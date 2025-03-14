@@ -1,25 +1,9 @@
 {
   "actions": {
-    "ApplyTiwTrial": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=ApplyTiwTrial\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "申请互动白板试用"
-      }
-    ],
-    "CreateApplication": [
-      {
-        "document": "创建白板应用",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateApplication\n&SdkAppId=1400000001\n&AppName=ForTest\n&SKey=Azu23oixeru90kic11cMw\n&TinyId=1401234005243\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"AppId\": 1200000001,\n        \"SdkAppId\": 1400000001,\n        \"AppName\": \"ForTest\"\n    }\n}",
-        "title": "创建白板应用"
-      }
-    ],
     "CreatePPTCheckTask": [
       {
         "document": "创建PPT检测任务，识别动态转码不支持的元素列表",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"http://example.com/%E6%B5%8B%E8%AF%95.pptx\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePPTCheckTask\n<公共请求参数>\n\n{\n    \"Url\": \"http://example.com/%E6%B5%8B%E8%AF%95.pptx\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT检测任务"
       }
@@ -35,13 +19,13 @@
     "CreateTranscode": [
       {
         "document": "创建PPT动态转码任务，并生成分辨率为960x540的缩略图",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"ThumbnailResolution\": \"960x540\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"ThumbnailResolution\": \"960x540\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT动态转码任务"
       },
       {
         "document": "创建PPT静态转码任务",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"IsStaticPPT\": \"True\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"IsStaticPPT\": \"True\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT静态转码任务"
       }
@@ -49,49 +33,9 @@
     "CreateVideoGenerationTask": [
       {
         "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=xxxxx\n&<公共请求参数>",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=bj0mt2l23osdj300hl30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g7khk7f809vterp942mb\"\n    }\n}",
         "title": "开始录制视频生成"
-      }
-    ],
-    "DescribeAPIService": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAPIService\n<公共请求参数>\n\n{\n    \"Service\": \"cos:GetService\",\n    \"Data\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"ResponseData\": \"{\\\"Bucket\\\": \\\"test\\\"}\"\n    }\n}",
-        "title": "查询COS桶列表"
-      }
-    ],
-    "DescribeApplicationInfos": [
-      {
-        "document": "查询白板应用列表",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeApplicationInfos\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ApplicationInfos\": [\n            {\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"tag_key\",\n                        \"TagValue\": \"tag_value\"\n                    }\n                ],\n                \"SdkAppId\": \"1400000001\",\n                \"AppName\": \"ForTest\",\n                \"CreateTime\": \"2019-11-10 00:00:00\"\n            }\n        ],\n        \"AllOption\": 1,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询白板应用列表"
-      }
-    ],
-    "DescribeApplicationUsage": [
-      {
-        "document": "按天查询白板用量",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationUsage\n<公共请求参数>\n\n{\n    \"TimeLevel\": \"DAILY\",\n    \"SubProduct\": \"sp_tiw_ric\",\n    \"BeginTime\": \"2019-10-01 00:00:00\",\n    \"SdkAppId\": 1400000001,\n    \"IsWeighted\": true,\n    \"EndTime\": \"2019-12-31 00:00:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Details\": [\n                    {\n                        \"Value\": 0.1,\n                        \"Weight\": 0.1,\n                        \"TagName\": \"tag_name\"\n                    }\n                ],\n                \"Value\": 23773611121,\n                \"Time\": \"2019-11-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询白板用量"
-      }
-    ],
-    "DescribeBoardSDKLog": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBoardSDKLog\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"RoomId\": \"73394291\",\n    \"UserId\": \"tic_web\",\n    \"TimeRange\": [\n        1614519034000,\n        1614691834999\n    ],\n    \"Context\": \"\",\n    \"AggregationInterval\": \"1h\",\n    \"Query\": \"\",\n    \"Ascending\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"52214ab1-eeaa-4c9a-aa8f-6c501f7cae18\",\n        \"Total\": 65,\n        \"Context\": \"\",\n        \"Sources\": [],\n        \"Buckets\": []\n    }\n}",
-        "title": "查询白板日志"
-      }
-    ],
-    "DescribeIMApplications": [
-      {
-        "document": "查询可用于创建白板应用的IM应用列表",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeIMApplications\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询IM应用列表"
       }
     ],
     "DescribeOnlineRecord": [
@@ -138,38 +82,6 @@
         "title": "查询回调地址"
       }
     ],
-    "DescribePostpaidUsage": [
-      {
-        "document": "查询用户后付费用量",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribePostpaidUsage\n&BeginTime=2019-12-16 10:44:58\n&EndTime=2019-12-16 10:44:58\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询用户后付费用量"
-      }
-    ],
-    "DescribeQualityMetrics": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityMetrics\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400296030,\n    \"Metric\": \"image_load_fail_count\",\n    \"Interval\": \"1h\",\n    \"StartTime\": 1617874404,\n    \"EndTime\": 1618479204\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c41b5df-2326-4c0b-baca-2fd85ebb4097\",\n        \"Metric\": \"image_load_fail_count\",\n        \"Content\": [\n            {\n                \"Time\": 1617872400,\n                \"Value\": 0\n            }\n        ]\n    }\n}",
-        "title": "查询白板图片加载失败统计"
-      }
-    ],
-    "DescribeRecordSearch": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeRecordSearch\n&Offset=0\n&Limit=1\n&RoomId=880528\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RecordTaskSet\": [\n            {\n                \"CreateTime\": \"2020-08-24T21:53:56+08:00\",\n                \"RoomId\": 880528,\n                \"TaskId\": \"gvft1qbrvs2331tcs1tb\",\n                \"Status\": \"FINISHED\",\n                \"SdkAppId\": 1400127140,\n                \"Result\": {\n                    \"FinishReason\": \"USER_CALL\",\n                    \"ExceptionCnt\": 0,\n                    \"RoomId\": 880528,\n                    \"GroupId\": \"880528\",\n                    \"RecordStartTime\": 1598277240,\n                    \"RecordStopTime\": 1598277614,\n                    \"TotalTime\": 368433,\n                    \"VideoInfos\": [\n                        {\n                            \"VideoDuration\": 368332,\n                            \"UserId\": \"\",\n                            \"VideoSize\": 10731806,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/0cf156ea197a8012073e6b690f44e530.mp4\",\n                            \"VideoType\": 2,\n                            \"VideoPlayTime\": 0,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"0cf156ea197a8012073e6b690f44e530\",\n                            \"Width\": 1280,\n                            \"Height\": 960\n                        },\n                        {\n                            \"VideoDuration\": 368325,\n                            \"UserId\": \"tic_mixstream_880528_custom\",\n                            \"VideoSize\": 12276476,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/ae62799da16a83ab9eb3da0bb37ef89f.mp4\",\n                            \"VideoType\": 3,\n                            \"VideoPlayTime\": 108,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"ae62799da16a83ab9eb3da0bb37ef89f\",\n                            \"Width\": 1624,\n                            \"Height\": 1000\n                        },\n                        {\n                            \"VideoDuration\": 181102,\n                            \"UserId\": \"tic_mixstream_880528_101\",\n                            \"VideoSize\": 3743450,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/54797f6b83940a708c7b7aecc2f1d1a9.mp4\",\n                            \"VideoType\": 3,\n                            \"VideoPlayTime\": 28918,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"54797f6b83940a708c7b7aecc2f1d1a9\",\n                            \"Width\": 496,\n                            \"Height\": 368\n                        },\n                        {\n                            \"VideoDuration\": 35405,\n                            \"UserId\": \"tiw_web_736\",\n                            \"VideoSize\": 3001045,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/7e562e9d513d12a2e03bea1514cc40fc.mp4\",\n                            \"VideoType\": 0,\n                            \"VideoPlayTime\": 29475,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"7e562e9d513d12a2e03bea1514cc40fc\",\n                            \"Width\": 1280,\n                            \"Height\": 720\n                        },\n                        {\n                            \"VideoDuration\": 161885,\n                            \"UserId\": \"tiw_web_310\",\n                            \"VideoSize\": 9974368,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/9ba564cba92925a02a88ef3ee874b586.mp4\",\n                            \"VideoType\": 0,\n                            \"VideoPlayTime\": 47535,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"9ba564cba92925a02a88ef3ee874b586\",\n                            \"Width\": 1280,\n                            \"Height\": 720\n                        },\n                        {\n                            \"VideoDuration\": 6085,\n                            \"UserId\": \"tiw_web_736\",\n                            \"VideoSize\": 283329,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/9517ed0696f910865ecaf22a07be4c0f.mp4\",\n                            \"VideoType\": 0,\n                            \"VideoPlayTime\": 64903,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"9517ed0696f910865ecaf22a07be4c0f\",\n                            \"Width\": 960,\n                            \"Height\": 540\n                        },\n                        {\n                            \"VideoDuration\": 96787,\n                            \"UserId\": \"tiw_web_736\",\n                            \"VideoSize\": 5604352,\n                            \"VideoUrl\": \"http://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/video/gvft1qbrvs2331tcs1tb/cdda0043fb734600d14324c4364213e2.mp4\",\n                            \"VideoType\": 0,\n                            \"VideoPlayTime\": 115401,\n                            \"VideoFormat\": \"mp4\",\n                            \"VideoId\": \"cdda0043fb734600d14324c4364213e2\",\n                            \"Width\": 1280,\n                            \"Height\": 720\n                        }\n                    ],\n                    \"OmittedDurations\": [],\n                    \"Details\": \"\",\n                    \"ErrorCode\": 0,\n                    \"ErrorMsg\": \"\"\n                }\n            }\n        ],\n        \"TotalCount\": 151,\n        \"RequestId\": \"bc309eaa-6d64-11e8-a7fe-5254000b4175\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "DescribeRoomList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"Query\": \"*\",\n    \"MaxSize\": 1000,\n    \"TimeRange\": [\n        1614519034000,\n        1615190492000\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f560a64-d7fb-476b-89b9-2b90acc5c675\",\n        \"RoomList\": [\n            {\n                \"RoomId\": \"108594741\",\n                \"StartTime\": 1614851243268,\n                \"EndTime\": 1614851284952,\n                \"UserNumber\": 1\n            }\n        ]\n    }\n}",
-        "title": "查询白板房间列表"
-      }
-    ],
     "DescribeRunningTasks": [
       {
         "document": "通过接口获取当前应用白板推流任务类型的正在执行中的任务列表",
@@ -184,22 +96,6 @@
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshotTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400127230,\n    \"TaskID\": \"f2e1728c-6e87-4481-abe1-cde8542a5a10\"\n}",
         "output": "{\n    \"Response\": {\n        \"CreateTime\": 1626249427,\n        \"FinishTime\": 1626250455,\n        \"RequestId\": \"38d75752-85e0-4931-9837-d41be5409a0a\",\n        \"Result\": {\n            \"ErrorCode\": \"OK\",\n            \"ErrorMessage\": \"\",\n            \"Snapshots\": [\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255368873480.png\",\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255373174978.png\",\n                \"http://tiw-snapshot-1259648581.cos.ap-guangzhou.myqcloud.com/880520/f2e1728c-6e87-4481-abe1-cde8542a5a10/53255375472670.png\"\n            ],\n            \"Total\": 3\n        },\n        \"Status\": \"Finished\",\n        \"TaskID\": \"f2e1728c-6e87-4481-abe1-cde8542a5a10\"\n    }\n}",
         "title": "获取任务信息"
-      }
-    ],
-    "DescribeTIWDailyUsage": [
-      {
-        "document": "查询2021-09-01到2021-09-07的互动白板时长用量",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTIWDailyUsage\n&SdkAppId=1400000001\n&SubProduct=sp_tiw_board\n&StartTime=2021-09-01\n&EndTime=2021-09-07\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cdfb2097-75d1-4159-ad37-62d9eca65d6a\",\n        \"Usages\": [\n            {\n                \"Time\": \"2021-09-01\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 779552\n            },\n            {\n                \"Time\": \"2021-09-02\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 78118\n            },\n            {\n                \"Time\": \"2021-09-03\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 768385\n            },\n            {\n                \"Time\": \"2021-09-04\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 94257\n            },\n            {\n                \"Time\": \"2021-09-05\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 26717\n            },\n            {\n                \"Time\": \"2021-09-06\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 95296\n            },\n            {\n                \"Time\": \"2021-09-07\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"Value\": 70592\n            }\n        ]\n    }\n}",
-        "title": "查询互动白板时长用量"
-      }
-    ],
-    "DescribeTIWRoomDailyUsage": [
-      {
-        "document": "查询2022-11-24到2022-11-25的互动白板房间计费用量",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTIWRoomDailyUsage\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400000001\",\n    \"SubProduct\": \"sp_tiw_board\",\n    \"Limit\": \"20\",\n    \"StartTime\": \"2022-11-24\",\n    \"Offset\": \"0\",\n    \"EndTime\": \"2022-11-25\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"916f3549-8e91-467c-afcb-b8dacf188e12\",\n        \"Usages\": [\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 432946024,\n                \"Value\": 5\n            },\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 523696026,\n                \"Value\": 60\n            },\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 1284910005,\n                \"Value\": 4\n            }\n        ],\n        \"Total\": 3\n    }\n}",
-        "title": "查询房间维度每天计费用量"
       }
     ],
     "DescribeTranscode": [
@@ -219,7 +115,7 @@
     "DescribeTranscodeByUrl": [
       {
         "document": "通过url查询文档动态转码任务状态",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"SdkAppId\": 1400000001\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscodeByUrl\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\"\n    }\n}",
         "title": "通过url查询文档动态转码任务状态"
       }
@@ -230,46 +126,6 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscodeCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/transcode/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询文档转码回调地址"
-      }
-    ],
-    "DescribeTranscodeSearch": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeTranscodeSearch\n&Offset=0\n&Limit=1\n&Keyword=拼音\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TranscodeTaskSet\": [\n            {\n                \"CreateTime\": \"2020-08-21T16:05:36+08:00\",\n                \"Status\": \"FINISHED\",\n                \"TaskId\": \"ggdb2vjdnc3lp0k0ovsb\",\n                \"OriginalFilename\": \"拼音.pptx\",\n                \"SdkAppId\": 1400127140,\n                \"IsStatic\": false,\n                \"Result\": {\n                    \"ResultUrl\": \"https://whiteboard-cam-test-1257307760.cos.ap-nanjing.myqcloud.com/doc/ggdb2vjdnc3lp0k0ovsb_tiw/h5/index.html\",\n                    \"Resolution\": \"960x540\",\n                    \"Title\": \"拼音.pptx\",\n                    \"Pages\": 20,\n                    \"ThumbnailUrl\": \"\",\n                    \"ThumbnailResolution\": \"\",\n                    \"CompressFileUrl\": \"\",\n                    \"ErrorCode\": 0,\n                    \"ErrorMsg\": \"ppt convert sucess!\"\n                }\n            }\n        ],\n        \"TotalCount\": 1340,\n        \"RequestId\": \"bc309eaa-6d64-11e8-a7fe-5254000b4175\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "DescribeUsageSummary": [
-      {
-        "document": "查询子产品用量统计",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeUsageSummary\n&BeginTime=2019-12-30 11:41:58\n&EndTime=2019-12-30 11:42:06\n&SubProducts.0=sp_tiw_dt\n&SubProducts.1=sp_tiw_st\n&IsWeighted=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70443084-c60f-4f8e-a4f9-acb791802298\"\n    }\n}",
-        "title": "查询子产品用量统计"
-      }
-    ],
-    "DescribeUserList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"RoomId\": \"0\",\n    \"Query\": \"*\",\n    \"MaxSize\": 1000,\n    \"TimeRange\": [\n        1614519034000,\n        1615190492000\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f560a64-d7fb-476b-89b9-2b90acc5c675\",\n        \"UserList\": [\n            {\n                \"UserId\": \"131001012\",\n                \"StartTime\": 1614519034000,\n                \"EndTime\": 1615190492000\n            }\n        ]\n    }\n}",
-        "title": "查询白板用户列表"
-      }
-    ],
-    "DescribeUserResources": [
-      {
-        "document": "查询客户资源列表",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeUserResources\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询客户资源列表"
-      }
-    ],
-    "DescribeUserStatus": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeUserStatus\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AppId\": 1250000060,\n        \"IsTiwUser\": 1,\n        \"IsSaaSUser\": 1,\n        \"IsTiwOfflineRecordUser\": 1,\n        \"IsAuthenticated\": 1,\n        \"RequestId\": \"9f5a59d6-2b77-41b2-a945-78084577e225\"\n    }\n}",
-        "title": "查询互动白板用户详情"
       }
     ],
     "DescribeVideoGenerationTask": [
@@ -296,22 +152,6 @@
         "title": "获取告警回调地址信息"
       }
     ],
-    "DescribeWhiteboardApplicationConfig": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWhiteboardApplicationConfig\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"TaskTypes\": [\n        \"transcode\",\n        \"recording\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Configs\": [\n            {\n                \"BucketLocation\": \"ap-nanjing\",\n                \"BucketName\": \"example-120000001\",\n                \"BucketPrefix\": \"video\",\n                \"Callback\": \"http://www.test.com\",\n                \"CallbackKey\": \"\",\n                \"ResultDomain\": \"example-120000001.cos.ap-nanjing.myqcloud.com\",\n                \"TaskType\": \"recording\",\n                \"SdkAppId\": 1400127140\n            },\n            {\n                \"BucketLocation\": \"ap-nanjing\",\n                \"BucketName\": \"example-120000001\",\n                \"BucketPrefix\": \"\",\n                \"Callback\": \"http://www.test.com/qcapi\",\n                \"CallbackKey\": \"abcde\",\n                \"ResultDomain\": \"example-120000001.cos.ap-nanjing.myqcloud.com\",\n                \"TaskType\": \"transcode\",\n                \"SdkAppId\": 1400127140\n            }\n        ],\n        \"SdkAppId\": 1400127140,\n        \"RequestId\": \"9f5a59d6-2b77-41b2-a945-78084577e225\"\n    }\n}",
-        "title": "查询应用资源配置"
-      }
-    ],
-    "DescribeWhiteboardBucketConfig": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardBucketConfig\n&SdkAppId=1400000001\n&TaskType=recording\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询应用资源配置"
-      }
-    ],
     "DescribeWhiteboardPush": [
       {
         "document": "",
@@ -332,46 +172,6 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPushCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Callback\": \"https://example.com/online/callback\",\n        \"CallbackKey\": \"6vg9G7Fd\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "查询白板推流回调地址"
-      }
-    ],
-    "DescribeWhiteboardPushSearch": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeWhiteboardPushSearch\n&Offset=0\n&Limit=1\n&RoomId=101069223\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"WhiteboardPushTaskSet\": [\n            {\n                \"CreateTime\": \"2021-01-15T12:43:57+08:00\",\n                \"RoomId\": 101069223,\n                \"TaskId\": \"01bjgeeigsh31f3rh00c\",\n                \"Status\": \"STOPPED\",\n                \"SdkAppId\": 1400313729,\n                \"PushUserId\": \"tic_push_user_101069223_107991\",\n                \"Result\": {\n                    \"RoomId\": 101069223,\n                    \"GroupId\": \"101069223\",\n                    \"FinishReason\": \"USER_CALL\",\n                    \"ExceptionCnt\": 0,\n                    \"PushStartTime\": 1610685839,\n                    \"PushStopTime\": 1610685852,\n                    \"IMSyncTime\": 0,\n                    \"ErrorCode\": 0,\n                    \"ErrorMsg\": \"\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "成功"
-      }
-    ],
-    "ModifyApplication": [
-      {
-        "document": "创建白板应用",
-        "input": "https://tiw.tencentcloudapi.com/?Action=ModifyApplication\n&SdkAppId=1400000001\n&AppName=ForTest\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "修改白板应用"
-      }
-    ],
-    "ModifyAutoRenewFlag": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=ModifyAutoRenewFlag\n&SubProduct=sp_tiw_package\n&ResourceId=sp_tiw_package-251006355-prepaid-1\n&AutoRenewFlag=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "设置白板月功能费自动续费"
-      }
-    ],
-    "ModifyWhiteboardApplicationConfig": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWhiteboardApplicationConfig\n<公共请求参数>\n\n{\n    \"Configs\": [\n        {\n            \"AdminUserId\": \"abcde\",\n            \"BucketPrefix\": \"doc\",\n            \"ResultDomain\": \"result.sample.com\",\n            \"AdminUserSig\": \"abcde\",\n            \"Callback\": \"http://www.example.com/callback\",\n            \"BucketName\": \"test-120000001\",\n            \"SdkAppId\": 1400000001,\n            \"TaskType\": \"recording\",\n            \"BucketLocation\": \"ap-guangzhou\",\n            \"CallbackKey\": \"abcde\"\n        }\n    ],\n    \"SdkAppId\": 1400000001\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "修改白板应用任务相关配置"
-      }
-    ],
-    "ModifyWhiteboardBucketConfig": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=ModifyWhiteboardBucketConfig\n&SdkAppId=1400000001\n&TaskType=recording\n&BucketLocation=ap-guangzhou\n&BucketName=test-120000001\n&BucketPrefix=doc\n&ResultDomain=https://bucket.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "设置应用资源配置"
       }
     ],
     "PauseOnlineRecord": [
@@ -495,7 +295,7 @@
     "StartWhiteboardPush": [
       {
         "document": "创建一个白板推流任务",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": \"1203\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": 1203,\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
         "title": "开始白板推流"
       }

@@ -11,7 +11,7 @@
     "AddOptimizerEngines": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOptimizerEngines\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOptimizerEngines\n<公共请求参数>\n\n{\n    \"Catalog\": \"DataLakeCatalog\",\n    \"Engines\": [\n        {\n            \"HouseName\": \"test_engine\",\n            \"HouseId\": \"DataEngine-123\",\n            \"HouseSize\": 0\n        }\n    ],\n    \"Database\": \"mydb\",\n    \"Table\": \"mytb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1304581893_25027_1709796072623_223\"\n    }\n}",
         "title": "实例一"
       }
@@ -732,6 +732,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskLog\n<公共请求参数>\n\n{\n    \"TaskId\": \"84f55bb7-4f9c-4995-90c5-a40fdff9bc62\",\n    \"StartTime\": 1736931692631,\n    \"EndTime\": 1737104492631,\n    \"Limit\": 10,\n    \"Context\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"Context\": \"\",\n        \"ListOver\": true,\n        \"LogUrl\": \"\",\n        \"RequestId\": \"********-****-****-****-303d24983adb\",\n        \"Results\": []\n    }\n}",
         "title": "获取spark 作业任务日志详情"
+      }
+    ],
+    "DescribeTaskMonitorInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskMonitorInfos\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        \"bba8a49efe4911ef9e535254001a35f3\"\n    ],\n    \"HouseName\": \"engine1\",\n    \"CreateTimeStart\": \"20250301\",\n    \"CreateTimeEnd\": \"20250302\",\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a79d797-2c6c-4773-a983-895e401b0a86\",\n        \"TaskMonitorInfoList\": [\n            {\n                \"TaskId\": \"bba8a49efe4911ef9e535254001a35f3\",\n                \"HouseName\": \"engine1\",\n                \"QuerySQL\": \"select 1;\",\n                \"CreateTime\": \"2023-08-10T12:35:02.123Z\",\n                \"UsedTime\": \"100\",\n                \"DataAmount\": \"1024\",\n                \"QueryStats\": \"{\\\"elapsedTime\\\": \\\"5.34s\\\",     \\\"executionTime\\\": \\\"4.89s\\\",     \\\"cumulativeUserMemory\\\": 1234567.89,     \\\"peakUserMemoryReservation\\\": \\\"64MB\\\",     \\\"totalBytes\\\": \\\"1.23MB\\\",    \\\"totalRows\\\": 1000   }\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取任务监控信息"
       }
     ],
     "DescribeTaskResult": [

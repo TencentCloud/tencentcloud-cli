@@ -1,19 +1,5 @@
 {
   "actions": {
-    "ApplyTiwTrial": {
-      "document": "申请互动白板试用，默认15天",
-      "input": "ApplyTiwTrialRequest",
-      "name": "申请互动白板试用",
-      "output": "ApplyTiwTrialResponse",
-      "status": "online"
-    },
-    "CreateApplication": {
-      "document": "创建白板应用",
-      "input": "CreateApplicationRequest",
-      "name": "创建白板应用",
-      "output": "CreateApplicationResponse",
-      "status": "online"
-    },
     "CreatePPTCheckTask": {
       "document": "检测PPT文件，识别PPT中包含的动态转码任务（Transcode）不支持的元素",
       "input": "CreatePPTCheckTaskRequest",
@@ -40,41 +26,6 @@
       "input": "CreateVideoGenerationTaskRequest",
       "name": "创建录制视频生成任务",
       "output": "CreateVideoGenerationTaskResponse",
-      "status": "online"
-    },
-    "DescribeAPIService": {
-      "document": "通过服务角色调用其他云产品API接口获取信息",
-      "input": "DescribeAPIServiceRequest",
-      "name": "获取其他云产品信息",
-      "output": "DescribeAPIServiceResponse",
-      "status": "online"
-    },
-    "DescribeApplicationInfos": {
-      "document": "查询白板应用详情",
-      "input": "DescribeApplicationInfosRequest",
-      "name": "查询白板应用详情",
-      "output": "DescribeApplicationInfosResponse",
-      "status": "online"
-    },
-    "DescribeApplicationUsage": {
-      "document": "查询互动白板各个子产品用量",
-      "input": "DescribeApplicationUsageRequest",
-      "name": "查询互动白板各个子产品用量",
-      "output": "DescribeApplicationUsageResponse",
-      "status": "online"
-    },
-    "DescribeBoardSDKLog": {
-      "document": "查询客户端白板日志",
-      "input": "DescribeBoardSDKLogRequest",
-      "name": "查询白板日志",
-      "output": "DescribeBoardSDKLogResponse",
-      "status": "online"
-    },
-    "DescribeIMApplications": {
-      "document": "查询可用于创建白板应用的IM应用列表",
-      "input": "DescribeIMApplicationsRequest",
-      "name": "查询可用的IM应用列表",
-      "output": "DescribeIMApplicationsResponse",
       "status": "online"
     },
     "DescribeOnlineRecord": {
@@ -105,34 +56,6 @@
       "output": "DescribePPTCheckCallbackResponse",
       "status": "online"
     },
-    "DescribePostpaidUsage": {
-      "document": "查询用户后付费用量",
-      "input": "DescribePostpaidUsageRequest",
-      "name": "查询用户后付费用量",
-      "output": "DescribePostpaidUsageResponse",
-      "status": "online"
-    },
-    "DescribeQualityMetrics": {
-      "document": "查询互动白板质量数据",
-      "input": "DescribeQualityMetricsRequest",
-      "name": "查询质量数据",
-      "output": "DescribeQualityMetricsResponse",
-      "status": "online"
-    },
-    "DescribeRecordSearch": {
-      "document": "根据房间号搜索实时录制任务",
-      "input": "DescribeRecordSearchRequest",
-      "name": "搜索实时录制任务",
-      "output": "DescribeRecordSearchResponse",
-      "status": "online"
-    },
-    "DescribeRoomList": {
-      "document": "查询白板房间列表",
-      "input": "DescribeRoomListRequest",
-      "name": "查询白板房间列表",
-      "output": "DescribeRoomListResponse",
-      "status": "online"
-    },
     "DescribeRunningTasks": {
       "document": "根据指定的任务类型，获取当前正在执行中的任务列表。只能查询最近3天内创建的任务。",
       "input": "DescribeRunningTasksRequest",
@@ -147,20 +70,6 @@
       "output": "DescribeSnapshotTaskResponse",
       "status": "online"
     },
-    "DescribeTIWDailyUsage": {
-      "document": "查询互动白板天维度计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量\n",
-      "input": "DescribeTIWDailyUsageRequest",
-      "name": "查询天维度计费用量",
-      "output": "DescribeTIWDailyUsageResponse",
-      "status": "online"
-    },
-    "DescribeTIWRoomDailyUsage": {
-      "document": "查询互动白板房间维度每天计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量\n",
-      "input": "DescribeTIWRoomDailyUsageRequest",
-      "name": "查询房间维度每天计费用量",
-      "output": "DescribeTIWRoomDailyUsageResponse",
-      "status": "online"
-    },
     "DescribeTranscode": {
       "document": "查询文档转码任务的执行进度与转码结果",
       "input": "DescribeTranscodeRequest",
@@ -169,7 +78,7 @@
       "status": "online"
     },
     "DescribeTranscodeByUrl": {
-      "document": "通过文档URL查询转码任务，返回最近一次的转码任务状态",
+      "document": "通过文档URL查询转码任务，返回最近一天内最新的转码任务状态",
       "input": "DescribeTranscodeByUrlRequest",
       "name": "通过文档URL查询转码任务状态",
       "output": "DescribeTranscodeByUrlResponse",
@@ -180,41 +89,6 @@
       "input": "DescribeTranscodeCallbackRequest",
       "name": "查询文档转码回调地址",
       "output": "DescribeTranscodeCallbackResponse",
-      "status": "online"
-    },
-    "DescribeTranscodeSearch": {
-      "document": "按文档名称搜索转码任务",
-      "input": "DescribeTranscodeSearchRequest",
-      "name": "搜索转码任务",
-      "output": "DescribeTranscodeSearchResponse",
-      "status": "online"
-    },
-    "DescribeUsageSummary": {
-      "document": "查询指定时间段内子产品的用量汇总",
-      "input": "DescribeUsageSummaryRequest",
-      "name": "查询子产品用量统计",
-      "output": "DescribeUsageSummaryResponse",
-      "status": "online"
-    },
-    "DescribeUserList": {
-      "document": "查询白板用户列表",
-      "input": "DescribeUserListRequest",
-      "name": "查询白板用户列表",
-      "output": "DescribeUserListResponse",
-      "status": "online"
-    },
-    "DescribeUserResources": {
-      "document": "查询客户资源列表",
-      "input": "DescribeUserResourcesRequest",
-      "name": "查询客户资源列表",
-      "output": "DescribeUserResourcesResponse",
-      "status": "online"
-    },
-    "DescribeUserStatus": {
-      "document": "查询互动白板用户详情，包括是否开通了互动白板，当前互动白板服务有效期等信息\n",
-      "input": "DescribeUserStatusRequest",
-      "name": "查询互动白板用户详情",
-      "output": "DescribeUserStatusResponse",
       "status": "online"
     },
     "DescribeVideoGenerationTask": {
@@ -238,20 +112,6 @@
       "output": "DescribeWarningCallbackResponse",
       "status": "online"
     },
-    "DescribeWhiteboardApplicationConfig": {
-      "document": "查询白板应用任务相关的配置，包括存储桶、回调等",
-      "input": "DescribeWhiteboardApplicationConfigRequest",
-      "name": "查询白板应用任务相关配置",
-      "output": "DescribeWhiteboardApplicationConfigResponse",
-      "status": "online"
-    },
-    "DescribeWhiteboardBucketConfig": {
-      "document": "查询文档转码，实时录制存储桶的配置",
-      "input": "DescribeWhiteboardBucketConfigRequest",
-      "name": "查询应用资源配置",
-      "output": "DescribeWhiteboardBucketConfigResponse",
-      "status": "online"
-    },
     "DescribeWhiteboardPush": {
       "document": "查询推流任务状态与结果",
       "input": "DescribeWhiteboardPushRequest",
@@ -264,41 +124,6 @@
       "input": "DescribeWhiteboardPushCallbackRequest",
       "name": "查询白板推流回调地址",
       "output": "DescribeWhiteboardPushCallbackResponse",
-      "status": "online"
-    },
-    "DescribeWhiteboardPushSearch": {
-      "document": "根据房间号搜索白板推流任务",
-      "input": "DescribeWhiteboardPushSearchRequest",
-      "name": "搜索白板推流任务",
-      "output": "DescribeWhiteboardPushSearchResponse",
-      "status": "online"
-    },
-    "ModifyApplication": {
-      "document": "修改白板应用",
-      "input": "ModifyApplicationRequest",
-      "name": "修改白板应用",
-      "output": "ModifyApplicationResponse",
-      "status": "online"
-    },
-    "ModifyAutoRenewFlag": {
-      "document": "设置白板月功能费自动续费",
-      "input": "ModifyAutoRenewFlagRequest",
-      "name": "设置自动续费",
-      "output": "ModifyAutoRenewFlagResponse",
-      "status": "online"
-    },
-    "ModifyWhiteboardApplicationConfig": {
-      "document": "修改白板应用任务相关的配置，包括存储桶、回调等",
-      "input": "ModifyWhiteboardApplicationConfigRequest",
-      "name": "修改白板应用任务相关配置",
-      "output": "ModifyWhiteboardApplicationConfigResponse",
-      "status": "online"
-    },
-    "ModifyWhiteboardBucketConfig": {
-      "document": "设置文档转码，实时录制存储桶的配置",
-      "input": "ModifyWhiteboardBucketConfigRequest",
-      "name": "设置应用资源存储桶配置",
-      "output": "ModifyWhiteboardBucketConfigResponse",
       "status": "online"
     },
     "PauseOnlineRecord": {
@@ -428,69 +253,6 @@
     "serviceShortName": "tiw"
   },
   "objects": {
-    "ApplicationItem": {
-      "document": "白板应用",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "应用名",
-          "example": "",
-          "member": "string",
-          "name": "AppName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "",
-          "member": "datetime",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "标签列表",
-          "example": "",
-          "member": "Tag",
-          "name": "TagList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "ApplyTiwTrialRequest": {
-      "document": "ApplyTiwTrial请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ApplyTiwTrialResponse": {
-      "document": "ApplyTiwTrial返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "AuthParam": {
       "document": "鉴权参数",
       "members": [
@@ -579,99 +341,6 @@
       ],
       "usage": "in"
     },
-    "CreateApplicationRequest": {
-      "document": "CreateApplication请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "App名字",
-          "example": "ForTest",
-          "member": "string",
-          "name": "AppName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "创建IM应用需要的SKey",
-          "example": "Azu23oixeru90kic11cMw",
-          "member": "string",
-          "name": "SKey",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "创建IM应用需要的TinyId",
-          "example": "1401234005243",
-          "member": "string",
-          "name": "TinyId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要绑定的标签列表",
-          "example": "无",
-          "member": "Tag",
-          "name": "TagList",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateApplicationResponse": {
-      "document": "CreateApplication返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的AppId",
-          "example": "1200000001",
-          "member": "int64",
-          "name": "AppId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "App名字",
-          "example": "ForTest",
-          "member": "string",
-          "name": "AppName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "应用SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreatePPTCheckTaskRequest": {
       "document": "CreatePPTCheckTask请求参数结构体",
       "members": [
@@ -704,7 +373,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。\n\n指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。\n\n目前支持检测的不兼容元素类型及对应的自动处理方式如下：\n0: 不支持的墨迹类型\n-- 自动处理方式：移除墨迹\n\n1: 自动翻页\n-- 自动处理方式：移除自动翻页设置，并修改为单击切换\n\n2: 已损坏音视频\n-- 自动处理方式：移除对损坏音视频的引用\n\n3: 不可访问资源\n-- 自动处理方式：移除对不可访问的资源的引用\n\n4: 只读文件\n-- 自动处理方式：移除只读设置\n\n5: 不支持的元素编辑锁定状态\n-- 自动处理方式：移除锁定状态\n\n6: 可能有兼容问题的字体\n-- 自动处理方式： 不支持处理\n\n7: 设置了柔化边缘的GIF图片\n-- 自动处理方式：移除柔化边缘设置\n\n8: 存在不兼容的空格下划线\n-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常\n\n9: 存在设置了分段动画的数学公式和文本混合内容\n-- 自动处理方式： 不支持处理\n\n10: 存在设置了分段动画的渐变色文本\n-- 自动处理方式： 不支持处理\n\n11: 存在不兼容的分散对齐方式\n-- 自动处理方式： 不支持处理\n\n12: 存在不兼容的多倍行距设置\n-- 自动处理方式： 不支持处理",
+          "document": "此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。\n\n指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。\n\n目前支持检测的不兼容元素类型及对应的自动处理方式如下：\n0: 不支持的墨迹类型\n-- 自动处理方式：移除墨迹\n\n1: 自动翻页\n-- 自动处理方式：移除自动翻页设置，并修改为单击切换\n\n2: 已损坏音视频\n-- 自动处理方式：移除对损坏音视频的引用\n\n3: 不可访问资源\n-- 自动处理方式：移除对不可访问的资源的引用\n\n4: 只读文件\n-- 自动处理方式：移除只读设置\n\n5: 不支持的元素编辑锁定状态\n-- 自动处理方式：移除锁定状态\n\n6: 可能有兼容问题的字体\n-- 自动处理方式： 不支持处理\n\n7: 设置了柔化边缘的GIF图片\n-- 自动处理方式：移除柔化边缘设置\n\n8: 存在不兼容的空格下划线\n-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常\n\n9: 存在设置了分段动画的数学公式和文本混合内容\n-- 自动处理方式： 不支持处理\n\n10: 存在设置了分段动画的渐变色文本\n-- 自动处理方式： 不支持处理\n\n11: 存在不兼容的分散对齐方式\n-- 自动处理方式： 不支持处理\n\n12: 存在不兼容的多倍行距设置\n-- 自动处理方式： 不支持处理\n\n13: 存在带有特殊符号内容的datetime类型的a:fld标签元素\n-- 自动处理方式： a:fld标签替换为普通文本",
           "example": "[0, 1, 2]",
           "member": "int64",
           "name": "AutoHandleUnsupportedElementTypes",
@@ -959,8 +628,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "录制任务的TaskId",
-          "example": "",
+          "document": "实时录制任务的TaskId",
+          "example": "bj0mt2l23osdj300hl30",
           "member": "string",
           "name": "OnlineRecordTaskId",
           "required": true,
@@ -969,7 +638,7 @@
         {
           "disabled": false,
           "document": "客户的SdkAppId",
-          "example": "",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -978,7 +647,7 @@
         {
           "disabled": false,
           "document": "视频生成的白板参数，例如白板宽高等。\n\n此参数与开始录制接口提供的Whiteboard参数互斥，在本接口与开始录制接口都提供了Whiteboard参数时，优先使用本接口指定的Whiteboard参数进行视频生成，否则使用开始录制接口提供的Whiteboard参数进行视频生成。",
-          "example": "",
+          "example": "1280*960",
           "member": "Whiteboard",
           "name": "Whiteboard",
           "required": false,
@@ -987,7 +656,7 @@
         {
           "disabled": false,
           "document": "视频拼接参数\n\n此参数与开始录制接口提供的Concat参数互斥，在本接口与开始录制接口都提供了Concat参数时，优先使用本接口指定的Concat参数进行视频拼接，否则使用开始录制接口提供的Concat参数进行视频拼接。",
-          "example": "",
+          "example": "否",
           "member": "Concat",
           "name": "Concat",
           "required": false,
@@ -996,7 +665,7 @@
         {
           "disabled": false,
           "document": "视频生成混流参数\n\n此参数与开始录制接口提供的MixStream参数互斥，在本接口与开始录制接口都提供了MixStream参数时，优先使用本接口指定的MixStream参数进行视频混流，否则使用开始录制接口提供的MixStream参数进行视频拼混流。",
-          "example": "",
+          "example": "否",
           "member": "MixStream",
           "name": "MixStream",
           "required": false,
@@ -1005,7 +674,7 @@
         {
           "disabled": false,
           "document": "视频生成控制参数，用于更精细地指定需要生成哪些流，某一路流是否禁用音频，是否只录制小画面等\n\n此参数与开始录制接口提供的RecordControl参数互斥，在本接口与开始录制接口都提供了RecordControl参数时，优先使用本接口指定的RecordControl参数进行视频生成控制，否则使用开始录制接口提供的RecordControl参数进行视频拼生成控制。",
-          "example": "",
+          "example": "否",
           "member": "RecordControl",
           "name": "RecordControl",
           "required": false,
@@ -1014,7 +683,7 @@
         {
           "disabled": false,
           "document": "内部参数",
-          "example": "",
+          "example": "'''",
           "member": "string",
           "name": "ExtraData",
           "required": false,
@@ -1029,9 +698,10 @@
         {
           "disabled": false,
           "document": "视频生成的任务Id",
-          "example": "",
+          "example": "bj0mt2l23osdj300hl30",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1069,353 +739,6 @@
         }
       ],
       "usage": "in"
-    },
-    "DataItem": {
-      "document": "画图数据，Time/Value/Details",
-      "members": [
-        {
-          "disabled": false,
-          "document": "时间\n按月格式yyyy-mm\n按天格式yyyy-mm-dd\n按分钟格式 yyyy-mm-dd HH:MM:SS",
-          "example": "",
-          "member": "string",
-          "name": "Time",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "画图所需要的值",
-          "example": "",
-          "member": "int64",
-          "name": "Value",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "各个具体指标的详情",
-          "example": "",
-          "member": "Detail",
-          "name": "Details",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "DescribeAPIServiceRequest": {
-      "document": "DescribeAPIService请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "目前支持的Service为cos:GetService，cdn:DescribeDomainsConfig",
-          "example": "",
-          "member": "string",
-          "name": "Service",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "JSON格式的请求参数",
-          "example": "",
-          "member": "string",
-          "name": "Data",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeAPIServiceResponse": {
-      "document": "DescribeAPIService返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Json格式的响应数据",
-          "example": "",
-          "member": "string",
-          "name": "ResponseData",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeApplicationInfosRequest": {
-      "document": "DescribeApplicationInfos请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeApplicationInfosResponse": {
-      "document": "DescribeApplicationInfos返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用列表",
-          "example": "无",
-          "member": "ApplicationItem",
-          "name": "ApplicationInfos",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否包含所有的应用，0-不包含，1-包含",
-          "example": "1",
-          "member": "int64",
-          "name": "AllOption",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeApplicationUsageRequest": {
-      "document": "DescribeApplicationUsage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用量开始时间（包括该时间点）",
-          "example": "2019-10-01 00:00:00",
-          "member": "datetime",
-          "name": "BeginTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用量结束时间（不包括该时间点）",
-          "example": "2019-12-31 00:00:00",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "白板子产品名",
-          "example": "sp_tiw_ric",
-          "member": "string",
-          "name": "SubProduct",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "时间跨度单位\n- MONTHLY：月\n- DAILY：天\n- MINUTELY：分钟",
-          "example": "DAILY",
-          "member": "string",
-          "name": "TimeLevel",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "白板应用的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "true: 返回加权求和后的用量数据\nfalse: 返回原始用量数据",
-          "example": "1",
-          "member": "bool",
-          "name": "IsWeighted",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeApplicationUsageResponse": {
-      "document": "DescribeApplicationUsage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "画图所需的用量数据",
-          "example": "无",
-          "member": "DataItem",
-          "name": "Data",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBoardSDKLogRequest": {
-      "document": "DescribeBoardSDKLog请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "白板应用的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询日志的白板房间号",
-          "example": "10000",
-          "member": "string",
-          "name": "RoomId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询日志的用户ID",
-          "example": "tic_web",
-          "member": "string",
-          "name": "UserId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间",
-          "example": "[1614519034000,1614691834999]",
-          "member": "int64",
-          "name": "TimeRange",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "聚合日志条数查询的桶的时间范围，如5m, 1h, 4h等",
-          "example": "5m",
-          "member": "string",
-          "name": "AggregationInterval",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "额外的查询条件",
-          "example": "action: addData",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否按时间升序排列",
-          "example": "false",
-          "member": "bool",
-          "name": "Ascending",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "用于递归拉取的上下文Key，在上一次请求中返回",
-          "example": "空",
-          "member": "string",
-          "name": "Context",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeBoardSDKLogResponse": {
-      "document": "DescribeBoardSDKLog返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总共能查到日志条数",
-          "example": "65",
-          "member": "int64",
-          "name": "Total",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志详细内容",
-          "example": "[]",
-          "member": "string",
-          "name": "Sources",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "按时间段聚合后每个时间段的日志条数",
-          "example": "[]",
-          "member": "string",
-          "name": "Buckets",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用于递归拉取的上下文Key，下一次请求的时候带上",
-          "example": "空",
-          "member": "string",
-          "name": "Context",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIMApplicationsRequest": {
-      "document": "DescribeIMApplications请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeIMApplicationsResponse": {
-      "document": "DescribeIMApplications返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "DescribeOnlineRecordCallbackRequest": {
       "document": "DescribeOnlineRecordCallback请求参数结构体",
@@ -1791,226 +1114,6 @@
       ],
       "type": "object"
     },
-    "DescribePostpaidUsageRequest": {
-      "document": "DescribePostpaidUsage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "开始时间",
-          "example": "",
-          "member": "datetime",
-          "name": "BeginTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePostpaidUsageResponse": {
-      "document": "DescribePostpaidUsage返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeQualityMetricsRequest": {
-      "document": "DescribeQualityMetrics请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "白板应用的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间，Unix时间戳，单位秒，时间跨度不能超过7天",
-          "example": "1614691834",
-          "member": "int64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间，Unix时间戳，单位秒，时间跨度不能超过7天",
-          "example": "1614691834",
-          "member": "int64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询的指标，目前支持以下值\n  - image_load_total_count: 图片加载总数（单位，次）\n  - image_load_fail_count: 图片加载失败数量（单位，次）\n  - image_load_success_rate: 图片加载成功率（百分比）\n  - ppt_load_total_count: PPT加载总数（单位，次）\n  - ppt_load_fail_count: PPT加载失败总数（单位，次）\n  - ppt_load_success_rate: PPT加载成功率（单位，百分比）\n  - verify_sdk_total_count: 白板鉴权总次数（单位，次）\n  - verify_sdk_fail_count: 白板鉴权失败次数（单位，次）\n  - verify_sdk_success_rate: 白板鉴权成功率（单位，百分比）\n  - verify_sdk_in_one_second_rate: 白板鉴权秒开率（单位，百分比）\n  - verify_sdk_cost_avg: 白板鉴权耗时平均时间（单位，毫秒）",
-          "example": "image_load_success_rate",
-          "member": "string",
-          "name": "Metric",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "聚合的时间维度，目前只支持1小时，输入值为\"1h\"",
-          "example": "1h",
-          "member": "string",
-          "name": "Interval",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeQualityMetricsResponse": {
-      "document": "DescribeQualityMetrics返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "输入的查询指标",
-          "example": "image_load_success_rate",
-          "member": "string",
-          "name": "Metric",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "时间序列",
-          "example": "无",
-          "member": "TimeValue",
-          "name": "Content",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRecordSearchRequest": {
-      "document": "DescribeRecordSearch请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeRecordSearchResponse": {
-      "document": "DescribeRecordSearch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "录制任务搜索结果集合",
-          "example": "无",
-          "member": "RecordTaskSearchResult",
-          "name": "RecordTaskSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录制总任务数",
-          "example": "151",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRoomListRequest": {
-      "document": "DescribeRoomList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "白板应用的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间",
-          "example": "[1614519034000,1614691834999]",
-          "member": "int64",
-          "name": "TimeRange",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "额外的查询条件",
-          "example": "action: addData",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "返回最大的数据条数，默认1000",
-          "example": "1000",
-          "member": "int64",
-          "name": "MaxSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRoomListResponse": {
-      "document": "DescribeRoomList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "白板房间列表",
-          "example": "[]",
-          "member": "RoomListItem",
-          "name": "RoomList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeRunningTasksRequest": {
       "document": "DescribeRunningTasks请求参数结构体",
       "members": [
@@ -2159,171 +1262,6 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTIWDailyUsageRequest": {
-      "document": "DescribeTIWDailyUsage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "互动白板应用SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的子产品用量，支持传入以下值\n- sp_tiw_board: 互动白板时长，单位为分钟\n- sp_tiw_dt: 动态转码页数，单位页\n- sp_tiw_st: 静态转码页数，单位页\n- sp_tiw_ric: 实时录制时长，单位分钟\n\n注意：动态转码以1:8的比例计算文档转码页数，静态转码以1:1的比例计算文档转码页数",
-          "example": "sp_tiw_board",
-          "member": "string",
-          "name": "SubProduct",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间，格式YYYY-MM-DD，查询结果里包括该天数据",
-          "example": "2021-10-01",
-          "member": "date",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。",
-          "example": "2021-10-31",
-          "member": "date",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTIWDailyUsageResponse": {
-      "document": "DescribeTIWDailyUsage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "指定区间指定产品的用量汇总",
-          "example": "无",
-          "member": "UsageDataItem",
-          "name": "Usages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTIWRoomDailyUsageRequest": {
-      "document": "DescribeTIWRoomDailyUsage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "互动白板应用SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的子产品用量，支持传入以下值\n- sp_tiw_board: 互动白板时长，单位为分钟\n- sp_tiw_ric: 实时录制时长，单位分钟",
-          "example": "sp_tiw_board",
-          "member": "string",
-          "name": "SubProduct",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间，格式YYYY-MM-DD，查询结果里包括该天数据",
-          "example": "2021-10-01",
-          "member": "date",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间，格式YYYY-MM-DD，查询结果里包括该天数据，单次查询统计区间最多不能超过31天。",
-          "example": "2021-10-31",
-          "member": "date",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的房间ID列表，不填默认查询全部房间",
-          "example": "无",
-          "member": "uint64",
-          "name": "RoomIDs",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "查询偏移量，默认为0",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "每次查询返回条目限制，默认为20",
-          "example": "20",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTIWRoomDailyUsageResponse": {
-      "document": "DescribeTIWRoomDailyUsage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "指定区间指定产品的房间用量列表",
-          "example": "无",
-          "member": "RoomUsageDataItem",
-          "name": "Usages",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用量列表总数",
-          "example": "10",
-          "member": "uint64",
-          "name": "Total",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2633,249 +1571,6 @@
       ],
       "type": "object"
     },
-    "DescribeTranscodeSearchRequest": {
-      "document": "DescribeTranscodeSearch请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeTranscodeSearchResponse": {
-      "document": "DescribeTranscodeSearch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "转码任务搜索结果集合",
-          "example": "无",
-          "member": "TranscodeTaskSearchResult",
-          "name": "TranscodeTaskSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "转码总任务数",
-          "example": "1340",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeUsageSummaryRequest": {
-      "document": "DescribeUsageSummary请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "统计时间段的开始时间",
-          "example": "",
-          "member": "datetime",
-          "name": "BeginTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "统计时间段的结束时间",
-          "example": "",
-          "member": "datetime",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要获取用量的子产品列表",
-          "example": "",
-          "member": "string",
-          "name": "SubProducts",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "true: 返回加权后的数据\nfalse: 返回原始数据",
-          "example": "",
-          "member": "bool",
-          "name": "IsWeighted",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeUsageSummaryResponse": {
-      "document": "DescribeUsageSummary返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeUserListRequest": {
-      "document": "DescribeUserList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "白板应用的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询用户列表的白板房间号",
-          "example": "10000",
-          "member": "string",
-          "name": "RoomId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "查询时间段，Unix时间戳，单位毫秒，第一个值为开始时间戳，第二个值为结束时间",
-          "example": "[1614519034000,1614691834999]",
-          "member": "int64",
-          "name": "TimeRange",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "额外的查询条件",
-          "example": "action: addData",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "返回最大的数据条数，默认1000",
-          "example": "1000",
-          "member": "int64",
-          "name": "MaxSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeUserListResponse": {
-      "document": "DescribeUserList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "房间内的用户列表",
-          "example": "[]",
-          "member": "UserListItem",
-          "name": "UserList",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeUserResourcesRequest": {
-      "document": "DescribeUserResources请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeUserResourcesResponse": {
-      "document": "DescribeUserResources返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeUserStatusRequest": {
-      "document": "DescribeUserStatus请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeUserStatusResponse": {
-      "document": "DescribeUserStatus返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的AppId",
-          "example": "",
-          "member": "int64",
-          "name": "AppId",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否开通过白板（试用或正式）\n\n0: 从未开通过白板服务\n1: 已经开通过白板服务",
-          "example": "",
-          "member": "int64",
-          "name": "IsTiwUser",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否开通过互动课堂（试用或正式）",
-          "example": "",
-          "member": "int64",
-          "name": "IsSaaSUser",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否使用白板的课后录制",
-          "example": "",
-          "member": "int64",
-          "name": "IsTiwOfflineRecordUser",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户是否实名认证",
-          "example": "",
-          "member": "int64",
-          "name": "IsAuthenticated",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeVideoGenerationTaskCallbackRequest": {
       "document": "DescribeVideoGenerationTaskCallback请求参数结构体",
       "members": [
@@ -3074,107 +1769,6 @@
       ],
       "type": "object"
     },
-    "DescribeWhiteboardApplicationConfigRequest": {
-      "document": "DescribeWhiteboardApplicationConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
-          "example": "[\"transcode\",\"recording\"]",
-          "member": "string",
-          "name": "TaskTypes",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询配置的SdkAppId列表",
-          "example": "[0]",
-          "member": "int64",
-          "name": "SdkAppIds",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWhiteboardApplicationConfigResponse": {
-      "document": "DescribeWhiteboardApplicationConfig返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "1400127140",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板应用任务相关配置",
-          "example": "无",
-          "member": "WhiteboardApplicationConfig",
-          "name": "Configs",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWhiteboardBucketConfigRequest": {
-      "document": "DescribeWhiteboardBucketConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
-          "example": "",
-          "member": "string",
-          "name": "TaskType",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeWhiteboardBucketConfigResponse": {
-      "document": "DescribeWhiteboardBucketConfig返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeWhiteboardPushCallbackRequest": {
       "document": "DescribeWhiteboardPushCallback请求参数结构体",
       "members": [
@@ -3357,79 +1951,6 @@
       ],
       "type": "object"
     },
-    "DescribeWhiteboardPushSearchRequest": {
-      "document": "DescribeWhiteboardPushSearch请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeWhiteboardPushSearchResponse": {
-      "document": "DescribeWhiteboardPushSearch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "推流任务搜索结果集合",
-          "example": "无",
-          "member": "WhiteboardPushTaskSearchResult",
-          "name": "WhiteboardPushTaskSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "推流总任务数",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "Detail": {
-      "document": "计费用量数据里，带不同指标Tag的详情",
-      "members": [
-        {
-          "disabled": false,
-          "document": "用量指标",
-          "example": "",
-          "member": "string",
-          "name": "TagName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用量权重",
-          "example": "",
-          "member": "float",
-          "name": "Weight",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用量的值",
-          "example": "",
-          "member": "float",
-          "name": "Value",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "ExcelParam": {
       "document": "Excel转码相关参数",
       "members": [
@@ -3591,195 +2112,6 @@
         }
       ],
       "usage": "in"
-    },
-    "ModifyApplicationRequest": {
-      "document": "ModifyApplication请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "App名字",
-          "example": "",
-          "member": "string",
-          "name": "AppName",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyApplicationResponse": {
-      "document": "ModifyApplication返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyAutoRenewFlagRequest": {
-      "document": "ModifyAutoRenewFlag请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "资源Id，从DescribeUserResources接口中获取Level=1的正式月功能费的SubProduct，一般为sp_tiw_package",
-          "example": "",
-          "member": "string",
-          "name": "SubProduct",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "资源Id，从DescribeUserResources接口中获取Level=1的正式月功能费资源Id",
-          "example": "",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自动续费标记，0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续 费，需要设置为0",
-          "example": "",
-          "member": "int64",
-          "name": "AutoRenewFlag",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyAutoRenewFlagResponse": {
-      "document": "ModifyAutoRenewFlag返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyWhiteboardApplicationConfigRequest": {
-      "document": "ModifyWhiteboardApplicationConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "白板应用任务相关配置",
-          "example": "无",
-          "member": "WhiteboardApplicationConfig",
-          "name": "Configs",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyWhiteboardApplicationConfigResponse": {
-      "document": "ModifyWhiteboardApplicationConfig返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyWhiteboardBucketConfigRequest": {
-      "document": "ModifyWhiteboardBucketConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
-          "example": "",
-          "member": "string",
-          "name": "TaskType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "COS存储桶名字",
-          "example": "",
-          "member": "string",
-          "name": "BucketName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "COS存储桶地域",
-          "example": "",
-          "member": "string",
-          "name": "BucketLocation",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "存储桶里资源前缀",
-          "example": "",
-          "member": "string",
-          "name": "BucketPrefix",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "返回Url域名",
-          "example": "",
-          "member": "string",
-          "name": "ResultDomain",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyWhiteboardBucketConfigResponse": {
-      "document": "ModifyWhiteboardBucketConfig返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "OmittedDuration": {
       "document": "拼接视频中被忽略的时间段",
@@ -3971,198 +2303,6 @@
       ],
       "usage": "in"
     },
-    "RecordTaskResult": {
-      "document": "实时录制结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "AUTO - 自动停止录制， USER_CALL - 用户主动调用停止录制",
-          "example": "",
-          "member": "string",
-          "name": "FinishReason",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "异常数",
-          "example": "",
-          "member": "int64",
-          "name": "ExceptionCnt",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房间号",
-          "example": "",
-          "member": "int64",
-          "name": "RoomId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分组",
-          "example": "",
-          "member": "string",
-          "name": "GroupId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录制真实开始时间",
-          "example": "",
-          "member": "int64",
-          "name": "RecordStartTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录制结束时间",
-          "example": "",
-          "member": "int64",
-          "name": "RecordStopTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "录制总时长",
-          "example": "",
-          "member": "int64",
-          "name": "TotalTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "视频信息列表",
-          "example": "",
-          "member": "VideoInfo",
-          "name": "VideoInfos",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "被忽略的视频时间段",
-          "example": "",
-          "member": "OmittedDuration",
-          "name": "OmittedDurations",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "详情",
-          "example": "",
-          "member": "string",
-          "name": "Details",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务失败错误码",
-          "example": "",
-          "member": "int64",
-          "name": "ErrorCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "错误信息",
-          "example": "",
-          "member": "string",
-          "name": "ErrorMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "RecordTaskSearchResult": {
-      "document": "实时录制任务搜索结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务唯一ID",
-          "example": "",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实时录制任务状态\n- PAUSED: 录制已暂停\n- PREPARED: 录制在准备阶段\n- RECORDING: 正在录制\n- STOPPED：录制已停止\n- FINISHED: 录制已结束",
-          "example": "",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实时录制房间号",
-          "example": "",
-          "member": "int64",
-          "name": "RoomId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务创建时间",
-          "example": "",
-          "member": "datetime_iso",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户应用SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实时录制结果",
-          "example": "",
-          "member": "RecordTaskResult",
-          "name": "Result",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "ResumeOnlineRecordRequest": {
       "document": "ResumeOnlineRecord请求参数结构体",
       "members": [
@@ -4198,108 +2338,6 @@
         }
       ],
       "type": "object"
-    },
-    "RoomListItem": {
-      "document": "日志查询里返回的白板房间数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "房间ID",
-          "example": "100000",
-          "member": "string",
-          "name": "RoomId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房间在查询时间段内最早出现的时间，Unix时间戳，单位毫秒",
-          "example": "1614519034000",
-          "member": "int64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房间在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒",
-          "example": "1614519034000",
-          "member": "int64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房间里成员数",
-          "example": "100",
-          "member": "int64",
-          "name": "UserNumber",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "RoomUsageDataItem": {
-      "document": "互动白板房间用量信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日期，格式为YYYY-MM-DD",
-          "example": "2021-10-01",
-          "member": "string",
-          "name": "Time",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板应用SDKAppID",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "互动白板子产品，请求参数传入的一致\n- sp_tiw_board: 互动白板时长\n- sp_tiw_ric: 实时录制时长",
-          "example": "sp_tiw_board",
-          "member": "string",
-          "name": "SubProduct",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用量值\n- 白板时长、实时录制时长单位为分钟",
-          "example": "100000",
-          "member": "float",
-          "name": "Value",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "互动白板房间号",
-          "example": "12345",
-          "member": "uint64",
-          "name": "RoomID",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "RunningTaskItem": {
       "document": "正在运行的任务列表项",
@@ -4949,8 +2987,8 @@
         },
         {
           "disabled": false,
-          "document": "需要录制的白板房间号，取值范围: (1, 4294967295)。\n\n1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为\"1234\"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。\n2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。",
-          "example": "12345",
+          "document": "需要录制的白板房间号，取值范围: (1, 4294967295)。\n\n1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为12358，则IM群组ID为\"12358\"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。\n2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。",
+          "example": "12358",
           "member": "int64",
           "name": "RoomId",
           "required": true,
@@ -4959,7 +2997,7 @@
         {
           "disabled": false,
           "document": "用于录制服务进房的用户ID，最大长度不能大于60个字节，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
-          "example": "tic_record_user_880528_1258",
+          "example": "tic_record_user_12358_1258",
           "member": "string",
           "name": "RecordUserId",
           "required": true,
@@ -4977,7 +3015,7 @@
         {
           "disabled": false,
           "document": "白板进行信令同步的 IM 群组 ID。\n在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。\n在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。",
-          "example": "12345",
+          "example": "12358",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -5049,7 +3087,7 @@
         {
           "disabled": false,
           "document": "聊天群组ID，此字段仅适用于`视频生成模式`\n\n在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。",
-          "example": "12345",
+          "example": "12358",
           "member": "string",
           "name": "ChatGroupId",
           "required": false,
@@ -5076,7 +3114,7 @@
         {
           "disabled": false,
           "document": "TRTC数字类型房间号，取值范围: (1, 4294967295)。\n\n在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。\n\n当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。",
-          "example": "12345",
+          "example": "12358",
           "member": "int64",
           "name": "TRTCRoomId",
           "required": false,
@@ -5131,7 +3169,7 @@
         {
           "disabled": false,
           "document": "需要推流的白板房间号，取值范围: (1, 4294967295)。\n\n1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为\"1234\"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。\n2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。",
-          "example": "12345",
+          "example": "1268",
           "member": "int64",
           "name": "RoomId",
           "required": true,
@@ -5139,8 +3177,8 @@
         },
         {
           "disabled": false,
-          "document": "用于白板推流服务进入白板房间的用户ID。在没有额外指定`IMAuthParam`和`TRTCAuthParam`的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该用户ID必须是一个单独的未同时在其他地方使用的用户ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该用户ID和其他地方同时在使用的用户ID重复，会导致白板推流服务与其他使用场景帐号互踢，影响正常推流。",
-          "example": "tic_push_12345_xxx",
+          "document": "用于白板推流服务进入白板房间的用户ID。在没有额外指定`IMAuthParam`和`TRTCAuthParam`的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该用户ID必须是一个单独的未同时在其他地方使用的用户ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该用户ID和其他地方同时在使用的用户ID重复，会导致白板推流服务与其他使用场景账号互踢，影响正常推流。",
+          "example": "tic_push_1268_xxx",
           "member": "string",
           "name": "PushUserId",
           "required": true,
@@ -5266,7 +3304,7 @@
         {
           "disabled": false,
           "document": "TRTC数字类型房间号，取值范围: (1, 4294967295)。\n\n在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。\n\n当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。",
-          "example": "12345",
+          "example": "1368",
           "member": "int64",
           "name": "TRTCRoomId",
           "required": false,
@@ -5311,7 +3349,7 @@
         {
           "disabled": false,
           "document": "白板进行信令同步的 IM 群组 ID。\n在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。\n在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。",
-          "example": "12345",
+          "example": "1368",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -5525,312 +3563,6 @@
       ],
       "usage": "in"
     },
-    "Tag": {
-      "document": "标签",
-      "members": [
-        {
-          "disabled": false,
-          "document": "标签键",
-          "example": "",
-          "member": "string",
-          "name": "TagKey",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "标签值",
-          "example": "",
-          "member": "string",
-          "name": "TagValue",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TimeValue": {
-      "document": "查询指标返回的时间序列",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Unix时间戳，单位秒",
-          "example": "1617883200",
-          "member": "uint64",
-          "name": "Time",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "查询指标对应当前时间的值",
-          "example": "100",
-          "member": "float",
-          "name": "Value",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TranscodeTaskResult": {
-      "document": "转码任务结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "转码结果地址",
-          "example": "",
-          "member": "string",
-          "name": "ResultUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "分辨率",
-          "example": "",
-          "member": "string",
-          "name": "Resolution",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "标题（一般为文件名）",
-          "example": "",
-          "member": "string",
-          "name": "Title",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "转码页数",
-          "example": "",
-          "member": "int64",
-          "name": "Pages",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "缩略图URL前缀，比如，该URL前缀为http://example.com/g0jb42ps49vtebjshilb/，那么动态PPT第1页的缩略图URL为\nhttp://example.com/g0jb42ps49vtebjshilb/1.jpg，其它页以此类推\n\n如果发起文档转码请求参数中带了ThumbnailResolution参数，并且转码类型为动态转码，该参数不为空，其余情况该参数为空字符串",
-          "example": "",
-          "member": "string",
-          "name": "ThumbnailUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "动态转码缩略图生成分辨率",
-          "example": "",
-          "member": "string",
-          "name": "ThumbnailResolution",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "转码压缩文件下载的URL，如果发起文档转码请求参数中CompressFileType为空或者不是支持的压缩格式，该参数为空字符串",
-          "example": "",
-          "member": "string",
-          "name": "CompressFileUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务失败错误码",
-          "example": "",
-          "member": "int64",
-          "name": "ErrorCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务失败错误信息",
-          "example": "",
-          "member": "string",
-          "name": "ErrorMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "TranscodeTaskSearchResult": {
-      "document": "转码任务搜索结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务创建时间",
-          "example": "",
-          "member": "datetime_iso",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务唯一ID",
-          "example": "",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务的当前状态\n- QUEUED: 正在排队等待转换\n- PROCESSING: 转换中\n- FINISHED: 转换完成",
-          "example": "",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "转码文件原始名称",
-          "example": "",
-          "member": "string",
-          "name": "OriginalFilename",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户应用SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "转码任务结果",
-          "example": "",
-          "member": "TranscodeTaskResult",
-          "name": "Result",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否静态转码",
-          "example": "",
-          "member": "bool",
-          "name": "IsStatic",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "UsageDataItem": {
-      "document": "互动白板用量信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日期，格式为YYYY-MM-DD",
-          "example": "2021-10-01",
-          "member": "string",
-          "name": "Time",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板应用SDKAppID",
-          "example": "1400000001",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "互动白板子产品，请求参数传入的一致\n- sp_tiw_board: 互动白板时长\n- sp_tiw_dt: 动态转码页数\n- sp_tiw_st: 静态转码页数\n- sp_tiw_ric: 实时录制时长",
-          "example": "sp_tiw_board",
-          "member": "string",
-          "name": "SubProduct",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用量值\n- 静态转码、动态转码单位为页\n- 白板时长、实时录制时长单位为分钟",
-          "example": "100000",
-          "member": "float",
-          "name": "Value",
-          "required": true,
-          "type": "float",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "UserListItem": {
-      "document": "日志查询里返回的白板用户数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "房间内的用户ID",
-          "example": "100000",
-          "member": "string",
-          "name": "UserId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户在查询时间段内最早出现的时间，Unix时间戳，单位毫秒",
-          "example": "1614519034000",
-          "member": "int64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户在查询时间段内最晚出现的时间，Unix时间戳，单位毫秒",
-          "example": "1614519034000",
-          "member": "int64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "VideoInfo": {
       "document": "视频信息",
       "members": [
@@ -5973,112 +3705,6 @@
       ],
       "usage": "in"
     },
-    "WhiteboardApplicationConfig": {
-      "document": "白板应用配置，包括资源存储桶，域名，回调地址，回调密钥等",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务类型\n\nrecording: 实时录制\ntranscode: 文档转码",
-          "example": "",
-          "member": "string",
-          "name": "TaskType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "存储桶名字",
-          "example": "",
-          "member": "string",
-          "name": "BucketName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "存储桶地域",
-          "example": "",
-          "member": "string",
-          "name": "BucketLocation",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "资源在存储桶中的前缀",
-          "example": "",
-          "member": "string",
-          "name": "BucketPrefix",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "目标CDN域名",
-          "example": "",
-          "member": "string",
-          "name": "ResultDomain",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "回调地址",
-          "example": "",
-          "member": "string",
-          "name": "Callback",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "回调鉴权密钥",
-          "example": "",
-          "member": "string",
-          "name": "CallbackKey",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "配置的应用SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "IM管理员UserId",
-          "example": "",
-          "member": "string",
-          "name": "AdminUserId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "IM管理员UserSig",
-          "example": "",
-          "member": "string",
-          "name": "AdminUserSig",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "WhiteboardPushBackupParam": {
       "document": "白板推流备份相关请求参数",
       "members": [
@@ -6104,178 +3730,6 @@
         }
       ],
       "usage": "in"
-    },
-    "WhiteboardPushResult": {
-      "document": "白板推流任务结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "AUTO - 自动停止推流， USER_CALL - 用户主动调用停止推流",
-          "example": "",
-          "member": "string",
-          "name": "FinishReason",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "异常数",
-          "example": "",
-          "member": "int64",
-          "name": "ExceptionCnt",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "房间号",
-          "example": "",
-          "member": "int64",
-          "name": "RoomId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "IM群组ID",
-          "example": "",
-          "member": "string",
-          "name": "GroupId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "推流真实开始时间",
-          "example": "",
-          "member": "int64",
-          "name": "PushStartTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "推流结束时间",
-          "example": "",
-          "member": "int64",
-          "name": "PushStopTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板推流首帧对应的IM时间戳，可用于录制回放时IM聊天消息与白板推流视频进行同步对时。",
-          "example": "",
-          "member": "int64",
-          "name": "IMSyncTime",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务失败错误码",
-          "example": "",
-          "member": "int64",
-          "name": "ErrorCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "错误信息",
-          "example": "",
-          "member": "string",
-          "name": "ErrorMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "WhiteboardPushTaskSearchResult": {
-      "document": "实时录制任务搜索结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务唯一ID",
-          "example": "",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板推流任务状态\n- PREPARED: 推流在准备阶段\n- PUSHING: 正在推流\n- STOPPED：推流已停止",
-          "example": "",
-          "member": "string",
-          "name": "Status",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板推流房间号",
-          "example": "",
-          "member": "int64",
-          "name": "RoomId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务创建时间",
-          "example": "",
-          "member": "datetime_iso",
-          "name": "CreateTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户应用SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板推流结果",
-          "example": "",
-          "member": "WhiteboardPushResult",
-          "name": "Result",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "白板推流用户ID",
-          "example": "",
-          "member": "string",
-          "name": "PushUserId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     }
   },
   "version": "1.0"

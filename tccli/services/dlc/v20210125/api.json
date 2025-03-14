@@ -637,6 +637,13 @@
       "output": "DescribeTaskLogResponse",
       "status": "online"
     },
+    "DescribeTaskMonitorInfos": {
+      "document": "查询任务监控指标信息",
+      "input": "DescribeTaskMonitorInfosRequest",
+      "name": "查询任务监控信息",
+      "output": "DescribeTaskMonitorInfosResponse",
+      "status": "online"
+    },
     "DescribeTaskResult": {
       "document": "查询任务结果，仅支持30天以内的任务查询结果，且返回数据大小超过近50M会进行截断。",
       "input": "DescribeTaskResultRequest",
@@ -1093,7 +1100,44 @@
     },
     "AddOptimizerEnginesRequest": {
       "document": "AddOptimizerEngines请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎信息列表",
+          "example": "无",
+          "member": "OptimizerEngineInfo",
+          "name": "Engines",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据表名称",
+          "example": "test_tb",
+          "member": "string",
+          "name": "Table",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "AddOptimizerEnginesResponse": {
@@ -11125,6 +11169,98 @@
       ],
       "type": "object"
     },
+    "DescribeTaskMonitorInfosRequest": {
+      "document": "DescribeTaskMonitorInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID列表，上限50个",
+          "example": "[\"bba8a49efe4911ef9e535254001a35f3\",\"bba8a49efe4911ef9e535254001a3523]",
+          "member": "string",
+          "name": "TaskIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "uanalysis_dlc_presto_512s",
+          "member": "string",
+          "name": "HouseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间的起始时间",
+          "example": "20250301",
+          "member": "string",
+          "name": "CreateTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间的结束时间",
+          "example": "20250302",
+          "member": "string",
+          "name": "CreateTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每一页条数",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskMonitorInfosResponse": {
+      "document": "DescribeTaskMonitorInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务监控信息列表",
+          "example": "无",
+          "member": "TaskMonitorInfo",
+          "name": "TaskMonitorInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskResultRequest": {
       "document": "DescribeTaskResult请求参数结构体",
       "members": [
@@ -15375,6 +15511,45 @@
       ],
       "usage": "out"
     },
+    "OptimizerEngineInfo": {
+      "document": "数据优化引擎信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_engine",
+          "member": "string",
+          "name": "HouseName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DataEngine-123456",
+          "member": "string",
+          "name": "HouseId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该参数仅针对spark作业引擎有效，用于执行数据优化任务的资源大小，不填时将采用该引擎所有资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "36",
+          "member": "int64",
+          "name": "HouseSize",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Other": {
       "document": "数据格式其它类型。",
       "members": [
@@ -18372,6 +18547,82 @@
         }
       ],
       "usage": "in"
+    },
+    "TaskMonitorInfo": {
+      "document": "任务监控信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "3c2c581afe4d11efbde1525400b3a056",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称",
+          "example": "engine1",
+          "member": "string",
+          "name": "HouseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sql语句",
+          "example": "select 1;",
+          "member": "string",
+          "name": "QuerySQL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务时间",
+          "example": "2023-08-10T12:35:02.123Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行时间",
+          "example": "100",
+          "member": "string",
+          "name": "UsedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据扫描量",
+          "example": "1024",
+          "member": "string",
+          "name": "DataAmount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标信息",
+          "example": "{\"elapsedTime\": \"5.34s\",     \"executionTime\": \"4.89s\",     \"cumulativeUserMemory\": 1234567.89,     \"peakUserMemoryReservation\": \"64MB\",     \"totalBytes\": \"1.23MB\",     \"totalRows\": 1000   }",
+          "member": "string",
+          "name": "QueryStats",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TaskResponseInfo": {
       "document": "任务实例。",
