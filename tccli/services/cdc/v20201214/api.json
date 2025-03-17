@@ -649,13 +649,13 @@
         },
         {
           "disabled": false,
-          "document": "专用集群的描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用集群的描述。",
           "example": "this is a description",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -694,6 +694,16 @@
           "member": "string",
           "name": "SiteId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专用集群的运营状态",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "RunningStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -971,163 +981,163 @@
         },
         {
           "disabled": false,
-          "document": "子订单详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[           {             \"ComputeFormat\": \"1 SA5t.60XLARGE1076\",             \"Count\": 1,             \"CreateTime\": \"2024-10-16 15:18:37\",             \"DedicatedClusterTypeId\": \"dctype-45ndlenk\",             \"Description\": \"SA5t\",             \"Name\": \"CVM.SA5t.60XLARGE1076\",             \"PowerDraw\": 0,             \"SubOrderId\": \"sord-gfwblx76\",             \"SubOrderPayStatus\": 0,             \"SubOrderStatus\": \"DELIVERED\",             \"SupportedInstanceFamily\": [               \"SA5t\"             ],             \"SupportedStorageType\": [],             \"SupportedUplinkSpeed\": [],             \"TotalCpu\": 240,             \"TotalGpu\": 0,             \"TotalMem\": 1076,             \"TypeFamily\": \"CUSTOM.COMPUTE\",             \"TypeName\": \"CVM.SA5t.60XLARGE1076\",             \"Weight\": 0           }         ]",
+          "document": "子订单详情列表",
+          "example": "[{\"ComputeFormat\":\"1SA5t.60XLARGE1076\",\"Count\":1,\"DedicatedClusterTypeId\":\"dctype-45ndlenk\",\"SubOrderId\":\"sord-gfwblx76\",\"Weight\":0}]",
           "member": "DedicatedClusterOrderItem",
           "name": "DedicatedClusterOrderItems",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cpu值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cpu值",
           "example": "240",
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mem值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mem值",
           "example": "1076",
           "member": "int64",
           "name": "Mem",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "gpu值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "gpu值",
           "example": "0",
           "member": "int64",
           "name": "Gpu",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0代表未支付，1代表已支付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0代表未支付，1代表已支付",
           "example": "1",
           "member": "int64",
           "name": "PayStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "支付方式，一次性、按月、按年\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支付方式，一次性、按月、按年",
           "example": "MONTHLY",
           "member": "string",
           "name": "PayType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "购买时长的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时长的单位",
           "example": "YEAR",
           "member": "string",
           "name": "TimeUnit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时长",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单类型",
           "example": "CUSTOM",
           "member": "string",
           "name": "OrderType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验收状态",
+          "document": "验收状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DELIVERING",
           "member": "string",
           "name": "CheckStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "交付预期时间",
+          "document": "交付预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverExpectTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "交付实际完成时间",
+          "document": "交付实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "DeliverFinishTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "验收预期时间",
+          "document": "验收预期时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckExpectTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "验收实际完成时间",
+          "document": "验收实际完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-01-01 12:00:00",
           "member": "string",
           "name": "CheckFinishTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "订单SLA",
+          "document": "订单SLA\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
           "name": "OrderSLA",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "订单支付计划",
+          "document": "订单支付计划\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "string",
           "name": "OrderPayPlan",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1297,33 +1307,33 @@
         },
         {
           "disabled": false,
-          "document": "规格展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格展示",
           "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
           "member": "string",
           "name": "ComputeFormat",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格类型",
           "example": "COMPUTE",
           "member": "string",
           "name": "TypeFamily",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0未支付，1已支付\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0未支付，1已支付",
           "example": "0",
           "member": "int64",
           "name": "SubOrderPayStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1343,13 +1353,13 @@
         },
         {
           "disabled": false,
-          "document": "配置描述，对应描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置描述，对应描述",
           "example": "适用于xxx场景",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2601,13 +2611,13 @@
         },
         {
           "disabled": false,
-          "document": "宿主机id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "宿主机id",
           "example": "host-xxxx",
           "member": "string",
           "name": "HostId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2743,23 +2753,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳",
           "example": "[0]",
           "member": "float",
           "name": "Timestamps",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时间对应的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间对应的值",
           "example": "[0]",
           "member": "float",
           "name": "Values",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2769,43 +2779,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议",
           "example": "BGP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络id",
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由信息",
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "BGPRoute",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本地IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本地IP",
           "example": "10.0.0.0",
           "member": "string",
           "name": "LocalIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3175,23 +3185,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间戳",
           "example": "[0]",
           "member": "float",
           "name": "Timestamps",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对应时间的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应时间的值",
           "example": "[0]",
           "member": "float",
           "name": "Values",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3227,123 +3237,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘仓库id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库id",
           "example": "set-mm4hzptu",
           "member": "string",
           "name": "SetId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库名称",
           "example": "HCBS_GZCDC_Z133_CDCCBS_Y0SH1125G_D0003",
           "member": "string",
           "name": "SetName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库类型",
           "example": "ssd",
           "member": "string",
           "name": "SetType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘仓库容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库容量",
           "example": "33.4",
           "member": "float",
           "name": "SetSize",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘仓库状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库状态",
           "example": "RUNNING",
           "member": "string",
           "name": "SetStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘仓库创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘仓库创建时间",
           "example": "2022-12-09 15:20:09",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "读流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "读流量",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "ReadTraffic",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "写流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "写流量",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "WriteTraffic",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "读IO\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "读IO",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "ReadIO",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "写IO\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "写IO",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "WriteIO",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均等待时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均等待时间",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "Await",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "利用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "利用率",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "DetailData",
           "name": "Util",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3373,13 +3383,13 @@
         },
         {
           "disabled": false,
-          "document": "站点描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "站点描述",
           "example": "my first site",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3645,13 +3655,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "出带宽流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出带宽流量",
           "example": "{\"Timestamps\": [1693274400],\"Values\": [0]}",
           "member": "OutBandwidth",
           "name": "OutBandwidth",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -901,6 +901,15 @@
           "name": "TagItems",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "副可用去信息",
+          "example": "[{\"ap-guangzhou-3\",\"user-1\"}]",
+          "member": "SecondaryZoneInfo",
+          "name": "SecondaryZoneInfo",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1764,7 +1773,7 @@
         {
           "disabled": false,
           "document": "搜索的集群name",
-          "example": "-",
+          "example": "test",
           "member": "string",
           "name": "SearchInstanceName",
           "required": false,
@@ -1805,6 +1814,15 @@
           "name": "IsSimple",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "vip列表",
+          "example": "['127.0.0.1','192.168.10.10']",
+          "member": "string",
+          "name": "Vips",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1825,7 +1843,7 @@
         {
           "disabled": false,
           "document": "实例数组",
-          "example": "-",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "InstancesList",
           "output_required": true,
@@ -4119,6 +4137,56 @@
         }
       ],
       "usage": "in"
+    },
+    "SecondaryZoneInfo": {
+      "document": "副可用区详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "副可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SecondaryZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区可用的子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SecondarySubnet",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区可用的子网可用ip的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UserIpNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区可用的子网可用ip的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SecondaryUserSubnetIPNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ServiceInfo": {
       "document": "服务详细信息描述。",

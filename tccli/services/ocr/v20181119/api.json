@@ -1595,6 +1595,32 @@
       ],
       "type": "object"
     },
+    "BankSlip": {
+      "document": "银行回单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "银行回单信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BankSlipInfo",
+          "name": "BankSlipInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "银行回单信息常用字段",
+          "example": "无",
+          "member": "BankSlipInfo",
+          "name": "CommonBankSlipInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BankSlipInfo": {
       "document": "银行回单识别出的字段",
       "members": [
@@ -16419,6 +16445,16 @@
           "example": "无",
           "member": "CustomsPaymentReceipt",
           "name": "CustomsPaymentReceipt",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "银行回单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BankSlip",
+          "name": "BankSlip",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

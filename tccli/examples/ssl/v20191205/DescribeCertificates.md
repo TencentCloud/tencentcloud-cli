@@ -145,7 +145,7 @@ Output:
                 "Alias": "",
                 "Status": 1,
                 "VulnerabilityStatus": "INACTIVE",
-                "StatusMsg": null,
+                "StatusMsg": "ca-reviewing",
                 "VerifyType": "DNS_AUTO",
                 "CertBeginTime": "2025-02-12 08:00:00",
                 "CertEndTime": "2025-05-14 07:59:59",
@@ -179,7 +179,7 @@ Output:
                     "ninghhuang.online",
                     "www.ninghhuang.online"
                 ],
-                "CertRevokedTime": null,
+                "CertRevokedTime": "",
                 "CAEncryptAlgorithms": [],
                 "CAEndTimes": [],
                 "CACommonNames": [],
@@ -215,17 +215,16 @@ Output:
                     "ReplacedFor": null,
                     "RenewOrder": null,
                     "SMCert": 0,
-                    "CompanyType": null
+                    "CompanyType": 1
                 },
-                "AllowDownload": null,
+                "AllowDownload": false,
                 "IsPackage": false,
                 "HostingStatus": -1,
                 "HostingCompleteTime": "",
                 "HostingRenewCertId": "",
                 "HostingResourceTypes": [],
-                "HostingConfig": null,
                 "IsDNSPODResolve": false,
-                "BoundResource": null
+                "BoundResource": []
             }
         ],
         "RequestId": "e7f6021f-47bb-476b-a424-6a0cde19a1eb"
@@ -261,7 +260,7 @@ Output:
                 "Alias": "",
                 "Status": 1,
                 "VulnerabilityStatus": "INACTIVE",
-                "StatusMsg": null,
+                "StatusMsg": "",
                 "VerifyType": "DNS_AUTO",
                 "CertBeginTime": "2025-02-12 08:00:00",
                 "CertEndTime": "2025-05-14 07:59:59",
@@ -295,7 +294,7 @@ Output:
                     "ninghhuang.online",
                     "www.ninghhuang.online"
                 ],
-                "CertRevokedTime": null,
+                "CertRevokedTime": "",
                 "CAEncryptAlgorithms": [],
                 "CAEndTimes": [],
                 "CACommonNames": [],
@@ -331,17 +330,16 @@ Output:
                     "ReplacedFor": null,
                     "RenewOrder": null,
                     "SMCert": 0,
-                    "CompanyType": null
+                    "CompanyType": 1
                 },
-                "AllowDownload": null,
+                "AllowDownload": false,
                 "IsPackage": false,
                 "HostingStatus": -1,
                 "HostingCompleteTime": "",
                 "HostingRenewCertId": "",
                 "HostingResourceTypes": [],
-                "HostingConfig": null,
                 "IsDNSPODResolve": false,
-                "BoundResource": null
+                "BoundResource": []
             }
         ],
         "RequestId": "e7f6021f-47bb-476b-a424-6a0cde19a1eb"
@@ -377,7 +375,7 @@ Output:
                 "Alias": "K926htp2的自动续费证书",
                 "Status": 1,
                 "VulnerabilityStatus": "INACTIVE",
-                "StatusMsg": null,
+                "StatusMsg": "",
                 "VerifyType": "DNS_AUTO",
                 "CertBeginTime": "2025-02-05 08:00:00",
                 "CertEndTime": "2025-05-07 07:59:59",
@@ -411,7 +409,7 @@ Output:
                     "ninghhuang.online",
                     "www.ninghhuang.online"
                 ],
-                "CertRevokedTime": null,
+                "CertRevokedTime": "",
                 "CAEncryptAlgorithms": [],
                 "CAEndTimes": [],
                 "CACommonNames": [],
@@ -447,13 +445,13 @@ Output:
                     "ReplacedFor": null,
                     "RenewOrder": null,
                     "SMCert": 0,
-                    "CompanyType": null
+                    "CompanyType": 1
                 },
-                "AllowDownload": null,
+                "AllowDownload": false,
                 "IsPackage": false,
                 "HostingStatus": 0,
                 "HostingCompleteTime": "2025-02-05 08:39:30",
-                "HostingRenewCertId": null,
+                "HostingRenewCertId": "",
                 "HostingResourceTypes": [
                     "cdn",
                     "clb",
@@ -468,7 +466,7 @@ Output:
                     "ReplaceTime": 999
                 },
                 "IsDNSPODResolve": false,
-                "BoundResource": null
+                "BoundResource": []
             }
         ],
         "RequestId": "e7f6021f-47bb-476b-a424-6a0cde19a1eb"

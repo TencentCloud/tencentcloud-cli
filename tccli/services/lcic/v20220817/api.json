@@ -1843,7 +1843,7 @@
         },
         {
           "disabled": false,
-          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "document": "板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式",
           "example": "0",
           "member": "uint64",
           "name": "WhiteBoardSnapshotMode",
@@ -6780,7 +6780,7 @@
         },
         {
           "disabled": false,
-          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "document": "板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式",
           "example": "0",
           "member": "uint64",
           "name": "WhiteBoardSnapshotMode",

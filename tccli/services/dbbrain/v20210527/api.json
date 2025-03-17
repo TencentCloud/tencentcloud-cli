@@ -2865,6 +2865,15 @@
         },
         {
           "disabled": false,
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "偏移量，默认0。",
           "example": "0",
           "member": "int64",
@@ -2893,7 +2902,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2903,7 +2912,7 @@
           "example": "无",
           "member": "DiagHistoryEventItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

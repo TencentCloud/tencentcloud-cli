@@ -192,7 +192,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"SceneIds\": [\n        \"sc-12345678\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb973a12-71e3-4c0c-b1d8-4b863e5f5daf\",\n        \"TotalCount\": 1,\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"sc-12345678\",\n                \"SceneName\": \"运维场景\",\n                \"CreatedBy\": \"USER\",\n                \"CreatedTime\": \"2020-11-02T02:48:11+00:00\",\n                \"UpdatedTime\": \"2020-11-02T02:48:11+00:00\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb973a12-71e3-4c0c-b1d8-4b863e5f5daf\",\n        \"TotalCount\": 1,\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"sc-12345678\",\n                \"SceneName\": \"运维场景\",\n                \"CreatedBy\": \"TAT\",\n                \"CreatedTime\": \"2020-11-02T02:48:11+00:00\",\n                \"UpdatedTime\": \"2020-11-02T02:48:11+00:00\"\n            }\n        ]\n    }\n}",
         "title": "查询场景"
       }
     ],

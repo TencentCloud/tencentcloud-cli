@@ -659,9 +659,9 @@
       "status": "online"
     },
     "RunReRank": {
-      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。",
+      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。（这个接口已下线，请使用新接口，接口文档：https://cloud.tencent.com/document/product/1772/115339）。",
       "input": "RunReRankRequest",
-      "name": "重排序",
+      "name": "重排序（已下线）",
       "output": "RunReRankResponse",
       "status": "online"
     },
@@ -4932,7 +4932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -4976,7 +4976,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态(1待发布 2发布中 3发布成功 4发布失败 5发布中 6发布中 7发布失败 9发布暂停)",
+          "document": "发布状态(1待发布 2发布中 3发布成功 4发布失败 5发布中(审核中) 6发布中(审核完成) 7发布失败(审核失败) 9发布暂停)",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -13518,8 +13518,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型名称, 必填，默认: lke-reranker-base",
-          "example": "lke-reranker-base",
+          "document": "查询内容，必填",
+          "example": "腾讯知识引擎大模型",
           "member": "string",
           "name": "Query",
           "required": false,

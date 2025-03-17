@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DeleteBlueprints": {
-      "document": "本接口 (DeleteBlueprints) 用于删除镜像。",
+      "document": "本接口 (DeleteBlueprints) 用于删除镜像。可删除的镜像应满足如下条件：\n1、删除镜像接口需要镜像状态为NORMAL（正常）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败），其他状态下的镜像不支持删除操作。镜像状态，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintState获取。\n2、仅支持删除自定义镜像。",
       "input": "DeleteBlueprintsRequest",
       "name": "删除镜像",
       "output": "DeleteBlueprintsResponse",
@@ -148,7 +148,7 @@
       "status": "online"
     },
     "DeleteKeyPairs": {
-      "document": "本接口（DeleteKeyPairs）用于删除密钥对。",
+      "document": "本接口（DeleteKeyPairs）用于删除密钥对。\n- 不能删除已被实例或镜像引用的密钥对，删除之前需要确保没有被任何实例和镜像引用。",
       "input": "DeleteKeyPairsRequest",
       "name": "删除密钥对",
       "output": "DeleteKeyPairsResponse",
@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeBlueprints": {
-      "document": "本接口（DescribeBlueprints）用于查询镜像信息。",
+      "document": "本接口（DescribeBlueprints）用于查询镜像信息。该接口返回的镜像类型有：自定义镜像、共享镜像、公共镜像。",
       "input": "DescribeBlueprintsRequest",
       "name": "查询镜像信息",
       "output": "DescribeBlueprintsResponse",
@@ -344,7 +344,7 @@
       "status": "deprecated"
     },
     "DescribeInstanceVncUrl": {
-      "document": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。\n\n* 处于 `STOPPED` 状态的机器无法使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n* 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。\n 最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```\n",
+      "document": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。\n\n* 仅处于 `RUNNING`，`RESCUE_MODE` 状态的机器，且当前机器无变更中操作，才可使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n* 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。\n 最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```",
       "input": "DescribeInstanceVncUrlRequest",
       "name": "查询实例管理终端地址",
       "output": "DescribeInstanceVncUrlResponse",
@@ -547,7 +547,7 @@
       "status": "online"
     },
     "ModifyDisksRenewFlag": {
-      "document": "本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识。",
+      "document": "本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识。\n云硬盘需要处于以下状态：\n<li> ATTACHED （已挂载）</li>\n<li> UNATTACHED （待挂载）</li>\n<li> ATTACHING （挂载中） </li>\n<li> DETACHING （卸载中）</li>",
       "input": "ModifyDisksRenewFlagRequest",
       "name": "修改云硬盘续费标识",
       "output": "ModifyDisksRenewFlagResponse",
@@ -750,7 +750,7 @@
       "status": "online"
     },
     "TerminateDisks": {
-      "document": "本接口（TerminateDisks）用于销毁一个或多个云硬盘。",
+      "document": "本接口（TerminateDisks）用于销毁一个或多个云硬盘。\n云硬盘状态必须处于SHUTDOWN（已隔离）状态。",
       "input": "TerminateDisksRequest",
       "name": "销毁云硬盘",
       "output": "TerminateDisksResponse",
@@ -1537,7 +1537,7 @@
         },
         {
           "disabled": false,
-          "document": "接收共享镜像的账号ID列表。账号ID不同于QQ号，查询用户账号ID请查看账号信息中的账号ID栏。账号个数取值最大为10。",
+          "document": "接收共享镜像的[账号ID](https://cloud.tencent.com/document/product/213/4944#.E8.8E.B7.E5.8F.96.E4.B8.BB.E8.B4.A6.E5.8F.B7.E7.9A.84.E8.B4.A6.E5.8F.B7-id)列表。账号ID不同于QQ号，查询用户账号ID请查看账号信息中的账号ID栏。账号个数取值最大为10。",
           "example": "[\"700000164995\"]",
           "member": "string",
           "name": "AccountIds",
@@ -2556,7 +2556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要删除的快照 ID 列表，可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a>查询。",
+          "document": "要删除的快照 ID 列表，每次请求批量快照的上限为10个，可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a>查询。",
           "example": "[\"lhsnap-nv6aqcv6\"]",
           "member": "string",
           "name": "SnapshotIds",
@@ -2604,7 +2604,7 @@
         {
           "disabled": false,
           "document": "限制操作消息。",
-          "example": "The request does not support the instance `lhins-ruy9d2tw` which is in the state of `RUNNING`.",
+          "example": "实例 `lhins-ruy9d2tw` 处于 `RUNNING` 状态中，不支持该操作。",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -2758,7 +2758,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4119,7 +4119,7 @@
           "example": "wss%3A%2F%2Fusevnc.qcloud.com%3A443%2Fvnc%3Fs%3D",
           "member": "string",
           "name": "InstanceVncUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4767,7 +4767,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照 ID 列表, 可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a> 查询。",
+          "document": "快照 ID 列表,每次请求批量快照的上限是100个。 可通过 <a href=\"https://cloud.tencent.com/document/product/1207/54388\" target=\"_blank\">DescribeSnapshots</a> 查询。",
           "example": "[\"lhsnap-nv6aqcv6\"]",
           "member": "string",
           "name": "SnapshotIds",
@@ -5090,7 +5090,7 @@
         },
         {
           "disabled": false,
-          "document": "计费单元。",
+          "document": "时间单位。\n取值为：\n- m - 月\n- d - 日",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -5186,7 +5186,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型",
+          "document": "磁盘类型\n枚举值：\n<li> SYSTEM_DISK: 系统盘 </li>\n<li> DATA_DISK: 数据盘 </li>\n",
           "example": "DATA_DISK",
           "member": "string",
           "name": "DiskUsage",
@@ -5196,7 +5196,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘介质类型",
+          "document": "磁盘介质类型\n枚举值:\n<li> CLOUD_BASIC: 普通云硬盘 </li>\n<li> CLOUD_PREMIUM: 高性能云硬盘 </li>\n<li> CLOUD_SSD: SSD云硬盘 </li>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -5206,7 +5206,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘付费类型",
+          "document": "磁盘付费类型\n<li> PREPAID: 预付费 </li>\n<li> POSTPAID_BY_HOUR: 按小时后付费 </li>",
           "example": "PREPAID",
           "member": "string",
           "name": "DiskChargeType",
@@ -5216,7 +5216,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘大小",
+          "document": "磁盘大小, 单位GB",
           "example": "20",
           "member": "int64",
           "name": "DiskSize",
@@ -5236,7 +5236,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：未挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
+          "document": "磁盘状态，取值范围：\n<li>PENDING：创建中。 </li>\n<li>UNATTACHED：待挂载。</li>\n<li>ATTACHING：挂载中。</li>\n<li>ATTACHED：已挂载。</li>\n<li>DETACHING：卸载中。 </li>\n<li> SHUTDOWN：已隔离。</li>\n<li> CREATED_FAILED：创建失败。</li>\n<li>TERMINATING：销毁中。</li>\n<li> DELETING：删除中。</li>\n<li> FREEZING：冻结中。</li>",
           "example": "UNATTACHED",
           "member": "string",
           "name": "DiskState",
@@ -5494,7 +5494,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新购周期。",
+          "document": "新购周期。\n可选值：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -5503,7 +5503,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。",
+          "document": "自动续费标识。取值范围：\n- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。\n- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费。\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知。\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -5512,7 +5512,7 @@
         },
         {
           "disabled": false,
-          "document": "新购单位. 默认值: \"m\"。",
+          "document": "新购单位.。\n可选值：m - 月。\n默认值：m - 月。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -5531,17 +5531,17 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘类型。",
+          "document": "云硬盘类型。枚举值如下：\n\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5551,7 +5551,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "DiskSalesState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5561,7 +5561,7 @@
           "example": "1000",
           "member": "int64",
           "name": "MaxDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5571,7 +5571,7 @@
           "example": "10",
           "member": "int64",
           "name": "MinDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5581,7 +5581,7 @@
           "example": "10",
           "member": "int64",
           "name": "DiskStepSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6150,7 +6150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。",
+          "document": "应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。",
           "example": "HTTP(80)",
           "member": "string",
           "name": "AppType",
@@ -6160,7 +6160,7 @@
         },
         {
           "disabled": false,
-          "document": "协议，取值：TCP，UDP，ICMP，ALL。",
+          "document": "协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -6554,10 +6554,10 @@
         {
           "disabled": false,
           "document": "自定义镜像的价格参数。",
-          "example": "{              ",
+          "example": "无      ",
           "member": "BlueprintPrice",
           "name": "BlueprintPrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7178,7 +7178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
+          "document": "购买实例的时长，单位：月。\n- 创建实例时，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。\n- 续费实例时，取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -7257,7 +7257,7 @@
         {
           "disabled": false,
           "document": "套餐单价原价。",
-          "example": "1.1",
+          "example": "90",
           "member": "float",
           "name": "OriginalBundlePrice",
           "output_required": true,
@@ -7267,7 +7267,7 @@
         {
           "disabled": false,
           "document": "原价。",
-          "example": "2.2",
+          "example": "90",
           "member": "float",
           "name": "OriginalPrice",
           "output_required": true,
@@ -7277,7 +7277,7 @@
         {
           "disabled": false,
           "document": "折扣。",
-          "example": "0.8",
+          "example": "100",
           "member": "float",
           "name": "Discount",
           "output_required": true,
@@ -7287,7 +7287,7 @@
         {
           "disabled": false,
           "document": "折后价。",
-          "example": "1.8",
+          "example": "90",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": true,
@@ -7368,7 +7368,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还失败错误码。",
+          "document": "实例退还失败错误码。取值:\n0: 可以退还\n1: 资源已退货。如为退货后续费资源，请于购买6小时后操作\n2: 资源已到期\n3: 资源购买超过5天不支持退款\n4: 非预付费资源不支持退款\n8: 退货数量超出限额\n9: 涉及活动订单不支持退款\n10: 资源不支持自助退，请走工单退款\n11: 涉及推广奖励渠道订单，请提工单咨询\n12: 根据业务侧产品规定，该资源不允许退款",
           "example": "2",
           "member": "int64",
           "name": "ReturnFailCode",
@@ -8177,7 +8177,7 @@
         },
         {
           "disabled": false,
-          "document": "待变更的套餐Id。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
+          "document": "待变更的套餐Id。注意不可和当前要升配的实例套餐ID相同。可通过[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口返回值中的BundleId获取。",
           "example": "“bundle_ent_01”",
           "member": "string",
           "name": "BundleId",
@@ -8563,7 +8563,7 @@
       "type": "object"
     },
     "RenewDiskChargePrepaid": {
-      "document": "续费云硬盘包年包月相关参数设置",
+      "document": "续费云硬盘包年包月相关参数设置。",
       "members": [
         {
           "disabled": false,
@@ -8576,7 +8576,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。",
+          "document": "自动续费标识。\n取值范围：\n<li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li>\n<li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li>\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，云硬盘到期后将按月自动续费。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -8594,7 +8594,7 @@
         },
         {
           "disabled": false,
-          "document": "当前实例到期时间。如“2018-01-01 00:00:00”。指定该参数即可对齐云硬盘所挂载的实例到期时间。该参数与Period必须指定其一，且不支持同时指定。",
+          "document": "当前实例到期时间。如“2018-01-01 00:00:00”。\n指定该参数即可对齐云硬盘所挂载的实例到期时间。\n该参数与Period必须指定其一，且不支持同时指定。\n该参数值必须大于入参中云硬盘的过期时间。",
           "example": "2018-01-01 00:00:00",
           "member": "string",
           "name": "CurInstanceDeadline",
@@ -8610,7 +8610,7 @@
         {
           "disabled": false,
           "document": "云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求续费数据盘数量总计上限为50。",
-          "example": "[“lhdisk-xxxxxx”]",
+          "example": "[“lhdisk-afkvbns”]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -8891,7 +8891,7 @@
         },
         {
           "disabled": false,
-          "document": "实例镜像是否可重置为目标镜像",
+          "document": "实例镜像是否可重置为目标镜像。\n取值：\ntrue（允许）\nfalse（不允许）",
           "example": "false",
           "member": "bool",
           "name": "IsResettable",
@@ -8981,7 +8981,7 @@
         {
           "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：</br> `LINUX_UNIX` 实例密码必须 8-30 位，推荐使用 12 位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：</br> <li>小写字母：[a-z]</br></li> <li>大写字母：[A-Z]</br></li> <li>数字：0-9</br></li> <li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</li></br> `WINDOWS` 实例密码必须 12-30 位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符</br> <li>小写字母：[a-z]</br></li> <li>大写字母：[A-Z]</br></li> <li>数字： 0-9</br></li> <li>特殊字符：()\\`~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</br></li> <li>如果实例即包含 `LINUX_UNIX` 实例又包含 `WINDOWS` 实例，则密码复杂度限制按照 `WINDOWS` 实例的限制。</li>",
-          "example": "xxxxxxxxxxx",
+          "example": "a!LightHouse@123",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -9225,7 +9225,7 @@
         },
         {
           "disabled": false,
-          "document": "接收共享镜像的账号Id列表。账号ID不同于QQ号，查询用户账号ID请查看账号信息中的账号ID栏。账号个数取值最大为10。",
+          "document": "接收共享镜像的[账号ID](https://cloud.tencent.com/document/product/213/4944#.E8.8E.B7.E5.8F.96.E4.B8.BB.E8.B4.A6.E5.8F.B7.E7.9A.84.E8.B4.A6.E5.8F.B7-id)列表。账号ID不同于QQ号，查询用户账号ID请查看账号信息中的账号ID栏。账号个数取值最大为10。",
           "example": "[\"700000164995\"]",
           "member": "string",
           "name": "AccountIds",
@@ -9732,7 +9732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。",
+          "document": "云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。\n每次批量请求云硬盘的上限数量为100。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",

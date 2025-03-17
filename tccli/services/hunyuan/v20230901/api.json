@@ -84,6 +84,13 @@
       "output": "GetTokenCountResponse",
       "status": "online"
     },
+    "GroupChatCompletions": {
+      "document": "如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "input": "GroupChatCompletionsRequest",
+      "name": "群聊",
+      "output": "GroupChatCompletionsResponse",
+      "status": "online"
+    },
     "QueryHunyuanImageChatJob": {
       "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryHunyuanImageChatJobRequest",
@@ -167,6 +174,34 @@
         }
       ],
       "type": "object"
+    },
+    "Character": {
+      "document": "人物描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人物名称",
+          "example": "孙悟空",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人物对应SystemPrompt",
+          "example": "你是《七龙珠》中的角色孙悟空，你将与{usernames}等多人展开对话。",
+          "member": "string",
+          "name": "SystemPrompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ChatCompletionsRequest": {
       "document": "ChatCompletions请求参数结构体",
@@ -1634,6 +1669,255 @@
         }
       ],
       "type": "object"
+    },
+    "GroupChatCompletionsRequest": {
+      "document": "GroupChatCompletions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称，可选值包括 hunyuan-large-role-group。各模型介绍请阅读 [产品概述](https://cloud.tencent.com/document/product/1729/104753) 中的说明。注意：不同的模型计费不同，请根据 [购买指南](https://cloud.tencent.com/document/product/1729/97731) 按需调用。",
+          "example": "hunyuan-large-role-group",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "聊天上下文信息。",
+          "example": "无",
+          "member": "GroupMessage",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流式调用开关。\n说明：\n1. 未传值时默认为非流式调用（false）。\n2. 流式调用时以 SSE 协议增量返回结果（返回值取 Choices[n].Delta 中的值，需要拼接增量数据才能获得完整结果）。\n3. 非流式调用时：\n调用方式与普通 HTTP 请求无异。\n接口响应耗时较长，**如需更低时延建议设置为 true**。\n只返回一次最终结果（返回值取 Choices[n].Message 中的值）。\n\n注意：\n通过 SDK 调用时，流式和非流式调用需用**不同的方式**获取返回值，具体参考 SDK 中的注释或示例（在各语言 SDK 代码仓库的 examples/hunyuan/v20230901/ 目录中）。",
+          "example": "false",
+          "member": "bool",
+          "name": "Stream",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "目标人物名称",
+          "example": "孙悟空",
+          "member": "string",
+          "name": "TargetCharacterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色描述",
+          "example": "无",
+          "member": "GroupChatConfig",
+          "name": "GroupChatConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对话接口",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupChatCompletionsResponse": {
+      "document": "GroupChatCompletions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Unix 时间戳，单位为秒。",
+          "example": "1705634032",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 统计信息。\n按照总 Token 数量计费。",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免责声明。",
+          "example": "以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记",
+          "member": "string",
+          "name": "Note",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次请求的 RequestId。",
+          "example": "9c772634-8824-43e8-bc24-8bc4c19b9151",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回复内容。",
+          "example": "无",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorMsg",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果信息",
+          "example": "无",
+          "member": "SearchInfo",
+          "name": "SearchInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多媒体信息。\n说明：\n1. 可以用多媒体信息替换回复内容里的占位符，得到完整的消息。\n2. 可能会出现回复内容里存在占位符，但是因为审核等原因没有返回多媒体信息。",
+          "example": "无",
+          "member": "Replace",
+          "name": "Replaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐问答。",
+          "example": "无",
+          "member": "string",
+          "name": "RecommendedQuestions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GroupChatConfig": {
+      "document": "群聊配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人物名称",
+          "example": "布尔玛",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "### 主题：\\n武道修炼与科技创新的碰撞\\n\\n### 地点：\\n布尔玛的实验室\\n\\n### 故事背景：\\n布尔玛正在研发一种新型的龙珠雷达，旨在更精确地定位龙珠的位置。她邀请了孙悟空、天津饭、饺子和雅木茶前来测试新设备。然而，这些武道家们对科技的理解有限，导致了一系列有趣的误解和互动。\\n\\n### 人物关系：\\n- **布尔玛**：天才科学家，负责研发和解释新设备。\\n- **孙悟空**：纯粹的战斗狂，对科技一窍不通，但对新事物充满好奇。\\n- **天津饭**：严肃自律的武道家，对科技持谨慎态度，但愿意尝试。\\n- **饺子**：内向单纯，依赖天津饭，对科技感到困惑和害怕。\\n- **雅木茶**：幽默自嘲的前沙漠强盗，对科技有一定了解，但更倾向于轻松调侃。\\n\\n### 人物目标：\\n- **布尔玛**：希望新龙珠雷达能够得到有效测试，并得到反馈以改进。\\n- **孙悟空**：希望通过新设备找到更强的对手进行战斗。\\n- **天津饭**：希望通过测试新设备提升自己的武道修炼。\\n- **饺子**：希望在不引起麻烦的情况下完成任务，并得到天津饭的认可。\\n- **雅木茶**：希望通过参与测试证明自己的价值，同时享受与朋友们的互动。\\n\\n### 场景描述：\\n布尔玛在实验室中展示她的新龙珠雷达，解释其工作原理和优势。孙悟空对设备的功能感到兴奋，但完全无法理解技术细节，不断提出天真的问题。天津饭则严肃地询问设备的安全性和可靠性，表现出对科技的谨慎态度。饺子对复杂的设备感到害怕，不断向天津饭寻求确认和安慰。雅木茶则在一旁调侃大家的反应，试图缓解紧张气氛。布尔玛在解释过程中不断被孙悟空的问题打断，感到无奈，但也被他的热情所感染。最终，大家决定一起外出测试新设备，展开一场充满欢笑和冒险的旅程。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色描述",
+          "example": "角色描述",
+          "member": "Character",
+          "name": "Characters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GroupMessage": {
+      "document": "群聊会话内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色，可选值包括 system、user、assistant、 tool。",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本内容",
+          "example": "本小姐可是天才科学家！都来看看我的新发明！",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "布尔玛",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "History": {
       "document": "混元生图多轮对话历史记录。",

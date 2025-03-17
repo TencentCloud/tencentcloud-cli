@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeEventStatistics": {
+      "document": "本接口用于查询腾讯云健康看板的实时可用性事件信息，可以通过产品列表、地域进行过滤查询。\n可以参考健康看板历史事件页面来获取查询案例（链接：https://status.cloud.tencent.com/history）。",
+      "input": "DescribeEventStatisticsRequest",
+      "name": "查看事件统计",
+      "output": "DescribeEventStatisticsResponse",
+      "status": "online"
+    },
     "DescribeEvents": {
       "document": "本接口用于查询腾讯云健康看板的可用性事件信息，可以通过产品列表、地域列表和事件发生日期进行过滤查询。\n当查询的产品对应时间内无事件时将返回空结果。\n可以参考健康看板历史事件页面来获取查询案例（链接：https://status.cloud.tencent.com/history）。",
       "input": "DescribeEventsRequest",
@@ -15,6 +22,52 @@
     "serviceShortName": "tchd"
   },
   "objects": {
+    "DescribeEventStatisticsRequest": {
+      "document": "DescribeEventStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1. 查询非区域性产品事件时，地域ID指定为：non-regional\n2. 其他地域ID取值请参考：https://cloud.tencent.com/document/api/213/15692",
+          "example": "\"ap-beijing\"",
+          "member": "string",
+          "name": "RegionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1. 不指定产品列表时将查询所有产品。\n2. 产品ID示例：cvm、lb、cdb、cdn、crs",
+          "example": "[\"tse\"]",
+          "member": "string",
+          "name": "ProductIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventStatisticsResponse": {
+      "document": "DescribeEventStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常产品数",
+          "example": "{   \"NormalCount\": 77,   \"NotifyCount\": 0,   \"AbnormalCount\": 2 }",
+          "member": "TotalStatus",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventsRequest": {
       "document": "DescribeEvents请求参数结构体",
       "members": [
@@ -158,6 +211,42 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TotalStatus": {
+      "document": "状态汇总",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常状态的数目",
+          "example": "1",
+          "member": "int64",
+          "name": "NormalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知状态的数目",
+          "example": "1",
+          "member": "int64",
+          "name": "NotifyCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常状态的数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AbnormalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

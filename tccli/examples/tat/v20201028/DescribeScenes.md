@@ -21,7 +21,7 @@ Output:
             {
                 "SceneId": "sc-12345678",
                 "SceneName": "运维场景",
-                "CreatedBy": "USER",
+                "CreatedBy": "TAT",
                 "CreatedTime": "2020-11-02T02:48:11+00:00",
                 "UpdatedTime": "2020-11-02T02:48:11+00:00"
             }

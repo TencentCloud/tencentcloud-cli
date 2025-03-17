@@ -283,23 +283,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源水位详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[       {         \"ProductName\": \"云服务器\",         \"SubProductName\": \"标准型S5\",         \"Statistics\": [           {             \"Item\": \"CPU\",             \"Unit\": \"核\",             \"Total\": \"41996\",             \"Usage\": \"32875\",             \"UsageRate\": \"78.28%\",             \"Remain\": \"9121\",             \"RemainRate\": \"21.72%\",             \"ThisMondayUsageRate\": \"78.33%\",             \"ThisMondayUsageGrowthRate\": \"-0.05%\",             \"LastMondayUsageGrowthRate\": \"-4.41%\"           }         ]       } ]",
+          "document": "资源水位详情",
+          "example": "无",
           "member": "CloudDedicatedZoneResourceSummaryInfo",
           "name": "ResourceSummarySet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源水位扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{             \"ThisMondayLocalDate\": \"2024-11-11\",             \"LastMondayLocalDate\": \"2024-11-04\"         }",
+          "document": "资源水位扩展信息",
+          "example": "{\"ThisMondayLocalDate\":\"2024-11-11\",\"LastMondayLocalDate\":\"2024-11-04\"}",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -315,23 +315,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "专属可用区当地时间本周一日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专属可用区当地时间本周一日期",
           "example": "2024-01-22",
           "member": "string",
           "name": "ThisMondayLocalDate",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专属可用区当地时间上周一日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专属可用区当地时间上周一日期",
           "example": "2024-01-15",
           "member": "string",
           "name": "LastMondayLocalDate",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

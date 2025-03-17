@@ -10370,7 +10370,7 @@
         {
           "disabled": false,
           "document": "任务列表",
-          "example": "[     {         \"ClusterId\": \"rocketmq-3jaer4odmx52\",         \"ConnectionType\": \"PUBLIC\",         \"SourceClusterName\": \"test_name\",         \"SourceNameServer\": \"\",         \"TaskId\": \"700000780519-3jaer4odmx52-7f0df1dc\",         \"TaskName\": \"test_task\",         \"TaskStatus\": \"Configuration\"     } ]",
+          "example": "无",
           "member": "RocketMQSmoothMigrationTaskItem",
           "name": "Data",
           "output_required": false,
