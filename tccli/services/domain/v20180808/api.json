@@ -550,48 +550,48 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前域名价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前域名价格",
           "example": "120.00",
           "member": "float",
           "name": "CurrentPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户上次出价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户上次出价",
           "example": "100.00",
           "member": "float",
           "name": "BidPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前加价幅度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前加价幅度",
           "example": "50.00",
           "member": "float",
           "name": "CurrentPriceScope",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加价幅度区间配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "list[\"PriceScopeConf\"]",
+          "example": "[\"PriceScopeConf\"]",
           "member": "PriceScopeConf",
           "name": "PriceScope",
           "output_required": false,
@@ -600,13 +600,13 @@
         },
         {
           "disabled": false,
-          "document": "用户当前已经支付了的保证金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户当前已经支付了的保证金",
           "example": "50.00",
           "member": "float",
           "name": "DepositPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1527,13 +1527,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量日志ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量日志ID",
           "example": "318",
           "member": "int64",
           "name": "LogId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1889,23 +1889,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "竞拍详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞拍详情列表",
           "example": "list[\"AuctionInfo\"]",
           "member": "AuctionInfo",
           "name": "AuctionList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1964,13 +1964,13 @@
         },
         {
           "disabled": false,
-          "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"UpdatedOn\": \"2024-12-18 12:21:16\",\"BigDealId\": \"\",\"TransferDnsResult\": null,\"Action\": \"batch_modify_domain_dns1\",\"Status\": \"failed\",\"Domain\": \"***.com\",\"ReasonZh\": \"域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】\",\"CreatedOn\": \"2024-12-18 12:21:12\",\"Reason\": \"域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】\",\"PayStatus\": 0,\"Id\": 1001}]",
+          "document": "日志详情列表。",
+          "example": "[{\"UpdatedOn\": \"2024-12-18 12:21:16\",\"BigDealId\": \"\",\"TransferDnsResult\": null,\"Action\": \"batch_modify_*\",\"Status\": \"failed\",\"Domain\": \"***.com\",\"ReasonZh\": \"域名***\",\"CreatedOn\": \"2024-12-18 12:21:12\",\"Reason\": \"域名***\",\"PayStatus\": 0,\"Id\": 1001}]",
           "member": "DomainBatchDetailSet",
           "name": "DomainBatchDetailSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2020,13 +2020,13 @@
         },
         {
           "disabled": false,
-          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "日志列表",
+          "example": "[{\"Status\": \"doing\",\"Success\": 0,\"Doing\": 1,\"CreatedOn\": \"2025-03-10 17:41:07\",\"Number\": 1,\"LogId\": 1001,\"Failed\": 0,\"Action\": \"new\",\"PayStatus\": false,\"BigDealId\": \"2025***\"}]",
           "member": "DomainBatchLogSet",
           "name": "DomainBatchLogSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2885,13 +2885,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "域名信息集合",
+          "example": "无",
           "member": "DomainList",
           "name": "DomainSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3524,13 +3524,13 @@
         },
         {
           "disabled": false,
-          "document": "预释放列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预释放列表",
           "example": "list[\"PreReleaseInfo\"]",
           "member": "PreReleaseInfo",
           "name": "PreReleaseList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4318,6 +4318,26 @@
           "name": "Failed",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否付费",
+          "example": "false",
+          "member": "bool",
+          "name": "PayStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大订单ID",
+          "example": "2025***",
+          "member": "string",
+          "name": "BigDealId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5841,7 +5861,7 @@
         {
           "disabled": false,
           "document": "联系人信息",
-          "example": "{\"Province\": \"*ng\",\"RegistrantType\": \"I\",\"OrganizationName\": \"*ng\",\"OrganizationNameCN\": \"*名\",\"Country\": \"CN\",\"RegistrantName\": \"*ng\",\"ZipCode\": \"0***0\",\"Email\": \"***@tencent.com\",\"City\": \"***hi\",\"RegistrantNameCN\": \"*名\",\"StreetCN\": \"***城\",\"Street\": \"***eng\",\"ProvinceCN\": \"*省\",\"CountryCN\": \"中国\",\"CityCN\": \"*市\",\"Telephone\": \"1***9\"}",
+          "example": "无",
           "member": "ContactInfo",
           "name": "ContactInfo",
           "output_required": true,

@@ -1969,6 +1969,30 @@
       ],
       "usage": "both"
     },
+    "Image": {
+      "document": "图片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片Url。",
+          "example": "https://xxx.com/image.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片Base64。",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ImageUrl": {
       "document": "具体的图片内容",
       "members": [
@@ -3009,7 +3033,7 @@
         },
         {
           "disabled": false,
-          "document": "生成图分辨率。\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3），不传默认使用1024:1024。",
+          "document": "生成图分辨率。\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3），不传默认使用1024:1024。\n如果上传 ContentImage 参考图，分辨率仅支持：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1），不传将自动适配分辨率。如果参考图被用于做风格转换，将生成保持原图长宽比例且长边为1024的图片，指定的分辨率不生效。",
           "example": "1024:1024",
           "member": "string",
           "name": "Resolution",
@@ -3027,16 +3051,7 @@
         },
         {
           "disabled": false,
-          "document": "随机种子，默认随机。\n不传：随机种子生成。\n正数：固定种子生成。",
-          "example": "1",
-          "member": "int64",
-          "name": "Seed",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "超分选项，默认不做超分，可选开启。\n x2：2倍超分\n x4：4倍超分",
+          "document": "超分选项，默认不做超分，可选开启。\n x2：2倍超分\n x4：4倍超分\n在 Resolution 的基础上按比例提高分辨率，例如1024:1024开启2倍超分后将得到2048:2048。",
           "example": "x2",
           "member": "string",
           "name": "Clarity",
@@ -3045,10 +3060,28 @@
         },
         {
           "disabled": false,
-          "document": "prompt 扩写开关。1为开启，0为关闭，不传默认开启。\n开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。\n如果关闭扩写，将直接使用原始输入的 prompt 生成图片。\n建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。",
+          "document": "用于引导内容的参考图。\n图片限制：单边分辨率小于5000，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "{\"ImageUrl\":\"https://xxx.com/image.jpg\"}",
+          "member": "Image",
+          "name": "ContentImage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "prompt 扩写开关。1为开启，0为关闭，不传默认开启。\n开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。\n如果关闭扩写，将直接使用原始输入的 prompt 生成图片。如果上传了参考图，扩写关闭不生效，将保持开启。\n建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。",
           "example": "0",
           "member": "int64",
           "name": "Revise",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "随机种子，默认随机。\n不传：随机种子生成。\n正数：固定种子生成。\n扩写开启时固定种子不生效，将保持随机。",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
           "required": false,
           "type": "int"
         },

@@ -259,6 +259,13 @@
       "output": "DescribeInstancesActionTimerResponse",
       "status": "online"
     },
+    "DescribeInstancesAttributes": {
+      "document": "获取指定实例的属性，目前支持查询实例自定义数据User-Data。",
+      "input": "DescribeInstancesAttributesRequest",
+      "name": "批量获取指定实例属性",
+      "output": "DescribeInstancesAttributesResponse",
+      "status": "online"
+    },
     "DescribeInstancesModification": {
       "document": "本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。",
       "input": "DescribeInstancesModificationRequest",
@@ -1040,6 +1047,23 @@
         }
       ],
       "type": "object"
+    },
+    "Attribute": {
+      "document": "属性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的自定义数据。",
+          "example": "TXlVc2VyRGF0YQo=\t",
+          "member": "string",
+          "name": "UserData",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ChargePrepaid": {
       "document": "描述预付费模式，即包年包月相关参数。包括购买时长和自动续费逻辑等。",
@@ -3974,6 +3998,52 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesAttributesRequest": {
+      "document": "DescribeInstancesAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要获取的实例属性。可选值：\nUserData: 实例自定义数据",
+          "example": "[\"UserData\"]",
+          "member": "string",
+          "name": "Attributes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "[\"ins-lyxxskp2\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesAttributesResponse": {
+      "document": "DescribeInstancesAttributes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定的实例属性列表",
+          "example": "无",
+          "member": "InstanceAttribute",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesModificationRequest": {
       "document": "DescribeInstancesModification请求参数结构体",
       "members": [
@@ -4785,13 +4855,13 @@
         },
         {
           "disabled": false,
-          "document": "查询返回的维修任务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "查询返回的维修任务列表。",
+          "example": "无",
           "member": "RepairTaskInfo",
           "name": "RepairTaskInfoSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5169,13 +5239,22 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "是否强制关机",
+          "disabled": true,
+          "document": "是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。",
           "example": "False",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><br><li>HARD：直接强制关闭</li><br><li>SOFT：仅软关机</li><br>默认取值：SOFT。",
+          "example": "HARD",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7491,6 +7570,32 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceAttribute": {
+      "document": "实例属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "ins-lyxxskp2",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例属性信息。",
+          "example": "无",
+          "member": "Attribute",
+          "name": "Attributes",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

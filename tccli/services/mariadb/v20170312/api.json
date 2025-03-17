@@ -941,23 +941,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "约束类型为section时的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "约束类型为section时的最小值",
           "example": "1",
           "member": "string",
           "name": "Min",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "约束类型为section时的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "约束类型为section时的最大值",
           "example": "65535",
           "member": "string",
           "name": "Max",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2020,13 +2020,13 @@
         },
         {
           "disabled": false,
-          "document": "该字段对只读账号有意义，表示选择主备延迟小于该值的备机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段对只读账号有意义，表示选择主备延迟小于该值的备机",
           "example": "100",
           "member": "int64",
           "name": "DelayThresh",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2642,43 +2642,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "DCN 运行状态，START为正常运行，STOP为暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN 运行状态，START为正常运行，STOP为暂停",
           "example": "START",
           "member": "string",
           "name": "RoReplicationMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间",
           "example": "DEFAULT",
           "member": "string",
           "name": "DelayReplicationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟复制的指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟复制的指定时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DueTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟复制时的延迟秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟复制时的延迟秒数",
           "example": "1",
           "member": "int64",
           "name": "ReplicationDelay",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6325,13 +6325,13 @@
         },
         {
           "disabled": false,
-          "document": "分片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片ID",
           "example": "shard-54s3xede",
           "member": "string",
           "name": "ShardId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6421,25 +6421,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备型号",
           "example": "SH12",
           "member": "string",
           "name": "Machine",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该机型对应的可售卖规格列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Cpu\":1,\"Machine\":\"TS85\",\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":5,\"Pid\":1002231,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"},{\"Cpu\":1,\"Machine\":\"TS85\",\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":6,\"Pid\":1002231,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"}]",
+          "document": "该机型对应的可售卖规格列表",
+          "example": "无",
           "member": "SpecConfigInfo",
           "name": "SpecInfos",
           "output_required": true,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7689,7 +7689,7 @@
         {
           "disabled": false,
           "document": "约束类型为string时的可选值列表",
-          "example": "\"REAL_AS_FLOAT,PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,IGNORE_BAD_TABLE_OPTIONS,ONLY_FULL_GROUP_BY,NO_UNSIGNED_SUBTRACTION,NO_DIR_IN_CREATE,NO_KEY_OPTIONS,NO_TABLE_OPTIONS,NO_FIELD_OPTIONS,NO_AUTO_VALUE_ON_ZERO,NO_BACKSLASH_ESCAPES,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,HIGH_NOT_PRECEDENCE,NO_ENGINE_SUBSTITUTION,PAD_CHAR_TO_FULL_LENGTH\"",
+          "example": "STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION",
           "member": "string",
           "name": "String",
           "output_required": true,
@@ -7724,13 +7724,13 @@
         },
         {
           "disabled": false,
-          "document": "设置过的值，参数生效后，该值和value一样。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置过的值，参数生效后，该值和value一样。",
           "example": "2",
           "member": "string",
           "name": "SetValue",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8444,13 +8444,13 @@
         },
         {
           "disabled": false,
-          "document": "样例Sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "样例Sql",
           "example": "select id, f1, sleep(1) from t1 where id % 2 = 1",
           "member": "string",
           "name": "ExampleSql",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

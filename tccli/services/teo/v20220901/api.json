@@ -176,7 +176,7 @@
       "status": "online"
     },
     "CreateRule": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [CreateL7AccRules](https://cloud.tencent.com/document/product/1552/115822)。",
+      "document": "本接口为旧版本创建规则引擎接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本创建七层加速规则接口详情请参考 [CreateL7AccRules](https://cloud.tencent.com/document/product/1552/115822)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "CreateRuleRequest",
       "name": "创建规则引擎规则（旧）",
       "output": "CreateRuleResponse",
@@ -309,7 +309,7 @@
       "status": "online"
     },
     "DeleteRules": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DeleteL7AccRules](https://cloud.tencent.com/document/product/1552/115821)。",
+      "document": "本接口为旧版本删除规则引擎接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本删除七层加速规则接口详情请参考 [DeleteL7AccRules](https://cloud.tencent.com/document/product/1552/115821)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "DeleteRulesRequest",
       "name": "批量删除规则引擎规则（旧）",
       "output": "DeleteRulesResponse",
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "DescribeRules": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820)。",
+      "document": "本接口为旧版本查询规则引擎规则接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本查询七层加速规则接口详情请参考  [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "DescribeRulesRequest",
       "name": "查询规则引擎规则（旧）",
       "output": "DescribeRulesResponse",
@@ -918,7 +918,7 @@
       "status": "online"
     },
     "ModifyRule": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccRule](https://cloud.tencent.com/document/product/1552/115818)。",
+      "document": "本接口为旧版本修改规则引擎接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本修改七层加速规则接口详情请参考 [ModifyL7AccRule](https://cloud.tencent.com/document/product/1552/115818)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "ModifyRuleRequest",
       "name": "修改规则引擎规则（旧）",
       "output": "ModifyRuleResponse",
@@ -5863,7 +5863,7 @@
         {
           "disabled": false,
           "document": "规则标签。",
-          "example": "test",
+          "example": "[\"Cache Key Configuration\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -11343,6 +11343,112 @@
       ],
       "usage": "out"
     },
+    "DetectLengthLimitCondition": {
+      "document": "检测长度限制配置条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配条件的参数名称，取值有：\n<li>body_depth：请求正文包部分的检测深度。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的参数值，取值与 Name 成对使用。\n当 Name 值为 body_depth 时， Values 只支持传入单个值，取值有：\n<li>8KB；</li>\n<li>64KB；</li>\n<li>128KB。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DetectLengthLimitConfig": {
+      "document": "检测长度限制",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测长度限制的规则列表。",
+          "example": "无",
+          "member": "DetectLengthLimitRule",
+          "name": "DetectLengthLimitRules",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DetectLengthLimitRule": {
+      "document": "检测长度限制规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则Id。仅出参使用。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称。仅出参使用。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述，仅出参使用。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则配置条件。仅出参使用。",
+          "example": "无",
+          "member": "DetectLengthLimitCondition",
+          "name": "Conditions",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置方式，取值有：\n<li>skip：当请求正文数据超过 Conditions 出参中 body_depth 设置的检测深度时，跳过所有请求正文内容的检测；</li>\n<li>scan：仅检测 Conditions 出参中 body_depth 设置的检测深度，对超出部分的请求正文内容直接截断处理，超出部分的请求正文不会经过安全检测。</li>仅出参使用。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DiffIPWhitelist": {
       "document": "最新IP白名单列表相比于当前IP白名单列表的区别",
       "members": [
@@ -16357,7 +16463,7 @@
         {
           "disabled": false,
           "document": "规则标签。",
-          "example": "test",
+          "example": "[\"Cache Key Configuration\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -20193,7 +20299,7 @@
       "usage": "out"
     },
     "SecurityConfig": {
-      "document": "安全配置",
+      "document": "Web安全配置",
       "members": [
         {
           "disabled": false,
@@ -20300,6 +20406,17 @@
           "example": "无",
           "member": "SlowPostConfig",
           "name": "SlowPostConfig",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测长度限制配置。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLengthLimitConfig",
+          "name": "DetectLengthLimitConfig",
           "output_required": true,
           "required": false,
           "type": "object",
@@ -21735,6 +21852,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21745,6 +21863,7 @@
           "example": "strict",
           "member": "string",
           "name": "Level",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21755,6 +21874,7 @@
           "example": "block",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21765,6 +21885,7 @@
           "example": "无",
           "member": "WafRule",
           "name": "WafRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -21775,6 +21896,7 @@
           "example": "无",
           "member": "AiRule",
           "name": "AiRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false

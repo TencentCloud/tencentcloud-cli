@@ -391,6 +391,13 @@
       "name": "重新发送死信消息",
       "output": "ResendDeadLetterMessageResponse",
       "status": "online"
+    },
+    "ResetConsumerGroupOffset": {
+      "document": "重置消费位点",
+      "input": "ResetConsumerGroupOffsetRequest",
+      "name": "重置消费位点",
+      "output": "ResetConsumerGroupOffsetResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -6742,6 +6749,60 @@
           "type": "bool",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetConsumerGroupOffsetRequest": {
+      "document": "ResetConsumerGroupOffset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重置位点时间（单位：毫秒）-1表示重置到最新位点",
+          "example": "-1",
+          "member": "int64",
+          "name": "ResetTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetConsumerGroupOffsetResponse": {
+      "document": "ResetConsumerGroupOffset返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -453,6 +453,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4f1d3ba-3ed2-4e03-b741-9f6f696b9689\"\n    }\n}",
         "title": "重发死信消息"
       }
+    ],
+    "ResetConsumerGroupOffset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConsumerGroupOffset\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"Topic\": \"test_topic\",\n    \"ResetTimestamp\": -1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"707a78e5-019d-41f6-80fc-15743d99c81a\"\n    }\n}",
+        "title": "重置消费位点"
+      }
     ]
   },
   "version": "1.0"

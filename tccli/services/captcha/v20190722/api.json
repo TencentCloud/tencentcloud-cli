@@ -140,40 +140,40 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "\"20220620\"",
           "member": "string",
           "name": "DateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "停止验证数量",
-          "example": "",
+          "example": "0.01",
           "member": "float",
           "name": "AllStopCnt",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片停止加载数量",
-          "example": "",
+          "example": "0.02",
           "member": "float",
           "name": "PicStopCnt",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略拦截数量",
-          "example": "",
+          "example": "0.1",
           "member": "float",
           "name": "StrategyStopCnt",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -186,30 +186,30 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "20210206",
           "member": "string",
           "name": "DateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Market加载时间",
-          "example": "",
+          "example": "999.99",
           "member": "float",
           "name": "MarketLoadTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "AppId加载时间",
-          "example": "",
+          "example": "0.99",
           "member": "float",
           "name": "AppIdLoadTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -268,20 +268,20 @@
         {
           "disabled": false,
           "document": "尝试次数",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "TryCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户请求数量",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "UserCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -294,30 +294,30 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "20210206",
           "member": "string",
           "name": "DateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "平均尝试次数",
-          "example": "",
+          "example": "2",
           "member": "float",
           "name": "CntPerPass",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "market平均尝试次数",
-          "example": "",
+          "example": "3",
           "member": "float",
           "name": "MarketCntPerPass",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -330,9 +330,10 @@
         {
           "disabled": false,
           "document": "数量",
-          "example": "",
+          "example": "95",
           "member": "int64",
           "name": "Cnt",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -340,9 +341,10 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "20210206",
           "member": "string",
           "name": "Date",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -498,40 +500,40 @@
         {
           "disabled": false,
           "document": "验证码应用ID",
-          "example": "",
+          "example": "199999409",
           "member": "int64",
           "name": "CaptchaAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "注册应用名称",
-          "example": "",
+          "example": "\"登陆验证码\"",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "腾讯云APPID",
-          "example": "",
+          "example": "199999409",
           "member": "int64",
           "name": "TcAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "渠道信息",
-          "example": "",
+          "example": "\"web\"",
           "member": "string",
           "name": "ChannelInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -838,7 +840,7 @@
         {
           "disabled": false,
           "document": "请求总量",
-          "example": "123",
+          "example": "193",
           "member": "int64",
           "name": "GetSum",
           "output_required": true,
@@ -1339,13 +1341,13 @@
         },
         {
           "disabled": false,
-          "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态描述及验证错误信息",
           "example": "ticket expired",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1476,23 +1478,23 @@
         },
         {
           "disabled": false,
-          "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态描述及验证错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ticket verification succeeded",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "拦截策略返回信息\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截策略返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"UserId\": \"\", \"PostTime\": 1606977595, \"AssociateAccount\": \"\", \"UserIp\": \"127.0.0.1\", \"RiskLevel\": \"pass\", \"RiskType\": []}",
           "member": "OutputManageMarketingRiskValue",
           "name": "ManageMarketingRiskValue",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2452,61 +2454,61 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号 ID。对应输入参数： AccountType 是 1 时，对应 QQ 的 OpenID。\nAccountType 是 2 时，对应微信的 OpenID/UnionID。\nAccountType 是 4 时，对应手机号。\nAccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。\nAccountType 是 0 时，对应账号信息。\nAccountType 是 10004 时，对应手机号的 MD5。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "账号 ID。对应输入参数： AccountType 是 1 时，对应 QQ 的 OpenID。\nAccountType 是 2 时，对应微信的 OpenID/UnionID。\nAccountType 是 4 时，对应手机号。\nAccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。\nAccountType 是 0 时，对应账号信息。\nAccountType 是 10004 时，对应手机号的 MD5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"1854132222\"",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作时间戳，单位秒（对应输入参数）。 \n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作时间戳，单位秒（对应输入参数）。 \n",
+          "example": "1740381566",
           "member": "int64",
           "name": "PostTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"5ae3a04b4109\"",
           "member": "string",
           "name": "AssociateAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务详情。 注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "业务详情",
+          "example": "\"127.0.0.1\"",
           "member": "string",
           "name": "UserIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险值 pass : 无恶意\nreview：需要人工审核\nreject：拒绝，高风险恶意\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "风险值 pass : 无恶意\nreview：需要人工审核\nreject：拒绝，高风险恶意",
+          "example": "\"pass\"",
           "member": "string",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。\n账号风险\t\n        账号信用低\t1\t账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素\n\t疑似 低活跃账号\t11\t账号活跃度与正常用户有差异\n\t垃圾账号\t2\t疑似批量注册小号，近期存在严重违规或大量举报\n\t疑似小号\t21\t账号有疑似线上养号，小号等行为\n\t疑似 违规账号\t22\t账号曾有违规行为、曾被举报过、曾因违规被处罚过等\n\t无效账号\t3\t送检账号参数无法成功解析，请检查微信 openid 是否有\n\t黑名单\t4\t该账号在业务侧有过拉黑记录\n\t白名单 \t5\t业务自行有添加过白名单记录\n行为风险\t\n        批量操作\t101\t存在 ip/设备/环境等因素的聚集性异常\n\t疑似 IP 属性聚集 \t1011\t出现 IP 聚集\n\t疑似 设备属性聚集 \t1012\t出现设备聚集\n\t自动机 \t103\t疑似自动机批量请求\n\t微信登录态无效 \t104\t检查 wxtoken 参数，是否已经失效\n环境风险\t\n        环境异常 \t201\t操作 ip/设备/环境存在异常。当前 ip 为非常用 ip 或恶意 ip 段\n\t疑似 非常用IP请求 \t2011\t当前请求 IP 非该账号常用 IP\n\t疑似 IP 异常 \t2012\t使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip \n\t非公网有效 ip \t205\t传进来的 IP 地址为内网 ip 地址或者 ip 保留地\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "风险类型，请查看下面详细说明 \n账号风险\t\n        账号信用低\t1\t账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素\n\t疑似 低活跃账号\t11\t账号活跃度与正常用户有差异\n\t垃圾账号\t2\t疑似批量注册小号，近期存在严重违规或大量举报\n\t疑似小号\t21\t账号有疑似线上养号，小号等行为\n\t疑似 违规账号\t22\t账号曾有违规行为、曾被举报过、曾因违规被处罚过等\n\t无效账号\t3\t送检账号参数无法成功解析，请检查微信 openid 是否有\n\t黑名单\t4\t该账号在业务侧有过拉黑记录\n\t白名单 \t5\t业务自行有添加过白名单记录\n行为风险\t\n        批量操作\t101\t存在 ip/设备/环境等因素的聚集性异常\n\t疑似 IP 属性聚集 \t1011\t出现 IP 聚集\n\t疑似 设备属性聚集 \t1012\t出现设备聚集\n\t自动机 \t103\t疑似自动机批量请求\n\t微信登录态无效 \t104\t检查 wxtoken 参数，是否已经失效\n环境风险\t\n        环境异常 \t201\t操作 ip/设备/环境存在异常。当前 ip 为非常用 ip 或恶意 ip 段\n\t疑似 非常用IP请求 \t2011\t当前请求 IP 非该账号常用 IP\n\t疑似 IP 异常 \t2012\t使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip \n\t非公网有效 ip \t205\t传进来的 IP 地址为内网 ip 地址或者 ip 保留地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "int64",
           "name": "RiskType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2669,20 +2671,20 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "20210206",
           "member": "string",
           "name": "DateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "票据验证总量",
-          "example": "",
+          "example": "96",
           "member": "int64",
           "name": "Amount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2741,20 +2743,20 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "20210206",
           "member": "string",
           "name": "DateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "票据验证拦截量",
-          "example": "",
+          "example": "97",
           "member": "int64",
           "name": "Intercept",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2767,20 +2769,20 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "20210206",
           "member": "string",
           "name": "DateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "票据验证的通过量",
-          "example": "",
+          "example": "98",
           "member": "int64",
           "name": "Through",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

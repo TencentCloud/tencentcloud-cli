@@ -1209,7 +1209,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)\n",
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)\n",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -3452,6 +3452,15 @@
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括\n\n- 签署控件 是否默认展示日期.",
+          "example": "无",
+          "member": "SignComponentConfig",
+          "name": "SignComponentConfig",
           "required": false,
           "type": "object"
         }
@@ -10595,7 +10604,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -10875,7 +10884,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -12941,6 +12950,21 @@
         }
       ],
       "usage": "out"
+    },
+    "SignComponentConfig": {
+      "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括 \n\n- 签署控件 是否默认展示日期.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。\n\n- false 展示签署日期（默认）\n- true 不展示签署日期 \n![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。",
+          "example": "false",
+          "member": "bool",
+          "name": "HideDate",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "SignQrCode": {
       "document": "签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。",

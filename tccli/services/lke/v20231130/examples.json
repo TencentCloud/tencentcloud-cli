@@ -35,7 +35,7 @@
     "CreateAttributeLabel": [
       {
         "document": "创建标签",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1851816552255193088\",\n    \"AttrName\": \"哈哈哈\",\n    \"Labels\": [\n        {\n            \"LabelName\": \"的点点滴滴\",\n            \"SimilarLabels\": [\n                \"dfdf\",\n                \"发的\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1826933901291945900\",\n    \"AttrName\": \"汽车类型\",\n    \"Labels\": [\n        {\n            \"LabelName\": \"SUV\",\n            \"SimilarLabels\": [\n                \"运动型多用途汽车\",\n                \"越野\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AttrBizId\": \"1856169972235990080\",\n        \"RequestId\": \"044de4f1-8d88-4779-b9f7-b8c0e9f81752\"\n    }\n}",
         "title": "创建标签"
       }

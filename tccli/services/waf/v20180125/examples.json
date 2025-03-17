@@ -118,6 +118,14 @@
         "title": "新增IP黑白名单"
       }
     ],
+    "CreatePostCLSFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostCLSFlow\n<公共请求参数>\n\n{\n    \"LogsetName\": \"waf_post_logset\",\n    \"CLSRegion\": \"ap-guangzhou\",\n    \"LogType\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bdc5e296-a3f4-441a-b51e-aed0eeee3a7c\"\n    }\n}",
+        "title": "创建CLS投递流任务"
+      }
+    ],
     "DeleteAccessExport": [
       {
         "document": "",
@@ -608,6 +616,14 @@
         "title": "获取防护端口列表"
       }
     ],
+    "DescribePostCLSFlows": [
+      {
+        "document": "获取CLS投递流任务列表",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostCLSFlows\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\",\n        \"PostCLSFlows\": [\n            {\n                \"FlowId\": 100001,\n                \"LogType\": 1,\n                \"Status\": 1,\n                \"CLSRegion\": \"ap-guangzhou\",\n                \"LogsetName\": \"waf-post-logset\",\n                \"LogsetID\": \"59a61f1a-d606-4a17-8eaf-0881cb656887\"\n            }\n        ]\n    }\n}",
+        "title": "获取CLS投递流任务列表"
+      }
+    ],
     "DescribeProtectionModes": [
       {
         "document": "查询Tiga引擎大类规则及其防护模式",
@@ -758,6 +774,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeWebshellStatus\r\n&Domain=www.qcloudwaf.com\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Domain\": \"www.test.com\",\n        \"Status\": 1,\n        \"RequestId\": \"2d510f3e-9ac9-4282-a62d-9efa61c9825d\"\n    }\n}",
         "title": "获取域名webshell 状态"
+      }
+    ],
+    "DestroyPostCLSFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPostCLSFlow\n<公共请求参数>\n\n{\n    \"FlowId\": 100001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\"\n    }\n}",
+        "title": "销毁CLS投递流任务"
       }
     ],
     "FreshAntiFakeUrl": [

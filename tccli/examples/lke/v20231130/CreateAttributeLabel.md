@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli lke CreateAttributeLabel --cli-unfold-argument  \
-    --BotBizId 1851816552255193088 \
-    --AttrName 哈哈哈 \
-    --Labels.0.LabelName 的点点滴滴 \
-    --Labels.0.SimilarLabels dfdf 发的
+    --BotBizId 1826933901291945900 \
+    --AttrName 汽车类型 \
+    --Labels.0.LabelName SUV \
+    --Labels.0.SimilarLabels 运动型多用途汽车 越野
 ```
 
 Output: 

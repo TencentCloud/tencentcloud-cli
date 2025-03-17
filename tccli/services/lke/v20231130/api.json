@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateAttributeLabel": {
-      "document": "创建属性",
+      "document": "创建标签",
       "input": "CreateAttributeLabelRequest",
       "name": "创建标签",
       "output": "CreateAttributeLabelResponse",
@@ -2372,7 +2372,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1826933901291945900",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -2381,7 +2381,7 @@
         {
           "disabled": false,
           "document": "标签名",
-          "example": "无",
+          "example": "汽车类型",
           "member": "string",
           "name": "AttrName",
           "required": true,
@@ -2390,7 +2390,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "[             {                 \"LabelName\": \"SUV\",                 \"SimilarLabels\": [                     \"运动型多用途汽车\",                     \"越野\"                 ]             }         ]",
           "member": "AttributeLabel",
           "name": "Labels",
           "required": true,

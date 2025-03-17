@@ -3466,12 +3466,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回集群创建是否成功 succ为成功。并且中间无err\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回集群创建是否成功 succ为成功。并且中间无err",
           "example": "succ",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3889,33 +3890,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态(creating/succ)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态(creating/succ)",
           "example": "succ",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本名称（只有Result为succ的时候，才会返回VersionName)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本名称（只有Result为succ的时候，才会返回VersionName)",
           "example": "version-001",
           "member": "string",
           "name": "VersionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作记录id",
           "example": "test12345",
           "member": "string",
           "name": "RunId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5231,33 +5232,33 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Dockefile的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dockefile的路径",
           "example": "Dockefile",
           "member": "string",
           "name": "DockerfilePath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DockerBuild的目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DockerBuild的目录",
           "example": ".",
           "member": "string",
           "name": "BuildDir",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5301,13 +5302,13 @@
         },
         {
           "disabled": false,
-          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量",
           "example": "key=value",
           "member": "string",
           "name": "EnvParams",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5331,203 +5332,203 @@
         },
         {
           "disabled": false,
-          "document": "版本的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本的IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "VersionIP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本的端口号",
           "example": "9000",
           "member": "int64",
           "name": "VersionPort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本状态",
           "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "枚举（package/repository/image)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举（package/repository/image)",
           "example": "package",
           "member": "string",
           "name": "UploadType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名字",
           "example": "server",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否对于外网开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否对于外网开放",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc id",
           "example": "vpc-sddksdfj",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网实例id",
           "example": "[\"subenet-sdfsdf\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志采集路径",
           "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听端口",
           "example": "8080",
           "member": "int64",
           "name": "ContainerPort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟多长时间开始健康检查（单位s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟多长时间开始健康检查（单位s）",
           "example": "80",
           "member": "int64",
           "name": "InitialDelaySeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像地址",
           "example": "address",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not",
           "example": "0",
           "member": "int64",
           "name": "HasDockerfile",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础镜像",
           "example": "JDK7",
           "member": "string",
           "name": "BaseImage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容器启动入口命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器启动入口命令",
           "example": "java -jar app.jar",
           "member": "string",
           "name": "EntryPoint",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动扩缩容策略组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动扩缩容策略组",
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetail",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Tke集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tke集群信息",
           "example": "无",
           "member": "TkeClusterInfo",
           "name": "TkeClusterInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本工作负载类型；deployment/deamonset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本工作负载类型；deployment/deamonset",
           "example": "deployment",
           "member": "string",
           "name": "TkeWorkloadType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代码包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码包信息",
           "example": "无",
           "member": "CbrPackageInfo",
           "name": "PackageInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库信息",
           "example": "无",
           "member": "CbrRepoInfo",
           "name": "RepoInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5634,33 +5635,33 @@
         },
         {
           "disabled": false,
-          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载链接",
           "example": "http://downloadurl",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下载Httpheader\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载Httpheader",
           "example": "[{\"key\":\"value\"}]",
           "member": "KVPair",
           "name": "DownloadHeaders",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下载链接是否过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载链接是否过期",
           "example": "false",
           "member": "bool",
           "name": "OutDate",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5884,13 +5885,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "所有vpcid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所有vpcid",
           "example": "[\"vpcid-aa\",\"vpcid=bb\"]",
           "member": "string",
           "name": "Vpcs",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5930,13 +5931,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近更新时间",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "LastUpTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6133,23 +6134,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "[\"sddf\"]",
           "member": "string",
           "name": "Action",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名列表",
           "example": "[\"server\"]",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6264,13 +6265,13 @@
         },
         {
           "disabled": false,
-          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器列表",
           "example": "无",
           "member": "CloudBaseRunVersionPod",
           "name": "PodList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6301,43 +6302,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群状态(creating/succ)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态(creating/succ)",
           "example": "succ",
           "member": "string",
           "name": "ClusterStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟集群ID",
           "example": "cls-sdfsdf",
           "member": "string",
           "name": "VirtualClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc id信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc id信息",
           "example": "vpc-sdfdf",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域信息",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6378,43 +6379,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群状态(creating/succ)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态(creating/succ)",
           "example": "succ",
           "member": "string",
           "name": "ClusterStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟集群ID",
           "example": "cls-sdfd",
           "member": "string",
           "name": "VirtualClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc id信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc id信息",
           "example": "vpc-xcfd",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域信息",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6575,83 +6576,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "个数",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本列表",
           "example": "无",
           "member": "CloudBaseRunServerVersionItem",
           "name": "VersionItems",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名称",
           "example": "server-01",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否对于外网开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否对于外网开放",
           "example": "1",
           "member": "bool",
           "name": "IsPublic",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像仓库",
           "example": "image",
           "member": "string",
           "name": "ImageRepo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量配置的类型（FLOW,URL_PARAMS)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量配置的类型（FLOW,URL_PARAMS)",
           "example": "FLOW",
           "member": "string",
           "name": "TrafficType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务创建类型，默认为空，一键部署为oneclick\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务创建类型，默认为空，一键部署为oneclick",
           "example": "\"oneclick\"",
           "member": "string",
           "name": "SourceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务标签, function: 托管函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务标签, function: 托管函数",
           "example": "function",
           "member": "string",
           "name": "Tag",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6710,33 +6711,33 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Dockefile的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dockefile的路径",
           "example": "Dockefile",
           "member": "string",
           "name": "DockerfilePath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DockerBuild的目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DockerBuild的目录",
           "example": ".",
           "member": "string",
           "name": "BuildDir",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6800,13 +6801,13 @@
         },
         {
           "disabled": false,
-          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量",
           "example": "key=value",
           "member": "string",
           "name": "EnvParams",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6830,123 +6831,123 @@
         },
         {
           "disabled": false,
-          "document": "版本的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本的IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "VersionIP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本的端口号",
           "example": "80",
           "member": "int64",
           "name": "VersionPort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本状态",
           "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代码包的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码包的名字",
           "example": "package",
           "member": "string",
           "name": "PackageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代码版本的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码版本的名字",
           "example": "134sd",
           "member": "string",
           "name": "PackageVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "枚举（package/repository/image)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举（package/repository/image)",
           "example": "package",
           "member": "string",
           "name": "UploadType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Repo的类型(gitlab/github/coding)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Repo的类型(gitlab/github/coding)",
           "example": "gitlab",
           "member": "string",
           "name": "RepoType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "adress",
           "member": "string",
           "name": "Repo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分支",
           "example": "master",
           "member": "string",
           "name": "Branch",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名字",
           "example": "version",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否对于外网开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否对于外网开放",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc id",
           "example": "vpc-sdfsdf",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6960,103 +6961,103 @@
         },
         {
           "disabled": false,
-          "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志采集路径",
           "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听端口",
           "example": "80",
           "member": "int64",
           "name": "ContainerPort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟多长时间开始健康检查（单位s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟多长时间开始健康检查（单位s）",
           "example": "80",
           "member": "int64",
           "name": "InitialDelaySeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像地址",
           "example": "url",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CPU 大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU 大小",
           "example": "2.0",
           "member": "float",
           "name": "CpuSize",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "MEM 大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MEM 大小",
           "example": "4.0",
           "member": "float",
           "name": "MemSize",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有Dockerfile：0-default has, 1-has, 2-has not",
           "example": "0",
           "member": "int64",
           "name": "HasDockerfile",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础镜像",
           "example": "JDK7",
           "member": "string",
           "name": "BaseImage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容器启动入口命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器启动入口命令",
           "example": "java -jar app.jar",
           "member": "string",
           "name": "EntryPoint",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库语言",
           "example": "Java",
           "member": "string",
           "name": "RepoLanguage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7080,13 +7081,13 @@
         },
         {
           "disabled": false,
-          "document": "版本工作负载类型；deployment/deamonset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本工作负载类型；deployment/deamonset",
           "example": "deployment",
           "member": "string",
           "name": "TkeWorkloadType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7145,33 +7146,33 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Dockefile的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Dockefile的路径",
           "example": "Dockefile",
           "member": "string",
           "name": "DockerfilePath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DockerBuild的目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DockerBuild的目录",
           "example": ".",
           "member": "string",
           "name": "BuildDir",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7215,13 +7216,13 @@
         },
         {
           "disabled": false,
-          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量",
           "example": "key=value",
           "member": "string",
           "name": "EnvParams",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7245,223 +7246,223 @@
         },
         {
           "disabled": false,
-          "document": "版本的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本的IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "VersionIP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本的端口号",
           "example": "80",
           "member": "int64",
           "name": "VersionPort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本状态",
           "example": "running",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代码包的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码包的名字",
           "example": "sddf.zip",
           "member": "string",
           "name": "PackageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代码版本的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代码版本的名字",
           "example": "12424",
           "member": "string",
           "name": "PackageVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "枚举（package/repository/image)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举（package/repository/image)",
           "example": "package",
           "member": "string",
           "name": "UploadType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Repo的类型(coding/gitlab/github/coding)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Repo的类型(coding/gitlab/github/coding)",
           "example": "coding",
           "member": "string",
           "name": "RepoType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "repo",
           "member": "string",
           "name": "Repo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分支",
           "example": "master",
           "member": "string",
           "name": "Branch",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名字",
           "example": "server",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否对于外网开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否对于外网开放",
           "example": "false",
           "member": "bool",
           "name": "IsPublic",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc id",
           "example": "vpc-sdfd",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网实例id",
           "example": "[\"subnet-csdffl\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志采集路径",
           "example": "stdout",
           "member": "string",
           "name": "CustomLogs",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监听端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听端口",
           "example": "80",
           "member": "int64",
           "name": "ContainerPort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟多长时间开始健康检查（单位s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟多长时间开始健康检查（单位s）",
           "example": "80",
           "member": "int64",
           "name": "InitialDelaySeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像地址",
           "example": "url",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CPU 大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU 大小",
           "example": "2.0",
           "member": "float",
           "name": "CpuSize",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "MEM 大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MEM 大小",
           "example": "4.0",
           "member": "float",
           "name": "MemSize",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩缩容策略详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩缩容策略详情",
           "example": "无",
           "member": "HpaPolicy",
           "name": "PolicyDetail",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Cpu的Request值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cpu的Request值",
           "example": "1.0",
           "member": "float",
           "name": "Cpu",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Mem的Request值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Mem的Request值",
           "example": "2.0",
           "member": "float",
           "name": "Mem",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7554,13 +7555,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本历史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本历史",
           "example": "无",
           "member": "CloudRunServiceSimpleVersionSnapshot",
           "name": "Snapshots",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10436,13 +10437,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建服务是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建服务是否成功",
           "example": "succ",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10681,23 +10682,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量状态\n成功：succ\n失败：fail\n部分：partial（部分成功、部分失败）\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量状态\n成功：succ\n失败：fail\n部分：partial（部分成功、部分失败）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "succ",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "冻结失败服务列表\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结失败服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[“xxx”,\"xxx\"]",
           "member": "string",
           "name": "FailServerList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11472,13 +11473,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，succ代表成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果，succ代表成功",
           "example": "succ",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11608,13 +11609,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果（succ为成功）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果（succ为成功）",
           "example": "succ",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12686,23 +12687,23 @@
         },
         {
           "disabled": false,
-          "document": "滚动更新的VersionName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "滚动更新的VersionName",
           "example": "version",
           "member": "string",
           "name": "VersionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作记录id",
           "example": "aa123",
           "member": "string",
           "name": "RunId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13380,23 +13381,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量执行结果\n成功：succ\n失败：fail\n部分：partial（部分成功、部分失败）\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批量执行结果\n成功：succ\n失败：fail\n部分：partial（部分成功、部分失败）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "succ",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解冻失败列表\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解冻失败列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"server-sdfsdf\"]",
           "member": "string",
           "name": "FailServerList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

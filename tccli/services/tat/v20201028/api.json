@@ -1644,13 +1644,13 @@
         },
         {
           "disabled": false,
-          "document": "注册码信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册码信息列表。",
           "example": "无",
           "member": "RegisterCodeInfo",
           "name": "RegisterCodeSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2284,7 +2284,7 @@
         },
         {
           "disabled": false,
-          "document": "调用来源。",
+          "document": "调用来源。\n\n- USER：来源于用户调用。\n- INVOKER：来源于定时执行。",
           "example": "USER",
           "member": "string",
           "name": "InvocationSource",
@@ -2516,13 +2516,13 @@
         },
         {
           "disabled": false,
-          "document": "执行器周期计划。周期执行器会返回此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行器周期计划。周期执行器会返回此字段。",
           "example": "无",
           "member": "ScheduleSettings",
           "name": "ScheduleSettings",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3067,7 +3067,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "托管实例ID。",
           "example": "rins-8d5cxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -3077,7 +3077,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名。",
+          "document": "托管实例名。",
           "example": "register-test",
           "member": "string",
           "name": "InstanceName",

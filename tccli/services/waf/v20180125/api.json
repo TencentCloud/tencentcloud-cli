@@ -98,6 +98,13 @@
       "output": "CreateIpAccessControlResponse",
       "status": "online"
     },
+    "CreatePostCLSFlow": {
+      "document": "创建CLS投递流任务",
+      "input": "CreatePostCLSFlowRequest",
+      "name": "创建CLS投递流任务",
+      "output": "CreatePostCLSFlowResponse",
+      "status": "online"
+    },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
@@ -511,6 +518,13 @@
       "output": "DescribePortsResponse",
       "status": "online"
     },
+    "DescribePostCLSFlows": {
+      "document": "获取CLS投递流任务列表",
+      "input": "DescribePostCLSFlowsRequest",
+      "name": "获取CLS投递流任务列表",
+      "output": "DescribePostCLSFlowsResponse",
+      "status": "online"
+    },
     "DescribeProtectionModes": {
       "document": "查询Tiga引擎大类规则及其防护模式",
       "input": "DescribeProtectionModesRequest",
@@ -642,6 +656,13 @@
       "input": "DescribeWebshellStatusRequest",
       "name": "获取域名webshell状态",
       "output": "DescribeWebshellStatusResponse",
+      "status": "online"
+    },
+    "DestroyPostCLSFlow": {
+      "document": "销毁CLS投递流任务",
+      "input": "DestroyPostCLSFlowRequest",
+      "name": "销毁CLS投递流任务",
+      "output": "DestroyPostCLSFlowResponse",
       "status": "online"
     },
     "FreshAntiFakeUrl": {
@@ -5389,6 +5410,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostCLSFlowRequest": {
+      "document": "CreatePostCLSFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递的CLS所在区域，默认为ap-shanghai",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递的CLS所在日志集合名称，默认为 waf_post_logset",
+          "example": "waf-post-logset",
+          "member": "string",
+          "name": "LogsetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostCLSFlowResponse": {
+      "document": "CreatePostCLSFlow返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10346,6 +10412,43 @@
       ],
       "type": "object"
     },
+    "DescribePostCLSFlowsRequest": {
+      "document": "DescribePostCLSFlows请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostCLSFlowsResponse": {
+      "document": "DescribePostCLSFlows返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的投递流列表",
+          "example": "[{ \"FlowId\": 91}]",
+          "member": "PostCLSFlowInfo",
+          "name": "PostCLSFlows",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProtectionModesRequest": {
       "document": "DescribeProtectionModes请求参数结构体",
       "members": [
@@ -11630,6 +11733,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPostCLSFlowRequest": {
+      "document": "DestroyPostCLSFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递流的流ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPostCLSFlowResponse": {
+      "document": "DestroyPostCLSFlow返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -19352,6 +19491,92 @@
         }
       ],
       "type": "object"
+    },
+    "PostCLSFlowInfo": {
+      "document": "CKafka投递流",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递流唯一ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志 2-攻击日志",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 0-为关闭 1-为启用",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS所在区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集合名称",
+          "example": "waf-post-logset",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集合ID",
+          "example": "59a61f1a-d606-4a17-8eaf-0881cb656887",
+          "member": "string",
+          "name": "LogsetID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志主题名称",
+          "example": "waf-post-logtopic",
+          "member": "string",
+          "name": "LogTopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集合ID",
+          "example": "59a61f1a-d606-4a17-8eaf-0881cb656887",
+          "member": "string",
+          "name": "LogTopicID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProductInfo": {
       "document": "waf产品",

@@ -5983,7 +5983,7 @@
         },
         {
           "disabled": false,
-          "document": "防护级别：0基础版，1专业版，2旗舰版，3普惠版",
+          "document": "防护级别：0基础版，1专业版，2旗舰版，3轻量版",
           "example": "1",
           "member": "uint64",
           "name": "ProtectLevel",
@@ -14584,7 +14584,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式： 0按周，1按天",
+          "document": "备份模式： 0按周，1按天，2不备份",
           "example": "1",
           "member": "uint64",
           "name": "BackupType",
@@ -29823,6 +29823,24 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件创建起始时间",
+          "example": "2025-02-10 16:00:01",
+          "member": "string",
+          "name": "CreateBeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件创建结束时间",
+          "example": "2025-02-10 16:00:01",
+          "member": "string",
+          "name": "CreateEndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -29833,7 +29851,7 @@
         {
           "disabled": false,
           "document": "事件列表",
-          "example": "[             {                 \"Id\": 10001,                 \"CreateTime\": \"2024-05-14 11:01:02\",                 \"ModifyTime\": \"2024-07-19 17:59:03\",                 \"Quuid\": \"1c26308c-5493-4eaf-a817-112ec25f4991\",                 \"Uuid\": \"1c26308c-5493-4eaf-a817-112ec25f4991\",                 \"Status\": 2,                 \"BaitFilePath\": \"/home/.yjfile/121hcXh.doc\",                 \"FilePath\": \"/usr/bin/bash\",                 \"FileMd5\": \"708c8760385810080c4d17fa84d325ca\",                 \"FileSize\": 964536,                 \"Pid\": 32254,                 \"PidParam\": \"bash -c echo \\\"Csip data test\\\" >> /home/.yjfile/121hcXh.doc  1>&2\",                 \"Type\": 0,                 \"PsTree\": \"W3sicGlkIjozMjI1NCwiZXhlIjoiL3Vzci9iaW4vYmFzaCIsImNtZGxpbmUiOiJiYXNoIC1jIGVjaG8gXCJDc2lwIGRhdGEgdGVzdFwiIFx1MDAzZVx1MDAzZSAvaG9tZS8ueWpmaWxlLzEyMWhjWGguZG9jICAxXHUwMDNlXHUwMDI2MiIsImFjY291bnQiOiIwOjAiLCJzdGFydF90aW1lIjoxNzE1NjU1NjYyLCJleGVfcGVybSI6Ii1yd3hyLXhyLXgiLCJleGVfbXRpbWUiOjE1ODU3MDc0NTEsInNlc3Npb25pZCI6MzIyNTQsInNzaF9zb3VyY2UiOiIxMTMuMTA4Ljc3LjUzOjM5NjIyIiwic3NoX3NlcnZpY2UiOiIxNzIuMTYuNDkuMTA0OjIyIn0seyJwaWQiOjMyMjUyLCJleGUiOiIvdXNyL3NiaW4vc3NoZCIsImNtZGxpbmUiOiIvdXNyL3NiaW4vc3NoZCAtRCAtUiIsImFjY291bnQiOiIwOjAiLCJzdGFydF90aW1lIjoxNzE1NjU1NjYxLCJleGVfcGVybSI6Ii1yd3hyLXhyLXgiLCJleGVfbXRpbWUiOjE2OTExNjQ4NTIsInNlc3Npb25pZCI6MzIyNTJ9XQ==\",                 \"ProcessStartTime\": \"2024-05-14 11:01:02\",                 \"InstanceId\": \"ins-qwea\",                 \"HostName\": \"机器名称\",                 \"StrategyId\": 10001,                 \"StrategyName\": \"测试勿动\",                 \"HostIp\": \"1.1.1.1\",                 \"WanIp\": \"1.1.1.1\",                 \"SnapshotNum\": 45             }         ]",
+          "example": "[             {                 \"Id\": 10001,                 \"CreateTime\": \"2024-05-14 11:01:02\"            }         ]",
           "member": "RansomDefenseEvent",
           "name": "List",
           "output_required": true,
@@ -42441,6 +42459,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -44368,7 +44396,7 @@
         },
         {
           "disabled": false,
-          "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
+          "document": "防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
@@ -44888,7 +44916,7 @@
         },
         {
           "disabled": false,
-          "document": "防护版本 BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版.",
+          "document": "防护版本 BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版.",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
@@ -49357,7 +49385,7 @@
         },
         {
           "disabled": false,
-          "document": "机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版",
+          "document": "机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版",
           "example": "1",
           "member": "uint64",
           "name": "PayVersion",
@@ -49504,7 +49532,7 @@
         {
           "disabled": false,
           "document": "攻击数据包",
-          "example": "POST /wls-wsat/CoordinatorPortType HTTP/1.1\r\nX-Stgw-Time: 1730212752.801\r\nHost: h2.lghd111.com\r\nX-Client-Proto: https\r\nX-Forwarded-Proto: https\r\nX-Client-Proto-Ver: HTTP/1.1\r\nX-Real-IP: 180.184.132.93\r\nX-Forwarded-For: 223.160.168.205, 180.184.132.93\r\nConnection: keep-alive\r\nContent-Length: 602131\r\nX-Bd-Tlb-Waf-Token: 760b7cc634ab0dc34e478204cbf9d5d7\r\nUser-Agent: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.2309.372 Safari/537.36\r\nCmd: whoami\r\nContent-Type: text/xml\r\nAccept-Encoding: gzip\r\nX-Client-Scheme: https\r\nX-Real-Port: 59809\r\nX-Waf-RequestId: 68f116341c0029caf481ddf6cec16bd1\r\nX-Waf-Account-Id: 2102099106\r\nX-TLB-Cluster: antiddos_shanghai1\r\nX-TLB-Server-Addr: 192.168.0.173\r\nX-TT-LOGID: 20241029223911B8C44E08BB016F27DA08\r\n\r\n<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<soapenv:Envelope\n    xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n    xmlns:wsa=\"http://www.w3.org/2005/08/addressing\"\n    xmlns:asy=\"http://www.bea.com/async/AsyncResponseService\">\n    <soapenv:Header>\n        <wsa:Action/>\n        <wsa:RelatesTo/>\n        <asy:onAsyncDelivery/>\n        <work:WorkContext\n            xmlns:work=\"http://bea.com/2004/06/soap/workarea/\">\n            <class>\n                <string>oracle.toplink.internal.sessions.UnitOfWorkChangeSet</string>\n                <void>\n                    <array class=\"byte\" length=\"5010\">\n                        <void index=\"0\">\n                            <byte>-84</byte>\n                        </void>\n                        <void index=\"1\">\n                            <byte>-19</byte>\n                        </void>\n                        <void index=\"2\">\n                            <byte>0</byte>\n                        </void>\n                        <void index=\"3\">\n                            <byte>5</byte>\n                        </void>\n                        <void index=\"4\">\n                            <byte>115</byte>\n                        </void>\n                        <void index=\"5\">\n                            <byte>114</byte>\n                        </void>\n                        <void index=\"6\">\n                            <byte>0</byte>\n                        </void>\n                        <void index=\"7\">\n                            <byte>23</byte>\n                        </void>\n                        <void index=\"8\">\n                            <byte>106</byte>\n                        </void>\n                        <void index=\"9\">\n                            <byte>97</byte>\n                        </void>\n                        <void index=\"10\">\n                            <byte>118</byte>\n                        </void>\n                        <void index=\"11\">\n                            <byte>97</byte>\n                        </vo****",
+          "example": "POST /wls-wsat/CoordinatorPortType HTTP/1.1X-Stgw-Time: 1730212752.801Host: h2.lghd111.comX-Client-Proto: httpsX-Forwarded-Proto: httpsX-Client-Proto-Ver: HTTP/1.1X-Real-IP: 180.184.132.93X-Forwarded-For: 223.160.168.205",
           "member": "string",
           "name": "NetPayload",
           "output_required": true,
@@ -49573,7 +49601,7 @@
         },
         {
           "disabled": false,
-          "document": "机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版",
+          "document": "机器付费版本，0 基础版，1专业版，2旗舰版，3轻量版",
           "example": "1",
           "member": "uint64",
           "name": "PayVersion",
@@ -49624,7 +49652,7 @@
         {
           "disabled": false,
           "document": "进程树,需要用base64 解码",
-          "example": "W3sicGlkIjoyODc0MCwiZXhlIjoiL3Vzci9iaW4vY3VybCIsImFjY291bnQiOiIwOjAiLCJjbWRsaW5lIjoiY3VybCAtcyAtTCBodHRwczovL2Rvd25sb2FkLmMzcG9vbC5vcmcveG1yaWdfc2V0dXAvcmF3L21hc3Rlci91bmluc3RhbGxfYzNwb29sX21pbmVyLnNoIiwic3NoX3NlcnZpY2UiOiIxMC4xMC42LjE0OjIyIiwic3NoX3NvdXJjZSI6IjE4My4xNC4yOS42NTozMDM4MyIsInN0YXJ0X3RpbWUiOjE3MzA0MzA1NTN9LHsicGlkIjoyODczNiwiZXhlIjoiL3Vzci9iaW4vYmFzaCIsImFjY291bnQiOiIwOjAiLCJjbWRsaW5lIjoiYmFzaCAuL3h4bC1qb2IvZXhlY3V0b3IvZ2x1ZXNvdXJjZS8xODc5NzhfMTE2OTg5NzkxMTEwLnNoIGRlbW9Kb2JIYW5kbGVyIDAgMCIsInNzaF9zZXJ2aWNlIjoiMTAuMTAuNi4xNDoyMiIsInNzaF9zb3VyY2UiOiIxODMuMTQuMjkuNjU6MzAzODMiLCJzdGFydF90aW1lIjoxNzMwNDMwNTUzfSx7InBpZCI6MTU5NjgsImV4ZSI6Ii9kYXRhL2pkay0xNy4wLjguMSsxL2Jpbi9qYXZhIiwiYWNjb3VudCI6IjA6MCIsImNtZGxpbmUiOiJqYXZhIC1YbXg1MTJtIC1YbXMxMjhtIC1Yc3M1MTJrIC1qYXIgLS1hZGQtb3BlbnMgamF2YS5iYXNlL2phdmEubGFuZy5yZWZsZWN0PUFMTC1VTk5BTUVEIC0tYWRkLW9wZW5zIGphdmEuYmFzZS9qYXZhLmxhbmc9QUxMLVVOTkFNRUQgL2RhdGEvYXBpL3Nob3AvY29uc3VtZXIvY29uc3VtZXItMS4wLjIuMi5qYXIiLCJzc2hfc2VydmljZSI6IjEwLjEwLjYuMTQ6MjIiLCJzc2hfc291cmNlIjoiMTgzLjE0LjI5LjY1OjMwMzgzIiwic3RhcnRfdGltZSI6MTczMDE4NTEyM30seyJwaWQiOjEsImV4ZSI6Ii91c3IvbGliL3N5c3RlbWQvc3lzdGVtZCIsImFjY291bnQiOiIwOjAiLCJjbWRsaW5lIjoiL3Vzci9saWIvc3lzdGVtZC9zeXN0ZW1kIC0tc3dpdGNoZWQtcm9vdCAtLXN5c3RlbSAtLWRlc2VyaWFsaXplIDIyIiwic3RhcnRfdGltZSI6MTcxNzA1NTg4****",
+          "example": "YW*jZA==",
           "member": "string",
           "name": "HostOpProcessTree",
           "output_required": false,
@@ -51328,7 +51356,7 @@
         },
         {
           "disabled": false,
-          "document": "备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除",
+          "document": "备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除",
           "example": "1",
           "member": "uint64",
           "name": "BackupStatus",
@@ -51871,7 +51899,7 @@
         },
         {
           "disabled": false,
-          "document": "备份模式： 0按周，1按天",
+          "document": "备份模式： 0按周，1按天，2不备份",
           "example": "0",
           "member": "uint64",
           "name": "BackupType",
@@ -52313,12 +52341,22 @@
         },
         {
           "disabled": false,
-          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版",
+          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版",
           "example": "1",
           "member": "uint64",
           "name": "HostVersion",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -52449,7 +52487,7 @@
         },
         {
           "disabled": false,
-          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版",
+          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版",
           "example": "0",
           "member": "uint64",
           "name": "HostVersion",
@@ -52464,6 +52502,16 @@
           "member": "string",
           "name": "StrategyName",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器所属专区类型 CVM 云服务器, BM 黑石, ECM 边缘计算, LH 轻量应用服务器 ,Other 混合云专区",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -58366,7 +58414,7 @@
         },
         {
           "disabled": false,
-          "document": "0 专业版,1 旗舰版,2 LH普惠版（仅限LH使用）,3  CVM普惠版（仅限CVM使用）",
+          "document": "0 专业版,1 旗舰版,2 LH轻量版（仅限LH使用）,3  CVM轻量版（仅限CVM使用）",
           "example": "1",
           "member": "int64",
           "name": "UpgradeType",
@@ -59168,7 +59216,7 @@
         },
         {
           "disabled": false,
-          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版",
+          "document": "版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版",
           "example": "1",
           "member": "uint64",
           "name": "HostVersion",
