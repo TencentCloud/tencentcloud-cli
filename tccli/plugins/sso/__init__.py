@@ -36,7 +36,17 @@ _spec = {
         },
     },
     "objects": {
-        "loginRequest": {"members": []},
+        "loginRequest": {
+            "members": [
+                {
+                    "name": "duration",
+                    "member": "int64",
+                    "type": "int64",
+                    "required": False,
+                    "document": "duration for credential",
+                },
+            ],
+        },
         "loginResponse": {"members": []},
         "logoutRequest": {"members": []},
         "logoutResponse": {"members": []},
