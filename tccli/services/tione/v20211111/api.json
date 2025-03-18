@@ -1131,6 +1131,24 @@
           "name": "InstancePerReplicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "30",
+          "example": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "member": "int64",
+          "name": "TerminationGracePeriodSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "[\"sleep\",\"60\"]",
+          "example": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "member": "string",
+          "name": "PreStopCommand",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6420,6 +6438,24 @@
           "name": "InstancePerReplicas",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "30",
+          "example": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "member": "int64",
+          "name": "TerminationGracePeriodSeconds",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "[\"sleep\",\"60\"]",
+          "example": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "member": "string",
+          "name": "PreStopCommand",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8771,7 +8807,7 @@
         {
           "disabled": false,
           "document": "镜像信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "output_required": true,
@@ -8793,7 +8829,7 @@
         {
           "disabled": false,
           "document": "资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ResourceInfo",
           "name": "Resources",
           "output_required": true,
@@ -8815,7 +8851,7 @@
         {
           "disabled": false,
           "document": "模型信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ModelInfo",
           "name": "ModelInfo",
           "output_required": true,
@@ -8837,7 +8873,7 @@
         {
           "disabled": false,
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
           "output_required": true,
@@ -8859,7 +8895,7 @@
         {
           "disabled": false,
           "document": "hpa配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "HorizontalPodAutoscaler",
           "name": "HorizontalPodAutoscaler",
           "output_required": true,
@@ -8892,7 +8928,7 @@
         {
           "disabled": false,
           "document": "资源总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ResourceInfo",
           "name": "ResourceTotal",
           "output_required": true,
@@ -9108,6 +9144,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的优雅退出时限。单位为秒，默认值为30，最小为1",
+          "example": "30",
+          "member": "int64",
+          "name": "TerminationGracePeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束",
+          "example": "[\"sleep\",\"60\"]",
+          "member": "string",
+          "name": "PreStopCommand",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

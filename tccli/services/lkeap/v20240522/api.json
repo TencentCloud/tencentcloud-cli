@@ -641,7 +641,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为1",
+          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为0",
           "example": "1",
           "member": "string",
           "name": "TableResultType",
@@ -650,7 +650,7 @@
         },
         {
           "disabled": false,
-          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为3（返回全文MD + 每一页的OCR原始Json）\n\n",
+          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为0",
           "example": "3",
           "member": "string",
           "name": "ResultType",

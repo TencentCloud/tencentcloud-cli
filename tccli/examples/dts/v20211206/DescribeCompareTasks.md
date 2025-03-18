@@ -53,7 +53,10 @@ Output:
                             "Views": null
                         }
                     ],
-                    "ObjectMode": "partial"
+                    "ObjectMode": "partial",
+                    "AdvancedObjects": [
+                        "index"
+                    ]
                 },
                 "CreatedAt": "2022-07-11 17:21:02",
                 "FinishedAt": "2022-07-11 17:24:54",

@@ -37,7 +37,7 @@ Output:
             {
                 "DatabaseName": "dts",
                 "ObjectsType": 0,
-                "TableNames": null
+                "TableNames": []
             }
         ],
         "UniqSubnetId": "subnet-4p1hpsj8",

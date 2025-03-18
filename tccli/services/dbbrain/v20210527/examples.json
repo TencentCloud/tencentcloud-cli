@@ -8,12 +8,28 @@
         "title": "添加邮件发送联系人信息"
       }
     ],
+    "CancelDBAutonomyAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelDBAutonomyAction\n<公共请求参数>\n\n{\n    \"ActionId\": 421,\n    \"InstanceId\": \"crs-1p8z8saa\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b583647-3013-4d38-ae17-a3a95fe6b219\"\n    }\n}",
+        "title": "终止自治任务（单次）"
+      }
+    ],
     "CancelKillTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelKillTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Product\": \"mysql\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"09299b00-b878-11eb-b0b4-959ba47770cf\"\n    }\n}",
         "title": "终止中断会话任务"
+      }
+    ],
+    "CancelRedisBigKeyAnalysisTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelRedisBigKeyAnalysisTasks\n<公共请求参数>\n\n{\n    \"AsyncRequestIds\": [\n        7453279\n    ],\n    \"InstanceId\": \"crs-knx3av0w\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49f26a00-0fb5-4c87-95d5-e82b601149f0\",\n        \"Status\": 0\n    }\n}",
+        "title": "终止大Key任务"
       }
     ],
     "CloseAuditService": [
@@ -104,6 +120,14 @@
         "title": "创建实例SQL限流任务"
       }
     ],
+    "CreateUserAutonomyProfile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserAutonomyProfile\n<公共请求参数>\n\n{\n    \"ProfileType\": \"RedisAutoScaleUp\",\n    \"InstanceId\": \"crs-k1gjspdk\",\n    \"Product\": \"redis\",\n    \"ProfileInfo\": \"{\\n        \\\"Strategy\\\": \\\"Threshold\\\",\\n        \\\"Enabled\\\": true,\\n        \\\"MemoryUpperLimit\\\": 512,\\n        \\\"ThresholdRule\\\": {\\n            \\\"Metric\\\": \\\"mem_util\\\",\\n            \\\"Threshold\\\": 70,\\n            \\\"Duration\\\": 600\\n        }\\n    }\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d98451b3-bff6-4ce8-9972-1e770534cac9\"\n    }\n}",
+        "title": "开启自治功能"
+      }
+    ],
     "DeleteAuditLogFile": [
       {
         "document": "删除审计日志文件",
@@ -182,6 +206,22 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagReportTasks\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsql-cerses\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"8ca4d610-dcf3-11ed-9a8b-393823b6fd49\",\n        \"Items\": [\n            {\n                \"Status\": \"success\",\n                \"AsyncRequestId\": 173,\n                \"ErrMsg\": \"\",\n                \"CreateTime\": \"2023-04-17 15:37:55\",\n                \"FileName\": \"tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz\",\n                \"FileSize\": 0.326,\n                \"DownloadUrl\": \"https://dbbrain-gz-xxx.cos.ap-guangzhou.tencentcos.cn/tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkMfJhxjhBTahcIaNgNsBKDwZx74pmsY3%2638be613391610\",\n                \"Progress\": 22,\n                \"FinishTime\": \"2024-07-23 16:05:23\"\n            }\n        ]\n    }\n}",
         "title": "查询审计日志文件列表"
+      }
+    ],
+    "DescribeDBAutonomyActions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBAutonomyActions\n<公共请求参数>\n\n{\n    \"EventId\": 37,\n    \"InstanceId\": \"crs-1p8z8saa\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Actions\": [\n            {\n                \"ActionId\": 422,\n                \"CreateTime\": \"2025-03-14 11:50:00\",\n                \"EventId\": 37,\n                \"ExpireTime\": 0,\n                \"FinishTime\": \"2025-03-14 11:50:00\",\n                \"Reason\": \"指标\\\"mem_util\\\"大于50%持续超过15分钟\",\n                \"Status\": \"TERMINATED\",\n                \"TriggerTime\": \"2025-03-14 11:50:00\",\n                \"Type\": \"RedisAutoScaleUp\",\n                \"UpdateTime\": \"2025-03-14 11:50:00\"\n            },\n            {\n                \"ActionId\": 421,\n                \"CreateTime\": \"2025-03-14 11:35:00\",\n                \"EventId\": 37,\n                \"ExpireTime\": 0,\n                \"FinishTime\": \"2025-03-14 11:35:00\",\n                \"Reason\": \"指标\\\"mem_util\\\"大于50%持续超过15分钟\",\n                \"Status\": \"TERMINATED\",\n                \"TriggerTime\": \"2025-03-14 11:35:00\",\n                \"Type\": \"RedisAutoScaleUp\",\n                \"UpdateTime\": \"2025-03-14 11:35:00\"\n            },\n            {\n                \"ActionId\": 420,\n                \"CreateTime\": \"2025-03-14 11:16:00\",\n                \"EventId\": 37,\n                \"ExpireTime\": 0,\n                \"FinishTime\": \"2025-03-14 11:20:00\",\n                \"Reason\": \"指标\\\"mem_util\\\"大于50%持续超过15分钟\",\n                \"Status\": \"CANCELLED\",\n                \"TriggerTime\": \"2025-03-14 11:16:00\",\n                \"Type\": \"RedisAutoScaleUp\",\n                \"UpdateTime\": \"2025-03-14 11:16:00\"\n            },\n            {\n                \"ActionId\": 419,\n                \"CreateTime\": \"2025-03-14 11:01:00\",\n                \"EventId\": 37,\n                \"ExpireTime\": 0,\n                \"FinishTime\": \"2025-03-14 11:01:00\",\n                \"Reason\": \"指标\\\"mem_util\\\"大于50%持续超过15分钟\",\n                \"Status\": \"TERMINATED\",\n                \"TriggerTime\": \"2025-03-14 11:01:00\",\n                \"Type\": \"RedisAutoScaleUp\",\n                \"UpdateTime\": \"2025-03-14 11:01:00\"\n            },\n            {\n                \"ActionId\": 418,\n                \"CreateTime\": \"2025-03-14 10:46:00\",\n                \"EventId\": 37,\n                \"ExpireTime\": 0,\n                \"FinishTime\": \"2025-03-14 10:46:00\",\n                \"Reason\": \"指标\\\"mem_util\\\"大于50%持续超过15分钟\",\n                \"Status\": \"TERMINATED\",\n                \"TriggerTime\": \"2025-03-14 10:46:00\",\n                \"Type\": \"RedisAutoScaleUp\",\n                \"UpdateTime\": \"2025-03-14 10:46:00\"\n            }\n        ],\n        \"RequestId\": \"6ae91539-89e6-4b80-be25-cfc3cd2714f3\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "查询自治事件任务列表"
+      }
+    ],
+    "DescribeDBAutonomyEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBAutonomyEvents\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"InstanceId\": \"crs-1p8z8saa\",\n    \"StartTime\": \"2025-03-13T11:11:37+08:00\",\n    \"EndTime\": \"2025-03-14T11:11:37+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"CreateTime\": 1741920360000,\n                \"EventId\": 37,\n                \"FinishTime\": 172800000,\n                \"LastTriggerTime\": 1741924080000,\n                \"Reason\": \"内存利用率过高\",\n                \"Status\": \"RUNNING\",\n                \"TriggerTime\": 1741919460000,\n                \"Type\": \"RedisAutoScale\",\n                \"UpdateTime\": 1741924080000\n            },\n            {\n                \"CreateTime\": 1741869480000,\n                \"EventId\": 36,\n                \"FinishTime\": 1741919334000,\n                \"LastTriggerTime\": 1741919280000,\n                \"Reason\": \"内存利用率过高\",\n                \"Status\": \"TERMINATED\",\n                \"TriggerTime\": 1741868880000,\n                \"Type\": \"RedisAutoScale\",\n                \"UpdateTime\": 1741919334000\n            },\n            {\n                \"CreateTime\": 1741868460000,\n                \"EventId\": 35,\n                \"FinishTime\": 1741868520000,\n                \"LastTriggerTime\": 1741868460000,\n                \"Reason\": \"内存利用率过高\",\n                \"Status\": \"FINISHED\",\n                \"TriggerTime\": 1741867860000,\n                \"Type\": \"RedisAutoScale\",\n                \"UpdateTime\": 1741868520000\n            }\n        ],\n        \"RequestId\": \"ef7c643f-7644-4962-9449-b17c6ef6f7c5\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询自治事件列表"
       }
     ],
     "DescribeDBDiagEvent": [
@@ -432,6 +472,14 @@
         "title": "获取Top表的空间统计信息"
       }
     ],
+    "DescribeUserAutonomyProfile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAutonomyProfile\n<公共请求参数>\n\n{\n    \"ProfileType\": \"RedisAutoScaleUp\",\n    \"InstanceId\": \"crs-1p8z8saa\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProfileInfo\": {\n            \"Enabled\": true,\n            \"MemoryUpperLimit\": 512,\n            \"ThresholdRule\": {\n                \"Duration\": 900,\n                \"Metric\": \"mem_util\",\n                \"Threshold\": 50\n            },\n            \"Uin\": \"100013717858\"\n        },\n        \"ProfileType\": \"RedisAutoScaleUp\",\n        \"RequestId\": \"18c0c4ad-5f14-4609-9796-a0fb07e85918\",\n        \"UpdateTime\": \"2025-03-14 10:32:25\"\n    }\n}",
+        "title": "查询自治功能开关情况"
+      }
+    ],
     "DescribeUserSqlAdvice": [
       {
         "document": "",
@@ -490,6 +538,14 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=ModifySqlFilters\n&InstanceId=cdb-test\n&FilterIds.0=1433288\n&Status=TERMINATED\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\"\n    }\n}",
         "title": "修改SQL限流任务状态"
+      }
+    ],
+    "ModifyUserAutonomyProfile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserAutonomyProfile\n<公共请求参数>\n\n{\n    \"ProfileType\": \"RedisAutoScaleUp\",\n    \"InstanceId\": \"crs-1p8z8saa\",\n    \"Product\": \"redis\",\n    \"NewProfileInfo\": \"\\t{\\n    \\\"MemoryUpperLimit\\\": 512,\\n    \\\"Version\\\": 0,\\n    \\\"Enabled\\\": true,\\n    \\\"Uin\\\": \\\"100013717858\\\",\\n    \\\"ThresholdRule\\\": {\\n        \\\"Duration\\\": 900,\\n        \\\"Metric\\\": \\\"mem_util\\\",\\n        \\\"Threshold\\\": 50\\n    }\\n}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1ed2569-7c73-4ed5-bec8-4aab9f9b0a77\"\n    }\n}",
+        "title": "关闭自治功能（实例级）"
       }
     ],
     "OpenAuditService": [

@@ -49,6 +49,13 @@
       "output": "CancelAssignTWeCallLicenseResponse",
       "status": "online"
     },
+    "ChangeP2PRoute": {
+      "document": "p2p路线切换",
+      "input": "ChangeP2PRouteRequest",
+      "name": "p2p线路切换",
+      "output": "ChangeP2PRouteResponse",
+      "status": "online"
+    },
     "CheckFirmwareUpdate": {
       "document": "本接口（CheckFirmwareUpdate）用于查询设备可升级固件版本",
       "input": "CheckFirmwareUpdateRequest",
@@ -567,6 +574,13 @@
       "output": "DescribeModelDefinitionResponse",
       "status": "online"
     },
+    "DescribeP2PRoute": {
+      "document": "当前p2p线路",
+      "input": "DescribeP2PRouteRequest",
+      "name": "查询当前P2P线路",
+      "output": "DescribeP2PRouteResponse",
+      "status": "online"
+    },
     "DescribePackageConsumeTask": {
       "document": "查询套餐消耗记录详情",
       "input": "DescribePackageConsumeTaskRequest",
@@ -831,6 +845,13 @@
       "input": "ListTopicPolicyRequest",
       "name": "获取Topic列表",
       "output": "ListTopicPolicyResponse",
+      "status": "online"
+    },
+    "ModifyApplication": {
+      "document": "更新应用信息",
+      "input": "ModifyApplicationRequest",
+      "name": "更新应用",
+      "output": "ModifyApplicationResponse",
       "status": "online"
     },
     "ModifyCloudStorageAIService": {
@@ -1925,6 +1946,51 @@
     },
     "CancelAssignTWeCallLicenseResponse": {
       "document": "CancelAssignTWeCallLicense返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeP2PRouteRequest": {
+      "document": "ChangeP2PRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "P2P线路",
+          "example": "1",
+          "member": "uint64",
+          "name": "RouteId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeP2PRouteResponse": {
+      "document": "ChangeP2PRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7763,6 +7829,52 @@
       ],
       "type": "object"
     },
+    "DescribeP2PRouteRequest": {
+      "document": "DescribeP2PRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeP2PRouteResponse": {
+      "document": "DescribeP2PRoute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前p2p线路",
+          "example": "1",
+          "member": "uint64",
+          "name": "RouteId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePackageConsumeTaskRequest": {
       "document": "DescribePackageConsumeTask请求参数结构体",
       "members": [
@@ -11267,6 +11379,292 @@
       ],
       "type": "object"
     },
+    "IotApplication": {
+      "document": "应用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "XX",
+          "member": "string",
+          "name": "IotAppID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "test",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用说明",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开发模式",
+          "example": "0",
+          "member": "int64",
+          "name": "DevMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "iOS 平台 AppKey",
+          "example": "45yrtg",
+          "member": "string",
+          "name": "IOSAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "iOS 平台 AppSecret",
+          "example": "45156faghthr",
+          "member": "string",
+          "name": "IOSAppSecret",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Android 平台 AppKey",
+          "example": "545gsrh",
+          "member": "string",
+          "name": "AndroidAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Android 平台 AppSecret",
+          "example": "irut905",
+          "member": "string",
+          "name": "AndroidAppSecret",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的产品列表，数据为：ProdcutID 数组 JSON 序列化后的字符串",
+          "example": "[]",
+          "member": "string",
+          "name": "Products",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-07-14T14:24:13+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "prj-t6le10pr",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信鸽推送APP ID",
+          "example": "45gdbvg8",
+          "member": "string",
+          "name": "PushSecretID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信鸽推送SECRET KEY",
+          "example": "32t7767ug",
+          "member": "string",
+          "name": "PushSecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "iOS平台推送环境",
+          "example": "drg",
+          "member": "string",
+          "name": "PushEnvironment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序平台 AppKey",
+          "example": "34r",
+          "member": "string",
+          "name": "MiniProgramAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序平台 AppSecret",
+          "example": "345t44 ",
+          "member": "string",
+          "name": "MiniProgramAppSecret",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用AccessID，TPNS全称为腾讯移动推送（Tencent Push Notification Service），详见：https://cloud.tencent.com/document/product/548",
+          "example": "g345tg4",
+          "member": "string",
+          "name": "TPNSiOSAccessID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用SecretKey",
+          "example": "34t5645g",
+          "member": "string",
+          "name": "TPNSiOSSecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用推送环境",
+          "example": "45tgv",
+          "member": "string",
+          "name": "TPNSiOSPushEnvironment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务Android应用AccessID",
+          "example": "g45ty",
+          "member": "string",
+          "name": "TPNSAndroidAccessID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务Android应用SecretKey",
+          "example": "45tg",
+          "member": "string",
+          "name": "TPNSAndroidSecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用所属地域，详细说明参见 ModifyApplication 同名入参。",
+          "example": "4t5g",
+          "member": "string",
+          "name": "TPNSiOSRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务Android应用所属地域，详细说明参见 ModifyApplication 同名入参。",
+          "example": "34r",
+          "member": "string",
+          "name": "TPNSAndroidRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自主短信配置APPID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1400222796",
+          "member": "string",
+          "name": "SelfSmsAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自主短信配置APPKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eacc64dcb0c225b47d885fd6fef608f7",
+          "member": "string",
+          "name": "SelfSmsAppKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自主短信配置签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云智能物联",
+          "member": "string",
+          "name": "SelfSmsSign",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自主短信配置模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "360226",
+          "member": "int64",
+          "name": "SelfSmsTemplateId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第三方小程序强提醒开关 0：关闭；1：开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WechatNotifyStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LicenseServiceNumInfo": {
       "document": "增值服务数量统计",
       "members": [
@@ -11818,6 +12216,169 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyApplicationRequest": {
+      "document": "ModifyApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "VJbAVRtnqQmX",
+          "member": "string",
+          "name": "IotAppID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "IoT_App",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用说明",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的产品",
+          "example": "[\"productID\"]",
+          "member": "string",
+          "name": "Products",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "信鸽推送APP ID",
+          "example": "PushSecretID",
+          "member": "string",
+          "name": "PushSecretID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "信鸽推送SECRET KEY",
+          "example": "PushSecretKey",
+          "member": "string",
+          "name": "PushSecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "iOS平台推送环境",
+          "example": "dev",
+          "member": "string",
+          "name": "PushEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用AccessID，TPNS全称为腾讯移动推送（Tencent Push Notification Service），详见：https://cloud.tencent.com/document/product/548",
+          "example": "TPNSiOSAccessID",
+          "member": "string",
+          "name": "TPNSiOSAccessID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用SecretKey",
+          "example": "TPNSiOSSecretKey",
+          "member": "string",
+          "name": "TPNSiOSSecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用推送环境",
+          "example": "dev",
+          "member": "string",
+          "name": "TPNSiOSPushEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务Android应用AccessID",
+          "example": "TPNSAndroidAccessID",
+          "member": "string",
+          "name": "TPNSAndroidAccessID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务Android应用SecretKey",
+          "example": "TPNSAndroidSecretKey",
+          "member": "string",
+          "name": "TPNSAndroidSecretKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务iOS应用所属地域，广州：ap-guangzhou，上海：ap-shanghai，中国香港：ap-hongkong，新加坡：ap-singapore。",
+          "example": "TPNSiOSRegion",
+          "member": "string",
+          "name": "TPNSiOSRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TPNS服务Android应用所属地域，广州：ap-guangzhou，上海：ap-shanghai，中国香港：ap-hongkong，新加坡：ap-singapore。",
+          "example": "TPNSAndroidRegion",
+          "member": "string",
+          "name": "TPNSAndroidRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TurnKey小程序托管",
+          "example": "1",
+          "member": "int64",
+          "name": "TurnKeySwitch",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationResponse": {
+      "document": "ModifyApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用信息",
+          "example": "无",
+          "member": "IotApplication",
+          "name": "Application",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCloudStorageAIServiceCallbackRequest": {
       "document": "ModifyCloudStorageAIServiceCallback请求参数结构体",

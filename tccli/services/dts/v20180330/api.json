@@ -847,7 +847,7 @@
           "example": "subs-58zcu8bax0",
           "member": "string",
           "name": "SubscribeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -857,7 +857,7 @@
           "example": "测试实例",
           "member": "string",
           "name": "SubscribeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -867,7 +867,7 @@
           "example": "dts-channel-C9rS58f2rFx11ZEZ",
           "member": "string",
           "name": "ChannelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -877,7 +877,7 @@
           "example": "mysql",
           "member": "string",
           "name": "Product",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -887,7 +887,7 @@
           "example": "cdb-forsubsc",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -897,7 +897,7 @@
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -907,7 +907,7 @@
           "example": "configured",
           "member": "string",
           "name": "SubsStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -917,7 +917,7 @@
           "example": "normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -927,7 +927,7 @@
           "example": "2019-12-20 14:59:07",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -937,7 +937,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "IsolateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -947,7 +947,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -957,7 +957,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "OfflineTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -967,7 +967,7 @@
           "example": "2019-12-19 16:23:45",
           "member": "string",
           "name": "ConsumeStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -977,7 +977,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -987,7 +987,7 @@
           "example": "192.168.1.143",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -997,7 +997,7 @@
           "example": "7507",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1007,7 +1007,7 @@
           "example": "vpc-fbg8gh1j",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1017,7 +1017,7 @@
           "example": "subnet-4p1hpsj8",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1027,7 +1027,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "SdkConsumedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1037,7 +1037,7 @@
           "example": "192.168.1.143",
           "member": "string",
           "name": "SdkHost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1047,7 +1047,7 @@
           "example": "3",
           "member": "int64",
           "name": "SubscribeObjectType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1057,7 +1057,7 @@
           "example": "无",
           "member": "SubscribeObject",
           "name": "SubscribeObjects",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1067,7 +1067,7 @@
           "example": "2019-12-20 18:06:26",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1077,29 +1077,29 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅实例的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅实例的标签",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标识,0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识,0-不自动续费，1-自动续费",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1107,7 +1107,7 @@
           "example": "txdts",
           "member": "string",
           "name": "SubscribeVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1117,7 +1117,7 @@
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2371,14 +2371,14 @@
         },
         {
           "disabled": false,
-          "document": "云联网ID，如：ccn-afp6kltc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网ID，如：ccn-afp6kltc",
           "example": "ccn-afp6kltc",
           "member": "string",
           "name": "CcnId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

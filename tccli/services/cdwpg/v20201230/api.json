@@ -603,7 +603,7 @@
         {
           "disabled": false,
           "document": "集群密码",
-          "example": "无",
+          "example": "\"cdw1234\"",
           "member": "string",
           "name": "AdminPassword",
           "required": true,
@@ -645,7 +645,7 @@
         {
           "disabled": false,
           "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "1123",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -665,7 +665,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "message",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -988,7 +988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1",
+          "document": "集群描述信息",
           "example": "无",
           "member": "SimpleInstanceInfo",
           "name": "SimpleInstanceInfo",
@@ -998,7 +998,7 @@
         },
         {
           "disabled": false,
-          "document": "1",
+          "document": "错误信息",
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",

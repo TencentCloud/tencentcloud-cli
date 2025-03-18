@@ -7,11 +7,25 @@
       "output": "AddUserContactResponse",
       "status": "online"
     },
+    "CancelDBAutonomyAction": {
+      "document": "自治中心-终止自治任务（单次）",
+      "input": "CancelDBAutonomyActionRequest",
+      "name": "终止自治任务（单次）",
+      "output": "CancelDBAutonomyActionResponse",
+      "status": "online"
+    },
     "CancelKillTask": {
       "document": "终止中断会话任务。",
       "input": "CancelKillTaskRequest",
       "name": "终止中断会话任务",
       "output": "CancelKillTaskResponse",
+      "status": "online"
+    },
+    "CancelRedisBigKeyAnalysisTasks": {
+      "document": "自治中心-终止自治任务（单次）",
+      "input": "CancelRedisBigKeyAnalysisTasksRequest",
+      "name": "终止大Key任务",
+      "output": "CancelRedisBigKeyAnalysisTasksResponse",
       "status": "online"
     },
     "CloseAuditService": {
@@ -91,6 +105,13 @@
       "output": "CreateSqlFilterResponse",
       "status": "online"
     },
+    "CreateUserAutonomyProfile": {
+      "document": "自治中心-终止自治任务（单次）；注意：接口需要加白名单。",
+      "input": "CreateUserAutonomyProfileRequest",
+      "name": "开启自治功能",
+      "output": "CreateUserAutonomyProfileResponse",
+      "status": "online"
+    },
     "DeleteAuditLogFile": {
       "document": "用于删除云数据库实例的审计日志文件。",
       "input": "DeleteAuditLogFileRequest",
@@ -159,6 +180,20 @@
       "input": "DescribeAuditLogFilesRequest",
       "name": "查询审计日志文件",
       "output": "DescribeAuditLogFilesResponse",
+      "status": "online"
+    },
+    "DescribeDBAutonomyActions": {
+      "document": "自治中心-终止自治任务（单次）",
+      "input": "DescribeDBAutonomyActionsRequest",
+      "name": "查询自治事件任务列表",
+      "output": "DescribeDBAutonomyActionsResponse",
+      "status": "online"
+    },
+    "DescribeDBAutonomyEvents": {
+      "document": "自治中心-终止自治任务（单次）",
+      "input": "DescribeDBAutonomyEventsRequest",
+      "name": "查询自治事件列表",
+      "output": "DescribeDBAutonomyEventsResponse",
       "status": "online"
     },
     "DescribeDBDiagEvent": {
@@ -378,6 +413,13 @@
       "output": "DescribeTopSpaceTablesResponse",
       "status": "online"
     },
+    "DescribeUserAutonomyProfile": {
+      "document": "自治中心-终止自治任务（单次）；注意： 接口调用需要加白名单。",
+      "input": "DescribeUserAutonomyProfileRequest",
+      "name": "查询自治功能配置",
+      "output": "DescribeUserAutonomyProfileResponse",
+      "status": "online"
+    },
     "DescribeUserSqlAdvice": {
       "document": "获取SQL优化建议。【产品用户回馈，此接口限免开放，后续将并入dbbrain专业版】",
       "input": "DescribeUserSqlAdviceRequest",
@@ -418,6 +460,13 @@
       "input": "ModifySqlFiltersRequest",
       "name": "更改实例限流任务状态",
       "output": "ModifySqlFiltersResponse",
+      "status": "online"
+    },
+    "ModifyUserAutonomyProfile": {
+      "document": "自治中心-终止自治任务（单次）；注意：接口需要加白名单。",
+      "input": "ModifyUserAutonomyProfileRequest",
+      "name": "修改自治功能（实例级）",
+      "output": "ModifyUserAutonomyProfileResponse",
       "status": "online"
     },
     "OpenAuditService": {
@@ -1145,6 +1194,309 @@
       ],
       "usage": "in"
     },
+    "AutonomyActionVo": {
+      "document": "redis自治事件任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治任务ID。",
+          "example": "2",
+          "member": "int64",
+          "name": "ActionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治事件ID。",
+          "example": "2",
+          "member": "int64",
+          "name": "EventId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型：支持RedisAutoScaleUp",
+          "example": "RedisAutoScaleUp",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务触发时间。",
+          "example": "2025-03-12 00:00:00",
+          "member": "string",
+          "name": "TriggerTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务创建时间。",
+          "example": "2025-03-12 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务更新时间",
+          "example": "2025-03-12 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务完成时间。",
+          "example": "2025-03-12 00:00:00",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余时间，单位：秒。",
+          "example": "100",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发原因。",
+          "example": "指标\"cpu_limit\"大于10s持续超过15分钟",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务状态：支持 RUNNING，FINISHED，TERMINATED，CANCELLED",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AutonomyEventVo": {
+      "document": "自治事件详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治事件ID。",
+          "example": "2",
+          "member": "int64",
+          "name": "EventId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治事件类型：支持RunningAutoRecovery，RedisAutoScale",
+          "example": "RedisAutoScale",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治事件状态：支持 RUNNING，FINISHED，TERMINATED",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发原因。\t",
+          "example": "指标\"cpu_limit\"大于10s持续超过15分钟\t",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务触发时间。",
+          "example": "1741783246000",
+          "member": "int64",
+          "name": "TriggerTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务最后触发时间。",
+          "example": "1741783246000",
+          "member": "int64",
+          "name": "LastTriggerTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务创建时间。",
+          "example": "1741783246000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务更新时间。",
+          "example": "1741783246000",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治任务完成时间；非结束状态的时候，该值无意义。",
+          "example": "1741783246000",
+          "member": "int64",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AutonomyUserProfileInfo": {
+      "document": "自治用户配置详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启自治。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户Uin。",
+          "example": "10098344882",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存上限。",
+          "example": "10",
+          "member": "int64",
+          "name": "MemoryUpperLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标阈值规则。",
+          "example": "无",
+          "member": "MetricThreshold",
+          "name": "ThresholdRule",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治功能类型。",
+          "example": "RedisAutoScaleUp",
+          "member": "string",
+          "name": "EnabledItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CancelDBAutonomyActionRequest": {
+      "document": "CancelDBAutonomyAction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治任务ID。",
+          "example": "12",
+          "member": "int64",
+          "name": "ActionId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelDBAutonomyActionResponse": {
+      "document": "CancelDBAutonomyAction返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CancelKillTaskRequest": {
       "document": "CancelKillTask请求参数结构体",
       "members": [
@@ -1179,6 +1531,61 @@
           "member": "int64",
           "name": "Status",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelRedisBigKeyAnalysisTasksRequest": {
+      "document": "CancelRedisBigKeyAnalysisTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治任务ID。",
+          "example": "[12,18]",
+          "member": "int64",
+          "name": "AsyncRequestIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelRedisBigKeyAnalysisTasksResponse": {
+      "document": "CancelRedisBigKeyAnalysisTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终止大Key任务结果；0-成功。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2046,6 +2453,60 @@
       ],
       "type": "object"
     },
+    "CreateUserAutonomyProfileRequest": {
+      "document": "CreateUserAutonomyProfile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置类型，为需要配置的功能枚举值，目前包含一下枚举值：AutonomyGlobal（自治功能全局配置）、RedisAutoScaleUp（Redis自治扩容配置）",
+          "example": "RedisAutoScaleUp",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自治功能相关配置，标准JSON字符串格式。",
+          "example": "{         \"Strategy\": \"Threshold\",         \"Enabled\": true,         \"MemoryUpperLimit\": 512,         \"ThresholdRule\": {             \"Metric\": \"mem_util\",             \"Threshold\": 70,             \"Duration\": 600         }     }",
+          "member": "string",
+          "name": "ProfileInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserAutonomyProfileResponse": {
+      "document": "CreateUserAutonomyProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAuditLogFileRequest": {
       "document": "DeleteAuditLogFile请求参数结构体",
       "members": [
@@ -2659,6 +3120,163 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBAutonomyActionsRequest": {
+      "document": "DescribeDBAutonomyActions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件ID。",
+          "example": "12",
+          "member": "int64",
+          "name": "EventId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBAutonomyActionsResponse": {
+      "document": "DescribeDBAutonomyActions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治事件总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治事件列表。",
+          "example": "无",
+          "member": "AutonomyActionVo",
+          "name": "Actions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBAutonomyEventsRequest": {
+      "document": "DescribeDBAutonomyEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。",
+          "example": "2015-03-12 00:00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。",
+          "example": "2015-03-12 00:00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，默认值为20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBAutonomyEventsResponse": {
+      "document": "DescribeDBAutonomyEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自治事件列表总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治事件列表。",
+          "example": "无",
+          "member": "AutonomyEventVo",
+          "name": "Events",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5552,6 +6170,81 @@
       ],
       "type": "object"
     },
+    "DescribeUserAutonomyProfileRequest": {
+      "document": "DescribeUserAutonomyProfile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置类型，为需要配置的功能枚举值，目前包含一下枚举值：AutonomyGlobal（自治功能全局配置）、RedisAutoScaleUp（Redis自治扩容配置）。",
+          "example": "redis_mo",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAutonomyProfileResponse": {
+      "document": "DescribeUserAutonomyProfile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置类型，为需要配置的功能枚举值，目前包含一下枚举值：AutonomyGlobal（自治功能全局配置）、RedisAutoScaleUp（Redis自治扩容配置）。",
+          "example": "AutonomyGlobal",
+          "member": "string",
+          "name": "ProfileType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。",
+          "example": "2025-03-12 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自治用户配置。",
+          "example": "无",
+          "member": "AutonomyUserProfileInfo",
+          "name": "ProfileInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserSqlAdviceRequest": {
       "document": "DescribeUserSqlAdvice请求参数结构体",
       "members": [
@@ -6906,6 +7599,42 @@
       ],
       "usage": "both"
     },
+    "MetricThreshold": {
+      "document": "自治指标阈值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标。",
+          "example": "cpu",
+          "member": "string",
+          "name": "Metric",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "阈值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Threshold",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间间隔。",
+          "example": "5",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAlarmPolicyRequest": {
       "document": "ModifyAlarmPolicy请求参数结构体",
       "members": [
@@ -7212,6 +7941,60 @@
     },
     "ModifySqlFiltersResponse": {
       "document": "ModifySqlFilters返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserAutonomyProfileRequest": {
+      "document": "ModifyUserAutonomyProfile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置类型，为需要配置的功能枚举值，目前包含一下枚举值：AutonomyGlobal（自治功能全局配置）、RedisAutoScaleUp（Redis自治扩容配置）",
+          "example": "RedisAutoScaleUp",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实列ID。",
+          "example": "crs-qtmkik3e",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自治功能相关配置，标准JSON字符串格式。",
+          "example": "{     \"MemoryUpperLimit\": 512,     \"Version\": 0,     \"Enabled\": true,     \"Uin\": \"100013717858\",     \"ThresholdRule\": {         \"Duration\": 900,         \"Metric\": \"mem_util\",         \"Threshold\": 50     } }",
+          "member": "string",
+          "name": "NewProfileInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserAutonomyProfileResponse": {
+      "document": "ModifyUserAutonomyProfile返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

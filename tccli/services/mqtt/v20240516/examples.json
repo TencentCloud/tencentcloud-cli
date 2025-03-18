@@ -51,8 +51,8 @@
     "CreateInstance": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceType\": \"BASIC\",\n    \"Name\": \"instance-1\",\n    \"SkuCode\": \"basic_1k\",\n    \"Remark\": \"this is remark\",\n    \"VpcList\": [\n        {\n            \"VpcId\": \"vpc-9a5wnirv\",\n            \"SubnetId\": \"subnet-0tw6tlfi\"\n        }\n    ],\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"11111111\"\n        }\n    ]\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"02107c9d-cbea-418c-bafc-740300fdefad\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceType\": \"BASIC\",\n    \"Name\": \"instance-1\",\n    \"SkuCode\": \"basic_1k\",\n    \"Remark\": \"this is remark\",\n    \"VpcList\": [\n        {\n            \"VpcId\": \"vpc-9a5wnirv\",\n            \"SubnetId\": \"subnet-0tw6tlfi\"\n        }\n    ],\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"remark\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"02107c9d-c1e2-418c-bafc-740300fdefad\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -171,15 +171,9 @@
     "DescribeAuthenticator": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTAuthenticator\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-2vnk55xv\",\n    \"Type\": \"JWKS\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Authenticators\": [\n            {\n                \"Config\": \"{\\\"endpoint\\\":\\\"1.2.3.4\\\",\\\"refreshInterval\\\":10}\",\n                \"Status\": \"open\",\n                \"Type\": \"JWKS\"\n            }\n        ],\n        \"RequestId\": \"83d4a381-b448-45c8-adcf-b563bd18f4fb\"\n    }\n}",
-        "title": "示例"
-      },
-      {
-        "document": "HTTP示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthenticator\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-dmzeoj58\",\n    \"Type\": \"HTTP\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Authenticators\": [\n            {\n                \"Config\": \"{\\\"headers\\\":[{\\\"key\\\":\\\"user\\\",\\\"value\\\":\\\"${username}\\\"}],\\\"endpoint\\\":\\\"127.0.0.1\\\",\\\"method\\\":\\\"Post\\\",\\\"readTimeout\\\":1,\\\"connectTimeout\\\":1,\\\"body\\\":[{\\\"key\\\":\\\"user\\\",\\\"value\\\":\\\"${username}\\\"}],\\\"concurrency\\\":1}\",\n                \"CreateTime\": 1731036362,\n                \"Remark\": \"this is remark\",\n                \"Status\": \"open\",\n                \"Type\": \"HTTP\"\n            }\n        ],\n        \"RequestId\": \"756b8ee7-00e8-48ea-94f2-02eead2a5067\"\n    }\n}",
-        "title": "HTTP示例"
+        "title": "示例"
       }
     ],
     "DescribeAuthorizationPolicies": [
@@ -256,7 +250,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-bg8k8v8o\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"AuthorizationPolicyLimit\": 10,\n        \"AutomaticActivation\": false,\n        \"ClientNumLimit\": 1000,\n        \"CreatedTime\": 1722572792,\n        \"DestroyTime\": 0,\n        \"DeviceCertificateProvisionType\": \"MANUAL\",\n        \"ExpiryTime\": 0,\n        \"InstanceId\": \"mqtt-bg8k8v8o\",\n        \"InstanceName\": \"jehansun-0802\",\n        \"InstanceStatus\": \"RUNNING\",\n        \"InstanceType\": \"BASIC\",\n        \"MaxSubscriptionPerClient\": 30,\n        \"PayMode\": \"POSTPAID\",\n        \"Remark\": \"\",\n        \"RenewFlag\": 1,\n        \"RequestId\": \"3e180cf0-ddb8-4a0b-8855-c69c5dc02f35\",\n        \"SkuCode\": \"basic_1k\",\n        \"TopicNum\": 0,\n        \"TopicNumLimit\": 100,\n        \"TpsLimit\": 1000,\n        \"X509Mode\": \"TLS\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"AuthorizationPolicyLimit\": 10,\n        \"AutomaticActivation\": false,\n        \"ClientNumLimit\": 1000,\n        \"CreatedTime\": 1722572792,\n        \"DestroyTime\": 0,\n        \"DeviceCertificateProvisionType\": \"MANUAL\",\n        \"ExpiryTime\": 0,\n        \"InstanceId\": \"mqtt-bg8k8v8o\",\n        \"InstanceName\": \"instance-0802\",\n        \"InstanceStatus\": \"RUNNING\",\n        \"InstanceType\": \"BASIC\",\n        \"MaxSubscriptionPerClient\": 30,\n        \"PayMode\": \"POSTPAID\",\n        \"Remark\": \"\",\n        \"RenewFlag\": 1,\n        \"RequestId\": \"3e180cf0-ddb8-4a0b-8855-c69c5dc02f35\",\n        \"SkuCode\": \"basic_1k\",\n        \"TopicNum\": 0,\n        \"TopicNumLimit\": 100,\n        \"TpsLimit\": 1000,\n        \"X509Mode\": \"TLS\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -407,7 +401,7 @@
     "RegisterDeviceCertificate": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterDeviceCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-jbgwp4ae\",\n    \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIIEQjCCAyqgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmREwDQYJKoZIhvcNAQEL\\nBQAwgZIxCzAJBgNVBAYTAmNuMQ0wCwYDVQQIDAR4aWFuMQ0wCwYDVQQHDARodXlp\\nMREwDwYDVQQKDAhqZWhhbnN1bjEWMBQGA1UECwwNdW5pdCBqZWhhbnN1bjEVMBMG\\nA1UEAwwMc3Vuamlhbnhpb25nMSMwIQYJKoZIhvcNAQkBFhRqZWhhbnN1bkB0ZW5j\\nZW50LmNvbTAeFw0yNDA1MDYwODU0NDNaFw0yNTA5MTgwODU0NDNaMIGBMQswCQYD\\nVQQGEwJDTjELMAkGA1UECAwCWkoxCzAJBgNVBAcMAkhaMQwwCgYDVQQKDANBTEkx\\nDTALBgNVBAsMBE1RVFQxFjAUBgkqhkiG9w0BCQEWB3h4eEB4eHgxIzAhBgNVBAMM\\nGm1xdHQtdGVzdC54eHguYWxpeXVuY3MuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOC\\nAQ8AMIIBCgKCAQEArSMP1QFvggJVAth6Zhnf7NMWi+JP9TvnfzYl1xAWsWfX2ocN\\nC+AumAQl7I0C2UMUppDHIRiikdAwqmoMLFkuTYCoPnTrk8FpQx+/bLXGNZzwgAKN\\n8Y0dbEanl5y6UFXDB6ZsYhRJmjBEZoUj6xCeBzXxP2Uu0FPFAF5haLwt03gQMcWi\\nEMHLdj/jFKUGoLns/eQUdE5wbsZjGrCmk5hEeJxa9vAw40W0cgwsVi0E8qt5FCj7\\n11DeQsvZ5NlQVyOT6YOStElE2zuWtMjzsgk7ryW2qWANv62hRxY8dDmPXO5oimK8\\nAzNjakiN40OmOhzwfiG3noItixlQywWppuTrfwIDAQABo4GeMIGbMB8GA1UdIwQY\\nMBaAFEaWXAdZRRy3HPvjV6NBAYZYGhDfMAkGA1UdEwQCMAAwCwYDVR0PBAQDAgL0\\nMEEGA1UdEQQ6MDiCEyoubXF0dC5hbGl5dW5jcy5jb22CIW1xdHQtdGVzdC5jbi1x\\naW5nZGFvLmFsaXl1bmNzLmNvbTAdBgNVHQ4EFgQUz7CdvXCtki2X9i6zIQwKVJ7q\\n/LwwDQYJKoZIhvcNAQELBQADggEBAB7Y/susqeC85RtXw9CHcOmcb/17G7svgxFZ\\nLecOwEFxxaqwNVp/ae6TVkPvrMPStpVJmpS7ikYz37J16/n1mks/s+7fkGwAwfCI\\nD+vGR+Hcvu2RsiTPwDMRhFwj92ZclnSyBjtPa1pgS1Nq0oCJ85G+nyxYBAjDQqzO\\n05jNRO+E4/L+WrYhLE6M72amFMLbVGs170wHTiXtzokfUdflj9mNQs3pfLFNsyCt\\nasDfqJX4Kie/MIwv/YKcB9pZ4NsonEgD3OfjJ6pFEHEH4ZiOVHuTT6C52XpCYMWA\\najvuaaIlJp7GgOZxxPInOVXPmBlBlp28AiMlmxSfSAuMpUF0I8w=\\n-----END CERTIFICATE-----\\n\",\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n    \"ClientId\": \"VIN0001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterDeviceCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-jbgwp4ae\",\n    \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\najvuaaIlJp7GgOZxxPInOVXPmBlBlp28AiMlmxSfSAuMpUF0I8w=\\n-----END CERTIFICATE-----\\n\",\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n    \"ClientId\": \"VIN0001\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"49af88f0-6571-4aa4-af92-9261f28c0ed9\"\n    }\n}",
         "title": "示例"
       }

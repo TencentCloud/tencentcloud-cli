@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdwpg ModifyInstance --cli-unfold-argument  \
-    --InstanceId cdwch-12345678 \
-    --InstanceName cdwch-test
+    --InstanceId cdwpg-fdgytddr \
+    --InstanceName cdwpg-test
 ```
 
 Output: 

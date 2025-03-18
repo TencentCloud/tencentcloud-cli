@@ -6,55 +6,59 @@ Input:
 
 ```
 tccli cdwpg DescribeInstanceInfo --cli-unfold-argument  \
-    --InstanceId cdwpg-abc
+    --InstanceId cdwpg-4dwmcu5n
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ErrorMsg": "",
+        "RequestId": "94e9f7c9-8431-45b4-9167-1d2a648d3d07",
         "SimpleInstanceInfo": {
-            "ID": 0,
-            "InstanceId": "cdwpg-abc",
-            "InstanceName": "test-abc",
-            "Version": "3.16.4.8",
-            "Region": "ap-beijing",
-            "Zone": "ap-beijing-6",
-            "UserVPCID": "abdc",
-            "UserSubnetID": "abdc",
-            "CreateTime": "2012-12-12 12:12:12",
-            "ExpireTime": "2012-12-12 13:12:12",
-            "AccessInfo": "--",
-            "RenewFlag": 0,
+            "AccessInfo": "192.168.22.104:9000",
             "ChargeProperties": {
-                "PayMode": 0,
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "RenewFlag": 0,
-                "TimeSpan": 0,
-                "TimeUnit": "--",
-                "ChargeType": "--"
+                "TimeSpan": 1,
+                "TimeUnit": "h"
             },
+            "CreateTime": "2025-03-03 14:25:01",
+            "ExpireTime": "0000.00.00 00:00:00",
+            "ID": 595,
+            "InstanceId": "cdwpg-4dwmcu5n",
+            "InstanceName": "cdwpg_test100",
+            "Region": "eu-frankfurt",
+            "RenewFlag": 0,
             "Resources": [
                 {
-                    "SpecName": "s4",
-                    "Count": 0,
+                    "Count": 2,
                     "DiskSpec": {
-                        "DiskType": "local",
-                        "DiskSize": 0,
-                        "DiskCount": 0
+                        "DiskCount": 10,
+                        "DiskSize": 20,
+                        "DiskType": "CLOUD_HSSD"
                     },
+                    "SpecName": "S_4_16_H_CN",
+                    "Type": "cn"
+                },
+                {
+                    "Count": 2,
+                    "DiskSpec": {
+                        "DiskCount": 10,
+                        "DiskSize": 20,
+                        "DiskType": "CLOUD_HSSD"
+                    },
+                    "SpecName": "S_4_16_H",
                     "Type": "dn"
                 }
             ],
-            "Tags": [
-                {
-                    "TagKey": "gd",
-                    "TagValue": "fd"
-                }
-            ],
-            "Status": 0
-        },
-        "ErrorMsg": "",
-        "RequestId": "abcss"
+            "Status": 2,
+            "Tags": [],
+            "UserSubnetID": "subnet-d05spb5o",
+            "UserVPCID": "vpc-5wsen2rn",
+            "Version": "3.16.9.3",
+            "Zone": "eu-frankfurt-1"
+        }
     }
 }
 ```

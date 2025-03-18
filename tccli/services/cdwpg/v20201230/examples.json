@@ -3,8 +3,8 @@
     "CreateInstanceByApi": [
       {
         "document": "创建集群",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceName\": \"abc\",\n    \"Zone\": \"abc\",\n    \"UserVPCId\": \"abc\",\n    \"UserSubnetId\": \"abc\",\n    \"ChargeProperties\": {\n        \"PayMode\": 0,\n        \"RenewFlag\": 0,\n        \"TimeSpan\": 0,\n        \"TimeUnit\": \"abc\",\n        \"ChargeType\": \"abc\"\n    },\n    \"AdminPassword\": \"abc\",\n    \"Tags\": {\n        \"TagKey\": \"abc\",\n        \"TagValue\": \"abc\"\n    },\n    \"Resources\": [\n        {\n            \"SpecName\": \"abc\",\n            \"Count\": 0,\n            \"DiskSpec\": {\n                \"DiskType\": \"abc\",\n                \"DiskSize\": 0,\n                \"DiskCount\": 0\n            },\n            \"Type\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceName\": \"cdwpg_test001\",\n    \"Zone\": \"na-ashburn-1\",\n    \"UserVPCId\": \"vpc-65mchhgn\",\n    \"UserSubnetId\": \"subnet-3b7g4en2\",\n    \"AdminPassword\": \"cloud_12345\",\n    \"ChargeProperties\": {\n        \"ChargeType\": \"POSTPAID_BY_HOUR\",\n        \"RenewFlag\": 0,\n        \"TimeSpan\": 1,\n        \"TimeUnit\": \"h\"\n    },\n    \"Resources\": [\n        {\n            \"Count\": 2,\n            \"DiskSpec\": {\n                \"DiskCount\": 1,\n                \"DiskSize\": 200,\n                \"DiskType\": \"CLOUD_HSSD\"\n            },\n            \"SpecName\": \"S_4_16_H_CN\",\n            \"Type\": \"cn\"\n        },\n        {\n            \"Type\": \"dn\",\n            \"SpecName\": \"S_4_16_H\",\n            \"Count\": 2,\n            \"DiskSpec\": {\n                \"DiskType\": \"CLOUD_HSSD\",\n                \"DiskSize\": 20,\n                \"DiskCount\": 10\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"1125\",\n        \"InstanceId\": \"cdwpg-fdergdabc\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abc-sssscdddd\"\n    }\n}",
         "title": "创建集群"
       }
     ],
@@ -51,8 +51,8 @@
     "DescribeInstanceInfo": [
       {
         "document": "查询集群信息",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SimpleInstanceInfo\": {\n            \"ID\": 0,\n            \"InstanceId\": \"cdwpg-abc\",\n            \"InstanceName\": \"test-abc\",\n            \"Version\": \"3.16.4.8\",\n            \"Region\": \"ap-beijing\",\n            \"Zone\": \"ap-beijing-6\",\n            \"UserVPCID\": \"abdc\",\n            \"UserSubnetID\": \"abdc\",\n            \"CreateTime\": \"2012-12-12 12:12:12\",\n            \"ExpireTime\": \"2012-12-12 13:12:12\",\n            \"AccessInfo\": \"--\",\n            \"RenewFlag\": 0,\n            \"ChargeProperties\": {\n                \"PayMode\": 0,\n                \"RenewFlag\": 0,\n                \"TimeSpan\": 0,\n                \"TimeUnit\": \"--\",\n                \"ChargeType\": \"--\"\n            },\n            \"Resources\": [\n                {\n                    \"SpecName\": \"s4\",\n                    \"Count\": 0,\n                    \"DiskSpec\": {\n                        \"DiskType\": \"local\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0\n                    },\n                    \"Type\": \"dn\"\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"TagKey\": \"gd\",\n                    \"TagValue\": \"fd\"\n                }\n            ],\n            \"Status\": 0\n        },\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abcss\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-4dwmcu5n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"94e9f7c9-8431-45b4-9167-1d2a648d3d07\",\n        \"SimpleInstanceInfo\": {\n            \"AccessInfo\": \"192.168.22.104:9000\",\n            \"ChargeProperties\": {\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"RenewFlag\": 0,\n                \"TimeSpan\": 1,\n                \"TimeUnit\": \"h\"\n            },\n            \"CreateTime\": \"2025-03-03 14:25:01\",\n            \"ExpireTime\": \"0000.00.00 00:00:00\",\n            \"ID\": 595,\n            \"InstanceId\": \"cdwpg-4dwmcu5n\",\n            \"InstanceName\": \"cdwpg_test100\",\n            \"Region\": \"eu-frankfurt\",\n            \"RenewFlag\": 0,\n            \"Resources\": [\n                {\n                    \"Count\": 2,\n                    \"DiskSpec\": {\n                        \"DiskCount\": 10,\n                        \"DiskSize\": 20,\n                        \"DiskType\": \"CLOUD_HSSD\"\n                    },\n                    \"SpecName\": \"S_4_16_H_CN\",\n                    \"Type\": \"cn\"\n                },\n                {\n                    \"Count\": 2,\n                    \"DiskSpec\": {\n                        \"DiskCount\": 10,\n                        \"DiskSize\": 20,\n                        \"DiskType\": \"CLOUD_HSSD\"\n                    },\n                    \"SpecName\": \"S_4_16_H\",\n                    \"Type\": \"dn\"\n                }\n            ],\n            \"Status\": 2,\n            \"Tags\": [],\n            \"UserSubnetID\": \"subnet-d05spb5o\",\n            \"UserVPCID\": \"vpc-5wsen2rn\",\n            \"Version\": \"3.16.9.3\",\n            \"Zone\": \"eu-frankfurt-1\"\n        }\n    }\n}",
         "title": "查询集群信息"
       }
     ],
@@ -123,7 +123,7 @@
     "DestroyInstanceByApi": [
       {
         "document": "销毁集群",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abcdsds\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"1254\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"afsbc\"\n    }\n}",
         "title": "销毁集群"
       }
@@ -139,7 +139,7 @@
     "ModifyInstance": [
       {
         "document": "用户修改实例名称",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-12345678\",\n    \"InstanceName\": \"cdwch-test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-fdgytddr\",\n    \"InstanceName\": \"cdwpg-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx\"\n    }\n}",
         "title": "修改实例信息"
       }

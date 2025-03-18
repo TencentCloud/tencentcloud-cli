@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vdb DescribeInstanceNodes --cli-unfold-argument  \
-    --InstanceId vdb-ecbgiqwb
+    --InstanceId vdb-bmz0gqmd
 ```
 
 Output: 
@@ -15,17 +15,24 @@ Output:
     "Response": {
         "Items": [
             {
-                "Name": "master-0"
+                "Name": "master-0",
+                "Status": "Running"
             },
             {
-                "Name": "search-0"
+                "Name": "search-0",
+                "Status": "Running"
             },
             {
-                "Name": "worker-0"
+                "Name": "worker-0",
+                "Status": "Running"
+            },
+            {
+                "Name": "worker-1",
+                "Status": "Pending"
             }
         ],
-        "RequestId": "c0c57557-d604-4bfc-abed-5ae659961720",
-        "TotalCount": 3
+        "RequestId": "b3157916-a811-443f-af68-23220d6dfb01",
+        "TotalCount": 5
     }
 }
 ```

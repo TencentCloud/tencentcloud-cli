@@ -2791,6 +2791,15 @@
           "name": "CacheApproverInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。\n <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n\n注：`合同组暂不支持批量拒签功能。`\n",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2936,6 +2945,15 @@
           "name": "UrlUseEnv",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4608,6 +4626,15 @@
           "name": "ResultPageConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括 \n - 签署控件 是否默认展示日期.",
+          "example": "无",
+          "member": "SignComponentConfig",
+          "name": "SignComponentConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -6555,7 +6582,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -6563,8 +6590,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括  \n\n- 签署控件 是否默认展示日期.",
+          "disabled": true,
+          "document": "<font color=\"red\">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>\n签署控件的配置信息，用在嵌入式发起的页面配置，\n包括  \n\n- 签署控件 是否默认展示日期.",
           "example": "无",
           "member": "SignComponentConfig",
           "name": "SignComponentConfig",

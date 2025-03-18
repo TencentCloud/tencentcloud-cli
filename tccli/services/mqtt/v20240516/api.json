@@ -3835,7 +3835,7 @@
         {
           "disabled": false,
           "document": "子网信息",
-          "example": "subnet-dadaf",
+          "example": "subnet-1acd3",
           "member": "string",
           "name": "SubnetId",
           "output_required": false,
@@ -4837,7 +4837,7 @@
         {
           "disabled": false,
           "document": "公钥",
-          "example": " -----BEGIN CERTIFICATE----- MIIECDCCAvCgAwIBAgIUG/L3CDia0Tl2KKs8bDOxY2t+SfUwDQYJKoZIhvcNAQEN 9w0BAQ0FAAOCAQEAtXGaYSOlseeXzq9lapF0SWcI/UhRXSfomwLeF+PvH3meF04r 2Hdl/IvY0jfKuc/olOPDxF3mK3/Lf7nk/68fKG7ytmVJrBXCGUN8R2AuTmeRsbK8 qEf2C8DgIw9KAPHtPY7ZupRzRskVeZHUy6N1pKYjlQk80451SwNwnfU8gni10BaJ dd1vc7JbPm90IQjb+OcfuflFwfl8yiQLWy1oJdwGwEN/f4PFoRKP4dizyn9+0+Ki 5M8AINMMlYrfXRWHVyr8N/Pj8l4QNo3cJiUeXIpoSc39oNiYbdfTs1f3sJCT8lIG 8lCCucEU4bX5ZPwMJ9QMTJ6xORLenDIk2orY7Q== -----END CERTIFICATE-----",
+          "example": " -----BEGIN CERTIFICATE----- -----END CERTIFICATE-----",
           "member": "string",
           "name": "PublicKey",
           "required": false,
@@ -5306,7 +5306,7 @@
         {
           "disabled": false,
           "document": "设备证书",
-          "example": "-----BEGIN CERTIFICATE----- MIIDXTCCAkWgAwIBAgIJALc4Yk9ZT1WjMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV BAYTAkNOMRAwDgYDVQQIDAdBeW9tYW5nMQ8wDQYDVQQHDAZGb3J0cmUwHhcNMTkw ODA1MTUwOTA5WhcNMjAwODEyMTUwOTA5WjBFMQswCQYDVQQGEwJDTjEQMA4GA1UE CAwHQXlvbWFuZzEPMA0GA1UEBwwGRm9ydHJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ... -----END CERTIFICATE-----",
+          "example": "-----BEGIN CERTIFICATE-----END CERTIFICATE-----",
           "member": "string",
           "name": "DeviceCertificate",
           "required": true,

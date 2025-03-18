@@ -13664,8 +13664,8 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围，默认填0即可",
-          "example": "0",
+          "document": "标签适用范围，需要传参为1",
+          "example": "1",
           "member": "uint64",
           "name": "AttrRange",
           "required": false,

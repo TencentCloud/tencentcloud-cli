@@ -46,6 +46,50 @@ Output:
                     "Status": "consistent"
                 },
                 "CreateTime": "2022-07-11 16:20:49",
+                "BriefMsg": "",
+                "DumperResumeCtrl": "yes",
+                "AutoRetryTimeRangeMinutes": 5,
+                "StepInfo": {
+                    "MasterSlaveDistance": 0,
+                    "SecondsBehindMaster": 0,
+                    "StepAll": 3,
+                    "StepInfo": [
+                        {
+                            "Errors": [],
+                            "StartTime": "2022-07-11 17:21:59",
+                            "Status": "finished",
+                            "StepId": "dumper",
+                            "StepName": "源库导出",
+                            "StepNo": 1,
+                            "Percent": 100,
+                            "StepMessage": "",
+                            "Warnings": []
+                        },
+                        {
+                            "Errors": [],
+                            "StartTime": "2022-07-11 17:22:43",
+                            "Status": "finished",
+                            "StepId": "loader",
+                            "StepName": "数据导入",
+                            "StepNo": 2,
+                            "Percent": 100,
+                            "StepMessage": "",
+                            "Warnings": []
+                        },
+                        {
+                            "Errors": [],
+                            "StartTime": "2022-07-11 17:23:26",
+                            "Status": "running",
+                            "StepId": "sinker",
+                            "StepName": "同步增量",
+                            "Percent": 0,
+                            "StepMessage": "",
+                            "StepNo": 3,
+                            "Warnings": []
+                        }
+                    ],
+                    "StepNow": 3
+                },
                 "DstInfo": {
                     "AccessType": "cdb",
                     "DatabaseType": "mysql",
@@ -122,6 +166,8 @@ Output:
                     "BillingType": "billing",
                     "DealName": "20220711715001047929481",
                     "ExpireTime": "0000-00-00 00:00:00",
+                    "OfflineTime": "0000-00-00 00:00:00",
+                    "IsolateTime": "0000-00-00 00:00:00",
                     "InstanceClass": "xlarge",
                     "IsolateReason": "",
                     "LastDealName": "",

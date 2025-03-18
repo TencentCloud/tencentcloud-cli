@@ -1862,6 +1862,15 @@
           "name": "CacheApproverInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2025,6 +2034,15 @@
           "name": "UrlUseEnv",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3456,8 +3474,8 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括\n\n- 签署控件 是否默认展示日期.",
+          "disabled": true,
+          "document": "<font color=\"red\">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>\n签署控件的配置信息，用在嵌入式发起的页面配置，包括\n\n- 签署控件 是否默认展示日期.",
           "example": "无",
           "member": "SignComponentConfig",
           "name": "SignComponentConfig",
@@ -7496,6 +7514,15 @@
           "name": "SkipUploadFile",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括 \n - 签署控件 是否默认展示日期.",
+          "example": "无",
+          "member": "SignComponentConfig",
+          "name": "SignComponentConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

@@ -2570,7 +2570,7 @@
         {
           "disabled": false,
           "document": "视频智能横转竖模板 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "28",
           "member": "uint64",
           "name": "Definition",
           "output_required": false,
@@ -2678,7 +2678,7 @@
         {
           "disabled": false,
           "document": "视频内容分析模板 ID。",
-          "example": "0",
+          "example": "28",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
@@ -2689,7 +2689,7 @@
         {
           "disabled": false,
           "document": "扩展参数，其值为序列化的 json字符串。\n注意：此参数为定制需求参数，参考如下：\n智能檫除：https://cloud.tencent.com/document/product/862/101530\n智能拆条：https://cloud.tencent.com/document/product/862/112098\n高光集锦：https://cloud.tencent.com/document/product/862/107280\n智能横转竖：https://cloud.tencent.com/document/product/862/112112\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"{}\"",
+          "example": "\"{\\\"htv\\\": {} }\"",
           "member": "string",
           "name": "ExtendedParameter",
           "output_required": true,
@@ -2804,10 +2804,10 @@
         {
           "disabled": false,
           "document": "视频智能标签模板 ID。",
-          "example": "0",
+          "example": "20",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -15224,6 +15224,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "FairPlay, WideVine， PlayReady 加密信息。",
+          "example": "无",
+          "member": "SpekeDrm",
+          "name": "SpekeDrm",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21051,7 +21062,7 @@
         {
           "disabled": false,
           "document": "视频的 md5 值。",
-          "example": "xxxx",
+          "example": "\"xxxx\"",
           "member": "string",
           "name": "Md5",
           "output_required": true,
@@ -21077,6 +21088,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频转码使用增强项说明，增强项解释\n<li>hdr：HDR配置</li>\n<li>wd_fps：插帧帧率配置</li>\n<li>video_super_resolution：\t超分配置</li>\n<li>repair：综合增强配置</li>\n<li>denoise：视频降噪配置</li>\n<li>color_enhance：色彩增强配置</li>\n<li>scratch：去划痕配置</li>\n<li>artifact：去伪影（毛刺）配置</li>\n<li>sharp：细节增强配置</li>\n<li>low_light：低光照增强配置</li>\n<li>face_enhance：人脸增强配置</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{\\\"enhance_item\\\":[\\\"hdr\\\",\\\"color_enhance\\\"]}\"",
+          "member": "string",
+          "name": "CallBackExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -27155,6 +27176,67 @@
         }
       ],
       "usage": "out"
+    },
+    "SpekeDrm": {
+      "document": "FairPlay，WideVine，PlayReady 等Drm加密方式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源标记，\n支持1-128个字符的数字、字母、下划线(_)、中划线(-)。",
+          "example": "123xx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "drm厂商访问地址；\n\n注: 不同DRM厂商对子流的数量限制不一样，如 pallycon 限制不能超过5条子流，drmtoday厂商最多仅支持9条子流加密",
+          "example": "https://kms.pallycon.com/v2/cpix/getKey?enc-token=xxx",
+          "member": "string",
+          "name": "KeyServerUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密初始化向量(32字节字符串)。",
+          "example": "452ac1553f19b846e2f2c4cffd8f4a9b",
+          "member": "string",
+          "name": "Vector",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密方式，FairPlay 默认cbcs，PlayReady，Widevine 默认cenc\n\ncbcs：PlayReady，Widevine，FairPlay 支持；\ncenc：PlayReady，Widevine支持；",
+          "example": "cbcs",
+          "member": "string",
+          "name": "EncryptionMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子流加密规则，默认 preset0\npreset0：全部子流使用同一个key加密；\npreset1：每个子流使用不同的key加密；\n",
+          "example": "preset0",
+          "member": "string",
+          "name": "EncryptionPreset",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StartStreamLinkFlowRequest": {
       "document": "StartStreamLinkFlow请求参数结构体",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwpg DestroyInstanceByApi --cli-unfold-argument  \
-    --InstanceId cdwpg-abc
+    --InstanceId cdwpg-abcdsds
 ```
 
 Output: 

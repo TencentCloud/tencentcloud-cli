@@ -26573,6 +26573,24 @@
           "name": "ScheduleTimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计划调度时间",
+          "example": "无",
+          "member": "string",
+          "name": "ScheduleTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计划调度时间",
+          "example": "无",
+          "member": "string",
+          "name": "ScheduleTimeTo",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -30468,6 +30486,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录计划时间范围的类型： \nDATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间",
+          "example": "DATA_TIME",
+          "member": "string",
+          "name": "TimeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -30849,6 +30877,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理",
+          "example": "DATA_TIME",
+          "member": "string",
+          "name": "TimeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -47450,6 +47489,15 @@
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理",
+          "example": "DATA_TIME",
+          "member": "string",
+          "name": "TimeType",
           "required": false,
           "type": "string"
         }

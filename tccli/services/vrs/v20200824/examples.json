@@ -4,7 +4,7 @@
       {
         "document": "声音复刻取消任务",
         "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelVRSTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"efe36c79-1c71-41d1-b541-04075fb3b9aa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {},\n        \"RequestId\": \"33ccdce8-15d7-4536-9325-8259266c21\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"efe36c79-1c71-41d1-b541-04075fb3b9aa\"\n        },\n        \"RequestId\": \"33ccdce8-15d7-4536-9325-8259266c21\"\n    }\n}",
         "title": "声音复刻取消任务"
       }
     ],

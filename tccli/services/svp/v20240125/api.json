@@ -1030,7 +1030,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "[\"*\"]",
+          "example": "[\"33\"]",
           "member": "string",
           "name": "Region",
           "output_required": true,

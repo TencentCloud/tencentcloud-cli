@@ -15,7 +15,7 @@
       "status": "online"
     },
     "ApplyInstanceSnapshot": {
-      "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n<li>仅支持回滚到原系统盘。</li>\n<li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通过 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>\n<li>回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 DescribeInstances 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。</li>",
+      "document": "本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。\n- 仅支持回滚到原系统盘。\n- 用于回滚的快照必须处于 NORMAL 状态。快照状态可以通过 [DescribeSnapshots](https://cloud.tencent.com/document/product/1207/54388) 接口查询，见输出参数中 SnapshotState 字段解释。\n- 回滚快照时，实例的状态必须为 STOPPED 或 RUNNING，可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口查询实例状态。处于 RUNNING 状态的实例会强制关机，然后回滚快照。",
       "input": "ApplyInstanceSnapshotRequest",
       "name": "回滚实例快照",
       "output": "ApplyInstanceSnapshotResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "AttachDisks": {
-      "document": "本接口（AttachDisks）用于挂载一个或多个云硬盘。",
+      "document": "本接口（AttachDisks）用于挂载一个或多个云硬盘。\n<li>只能挂载处于待挂载状态的云硬盘</li>",
       "input": "AttachDisksRequest",
       "name": "挂载云硬盘",
       "output": "AttachDisksResponse",
@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateFirewallRules": {
-      "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n\n* FirewallVersion 为防火墙版本号，用户每次更新防火墙规则版本会自动加1，防止您更新的规则已过期，不填不考虑冲突。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
+      "document": "本接口（CreateFirewallRules）用于在实例上添加防火墙规则。\n\n\n* FirewallVersion 为防火墙版本号，用户每次更新防火墙规则版本会自动加1，防止您更新的规则已过期，不填不考虑冲突。FirewallVersion可通过[DescribeFirewallRules](https://cloud.tencent.com/document/api/1207/48252)接口返回值中的FirewallVersion获取。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ICMPv6，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "CreateFirewallRulesRequest",
       "name": "添加防火墙规则",
       "output": "CreateFirewallRulesResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateInstances": {
-      "document": "本接口(CreateInstances)用于创建一个或多个指定套餐的轻量应用服务器实例。",
+      "document": "本接口(CreateInstances)用于创建一个或多个指定套餐的轻量应用服务器实例。\n*创建实例时，如指定实例访问域名信息时，本次创建请求，仅支持购买一台实例。",
       "input": "CreateInstancesRequest",
       "name": "创建实例",
       "output": "CreateInstancesResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DeleteFirewallRules": {
-      "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接删除指定的规则。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
+      "document": "本接口（DeleteFirewallRules）用于删除实例的防火墙规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接删除指定的规则。FirewallVersion可通过[DescribeFirewallRules](https://cloud.tencent.com/document/api/1207/48252)接口返回值中的FirewallVersion获取。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ICMPv6，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "DeleteFirewallRulesRequest",
       "name": "删除防火墙规则",
       "output": "DeleteFirewallRulesResponse",
@@ -449,7 +449,7 @@
       "status": "online"
     },
     "DetachDisks": {
-      "document": "本接口（DetachDisks）用于卸载一个或多个云硬盘。",
+      "document": "本接口（DetachDisks）用于卸载一个或多个云硬盘。该操作目前仅支持云硬盘类型为数据盘的云硬盘。\n- 支持批量操作，卸载挂载在同一主机上的多块云硬盘。如果多块云硬盘中存在不允许卸载的云硬盘，则操作不执行，返回特定的错误码。\n- 本接口为异步接口，当请求成功返回时，云硬盘并未立即卸载，可通过接口[DescribeDisks](https://cloud.tencent.com/document/product/362/16315)来查询对应云硬盘的状态，如果云硬盘的状态由“ATTACHED”变为“UNATTACHED”，则为卸载成功。",
       "input": "DetachDisksRequest",
       "name": "卸载云硬盘",
       "output": "DetachDisksResponse",
@@ -540,7 +540,7 @@
       "status": "online"
     },
     "ModifyDisksBackupQuota": {
-      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。该操作目前仅支持云硬盘类型为数据盘的云硬盘。",
+      "document": "本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。\n该操作目前仅支持云硬盘类型为数据盘且状态是ATTACHED（已挂载）或 UNATTACHED（待挂载）的云硬盘。\n支持批量操作。每次批量请求云硬盘数量上限为15个。",
       "input": "ModifyDisksBackupQuotaRequest",
       "name": "调整云硬盘备份点配额",
       "output": "ModifyDisksBackupQuotaResponse",
@@ -561,14 +561,14 @@
       "status": "online"
     },
     "ModifyFirewallRuleDescription": {
-      "document": "本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接修改防火墙规则备注。\n\n用FirewallRule参数来指定要修改的防火墙规则，使用其中的Protocol， Port， CidrBlock，Action字段来匹配要修改的防火墙规则。\n\n在 FirewallRule 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
+      "document": "本接口（ModifyFirewallRuleDescription）用于修改单条防火墙规则描述。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接修改防火墙规则备注。FirewallVersion可通过[DescribeFirewallRules](https://cloud.tencent.com/document/api/1207/48252)接口返回值中的FirewallVersion获取。\n\n用FirewallRule参数来指定要修改的防火墙规则，使用其中的Protocol， Port， CidrBlock，Action字段来匹配要修改的防火墙规则。\n\n在 FirewallRule 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ICMPv6，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "ModifyFirewallRuleDescriptionRequest",
       "name": "修改防火墙规则描述",
       "output": "ModifyFirewallRuleDescriptionResponse",
       "status": "online"
     },
     "ModifyFirewallRules": {
-      "document": "本接口（ModifyFirewallRules）用于重置实例防火墙规则。\n\n本接口先删除当前实例的所有防火墙规则，然后添加新的规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接重置防火墙规则。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
+      "document": "本接口（ModifyFirewallRules）用于重置实例防火墙规则。\n\n本接口先删除当前实例的所有防火墙规则，然后添加新的规则。\n\n* FirewallVersion 用于指定要操作的防火墙的版本。传入 FirewallVersion 版本号若不等于当前防火墙的最新版本，将返回失败；若不传 FirewallVersion 则直接重置防火墙规则。可通过[DescribeFirewallRules](https://cloud.tencent.com/document/api/1207/48252)接口返回值中的FirewallVersion获取。\n\n在 FirewallRules 参数中：\n* Protocol 字段支持输入 TCP，UDP，ICMP，ICMPv6，ALL。\n* Port 字段允许输入 ALL，或者一个单独的端口号，或者用逗号分隔的离散端口号，或者用减号分隔的两个端口号代表的端口范围。当 Port 为范围时，减号分隔的第一个端口号小于第二个端口号。当 Protocol 字段不是 TCP 或 UDP 时，Port 字段只能为空或 ALL。Port 字段长度不得超过 64。\n* CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。租户之间网络隔离规则优先于防火墙中的内网规则。\n* Action 字段只允许输入 ACCEPT 或 DROP。\n* FirewallRuleDescription 字段长度不得超过 64。",
       "input": "ModifyFirewallRulesRequest",
       "name": "修改防火墙规则",
       "output": "ModifyFirewallRulesResponse",
@@ -680,7 +680,7 @@
       "status": "online"
     },
     "ResetInstance": {
-      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。\n* 对于游戏专区实例，仅支持重装当前镜像。",
+      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 仅`RUNNING`，`STOPPED`状态的机器，且当前机器无变更中的操作，才支持重装系统。\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装，否则按照当前实例使用的镜像进行重装。\n* 非中国大陆地域的实例不支持使用该接口实现LIUNX_UNIX和WINDOWS操作系统切换。\n* 系统盘将会被格式化，并重置，请确保系统盘中无重要文件。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。\n* 对于游戏专区实例，仅支持重装当前镜像。",
       "input": "ResetInstanceRequest",
       "name": "重装系统",
       "output": "ResetInstanceResponse",
@@ -757,7 +757,7 @@
       "status": "online"
     },
     "TerminateInstances": {
-      "document": "本接口 (TerminateInstances) 用于销毁实例。\n\n* 处于 SHUTDOWN 状态的实例，可通过本接口销毁，且不可恢复。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态 (LatestOperationState) 为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (TerminateInstances) 用于销毁实例。\n\n* 处于 SHUTDOWN 状态的实例，可通过本接口销毁，且不可恢复。\n* 支持批量操作，每次请求批量实例的上限为100。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果返回列表中不存在该实例，则代表操作成功。",
       "input": "TerminateInstancesRequest",
       "name": "销毁实例",
       "output": "TerminateInstancesResponse",
@@ -1443,7 +1443,7 @@
         {
           "disabled": false,
           "document": "套餐当前单位价格信息。",
-          "example": " {           \"InstancePrice\": {             \"OriginalBundlePrice",
+          "example": "无",
           "member": "Price",
           "name": "Price",
           "output_required": true,
@@ -1492,7 +1492,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型。\n取值范围：\n<li>STARTER_BUNDLE：入门型</li>\n<li>GENERAL_BUNDLE：通用型</li>\n<li>ENTERPRISE_BUNDLE：企业型</li>\n<li>STORAGE_BUNDLE：存储型</li>\n<li>EXCLUSIVE_BUNDLE：专属型</li>\n<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>\n<li>CAREFREE_BUNDLE：无忧型</li>\n<li>BEFAST_BUNDLE：蜂驰型 </li>",
+          "document": "套餐类型。\n取值范围：\n<li>STARTER_BUNDLE：入门型</li>\n<li>GENERAL_BUNDLE：通用型</li>\n<li>ENTERPRISE_BUNDLE：企业型</li>\n<li>STORAGE_BUNDLE：存储型</li>\n<li>EXCLUSIVE_BUNDLE：专属型</li>\n<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>\n<li>CAREFREE_BUNDLE：无忧型</li>\n<li>BEFAST_BUNDLE：蜂驰型 </li>\n<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>\n<li>NEWCOMER_BUNDLE：新客专享</li>\n<li>GAME_PORTAL_BUNDLE：游戏专区</li>\n<li>ECONOMY_BUNDLE：经济型</li>\n<li>RAZOR_SPEED_BUNDLE：锐驰型</li>",
           "example": "GENERAL_BUNDLE",
           "member": "string",
           "name": "BundleType",
@@ -1708,7 +1708,7 @@
         },
         {
           "disabled": false,
-          "document": "需要制作镜像的实例ID。",
+          "document": "需要制作镜像的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/1207/47573) 接口返回值中的 InstanceId 获取。",
           "example": "lhins-aaaabbbb",
           "member": "string",
           "name": "InstanceId",
@@ -2137,7 +2137,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区列表。\n不填此参数，表示为随机可用区。",
+          "document": "可用区列表。\n不填此参数，表示为随机可用区。\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/57513\" target=\"_blank\">DescribeZones</a>接口获取指定地域下的可用区列表信息",
           "example": "[\"ap-beijing-1\"]",
           "member": "string",
           "name": "Zones",
@@ -2218,7 +2218,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名。",
+          "document": "主域名。\n注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。",
           "example": "tencent.com",
           "member": "string",
           "name": "DomainName",
@@ -2227,7 +2227,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名。",
+          "document": "子域名。\n注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。",
           "example": "www",
           "member": "string",
           "name": "Subdomain",
@@ -2242,7 +2242,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例ID。返回实例ID列表并不代表实例创建成功。\n\n可根据 DescribeInstances 接口查询返回的InstancesSet中对应实例的ID的状态来判断创建是否完成；如果实例状态由“启动中”变为“运行中”，则为创建成功。",
+          "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例ID。返回实例ID列表并不代表实例创建成功。\n\n可根据<a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询返回的InstancesSet中对应实例的ID的状态来判断创建是否完成；如果实例状态由“启动中”变为“运行中”，则为创建成功。",
           "example": "[\"lhins-abcd1234\"]",
           "member": "string",
           "name": "InstanceIdSet",
@@ -2394,8 +2394,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘备份点ID列表，可通过 [DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。",
-          "example": "[\"lhbak-ounanbtt\\n\"]",
+          "document": "云硬盘备份点ID列表，可通过 [DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。列表长度最大值为100。",
+          "example": "[\"lhbak-ounanbtt\"]",
           "member": "string",
           "name": "DiskBackupIds",
           "required": true,
@@ -2962,7 +2962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘备份点 ID 列表, 可通过<a href=\"https://cloud.tencent.com/document/product/1207/84379\" target=\"_blank\">DescribeDiskBackups</a>接口查询。",
+          "document": "云硬盘备份点 ID 列表, 可通过<a href=\"https://cloud.tencent.com/document/product/1207/84379\" target=\"_blank\">DescribeDiskBackups</a>接口查询。列表长度最大值为100。",
           "example": "[\"lhbak-nuen5foj\"] ",
           "member": "string",
           "name": "DiskBackupIds",
@@ -3008,7 +3008,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 \n<a href=\"https://cloud.tencent.com/document/product/1207/47576#DiskBackup\">DescribeSnapshots</a> 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：SYSTEM_DISK或DATA_DISK\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
+          "document": "过滤器列表。\n<li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-id</li>按照【云硬盘 ID】进行过滤。\n类型：String\n必选：否\n<li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。\n类型：String\n必选：否\n取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。\n<li>disk-usage</li>按照【云硬盘类型】进行过滤。\n类型：String\n必选：否\n取值：\n- SYSTEM_DISK - 系统盘\n- DATA_DISK - 数据盘\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3128,7 +3128,7 @@
         },
         {
           "disabled": false,
-          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
+          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置[0 - 500]个云硬盘备份点配额。",
           "example": "1",
           "member": "int64",
           "name": "DiskBackupQuota",
@@ -3562,7 +3562,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
+          "document": "容器ID列表。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。参数不支持同时指定 ContainerIds 和 Filters。",
           "example": "[\"edbc15ffac7074bf28cbc6071f422f90029154aefd9bf0392f33b247a3577a57\"]",
           "member": "string",
           "name": "ContainerIds",
@@ -4026,7 +4026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 中国香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘\n- FIREWALL_RULE 防火墙规则",
+          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 中国香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘",
           "example": "[\"GENERAL_BUNDLE_INSTANCE\"]",
           "member": "string",
           "name": "ResourceNames",
@@ -4526,7 +4526,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n可通过<a href=\"https://cloud.tencent.com/document/product/1207/47575\"> DescribeBundles </a>接口返回值中的 BundleId 获取。\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
+          "document": "过滤器列表。\n<li>bundle-id</li>按照【套餐 ID】进行过滤。\n类型：String\n必选：否\n可通过<a href=\"https://cloud.tencent.com/document/product/1207/47575\"> DescribeBundles </a>接口返回值中的 BundleId 获取。\n<li>support-platform-type</li>按照【系统类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）\n类型：String\n必选：否\n<li>bundle-type</li>按照 【套餐类型进行过滤】。\n取值：GENERAL_BUNDLE (通用型套餐); STORAGE_BUNDLE(存储型套餐);ENTERPRISE_BUNDLE( 企业型套餐);EXCLUSIVE_BUNDLE(专属型套餐);BEFAST_BUNDLE(蜂驰型套餐);STARTER_BUNDLE(入门型套餐);ECONOMY_BUNDLE(经济型套餐);RAZOR_SPEED_BUNDLE(锐驰型套餐)\n类型：String\n必选：否\n<li>bundle-state</li>按照【套餐状态】进行过滤。\n取值: ‘ONLINE’(在线); ‘OFFLINE’(下线);\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4655,7 +4655,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）;DOCKER（Docker容器镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n可通过 <a href=\"https://cloud.tencent.com/document/product/1207/47689\">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5801,7 +5801,7 @@
           "example": "928f59ce31678d9c00955e655231e594945d11058517d1935c7f4ec53c6cde7c",
           "member": "string",
           "name": "ContainerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5811,7 +5811,7 @@
           "example": "Container1",
           "member": "string",
           "name": "ContainerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5821,7 +5821,7 @@
           "example": "nginx",
           "member": "string",
           "name": "ContainerImage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5831,7 +5831,7 @@
           "example": "ls -l",
           "member": "string",
           "name": "Command",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5841,17 +5841,17 @@
           "example": "Up 23 hours",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容器状态，和docker的容器状态保持一致，当前取值有：created, restarting, running, removing, paused, exited, or dead",
+          "document": "容器状态，和docker的容器状态保持一致，当前取值有：created（已创建）、restarting（重启中）、running（运行中）、removing（迁移中）、paused（暂停）、exited（停止）和dead（死亡）\n",
           "example": "running",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5861,7 +5861,7 @@
           "example": "[{\"ContainerPort\":80,\"HostPort\":8081}]",
           "member": "DockerContainerPublishPort",
           "name": "PublishPortSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5871,7 +5871,7 @@
           "example": "[{\"ContainerPath\":\"/data/nginx\",\"HostPath\":\"/data/nginx\"}]",
           "member": "DockerContainerVolume",
           "name": "VolumeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5881,7 +5881,7 @@
           "example": "2020-04-28T03:46:09Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5959,7 +5959,7 @@
         },
         {
           "disabled": false,
-          "document": "容器重启策略",
+          "document": "容器重启策略。\n- no -默认策略，在容器退出时不重启容器\n- on-failure -在容器非正常退出时（退出状态非0），才会重启容器\n- on-failure:3 -在容器非正常退出时重启容器，最多重启3次\n- always -在容器退出时总是重启容器",
           "example": "always",
           "member": "string",
           "name": "RestartPolicy",
@@ -6078,7 +6078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议，取值：TCP，UDP，ICMP，ALL。",
+          "document": "协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -6611,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。目前只支持不带或设置1个云硬盘备份点配额。",
+          "document": "指定云硬盘备份点配额，不传时默认为不带备份点配额。\n取值范围：0 到 500",
           "example": "1",
           "member": "int64",
           "name": "DiskBackupQuota",
@@ -6630,7 +6630,7 @@
           "example": "无",
           "member": "DiskPrice",
           "name": "DiskPrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7771,7 +7771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘备份点ID，可通过 [DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379) 接口返回值中的 DiskBackupId 获取。",
+          "document": "云硬盘备份点ID，可通过 [DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379) 接口返回值中的 DiskBackupId 获取。列表长度最大值为100。",
           "example": "[\"lhbak-l1ghx97r\"]",
           "member": "string",
           "name": "DiskBackupIds",
@@ -8709,7 +8709,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 接口返回值中的 TemplateId 获取。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-p1mlufa9",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -8718,7 +8718,7 @@
         {
           "disabled": false,
           "document": "防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 接口返回值中的 TemplateRuleId 获取。",
-          "example": "lhftr-xxxxxxxxxx",
+          "example": "lhftr-cn8z2sf881",
           "member": "string",
           "name": "TemplateRuleId",
           "required": true,
@@ -8935,7 +8935,7 @@
         },
         {
           "disabled": false,
-          "document": "要创建的容器配置列表。",
+          "document": "要创建的容器配置列表。\n注意：仅重装的镜像类型为Docker时支持传入该参数。",
           "example": "无",
           "member": "DockerContainerConfiguration",
           "name": "Containers",
@@ -8945,7 +8945,7 @@
         {
           "disabled": false,
           "document": "实例登录信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码或绑定密钥。",
-          "example": "\"KeyIds\": [\"lhkp-7f7lh1fv\", \"lhkp-gfr54z9r\"]",
+          "example": "无",
           "member": "LoginConfiguration",
           "name": "LoginConfiguration",
           "required": false,

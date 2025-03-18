@@ -25085,7 +25085,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件：\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship：旗舰版 | ProtectedMachines：专业版+旗舰版） | BASIC_PROPOST_GENERAL_DISCOUNT：普惠版+专业版按量计费+基础版主机 | UnFlagship：专业版预付费+专业版后付费+基础版+普惠版</li>",
+          "document": "过滤条件：<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship：旗舰版 | ProtectedMachines：专业版+旗舰版） | BASIC_PROPOST_GENERAL_DISCOUNT：轻量版+专业版按量计费+基础版主机 | UnFlagship：专业版预付费+专业版后付费+基础版+轻量版</li>",
           "example": "[{\"Name\": \"Version\", \"Values\": [\"UnFlag****\"]}]",
           "member": "Filters",
           "name": "Filters",
@@ -25101,7 +25101,7 @@
         {
           "disabled": false,
           "document": "有效的机器信息列表：机器名称、机器公网/内网ip、机器标签",
-          "example": "[{\"MachineName\": \"KISYUN-TXGZ-BZRDP.G01-64****\", \"MachinePublicIp\": \"10.0.1****\", \"MachinePrivateIp\": \"10.244.64****\", \"MachineTag\": null, \"CloudTags\": [{\"TagKey\": \"Use\", \"TagValue\": \"Produc****\"}], \"Quuid\": \"cb28d31e-b727-424d-bd9c-b8cff56a****\", \"Uuid\": \"cb28d31e-b727-424d-bd9c-b8cff56a****\", \"KernelVersion\": \"1.0.1\", \"MachineStatus\": \"OFFLINE\", \"LicenseOrder\": {\"LicenseId\": 0, \"LicenseType\": 0, \"SourceType\": 0, \"ResourceId\": \"\", \"Status\": 0}, \"VulNum\": 0, \"InstanceID\": \"ins-pgja****\", \"CloudFrom\": 0}]",
+          "example": "无",
           "member": "EffectiveMachineInfo",
           "name": "EffectiveMachineInfoList",
           "output_required": true,
@@ -25684,7 +25684,7 @@
         },
         {
           "disabled": false,
-          "document": "普惠版总授权数(有效订单的授权数)",
+          "document": "轻量版总授权数(有效订单的授权数)",
           "example": "0",
           "member": "uint64",
           "name": "CwpVersionLicenseCnt",
@@ -25910,7 +25910,7 @@
         },
         {
           "disabled": false,
-          "document": "普惠版 配置信息",
+          "document": "轻量版 配置信息",
           "example": "1",
           "member": "VersionWhiteConfig",
           "name": "PrattWhitney",
@@ -27025,7 +27025,7 @@
         },
         {
           "disabled": false,
-          "document": "已防护普惠版机器数（Lighthouse机器）",
+          "document": "已防护轻量机器数（Lighthouse机器）",
           "example": "0",
           "member": "uint64",
           "name": "LHGeneralDiscountCnt",
@@ -27291,7 +27291,7 @@
         },
         {
           "disabled": false,
-          "document": "防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版",
+          "document": "防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版",
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
@@ -31853,7 +31853,7 @@
         },
         {
           "disabled": false,
-          "document": "为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机",
+          "document": "为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机",
           "example": "[\"d99a1b46-cc2d-4633-a11f-4a7663d25***\"]",
           "member": "string",
           "name": "Uuids",
@@ -33694,7 +33694,7 @@
         },
         {
           "disabled": false,
-          "document": "普惠版数量",
+          "document": "轻量版数量",
           "example": "1",
           "member": "uint64",
           "name": "GeneralVersionNum",
@@ -42468,6 +42468,26 @@
           "name": "MachineType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "17",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -51810,6 +51830,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -55114,7 +55144,7 @@
         },
         {
           "disabled": false,
-          "document": "为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机",
+          "document": "为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机",
           "example": "['']",
           "member": "string",
           "name": "Uuids",

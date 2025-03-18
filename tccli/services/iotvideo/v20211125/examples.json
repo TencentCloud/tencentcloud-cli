@@ -64,6 +64,14 @@
         "title": "取消设备升级任务"
       }
     ],
+    "ChangeP2PRoute": [
+      {
+        "document": "切换p2p线路",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeP2PRoute\n<公共请求参数>\n\n{\n    \"ProductId\": \"dddd\",\n    \"DeviceName\": \"ddd\",\n    \"RouteId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ca95e7d-5075-4cd7-9dcb-c1c058557ac6\"\n    }\n}",
+        "title": "切换p2p线路"
+      }
+    ],
     "CheckForwardAuth": [
       {
         "document": "通用场景",
@@ -558,6 +566,14 @@
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeP2PInfo\n<公共请求参数>\n\n{\n    \"ProductId\": \"KH6Q8C4N0D\",\n    \"DeviceName\": \"aaa_31400554_1\"\n}",
         "output": "{\n    \"Response\": {\n        \"P2PInfo\": \"XP2Ptest==%2.4.19\",\n        \"ReportTime\": 1708571992,\n        \"RequestId\": \"f5603714-0db6-4a4e-85a9-bb884a83a724\"\n    }\n}",
         "title": "拉取设备p2p信息"
+      }
+    ],
+    "DescribeP2PRoute": [
+      {
+        "document": "查询当前p2p示例",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeP2PRoute\n<公共请求参数>\n\n{\n    \"ProductId\": \"sdfdsf\",\n    \"DeviceName\": \"dsfddd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2b3a4d-2ab6-478b-b880-721b5dd8928b\",\n        \"RouteId\": 1\n    }\n}",
+        "title": "查询当前p2p示例"
       }
     ],
     "DescribePackageConsumeTask": [

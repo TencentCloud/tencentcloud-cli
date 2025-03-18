@@ -15,9 +15,9 @@
       "status": "online"
     },
     "DescribeInstanceNodes": {
-      "document": "实例节点列表",
+      "document": "查询实例pod列表",
       "input": "DescribeInstanceNodesRequest",
-      "name": "实例pod列表（返回 pod 名称、状态）",
+      "name": "查询实例pod列表",
       "output": "DescribeInstanceNodesResponse",
       "status": "online"
     },
@@ -323,6 +323,15 @@
           "example": "[{\"TagKey\":\"tag1\",\"TagValue\":\"tag_value1\"}]",
           "member": "Tag",
           "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态：1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "TaskStatus",
           "required": false,
           "type": "list"
         }
@@ -765,6 +774,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -880,6 +899,16 @@
           "example": "worker-0",
           "member": "string",
           "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod状态",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

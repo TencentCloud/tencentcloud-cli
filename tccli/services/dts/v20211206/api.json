@@ -566,73 +566,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "步骤编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "步骤编号",
           "example": "1",
           "member": "uint64",
           "name": "StepNo",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "步骤Id， 如：ConnectDBCheck、VersionCheck、SrcPrivilegeCheck等，具体校验项和源目标实例相关",
           "example": "SrcPrivilegeCheck",
           "member": "string",
           "name": "StepId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "步骤名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "步骤名称",
           "example": "源实例权限检查",
           "member": "string",
           "name": "StepName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此检查步骤的结果，pass(校验通过)、failed(校验失败)、notStarted(校验还未开始进行)、blocked(检验阻塞)、warning(校验有告警，但仍通过)",
           "example": "pass",
           "member": "string",
           "name": "StepStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此检查步骤的错误消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此检查步骤的错误消息",
           "example": "修改目标库session级别explicit_defaults_for_timestamp参数为`ON`失败",
           "member": "string",
           "name": "StepMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每个检查步骤里的具体检查项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个检查步骤里的具体检查项",
           "example": "无",
           "member": "DetailCheckItem",
           "name": "DetailCheckItems",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否已跳过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否已跳过",
           "example": "false",
           "member": "bool",
           "name": "HasSkipped",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -706,143 +706,143 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验配置参数",
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "一致性校验对比对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一致性校验对比对象",
           "example": "无",
           "member": "CompareObject",
           "name": "Objects",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比结论: same,different\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比结论: same,different",
           "example": "same",
           "member": "string",
           "name": "Conclusion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态: success,failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态: success,failed",
           "example": "success",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总的表数量",
           "example": "100",
           "member": "uint64",
           "name": "TotalTables",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已校验的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已校验的表数量",
           "example": "100",
           "member": "uint64",
           "name": "CheckedTables",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不一致的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致的表数量",
           "example": "1",
           "member": "uint64",
           "name": "DifferentTables",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跳过校验的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过校验的表数量",
           "example": "1",
           "member": "uint64",
           "name": "SkippedTables",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预估表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预估表总数",
           "example": "100",
           "member": "uint64",
           "name": "NearlyTableCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不一致的数据行数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致的数据行数量",
           "example": "1",
           "member": "uint64",
           "name": "DifferentRows",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源库行数，当对比类型为**行数对比**时此项有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源库行数，当对比类型为**行数对比**时此项有意义",
           "example": "100000",
           "member": "uint64",
           "name": "SrcSampleRows",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标库行数，当对比类型为**行数对比**时此项有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标库行数，当对比类型为**行数对比**时此项有意义",
           "example": "100000",
           "member": "uint64",
           "name": "DstSampleRows",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "2023-12-19 15:54:18",
           "member": "string",
           "name": "StartedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "2023-12-19 15:58:18",
           "member": "string",
           "name": "FinishedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -869,53 +869,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据不一致的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据不一致的表详情",
           "example": "无",
           "member": "DifferenceDetail",
           "name": "Difference",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跳过校验的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过校验的表详情",
           "example": "无",
           "member": "SkippedDetail",
           "name": "Skipped",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据库不一致的详情，mongodb业务用到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库不一致的详情，mongodb业务用到",
           "example": "无",
           "member": "DifferenceAdvancedObjectsDetail",
           "name": "DifferenceAdvancedObjects",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据不一致的详情，mongodb业务用到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据不一致的详情，mongodb业务用到",
           "example": "无",
           "member": "DifferenceDataDetail",
           "name": "DifferenceData",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据行不一致的详情，mongodb业务用到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据行不一致的详情，mongodb业务用到",
           "example": "无",
           "member": "DifferenceRowDetail",
           "name": "DifferenceRow",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -947,14 +947,14 @@
         },
         {
           "disabled": false,
-          "document": "高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)",
+          "document": "高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "index",
           "member": "string",
           "name": "AdvancedObjects",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1151,143 +1151,143 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务id",
           "example": "dts-e7ukka6g",
           "member": "string",
           "name": "JobId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比任务 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比任务 Id",
           "example": "dts-e7ukka6g-cmp-c7tnusmo",
           "member": "string",
           "name": "CompareTaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比任务名称",
           "example": "compare",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止",
           "example": "success",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比任务配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比任务配置",
           "example": "无",
           "member": "CompareObject",
           "name": "Config",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比任务校验详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比任务校验详情",
           "example": "无",
           "member": "ProcessProgress",
           "name": "CheckProcess",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比任务运行详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比任务运行详情",
           "example": "无",
           "member": "ProcessProgress",
           "name": "CompareProcess",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过",
           "example": "same",
           "member": "string",
           "name": "Conclusion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务创建时间",
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务启动时间",
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "StartedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比结束时间",
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "FinishedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)",
           "example": "dataCheck",
           "member": "string",
           "name": "Method",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比配置信息",
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "一致性校验提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一致性校验提示信息",
           "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1808,13 +1808,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据对比任务 ID，形如：dts-8yv4w2i1-cmp-37skmii9",
           "example": "dts-8yv4w2i1-cmp-37skmii9",
           "member": "string",
           "name": "CompareTaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3392,23 +3392,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "一致性校验摘要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一致性校验摘要信息",
           "example": "无",
           "member": "CompareAbstractInfo",
           "name": "Abstract",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "一致性校验详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一致性校验详细信息",
           "example": "无",
           "member": "CompareDetailInfo",
           "name": "Detail",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3475,21 +3475,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "一致性校验列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一致性校验列表",
           "example": "无",
           "member": "CompareTaskItem",
           "name": "Items",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3713,33 +3715,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)",
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "校验任务结果输出简要信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验任务结果输出简要信息",
           "example": "选择的库表不存在，请重新选择[存在输入参数table在源实例没有找到]",
           "member": "string",
           "name": "BriefMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检查步骤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查步骤",
           "example": "无",
           "member": "CheckStep",
           "name": "StepInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3747,7 +3749,7 @@
           "example": "checkPass",
           "member": "string",
           "name": "CheckFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4162,23 +4164,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移任务数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "迁移任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移任务列表",
           "example": "无",
           "member": "JobItem",
           "name": "JobList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5168,83 +5170,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "检查项的名称，如：源实例权限检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查项的名称，如：源实例权限检查",
           "example": "周边检查",
           "member": "string",
           "name": "CheckItemName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检查项详细内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查项详细内容",
           "example": "周边检查",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "pass(通过)，failed(失败), warning(校验有警告，但仍通过)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "pass(通过)，failed(失败), warning(校验有警告，但仍通过)",
           "example": "failed",
           "member": "string",
           "name": "CheckResult",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检查项失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查项失败原因",
           "example": "如果目标库explicit_defaults_for_timestamp参数不为`ON`，timestamp列的隐式转换规则可能会导致源库和目标库结构不一致",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解决方案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解决方案",
           "example": "尝试以下两种方式任意一种即可：1.xxx,2xxx",
           "member": "string",
           "name": "Solution",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运行报错日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "修改目标库session级别explicit_defaults_for_timestamp参数为`ON`失败，错误信息详情 failed to run query set explicit_defaults_for_timestamp = on, err: Error 1227: Access denied; you need (at least one of) the SUPER privilege(s) for this operation ",
+          "document": "运行报错日志",
+          "example": "err: Error 1227: Access denied; you need (at least one of) the SUPER privilege(s) for this operation ",
           "member": "string",
           "name": "ErrorLog",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详细帮助的文档链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细帮助的文档链接",
           "example": "周边检查: cloud.tencent.com/document/product/571/58690",
           "member": "string",
           "name": "HelpDoc",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跳过风险文案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过风险文案",
           "example": "如果目标库explicit_defaults_for_timestamp参数不为`ON`，timestamp列的隐式转换规则可能会导致源库和目标库结构不一致",
           "member": "string",
           "name": "SkipInfo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5280,73 +5282,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名",
           "example": "user_c",
           "member": "string",
           "name": "Db",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合",
           "example": "user_s",
           "member": "string",
           "name": "Table",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源端ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端ID",
           "example": "ObjectID(\"626cb354184dd55f78b95f7f\")",
           "member": "string",
           "name": "SrcChunk",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标端ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端ID",
           "example": "ObjectID(\"626cb354184dd55f78b95f7f\")",
           "member": "string",
           "name": "DstChunk",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源端值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端值",
           "example": "{\"$numberInt\":\"17\"}",
           "member": "string",
           "name": "SrcItem",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标端值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端值",
           "example": "{\"$numberInt\":\"18\"}",
           "member": "string",
           "name": "DstItem",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2023-10-26 18:54:40",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5356,13 +5358,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5382,13 +5384,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据不一致的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据不一致的表数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5396,7 +5398,7 @@
           "example": "无",
           "member": "DifferenceItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -5408,103 +5410,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名",
           "example": "db1",
           "member": "string",
           "name": "Db",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表名",
           "example": "t1",
           "member": "string",
           "name": "Table",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分块号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分块号",
           "example": "10",
           "member": "int64",
           "name": "Chunk",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源库数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源库数值",
           "example": "1",
           "member": "string",
           "name": "SrcItem",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标库数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标库数值",
           "example": "0",
           "member": "string",
           "name": "DstItem",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "索引名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引名称",
           "example": "PRIMARY",
           "member": "string",
           "name": "IndexName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "索引下边界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引下边界",
           "example": "[\"1\",\"1\",\"2023-12-26\"]",
           "member": "string",
           "name": "LowerBoundary",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "索引上边界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "索引上边界",
           "example": "[\"+inf\"]",
           "member": "string",
           "name": "UpperBoundary",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对比消耗时间,单位为 ms\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对比消耗时间,单位为 ms",
           "example": "0.48",
           "member": "float",
           "name": "CostTime",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成时间",
           "example": "2023-12-26 05:14:24",
           "member": "string",
           "name": "FinishedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5514,13 +5516,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "不一致总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不一致总数",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6459,193 +6461,193 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据迁移任务ID",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据迁移任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据迁移任务名称",
           "example": "dts-amm1jw5q",
           "member": "string",
           "name": "JobName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务更新时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务更新时间，格式为 yyyy-mm-dd hh:mm:ss",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "迁移任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移任务错误信息",
           "example": "execute fail: Error 1146: Table '__tencentdb__.eg_dts-4lcse9uh' doesn't exist",
           "member": "string",
           "name": "BriefMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态，取值为：creating(创建中)、created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、\npausing(暂停中)、\nmanualPaused(已暂停)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态，取值为：creating(创建中)、created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、\npausing(暂停中)、\nmanualPaused(已暂停)",
           "example": "created",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务运行模式，值包括：immediate(立即运行)，timed(定时运行)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务运行模式，值包括：immediate(立即运行)，timed(定时运行)",
           "example": "immediate",
           "member": "string",
           "name": "RunMode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "期待启动时间，当RunMode取值为timed时，此值必填，形如：2022-07-11 16:20:49\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "期待启动时间，当RunMode取值为timed时，此值必填，形如：2022-07-11 16:20:49",
           "example": "2022-07-11 16:20:49",
           "member": "string",
           "name": "ExpectRunTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务操作信息",
           "example": "无",
           "member": "MigrateAction",
           "name": "Action",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "迁移执行过程信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移执行过程信息",
           "example": "无",
           "member": "MigrateDetailInfo",
           "name": "StepInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例信息",
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "SrcInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标端信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端信息",
           "example": "无",
           "member": "DBEndpointInfo",
           "name": "DstInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据一致性校验结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据一致性校验结果",
           "example": "无",
           "member": "CompareTaskInfo",
           "name": "CompareTask",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计费状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费状态信息",
           "example": "无",
           "member": "TradeInfo",
           "name": "TradeInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签信息",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动重试时间段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动重试时间段信息",
           "example": "5",
           "member": "int64",
           "name": "AutoRetryTimeRangeMinutes",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全量导出可重入标识：enum::\"yes\"/\"no\"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传",
           "example": "yes",
           "member": "string",
           "name": "DumperResumeCtrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8720,43 +8722,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名",
           "example": "user",
           "member": "string",
           "name": "Db",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合",
           "example": "user_core",
           "member": "string",
           "name": "Table",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源端行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端行数",
           "example": "100",
           "member": "int64",
           "name": "SrcCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标端行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标端行数",
           "example": "105",
           "member": "int64",
           "name": "DstCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8857,13 +8859,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳过的表数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过的表数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8871,7 +8873,7 @@
           "example": "无",
           "member": "SkippedItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -8883,33 +8885,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名",
           "example": "db1",
           "member": "string",
           "name": "Db",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表名",
           "example": "t1",
           "member": "string",
           "name": "Table",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "未发起检查的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "未发起检查的原因",
           "example": "engine not support, only support MyISAM or InnoDB",
           "member": "string",
           "name": "Reason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
