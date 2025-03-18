@@ -3,7 +3,7 @@
     "CancelVRSTask": {
       "document": "声音复刻取消任务接口",
       "input": "CancelVRSTaskRequest",
-      "name": "声音复刻取消任务接口",
+      "name": "声音复刻取消任务接口（暂未开放）",
       "output": "CancelVRSTaskResponse",
       "status": "online"
     },
@@ -88,6 +88,7 @@
           "example": "无",
           "member": "CancelVRSTaskRsp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -102,7 +103,18 @@
     },
     "CancelVRSTaskRsp": {
       "document": "取消任务响应",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ce68122c-0ca8-4fa6-99b1-90a28670626b",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "CreateVRSTaskRequest": {

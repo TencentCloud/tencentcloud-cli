@@ -1515,25 +1515,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aaa",
+          "document": "过滤名称",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤值",
           "example": "[a,b]",
           "member": "string",
           "name": "Values",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1600,9 +1600,10 @@
         {
           "disabled": false,
           "document": "键名",
-          "example": "aaa",
+          "example": "product",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1610,9 +1611,10 @@
         {
           "disabled": false,
           "document": "键名对应值",
-          "example": "xxx",
+          "example": "cvm",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

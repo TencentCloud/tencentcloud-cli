@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud GetCOSURL --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --FirmwareVersion 2.0.0
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "Url": "http://abc.com",
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "Url": "http://tencent.com",
+        "RequestId": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc"
     }
 }
 ```

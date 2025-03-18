@@ -925,7 +925,7 @@
     "CreateFlowForwards": [
       {
         "document": "将当前合同经办人转为其他员工",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeEmployees\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"TargetOpenId\": \"open_id_1\",\n    \"FlowForwardInfos\": [\n        {\n            \"FlowId\": \"yDtSPUU**********************PHG7JhZM\",\n            \"RecipientId\": \"yDtSPUU******************os8flxcvLpj\"\n        },\n        {\n            \"FlowId\": \"yDtSPUU**********************PHG7s8flx\",\n            \"RecipientId\": \"yDtSPUU******************oSPUxSP\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowForwards\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"TargetOpenId\": \"open_id_1\",\n    \"FlowForwardInfos\": [\n        {\n            \"FlowId\": \"yDtSPUU**********************PHG7JhZM\",\n            \"RecipientId\": \"yDtSPUU******************os8flxcvLpj\"\n        },\n        {\n            \"FlowId\": \"yDtSPUU**********************PHG7s8flx\",\n            \"RecipientId\": \"yDtSPUU******************oSPUxSP\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedFlows\": [\n            {\n                \"ErrorDetail\": \"转发人状态非待签署或待填写，禁止转发\",\n                \"FlowId\": \"yDtSPUU**********************PHG7JhZM\"\n            }\n        ],\n        \"RequestId\": \"s1740641173120185806\",\n        \"SuccessFlows\": [\n            \"yDtSPUU**********************PHG7s8flx\"\n        ]\n    }\n}",
         "title": "将当前合同经办人转为其他员工"
       }
@@ -1238,6 +1238,32 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"StartDate\": \"2023-11-06\",\n    \"EndDate\": \"2023-11-08\",\n    \"NeedAggregate\": true,\n    \"Limit\": 1000,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"Details\": [\n            {\n                \"ProxyOrganizationOpenId\": \"org_zhangsan\",\n                \"ProxyOrganizationName\": \"张三实例企业\",\n                \"Date\": \"1970-01-01\",\n                \"Usage\": 0,\n                \"Cancel\": 5,\n                \"FlowChannel\": \"企业版\"\n            },\n            {\n                \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n                \"ProxyOrganizationName\": \"典子谦示例企业\",\n                \"Date\": \"1970-01-01\",\n                \"Usage\": 48,\n                \"Cancel\": 0,\n                \"FlowChannel\": \"企业版\"\n            }\n        ],\n        \"RequestId\": \"f6ad02ec-0399-46c8-a9d9-4dde2aedc036\"\n    }\n}",
         "title": "查询汇总消耗"
+      }
+    ],
+    "DescribeUserFlowType": [
+      {
+        "document": "查询用户合同类型（不指定filter）",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserFlowType\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 0,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（不指定filter）"
+      },
+      {
+        "document": "查询用户合同类型（不指定查询绑定模版的合同类型）",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserFlowType\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"QueryBindTemplate\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 0,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（不指定查询绑定模版的合同类型）"
+      },
+      {
+        "document": "查询用户合同类型（指定查询绑定模版的合同类型）",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserFlowType\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"QueryBindTemplate\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 10,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（指定查询绑定模版的合同类型）"
+      },
+      {
+        "document": "查询用户合同类型（指定用户模版id）",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserFlowType\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"user-flow-type-id\",\n            \"Values\": [\n                \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            ]\n        }\n    ],\n    \"QueryBindTemplate\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 10,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（指定用户模版id）"
       }
     ],
     "GetDownloadFlowUrl": [

@@ -21,7 +21,7 @@ Output:
             {
                 "Domain": "hh**.com",
                 "CertId": "K***hh",
-                "Status": 0
+                "Keepalive": 1
             }
         ],
         "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"

@@ -131,50 +131,50 @@
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "xxx",
+          "example": "6cd22e51****************f6f7cb81",
           "member": "string",
           "name": "UserGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组名称",
-          "example": "xxx",
+          "example": "用户组1",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "XXX",
+          "example": "包含了一组用户",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "xxx",
+          "example": "tenantId",
           "member": "string",
           "name": "TenantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

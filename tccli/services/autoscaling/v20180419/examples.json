@@ -386,6 +386,14 @@
         "title": "启用指定伸缩组"
       }
     ],
+    "EnterStandby": [
+      {
+        "document": "伸缩组 asg-boz1qhnk 中实例 ins-osckfnm7, ins-cri8d02t 进入备用中状态",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnterStandby\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-q59zikez\",\n        \"RequestId\": \"5b039ee6-e8ff-4605-bb24-b45337747431\"\n    }\n}",
+        "title": "伸缩组内实例进入备用中状态"
+      }
+    ],
     "ExecuteScalingPolicy": [
       {
         "document": "触发告警伸缩策略",

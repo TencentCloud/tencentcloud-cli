@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tag TagResources --cli-unfold-argument  \
-    --ResourceList qcs::cvm:ap-beijing:uin/10000055****:instance/ins-**** qcs::cvm:ap-shanghai:uin/10000055****:volme/volme-**** \
+    --ResourceList qcs::cvm:ap-beijing:uin/10000055****:instance/ins-**** qcs::cvm:ap-shanghai:uin/10000055****:volume/**** \
     --Tags.0.TagKey 11 \
     --Tags.0.TagValue 11 \
     --Tags.1.TagKey 22 \

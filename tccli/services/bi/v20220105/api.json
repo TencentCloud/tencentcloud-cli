@@ -5171,6 +5171,17 @@
         },
         {
           "disabled": false,
+          "document": "全局角色编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sys_common_user",
+          "member": "string",
+          "name": "GlobalUserCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "手机号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1329****797",
           "member": "string",
@@ -5233,6 +5244,28 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-1 免激活  0 未激活  1 已激活 空代表待绑定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "邮箱激活状态",
+          "member": "int64",
+          "name": "EmailActivationStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "主键id",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5652,6 +5685,16 @@
           "example": "1",
           "member": "int64",
           "name": "LoginSecurityStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱激活状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EmailActivationStatus",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

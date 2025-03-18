@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli goosefs DescribeFileSystems --cli-unfold-argument  \
-    --Limit 20 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -16,53 +16,84 @@ Output:
     "Response": {
         "FSAttributeList": [
             {
-                "FileSystemId": "x_c60_r3c4fa1f",
-                "Name": "MyTestFS",
-                "Status": "alive",
-                "Type": "goosefsx",
-                "VpcId": "vpc-123",
-                "SubnetId": "subnet-123",
-                "Zone": "ap-guangzhou-3",
-                "Description": "my test fs",
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "ModifyTime": "2020-09-22T00:00:00+00:00",
-                "Tag": [
-                    {
-                        "Value": "production",
-                        "Key": "env"
-                    }
-                ],
+                "ChargeAttribute": {
+                    "PayMode": "postPay"
+                },
+                "CreateTime": "2025-03-06T20:25:17+08:00",
+                "Description": "性能",
+                "FileSystemId": "x-c50-6zgr1g24",
                 "GooseFSxAttribute": {
-                    "Model": "C60",
-                    "Capacity": 4608,
-                    "MappedBucketList": [
-                        {
-                            "BucketName": "mybucket-12500000",
-                            "FileSystemPath": "/"
-                        }
-                    ],
+                    "Capacity": 9216,
                     "ClientManagerNodeList": [
                         {
-                            "NodeInstanceId": "ins-a1b2c3",
-                            "NodeIp": "10.0.1.1",
-                            "InitialPassword": "a1b2c3d4"
+                            "InitialPassword": "wcewcffevvrvvrvgr",
+                            "NodeInstanceId": "ins-3nryi8i7",
+                            "NodeIp": "10.0.0.10"
                         },
                         {
-                            "NodeInstanceId": "ins-d4f5g6",
-                            "NodeIp": "10.0.1.2",
-                            "InitialPassword": "a1b2c3d4"
+                            "InitialPassword": "wcewcffevvrvvrvgr",
+                            "NodeInstanceId": "ins-h84056df",
+                            "NodeIp": "10.0.0.11"
                         },
                         {
-                            "NodeInstanceId": "ins-h7i8j9",
-                            "NodeIp": "10.0.1.3",
-                            "InitialPassword": "a1b2c3d4"
+                            "InitialPassword": "wcewcffevvrvvrvgr",
+                            "NodeInstanceId": "ins-0voabq4p",
+                            "NodeIp": "10.0.0.12"
                         }
-                    ]
-                }
+                    ],
+                    "MappedBucketList": [],
+                    "Model": "C50"
+                },
+                "ModifyTime": "2025-03-06T20:39:10+08:00",
+                "Name": "性能",
+                "Status": "ACTIVE",
+                "SubnetId": "subnet-c4cdynlr",
+                "Tag": [],
+                "Type": "goosefsx",
+                "VpcId": "vpc-lc0aecbo",
+                "Zone": "ap-beijing-7"
+            },
+            {
+                "ChargeAttribute": {
+                    "PayMode": "postPay"
+                },
+                "CreateTime": "2025-03-05T17:12:03+08:00",
+                "Description": "s6C50",
+                "FileSystemId": "x-c50-q51r4u2f",
+                "GooseFSxAttribute": {
+                    "Capacity": 9216,
+                    "ClientManagerNodeList": [
+                        {
+                            "InitialPassword": "wcewcffevvrvvrvgr",
+                            "NodeInstanceId": "ins-1z4swav5",
+                            "NodeIp": "10.0.0.1"
+                        },
+                        {
+                            "InitialPassword": "wcewcffevvrvvrvgr",
+                            "NodeInstanceId": "ins-6dzh6vd3",
+                            "NodeIp": "10.0.0.11"
+                        },
+                        {
+                            "InitialPassword": "wcewcffevvrvvrvgr",
+                            "NodeInstanceId": "ins-70nmym9x",
+                            "NodeIp": "10.0.0.12"
+                        }
+                    ],
+                    "MappedBucketList": [],
+                    "Model": "C50"
+                },
+                "ModifyTime": "2025-03-05T17:26:16+08:00",
+                "Name": "s6C50",
+                "Status": "ACTIVE",
+                "SubnetId": "subnet-c4cdynlr",
+                "Tag": [],
+                "Type": "goosefsx",
+                "VpcId": "vpc-lc0aecbo",
+                "Zone": "ap-beijing-7"
             }
         ],
-        "TotalCount": 30,
-        "RequestId": "b3caa32f-5e39-4360-91e4-5724369b78a6"
+        "RequestId": "7066c1c9-5b5d-494c-8116-1c6f533ee2f6",
+        "TotalCount": 2
     }
 }
 ```

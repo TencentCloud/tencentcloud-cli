@@ -8,22 +8,6 @@
         "title": "人脸美颜请求示例"
       }
     ],
-    "BeautifyVideo": [
-      {
-        "document": "调用返回成功",
-        "input": "POST / HTTP/1.1\nHost: fmu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BeautifyVideo\n<公共请求参数>\n\n{\n    \"Url\": \"abc\",\n    \"BeautyParam\": [\n        {\n            \"WhitenLevel\": 1,\n            \"SmoothingLevel\": 1,\n            \"EyeEnlargeLevel\": 1,\n            \"FaceShrinkLevel\": 1\n        }\n    ],\n    \"OutputVideoType\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"Vi6QGs7jO3uylsZY\",\n        \"EstimatedProcessTime\": 30,\n        \"RequestId\": \"327cd4c8-e544-43db-ba0c-3afda873ac73\"\n    }\n}",
-        "title": "调用返回成功"
-      }
-    ],
-    "CancelBeautifyVideoJob": [
-      {
-        "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=CancelBeautifyVideoJob\n&JobId=Iyjz4Rj3OCt5Az9a\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea89354b-209d-4abf-ba04-eef6d4e664f2\"\n    }\n}",
-        "title": "调用返回成功"
-      }
-    ],
     "CreateModel": [
       {
         "document": "",
@@ -58,14 +42,6 @@
         "input": "POST / HTTP/1.1\nHost: fmu.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetModelList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"ModelIdNum\": 1,\n        \"ModelInfos\": [\n            {\n                \"ModelId\": \"mo_0_111111140461_1259088222_3\",\n                \"Description\": \"\",\n                \"LUTFileUrl\": \"https://liudehua-9527.cos.ap-guangzhou.myqcloud.com/result.jpeg?q-sign-algorithm=sha1&q-ak=AKID********EXAMPLE&q-sign-time=8888;9999&q-key-time=8888;9999&q-header-list=&q-url-param-list=&q-signature=7de87f7bf9cfd23df9da32f46661e7cf97a5603c\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "人脸特效-人脸试妆-拉起素材列表"
-      }
-    ],
-    "QueryBeautifyVideoJob": [
-      {
-        "document": "",
-        "input": "https://fmu.tencentcloudapi.com/?Action=QueryBeautifyVideoJob\n&JobId=Iyjz4Rj3OCt5Az9a\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobStatusCode\": 7,\n        \"JobStatus\": \"处理完成\",\n        \"BeautifyVideoOutput\": {\n            \"VideoUrl\": \"http://bda-video-bodyseg-1254418846.cos.ap-guangzhou.myqcloud.com/video_beautify_prod/1.0/251006279/20200820144608_6dddf5c7-1828-42b8-8512-419cf16a2d3c_result.mp4\",\n            \"VideoMD5\": \"8A1737F730437CBFDFD8154F6845919C\",\n            \"CoverImage\": \"\",\n            \"Width\": 540,\n            \"Height\": 960,\n            \"Fps\": 22.847341537476,\n            \"DurationInSec\": 1.6194444894791\n        },\n        \"RequestId\": \"a2924747-04ca-4810-827d-8d2bd42d45ea\"\n    }\n}",
-        "title": "调用返回成功"
       }
     ],
     "StyleImage": [

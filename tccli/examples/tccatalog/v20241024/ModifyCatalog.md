@@ -34,7 +34,19 @@ tccli tccatalog ModifyCatalog --cli-unfold-argument  \
     --Connection.TCHouseDConnection.NetWork.VpcCidrBlock  \
     --Connection.TCHouseDConnection.NetWork.SubnetId  \
     --Connection.TCHouseDConnection.NetWork.SubnetCidrBlock  \
-    --Connection.VolumeConnection.Location 
+    --Connection.DlcConnection.InstanceId  \
+    --Connection.DlcConnection.InstanceName  \
+    --Connection.VolumeConnection.Location  \
+    --Connection.TccHiveConnection.EndpointServiceId  \
+    --Connection.TccHiveConnection.MetaStoreUrl  \
+    --Connection.TccHiveConnection.HiveVersion  \
+    --Connection.TccHiveConnection.Location  \
+    --Connection.TccHiveConnection.NetWork.VpcId  \
+    --Connection.TccHiveConnection.NetWork.VpcCidrBlock  \
+    --Connection.TccHiveConnection.NetWork.SubnetId  \
+    --Connection.TccHiveConnection.NetWork.SubnetCidrBlock  \
+    --Connection.WeDataModelConnection.SyncInterval  \
+    --Connection.WeDataModelConnection.TargetSchema 
 ```
 
 Output: 

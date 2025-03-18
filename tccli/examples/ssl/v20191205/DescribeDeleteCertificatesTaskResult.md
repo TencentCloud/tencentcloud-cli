@@ -21,7 +21,7 @@ Output:
                 "Domains": [
                     "GMCert ECC Root CA - 01"
                 ],
-                "Error": null,
+                "Error": "",
                 "CacheTime": "2023-09-27 19:01:47"
             },
             {
@@ -31,7 +31,7 @@ Output:
                 "Domains": [
                     "hank.com"
                 ],
-                "Error": null,
+                "Error": "",
                 "CacheTime": "2023-09-27 19:01:48"
             },
             {
@@ -41,7 +41,7 @@ Output:
                 "Domains": [
                     "test.hankzzz.com"
                 ],
-                "Error": null,
+                "Error": "",
                 "CacheTime": "2023-09-27 19:01:48"
             },
             {

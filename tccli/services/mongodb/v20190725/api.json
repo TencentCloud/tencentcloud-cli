@@ -112,6 +112,13 @@
       "output": "DescribeDBInstanceDealResponse",
       "status": "online"
     },
+    "DescribeDBInstanceNamespace": {
+      "document": "本接口（DescribeDBInstanceNamespace）用于查询数据库的表信息。",
+      "input": "DescribeDBInstanceNamespaceRequest",
+      "name": "查询实例的库表。",
+      "output": "DescribeDBInstanceNamespaceResponse",
+      "status": "online"
+    },
     "DescribeDBInstanceNodeProperty": {
       "document": "本接口用于查询节点的属性，包括节点所在可用区、节点名称、地址、角色、状态、主从延迟、优先级、投票权、标签等属性。",
       "input": "DescribeDBInstanceNodePropertyRequest",
@@ -197,7 +204,7 @@
       "status": "online"
     },
     "EnableTransparentDataEncryption": {
-      "document": "本接口(EnableTransparentDataEncryption)用于开启云数据库 MongoDB 的透明加密能力。",
+      "document": "本接口（EnableTransparentDataEncryption）用于开启云数据库 MongoDB 的透明加密能力。",
       "input": "EnableTransparentDataEncryptionRequest",
       "name": "开启实例数据透明加密",
       "output": "EnableTransparentDataEncryptionResponse",
@@ -1810,17 +1817,17 @@
           "example": "MONGOS_ALL",
           "member": "string",
           "name": "URLType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例 URI 形式的连接串访问地址示例。",
-          "example": "无",
+          "example": "mongodb://mongouser:******@10.0.5.**:27017/test?replicaSet=cmgo-ldig****_0&authSource=admin",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1869,6 +1876,7 @@
           "example": "1",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2472,6 +2480,62 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstanceNamespaceRequest": {
+      "document": "DescribeDBInstanceNamespace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定查询数据库所属的实例 ID，支持批量查询。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "example": "\"cmgo-j0i*****\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定查询的数据库名。为空时，返回当前实例的全部数据库列表。",
+          "example": "dba",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceNamespaceResponse": {
+      "document": "DescribeDBInstanceNamespace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询实例的数据库列表。若未使用 DbName 指定具体查询的数据库，则仅返回查询实例所有的数据库列表，而不返回 Collections 集合信息。",
+          "example": "['db-a','db-b']",
+          "member": "string",
+          "name": "Databases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询的集合信息。指定 DbName 时，则仅返回该数据库下的集合列表。",
+          "example": "['col-1','col-2',]",
+          "member": "string",
+          "name": "Collections",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBInstanceNodePropertyRequest": {
       "document": "DescribeDBInstanceNodeProperty请求参数结构体",
       "members": [
@@ -2712,7 +2776,7 @@
         },
         {
           "disabled": false,
-          "document": "根据版本号插叙参数模板，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是：MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本，MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。",
+          "document": "根据版本号查询参数模板，具体支持的售卖版本，请参见[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询云数据库的售卖规格的返回结果。参数与版本对应关系如下所示：\n- MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。\n- MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。\n- MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。",
           "example": "[\"MONGO_42_WT\"]",
           "member": "string",
           "name": "MongoVersion",
@@ -3415,7 +3479,7 @@
         {
           "disabled": false,
           "document": "密钥 ID。若不设置该参数，不指定具体的密钥 ID，由腾讯云自动生成密钥。",
-          "example": "秘钥ID",
+          "example": "AKID********************************",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -3758,7 +3822,7 @@
         },
         {
           "disabled": false,
-          "document": "指 ConfigServer CPU核数，取值为1，单位：GB。若为分片集群实例询价，该参数必须设置。",
+          "document": "指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。",
           "example": "1",
           "member": "uint64",
           "name": "ConfigServerCpu",
@@ -3767,7 +3831,7 @@
         },
         {
           "disabled": false,
-          "document": "指 ConfigServer 内存大小，取值为2，单位：GB。若为分片集群实例询价，则该参数必须设置。",
+          "document": "指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。",
           "example": "2",
           "member": "uint64",
           "name": "ConfigServerMemory",
@@ -3776,7 +3840,7 @@
         },
         {
           "disabled": false,
-          "document": "指 ConfigServer 磁盘大小，取值为 20，单位：GB。若为分片集群实例询价，则该参数必须设置。",
+          "document": "指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。",
           "example": "20",
           "member": "uint64",
           "name": "ConfigServerVolume",
@@ -5160,7 +5224,7 @@
         },
         {
           "disabled": false,
-          "document": "实例变更后mongod的节点数（不包含readonly节点数）。\n- 变更mongod CPU与内存规格时，该参数可以不配置或者输入当前 mongod(不包含readonly) 节点数量。\n-  变更 mongos CPU与内存规格时，该参数可以不配置或者输入当前 mongod(不包含readonly) 节点数量。\n-  节点变更时(全部类型)，该参数可不配置或输入变更后的 mongod(不包含readonl) 节点数量。\n-  副本集节点数：请确认节点数量取值范围，通过云数据库的售卖规格 [DescribeSpecInfo ](https://cloud.tencent.com/document/product/240/38565)接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。\n-  分片集群每个分片节点数：请确认节点数量取值范围，通过云数据库的售卖规格 [DescribeSpecInfo ](https://cloud.tencent.com/document/product/240/38565)接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。",
+          "document": "实例变更后mongod的节点数（不包含readonly节点数）。\n- 变更mongod CPU与内存规格时，该参数可以不配置或者输入当前 mongod(不包含readonly) 节点数量。\n-  变更 mongos CPU与内存规格时，该参数可以不配置或者输入当前 mongod(不包含readonly) 节点数量。\n-  节点变更时(全部类型)，该参数可不配置或输入变更后的 mongod(不包含readonly) 节点数量。\n-  副本集节点数：请确认节点数量取值范围，通过云数据库的售卖规格 [DescribeSpecInfo ](https://cloud.tencent.com/document/product/240/38565)接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。\n-  分片集群每个分片节点数：请确认节点数量取值范围，通过云数据库的售卖规格 [DescribeSpecInfo ](https://cloud.tencent.com/document/product/240/38565)接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。",
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",

@@ -1,6 +1,6 @@
 **Example 1: 示例**
 
-示例
+
 
 Input: 
 
@@ -15,23 +15,55 @@ Output:
     "Response": {
         "MQTTProductSkuList": [
             {
-                "ClientNumLimit": 1,
+                "AuthorizationPolicyLimit": 10,
+                "ClientNumLimit": 2000,
                 "InstanceType": "BASIC",
+                "MaxSubscriptionPerClient": 30,
                 "OnSale": true,
-                "SkuCode": "mqtt_1k",
-                "TopicNumLimit": 1,
-                "TpsLimit": 1
+                "PriceTags": [
+                    {
+                        "Category": "v_tdmq_mqtt_instance_specification",
+                        "Code": "sv_tdmq_mqtt_instance_specification_basic_config",
+                        "Name": "tps",
+                        "Step": 1
+                    },
+                    {
+                        "Category": "v_tdmq_instance_specification",
+                        "Code": "sv_tdmq_mqtt_instance_specification_basic_tps",
+                        "Name": "stepTps",
+                        "Step": 2
+                    }
+                ],
+                "SkuCode": "basic_2k",
+                "TopicNumLimit": 100,
+                "TpsLimit": 2000
             },
             {
-                "ClientNumLimit": 1000,
+                "AuthorizationPolicyLimit": 10,
+                "ClientNumLimit": 5000,
                 "InstanceType": "BASIC",
+                "MaxSubscriptionPerClient": 30,
                 "OnSale": true,
-                "SkuCode": "basic_1k",
-                "TopicNumLimit": 25,
-                "TpsLimit": 1000
+                "PriceTags": [
+                    {
+                        "Category": "v_tdmq_mqtt_instance_specification",
+                        "Code": "sv_tdmq_mqtt_instance_specification_basic_config",
+                        "Name": "tps",
+                        "Step": 1
+                    },
+                    {
+                        "Category": "v_tdmq_instance_specification",
+                        "Code": "sv_tdmq_mqtt_instance_specification_basic_tps",
+                        "Name": "stepTps",
+                        "Step": 5
+                    }
+                ],
+                "SkuCode": "basic_5k",
+                "TopicNumLimit": 100,
+                "TpsLimit": 5000
             }
         ],
-        "RequestId": "2be05982-b125-4259-b965-c487949cd896",
+        "RequestId": "590f4a66-aa96-49d7-9572-0e01e90dc85c",
         "TotalCount": 2
     }
 }

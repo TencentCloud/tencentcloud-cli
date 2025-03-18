@@ -126,6 +126,13 @@
       "output": "CreateIpAccessControlResponse",
       "status": "online"
     },
+    "CreatePostCLSFlow": {
+      "document": "创建CLS投递流任务",
+      "input": "CreatePostCLSFlowRequest",
+      "name": "创建CLS投递流任务",
+      "output": "CreatePostCLSFlowResponse",
+      "status": "online"
+    },
     "DeleteAccessExport": {
       "document": "本接口用于删除访问日志导出",
       "input": "DeleteAccessExportRequest",
@@ -637,6 +644,13 @@
       "output": "DescribePortsResponse",
       "status": "online"
     },
+    "DescribePostCLSFlows": {
+      "document": "获取CLS投递流任务列表",
+      "input": "DescribePostCLSFlowsRequest",
+      "name": "获取CLS投递流任务列表",
+      "output": "DescribePostCLSFlowsResponse",
+      "status": "online"
+    },
     "DescribeProtectionModes": {
       "document": "查询Tiga引擎大类规则及其防护模式",
       "input": "DescribeProtectionModesRequest",
@@ -817,6 +831,13 @@
       "input": "DescribeWebshellStatusRequest",
       "name": "获取域名webshell状态",
       "output": "DescribeWebshellStatusResponse",
+      "status": "online"
+    },
+    "DestroyPostCLSFlow": {
+      "document": "销毁CLS投递流任务",
+      "input": "DestroyPostCLSFlowRequest",
+      "name": "销毁CLS投递流任务",
+      "output": "DestroyPostCLSFlowResponse",
       "status": "online"
     },
     "EditOpRuleUpdateLog": {
@@ -1155,6 +1176,13 @@
       "output": "ModifyUserLevelResponse",
       "status": "online"
     },
+    "ModifyUserSignatureClass": {
+      "document": "切换Tiga引擎规则类型的生效开关",
+      "input": "ModifyUserSignatureClassRequest",
+      "name": "切换规则类型生效开关",
+      "output": "ModifyUserSignatureClassResponse",
+      "status": "online"
+    },
     "ModifyUserSignatureRule": {
       "document": "修改用户防护规则，开启关闭具体的某条规则",
       "input": "ModifyUserSignatureRuleRequest",
@@ -1237,6 +1265,13 @@
       "input": "SwitchElasticModeRequest",
       "name": "切换弹性QPS的开关",
       "output": "SwitchElasticModeResponse",
+      "status": "online"
+    },
+    "UpdateProtectionModes": {
+      "document": "更新Tiga引擎下大类规则的防护模式",
+      "input": "UpdateProtectionModesRequest",
+      "name": "批量更新规则防护模式",
+      "output": "UpdateProtectionModesResponse",
       "status": "online"
     },
     "UpsertCCAutoStatus": {
@@ -6186,6 +6221,51 @@
       ],
       "type": "object"
     },
+    "CreatePostCLSFlowRequest": {
+      "document": "CreatePostCLSFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递的CLS所在区域，默认为ap-shanghai",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递的CLS所在日志集合名称，默认为 waf_post_logset",
+          "example": "waf-post-logset",
+          "member": "string",
+          "name": "LogsetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostCLSFlowResponse": {
+      "document": "CreatePostCLSFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CronJob": {
       "document": "规则周期执行的数据结构",
       "members": [
@@ -10825,7 +10905,7 @@
         {
           "disabled": false,
           "document": "输出",
-          "example": "{                     \"Res\": [                         {                             \"Id\": \"66a341dd8f33c805d65f4765\",                             \"RuleId\": 5501526871,                             \"IpList\": [                                 \"113.108.77.69\"                             ],                             \"ActionType\": 42,                             \"Ip\": \"113.108.77.69\",                             \"Note\": \"\",                             \"Source\": \"custom\",                             \"TsVersion\": 1721975261208,                             \"CreateTime\": 1721975261208,                             \"ValidTs\": 2019571199,                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"ValidStatus\": 1                         }                     ],                     \"TotalCount\": 1             }",
+          "example": "{ \"Res\": [{\"Id\": \"66a341dd8f33c805d65f4765\", \"RuleId\": 5501526871, \"IpList\": [ \"113.108.77.69\" ],  \"TotalCount\": 1 }",
           "member": "IpAccessControlData",
           "name": "Data",
           "output_required": true,
@@ -12005,6 +12085,43 @@
           "example": "[\"443\",\"8443\"]",
           "member": "string",
           "name": "HttpsPorts",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostCLSFlowsRequest": {
+      "document": "DescribePostCLSFlows请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostCLSFlowsResponse": {
+      "document": "DescribePostCLSFlows返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的投递流列表",
+          "example": "[{ \"FlowId\": 91}]",
+          "member": "PostCLSFlowInfo",
+          "name": "PostCLSFlows",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -13681,6 +13798,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPostCLSFlowRequest": {
+      "document": "DestroyPostCLSFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递流的流ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPostCLSFlowResponse": {
+      "document": "DestroyPostCLSFlow返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -17360,36 +17513,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "定时执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时执行的时间参数",
           "example": "[{\"StartDateTime\":1711618518\t,\"EndDateTime\":1711918518}]",
           "member": "TimedJob",
           "name": "Timed",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "周期执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期执行的时间参数",
           "example": "[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}]",
           "member": "CronJob",
           "name": "Cron",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时区",
           "example": "UTC+8\t",
           "member": "string",
           "name": "TimeTZone",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21144,6 +21297,71 @@
       ],
       "type": "object"
     },
+    "ModifyUserSignatureClassRequest": {
+      "document": "ModifyUserSignatureClass请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型ID",
+          "example": "010000000",
+          "member": "string",
+          "name": "TypeID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型状态，0:关闭，1:开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserSignatureClassResponse": {
+      "document": "ModifyUserSignatureClass返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型ID",
+          "example": "010000000",
+          "member": "string",
+          "name": "TypeID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型状态，0：关闭，1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserSignatureRuleRequest": {
       "document": "ModifyUserSignatureRule请求参数结构体",
       "members": [
@@ -22025,6 +22243,92 @@
         }
       ],
       "type": "object"
+    },
+    "PostCLSFlowInfo": {
+      "document": "CKafka投递流",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递流唯一ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志 2-攻击日志",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 0-为关闭 1-为启用",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS所在区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CLSRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集合名称",
+          "example": "waf-post-logset",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集合ID",
+          "example": "59a61f1a-d606-4a17-8eaf-0881cb656887",
+          "member": "string",
+          "name": "LogsetID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志主题名称",
+          "example": "waf-post-logtopic",
+          "member": "string",
+          "name": "LogTopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集合ID",
+          "example": "59a61f1a-d606-4a17-8eaf-0881cb656887",
+          "member": "string",
+          "name": "LogTopicID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProductInfo": {
       "document": "waf产品",
@@ -24157,6 +24461,70 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateProtectionModesRequest": {
+      "document": "UpdateProtectionModes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "大类规则ID",
+          "example": "[010000000,020000000]",
+          "member": "string",
+          "name": "TypeIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0表示观察，1表示拦截",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProtectionModesResponse": {
+      "document": "UpdateProtectionModes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonRspData",
+          "name": "CommonRsp",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpsertCCAutoStatusRequest": {
       "document": "UpsertCCAutoStatus请求参数结构体",

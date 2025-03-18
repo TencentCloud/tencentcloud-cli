@@ -7,7 +7,7 @@ Input:
 ```
 tccli lowcode DeleteKnowledgeSet --cli-unfold-argument  \
     --EnvId lowcode-1cf \
-    --Name test
+    --Name name
 ```
 
 Output: 

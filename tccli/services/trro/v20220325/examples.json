@@ -183,6 +183,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改项目接口示例"
       }
+    ],
+    "ModifyProjectSecMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProjectSecMode\n<公共请求参数>\n\n{\n    \"ProjectId\": \"m82k540iwduvuuma\",\n    \"Mode\": 1,\n    \"Key\": \"123456789012345678901234567abcde\",\n    \"AutoRegister\": 3,\n    \"FieldListEnable\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\"\n    }\n}",
+        "title": "修改项目授权模式"
+      }
     ]
   },
   "version": "1.0"

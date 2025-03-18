@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud GetAllVersion --cli-unfold-argument  \
-    --ProductId ABCDE12345
+    --ProductId EQPOKD5111
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
             "1.0.0",
             "2.0.0"
         ],
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc"
     }
 }
 ```

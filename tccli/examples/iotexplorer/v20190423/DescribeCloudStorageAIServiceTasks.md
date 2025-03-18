@@ -23,7 +23,7 @@ Output:
                 "ProductId": "TQBDY6RPI9",
                 "DeviceName": "cs_112114601_2",
                 "ChannelId": 0,
-                "ServiceType": "PackageDetect",
+                "ServiceType": "Highlight",
                 "StartTime": 1710487888,
                 "EndTime": 1710487898,
                 "Status": 3,
@@ -31,6 +31,14 @@ Output:
                 "Files": [
                     "highlight.mp4",
                     "thumbnail.jpg"
+                ],
+                "FilesInfo": [
+                    {
+                        "FileName": "highlight.mp4"
+                    },
+                    {
+                        "FileName": "thumbnail.mp4"
+                    }
                 ],
                 "CreateTime": 1710490000,
                 "UpdateTime": 1710490000

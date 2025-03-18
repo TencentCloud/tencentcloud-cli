@@ -20,21 +20,21 @@ Output:
                 "LoadBalancerName": "the_name_of_gwlb",
                 "Status": 1,
                 "SubnetId": "subnet-gbi70xxx",
-                "TargetGroupId": null,
+                "TargetGroupId": "",
                 "VpcId": "vpc-rdiw0xxx",
                 "Vips": [
                     "10.0.0.1"
                 ],
                 "JumboFrame": true,
                 "CreateTime": "2024-11-26 16:40:42",
-                "Tags": null,
+                "Tags": [],
                 "InternetMaxBandwidthOut": 512000,
-                "AssociateAclGroup": null,
-                "Specifications": null,
+                "AssociateAclGroup": "",
+                "Specifications": "",
                 "DeleteProtect": false,
                 "ChargeType": "POSTPAID_BY_HOUR",
                 "Isolation": 0,
-                "IsolatedTime": null
+                "IsolatedTime": ""
             }
         ],
         "RequestId": "7c28eba2-f0d0-427e-9bc2-f44c035825b5"

@@ -231,6 +231,13 @@
       "output": "CheckDefaultSubnetResponse",
       "status": "online"
     },
+    "CheckGatewayFlowMonitor": {
+      "document": "本接口（CheckGatewayFlowMonitor）用于查询网关是否启用流量监控。",
+      "input": "CheckGatewayFlowMonitorRequest",
+      "name": "查询网关是否启用流量监控",
+      "output": "CheckGatewayFlowMonitorResponse",
+      "status": "online"
+    },
     "CheckIpInSubnetInternal": {
       "document": "用于检查某个IP是否在子网里面 原始VPC OSS接口: CheckIpInSubnet",
       "input": "CheckIpInSubnetInternalRequest",
@@ -833,6 +840,13 @@
       "output": "CreateVpnGatewaySslServerResponse",
       "status": "online"
     },
+    "CreateVxlanInternal": {
+      "document": "添加子机的VXLAN信息表，访问该IP时，母机封装VXLAN报文，而不是GRE报文。",
+      "input": "CreateVxlanInternalRequest",
+      "name": "添加子机的vxlan信息",
+      "output": "CreateVxlanInternalResponse",
+      "status": "online"
+    },
     "CreateWanIpPropertyInternal": {
       "document": "添加外网属性 原始VPC OSS接口: AddWanIpProperty",
       "input": "CreateWanIpPropertyInternalRequest",
@@ -1356,6 +1370,13 @@
       "input": "DeleteVpnGatewaySslServerRequest",
       "name": "删除SSL-VPN-SERVER",
       "output": "DeleteVpnGatewaySslServerResponse",
+      "status": "online"
+    },
+    "DeleteVxlanInternal": {
+      "document": "删除子机的VXLAN信息表。",
+      "input": "DeleteVxlanInternalRequest",
+      "name": "删除子机的VXLAN信息表",
+      "output": "DeleteVxlanInternalResponse",
       "status": "online"
     },
     "DeleteWanServiceInternal": {
@@ -2539,6 +2560,13 @@
       "input": "DescribeVpngwListDetailInternalRequest",
       "name": "查询vpngw列表详情",
       "output": "DescribeVpngwListDetailInternalResponse",
+      "status": "online"
+    },
+    "DescribeVxlanInternal": {
+      "document": "查询子机的VXLAN信息表。",
+      "input": "DescribeVxlanInternalRequest",
+      "name": "查询子机 vxlan 信息",
+      "output": "DescribeVxlanInternalResponse",
       "status": "online"
     },
     "DescribeWanServiceInternal": {
@@ -9272,6 +9300,53 @@
       ],
       "type": "object"
     },
+    "CheckGatewayFlowMonitorRequest": {
+      "document": "CheckGatewayFlowMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID，目前我们支持的网关实例类型有，\n专线网关实例ID，形如，`dcg-ltjahce6`；\nNat网关实例ID，形如，`nat-ltjahce6`；\nVPN网关实例ID，形如，`vpn-ltjahce6`。",
+          "example": "vpngw-4je9dgin",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckGatewayFlowMonitorResponse": {
+      "document": "CheckGatewayFlowMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关是否启用了流控。true为启用，false未启用。",
+          "example": "1",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关的带宽。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CheckIpInSubnetInternalRequest": {
       "document": "CheckIpInSubnetInternal请求参数结构体",
       "members": [
@@ -15260,6 +15335,43 @@
       ],
       "type": "object"
     },
+    "CreateVxlanInternalRequest": {
+      "document": "CreateVxlanInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加子机的VXLAN信息表。",
+          "example": "[{\"Owner\":\"251224754\",\"VpcId\":80203,\"Ip\":\"10.0.16.4\"}]",
+          "member": "VpcVxlanSet",
+          "name": "VpcVxlanRequestSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVxlanInternalResponse": {
+      "document": "CreateVxlanInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回子机的VXLAN信息表。",
+          "example": "无",
+          "member": "VpcVxlanSet",
+          "name": "VpcVxlanSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWanIpPropertyInternalRequest": {
       "document": "CreateWanIpPropertyInternal请求参数结构体",
       "members": [
@@ -18323,6 +18435,43 @@
           "name": "TaskId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVxlanInternalRequest": {
+      "document": "DeleteVxlanInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子机的VXLAN信息表。",
+          "example": "[{\"Owner\":\"251224754\",\"VpcId\":80203,\"Ip\":\"10.0.16.4\"}]",
+          "member": "VpcVxlanSet",
+          "name": "VpcVxlanRequestSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVxlanInternalResponse": {
+      "document": "DeleteVxlanInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子机的VXLAN信息表。",
+          "example": "无",
+          "member": "VpcVxlanSet",
+          "name": "VpcVxlanSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -32026,6 +32175,107 @@
           "member": "VpcOssGetVpngwListDetailResult",
           "name": "GetVpngwListDetailResult",
           "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVxlanInternalRequest": {
+      "document": "DescribeVxlanInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整数vpcId。",
+          "example": "80203",
+          "member": "uint64",
+          "name": "VpcId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对外唯一VpcId。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId。",
+          "example": "251224754",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子机IP地址。",
+          "example": "172.16.0.25",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子机VXLAN对象的自增Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VpcVxlanId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVxlanInternalResponse": {
+      "document": "DescribeVxlanInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回对象个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子机的VXLAN信息表。",
+          "example": "无",
+          "member": "VpcVxlanSet",
+          "name": "VpcVxlanSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -67680,6 +67930,78 @@
         }
       ],
       "usage": "out"
+    },
+    "VpcVxlanSet": {
+      "document": "子机的VXLAN信息表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整数vpcId。",
+          "example": "80203",
+          "member": "uint64",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对外唯一VpcId。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户AppId。",
+          "example": "251224754",
+          "member": "string",
+          "name": "Owner",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子机IP地址。",
+          "example": "172.16.0.25",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子机VXLAN对象的自增Id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "VpcVxlanId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2024-12-19 10:54:31",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VpnConnection": {
       "document": "VPN通道对象。",

@@ -133,21 +133,39 @@
         },
         {
           "disabled": false,
-          "document": "大模型生成语言控制参数， zh-CN表示中文；en-US表示英文",
-          "example": "zh-CN",
-          "member": "string",
-          "name": "LLMLanguage",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "流式调用开关",
           "example": "true",
           "member": "bool",
           "name": "Stream",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "EnableDeepThink",
+          "example": "ture",
+          "member": "bool",
+          "name": "EnableDeepThink",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "EnableOnlineSearch",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableOnlineSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "大模型生成语言控制参数， zh-CN表示中文；en-US表示英文",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "LLMLanguage",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -167,7 +185,7 @@
         {
           "disabled": false,
           "document": "/",
-          "example": "/",
+          "example": "\"note\"",
           "member": "string",
           "name": "Note",
           "output_required": false,
@@ -177,7 +195,7 @@
         {
           "disabled": false,
           "document": "/",
-          "example": "/",
+          "example": "{...}",
           "member": "Choice",
           "name": "Choices",
           "output_required": false,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud ListSDKLog --cli-unfold-argument  \
-    --Keywords productid:xxxxxxx \
+    --Keywords 'productid: UTY5QRLMQY' \
     --MinTime 1606205400000 \
     --MaxTime 1606209059999
 ```

@@ -175,6 +175,13 @@
       "output": "DescribeEmrOverviewMetricsResponse",
       "status": "online"
     },
+    "DescribeExportConfs": {
+      "document": "查询导出配置",
+      "input": "DescribeExportConfsRequest",
+      "name": "查询导出配置",
+      "output": "DescribeExportConfsResponse",
+      "status": "online"
+    },
     "DescribeGlobalConfig": {
       "document": "查询YARN资源调度的全局配置",
       "input": "DescribeGlobalConfigRequest",
@@ -441,6 +448,13 @@
       "output": "ModifyGlobalConfigResponse",
       "status": "online"
     },
+    "ModifyInspectionSettings": {
+      "document": "设置巡检任务配置",
+      "input": "ModifyInspectionSettingsRequest",
+      "name": "设置巡检任务配置",
+      "output": "ModifyInspectionSettingsResponse",
+      "status": "online"
+    },
     "ModifyInstanceBasic": {
       "document": "修改集群名称",
       "input": "ModifyInstanceBasicRequest",
@@ -502,6 +516,13 @@
       "input": "ModifySLInstanceRequest",
       "name": "Serverless HBase变配实例",
       "output": "ModifySLInstanceResponse",
+      "status": "online"
+    },
+    "ModifySLInstanceBasic": {
+      "document": "serverless hbase修改实例名称",
+      "input": "ModifySLInstanceBasicRequest",
+      "name": "Serverless HBase修改实例名称",
+      "output": "ModifySLInstanceBasicResponse",
       "status": "online"
     },
     "ModifyUserGroup": {
@@ -6120,6 +6141,98 @@
       ],
       "type": "object"
     },
+    "DescribeExportConfsRequest": {
+      "document": "DescribeExportConfs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "emr-cf5zdrxk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定需要导出的配置",
+          "example": "无",
+          "member": "ExportConfContext",
+          "name": "ExportConfContexts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "配置组id",
+          "example": "无",
+          "member": "uint64",
+          "name": "ConfGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导出类型",
+          "example": "无",
+          "member": "int64",
+          "name": "ExportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "节点ip",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否内部调用",
+          "example": "无",
+          "member": "bool",
+          "name": "InnerCall",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportConfsResponse": {
+      "document": "DescribeExportConfs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导出配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExportConfMeta",
+          "name": "ExportConfParamList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导出原格式配置文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExportOriginalConf",
+          "name": "ExportConfFileParamList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGlobalConfigRequest": {
       "document": "DescribeGlobalConfig请求参数结构体",
       "members": [
@@ -9968,6 +10081,130 @@
       ],
       "usage": "both"
     },
+    "ExportConfContext": {
+      "document": "指定要导出配置的上下文结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务配置",
+          "example": "",
+          "member": "int64",
+          "name": "ServiceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ExportConfMeta": {
+      "document": "导出配置结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Classification",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ServiceVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导出配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Properties",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExportOriginalConf": {
+      "document": "组件和所属配置文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名和版本号信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceNameAndVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExportOriginalConfFile",
+          "name": "ExportOriginalConfFileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExportOriginalConfFile": {
+      "document": "配置文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ExternalAccess": {
       "document": "容器集群外部访问设置",
       "members": [
@@ -11738,9 +11975,86 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "洞察结构化信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"allocatedMemMBSeconds\":118066,\"confMemSizeMB\":4096,\"minimumWastePercent\":48,\"suggestMemSizeMB\":3072,\"totalWastePercent\":48}\"",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "InspectionTaskSettings": {
+      "document": "设置巡检任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "巡检任务的唯一标记",
+          "example": "",
+          "member": "string",
+          "name": "TaskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "巡检任务组名称",
+          "example": "",
+          "member": "string",
+          "name": "Group",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "巡检任务名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "巡检任务参数设置",
+          "example": "",
+          "member": "TaskSettings",
+          "name": "TaskSettings",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否选中，”true“ ”false“",
+          "example": "",
+          "member": "string",
+          "name": "Selected",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启监控",
+          "example": "",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "InstanceChargePrepaid": {
       "document": "实例预付费参数，只有在付费类型为PREPAID时生效。",
@@ -12735,6 +13049,134 @@
       ],
       "type": "object"
     },
+    "ModifyInspectionSettingsRequest": {
+      "document": "ModifyInspectionSettings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "emr-mwyixwxp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "巡检类型，FixedTime/RealTime",
+          "example": "RealTime",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务配置",
+          "example": "[{                 \"Name\": \"元数据库异常\",                 \"Group\": \"节点\",                 \"TaskType\": \"MetaDBPingFail\",                 \"Selected\": \"true\",                 \"TaskSettings\": []             }]",
+          "member": "InspectionTaskSettings",
+          "name": "Settings",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳",
+          "example": "1741795200",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳",
+          "example": "1741837980",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "巡检周期，eg EveryDay EveryWeek EveryMonth",
+          "example": "None",
+          "member": "string",
+          "name": "Strategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每天的开始的时间",
+          "example": "15:04:05",
+          "member": "string",
+          "name": "Clock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每周的周几",
+          "example": "1",
+          "member": "string",
+          "name": "DayOfWeek",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每月的第几号",
+          "example": "2",
+          "member": "string",
+          "name": "DayOfMonth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "巡检作业Id",
+          "example": "500",
+          "member": "string",
+          "name": "JobId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInspectionSettingsResponse": {
+      "document": "ModifyInspectionSettings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回值描述",
+          "example": "OK",
+          "member": "string",
+          "name": "Info",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回成功修改的巡检任务Id",
+          "example": "123",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceBasicRequest": {
       "document": "ModifyInstanceBasic请求参数结构体",
       "members": [
@@ -13321,6 +13763,42 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySLInstanceBasicRequest": {
+      "document": "ModifySLInstanceBasic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySLInstanceBasicResponse": {
+      "document": "ModifySLInstanceBasic返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -19732,6 +20210,52 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskSettings": {
+      "document": "巡检任务参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数唯一标记",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可编辑，”true\" \"false\"",
+          "example": "",
+          "member": "string",
+          "name": "Editable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "TerminateClusterNodesRequest": {
       "document": "TerminateClusterNodes请求参数结构体",

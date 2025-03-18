@@ -748,14 +748,6 @@
         "title": "查询RabbitMQ vhost列表"
       }
     ],
-    "DescribeRabbitMQVirtualHostList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVirtualHostList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-testtesttest\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"tdmq_data\",\n                \"Description\": \"The virtual host is for test\"\n            }\n        ]\n    }\n}",
-        "title": "获取云服务器列表"
-      }
-    ],
     "DescribeRocketMQAllTemplateModuleOpt": [
       {
         "document": "",
@@ -988,6 +980,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTenantsOpt\n<公共请求参数>\n\n{\n    \"ClusterName\": \"\",\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"TenantName\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f689f940-601d-4df4-8c64-c1cbdc6a53a1\",\n        \"TotalCount\": 211,\n        \"TenantSet\": [\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {}\n        ]\n    }\n}",
         "title": "test"
+      }
+    ],
+    "DescribeRocketMQTopUsages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTopUsages\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-abc\",\n    \"MetricName\": \"consumeLag\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Dimensions\": [\n            {\n                \"Dimensions\": [\n                    {},\n                    {},\n                    {}\n                ]\n            },\n            {\n                \"Dimensions\": [\n                    {},\n                    {},\n                    {}\n                ]\n            }\n        ],\n        \"RequestId\": \"f0288e86-ee7d-4a73-a788-81ca6680b06c\",\n        \"Values\": [\n            309,\n            0\n        ]\n    }\n}",
+        "title": "获取 Group 堆积数量排序"
       }
     ],
     "DescribeRocketMQTopicMsgs": [
@@ -1442,7 +1442,7 @@
       {
         "document": "设置地域级迁移完成",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCMQRegionMigrate\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abEEEc\"\n    }\n}",
         "title": "设置迁移完成"
       }
     ],

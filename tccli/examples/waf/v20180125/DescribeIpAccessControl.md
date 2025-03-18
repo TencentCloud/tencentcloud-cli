@@ -41,10 +41,10 @@ Output:
                                 "EndDateTime": 0
                             }
                         ],
-                        "Cron": null,
+                        "Cron": [],
                         "TimeTZone": "UTC+8"
                     },
-                    "CronType": "-",
+                    "CronType": "week",
                     "ValidStatus": 1
                 }
             ],

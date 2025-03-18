@@ -176,7 +176,7 @@
       "status": "online"
     },
     "CreateRule": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [CreateL7AccRules](https://cloud.tencent.com/document/product/1552/115822)。",
+      "document": "本接口为旧版本创建规则引擎接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本创建七层加速规则接口详情请参考 [CreateL7AccRules](https://cloud.tencent.com/document/product/1552/115822)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "CreateRuleRequest",
       "name": "创建规则引擎规则（旧）",
       "output": "CreateRuleResponse",
@@ -309,7 +309,7 @@
       "status": "online"
     },
     "DeleteRules": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DeleteL7AccRules](https://cloud.tencent.com/document/product/1552/115821)。",
+      "document": "本接口为旧版本删除规则引擎接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本删除七层加速规则接口详情请参考 [DeleteL7AccRules](https://cloud.tencent.com/document/product/1552/115821)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "DeleteRulesRequest",
       "name": "批量删除规则引擎规则（旧）",
       "output": "DeleteRulesResponse",
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "DescribeRules": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820)。",
+      "document": "本接口为旧版本查询规则引擎规则接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本查询七层加速规则接口详情请参考  [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "DescribeRulesRequest",
       "name": "查询规则引擎规则（旧）",
       "output": "DescribeRulesResponse",
@@ -918,7 +918,7 @@
       "status": "online"
     },
     "ModifyRule": {
-      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccRule](https://cloud.tencent.com/document/product/1552/115818)。",
+      "document": "本接口为旧版本修改规则引擎接口，EdgeOne 于 2025 年 1 月 21 日已对规则引擎相关接口全面升级，新版本修改七层加速规则接口详情请参考 [ModifyL7AccRule](https://cloud.tencent.com/document/product/1552/115818)。\n<p style=\"color: red;\">注意：自 2025 年 1 月 21 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供，旧版接口支持的原有能力将不受影响。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版规则引擎接口。</p>",
       "input": "ModifyRuleRequest",
       "name": "修改规则引擎规则（旧）",
       "output": "ModifyRuleResponse",
@@ -1494,7 +1494,7 @@
         {
           "disabled": false,
           "document": "ip 封禁的惩罚时间单位，取值有：\n<li>second：秒；</li>\n<li>minutes：分；</li>\n<li>hour：小时。</li>默认为 second。",
-          "example": "min",
+          "example": "second",
           "member": "string",
           "name": "PunishTimeUnit",
           "output_required": true,
@@ -2635,6 +2635,23 @@
         }
       ],
       "type": "object"
+    },
+    "BlockIPActionParameters": {
+      "document": "Web安全IP封禁的附加参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封禁 IP 的惩罚时长。支持的单位有：<li>s：秒，取值范围1～120；</li><li>m：分，取值范围1～120；</li><li>h：小时，取值范围1～48。</li>",
+          "example": "80s",
+          "member": "string",
+          "name": "Duration",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BotConfig": {
       "document": "安全Bot配置",
@@ -5883,7 +5900,7 @@
         {
           "disabled": false,
           "document": "规则标签。",
-          "example": "test",
+          "example": "[\"Cache Key Configuration\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -6056,7 +6073,7 @@
         },
         {
           "disabled": false,
-          "document": "同名站点标识。限制输入数字、英文、- 和 _ 组合，长度 20 个字符以内。详情参考 [同名站点标识](https://cloud.tencent.com/document/product/1552/70202)，无此使用场景时，该字段保留为空即可。",
+          "document": "同名站点标识。限制输入数字、英文、\".\" 、\"-\" 和 \"_\"，长度 200 个字符以内。详情参考 [同名站点标识](https://cloud.tencent.com/document/product/1552/70202)，无此使用场景时，该字段保留为空即可。",
           "example": "zone-example",
           "member": "string",
           "name": "AliasZoneName",
@@ -6066,7 +6083,7 @@
         {
           "disabled": false,
           "document": "标签。该参数用于对站点进行分权限管控、分账。需要先前往 [标签控制台](https://console.cloud.tencent.com/tag/taglist) 创建对应的标签才可以在此处传入对应的标签键和标签值。",
-          "example": "a",
+          "example": "[a]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -6308,6 +6325,106 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomRule": {
+      "document": "Web安全的自定义规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义规则的名称。",
+          "example": "SampleBasicACLRule",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "example": "${http.request.ip} in ['1.1.1.1', '10.10.10.0/24', ${security.ip_group['123'@'zone-2xsnpvkhdjes']} ]",
+          "member": "string",
+          "name": "Condition",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则的执行动作。\tSecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Allow：放行。</li>",
+          "example": "参考SecurityAction结构",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则是否开启。取值有：<li>on：开启</li><li>off：关闭</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> - 增加新规则：ID 为空或不指定 ID 参数；<br> - 修改已有规则：指定需要更新/修改的规则 ID；<br> - 删除已有规则：CustomRules 参数中，Rules 列表中未包含的已有规则将被删除。",
+          "example": "1492837231",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则的类型。取值有：<li>BasicAccessRule：基础访问管控；</li><li>PreciseMatchRule：精准匹配规则，默认；</li><li>ManagedAccessRule：专家定制规则，仅出参。</li><br/>默认为PreciseMatchRule。",
+          "example": "PreciseMatchRule",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则的优先级，范围是 0 ~ 100，默认为 0，仅支持精准匹配规则（PreciseMatchRule）。",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomRules": {
+      "document": "Web安全的自定义规则结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义规则的定义列表。<br>使用 ModifySecurityPolicy 修改 Web 防护配置时: <br> -  若未指定 Rules 参数，或 Rules 参数长度为零：清空所有自定义规则配置。<br> - 若 SecurityPolicy 参数中，未指定 CustomRules 参数值：保持已有自定义规则配置，不做修改。",
+          "example": "参考 CustomRule 结构",
+          "member": "CustomRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11363,6 +11480,112 @@
       ],
       "usage": "out"
     },
+    "DetectLengthLimitCondition": {
+      "document": "检测长度限制配置条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配条件的参数名称，取值有：\n<li>body_depth：请求正文包部分的检测深度。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的参数值，取值与 Name 成对使用。\n当 Name 值为 body_depth 时， Values 只支持传入单个值，取值有：\n<li>8KB；</li>\n<li>64KB；</li>\n<li>128KB。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DetectLengthLimitConfig": {
+      "document": "检测长度限制",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测长度限制的规则列表。",
+          "example": "无",
+          "member": "DetectLengthLimitRule",
+          "name": "DetectLengthLimitRules",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DetectLengthLimitRule": {
+      "document": "检测长度限制规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则Id。仅出参使用。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称。仅出参使用。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述，仅出参使用。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则配置条件。仅出参使用。",
+          "example": "无",
+          "member": "DetectLengthLimitCondition",
+          "name": "Conditions",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置方式，取值有：\n<li>skip：当请求正文数据超过 Conditions 出参中 body_depth 设置的检测深度时，跳过所有请求正文内容的检测；</li>\n<li>scan：仅检测 Conditions 出参中 body_depth 设置的检测深度，对超出部分的请求正文内容直接截断处理，超出部分的请求正文不会经过安全检测。</li>仅出参使用。",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DiffIPWhitelist": {
       "document": "最新IP白名单列表相比于当前IP白名单列表的区别",
       "members": [
@@ -14618,6 +14841,284 @@
       ],
       "usage": "both"
     },
+    "ManagedRuleAction": {
+      "document": "托管规则的项配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管规则组下的具体项，用于改写此单条规则项配置的内容，具体参考产品文档。\t",
+          "example": "4312344811",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RuleId 中指定托管规则项的处置动作。 SecurityAction 的 Name 取值支持：<li>Deny：拦截，响应拦截页面；</li><li>Monitor：观察，不处理请求记录安全事件到日志中；</li><li>Disabled：未启用，不扫描请求跳过该规则。</li>",
+          "example": "参考 SecurityAction 结构",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagedRuleAutoUpdate": {
+      "document": "托管规则自动更新选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启自动更新至最新版本。取值有：<li>on：开启</li><li>off：关闭</li>",
+          "example": "on",
+          "member": "string",
+          "name": "AutoUpdateToLatestVersion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前使用的版本，格式符合ISO 8601标准，如2023-12-21T12:00:32Z，默认为空，仅出参。",
+          "example": "2023-12-21T12:00:32Z",
+          "member": "string",
+          "name": "RulesetVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagedRuleDetail": {
+      "document": "托管规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管规则Id。",
+          "example": "4401213776",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则的防护级别。取值有：<li>low：低风险，此规则风险较低，适用于非常严格控制环境下的访问场景，该等级规则可能造成较多的误报；</li><li>medium：中风险，表示此条规则风险正常，适用较为严格的防护场景；</li><li>high：高风险，表示此条规则风险较高，大多数场景不会产生误报；</li><li>extreme：超高风险，表示此条规则风险极高，基本不会产生误报；</li>",
+          "example": "extreme",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述。",
+          "example": "针对嵌入式数据库中，使用 create_alias 进行代码执行的操作",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则标签。部分类型的规则不存在标签。",
+          "example": "[\"OWASP\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则所属版本。",
+          "example": "2023-12-21T12:00:32Z",
+          "member": "string",
+          "name": "RuleVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagedRuleGroup": {
+      "document": "托管规则组配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管规则的组名称，未指定配置的规则分组将按照默认配置处理，GroupId 的具体取值参考产品文档。",
+          "example": "wafmanagedrulegroup-file-upload-attacks",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则组的防护级别。取值有：<li>loose：宽松，只包含超高风险规则，此时需配置Action，且RuleActions配置无效；</li><li>normal：正常，包含超高风险和高风险规则，此时需配置Action，且RuleActions配置无效；</li><li>strict：严格，包含超高风险、高风险和中风险规则，此时需配置Action，且RuleActions配置无效；</li><li>extreme：超严格，包含超高风险、高风险、中风险和低风险规则，此时需配置Action，且RuleActions配置无效；</li><li>custom：自定义，精细化策略，按单条规则配置处置方式，此时Action字段无效，使用RuleActions配置单条规则的精细化策略。</li>\t",
+          "example": "loose",
+          "member": "string",
+          "name": "SensitivityLevel",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则组的处置动作。SecurityAction 的 Name 取值支持：<li>Deny：拦截，响应拦截页面；</li><li>Monitor：观察，不处理请求记录安全事件到日志中；</li><li>Disabled：未启用，不扫描请求跳过该规则。</li>",
+          "example": "参考 SecurityAction 结构。",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则组下规则项的具体配置，仅在 SensitivityLevel 为 custom 时配置生效。",
+          "example": "参考 ManagedRuleAction 结构。",
+          "member": "ManagedRuleAction",
+          "name": "RuleActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则组信息，仅出参。\t",
+          "example": "参考 ManagedRuleGroupMeta 结构。",
+          "member": "ManagedRuleGroupMeta",
+          "name": "MetaData",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagedRuleGroupMeta": {
+      "document": "托管规则组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管规则组描述，仅出参。",
+          "example": "SQL 注入攻击防护",
+          "member": "string",
+          "name": "GroupDetail",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则组名称，仅出参。",
+          "example": "SQL 注入攻击防护",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前托管规则组下的所有子规则信息，仅出参。",
+          "example": "参考 ManagedRulesMeta 结构。",
+          "member": "ManagedRuleDetail",
+          "name": "RuleDetails",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ManagedRules": {
+      "document": "Web安全的托管规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "DetectionOnly",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则语义分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行语义分析后进行处理；</li><li>off：关闭，对请求不进行语义分析，直接进行处理。</li> <br/>默认为 off。",
+          "example": "on",
+          "member": "string",
+          "name": "SemanticAnalysis",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则自动更新选项。",
+          "example": "参考 ManagedRulesAutoUpdate 结构",
+          "member": "ManagedRuleAutoUpdate",
+          "name": "AutoUpdate",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。",
+          "example": "参考 ManagedRuleGroup 结构",
+          "member": "ManagedRuleGroup",
+          "name": "ManagedRuleGroups",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MaxAge": {
       "document": "浏览器缓存规则配置，用于设置 MaxAge 默认值，默认为关闭状态",
       "members": [
@@ -16419,7 +16920,7 @@
         {
           "disabled": false,
           "document": "规则标签。",
-          "example": "test",
+          "example": "[\"Cache Key Configuration\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -16500,7 +17001,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点Id。",
+          "document": "站点 ID。",
           "example": "zone-225qgrnvbi9w",
           "member": "string",
           "name": "ZoneId",
@@ -16509,7 +17010,7 @@
         },
         {
           "disabled": false,
-          "document": "安全配置。",
+          "document": "安全策略配置。<li>当 SecurityPolicy 参数中的 CustomRule 被设置时，SecurityConfig 参数中的 AclConfg、 IpTableConfg 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略。</li><li>对于自定义规则以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>",
           "example": "无",
           "member": "SecurityConfig",
           "name": "SecurityConfig",
@@ -16518,8 +17019,17 @@
         },
         {
           "disabled": false,
-          "document": "子域名/应用名。\n\n注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。",
-          "example": "a.test.com",
+          "document": "安全策略配置。对 Web 防护自定义策略和托管规则配置建议使用，支持表达式语法对安全策略进行配置。",
+          "example": "参考\tSecurityPolicy 结构",
+          "member": "SecurityPolicy",
+          "name": "SecurityPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "安全策略类型，可使用以下参数值： <li>ZoneDefaultPolicy：用于指定站点级策略；</li><li>Template：用于指定策略模板，需要同时指定 TemplateId 参数；</li><li>Host：用于指定域名级策略（注意：当使用域名来指定域名服务策略时，仅支持已经应用了域名级策略的域名服务或者策略模板）。</li>",
+          "example": "Host",
           "member": "string",
           "name": "Entity",
           "required": false,
@@ -16527,7 +17037,16 @@
         },
         {
           "disabled": false,
-          "document": "指定模板策略 ID，或指定站点全局策略。\n- 如需配置策略模板，请指定策略模板 ID。\n- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值\n\n注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。",
+          "document": "指定域名。当 Entity 参数值为 Host 时，使用本参数指定的域名级策略，例如：使用 www.example.com ，配置该域名的域名级策略。",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定策略模板 ID。当 Entity 参数值为 Template 时，使用本参数指定策略模板的 ID。",
           "example": "temp-wj86oi2",
           "member": "string",
           "name": "TemplateId",
@@ -16581,7 +17100,7 @@
         },
         {
           "disabled": false,
-          "document": "站点别名。数字、英文、-和_组合，限制20个字符。",
+          "document": "同名站点标识。限制输入数字、英文、\".\" 、\"-\" 和 \"_\"，长度 200 个字符以内。",
           "example": "zone-example",
           "member": "string",
           "name": "AliasZoneName",
@@ -18827,6 +19346,23 @@
       ],
       "usage": "out"
     },
+    "RedirectActionParameters": {
+      "document": "Web安全重定向的附加参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重定向的URL。",
+          "example": "https://www.tencent.com",
+          "member": "string",
+          "name": "URL",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RenewFlag": {
       "document": "预付费套餐自动续费配置项。",
       "members": [
@@ -19049,8 +19585,8 @@
         },
         {
           "disabled": false,
-          "document": "限速值，单位为：KB/s，填写数值，指定限速大小。",
-          "example": "1000",
+          "document": "限速值，指定限速大小，填写含单位的数值或变量。当前支持单位有：KB/s。",
+          "example": "1000KB/s",
           "member": "string",
           "name": "MaxSpeed",
           "output_required": false,
@@ -19060,12 +19596,40 @@
         },
         {
           "disabled": false,
-          "document": "限速开始值，可以为下载大小或指定时长，单位为：KB或s，当 Mode 取值为 LimitAfterSpecificBytesDownloaded 或 LimitAfterSpecificSecondsDownloaded 时，该参数必填。填写数值，指定下载大小或指定时长。",
-          "example": "10",
+          "document": "限速开始值，可以为下载大小或指定时长，填写含单位的数值或变量，指定下载大小或指定时长。\n\n- 当Mode 取值为 LimitAfterSpecificBytesDownloaded 时，单位取值有： KB；\n\n- 当Mode 取值为 LimitAfterSpecificSecondsDownloaded 时，单位取值有： s。\n",
+          "example": "10s",
           "member": "string",
           "name": "StartAt",
           "output_required": false,
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReturnCustomPageActionParameters": {
+      "document": "Web安全自定义页面的附加参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应状态码。",
+          "example": "404",
+          "member": "string",
+          "name": "ResponseCode",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应的自定义页面ID。",
+          "example": "p-2yr7ncnju1yk",
+          "member": "string",
+          "name": "ErrorPageId",
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -20338,8 +20902,58 @@
       ],
       "usage": "out"
     },
+    "SecurityAction": {
+      "document": "安全的执行动作",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全执行的具体动作。取值有：\n<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>",
+          "example": "Deny",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 Name 为 BlockIP 时的附加参数。",
+          "example": "参考 BlockIPActionParameters 结构",
+          "member": "BlockIPActionParameters",
+          "name": "BlockIPActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 Name 为 ReturnCustomPage 时的附加参数。",
+          "example": "参考 ReturnCustomPageActionParameters 结构",
+          "member": "ReturnCustomPageActionParameters",
+          "name": "ReturnCustomPageActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 Name 为 Redirect 时的附加参数。",
+          "example": "参考 RedirectActionParameters 结构",
+          "member": "RedirectActionParameters",
+          "name": "RedirectActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SecurityConfig": {
-      "document": "安全配置",
+      "document": "Web安全配置",
       "members": [
         {
           "disabled": false,
@@ -20450,6 +21064,45 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测长度限制配置。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetectLengthLimitConfig",
+          "name": "DetectLengthLimitConfig",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SecurityPolicy": {
+      "document": "安全策略配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义规则配置。",
+          "example": "参考 CustomRules 示例",
+          "member": "CustomRules",
+          "name": "CustomRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管规则配置。",
+          "example": "参考 ManagedRules 示例",
+          "member": "ManagedRules",
+          "name": "ManagedRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21920,6 +22573,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21930,6 +22584,7 @@
           "example": "strict",
           "member": "string",
           "name": "Level",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21940,6 +22595,7 @@
           "example": "block",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21950,6 +22606,7 @@
           "example": "无",
           "member": "WafRule",
           "name": "WafRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -21960,6 +22617,7 @@
           "example": "无",
           "member": "AiRule",
           "name": "AiRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false

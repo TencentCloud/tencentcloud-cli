@@ -23,7 +23,7 @@ Output:
         "DeviceCertificateProvisionType": "MANUAL",
         "ExpiryTime": 0,
         "InstanceId": "mqtt-bg8k8v8o",
-        "InstanceName": "jehansun-0802",
+        "InstanceName": "instance-0802",
         "InstanceStatus": "RUNNING",
         "InstanceType": "BASIC",
         "MaxSubscriptionPerClient": 30,

@@ -14,7 +14,7 @@ tccli mqtt CreateInstance --cli-unfold-argument  \
     --VpcList.0.SubnetId subnet-0tw6tlfi \
     --IpRules.0.Ip 1.1.1.1 \
     --IpRules.0.Allow True \
-    --IpRules.0.Remark 11111111
+    --IpRules.0.Remark remark
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
     "RequestId": null,
     "Response": {
         "InstanceId": "mqtt-7pnqmkrx",
-        "RequestId": "02107c9d-cbea-418c-bafc-740300fdefad"
+        "RequestId": "02107c9d-c1e2-418c-bafc-740300fdefad"
     }
 }
 ```

@@ -8,6 +8,14 @@
         "title": "节省计划下单"
       }
     ],
+    "DescribeSavingPlanCoverage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanCoverage\n<公共请求参数>\n\n{\n    \"StartDate\": \"2024-12-01\",\n    \"EndDate\": \"2024-12-30\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DetailSet\": [\n            {\n                \"BillingItemName\": \"计费项\",\n                \"EndDate\": \"2024-12-30\",\n                \"ExpectedAmount\": -4.550174,\n                \"OwnerUinName\": \"9099账号\",\n                \"PayerUin\": \"9099\",\n                \"PayerUinName\": \"9099账号\",\n                \"ProductCode\": \"p_cbs\",\n                \"RegionId\": 1,\n                \"ResourceId\": \"billingVirtualHighPrecisionFlatAccountId_\",\n                \"SpCoverage\": 0,\n                \"SpCoveredAmount\": 0,\n                \"SpUncoveredAmount\": -4.550174,\n                \"StartDate\": \"2024-12-01\",\n                \"SubBillingItemName\": \"计费细项\",\n                \"SubProductCode\": \"sp_cbs_bssd\",\n                \"SubProductName\": \"通用型SSD云硬盘\",\n                \"TotalRealAmount\": -4.550174\n            }\n        ],\n        \"RateSet\": [\n            {\n                \"DatePoint\": \"2024-12-01\",\n                \"Rate\": 10.05\n            }\n        ],\n        \"RequestId\": \"7816cba1-60d9-4a07-8556-5b62ab8d3641\",\n        \"TotalCount\": 25\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeSavingPlanDeduct": [
       {
         "document": "",

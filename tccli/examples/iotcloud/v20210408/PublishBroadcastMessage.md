@@ -7,7 +7,7 @@ Input:
 ```
 tccli iotcloud PublishBroadcastMessage --cli-unfold-argument  \
     --ProductId ASBHKN121 \
-    --Payload 123456 \
+    --Payload 5346563 \
     --Qos 1
 ```
 

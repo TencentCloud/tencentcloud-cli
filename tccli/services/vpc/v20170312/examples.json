@@ -318,6 +318,14 @@
         "title": "预判是否可建默认子网"
       }
     ],
+    "CheckGatewayFlowMonitor": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CheckGatewayFlowMonitor\n&GatewayId=vpngw-4je9dgin\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"Bandwidth\": 5,\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "title": "示例1 查询VPN网关是否开启了网关流控"
+      }
+    ],
     "CheckIpInSubnetInternal": [
       {
         "document": "",
@@ -1060,6 +1068,14 @@
         "title": "创建SSL-VPN-SERVER"
       }
     ],
+    "CreateVxlanInternal": [
+      {
+        "document": "添加子机的VXLAN信息。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVxlanInternal\n<公共请求参数>\n\n{\n    \"VpcVxlanRequestSet\": [\n        {\n            \"VpcId\": 80203,\n            \"Owner\": \"251224754\",\n            \"Ip\": \"10.0.16.4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d0ccf2a-a8cf-406e-8dfa-9cbb73b74803\",\n        \"VpcVxlanSet\": [\n            {\n                \"CreateTime\": \"2024-12-23 17:30:49\",\n                \"Ip\": \"10.0.16.4\",\n                \"Owner\": \"251224754\",\n                \"UniqueVpcId\": \"vpc-mcqaoy0f\",\n                \"VpcId\": 80203,\n                \"VpcVxlanId\": 6\n            }\n        ]\n    }\n}",
+        "title": "添加子机的VXLAN信息。"
+      }
+    ],
     "CreateWanIpPropertyInternal": [
       {
         "document": "",
@@ -1706,6 +1722,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteVpnGatewaySslServer\n&SslVpnServerId=vpns-xxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aeabeab6-f74b-453a-b25d-d7b460193c3b\",\n        \"TaskId\": 123\n    }\n}",
         "title": "删除SSL-VPN-SERVER"
+      }
+    ],
+    "DeleteVxlanInternal": [
+      {
+        "document": "删除子机的VXLAN信息。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVxlanInternal\n<公共请求参数>\n\n{\n    \"VpcVxlanRequestSet\": [\n        {\n            \"VpcId\": 80203,\n            \"Owner\": \"251224754\",\n            \"Ip\": \"10.0.16.4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f90488-d1c4-4697-b38a-114a8f5eae48\",\n        \"VpcVxlanSet\": [\n            {\n                \"CreateTime\": \"2024-12-23 17:30:49\",\n                \"Ip\": \"10.0.16.4\",\n                \"Owner\": \"251224754\",\n                \"UniqueVpcId\": \"vpc-mcqaoy0f\",\n                \"VpcId\": 80203,\n                \"VpcVxlanId\": 6\n            }\n        ]\n    }\n}",
+        "title": "删除子机的VXLAN信息。"
       }
     ],
     "DeleteWanServiceInternal": [
@@ -3256,6 +3280,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpngwListDetailInternal\n<公共请求参数>\n\n{\n    \"Owner\": \"251197522\",\n    \"Limit\": \"1\",\n    \"ImageId\": \"img2021011305837244\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"GetVpngwListDetailResult\": [\n            {\n                \"VpcId\": 81292,\n                \"UniqueVpcId\": \"vpc-7f2w7dl7\",\n                \"HotHaMac\": \"50:54:A9:FE:80:07\",\n                \"VpcDefaultFlag\": 0,\n                \"InternalHotHaMask\": \"\",\n                \"ImageId\": \"img2021011305837244\",\n                \"HotHaMask\": \"255.255.128.0\",\n                \"Bandwidth\": 5,\n                \"VpcName\": \"new_test\",\n                \"Owner\": \"251197522\",\n                \"VpnConnectNum\": 0,\n                \"MaxConnection\": 5,\n                \"Zone\": \"ap-guangzhou-2\",\n                \"UniqueCdcId\": \"\",\n                \"VpcIntMask\": 16,\n                \"VpcMask\": \"255.255.0.0\",\n                \"ZoneId\": 100002,\n                \"VpngwDomainIpPoolNum\": 0,\n                \"State\": 3,\n                \"WanIp\": \"\",\n                \"InternalHotHaSubnet\": \"\",\n                \"VpnType\": 0,\n                \"AutoRenewalsFlag\": 1,\n                \"VpcSubnet\": \"10.0.0.0\",\n                \"Quota\": \"qc_mini\",\n                \"DealId\": \"20210323292000292232301\",\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\n                \"InternalHotHaMac\": \"\",\n                \"VpngwDomainRtNum\": 0,\n                \"VpngwId\": 12201,\n                \"UniqVpngwId\": \"vpngw-eavy145z\",\n                \"HotHaSubnet\": \"169.254.128.0\",\n                \"CreateTime\": \"2021-03-23 16:01:01\",\n                \"VpngwDomainNum\": 0,\n                \"InternalHotHaIp\": \"\",\n                \"SlaLocalIp\": \"0.0.0.0\",\n                \"Name\": \"new_t_vpn_gw\",\n                \"NewAfcFlag\": 0,\n                \"HotHaFlag\": 1,\n                \"VpngwDomainAclNum\": 0,\n                \"HotHaIp\": \"169.254.128.7\",\n                \"SSLVpnPort\": 443,\n                \"BlockedFlag\": 0\n            }\n        ],\n        \"RequestId\": \"0f6d3987-1b1d-4607-9782-614d03b63275\"\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "DescribeVxlanInternal": [
+      {
+        "document": "查询子机的VXLAN信息。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVxlanInternal\n<公共请求参数>\n\n{\n    \"VpcId\": 80203,\n    \"Owner\": \"251224754\",\n    \"Ip\": \"10.0.16.4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"029ade9b-d9cc-4a1e-bd9c-a6d17e11e480\",\n        \"Total\": 1,\n        \"VpcVxlanSet\": [\n            {\n                \"CreateTime\": \"2024-12-23 17:30:49\",\n                \"Ip\": \"10.0.16.4\",\n                \"Owner\": \"251224754\",\n                \"UniqueVpcId\": \"vpc-mcqaoy0f\",\n                \"VpcId\": 80203,\n                \"VpcVxlanId\": 6\n            }\n        ]\n    }\n}",
+        "title": "查询子机的VXLAN信息。"
       }
     ],
     "DescribeWanServiceInternal": [

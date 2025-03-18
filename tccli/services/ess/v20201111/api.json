@@ -260,7 +260,7 @@
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
-      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1.满足以下条件的模板支持创建签署码： \n - 签署对象：企业与个人（无序签署）、企业与个人（顺序签署&企业非首位）、 仅个人签署。\n - 其发起方没有填写控件,签署方（B端或C端）可以有填写控件。 \n - 如签署对象中含企业方，企业方签署区只能由发起方企业签署。\n\n2. 通过一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "CreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多签签署码",
       "output": "CreateMultiFlowSignQRCodeResponse",
@@ -600,6 +600,13 @@
       "input": "DescribeUserAutoSignStatusRequest",
       "name": "获取个人用户自动签的开通状态",
       "output": "DescribeUserAutoSignStatusResponse",
+      "status": "online"
+    },
+    "DescribeUserFlowType": {
+      "document": "查询用户模版类型，分为两种模式：\n<ul>\n<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息</li>\n<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息，被绑定的模版数量</li>\n</ul>",
+      "input": "DescribeUserFlowTypeRequest",
+      "name": "查询用户模版类型",
+      "output": "DescribeUserFlowTypeResponse",
       "status": "online"
     },
     "DescribeUserVerifyStatus": {
@@ -2810,6 +2817,15 @@
           "name": "CacheApproverInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。\n <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>\n\n注：`合同组暂不支持批量拒签功能。`\n",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2955,6 +2971,15 @@
           "name": "UrlUseEnv",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`",
+          "example": "false",
+          "member": "bool",
+          "name": "CanBatchReject",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3977,7 +4002,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方签署控件（印章/签名等）的生成方式：\n<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>\n<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>",
+          "document": "签署方签署控件（印章/签名等）的生成方式：\n<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>\n<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>\n\n注：签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5",
           "example": "0",
           "member": "int64",
           "name": "SignBeanTag",
@@ -4182,7 +4207,7 @@
         {
           "disabled": false,
           "document": "合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。\n\n注意：`需要保证目标经办人已经加入企业且已实名`",
-          "example": "无",
+          "example": "yDwfGUieurag8Uy0AthwPa6bOntYp6x0",
           "member": "string",
           "name": "TargetUserId",
           "required": true,
@@ -4225,7 +4250,7 @@
         {
           "disabled": false,
           "document": "成功的合同id",
-          "example": "无",
+          "example": "[\"yDtCvUUlal1z9fUEyCjfI8TAPPwBtFzu\"]",
           "member": "string",
           "name": "SuccessFlows",
           "output_required": false,
@@ -4627,6 +4652,15 @@
           "name": "ResultPageConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括 \n - 签署控件 是否默认展示日期.",
+          "example": "无",
+          "member": "SignComponentConfig",
+          "name": "SignComponentConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -6574,12 +6608,21 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "<font color=\"red\">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>\n签署控件的配置信息，用在嵌入式发起的页面配置，\n包括  \n\n- 签署控件 是否默认展示日期.",
+          "example": "无",
+          "member": "SignComponentConfig",
+          "name": "SignComponentConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9366,7 +9409,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。\n<ul><li><strong>模板 ID</strong>：<strong>Key</strong>设置为 <code>template-id</code> ，<strong>Values</strong>为您想要查询的 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/5c27b917b2bbe8c341566c78ca6f8782.png\" target=\"_blank\">模板 ID </a>列表。</li>  <li><strong>主企业模板 ID</strong>：<strong>Key</strong>设置为 <code>share-template-id</code> ，<strong>Values</strong>为您想要查询的 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/5c27b917b2bbe8c341566c78ca6f8782.png\" target=\"_blank\">主企业模板 ID </a>列表。用来查询主企业分享模板到子企业场景下，子企业的模板信息，在此情境下，参数 <strong>Agent.ProxyOrganizationId</strong>（子企业的组织ID）为必填项。</li> <li><strong>模板名称</strong>：<strong>Key</strong>设置为 <code>template-name</code> ，<strong>Values</strong>为您想要查询的<a href=\"https://qcloudimg.tencent-cloud.cn/raw/03a924ee0a53d86575f8067d1c97876d.png\" target=\"_blank\">模板名称</a>列表。</li></ul>",
+          "document": "搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。\n<ul><li><strong>模板 ID</strong>：<strong>Key</strong>设置为 <code>template-id</code> ，<strong>Values</strong>为您想要查询的 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/5c27b917b2bbe8c341566c78ca6f8782.png\" target=\"_blank\">模板 ID </a>列表。</li>  <li><strong>主企业模板 ID</strong>：<strong>Key</strong>设置为 <code>share-template-id</code> ，<strong>Values</strong>为您想要查询的 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/5c27b917b2bbe8c341566c78ca6f8782.png\" target=\"_blank\">主企业模板 ID </a>列表。用来查询主企业分享模板到子企业场景下，子企业的模板信息，在此情境下，参数 <strong>Agent.ProxyOrganizationId</strong>（子企业的组织ID）为必填项。</li> <li><strong>模板名称</strong>：<strong>Key</strong>设置为 <code>template-name</code> ，<strong>Values</strong>为您想要查询的<a href=\"https://qcloudimg.tencent-cloud.cn/raw/03a924ee0a53d86575f8067d1c97876d.png\" target=\"_blank\">模板名称</a>列表。</li><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>",
           "example": "Filters",
           "member": "Filter",
           "name": "Filters",
@@ -10437,6 +10480,70 @@
           "name": "SealId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserFlowTypeRequest": {
+      "document": "DescribeUserFlowType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "搜索过滤的条件，本字段允许您通过指定模板 ID 或模板名称来进行查询。\n<ul><li><strong>模板 ID</strong>：<strong>Key</strong>设置为 <code>template-id</code> ，<strong>Values</strong>为您想要查询的 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/5c27b917b2bbe8c341566c78ca6f8782.png\" target=\"_blank\">模板 ID </a>列表。</li>  <li><strong>主企业模板 ID</strong>：<strong>Key</strong>设置为 <code>share-template-id</code> ，<strong>Values</strong>为您想要查询的 <a href=\"https://qcloudimg.tencent-cloud.cn/raw/5c27b917b2bbe8c341566c78ca6f8782.png\" target=\"_blank\">主企业模板 ID </a>列表。用来查询主企业分享模板到子企业场景下，子企业的模板信息，在此情境下，参数 <strong>Agent.ProxyOrganizationId</strong>（子企业的组织ID）为必填项。</li> <li><strong>模板名称</strong>：<strong>Key</strong>设置为 <code>template-name</code> ，<strong>Values</strong>为您想要查询的<a href=\"https://qcloudimg.tencent-cloud.cn/raw/03a924ee0a53d86575f8067d1c97876d.png\" target=\"_blank\">模板名称</a>列表。</li><li><strong>模板的用户合同类型</strong>：<strong>Key</strong>设置为 <code>user-flow-type-id</code> ，<strong>Values</strong>为您想要查询的用户模版类型id列表。</li></ul>",
+          "example": "Filters",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询绑定了模版的用户合同类型 <ul> <li>false（默认值），查询用户合同类型</li> <li>true，查询绑定了模版的用户合同类型</li> </ul>\t",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryBindTemplate",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserFlowTypeResponse": {
+      "document": "DescribeUserFlowType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的所有用户合同类型列表\t",
+          "example": "无",
+          "member": "TemplateUserFlowType",
+          "name": "AllUserFlowTypes",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12224,7 +12331,7 @@
         },
         {
           "disabled": false,
-          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
+          "document": "在短信通知、填写、签署流程中，若标题、按钮、合同详情等地方存在“合同”字样时，可根据此配置指定文案，可选文案如下：  <ul><li> <b>0</b> :合同（默认值）</li> <li> <b>1</b> :文件</li> <li> <b>2</b> :协议</li><li> <b>3</b> :文书</li></ul>效果如下:![FlowDisplayType](https://qcloudimg.tencent-cloud.cn/raw/e4a2c4d638717cc901d3dbd5137c9bbc.png)",
           "example": "1",
           "member": "int64",
           "name": "FlowDisplayType",
@@ -14828,6 +14935,21 @@
       ],
       "usage": "both"
     },
+    "SignComponentConfig": {
+      "document": "签署控件的配置信息，用在嵌入式发起的页面配置，包括\n\n- 签署控件是否默认展示日期.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署控件默认属性配置，是否默认展示签署日期， 在页面中可以进行修改。\n\n- false 展示签署日期（默认）\n- true 不展示签署日期 \n![image](https://qcloudimg.tencent-cloud.cn/raw/448514412e2f69f6129425beda4ff568.png)。",
+          "example": "false",
+          "member": "bool",
+          "name": "HideDate",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "SignQrCode": {
       "document": "签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。",
       "members": [
@@ -15757,6 +15879,56 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TemplateUserFlowType": {
+      "document": "模版对应的合同类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同类型id",
+          "example": "yDtwEUUckp7f87yrUygaLZxYk2SEodS7",
+          "member": "string",
+          "name": "UserFlowTypeId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同类型名称",
+          "example": "入职合同",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同类型的具体描述",
+          "example": "入职合同分类",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个合同类型绑定的模版数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TemplateNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

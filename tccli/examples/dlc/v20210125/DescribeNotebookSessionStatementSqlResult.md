@@ -15,25 +15,25 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": "abc",
-        "ResultSet": "abc",
+        "TaskId": "0be002bf-4233-430c-abed-f99b6e375513",
+        "ResultSet": "SqlResult",
         "ResultSchema": [
             {
-                "Name": "abc",
-                "Type": "abc",
-                "Comment": "abc",
+                "Name": "title",
+                "Type": "string",
+                "Comment": "sql test",
                 "Precision": 0,
                 "Scale": 0,
-                "Nullable": "abc",
+                "Nullable": "NULLABLE",
                 "Position": 0,
-                "CreateTime": "abc",
-                "ModifiedTime": "abc",
+                "CreateTime": "",
+                "ModifiedTime": "",
                 "IsPartition": true
             }
         ],
-        "NextToken": "abc",
-        "OutputPath": "abc",
-        "RequestId": "abc",
+        "NextToken": "nexttokenxxx",
+        "OutputPath": "lakefs://*/*/.system/result/20250109/*/",
+        "RequestId": "dd329ee3-ec32-4249-a7aa-596f3d47d703",
         "UseTime": 10,
         "AffectRows": 10
     }

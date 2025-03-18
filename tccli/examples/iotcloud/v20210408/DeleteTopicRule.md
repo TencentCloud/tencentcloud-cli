@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DeleteTopicRule --cli-unfold-argument  \
-    --RuleName test
+    --RuleName myname
 ```
 
 Output: 

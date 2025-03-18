@@ -3,7 +3,7 @@
     "AddSmsSign": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"业务自用申请\",\n    \"SignPurpose\": 0,\n    \"SignType\": 0,\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"ProofImage\": \"base64\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsSign\n<公共请求参数>\n\n{\n    \"Remark\": \"业务自用申请\",\n    \"SignPurpose\": 0,\n    \"SignType\": 0,\n    \"CommissionImage\": \"base64\",\n    \"SignName\": \"腾讯云\",\n    \"DocumentType\": 1,\n    \"International\": 0,\n    \"ProofImage\": \"base64\",\n    \"QualificationId\": 1000001\n}",
         "output": "{\n    \"Response\": {\n        \"AddSignStatus\": {\n            \"SignId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }

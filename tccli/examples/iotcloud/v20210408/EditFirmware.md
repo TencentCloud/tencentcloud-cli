@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud EditFirmware --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --FirmwareVersion 1.0.0 \
-    --FirmwareName name \
+    --FirmwareName name1 \
     --FirmwareDescription desc \
     --FirmwareUserDefined '{\"key1\":\"value1\", \"key2\":\"支持中文\"}'
 ```
@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc"
     }
 }
 ```

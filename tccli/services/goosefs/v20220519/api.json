@@ -604,47 +604,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间",
           "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CurDeadline",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "付费方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费方式",
           "example": "prePay",
           "member": "string",
           "name": "PayMode",
-          "output_required": false,
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动付费标识：0:默认未设置 1:自动续费 2 不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动付费标识：0:默认未设置 1:自动续费 2 不自动续费",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "100026787145_sp_cdls_goosefs_1716879810",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -750,13 +750,13 @@
         },
         {
           "disabled": false,
-          "document": "自定义挂载点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义挂载点",
           "example": "/test",
           "member": "string",
           "name": "MountPoint",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1425,9 +1425,10 @@
         {
           "disabled": false,
           "document": "bucket列表",
-          "example": "无",
+          "example": "{\"BucketName\":\"bucket125\",\"FileSystemPath\":\"/goosefs,\"DataRepositoryTaskAutoStrategy\":[\"AutoImportData\",\"\"],\"RuleId\":\"x-rule-1\"}",
           "member": "MappedBucket",
           "name": "BucketList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1473,7 +1474,7 @@
           "example": "无",
           "member": "FSAttribute",
           "name": "FSAttributeList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1483,7 +1484,7 @@
           "example": "30",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1659,13 +1660,13 @@
         },
         {
           "disabled": false,
-          "document": "GooseFSx文件系统属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GooseFSx文件系统属性",
           "example": "无",
           "member": "GooseFSxAttribute",
           "name": "GooseFSxAttribute",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1729,13 +1730,13 @@
         },
         {
           "disabled": false,
-          "document": "Tag数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tag数组",
           "example": "无",
           "member": "Tag",
           "name": "Tag",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1749,13 +1750,13 @@
         },
         {
           "disabled": false,
-          "document": "文件系统付费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统付费信息",
           "example": "无",
           "member": "ChargeAttribute",
           "name": "ChargeAttribute",
-          "output_required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2073,7 +2074,7 @@
         {
           "disabled": false,
           "document": "映射到的文件系统路径, 默认为/",
-          "example": "/",
+          "example": "/goosefs_data",
           "member": "string",
           "name": "FileSystemPath",
           "output_required": true,
@@ -2083,36 +2084,36 @@
         },
         {
           "disabled": false,
-          "document": "数据流动的自动策略, 包含加载与沉降。策略可以是多种的组合\n按需加载(OnDemandImport)\n自动加载元数据(AutoImportMeta)\n自动加载数据(AutoImportData)\n周期加载(PeriodImport)\n\n周期沉降(PeriodExport)\n立即沉降(ImmediateExport)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据流动的自动策略, 包含加载与沉降。策略可以是多种的组合\n按需加载(OnDemandImport)\n自动加载元数据(AutoImportMeta)\n自动加载数据(AutoImportData)\n周期加载(PeriodImport)\n\n周期沉降(PeriodExport)\n立即沉降(ImmediateExport)",
+          "example": "[\"AutoImportData\",\"AutoImportMeta\"]",
           "member": "string",
           "name": "DataRepositoryTaskAutoStrategy",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定bucket的数据流动策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定bucket的数据流动策略ID",
           "example": "x-rule-1",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则备注与描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则备注与描述",
           "example": "this rule is for picture bucket",
           "member": "string",
           "name": "RuleDescription",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2127,36 +2128,36 @@
         },
         {
           "disabled": false,
-          "document": "是否使用全球加速域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否使用全球加速域名",
           "example": "false",
           "member": "bool",
           "name": "AccelerateFlag",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "桶所在的园区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "桶所在的园区",
           "example": "ap-shanghai",
           "member": "string",
           "name": "BucketRegion",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义Endpoint\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义Endpoint",
           "example": "172.0.1.16",
           "member": "string",
           "name": "Endpoint",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2390,23 +2391,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc id",
           "example": "vpc-a1b2c3d4",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网ID",
           "example": "subnet-a1b2c3d4",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

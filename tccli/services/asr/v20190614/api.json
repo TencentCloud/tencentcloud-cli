@@ -316,10 +316,10 @@
         {
           "disabled": false,
           "document": "词文件（纯文本文件）的二进制base64编码，以行分隔\n格式要求：TXT\n每行只有一个词，不满足格式则报错无法上传\n每个词限制**5个汉字，15个字符**，单个词库最多不超过100个词\n注意不要有空行，尤其是最后一行",
-          "example": "避风港(进行bas64编码)",
+          "example": "避风港(进行base64编码)",
           "member": "string",
           "name": "KeyWordFile",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -2384,7 +2384,7 @@
         {
           "disabled": false,
           "document": "关键词表ID",
-          "example": "aa6f402f263f12ea856fc81fbecfd0sd",
+          "example": "aa6f402******2ea856fc81fbecfd0sd",
           "member": "string",
           "name": "KeyWordLibId",
           "required": true,
@@ -2396,16 +2396,16 @@
           "example": "新的词表名称",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
           "disabled": false,
           "document": "- 词文件（纯文本文件）以行分隔 ，进行二进制base64编码\n- 格式要求：TXT 每行只有一个词，不满足格式则报错无法上传 \n- 每个词最多5个汉字或15个字符，单个词库最多不超过100个词\n- 此参数为空则只更新词表名称",
-          "example": "无",
+          "example": "<文件base64>",
           "member": "string",
           "name": "KeyWordFile",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],

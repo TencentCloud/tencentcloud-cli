@@ -1394,13 +1394,13 @@
         },
         {
           "disabled": false,
-          "document": "分析RO组其下RO信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分析RO组其下RO信息",
           "example": "无",
           "member": "RoGroupRelation",
           "name": "RoInstances",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -16085,6 +16085,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例下线保留备份配置",
+          "example": "{\"EnableSaveBackup\":\"on\",\"SaveRange\":\"all\",\"EnableSaveBinlog\":\"on\",\"RangeTime\":0}",
+          "member": "SaveBackupConfig",
+          "name": "SaveBackup",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -21695,6 +21704,48 @@
         }
       ],
       "usage": "out"
+    },
+    "SaveBackupConfig": {
+      "document": "备份保留配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否保留备份文件，on-保留，off-不保留。",
+          "example": "off",
+          "member": "string",
+          "name": "EnableSaveBackup",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选择范围，all-保留全部，last-保留最近一个，time-保留时间段内。",
+          "example": "all",
+          "member": "string",
+          "name": "SaveRange",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否保留日志文件，仅在EnableSaveBackup为on时有效，on-支持，off-不支持。",
+          "example": "off",
+          "member": "string",
+          "name": "EnableSaveBinlog",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间范围，仅在SaveRange为time时生效，格式为时间戳。",
+          "example": "1731464610",
+          "member": "int64",
+          "name": "RangeTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "SecurityGroup": {
       "document": "安全组详情",

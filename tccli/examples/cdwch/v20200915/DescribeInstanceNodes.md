@@ -13,28 +13,44 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f510b0e8-4bc7-44c7-a191-79e467b556c4",
-        "TotalCount": 2,
         "InstanceNodesList": [
             {
-                "Ip": "172.31.1.5",
-                "Spec": "CVM.SA2",
-                "Core": 16,
-                "Memory": 32,
-                "DiskType": "CLOUD_PREMIUM",
-                "DiskSize": 1000,
-                "Cluster": "default-cluster"
+                "Cluster": "default_cluster",
+                "Core": 2,
+                "DiskSize": 200,
+                "DiskType": "CLOUD_HSSD",
+                "Ip": "10.0.0.x",
+                "IsCHProxy": false,
+                "Memory": 4,
+                "NodeGroups": [],
+                "RealResourceId": "ins-xxxxxxxx",
+                "Rip": "9.0.x.x",
+                "Spec": "S_2_4_H",
+                "Status": "Running",
+                "UUID": "939cd0af-b336-4e83-ad1f-1bc11ea097b",
+                "Zone": "ap-chongqing-1",
+                "ZoneDesc": "重庆一区"
             },
             {
-                "Ip": "172.31.1.4",
-                "Spec": "CVM.SA2",
-                "Core": 16,
-                "Memory": 32,
-                "DiskType": "CLOUD_PREMIUM",
-                "DiskSize": 1000,
-                "Cluster": "default-cluster"
+                "Cluster": "default_cluster",
+                "Core": 2,
+                "DiskSize": 200,
+                "DiskType": "CLOUD_HSSD",
+                "Ip": "10.0.0.x",
+                "IsCHProxy": false,
+                "Memory": 4,
+                "NodeGroups": [],
+                "RealResourceId": "ins-xxxxxxxx",
+                "Rip": "9.0.x.x",
+                "Spec": "S_2_4_H",
+                "Status": "Running",
+                "UUID": "939cd0af-b336-4e83-ad1f-1bc11ea097b",
+                "Zone": "ap-chongqing-1",
+                "ZoneDesc": "重庆一区"
             }
-        ]
+        ],
+        "RequestId": "xxxxxxxxxx",
+        "TotalCount": 2
     }
 }
 ```

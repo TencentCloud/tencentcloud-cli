@@ -976,23 +976,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "约束类型为section时的最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "约束类型为section时的最小值",
           "example": "1",
           "member": "string",
           "name": "Min",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "约束类型为section时的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "约束类型为section时的最大值",
           "example": "65535",
           "member": "string",
           "name": "Max",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1092,7 +1092,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户名，由字母、数字、下划线和连字符组成，长度为1~32位。",
+          "document": "账号名，账号名需要1-32个字符，由字母、数字或特殊字符组成；以字母开头；特殊字符为_-",
           "example": "testuser1",
           "member": "string",
           "name": "UserName",
@@ -1110,7 +1110,7 @@
         },
         {
           "disabled": false,
-          "document": "账号密码，密码需要 8-32 个字符，不能以 '/' 开头，并且必须包含小写字母、大写字母、数字和符号()~!@#$%^&*-+=_|{}[]:<>,.?/。",
+          "document": "账号密码，密码需要 8\\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项",
           "example": "1234qweri#",
           "member": "string",
           "name": "Password",
@@ -1128,7 +1128,7 @@
         },
         {
           "disabled": false,
-          "document": "账号备注，可以包含中文、英文字符、常见符号和数字，长度为0~256字符",
+          "document": "账号备注，可以包含中文、英文字符、常见符号和数字，最多256个字符",
           "example": "测试账号",
           "member": "string",
           "name": "Description",
@@ -2055,13 +2055,13 @@
         },
         {
           "disabled": false,
-          "document": "该字段对只读账号有意义，表示选择主备延迟小于该值的备机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段对只读账号有意义，表示选择主备延迟小于该值的备机",
           "example": "100",
           "member": "int64",
           "name": "DelayThresh",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2723,43 +2723,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "DCN 运行状态，START为正常运行，STOP为暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN 运行状态，START为正常运行，STOP为暂停",
           "example": "START",
           "member": "string",
           "name": "RoReplicationMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟复制的类型，DEFAULT为正常，DUE_TIME为指定时间",
           "example": "DEFAULT",
           "member": "string",
           "name": "DelayReplicationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟复制的指定时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟复制的指定时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DueTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "延迟复制时的延迟秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "延迟复制时的延迟秒数",
           "example": "1",
           "member": "int64",
           "name": "ReplicationDelay",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3678,6 +3678,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "文件下载链接路径前缀",
+          "example": "http://newdtsdev-1301792469.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "UrlPrefix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3757,7 +3767,7 @@
           "example": "2019-04-06 00:31:10",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3767,7 +3777,7 @@
           "example": "2019-04-06 14:31:56",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6667,13 +6677,13 @@
         },
         {
           "disabled": false,
-          "document": "分片ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片ID",
           "example": "shard-54s3xede",
           "member": "string",
           "name": "ShardId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6763,25 +6773,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备型号",
           "example": "SH12",
           "member": "string",
           "name": "Machine",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该机型对应的可售卖规格列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Cpu\":1,\"Machine\":\"TS85\",\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":5,\"Pid\":1002231,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"},{\"Cpu\":1,\"Machine\":\"TS85\",\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":6,\"Pid\":1002231,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"}]",
+          "document": "该机型对应的可售卖规格列表",
+          "example": "无",
           "member": "SpecConfigInfo",
           "name": "SpecInfos",
           "output_required": true,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7963,7 +7973,7 @@
         },
         {
           "disabled": false,
-          "document": "是否IPv6，默认0",
+          "document": "是否为IPV6网络类型实例，0:否，1:是，不传默认为0表示实例为IPV4网络类型",
           "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
@@ -7982,7 +7992,7 @@
           "example": "3323",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8031,7 +8041,7 @@
         {
           "disabled": false,
           "document": "约束类型为string时的可选值列表",
-          "example": "\"REAL_AS_FLOAT,PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,IGNORE_BAD_TABLE_OPTIONS,ONLY_FULL_GROUP_BY,NO_UNSIGNED_SUBTRACTION,NO_DIR_IN_CREATE,NO_KEY_OPTIONS,NO_TABLE_OPTIONS,NO_FIELD_OPTIONS,NO_AUTO_VALUE_ON_ZERO,NO_BACKSLASH_ESCAPES,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,HIGH_NOT_PRECEDENCE,NO_ENGINE_SUBSTITUTION,PAD_CHAR_TO_FULL_LENGTH\"",
+          "example": "STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION",
           "member": "string",
           "name": "String",
           "output_required": true,
@@ -8066,13 +8076,13 @@
         },
         {
           "disabled": false,
-          "document": "设置过的值，参数生效后，该值和value一样。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设置过的值，参数生效后，该值和value一样。",
           "example": "2",
           "member": "string",
           "name": "SetValue",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8384,7 +8394,7 @@
         },
         {
           "disabled": false,
-          "document": "新密码，由字母、数字或常见符号组成，不能包含分号、单引号和双引号，长度为6~32位。",
+          "document": "密码需要 8\\~32 个字符，不能以 '/' 开头，并且至少包含字母、数字和特殊字符 ()~!@#$%^&*-+=_|{}[]:<>,.?/ 中的两项",
           "example": "abcd8765_.",
           "member": "string",
           "name": "Password",
@@ -8394,7 +8404,7 @@
         {
           "disabled": false,
           "document": "使用GetPublicKey返回的RSA2048公钥加密后的密码",
-          "example": "+5DzNPbJ5s6e/SkAFgMKQ4ezgmIyKqwHR/TtkwCQP5oFzYTpXJC6iEYVkAmlbreL8XX2I/YdNsqfy184B5sKt7LcfcvTCDspbQrDlRawvcWU0lLxvSpBgL4zXlixxOIR5UmC6lvSJFHOdMzoeK2UKGuV2EG3BMuvVthHAKaFDEQh5C5UP5FsN8G+Zsf27tofNm6KRFrQksNcYvFqMEnnGWV4luXISbJI0yK0m6kyKJSAgtHtDvsGBbJ1fA3RO1p5K/usvARNPB1jzjK5TJtG5eFDsPLXDHwiHh8clQpSLhYj531Ba1uXi9yL1Zkhoc0lf4y2xoJU3N+ce+6IAfJiaw==",
+          "example": "MTIzNDU2Nzg5MTA=",
           "member": "string",
           "name": "EncryptedPassword",
           "required": false,
@@ -8812,13 +8822,13 @@
         },
         {
           "disabled": false,
-          "document": "样例Sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "样例Sql",
           "example": "select id, f1, sleep(1) from t1 where id % 2 = 1",
           "member": "string",
           "name": "ExampleSql",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

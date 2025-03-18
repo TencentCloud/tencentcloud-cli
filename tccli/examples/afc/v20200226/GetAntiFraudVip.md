@@ -1,41 +1,20 @@
 **Example 1: 反欺诈VIP评分接口**
 
-
+反欺诈VIP
 
 Input: 
 
 ```
 tccli afc GetAntiFraudVip --cli-unfold-argument  \
-    --BusinessSecurityData.AppIdU 0 \
-    --BusinessSecurityData.PhoneCryptoType 0 \
-    --BusinessSecurityData.WifiSSID 0 \
-    --BusinessSecurityData.IdCryptoType 0 \
-    --BusinessSecurityData.Imsi 0 \
-    --BusinessSecurityData.CustomerSubUin 0 \
-    --BusinessSecurityData.Mac 0 \
-    --BusinessSecurityData.Idfa 0 \
-    --BusinessSecurityData.Authorization 0 \
-    --BusinessSecurityData.Address 0 \
-    --BusinessSecurityData.Imei 0 \
-    --BusinessSecurityData.WifiBSSID 0 \
-    --BusinessSecurityData.BankCardNumber 0 \
-    --BusinessSecurityData.ExtensionId 0 \
-    --BusinessSecurityData.Name 0 \
-    --BusinessSecurityData.ExtensionIn 0 \
-    --BusinessSecurityData.CustomerUin 0 \
-    --BusinessSecurityData.UserIp 0 \
-    --BusinessSecurityData.PhoneNumber 0 \
-    --BusinessSecurityData.CustomerAppid 0 \
-    --BusinessSecurityData.NameCryptoType 0 \
-    --BusinessSecurityData.Uid 0 \
-    --BusinessSecurityData.WifiMac xx \
-    --BusinessSecurityData.BusinessId 0 \
-    --BusinessSecurityData.Scene 0 \
-    --BusinessSecurityData.IdNumber 0 \
-    --BusinessSecurityData.EmailAddress 0 \
-    --BusinessSecurityData.AccountType 0 \
-    --BusinessCryptoData.CryptoType 0 \
-    --BusinessCryptoData.CryptoContent 0
+    --BusinessSecurityData.CustomerUin 12001 \
+    --BusinessSecurityData.CustomerAppid 21001 \
+    --BusinessSecurityData.IdNumber 0cec189e3b86c7e4fdb222355e128ed8 \
+    --BusinessSecurityData.PhoneNumber 8412d6b9f44d948e1a105dc1e2bfcbd6 \
+    --BusinessSecurityData.Scene 1000 \
+    --BusinessSecurityData.Name 张三 \
+    --BusinessSecurityData.IdCryptoType 1 \
+    --BusinessSecurityData.PhoneCryptoType 1 \
+    --BusinessSecurityData.NameCryptoType 0
 ```
 
 Output: 
@@ -43,18 +22,18 @@ Output:
 {
     "Response": {
         "Data": {
-            "OtherModelScores": "00",
-            "PostTime": "00",
-            "Code": "00",
-            "RiskInfo": "00",
-            "ExtensionOut": "00",
-            "IdFound": "00",
-            "CodeDesc": "00",
-            "Found": "00",
-            "Message": "00",
-            "RiskScore": "00"
+            "Found": "1",
+            "IdFound": "1",
+            "RiskScore": "37",
+            "RiskInfo": [],
+            "Message": "Success",
+            "CodeDesc": "Success",
+            "Code": "0",
+            "OtherModelScores": [],
+            "PostTime": "1741231784",
+            "ExtensionOut": ""
         },
-        "RequestId": "00"
+        "RequestId": "febb48d4-761f-4032-9e99-f960fbbb4c79"
     }
 }
 ```

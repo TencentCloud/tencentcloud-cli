@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli asr UpdateAsrKeyWordLib --cli-unfold-argument  \
-    --KeyWordLibId aa6f402f263f12ea856fc81fbecfd0sd \
-    --Name 新的词表名称
+    --KeyWordLibId aa6f402******2ea856fc81fbecfd0sd \
+    --Name 词表名 \
+    --KeyWordFile <文件base64>
 ```
 
 Output: 
@@ -15,7 +16,7 @@ Output:
 {
     "Response": {
         "Data": {
-            "KeyWordLibId": "aa6f402f263f12ea856fc81fbecfd0sd"
+            "KeyWordLibId": "aa6f402f******ea856fc81fbecfd0sd"
         },
         "RequestId": "3290cfb2-91a7-4989-91de-d1d624a77c12"
     }

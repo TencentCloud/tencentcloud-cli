@@ -21,7 +21,7 @@ Output:
                 "ActionType": "billVirtualId",
                 "ActionTypeName": "月度计费精度差异",
                 "AllocationType": 1,
-                "BillDate": null,
+                "BillDate": "2025-01-01",
                 "BlendedDiscount": "",
                 "BusinessCode": "billVirtualId",
                 "BusinessCodeName": "月度计费精度差异",
@@ -37,7 +37,7 @@ Output:
                 "Formula": "",
                 "FormulaUrl": "",
                 "IncentivePayAmount": "0.00000000",
-                "InstanceType": null,
+                "InstanceType": "",
                 "InstanceTypeName": "",
                 "ItemCode": "billVirtualId",
                 "ItemCodeName": "月度计费精度差异",
@@ -67,7 +67,12 @@ Output:
                 "SinglePriceUnit": "元/月",
                 "SplitItemId": "",
                 "SplitItemName": "",
-                "Tag": null,
+                "Tag": [
+                    {
+                        "TagKey": "department",
+                        "TagValue": "运营中心"
+                    }
+                ],
                 "TimeSpan": "1.00000000",
                 "TimeUnit": "月",
                 "TotalCost": "-0.00000285",

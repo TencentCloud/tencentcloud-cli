@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli iotcloud DeleteDeviceShadow --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName abc
+    --ProductId EQPOKD5111 \
+    --DeviceName dev-001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "5186e731-d43c-43ef-955c-12ff9b0ce9f1"
     }
 }
 ```

@@ -16,22 +16,24 @@ Output:
         "BucketList": [
             {
                 "BucketName": "mybucket-12500000",
-                "FileSystemPath": "/",
+                "FileSystemPath": "/goosefs_data",
                 "DataRepositoryTaskAutoStrategy": [
                     "AutoImportData",
                     "AutoImportMeta"
                 ],
-                "RuleId": "x-rule-1"
+                "RuleId": "x-rule-1",
+                "RuleDescription": "Bucket与goosefs的文件映射"
             },
             {
                 "BucketName": "mytest-12500000",
-                "FileSystemPath": "/aaa",
+                "FileSystemPath": "/goosefs_data1",
                 "DataRepositoryTaskAutoStrategy": [
                     "OndemandImport",
                     "AutoImportMeta",
                     "PeriodExport"
                 ],
-                "RuleId": "x-rule-2"
+                "RuleId": "x-rule-2",
+                "RuleDescription": "Bucket与goosefs的文件映射"
             }
         ],
         "RequestId": "b3caa32f-5e39-4360-91e4-5724369b78a6"

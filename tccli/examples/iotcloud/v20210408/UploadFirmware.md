@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud UploadFirmware --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --FirmwareVersion 1.0.0 \
     --Md5sum hfshfspodkoiwuidoiwjcuie \
     --FileSize 1024
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "bea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc"
     }
 }
 ```

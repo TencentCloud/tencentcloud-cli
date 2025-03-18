@@ -58,10 +58,10 @@
     ],
     "DeleteAccountUser": [
       {
-        "document": "刪除实例账号",
+        "document": "删除实例账号",
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccountUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-9d0p****\",\n    \"UserName\": \"test_user\",\n    \"MongoUserPassword\": \"Abc@123\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"1df930fb-eb7e-4e3f-bcab-15a1aa5fede0\"\n    }\n}",
-        "title": "刪除实例账号"
+        "title": "删除实例账号"
       }
     ],
     "DescribeAccountUsers": [
@@ -126,6 +126,20 @@
         "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeDBInstanceDeal\n&DealId=20200420111635\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Action\": \"purchase\",\n        \"DiscountPrice\": 759.33,\n        \"OriginalPrice\": 1116.67,\n        \"RequestId\": \"e79836e8-1864-45bf-aa63-0c7af31e7de5\",\n        \"Status\": 4\n    }\n}",
         "title": "查询订单详情"
+      }
+    ],
+    "DescribeDBInstanceNamespace": [
+      {
+        "document": "输入参数 DbName 为空时，查看当前实例全部数据库列表。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceNamespace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qny2****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            \"demo_db7\",\n            \"demo_db8\",\n            \"demo_db9\"\n        ],\n        \"RequestId\": \"18cfe2bf-6934-4f17-a089-8d2e5d6cfc53\"\n    }\n}",
+        "title": "查询当前实例的DB列表。"
+      },
+      {
+        "document": "指定 DbName，查询该数据库下的所有集合信息。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceNamespace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qny2****\",\n    \"DbName\": \"demo_db0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Collections\": [\n            \"col148\",\n            \"col108\",\n            \"col120\"\n        ],\n        \"RequestId\": \"21b503b5-6606-4efb-b250-63071c2fe565\"\n    }\n}",
+        "title": "查询指定 DB 下的所有集合"
       }
     ],
     "DescribeDBInstanceNodeProperty": [
@@ -227,8 +241,8 @@
     "EnableTransparentDataEncryption": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"myEncryptionkey\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"a8dce7a4-d488-49c9-8d24-33cf623f5992\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjy****\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"AKID********************************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 17316505316,\n        \"RequestId\": \"a8dce7a4-d488-49c9-8d24-33cf623f5992\"\n    }\n}",
         "title": "开启实例数据透明加密"
       }
     ],

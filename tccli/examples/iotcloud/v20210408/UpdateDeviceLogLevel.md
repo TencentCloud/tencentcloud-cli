@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud UpdateDeviceLogLevel --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName abc \
+    --ProductId EQPOKD5111 \
+    --DeviceName dev-001 \
     --LogLevel 1
 ```
 

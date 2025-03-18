@@ -12,7 +12,7 @@ tccli ciam DescribeUser --cli-unfold-argument  \
     --Filters.0.PropertyKey nickname \
     --Filters.0.PropertyValue 昵称1 \
     --Filters.0.Logic True \
-    --Filters.0.OperateLogic abc \
+    --Filters.0.OperateLogic test01 \
     --Original True \
     --Sort.PropertyKey nickname \
     --Sort.Order decs
@@ -62,7 +62,7 @@ Output:
                 "Name": "姓名",
                 "Locale": "地理位置",
                 "Gender": "男",
-                "IdentityVerificationMethod": "-",
+                "IdentityVerificationMethod": "nameAndIdCard",
                 "IdentityVerified": true,
                 "Job": "员工",
                 "Nationality": "汉族",
@@ -72,7 +72,7 @@ Output:
                 "TenantId": "tenantId",
                 "UserStoreId": "2c3aca3b****************a7efe88e",
                 "Version": 0,
-                "LockType": "-",
+                "LockType": "failureLock",
                 "LockTime": 0,
                 "IndexedAttribute1": "value1",
                 "IndexedAttribute2": "value2",

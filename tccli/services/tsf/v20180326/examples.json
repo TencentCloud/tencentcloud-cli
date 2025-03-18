@@ -992,6 +992,14 @@
         "title": "获取微服务列表"
       }
     ],
+    "DescribeMicroservicesByGroupIds": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMicroservicesByGroupIds\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"group-6a7eb39y\",\n        \"group-nalb5dwv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b3b8c47-e7fa-4938-b9a3-cd2c962de722\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"CreateTime\": null,\n                    \"CriticalInstanceCount\": null,\n                    \"MicroserviceDesc\": null,\n                    \"MicroserviceId\": \"ms-yrkd4dla\",\n                    \"MicroserviceName\": \"consumer-demo\",\n                    \"NamespaceId\": \"namespace-9yn23x4y\",\n                    \"RunInstanceCount\": 1,\n                    \"UpdateTime\": null\n                },\n                {\n                    \"CreateTime\": null,\n                    \"CriticalInstanceCount\": null,\n                    \"MicroserviceDesc\": null,\n                    \"MicroserviceId\": \"ms-ymbjjl3v\",\n                    \"MicroserviceName\": \"provider-demo\",\n                    \"NamespaceId\": \"namespace-4y4g8pyk\",\n                    \"RunInstanceCount\": 1,\n                    \"UpdateTime\": null\n                }\n            ],\n            \"TotalCount\": 2\n        }\n    }\n}",
+        "title": "通过部署组ID获取微服务"
+      }
+    ],
     "DescribeMsApiList": [
       {
         "document": "查询微服务API列表",

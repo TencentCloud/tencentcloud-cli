@@ -933,7 +933,7 @@
         {
           "disabled": false,
           "document": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填。",
-          "example": "123",
+          "example": "6235990",
           "member": "string",
           "name": "VpcId",
           "required": false,

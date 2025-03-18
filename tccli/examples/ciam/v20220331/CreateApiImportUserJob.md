@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ciam CreateApiImportUserJob --cli-unfold-argument  \
-    --UserStoreId abc \
+    --UserStoreId 2c3aca3b****************a7efe88e \
     --DataFlowUserCreateList.0.UserName zhangsan \
     --DataFlowUserCreateList.0.PhoneNumber 132****0000 \
     --DataFlowUserCreateList.0.Email 132****@qq.com \
@@ -25,7 +25,7 @@ tccli ciam CreateApiImportUserJob --cli-unfold-argument  \
     --DataFlowUserCreateList.0.Name 姓名 \
     --DataFlowUserCreateList.0.Locale 地理位置 \
     --DataFlowUserCreateList.0.Gender 男 \
-    --DataFlowUserCreateList.0.IdentityVerificationMethod 无 \
+    --DataFlowUserCreateList.0.IdentityVerificationMethod nameAndIdCard \
     --DataFlowUserCreateList.0.IdentityVerified True \
     --DataFlowUserCreateList.0.Job 员工 \
     --DataFlowUserCreateList.0.Nationality 汉族 \
@@ -36,7 +36,7 @@ tccli ciam CreateApiImportUserJob --cli-unfold-argument  \
     --DataFlowUserCreateList.0.CustomizationAttributes.0.Type STRING \
     --DataFlowUserCreateList.0.Salt.SaltValue salt*** \
     --DataFlowUserCreateList.0.Salt.SaltLocation.SaltLocationTypeEnum HEAD \
-    --DataFlowUserCreateList.0.Salt.SaltLocation.SaltLocationRule.Regex passwordabc123 \
+    --DataFlowUserCreateList.0.Salt.SaltLocation.SaltLocationRule.Regex password123 \
     --DataFlowUserCreateList.0.PasswordEncryptTypeEnum SHA1 \
     --DataFlowUserCreateList.0.IndexedAttribute1 value1 \
     --DataFlowUserCreateList.0.IndexedAttribute2 value2 \

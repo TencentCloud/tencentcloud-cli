@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfg DescribeTask --cli-unfold-argument  \
-    --TaskId 0
+    --TaskId 6834
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Output:
             "ApplicationName": "",
             "Tags": [],
             "TaskCreateTime": "2023-10-09 10:55:18",
-            "TaskDescription": "测试",
+            "TaskDescription": "游戏登录服跨AZ容灾演练",
             "TaskEndTime": null,
             "TaskExpect": null,
             "TaskGroups": [
@@ -46,7 +46,7 @@ Output:
                             "ActionType": "平台",
                             "IsExecuteRedo": false,
                             "TaskGroupActionCreateTime": "2023-10-09 10:55:18",
-                            "TaskGroupActionCustomConfiguration": "{}",
+                            "TaskGroupActionCustomConfiguration": "{\"force\": \"否\", \"destIp\": \"\", \"excludeIp\": \"\", \"localPort\": \"\", \"netPercent\": 8, \"remotePort\": \"\", \"excludePort\": \"\", \"netInterface\": \"eth0\"}",
                             "TaskGroupActionExecuteId": null,
                             "TaskGroupActionExecuteTime": null,
                             "TaskGroupActionGeneralConfiguration": "{\"AliasTitle\": \"\", \"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
@@ -68,7 +68,7 @@ Output:
                             "ActionType": "平台",
                             "IsExecuteRedo": false,
                             "TaskGroupActionCreateTime": "2023-10-09 10:55:18",
-                            "TaskGroupActionCustomConfiguration": "{}",
+                            "TaskGroupActionCustomConfiguration": "{\"force\": \"否\", \"destIp\": \"\", \"excludeIp\": \"\", \"localPort\": \"\", \"netPercent\": 8, \"remotePort\": \"\", \"excludePort\": \"\", \"netInterface\": \"eth0\"}",
                             "TaskGroupActionExecuteId": 457181,
                             "TaskGroupActionExecuteTime": null,
                             "TaskGroupActionGeneralConfiguration": "{\"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
@@ -134,9 +134,33 @@ Output:
             "TaskStatusType": 0,
             "TaskSummary": null,
             "TaskTag": "",
-            "TaskTitle": "测试",
+            "TaskTitle": "跨AZ容灾演练",
             "TaskUpdateTime": "2023-10-09 10:55:18"
         }
+    }
+}
+```
+
+**Example 2: 无权限的调用**
+
+
+
+Input: 
+
+```
+tccli cfg DescribeTask --cli-unfold-argument  \
+    --TaskId 6834
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "您无权操作此功能！"
+        },
+        "RequestId": "d1fc7e73-8e6d-45fa-a333-c199914883e9"
     }
 }
 ```

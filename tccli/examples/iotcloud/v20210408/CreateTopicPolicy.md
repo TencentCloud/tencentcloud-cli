@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud CreateTopicPolicy --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --TopicName abc \
+    --ProductId EQPOKD5111 \
+    --TopicName updata \
     --Privilege 2 \
     --BrokerSubscribe.ProductId 11LAWZ3J2D \
     --BrokerSubscribe.DeviceName device1

@@ -7,8 +7,8 @@ Input:
 ```
 tccli iotcloud CreateTopicRule --cli-unfold-argument  \
     --TopicRulePayload.Sql U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw== \
-    --TopicRulePayload.Description xx \
-    --TopicRulePayload.Actions [] \
+    --TopicRulePayload.Description my descrption \
+    --TopicRulePayload.Actions [json] \
     --TopicRulePayload.RuleDisabled True \
     --RuleName testrulename
 ```

@@ -1,0 +1,357 @@
+**Example 1: 设置巡检任务配置**
+
+
+
+Input: 
+
+```
+tccli emr ModifyInspectionSettings --cli-unfold-argument  \
+    --StartTime 1741795200 \
+    --EndTime 1741837980 \
+    --InstanceId emr-mwyixwxp \
+    --Type RealTime \
+    --Settings.0.Name CPU利用率连续高于阈值 \
+    --Settings.0.Group 节点 \
+    --Settings.0.TaskType CpuUsageMoreThanThreshold \
+    --Settings.0.Selected true \
+    --Settings.0.TaskSettings.0.Key Threshold \
+    --Settings.0.TaskSettings.0.Name 阈值 \
+    --Settings.0.TaskSettings.0.Value 85 \
+    --Settings.0.TaskSettings.0.Editable true \
+    --Settings.0.TaskSettings.1.Key WindowSize \
+    --Settings.0.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.0.TaskSettings.1.Value 1800 \
+    --Settings.0.TaskSettings.1.Editable true \
+    --Settings.1.Name CPU IOwait平均值高于阈值 \
+    --Settings.1.Group 节点 \
+    --Settings.1.TaskType CpuIOWaitAvgMoreThanThreshold \
+    --Settings.1.Selected true \
+    --Settings.1.TaskSettings.0.Key Threshold \
+    --Settings.1.TaskSettings.0.Name 阈值 \
+    --Settings.1.TaskSettings.0.Value 60 \
+    --Settings.1.TaskSettings.0.Editable true \
+    --Settings.1.TaskSettings.1.Key WindowSize \
+    --Settings.1.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.1.TaskSettings.1.Value 1800 \
+    --Settings.1.TaskSettings.1.Editable true \
+    --Settings.2.Name 内存使用率持续高于阈值 \
+    --Settings.2.Group 节点 \
+    --Settings.2.TaskType MemoryFreeException \
+    --Settings.2.Selected true \
+    --Settings.2.TaskSettings.0.Key Threshold \
+    --Settings.2.TaskSettings.0.Name 阈值 \
+    --Settings.2.TaskSettings.0.Value 85 \
+    --Settings.2.TaskSettings.0.Editable true \
+    --Settings.2.TaskSettings.1.Key WindowSize \
+    --Settings.2.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.2.TaskSettings.1.Value 1800 \
+    --Settings.2.TaskSettings.1.Editable true \
+    --Settings.3.Name 系统进程总数连续高于阈值 \
+    --Settings.3.Group 节点 \
+    --Settings.3.TaskType ProcessCntMoreThanThreshold \
+    --Settings.3.Selected true \
+    --Settings.3.TaskSettings.0.Key Threshold \
+    --Settings.3.TaskSettings.0.Name 阈值 \
+    --Settings.3.TaskSettings.0.Value 10000 \
+    --Settings.3.TaskSettings.0.Editable true \
+    --Settings.3.TaskSettings.1.Key WindowSize \
+    --Settings.3.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.3.TaskSettings.1.Value 1800 \
+    --Settings.3.TaskSettings.1.Editable true \
+    --Settings.4.Name 元数据库异常 \
+    --Settings.4.Group 节点 \
+    --Settings.4.TaskType MetaDBPingFail \
+    --Settings.4.Selected true \
+    --Settings.5.Name HDFS存储空间使用率持续高于阈值 \
+    --Settings.5.Group HDFS \
+    --Settings.5.TaskType HDFSCapacityUsedRateMoreThanThreshold \
+    --Settings.5.Selected true \
+    --Settings.5.TaskSettings.0.Key Threshold \
+    --Settings.5.TaskSettings.0.Name 阈值 \
+    --Settings.5.TaskSettings.0.Value 85 \
+    --Settings.5.TaskSettings.0.Editable true \
+    --Settings.5.TaskSettings.1.Key WindowSize \
+    --Settings.5.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.5.TaskSettings.1.Value 1800 \
+    --Settings.5.TaskSettings.1.Editable true \
+    --Settings.6.Name NameNode 发生主备切换 \
+    --Settings.6.Group HDFS \
+    --Settings.6.TaskType HDFSNameNodeSwitch \
+    --Settings.6.Selected true \
+    --Settings.7.Name NameNode 发生full GC \
+    --Settings.7.Group HDFS \
+    --Settings.7.TaskType NameNodeFullGC \
+    --Settings.7.Selected true \
+    --Settings.8.Name NameNode JVM内存使用率持续高于阈值 \
+    --Settings.8.Group HDFS \
+    --Settings.8.TaskType NameNodeJvmMemoryUsageMoreThanThreshold \
+    --Settings.8.Selected true \
+    --Settings.8.TaskSettings.0.Key Threshold \
+    --Settings.8.TaskSettings.0.Name 阈值 \
+    --Settings.8.TaskSettings.0.Value 85 \
+    --Settings.8.TaskSettings.0.Editable true \
+    --Settings.8.TaskSettings.1.Key WindowSize \
+    --Settings.8.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.8.TaskSettings.1.Value 1800 \
+    --Settings.8.TaskSettings.1.Editable true \
+    --Settings.9.Name ResourceManager 发生主备切换 \
+    --Settings.9.Group YARN \
+    --Settings.9.TaskType YarnRMSwitch \
+    --Settings.9.Selected true \
+    --Settings.10.Name ResourceManager 发生full GC \
+    --Settings.10.Group YARN \
+    --Settings.10.TaskType YarnRmFullGCMoreThanThreshold \
+    --Settings.10.Selected true \
+    --Settings.11.Name ResourceManager JVM内存使用率持续高于阈值 \
+    --Settings.11.Group YARN \
+    --Settings.11.TaskType YarnRmJvmMemoryUsageMoreThanThreshold \
+    --Settings.11.Selected true \
+    --Settings.11.TaskSettings.0.Key Threshold \
+    --Settings.11.TaskSettings.0.Name RM JVM内存使用率 \
+    --Settings.11.TaskSettings.0.Value 85 \
+    --Settings.11.TaskSettings.0.Editable true \
+    --Settings.11.TaskSettings.1.Key WindowSize \
+    --Settings.11.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.11.TaskSettings.1.Value 1800 \
+    --Settings.11.TaskSettings.1.Editable true \
+    --Settings.12.Name 集群处于RIT Region个数持续高于阈值 \
+    --Settings.12.Group HBASE \
+    --Settings.12.TaskType HbaseRitRegionNumMoreThanThreshold \
+    --Settings.12.Selected true \
+    --Settings.12.TaskSettings.0.Key Threshold \
+    --Settings.12.TaskSettings.0.Name Rit Region个数 \
+    --Settings.12.TaskSettings.0.Value 1 \
+    --Settings.12.TaskSettings.0.Editable true \
+    --Settings.12.TaskSettings.1.Key WindowSize \
+    --Settings.12.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.12.TaskSettings.1.Value 60 \
+    --Settings.12.TaskSettings.1.Editable true \
+    --Settings.13.Name HMaster JVM内存使用率持续高于阈值 \
+    --Settings.13.Group HBASE \
+    --Settings.13.TaskType HbaseHmJvmMemoryUsageMoreThanThreshold \
+    --Settings.13.Selected true \
+    --Settings.13.TaskSettings.0.Key Threshold \
+    --Settings.13.TaskSettings.0.Name HMaster JVM内存使用率 \
+    --Settings.13.TaskSettings.0.Value 85 \
+    --Settings.13.TaskSettings.0.Editable true \
+    --Settings.13.TaskSettings.1.Key WindowSize \
+    --Settings.13.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.13.TaskSettings.1.Value 1800 \
+    --Settings.13.TaskSettings.1.Editable true \
+    --Settings.14.Name HiveServer2 发生full GC \
+    --Settings.14.Group HIVE \
+    --Settings.14.TaskType HiveServer2FullGC \
+    --Settings.14.Selected true \
+    --Settings.15.Name HiveServer2 JVM内存使用率持续高于阈值 \
+    --Settings.15.Group HIVE \
+    --Settings.15.TaskType HiveServer2JvmMemoryUsageMoreThanThreshold \
+    --Settings.15.Selected true \
+    --Settings.15.TaskSettings.0.Key Threshold \
+    --Settings.15.TaskSettings.0.Name HiveServer2 JVM内存使用率 \
+    --Settings.15.TaskSettings.0.Value 85 \
+    --Settings.15.TaskSettings.0.Editable true \
+    --Settings.15.TaskSettings.1.Key WindowSize \
+    --Settings.15.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.15.TaskSettings.1.Value 1800 \
+    --Settings.15.TaskSettings.1.Editable true \
+    --Settings.16.Name Impala Beeswax API客户端连接数高于阈值 \
+    --Settings.16.Group IMPALA \
+    --Settings.16.TaskType ImpalaThriftServerBeeswaxFrontendConnMoreThanThreshold \
+    --Settings.16.Selected true \
+    --Settings.16.TaskSettings.0.Key Threshold \
+    --Settings.16.TaskSettings.0.Name Impala Beeswax API客户端连接数 \
+    --Settings.16.TaskSettings.0.Value 64 \
+    --Settings.16.TaskSettings.0.Editable true \
+    --Settings.17.Name Impala HS2客户端连接数高于阈值 \
+    --Settings.17.Group IMPALA \
+    --Settings.17.TaskType ImpalaThriftServerHS2ConnMoreThanThrshold \
+    --Settings.17.Selected true \
+    --Settings.17.TaskSettings.0.Key Threshold \
+    --Settings.17.TaskSettings.0.Name Impala HS2客户端连接数 \
+    --Settings.17.TaskSettings.0.Value 64 \
+    --Settings.17.TaskSettings.0.Editable true \
+    --Settings.18.Name JVM OLD区异常 \
+    --Settings.18.Group 集群 \
+    --Settings.18.TaskType JVMOldException \
+    --Settings.18.Selected true \
+    --Settings.19.Name 单盘INODES使用率持续高于阈值 \
+    --Settings.19.Group 节点 \
+    --Settings.19.TaskType SingleDiskInMoreThanThreshold \
+    --Settings.19.Selected true \
+    --Settings.19.TaskSettings.0.Key Threshold \
+    --Settings.19.TaskSettings.0.Name 阈值 \
+    --Settings.19.TaskSettings.0.Value 85 \
+    --Settings.19.TaskSettings.0.Editable true \
+    --Settings.19.TaskSettings.1.Key WindowSize \
+    --Settings.19.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.19.TaskSettings.1.Value 1800 \
+    --Settings.19.TaskSettings.1.Editable true \
+    --Settings.20.Name 单盘IO设备利用率持续高于阈值 \
+    --Settings.20.Group 节点 \
+    --Settings.20.TaskType SingleDiskUtilMoreThanThreshold \
+    --Settings.20.Selected true \
+    --Settings.20.TaskSettings.0.Key Threshold \
+    --Settings.20.TaskSettings.0.Name 阈值 \
+    --Settings.20.TaskSettings.0.Value 85 \
+    --Settings.20.TaskSettings.0.Editable true \
+    --Settings.20.TaskSettings.1.Key WindowSize \
+    --Settings.20.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.20.TaskSettings.1.Value 1800 \
+    --Settings.20.TaskSettings.1.Editable true \
+    --Settings.21.Name 单盘空间使用率持续高于阈值 \
+    --Settings.21.Group 节点 \
+    --Settings.21.TaskType SingleDiskSpaceMoreThanThreshold \
+    --Settings.21.Selected true \
+    --Settings.21.TaskSettings.0.Key Threshold \
+    --Settings.21.TaskSettings.0.Name 阈值 \
+    --Settings.21.TaskSettings.0.Value 85 \
+    --Settings.21.TaskSettings.0.Editable true \
+    --Settings.21.TaskSettings.1.Key WindowSize \
+    --Settings.21.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.21.TaskSettings.1.Value 1800 \
+    --Settings.21.TaskSettings.1.Editable true \
+    --Settings.22.Name HBASE 两个HMaster服务状态均为Standby \
+    --Settings.22.Group HBASE \
+    --Settings.22.TaskType HmStandbyStatusMoreThanThreshold \
+    --Settings.22.Selected true \
+    --Settings.22.TaskSettings.0.Key WindowSize \
+    --Settings.22.TaskSettings.0.Name 两个HMaster节点同时处于StandBy状态持续90秒以上，指标区间(秒) \
+    --Settings.22.TaskSettings.0.Value 300 \
+    --Settings.22.TaskSettings.0.Editable true \
+    --Settings.23.Name HDFS 两个NameNode服务状态均为Standby \
+    --Settings.23.Group HDFS \
+    --Settings.23.TaskType NNStandbyStatusMoreThanThreshold \
+    --Settings.23.Selected true \
+    --Settings.23.TaskSettings.0.Key WindowSize \
+    --Settings.23.TaskSettings.0.Name 两个NameNode节点同时处于StandBy状态持续90秒以上,指标区间(秒) \
+    --Settings.23.TaskSettings.0.Value 300 \
+    --Settings.23.TaskSettings.0.Editable true \
+    --Settings.24.Name 子机UTC时间和NTP时间差值高于阈值 \
+    --Settings.24.Group 节点 \
+    --Settings.24.TaskType NodeUTCNTPTimeOffsetMoreThanThreshold \
+    --Settings.24.Selected true \
+    --Settings.24.TaskSettings.0.Key Threshold \
+    --Settings.24.TaskSettings.0.Name 阈值 \
+    --Settings.24.TaskSettings.0.Value 30000 \
+    --Settings.24.TaskSettings.0.Editable true \
+    --Settings.25.Name HDFS NameNode进入安全模式 \
+    --Settings.25.Group HDFS \
+    --Settings.25.TaskType HDFSNameNodeEnterSafeMode \
+    --Settings.25.Selected true \
+    --Settings.26.Name HDFS MissingBlocks数量持续高于阈值 \
+    --Settings.26.Group HDFS \
+    --Settings.26.TaskType HDFSMissingBlocksNumMoreThanThreshold \
+    --Settings.26.Selected true \
+    --Settings.26.TaskSettings.0.Key Threshold \
+    --Settings.26.TaskSettings.0.Name 阈值 \
+    --Settings.26.TaskSettings.0.Value 1 \
+    --Settings.26.TaskSettings.0.Editable true \
+    --Settings.26.TaskSettings.1.Key WindowSize \
+    --Settings.26.TaskSettings.1.Name 持续时间(秒) \
+    --Settings.26.TaskSettings.1.Value 1800 \
+    --Settings.26.TaskSettings.1.Editable true \
+    --Settings.27.Name 节点故障 \
+    --Settings.27.Group 节点 \
+    --Settings.27.TaskType NodeFailure \
+    --Settings.27.Selected true \
+    --Settings.28.Name 节点磁盘IO异常 \
+    --Settings.28.Group 节点 \
+    --Settings.28.TaskType DiskIOError \
+    --Settings.28.Selected true \
+    --Settings.29.Name 服务角色健康状态异常 \
+    --Settings.29.Group 集群 \
+    --Settings.29.TaskType ProcessDetectionAbnormal \
+    --Settings.29.Selected true \
+    --Settings.29.TaskSettings.0.Key WindowSize \
+    --Settings.29.TaskSettings.0.Name 持续时间(秒) \
+    --Settings.29.TaskSettings.0.Value 300 \
+    --Settings.29.TaskSettings.0.Editable true \
+    --Settings.30.Name 自动伸缩策略执行失败 \
+    --Settings.30.Group 集群 \
+    --Settings.30.TaskType AutoScaleStrategyFailure \
+    --Settings.30.Selected true \
+    --Settings.31.Name 自动伸缩策略执行超时 \
+    --Settings.31.Group 集群 \
+    --Settings.31.TaskType AutoScaleStrategyTimeOut \
+    --Settings.31.Selected true \
+    --Settings.32.Name HMaster 发生主备切换 \
+    --Settings.32.Group HBASE \
+    --Settings.32.TaskType HMasterSwitch \
+    --Settings.32.Selected true \
+    --Settings.33.Name Zookeeper 发生Leader切换 \
+    --Settings.33.Group ZOOKEEPER \
+    --Settings.33.TaskType ZKLeaderSwitch \
+    --Settings.33.Selected true \
+    --Settings.34.Name YARN ResourceManager无active状态 \
+    --Settings.34.Group YARN \
+    --Settings.34.TaskType YarnRmNoActiveStatusMoreThanThreshold \
+    --Settings.34.Selected true \
+    --Settings.34.TaskSettings.0.Key WindowSize \
+    --Settings.34.TaskSettings.0.Name Yarn无active状态的ResourceManager服务,持续时间(秒) \
+    --Settings.34.TaskSettings.0.Value 90 \
+    --Settings.34.TaskSettings.0.Editable true \
+    --Settings.35.Name 进程被OOMKiller kill \
+    --Settings.35.Group 集群 \
+    --Settings.35.TaskType ProcessOutOfMemory \
+    --Settings.35.Selected true \
+    --Settings.36.Name 实例硬盘异常待授权 \
+    --Settings.36.Group 节点 \
+    --Settings.36.TaskType InstanceDiskErrorInquiring \
+    --Settings.36.Selected true \
+    --Settings.37.Name 实例运行异常待授权 \
+    --Settings.37.Group 节点 \
+    --Settings.37.TaskType InstanceRunningAbnormallyInquiring \
+    --Settings.37.Selected true \
+    --Settings.38.Name 子机nvme设备error \
+    --Settings.38.Group 节点 \
+    --Settings.38.TaskType NvmeError \
+    --Settings.38.Selected true \
+    --Settings.39.Name 机器重启 \
+    --Settings.39.Group 节点 \
+    --Settings.39.TaskType GuestReboot \
+    --Settings.39.Selected true \
+    --Settings.40.Name 内存OOM \
+    --Settings.40.Group 节点 \
+    --Settings.40.TaskType GuestOom \
+    --Settings.40.Selected true \
+    --Settings.41.Name 内核故障 \
+    --Settings.41.Group 节点 \
+    --Settings.41.TaskType GuestCoreError \
+    --Settings.41.Selected true \
+    --Settings.42.Name 磁盘只读 \
+    --Settings.42.Group 节点 \
+    --Settings.42.TaskType CvmDiskReadonly \
+    --Settings.42.Selected true \
+    --Settings.43.Name ping不可达 \
+    --Settings.43.Group 节点 \
+    --Settings.43.TaskType PingUnreachable \
+    --Settings.43.Selected true \
+    --Settings.44.Name 开启外网环境下安全组端口存在风险 \
+    --Settings.44.Group 集群 \
+    --Settings.44.TaskType NetworkSecurityHighRiskPortDetection \
+    --Settings.44.Selected true \
+    --Settings.45.Name HDFS目录满 \
+    --Settings.45.Group HDFS \
+    --Settings.45.TaskType HdfsDirFull \
+    --Settings.45.Selected true \
+    --Settings.45.TaskSettings.0.Key Threshold \
+    --Settings.45.TaskSettings.0.Name 百分比阈值 \
+    --Settings.45.TaskSettings.0.Value 95 \
+    --Settings.45.TaskSettings.0.Editable true \
+    --Settings.46.Name Trino全表扫描分区表 \
+    --Settings.46.Group TRINO \
+    --Settings.46.TaskType TrinoFullScanPartTable \
+    --Settings.46.Selected false
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Info": "OK",
+        "JobId": "499",
+        "RequestId": "c1ff0d96-48a7-47ef-bdde-ab6bf1fc5f15"
+    }
+}
+```
+

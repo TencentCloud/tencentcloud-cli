@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli mongodb EnableTransparentDataEncryption --cli-unfold-argument  \
-    --InstanceId cmgo-igjysqkr \
+    --InstanceId cmgo-igjy**** \
     --KmsRegion ap-guangzhou \
-    --KeyId myEncryptionkey
+    --KeyId AKID********************************
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 0,
+        "FlowId": 17316505316,
         "RequestId": "a8dce7a4-d488-49c9-8d24-33cf623f5992"
     }
 }

@@ -374,6 +374,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内置hive数据",
+          "example": "复杂类型",
+          "member": "TccConnection",
+          "name": "TccHiveConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "wedata模型数据目录连接信息",
+          "example": "{\"Url\":\"http://1.0.0.0\"}",
+          "member": "WeDataModelConnection",
+          "name": "WeDataModelConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1378,6 +1400,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeDataModelConnection": {
+      "document": "WeData模型数据目录连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "wedata mlflo服务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2334534523423423423",
+          "member": "string",
+          "name": "ServerId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步周期，分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "string",
+          "name": "SyncInterval",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标schema\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "TargetSchema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

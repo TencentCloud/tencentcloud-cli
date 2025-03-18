@@ -556,13 +556,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅实例的ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据订阅实例的ID数组",
           "example": "[\"subs-ieuwi83j2e\"]",
           "member": "string",
           "name": "SubscribeIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -847,7 +847,7 @@
           "example": "subs-58zcu8bax0",
           "member": "string",
           "name": "SubscribeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -857,7 +857,7 @@
           "example": "测试实例",
           "member": "string",
           "name": "SubscribeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -867,7 +867,7 @@
           "example": "dts-channel-C9rS58f2rFx11ZEZ",
           "member": "string",
           "name": "ChannelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -877,7 +877,7 @@
           "example": "mysql",
           "member": "string",
           "name": "Product",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -887,7 +887,7 @@
           "example": "cdb-forsubsc",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -897,7 +897,7 @@
           "example": "running",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -907,7 +907,7 @@
           "example": "configured",
           "member": "string",
           "name": "SubsStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -917,7 +917,7 @@
           "example": "normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -927,7 +927,7 @@
           "example": "2019-12-20 14:59:07",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -937,7 +937,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "IsolateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -947,7 +947,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -957,7 +957,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "OfflineTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -967,7 +967,7 @@
           "example": "2019-12-19 16:23:45",
           "member": "string",
           "name": "ConsumeStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -977,7 +977,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -987,7 +987,7 @@
           "example": "192.168.1.143",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -997,7 +997,7 @@
           "example": "7507",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1007,7 +1007,7 @@
           "example": "vpc-fbg8gh1j",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1017,7 +1017,7 @@
           "example": "subnet-4p1hpsj8",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1027,7 +1027,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "SdkConsumedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1037,7 +1037,7 @@
           "example": "192.168.1.143",
           "member": "string",
           "name": "SdkHost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1047,7 +1047,7 @@
           "example": "3",
           "member": "int64",
           "name": "SubscribeObjectType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1057,7 +1057,7 @@
           "example": "无",
           "member": "SubscribeObject",
           "name": "SubscribeObjects",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1067,7 +1067,7 @@
           "example": "2019-12-20 18:06:26",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1077,29 +1077,29 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅实例的标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅实例的标签",
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标识,0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识,0-不自动续费，1-自动续费",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1107,7 +1107,7 @@
           "example": "txdts",
           "member": "string",
           "name": "SubscribeVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1117,7 +1117,7 @@
           "example": "无",
           "member": "SubsErr",
           "name": "Errors",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1822,13 +1822,13 @@
         },
         {
           "disabled": false,
-          "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义",
           "example": "2024-12-20 19:02:01",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2371,14 +2371,14 @@
         },
         {
           "disabled": false,
-          "document": "云联网ID，如：ccn-afp6kltc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网ID，如：ccn-afp6kltc",
           "example": "ccn-afp6kltc",
           "member": "string",
           "name": "CcnId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2453,14 +2453,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "error",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2613,14 +2613,14 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2723,14 +2723,14 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅",
           "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2740,36 +2740,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅对象的类型，0-数据库，1-数据库内的表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据订阅对象的类型，0-数据库，1-数据库内的表",
           "example": "1",
           "member": "int64",
           "name": "ObjectsType",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅数据库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅数据库的名称",
           "example": "db_1",
           "member": "string",
           "name": "DatabaseName",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅数据库中表名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅数据库中表名称数组",
           "example": "[\"tab_1\"]",
           "member": "string",
           "name": "TableNames",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2814,14 +2814,14 @@
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "value",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

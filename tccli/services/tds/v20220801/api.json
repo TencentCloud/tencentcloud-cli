@@ -431,7 +431,7 @@
         {
           "disabled": false,
           "document": "微信的OpenId",
-          "example": "oOn8tchm7cx918p8mdc000vlzm",
+          "example": "oOn8tchm7************0vlzm",
           "member": "string",
           "name": "WeChatOpenId",
           "required": false,
@@ -458,7 +458,7 @@
         {
           "disabled": false,
           "document": "QQ的OpenId",
-          "example": "无",
+          "example": "A8E0232CD************2058B0EA885",
           "member": "string",
           "name": "QQOpenId",
           "required": false,

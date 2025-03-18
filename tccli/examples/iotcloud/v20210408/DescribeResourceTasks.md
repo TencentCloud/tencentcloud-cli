@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud DescribeResourceTasks --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
-    --Name test \
+    --ProductID ' EQPOKD5111' \
+    --Name dev-001 \
     --Offset 1 \
     --Limit 5
 ```
@@ -49,7 +49,7 @@ Output:
                 "CreateTime": 1589467141
             }
         ],
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbd"
     }
 }
 ```

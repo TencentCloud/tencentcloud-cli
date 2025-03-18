@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxx",
+        "RequestId": "fd20b929c9-211d-4121-b2ad-179047c17e",
         "UploadSign": "",
         "Result": 0,
         "FildID": "",

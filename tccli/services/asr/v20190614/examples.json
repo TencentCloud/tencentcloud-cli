@@ -11,8 +11,8 @@
     "CreateAsrKeyWordLib": [
       {
         "document": "用户通过上传文件方式创建关键词表",
-        "input": "https://asr.tencentcloudapi.com/?Action=CreateAsrKeyWordLib\n&Name=词表名称& KeyWordFile=<文件base64>\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibId\": \"aa6f402f263f12ea856fc81fbecfd0sd\"\n        },\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAsrKeyWordLib\n<公共请求参数>\n\n{\n    \"Name\": \"词表名\",\n    \"KeyWordFile\": \"<文件base64>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibId\": \"aa6f402f263f1******fc81fbecfd0sd\"\n        },\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
         "title": "创建关键词表"
       }
     ],
@@ -217,8 +217,8 @@
     "UpdateAsrKeyWordLib": [
       {
         "document": "用户通过该API传入已经创建的关键词表ID，可以更新其相应的内容",
-        "input": "https://asr.tencentcloudapi.com/?Action=UpdateAsrKeyWordLibId\n&KeyWordLibId=aa6f402f263f12ea856fc81fbecfd0sd\n&Name=新的词表名称\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibId\": \"aa6f402f263f12ea856fc81fbecfd0sd\"\n        },\n        \"RequestId\": \"3290cfb2-91a7-4989-91de-d1d624a77c12\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAsrKeyWordLib\n<公共请求参数>\n\n{\n    \"KeyWordLibId\": \"aa6f402******2ea856fc81fbecfd0sd\",\n    \"Name\": \"词表名\",\n    \"KeyWordFile\": \"<文件base64>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibId\": \"aa6f402f******ea856fc81fbecfd0sd\"\n        },\n        \"RequestId\": \"3290cfb2-91a7-4989-91de-d1d624a77c12\"\n    }\n}",
         "title": "更新关键词表"
       }
     ],

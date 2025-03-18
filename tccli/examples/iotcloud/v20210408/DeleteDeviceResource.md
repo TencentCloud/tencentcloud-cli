@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotcloud DeleteDeviceResource --cli-unfold-argument  \
-    --ProductID xxxx \
-    --Name test \
-    --DeviceName test
+    --ProductID EQPOKD5111 \
+    --Name myname \
+    --DeviceName dev-001
 ```
 
 Output: 

@@ -23,7 +23,7 @@ Output:
                 "DiskSize": 50,
                 "SnapshotName": "lighthouse-test1-0903145122",
                 "SnapshotState": "NORMAL",
-                "Percent": "100",
+                "Percent": 100,
                 "LatestOperation": "RollbackInstanceSnapshot",
                 "LatestOperationState": "SUCCESS",
                 "LatestOperationRequestId": "96aee6e3-172c-4f0f-be7c-fc46b9865763",
