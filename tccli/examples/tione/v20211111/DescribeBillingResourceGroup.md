@@ -30,16 +30,27 @@ Output:
                     "Memory": 349696,
                     "Gpu": 400,
                     "GpuType": "4090D",
+                    "Volume": null,
                     "RealGpu": 0,
-                    "RealGpuDetailSet": []
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false,
+                    "IdleDisks": [],
+                    "GpuMemory": 9600
                 },
                 "TotalResource": {
                     "Cpu": 78200,
                     "Memory": 349780,
                     "Gpu": 400,
                     "GpuType": "4090D",
+                    "Volume": {
+                        "Type": 0,
+                        "Size": 0
+                    },
                     "RealGpu": 0,
-                    "RealGpuDetailSet": []
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false,
+                    "IdleDisks": [],
+                    "GpuMemory": 9600
                 },
                 "InstanceStatus": "RUNNING",
                 "SubUin": "100023251204",
@@ -47,7 +58,19 @@ Output:
                 "ExpireTime": "",
                 "AutoRenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "SpecId": "sv_tio_platform_cloud_post_gpu_80c368g_44090d_sw",
-                "SpecAlias": "80核358GB 4090D*4"
+                "SpecAlias": "80核358GB 4090D*4",
+                "AvailableResource": {
+                    "Cpu": 0,
+                    "Memory": 84,
+                    "Gpu": 0,
+                    "GpuType": "4090D",
+                    "Volume": null,
+                    "RealGpu": 0,
+                    "RealGpuDetailSet": [],
+                    "EnableRDMA": false,
+                    "IdleDisks": [],
+                    "GpuMemory": 0
+                }
             }
         ],
         "RequestId": "114e2564-3ce6-469c-b9c0-284a51247902"

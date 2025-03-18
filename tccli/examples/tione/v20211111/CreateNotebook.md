@@ -19,7 +19,9 @@ tccli tione CreateNotebook --cli-unfold-argument  \
     --VolumeSourceType CFS \
     --VolumeSizeInGB 1 \
     --VolumeSourceCFS.Id cfs-9su5kqtv \
-    --VolumeSourceCFS.Path / \
+    --VolumeSourceCFS.Path /tione \
+    --VolumeSourceCFS.VpcId vpc-4kq8vlym \
+    --VolumeSourceCFS.SubnetId subnet-58zkmdob \
     --LogEnable True \
     --LogConfig.LogsetId 4dd0a097-f629-4afc-9b99-888ef99a178f \
     --LogConfig.TopicId ea8048db-8f97-4abb-9668-f3532b9b61f8 \
@@ -35,7 +37,14 @@ tccli tione CreateNotebook --cli-unfold-argument  \
     --DataConfigs.0.MappingPath /home/tione/notebook \
     --DataConfigs.0.DataSourceType CLOUD_PREMIUM \
     --DataConfigs.0.CBSSource.VolumeSizeInGB 50 \
+    --UserType AIMarket \
+    --UserDataInfo.AiMarketInfo.AlgorithmCosConfig.Bucket harry-1318247806 \
+    --UserDataInfo.AiMarketInfo.AlgorithmCosConfig.Region ap-shanghai \
+    --UserDataInfo.AiMarketInfo.AlgorithmCosConfig.Paths /test \
+    --UserDataInfo.AiMarketInfo.AlgorithmCosConfig.Uin 100032979603 \
+    --UserDataInfo.AiMarketInfo.AlgorithmCosConfig.SubUin 100032979603 \
     --ImageInfo.ImageType SYSTEM \
+    --ImageInfo.ImageId 35551e3c-b0e3-40dc-8e91-cc10a5613cd3 \
     --ImageInfo.ImageUrl tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0 \
     --ImageInfo.ImageName tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu \
     --ImageType SYSTEM

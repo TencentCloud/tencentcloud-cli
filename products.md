@@ -259,7 +259,7 @@
 | tics | [威胁情报云查服务](http://document.tencentcloudapi.woa.com/document/product/1013) | 2025-02-17 01:30:18 |
 | tiems | [腾讯云 TI 平台 TI-EMS ](http://document.tencentcloudapi.woa.com/document/product/1120) | 2022-07-19 06:12:58 |
 | tiia | [图像分析](http://document.tencentcloudapi.woa.com/document/product/865) | 2024-11-20 02:19:05 |
-| tione | [TI-ONE 训练平台](http://document.tencentcloudapi.woa.com/document/product/851) | 2025-02-21 10:58:27 |
+| tione | [TI-ONE 训练平台](http://document.tencentcloudapi.woa.com/document/product/851) | 2025-03-18 15:22:28 |
 | tiw | [互动白板](http://document.tencentcloudapi.woa.com/document/product/1137) | 2025-02-17 01:30:41 |
 | tke | [容器服务](http://document.tencentcloudapi.woa.com/document/product/457) | 2024-11-21 02:20:25 |
 | tms | [文本内容安全](http://document.tencentcloudapi.woa.com/document/product/1124) | 2024-10-30 02:23:52 |

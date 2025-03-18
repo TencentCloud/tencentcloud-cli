@@ -1,3 +1,53 @@
+# Release 3.0.1166.1
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 71 次发布
+
+发布时间：2025-03-18 15:22:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEvents](http://document.tencentcloudapi.woa.com/document/product/851/82606)
+* [DescribeLogs](http://document.tencentcloudapi.woa.com/document/product/851/74837)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeInferTemplates
+
+修改接口：
+
+* [DescribeNotebooks](http://document.tencentcloudapi.woa.com/document/product/851/85838)
+
+	* 新增出参：EnableIdleRecycle
+
+
+新增数据结构：
+
+* [Event](http://document.tencentcloudapi.woa.com/document/product/851/74915#Event)
+* [LogIdentity](http://document.tencentcloudapi.woa.com/document/product/851/74915#LogIdentity)
+
+修改数据结构：
+
+* [DatasetGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetGroup)
+
+	* 新增成员：CreatorNickname, IsCfsUpdated
+
+* [DatasetInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#DatasetInfo)
+
+	* 新增成员：CreatorNickname, IsCfsUpdated
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.1165.1
 
 ## 音频内容安全(ams) 版本：2020-12-29

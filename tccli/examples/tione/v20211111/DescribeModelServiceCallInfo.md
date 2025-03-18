@@ -21,7 +21,8 @@ Output:
             "OuterHttpsAddr": "https://service-5a4oixv0-1256580188.gz.tencentapigw.com:443/tione",
             "AppKey": "APID23ycs7qbGGbTf27PG18oOVK1Q449UORNA1g5",
             "AppSecret": "bD2krm7a7ujt6779kLKV1g0x4n2z861IcguAMm6v",
-            "AuthorizationEnable": true
+            "AuthorizationEnable": true,
+            "ApiParseStatus": "NULL_MODEL"
         },
         "InferGatewayCallInfo": null,
         "DefaultNginxGatewayCallInfo": null,

@@ -22,7 +22,9 @@ Output:
                         "test/model/"
                     ],
                     "Region": "ap-guangzhou",
-                    "Bucket": "test-bucket"
+                    "Bucket": "test-bucket",
+                    "SubUin": "100020000",
+                    "Uin": "100020000"
                 },
                 "TrainingJobId": "",
                 "TrainingModelProgress": 100,
@@ -37,7 +39,9 @@ Output:
                         "test/model/"
                     ],
                     "Region": "ap-guangzhou",
-                    "Bucket": "test-bucket"
+                    "Bucket": "test-bucket",
+                    "SubUin": "100020000",
+                    "Uin": "100020000"
                 },
                 "TrainingModelErrorMsg": "",
                 "TrainingModelCreator": "100020000",

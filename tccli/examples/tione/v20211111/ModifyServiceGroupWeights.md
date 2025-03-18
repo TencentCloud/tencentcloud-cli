@@ -81,6 +81,10 @@ Output:
                             },
                             "MaxReplicas": 0
                         },
+                        "EnvVar": {
+                            "Name": "xx",
+                            "Value": "xx"
+                        },
                         "LogConfig": {
                             "TopicId": "xx",
                             "LogsetId": "xx"
