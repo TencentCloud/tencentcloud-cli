@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DisableTopicRule --cli-unfold-argument  \
-    --RuleName test
+    --RuleName rule1
 ```
 
 Output: 

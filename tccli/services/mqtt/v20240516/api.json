@@ -3339,7 +3339,7 @@
         {
           "disabled": false,
           "document": "角色信息列表",
-          "example": "[ \t\t\t{ \t\t\t\t\"CreatedTime\": 1705392159000, \t\t\t\t\"ModifiedTime\": 1705392159000, \t\t\t\t\"Password\": \"sunjianxiong\", \t\t\t\t\"PermRead\": true, \t\t\t\t\"PermWrite\": true, \t\t\t\t\"Remark\": \"\", \t\t\t\t\"Username\": \"user1\" \t\t\t} \t\t]",
+          "example": "[ \t\t\t{ \t\t\t\t\"CreatedTime\": 1705392159000, \t\t\t\t\"ModifiedTime\": 1705392159000, \t\t\t\t\"Password\": \"pwd1\", \t\t\t\t\"PermRead\": true, \t\t\t\t\"PermWrite\": true, \t\t\t\t\"Remark\": \"\", \t\t\t\t\"Username\": \"user1\" \t\t\t} \t\t]",
           "member": "MQTTUserItem",
           "name": "Data",
           "output_required": true,

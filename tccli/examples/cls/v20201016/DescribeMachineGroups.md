@@ -33,6 +33,7 @@ Output:
                 "ServiceLogging": true,
                 "DelayCleanupTime": 30,
                 "MetaTags": [],
+                "OSType": 0,
                 "Tags": []
             }
         ],

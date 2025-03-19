@@ -8,29 +8,20 @@ Input:
 tccli iotcloud ListLog --cli-unfold-argument  \
     --MinTime 1530244265000 \
     --MaxTime 1530258665000 \
-    --Keywords abc
+    --Keywords UTY6QRLMQY \
+    --Context hello \
+    --MaxNum 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Context": "",
-        "Listover": false,
-        "TotalCount": 0,
-        "Results": [
-            {
-                "Content": "Device disconnect,connect time:2018-05-24 14:59:45,last avtive time:2018-05-24 14:59:45",
-                "DeviceName": "test",
-                "ProductId": "ABCDE12345",
-                "RequestId": "17431401761688125443",
-                "Result": "SUCC",
-                "Scene": "STATUS",
-                "Time": "2018-05-24 15:00:04.725",
-                "Userid": "100000005194"
-            }
-        ],
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "Error": {
+            "Code": "InvalidParameterValue",
+            "Message": "Invalid arguments[Keywords]"
+        },
+        "RequestId": "10059673-305d-4201-9b30-59bf3eb397ef"
     }
 }
 ```

@@ -1,3 +1,183 @@
+# Release 3.0.1168.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 133 次发布
+
+发布时间：2025-03-20 01:09:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCPUExpandStrategyInfo](http://document.tencentcloudapi.woa.com/document/product/236/85940)
+
+
+
+## 账号风控平台(ciam) 版本：2022-03-31
+
+
+
+## 账号风控平台(ciam) 版本：2021-04-20
+
+### 第 2 次发布
+
+发布时间：2025-03-20 01:11:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ListUserGroups
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 105 次发布
+
+发布时间：2025-03-20 01:12:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudProductLogTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CloudProductLogTaskInfo)
+
+	* 新增成员：Status
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 82 次发布
+
+发布时间：2025-03-20 01:24:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAsrHotwords](http://document.tencentcloudapi.woa.com/document/product/862/85950)
+* [CreateSmartSubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/85944)
+* [DeleteAsrHotwords](http://document.tencentcloudapi.woa.com/document/product/862/85949)
+* [DeleteSmartSubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/85943)
+* [DescribeAsrHotwords](http://document.tencentcloudapi.woa.com/document/product/862/85948)
+* [DescribeAsrHotwordsList](http://document.tencentcloudapi.woa.com/document/product/862/85947)
+* [DescribeSmartSubtitleTemplates](http://document.tencentcloudapi.woa.com/document/product/862/85942)
+* [ModifyAsrHotwords](http://document.tencentcloudapi.woa.com/document/product/862/85946)
+* [ModifySmartSubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/85941)
+
+修改接口：
+
+* [ProcessMedia](http://document.tencentcloudapi.woa.com/document/product/862/37578)
+
+	* 新增入参：SmartSubtitlesTask, SkipMateData
+
+
+新增数据结构：
+
+* [AsrHotWordsConfigure](http://document.tencentcloudapi.woa.com/document/product/862/37615#AsrHotWordsConfigure)
+* [AsrHotwordsSet](http://document.tencentcloudapi.woa.com/document/product/862/37615#AsrHotwordsSet)
+* [AsrHotwordsSetItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#AsrHotwordsSetItem)
+* [RawSmartSubtitleParameter](http://document.tencentcloudapi.woa.com/document/product/862/37615#RawSmartSubtitleParameter)
+* [ScheduleSmartSubtitleTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleSmartSubtitleTaskResult)
+* [SmartSubtitleTaskAsrFullTextResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskAsrFullTextResult)
+* [SmartSubtitleTaskAsrFullTextResultOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskAsrFullTextResultOutput)
+* [SmartSubtitleTaskAsrFullTextSegmentItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskAsrFullTextSegmentItem)
+* [SmartSubtitleTaskResultInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskResultInput)
+* [SmartSubtitleTaskTransTextResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskTransTextResult)
+* [SmartSubtitleTaskTransTextResultOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskTransTextResultOutput)
+* [SmartSubtitleTaskTransTextSegmentItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTaskTransTextSegmentItem)
+* [SmartSubtitleTemplateItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitleTemplateItem)
+* [SmartSubtitlesResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitlesResult)
+* [SmartSubtitlesTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#SmartSubtitlesTaskInput)
+
+修改数据结构：
+
+* [ActivityPara](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityPara)
+
+	* 新增成员：SmartSubtitlesTask
+
+* [ActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResItem)
+
+	* 新增成员：SmartSubtitlesTask
+
+* [WorkflowTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#WorkflowTask)
+
+	* 新增成员：SmartSubtitlesTaskResult
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 52 次发布
+
+发布时间：2025-03-20 01:27:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RemoveReplicationGroup](http://document.tencentcloudapi.woa.com/document/product/239/85951)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 139 次发布
+
+发布时间：2025-03-20 01:30:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Cluster)
+
+	* 新增成员：UpgradeProInstance
+
+* [DimensionOpt](http://document.tencentcloudapi.woa.com/document/product/1179/46089#DimensionOpt)
+
+	* 新增成员：Name, Value
+
+* [PulsarProClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterInfo)
+
+	* 新增成员：Tenant
+
+* [PulsarProClusterSpecInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProClusterSpecInfo)
+
+	* 新增成员：MaxDelayedMessages
+
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
+
+	* 新增成员：Tenant
+
+* [Role](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Role)
+
+	* 新增成员：PermType
+
+* [Topic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Topic)
+
+	* 新增成员：ClusterId, Tenant
+
+
+
+
 # Release 3.0.1167.1
 
 ## 账号中心(account) 版本：2018-12-25

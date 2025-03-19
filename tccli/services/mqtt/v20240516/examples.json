@@ -52,7 +52,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceType\": \"BASIC\",\n    \"Name\": \"instance-1\",\n    \"SkuCode\": \"basic_1k\",\n    \"Remark\": \"this is remark\",\n    \"VpcList\": [\n        {\n            \"VpcId\": \"vpc-9a5wnirv\",\n            \"SubnetId\": \"subnet-0tw6tlfi\"\n        }\n    ],\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"remark\"\n        }\n    ]\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"02107c9d-c1e2-418c-bafc-740300fdefad\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"request-id\"\n    }\n}",
         "title": "示例"
       }
     ],

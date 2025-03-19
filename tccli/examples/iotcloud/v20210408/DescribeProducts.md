@@ -1,4 +1,4 @@
-**Example 1: 获取产品列表**
+**Example 1: 获取产品列表（旧）**
 
 
 
@@ -16,22 +16,66 @@ Output:
     "Response": {
         "Products": [
             {
-                "ProductId": "ABCDEF12345",
-                "ProductName": "hello",
+                "ProductId": "UTY4QRLMQY",
                 "ProductMetadata": {
-                    "CreationDate": 1529049275
+                    "CreateUserId": 631833365,
+                    "CreationDate": 1740475425,
+                    "UserId": 0
                 },
+                "ProductName": "dev02",
                 "ProductProperties": {
-                    "ProductDescription": "test",
+                    "AppEUI": "",
+                    "DeviceLimit": 1000000,
                     "EncryptionType": "1",
-                    "Region": "gz",
+                    "ForbiddenStatus": 0,
+                    "Format": "json",
+                    "ModelId": "-1",
+                    "ModelName": "",
+                    "OriginProductId": "",
+                    "OriginUserId": 0,
+                    "Platform": "DEFAULT",
+                    "PrivateCAName": "",
+                    "ProductDescription": "IotHub",
+                    "ProductKey": "",
+                    "ProductSecret": "",
                     "ProductType": 0,
-                    "Format": "json"
+                    "Region": "",
+                    "RegisterLimit": 0,
+                    "RegisterType": 0
+                }
+            },
+            {
+                "ProductId": "ODX4QWWUF1",
+                "ProductMetadata": {
+                    "CreateUserId": 631833365,
+                    "CreationDate": 1740475291,
+                    "UserId": 0
+                },
+                "ProductName": "dev01",
+                "ProductProperties": {
+                    "AppEUI": "",
+                    "DeviceLimit": 1000000,
+                    "EncryptionType": "2",
+                    "ForbiddenStatus": 0,
+                    "Format": "json",
+                    "ModelId": "-1",
+                    "ModelName": "",
+                    "OriginProductId": "",
+                    "OriginUserId": 0,
+                    "Platform": "DEFAULT",
+                    "PrivateCAName": "",
+                    "ProductDescription": "",
+                    "ProductKey": "",
+                    "ProductSecret": "",
+                    "ProductType": 0,
+                    "Region": "",
+                    "RegisterLimit": 0,
+                    "RegisterType": 0
                 }
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "69f65618-600b-4ac4-b8e3-4528a6819078"
+        "RequestId": "c70b3902-2b4e-4f2b-983f-765fd4aa0d88",
+        "TotalCount": 2
     }
 }
 ```

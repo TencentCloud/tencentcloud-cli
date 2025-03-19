@@ -1,11 +1,11 @@
 {
   "actions": {
     "ListUserGroups": {
-      "document": "用户组列表",
+      "document": "服务已迁移到2022-03-31版本，本版本接口已废弃\n\n用户组列表",
       "input": "ListUserGroupsRequest",
       "name": "用户组列表",
       "output": "ListUserGroupsResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

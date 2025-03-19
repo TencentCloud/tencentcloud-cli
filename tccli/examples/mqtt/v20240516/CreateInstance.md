@@ -24,7 +24,7 @@ Output:
     "RequestId": null,
     "Response": {
         "InstanceId": "mqtt-7pnqmkrx",
-        "RequestId": "02107c9d-c1e2-418c-bafc-740300fdefad"
+        "RequestId": "request-id"
     }
 }
 ```

@@ -18,7 +18,8 @@ Output:
         "Rule": {
             "FullText": {
                 "CaseSensitive": false,
-                "Tokenizer": "-=/?"
+                "Tokenizer": "-=/?",
+                "ContainZH": false
             },
             "KeyValue": {
                 "CaseSensitive": false,
@@ -27,7 +28,9 @@ Output:
                         "Key": "age",
                         "Value": {
                             "Type": "long",
-                            "SqlFlag": true
+                            "SqlFlag": true,
+                            "Tokenizer": "",
+                            "ContainZH": false
                         }
                     }
                 ]
@@ -39,10 +42,15 @@ Output:
                         "Key": "__TAG__.timestamp",
                         "Value": {
                             "Type": "long",
-                            "SqlFlag": true
+                            "SqlFlag": true,
+                            "Tokenizer": "",
+                            "ContainZH": false
                         }
                     }
                 ]
+            },
+            "DynamicIndex": {
+                "Status": false
             }
         },
         "ModifyTime": "2021-01-13 21:00:08",
