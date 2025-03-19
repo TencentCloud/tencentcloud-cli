@@ -920,6 +920,14 @@
         "title": "获取实例列表"
       }
     ],
+    "DescribePrometheusIntegrationMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusIntegrationMetrics\n<公共请求参数>\n\n{\n    \"IntegrationCode\": \"qcloud\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationMetricSet\": [\n            {\n                \"Group\": \"cdb\",\n                \"Metrics\": [\n                    {\n                        \"MetricName\": \"qce_cdb_abortedclients_sum\",\n                        \"Name\": \"异常关闭的客户端连接数\",\n                        \"MetricType\": \"\",\n                        \"Unit\": \"Count\",\n                        \"Description\": \"由于客户端在没有正确关闭连接的情况下死亡而中止的连接数\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"sjwbr-sjhrbgfrb\"\n    }\n}",
+        "title": "获取prometheus集成指标"
+      }
+    ],
     "DescribePrometheusRecordRules": [
       {
         "document": "拉取聚合规则",

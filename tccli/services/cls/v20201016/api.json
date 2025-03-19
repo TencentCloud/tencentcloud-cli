@@ -840,36 +840,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤字段",
           "example": "http_code",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "过滤规则，0:等于，1:字段存在，2:字段不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤规则，0:等于，1:字段存在，2:字段不存在",
           "example": "0",
           "member": "uint64",
           "name": "Rule",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过滤值",
           "example": "400|500",
           "member": "string",
           "name": "Value",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -879,25 +879,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "键。支持以下key：\nSyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。\nQueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。\nCustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例： \"* | select count(*) as count\"。\nFields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。\nFormat：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。\nLimit：最大日志条数。 value示例： 5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "键。支持以下key：\nSyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。\nQueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。\nCustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例： \"* | select count(*) as count\"。\nFields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。\nFormat：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。\nLimit：最大日志条数。 value示例： 5。",
           "example": "k",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "值。\n键对应值如下：\nSyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。\nQueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。\nCustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例： \"* | select count(*) as count\"。\nFields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。\nFormat：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。\nLimit：最大日志条数。 value示例： 5。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值。\n键对应值如下：\nSyntaxRule：语法规则，value支持 0：Lucene语法；1： CQL语法。\nQueryIndex：执行语句序号。value支持  -1：自定义； 1：执行语句1； 2：执行语句2。\nCustomQuery：检索语句。 QueryIndex为-1时有效且必填，value示例： \"* | select count(*) as count\"。\nFields：字段。value支持 __SOURCE__；__FILENAME__；__HOSTNAME__；__TIMESTAMP__；__INDEX_STATUS__；__PKG_LOGID__；__TOPIC__。\nFormat：显示形式。value支持 1：每条日志一行；2：每条日志每个字段一行。\nLimit：最大日志条数。 value示例： 5。",
           "example": "v",
           "member": "string",
           "name": "Value",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1053,83 +1053,83 @@
         },
         {
           "disabled": false,
-          "document": "自定义回调模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义回调模板",
           "example": "无",
           "member": "CallBackInfo",
           "name": "CallBack",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "多维分析设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多维分析设置",
           "example": "无",
           "member": "AnalysisDimensional",
           "name": "Analysis",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组触发状态。1：开启，0：关闭（默认）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "分组触发状态。true：开启，false：关闭（默认）",
+          "example": "false",
           "member": "bool",
           "name": "GroupTriggerStatus",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组触发条件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组触发条件。",
           "example": "[\"$1.conut\"]",
           "member": "string",
           "name": "GroupTriggerCondition",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 ",
           "example": "0",
           "member": "uint64",
           "name": "MonitorObjectType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。",
           "example": "1",
           "member": "uint64",
           "name": "AlarmLevel",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警附加分类字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警附加分类字段。",
           "example": "[{\"Key\":\"abc\",\"Value\":\"123\"}]",
           "member": "AlarmClassification",
           "name": "Classifications",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "多触发条件。与\nCondition互斥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多触发条件。与\nCondition互斥。",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1149,13 +1149,13 @@
         },
         {
           "disabled": false,
-          "document": "告警通知渠道组绑定的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知渠道组绑定的标签信息。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1169,63 +1169,63 @@
         },
         {
           "disabled": false,
-          "document": "告警通知模板接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知模板接收者信息。",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警通知模板回调信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知模板回调信息。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警通知模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知模板ID。",
           "example": "notice-xxx-xxx-xx-xx",
           "member": "string",
           "name": "AlarmNoticeId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知规则。",
           "example": "无",
           "member": "NoticeRule",
           "name": "NoticeRules",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "免登录操作告警开关。\n参数值： 1：关闭 2：开启（默认开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "免登录操作告警开关。\n参数值： 1：关闭 2：开启（默认开启）",
           "example": "2",
           "member": "uint64",
           "name": "AlarmShieldStatus",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "调用链接域名。http:// 或者 https:// 开头，不能/结尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "调用链接域名。http:// 或者 https:// 开头，不能/结尾",
           "example": "https://console.cloud.tencent.com",
           "member": "string",
           "name": "JumpDomain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1239,23 +1239,23 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最近更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近更新时间。",
           "example": "2022-11-07 16:30:53",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1275,13 +1275,13 @@
         },
         {
           "disabled": false,
-          "document": "投递失败原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递失败原因。",
           "example": "投递失败，topicId不存在",
           "member": "string",
           "name": "ErrMsg",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1341,13 +1341,13 @@
         },
         {
           "disabled": false,
-          "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"AlarmID\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[\"alarm-57105ec6-xxxx-xxxx-xxxx-892f3b8d143a\"]\",\"Type\":\"Value\"}]}]}",
+          "document": "屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。",
+          "example": "{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1]\",\"Type\":\"Value\"}]}]}",
           "member": "string",
           "name": "Rule",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1417,80 +1417,80 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志主题ID。",
           "example": "380fe1f1-0c7b-4b0d-xxxx-d514959db1bb",
           "member": "string",
           "name": "TopicId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询语句。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询语句。",
           "example": "code:200 | select count(*) as success_counts",
           "member": "string",
           "name": "Query",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警对象序号；从1开始递增。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警对象序号；从1开始递增。",
           "example": "1",
           "member": "int64",
           "name": "Number",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。",
           "example": "-5",
           "member": "int64",
           "name": "StartTimeOffset",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。",
           "example": "0",
           "member": "int64",
           "name": "EndTimeOffset",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志集ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志集ID。",
           "example": "1c012db7-2cfd-4418-xxxx-7342c7a42516",
           "member": "string",
           "name": "LogsetId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1580,23 +1580,23 @@
         },
         {
           "disabled": false,
-          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题类型。\n0: 日志主题，1: 指标主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题类型。\n0: 日志主题，1: 指标主题",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1611,6 +1611,7 @@
           "member": "string",
           "name": "Name",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1621,11 +1622,12 @@
           "member": "string",
           "name": "AlarmNoticeId",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AlertHistoryRecord": {
       "document": "告警历史详情",
@@ -1636,6 +1638,7 @@
           "example": "7cfbe19f-99af-42ca-8f9f-b59d1f9c6157",
           "member": "string",
           "name": "RecordId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1646,6 +1649,7 @@
           "example": "alarm-8211a509-xxxx-43dd-9ec0-6a6e7bc92552",
           "member": "string",
           "name": "AlarmId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1656,6 +1660,7 @@
           "example": "日志错误数超限",
           "member": "string",
           "name": "AlarmName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1666,6 +1671,7 @@
           "example": "0bf009c5-53f3-4f60-xxxx-341d732ed5b9",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1676,6 +1682,7 @@
           "example": "Nginx请求日志",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1686,6 +1693,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1696,6 +1704,7 @@
           "example": "$1.d > 300",
           "member": "string",
           "name": "Trigger",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1706,6 +1715,7 @@
           "example": "1",
           "member": "int64",
           "name": "TriggerCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1716,6 +1726,7 @@
           "example": "15",
           "member": "int64",
           "name": "AlarmPeriod",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1726,6 +1737,7 @@
           "example": "无",
           "member": "AlertHistoryNotice",
           "name": "Notices",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1736,6 +1748,7 @@
           "example": "60",
           "member": "int64",
           "name": "Duration",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1746,6 +1759,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1756,39 +1770,43 @@
           "example": "1619359718000",
           "member": "uint64",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警分组触发时对应的分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警分组触发时对应的分组信息",
           "example": "[{\"Key\":\"$1.count\",\"Value\":\"100\"}]",
           "member": "GroupTriggerConditionInfo",
           "name": "GroupTriggerCondition",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监控对象类型。\n0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控对象类型。\n0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 ",
           "example": "0",
           "member": "uint64",
           "name": "MonitorObjectType",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1798,36 +1816,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "分析名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分析名称",
           "example": "status 502 pv",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分析类型：query，field ，original\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分析类型：query，field ，original",
           "example": "query",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分析内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分析内容",
           "example": "*|select count(1) as pv where status = 502",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1923,14 +1941,14 @@
         },
         {
           "disabled": false,
-          "document": "回调时的HTTP请求头部字段。\n例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。\n```\n\"Content-Type: application/json\"\n```\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调时的HTTP请求头部字段。\n例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。\n```\n\"Content-Type: application/json\"\n```",
           "example": "[\"Content-Type: application/json\"]",
           "member": "string",
           "name": "Headers",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2056,13 +2074,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka集群可访问状态，0：可正常访问 ...\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Kafka集群可访问状态，0：可正常访问 ...",
           "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2217,23 +2235,33 @@
         },
         {
           "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
           "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
           "example": "CDB-AUDIT",
           "member": "string",
           "name": "LogType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态， 0创建中 1创建完成 2 删除中 ",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2260,25 +2288,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集类型，必填字段。\n<li>0：元数据配置。</li>\n<li>1：指定Pod Label。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集类型，必填字段。\n<li>0：元数据配置。</li>\n<li>1：指定Pod Label。</li>",
           "example": "0",
           "member": "uint64",
           "name": "Type",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指定采集类型的采集配置信息。\n<li>当Type为0时，CollectConfigs不允许为空。</li>\n<li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定采集类型的采集配置信息。\n<li>当Type为0时，CollectConfigs不允许为空。</li>\n<li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>",
           "example": "无",
           "member": "CollectConfig",
           "name": "CollectConfigs",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2409,63 +2437,63 @@
         },
         {
           "disabled": false,
-          "document": "节点文件配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点文件配置信息",
           "example": "无",
           "member": "HostFileInfo",
           "name": "HostFile",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容器文件路径信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器文件路径信息",
           "example": "无",
           "member": "ContainerFileInfo",
           "name": "ContainerFile",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容器标准输出信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器标准输出信息",
           "example": "无",
           "member": "ContainerStdoutInfo",
           "name": "ContainerStdout",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志格式化方式",
           "example": "default",
           "member": "string",
           "name": "LogFormat",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log",
           "example": "minimalist_log",
           "member": "string",
           "name": "LogType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2499,13 +2527,13 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义解析字符串",
           "example": "{\"processors\":[{\"type\":\"processor_multiline_fullregex\",\"detail\":{\"BeginRegex\":\"[a-zA-Z]\"},\"processors\":[]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2519,63 +2547,63 @@
         },
         {
           "disabled": false,
-          "document": "自建采集配置标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自建采集配置标",
           "example": "label_k8s",
           "member": "string",
           "name": "ConfigFlag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志集ID",
           "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "LogsetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志集name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志集name",
           "example": "bow_test",
           "member": "string",
           "name": "LogsetName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志主题name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志主题name",
           "example": "bow_test",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "采集相关配置信息。详情见 CollectInfo复杂类型配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集相关配置信息。详情见 CollectInfo复杂类型配置。",
           "example": "无",
           "member": "CollectInfo",
           "name": "CollectInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
           "example": "{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}",
           "member": "string",
           "name": "AdvancedConfig",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2595,53 +2623,53 @@
         },
         {
           "disabled": false,
-          "document": "采集规则配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集规则配置名称",
           "example": "config_1",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志格式化方式",
           "example": "default",
           "member": "string",
           "name": "LogFormat",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志采集路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志采集路径",
           "example": "/test/log.test",
           "member": "string",
           "name": "Path",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "采集的日志类型。\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集的日志类型。\n- json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；\n- delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；\n- minimalist_log代表：单行全文-文件日志（详见[使用单行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17421)）；\n- fullregex_log代表：单行完全正则-文件日志（详见[使用单行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52365)）；\n- multiline_log代表：多行全文-文件日志（详见[使用多行全文提取模式采集日志](https://cloud.tencent.com/document/product/614/17422)）；\n- multiline_fullregex_log代表：多行完全正则-文件日志（详见[使用多行-完全正则提取模式采集日志](https://cloud.tencent.com/document/product/614/52366)）；\n- user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；\n- service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；\n- windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。",
           "example": "json_log",
           "member": "string",
           "name": "LogType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提取规则，如果设置了ExtractRule，则必须设置LogType",
           "example": "无",
           "member": "ExtractRuleInfo",
           "name": "ExtractRule",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2665,13 +2693,13 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2020-02-16 17:01:50",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2685,23 +2713,23 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。",
           "example": "{\"processors\":[{\"type\":\"processor_multiline_fullregex\",\"detail\":{\"BeginRegex\":\"[a-zA-Z]\"},\"processors\":[]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`\n\n控制台默认占位值：`{\\\"ClsAgentDefault\\\":0}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级采集配置。 Json字符串， Key/Value定义为如下：\n- ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时\n- ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数\n- ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false\n样例：\n`{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}`\n\n控制台默认占位值：`{\\\"ClsAgentDefault\\\":0}`",
           "example": "\"{\\\"ClsAgentFileTimeout\\\":0,\\\"ClsAgentMaxDepth\\\":10,\\\"ClsAgentParseFailMerge\\\":true}\"",
           "member": "string",
           "name": "AdvancedConfig",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2888,58 +2916,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否投递 TAG 信息。\n当EnableTag为true时，表示投递TAG元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否投递 TAG 信息。\n当EnableTag为true时，表示投递TAG元信息。",
           "example": "false",
           "member": "bool",
           "name": "EnableTag",
           "output_required": true,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_，\\_\\_TIMESTAMP\\_\\_，\\_\\_HOSTNAME\\_\\_和\\_\\_PKGID\\_\\_\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要投递的元数据列表，目前仅支持：\\_\\_SOURCE\\_\\_，\\_\\_FILENAME\\_\\_，\\_\\_TIMESTAMP\\_\\_，\\_\\_HOSTNAME\\_\\_和\\_\\_PKGID\\_\\_",
           "example": "[\"\\_\\_SOURCE\\_\\_\", \"\\_\\_FILENAME\\_\\_\", \"\\_\\_TIMESTAMP\\_\\_\"]",
           "member": "string",
           "name": "MetaFields",
           "output_required": true,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当EnableTag为true时，必须填写TagJsonNotTiled字段。\nTagJsonNotTiled用于标识tag信息是否json平铺。\n\nTagJsonNotTiled为true时不平铺，示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n不平铺：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n\nTagJsonNotTiled为false时平铺，示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n平铺：`{\"__TAG__.fieldA\":200,\"__TAG__.fieldB\":\"text\"}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当EnableTag为true时，必须填写TagJsonNotTiled字段。\nTagJsonNotTiled用于标识tag信息是否json平铺。\n\nTagJsonNotTiled为true时不平铺，示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n不平铺：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n\nTagJsonNotTiled为false时平铺，示例：\nTAG信息：`{\"__TAG__\":{\"fieldA\":200,\"fieldB\":\"text\"}}`\n平铺：`{\"__TAG__.fieldA\":200,\"__TAG__.fieldB\":\"text\"}`",
           "example": "false",
           "member": "bool",
           "name": "TagJsonNotTiled",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。",
           "example": "1",
           "member": "int64",
           "name": "TimestampAccuracy",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "投递Json格式。\nJsonType为0：和原始日志一致，不转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n\nJsonType为1：转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\",\"b\":\"{\\\"b1\\\":\\\"b1b1\\\", \\\"c1\\\":\\\"c1c1\\\"}\"}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递Json格式。\nJsonType为0：和原始日志一致，不转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n\nJsonType为1：转义。示例：\n日志原文：`{\"a\":\"aa\", \"b\":{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}}`\n投递到Ckafka：`{\"a\":\"aa\",\"b\":\"{\\\"b1\\\":\\\"b1b1\\\", \\\"c1\\\":\\\"c1c1\\\"}\"}`",
           "example": "0",
           "member": "int64",
           "name": "JsonType",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3015,25 +3043,25 @@
         },
         {
           "disabled": false,
-          "document": "工作负载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作负载信息",
           "example": "无",
           "member": "ContainerWorkLoadInfo",
           "name": "WorkLoad",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B",
           "example": "kube-system",
           "member": "string",
           "name": "ExcludeNamespace",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3076,25 +3104,25 @@
         },
         {
           "disabled": false,
-          "document": "container为空表所有的，不为空采集指定的容器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "container为空表所有的，不为空采集指定的容器",
           "example": "container_xzdfg",
           "member": "string",
           "name": "Container",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace",
           "example": "kube-system",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3120,14 +3148,14 @@
         },
         {
           "disabled": false,
-          "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "需要排除的namespace可以多个，用分隔号分割,例如A,B",
           "example": "kube-system",
           "member": "string",
           "name": "ExcludeNamespace",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4492,13 +4520,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS导入任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS导入任务id",
           "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
           "member": "string",
           "name": "Id",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7079,18 +7107,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警通知模板列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知模板列表。",
           "example": "无",
           "member": "AlarmNotice",
           "name": "AlarmNotices",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "符合条件的告警通知模板总数。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -7645,13 +7673,13 @@
         },
         {
           "disabled": false,
-          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "压缩方式[0:NONE；2:SNAPPY；3:LZ4]",
           "example": "0",
           "member": "int64",
           "name": "Compression",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7700,13 +7728,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "见: CosRechargeInfo 结构描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "见: CosRechargeInfo 结构描述",
           "example": "无",
           "member": "CosRechargeInfo",
           "name": "Data",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8008,7 +8036,7 @@
           "example": "826f8b26-b054-4a0d-8c8e-f3d609f5e0ea",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8018,17 +8046,17 @@
           "example": "true",
           "member": "bool",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "索引配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "RuleInfo",
           "name": "Rule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8038,29 +8066,29 @@
           "example": "2021-01-13 21:00:08 ",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引\n* false:不包含\n* true:包含\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引\n* false:不包含\n* true:包含",
           "example": "true",
           "member": "bool",
           "name": "IncludeInternalFields",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引\n* 0:仅包含开启键值索引的元数据字段\n* 1:包含所有元数据字段\n* 2:不包含任何元数据字段",
           "example": "1",
           "member": "uint64",
           "name": "MetadataFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8572,12 +8600,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器组信息列表",
           "example": "无",
           "member": "MachineGroupInfo",
           "name": "MachineGroups",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8585,6 +8614,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8704,13 +8734,13 @@
         },
         {
           "disabled": false,
-          "document": "总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数目",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8759,18 +8789,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板列表。",
           "example": "无",
           "member": "NoticeContentTemplate",
           "name": "NoticeContents",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "符合条件的通知内容模板总数。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -9008,13 +9038,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递规则列表",
           "example": "无",
           "member": "ShipperInfo",
           "name": "Shippers",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9156,18 +9186,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警渠道回调配置列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警渠道回调配置列表。",
           "example": "无",
           "member": "WebCallbackInfo",
           "name": "WebCallbacks",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "符合条件的通知内容配置总数。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -10027,6 +10057,7 @@
           "example": "$1.count",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10037,12 +10068,13 @@
           "example": "100",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "HighLightItem": {
       "document": "日志内容高亮描述信息",
@@ -14096,13 +14128,13 @@
         },
         {
           "disabled": false,
-          "document": "日志预览结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志预览结果",
           "example": "{\\\"__PKG_ID__\\\":\\\"61E93B596600E6D3-2B2B0\\\",\\\"__PKG_LOGID__\\\":65536,\\\"__TAG__.container_name\\\":\\\"main\\\",\\\"__TAG__.namespace\\\":\\\"sync-mysql\\\",\\\"__TAG__.pod_name\\\":\\\"sync-kxjyxkfe-start-vg7vz-1887219422\\\",\\\"__TIMESTAMP__\\\":1734519599010}",
           "member": "string",
           "name": "LogData",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14839,13 +14871,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配到的存储桶下的某个文件的前几行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配到的存储桶下的某个文件的前几行数据",
           "example": "[{\"metric\":{\"code\":\"InternalError\",\"region\":\"广州\",\"service_name\":\"service1\",\"url\":\"api1\"},\"values\":[[1735040190,\"100\"],[1735040205,\"91\"],[1735040310,\"98\"],[1735040325,\"85\"],[1735040340,\"76\"],[1735040730,\"100\"]]}]",
           "member": "string",
           "name": "Data",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -14859,23 +14891,23 @@
         },
         {
           "disabled": false,
-          "document": "当前预览文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前预览文件路径",
           "example": "https://bucket1.ap-guangzhou.myqcloud.com/csv/g_xxx.gz",
           "member": "string",
           "name": "Path",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预览获取数据失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预览获取数据失败原因",
           "example": "授权失败，请确认授权",
           "member": "string",
           "name": "Msg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15221,13 +15253,13 @@
         },
         {
           "disabled": false,
-          "document": "本次统计分析使用的采样率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次统计分析使用的采样率",
           "example": "0.1",
           "member": "float",
           "name": "SamplingRate",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

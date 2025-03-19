@@ -516,6 +516,14 @@
         "title": "查询二进制日志"
       }
     ],
+    "DescribeCPUExpandStrategyInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCPUExpandStrategyInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-sad1dsfa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Type\": \"auto\",\n        \"ExpandCpu\": \"4\",\n        \"AutoStrategy\": {\n            \"ExpandThreshold\": 0,\n            \"ShrinkThreshold\": 0,\n            \"ExpandPeriod\": 0,\n            \"ShrinkPeriod\": 0\n        },\n        \"RequestId\": \"sasd8asf-f78asd-fas8-dga9-gdfadf1234\"\n    }\n}",
+        "title": "查询实例的 CPU 弹性扩容策略"
+      }
+    ],
     "DescribeCdbProxyInfo": [
       {
         "document": "查询代理信息",

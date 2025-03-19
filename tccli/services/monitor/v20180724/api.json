@@ -658,6 +658,13 @@
       "output": "DescribePrometheusInstancesOverviewResponse",
       "status": "online"
     },
+    "DescribePrometheusIntegrationMetrics": {
+      "document": "获取prometheus集成指标",
+      "input": "DescribePrometheusIntegrationMetricsRequest",
+      "name": "获取prometheus集成指标",
+      "output": "DescribePrometheusIntegrationMetricsResponse",
+      "status": "online"
+    },
     "DescribePrometheusRecordRules": {
       "document": "获取聚合规则列表，包含关联集群内crd资源创建的record rule",
       "input": "DescribePrometheusRecordRulesRequest",
@@ -12527,6 +12534,43 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusIntegrationMetricsRequest": {
+      "document": "DescribePrometheusIntegrationMetrics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集成类型标识。取值参考DescribePrometheusIntegrations接口返回中IntegrationSet[i].Code参数",
+          "example": "qcloud",
+          "member": "string",
+          "name": "IntegrationCode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusIntegrationMetricsResponse": {
+      "document": "DescribePrometheusIntegrationMetrics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集成指标详情分组",
+          "example": "[{\"Group\":\"cdb\",\"Metrics\":[{\"MetricName\":\"qce_cdb_abortedclients_sum\",\"Name\":\"异常关闭的客户端连接数\",\"MetricType\":\"\",\"Unit\":\"Count\",\"Description\":\"由于客户端在没有正确关闭连接的情况下死亡而中止的连接数\"}]}]",
+          "member": "IntegrationMetricGroup",
+          "name": "IntegrationMetricSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusRecordRulesRequest": {
       "document": "DescribePrometheusRecordRules请求参数结构体",
       "members": [
@@ -14792,6 +14836,106 @@
         }
       ],
       "usage": "out"
+    },
+    "IntegrationMetric": {
+      "document": "prometheus集成指标详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名",
+          "example": "qce_cvm_tcpcurrestab_max",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "TCP 连接数",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计类型",
+          "example": "GAUGE",
+          "member": "string",
+          "name": "MetricType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位",
+          "example": "%",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标详细描述",
+          "example": " TCP 连接数量",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IntegrationMetricGroup": {
+      "document": "prometheus集成分组指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组标识",
+          "example": "qcloud",
+          "member": "string",
+          "name": "Group",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标详情",
+          "example": "[{\"Group\":\"cdb\",\"MetricName\":\"qce_cdb_abortedclients_sum\",\"Name\":\"异常关闭的客户端连接数\",\"MetricType\":\"\",\"Unit\":\"Count\",\"Description\":\"由于客户端在没有正确关闭连接的情况下死亡而中止的连接数\"}]",
+          "member": "IntegrationMetric",
+          "name": "Metrics",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Label": {
       "document": "k8s中标签，一般以数组的方式存在",

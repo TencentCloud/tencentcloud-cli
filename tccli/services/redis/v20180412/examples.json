@@ -774,6 +774,14 @@
         "title": "关闭外网实例"
       }
     ],
+    "RemoveReplicationGroup": [
+      {
+        "document": "当复制组内没有实例时，删除复制组",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveReplicationGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"crs-rpl-oxsincthdd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除复制组"
+      }
+    ],
     "RemoveReplicationInstance": [
       {
         "document": "移除复制组的实例，数据同步类型为强同步。",

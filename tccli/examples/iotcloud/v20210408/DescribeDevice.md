@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud DescribeDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName abc
+    --ProductId EQPOKD5111 \
+    --DeviceName dev-001
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "EnableState": 1,
         "LastOfflineTime": 1,
-        "Version": "2021-04-08",
+        "Version": "2018-06-14",
         "CertState": 1,
         "Online": 1,
         "FirmwareUpdateTime": 1,
@@ -37,12 +37,12 @@ Output:
         ],
         "LogLevel": 1,
         "FirstOnlineTime": 1,
-        "DeviceCert": "******",
+        "DeviceCert": "52352",
         "Imei": "Imei",
         "ClientIP": "127.0.0.1",
-        "DevicePsk": "DevicePsk",
+        "DevicePsk": "4534623",
         "Isp": 1,
-        "NBIoTDeviceID": "123124",
+        "NBIoTDeviceID": "12122124",
         "LoraDevEui": "your eui",
         "DeviceType": 1,
         "RequestId": "2abji99uojssd88",

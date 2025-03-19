@@ -80,6 +80,14 @@
         "title": "创建转动图模板"
       }
     ],
+    "CreateAsrHotwords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAsrHotwords\n<公共请求参数>\n\n{\n    \"Type\": 0,\n    \"Name\": \"HotwordsNameExample\",\n    \"Content\": \"腾讯云|10,语音识别|5,ASR|10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\",\n        \"RequestId\": \"1ebaa15b-14b5-480c-9904-ec90c536e701\"\n    }\n}",
+        "title": "CreateAsrHotwordsExample"
+      }
+    ],
     "CreateContentReviewTemplate": [
       {
         "document": "创建一个自定义 AI 内容审核模板，开启画面内容令人反感的信息任务，同时开启画面令人不安全的信息及画面令人不适宜的信息任务，判定为违规的分数阈值及判定为需要人工识别的分数阈值都为默认，且不指定过滤标签。",
@@ -158,6 +166,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchedule\n<公共请求参数>\n\n{\n    \"ScheduleName\": \"evan_test7\",\n    \"Trigger\": {\n        \"Type\": \"CosFileUpload\",\n        \"CosFileUploadTrigger\": {\n            \"Bucket\": \"evan-test-1300828900\",\n            \"Region\": \"ap-guangzhou\",\n            \"Dir\": \"/input/\",\n            \"Formats\": [\n                \"mp4\",\n                \"flv\"\n            ]\n        }\n    },\n    \"Activities\": [\n        {\n            \"ActivityType\": \"input\",\n            \"ReardriveIndex\": [\n                1,\n                2\n            ]\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                3\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                6,\n                7\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                4,\n                5\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                8\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                9\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"action-trans\",\n            \"ReardriveIndex\": [\n                10\n            ],\n            \"ActivityPara\": {\n                \"TranscodeTask\": {\n                    \"Definition\": 10\n                }\n            }\n        },\n        {\n            \"ActivityType\": \"output\",\n            \"ActivityPara\": {}\n        }\n    ],\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"evan-test-1300828900\",\n            \"Region\": \"ap-nanjing\"\n        }\n    },\n    \"OutputDir\": \"output/\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"ScheduleId\": 157482\n    }\n}",
         "title": "设置转码规则"
+      }
+    ],
+    "CreateSmartSubtitleTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"示例\",\n    \"VideoSrcLanguage\": \"zh\",\n    \"SubtitleType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Definition\": 202281,\n        \"RequestId\": \"42dc919b-2ec7-412c-85f0-88f003813d04\"\n    }\n}",
+        "title": "创建模板"
       }
     ],
     "CreateSnapshotByTimeOffsetTemplate": [
@@ -312,6 +328,14 @@
         "title": "删除转动图模板"
       }
     ],
+    "DeleteAsrHotwords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAsrHotwords\n<公共请求参数>\n\n{\n    \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3529414-e832-400d-9629-d9998a4e170c\"\n    }\n}",
+        "title": "DeleteAsrHotwords"
+      }
+    ],
     "DeleteContentReviewTemplate": [
       {
         "document": "删除用户自定义 AI 内容审核模板。",
@@ -366,6 +390,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteSmartSubtitleTemplate": [
+      {
+        "document": "删除用户自定义智能字幕模板。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 202281\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a7922ab4-645f-413a-abd9-c0dfba945e3c\"\n    }\n}",
+        "title": "删除智能字幕模板"
       }
     ],
     "DeleteSnapshotByTimeOffsetTemplate": [
@@ -490,6 +522,22 @@
         "title": "获取转动图模板列表"
       }
     ],
+    "DescribeAsrHotwords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsrHotwords\n<公共请求参数>\n\n{\n    \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"腾讯云|10,语音识别|5,ASR|10\",\n        \"CreateTime\": \"2025-03-19T03:29:06Z\",\n        \"FileName\": \"\",\n        \"HotWords\": [\n            {\n                \"Id\": 1,\n                \"Text\": \"腾讯云\",\n                \"Weight\": 10\n            },\n            {\n                \"Id\": 2,\n                \"Text\": \"语音识别\",\n                \"Weight\": 5\n            },\n            {\n                \"Id\": 3,\n                \"Text\": \"ASR\",\n                \"Weight\": 10\n            }\n        ],\n        \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\",\n        \"Limit\": 0,\n        \"Name\": \"HotwordsNameExample\",\n        \"Offset\": 0,\n        \"RequestId\": \"bad606d3-8a49-427f-a6a6-26c9f1fe1dc3\",\n        \"Status\": 0,\n        \"Type\": 0,\n        \"UpdateTime\": \"2025-03-19T03:29:06Z\",\n        \"WordCount\": 3\n    }\n}",
+        "title": "DescribeAsrHotwords"
+      }
+    ],
+    "DescribeAsrHotwordsList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAsrHotwordsList\n<公共请求参数>\n\n{\n    \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsrHotwordsSet\": [\n            {\n                \"CreateTime\": \"2025-03-19T03:29:06Z\",\n                \"FileName\": \"\",\n                \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\",\n                \"Name\": \"HotwordsNameExample\",\n                \"Status\": 0,\n                \"Type\": 0,\n                \"UpdateTime\": \"2025-03-19T03:29:06Z\",\n                \"WordCount\": 3\n            }\n        ],\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"RequestId\": \"0beec64c-8390-43dd-8b3a-14df16cc9ca7\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "DescribeAsrHotwordsList"
+      }
+    ],
     "DescribeContentReviewTemplates": [
       {
         "document": "从序号 0 开始，获取 10 个智能审核模板，包括系统默认智能审核模板。",
@@ -566,6 +614,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchedules\n<公共请求参数>\n\n{\n    \"ScheduleIds\": [\n        0\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ScheduleInfoSet\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeSmartSubtitleTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmartSubtitleTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f89a1f41-1a26-4cda-9be1-2747cb44a045\",\n        \"SmartSubtitleTemplateSet\": [\n            {\n                \"AliasName\": \"Generate_Chinese_And_English_Subtitle_For_English_Video\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"Definition\": 212,\n                \"Name\": \"英文源视频-生成中英文字幕\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 2,\n                \"TranslateDstLanguage\": \"zh\",\n                \"TranslateSwitch\": \"ON\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"VideoSrcLanguage\": \"en\"\n            },\n            {\n                \"AliasName\": \"Generate_Chinese_Subtitle_For_English_Video\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"Definition\": 211,\n                \"Name\": \"英文源视频-生成中文字幕\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 1,\n                \"TranslateDstLanguage\": \"zh\",\n                \"TranslateSwitch\": \"ON\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"VideoSrcLanguage\": \"en\"\n            },\n            {\n                \"AliasName\": \"Generate_English_Subtitle_For_English_Video\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"Definition\": 200,\n                \"Name\": \"英文源视频-生成英文字幕\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 0,\n                \"TranslateDstLanguage\": \"en\",\n                \"TranslateSwitch\": \"OFF\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"VideoSrcLanguage\": \"en\"\n            },\n            {\n                \"AliasName\": \"Generate_Chinese_And_English_Subtitle_For_Chinese_Video\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"Definition\": 122,\n                \"Name\": \"中文源视频-生成中英文字幕\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 2,\n                \"TranslateDstLanguage\": \"en\",\n                \"TranslateSwitch\": \"ON\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            },\n            {\n                \"AliasName\": \"Generate_English_Subtitle_For_Chinese_Video\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"Definition\": 121,\n                \"Name\": \"中文源视频-生成英文字幕\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 1,\n                \"TranslateDstLanguage\": \"en\",\n                \"TranslateSwitch\": \"ON\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            },\n            {\n                \"AliasName\": \"Generate_Chinese_Subtitle_For_Chinese_Video\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"Definition\": 100,\n                \"Name\": \"中文源视频-生成中文字幕\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 0,\n                \"TranslateDstLanguage\": \"en\",\n                \"TranslateSwitch\": \"OFF\",\n                \"Type\": \"Preset\",\n                \"UpdateTime\": \"2025-02-11T15:41:29+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-03-04T18:18:35+08:00\",\n                \"Definition\": 202226,\n                \"Name\": \"aaaaa\",\n                \"SubtitleFormat\": \"\",\n                \"SubtitleType\": 0,\n                \"TranslateDstLanguage\": \"\",\n                \"TranslateSwitch\": \"OFF\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-03-04T18:18:35+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"hwd-390af315ba0c31545156\",\n                    \"Switch\": \"ON\"\n                },\n                \"AsrHotWordsLibraryName\": \"ValidName\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-21T16:26:37+08:00\",\n                \"Definition\": 201309,\n                \"Name\": \"0221\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 0,\n                \"TranslateDstLanguage\": \"\",\n                \"TranslateSwitch\": \"OFF\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-02-21T16:26:37+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"\",\n                    \"Switch\": \"OFF\"\n                },\n                \"AsrHotWordsLibraryName\": \"\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-21T16:13:06+08:00\",\n                \"Definition\": 201308,\n                \"Name\": \"0221\",\n                \"SubtitleFormat\": \"vtt\",\n                \"SubtitleType\": 0,\n                \"TranslateDstLanguage\": \"\",\n                \"TranslateSwitch\": \"OFF\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-02-21T16:13:06+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            },\n            {\n                \"AliasName\": \"\",\n                \"AsrHotWordsConfigure\": {\n                    \"LibraryId\": \"hwd-f1d930ebc6d9a7d910\",\n                    \"Switch\": \"ON\"\n                },\n                \"AsrHotWordsLibraryName\": \"HotwordsName1\",\n                \"Comment\": \"\",\n                \"CreateTime\": \"2025-02-21T16:08:45+08:00\",\n                \"Definition\": 201307,\n                \"Name\": \"0221\",\n                \"SubtitleFormat\": \"\",\n                \"SubtitleType\": 0,\n                \"TranslateDstLanguage\": \"\",\n                \"TranslateSwitch\": \"OFF\",\n                \"Type\": \"Custom\",\n                \"UpdateTime\": \"2025-02-21T17:50:15+08:00\",\n                \"VideoSrcLanguage\": \"zh\"\n            }\n        ],\n        \"TotalCount\": 21\n    }\n}",
+        "title": "查询智能字幕模板"
       }
     ],
     "DescribeSnapshotByTimeOffsetTemplates": [
@@ -894,6 +950,14 @@
         "title": "修改转动图模板"
       }
     ],
+    "ModifyAsrHotwords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAsrHotwords\n<公共请求参数>\n\n{\n    \"HotwordsId\": \"hwd-aexxxxxxxxxxxxxx1481\",\n    \"Name\": \"HotwordsNameNew\",\n    \"Content\": \"腾讯云|10,语音识别|5,ASR|10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bebd190b-4864-4911-b919-ec713c102498\"\n    }\n}",
+        "title": "ModifyAsrHotwords"
+      }
+    ],
     "ModifyContentReviewTemplate": [
       {
         "document": "修改自定义 AI 内容审核模板。不指定过滤标签，将画面令人反感的信息的任务判定为违规的分数阈值和画面令人反感的信息的任务判定为需要人工内容审核的分数阈值修改为默认。",
@@ -978,6 +1042,14 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySchedule\n<公共请求参数>\n\n{\n    \"ScheduleId\": 22435,\n    \"Trigger\": {\n        \"Type\": \"AwsS3FileUpload\",\n        \"AwsS3FileUploadTrigger\": {\n            \"S3Bucket\": \"evanxia-test\",\n            \"S3Region\": \"us-east-1\",\n            \"Dir\": \"/input/\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改编排"
+      }
+    ],
+    "ModifySmartSubtitleTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmartSubtitleTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 202281,\n    \"TranslateSwitch\": \"ON\",\n    \"Name\": \"新名字\",\n    \"SubtitleType\": 1,\n    \"TranslateDstLanguage\": \"en\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"569d5d19-d01c-4efc-97dc-4ea53ae95647\"\n    }\n}",
+        "title": "修改智能字幕模板"
       }
     ],
     "ModifySnapshotByTimeOffsetTemplate": [

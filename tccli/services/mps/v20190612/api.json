@@ -49,6 +49,13 @@
       "output": "CreateAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "CreateAsrHotwords": {
+      "document": "智能字幕新建热词库接口",
+      "input": "CreateAsrHotwordsRequest",
+      "name": "创建智能字幕热词库",
+      "output": "CreateAsrHotwordsResponse",
+      "status": "online"
+    },
     "CreateContentReviewTemplate": {
       "document": "创建用户自定义内容审核模板，数量上限：50。",
       "input": "CreateContentReviewTemplateRequest",
@@ -96,6 +103,13 @@
       "input": "CreateScheduleRequest",
       "name": "创建编排",
       "output": "CreateScheduleResponse",
+      "status": "online"
+    },
+    "CreateSmartSubtitleTemplate": {
+      "document": "创建自定义智能字幕模板",
+      "input": "CreateSmartSubtitleTemplateRequest",
+      "name": "创建智能字幕模板",
+      "output": "CreateSmartSubtitleTemplateResponse",
       "status": "online"
     },
     "CreateSnapshotByTimeOffsetTemplate": {
@@ -210,6 +224,13 @@
       "output": "DeleteAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "DeleteAsrHotwords": {
+      "document": "删除智能字幕热词库",
+      "input": "DeleteAsrHotwordsRequest",
+      "name": "删除智能字幕热词库",
+      "output": "DeleteAsrHotwordsResponse",
+      "status": "online"
+    },
     "DeleteContentReviewTemplate": {
       "document": "删除用户自定义内容审核模板。",
       "input": "DeleteContentReviewTemplateRequest",
@@ -257,6 +278,13 @@
       "input": "DeleteScheduleRequest",
       "name": "删除编排",
       "output": "DeleteScheduleResponse",
+      "status": "online"
+    },
+    "DeleteSmartSubtitleTemplate": {
+      "document": "删除用户自定义智能字幕模板。",
+      "input": "DeleteSmartSubtitleTemplateRequest",
+      "name": "删除智能字幕模板",
+      "output": "DeleteSmartSubtitleTemplateResponse",
       "status": "online"
     },
     "DeleteSnapshotByTimeOffsetTemplate": {
@@ -350,6 +378,20 @@
       "output": "DescribeAnimatedGraphicsTemplatesResponse",
       "status": "online"
     },
+    "DescribeAsrHotwords": {
+      "document": "查询智能字幕热词库",
+      "input": "DescribeAsrHotwordsRequest",
+      "name": "查询智能字幕热词库详情",
+      "output": "DescribeAsrHotwordsResponse",
+      "status": "online"
+    },
+    "DescribeAsrHotwordsList": {
+      "document": "获取热词库列表",
+      "input": "DescribeAsrHotwordsListRequest",
+      "name": "查询智能字幕热词库列表",
+      "output": "DescribeAsrHotwordsListResponse",
+      "status": "online"
+    },
     "DescribeContentReviewTemplates": {
       "document": "根据智能审核模板唯一标识，获取智能审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及系统预置智能审核模板。",
       "input": "DescribeContentReviewTemplatesRequest",
@@ -411,6 +453,13 @@
       "input": "DescribeSchedulesRequest",
       "name": "查询编排",
       "output": "DescribeSchedulesResponse",
+      "status": "online"
+    },
+    "DescribeSmartSubtitleTemplates": {
+      "document": "根据智能字幕 模板唯一标识，获取智能字幕模板详情列表。返回结果包含符合条件的所有用户自定义智能字幕模板及系统预置智能字幕模板",
+      "input": "DescribeSmartSubtitleTemplatesRequest",
+      "name": "获取智能字幕模板列表",
+      "output": "DescribeSmartSubtitleTemplatesResponse",
       "status": "online"
     },
     "DescribeSnapshotByTimeOffsetTemplates": {
@@ -651,6 +700,13 @@
       "output": "ModifyAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "ModifyAsrHotwords": {
+      "document": "智能字幕更新热词库接口",
+      "input": "ModifyAsrHotwordsRequest",
+      "name": "修改智能字幕热词库",
+      "output": "ModifyAsrHotwordsResponse",
+      "status": "online"
+    },
     "ModifyContentReviewTemplate": {
       "document": "修改用户自定义内容审核模板。",
       "input": "ModifyContentReviewTemplateRequest",
@@ -698,6 +754,13 @@
       "input": "ModifyScheduleRequest",
       "name": "修改编排",
       "output": "ModifyScheduleResponse",
+      "status": "online"
+    },
+    "ModifySmartSubtitleTemplate": {
+      "document": "修改用户自定义智能字幕模板。",
+      "input": "ModifySmartSubtitleTemplateRequest",
+      "name": "修改智能字幕模板",
+      "output": "ModifySmartSubtitleTemplateResponse",
       "status": "online"
     },
     "ModifySnapshotByTimeOffsetTemplate": {
@@ -792,7 +855,7 @@
       "status": "online"
     },
     "ProcessMedia": {
-      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。\n10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）",
+      "document": "对 URL视频链接 或 COS 中的媒体文件发起处理任务，功能包括：\n1. 视频转码（普通转码、极速高清转码、音视频增强）；\n2. 视频转动图；\n3. 对视频按指定时间点截图；\n4. 对视频采样截图；\n5. 对视频截图雪碧图；\n6. 对视频转自适应码流；\n7. 智能内容审核（鉴黄、敏感信息检测）；\n8. 智能内容分析（标签、分类、封面、按帧标签、拆条、集锦、片头片尾、游戏打点）；\n9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音翻译、物体识别）。\n10. 媒体质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）\n11. 智能字幕（语音全文、语音热词、语音翻译）",
       "input": "ProcessMediaRequest",
       "name": "发起媒体处理",
       "output": "ProcessMediaResponse",
@@ -1094,7 +1157,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原子任务类型：\n<li>input: 起始节点</li>\n<li>output：终止节点</li>\n<li>action-trans：转码</li>\n<li>action-samplesnapshot：采样截图</li>\n<li>action-AIAnalysis: 分析</li>\n<li>action-AIRecognition：识别</li>\n<li>action-aiReview：审核</li>\n<li>action-animated-graphics：转动图</li>\n<li>action-image-sprite：雪碧图</li>\n<li>action-snapshotByTimeOffset: 时间点截图</li>\n<li>action-adaptive-substream：自适应码流</li>\n<li>action-AIQualityControl：媒体质检</li>\n<li>action-SmartSubtitles：智能字幕</li>\n\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "input",
           "member": "string",
           "name": "ActivityType",
@@ -1240,6 +1303,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitlesTaskInput",
+          "name": "SmartSubtitlesTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1250,7 +1324,7 @@
         {
           "disabled": false,
           "document": "转码任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskTranscodeResult",
           "name": "TranscodeTask",
           "output_required": true,
@@ -1260,7 +1334,7 @@
         {
           "disabled": false,
           "document": "转动图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskAnimatedGraphicResult",
           "name": "AnimatedGraphicTask",
           "output_required": true,
@@ -1270,7 +1344,7 @@
         {
           "disabled": false,
           "document": "时间点截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskSnapshotByTimeOffsetResult",
           "name": "SnapshotByTimeOffsetTask",
           "output_required": true,
@@ -1280,7 +1354,7 @@
         {
           "disabled": false,
           "document": "采样截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskSampleSnapshotResult",
           "name": "SampleSnapshotTask",
           "output_required": true,
@@ -1290,7 +1364,7 @@
         {
           "disabled": false,
           "document": "雪碧图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskImageSpriteResult",
           "name": "ImageSpriteTask",
           "output_required": true,
@@ -1300,7 +1374,7 @@
         {
           "disabled": false,
           "document": "自适应码流任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskAdaptiveDynamicStreamingResult",
           "name": "AdaptiveDynamicStreamingTask",
           "output_required": true,
@@ -1310,7 +1384,7 @@
         {
           "disabled": false,
           "document": "识别任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "ScheduleRecognitionTaskResult",
           "name": "RecognitionTask",
           "output_required": true,
@@ -1320,7 +1394,7 @@
         {
           "disabled": false,
           "document": "审核任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "ScheduleReviewTaskResult",
           "name": "ReviewTask",
           "output_required": true,
@@ -1330,7 +1404,7 @@
         {
           "disabled": false,
           "document": "分析任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "ScheduleAnalysisTaskResult",
           "name": "AnalysisTask",
           "output_required": true,
@@ -1340,9 +1414,19 @@
         {
           "disabled": false,
           "document": "媒体质检任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "ScheduleQualityControlTaskResult",
           "name": "QualityControlTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduleSmartSubtitleTaskResult",
+          "name": "SmartSubtitlesTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1355,8 +1439,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>\n<li>AiQualityControl：媒体质检。</li>",
-          "example": "\"\"",
+          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>\n<li>AiQualityControl：媒体质检。</li>\n<li>SmartSubtitles：智能字幕。</li>",
+          "example": "Transcode",
           "member": "string",
           "name": "ActivityType",
           "output_required": true,
@@ -1366,7 +1450,7 @@
         {
           "disabled": false,
           "document": "原子任务输出。",
-          "example": "NULL",
+          "example": "无",
           "member": "ActivityResItem",
           "name": "ActivityResItem",
           "output_required": true,
@@ -6342,6 +6426,156 @@
       ],
       "usage": "in"
     },
+    "AsrHotWordsConfigure": {
+      "document": "智能字幕热词参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热词开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hwd-2670a776bb5eccccc324",
+          "member": "string",
+          "name": "LibraryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AsrHotwordsSet": {
+      "document": "热词库查询返回结果集",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热词库 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hwd-aftgxxx",
+          "member": "string",
+          "name": "HotwordsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前热词库状态，数值表示绑定该热词库的智能字幕模板数量。\nStatus 为 0 ，表示该热词库没有被智能字幕模版引用可以删除；\nStatus 不为 0，表示该热词库不能被删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hotwordname",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库中的热词数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "WordCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词文件上传时的文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hwd.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库创建时间 ISOUTC 时间格式  2006-01-02T15:04:05Z\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库创建时间 ISOUTC 时间格式  2006-01-02T15:04:05Z\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02T15:04:05Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0：临时热词库\n1：文件热词库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AsrHotwordsSetItem": {
+      "document": "单个热词信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热词的序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "词语权重，取值范围 1-10,11,100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AsrWordsConfigureInfo": {
       "document": "语音关键词识别控制参数。",
       "members": [
@@ -8447,6 +8681,79 @@
       ],
       "type": "object"
     },
+    "CreateAsrHotwordsRequest": {
+      "document": "CreateAsrHotwords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 临时热词 1 文件热词",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "热词库名称",
+          "example": "HotwordsName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词库文本，Type为 0 必选",
+          "example": "腾讯云|10,语音识别|5,ASR|10",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词库文件的 base64 的内容，Type 为 1 必选\n\n",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传的文件名",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAsrHotwordsResponse": {
+      "document": "CreateAsrHotwords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热词库 id",
+          "example": "hwd-aexxxxxxxxxxxxxx1481",
+          "member": "string",
+          "name": "HotwordsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateContentReviewTemplateRequest": {
       "document": "CreateContentReviewTemplate请求参数结构体",
       "members": [
@@ -8470,7 +8777,7 @@
         },
         {
           "disabled": false,
-          "document": "令人反感的信息的控制参数。",
+          "document": "鉴黄任务控制参数。",
           "example": "无",
           "member": "PornConfigureInfo",
           "name": "PornConfigure",
@@ -8479,7 +8786,7 @@
         },
         {
           "disabled": false,
-          "document": "令人不安全的信息的控制参数。",
+          "document": "涉暴任务控制参数。",
           "example": "无",
           "member": "TerrorismConfigureInfo",
           "name": "TerrorismConfigure",
@@ -8488,7 +8795,7 @@
         },
         {
           "disabled": false,
-          "document": "令人不适宜的信息的控制参数。",
+          "document": "涉敏任务控制参数。",
           "example": "无",
           "member": "PoliticalConfigureInfo",
           "name": "PoliticalConfigure",
@@ -9783,6 +10090,106 @@
       ],
       "type": "object"
     },
+    "CreateSmartSubtitleTemplateRequest": {
+      "document": "CreateSmartSubtitleTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板名称\n长度限制：64 个字符。",
+          "example": "智能字幕模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕字幕语言类型\n0: 源语言\n1: 翻译语言\n2: 源语言+翻译语言\n当TranslateSwitch为OFF时仅支持取0\n当TranslateSwitch为ON时仅支持取1或2",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板描述信息\n长度限制：256 个字符。",
+          "example": "模板2",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ASR热词库参数",
+          "example": "无",
+          "member": "AsrHotWordsConfigure",
+          "name": "AsrHotWordsConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译",
+          "example": "ON",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语",
+          "example": "en",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSmartSubtitleTemplateResponse": {
+      "document": "CreateSmartSubtitleTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板唯一标识。",
+          "example": "200",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSnapshotByTimeOffsetTemplateRequest": {
       "document": "CreateSnapshotByTimeOffsetTemplate请求参数结构体",
       "members": [
@@ -10711,6 +11118,33 @@
       ],
       "type": "object"
     },
+    "DeleteAsrHotwordsRequest": {
+      "document": "DeleteAsrHotwords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的热词库 id",
+          "example": "hwd-aexxxxxxxxxxxxxx1481",
+          "member": "string",
+          "name": "HotwordsId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAsrHotwordsResponse": {
+      "document": "DeleteAsrHotwords返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteContentReviewTemplateRequest": {
       "document": "DeleteContentReviewTemplate请求参数结构体",
       "members": [
@@ -10890,6 +11324,33 @@
     },
     "DeleteScheduleResponse": {
       "document": "DeleteSchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSmartSubtitleTemplateRequest": {
+      "document": "DeleteSmartSubtitleTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板唯一标识。",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSmartSubtitleTemplateResponse": {
+      "document": "DeleteSmartSubtitleTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11483,6 +11944,319 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsrHotwordsListRequest": {
+      "document": "DescribeAsrHotwordsList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索参数，根据热词库 id 查询",
+          "example": "hwd-aexxxxxxxxxxx1481",
+          "member": "string",
+          "name": "HotwordsId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索参数，根据热词库名称查询",
+          "example": "Hotwords",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认返回所有热词库",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "热词排序顺序\n\n0：升序（默认）\n1：降序",
+          "example": "0",
+          "member": "uint64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据某个字段排序，默认使用创建时间，使用非法字段视为默认情况\n\n- CreateTime：创建时间排序\n- UpdateTime：更新时间排序\n- Name：热词库名称排序\n- WordCount：热词数量排序\n- HotwordsId：热词库 id 排序",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 临时热词 1 文件热词",
+          "example": "[0,1]",
+          "member": "uint64",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsrHotwordsListResponse": {
+      "document": "DescribeAsrHotwordsList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总热词库数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认返回所有热词库",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "热词库列表",
+          "example": "无",
+          "member": "AsrHotwordsSet",
+          "name": "AsrHotwordsSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsrHotwordsRequest": {
+      "document": "DescribeAsrHotwords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的热词库 id\n**注意：HotwordsId 与 Name 必须选择填写一个，如果同时填写，HotwordsId 优先级高于 Name**",
+          "example": "hwd-aexxxxxxxxxx1481",
+          "member": "string",
+          "name": "HotwordsId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词库名称，\n**注意：HotwordsId 与 Name 必须选择填写一个，如果同时填写，HotwordsId 优先级高于 Name**",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。\n",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "热词排序字段，目前可选值为\n\n- Default：默认文件中的顺序\n- Weight：权重排序\n- Lexical：热词文本排序",
+          "example": "Weight",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词排序顺序 0：升序（默认） 1：降序",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAsrHotwordsResponse": {
+      "document": "DescribeAsrHotwords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的热词库 id",
+          "example": "hwd-0bda6ac8d24411ef9ab0446a2eb5fd98",
+          "member": "string",
+          "name": "HotwordsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前热词库 id 状态，为 0 表示查询的时刻，没有模板绑定这个热词库，可以删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HotwordsNameExample",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "临时热词库为 0，返回创建时候的字符串\n文件热词库为 1，返回创建是上传的文件内容\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词文件上传时的文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询返回的热词库列表",
+          "example": "[{\"Id\":1,\"Text\":\"腾讯云\",\"Weight\":10},{\"Id\":2,\"Text\":\"语音识别\",\"Weight\":5},{\"Id\":3,\"Text\":\"ASR\",\"Weight\":10}]",
+          "member": "AsrHotwordsSetItem",
+          "name": "HotWords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "热词库文本，根据 Type 区分\n如果 Type 为 0，是热词库字符串\n如果 Type 是 1，是热词库文本文件的文件内容 base64 编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯云|10,语音识别|5,ASR|10",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前热词库包含的词语数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "WordCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库创建时间 ISOUTC 格式 \"2006-01-02T15:04:05Z\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-01-14T06:51:57Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热词库修改时间 ISOUTC 格式 \"2006-01-02T15:04:05Z\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-01-21T08:46:11Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13344,6 +14118,89 @@
           "example": "无",
           "member": "SchedulesInfo",
           "name": "ScheduleInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmartSubtitleTemplatesRequest": {
+      "document": "DescribeSmartSubtitleTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板唯一标识过滤条件，数组长度限制：10。",
+          "example": "[\"30\\r\\n\"]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板标识过滤条件，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmartSubtitleTemplatesResponse": {
+      "document": "DescribeSmartSubtitleTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板详情列表。",
+          "example": "无",
+          "member": "SmartSubtitleTemplateItem",
+          "name": "SmartSubtitleTemplateSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -21606,6 +22463,69 @@
       ],
       "type": "object"
     },
+    "ModifyAsrHotwordsRequest": {
+      "document": "ModifyAsrHotwords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热词库 id",
+          "example": "hwd-aexxxxxxxxxxxxxx1481",
+          "member": "string",
+          "name": "HotwordsId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词库名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词库文本",
+          "example": "腾讯云|10,语音识别|5,ASR|10",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词库文件的 base64 的内容，Type 为 1 必选\n\n\n",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "热词文件上传时的文件名",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAsrHotwordsResponse": {
+      "document": "ModifyAsrHotwords返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyContentReviewTemplateRequest": {
       "document": "ModifyContentReviewTemplate请求参数结构体",
       "members": [
@@ -22492,6 +23412,105 @@
     },
     "ModifyScheduleResponse": {
       "document": "ModifySchedule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySmartSubtitleTemplateRequest": {
+      "document": "ModifySmartSubtitleTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板唯一标识",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译",
+          "example": "ON",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板名称\n长度限制：64 个字符。",
+          "example": "智能字幕模板",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板描述信息\n长度限制：256 个字符。",
+          "example": "模板2",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕字幕语言类型\n0: 源语言\n1: 翻译语言\n2: 源语言+翻译语言\n当TranslateSwitch为OFF时仅支持取0\n当TranslateSwitch为ON时仅支持取1或2",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ASR热词库参数",
+          "example": "无",
+          "member": "AsrHotWordsConfigure",
+          "name": "AsrHotWordsConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语",
+          "example": "en",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySmartSubtitleTemplateResponse": {
+      "document": "ModifySmartSubtitleTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24690,6 +25709,24 @@
           "name": "ResourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕",
+          "example": "无",
+          "member": "SmartSubtitlesTaskInput",
+          "name": "SmartSubtitlesTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否跳过元信息获取，可选值： \n0：表示不跳过 \n1：表示跳过 \n默认值：0\t",
+          "example": "0",
+          "member": "int64",
+          "name": "SkipMateData",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -25321,6 +26358,89 @@
           "example": "repeat",
           "member": "string",
           "name": "RepeatType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RawSmartSubtitleParameter": {
+      "document": "自定义智能字幕参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕字幕语言类型\n0: 源语言\n1: 翻译语言\n2: 源语言+翻译语言\n当TranslateSwitch为OFF时仅支持取0\n当TranslateSwitch为ON时仅支持取1或2",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFF",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "en",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ASR热词库参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsrHotWordsConfigure",
+          "name": "AsrHotWordsConfigure",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数",
+          "example": "\"{}\"",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -26380,6 +27500,92 @@
       ],
       "usage": "out"
     },
+    "ScheduleSmartSubtitleTaskResult": {
+      "document": "编排智能字幕任务结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "具体错误信息",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitlesTaskInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wu",
+          "member": "SmartSubtitlesResult",
+          "name": "Output",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:28Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2019-07-16T06:21:46Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ScheduleTask": {
       "document": "编排任务信息",
       "members": [
@@ -26973,6 +28179,579 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartSubtitleTaskAsrFullTextResult": {
+      "document": "语音全文识别结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音全文识别任务输入信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskResultInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语音全文识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskAsrFullTextResultOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskAsrFullTextResultOutput": {
+      "document": "语音全文识别结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "语音全文识别片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskAsrFullTextSegmentItem",
+          "name": "SegmentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件地址。",
+          "example": "http://smart-subtitle-test-12******.cos.ap-shanghai.myqcloud.com/31*******8.vtt",
+          "member": "string",
+          "name": "SubtitlePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskAsrFullTextSegmentItem": {
+      "document": "语音全文识别片段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别片段置信度。取值：0~100。",
+          "example": "100",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段起始的偏移时间，单位：秒。",
+          "example": "3.204",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段终止的偏移时间，单位：秒。",
+          "example": "7.204",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别文本。",
+          "example": "腾讯云媒体处理",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字词时间戳信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WordResult",
+          "name": "Wordlist",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskResultInput": {
+      "document": "智能字幕翻译的输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板 ID。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕自定义参数，当 Definition 填 0 时有效。\n该参数用于高度定制场景，建议您优先使用 Definition 指定智能字幕参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义参数",
+          "member": "RawSmartSubtitleParameter",
+          "name": "RawParameter",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskTransTextResult": {
+      "document": "翻译结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "InvalidInput",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "错误信息",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译任务输入信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskResultInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "翻译任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitleTaskTransTextResultOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskTransTextResultOutput": {
+      "document": "翻译结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻译片段列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "SmartSubtitleTaskTransTextSegmentItem",
+          "name": "SegmentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕文件地址。",
+          "example": "http://lily-12*****.cos.ap-shanghai.myqcloud.com/310*****.vtt",
+          "member": "string",
+          "name": "SubtitlePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTaskTransTextSegmentItem": {
+      "document": "翻译片段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别片段置信度。取值：0~100。",
+          "example": "100",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段起始的偏移时间，单位：秒。",
+          "example": "17.45",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段终止的偏移时间，单位：秒。",
+          "example": "29.99",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别文本。",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译文本。",
+          "example": "Hello",
+          "member": "string",
+          "name": "Trans",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字词时间戳信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WordResult",
+          "name": "Wordlist",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitleTemplateItem": {
+      "document": "智能字幕模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板唯一标识",
+          "example": "30",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模版1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕模板描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用于A的模版",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Preset",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ASR热词库参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsrHotWordsConfigure",
+          "name": "AsrHotWordsConfigure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板关联热词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AsrHotWordsLibraryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕视频源语言\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nzh-PY：中英粤\nzh-medical：中文医疗\nyue：中文粤语\nvi：越南语\nms：马来语\nid：印度尼西亚语\nfil：菲律宾语\nth：泰语\npt：葡萄牙语\ntr：土耳其语\nar：阿拉伯语\nes：西班牙语\nhi：印地语\nfr：法语\nde：德语\nzh_dialect：中文方言",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕文件格式\n vtt: WebVTT 格式\n不填或填空：不生成字幕文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vtt",
+          "member": "string",
+          "name": "SubtitleFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕字幕语言类型\n0: 源语言\n1: 翻译语言\n2: 源语言+翻译语言\n当TranslateSwitch为OFF时仅支持取0\n当TranslateSwitch为ON时仅支持取1或2",
+          "example": "0",
+          "member": "int64",
+          "name": "SubtitleType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译开关\nON: 开启翻译\nOFF: 关闭翻译\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "TranslateSwitch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕翻译目标语言\n当TranslateSwitch为ON的时候生效\n当前支持以下语言：\nzh：简体中文\nen：英语\nja：日语\nko：韩语\nfr：法语\nes：西班牙语\nit：意大利语\nde：德语\ntr：土耳其语\nru：俄语\npt：葡萄牙语\nvi：越南语\nid：印度尼西亚语\nms：马来语\nth：泰语\nar：阿拉伯语\nhi：印地语\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "en",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕预设模板别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PresetTemplate1",
+          "member": "string",
+          "name": "AliasName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitlesResult": {
+      "document": "智能字幕结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务的类型，取值范围：\n<li>AsrFullTextRecognition：语音全文识别，</li>\n<li>TransTextRecognition：语音翻译。</li>",
+          "example": "AsrFullTextRecognition",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音全文识别结果，当 Type 为\n AsrFullTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "SmartSubtitleTaskAsrFullTextResult",
+          "name": "AsrFullTextTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "翻译结果，当 Type 为\n\nTransTextRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "SmartSubtitleTaskTransTextResult",
+          "name": "TransTextTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartSubtitlesTaskInput": {
+      "document": "智能字幕输入结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能字幕模板 ID 。\t",
+          "example": "123",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户扩展字段，一般场景不用填。",
+          "example": "用户扩展字段",
+          "member": "string",
+          "name": "UserExtPara",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕自定义参数，当 Definition 填 0 时有效。 该参数用于高度定制场景，建议您优先使用 Definition 指定智能字幕参数。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RawSmartSubtitleParameter",
+          "name": "RawParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -30133,7 +31912,7 @@
         {
           "disabled": false,
           "document": "媒体处理任务 ID。",
-          "example": "NULL",
+          "example": "2xxxx-123456789",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -30143,7 +31922,7 @@
         {
           "disabled": false,
           "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
-          "example": "NULL",
+          "example": "PROCESSING",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -30153,7 +31932,7 @@
         {
           "disabled": false,
           "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。",
-          "example": "NULL",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -30163,7 +31942,7 @@
         {
           "disabled": false,
           "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。",
-          "example": "NULL",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -30173,7 +31952,7 @@
         {
           "disabled": false,
           "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
           "output_required": true,
@@ -30183,7 +31962,7 @@
         {
           "disabled": false,
           "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
           "output_required": true,
@@ -30193,7 +31972,7 @@
         {
           "disabled": false,
           "document": "媒体处理任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
           "output_required": true,
@@ -30203,7 +31982,7 @@
         {
           "disabled": false,
           "document": "视频内容审核任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
           "output_required": true,
@@ -30213,7 +31992,7 @@
         {
           "disabled": false,
           "document": "视频内容分析任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
           "output_required": true,
@@ -30223,7 +32002,7 @@
         {
           "disabled": false,
           "document": "视频内容识别任务的执行状态与结果。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
           "output_required": true,
@@ -30233,11 +32012,21 @@
         {
           "disabled": false,
           "document": "媒体质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "ScheduleQualityControlTaskResult",
           "name": "AiQualityControlTaskResult",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能字幕任务的执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartSubtitlesResult",
+          "name": "SmartSubtitlesTaskResult",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

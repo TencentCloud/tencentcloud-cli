@@ -588,6 +588,14 @@
         "title": "销毁资源"
       }
     ],
+    "EditAuthConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EditAuthConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"618223f6-f247-05dc-2638-7a72c876b7d1\"\n    }\n}",
+        "title": "修改登录密码更新策略配置"
+      }
+    ],
     "EstablishCloudBaseRunServer": [
       {
         "document": "创建云应用服务",

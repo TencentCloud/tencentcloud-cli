@@ -22,7 +22,10 @@ Output:
             {
                 "ActionType": "postpay_deduct_h",
                 "ActionTypeName": "按量计费小时结",
-                "AssociatedOrder": null,
+                "AssociatedOrder": {
+                    "PrepayPurchase": "20230707400000439953321",
+                    "PrepayRenew": "20230707400000440668101,20230707400000440730331,20230707400000440886501"
+                },
                 "BillId": "20230816400705427744482",
                 "BusinessCode": "p_nat",
                 "BusinessCodeName": "NAT网关",
@@ -69,7 +72,11 @@ Output:
                 "OwnerUin": "700000686592",
                 "PayModeName": "按量计费",
                 "PayTime": "2023-08-16 21:15:38",
-                "PriceInfo": [],
+                "PriceInfo": [
+                    "linux",
+                    "第三阶梯",
+                    "云平"
+                ],
                 "ProductCode": "sp_nat",
                 "ProductCodeName": "NAT网关",
                 "ProjectId": 0,
@@ -78,7 +85,12 @@ Output:
                 "RegionName": "华东地区（上海）",
                 "ResourceId": "nat-ftuh6xel",
                 "ResourceName": "migration-nat-test3",
-                "Tags": [],
+                "Tags": [
+                    {
+                        "TagKey": "jemmahuang",
+                        "TagValue": "jemmahuang"
+                    }
+                ],
                 "ZoneName": "其他"
             }
         ],

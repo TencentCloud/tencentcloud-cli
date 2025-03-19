@@ -672,6 +672,13 @@
       "output": "ReleaseWanAddressResponse",
       "status": "online"
     },
+    "RemoveReplicationGroup": {
+      "document": "删除复制组",
+      "input": "RemoveReplicationGroupRequest",
+      "name": "删除复制组",
+      "output": "RemoveReplicationGroupResponse",
+      "status": "online"
+    },
     "RemoveReplicationInstance": {
       "document": "本接口（RemoveReplicationInstance）用于移除复制组中的实例。",
       "input": "RemoveReplicationInstanceRequest",
@@ -11151,6 +11158,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveReplicationGroupRequest": {
+      "document": "RemoveReplicationGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "复制组ID",
+          "example": "crs-rpl-xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveReplicationGroupResponse": {
+      "document": "RemoveReplicationGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

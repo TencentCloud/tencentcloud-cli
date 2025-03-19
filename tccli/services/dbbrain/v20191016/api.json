@@ -2398,33 +2398,33 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID 。",
           "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "保留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留字段",
           "example": "cpu_use_rate",
           "member": "string",
           "name": "Metric",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2814,6 +2814,7 @@
           "example": "Yes",
           "member": "string",
           "name": "DailyInspection",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2824,19 +2825,21 @@
           "example": "Yes",
           "member": "string",
           "name": "OverviewDisplay",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "redis大key分析的自定义分割符，仅redis使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "redis大key分析的自定义分割符，仅redis使用",
           "example": "[\",\",\":\",\"@\"]",
           "member": "string",
           "name": "KeyDelimiters",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3353,13 +3356,13 @@
         },
         {
           "disabled": false,
-          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标值。",
           "example": "[0.2]",
           "member": "float",
           "name": "Values",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3415,13 +3418,13 @@
         },
         {
           "disabled": false,
-          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标值。",
           "example": "[0.25,0.26]",
           "member": "int64",
           "name": "Values",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3570,13 +3573,13 @@
         },
         {
           "disabled": false,
-          "document": "库中所有表对应的独立物理文件大小加和（MB）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "库中所有表对应的独立物理文件大小加和（MB）。",
           "example": "0.2",
           "member": "float",
           "name": "PhysicalFileSize",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3616,7 +3619,7 @@
           "example": "性能",
           "member": "string",
           "name": "IssueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3626,7 +3629,7 @@
           "example": "-20",
           "member": "int64",
           "name": "ScoreLost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3636,19 +3639,19 @@
           "example": "-30",
           "member": "int64",
           "name": "ScoreLostMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扣分项列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "扣分项列表。",
+          "example": "无",
           "member": "ScoreItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

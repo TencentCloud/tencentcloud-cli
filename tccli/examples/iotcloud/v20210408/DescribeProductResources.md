@@ -9,7 +9,7 @@ tccli iotcloud DescribeProductResources --cli-unfold-argument  \
     --ProductID EQPOKD5111 \
     --Offset 0 \
     --Limit 10 \
-    --Name test
+    --Name myname
 ```
 
 Output: 

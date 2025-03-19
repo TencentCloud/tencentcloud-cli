@@ -18,16 +18,34 @@ Output:
         "Dimensions": [
             {
                 "Dimensions": [
-                    {},
-                    {},
-                    {}
+                    {
+                        "Name": "tenant",
+                        "Value": "rocketmq-vvqb9emabapx"
+                    },
+                    {
+                        "Name": "namespace",
+                        "Value": "test_ns"
+                    },
+                    {
+                        "Name": "topic",
+                        "Value": "test_topic"
+                    }
                 ]
             },
             {
                 "Dimensions": [
-                    {},
-                    {},
-                    {}
+                    {
+                        "Name": "tenant",
+                        "Value": "rocketmq-vvqb9emabapx"
+                    },
+                    {
+                        "Name": "namespace",
+                        "Value": "test_ns"
+                    },
+                    {
+                        "Name": "topic",
+                        "Value": "test_topic2"
+                    }
                 ]
             }
         ],

@@ -7587,6 +7587,15 @@
           "name": "ParentsFolderId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹来源 template管理，orchestrationSpace 编排空间",
+          "example": "orchestrationSpace",
+          "member": "string",
+          "name": "FolderForm",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14516,6 +14525,51 @@
           "example": "cycle",
           "member": "string",
           "name": "WorkflowType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型id列表",
+          "example": "36",
+          "member": "int64",
+          "name": "TaskTypeIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "责任人id列表",
+          "example": "1002134123",
+          "member": "string",
+          "name": "InChargeIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自身责任人",
+          "example": "true",
+          "member": "bool",
+          "name": "OnlyMe",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含代码模版",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeCodeTemplate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理",
+          "example": "orchestrationSpace",
+          "member": "string",
+          "name": "FolderForm",
           "required": false,
           "type": "string"
         }

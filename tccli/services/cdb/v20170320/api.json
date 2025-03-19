@@ -420,6 +420,13 @@
       "output": "DescribeBinlogsResponse",
       "status": "online"
     },
+    "DescribeCPUExpandStrategyInfo": {
+      "document": "通过该 API 可以查询实例的 CPU 弹性扩容信息",
+      "input": "DescribeCPUExpandStrategyInfoRequest",
+      "name": "查询实例的 CPU 弹性扩容策略信息",
+      "output": "DescribeCPUExpandStrategyInfoResponse",
+      "status": "online"
+    },
     "DescribeCdbProxyInfo": {
       "document": "本接口（DescribeCdbProxyInfo）用于查询数据库代理详情信息。",
       "input": "DescribeCdbProxyInfoRequest",
@@ -9205,6 +9212,63 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCPUExpandStrategyInfoRequest": {
+      "document": "DescribeCPUExpandStrategyInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。",
+          "example": "cdb-xxdasd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCPUExpandStrategyInfoResponse": {
+      "document": "DescribeCPUExpandStrategyInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型。可选值 auto、manual。如果返回为NULL说明尚未开通弹性扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "auto",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手动扩容的 CPU 。Type为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "ExpandCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动扩容策略。Type 为 auto 时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "略",
+          "member": "AutoStrategy",
+          "name": "AutoStrategy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

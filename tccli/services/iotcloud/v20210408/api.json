@@ -155,9 +155,9 @@
       "status": "online"
     },
     "DescribeDevices": {
-      "document": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 ",
+      "document": "本接口（DescribeDevices）用于查询物联网通信设备的设备列表。",
       "input": "DescribeDevicesRequest",
-      "name": "获取设备列表",
+      "name": "获取设备列表（新）",
       "output": "DescribeDevicesResponse",
       "status": "online"
     },
@@ -274,9 +274,9 @@
       "status": "online"
     },
     "DescribeProducts": {
-      "document": "本接口（DescribeProducts）用于列出产品列表。 ",
+      "document": "本接口（DescribeProducts）用于列出产品列表。",
       "input": "DescribeProductsRequest",
-      "name": "获取产品列表",
+      "name": "获取产品列表（旧）",
       "output": "DescribeProductsResponse",
       "status": "online"
     },
@@ -316,7 +316,7 @@
       "status": "online"
     },
     "EnableTopicRule": {
-      "document": "本接口（EnableTopicRule）用于启用规则 ",
+      "document": "本接口（EnableTopicRule）用于启用规则",
       "input": "EnableTopicRuleRequest",
       "name": "启用规则",
       "output": "EnableTopicRuleResponse",
@@ -351,7 +351,7 @@
       "status": "online"
     },
     "ListLog": {
-      "document": "本接口（ListLog）用于查看日志信息 ",
+      "document": "本接口（ListLog）用于查看日志信息",
       "input": "ListLogRequest",
       "name": "查询日志",
       "output": "ListLogResponse",
@@ -679,7 +679,7 @@
         {
           "disabled": false,
           "document": "设备Tag",
-          "example": "无",
+          "example": "11",
           "member": "DeviceTag",
           "name": "Tags",
           "output_required": true,
@@ -828,7 +828,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "ABCD",
+          "example": "devGat-001",
           "member": "string",
           "name": "DeviceName",
           "output_required": true,
@@ -838,7 +838,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
@@ -848,7 +848,7 @@
         {
           "disabled": false,
           "document": "请求ID",
-          "example": "xxxxxxxxx",
+          "example": "0b77fcf9-d157-4b60-9a3d-541916b48c24",
           "member": "string",
           "name": "RequestId",
           "output_required": true,
@@ -888,7 +888,7 @@
         {
           "disabled": true,
           "document": "腾讯云账号",
-          "example": "12345",
+          "example": "4546542",
           "member": "string",
           "name": "Userid",
           "output_required": true,
@@ -898,7 +898,7 @@
         {
           "disabled": false,
           "document": "腾讯云账号",
-          "example": "12345",
+          "example": "16535412",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -1879,7 +1879,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1888,7 +1888,7 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "abc",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -2050,7 +2050,7 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "output_required": true,
@@ -2120,7 +2120,7 @@
         {
           "disabled": false,
           "document": "设备属性",
-          "example": "无",
+          "example": "tags1",
           "member": "DeviceTag",
           "name": "Tags",
           "output_required": true,
@@ -2140,7 +2140,7 @@
         {
           "disabled": false,
           "document": "国际移动设备识别码 IMEI",
-          "example": "imei",
+          "example": "345323123",
           "member": "string",
           "name": "Imei",
           "output_required": true,
@@ -2160,7 +2160,7 @@
         {
           "disabled": false,
           "document": "IP地址",
-          "example": "1",
+          "example": "127.0.0.1",
           "member": "uint64",
           "name": "ConnIP",
           "output_required": true,
@@ -2170,7 +2170,7 @@
         {
           "disabled": true,
           "document": "NB IoT运营商处的DeviceID",
-          "example": "1233445",
+          "example": "7233445",
           "member": "string",
           "name": "NbiotDeviceID",
           "output_required": true,
@@ -2260,7 +2260,7 @@
         {
           "disabled": false,
           "document": "设备标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "labels1",
           "member": "DeviceLabel",
           "name": "Labels",
           "output_required": true,
@@ -2290,7 +2290,7 @@
         {
           "disabled": false,
           "document": "创建者账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "54362341",
           "member": "uint64",
           "name": "CreateUserId",
           "output_required": true,
@@ -2300,7 +2300,7 @@
         {
           "disabled": false,
           "document": "NB IoT运营商处的DeviceID",
-          "example": "1233445",
+          "example": "54362341",
           "member": "string",
           "name": "NBIoTDeviceID",
           "output_required": true,
@@ -2368,7 +2368,7 @@
         {
           "disabled": false,
           "document": "需要查看设备列表的产品 ID",
-          "example": "ABCDE12345",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2404,7 +2404,7 @@
         {
           "disabled": false,
           "document": "需要过滤的设备名称",
-          "example": "ABCD",
+          "example": "myname1",
           "member": "string",
           "name": "DeviceName",
           "required": false,
@@ -2431,17 +2431,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备详细信息列表",
-          "example": "无",
+          "example": "{\"CertState\": 0,}",
           "member": "DeviceInfo",
           "name": "Devices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3247,7 +3247,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3382,40 +3382,40 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品名",
-          "example": "Test_1",
+          "example": "dev-001",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品元数据",
-          "example": "无",
+          "example": "{\"CreateUserId\": 630811165}",
           "member": "ProductMetadata",
           "name": "ProductMetadata",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品属性",
-          "example": "无",
+          "example": "{\"AppEUI\": \"\",}",
           "member": "ProductProperties",
           "name": "ProductProperties",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3572,17 +3572,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品详细信息列表",
-          "example": "无",
+          "example": "{\"ProductId\": \"UTY4QRLMQY\",}",
           "member": "ProductInfo",
           "name": "Products",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3750,7 +3750,7 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "output_required": true,
@@ -3850,7 +3850,7 @@
         {
           "disabled": true,
           "document": "NB IOT运营商处的DeviceID",
-          "example": "12345",
+          "example": "34534",
           "member": "string",
           "name": "NbiotDeviceID",
           "output_required": true,
@@ -3860,7 +3860,7 @@
         {
           "disabled": false,
           "document": "IP地址",
-          "example": "123124121",
+          "example": "127.0.0.1",
           "member": "uint64",
           "name": "ConnIP",
           "output_required": true,
@@ -3960,7 +3960,7 @@
         {
           "disabled": false,
           "document": "设备标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "labels1",
           "member": "DeviceLabel",
           "name": "Labels",
           "output_required": true,
@@ -3990,7 +3990,7 @@
         {
           "disabled": false,
           "document": "创建者 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1063452",
           "member": "uint64",
           "name": "CreateUserId",
           "output_required": true,
@@ -4000,7 +4000,7 @@
         {
           "disabled": false,
           "document": "NB IOT运营商处的DeviceID",
-          "example": "12345",
+          "example": "453412",
           "member": "string",
           "name": "NBIoTDeviceID",
           "output_required": true,
@@ -4280,7 +4280,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "test",
+          "example": "rule1",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4425,7 +4425,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "test",
+          "example": "rule1",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -4878,7 +4878,7 @@
         {
           "disabled": false,
           "document": "日志列表",
-          "example": "无",
+          "example": "  {\"DateTime\": \"1606207990000\"}",
           "member": "PayloadLogItem",
           "name": "Results",
           "output_required": true,
@@ -4917,8 +4917,8 @@
         },
         {
           "disabled": false,
-          "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。键值或文本可以包含多个，以空格隔开。其中可以索引的key包括：requestid、productid、devicename、scene、content。\n一个典型的查询示例：productid:ABCDE12345 devicename:test scene:SHADOW content:Device%20connect publish",
-          "example": "abc",
+          "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:vlue worda。键值或文本可以包含多个，以空格隔开。其中可以索引的key包括：requestid、productid、devicename、scene、content。一个典型的查询示例：productid:ABCDE12345 devicename:test scene:SHADOW content:Device%20connect publish",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "Keywords",
           "required": false,
@@ -4927,7 +4927,7 @@
         {
           "disabled": false,
           "document": "日志检索上下文",
-          "example": "123",
+          "example": "hello",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -4951,10 +4951,10 @@
         {
           "disabled": false,
           "document": "日志上下文",
-          "example": "123",
+          "example": "hello",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4964,27 +4964,27 @@
           "example": "true",
           "member": "bool",
           "name": "Listover",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志列表",
-          "example": "无",
+          "example": "{\"Context\":\"hello\"}",
           "member": "CLSLogItem",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志总条数",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5021,7 +5021,7 @@
         {
           "disabled": false,
           "document": "查询关键字，可以同时支持键值查询和文本查询，\n例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。\n键值或文本可以包含多个，以空格隔开。\n其中可以索引的key包括：productid、devicename、loglevel\n一个典型的查询示例：productid:7JK1G72JNE devicename:name publish loglevel:WARN一个典型的查询示例：productid:ABCDE12345 devicename:test scene:SHADOW publish",
-          "example": "productid:xxxxxxx",
+          "example": "productid:adferdfwe",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -5064,7 +5064,7 @@
         {
           "disabled": false,
           "document": "是否还有日志，如有仍有日志，下次查询的请求带上当前请求返回的Context",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Listover",
           "output_required": true,
@@ -5304,30 +5304,30 @@
         {
           "disabled": false,
           "document": "产品创建时间",
-          "example": "12345",
+          "example": "1741161091",
           "member": "uint64",
           "name": "CreationDate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者 Uin",
-          "example": "0",
+          "example": "10374533",
           "member": "uint64",
           "name": "CreateUserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账号 Uin",
-          "example": "0",
+          "example": "10374533",
           "member": "uint64",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

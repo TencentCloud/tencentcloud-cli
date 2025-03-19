@@ -4011,25 +4011,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件类型编码",
           "example": "v_cvm_cpu",
           "member": "string",
           "name": "ComponentCode",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组件类型：用户购买的产品或服务对应的组件大类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件类型：用户购买的产品或服务对应的组件大类",
           "example": "CPU",
           "member": "string",
           "name": "ComponentCodeName",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6820,7 +6820,7 @@
         {
           "disabled": false,
           "document": "产品消费详情",
-          "example": "[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器CVM\",\"RegionName\":\"华北地区（北京）\",\"RealTotalCost\":\"39122.58\",\"CashPayAmount\":\"39122.57837976\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"Trend\":{\"Type\":\"downward\",\"Value\":\"34.77\"}}]",
+          "example": "无",
           "member": "ConsumptionBusinessSummaryDataItem",
           "name": "Business",
           "output_required": true,
@@ -6829,43 +6829,43 @@
         },
         {
           "disabled": false,
-          "document": "现金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "现金",
           "example": "77916.41339286",
           "member": "string",
           "name": "CashPayAmount",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "代金券\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "代金券",
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "赠送金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "赠送金",
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分成金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分成金",
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9970,7 +9970,7 @@
         {
           "disabled": false,
           "document": "详情列表",
-          "example": "[ \t\t\t{ \t\t\t\t\"ActionType\": \"postpay_deduct_h\", \t\t\t\t\"ActionTypeName\": \"按量计费小时结\", \t\t\t\t\"AssociatedOrder\": null, \t\t\t\t\"BillId\": \"20230816400705427744482\", \t\t\t\t\"BusinessCode\": \"p_nat\", \t\t\t\t\"BusinessCodeName\": \"NAT网关\", \t\t\t\t\"ComponentSet\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"BlendedDiscount\": \"0.68040500\", \t\t\t\t\t\t\"CashPayAmount\": \"0.34020250\", \t\t\t\t\t\t\"ComponentCode\": \"v_nat_hour_instance\", \t\t\t\t\t\t\"ComponentCodeName\": \"实例\", \t\t\t\t\t\t\"ComponentConfig\": [], \t\t\t\t\t\t\"ContractPrice\": \"0.34020250\", \t\t\t\t\t\t\"Cost\": \"0.50000000\", \t\t\t\t\t\t\"DeductedMeasure\": \"-\", \t\t\t\t\t\t\"Discount\": \"0.680405\", \t\t\t\t\t\t\"IncentivePayAmount\": \"0\", \t\t\t\t\t\t\"InstanceType\": \"\", \t\t\t\t\t\t\"ItemCode\": \"sv_nat_hour_instance_small\", \t\t\t\t\t\t\"ItemCodeName\": \"NAT网关-小型实例\", \t\t\t\t\t\t\"OriginalCostWithRI\": \"0.00000000\", \t\t\t\t\t\t\"OriginalCostWithSP\": \"0.00000000\", \t\t\t\t\t\t\"PriceUnit\": \"元/100个/小时\", \t\t\t\t\t\t\"RealCost\": \"0.34020250\", \t\t\t\t\t\t\"RealTotalMeasure\": \"-\", \t\t\t\t\t\t\"ReduceType\": \"折扣\", \t\t\t\t\t\t\"RiTimeSpan\": \"0.00000000\", \t\t\t\t\t\t\"SPDeduction\": \"0.00000000\", \t\t\t\t\t\t\"SPDeductionRate\": \"0.00000000\", \t\t\t\t\t\t\"SinglePrice\": \"0.50000000\", \t\t\t\t\t\t\"SpecifiedPrice\": \"0.50000000\", \t\t\t\t\t\t\"TimeSpan\": \"1\", \t\t\t\t\t\t\"TimeUnitName\": \"小时\", \t\t\t\t\t\t\"TransferPayAmount\": \"0\", \t\t\t\t\t\t\"UsedAmount\": \"100\", \t\t\t\t\t\t\"UsedAmountUnit\": \"个\", \t\t\t\t\t\t\"VoucherPayAmount\": \"0\" \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"FeeBeginTime\": \"2023-08-16 20:00:00\", \t\t\t\t\"FeeEndTime\": \"2023-08-16 20:59:59\", \t\t\t\t\"Formula\": \"-\", \t\t\t\t\"FormulaUrl\": \"https://buy.cloud.tencent.com/price/nat\", \t\t\t\t\"OperateUin\": \"700000686592\", \t\t\t\t\"OrderId\": \"20230816867705427744432\", \t\t\t\t\"OwnerUin\": \"700000686592\", \t\t\t\t\"PayModeName\": \"按量计费\", \t\t\t\t\"PayTime\": \"2023-08-16 21:15:38\", \t\t\t\t\"PriceInfo\": [], \t\t\t\t\"ProductCode\": \"sp_nat\", \t\t\t\t\"ProductCodeName\": \"NAT网关\", \t\t\t\t\"ProjectId\": 0, \t\t\t\t\"ProjectName\": \"默认项目\", \t\t\t\t\"RegionId\": \"4\", \t\t\t\t\"RegionName\": \"华东地区（上海）\", \t\t\t\t\"ResourceId\": \"nat-ftuh6xel\", \t\t\t\t\"ResourceName\": \"migration-nat-test3\", \t\t\t\t\"Tags\": [], \t\t\t\t\"ZoneName\": \"其他\" \t\t\t} \t\t]",
+          "example": "无",
           "member": "DistributionBillDetail",
           "name": "DetailSet",
           "output_required": true,
@@ -9989,13 +9989,13 @@
         },
         {
           "disabled": false,
-          "document": "本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本次请求的上下文信息，可用于下一次请求的请求参数中，加快查询速度",
           "example": "UEEJBfSsteS7dZgAaEEziWS40d4sn4urG7",
           "member": "string",
           "name": "Context",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
