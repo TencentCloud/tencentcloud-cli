@@ -844,14 +844,6 @@
         "title": "获取资产报表任务列表"
       }
     ],
-    "DescribeRuleDetail": [
-      {
-        "document": "查询分类规则详情",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeRuleDetail\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351be6a8-0d0b-471d-b66f-c36f13698e03\"\n    }\n}",
-        "title": "查询分类规则详情"
-      }
-    ],
     "DescribeRuleList": [
       {
         "document": "查询分类下规则列表",

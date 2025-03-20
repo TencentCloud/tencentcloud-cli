@@ -18,7 +18,8 @@ Output:
                 "TimeTemplateId": "tgrp-a6gvpkzu",
                 "TimeTemplateName": "myTimeTemplate",
                 "EventId": 1,
-                "Devices": []
+                "Devices": [],
+                "RecordStorageTime": 30
             }
         ],
         "RequestId": "c6cc4efc-a7db-4c93-a373-0ce2a383023a",

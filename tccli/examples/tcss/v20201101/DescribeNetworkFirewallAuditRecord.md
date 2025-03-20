@@ -21,7 +21,7 @@ Output:
                 "Region": "ap-guangzhou",
                 "ClusterId": "  cls-jvrv0kf2",
                 "Uin": "10023234334",
-                "NetworkPolicyName": "test",
+                "NetworkPolicyName": "NetworkPolicyName",
                 "AppId": 346456456,
                 "PolicyId": "54645",
                 "Action": "add",

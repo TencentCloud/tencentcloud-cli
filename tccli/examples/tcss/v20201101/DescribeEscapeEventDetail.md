@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeEscapeEventDetail --cli-unfold-argument  \
-    --EventId dsfhuyh2r
+    --EventId 10021
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
             "ClusterID": "cls-sdfw3f3",
             "ClusterName": "web-cluster",
             "ContainerId": "a960d85856c7a77cb504b638c56f59a28057",
-            "ContainerIsolateOperationSrc": "",
+            "ContainerIsolateOperationSrc": "system",
             "ContainerName": "node1",
             "ContainerNetStatus": "NORMAL",
             "ContainerNetSubStatus": "NONE",
@@ -36,26 +36,26 @@ Output:
             "HostID": "3b6b1bbc-1c7a-47e2-9ca8-e9c27ec9d068",
             "HostIP": "172.17.1.6",
             "ImageId": "sha256:b760a4831f5aab71c711f7537a107b751d0d0ce90dd32d8b358df3c5da385426",
-            "ImageName": "-",
+            "ImageName": "centos:7.6",
             "LatestFoundTime": "2024-10-23 17:13:51",
             "Namespace": "default",
             "NodeID": "web-node1",
             "NodeName": "VM-1-6-tencentos",
             "NodeSubNetCIDR": "172.16.0.0/24",
-            "NodeSubNetID": "",
-            "NodeSubNetName": "",
+            "NodeSubNetID": "sub-ndifn***",
+            "NodeSubNetName": "dev",
             "NodeType": "NORMAL",
-            "NodeUniqueID": "",
-            "PodIP": "",
+            "NodeUniqueID": "d41d8cd98f00b20*******",
+            "PodIP": "10.0.0.121",
             "PodName": "kube-system/cilium-m2gkw",
-            "PodStatus": "",
+            "PodStatus": "NORMAL",
             "Status": "EVENT_UNDEAL",
-            "WorkloadType": ""
+            "WorkloadType": "StatefulSet"
         },
         "EventDetail": {
             "Description": "容器（ID:5893711bb2...）挂载了敏感目录/lib/modules,/proc/sys/net,/proc/sys/kernel，存在容器逃逸的风险，当攻击者攻破容器后，可通过篡改该目录下的敏感文件，从而实现容器逃逸，获得宿主机系统的控制权限，威胁宿主机上其它容器及内网的安全。",
             "OperationTime": "1970-01-01 00:00:01",
-            "Remark": "",
+            "Remark": "dev",
             "Solution": "修改挂载路径，只将必须的路径挂载到容器中，避免挂载敏感路径。"
         },
         "ParentProcessInfo": {
@@ -65,7 +65,7 @@ Output:
             "ProcessUserGroup": "root"
         },
         "ProcessInfo": {
-            "ProcessAuthority": "",
+            "ProcessAuthority": "-rwxr-xr-x",
             "ProcessId": 2743103,
             "ProcessMd5": "81a7701a194c3a1179cfe4a7ac836626",
             "ProcessName": "runc",

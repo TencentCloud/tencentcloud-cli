@@ -9348,13 +9348,13 @@
         },
         {
           "disabled": false,
-          "document": "实例参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例参数列表",
+          "example": "[{\"ParamName\": \"demoString\",\"NewValue\": \"demoString\",\"OldValue\": \"demoString\",\"ValueFunction\": \"demoString\"}]",
           "member": "ParamItemInfo",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9600,13 +9600,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库信息",
           "example": " [{\"Status\": \"running\", \"UserHostPrivileges\": [], \"UpdateTime\": \"0001-01-01T00:00:00Z\", \"Description\": \"\", \"DbId\": 0, \"CharacterSet\": \"\", \"ClusterId\": \"\", \"DbName\": \"mysql\", \"Uin\": \"\", \"AppId\": 0, \"CollateRule\": \"\", \"CreateTime\": \"0001-01-01T00:00:00Z\"}]",
           "member": "DbInfo",
           "name": "DbInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9843,13 +9843,13 @@
         },
         {
           "disabled": false,
-          "document": "参数修改记录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "参数修改记录",
+          "example": " [{\"Status\": \"success\",\"CurrentValue\": \"1024\",\"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\"UpdateValue\": \"1025\",\"ParamName\": \"back_log\",\"CreateTime\": \"2020-09-22T00:00:00+00:00\",\"ClusterId\": \"cynosdbmysql-mwg71211\",\"InstanceId\": \"cynosdbmysql-ins-m6f0hk11\"}]",
           "member": "ClusterParamModifyLog",
           "name": "ClusterParamLogs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9908,13 +9908,13 @@
         },
         {
           "disabled": false,
-          "document": "实例参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例参数列表",
           "example": "无",
           "member": "ParamInfo",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9945,63 +9945,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据字典参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据字典参数",
           "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordDictionary",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "密码长度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "8",
+          "document": "密码长度",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordLength",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "大小写敏感字符个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "大小写敏感字符个数",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordMixedCaseCount",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数字个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "数字个数",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordNumberCount",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "密码等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "MEDIUM",
+          "document": "密码等级",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordPolicy",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "特殊字符个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "特殊字符个数",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ValidatePasswordSpecialCharCount",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10419,23 +10419,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志条数",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误日志列表",
           "example": " [\"Content\": \"Aborted connection 562579 to db: 'unconnected' user: 'unauthenticated' host: '169.*.*.*' (Got an error reading communication packets)\",\"Level\": \"note\",\"Timestamp\": 1730182001}]",
           "member": "CynosdbErrorLogItem",
           "name": "ErrorLogs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11400,13 +11400,13 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库代理组列表",
           "example": "无",
           "member": "ProxyGroupInfo",
           "name": "ProxyGroupInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11750,13 +11750,13 @@
         },
         {
           "disabled": false,
-          "document": "资源包明细\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [{\"AppId\": 12311134,\"PackageId\": \"package-cbhsysss\",\"PackageName\": \"MyPackageName\",\"PackageType\": \"CCU\",\"PackageRegion\": \"chineseMainland\",\"Status\": \"using\",\"PackageTotalSpec\": 10000000,\"PackageUsedSpec\": 2394.3,\"HasQuota\": true,\"BindInstanceInfos\": [{\"InstanceId\": \"cynosdbpg-ins-bzkxx111\",\"InstanceRegion\": \"ap-guangzhou\",\"InstanceType\": \"cynosdb-serverless\"}],\"StartTime\": \"2023-12-10 00:00:00\",\"ExpireTime\": \"2025-11-10 00:00:00\"}]",
+          "document": "资源包明细",
+          "example": "[{\"AppId\":1237111134,\"PackageId\":\"package-cbhsysss\",\"PackageName\":\"PackageName\",\"PackageType\":\"CCU\",\"PackageRegion\":\"chineseMainland\",\"Status\":\"using\",\"PackageTotalSpec\":10,\"PackageUsedSpec\":2,\"HasQuota\":true,\"BindInstanceInfos\":[]}]",
           "member": "Package",
           "name": "Detail",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11833,13 +11833,13 @@
         },
         {
           "disabled": false,
-          "document": "资源包明细说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "资源包明细说明",
+          "example": "[{\"PackageRegion\": \"china\",\"PackageType\": \"CCU\",\"PackageVersion\": \"common\",\"MinPackageSpec\": 50,\"MaxPackageSpec\": 100,\"ExpireDay\": 180}]",
           "member": "SalePackageSpec",
           "name": "Detail",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11916,28 +11916,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "有效回归时间范围开始时间点（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效回归时间范围开始时间点（已废弃）",
           "example": "2019-01-13 02:12:05",
           "member": "string",
           "name": "TimeRangeStart",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "有效回归时间范围结束时间点（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效回归时间范围结束时间点（已废弃）",
           "example": "2019-01-20 02:10:12",
           "member": "string",
           "name": "TimeRangeEnd",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可回档时间范围",
-          "example": "无",
+          "example": "[{\"TimeRangeStart\": \"2019-01-13 02:12:05\",\"TimeRangeEnd\": \"2019-01-20 02:10:12\"}]",
           "member": "RollbackTimeRange",
           "name": "RollbackTimeRanges",
           "output_required": true,
@@ -12106,23 +12106,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的数据库代理版本集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的数据库代理版本集合",
           "example": "[\"1.3.7\",\"1.3.9\",\"1.2.1\",\"1.3.14\"]",
           "member": "string",
           "name": "SupportProxyVersions",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前proxy版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前proxy版本号",
           "example": "1.3.13",
           "member": "string",
           "name": "CurrentProxyVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -12130,7 +12130,7 @@
           "example": "[{\"ProxyVersion\": \"1.3.7\",\"ProxyVersionType\": \"DEPRECATED\"},{\"ProxyVersion\": \"1.3.9\",\"ProxyVersionType\": \"DEPRECATED\"}]",
           "member": "ProxyVersionInfo",
           "name": "SupportProxyVersionDetail",
-          "output_required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12509,13 +12509,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误日志导出内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误日志导出内容",
           "example": "[{\"Timestamp\": \"2019-07-04 16:45:32\",\"Level\": \"error\",\"Content\": \"Got an error reading communication packets\"}]",
           "member": "ErrorLogItemExport",
           "name": "ErrorLogItems",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13061,23 +13061,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例价格",
           "example": "{\"ChargeUnit\":\"\",\"Discount\":100,\"TotalPrice\":200,\"TotalPriceDiscount\":200,\"UnitPrice\":0,\"UnitPriceDiscount\":0}",
           "member": "TradePrice",
           "name": "InstancePrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储价格",
           "example": "{\"ChargeUnit\":\"GB*h\",\"Discount\":100,\"TotalPrice\":0,\"TotalPriceDiscount\":0,\"UnitPrice\":350,\"UnitPriceDiscount\":350}",
           "member": "TradePrice",
           "name": "StoragePrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13932,13 +13932,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)",
           "example": "147284",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15136,33 +15136,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结流水ID",
           "example": "142674",
           "member": "string",
           "name": "TranId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "137895",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号",
           "example": "182734",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17814,43 +17814,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数名字",
           "example": "binlog_cache_size",
           "member": "string",
           "name": "ParamName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数新值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数新值\n",
           "example": "32780",
           "member": "string",
           "name": "NewValue",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数旧值\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数旧值\n",
           "example": "32768",
           "member": "string",
           "name": "OldValue",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数公式\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数公式\n",
           "example": "{MIN(DBInitMemory/%d*%d,%d)},4000,32768,2097152",
           "member": "string",
           "name": "ValueFunction",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18860,53 +18860,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "预付费总订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费总订单号",
           "example": "[\"202411210540***90590481\",\"202411210540***90590481\"]",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "退款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退款订单号",
           "example": "[\"202411210540***90634651\",\"202411210540***90634661\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "冻结流水，一次开通一个冻结流水\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结流水，一次开通一个冻结流水",
           "example": "0",
           "member": "string",
           "name": "TranId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每个订单号对应的发货资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个订单号对应的发货资源id列表",
           "example": "[\"cynosdbmysql-ins-btx2ns9jk\",\"cynosdbmysql-ins-m9ts6h7y\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群id列表",
           "example": "[\"cynosdbmysql-vx29id0o\"]",
           "member": "string",
           "name": "ClusterIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20006,43 +20006,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结流水ID",
           "example": "20190522160000003106844584180998",
           "member": "string",
           "name": "TranId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号",
           "example": "[\"20190522112283\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）",
           "example": "[\"cynosdbpg-ins-67rmucgk\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）",
           "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
           "member": "string",
           "name": "ClusterIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -20498,13 +20498,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据表列表",
           "example": "[{\"Database\": \"db1\",\"Tables\": [\"audit_log\",\"core_user\"]}]",
           "member": "DatabaseTables",
           "name": "Tables",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -21854,23 +21854,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "冻结流水ID",
           "example": "MyTranId",
           "member": "string",
           "name": "TranId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "大订单号",
           "example": "[\"202411042983\"]",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

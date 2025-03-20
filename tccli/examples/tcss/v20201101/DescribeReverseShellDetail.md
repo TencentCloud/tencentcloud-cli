@@ -20,11 +20,11 @@ Output:
             "ProcessUserGroup": "root"
         },
         "EventBaseInfo": {
-            "ClientIP": "43.138.142.111",
-            "ClusterID": "",
-            "ClusterName": "",
+            "ClientIP": "43.138.**.**",
+            "ClusterID": "12",
+            "ClusterName": "name1",
             "ContainerId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe",
-            "ContainerIsolateOperationSrc": "",
+            "ContainerIsolateOperationSrc": "ContainerIsolateOperationSrc",
             "ContainerName": "/fervent_goodall",
             "ContainerNetStatus": "NORMAL",
             "ContainerNetSubStatus": "NONE",
@@ -38,25 +38,25 @@ Output:
             "ImageId": "sha256:345234541324b561b4c16bcb82328cfe5809ab675bb17ab3a16c517c9",
             "ImageName": "centos:7",
             "LatestFoundTime": "2024-10-09 10:17:07",
-            "Namespace": "",
-            "NodeID": "",
+            "Namespace": "Namespace",
+            "NodeID": "NodeID",
             "NodeName": "k8s-node1",
-            "NodeSubNetCIDR": "",
-            "NodeSubNetID": "",
-            "NodeSubNetName": "",
+            "NodeSubNetCIDR": "NodeSubNetCIDR",
+            "NodeSubNetID": "NodeSubNetID",
+            "NodeSubNetName": "NodeSubNetName",
             "NodeType": "NORMAL",
-            "NodeUniqueID": "",
-            "PodIP": "",
-            "PodName": "--",
-            "PodStatus": "",
+            "NodeUniqueID": "NodeUniqueID",
+            "PodIP": "10.0.0.1",
+            "PodName": "PodName",
+            "PodStatus": "2",
             "Status": "EVENT_UNDEAL",
-            "WorkloadType": ""
+            "WorkloadType": "3"
         },
         "EventDetail": {
             "Description": "/fervent_goodall容器(ID:b18a9a3726...)内存在疑似反弹shell行为",
-            "DstAddress": "175.178.80.251:3387",
+            "DstAddress": "175.178.**.**:3387",
             "OperationTime": "1970-01-01 00:00:01",
-            "Remark": "",
+            "Remark": "Remark",
             "Solution": "清理容器内反弹shell进程，检查容器内服务是否存在漏洞、弱密码等风险"
         },
         "ParentProcessInfo": {
@@ -64,8 +64,8 @@ Output:
             "ProcessName": "bash",
             "ProcessParam": "sh -c bash ",
             "ProcessPath": "/usr/bin/bash",
-            "ProcessStartUser": "",
-            "ProcessUserGroup": ""
+            "ProcessStartUser": "ProcessStartUser",
+            "ProcessUserGroup": "ProcessUserGroup"
         },
         "ProcessInfo": {
             "ProcessAuthority": "-rwxr-xr-x",
@@ -74,7 +74,7 @@ Output:
             "ProcessName": "bash",
             "ProcessParam": "bash -i",
             "ProcessPath": "/usr/bin/bash",
-            "ProcessStartUser": "",
+            "ProcessStartUser": "ProcessStartUser",
             "ProcessTree": "bash(737357)|bash(737356)|bash(733933)|containerd-shim-runc-v2(2178890)|systemd(1)",
             "ProcessUserGroup": "root"
         },

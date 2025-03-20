@@ -23,7 +23,8 @@ Output:
                 "AssetType": "ASSET_CONTAINER",
                 "PeriodRule": {
                     "ExecutionTime": "2006-01-02 15:04:05",
-                    "Frequency": 1
+                    "Frequency": 1,
+                    "Enable": true
                 },
                 "LastTriggerTime": "2006-01-02 15:04:05",
                 "TotalPolicyItemCount": 345634,

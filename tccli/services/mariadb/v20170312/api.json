@@ -2688,13 +2688,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "DCN 的运行状态，START为正常运行，STOP为暂停，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN 的运行状态，START为正常运行，STOP为暂停，",
           "example": "START",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2702,7 +2702,7 @@
           "example": "1",
           "member": "int64",
           "name": "Delay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3639,19 +3639,19 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例备份时间配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例备份时间配置信息",
           "example": "无",
           "member": "DBBackupTimeConfig",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4820,23 +4820,23 @@
         },
         {
           "disabled": false,
-          "document": "实例VIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例VIP。",
           "example": "172.16.0.10",
           "member": "string",
           "name": "VIP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例端口。",
           "example": "3306",
           "member": "string",
           "name": "VPort",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8741,153 +8741,153 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "128007987",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-10-11 10:00:11",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例备注",
           "example": "tdsql-fortdsql-tst",
           "member": "string",
           "name": "InstanceRemark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0:非临时实例 ,1:无效临时实例, 2:回档成功的有效临时实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0:非临时实例 ,1:无效临时实例, 2:回档成功的有效临时实例",
           "example": "1",
           "member": "int64",
           "name": "TempType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例状态,0:待初始化,1:流程处理中,2:有效状态,-1:已隔离，-2：已下线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态,0:待初始化,1:流程处理中,2:有效状态,-1:已隔离，-2：已下线",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例 ID，形如：tdsql-ow728lmc。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID，形如：tdsql-ow728lmc。",
           "example": "tdsql-ow728lmc",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例虚IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例虚IP",
           "example": "10.1.0.1",
           "member": "string",
           "name": "Vip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例虚端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例虚端口",
           "example": "3306",
           "member": "int64",
           "name": "Vport",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效期结束时间",
           "example": "2024-12-11 10:00:11",
           "member": "datetime",
           "name": "PeriodEndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源实例 ID，形如：tdsql-ow728lmc。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例 ID，形如：tdsql-ow728lmc。",
           "example": "tdsql-fortdsql",
           "member": "string",
           "name": "SrcInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态描述",
           "example": "2",
           "member": "string",
           "name": "StatusDesc",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例虚IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例虚IPv6",
           "example": "2402:4e00:*",
           "member": "string",
           "name": "Vipv6",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例IPv6标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例IPv6标志",
           "example": "1",
           "member": "uint64",
           "name": "Ipv6Flag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

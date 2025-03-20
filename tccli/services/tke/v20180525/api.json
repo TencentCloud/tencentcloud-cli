@@ -20767,13 +20767,13 @@
         },
         {
           "disabled": false,
-          "document": "Pod是GPU时，表示GPU卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Pod是GPU时，表示GPU卡数",
           "example": "\"0.25\"",
           "member": "string",
           "name": "Gpu",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -20813,63 +20813,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "Pod的 CPU\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "Pod的 CPU",
+          "example": "8",
           "member": "float",
           "name": "Cpu",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Pod 的内存\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "document": "Pod 的内存",
+          "example": "40",
           "member": "float",
           "name": "Memory",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " Pod 的类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "intel",
+          "document": " Pod 的类型",
+          "example": "v100",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "16",
+          "document": " Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。",
+          "example": "\"1\"",
           "member": "string",
           "name": "GpuNum",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "这种规格的 Pod总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "这种规格的 Pod总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "这种规格的 Pod被预留券抵扣的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "这种规格的 Pod被预留券抵扣的数量",
           "example": "1",
           "member": "uint64",
           "name": "DeductionNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20971,53 +20971,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群 ID",
           "example": "cls-12345678",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " 节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 节点名称",
           "example": "eklet-subnet-0j105iya",
           "member": "string",
           "name": "NodeName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "default",
+          "document": "命名空间",
+          "example": "test",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " Pod 名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "nginx-ingress-ingress-nginx-controller-t4scx",
+          "document": " Pod 名称",
+          "example": "test-0",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24019,103 +24019,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "使用率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用率",
           "example": "1.0",
           "member": "float",
           "name": "Rate",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预留券数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预留券数量",
           "example": "1",
           "member": "uint64",
           "name": "Num",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "核数",
           "example": "0.5",
           "member": "float",
           "name": "CPU",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存",
           "example": "1.0",
           "member": "float",
           "name": "Memory",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " 预留券类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 预留券类型",
           "example": "common",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GPU 卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU 卡数",
           "example": "0.5",
           "member": "string",
           "name": "GpuNum",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可用区",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群 ID",
           "example": "cls-qbc3zefo",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "eklet-subnet-qbc3zefo",
           "member": "string",
           "name": "NodeName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Pod 数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Pod 数量",
           "example": "1",
           "member": "uint64",
           "name": "PodNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24969,53 +24969,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称",
           "example": "eklet-subnet-12345678",
           "member": "string",
           "name": "NodeName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点上的资源总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点上的资源总数",
           "example": "1",
           "member": "uint64",
           "name": "Num",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点上的总核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点上的总核数",
           "example": "1",
           "member": "float",
           "name": "Cpu",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点上的总内存数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点上的总内存数",
           "example": "1",
           "member": "float",
           "name": "Memory",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点上的总 GPU 卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点上的总 GPU 卡数",
           "example": "0",
           "member": "float",
           "name": "Gpu",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

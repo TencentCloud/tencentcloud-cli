@@ -28,7 +28,7 @@ Output:
                 "Pps": 2313,
                 "Business": "bgpip",
                 "InstanceId": "bgpip-00000143",
-                "InstanceName": "test"
+                "InstanceName": "name"
             }
         ]
     }

@@ -15,8 +15,8 @@ Output:
             {
                 "AlarmCount": 1,
                 "ClusterID": "cls-abhq0j4o-666",
-                "ClusterName": "",
-                "ClusterRunningStatus": "",
+                "ClusterName": "clsfoo***",
+                "ClusterRunningStatus": "CSR_RUN****",
                 "Desc": "检测到您的K8s API Server存在匿名用户访问请求，攻击者可利用匿名用户，通过API Server访问集群资源，如进入容器执行命令等。",
                 "FirstCreateTime": "2024-10-22T11:00:45Z",
                 "ID": 501472,

@@ -1949,25 +1949,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池最小副本数",
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点池最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池最大副本数",
           "example": "10",
           "member": "int64",
           "name": "MaxReplicas",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1988,25 +1988,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启自动升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启自动升级",
           "example": "true",
           "member": "bool",
           "name": "AutoUpgrade",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运维窗口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运维窗口",
           "example": "无",
           "member": "AutoUpgradeOptions",
           "name": "UpgradeOptions",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2021,14 +2021,14 @@
         },
         {
           "disabled": false,
-          "document": "升级时，最大不可升级的节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级时，最大不可升级的节点数",
           "example": "无",
           "member": "IntOrString",
           "name": "MaxUnavailable",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2457,23 +2457,23 @@
         },
         {
           "disabled": false,
-          "document": "VPC 唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC 唯一 ID",
           "example": "vpc-4h43fuxj",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网唯一 ID",
           "example": "subnet-4h43fuxj",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2503,13 +2503,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "伸缩配置",
           "example": "无",
           "member": "MachineSetScaling",
           "name": "Scaling",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2533,13 +2533,13 @@
         },
         {
           "disabled": false,
-          "document": "自动升级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动升级配置",
           "example": "无",
           "member": "MachineUpgradeSettings",
           "name": "UpgradeSettings",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2563,13 +2563,13 @@
         },
         {
           "disabled": false,
-          "document": "包年包月机型计费配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月机型计费配置",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2593,13 +2593,13 @@
         },
         {
           "disabled": false,
-          "document": "Machine 系统配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Machine 系统配置",
           "example": "无",
           "member": "ManagementConfig",
           "name": "Management",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2633,33 +2633,33 @@
         },
         {
           "disabled": false,
-          "document": "预定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预定义脚本",
           "example": "无",
           "member": "LifecycleConfig",
           "name": "Lifecycle",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运行时根目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行时根目录",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "RuntimeRootDir",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启弹性伸缩",
           "example": "true",
           "member": "bool",
           "name": "EnableAutoscaling",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2673,13 +2673,13 @@
         },
         {
           "disabled": false,
-          "document": "期望节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "期望节点数",
           "example": "10",
           "member": "int64",
           "name": "Replicas",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2693,13 +2693,13 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网带宽设置",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2713,13 +2713,13 @@
         },
         {
           "disabled": false,
-          "document": "原生节点机型 Native, NativeCVM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原生节点机型 Native, NativeCVM",
           "example": "Native",
           "member": "string",
           "name": "MachineType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -128,23 +128,23 @@
         },
         {
           "disabled": false,
-          "document": "小程序应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序应用名称",
           "example": "测试小程序",
           "member": "string",
           "name": "AppName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序应用版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序应用版本",
           "example": "小程序版本",
           "member": "string",
           "name": "AppVersion",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -158,83 +158,83 @@
         },
         {
           "disabled": false,
-          "document": "小程序隐私诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序隐私诊断报告下载链接",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序隐私诊断报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序隐私诊断报告名称",
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序隐私诊断堆栈报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序隐私诊断堆栈报告下载链接",
           "example": "诊断堆栈报告下载链接",
           "member": "string",
           "name": "BehaviorUrl",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序隐私诊断堆栈报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序隐私诊断堆栈报告名称",
           "example": "诊断堆栈报告名称",
           "member": "string",
           "name": "BehaviorTitle",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断风险项数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断风险项数量",
           "example": "5",
           "member": "int64",
           "name": "HighRiskCount",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "隐私申明文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隐私申明文件名称",
           "example": "隐私申明文本.txt",
           "member": "string",
           "name": "PrivacyTextName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "软件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "软件MD5",
           "example": "c799****************************593f",
           "member": "string",
           "name": "SoftwareMD5",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "隐私文本MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隐私文本MD5",
           "example": "3bc1****************************4523",
           "member": "string",
           "name": "PrivacyTextMD5",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -274,13 +274,13 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "内部错误",
           "member": "string",
           "name": "TaskErrMsg",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -324,13 +324,13 @@
         },
         {
           "disabled": false,
-          "document": "联系人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系人信息",
           "example": "张三",
           "member": "string",
           "name": "ContactName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -984,19 +984,19 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断报告下载链接",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1067,29 +1067,29 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断报告数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "诊断报告数据",
+          "example": "{\"TaskID\":\"\"}",
           "member": "FlySecMiniAppReportData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断任务数",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1151,29 +1151,29 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断任务数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断任务数据列表",
           "example": "无",
           "member": "FlySecMiniAppTaskData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断任务数",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1295,7 +1295,7 @@
           "example": "0",
           "member": "int64",
           "name": "Ret",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1305,39 +1305,39 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断失败错误码",
           "example": "100010",
           "member": "int64",
           "name": "Errno",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序名称",
           "example": "微信小程序",
           "member": "string",
           "name": "MiniAppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序版本",
           "example": "V125",
           "member": "string",
           "name": "MiniAppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1455,7 +1455,7 @@
         {
           "disabled": false,
           "document": "应用名称或小程序名称(可选参数)",
-          "example": "测试",
+          "example": "waf",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -1497,23 +1497,23 @@
         },
         {
           "disabled": false,
-          "document": "诊断任务数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断任务数据列表",
           "example": "无",
           "member": "AppTaskData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1584,7 +1584,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1594,29 +1594,29 @@
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断报告/堆栈名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断报告/堆栈名称",
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断json结果内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断json结果内容",
           "example": "诊断json结果内容",
           "member": "string",
           "name": "ReportResult",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2040,13 +2040,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程编号",
           "example": "1.1",
           "member": "string",
           "name": "FlowNo",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2054,7 +2054,7 @@
           "example": "APK 下载",
           "member": "string",
           "name": "FlowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2064,39 +2064,39 @@
           "example": "1",
           "member": "int64",
           "name": "FlowStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程状态描述",
           "example": "进行中",
           "member": "string",
           "name": "FlowStateDesc",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程启动时间",
           "example": "2022-03-21 15:17:18",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程完成时间",
           "example": "2022-03-21 15:17:18",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -8,7 +8,7 @@ Input:
 tccli tcss AddNetworkFirewallPolicyDetail --cli-unfold-argument  \
     --PolicyName test-2 \
     --CustomPolicy.0.Direction FROM \
-    --Description  \
+    --Description description1 \
     --ClusterId cls-fsdfw \
     --FromPolicyRule 0 \
     --Namespace default \

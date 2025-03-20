@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcss CheckNetworkFirewallPolicyYaml --cli-unfold-argument  \
     --PolicyName sdfhuiwhiw \
-    --Description  \
+    --Description description1 \
     --ClusterId cls-shuiwf \
     --Yaml YXNkZmFzZGZhZHNmYXNkZmFzZGY=
 ```

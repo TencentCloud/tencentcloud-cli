@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tcss AddAndPublishNetworkFirewallPolicyDetail --cli-unfold-argument  \
-    --PolicyName rptest \
+    --PolicyName NewStrategy \
     --CustomPolicy.0.Direction FROM \
     --Description describe content \
     --ClusterId cls-new \
-    --FromPolicyRule 0 \
+    --FromPolicyRule 1 \
     --Namespace default \
-    --ToPolicyRule 0 \
+    --ToPolicyRule 2 \
     --PodSelector a=b
 ```
 

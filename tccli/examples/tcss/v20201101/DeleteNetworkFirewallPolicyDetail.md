@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DeleteNetworkFirewallPolicyDetail --cli-unfold-argument  \
-    --ClusterId test-clusterId \
+    --ClusterId cls_fdts*** \
     --Id 1
 ```
 

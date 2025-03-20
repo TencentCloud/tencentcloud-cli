@@ -1429,9 +1429,10 @@
         {
           "disabled": false,
           "document": "配置绑定的CLB ID",
-          "example": "",
+          "example": "lb-6e6a****",
           "member": "string",
           "name": "LoadBalancerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1439,9 +1440,10 @@
         {
           "disabled": false,
           "document": "配置绑定的监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lbl-cuxw****",
           "member": "string",
           "name": "ListenerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1449,9 +1451,10 @@
         {
           "disabled": false,
           "document": "配置绑定的域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1459,9 +1462,10 @@
         {
           "disabled": false,
           "document": "配置绑定的规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "loc-4apy****",
           "member": "string",
           "name": "LocationId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3498,7 +3502,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组绑定的后端服务器",
+          "document": "目标组绑定的后端服务器，单次最多支持50个。",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -10471,7 +10475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "重定向目标的监听器ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重定向目标的监听器ID，该字段仅配置了重定向时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lbl-q471xxxx",
           "member": "string",
           "name": "TargetListenerId",
@@ -10481,7 +10485,7 @@
         },
         {
           "disabled": false,
-          "document": "重定向目标的转发规则ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重定向目标的转发规则ID，该字段仅配置了重定向时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "loc-188pxxxx",
           "member": "string",
           "name": "TargetLocationId",
@@ -11906,7 +11910,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组实例的权重",
+          "document": "目标组实例的权重\n\nv2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。",
           "example": "10",
           "member": "uint64",
           "name": "Weight",

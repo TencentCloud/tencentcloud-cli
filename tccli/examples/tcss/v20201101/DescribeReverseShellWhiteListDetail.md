@@ -16,7 +16,7 @@ Output:
         "RequestId": "6281f7822403e60601d1dba6",
         "WhiteListDetailInfo": {
             "ImageIds": [
-                "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211"
+                "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5b*****"
             ],
             "ProcessName": "/bin/apitest",
             "DstIp": "1.1.1.1",

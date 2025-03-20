@@ -28,7 +28,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanOverview\n<公共请求参数>\n\n{\n    \"StartDate\": \"2024-03-01\",\n    \"EndDate\": \"2024-05-01\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Overviews\": [\n            {\n                \"EndTime\": \"2028-03-30 14:59:59\",\n                \"PayAmount\": \"0\",\n                \"Region\": [\n                    \"*\"\n                ],\n                \"SavingAmount\": \"600\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-03-30 14:00:00\",\n                \"Status\": 1,\n                \"PayType\": 1\n            }\n        ],\n        \"RequestId\": \"aa36e003-786e-47aa-aefe-e717d749f964\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Overviews\": [\n            {\n                \"EndTime\": \"2028-03-30 14:59:59\",\n                \"PayAmount\": \"0\",\n                \"Region\": [\n                    \"33\"\n                ],\n                \"SavingAmount\": \"600\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-03-30 14:00:00\",\n                \"Status\": 1,\n                \"PayType\": 1\n            }\n        ],\n        \"RequestId\": \"aa36e003-786e-47aa-aefe-e717d749f964\",\n        \"Total\": 1\n    }\n}",
         "title": "查询节省计划总览明细示例"
       }
     ],

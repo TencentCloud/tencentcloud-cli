@@ -20,19 +20,18 @@ Output:
                 "Status": 3,
                 "ExtraInformation": "{\"DeviceModel\":\"xxx\",\"Manufacturer\":\"xxx\"}",
                 "DeviceType": 2,
-                "DeviceCode": "99350367561320000005"
-            },
-            {
-                "NickName": "nameCN22",
-                "DeviceId": "99350367561320000004_99350367561320000004",
-                "Status": 3,
-                "ExtraInformation": "{\"DeviceModel\":\"xxx\",\"Manufacturer\":\"xxx\"}",
-                "DeviceType": 2,
-                "DeviceCode": "99350367561320000004"
+                "IsRecord": 0,
+                "DeviceCode": "99350367561320000005",
+                "Recordable": 1,
+                "Protocol": "GB28181",
+                "CreateTime": 342324234,
+                "ChannelNum": 1,
+                "VideoChannelNum": 1,
+                "RTSPUrl": ""
             }
         ],
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8",
-        "TotalCount": 2
+        "TotalCount": 1
     }
 }
 ```

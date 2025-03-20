@@ -840,13 +840,6 @@
       "output": "ModifyEnvironmentRoleResponse",
       "status": "online"
     },
-    "ModifyPublicNetworkAccessPoint": {
-      "document": "RabbitMQ专享版修改公网管控台，vpc15672开关",
-      "input": "ModifyPublicNetworkAccessPointRequest",
-      "name": "RabbitMQ专享版修改公网管控台，vpc15672开关",
-      "output": "ModifyPublicNetworkAccessPointResponse",
-      "status": "online"
-    },
     "ModifyPublicNetworkSecurityPolicy": {
       "document": "修改pulsar专业版公网安全策略",
       "input": "ModifyPublicNetworkSecurityPolicyRequest",
@@ -13420,88 +13413,6 @@
     "ModifyEnvironmentRoleResponse": {
       "document": "ModifyEnvironmentRole返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyPublicNetworkAccessPointRequest": {
-      "document": "ModifyPublicNetworkAccessPoint请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群名字",
-          "example": "amqp-jero744g",
-          "member": "string",
-          "name": "ClusterId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启",
-          "example": "true",
-          "member": "bool",
-          "name": "PublicNetworkAccessPointStatus",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "必填，公网控制台的开关/Vpc控制台的开关，示例值，Public/Vpc",
-          "example": "Public",
-          "member": "string",
-          "name": "SwitchOwner",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "Vpc",
-          "example": "vpc-5ghsr4p9",
-          "member": "string",
-          "name": "VpcId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子网",
-          "example": "subnet-67y9wil4",
-          "member": "string",
-          "name": "SubnetId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子网下面指定ip作为vpc接入点",
-          "example": "10.1.0.1",
-          "member": "string",
-          "name": "SelectIp",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyPublicNetworkAccessPointResponse": {
-      "document": "ModifyPublicNetworkAccessPoint返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "修改结果",
-          "example": "修改成功",
-          "member": "string",
-          "name": "ModifyResult",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

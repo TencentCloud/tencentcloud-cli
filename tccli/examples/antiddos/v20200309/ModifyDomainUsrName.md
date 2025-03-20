@@ -7,7 +7,7 @@ Input:
 ```
 tccli antiddos ModifyDomainUsrName --cli-unfold-argument  \
     --DomainName test.com \
-    --DomainUserName test
+    --DomainUserName name
 ```
 
 Output: 

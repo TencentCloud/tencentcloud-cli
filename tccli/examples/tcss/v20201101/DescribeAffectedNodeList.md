@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcss DescribeAffectedNodeList --cli-unfold-argument  \
     --Limit 2 \
-    --CheckItemId 1 \
+    --CheckItemId 15 \
     --Offset 0
 ```
 
@@ -19,6 +19,7 @@ Output:
         "TotalCount": 6,
         "AffectedNodeList": [
             {
+                "NodeName": "inode****",
                 "ClusterId": "cls-0zmsjvko",
                 "ClusterName": "wk独立集群",
                 "InstanceId": "ins-afynf7mw",
@@ -38,7 +39,8 @@ Output:
                 "ClusterVersion": "1.18.4",
                 "ContainerRuntime": "docker",
                 "Region": "ap-guangzhou",
-                "VerifyInfo": "Runc 版本为 1.0.0-rc10"
+                "VerifyInfo": "Runc 版本为 1.0.0-rc10",
+                "NodeName": "inode****"
             }
         ]
     }

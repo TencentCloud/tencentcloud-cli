@@ -24,7 +24,7 @@ Output:
                     {
                         "FixedVersion": "0:1.33.0-5.el8_8",
                         "Name": "libnghttp2",
-                        "Path": "",
+                        "Path": "/a/b",
                         "Version": "1.33.0-3.el8_2.1"
                     }
                 ],

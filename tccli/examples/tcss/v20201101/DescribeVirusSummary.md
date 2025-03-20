@@ -19,7 +19,7 @@ Output:
         "RiskContainerIncrease": 0,
         "RiskIncrease": 0,
         "TaskId": "67204f7cad8a5e71a40875752cc2f374",
-        "VirusDataBaseModifyTime": ""
+        "VirusDataBaseModifyTime": "2020-11-21 15:16:00"
     }
 }
 ```

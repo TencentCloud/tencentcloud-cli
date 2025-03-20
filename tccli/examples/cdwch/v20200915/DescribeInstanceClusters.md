@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwch DescribeInstanceClusters --cli-unfold-argument  \
-    --InstanceId cdwch-asdf8max
+    --InstanceId cdwch-xxxxxxxx
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
             {
                 "ClusterName": "default_cluster",
                 "NodeIps": [
-                    "10.2.23.43"
+                    "10.x.x.xx"
                 ]
             }
         ],

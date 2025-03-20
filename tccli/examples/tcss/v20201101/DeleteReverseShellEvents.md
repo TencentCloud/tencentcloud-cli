@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DeleteReverseShellEvents --cli-unfold-argument  \
-    --EventIdSet "id1"
+    --EventIdSet "1002"
 ```
 
 Output: 

@@ -18,7 +18,7 @@ Output:
         "List": [
             {
                 "Id": 17,
-                "Name": "kbtest",
+                "Name": "Name",
                 "LogType": "malware",
                 "Condition": "src_ip 匹配字符: 193.27.228.98",
                 "TimeRange": "2020-07-31 00:00:00 至 2020-07-31 23:59:59",
@@ -28,7 +28,7 @@ Output:
             },
             {
                 "Id": 13,
-                "Name": "test",
+                "Name": "Name",
                 "LogType": "malware",
                 "Condition": "src_ip 匹配字符: 10.0.0.1",
                 "TimeRange": "2020-06-13 00:00:00 至 2020-07-13 23:59:59",

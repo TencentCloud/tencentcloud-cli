@@ -20,7 +20,8 @@ Output:
                 "Size": 1,
                 "ImageName": "centos:7.6",
                 "ContainerCnt": 0,
-                "ImageType": "",
+                "HostCnt": 1,
+                "ImageType": "3",
                 "ImageID": "c826b9fa-68b5-4603-bf25-a5eb9b65c768"
             }
         ],

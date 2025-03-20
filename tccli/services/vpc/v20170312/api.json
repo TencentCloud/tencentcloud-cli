@@ -25036,23 +25036,23 @@
         },
         {
           "disabled": false,
-          "document": "折扣后的价格，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣后的价格，单位：元。",
           "example": "80",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -25430,93 +25430,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "国家信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家信息",
           "example": "中国",
           "member": "string",
           "name": "Country",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "省、州、郡一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省、州、郡一级行政区域信息",
           "example": "安徽省",
           "member": "string",
           "name": "Province",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "市一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "市一级行政区域信息",
           "example": "未知",
           "member": "string",
           "name": "City",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "市内区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "市内区域信息",
           "example": "未知",
           "member": "string",
           "name": "Region",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入运营商信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入运营商信息",
           "example": "中国电信",
           "member": "string",
           "name": "Isp",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "骨干运营商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "骨干运营商名称",
           "example": "中国电信",
           "member": "string",
           "name": "AsName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "骨干运营商AS号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "骨干运营商AS号",
           "example": "4134",
           "member": "string",
           "name": "AsId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "注释信息。目前的填充值为移动接入用户的APN值，如无APN属性则为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "注释信息。目前的填充值为移动接入用户的APN值，如无APN属性则为空",
+          "example": "未知",
           "member": "string",
           "name": "Comment",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址",
           "example": "223.246.170.250",
           "member": "string",
           "name": "AddressIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -31385,13 +31385,13 @@
         },
         {
           "disabled": false,
-          "document": "配额所属的网络组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配额所属的网络组",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "QuotaGroup",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -35593,23 +35593,23 @@
         },
         {
           "disabled": false,
-          "document": "格式化后的流量，单位见参数 FormatUnit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "格式化后的流量，单位见参数 FormatUnit",
           "example": "10.0",
           "member": "float",
           "name": "FormatValue",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "格式化后流量的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "格式化后流量的单位",
           "example": "GB",
           "member": "string",
           "name": "FormatUnit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -35908,13 +35908,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包名称",
           "example": "未命名",
           "member": "string",
           "name": "TrafficPackageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -35978,13 +35978,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "流量包标签",
+          "example": "[{\"Key\": \"Env\", \"Value\": \"Prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -36724,13 +36724,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包名称",
           "example": "demo",
           "member": "string",
           "name": "TrafficPackageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeRiskSyscallWhiteListDetail --cli-unfold-argument  \
-    --WhiteListId 45645
+    --WhiteListId 1002
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
                 "chroot"
             ],
             "ImageIds": [
-                "image-id"
+                "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b"
             ],
             "Id": "10001",
             "ProcessPath": "/bin/sh"

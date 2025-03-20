@@ -20,7 +20,7 @@ Output:
         "ClusterNamespaceList": [
             {
                 "Name": "hello",
-                "Labels": "new=test"
+                "Labels": "new=value"
             }
         ]
     }
@@ -46,44 +46,8 @@ Output:
         "TotalCount": 14,
         "ClusterNamespaceList": [
             {
-                "Labels": "",
+                "Labels": "key=value",
                 "Name": "app-team1"
-            },
-            {
-                "Labels": "ns=backend,",
-                "Name": "backend"
-            },
-            {
-                "Labels": "",
-                "Name": "backend1"
-            },
-            {
-                "Labels": "",
-                "Name": "default"
-            },
-            {
-                "Labels": "",
-                "Name": "dosec"
-            },
-            {
-                "Labels": "",
-                "Name": "foo"
-            },
-            {
-                "Labels": "",
-                "Name": "front"
-            },
-            {
-                "Labels": "app.kubernetes.io/name=ingress-nginx,app.kubernetes.io/part-of=ingress-nginx,",
-                "Name": "ingress-nginx"
-            },
-            {
-                "Labels": "",
-                "Name": "kube-node-lease"
-            },
-            {
-                "Labels": "",
-                "Name": "kube-public"
             }
         ]
     }

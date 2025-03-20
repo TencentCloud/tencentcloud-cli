@@ -8,7 +8,7 @@ Input:
 tccli tcss ModifyAbnormalProcessStatus --cli-unfold-argument  \
     --EventIdSet 10001 \
     --Status ' EVENT_DEALED' \
-    --Remark 无
+    --Remark Remark
 ```
 
 Output: 

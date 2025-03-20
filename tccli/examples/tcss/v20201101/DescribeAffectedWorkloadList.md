@@ -26,7 +26,7 @@ Output:
             }
         ],
         "RequestId": "299deeb1-48aa-449d-980c-1f46e2375cec",
-        "TotalCount": 111
+        "TotalCount": "0"
     }
 }
 ```

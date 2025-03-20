@@ -8,7 +8,7 @@ Input:
 tccli tcss UpdateNetworkFirewallPolicyDetail --cli-unfold-argument  \
     --Id 22 \
     --CustomPolicy.0.Direction FROM \
-    --Description  \
+    --Description just for develop \
     --ClusterId cls-sdfdsf \
     --FromPolicyRule 0 \
     --Namespace default \

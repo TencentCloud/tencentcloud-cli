@@ -24,9 +24,9 @@ Output:
         "RegistryTaskID": 0,
         "RemainingTime": 0,
         "RequestId": "b6cffd6d-b5a4-41d2-8ffc-21e5cbdee3b5",
-        "ScanEndTime": "",
+        "ScanEndTime": "2020-11-21 15:16:00",
         "ScanProgress": 0,
-        "ScanStartTime": "",
+        "ScanStartTime": "2020-11-21 15:16:00",
         "Status": "NOT_SCAN"
     }
 }

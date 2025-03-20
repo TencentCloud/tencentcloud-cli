@@ -56,6 +56,13 @@
       "output": "CreateDomainGroupResponse",
       "status": "online"
     },
+    "CreateDomainsAnalyticsFile": {
+      "document": "批量导出域名解析量",
+      "input": "CreateDomainsAnalyticsFileRequest",
+      "name": "批量导出域名解析量",
+      "output": "CreateDomainsAnalyticsFileResponse",
+      "status": "online"
+    },
     "CreateLineGroup": {
       "document": "创建域名的线路分组",
       "input": "CreateLineGroupRequest",
@@ -96,6 +103,13 @@
       "input": "CreateSnapshotRequest",
       "name": "创建快照",
       "output": "CreateSnapshotResponse",
+      "status": "online"
+    },
+    "CreateSubDomainsAnalyticsFile": {
+      "document": "批量导出子域名解析量",
+      "input": "CreateSubDomainsAnalyticsFileRequest",
+      "name": "批量导出子域名解析量",
+      "output": "CreateSubDomainsAnalyticsFileResponse",
       "status": "online"
     },
     "CreateSubdomainValidateTXTValue": {
@@ -278,6 +292,13 @@
       "input": "DescribeDomainWhoisRequest",
       "name": "获取域名Whois信息",
       "output": "DescribeDomainWhoisResponse",
+      "status": "online"
+    },
+    "DescribeFileInfoByJobId": {
+      "document": "根据批量任务ID获取生成文件信息",
+      "input": "DescribeFileInfoByJobIdRequest",
+      "name": "根据任务ID获取生成的文件信息",
+      "output": "DescribeFileInfoByJobIdResponse",
       "status": "online"
     },
     "DescribeLineGroupList": {
@@ -1573,6 +1594,69 @@
       ],
       "type": "object"
     },
+    "CreateDomainsAnalyticsFileRequest": {
+      "document": "CreateDomainsAnalyticsFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询解析量的域名数组。",
+          "example": "[\"dnspod.cn\",\"dnspod.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量的时间区间起点。如：2023-01-01。",
+          "example": "2023-01-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量的统计维度。默认为 DATE。\nDATE：按天统计\nHOUR：按小时统计",
+          "example": "DATE",
+          "member": "string",
+          "name": "DNSFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量的时间区间终点。如：2023-01-01。默认为当天。",
+          "example": "2023-01-02",
+          "member": "string",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainsAnalyticsFileResponse": {
+      "document": "CreateDomainsAnalyticsFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前批量任务 id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "JobId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLineGroupCopyRequest": {
       "document": "CreateLineGroupCopy请求参数结构体",
       "members": [
@@ -2173,6 +2257,78 @@
     "CreateSnapshotResponse": {
       "document": "CreateSnapshot返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubDomainsAnalyticsFileRequest": {
+      "document": "CreateSubDomainsAnalyticsFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询解析量的域名数组。",
+          "example": "无",
+          "member": "SubDomainsAnalyticsParamsItem",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量的时间区间起点。如：2023-01-01。",
+          "example": "2023-01-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量子域名类型。\n1：子域名\n2：无解析量子域名",
+          "example": "1",
+          "member": "uint64",
+          "name": "SubDomainType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量的统计维度。默认为 DATE。\nDATE：按天统计\nHOUR：按小时统计",
+          "example": "DATE",
+          "member": "string",
+          "name": "DNSFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询解析量的时间区间终点。如：2023-01-01。默认为当天。",
+          "example": "2023-01-02",
+          "member": "string",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubDomainsAnalyticsFileResponse": {
+      "document": "CreateSubDomainsAnalyticsFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前批量任务 id。",
+          "example": "1",
+          "member": "uint64",
+          "name": "JobId",
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4022,6 +4178,43 @@
           "example": "无",
           "member": "WhoisInfo",
           "name": "Info",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileInfoByJobIdRequest": {
+      "document": "DescribeFileInfoByJobId请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1808638",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileInfoByJobIdResponse": {
+      "document": "DescribeFileInfoByJobId返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成文件相关信息",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6591,6 +6784,122 @@
       ],
       "type": "object"
     },
+    "FileInfo": {
+      "document": "生成的文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件 id。",
+          "example": "10",
+          "member": "uint64",
+          "name": "FileId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件生成时间。",
+          "example": "2023-01-17 14:54:06",
+          "member": "string",
+          "name": "CreatedOn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件最后更新时间。",
+          "example": "2023-01-17 14:54:07",
+          "member": "string",
+          "name": "UpdatedOn",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件涉及到的域名。",
+          "example": "[\"dnspod.cn\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名称。",
+          "example": "xxxx.xlsx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.xxx.xx",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生成文件的任务 id。",
+          "example": "11",
+          "member": "uint64",
+          "name": "JobId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成文件的进度。100 表示 完成度为100%。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件状态。\nOK：已完成\nRUNNING：正在生成中\nERROR：生成失败\nCANCELED：文件已取消生成\nCANCELING：文件正在取消生成\nEXPIRED：文件已过期",
+          "example": "OK",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成文件的任务类型。\nRECORD_LOG：解析量数据\nRECORD_EXPORT：导出解析记录\nDOMAIN_EXPORT：导出域名列表",
+          "example": "RECORD_LOG",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LeftTime",
+          "name": "LeftTime",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "GroupInfo": {
       "document": "域名分组列表",
       "members": [
@@ -6662,6 +6971,42 @@
         }
       ],
       "usage": "both"
+    },
+    "LeftTime": {
+      "document": "批量生成文件剩余时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "剩余天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Days",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余小时数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "Hours",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余分钟数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "49",
+          "member": "uint64",
+          "name": "Mins",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "LineGroupDetail": {
       "document": "自定义线路分组详细信息",
@@ -9485,6 +9830,52 @@
         }
       ],
       "usage": "both"
+    },
+    "SubDomainsAnalyticsParamsItem": {
+      "document": "批量导出子域名解析量查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询解析量的主域名。",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "要查询解析量的子域名主机头。",
+          "example": "www",
+          "member": "string",
+          "name": "SubDomain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询子域名列表的偏移量。没有指定查询的 Subdomain 参数时，根据分页参数返回每页子域名解析量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询子域名列表的每页条数。没有指定查询的 Subdomain 参数时，根据分页参数返回每页子域名解析量。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "SubdomainAliasAnalyticsItem": {
       "document": "子域名别名解析量统计信息",

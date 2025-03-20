@@ -20,15 +20,11 @@ Output:
                 "GroupPath": "/group-aaa",
                 "ParentId": "group_root",
                 "GroupDescribe": "this is xxx",
-                "CreateTime": 1608256825
-            },
-            {
-                "GroupId": "group-bbb",
-                "GroupName": "分组B",
-                "GroupPath": "/group-bbb",
-                "ParentId": "group_root",
-                "GroupDescribe": "this is xxx",
-                "CreateTime": 1608705289
+                "CreateTime": 1608256825,
+                "ExtraInformation": "",
+                "GroupStatus": 1,
+                "Error": "",
+                "GroupType": "NormalGroup"
             }
         ],
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8"
