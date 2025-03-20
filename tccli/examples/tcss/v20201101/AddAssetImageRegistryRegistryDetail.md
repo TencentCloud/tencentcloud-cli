@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcss AddAssetImageRegistryRegistryDetail --cli-unfold-argument  \
     --Username usename \
-    --Name test \
+    --Name admin \
     --Url http://127.0.0.1:8080 \
     --RegistryVersion V2 \
     --RegistryRegion default \
@@ -20,9 +20,9 @@ Output:
 ```
 {
     "Response": {
-        "HealthCheckErr": "",
-        "NameRepeatErr": "",
-        "RegistryId": 0,
+        "HealthCheckErr": "connect closed",
+        "NameRepeatErr": "name repeat err",
+        "RegistryId": 1002,
         "RequestId": "f8d97649-ca1b-4f94-8ed4-40052a40d426"
     }
 }

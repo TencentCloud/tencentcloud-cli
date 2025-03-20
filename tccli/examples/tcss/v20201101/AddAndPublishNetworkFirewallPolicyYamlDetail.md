@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcss AddAndPublishNetworkFirewallPolicyYamlDetail --cli-unfold-argument  \
     --PolicyName fshduis \
-    --Description  \
+    --Description desc of network firewall policy \
     --ClusterId cls-hjsdfh \
     --Yaml YXNkZmFzZGZhZHNmYXNkZmFzZGY=
 ```

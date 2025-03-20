@@ -22,7 +22,8 @@ Output:
             "RecordStorageTime": 1,
             "Devices": [
                 {
-                    "DeviceId": "dev001"
+                    "DeviceId": "99350367561320000005",
+                    "ChannelId": "99350367561320000005"
                 }
             ]
         },

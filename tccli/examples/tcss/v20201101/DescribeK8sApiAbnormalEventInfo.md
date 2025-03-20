@@ -16,16 +16,16 @@ Output:
         "Info": {
             "AlarmCount": 1,
             "ClusterID": "cls-abhq0j4o-666",
-            "ClusterMasterIP": "",
-            "ClusterName": "",
-            "ClusterRunningStatus": "",
+            "ClusterMasterIP": "10.0.1.92",
+            "ClusterName": "clsfoo***",
+            "ClusterRunningStatus": "CSR_RUN****",
             "Desc": "检测到您的K8s API Server存在匿名用户访问请求，攻击者可利用匿名用户，通过API Server访问集群资源，如进入容器执行命令等。",
             "FirstCreateTime": "2024-10-22T11:00:45Z",
             "HighLightFields": [
                 "RequestUser"
             ],
             "Info": "{\"Verb\": \"list\", \"AuditID\": \"4e477a26-b171-4702-a2ac-1ac494ae8c85\", \"PodNameIP\": \"\", \"SourceIPS\": \"[\\\"10.0.0.4\\\"]\", \"UserAgent\": \"tcss_agent_cluster/v0.0.0 (linux/amd64) kubernetes/$Format\", \"RequestURI\": \"/api/v1/namespaces?limit=1\", \"RequestUser\": \"{\\\"groups\\\":\\\"[\\\\\\\"system:unauthenticated\\\\\\\"]\\\",\\\"uid\\\":\\\"\\\",\\\"username\\\":\\\"system:anonymous\\\"}\", \"MountHostDir\": \"\", \"RequestObject\": \"{\\\"metadata\\\":\\\"\\\"}\", \"ResponseObject\": \"{\\\"metadata\\\":\\\"\\\"}\", \"ResponseStatusCode\": \"200\"}",
-            "K8sVersion": "",
+            "K8sVersion": "1.0.1",
             "LastCreateTime": "2024-10-22T11:00:45Z",
             "MatchRule": {
                 "Action": "RULE_MODE_ALERT",

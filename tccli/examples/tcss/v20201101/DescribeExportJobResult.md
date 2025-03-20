@@ -16,7 +16,7 @@ Output:
         "DownloadURL": "https://yunjing.cos.ap-guangzhou.myqcloud.com",
         "ExportProgress": 100,
         "ExportStatus": "SUCCESS",
-        "FailureMsg": "",
+        "FailureMsg": "FailureMsg",
         "RequestId": "c66b2b1f-9c85-481a-8eea-1a254ffd61df"
     }
 }

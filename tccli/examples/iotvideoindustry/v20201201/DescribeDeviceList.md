@@ -17,6 +17,7 @@ Output:
     "Response": {
         "Devices": [
             {
+                "NickName": "keting",
                 "DeviceId": "99576636581320000270_99576636581320000270",
                 "DeviceType": 2,
                 "Status": 3,
@@ -25,33 +26,14 @@ Output:
                 "Protocol": "GB28181",
                 "GroupId": "group_root",
                 "GroupName": "全部",
-                "GroupPath": ""
-            },
-            {
-                "DeviceId": "99576636581320000271_99576636581320000271",
-                "DeviceType": 2,
-                "Status": 3,
-                "ExtraInformation": "",
-                "DeviceCode": "99576636581320000271",
-                "Protocol": "GB28181",
-                "GroupId": "group_root",
-                "GroupName": "全部",
-                "GroupPath": ""
-            },
-            {
-                "DeviceId": "99576636581320000272_99576636581320000272",
-                "DeviceType": 2,
-                "Status": 3,
-                "ExtraInformation": "",
-                "DeviceCode": "99576636581320000272",
-                "Protocol": "GB28181",
-                "GroupId": "group_root",
-                "GroupName": "全部",
-                "GroupPath": ""
+                "GroupPath": "",
+                "Recordable": 1,
+                "IsRecord": 0,
+                "CreateTime": 345233456
             }
         ],
         "RequestId": "5aa3fe4f-72c3-4c77-a48d-a418addff8c9",
-        "TotalCount": 3
+        "TotalCount": 1
     }
 }
 ```

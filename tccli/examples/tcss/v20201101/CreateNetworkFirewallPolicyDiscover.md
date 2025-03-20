@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss CreateNetworkFirewallPolicyDiscover --cli-unfold-argument  \
-    --ClusterId cls-1342
+    --ClusterId cls-gsdgs
 ```
 
 Output: 

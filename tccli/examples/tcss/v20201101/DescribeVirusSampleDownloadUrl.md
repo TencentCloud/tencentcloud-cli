@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "522d7714-ef53-4940-b0ed-46d59a3cf0fd",
-        "FileUrl": "http://1.2.3.4/a"
+        "FileUrl": "http://****/a***"
     }
 }
 ```

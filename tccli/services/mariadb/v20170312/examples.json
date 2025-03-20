@@ -134,6 +134,12 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeBackupTime\n&InstanceIds.0=tdsql-fdpjf5zh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"caca6ca7-9ef0-48e0-aa7a-4327a1ac001c\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"InstanceId\": \"tdsql-33y5ai5p\",\n                \"StartBackupTime\": \"00:00\",\n                \"EndBackupTime\": \"23:59\"\n            }\n        ]\n    }\n}",
         "title": "查询云数据库实例的备份时间窗口配置"
+      },
+      {
+        "document": "获取实例的备份时间",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupTime\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"tdsql-gsv37hvp\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"EndBackupTime\": \"23:59\",\n                \"InstanceId\": \"tdsql-gsv37hvp\",\n                \"StartBackupTime\": \"00:00\"\n            }\n        ],\n        \"RequestId\": \"0dff93f5-e934-491a-abcd-4617ce0cfe3c\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取备份时间"
       }
     ],
     "DescribeBinlogTime": [
@@ -198,6 +204,12 @@
         "input": "https://mariadb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups\n&Product=mariadb\n&InstanceId=tdsql-eb2w7dto\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"VIP\": \"10.0.0.7\",\n        \"VPort\": \"3306\",\n        \"RequestId\": \"31a60135-7057-47ae-8fd3-7a0617deca38\",\n        \"Groups\": [\n            {\n                \"ProjectId\": 0,\n                \"CreateTime\": \"\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"Outbound\": [\n                    {\n                        \"Action\": \"\",\n                        \"CidrIp\": \"\",\n                        \"PortRange\": \"\",\n                        \"IpProtocol\": \"\"\n                    }\n                ],\n                \"SecurityGroupId\": \"\",\n                \"SecurityGroupName\": \"\",\n                \"SecurityGroupRemark\": \"mariadb\"\n            }\n        ]\n    }\n}",
         "title": "示例1 查询实例安全组信息"
+      },
+      {
+        "document": "获取实例的详细安全组信息",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSecurityGroups\n<公共请求参数>\n\n{\n    \"Product\": \"mariadb\",\n    \"InstanceId\": \"tdsql-gsv37hvp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2024-10-23 15:57:12\",\n                \"Inbound\": [],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-52n3w8dn\",\n                \"SecurityGroupName\": \"test_policy\",\n                \"SecurityGroupRemark\": \"\"\n            },\n            {\n                \"CreateTime\": \"2024-10-23 15:57:06\",\n                \"Inbound\": [],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-ljb7rq17\",\n                \"SecurityGroupName\": \"test_policy\",\n                \"SecurityGroupRemark\": \"\"\n            }\n        ],\n        \"RequestId\": \"579a626b-fc7e-4726-953d-bbd1814da8b1\",\n        \"VIP\": \"10.0.0.33\",\n        \"VPort\": \"3306\"\n    }\n}",
+        "title": "获取实例安全组"
       }
     ],
     "DescribeDBSlowLogs": [

@@ -21,9 +21,9 @@ Output:
         "Schedule": 0,
         "Status": "SCANNING",
         "RiskContainerCnt": 0,
-        "StartTime": "",
-        "EndTime": "",
-        "ScanType": 1
+        "StartTime": "2020-11-21 15:16:00",
+        "EndTime": "2020-11-21 15:16:00",
+        "ScanType": "CYCLE"
     }
 }
 ```

@@ -13,10 +13,10 @@ Output:
     "Response": {
         "List": [
             {
-                "Count": 1,
-                "SuperNodeCount": 1,
+                "Count": 1931,
+                "SuperNodeCount": 21,
                 "IsJoined": true,
-                "LogType": "local"
+                "LogType": "container_bash"
             }
         ],
         "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe"

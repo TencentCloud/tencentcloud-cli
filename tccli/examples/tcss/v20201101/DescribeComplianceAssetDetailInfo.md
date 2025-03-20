@@ -31,22 +31,22 @@ Output:
         },
         "ContainerDetailInfo": {
             "ContainerId": "e822238a07e0",
-            "PodName": ""
+            "PodName": "PodName"
         },
         "HostDetailInfo": {
-            "ContainerdVersion": "",
-            "DockerVersion": "",
-            "K8SVersion": ""
+            "ContainerdVersion": "2.3",
+            "DockerVersion": "2.3",
+            "K8SVersion": "1.24"
         },
         "ImageDetailInfo": {
-            "ImageId": "",
-            "ImageName": "",
-            "ImageTag": "",
-            "Repository": ""
+            "ImageId": "id1",
+            "ImageName": "name",
+            "ImageTag": "tag1",
+            "Repository": "repository"
         },
         "K8SDetailInfo": {
-            "ClusterName": "",
-            "ClusterVersion": ""
+            "ClusterName": "name",
+            "ClusterVersion": "1.1"
         },
         "RequestId": "ae46673b-3930-4874-9144-a514653d232c"
     }

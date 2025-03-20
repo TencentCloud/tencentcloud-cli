@@ -605,13 +605,13 @@
         },
         {
           "disabled": false,
-          "document": "慢查模板概览。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\\\"type\\\":\\\"command\\\",\\\"ns\\\":\\\"welabel.ground_truth_data\\\",\\\"appName\\\":\\\"MongoDB Compass\\\",\\\"command\\\":{\\\"aggregate\\\":\\\"ground_truth_data\\\",\\\"pipeline\\\":[{\\\"$match\\\":{\\\"is_skip\\\":{\\\"$ne\\\":true}}},{\\\"$project\\\":{\\\"labels\\\":{\\\"$filter\\\":{\\\"input\\\":\\\"$comments.data.error_labels\\\",\\\"as\\\":\\\"com\\\",\\\"cond\\\":{\\\"$eq\\\":[\\\"$$com.questionType\\\",\\\"single\\\"]}}},\\\"ground_truth_id\\\":1}},{\\\"$unwind\\\":{\\\"path\\\":\\\"$labels\\\"}}",
+          "document": "慢查模板概览。",
+          "example": "{\\\"type\\\":\\\"command\\\",\\\"ns\\\":\\\"a.q\\\",\\\"appName\\\":\\\"mc\\\",\\\"command\\\":{\\\"aggregate\\\":\\\"gtd\\\",\\\"pipeline\\\":[{\\\"$eq\\\":[\\\"$$com.qt\\\",\\\"single\\\"]}}},\\\"gi\\\":1}},{\\\"$ud\\\":{\\\"path\\\":\\\"$labels\\\"}}",
           "member": "string",
           "name": "SlowLogs",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -621,143 +621,143 @@
       "members": [
         {
           "disabled": false,
-          "document": "0-不是 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0-不是 1-是",
           "example": "0",
           "member": "int64",
           "name": "IsWebHook",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收告警用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收告警用户数量",
           "example": "1",
           "member": "int64",
           "name": "ReceiveUinCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语言",
           "example": "cn",
           "member": "string",
           "name": "Lang",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板类型",
           "example": "msg_template",
           "member": "string",
           "name": "TemplateType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "demo template",
           "member": "string",
           "name": "Remark",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收组数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收组数量",
           "example": "1",
           "member": "int64",
           "name": "ReceiveGroupCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新用户的uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新用户的uin",
           "example": "000001",
           "member": "int64",
           "name": "UpdateUin",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收类型",
           "example": "[1,2]",
           "member": "int64",
           "name": "ReceiveType",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收用户信息",
           "example": "无",
           "member": "ReceiveInfo",
           "name": "ReceiveInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2024-12-04 17:16:35",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板名",
           "example": "demoTemplateName",
           "member": "string",
           "name": "TemplateName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发送渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发送渠道",
           "example": "[0, 1]",
           "member": "int64",
           "name": "SendChannel",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板id",
           "example": "23455",
           "member": "int64",
           "name": "TemplateId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "webhook数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "webhook数量",
           "example": "0",
           "member": "int64",
           "name": "WebHookCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1027,13 +1027,13 @@
         },
         {
           "disabled": false,
-          "document": "资源Tags。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源Tags。",
           "example": "[\"tag_abc\"]",
           "member": "string",
           "name": "ResourceTags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1043,13 +1043,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计日志文件生成异步任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志文件生成异步任务ID。",
           "example": "173",
           "member": "int64",
           "name": "AsyncRequestId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1063,23 +1063,23 @@
         },
         {
           "disabled": false,
-          "document": "审计日志文件创建时间。格式为 : \"2019-03-20 17:09:13\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计日志文件创建时间。格式为 : \"2019-03-20 17:09:13\"。",
           "example": "2019-03-20 17:09:13",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件状态值。可能返回的值为：\n\"creating\" - 生成中;\n\"failed\" - 创建失败;\n\"success\" - 已生成;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件状态值。可能返回的值为：\n\"creating\" - 生成中;\n\"failed\" - 创建失败;\n\"success\" - 已生成;",
           "example": "success",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8519,63 +8519,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "接收组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收组",
           "example": "[196444,196445]",
           "member": "int64",
           "name": "ReceiveGroup",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后接收时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后接收时间",
           "example": "23:59:59",
           "member": "string",
           "name": "EndReceiveTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收名",
           "example": "通知",
           "member": "string",
           "name": "ReceiveName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "推送渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推送渠道",
           "example": "[1,2,32]",
           "member": "int64",
           "name": "SendChannel",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "00:00:00",
           "member": "string",
           "name": "StartReceiveTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收用户列表",
           "example": "[{\"UinName\":\"zhangsan\",\"Uin\":\"100020880953\"}]",
           "member": "ReceiveUin",
           "name": "ReceiveUin",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9198,29 +9198,29 @@
           "example": "1",
           "member": "uint64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始时间。",
           "example": "2019-06-06 13:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束时间。",
           "example": "2019-06-06 13:00:02",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9228,7 +9228,7 @@
           "example": "2019-06-06 12:50:02",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9238,7 +9238,7 @@
           "example": "finished",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9248,49 +9248,49 @@
           "example": "100",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "导出日志开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导出日志开始时间。",
           "example": "2019-06-06 12:00:00",
           "member": "datetime",
           "name": "LogStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "导出日志结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导出日志结束时间。",
           "example": "2019-06-06 13:00:00",
           "member": "datetime",
           "name": "LogEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志文件总大小，单位KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志文件总大小，单位KB。",
           "example": "100",
           "member": "uint64",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "DangerLevels",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9402,23 +9402,23 @@
         },
         {
           "disabled": false,
-          "document": "User来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "User来源",
           "example": "root",
           "member": "string",
           "name": "UserName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP来源",
           "example": "127.0.0.1",
           "member": "string",
           "name": "UserHost",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9432,33 +9432,33 @@
         },
         {
           "disabled": false,
-          "document": "锁时间,单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "锁时间,单位秒",
           "example": "0.22",
           "member": "float",
           "name": "LockTime",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扫描行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扫描行数",
           "example": "12",
           "member": "int64",
           "name": "RowsExamined",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回行数",
           "example": "122",
           "member": "int64",
           "name": "RowsSent",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9784,43 +9784,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计维度的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计维度的值。",
           "example": "p=dbbrain,kk=cc",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均时间。",
           "example": "23.1",
           "member": "float",
           "name": "TimeAvg",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总时间。",
           "example": "238.2",
           "member": "float",
           "name": "TimeSum",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量。",
           "example": "2",
           "member": "int64",
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9830,23 +9830,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计分析的维度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计分析的维度。",
           "example": "SqlTag",
           "member": "string",
           "name": "Dimension",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "统计分析的维度下的统计数据详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计分析的维度下的统计数据详情。",
           "example": "无",
           "member": "StatisticDataInfo",
           "name": "Data",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10376,43 +10376,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置的id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置的id。",
           "example": "1433288",
           "member": "string",
           "name": "ProfileId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置类型，支持值包括：\"dbScan_mail_configuration\" - 数据库巡检邮件配置，\"scheduler_mail_configuration\" - 定期生成邮件配置。",
           "example": "dbScan_mail_configuration",
           "member": "string",
           "name": "ProfileType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置级别，支持值包括：\"User\" - 用户级别，\"Instance\" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置级别，支持值包括：\"User\" - 用户级别，\"Instance\" - 实例级别，其中数据库巡检邮件配置为用户级别，定期生成邮件配置为实例级别。",
           "example": "User",
           "member": "string",
           "name": "ProfileLevel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置名称。",
           "example": "demoProfile",
           "member": "string",
           "name": "ProfileName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

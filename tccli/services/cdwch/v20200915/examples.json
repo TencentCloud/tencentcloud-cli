@@ -43,8 +43,8 @@
     "DescribeBackUpJobDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpJobDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TableContents\": [\n            {\n                \"Table\": \"xx\",\n                \"Ips\": \"xx\",\n                \"VCluster\": \"xx\",\n                \"TotalBytes\": 0,\n                \"Database\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpJobDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-xxxxxxxx\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20a71202-27c4-4120-80c4-fb1a8e15dxxx\",\n        \"TableContents\": [\n            {\n                \"Table\": \"tb_test\",\n                \"Ips\": \"10.x.x.x\",\n                \"VCluster\": \"default\",\n                \"TotalBytes\": 1024,\n                \"Database\": \"db_test\",\n                \"ZooPath\": \"/data\",\n                \"Rip\": \"192.x.x.x\"\n            }\n        ]\n    }\n}",
         "title": "示例"
       }
     ],
@@ -52,7 +52,7 @@
       {
         "document": "查询备份策略信息",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpSchedule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-1a1xfbc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackUpOpened\": true,\n        \"MetaStrategy\": {\n            \"CosBucketName\": \"pa-cold-test-1258142303\",\n            \"RetainDays\": 1,\n            \"WeekDays\": \"2\",\n            \"ExecuteHour\": 5,\n            \"ScheduleId\": 1\n        },\n        \"DataStrategy\": {\n            \"CosBucketName\": \"pa-cold-test-1268142801\",\n            \"RetainDays\": 2,\n            \"WeekDays\": \"1\",\n            \"ExecuteHour\": 8,\n            \"ScheduleId\": 13\n        },\n        \"BackUpContents\": [\n            {\n                \"VCluster\": \"default_cluster\",\n                \"Database\": \"default\",\n                \"Table\": \"stemp\",\n                \"TotalBytes\": 1231270,\n                \"Ips\": \"10.0.1.23\"\n            }\n        ],\n        \"BackUpStatus\": 0,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"asdfaes-xad12x-123axafg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackUpOpened\": true,\n        \"MetaStrategy\": {\n            \"CosBucketName\": \"pa-cold-test-1258142303\",\n            \"RetainDays\": 1,\n            \"WeekDays\": \"2\",\n            \"ExecuteHour\": 5,\n            \"ScheduleId\": 1,\n            \"NextBackupTime\": \"2021-01-10 12:00:00\"\n        },\n        \"DataStrategy\": {\n            \"CosBucketName\": \"pa-cold-test-1268142801\",\n            \"RetainDays\": 2,\n            \"WeekDays\": \"1\",\n            \"ExecuteHour\": 8,\n            \"ScheduleId\": 13\n        },\n        \"BackUpContents\": [\n            {\n                \"VCluster\": \"default_cluster\",\n                \"Database\": \"default\",\n                \"Table\": \"stemp\",\n                \"TotalBytes\": 1231270,\n                \"Ips\": \"10.0.1.23\",\n                \"Rip\": \"192.x.x.x\",\n                \"ZooPath\": \"/data\"\n            }\n        ],\n        \"BackUpStatus\": 0,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"asdfaes-xad12x-123axafg\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCkSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-czj3e8qw\",\n    \"Cluster\": \"default\",\n    \"UserName\": \"admin\",\n    \"ApiType\": \"GetSystemUsers\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ReturnData\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnData\": \"[{\\\"InstanceId\\\":\\\"cdwch-xxxxxxxx\\\",\\\"UserName\\\":\\\"test_user\\\",\\\"Describe\\\":\\\"\\\",\\\"Type\\\":\\\"RBAC\\\",\\\"Cluster\\\":\\\"default_cluster\\\"}]\",\n        \"RequestId\": \"23808b41-a7ac-48fa-9b6b-6686a1814d0a\"\n    }\n}",
         "title": "查询ck集群信息"
       }
     ],
@@ -76,7 +76,7 @@
       {
         "document": "在xml方式下修改配置文件内容时，获取集群配置文件内容",
         "input": "https://cdwch.tencentcloudapi.com/\n?Action=DescribeClusterConfigs\n&InstanceId=cdwch-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"FileName\": \"abc\",\n                \"FileConf\": \"abc\",\n                \"KeyConf\": \"abc\",\n                \"OriParam\": \"abc\",\n                \"NeedRestart\": 0,\n                \"FilePath\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"FileName\": \"hosts\",\n                \"FileConf\": \"\",\n                \"KeyConf\": \"\",\n                \"OriParam\": \"\",\n                \"NeedRestart\": 0,\n                \"FilePath\": \"/etc\"\n            }\n        ],\n        \"RequestId\": \"e5733734-4226-4949-b692-333a6301399e\"\n    }\n}",
         "title": "获取集群配置文件内容"
       }
     ],
@@ -91,8 +91,8 @@
     "DescribeInstanceClusters": [
       {
         "document": "查询cluster列表",
-        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceClusters\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-asdf8max\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterName\": \"default_cluster\",\n                \"NodeIps\": [\n                    \"10.2.23.43\"\n                ]\n            }\n        ],\n        \"RequestId\": \"asdfa-xa1dads-8amsad\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceClusters\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Clusters\": [\n            {\n                \"ClusterName\": \"default_cluster\",\n                \"NodeIps\": [\n                    \"10.x.x.xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"asdfa-xa1dads-8amsad\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -100,7 +100,7 @@
       {
         "document": "在集群详情页面获取所有参数列表",
         "input": "https://cdwch.tencentcloudapi.com/\n?Action=DescribeInstanceKeyValConfigs\n&InstanceId=cdwch-xxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ConfigItems\": [\n            {\n                \"ConfKey\": \"abc\",\n                \"ConfValue\": \"abc\",\n                \"DefaultValue\": \"abc\",\n                \"NeedRestart\": true,\n                \"Editable\": true,\n                \"ConfDesc\": \"abc\",\n                \"FileName\": \"abc\",\n                \"ModifyRuleType\": \"abc\",\n                \"ModifyRuleValue\": \"abc\",\n                \"Uin\": \"abc\",\n                \"ModifyTime\": \"abc\"\n            }\n        ],\n        \"UnConfigItems\": [\n            {\n                \"ConfKey\": \"abc\",\n                \"ConfValue\": \"abc\",\n                \"DefaultValue\": \"abc\",\n                \"NeedRestart\": true,\n                \"Editable\": true,\n                \"ConfDesc\": \"abc\",\n                \"FileName\": \"abc\",\n                \"ModifyRuleType\": \"abc\",\n                \"ModifyRuleValue\": \"abc\",\n                \"Uin\": \"abc\",\n                \"ModifyTime\": \"abc\"\n            }\n        ],\n        \"MapConfigItems\": [\n            {\n                \"ConfKey\": \"abc\",\n                \"Items\": [\n                    {\n                        \"ConfKey\": \"abc\",\n                        \"ConfValue\": \"abc\",\n                        \"DefaultValue\": \"abc\",\n                        \"NeedRestart\": true,\n                        \"Editable\": true,\n                        \"ConfDesc\": \"abc\",\n                        \"FileName\": \"abc\",\n                        \"ModifyRuleType\": \"abc\",\n                        \"ModifyRuleValue\": \"abc\",\n                        \"Uin\": \"abc\",\n                        \"ModifyTime\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigItems\": [\n            {\n                \"ConfKey\": \"max_connections\",\n                \"ConfValue\": \"4096\",\n                \"DefaultValue\": \"4096\",\n                \"NeedRestart\": false,\n                \"Editable\": true,\n                \"ConfDesc\": \"The maximum number of inbound connections.\",\n                \"FileName\": \"config.xml\",\n                \"ModifyRuleType\": \"\",\n                \"ModifyRuleValue\": \"{\\\"ruleName\\\":\\\"int_maxmin\\\", \\\"max\\\": 262145, \\\"min\\\":4096 }\",\n                \"Uin\": \"836178961123\",\n                \"ModifyTime\": \"2025-01-25 12:00:00\"\n            }\n        ],\n        \"UnConfigItems\": [\n            {\n                \"ConfKey\": \"max_table_size_to_drop\",\n                \"ConfValue\": \"\",\n                \"DefaultValue\": \"50000000000\",\n                \"NeedRestart\": false,\n                \"Editable\": true,\n                \"ConfDesc\": \"\",\n                \"FileName\": \"config.xml\",\n                \"ModifyRuleType\": \"number\",\n                \"ModifyRuleValue\": \"{\\\"ruleName\\\":\\\"int_bigthan\\\", \\\"min\\\":0 }\",\n                \"Uin\": \"100000000000\",\n                \"ModifyTime\": \"\"\n            }\n        ],\n        \"MapConfigItems\": [\n            {\n                \"ConfKey\": \"logger\",\n                \"Items\": [\n                    {\n                        \"ConfKey\": \"logger.level\",\n                        \"ConfValue\": \"trace\",\n                        \"DefaultValue\": \"\",\n                        \"NeedRestart\": false,\n                        \"Editable\": false,\n                        \"ConfDesc\": \"\",\n                        \"FileName\": \"\",\n                        \"ModifyRuleType\": \"\",\n                        \"ModifyRuleValue\": \"\",\n                        \"Uin\": \"100000000000\",\n                        \"ModifyTime\": \"\"\n                    }\n                ]\n            }\n        ],\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"6d00d832-cb73-4fb9-8216-aca54f040xxx\"\n    }\n}",
         "title": "获取参数列表"
       }
     ],
@@ -116,7 +116,7 @@
       {
         "document": "获取实例节点信息列表",
         "input": "https://cdwch.tencentcloudapi.com/?Action=DescribeInstanceShards\n&InstanceId=cdwch-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f510b0e8-4bc7-44c7-a191-79e467b556c4\",\n        \"InstanceShardsList\": \"[]\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f510b0e8-4bc7-44c7-a191-79e467b556c4\",\n        \"InstanceShardsList\": \"[{\\\"HA\\\": 1, \\\"ZKHost\\\": \\\"10.x.x.xx\\\"}]\"\n    }\n}",
         "title": "获取实例节点信息列表"
       }
     ],
@@ -187,8 +187,8 @@
     "RecoverBackUpJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverBackUpJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverBackUpJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-7uxy36jk\",\n    \"BackUpJobId\": 998\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad428528-10ae-4c38-9068-129f075e8e8f\"\n    }\n}",
         "title": "示例"
       }
     ],

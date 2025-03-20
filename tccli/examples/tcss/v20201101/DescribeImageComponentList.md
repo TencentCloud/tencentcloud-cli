@@ -20,7 +20,7 @@ Output:
             {
                 "ImageID": "sha256:2ebe27d",
                 "Name": "name",
-                "Path": "",
+                "Path": "Path",
                 "Type": "SYSTEM_COMPONENT",
                 "Version": "2.2.51-12.el7",
                 "VulCount": 0

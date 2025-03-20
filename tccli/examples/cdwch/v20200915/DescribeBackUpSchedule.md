@@ -19,7 +19,8 @@ Output:
             "RetainDays": 1,
             "WeekDays": "2",
             "ExecuteHour": 5,
-            "ScheduleId": 1
+            "ScheduleId": 1,
+            "NextBackupTime": "2021-01-10 12:00:00"
         },
         "DataStrategy": {
             "CosBucketName": "pa-cold-test-1268142801",
@@ -34,7 +35,9 @@ Output:
                 "Database": "default",
                 "Table": "stemp",
                 "TotalBytes": 1231270,
-                "Ips": "10.0.1.23"
+                "Ips": "10.0.1.23",
+                "Rip": "192.x.x.x",
+                "ZooPath": "/data"
             }
         ],
         "BackUpStatus": 0,

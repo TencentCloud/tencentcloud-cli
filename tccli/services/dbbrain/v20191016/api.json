@@ -3721,29 +3721,29 @@
           "example": "1",
           "member": "uint64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始时间。",
           "example": "2019-06-06 13:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束时间。",
           "example": "2019-06-06 13:00:02",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3751,7 +3751,7 @@
           "example": "2019-06-06 12:50:02",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3761,7 +3761,7 @@
           "example": "finished",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3771,49 +3771,49 @@
           "example": "100",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "导出日志开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导出日志开始时间。",
           "example": "2019-06-06 12:00:00",
           "member": "datetime",
           "name": "LogStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "导出日志结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导出日志结束时间。",
           "example": "2019-06-06 13:00:00",
           "member": "datetime",
           "name": "LogEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志文件总大小，单位KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志文件总大小，单位KB。",
           "example": "100",
           "member": "uint64",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险等级列表。0 无风险；1 低风险；2 中风险；3 高风险。",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "DangerLevels",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4329,43 +4329,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置的id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置的id。",
           "example": "1433288",
           "member": "string",
           "name": "ProfileId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置类型。",
           "example": "dbScan_mail_configuration",
           "member": "string",
           "name": "ProfileType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置级别，\"User\"或\"Instance\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置级别，\"User\"或\"Instance\"。",
           "example": "User",
           "member": "string",
           "name": "ProfileLevel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置名称。",
           "example": "demoProfile",
           "member": "string",
           "name": "ProfileName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

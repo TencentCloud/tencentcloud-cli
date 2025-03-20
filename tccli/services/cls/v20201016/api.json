@@ -56,13 +56,6 @@
       "output": "CreateAlarmShieldResponse",
       "status": "online"
     },
-    "CreateCloudProductLogTask": {
-      "document": "内部云产品接入使用相关接口",
-      "input": "CreateCloudProductLogTaskRequest",
-      "name": "创建云产品日志投递任务",
-      "output": "CreateCloudProductLogTaskResponse",
-      "status": "online"
-    },
     "CreateConfig": {
       "document": "创建采集规则配置",
       "input": "CreateConfigRequest",
@@ -208,13 +201,6 @@
       "input": "DeleteAlarmShieldRequest",
       "name": "删除告警屏蔽规则",
       "output": "DeleteAlarmShieldResponse",
-      "status": "online"
-    },
-    "DeleteCloudProductLogTask": {
-      "document": "内部云产品接入使用相关接口",
-      "input": "DeleteCloudProductLogTaskRequest",
-      "name": "删除云产品日志投递任务",
-      "output": "DeleteCloudProductLogTaskResponse",
       "status": "online"
     },
     "DeleteConfig": {
@@ -369,13 +355,6 @@
       "input": "DescribeAlertRecordHistoryRequest",
       "name": "获取告警历史",
       "output": "DescribeAlertRecordHistoryResponse",
-      "status": "online"
-    },
-    "DescribeCloudProductLogTasks": {
-      "document": "云产品接入使用相关接口",
-      "input": "DescribeCloudProductLogTasksRequest",
-      "name": "查看云产品日志投递任务列表",
-      "output": "DescribeCloudProductLogTasksResponse",
       "status": "online"
     },
     "DescribeConfigExtras": {
@@ -593,13 +572,6 @@
       "input": "ModifyAlarmShieldRequest",
       "name": "修改告警屏蔽规则",
       "output": "ModifyAlarmShieldResponse",
-      "status": "online"
-    },
-    "ModifyCloudProductLogTask": {
-      "document": "内部云产品接入使用相关接口",
-      "input": "ModifyCloudProductLogTaskRequest",
-      "name": "修改云产品日志投递任务",
-      "output": "ModifyCloudProductLogTaskResponse",
       "status": "online"
     },
     "ModifyConfig": {
@@ -2190,82 +2162,6 @@
       ],
       "type": "object"
     },
-    "CloudProductLogTaskInfo": {
-      "document": "云产品日志投递任务信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志服务地域",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "ClsRegion",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-r8hr2upy",
-          "member": "string",
-          "name": "InstanceId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志集ID",
-          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
-          "member": "string",
-          "name": "LogsetId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志主题ID",
-          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
-          "member": "string",
-          "name": "TopicId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
-          "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
-          "member": "string",
-          "name": "Extend",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
-          "example": "CDB-AUDIT",
-          "member": "string",
-          "name": "LogType",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务状态， 0创建中 1创建完成 2 删除中 ",
-          "example": "1",
-          "member": "int64",
-          "name": "Status",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "CollectConfig": {
       "document": "采集配置信息",
       "members": [
@@ -3840,154 +3736,6 @@
           "example": "cb37f589-6232-431a-xxxx-e2b61fb375d1",
           "member": "string",
           "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateCloudProductLogTaskRequest": {
-      "document": "CreateCloudProductLogTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-r8hrxxx",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
-          "example": "CDB",
-          "member": "string",
-          "name": "AssumerName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
-          "example": "CDB-AUDIT",
-          "member": "string",
-          "name": "LogType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT:  gz\n- MongoDB-AUDIT:  gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "CloudProductRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "CLS目标地域",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "ClsRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志集名称，未填LogsetId时必填。若日志集不存在, 将自动创建",
-          "example": "logset",
-          "member": "string",
-          "name": "LogsetName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志集ID，若指定则代表选择已有日志集。选择已有日志集时，LogsetName可以不填",
-          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
-          "member": "string",
-          "name": "LogsetId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志主题名称，在未填TopicId时必填。 若日志主题不存在，将自动创建",
-          "example": "topic",
-          "member": "string",
-          "name": "TopicName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志主题ID，若指定则代表选择已有日志主题，选择已有日志主题时，TopicName可以不填",
-          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
-          "member": "string",
-          "name": "TopicId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
-          "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
-          "member": "string",
-          "name": "Extend",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateCloudProductLogTaskResponse": {
-      "document": "CreateCloudProductLogTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志主题ID",
-          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
-          "member": "string",
-          "name": "TopicId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志主题名称",
-          "example": "test-topic",
-          "member": "string",
-          "name": "TopicName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志集ID",
-          "example": "92cdd6d4-da98-4a6e-9494-175b44338680",
-          "member": "string",
-          "name": "LogsetId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志集名称",
-          "example": "test-logset",
-          "member": "string",
-          "name": "LogsetName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6454,60 +6202,6 @@
       ],
       "type": "object"
     },
-    "DeleteCloudProductLogTaskRequest": {
-      "document": "DeleteCloudProductLogTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-r8hr2upy",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
-          "example": "CDB",
-          "member": "string",
-          "name": "AssumerName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
-          "example": "CDB-AUDIT",
-          "member": "string",
-          "name": "LogType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "CloudProductRegion",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteCloudProductLogTaskResponse": {
-      "document": "DeleteCloudProductLogTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DeleteConfigExtraRequest": {
       "document": "DeleteConfigExtra请求参数结构体",
       "members": [
@@ -7343,71 +7037,6 @@
           "name": "Records",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudProductLogTasksRequest": {
-      "document": "DescribeCloudProductLogTasks请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "分页的偏移量，默认值为0。",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页单页限制数目，默认值为100，最大值100。",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "- assumerName\n  - 按照【云产品标识】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS\n- logType\n  - 按照【日志类型】进行过滤。\n  - 类型：String\n  - 必选：否\n  - 枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS\n- instanceId\n  - 按照【实例ID】进行过滤。\n  - 类型：String\n  - 必选：否",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCloudProductLogTasksResponse": {
-      "document": "DescribeCloudProductLogTasks返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "日志配置详情列表",
-          "example": "无",
-          "member": "CloudProductLogTaskInfo",
-          "name": "Tasks",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志配置总数",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -11797,69 +11426,6 @@
       ],
       "type": "object"
     },
-    "ModifyCloudProductLogTaskRequest": {
-      "document": "ModifyCloudProductLogTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-r8hr2upy",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云产品标识，支持枚举：CDS、CWP、CDB、TDSQL-C、MongoDB、TDStore、DCDB、MariaDB、PostgreSQL、BH、APIS",
-          "example": "CDB",
-          "member": "string",
-          "name": "AssumerName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS",
-          "example": "CDB-AUDIT",
-          "member": "string",
-          "name": "LogType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "云产品地域。 不同日志类型(LogType)地域入參格式存在差异， 请参考如下示例：\n- CDS所有日志类型：ap-guangzhou\n- CDB-AUDIT: gz\n- TDSQL-C-AUDIT: gz\n- MongoDB-AUDIT: gz\n- MongoDB-SlowLog：ap-guangzhou\n- MongoDB-ErrorLog：ap-guangzhou\n- TDMYSQL-SLOW：gz\n- DCDB所有日志类型：gz\n- MariaDB所有日志类型：gz\n- PostgreSQL所有日志类型：gz\n- BH所有日志类型：overseas-polaris(国内站海外)/fsi-polaris(国内站金融)/general-polaris(国内站普通)/intl-sg-prod(国际站)\n- APIS所有日志类型：gz",
-          "example": "ap-guangzhou",
-          "member": "string",
-          "name": "CloudProductRegion",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
-          "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
-          "member": "string",
-          "name": "Extend",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyCloudProductLogTaskResponse": {
-      "document": "ModifyCloudProductLogTask返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyConfigExtraRequest": {
       "document": "ModifyConfigExtra请求参数结构体",
       "members": [
@@ -15677,25 +15243,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "name",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "业务A",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15796,13 +15362,13 @@
         },
         {
           "disabled": false,
-          "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE",
           "example": "CLS_bus",
           "member": "string",
           "name": "AssumerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15826,63 +15392,63 @@
         },
         {
           "disabled": false,
-          "document": "主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题绑定的标签信息",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该主题是否开启自动分裂\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该主题是否开启自动分裂",
           "example": "true",
           "member": "bool",
           "name": "AutoSplit",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "若开启自动分裂的话，该主题能够允许的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "若开启自动分裂的话，该主题能够允许的最大分区数",
           "example": "50",
           "member": "int64",
           "name": "MaxSplitPartitions",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题的存储类型\n\n- hot: 标准存储\n- cold: 低频存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题的存储类型\n\n- hot: 标准存储\n- cold: 低频存储",
           "example": "hot",
           "member": "string",
           "name": "StorageType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存",
           "example": "30",
           "member": "int64",
           "name": "Period",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。",
           "example": "TKE-Audio",
           "member": "string",
           "name": "SubAssumerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15896,33 +15462,33 @@
         },
         {
           "disabled": false,
-          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\nHotPeriod=0为没有开启日志沉降。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\nHotPeriod=0为没有开启日志沉降。",
           "example": "0",
           "member": "uint64",
           "name": "HotPeriod",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题类型。\n- 0: 日志主题 \n- 1: 指标主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题类型。\n- 0: 日志主题 \n- 1: 指标主题",
           "example": "0",
           "member": "uint64",
           "name": "BizType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15936,33 +15502,33 @@
         },
         {
           "disabled": false,
-          "document": "异步迁移任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步迁移任务ID",
           "example": "b5d24fc0-xxxx-xxxx-8c5d-ceed655c204b",
           "member": "string",
           "name": "TopicAsyncTaskID",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "异步迁移状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步迁移状态",
           "example": "1",
           "member": "uint64",
           "name": "MigrationStatus",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "异步迁移完成后，预计生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步迁移完成后，预计生效日期",
           "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "EffectiveDate",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16050,14 +15616,14 @@
         },
         {
           "disabled": false,
-          "document": "是否包含中文，long及double类型字段需为false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否包含中文，long及double类型字段需为false",
           "example": "false",
           "member": "bool",
           "name": "ContainZH",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16194,103 +15760,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警渠道回调配置id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警渠道回调配置id。",
           "example": "\"webcallback-aaa-bbb-ccc-ddd\"",
           "member": "string",
           "name": "WebCallbackId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警渠道回调配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警渠道回调配置名称。",
           "example": "\"name\"",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "渠道类型\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "渠道类型\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;",
           "example": "“Http”",
           "member": "string",
           "name": "Type",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回调地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调地址。",
           "example": "“http://www.xxx.com”",
           "member": "string",
           "name": "Webhook",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求方式。",
           "example": "“POST”",
           "member": "string",
           "name": "Method",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "秘钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "秘钥信息。",
           "example": "“keyid”",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主账号。",
           "example": "10001",
           "member": "uint64",
           "name": "Uin",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子账号。",
           "example": "1000101",
           "member": "uint64",
           "name": "SubUin",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。秒级时间戳",
           "example": "1693468888",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间。秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间。秒级时间戳",
           "example": "1693468888",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

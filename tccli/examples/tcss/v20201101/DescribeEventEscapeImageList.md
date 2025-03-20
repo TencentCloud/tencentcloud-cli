@@ -31,8 +31,8 @@ Output:
                 "LatestFoundTime": "2020-09-22 00:00:00",
                 "EventCount": 0,
                 "Status": "EVENT_INGNORE",
-                "Description": "",
-                "Solution": ""
+                "Description": "Description",
+                "Solution": "Solution"
             }
         ],
         "TotalCount": 1,

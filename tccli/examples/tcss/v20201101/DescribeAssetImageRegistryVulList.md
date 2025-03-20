@@ -32,7 +32,7 @@ Output:
                     {
                         "FixedVersion": "0:3.26.0-15.el8",
                         "Name": "sqlite-libs",
-                        "Path": "",
+                        "Path": "/var/sqlite/",
                         "Type": "SYSTEM",
                         "Version": "3.26.0-13.el8"
                     }

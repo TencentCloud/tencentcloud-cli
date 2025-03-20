@@ -12,7 +12,7 @@ tccli antiddos ModifyCCReqLimitPolicy --cli-unfold-argument  \
     --Policy.Mode equal \
     --Policy.Period 10 \
     --Policy.RequestNum 600 \
-    --Policy.Uri / \
+    --Policy.Uri www.a.com \
     --PolicyId ccRule-00009001
 ```
 

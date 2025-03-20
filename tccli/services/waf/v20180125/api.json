@@ -5448,6 +5448,15 @@
           "name": "LogType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递的CLS所在日志主题的名称，默认为 waf_post_logtopic",
+          "example": "waf-post-logtopic",
+          "member": "string",
+          "name": "LogTopicName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

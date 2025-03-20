@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "8bc803fd-d85d-47b8-9e2b-9644674be677",
-        "DownloadUrl": "",
+        "DownloadUrl": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
         "JobId": "10001"
     }
 }

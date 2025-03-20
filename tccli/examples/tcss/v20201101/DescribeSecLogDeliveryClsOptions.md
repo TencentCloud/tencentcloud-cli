@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss DescribeSecLogDeliveryClsOptions --cli-unfold-argument  \
-    --ClsRegion 
+    --ClsRegion ap-bangkok
 ```
 
 Output: 

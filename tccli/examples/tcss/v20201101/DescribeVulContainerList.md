@@ -22,12 +22,12 @@ Output:
                 "HostID": "5c442550-bbbc-aaaa-ada3-00796bd9fefe",
                 "HostIP": "10.206.64.13",
                 "HostName": "tcs-sssa",
-                "NodeID": "",
-                "NodeName": "",
+                "NodeID": "mix-GOmf****",
+                "NodeName": "i-node***",
                 "NodeType": "NORMAL",
-                "NodeUniqueID": "",
-                "PodIP": "",
-                "PodName": "",
+                "NodeUniqueID": "896e349d-2e7d-4151-a26f-4e9fdafe****",
+                "PodIP": "10.0.1.92",
+                "PodName": "agent-test-2zrp7",
                 "PublicIP": "1.2.3.4"
             }
         ],

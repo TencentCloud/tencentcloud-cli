@@ -13,12 +13,12 @@ Output:
     "Response": {
         "List": [
             {
-                "AccessLog": "",
+                "AccessLog": "AccessLog",
                 "Config": "/etc/nginx/nginx.conf",
                 "ContainerId": "dbbd1295d632365",
                 "ContainerName": "/container_name",
-                "DataPath": "",
-                "ErrorLog": "",
+                "DataPath": "/a/b",
+                "ErrorLog": "ErrorLog",
                 "Exe": "/usr/sbin/nginx",
                 "HostID": "8bc803fd-d85d-47b8-9e2b-9644674be677",
                 "HostIP": "1.1.1.1",
@@ -27,16 +27,16 @@ Output:
                     "tcp://0.0.0.0:8080"
                 ],
                 "MainType": "web",
-                "NodeID": "",
+                "NodeID": "mix-GOmf****",
                 "NodeType": "NORMAL",
-                "NodeUniqueID": "",
+                "NodeUniqueID": "896e349d-2e7d-4151-a26f-4e9fdafe****",
                 "Parameter": "nginx: master process nginx -g daemon off;",
                 "Pids": [
                     1,
                     2
                 ],
-                "PodIP": "",
-                "PodName": "",
+                "PodIP": "10.0.1.92",
+                "PodName": "agent-test-2zrp7",
                 "ProcessCnt": 0,
                 "PublicIp": "1.1.1.1",
                 "RunAs": ":",

@@ -14,7 +14,7 @@ Output:
         "AllCoresCnt": 154,
         "AuthorizedCoresCnt": 147,
         "AuthorizedImageCnt": 287756,
-        "AutomaticRenewal": 1,
+        "AutomaticRenewal": 194,
         "BeginTime": "2024-09-24 13:01:18",
         "CoresCnt": 68,
         "CurrentFlexibleCoresCnt": 0,
@@ -30,7 +30,7 @@ Output:
         "PurchasedAuthorizedCnt": 300000,
         "RequestId": "e40cad09-f295-42a8-914d-ea84767fb6f1",
         "State": 3,
-        "SubState": "",
+        "SubState": "NORMAL",
         "UndefendCoresCnt": 86
     }
 }

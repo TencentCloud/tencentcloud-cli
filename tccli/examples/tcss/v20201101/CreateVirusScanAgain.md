@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss CreateVirusScanAgain --cli-unfold-argument  \
-    --TaskId 
+    --TaskId 6177adf5f95e94a76635****
 ```
 
 Output: 

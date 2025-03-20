@@ -8,7 +8,7 @@ Input:
 tccli antiddos ModifyNewDomainRules --cli-unfold-argument  \
     --Business bgpip \
     --Id bgpip-000000xe \
-    --Rule.RuleName test \
+    --Rule.RuleName name \
     --Rule.Protocol http \
     --Rule.Domain www.abc.com \
     --Rule.SourceType 2 \

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcss ModifySecLogDeliveryKafkaSetting --cli-unfold-argument  \
-    --InstanceID 实例ID \
-    --InstanceName 实例名称 \
-    --Domain 域名 \
-    --User 用户名 \
-    --Password 密码 \
+    --InstanceID ins_dhsghd \
+    --InstanceName xingneng \
+    --Domain www.a.com \
+    --User root \
+    --Password pwd \
     --RegionID ap-beijing \
     --LogTypeList.0.LogType container_bash \
-    --LogTypeList.0.TopicID 主题ID \
-    --LogTypeList.0.TopicName 主题名称 \
+    --LogTypeList.0.TopicID topicID \
+    --LogTypeList.0.TopicName name \
     --LogTypeList.0.State True
 ```
 

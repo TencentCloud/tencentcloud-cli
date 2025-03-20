@@ -6,14 +6,18 @@ Input:
 
 ```
 tccli bi CreateEmbedToken --cli-unfold-argument  \
-    --ExpireTime 10 \
-    --Scope panel \
-    --ExtraParam  \
-    --ProjectId 1 \
-    --UserCorpId  \
-    --UserId  \
-    --TicketNum 0 \
-    --GlobalParam [{"ParamKey": "province",         "JoinType": "and",         "WhereList": [             {                 "Operator": "-is",                 "Value": [                     "重庆市",                     "湖北省",                     "湖南省",                     "四川省"                 ]             }         ]     } ]
+    --ProjectId 1982493789748932 \
+    --PageId 1982493789748932 \
+    --Intention Intention \
+    --Scope Scope \
+    --ExpireTime ExpireTime \
+    --ExtraParam ExtraParam \
+    --UserCorpId UserCorpId \
+    --UserId UserId \
+    --TicketNum 1982493789748932 \
+    --GlobalParam GlobalParam \
+    --TokenType 1982493789748932 \
+    --TokenNum 1982493789748932
 ```
 
 Output: 

@@ -10736,6 +10736,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库guid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseGuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -25856,6 +25866,15 @@
           "example": "production",
           "member": "string",
           "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "doris写入模式配置",
+          "example": "append",
+          "member": "string",
+          "name": "WriteMode",
           "required": false,
           "type": "string"
         }

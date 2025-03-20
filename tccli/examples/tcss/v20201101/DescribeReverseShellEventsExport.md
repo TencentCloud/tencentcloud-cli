@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "DownloadUrl": "",
+        "DownloadUrl": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
         "JobId": "94b72f91-5827-4314-bc65-6b07c0d77a9c",
         "RequestId": "2f5665c4-6bf5-4d99-a3b5-ee16d5f9bae9"
     }

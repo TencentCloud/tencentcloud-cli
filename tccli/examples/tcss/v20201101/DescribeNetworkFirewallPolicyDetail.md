@@ -13,15 +13,15 @@ Output:
 ```
 {
     "Response": {
-        "PolicyName": "test",
+        "PolicyName": "name01",
         "CustomPolicy": [
             {
                 "Peer": [
                     {
                         "NamespaceSelector": "default",
-                        "PeerType": "",
-                        "PodSelector": "",
-                        "IPBlock": ""
+                        "PeerType": "peer type",
+                        "PodSelector": "a=b",
+                        "IPBlock": "ip block"
                     }
                 ],
                 "Direction": "FROM",
@@ -33,18 +33,18 @@ Output:
                 ]
             }
         ],
-        "Description": "",
+        "Description": "desc content",
         "ClusterId": "cls-dsfhuisdhfis",
         "FromPolicyRule": 0,
-        "PublishResult": "",
+        "PublishResult": "success",
         "Namespace": "default",
-        "NetworkPolicyPlugin": "",
+        "NetworkPolicyPlugin": "plugin",
         "PodSelector": "a=b",
         "PublishStatus": "running",
         "ToPolicyRule": 0,
         "RequestId": "392f05bd-bf86-4911-8cf9-b8c2ac0f62ab",
         "PolicyCreateTime": "2024-10-30 12:27:01",
-        "PolicySourceType": ""
+        "PolicySourceType": "type"
     }
 }
 ```

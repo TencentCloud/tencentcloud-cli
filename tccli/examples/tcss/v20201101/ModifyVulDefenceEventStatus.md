@@ -7,7 +7,8 @@ Input:
 ```
 tccli tcss ModifyVulDefenceEventStatus --cli-unfold-argument  \
     --Status EVENT_DEALED \
-    --EventIDs 1
+    --EventIDs 1 \
+    --Remark remark content
 ```
 
 Output: 

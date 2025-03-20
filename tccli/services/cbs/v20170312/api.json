@@ -335,43 +335,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留最新快照Days天内的每天最新的一个快照，取值范围：[0, 100]",
           "example": "6",
           "member": "uint64",
           "name": "Days",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留最新快照Weeks周内的每周最新的一个快照，取值范围：[0, 100]",
           "example": "8",
           "member": "uint64",
           "name": "Weeks",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留最新快照Months月内的每月最新的一个快照， 取值范围：[0, 100]",
           "example": "3",
           "member": "uint64",
           "name": "Months",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留最新快照Years年内的每年最新的一个快照，取值范围：[0, 100]",
           "example": "1",
           "member": "uint64",
           "name": "Years",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -722,13 +726,13 @@
         },
         {
           "disabled": false,
-          "document": "是否是跨账号复制快照快照, 1：是, 0: 不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是跨账号复制快照快照, 1：是, 0: 不是",
           "example": "0",
           "member": "uint64",
           "name": "IsCopyToRemote",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -812,33 +816,33 @@
         },
         {
           "disabled": false,
-          "document": "已绑定当前定期快照策略的实例ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已绑定当前定期快照策略的实例ID列表。",
           "example": "[\"ins-og3j7lue\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该定期快照创建的快照可以保留的月数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该定期快照创建的快照可以保留的月数。",
           "example": "1",
           "member": "uint64",
           "name": "RetentionMonths",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该定期快照创建的快照最大保留数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该定期快照创建的快照最大保留数量。",
           "example": "5",
           "member": "uint64",
           "name": "RetentionAmount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -862,13 +866,13 @@
         },
         {
           "disabled": false,
-          "document": "标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签。",
           "example": "[{'Key': 'test_key', 'Value': 'test_value'}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1030,13 +1034,13 @@
         },
         {
           "disabled": false,
-          "document": "独享集群的可用容量大小，单位GiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群的可用容量大小，单位GiB",
           "example": "100000",
           "member": "uint64",
           "name": "DiskAvailable",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

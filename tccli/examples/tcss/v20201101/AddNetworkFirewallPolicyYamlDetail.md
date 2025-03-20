@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcss AddNetworkFirewallPolicyYamlDetail --cli-unfold-argument  \
-    --PolicyName dfsdfsd \
-    --Description  \
+    --PolicyName policyname \
+    --Description describe content \
     --ClusterId cls-dsfsdf \
     --Yaml YXNkZmFzZGZhZHNmYXNkZmFzZGY=
 ```

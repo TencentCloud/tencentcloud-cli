@@ -30,7 +30,7 @@ Output:
                     {
                         "FieldType": "value",
                         "FieldName": "cgi",
-                        "Value": "test",
+                        "Value": "value",
                         "ValueOperator": "include"
                     }
                 ],

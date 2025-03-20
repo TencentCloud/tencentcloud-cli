@@ -15,15 +15,15 @@ Output:
     "Response": {
         "ClusterConfList": [
             {
-                "FileName": "abc",
-                "FileConf": "abc",
-                "KeyConf": "abc",
-                "OriParam": "abc",
+                "FileName": "hosts",
+                "FileConf": "",
+                "KeyConf": "",
+                "OriParam": "",
                 "NeedRestart": 0,
-                "FilePath": "abc"
+                "FilePath": "/etc"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e5733734-4226-4949-b692-333a6301399e"
     }
 }
 ```

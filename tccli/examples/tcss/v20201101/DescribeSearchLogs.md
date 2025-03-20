@@ -12,7 +12,7 @@ Output:
 {
     "Response": {
         "Data": [
-            "test",
+            "\"exec_start: bash -ec mysqladmin p****",
             "test2",
             "test3"
         ],

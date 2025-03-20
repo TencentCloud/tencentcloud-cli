@@ -23,10 +23,10 @@ Output:
         "List": [
             {
                 "ClusterID": "cls-q0bc0ed2",
-                "ClusterMainAddress": "",
+                "ClusterMainAddress": "10.0.0.1",
                 "ClusterName": "tke2",
-                "ClusterStatus": "",
-                "ClusterType": "",
+                "ClusterStatus": "3",
+                "ClusterType": "2",
                 "ClusterVersion": "v1.26.1-tke.5",
                 "ContainerCnt": 23,
                 "HostID": "3b6b1bbc-1c7a-47e2-9ca8-e9c27ec9d068",

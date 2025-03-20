@@ -26,3 +26,31 @@ Output:
 }
 ```
 
+**Example 2: 获取备份时间**
+
+获取实例的备份时间
+
+Input: 
+
+```
+tccli mariadb DescribeBackupTime --cli-unfold-argument  \
+    --InstanceIds tdsql-gsv37hvp
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Items": [
+            {
+                "EndBackupTime": "23:59",
+                "InstanceId": "tdsql-gsv37hvp",
+                "StartBackupTime": "00:00"
+            }
+        ],
+        "RequestId": "0dff93f5-e934-491a-abcd-4617ce0cfe3c",
+        "TotalCount": 1
+    }
+}
+```
+

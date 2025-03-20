@@ -378,7 +378,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCPrecisionPlyList\n<公共请求参数>\n\n{\n    \"Business\": \"bgp-multip\",\n    \"InstanceId\": \"bgp-00000211\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a97c66-22d4-4522-b93b-388aac08777d\",\n        \"Total\": 1,\n        \"PrecisionPolicyList\": [\n            {\n                \"PolicyId\": \"ccPrecs-00000001\",\n                \"InstanceId\": \"bgp-00000211\",\n                \"Ip\": \"1.1.1.1\",\n                \"Protocol\": \"http\",\n                \"Domain\": \"www.test.com\",\n                \"PolicyAction\": \"alg\",\n                \"PolicyList\": [\n                    {\n                        \"FieldType\": \"value\",\n                        \"FieldName\": \"cgi\",\n                        \"Value\": \"test\",\n                        \"ValueOperator\": \"include\"\n                    }\n                ],\n                \"CreateTime\": \"2022-12-01 09:05:36\",\n                \"ModifyTime\": \"2022-12-01 09:05:36\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a97c66-22d4-4522-b93b-388aac08777d\",\n        \"Total\": 1,\n        \"PrecisionPolicyList\": [\n            {\n                \"PolicyId\": \"ccPrecs-00000001\",\n                \"InstanceId\": \"bgp-00000211\",\n                \"Ip\": \"1.1.1.1\",\n                \"Protocol\": \"http\",\n                \"Domain\": \"www.test.com\",\n                \"PolicyAction\": \"alg\",\n                \"PolicyList\": [\n                    {\n                        \"FieldType\": \"value\",\n                        \"FieldName\": \"cgi\",\n                        \"Value\": \"value\",\n                        \"ValueOperator\": \"include\"\n                    }\n                ],\n                \"CreateTime\": \"2022-12-01 09:05:36\",\n                \"ModifyTime\": \"2022-12-01 09:05:36\"\n            }\n        ]\n    }\n}",
         "title": "获取CC精准防护列表"
       }
     ],
@@ -618,7 +618,7 @@
       {
         "document": "",
         "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeOverviewDDoSEventList\n&StartTime=2020-02-01 12:04:12\n&EndTime=2020-02-03 18:03:23\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"EventList\": [\n            {\n                \"Id\": \"ddosev-00000421\",\n                \"Vip\": \"10.143.145.42\",\n                \"StartTime\": \"2021-04-14 14:14:54\",\n                \"EndTime\": \"2021-04-14 14:16:23\",\n                \"AttackType\": \"SYNFLOOD\",\n                \"AttackStatus\": 0,\n                \"Mbps\": 23414,\n                \"Pps\": 2313,\n                \"Business\": \"bgpip\",\n                \"InstanceId\": \"bgpip-00000143\",\n                \"InstanceName\": \"test\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Total\": 1,\n        \"EventList\": [\n            {\n                \"Id\": \"ddosev-00000421\",\n                \"Vip\": \"10.143.145.42\",\n                \"StartTime\": \"2021-04-14 14:14:54\",\n                \"EndTime\": \"2021-04-14 14:16:23\",\n                \"AttackType\": \"SYNFLOOD\",\n                \"AttackStatus\": 0,\n                \"Mbps\": 23414,\n                \"Pps\": 2313,\n                \"Business\": \"bgpip\",\n                \"InstanceId\": \"bgpip-00000143\",\n                \"InstanceName\": \"name\"\n            }\n        ]\n    }\n}",
         "title": "获取防护概览的ddos攻击事件"
       }
     ],
@@ -673,7 +673,7 @@
     "ModifyCCReqLimitPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCCReqLimitPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00000001\",\n    \"Policy\": {\n        \"Action\": \"alg\",\n        \"ExecuteDuration\": 100,\n        \"Mode\": \"equal\",\n        \"Period\": 10,\n        \"RequestNum\": 600,\n        \"Uri\": \"/\"\n    },\n    \"PolicyId\": \"ccRule-00009001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCCReqLimitPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bgpip-00000001\",\n    \"Policy\": {\n        \"Action\": \"alg\",\n        \"ExecuteDuration\": 100,\n        \"Mode\": \"equal\",\n        \"Period\": 10,\n        \"RequestNum\": 600,\n        \"Uri\": \"www.a.com\"\n    },\n    \"PolicyId\": \"ccRule-00009001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "修改CC频率限制策略"
       }
@@ -737,7 +737,7 @@
     "ModifyDomainUsrName": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyDomainUsrName\n&DomainName=test.com\n&DomainUserName=test\n&<公共请求参数>",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyDomainUsrName\n&DomainName=test.com\n&DomainUserName=name\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5063ab0a-a8a7-41e8-ace2-263b2c1c8794\"\n    }\n}",
         "title": "修改智能解析域名名称"
       }
@@ -745,7 +745,7 @@
     "ModifyNewDomainRules": [
       {
         "document": "",
-        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyNewDomainRules\n&Business=bgpip\n&Id=bgpip-000000xe\n&Rule.RuleName=test\n&Rule.Protocol=http\n&Rule.Domain=www.abc.com\n&Rule.SourceType=2\n&Rule.LbType=1\n&Rule.KeepTime=300\n&Rule.SourceList.0.Source=1.1.1.10\n&Rule.SourceList.0.Weight=100\n&Rule.SourceList.1.Source=1.1.1.20\n&Rule.SourceList.1.Weight=100\n&Rule.CertType=0\n&Rule.VirtualPort=8443\n&Rule.KeepEnable=0\n&<公共请求参数>",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=ModifyNewDomainRules\n&Business=bgpip\n&Id=bgpip-000000xe\n&Rule.RuleName=name\n&Rule.Protocol=http\n&Rule.Domain=www.abc.com\n&Rule.SourceType=2\n&Rule.LbType=1\n&Rule.KeepTime=300\n&Rule.SourceList.0.Source=1.1.1.10\n&Rule.SourceList.0.Weight=100\n&Rule.SourceList.1.Source=1.1.1.20\n&Rule.SourceList.1.Weight=100\n&Rule.CertType=0\n&Rule.VirtualPort=8443\n&Rule.KeepEnable=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "修改7层转发规则"
       }

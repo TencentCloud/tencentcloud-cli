@@ -17,30 +17,23 @@ Output:
     "Response": {
         "DeviceList": [
             {
-                "NickName": "Camera 01",
-                "DeviceId": "99576636581320000278_99576636581320000278",
-                "Status": 0,
-                "ExtraInformation": "{\"Manufacturer\":\"Hikvision\",\"Model\":\"IP Camera\"}",
-                "DeviceType": 6,
+                "NickName": "test4",
+                "DeviceId": "99350367561320000005_99350367561320000005",
+                "Status": 3,
+                "ExtraInformation": "{\"DeviceModel\":\"xxx\",\"Manufacturer\":\"xxx\"}",
+                "DeviceType": 2,
                 "IsRecord": 0,
-                "DeviceCode": "99576636581320000278",
+                "DeviceCode": "99350367561320000005",
                 "Recordable": 1,
-                "Protocol": ""
-            },
-            {
-                "NickName": "Camera 02",
-                "DeviceId": "99576636581320000278_99576636581320000279",
-                "Status": 0,
-                "ExtraInformation": "{\"Model\":\"IP Camera\",\"Manufacturer\":\"Hikvision\"}",
-                "DeviceType": 6,
-                "IsRecord": 0,
-                "DeviceCode": "99576636581320000279",
-                "Recordable": 1,
-                "Protocol": ""
+                "Protocol": "GB28181",
+                "CreateTime": 342324234,
+                "ChannelNum": 1,
+                "VideoChannelNum": 1,
+                "RTSPUrl": ""
             }
         ],
         "RequestId": "20e4eb35-5429-4b25-8e4e-d7435518f194",
-        "TotalCount": 2
+        "TotalCount": 1
     }
 }
 ```

@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli tcss DescribeVirusDetail --cli-unfold-argument  \
-    --Id dskaldjskld
+    --Id 10021
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AncestorProcessParam": "-",
-        "AncestorProcessPath": "-",
-        "AncestorProcessStartUser": "-",
-        "AncestorProcessUserGroup": "",
+        "AncestorProcessParam": "/usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 7b4ed805844e07bd15663e4f778acf9bf388719cbcdf794290b9637a550a21d6 -address /run/containerd/containerd.****",
+        "AncestorProcessPath": "/usr/local/bin/containerd-shim-run****",
+        "AncestorProcessStartUser": "0",
+        "AncestorProcessUserGroup": "0",
         "CheckPlatform": [
             "VDC",
             "TAV"
         ],
         "ClientIP": "106.55.163.111",
-        "ClusterID": "",
-        "ClusterName": "",
+        "ClusterID": "cls-dfw3e***",
+        "ClusterName": "clsfoo***",
         "ContainerId": "d4c43f9268ecea2aa75b26632299df8aaf496af54e391f94ebcc62d7b2435105",
         "ContainerIsolateOperationSrc": "运行时安全/文件查杀",
         "ContainerName": "/pedantic_agnesi",
@@ -44,30 +44,30 @@ Output:
         "ImageName": "centos:7",
         "Mark": "just for test",
         "ModifyTime": "2024-10-21T06:42:49Z",
-        "Namespace": "",
-        "NodeID": "",
-        "NodeSubNetCIDR": "",
-        "NodeSubNetID": "",
-        "NodeSubNetName": "",
+        "Namespace": "tcss",
+        "NodeID": "mix-GOmf****",
+        "NodeSubNetCIDR": "10.0.200.0/24",
+        "NodeSubNetID": "subnet-5gu2***",
+        "NodeSubNetName": "subnet***",
         "NodeType": "NORMAL",
         "NodeUniqueID": "wer41324-18a1-4775-9e3f-cdfc89845157",
         "OperationTime": "2024-08-27T03:30:37Z",
-        "PProcessParam": "-",
-        "PProcessPath": "-",
-        "PProcessStartUser": "-",
-        "PProcessUserGroup": "",
-        "PodIP": "",
-        "PodName": "/",
-        "PodStatus": "",
-        "ProcessAccountGroup": "",
-        "ProcessArgv": "-",
-        "ProcessChan": "-",
-        "ProcessFileAuthority": "-",
+        "PProcessParam": "node dist/inde****",
+        "PProcessPath": "/usr/bin/****",
+        "PProcessStartUser": "root",
+        "PProcessUserGroup": "root",
+        "PodIP": "10.0.1.92",
+        "PodName": "PodName",
+        "PodStatus": "Running",
+        "ProcessAccountGroup": "root",
+        "ProcessArgv": "git clone --depth=1 https://youmengjie:Yn-2_qMrLWkX5cf3iVKz@code.devops.xiaohongshu.com/fe/farmer/asar-hot-updater.git part-local-lab/asar-hot-upd****",
+        "ProcessChan": "git(433802)|node(280016)|containerd-shim-runc-v2(176637)|system****",
+        "ProcessFileAuthority": "-rwxr-****",
         "ProcessId": 0,
-        "ProcessMd5": "-",
-        "ProcessName": "",
-        "ProcessPath": "-",
-        "ProcessStartAccount": "-",
+        "ProcessMd5": "472c65af3f43136472d1a383f5******",
+        "ProcessName": "/bin/a***",
+        "ProcessPath": "/usr/bin****",
+        "ProcessStartAccount": "root",
         "RequestId": "dc56fda9-58c8-4c4f-9e8c-b7296836c1f1",
         "RiskLevel": "RISK_CRITICAL",
         "Size": 332155,
@@ -81,7 +81,7 @@ Output:
             "窃取用户信息，感染用户本地所有的html、exe、dll等格式的文件。"
         ],
         "VirusName": "Win32.Virus.Ramnit.Qwhl",
-        "WorkloadType": ""
+        "WorkloadType": "DaemonSet"
     }
 }
 ```

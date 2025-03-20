@@ -984,14 +984,6 @@
         "title": "修改环境角色授权"
       }
     ],
-    "ModifyPublicNetworkAccessPoint": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkAccessPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-jero744g\",\n    \"PublicNetworkAccessPointStatus\": true,\n    \"SwitchOwner\": \"Public\",\n    \"VpcId\": \"vpc-d\",\n    \"SubnetId\": \"subnet-67y9wil4\",\n    \"SelectIp\": \"10.1.0.1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"ModifyResult\": \"修改成功\"\n    }\n}",
-        "title": "RabbitMQ专享版修改公网管控台，数据流开关"
-      }
-    ],
     "ModifyPublicNetworkSecurityPolicy": [
       {
         "document": "",

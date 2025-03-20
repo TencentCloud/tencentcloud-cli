@@ -1293,30 +1293,30 @@
         {
           "disabled": false,
           "document": "已使用的端口规则数，单位条",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "PortRulesUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "已使用的域名规则数，单位条",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "DomainRulesUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近7天的攻击次数，单位次",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Last7DayAttackCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2014,30 +2014,30 @@
         {
           "disabled": false,
           "document": "已使用的防护次数，单位次",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ProtectCountUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "已防护的IP数，单位个",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ProtectIPNumberUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近7天的攻击次数，单位次",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Last7DayAttackCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2178,70 +2178,70 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "bgp-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Ip",
-          "example": "",
+          "example": "192.168.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议",
-          "example": "",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.a.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "防护等级，可取值default表示默认策略，loose表示宽松，strict表示严格",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-01-01",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "",
+          "example": "2024-01-01",
           "member": "datetime",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2304,90 +2304,90 @@
         {
           "disabled": false,
           "document": "策略Id",
-          "example": "",
+          "example": "id-xxx",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "bgp-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Ip地址",
-          "example": "",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议",
-          "example": "",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.a.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略方式（丢弃或验证码）",
-          "example": "",
+          "example": "drop",
           "member": "string",
           "name": "PolicyAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "",
+          "example": "list",
           "member": "CCPrecisionPlyRecord",
           "name": "PolicyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-01-01",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "",
+          "example": "2024-01-01",
           "member": "datetime",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2400,80 +2400,80 @@
         {
           "disabled": false,
           "document": "策略Id",
-          "example": "",
+          "example": "id-xxx",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "bgp-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Ip地址",
-          "example": "",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议，可取值HTTP，HTTPS",
-          "example": "",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.a.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略项",
-          "example": "",
+          "example": "record",
           "member": "CCReqLimitPolicyRecord",
           "name": "PolicyRecord",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-01-01",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "",
+          "example": "2024-01-01",
           "member": "datetime",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2486,9 +2486,10 @@
         {
           "disabled": false,
           "document": "统计周期，可取值1，10，30，60，单位秒",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Period",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2496,9 +2497,10 @@
         {
           "disabled": false,
           "document": "请求数，取值1~20000",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "RequestNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2506,9 +2508,10 @@
         {
           "disabled": false,
           "document": "频率限制策略方式，可取值alg表示验证码，drop表示丢弃",
-          "example": "",
+          "example": "drop",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2516,9 +2519,10 @@
         {
           "disabled": false,
           "document": "频率限制策略时长，可取值1~86400，单位秒",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ExecuteDuration",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2526,9 +2530,10 @@
         {
           "disabled": false,
           "document": "策略项比对方式，可取值include表示包含，equal表示等于",
-          "example": "",
+          "example": "include",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2536,9 +2541,10 @@
         {
           "disabled": false,
           "document": "Uri，三个策略项仅可填其中之一",
-          "example": "",
+          "example": "www.a.com",
           "member": "string",
           "name": "Uri",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2546,9 +2552,10 @@
         {
           "disabled": false,
           "document": "User-Agent，三个策略项仅可填其中之一",
-          "example": "",
+          "example": "Agent",
           "member": "string",
           "name": "UserAgent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2556,9 +2563,10 @@
         {
           "disabled": false,
           "document": "Cookie，三个策略项仅可填其中之一",
-          "example": "",
+          "example": "Cookie",
           "member": "string",
           "name": "Cookie",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2936,9 +2944,10 @@
         {
           "disabled": false,
           "document": "基于源IP+目的IP的每秒新建数限制",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "SdNewLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2946,9 +2955,10 @@
         {
           "disabled": false,
           "document": "基于目的IP的每秒新建数限制",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "DstNewLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2956,9 +2966,10 @@
         {
           "disabled": false,
           "document": "基于源IP+目的IP的并发连接控制",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "SdConnLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2966,9 +2977,10 @@
         {
           "disabled": false,
           "document": "基于目的IP+目的端口的并发连接控制",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "DstConnLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2976,9 +2988,10 @@
         {
           "disabled": false,
           "document": "基于连接抑制触发阈值，取值范围[0,4294967295]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BadConnThreshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2986,9 +2999,10 @@
         {
           "disabled": false,
           "document": "异常连接检测条件，空连接防护开关，，取值范围[0,1]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "NullConnEnable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2996,9 +3010,10 @@
         {
           "disabled": false,
           "document": "异常连接检测条件，连接超时，，取值范围[0,65535]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ConnTimeout",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3006,9 +3021,10 @@
         {
           "disabled": false,
           "document": "异常连接检测条件，syn占比ack百分比，，取值范围[0,100]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "SynRate",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3016,9 +3032,10 @@
         {
           "disabled": false,
           "document": "异常连接检测条件，syn阈值，取值范围[0,100]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "SynLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3220,7 +3237,7 @@
         },
         {
           "disabled": false,
-          "document": "策略方式，可取值alg表示验证码，drop表示丢弃，trans表示放行",
+          "document": "策略方式，可取值alg表示人机校验，drop表示丢弃，trans表示放行",
           "example": "alg",
           "member": "string",
           "name": "PolicyAction",
@@ -4070,20 +4087,20 @@
         {
           "disabled": false,
           "document": "AI防护开关，取值[\non(开启)\noff(关闭)\n]",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "DDoSAI",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "AI防护开关所属的资源实例",
-          "example": "",
+          "example": "bgp-xxx",
           "member": "InstanceRelation",
           "name": "InstanceDetailList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5684,7 +5701,7 @@
         {
           "disabled": false,
           "document": "指定特定实例Id",
-          "example": "无",
+          "example": "bgp-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -6798,7 +6815,7 @@
         {
           "disabled": false,
           "document": "名称搜索",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "FilterName",
           "required": false,
@@ -6816,7 +6833,7 @@
         {
           "disabled": false,
           "document": "高防弹性公网IP实例的绑定状态搜索条件，取值范围 [BINDING、 BIND、UNBINDING、UNBIND]。该搜索条件只在FilterEipType=1时才有效。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "FilterEipEipAddressStatus",
           "required": false,
@@ -6852,7 +6869,7 @@
         {
           "disabled": false,
           "document": "批量查询实例ID对应的高防IP实例资源",
-          "example": "无",
+          "example": "id-xxxx",
           "member": "string",
           "name": "FilterInstanceIdList",
           "required": false,
@@ -6861,7 +6878,7 @@
         {
           "disabled": false,
           "document": "标签搜索",
-          "example": "无",
+          "example": "tag",
           "member": "TagFilter",
           "name": "FilterTag",
           "required": false,
@@ -6870,7 +6887,7 @@
         {
           "disabled": false,
           "document": "按照套餐类型进行过滤",
-          "example": "无",
+          "example": "type",
           "member": "string",
           "name": "FilterPackType",
           "required": false,
@@ -6879,7 +6896,7 @@
         {
           "disabled": false,
           "document": "重保护航搜索",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "FilterConvoy",
           "required": false,
@@ -8510,7 +8527,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8520,7 +8537,7 @@
           "example": "无",
           "member": "OverviewDDoSEvent",
           "name": "EventList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9174,9 +9191,10 @@
         {
           "disabled": false,
           "document": "告警阈值类型，取值[\n1(入流量告警阈值)\n2(攻击清洗流量告警阈值)\n]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AlarmType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9184,9 +9202,10 @@
         {
           "disabled": false,
           "document": "告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AlarmThreshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9194,9 +9213,10 @@
         {
           "disabled": false,
           "document": "告警阈值所属的资源实例",
-          "example": "",
+          "example": "bgp-xxx",
           "member": "InstanceRelation",
           "name": "InstanceDetailList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -11405,9 +11425,10 @@
         {
           "disabled": false,
           "document": "套餐包的类型，取值[\nstaticpack：高防IP三网套餐包\ninsurance：保险套餐包\n]",
-          "example": "",
+          "example": "staticpack",
           "member": "string",
           "name": "PackType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11415,9 +11436,10 @@
         {
           "disabled": false,
           "document": "套餐包的ID",
-          "example": "",
+          "example": "bgp-xxx",
           "member": "string",
           "name": "PackId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11726,9 +11748,10 @@
         {
           "disabled": false,
           "document": "起始端口，取值1~65535",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BeginPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11736,9 +11759,10 @@
         {
           "disabled": false,
           "document": "结束端口，取值1~65535，必须不小于起始端口",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "EndPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12054,9 +12078,10 @@
         {
           "disabled": false,
           "document": "转发监听端口列表，端口取值1~65535",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ProxyPorts",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -12064,9 +12089,10 @@
         {
           "disabled": false,
           "document": "转发协议，取值[\nhttp(HTTP协议)\nhttps(HTTPS协议)\n]",
-          "example": "",
+          "example": "http",
           "member": "string",
           "name": "ProxyType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12080,9 +12106,10 @@
         {
           "disabled": false,
           "document": "地域名称，例如，ap-guangzhou",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12268,9 +12295,10 @@
         {
           "disabled": false,
           "document": "限速值类型，取值[\n1(包速率pps)\n2(带宽bps)\n]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12278,9 +12306,10 @@
         {
           "disabled": false,
           "document": "值大小",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false

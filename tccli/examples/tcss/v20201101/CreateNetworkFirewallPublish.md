@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcss CreateNetworkFirewallPublish --cli-unfold-argument  \
     --ClusterId cls-sdhfisdf \
-    --Id 1
+    --Id 1002
 ```
 
 Output: 

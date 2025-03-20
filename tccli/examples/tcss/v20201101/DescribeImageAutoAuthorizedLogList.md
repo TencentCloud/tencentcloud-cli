@@ -21,9 +21,9 @@ Output:
             {
                 "Status": "SUCCESS",
                 "AuthorizedTime": "2022-01-01 00:00:00",
-                "ImageName": "镜像名称",
+                "ImageName": "imageName-01",
                 "IsAuthorized": 1,
-                "ImageId": "镜像id image-id"
+                "ImageId": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b"
             }
         ]
     }

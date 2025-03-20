@@ -29,9 +29,9 @@ Output:
                 "CustomerAssetId": 1001005017196,
                 "HostIP": "172.17.1.53",
                 "ImageRegistryInfo": {
-                    "Address": "",
-                    "Name": "",
-                    "Type": ""
+                    "Address": "10.0.0.1",
+                    "Name": "name1",
+                    "Type": "3"
                 },
                 "ImageTag": "v1.22.5-tke.27-rc1",
                 "InstanceId": "ins-4bi3i496",

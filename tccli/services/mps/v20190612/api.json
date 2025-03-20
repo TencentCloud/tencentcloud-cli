@@ -26637,10 +26637,10 @@
         {
           "disabled": false,
           "document": "地区名称。",
-          "example": "ap-mumbai",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -27874,7 +27874,7 @@
         {
           "disabled": false,
           "document": "安全组 ID。",
-          "example": "test",
+          "example": "id",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -27884,7 +27884,7 @@
         {
           "disabled": false,
           "document": "安全组名称。",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -27904,7 +27904,7 @@
         {
           "disabled": false,
           "document": "绑定的输入流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testinput",
+          "example": "无",
           "member": "string",
           "name": "OccupiedInputs",
           "output_required": true,
@@ -27914,7 +27914,7 @@
         {
           "disabled": false,
           "document": "安全组地址。",
-          "example": "ap-mumbai",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -27924,7 +27924,7 @@
         {
           "disabled": false,
           "document": "绑定的输出流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testoutput",
+          "example": "无",
           "member": "string",
           "name": "OccupiedOutputs",
           "output_required": false,

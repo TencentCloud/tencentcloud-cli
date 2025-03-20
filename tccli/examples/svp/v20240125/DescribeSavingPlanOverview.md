@@ -21,7 +21,7 @@ Output:
                 "EndTime": "2028-03-30 14:59:59",
                 "PayAmount": "0",
                 "Region": [
-                    "*"
+                    "33"
                 ],
                 "SavingAmount": "600",
                 "SpType": "svp_common",

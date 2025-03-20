@@ -406,7 +406,7 @@
         {
           "disabled": false,
           "document": "分页偏移量",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -429,13 +429,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "节省计划总览明细数据\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"EndTime\":\"2028-03-30 14:59:59\",\"PayAmount\":\"0\",\"Region\":[\"*\"],\"SavingAmount\":\"600\",\"SpId\":\"svp-ivm000e-D4l9f66\",\"SpType\":\"svp_common\",\"StartTime\":\"2023-03-30 14:00:00\",\"Status\":1,\"PayType\":1}]",
+          "document": "节省计划总览明细数据\t",
+          "example": "[{\"EndTime\":\"2028-03-30 14:59:59\",\"PayAmount\":\"0\",\"Region\":[\"33\"],\"SavingAmount\":\"600\",\"SpId\":\"svp-ivm000e-D4l9f66\",\"SpType\":\"svp_common\",\"StartTime\":\"2023-03-30 14:00:00\",\"Status\":1,\"PayType\":1}]",
           "member": "SavingPlanOverviewDetail",
           "name": "Overviews",
-          "output_required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -763,203 +763,203 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号id",
           "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号名称",
           "example": "深圳市腾讯计算机系统有限公司",
           "member": "string",
           "name": "OwnerUinName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "抵扣账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣账号id",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "抵扣账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣账号名称",
           "example": "深圳市腾讯计算机系统有限公司",
           "member": "string",
           "name": "PayerUinName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节省计划资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节省计划资源id",
           "example": "svp-jf1000fuY_gME1p",
           "member": "string",
           "name": "SpId",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品编码",
           "example": "p_cvm",
           "member": "string",
           "name": "ProductCode",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "云服务器CVM",
           "member": "string",
           "name": "ProductName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子产品编码",
           "example": "sp_cvm_s4",
           "member": "string",
           "name": "SubProductCode",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子产品名称",
           "example": "云服务器CVM-标准型S4",
           "member": "string",
           "name": "SubProductName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交易ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交易ID",
           "example": "20241118400246988192100",
           "member": "string",
           "name": "OutTradeNo",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域id",
           "example": "4",
           "member": "int64",
           "name": "RegionId",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域名称",
           "example": "华东地区（上海）",
           "member": "string",
           "name": "RegionName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地区id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地区id",
           "example": "200002",
           "member": "int64",
           "name": "ZoneId",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地区名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地区名称",
           "example": "上海二区",
           "member": "string",
           "name": "ZoneName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始使用时间",
           "example": "2024-11-18 13:00:00",
           "member": "string",
           "name": "SpStartTime",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束使用时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束使用时间",
           "example": "2024-11-18 14:00:00",
           "member": "string",
           "name": "SpEndTime",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣时间",
           "example": "2024-11-18 14:16:11",
           "member": "string",
           "name": "DeductTime",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "抵扣金额，单位分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣金额，单位分",
           "example": "0.04",
           "member": "string",
           "name": "DeductAmount",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "抵扣折扣率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣折扣率",
           "example": "0.86",
           "member": "string",
           "name": "DeductDiscount",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "抵扣比率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "抵扣比率",
           "example": "0.44",
           "member": "string",
           "name": "DeductRate",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1156,7 +1156,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "[\"*\"]",
+          "example": "[\"15\"]",
           "member": "string",
           "name": "Region",
           "output_required": true,

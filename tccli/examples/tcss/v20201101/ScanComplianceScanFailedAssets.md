@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcss ScanComplianceScanFailedAssets --cli-unfold-argument  \
-    --CustomerAssetIdSet 111 456 789
+    --CustomerAssetIdSet 1002
 ```
 
 Output: 

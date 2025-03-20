@@ -35,13 +35,13 @@ Output:
                     "CVSSScore": "5.2",
                     "RelateLink": "https://",
                     "AffectedType": "Node",
-                    "AffectedVersion": "",
+                    "AffectedVersion": "1.3",
                     "IgnoredAssetNum": 0,
                     "IsIgnored": true,
-                    "RiskAssessment": "test"
+                    "RiskAssessment": "RiskAssessment"
                 },
-                "VerifyInfo": "",
-                "ErrorMessage": "",
+                "VerifyInfo": "VerifyInfo",
+                "ErrorMessage": "ErrorMessage",
                 "AffectedClusterCount": 1,
                 "AffectedNodeCount": 2
             }

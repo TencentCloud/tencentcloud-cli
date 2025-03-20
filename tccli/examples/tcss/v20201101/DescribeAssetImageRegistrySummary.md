@@ -8,7 +8,7 @@ Input:
 tccli tcss DescribeAssetImageRegistrySummary --cli-unfold-argument  \
     --Filters.0.Name OnlyShowLatest \
     --Filters.0.ExactMatch True \
-    --Filters.0.Values 1
+    --Filters.0.Values 1021
 ```
 
 Output: 

@@ -8,7 +8,7 @@ Input:
 tccli tcss DescribeComplianceAssetList --cli-unfold-argument  \
     --AssetTypeSet ASSET_CONTAINDER \
     --Offset 0 \
-    --Limit 1
+    --Limit 100
 ```
 
 Output: 
@@ -25,8 +25,8 @@ Output:
                 "HostIP": "172.16.0.1",
                 "NodeName": "node-1",
                 "CheckStatus": "CHECK_FINISHED",
-                "PassedPolicyItemCount": 1,
-                "FailedPolicyItemCount": 1,
+                "PassedPolicyItemCount": 1021,
+                "FailedPolicyItemCount": 1021,
                 "LastCheckTime": "2020-09-22 00:00:00",
                 "CheckResult": "RESULT_FAILED",
                 "InstanceId": "ins-busi1",
