@@ -355,13 +355,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询命中的节省计划抵扣明细数据总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询命中的节省计划抵扣明细数据总条数",
           "example": "100",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -523,7 +523,7 @@
         {
           "disabled": false,
           "document": "节省计划使用率数据",
-          "example": "[]",
+          "example": "[{\"CostAmount\":\"600\",\"DeductAmount\":\"600\",\"DosageAmount\":\"0\",\"LossAmount\":\"0\",\"NetSavings\":\"-600\",\"PromiseAmount\":\"600\",\"Region\":[\"15\"],\"SpId\":\"svp-ivm000e-D4l9f66\",\"SpType\":\"svp_common\",\"Status\":1,\"UtilizationRate\":100}]",
           "member": "SavingPlanUsageDetail",
           "name": "Usages",
           "output_required": true,

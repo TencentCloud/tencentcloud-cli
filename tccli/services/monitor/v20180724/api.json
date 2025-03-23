@@ -56,6 +56,13 @@
       "output": "CreateAlertRuleResponse",
       "status": "online"
     },
+    "CreateConditionsTemplate": {
+      "document": "创建告警条件模板",
+      "input": "CreateConditionsTemplateRequest",
+      "name": "创建告警条件模板",
+      "output": "CreateConditionsTemplateResponse",
+      "status": "online"
+    },
     "CreateExporterIntegration": {
       "document": "创建集成中心 exporter 集成，因集成较多，建议控制台创建集成。(前提：已授权创建托管 EKS 集群，验证方式：1. 控制台界面确认，未提示授权则表示已授权创建；2. 通过 DescribePrometheusInstanceInitStatus 接口查询集群状态，如果托管集群不存在，可通过 RunPrometheusInstance 接口创建)",
       "input": "CreateExporterIntegrationRequest",
@@ -3883,6 +3890,124 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConditionsTemplateRequest": {
+      "document": "CreateConditionsTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，monitor",
+          "example": "monitor,",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视图名",
+          "example": "cvm_device,",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组名",
+          "example": "测试API新增,",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为与关系",
+          "example": "0,",
+          "member": "int64",
+          "name": "IsUnionRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "测试API创建一下模板,",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "父ID",
+          "example": "无",
+          "member": "int64",
+          "name": "ParentGroupID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否屏蔽",
+          "example": "无",
+          "member": "int64",
+          "name": "IsShielded",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "复合告警表达式",
+          "example": "无",
+          "member": "string",
+          "name": "ComplexExpression",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标告警条件",
+          "example": "无",
+          "member": "ModifyConditionsTemplateRequestCondition",
+          "name": "Conditions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "事件告警条件",
+          "example": "无",
+          "member": "ModifyConditionsTemplateRequestEventCondition",
+          "name": "EventConditions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConditionsTemplateResponse": {
+      "document": "CreateConditionsTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板策略组ID",
+          "example": "1998842",
+          "member": "int64",
+          "name": "GroupID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15990,6 +16115,130 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyConditionsTemplateRequestCondition": {
+      "document": "ModifyConditionsTemplateRequestCondition，Condition入参字段值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计周期",
+          "example": "60",
+          "member": "string",
+          "name": "CalcPeriod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计方式",
+          "example": "1",
+          "member": "string",
+          "name": "CalcType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "持续周期",
+          "example": "1",
+          "member": "string",
+          "name": "ContinuePeriod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标ID",
+          "example": "\"33\"",
+          "member": "int64",
+          "name": "MetricID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统计值",
+          "example": "0",
+          "member": "string",
+          "name": "CalcValue",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警通知周期",
+          "example": "86400",
+          "member": "string",
+          "name": "AlarmNotifyPeriod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警通知方式",
+          "example": "0",
+          "member": "int64",
+          "name": "AlarmNotifyType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyConditionsTemplateRequestEventCondition": {
+      "document": "ModifyConditionsTemplateRequestEventCondition",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警通知周期",
+          "example": "",
+          "member": "string",
+          "name": "AlarmNotifyPeriod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警通知方式",
+          "example": "",
+          "member": "string",
+          "name": "AlarmNotifyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "",
+          "member": "string",
+          "name": "EventID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "",
+          "member": "int64",
+          "name": "RuleID",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ModifyGrafanaInstanceRequest": {
       "document": "ModifyGrafanaInstance请求参数结构体",

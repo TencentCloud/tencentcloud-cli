@@ -1448,7 +1448,7 @@
           "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -1457,7 +1457,7 @@
           "example": "1617123538",
           "member": "int64",
           "name": "StartTime",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -1466,7 +1466,7 @@
           "example": "1617123538",
           "member": "int64",
           "name": "EndTime",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -1554,6 +1554,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "业务系统 ID",
+          "example": "apm-CVfliqa8U",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "指标列表",
           "example": "[{\"Compare\":\"1\",\"Compares\":[\"CompareByYesterday\",\"CompareByLastWeek\"],\"MetricName\":\"qps\"}]",
           "member": "QueryMetricItem",
@@ -1563,20 +1572,11 @@
         },
         {
           "disabled": false,
-          "document": "业务系统 ID",
-          "example": "apm-CVfliqa8U",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "开始时间（单位为秒）",
           "example": "1618361193",
           "member": "uint64",
           "name": "StartTime",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -1585,8 +1585,17 @@
           "example": "1618361193",
           "member": "uint64",
           "name": "EndTime",
-          "required": false,
+          "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "聚合维度",
+          "example": "[\"service.instance\"]",
+          "member": "string",
+          "name": "GroupBy",
+          "required": true,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1603,15 +1612,6 @@
           "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
           "member": "Filter",
           "name": "OrFilters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "聚合维度",
-          "example": "[\"service.instance\"]",
-          "member": "string",
-          "name": "GroupBy",
           "required": false,
           "type": "list"
         },
@@ -1736,6 +1736,24 @@
         },
         {
           "disabled": false,
+          "document": "开始时间（单位：秒）",
+          "example": "1618361193",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（单位：秒）",
+          "example": "1618361193",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "聚合维度",
           "example": "service.name",
           "member": "string",
@@ -1751,24 +1769,6 @@
           "name": "Filters",
           "required": false,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间（单位：秒）",
-          "example": "1618361193",
-          "member": "uint64",
-          "name": "StartTime",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间（单位：秒）",
-          "example": "1618361193",
-          "member": "uint64",
-          "name": "EndTime",
-          "required": false,
-          "type": "int"
         },
         {
           "disabled": false,
@@ -1849,7 +1849,7 @@
           "example": "1734400800",
           "member": "int64",
           "name": "StartTime",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -1858,7 +1858,7 @@
           "example": "1734415200",
           "member": "int64",
           "name": "EndTime",
-          "required": false,
+          "required": true,
           "type": "int"
         },
         {
@@ -2149,7 +2149,7 @@
         {
           "disabled": false,
           "document": "是否开启错误采样（0=关, 1=开）",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "ErrorSample",
           "required": false,

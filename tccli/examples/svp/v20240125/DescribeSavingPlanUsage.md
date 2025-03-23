@@ -28,7 +28,7 @@ Output:
                 "NetSavings": "-600",
                 "PromiseAmount": "600",
                 "Region": [
-                    "*"
+                    "15"
                 ],
                 "SpType": "svp_common",
                 "Status": 1,

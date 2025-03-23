@@ -83,6 +83,7 @@ tccli apm DescribeMetricRecords --cli-unfold-argument  \
     --Offset 1 \
     --StartTime 1618361193 \
     --EndTime 1618677137 \
+    --InstanceId apm-CVfliqa8U \
     --OrderBy.Key duration_avg \
     --OrderBy.Value DESC
 ```

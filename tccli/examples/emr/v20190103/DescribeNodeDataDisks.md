@@ -16,30 +16,27 @@ Output:
     "Response": {
         "CBSList": [
             {
+                "Attached": true,
+                "DeadlineTime": "",
                 "DeleteWithInstance": true,
+                "DifferDaysOfDeadline": 0,
                 "DiskChargeType": "POSTPAID_BY_HOUR",
-                "DiskId": "disk-xxxxxxxx",
-                "DiskName": "未命名_1",
-                "DiskSize": 100,
+                "DiskId": "disk-bpcm1kg4",
+                "DiskName": "emr-Master.1_emr-gzpmy487_数据盘_1",
+                "DiskSize": 200,
                 "DiskState": "ATTACHED",
-                "DiskType": "CLOUD_SSD",
+                "DiskType": "CLOUD_HSSD",
                 "DiskUsage": "DATA_DISK",
-                "DeadlineTime": ""
-            },
-            {
-                "DeleteWithInstance": true,
-                "DiskChargeType": "POSTPAID_BY_HOUR",
-                "DiskId": "disk-xxxxxxxx",
-                "DiskName": "未命名_0",
-                "DiskSize": 50,
-                "DiskState": "ATTACHED",
-                "DiskType": "CLOUD_SSD",
-                "DiskUsage": "SYSTEM_DISK",
-                "DeadlineTime": ""
+                "InstanceId": "ins-4y5u591o",
+                "InstanceIdList": [
+                    "ins-4y5u591o"
+                ],
+                "RenewFlag": "",
+                "Shareable": false
             }
         ],
-        "RequestId": "9dd6b795-aed5-4a09-b493-f460c1f1a0c5",
-        "TotalCount": 2
+        "RequestId": "e681bb5e-e0b9-49ba-b3bd-be504a76e91b",
+        "TotalCount": 1
     }
 }
 ```

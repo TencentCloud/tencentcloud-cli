@@ -1274,6 +1274,14 @@
         "title": "修改规则"
       }
     ],
+    "ModifyL7AccRulePriority": [
+      {
+        "document": "站点下有 3 条规则，原来执行顺序是 rule-example1、rule-example2、rule-example3，需要修改成执行顺序是 rule-example2、rule-example3、rule-example1。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyL7AccRulePriority\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-example\",\n    \"RuleIds\": [\n        \"rule-example2\",\n        \"rule-example3\",\n        \"rule-example1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"example-310c-41f4-b5e7-abe407404sxsd\"\n    }\n}",
+        "title": "修改规则引擎优先级"
+      }
+    ],
     "ModifyL7AccSetting": [
       {
         "document": "修改站点加速全局配置。",

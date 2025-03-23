@@ -260,7 +260,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeDataDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxxxxxx\",\n    \"CvmInstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CBSList\": [\n            {\n                \"DeleteWithInstance\": true,\n                \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n                \"DiskId\": \"disk-xxxxxxxx\",\n                \"DiskName\": \"未命名_1\",\n                \"DiskSize\": 100,\n                \"DiskState\": \"ATTACHED\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DeadlineTime\": \"\"\n            },\n            {\n                \"DeleteWithInstance\": true,\n                \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n                \"DiskId\": \"disk-xxxxxxxx\",\n                \"DiskName\": \"未命名_0\",\n                \"DiskSize\": 50,\n                \"DiskState\": \"ATTACHED\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskUsage\": \"SYSTEM_DISK\",\n                \"DeadlineTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"9dd6b795-aed5-4a09-b493-f460c1f1a0c5\",\n        \"TotalCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CBSList\": [\n            {\n                \"Attached\": true,\n                \"DeadlineTime\": \"\",\n                \"DeleteWithInstance\": true,\n                \"DifferDaysOfDeadline\": 0,\n                \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n                \"DiskId\": \"disk-bpcm1kg4\",\n                \"DiskName\": \"emr-Master.1_emr-gzpmy487_数据盘_1\",\n                \"DiskSize\": 200,\n                \"DiskState\": \"ATTACHED\",\n                \"DiskType\": \"CLOUD_HSSD\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"InstanceId\": \"ins-4y5u591o\",\n                \"InstanceIdList\": [\n                    \"ins-4y5u591o\"\n                ],\n                \"RenewFlag\": \"\",\n                \"Shareable\": false\n            }\n        ],\n        \"RequestId\": \"e681bb5e-e0b9-49ba-b3bd-be504a76e91b\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询节点数据盘信息"
       }
     ],
@@ -549,7 +549,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDataDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxxx\",\n    \"CvmInstanceIds\": [\n        \"ins-xx\"\n    ],\n    \"DiskIds\": [\n        \"disk-xxx1\",\n        \"disk-xxx2\"\n    ],\n    \"DiskSize\": 500\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\"\n    }\n}",
-        "title": "云盘扩容"
+        "title": "云数据盘扩容"
       }
     ],
     "RunJobFlow": [

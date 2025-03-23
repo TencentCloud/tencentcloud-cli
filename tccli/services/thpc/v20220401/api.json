@@ -617,13 +617,13 @@
         },
         {
           "disabled": false,
-          "document": "集群活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动状态码。",
           "example": "ActivitySuccess",
           "member": "string",
           "name": "ActivityStatusCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -667,23 +667,23 @@
         },
         {
           "disabled": false,
-          "document": "集群活动开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动开始时间。",
           "example": "2021-11-01T02:17:20Z\t",
           "member": "datetime_iso",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群活动结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动结束时间。",
           "example": "2021-11-01T02:17:38Z\t",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

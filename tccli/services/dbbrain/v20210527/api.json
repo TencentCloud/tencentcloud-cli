@@ -2136,6 +2136,15 @@
           "name": "Product",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实列代理ID。",
+          "example": "a267221bfa30c571cabbea555121bc1c2c97e518",
+          "member": "string",
+          "name": "InstanceProxyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3945,7 +3954,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -3961,10 +3970,10 @@
         {
           "disabled": false,
           "document": "健康得分以及异常扣分项。",
-          "example": "-",
+          "example": "无",
           "member": "HealthScoreInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8168,13 +8177,13 @@
         },
         {
           "disabled": false,
-          "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标值。",
           "example": "[0.25,0.26]",
           "member": "float",
           "name": "Values",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

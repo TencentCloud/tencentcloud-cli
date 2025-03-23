@@ -820,6 +820,14 @@
         "title": "获取规则信息"
       }
     ],
+    "DescribeUnbindedDevices": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=DescribeUnbindedDevices\n&ProductId=12345ABCDE\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bec3b0f5-f994-43bf-8e99-21de4e683bfc\",\n        \"Total\": 1,\n        \"UnbindedDevices\": [\n            {\n                \"ProductId\": \"12345ABCDE\",\n                \"DeviceName\": \"subdev4\"\n            }\n        ]\n    }\n}",
+        "title": "获取未绑定的设备列表"
+      }
+    ],
     "DescribeVideoLicense": [
       {
         "document": "查询激活码统计信息",

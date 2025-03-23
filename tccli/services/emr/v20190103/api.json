@@ -477,9 +477,9 @@
       "status": "online"
     },
     "ResizeDataDisks": {
-      "document": "云盘扩容",
+      "document": "云数据盘扩容",
       "input": "ResizeDataDisksRequest",
-      "name": "云盘扩容",
+      "name": "云数据盘扩容",
       "output": "ResizeDataDisksResponse",
       "status": "online"
     },
@@ -1052,6 +1052,15 @@
           "name": "DeleteWithInstance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "新挂磁盘时可支持配置的服务名称列表",
+          "example": "[\"HDFS\",\"YARN\"]",
+          "member": "string",
+          "name": "SelectiveConfServices",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1606,6 +1615,16 @@
           "name": "Shareable",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "emr节点ID",
+          "example": "emr-vm-rwxi34si",
+          "member": "string",
+          "name": "EmrResourceId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5985,6 +6004,42 @@
           "name": "CvmInstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询云盘的过滤条件",
+          "example": "[{\"Name\":\"disk-id\",\"Values\":[\"disk-123ddesx\"]},{\"Name\":\"disk-name\",\"Values\":[\"test1\"]}]",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索",
+          "example": "test1",
+          "member": "string",
+          "name": "InnerSearch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量，默认值为100，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5998,7 +6053,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6008,9 +6063,19 @@
           "example": "无",
           "member": "CBSInstance",
           "name": "CBSList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云盘最大容量",
+          "example": "200",
+          "member": "uint64",
+          "name": "MaxSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9319,6 +9384,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "节点续费询价明细列表",
+          "example": "无",
+          "member": "NodeRenewPriceDetail",
+          "name": "NodeRenewPriceDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -9687,6 +9762,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点续费询价明细列表",
+          "example": "无",
+          "member": "NodeRenewPriceDetail",
+          "name": "NodeRenewPriceDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13017,6 +13102,92 @@
       ],
       "usage": "out"
     },
+    "NodeRenewPriceDetail": {
+      "document": "节点续费询价明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费类型，包月为1、包销为3",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "emr资源id",
+          "example": "erm-vm-6jdsa17c",
+          "member": "string",
+          "name": "EmrResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "Master",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点内网ip",
+          "example": "10.0.0.12",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前到期时间",
+          "example": "2025-02-24 20:45:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "50",
+          "member": "float",
+          "name": "OriginalCost",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣价",
+          "example": "25",
+          "member": "float",
+          "name": "DiscountCost",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点子项续费询价明细列表",
+          "example": "无",
+          "member": "RenewPriceDetail",
+          "name": "RenewPriceDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NodeResource": {
       "document": "规格管理，规格类型描述",
       "members": [
@@ -14814,6 +14985,62 @@
       ],
       "usage": "out"
     },
+    "RenewPriceDetail": {
+      "document": "节点子项续费询价明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项名称",
+          "example": "云SSD 70G",
+          "member": "string",
+          "name": "BillingName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣",
+          "example": "0.5",
+          "member": "float",
+          "name": "Policy",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Quantity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "50",
+          "member": "float",
+          "name": "OriginalCost",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣价",
+          "example": "25",
+          "member": "float",
+          "name": "DiscountCost",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RepeatStrategy": {
       "document": "定时伸缩任务策略",
       "members": [
@@ -14947,15 +15174,6 @@
         },
         {
           "disabled": false,
-          "document": "需要扩容的云盘ID",
-          "example": "[disk-xxx1, disk-xxx2]",
-          "member": "string",
-          "name": "DiskIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "需要扩充的容量值，容量值需要大于原容量，并且为10的整数倍",
           "example": "300",
           "member": "int64",
@@ -14971,6 +15189,24 @@
           "name": "CvmInstanceIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要扩容的云盘ID",
+          "example": "[disk-xxx1, disk-xxx2]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否扩容全部云硬盘",
+          "example": "true",
+          "member": "bool",
+          "name": "ResizeAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -22,15 +22,15 @@ tccli cdwch CreateBackUpSchedule --cli-unfold-argument  \
     --RetainDays 7 \
     --WeekDays 2 \
     --ExecuteHour 1 \
-    --ScheduleId 4879
+    --ScheduleId 3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "InvalidParameter",
+        "RequestId": "20a71202-27c4-4120-80c4-fb1a8e15dxxx"
     }
 }
 ```
