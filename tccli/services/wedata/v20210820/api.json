@@ -34702,7 +34702,7 @@
         {
           "disabled": false,
           "document": "生产调度任务工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "342",
           "member": "string",
           "name": "WorkflowId",
           "output_required": true,
@@ -34713,7 +34713,7 @@
         {
           "disabled": false,
           "document": "生产调度任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "2352",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -34742,6 +34742,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产任务类型",
+          "example": "1",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37760,7 +37771,7 @@
         {
           "disabled": false,
           "document": "规则组Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "1",
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
@@ -37771,7 +37782,7 @@
         {
           "disabled": false,
           "document": "数据源Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "5432323",
           "member": "string",
           "name": "DatasourceId",
           "output_required": true,
@@ -37837,7 +37848,7 @@
         {
           "disabled": false,
           "document": "关联数据表Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "734",
           "member": "string",
           "name": "TableId",
           "output_required": true,
@@ -37881,7 +37892,7 @@
         {
           "disabled": false,
           "document": "数据库id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "35f324y54gerg",
           "member": "string",
           "name": "DatabaseId",
           "output_required": true,
@@ -37947,7 +37958,7 @@
         {
           "disabled": false,
           "document": "表负责人UserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "342455",
           "member": "uint64",
           "name": "TableOwnerUserId",
           "output_required": true,
@@ -38020,6 +38031,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "离线周期检测  2024-12-18 ~ 2024-12-19，每天00:00执行一次",
+          "member": "string",
+          "name": "ExecDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事中关联任务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "PipelineTaskCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "EnableRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控创建人",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "CreateUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -38348,7 +38425,7 @@
         {
           "disabled": false,
           "document": "规则组Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "235234",
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
@@ -38381,7 +38458,7 @@
         {
           "disabled": false,
           "document": "执行资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "13543",
           "member": "string",
           "name": "ExecutorGroupId",
           "output_required": true,
@@ -38502,7 +38579,7 @@
         {
           "disabled": false,
           "document": "规则id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "342346",
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
@@ -38542,6 +38619,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "任务1",
+          "member": "string",
+          "name": "RuleGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "schema名称",
+          "example": "schema1",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "testTable",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "82476",
+          "member": "string",
+          "name": "DatasourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务描述",
+          "example": "任务1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -38694,7 +38837,7 @@
         {
           "disabled": false,
           "document": "规则组Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "3456",
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
@@ -38738,7 +38881,7 @@
         {
           "disabled": false,
           "document": "规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "234563456",
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
@@ -38753,6 +38896,17 @@
           "member": "string",
           "name": "RuleName",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{         \t\"alarmWay\": \"1,2,3\",           \t\"webhooks\": {             \t\"type\": \"7\",             \t\"webhooks\": [\"test1\", \"test2\"]           \t}         }",
+          "member": "string",
+          "name": "AlarmMessageRule",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

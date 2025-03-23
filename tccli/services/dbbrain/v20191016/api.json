@@ -1352,7 +1352,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -1368,7 +1368,7 @@
         {
           "disabled": false,
           "document": "健康得分以及异常扣分项。",
-          "example": "{\"IssueTypes\":[{\"TotalCount\":0,\"Events\":[],\"IssueType\":\"AVAILABILITY\"},{\"TotalCount\":0,\"Events\":[],\"IssueType\":\"MAINTAINABILITY\"},{\"TotalCount\":1,\"Events\":[{\"DiagType\":\"高并发/压力请求\",\"ScoreLost\":6,\"StartTime\":\"2020-09-22T00:00:00+00:00\",\"EndTime\":\"2020-09-22T00:00:00+00:00\",\"EventId\":780019530,\"Outline\":\"监控指标 \\\"cpu_use_rate\\\" 告警，当前值 100\",\"Severity\":1,\"Metric\":\"cpu_use_rate\",\"Count\":1}],\"IssueType\":\"PERFORMANCE\"},{\"TotalCount\":1,\"Events\":[{\"DiagType\":\"复制\",\"ScoreLost\":10,\"StartTime\":\"2020-09-22T00:00:00+00:00\",\"EndTime\":\"2020-09-22T00:00:00+00:00\",\"EventId\":780018741,\"Outline\":\"复制IO线程中断\",\"Severity\":1,\"Metric\":\"slave_io_running\",\"Count\":1}],\"IssueType\":\"RELIABILITY\"}],\"EventsTotalCount\":2,\"HealthLevel\":\"RISK\"}",
+          "example": "无",
           "member": "HealthScoreInfo",
           "name": "Data",
           "output_required": true,

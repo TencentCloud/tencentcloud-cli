@@ -567,7 +567,7 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "ap-beijing-2",
+          "example": "ap-beijing-6",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -576,7 +576,7 @@
         {
           "disabled": false,
           "document": "私有网络",
-          "example": "vpc-xxx",
+          "example": "vpc-1asw4o72",
           "member": "string",
           "name": "UserVPCId",
           "required": true,
@@ -585,7 +585,7 @@
         {
           "disabled": false,
           "document": "子网",
-          "example": "subnet-xxx",
+          "example": "subnet-rdlodajh",
           "member": "string",
           "name": "UserSubnetId",
           "required": true,
@@ -594,7 +594,7 @@
         {
           "disabled": false,
           "document": "计费方式",
-          "example": "无",
+          "example": "{\"ChargeType\":\"POSTPAID_BY_HOUR\",\"RenewFlag\":0,\"TimeSpan\":1,\"TimeUnit\":\"h\"}",
           "member": "ChargeProperties",
           "name": "ChargeProperties",
           "required": true,
@@ -603,7 +603,7 @@
         {
           "disabled": false,
           "document": "集群密码",
-          "example": "\"cdw1234\"",
+          "example": "cdw_2025",
           "member": "string",
           "name": "AdminPassword",
           "required": true,
@@ -612,7 +612,7 @@
         {
           "disabled": false,
           "document": "资源信息",
-          "example": "无",
+          "example": "[{\"Count\":2,\"DiskSpec\":{\"DiskCount\":1,\"DiskSize\":200,\"DiskType\":\"CLOUD_HSSD\"},\"SpecName\":\"S_4_16_H_CN\",\"Type\":\"cn\"},{\"Count\":2,\"DiskSpec\":{\"DiskCount\":10,\"DiskSize\":20,\"DiskType\":\"CLOUD_HSSD\"},\"SpecName\":\"S_4_16_H\",\"Type\":\"dn\"}]",
           "member": "ResourceSpecNew",
           "name": "Resources",
           "required": true,
@@ -621,7 +621,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "无",
+          "example": "{\"TagKey\":\"k1\",\"TagValue\":\"v1\"}",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -630,7 +630,7 @@
         {
           "disabled": false,
           "document": "版本",
-          "example": "无",
+          "example": "3.16.9.4",
           "member": "string",
           "name": "ProductVersion",
           "required": false,
@@ -655,7 +655,7 @@
         {
           "disabled": false,
           "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cdwpg-xxx",
+          "example": "cdwpg-dfsgdxdfs",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -942,7 +942,7 @@
         {
           "disabled": false,
           "document": "返回信息总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -952,7 +952,7 @@
         {
           "disabled": false,
           "document": "错误日志详细信息",
-          "example": "无",
+          "example": "[{\"Database\":\"postgres\",\"ErrorMessage\":\"2025-03-20 12:12:05.850 CST [unknown] 9.0.107.9(48928) postgres tbase 347135 0ERROR:  function fn_stat_get_activity\",\"UserName\":\"tbase\"}]",
           "member": "ErrorLogDetail",
           "name": "ErrorLogDetails",
           "output_required": true,
@@ -1825,40 +1825,40 @@
         {
           "disabled": false,
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "tbase",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cdwpg",
+          "example": "postgres",
           "member": "string",
           "name": "Database",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "报错时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-03-20 12:08:05",
           "member": "string",
           "name": "ErrorTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "报错信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2025-03-20 12:08:05.847 CST [unknown] 9.0.107.9(44402) postgres tbase 342423 0ERROR",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3256,7 +3256,7 @@
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "nc2.large",
+          "example": "S_4_16_H_CN",
           "member": "string",
           "name": "SpecName",
           "required": true,
@@ -3283,7 +3283,7 @@
         {
           "disabled": false,
           "document": "资源类型，DATA",
-          "example": "Local",
+          "example": "cn",
           "member": "string",
           "name": "Type",
           "required": true,

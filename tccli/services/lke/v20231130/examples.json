@@ -732,14 +732,6 @@
         "title": "重命名文档-提交成功"
       }
     ],
-    "ResetSession": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"your session id\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"76ad8e10-2e25-4702-8b15-1dbbe4ee2c3b\"\n    }\n}",
-        "title": "重置会话"
-      }
-    ],
     "RetryDocAudit": [
       {
         "document": "文档审核重试",

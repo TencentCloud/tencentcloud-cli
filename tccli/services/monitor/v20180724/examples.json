@@ -70,6 +70,14 @@
         "title": "创建报警规则"
       }
     ],
+    "CreateConditionsTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConditionsTemplate\n<公共请求参数>\n\n{\n    \"EventConditions\": [\n        {\n            \"EventID\": \"123\",\n            \"AlarmNotifyType\": \"0\",\n            \"AlarmNotifyPeriod\": \"123\",\n            \"RuleID\": 0\n        }\n    ],\n    \"Remark\": \"abcd\",\n    \"ViewName\": \"cvm\",\n    \"Module\": \"monitor\",\n    \"IsUnionRule\": 0,\n    \"GroupName\": \"abcd\",\n    \"IsShielded\": 0,\n    \"ComplexExpression\": \"(1 AND 2) OR 3\",\n    \"ParentGroupID\": 0,\n    \"Conditions\": [\n        {\n            \"RuleID\": 0,\n            \"MetricID\": 0,\n            \"CalcType\": \"1\",\n            \"AlarmNotifyPeriod\": \"0\",\n            \"ContinuePeriod\": \"1\",\n            \"AlarmNotifyType\": 0,\n            \"CalcPeriod\": \"60\",\n            \"CalcValue\": \"0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupID\": 1998842,\n        \"RequestId\": \"'4cf37d0d-99f9-4050-a08e-88e2b97017a8\"\n    }\n}",
+        "title": "创建告警条件模板"
+      }
+    ],
     "CreateExporterIntegration": [
       {
         "document": "参数说明：\n1. InstanceId 是 Prometheus 实例 ID，必填\n2. Kind 参数固定为 `emr-exporter`，必填\n3. Content 参数格式如示例。说明如下：\n4.1. kind 是集成类型，必填且这里固定为 `emr-exporter`\n4.2. spec.job 是抓取配置，必填，yaml格式，具体可参考[EMR 接入文档](https://cloud.tencent.com/document/product/1416/92850#cb099aba-2dd3-42e6-bc10-69db3999a5a8)",

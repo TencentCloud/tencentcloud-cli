@@ -13,7 +13,9 @@ tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
     --Filters.0.Value 663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac \
     --Limit 0 \
     --Offset 10 \
-    --InstanceId 52Dpv13GR \
+    --InstanceId apm-52Dpv13GR \
+    --StartTime 1742374000 \
+    --EndTime 1742374331 \
     --BusinessName tdmq
 ```
 
@@ -91,7 +93,8 @@ tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
     --Offset 10 \
     --InstanceId 52Dpv13GR \
     --BusinessName tdmq \
-    --StartTime 1621923035
+    --StartTime 1621923035 \
+    --EndTime 1621923038
 ```
 
 Output: 

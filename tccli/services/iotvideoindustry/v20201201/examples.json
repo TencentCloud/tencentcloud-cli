@@ -474,7 +474,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageForwards\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IntId\": 1,\n                \"Uin\": \"admin\",\n                \"MessageType\": \"[1]\",\n                \"RegionName\": \"广州\",\n                \"Instance\": \"ckafka\",\n                \"InstanceName\": \"卡夫卡\",\n                \"TopicId\": \"topic\",\n                \"TopicName\": \"topicname\",\n                \"CreateTime\": \"2021-09-30T17:26:47+08:00\",\n                \"UpdateTime\": \"2021-09-30T17:26:47+08:00\"\n            }\n        ],\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"IntId\": 1,\n                \"Uin\": \"admin\",\n                \"MessageType\": \"[1]\",\n                \"RegionId\": \"gz\",\n                \"RegionName\": \"广州\",\n                \"Instance\": \"ckafka\",\n                \"InstanceName\": \"卡夫卡\",\n                \"TopicId\": \"topic\",\n                \"TopicName\": \"topicname\",\n                \"CreateTime\": \"2021-09-30T17:26:47+08:00\",\n                \"UpdateTime\": \"2021-09-30T17:26:47+08:00\"\n            }\n        ],\n        \"RequestId\": \"1d7a62c9-db36-4a5f-9209-2e420883e28f\",\n        \"Total\": 1\n    }\n}",
         "title": "查看消息转发配置列表"
       }
     ],

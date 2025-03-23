@@ -36,7 +36,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: svp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanUsage\n<公共请求参数>\n\n{\n    \"StartDate\": \"2024-03-01\",\n    \"EndDate\": \"2024-05-01\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"TimeInterval\": \"month\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"626b5af9-5c9e-4ffb-ab6c-ec370b75a355\",\n        \"Total\": 1,\n        \"Usages\": [\n            {\n                \"CostAmount\": \"600\",\n                \"DeductAmount\": \"600\",\n                \"DosageAmount\": \"0\",\n                \"LossAmount\": \"0\",\n                \"NetSavings\": \"-600\",\n                \"PromiseAmount\": \"600\",\n                \"Region\": [\n                    \"*\"\n                ],\n                \"SpType\": \"svp_common\",\n                \"Status\": 1,\n                \"UtilizationRate\": 100\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"626b5af9-5c9e-4ffb-ab6c-ec370b75a355\",\n        \"Total\": 1,\n        \"Usages\": [\n            {\n                \"CostAmount\": \"600\",\n                \"DeductAmount\": \"600\",\n                \"DosageAmount\": \"0\",\n                \"LossAmount\": \"0\",\n                \"NetSavings\": \"-600\",\n                \"PromiseAmount\": \"600\",\n                \"Region\": [\n                    \"15\"\n                ],\n                \"SpType\": \"svp_common\",\n                \"Status\": 1,\n                \"UtilizationRate\": 100\n            }\n        ]\n    }\n}",
         "title": "查询节省计划使用率明细示例"
       }
     ]

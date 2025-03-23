@@ -889,6 +889,13 @@
       "output": "ModifyL7AccRuleResponse",
       "status": "online"
     },
+    "ModifyL7AccRulePriority": {
+      "document": "本接口用于修改[规则引擎](https://cloud.tencent.com/document/product/1552/70901)中规则列表的优先级，本接口需要传入站点 ID 下完整的规则 ID 列表，规则 ID 列表可以通过[查询七层加速规则](https://cloud.tencent.com/document/product/1552/115820)接口获取，最终优先级顺序将调整成规则 ID 列表的顺序，从前往后执行。",
+      "input": "ModifyL7AccRulePriorityRequest",
+      "name": "修改七层加速规则优先级",
+      "output": "ModifyL7AccRulePriorityResponse",
+      "status": "online"
+    },
     "ModifyL7AccSetting": {
       "document": "本接口用于修改[站点加速](https://cloud.tencent.com/document/product/1552/96193)全局配置。",
       "input": "ModifyL7AccSettingRequest",
@@ -11537,7 +11544,7 @@
         {
           "disabled": false,
           "document": "匹配条件的参数名称，取值有：\n<li>body_depth：请求正文包部分的检测深度。</li>",
-          "example": "无",
+          "example": "body_depth",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -11547,8 +11554,8 @@
         },
         {
           "disabled": false,
-          "document": "匹配条件的参数值，取值与 Name 成对使用。\n当 Name 值为 body_depth 时， Values 只支持传入单个值，取值有：\n<li>8KB；</li>\n<li>64KB；</li>\n<li>128KB。</li>",
-          "example": "无",
+          "document": "匹配条件的参数值，取值与 Name 成对使用。\n当 Name 值为 body_depth 时， Values 只支持传入单个值，取值有：\n<li>10KB；</li>\n<li>64KB；</li>\n<li>128KB。</li>",
+          "example": "[\"10KB\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -11582,7 +11589,7 @@
         {
           "disabled": false,
           "document": "规则Id。仅出参使用。",
-          "example": "无",
+          "example": "10468982785",
           "member": "uint64",
           "name": "RuleId",
           "output_required": false,
@@ -11593,7 +11600,7 @@
         {
           "disabled": false,
           "document": "规则名称。仅出参使用。",
-          "example": "无",
+          "example": "请求正文最大检测长度",
           "member": "string",
           "name": "RuleName",
           "output_required": false,
@@ -11604,7 +11611,7 @@
         {
           "disabled": false,
           "document": "规则描述，仅出参使用。",
-          "example": "无",
+          "example": "在检查请求正文内容时，安全策略仅检测一定长度范围内的请求正文数据，超过该范围的数据不会触发安全策略。您可以选择如何处理正文超长的请求。",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -11626,7 +11633,7 @@
         {
           "disabled": false,
           "document": "处置方式，取值有：\n<li>skip：当请求正文数据超过 Conditions 出参中 body_depth 设置的检测深度时，跳过所有请求正文内容的检测；</li>\n<li>scan：仅检测 Conditions 出参中 body_depth 设置的检测深度，对超出部分的请求正文内容直接截断处理，超出部分的请求正文不会经过安全检测。</li>仅出参使用。",
-          "example": "无",
+          "example": "scan",
           "member": "string",
           "name": "Action",
           "output_required": false,
@@ -16364,6 +16371,42 @@
     },
     "ModifyL4ProxyStatusResponse": {
       "document": "ModifyL4ProxyStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7AccRulePriorityRequest": {
+      "document": "ModifyL7AccRulePriority请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-example",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "站点 ID 下完整的规则 ID 列表，规则 ID 列表可以通过 [查询七层加速规则](https://cloud.tencent.com/document/product/1552/115820) 获取，最终优先级顺序将调整成规则 ID 列表的顺序，从前往后依次执行。",
+          "example": "[\"rule-example1\", \"rule-example2\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7AccRulePriorityResponse": {
+      "document": "ModifyL7AccRulePriority返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

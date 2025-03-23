@@ -310,23 +310,23 @@
         },
         {
           "disabled": false,
-          "document": "活动结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活动结束时间",
           "example": "2021-10-05 01:02:14",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云服务器实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器实例ID",
           "example": "ins-qgks4wwf",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -336,36 +336,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景类型，支持WINDOWS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景类型，支持WINDOWS",
           "example": "WINDOWS",
           "member": "string",
           "name": "Scene",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运行Agent的User\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行Agent的User",
           "example": "12348349197419",
           "member": "string",
           "name": "User",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运行Agent的Session\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行Agent的Session",
           "example": "95af4dd1-c6cd-4294-9439-f55028895c62",
           "member": "string",
           "name": "Session",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -425,58 +425,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用程序的交付方式，包括PACKAGE、LOCAL 两种取值，分别指远程存储的软件包、计算环境本地。",
           "example": "LOCAL",
           "member": "string",
           "name": "DeliveryForm",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务执行命令。与Commands不能同时指定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行命令。与Commands不能同时指定。",
           "example": "sleep 10",
           "member": "string",
           "name": "Command",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用程序软件包的远程存储路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用程序软件包的远程存储路径",
           "example": "/tmp",
           "member": "string",
           "name": "PackagePath",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用使用Docker的相关配置。在使用Docker配置的情况下，DeliveryForm 为 LOCAL 表示直接使用Docker镜像内部的应用软件，通过Docker方式运行；DeliveryForm 为 PACKAGE，表示将远程应用包注入到Docker镜像后，通过Docker方式运行。为避免Docker不同版本的兼容性问题，Docker安装包及相关依赖由Batch统一负责，对于已安装Docker的自定义镜像，请卸载后再使用Docker特性。",
           "example": "无",
           "member": "Docker",
           "name": "Docker",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务执行命令信息。与Command不能同时指定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行命令信息。与Command不能同时指定。",
           "example": "无",
           "member": "CommandLine",
           "name": "Commands",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -522,36 +522,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权场景，例如COS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权场景，例如COS",
           "example": "COS",
           "member": "string",
           "name": "Scene",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SecretId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SecretId",
           "example": "AKIDUdi16HNjSuTl027Q9ThAzpuXIjNx",
           "member": "string",
           "name": "SecretId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "SecretKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SecretKey",
           "example": "Udi16HNjSuTl027Q9ThAzpuXIjN",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -561,14 +561,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行命令。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务执行命令。",
           "example": "echo hello world",
           "member": "string",
           "name": "Command",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -588,23 +588,23 @@
         },
         {
           "disabled": false,
-          "document": "计算环境名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算环境名称",
           "example": "demo",
           "member": "string",
           "name": "EnvName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计算环境描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算环境描述",
           "example": "it is a first job",
           "member": "string",
           "name": "EnvDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -628,43 +628,43 @@
         },
         {
           "disabled": false,
-          "document": "数据盘挂载选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘挂载选项",
           "example": "无",
           "member": "MountDataDisk",
           "name": "MountDataDisks",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "输入映射\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入映射",
           "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权信息",
           "example": "无",
           "member": "Authentication",
           "name": "Authentications",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知信息",
           "example": "无",
           "member": "Notification",
           "name": "Notifications",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -678,13 +678,13 @@
         },
         {
           "disabled": false,
-          "document": "计算环境标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算环境标签列表",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1433,25 +1433,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "依赖关系的起点任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "依赖关系的起点任务名称",
           "example": "TaskA",
           "member": "string",
           "name": "StartTask",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "依赖关系的终点任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "依赖关系的终点任务名称",
           "example": "TaskB",
           "member": "string",
           "name": "EndTask",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1591,7 +1591,7 @@
           "example": "env-qleawxzt",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1601,19 +1601,19 @@
           "example": "test compute env",
           "member": "string",
           "name": "EnvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计算环境描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计算环境描述",
           "example": "test compute env",
           "member": "string",
           "name": "EnvDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1621,7 +1621,7 @@
           "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1631,7 +1631,7 @@
           "example": "无",
           "member": "EnvData",
           "name": "EnvData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1641,7 +1641,7 @@
           "example": "无",
           "member": "MountDataDisk",
           "name": "MountDataDisks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1651,7 +1651,7 @@
           "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1661,7 +1661,7 @@
           "example": "无",
           "member": "Authentication",
           "name": "Authentications",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1671,7 +1671,7 @@
           "example": "无",
           "member": "Notification",
           "name": "Notifications",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1681,7 +1681,7 @@
           "example": "2",
           "member": "int64",
           "name": "DesiredComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1691,7 +1691,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2250,13 +2250,13 @@
         },
         {
           "disabled": false,
-          "document": "下一步动作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下一步动作",
           "example": "TERMINATING",
           "member": "string",
           "name": "NextAction",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2845,14 +2845,14 @@
         },
         {
           "disabled": false,
-          "document": "Docker命令运行参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Docker命令运行参数。",
           "example": "-u root",
           "member": "string",
           "name": "DockerRunOption",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3278,25 +3278,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境变量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量名称",
           "example": "batch_demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "环境变量取值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量取值",
           "example": "first_demo",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3334,25 +3334,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义键",
           "example": "batch_demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义值",
           "example": "first-demo",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3425,36 +3425,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "源端路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源端路径",
           "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/",
           "member": "string",
           "name": "SourcePath",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目的端路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目的端路径",
           "example": "/home/input/",
           "member": "string",
           "name": "DestinationPath",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "挂载配置项参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂载配置项参数",
           "example": "-odbglevel=info",
           "member": "string",
           "name": "MountOptionParameter",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4274,13 +4274,13 @@
         },
         {
           "disabled": false,
-          "document": "位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "位置信息",
           "example": "无",
           "member": "Placement",
           "name": "Placement",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4294,13 +4294,13 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "2024-12-19 14:40:37",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4314,13 +4314,13 @@
         },
         {
           "disabled": false,
-          "document": "作业绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作业绑定的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4536,25 +4536,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "挂载点，Linux系统合法路径，或Windows系统盘符,比如\"H:\\\\\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂载点，Linux系统合法路径，或Windows系统盘符,比如\"H:\\\\\"",
           "example": "/data/tmp",
           "member": "string",
           "name": "LocalPath",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统类型，Linux系统下支持\"EXT3\"和\"EXT4\"两种，默认\"EXT3\"；Windows系统下仅支持\"NTFS\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统类型，Linux系统下支持\"EXT3\"和\"EXT4\"两种，默认\"EXT3\"；Windows系统下仅支持\"NTFS\"",
           "example": "EXT3",
           "member": "string",
           "name": "FileSystemType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5084,47 +5084,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "标准输出重定向路径; \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出重定向路径; ",
           "example": "cos://kelvin-test-1351762227.cos.ap-nanjing.myqcloud.com/batch_test/",
           "member": "string",
           "name": "StdoutRedirectPath",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误重定向路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误重定向路径",
           "example": "cos://kelvin-test-1351762227.cos.ap-nanjing.myqcloud.com/batch_test/",
           "member": "string",
           "name": "StderrRedirectPath",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}",
           "example": "demo_stdout.log",
           "member": "string",
           "name": "StdoutRedirectFileName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}",
           "example": "demo_stderr.log",
           "member": "string",
           "name": "StderrRedirectFileName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5134,47 +5134,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "标准输出重定向本地路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出重定向本地路径",
           "example": "/tmp/log/",
           "member": "string",
           "name": "StdoutLocalPath",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误重定向本地路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误重定向本地路径",
           "example": "/tmp/log/",
           "member": "string",
           "name": "StderrLocalPath",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}",
           "example": "job-5ewdqncb-stdout.log",
           "member": "string",
           "name": "StdoutLocalFileName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误重定向本地文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}",
           "example": "job-5ewdqncb-stderr.log",
           "member": "string",
           "name": "StderrLocalFileName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5445,25 +5445,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键。",
           "example": "batch_tag",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值。",
           "example": "batch-demo",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5687,63 +5687,63 @@
         },
         {
           "disabled": false,
-          "document": "标准输出日志（Base64编码，解码后最大日志长度2048字节）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出日志（Base64编码，解码后最大日志长度2048字节）",
           "example": "MApWTV8zMl80X2NlbnRvcwo",
           "member": "string",
           "name": "StdoutLog",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误日志（Base64编码，解码后最大日志长度2048字节）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误日志（Base64编码，解码后最大日志长度2048字节）",
           "example": "MApWTV8zMl80X2NlbnRvcwo",
           "member": "string",
           "name": "StderrLog",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准输出重定向路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出重定向路径",
           "example": "cos://batch-test-11762227.cos.ap-shanghai.myqcloud.com/batch_test/",
           "member": "string",
           "name": "StdoutRedirectPath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误重定向路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误重定向路径",
           "example": "cos://batch-test-11762227.cos.ap-shanghai.myqcloud.com/batch_test/",
           "member": "string",
           "name": "StderrRedirectPath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准输出重定向文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准输出重定向文件名",
           "example": "stdout.log",
           "member": "string",
           "name": "StdoutRedirectFileName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标准错误重定向文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标准错误重定向文件名",
           "example": "stderr.log",
           "member": "string",
           "name": "StderrRedirectFileName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5753,83 +5753,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "Submitted个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Submitted个数",
           "example": "1",
           "member": "int64",
           "name": "SubmittedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Pending个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Pending个数",
           "example": "1",
           "member": "int64",
           "name": "PendingCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Runnable个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Runnable个数",
           "example": "1",
           "member": "int64",
           "name": "RunnableCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Starting个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Starting个数",
           "example": "1",
           "member": "int64",
           "name": "StartingCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Running个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Running个数",
           "example": "1",
           "member": "int64",
           "name": "RunningCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Succeed个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Succeed个数",
           "example": "1",
           "member": "int64",
           "name": "SucceedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "FailedInterrupted个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "FailedInterrupted个数",
           "example": "1",
           "member": "int64",
           "name": "FailedInterruptedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Failed个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Failed个数",
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5859,13 +5859,13 @@
         },
         {
           "disabled": false,
-          "document": "应用程序执行结束的exit code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用程序执行结束的exit code",
           "example": "1",
           "member": "int64",
           "name": "ExitCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5879,13 +5879,13 @@
         },
         {
           "disabled": false,
-          "document": "任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化",
           "example": "ins-g9mp0ppm",
           "member": "string",
           "name": "ComputeNodeInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5899,33 +5899,33 @@
         },
         {
           "disabled": false,
-          "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启动时间",
           "example": "2024-12-19 14:43:49",
           "member": "string",
           "name": "LaunchTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始运行时间",
           "example": "2024-12-19 14:46:49",
           "member": "string",
           "name": "RunningTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "2024-12-19 14:48:17",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5955,83 +5955,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "Submitted个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Submitted个数",
           "example": "1",
           "member": "int64",
           "name": "SubmittedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Pending个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Pending个数",
           "example": "1",
           "member": "int64",
           "name": "PendingCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Runnable个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Runnable个数",
           "example": "1",
           "member": "int64",
           "name": "RunnableCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Starting个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Starting个数",
           "example": "1",
           "member": "int64",
           "name": "StartingCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Running个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Running个数",
           "example": "1",
           "member": "int64",
           "name": "RunningCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Succeed个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Succeed个数",
           "example": "1",
           "member": "int64",
           "name": "SucceedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "FailedInterrupted个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "FailedInterrupted个数",
           "example": "1",
           "member": "int64",
           "name": "FailedInterruptedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Failed个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Failed个数",
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

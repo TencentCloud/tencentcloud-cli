@@ -10714,63 +10714,63 @@
         },
         {
           "disabled": false,
-          "document": "机器组绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器组绑定的标签列表",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启机器组自动更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启机器组自动更新",
           "example": "\"true\"",
           "member": "string",
           "name": "AutoUpdate",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "升级开始时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级开始时间，建议业务低峰期升级LogListener",
           "example": "\"12:00:00\"",
           "member": "string",
           "name": "UpdateStartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "升级结束时间，建议业务低峰期升级LogListener\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级结束时间，建议业务低峰期升级LogListener",
           "example": "\"13:00:00\"",
           "member": "string",
           "name": "UpdateEndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费",
           "example": "true",
           "member": "bool",
           "name": "ServiceLogging",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "机器组中机器离线定期清理时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器组中机器离线定期清理时间",
           "example": "30",
           "member": "int64",
           "name": "DelayCleanupTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10838,13 +10838,13 @@
         },
         {
           "disabled": false,
-          "document": "机器实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器实例ID",
           "example": "loglistener-1462d334-0fb6-5f36-28d8-209e1b17ea2d",
           "member": "string",
           "name": "InstanceID",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10998,25 +10998,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标名称",
           "example": "ErrorMessage",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指标内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标内容",
           "example": "Unauthorized",
           "member": "string",
           "name": "Value",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13001,14 +13001,14 @@
         },
         {
           "disabled": false,
-          "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。",
           "example": "*/1 * * * *",
           "member": "string",
           "name": "CronExpression",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13018,25 +13018,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "触发条件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发条件。",
           "example": "[$1.__QUERYCOUNT__]> 0",
           "member": "string",
           "name": "Condition",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n\n- 不填则默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n\n- 不填则默认为0。",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13083,25 +13083,25 @@
         },
         {
           "disabled": false,
-          "document": "告警触发通知内容模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警触发通知内容模板。",
           "example": "无",
           "member": "NoticeContentInfo",
           "name": "TriggerContent",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警恢复通知内容模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警恢复通知内容模板。",
           "example": "无",
           "member": "NoticeContentInfo",
           "name": "RecoveryContent",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13111,36 +13111,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板标题信息。\n部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板标题信息。\n部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。",
           "example": "这是标题。",
           "member": "string",
           "name": "Title",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知内容模板正文信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板正文信息。",
           "example": "这是正文。",
           "member": "string",
           "name": "Content",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。\n仅“自定义回调”支持该配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。\n仅“自定义回调”支持该配置。",
           "example": "[\"Content-Type:application/json\"]",
           "member": "string",
           "name": "Headers",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13150,93 +13150,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知内容模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板ID。",
           "example": "noticetemplate-0dffefa3-xxxx-xxxx-a1f6-84854de6e908",
           "member": "string",
           "name": "NoticeContentId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知内容模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板名称",
           "example": "监控告警专用",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语言类型。\n\n0： 中文\n1： 英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语言类型。\n\n0： 中文\n1： 英文",
           "example": "0",
           "member": "uint64",
           "name": "Type",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知内容模板信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板信息。",
           "example": "无",
           "member": "NoticeContent",
           "name": "NoticeContents",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知内容模板标记。\n\n0： 用户自定义\n1： 系统内置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板标记。\n\n0： 用户自定义\n1： 系统内置",
           "example": "0",
           "member": "uint64",
           "name": "Flag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建者主账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者主账号。",
           "example": "1000010111112",
           "member": "uint64",
           "name": "Uin",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建/修改者子账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建/修改者子账号。",
           "example": "1000219612312",
           "member": "uint64",
           "name": "SubUin",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间 秒级时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间 秒级时间戳。",
           "example": "1705923855",
           "member": "int64",
           "name": "CreateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间 秒级时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间 秒级时间戳。",
           "example": "1706149043",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13279,14 +13279,14 @@
         },
         {
           "disabled": false,
-          "document": "通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。",
           "example": "\"noticetemplate-1eba4ed8-9584-40e3-a948-c8cff121eed1\"",
           "member": "string",
           "name": "NoticeContentId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13329,80 +13329,80 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配规则 JSON串。\n**rule规则树格式为嵌套结构体JSON字符串**\n`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,0]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"NotIn\",\"Type\":\"Compare\"},{\"Value\":\"[2]\",\"Type\":\"Value\"}]}]}]}`\n\n**rule规则树限制规则如下**：\n- 顶层rule中Type可取值：`Condition`，`Operation`\n- Type为`Operation`的子节点支持的Type可取值：`Condition`，`Operation`\n- Type为`Condition`的子节点支持的Type可取值：`String`，`Compare`，`Array`，`TimeRange`，`Value`，`Key`\n- 其他Type无子节点\n- 当rule Type为`Operation`时，value可取值：`AND`，`OR`\n- 当rule Type为`Condition`时，value不可为空，子节点个数不能小于2\n    - 当子节点Type为  `Compare` 时，value可取值：`>`，`<`，`>=`，`<=`，`=`，`!=`，`Between`，`NotBetween`，`=~`，`!=~`，`In`，`NotIn`\n    - value为`Between`，`NotBetween`时，下一个子节点value必须是长度为2的数组\n    - value为`=~`，`!=~`时，下一个子节点value必须是一个正则表达式\n    - value为`In`，`NotIn`时， 下一个子节点value必须是一个数组\n\n**业务参数含义**：\n- Type：Condition 表示是规则条件，Value：Level 表示告警等级\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：0（警告），1（提醒），2 （紧急）\n以下示例表示：告警等级属于提醒\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Level\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}`\n\n- Type：Condition 表示是规则条件，Value：NotifyType 表示通知类型\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：1（告警通知），2 （恢复通知）\n以下示例表示：通知类型属于告警通知或通知类型不属于恢复通知\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：AlarmID 表示告警策略\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：告警策略id数组\n以下示例表示：告警策略属于alarm-53af048c-254b-4c73-bb48-xxx,alarm-6dfa8bc5-08da-4d64-b6cb-xxx或告警策略不属于alarm-1036314c-1e49-4cee-a8fb-xxx\n`\"{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmID\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"alarm-53af048c-254b-4c73-bb48-xxx\\\\\\\",\\\\\\\"alarm-6dfa8bc5-08da-4d64-b6cb-xxx\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmID\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"alarm-1036314c-1e49-4cee-a8fb-xxx\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\"`\n\n- Type：Condition 表示是规则条件，Value：AlarmName 表示告警策略名称\n    - 子节点Type支持`Compare`，Value支持`=~`，`!=~`\n    - 下一个子节点value支持的值：必须是正则表达式\n以下示例表示：告警策略名称正则匹配^test$或告警策略名称正则不匹配^hahaha$\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmName\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^test$\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmName\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"!=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^hahaha$\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：Label 表示告警分类字段\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`，`=~`，`!=~`\n    - 下一个子节点value支持的值：`In`，`NotIn` 时value是数组，`=~`，`!=~`时value是正则表达式\n以下示例表示：告警分类字段key1属于v1或告警分类字段key2不属于v2或告警分类字段key3正则匹配^test$或告警分类字段key4正则不匹配^hahaha$\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key1\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"v1\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key2\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"v2\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key3\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^test$\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key4\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"!=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^hahaha$\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：NotifyTime 表示通知时间\n    - 子节点Type支持`Compare`，Value支持`Between `，`NotBetween `\n    - 下一个子节点value支持的值：长度为2，格式为`14:20:36`的字符串数组\n以下示例表示：通知时间在指定范围内14:18:36至14:33:36或通知时间不在指定范围内14:20:36至14:30:36\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyTime\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"Between\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"14:18:36\\\\\\\",\\\\\\\"14:33:36\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyTime\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotBetween\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"14:20:36\\\\\\\",\\\\\\\"14:30:36\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：Duration 表示告警持续时间\n    - 子节点Type支持`Compare`，Value支持`>`，`<`，`>=`，`<=`\n    - 下一个子节点value支持的值：整型值单位分钟\n以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\">\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":1,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\">=\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":2,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"<\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":3,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"<=\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":4,\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配规则 JSON串。\n**rule规则树格式为嵌套结构体JSON字符串**\n`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,0]\",\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Level\",\"Children\":[{\"Value\":\"NotIn\",\"Type\":\"Compare\"},{\"Value\":\"[2]\",\"Type\":\"Value\"}]}]}]}`\n\n**rule规则树限制规则如下**：\n- 顶层rule中Type可取值：`Condition`，`Operation`\n- Type为`Operation`的子节点支持的Type可取值：`Condition`，`Operation`\n- Type为`Condition`的子节点支持的Type可取值：`String`，`Compare`，`Array`，`TimeRange`，`Value`，`Key`\n- 其他Type无子节点\n- 当rule Type为`Operation`时，value可取值：`AND`，`OR`\n- 当rule Type为`Condition`时，value不可为空，子节点个数不能小于2\n    - 当子节点Type为  `Compare` 时，value可取值：`>`，`<`，`>=`，`<=`，`=`，`!=`，`Between`，`NotBetween`，`=~`，`!=~`，`In`，`NotIn`\n    - value为`Between`，`NotBetween`时，下一个子节点value必须是长度为2的数组\n    - value为`=~`，`!=~`时，下一个子节点value必须是一个正则表达式\n    - value为`In`，`NotIn`时， 下一个子节点value必须是一个数组\n\n**业务参数含义**：\n- Type：Condition 表示是规则条件，Value：Level 表示告警等级\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：0（警告），1（提醒），2 （紧急）\n以下示例表示：告警等级属于提醒\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Level\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}`\n\n- Type：Condition 表示是规则条件，Value：NotifyType 表示通知类型\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：1（告警通知），2 （恢复通知）\n以下示例表示：通知类型属于告警通知或通知类型不属于恢复通知\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：AlarmID 表示告警策略\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`\n    - 下一个子节点value支持的值：告警策略id数组\n以下示例表示：告警策略属于alarm-53af048c-254b-4c73-bb48-xxx,alarm-6dfa8bc5-08da-4d64-b6cb-xxx或告警策略不属于alarm-1036314c-1e49-4cee-a8fb-xxx\n`\"{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmID\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"alarm-53af048c-254b-4c73-bb48-xxx\\\\\\\",\\\\\\\"alarm-6dfa8bc5-08da-4d64-b6cb-xxx\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmID\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"alarm-1036314c-1e49-4cee-a8fb-xxx\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}\"`\n\n- Type：Condition 表示是规则条件，Value：AlarmName 表示告警策略名称\n    - 子节点Type支持`Compare`，Value支持`=~`，`!=~`\n    - 下一个子节点value支持的值：必须是正则表达式\n以下示例表示：告警策略名称正则匹配^test$或告警策略名称正则不匹配^hahaha$\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmName\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^test$\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"AlarmName\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"!=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^hahaha$\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：Label 表示告警分类字段\n    - 子节点Type支持`Compare`，Value支持`In`，`NotIn`，`=~`，`!=~`\n    - 下一个子节点value支持的值：`In`，`NotIn` 时value是数组，`=~`，`!=~`时value是正则表达式\n以下示例表示：告警分类字段key1属于v1或告警分类字段key2不属于v2或告警分类字段key3正则匹配^test$或告警分类字段key4正则不匹配^hahaha$\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key1\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"v1\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key2\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"NotIn\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"v2\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key3\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^test$\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Label\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"key4\\\",\\\"Type\\\":\\\"Key\\\"},{\\\"Value\\\":\\\"!=~\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"^hahaha$\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：NotifyTime 表示通知时间\n    - 子节点Type支持`Compare`，Value支持`Between `，`NotBetween `\n    - 下一个子节点value支持的值：长度为2，格式为`14:20:36`的字符串数组\n以下示例表示：通知时间在指定范围内14:18:36至14:33:36或通知时间不在指定范围内14:20:36至14:30:36\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyTime\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"Between\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"14:18:36\\\\\\\",\\\\\\\"14:33:36\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyTime\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"NotBetween\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[\\\\\\\"14:20:36\\\\\\\",\\\\\\\"14:30:36\\\\\\\"]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}]}`\n\n- Type：Condition 表示是规则条件，Value：Duration 表示告警持续时间\n    - 子节点Type支持`Compare`，Value支持`>`，`<`，`>=`，`<=`\n    - 下一个子节点value支持的值：整型值单位分钟\n以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟\n`{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"OR\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\">\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":1,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\">=\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":2,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"<\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":3,\\\"Type\\\":\\\"Value\\\"}]},{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"Duration\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"<=\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":4,\\\"Type\\\":\\\"Value\\\"}]}]}]}`",
           "example": "{\\\"Value\\\":\\\"AND\\\",\\\"Type\\\":\\\"Operation\\\",\\\"Children\\\":[{\\\"Type\\\":\\\"Condition\\\",\\\"Value\\\":\\\"NotifyType\\\",\\\"Children\\\":[{\\\"Value\\\":\\\"In\\\",\\\"Type\\\":\\\"Compare\\\"},{\\\"Value\\\":\\\"[1,2]\\\",\\\"Type\\\":\\\"Value\\\"}]}]}",
           "member": "string",
           "name": "Rule",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警通知接收者信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知接收者信息。",
           "example": "无",
           "member": "NoticeReceiver",
           "name": "NoticeReceivers",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警通知模板回调信息，包括企业微信、钉钉、飞书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警通知模板回调信息，包括企业微信、钉钉、飞书。",
           "example": "无",
           "member": "WebCallback",
           "name": "WebCallbacks",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false",
           "example": "false",
           "member": "bool",
           "name": "Escalate",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1\n- 无人认领且未恢复：告警没有恢复并且没有人认领则升级\n- 未恢复：当前告警持续未恢复则升级\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1\n- 无人认领且未恢复：告警没有恢复并且没有人认领则升级\n- 未恢复：当前告警持续未恢复则升级\n",
           "example": "1",
           "member": "uint64",
           "name": "Type",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警升级间隔。单位：分钟，范围`[1，14400]`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警升级间隔。单位：分钟，范围`[1，14400]`",
           "example": "1",
           "member": "uint64",
           "name": "Interval",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警升级后下一个环节的通知渠道配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警升级后下一个环节的通知渠道配置",
           "example": "无",
           "member": "EscalateNoticeInfo",
           "name": "EscalateNotice",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13505,14 +13505,14 @@
         },
         {
           "disabled": false,
-          "document": "解析失败赋值信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析失败赋值信息",
           "example": "NotExist",
           "member": "string",
           "name": "KeyNonExistingField",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14342,23 +14342,23 @@
         },
         {
           "disabled": false,
-          "document": "语法规则，0：Lucene语法，1：CQL语法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语法规则，0：Lucene语法，1：CQL语法",
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。1：关闭，2：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启投递服务日志。1：关闭，2：开启。",
           "example": "1",
           "member": "uint64",
           "name": "HasServicesLog",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14957,13 +14957,13 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的过滤规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递日志的过滤规则",
           "example": "无",
           "member": "FilterRuleInfo",
           "name": "FilterRules",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -14977,23 +14977,23 @@
         },
         {
           "disabled": false,
-          "document": "投递日志的压缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递日志的压缩配置",
           "example": "无",
           "member": "CompressInfo",
           "name": "Compress",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "投递日志的内容格式配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递日志的内容格式配置",
           "example": "无",
           "member": "ContentInfo",
           "name": "Content",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15007,73 +15007,73 @@
         },
         {
           "disabled": false,
-          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
           "example": "1",
           "member": "uint64",
           "name": "FilenameMode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "投递数据范围的开始时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递数据范围的开始时间点",
           "example": "1670642281",
           "member": "int64",
           "name": "StartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "投递数据范围的结束时间点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递数据范围的结束时间点",
           "example": "0",
           "member": "int64",
           "name": "EndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "历史数据投递的进度（仅当用户选择的数据内中历史数据时才有效）",
           "example": "5.6",
           "member": "float",
           "name": "Progress",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "历史数据全部投递完成剩余的时间（仅当用户选择的数据中有历史数据时才有效）",
           "example": "23",
           "member": "int64",
           "name": "RemainTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "历史任务状态：\n0：实时任务\n1：任务准备中\n2：任务运行中\n3：任务运行异常\n4：任务运行结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "历史任务状态：\n0：实时任务\n1：任务准备中\n2：任务运行中\n3：任务运行异常\n4：任务运行结束",
           "example": "1",
           "member": "int64",
           "name": "HistoryStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cos桶类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cos桶类型",
           "example": "MAZ_STANDARD",
           "member": "string",
           "name": "StorageType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15452,13 +15452,13 @@
         },
         {
           "disabled": false,
-          "document": "主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题描述",
           "example": "xx部门xx业务topic",
           "member": "string",
           "name": "Describes",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15492,13 +15492,13 @@
         },
         {
           "disabled": false,
-          "document": "日志主题扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志主题扩展信息",
           "example": "无",
           "member": "TopicExtendInfo",
           "name": "Extends",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15655,80 +15655,80 @@
         },
         {
           "disabled": false,
-          "document": "集成配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集成配置ID。",
           "example": "\"webcallback-aaa-bbb-ccc-ddd\"",
           "member": "string",
           "name": "WebCallbackId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回调方法。可选值：\n- POST（默认值）\n- PUT\n\n注意：\n- 参数CallbackType为Http时为必选，其它回调方式无需填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调方法。可选值：\n- POST（默认值）\n- PUT\n\n注意：\n- 参数CallbackType为Http时为必选，其它回调方式无需填写。",
           "example": "POST",
           "member": "string",
           "name": "Method",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。",
           "example": "\"noticetemplate-1eba4ed8-9584-40e3-a948-c8cff121eed1\"",
           "member": "string",
           "name": "NoticeContentId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "提醒类型。\n\n0：不提醒；1：指定人；2：所有人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提醒类型。\n\n0：不提醒；1：指定人；2：所有人",
           "example": "0",
           "member": "uint64",
           "name": "RemindType",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "电话列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "电话列表。",
           "example": "[\"15111111111\"]",
           "member": "string",
           "name": "Mobiles",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID列表。",
           "example": "[\"11234\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该参数已废弃，请使用NoticeContentId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数已废弃，请使用NoticeContentId。",
           "example": "[\"Content-Type: application/json\"]",
           "member": "string",
           "name": "Headers",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -668,13 +668,13 @@
         },
         {
           "disabled": false,
-          "document": "集群活动状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动状态码。",
           "example": "ActivitySuccess",
           "member": "string",
           "name": "ActivityStatusCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -718,23 +718,23 @@
         },
         {
           "disabled": false,
-          "document": "集群活动开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动开始时间。",
           "example": "2021-11-01T02:17:20Z",
           "member": "datetime_iso",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群活动结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群活动结束时间。",
           "example": "2021-11-01T02:17:38Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -804,13 +804,13 @@
         },
         {
           "disabled": false,
-          "document": "集群调度器版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群调度器版本。",
           "example": "21.08.8",
           "member": "string",
           "name": "SchedulerVersion",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2444,23 +2444,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统master的ip和端口列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统master的ip和端口列表。",
           "example": "[\"172.16.0.2:55533\",\"172.16.0.3:55533\",\"172.16.0.4:55533\"]",
           "member": "string",
           "name": "Masters",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统的本地挂载路径。GooseFSx目前只支持挂载在/goosefsx/{文件系统ID}_proxy/目录下。",
           "example": "/goosefsx/x_c60_54oi5id3_proxy/",
           "member": "string",
           "name": "LocalPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

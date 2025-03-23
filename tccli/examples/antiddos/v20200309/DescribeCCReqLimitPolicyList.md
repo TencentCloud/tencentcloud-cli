@@ -31,7 +31,7 @@ Output:
                     "Action": "alg",
                     "ExecuteDuration": 120,
                     "Mode": "equal",
-                    "Uri": "/",
+                    "Uri": "www.a.com",
                     "UserAgent": "",
                     "Cookie": ""
                 },
