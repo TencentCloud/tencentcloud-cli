@@ -461,7 +461,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleSharingList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
-        "title": "批量查询控制台检索页/仪表盘免登陆分享站点示例"
+        "title": "批量查询控制台检索页/仪表盘免登录分享站点示例"
       }
     ],
     "DescribeConsumer": [

@@ -4501,6 +4501,34 @@
       ],
       "usage": "both"
     },
+    "GooseFSx": {
+      "document": "GosseFSx的配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "goosefsx实例id",
+          "example": "gs-fsxfs",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GooseFSx实例需要挂载的路径",
+          "example": "/model",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GpuDetail": {
       "document": "gpu 详情",
       "members": [
@@ -5994,10 +6022,21 @@
         {
           "disabled": false,
           "document": "cos路径信息",
-          "example": "{}",
+          "example": "无",
           "member": "CosPathInfo",
           "name": "CosPathInfo",
           "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GooseFSx的配置，ModelSource为GooseFSx时有效",
+          "example": "无",
+          "member": "GooseFSx",
+          "name": "GooseFSx",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false

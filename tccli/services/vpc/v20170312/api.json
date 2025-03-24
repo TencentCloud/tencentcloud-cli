@@ -23921,7 +23921,7 @@
         {
           "disabled": false,
           "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,

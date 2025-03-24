@@ -1,0 +1,293 @@
+{
+  "actions": {
+    "ConfirmCommonServiceWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfirmCommonServiceWorkOrder\n<公共请求参数>\n\n{\n    \"OrderId\": \"ord-24122617232912748\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56d72661-0f9d-40ab-b3ca-a4adb352996e\"\n    }\n}",
+        "title": "确认通用服务"
+      }
+    ],
+    "CreateCommonServiceWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCommonServiceWorkOrder\n<公共请求参数>\n\n{\n    \"DevicePositionSet\": [\n        {\n            \"Sn\": \"217404176\",\n            \"RackName\": \"M203-B14\",\n            \"IdcUnitId\": 2555,\n            \"PositionCode\": 1\n        }\n    ],\n    \"ServiceLevel\": 1,\n    \"PreAuthorization\": true,\n    \"ContactName\": \"张三\",\n    \"ContactPhone\": \"13800138000\",\n    \"DeviceType\": \"server\",\n    \"Instructions\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7600c206-c7c2-40f8-bea8-195a2efa8c7a\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"itCommon\",\n                \"ServiceType\": \"serverCommon\",\n                \"WorkOrderId\": \"ord-25030711115960582\"\n            }\n        ]\n    }\n}",
+        "title": "提交服务器类型的通用服务工单"
+      }
+    ],
+    "CreateModelEvaluationWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelEvaluationWorkOrder\n<公共请求参数>\n\n{\n    \"ModelSet\": [\n        {\n            \"DevModel\": \"IBM X3650 M5 013\",\n            \"Version\": \"V1\"\n        }\n    ],\n    \"CampusId\": 163,\n    \"DeviceType\": \"server\",\n    \"Remark\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bee9bdf-b631-414d-8d9b-20bdaddb87a2\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"modelEvaluation\",\n                \"ServiceType\": \"modelEvaluation\",\n                \"WorkOrderId\": \"ord-25030711220788330\"\n            }\n        ]\n    }\n}",
+        "title": "创建服务器类型的设备型号评估工单"
+      }
+    ],
+    "CreateMovingWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMovingWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 373,\n    \"DeviceType\": \"server\",\n    \"WithPowerOn\": false,\n    \"DeviceMovingList\": [\n        {\n            \"DeviceSn\": \"LD-SERVER-20250124-002\",\n            \"DstRackName\": \"M302-J01\",\n            \"DstPositionCode\": \"20\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd5139d4-b3fa-41ef-bf7a-9e8166975903\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"rackOff\",\n                \"ServiceType\": \"moving\",\n                \"WorkOrderId\": \"ord-25030714334568923\"\n            },\n            {\n                \"OrderType\": \"rackOn\",\n                \"ServiceType\": \"moving\",\n                \"WorkOrderId\": \"ord-25030714334565831\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备搬迁工单"
+      }
+    ],
+    "CreateNetDeviceModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetDeviceModel\n<公共请求参数>\n\n{\n    \"ModelDetail\": {\n        \"DevModel\": \"XXX-test\",\n        \"DevWidth\": \"370－446\",\n        \"DevDepth\": \"≤1000\",\n        \"DevWeight\": \"≤50\",\n        \"MountEar\": \"否\",\n        \"AccordCCC\": \"是\",\n        \"PassNetwork\": \"是\",\n        \"PowerportType\": \"C13\",\n        \"PowerModule\": \"交流\",\n        \"PowermoduleNum\": \"2\",\n        \"PowermodulePosition\": \"设备后端\",\n        \"HighVoltageAdapt\": \"否\",\n        \"PowerEnergy\": \"350\",\n        \"InwindPosition\": \"前\",\n        \"OutwindPosition\": \"后\",\n        \"BusinessPortPosition\": \"后\",\n        \"LineManager\": \"否\",\n        \"DevHeight\": \"2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DevModel\": \"XXX-test\",\n        \"RequestId\": \"24943157-d39d-44b7-ad4f-c9498f6a3b23\",\n        \"Version\": \"V1\"\n    }\n}",
+        "title": "创建网络设备型号"
+      }
+    ],
+    "CreatePersonnelVisitWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePersonnelVisitWorkOrder\n<公共请求参数>\n\n{\n    \"PersonnelSet\": [\n        {\n            \"IDCardNumber\": \"****\",\n            \"IDCardType\": \"IDENTITY_CARD\",\n            \"Company\": \"某某公司\",\n            \"LanguageType\": \"CHINESE\",\n            \"Name\": \"张三\",\n            \"TelNumber\": \"13800138000\",\n            \"Position\": \"工程师\",\n            \"Wechat\": \"zhangsan_wechat\",\n            \"Email\": \"zhangsan@example.com\"\n        }\n    ],\n    \"IdcId\": 373,\n    \"IdcUnitIdSet\": [\n        2555\n    ],\n    \"EnterStartTime\": \"2025-03-08 17:25:04\",\n    \"EnterEndTime\": \"2025-03-10 17:25:04\",\n    \"VisitReason\": [\n        \"IT_OPERATION\"\n    ],\n    \"VisitRemark\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"289288d7-d662-4b66-b4ef-d18d8913ca18\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"personnelVisit\",\n                \"ServiceType\": \"personnelVisit\",\n                \"WorkOrderId\": \"ord-25030711303576000\"\n            }\n        ]\n    }\n}",
+        "title": "创建人员到访工单"
+      }
+    ],
+    "CreatePowerOffWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePowerOffWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 2005,\n    \"DeviceType\": \"server\",\n    \"IsPowerOffConfirm\": \"1\",\n    \"DeviceSnList\": [\n        \"lihwli02130003\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f60e609f-eaa9-43c2-ba21-fcbc9e321efe\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"powerOff\",\n                \"ServiceType\": \"powerOff\",\n                \"WorkOrderId\": \"ord-25030714181161269\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备关电工单"
+      }
+    ],
+    "CreatePowerOnWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePowerOnWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 373,\n    \"DeviceType\": \"server\",\n    \"DeviceSnList\": [\n        \"TEN948P04K\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18a2463c-d31c-4125-8d28-7c5f018e7440\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"powerOn\",\n                \"ServiceType\": \"powerOn\",\n                \"WorkOrderId\": \"ord-25030711320087815\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备开电工单"
+      }
+    ],
+    "CreateQuitWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQuitWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 2005,\n    \"DeviceType\": \"server\",\n    \"StuffOption\": \"2\",\n    \"IsPowerOffConfirm\": \"1\",\n    \"DeviceSnList\": [\n        \"lihwli021718420010\"\n    ],\n    \"HandoverMethod\": \"2\",\n    \"CustomerReceipt\": {\n        \"PickUpStuff\": \"张三\",\n        \"PickUpStuffContact\": \"15311111111\",\n        \"PickUpStuffIDCard\": \"100000000000000005\",\n        \"PickUpTime\": \"2025-03-08 12:00:00\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ece01139-3175-4f9e-8c15-3a513839c405\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"powerOff\",\n                \"ServiceType\": \"quit\",\n                \"WorkOrderId\": \"ord-25030714282926976\"\n            },\n            {\n                \"OrderType\": \"rackOff\",\n                \"ServiceType\": \"quit\",\n                \"WorkOrderId\": \"ord-25030714282967608\"\n            },\n            {\n                \"OrderType\": \"quit\",\n                \"ServiceType\": \"quit\",\n                \"WorkOrderId\": \"ord-25030714282957052\"\n            },\n            {\n                \"OrderType\": \"personnelVisit\",\n                \"ServiceType\": \"quit\",\n                \"WorkOrderId\": \"ord-25030714282880371\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备退出工单"
+      }
+    ],
+    "CreateRackOffWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRackOffWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 2005,\n    \"DeviceType\": \"server\",\n    \"StuffOption\": \"2\",\n    \"IsPowerOffConfirm\": \"1\",\n    \"DeviceSnList\": [\n        \"lihwli021718420012\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5b09296a-8e17-4033-846e-79acaf3bc809\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"powerOff\",\n                \"ServiceType\": \"rackOff\",\n                \"WorkOrderId\": \"ord-25030714251078382\"\n            },\n            {\n                \"OrderType\": \"rackOff\",\n                \"ServiceType\": \"rackOff\",\n                \"WorkOrderId\": \"ord-25030714251022115\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备下架工单"
+      }
+    ],
+    "CreateRackOnWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRackOnWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 373,\n    \"DeviceType\": \"server\",\n    \"StuffOption\": \"2\",\n    \"WithPowerOn\": false,\n    \"DeviceRackOnList\": [\n        {\n            \"DeviceSn\": \"lihwli10225021\",\n            \"DstRackName\": \"M302-J01\",\n            \"DstPositionCode\": \"7\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4fd6eff1-2613-48dd-be51-a74ac082ff34\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"rackOn\",\n                \"ServiceType\": \"rackOn\",\n                \"WorkOrderId\": \"ord-25030711311423914\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备上架工单"
+      }
+    ],
+    "CreateReceivingWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReceivingWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 159,\n    \"DeviceType\": \"server\",\n    \"EntryTime\": \"2025-03-08 00:00:00\",\n    \"ReceivingOperation\": \"1\",\n    \"IsExpressDelivery\": false,\n    \"ServerDeviceList\": [\n        {\n            \"DeviceSn\": \"chc20250308xxx001\",\n            \"ModelVersion\": \"DELL R740-T1-V1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1006a5c-4a9f-463e-963a-7f6ba01edffe\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"receiving\",\n                \"ServiceType\": \"receiving\",\n                \"WorkOrderId\": \"ord-25030711283032499\"\n            }\n        ]\n    }\n}",
+        "title": "创建设备收货工单"
+      }
+    ],
+    "CreateServerModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServerModel\n<公共请求参数>\n\n{\n    \"ModelDetail\": {\n        \"DevModel\": \"XXX-TEST\",\n        \"DevNode\": \"1\",\n        \"DevHeight\": \"9\",\n        \"PowerEnergy\": \"500\",\n        \"PowerportType\": \"C14\",\n        \"PowermoduleNum\": \"2\",\n        \"InwindPosition\": \"前\",\n        \"OutwindPosition\": \"后\",\n        \"NetportPosition\": \"设备后端\",\n        \"DevWidth\": \"<370\",\n        \"DevDepth\": \"≤780\",\n        \"DevWeight\": \"≤50\",\n        \"PowerModule\": \"兼容直流270DC和交流\",\n        \"PowermodulePosition\": \"设备后端\",\n        \"NetportType\": \"电口\",\n        \"NetSpeed\": \"千兆\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DevModel\": \"XXX-TEST\",\n        \"RequestId\": \"21f5aef1-4251-4f47-81de-aaf03c4cbfa5\",\n        \"Version\": \"V1\"\n    }\n}",
+        "title": "创建新服务器型号"
+      }
+    ],
+    "DescribeAvailableModelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableModelList\n<公共请求参数>\n\n{\n    \"IdcId\": 373,\n    \"DeviceType\": \"server\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelVersionSet\": [\n            {\n                \"DevHeight\": \"2\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"SFT1502-III-V1\"\n            },\n            {\n                \"DevHeight\": \"30\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"lhshen server test 03-V1\"\n            },\n            {\n                \"DevHeight\": \"2\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"DELL R740-T1-V1\"\n            },\n            {\n                \"DevHeight\": \"2\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"Dell R740-T001-V1\"\n            },\n            {\n                \"DevHeight\": \"4\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"LD-002-V1\"\n            },\n            {\n                \"DevHeight\": \"2\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"LD-SERVER-001-V1\"\n            },\n            {\n                \"DevHeight\": \"23\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"BM X3650 M5003-V1\"\n            },\n            {\n                \"DevHeight\": \"22\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"IBM X3650 M5007-V1\"\n            },\n            {\n                \"DevHeight\": \"69\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"lihwli0217001-V2\"\n            },\n            {\n                \"DevHeight\": \"23\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"234-V1\"\n            },\n            {\n                \"DevHeight\": \"1\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"QW LD003 V1-V1\"\n            },\n            {\n                \"DevHeight\": \"1\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"QW LD003 V2-V1\"\n            },\n            {\n                \"DevHeight\": \"23\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"lihwli02250001-V1\"\n            },\n            {\n                \"DevHeight\": \"11\",\n                \"DeviceType\": \"server\",\n                \"ModelVersion\": \"lhshen-test-V1\"\n            }\n        ],\n        \"RequestId\": \"5bc61ca8-aa3c-4307-a239-873fbb8e5b18\"\n    }\n}",
+        "title": "查看客户可用的服务器型号列表"
+      }
+    ],
+    "DescribeCampusList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCampusList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CampusSet\": [\n            {\n                \"CampusId\": 6,\n                \"CampusName\": \"天津-滨海\"\n            },\n            {\n                \"CampusId\": 163,\n                \"CampusName\": \"天津-武清\"\n            }\n        ],\n        \"RequestId\": \"28707dca-e6ba-4e19-97bb-c7c1753865d3\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeCommonServiceWorkOrderDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCommonServiceWorkOrderDetail\n<公共请求参数>\n\n{\n    \"OrderId\": \"ord-25030712531166778\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"ContactName\": \"test\",\n            \"ContactPhone\": \"13134567876\",\n            \"IdcName\": \"天津数据备份中心东区4栋DC\",\n            \"Instructions\": \"remark\",\n            \"PreAuthorization\": true,\n            \"ServiceLevel\": 1\n        },\n        \"DeviceSet\": [\n            {\n                \"DeviceType\": \"netDevice\",\n                \"IdcName\": \"天津数据备份中心东区4栋DC\",\n                \"IdcUnitName\": \"天津数据备份中心东区4栋DCM208\",\n                \"RackName\": \"M208-C08\",\n                \"Sn\": \"lhshenNet101\"\n            }\n        ],\n        \"OrderStatus\": \"finish\",\n        \"RequestId\": \"8df49659-bc07-4364-ab1b-2c5981d3ab61\",\n        \"StepSet\": [\n            {\n                \"FinishTime\": \"2025-03-07 12:53:11\",\n                \"OwnerName\": \"test\",\n                \"StepName\": \"发起申请\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"2025-03-07 13:02:37\",\n                \"OwnerName\": \"\",\n                \"StepName\": \"现场实施\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"\",\n                \"OwnerName\": \"\",\n                \"StepName\": \"客户验证确认\",\n                \"StepStatus\": \"processing\"\n            }\n        ]\n    }\n}",
+        "title": "请求网络设备的通用服务订单详情"
+      }
+    ],
+    "DescribeCustomerInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CustomerInfo\": {\n            \"CustomerName\": \"XX科技有限公司\",\n            \"ShortCustomerName\": \"XX公司\",\n            \"WholeFlag\": true\n        },\n        \"RequestId\": \"5026a8d1-3619-4d79-89e8-0f6e63357a77\"\n    }\n}",
+        "title": "获取用户信息"
+      }
+    ],
+    "DescribeDeviceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceList\n<公共请求参数>\n\n{\n    \"DeviceType\": \"server\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceSet\": [\n            {\n                \"AssetId\": \"TH24122400001\",\n                \"DeviceType\": \"server\",\n                \"IdcId\": 159,\n                \"IdcName\": \"天津数据备份中心东区DC\",\n                \"IdcUnitId\": 596,\n                \"IdcUnitName\": \"天津数据备份中心东区DC1栋M303\",\n                \"Ip\": \"\",\n                \"ModelVersion\": \"DELL R420-V2\",\n                \"OnshelfDate\": \"2025-01-02\",\n                \"PositionCode\": 20,\n                \"PowerOnTime\": \"2025-01-02\",\n                \"RackId\": 15452,\n                \"RackName\": \"M303-C15\",\n                \"ServerTypeId\": 1,\n                \"Sn\": \"20241218chc0001\",\n                \"Status\": \"POWER_OFF\",\n                \"SvrIsSpecial\": 0\n            }\n        ],\n        \"RequestId\": \"13e97f35-2559-4a69-a4ea-38c5d9f42c80\",\n        \"Total\": 2513\n    }\n}",
+        "title": "查询服务器设备列表"
+      }
+    ],
+    "DescribeDeviceWorkOrderDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceWorkOrderDetail\n<公共请求参数>\n\n{\n    \"OrderId\": \"ord-25022518110325063\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"DeviceType\": \"server\",\n            \"IdcId\": 373,\n            \"IdcName\": \"天津数据备份中心东区3栋DC\",\n            \"IsPowerOffConfirm\": \"1\",\n            \"Remark\": \"\",\n            \"StuffOption\": \"2\"\n        },\n        \"DeviceSet\": [\n            {\n                \"AssetId\": \"TH2502250006E\",\n                \"DeviceType\": \"server\",\n                \"IdcId\": 373,\n                \"IdcName\": \"天津数据备份中心东区3栋DC\",\n                \"IdcUnitId\": 2559,\n                \"IdcUnitName\": \"天津数据备份中心东区3栋DCM204\",\n                \"PositionCode\": 4,\n                \"RackName\": \"M204-J10\",\n                \"Sn\": \"lihwli10225011\"\n            },\n            {\n                \"AssetId\": \"TH2502250006D\",\n                \"DeviceType\": \"server\",\n                \"IdcId\": 373,\n                \"IdcName\": \"天津数据备份中心东区3栋DC\",\n                \"IdcUnitId\": 2559,\n                \"IdcUnitName\": \"天津数据备份中心东区3栋DCM204\",\n                \"PositionCode\": 3,\n                \"RackName\": \"M204-J10\",\n                \"Sn\": \"lihwli10225012\"\n            }\n        ],\n        \"OrderId\": \"ord-25022518110325063\",\n        \"OrderStatus\": \"finish\",\n        \"OrderType\": \"rackOff\",\n        \"RequestId\": \"c03f33b4-e3e3-4c22-9af3-e8791cee35df\",\n        \"ServiceType\": \"rackOff\",\n        \"StepSet\": [\n            {\n                \"FinishTime\": \"2025-02-25 18:11:03\",\n                \"OwnerName\": \"godwin2@test.com\",\n                \"StepName\": \"发起申请\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"2025-02-25 18:12:05\",\n                \"OwnerName\": \"\",\n                \"StepName\": \"数经审核\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"2025-02-25 18:18:07\",\n                \"OwnerName\": \"\",\n                \"StepName\": \"现场实施\",\n                \"StepStatus\": \"finish\"\n            }\n        ]\n    }\n}",
+        "title": "查询设备类工单详情"
+      }
+    ],
+    "DescribeIdcUnitAssetDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdcUnitAssetDetail\n<公共请求参数>\n\n{\n    \"IdcUnitId\": 2569\n}",
+        "output": "{\n    \"Response\": {\n        \"IdcUnitDetail\": {\n            \"Address\": \"天津市滨海新区第六大街与北海路口泰达服务外包产业园信环南街\",\n            \"AssetManager\": \"张三\",\n            \"AssetManagerTelNumber\": \"1380013800\",\n            \"Operator\": \"zhangsan\",\n            \"TelNumber\": \"\"\n        },\n        \"RequestId\": \"8616a5eb-6edd-4d76-b081-fc4c429c3162\"\n    }\n}",
+        "title": "查询机房管理单元信息"
+      }
+    ],
+    "DescribeIdcUnitDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdcUnitDetail\n<公共请求参数>\n\n{\n    \"IdcUnitId\": 2563\n}",
+        "output": "{\n    \"Response\": {\n        \"IdcUnitDetail\": {\n            \"Address\": \"天津市滨海新区第六大街与北海路口泰达服务外包产业园信环南街9号\",\n            \"Operator\": \"zhangsan\",\n            \"TelNumber\": \"\"\n        },\n        \"RequestId\": \"545f1583-698c-4d9a-92fe-544f100769c2\"\n    }\n}",
+        "title": "查询机房管理单元信息"
+      }
+    ],
+    "DescribeIdcs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdcs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"IdcSet\": [\n            {\n                \"IdcId\": 373,\n                \"IdcName\": \"天津数据备份中心东区3栋DC\",\n                \"IdcUnitSet\": [\n                    {\n                        \"CageSet\": [\n                            {\n                                \"CageName\": \"cage2\",\n                                \"CheckerSet\": []\n                            }\n                        ],\n                        \"IdcUnitId\": 2555,\n                        \"IdcUnitName\": \"天津数据备份中心东区3栋DCM202\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"b8211320-9409-4ec7-b75f-11674b2bc9fc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModel\n<公共请求参数>\n\n{\n    \"DevModel\": \"IBM X3650 M5007\",\n    \"CampusId\": 163,\n    \"DeviceType\": \"server\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelSet\": [\n            {\n                \"CheckResult\": 0,\n                \"OptionSet\": [\n                    {\n                        \"CompareType\": \"--\",\n                        \"InputHint\": \"\",\n                        \"InputInfo\": \"请注意节点数代表服务器子机数量，正常情况下标准服务器均为1\",\n                        \"InputType\": \"dropDown\",\n                        \"OptionKey\": \"devNode\",\n                        \"OptionName\": \"节点数\",\n                        \"OptionValue\": \"1\",\n                        \"Standard\": \"--\",\n                        \"StandardInfo\": \"--\",\n                        \"ValueType\": \"number\"\n                    },\n                    {\n                        \"CompareType\": \"--\",\n                        \"InputHint\": \"填写设备高度（正整数，不带U）\",\n                        \"InputInfo\": \"\",\n                        \"InputType\": \"int\",\n                        \"OptionKey\": \"devHeight\",\n                        \"OptionName\": \"高度(u)\",\n                        \"OptionValue\": \"22\",\n                        \"Standard\": \"1u=44.45mm\",\n                        \"StandardInfo\": \"1u=44.45mm\",\n                        \"ValueType\": \"number\"\n                    },\n                    {\n                        \"CompareType\": \"<\",\n                        \"InputHint\": \"填写正整数\",\n                        \"InputInfo\": \"\",\n                        \"InputType\": \"int\",\n                        \"OptionKey\": \"powerEnergy\",\n                        \"OptionName\": \"功耗(W)\",\n                        \"OptionValue\": \"699\",\n                        \"Standard\": \"4400\",\n                        \"StandardInfo\": \"单柜<4400/6600\",\n                        \"ValueType\": \"number\"\n                    }\n                ],\n                \"Version\": \"V1\"\n            }\n        ],\n        \"RequestId\": \"c1957d1a-3d98-4463-83ee-d12896ab5bde\"\n    }\n}",
+        "title": "查看服务器设备型号详情"
+      }
+    ],
+    "DescribeModelEvaluationWorkOrderDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelEvaluationWorkOrderDetail\n<公共请求参数>\n\n{\n    \"OrderId\": \"ord-25030519265285037\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"CampusName\": \"天津-武清\",\n            \"CustomerName\": \"某某公司\",\n            \"DeviceType\": \"server\",\n            \"Remark\": \"zhangsan\"\n        },\n        \"NetDeviceModelSet\": [],\n        \"OrderStatus\": \"finish\",\n        \"RequestId\": \"8ca708b5-695c-4c2d-be1a-39dd5c559710\",\n        \"ServerModelSet\": [\n            {\n                \"CheckResult\": 1,\n                \"ModelVersion\": \"LHSHEN T2121 S5-V1\",\n                \"OptionSet\": [\n                    {\n                        \"CompareType\": \"--\",\n                        \"InputHint\": \"\",\n                        \"InputInfo\": \"请注意节点数代表服务器子机数量，正常情况下标准服务器均为1\",\n                        \"InputType\": \"dropDown\",\n                        \"OptionKey\": \"devNode\",\n                        \"OptionName\": \"节点数\",\n                        \"OptionValue\": \"1\",\n                        \"Standard\": \"--\",\n                        \"StandardInfo\": \"--\",\n                        \"ValueType\": \"number\"\n                    },\n                    {\n                        \"CompareType\": \"--\",\n                        \"InputHint\": \"填写设备高度（正整数，不带U）\",\n                        \"InputInfo\": \"\",\n                        \"InputType\": \"int\",\n                        \"OptionKey\": \"devHeight\",\n                        \"OptionName\": \"高度(u)\",\n                        \"OptionValue\": \"22\",\n                        \"Standard\": \"1u=44.45mm\",\n                        \"StandardInfo\": \"1u=44.45mm\",\n                        \"ValueType\": \"number\"\n                    },\n                    {\n                        \"CompareType\": \"<\",\n                        \"InputHint\": \"填写正整数\",\n                        \"InputInfo\": \"\",\n                        \"InputType\": \"int\",\n                        \"OptionKey\": \"powerEnergy\",\n                        \"OptionName\": \"功耗(W)\",\n                        \"OptionValue\": \"330\",\n                        \"Standard\": \"4400\",\n                        \"StandardInfo\": \"单柜<4400/6600\",\n                        \"ValueType\": \"number\"\n                    }\n                ]\n            }\n        ],\n        \"StepSet\": [\n            {\n                \"FinishTime\": \"2025-03-05 19:26:52\",\n                \"OwnerName\": \"zhangsan\",\n                \"StepName\": \"发起申请\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"2025-03-05 19:36:24\",\n                \"OwnerName\": \"lisi\",\n                \"StepName\": \"现场实施\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"2025-03-05 19:36:24\",\n                \"OwnerName\": \"\",\n                \"StepName\": \"结单\",\n                \"StepStatus\": \"finish\"\n            }\n        ]\n    }\n}",
+        "title": "查看服务器设备型号评估工单详情"
+      }
+    ],
+    "DescribeModelTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelTemplate\n<公共请求参数>\n\n{\n    \"DeviceType\": \"server\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cb9293d-5bd1-4e2d-9dd3-d289b0d6c113\",\n        \"TemplateDetail\": [\n            {\n                \"CompareType\": \"--\",\n                \"InputHint\": \"\",\n                \"InputInfo\": \"请注意节点数代表服务器子机数量，正常情况下标准服务器均为1\",\n                \"InputType\": \"dropDown\",\n                \"OptionKey\": \"DevNode\",\n                \"OptionName\": \"节点数\",\n                \"OptionValueSet\": [\n                    {\n                        \"OptionValue\": \"1\",\n                        \"Selected\": true\n                    },\n                    {\n                        \"OptionValue\": \"4\",\n                        \"Selected\": false\n                    }\n                ],\n                \"Standard\": \"--\",\n                \"StandardInfo\": \"--\",\n                \"ValueType\": \"number\"\n            },\n            {\n                \"CompareType\": \"--\",\n                \"InputHint\": \"填写设备高度（正整数，不带U）\",\n                \"InputInfo\": \"\",\n                \"InputType\": \"int\",\n                \"OptionKey\": \"DevHeight\",\n                \"OptionName\": \"高度(u)\",\n                \"OptionValueSet\": [],\n                \"Standard\": \"1u=44.45mm\",\n                \"StandardInfo\": \"1u=44.45mm\",\n                \"ValueType\": \"number\"\n            },\n            {\n                \"CompareType\": \"<\",\n                \"InputHint\": \"填写正整数\",\n                \"InputInfo\": \"\",\n                \"InputType\": \"int\",\n                \"OptionKey\": \"PowerEnergy\",\n                \"OptionName\": \"功耗(W)\",\n                \"OptionValueSet\": [],\n                \"Standard\": \"4400\",\n                \"StandardInfo\": \"单柜<4400/6600\",\n                \"ValueType\": \"number\"\n            }\n        ]\n    }\n}",
+        "title": "获取型号的填写模板"
+      }
+    ],
+    "DescribeModelVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelVersionList\n<公共请求参数>\n\n{\n    \"DeviceType\": \"server\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ModelVersionSet\": [\n            {\n                \"DevModel\": \"Test\",\n                \"VersionCount\": 1\n            }\n        ],\n        \"RequestId\": \"d8d199be-bde9-4f2b-bcf7-3a979233b66a\"\n    }\n}",
+        "title": "获取型号和对应版本数量"
+      }
+    ],
+    "DescribePersonnelVisitWorkOrderDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePersonnelVisitWorkOrderDetail\n<公共请求参数>\n\n{\n    \"OrderId\": \"ord-25030712514742548\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"EnterEndTime\": \"2025-03-21 00:00:00\",\n            \"EnterStartTime\": \"2025-03-20 00:00:00\",\n            \"IdcName\": \"天津数据备份中心东区3栋DC\",\n            \"IdcUnitNameList\": [\n                \"天津数据备份中心东区3栋DCM202\"\n            ],\n            \"VisitReason\": [\n                \"OTHER\"\n            ],\n            \"VisitRemark\": \"test\"\n        },\n        \"OrderStatus\": \"processing\",\n        \"PersonnelSet\": [\n            {\n                \"Company\": \"1\",\n                \"Email\": \"\",\n                \"IDCardNumber\": \"100000000000000005\",\n                \"IDCardType\": \"IDENTITY_CARD\",\n                \"LanguageType\": \"CHINESE\",\n                \"Name\": \"1\",\n                \"Position\": \"\",\n                \"TelNumber\": \"13134567876\",\n                \"Wechat\": \"\"\n            }\n        ],\n        \"RequestId\": \"50904c59-ffef-4fef-b504-2c637f98906a\",\n        \"StepSet\": [\n            {\n                \"FinishTime\": \"2025-03-07 12:51:47\",\n                \"OwnerName\": \"zhangsan\",\n                \"StepName\": \"发起申请\",\n                \"StepStatus\": \"finish\"\n            },\n            {\n                \"FinishTime\": \"\",\n                \"OwnerName\": \"zhangsan\",\n                \"StepName\": \"数经助理审批\",\n                \"StepStatus\": \"processing\"\n            }\n        ]\n    }\n}",
+        "title": "获取人员到访"
+      }
+    ],
+    "DescribePositionStatusSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePositionStatusSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54c5a2de-513a-4d98-93c8-c0a682364495\",\n        \"StatusCountSet\": [\n            {\n                \"Count\": 7442,\n                \"PositionStatus\": 0\n            },\n            {\n                \"Count\": 29447,\n                \"PositionStatus\": 1\n            },\n            {\n                \"Count\": 313,\n                \"PositionStatus\": 2\n            },\n            {\n                \"Count\": 3,\n                \"PositionStatus\": 3\n            },\n            {\n                \"Count\": 0,\n                \"PositionStatus\": 4\n            }\n        ],\n        \"Total\": 37205\n    }\n}",
+        "title": "获取机位数据汇总"
+      }
+    ],
+    "DescribePositions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePositions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PositionSet\": [\n            {\n                \"Height\": 2,\n                \"IdcId\": 159,\n                \"IdcName\": \"天津数据备份中心东区DC\",\n                \"IdcUnitId\": 596,\n                \"IdcUnitName\": \"天津数据备份中心东区DC1栋M303\",\n                \"PlanDeviceType\": 8,\n                \"PositionCode\": \"10\",\n                \"PositionId\": 158660,\n                \"PositionStatus\": 0,\n                \"RackId\": 15451,\n                \"RackName\": \"M303-C14\"\n            }\n        ],\n        \"RequestId\": \"718aa630-5ccb-4ffa-983b-f627c433379e\",\n        \"Total\": 37205\n    }\n}",
+        "title": "获取机位列表"
+      }
+    ],
+    "DescribeRacks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRacks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RackSet\": [\n            {\n                \"HostingType\": \"客户独享\",\n                \"IdcId\": 159,\n                \"IdcName\": \"天津数据备份中心东区DC\",\n                \"IdcUnitId\": 568,\n                \"IdcUnitName\": \"天津数据备份中心东区DC1栋M301\",\n                \"IsPowerOn\": true,\n                \"RackId\": 15082,\n                \"RackName\": \"M301-E10\",\n                \"RackOpenTime\": \"2021-09-06\"\n            }\n        ],\n        \"RequestId\": \"4df8264f-8348-4e02-98d3-bb4e85c651be\",\n        \"Total\": 2217\n    }\n}",
+        "title": "获取机架列表"
+      }
+    ],
+    "DescribeRacksDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRacksDistribution\n<公共请求参数>\n\n{\n    \"IdcUnitId\": 2555\n}",
+        "output": "{\n    \"Response\": {\n        \"DistributionSet\": [\n            {\n                \"RackNumber\": \"C\",\n                \"RackUsageSet\": [\n                    {\n                        \"RackId\": 91831,\n                        \"RackShortName\": \"C01\",\n                        \"TotalNum\": 10,\n                        \"UnusedNum\": 8,\n                        \"UsedNum\": 2,\n                        \"UsedRate\": 0.2\n                    },\n                    {\n                        \"RackId\": 91840,\n                        \"RackShortName\": \"C04\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 5,\n                        \"UsedNum\": 20,\n                        \"UsedRate\": 0.8\n                    },\n                    {\n                        \"RackId\": 91843,\n                        \"RackShortName\": \"C05\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 10,\n                        \"UsedNum\": 16,\n                        \"UsedRate\": 0.62\n                    },\n                    {\n                        \"RackId\": 91846,\n                        \"RackShortName\": \"C06\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 19,\n                        \"UsedNum\": 6,\n                        \"UsedRate\": 0.24\n                    },\n                    {\n                        \"RackId\": 91849,\n                        \"RackShortName\": \"C07\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 22,\n                        \"UsedNum\": 3,\n                        \"UsedRate\": 0.12\n                    },\n                    {\n                        \"RackId\": 91852,\n                        \"RackShortName\": \"C08\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 26,\n                        \"UsedNum\": 0,\n                        \"UsedRate\": 0\n                    },\n                    {\n                        \"RackId\": 91855,\n                        \"RackShortName\": \"C09\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 23,\n                        \"UsedNum\": 2,\n                        \"UsedRate\": 0.08\n                    },\n                    {\n                        \"RackId\": 91858,\n                        \"RackShortName\": \"C10\",\n                        \"TotalNum\": 10,\n                        \"UnusedNum\": 10,\n                        \"UsedNum\": 0,\n                        \"UsedRate\": 0\n                    },\n                    {\n                        \"RackId\": 91867,\n                        \"RackShortName\": \"C13\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 11,\n                        \"UsedNum\": 14,\n                        \"UsedRate\": 0.56\n                    },\n                    {\n                        \"RackId\": 91870,\n                        \"RackShortName\": \"C14\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 15,\n                        \"UsedNum\": 11,\n                        \"UsedRate\": 0.42\n                    },\n                    {\n                        \"RackId\": 91873,\n                        \"RackShortName\": \"C15\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 23,\n                        \"UsedNum\": 2,\n                        \"UsedRate\": 0.08\n                    }\n                ]\n            },\n            {\n                \"RackNumber\": \"D\",\n                \"RackUsageSet\": [\n                    {\n                        \"RackId\": 91885,\n                        \"RackShortName\": \"D01\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 22,\n                        \"UsedNum\": 3,\n                        \"UsedRate\": 0.12\n                    },\n                    {\n                        \"RackId\": 91894,\n                        \"RackShortName\": \"D04\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 25,\n                        \"UsedNum\": 0,\n                        \"UsedRate\": 0\n                    },\n                    {\n                        \"RackId\": 91897,\n                        \"RackShortName\": \"D05\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 17,\n                        \"UsedNum\": 9,\n                        \"UsedRate\": 0.35\n                    },\n                    {\n                        \"RackId\": 91900,\n                        \"RackShortName\": \"D06\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 15,\n                        \"UsedNum\": 10,\n                        \"UsedRate\": 0.4\n                    },\n                    {\n                        \"RackId\": 91903,\n                        \"RackShortName\": \"D07\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 23,\n                        \"UsedNum\": 2,\n                        \"UsedRate\": 0.08\n                    },\n                    {\n                        \"RackId\": 91906,\n                        \"RackShortName\": \"D08\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 19,\n                        \"UsedNum\": 7,\n                        \"UsedRate\": 0.27\n                    },\n                    {\n                        \"RackId\": 91909,\n                        \"RackShortName\": \"D09\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 12,\n                        \"UsedNum\": 13,\n                        \"UsedRate\": 0.52\n                    },\n                    {\n                        \"RackId\": 91912,\n                        \"RackShortName\": \"D10\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 14,\n                        \"UsedNum\": 11,\n                        \"UsedRate\": 0.44\n                    },\n                    {\n                        \"RackId\": 91915,\n                        \"RackShortName\": \"D11\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 18,\n                        \"UsedNum\": 8,\n                        \"UsedRate\": 0.31\n                    },\n                    {\n                        \"RackId\": 91918,\n                        \"RackShortName\": \"D12\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 20,\n                        \"UsedNum\": 5,\n                        \"UsedRate\": 0.2\n                    },\n                    {\n                        \"RackId\": 91921,\n                        \"RackShortName\": \"D13\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 18,\n                        \"UsedNum\": 7,\n                        \"UsedRate\": 0.28\n                    },\n                    {\n                        \"RackId\": 91924,\n                        \"RackShortName\": \"D14\",\n                        \"TotalNum\": 26,\n                        \"UnusedNum\": 23,\n                        \"UsedNum\": 3,\n                        \"UsedRate\": 0.12\n                    },\n                    {\n                        \"RackId\": 91927,\n                        \"RackShortName\": \"D15\",\n                        \"TotalNum\": 25,\n                        \"UnusedNum\": 12,\n                        \"UsedNum\": 13,\n                        \"UsedRate\": 0.52\n                    }\n                ]\n            },\n            {\n                \"RackNumber\": \"E\",\n                \"RackUsageSet\": [\n                    {\n                        \"RackId\": 91948,\n                        \"RackShortName\": \"E04\",\n                        \"TotalNum\": 10,\n                        \"UnusedNum\": 8,\n                        \"UsedNum\": 2,\n                        \"UsedRate\": 0.2\n                    },\n                    {\n                        \"RackId\": 91951,\n                        \"RackShortName\": \"E05\",\n                        \"TotalNum\": 10,\n                        \"UnusedNum\": 10,\n                        \"UsedNum\": 0,\n                        \"UsedRate\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"d83e0740-e3c6-4e67-b194-2b9081f50e0a\"\n    }\n}",
+        "title": "获取机架分布列表"
+      }
+    ],
+    "DescribeResourceUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"HostingServerCount\": 1367,\n        \"NetDeviceCount\": 893,\n        \"PositionTotalCount\": 37205,\n        \"PositionUsedCount\": 29447,\n        \"PositionUsedRate\": \"79.1\",\n        \"RackPowerOnCount\": 1796,\n        \"RackPowerOnRate\": \"81.0\",\n        \"RackTotalCount\": 2217,\n        \"RentServerCount\": 1146,\n        \"RequestId\": \"5964d012-da09-4fb6-ac4d-8cf019f52a00\"\n    }\n}",
+        "title": "获取资源汇总"
+      }
+    ],
+    "DescribeWorkOrderList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderList\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"646158b8-b20d-4843-a31a-883b78246cd8\",\n        \"TotalCount\": 3247,\n        \"WorkOrderSet\": [\n            {\n                \"CreateTime\": \"2025-03-07 11:11:59\",\n                \"Creator\": \"godwin2@test.com\",\n                \"OrderStatus\": \"processing\",\n                \"OrderType\": \"itCommon\",\n                \"ServiceType\": \"serverCommon\",\n                \"WorkOrderId\": \"ord-25030711115960582\"\n            }\n        ]\n    }\n}",
+        "title": "查询工单列表"
+      }
+    ],
+    "DescribeWorkOrderStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderStatistics\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CancelNum\": 0,\n        \"CheckingNum\": 0,\n        \"ConfirmingNum\": 0,\n        \"ExceptionNum\": 2748,\n        \"FinishNum\": 297,\n        \"ProcessingNum\": 112,\n        \"RejectNum\": 91,\n        \"RequestId\": \"4c2a84c1-61ab-4f4c-b3b3-b38d7e6af4fc\",\n        \"TotalNum\": 3248\n    }\n}",
+        "title": "查询工单状态对应的数量"
+      }
+    ],
+    "DescribeWorkOrderTypes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkOrderTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CollectedWorkOderTypeSet\": [\n            {\n                \"CollectFlag\": true,\n                \"SlaMessage\": \"2个工作日\",\n                \"WorkOrderDescription\": \"客户设备托管到腾讯IDC机房，为了确保设备符合机房的上架标准， 在入场前，需要提前进行托管设备入场的评估。\",\n                \"WorkOrderFamily\": \"设备服务\",\n                \"WorkOrderName\": \"托管设备型号评估\",\n                \"WorkOrderType\": \"modelEvaluation\"\n            },\n            {\n                \"CollectFlag\": true,\n                \"SlaMessage\": \"2 个工作日\",\n                \"WorkOrderDescription\": \"提供现场外包资产管理员，进行现场物资的收货和验收操作。\\n\",\n                \"WorkOrderFamily\": \"设备服务\",\n                \"WorkOrderName\": \"设备收货\",\n                \"WorkOrderType\": \"receiving\"\n            },\n            {\n                \"CollectFlag\": true,\n                \"SlaMessage\": \"2 个工作日\",\n                \"WorkOrderDescription\": \"提供现场外包工程师，将指定设备上到机位上。 \",\n                \"WorkOrderFamily\": \"设备服务\",\n                \"WorkOrderName\": \"设备上架\",\n                \"WorkOrderType\": \"rackOn\"\n            },\n            {\n                \"CollectFlag\": true,\n                \"SlaMessage\": \"最快 2 个工作日\",\n                \"WorkOrderDescription\": \"提供设备的开电操作。机架的开电由IDC平台部数经判断，自行发起。\\n\",\n                \"WorkOrderFamily\": \"设备服务\",\n                \"WorkOrderName\": \"设备开电\",\n                \"WorkOrderType\": \"powerOn\"\n            },\n            {\n                \"CollectFlag\": true,\n                \"SlaMessage\": \"最快 1 个工作日\",\n                \"WorkOrderDescription\": \"根据客户要求， 在同IDC内对指定设备进行搬迁操作。\",\n                \"WorkOrderFamily\": \"设备服务\",\n                \"WorkOrderName\": \"机房内搬迁\",\n                \"WorkOrderType\": \"moving\"\n            }\n        ],\n        \"RequestId\": \"3dad52cf-67c5-4eed-b191-e4f542ce4d80\",\n        \"WorkOrderFamilySet\": [\n            {\n                \"WorkOrderFamily\": \"设备服务\",\n                \"WorkOrderTypeSet\": [\n                    {\n                        \"CollectFlag\": true,\n                        \"SlaMessage\": \"2个工作日\",\n                        \"WorkOrderDescription\": \"客户设备托管到腾讯IDC机房，为了确保设备符合机房的上架标准， 在入场前，需要提前进行托管设备入场的评估。\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"托管设备型号评估\",\n                        \"WorkOrderType\": \"modelEvaluation\"\n                    },\n                    {\n                        \"CollectFlag\": true,\n                        \"SlaMessage\": \"2 个工作日\",\n                        \"WorkOrderDescription\": \"提供现场外包资产管理员，进行现场物资的收货和验收操作。\\n\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"设备收货\",\n                        \"WorkOrderType\": \"receiving\"\n                    },\n                    {\n                        \"CollectFlag\": true,\n                        \"SlaMessage\": \"2 个工作日\",\n                        \"WorkOrderDescription\": \"提供现场外包工程师，将指定设备上到机位上。 \",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"设备上架\",\n                        \"WorkOrderType\": \"rackOn\"\n                    },\n                    {\n                        \"CollectFlag\": true,\n                        \"SlaMessage\": \"最快 2 个工作日\",\n                        \"WorkOrderDescription\": \"提供设备的开电操作。机架的开电由IDC平台部数经判断，自行发起。\\n\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"设备开电\",\n                        \"WorkOrderType\": \"powerOn\"\n                    },\n                    {\n                        \"CollectFlag\": true,\n                        \"SlaMessage\": \"最快 1 个工作日\",\n                        \"WorkOrderDescription\": \"根据客户要求， 在同IDC内对指定设备进行搬迁操作。\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"机房内搬迁\",\n                        \"WorkOrderType\": \"moving\"\n                    },\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快 2 个工作日\",\n                        \"WorkOrderDescription\": \"提供设备的关电操作。\\n\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"设备关电\",\n                        \"WorkOrderType\": \"powerOff\"\n                    },\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快当天完成\",\n                        \"WorkOrderDescription\": \"提供现场外包工程师，将指定设备从机位上下架。\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"设备下架\",\n                        \"WorkOrderType\": \"rackOff\"\n                    },\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"1 个工作日\",\n                        \"WorkOrderDescription\": \"客户将设备等资产迁出腾讯机房， 腾讯提供指定设备的交接服务， 不包含物流服务，不包含包装、搬车和装运服务。\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"退出交接\",\n                        \"WorkOrderType\": \"quit\"\n                    },\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快 2 个工作日\",\n                        \"WorkOrderDescription\": \"提供机架的开电操作。\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"机架开电\",\n                        \"WorkOrderType\": \"rackPowerOn\"\n                    },\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快 2 个工作日\",\n                        \"WorkOrderDescription\": \"提供机架的关电操作。\",\n                        \"WorkOrderFamily\": \"设备服务\",\n                        \"WorkOrderName\": \"机架关电\",\n                        \"WorkOrderType\": \"rackPowerOff\"\n                    }\n                ]\n            },\n            {\n                \"WorkOrderFamily\": \"人员服务\",\n                \"WorkOrderTypeSet\": [\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快 1 个工作日\",\n                        \"WorkOrderDescription\": \"非机房常驻运维及授权人员，因运维需要进入机房，需提交人员到访申请。\",\n                        \"WorkOrderFamily\": \"人员服务\",\n                        \"WorkOrderName\": \"人员到访\",\n                        \"WorkOrderType\": \"personnelVisit\"\n                    }\n                ]\n            },\n            {\n                \"WorkOrderFamily\": \"通用服务\",\n                \"WorkOrderTypeSet\": [\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快 30min 响应\",\n                        \"WorkOrderDescription\": \"提供网络设备的设备重启、状态查看等通用服务受理\",\n                        \"WorkOrderFamily\": \"通用服务\",\n                        \"WorkOrderName\": \"网络设备通用服务\",\n                        \"WorkOrderType\": \"netDeviceCommon\"\n                    },\n                    {\n                        \"CollectFlag\": false,\n                        \"SlaMessage\": \"最快 30min 响应\",\n                        \"WorkOrderDescription\": \"提供服务器的设备重启、插拔硬盘、重装系统、状态查看等通用服务受理\",\n                        \"WorkOrderFamily\": \"通用服务\",\n                        \"WorkOrderName\": \"服务器通用服务\",\n                        \"WorkOrderType\": \"serverCommon\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyWorkOrderTypeCollectFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkOrderTypeCollectFlag\n<公共请求参数>\n\n{\n    \"WorkOrderType\": \"netDeviceCommon\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CurrentCollectFlag\": true,\n        \"RequestId\": \"14ec2fbf-8b7d-4b55-ba69-207d7ca6c15e\"\n    }\n}",
+        "title": "修改网络通用服务的收藏标识"
+      }
+    ]
+  },
+  "version": "1.0"
+}

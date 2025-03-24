@@ -1,0 +1,5728 @@
+{
+  "actions": {
+    "ConfirmCommonServiceWorkOrder": {
+      "document": "确认通用服务工单",
+      "input": "ConfirmCommonServiceWorkOrderRequest",
+      "name": "确认通用服务工单",
+      "output": "ConfirmCommonServiceWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateCommonServiceWorkOrder": {
+      "document": "创建通用工单",
+      "input": "CreateCommonServiceWorkOrderRequest",
+      "name": "创建通用服务工单",
+      "output": "CreateCommonServiceWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateModelEvaluationWorkOrder": {
+      "document": "创建设备型号评估工单",
+      "input": "CreateModelEvaluationWorkOrderRequest",
+      "name": "创建设备型号评估工单",
+      "output": "CreateModelEvaluationWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateMovingWorkOrder": {
+      "document": "创建设备搬迁工单",
+      "input": "CreateMovingWorkOrderRequest",
+      "name": "创建设备搬迁工单",
+      "output": "CreateMovingWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateNetDeviceModel": {
+      "document": "创建新的网络设备型号",
+      "input": "CreateNetDeviceModelRequest",
+      "name": "创建网络设备新型号",
+      "output": "CreateNetDeviceModelResponse",
+      "status": "online"
+    },
+    "CreatePersonnelVisitWorkOrder": {
+      "document": "创建人员到访工单",
+      "input": "CreatePersonnelVisitWorkOrderRequest",
+      "name": "创建人员到访工单",
+      "output": "CreatePersonnelVisitWorkOrderResponse",
+      "status": "online"
+    },
+    "CreatePowerOffWorkOrder": {
+      "document": "创建设备关电工单",
+      "input": "CreatePowerOffWorkOrderRequest",
+      "name": "创建设备关电工单",
+      "output": "CreatePowerOffWorkOrderResponse",
+      "status": "online"
+    },
+    "CreatePowerOnWorkOrder": {
+      "document": "创建设备开电工单",
+      "input": "CreatePowerOnWorkOrderRequest",
+      "name": "创建设备开电工单",
+      "output": "CreatePowerOnWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateQuitWorkOrder": {
+      "document": "创建设备退出工单",
+      "input": "CreateQuitWorkOrderRequest",
+      "name": "创建设备退出工单",
+      "output": "CreateQuitWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateRackOffWorkOrder": {
+      "document": "创建设备下架工单",
+      "input": "CreateRackOffWorkOrderRequest",
+      "name": "创建设备下架工单",
+      "output": "CreateRackOffWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateRackOnWorkOrder": {
+      "document": "创建设备上架工单",
+      "input": "CreateRackOnWorkOrderRequest",
+      "name": "创建设备上架工单",
+      "output": "CreateRackOnWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateReceivingWorkOrder": {
+      "document": "创建设备收货工单",
+      "input": "CreateReceivingWorkOrderRequest",
+      "name": "创建设备收货工单",
+      "output": "CreateReceivingWorkOrderResponse",
+      "status": "online"
+    },
+    "CreateServerModel": {
+      "document": "新增服务器设备型号",
+      "input": "CreateServerModelRequest",
+      "name": "创建服务器型号",
+      "output": "CreateServerModelResponse",
+      "status": "online"
+    },
+    "DescribeAvailableModelList": {
+      "document": "获取机房内可用的型号列表",
+      "input": "DescribeAvailableModelListRequest",
+      "name": "获取机房内可用的型号列表",
+      "output": "DescribeAvailableModelListResponse",
+      "status": "online"
+    },
+    "DescribeCampusList": {
+      "document": "获取用户可操作的园区列表",
+      "input": "DescribeCampusListRequest",
+      "name": "获取园区列表",
+      "output": "DescribeCampusListResponse",
+      "status": "online"
+    },
+    "DescribeCommonServiceWorkOrderDetail": {
+      "document": "查询通用服务工单详情",
+      "input": "DescribeCommonServiceWorkOrderDetailRequest",
+      "name": "获取通用服务工单详情",
+      "output": "DescribeCommonServiceWorkOrderDetailResponse",
+      "status": "online"
+    },
+    "DescribeCustomerInfo": {
+      "document": "查询客户信息",
+      "input": "DescribeCustomerInfoRequest",
+      "name": "查询客户信息",
+      "output": "DescribeCustomerInfoResponse",
+      "status": "online"
+    },
+    "DescribeDeviceList": {
+      "document": "获取设备列表",
+      "input": "DescribeDeviceListRequest",
+      "name": "获取设备列表",
+      "output": "DescribeDeviceListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceWorkOrderDetail": {
+      "document": "用于查询设备类工单的工单详情，如：'receiving', 'rackOn', 'powerOn', 'powerOff', 'rackOff', 'quit'",
+      "input": "DescribeDeviceWorkOrderDetailRequest",
+      "name": "查询设备类工单详情",
+      "output": "DescribeDeviceWorkOrderDetailResponse",
+      "status": "online"
+    },
+    "DescribeIdcUnitAssetDetail": {
+      "document": "查询机房管理单元资产详情",
+      "input": "DescribeIdcUnitAssetDetailRequest",
+      "name": "查询机房管理单元资产详情",
+      "output": "DescribeIdcUnitAssetDetailResponse",
+      "status": "online"
+    },
+    "DescribeIdcUnitDetail": {
+      "document": "查询机房管理单元详情",
+      "input": "DescribeIdcUnitDetailRequest",
+      "name": "查询机房管理单元详情",
+      "output": "DescribeIdcUnitDetailResponse",
+      "status": "online"
+    },
+    "DescribeIdcs": {
+      "document": "获取机房和机房管理单元信息",
+      "input": "DescribeIdcsRequest",
+      "name": "获取机房和机房管理单元信息",
+      "output": "DescribeIdcsResponse",
+      "status": "online"
+    },
+    "DescribeModel": {
+      "document": "查询设备型号详情",
+      "input": "DescribeModelRequest",
+      "name": "查询设备型号详情",
+      "output": "DescribeModelResponse",
+      "status": "online"
+    },
+    "DescribeModelEvaluationWorkOrderDetail": {
+      "document": "查询设备型号评估工单详情",
+      "input": "DescribeModelEvaluationWorkOrderDetailRequest",
+      "name": "查询设备型号评估工单",
+      "output": "DescribeModelEvaluationWorkOrderDetailResponse",
+      "status": "online"
+    },
+    "DescribeModelTemplate": {
+      "document": "获取型号的填写模板",
+      "input": "DescribeModelTemplateRequest",
+      "name": "获取型号的填写模板",
+      "output": "DescribeModelTemplateResponse",
+      "status": "online"
+    },
+    "DescribeModelVersionList": {
+      "document": "获取用户的型号和对应的版本数量",
+      "input": "DescribeModelVersionListRequest",
+      "name": "获取型号和版本列表",
+      "output": "DescribeModelVersionListResponse",
+      "status": "online"
+    },
+    "DescribePersonnelVisitWorkOrderDetail": {
+      "document": "查询人员到访工单详情",
+      "input": "DescribePersonnelVisitWorkOrderDetailRequest",
+      "name": "查询人员到访工单详情",
+      "output": "DescribePersonnelVisitWorkOrderDetailResponse",
+      "status": "online"
+    },
+    "DescribePositionStatusSummary": {
+      "document": "获取机架总数及各状态对应的数量汇总",
+      "input": "DescribePositionStatusSummaryRequest",
+      "name": "查询机位状态的汇总数据",
+      "output": "DescribePositionStatusSummaryResponse",
+      "status": "online"
+    },
+    "DescribePositions": {
+      "document": "获取机位列表",
+      "input": "DescribePositionsRequest",
+      "name": "获取机位列表",
+      "output": "DescribePositionsResponse",
+      "status": "online"
+    },
+    "DescribeRacks": {
+      "document": "获取机架列表",
+      "input": "DescribeRacksRequest",
+      "name": "获取机架列表",
+      "output": "DescribeRacksResponse",
+      "status": "online"
+    },
+    "DescribeRacksDistribution": {
+      "document": "获取机房管理单元的机位分布",
+      "input": "DescribeRacksDistributionRequest",
+      "name": "获取机位分布",
+      "output": "DescribeRacksDistributionResponse",
+      "status": "online"
+    },
+    "DescribeResourceUsage": {
+      "document": "查询资源汇总",
+      "input": "DescribeResourceUsageRequest",
+      "name": "查询资源汇总",
+      "output": "DescribeResourceUsageResponse",
+      "status": "online"
+    },
+    "DescribeWorkOrderList": {
+      "document": "查询工单列表",
+      "input": "DescribeWorkOrderListRequest",
+      "name": "查询工单列表",
+      "output": "DescribeWorkOrderListResponse",
+      "status": "online"
+    },
+    "DescribeWorkOrderStatistics": {
+      "document": "工单统计数据查询",
+      "input": "DescribeWorkOrderStatisticsRequest",
+      "name": "查询工单统计信息",
+      "output": "DescribeWorkOrderStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeWorkOrderTypes": {
+      "document": "获取用户可用的工单类型",
+      "input": "DescribeWorkOrderTypesRequest",
+      "name": "查询用户可用的工单列表",
+      "output": "DescribeWorkOrderTypesResponse",
+      "status": "online"
+    },
+    "ModifyWorkOrderTypeCollectFlag": {
+      "document": "如果当前该工单类型是收藏状态，调用接口后变成未收藏状态，如果是未收藏状态，调用该接口变为收藏状态",
+      "input": "ModifyWorkOrderTypeCollectFlagRequest",
+      "name": "修改工单类型的收藏标识",
+      "output": "ModifyWorkOrderTypeCollectFlagResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-04-18",
+    "api_brief": "云托付物理服务器（CHC）API接口，对客户提供云托管服务平台的统一接口AIPI，主要包括服务申请和资源概览两个根据地。",
+    "serviceNameCN": "云托付物理服务器",
+    "serviceShortName": "chc"
+  },
+  "objects": {
+    "AvailableModelVersion": {
+      "document": "已通过设备型号评估的型号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "带有版本号的设备型号",
+          "example": "IBM X3650 M5-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备高度",
+          "example": "2",
+          "member": "string",
+          "name": "DevHeight",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server 服务器，netDevice 网络设备",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Cage": {
+      "document": "围笼",
+      "members": [
+        {
+          "disabled": false,
+          "document": "围笼名称",
+          "example": "W1",
+          "member": "string",
+          "name": "CageName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "围笼审核人账号ID",
+          "example": "[”700000442974“]",
+          "member": "string",
+          "name": "CheckerSet",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Campus": {
+      "document": "园区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "园区ID",
+          "example": "163",
+          "member": "uint64",
+          "name": "CampusId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "园区名称",
+          "example": "天津-滨海",
+          "member": "string",
+          "name": "CampusName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CommonServiceBaseInfo": {
+      "document": "通用服务的基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房名称",
+          "example": "天津数据备份中心东区3栋DC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "ContactName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系人电话",
+          "example": "13800138000",
+          "member": "string",
+          "name": "ContactPhone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作说明",
+          "example": "检查五台设备",
+          "member": "string",
+          "name": "Instructions",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1 、2 、3 分别代表 L1、L2、L3",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作预授权",
+          "example": "true",
+          "member": "bool",
+          "name": "PreAuthorization",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfirmCommonServiceWorkOrderRequest": {
+      "document": "ConfirmCommonServiceWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单ID",
+          "example": "ord-24120219411076552",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfirmCommonServiceWorkOrderResponse": {
+      "document": "ConfirmCommonServiceWorkOrder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCommonServiceWorkOrderRequest": {
+      "document": "CreateCommonServiceWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备及位置信息列表",
+          "example": "[     {         \"DeviceSn\": \"818457500\",         \"AssetId\": \"TYSV18053XXX\",         \"IdcName\": \"天津数据备份中心东区DC\",         \"IdcUnitName\": \"天津数据备份中心东区DC1栋M303\",         \"PositionCode\": 20,         \"RackName\": \"M303-C15\"     } ]",
+          "member": "DevicePosition",
+          "name": "DevicePositionSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务级别，只支持传入 1、2、3，分别对应 L1、L2、L3",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceLevel",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作预授权",
+          "example": "true",
+          "member": "bool",
+          "name": "PreAuthorization",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "业务联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "ContactName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人电话",
+          "example": "13800138000",
+          "member": "string",
+          "name": "ContactPhone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型 server 服务器，netDevice 网络设备\t",
+          "example": "server ",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作说明",
+          "example": "检查五台设备",
+          "member": "string",
+          "name": "Instructions",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCommonServiceWorkOrderResponse": {
+      "document": "CreateCommonServiceWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "[ { \"WorkOrderId\": \"ord-24122317200212924\", \"ServiceType\": \"itCommon\", \"OrderType\": \"itCommon\" } ]",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelEvaluationWorkOrderRequest": {
+      "document": "CreateModelEvaluationWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名称及型号",
+          "example": "[         {             \"DevModel\": \"SFT1502-III\",             \"Version\": \"V1\"         }     ]",
+          "member": "ModelVersion",
+          "name": "ModelSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "园区ID",
+          "example": "6",
+          "member": "uint64",
+          "name": "CampusId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "只支持传入 server 和 netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelEvaluationWorkOrderResponse": {
+      "document": "CreateModelEvaluationWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "[     {         \"WorkOrderId\": \"ord-24122317200212924\",         \"ServiceType\": \"modelEvaluation\",         \"OrderType\": \"modelEvaluation\"     } ]",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMovingWorkOrderRequest": {
+      "document": "CreateMovingWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上架后是否开电",
+          "example": "false",
+          "member": "bool",
+          "name": "WithPowerOn",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "设备搬迁信息列表",
+          "example": "无",
+          "member": "DeviceRackOn",
+          "name": "DeviceMovingList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMovingWorkOrderResponse": {
+      "document": "CreateMovingWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNetDeviceModelRequest": {
+      "document": "CreateNetDeviceModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络设备型号",
+          "example": "无",
+          "member": "NetDeviceModel",
+          "name": "ModelDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNetDeviceModelResponse": {
+      "document": "CreateNetDeviceModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号名称",
+          "example": "Cisco IronPort 370",
+          "member": "string",
+          "name": "DevModel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "V1",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePersonnelVisitWorkOrderRequest": {
+      "document": "CreatePersonnelVisitWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "到访人员信息",
+          "example": "无",
+          "member": "Personnel",
+          "name": "PersonnelSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "机房 ID",
+          "example": "169",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元列表",
+          "example": "[      15802,     15803 ]",
+          "member": "uint64",
+          "name": "IdcUnitIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "到访开始时间",
+          "example": "2024-10-27 00:25:56",
+          "member": "string",
+          "name": "EnterStartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "到访结束时间",
+          "example": "2024-10-27 00:25:56",
+          "member": "string",
+          "name": "EnterEndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "到访原因，映射关系：IT_OPERATION IT运维 OTHER 其他",
+          "example": "[\"OTHER\"]",
+          "member": "string",
+          "name": "VisitReason",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "到访说明",
+          "example": "设备测试",
+          "member": "string",
+          "name": "VisitRemark",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePersonnelVisitWorkOrderResponse": {
+      "document": "CreatePersonnelVisitWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "[     {         \"WorkOrderId\": \"ord-24122317200212924\",         \"ServiceType\": \"personnelVisit\",         \"OrderType\": \"personnelVisit\"     } ]",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePowerOffWorkOrderRequest": {
+      "document": "CreatePowerOffWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关电确认，1.授权时关电 2.关电前需要确认",
+          "example": "1",
+          "member": "string",
+          "name": "IsPowerOffConfirm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备sn列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceSnList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关电前需要确认时必填",
+          "example": "无",
+          "member": "PowerOffConfirm",
+          "name": "PowerOffConfirmInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePowerOffWorkOrderResponse": {
+      "document": "CreatePowerOffWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePowerOnWorkOrderRequest": {
+      "document": "CreatePowerOnWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备sn列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceSnList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePowerOnWorkOrderResponse": {
+      "document": "CreatePowerOnWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQuitWorkOrderRequest": {
+      "document": "CreateQuitWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice, otherDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下架选择 1.自行解决 2.由腾讯IDC负责 3.不涉及下架，如：其他设备退出",
+          "example": "1",
+          "member": "string",
+          "name": "StuffOption",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关电确认 1.授权时关电 2.关电前需要确认",
+          "example": "1",
+          "member": "string",
+          "name": "IsPowerOffConfirm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备sn列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceSnList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "交接方式 1.物流上门收货 2.客户上门自提",
+          "example": "1",
+          "member": "string",
+          "name": "HandoverMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自行解决必填",
+          "example": "无",
+          "member": "SelfOperation",
+          "name": "SelfOperationInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "关电前需要确认时必填",
+          "example": "无",
+          "member": "PowerOffConfirm",
+          "name": "PowerOffConfirmInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "物流上门收货必传",
+          "example": "无",
+          "member": "LogisticsReceipt",
+          "name": "LogisticsReceipt",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "客户上门自提必传",
+          "example": "无",
+          "member": "CustomerReceipt",
+          "name": "CustomerReceipt",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateQuitWorkOrderResponse": {
+      "document": "CreateQuitWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRackOffWorkOrderRequest": {
+      "document": "CreateRackOffWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下架人员 1.自行解决 2.由腾讯IDC负责",
+          "example": "1",
+          "member": "string",
+          "name": "StuffOption",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关电确认 1.授权时关电 2.关电前需要确认",
+          "example": "1",
+          "member": "string",
+          "name": "IsPowerOffConfirm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备sn列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceSnList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自行解决必填",
+          "example": "无",
+          "member": "SelfOperation",
+          "name": "SelfOperationInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "关电前需要确认时必填",
+          "example": "无",
+          "member": "PowerOffConfirm",
+          "name": "PowerOffConfirmInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRackOffWorkOrderResponse": {
+      "document": "CreateRackOffWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRackOnWorkOrderRequest": {
+      "document": "CreateRackOnWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上架人员 1.自行解决 2.由腾讯IDC负责",
+          "example": "1",
+          "member": "string",
+          "name": "StuffOption",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上架后是否开电",
+          "example": "false",
+          "member": "bool",
+          "name": "WithPowerOn",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务器收货列表",
+          "example": "无",
+          "member": "DeviceRackOn",
+          "name": "DeviceRackOnList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自行解决必填",
+          "example": "无",
+          "member": "SelfOperation",
+          "name": "SelfOperationInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRackOnWorkOrderResponse": {
+      "document": "CreateRackOnWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceivingWorkOrderRequest": {
+      "document": "CreateReceivingWorkOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "325",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，server, netDevice, wire, otherDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "进入时间",
+          "example": "2024-11-30 00:00:00",
+          "member": "string",
+          "name": "EntryTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1.收货-仅核对外包装完整和数量，不开箱 2.验收-开箱核对型号SN一致",
+          "example": "1",
+          "member": "string",
+          "name": "ReceivingOperation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否快递寄件",
+          "example": "无",
+          "member": "bool",
+          "name": "IsExpressDelivery",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "快递寄件信息,快递寄件必填",
+          "example": "无",
+          "member": "ExpressDelivery",
+          "name": "ExpressInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务器收货列表",
+          "example": "无",
+          "member": "ServerReceivingInfo",
+          "name": "ServerDeviceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "网络设备收货列表",
+          "example": "无",
+          "member": "NetReceivingInfo",
+          "name": "NetDeviceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "线材收货列表",
+          "example": "无",
+          "member": "WireReceivingInfo",
+          "name": "WireDeviceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "其他设备收货列表",
+          "example": "无",
+          "member": "OtherDevReceivingInfo",
+          "name": "OtherDeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReceivingWorkOrderResponse": {
+      "document": "CreateReceivingWorkOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的工单信息",
+          "example": "无",
+          "member": "WorkOrderTinyInfo",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerModelRequest": {
+      "document": "CreateServerModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备型号详情",
+          "example": "无",
+          "member": "ServerModel",
+          "name": "ModelDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateServerModelResponse": {
+      "document": "CreateServerModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号名称",
+          "example": "SFT1502-III",
+          "member": "string",
+          "name": "DevModel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "V1",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomerInfo": {
+      "document": "客户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公司全称",
+          "example": "某某有限责任公司",
+          "member": "string",
+          "name": "CustomerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公司简称",
+          "example": "某某公司",
+          "member": "string",
+          "name": "ShortCustomerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否全托管用户",
+          "example": "true",
+          "member": "bool",
+          "name": "WholeFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CustomerReceipt": {
+      "document": "客户上门自提信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自提人员姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "PickUpStuff",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自提人电话",
+          "example": "15311111111",
+          "member": "string",
+          "name": "PickUpStuffContact",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自提人身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "PickUpStuffIDCard",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自提时间",
+          "example": "2024-12-11 12:00:00",
+          "member": "string",
+          "name": "PickUpTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeAvailableModelListRequest": {
+      "document": "DescribeAvailableModelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房ID",
+          "example": "159",
+          "member": "uint64",
+          "name": "IdcId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "server 服务器，netDevice 网络设备",
+          "example": "设备类型",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableModelListResponse": {
+      "document": "DescribeAvailableModelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房内可用的设备型号及版本列表",
+          "example": "[     {         \"ModelVersion\": \"IBM X3650 M5-V1\",         \"DevHeight\": \"2\",         \"DeviceType\": \"server\"     } ]",
+          "member": "AvailableModelVersion",
+          "name": "ModelVersionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCampusListRequest": {
+      "document": "DescribeCampusList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCampusListResponse": {
+      "document": "DescribeCampusList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户可操作的园区列表",
+          "example": " [{'CampusId': 6, 'CampusName': '天津-滨海'}]",
+          "member": "Campus",
+          "name": "CampusSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommonServiceWorkOrderDetailRequest": {
+      "document": "DescribeCommonServiceWorkOrderDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单ID",
+          "example": "ord-24120215310024323",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommonServiceWorkOrderDetailResponse": {
+      "document": "DescribeCommonServiceWorkOrderDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "进度",
+          "example": "无",
+          "member": "OrderStep",
+          "name": "StepSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基本信息",
+          "example": "无",
+          "member": "CommonServiceBaseInfo",
+          "name": "BaseInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备信息",
+          "example": "无",
+          "member": "DevicePosition",
+          "name": "DeviceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单状态",
+          "example": "工单状态 订单状态, processing 处理中 ，reject 已拒绝 ，finish 已完成，exception 异常",
+          "member": "string",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拒绝原因",
+          "example": "不符合规范",
+          "member": "string",
+          "name": "RejectReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomerInfoRequest": {
+      "document": "DescribeCustomerInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCustomerInfoResponse": {
+      "document": "DescribeCustomerInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户信息",
+          "example": "        \"CustomerInfo\": {             \"CustomerName\": \"某某科技有限公司\",             \"ShortCustomerName\": \"某某公司\"         }",
+          "member": "CustomerInfo",
+          "name": "CustomerInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceListRequest": {
+      "document": "DescribeDeviceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备类型 server 服务器，netDevice 网络设备，otherDevice 其他设备",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\n<li><strong>rack-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机架ID</strong>】进行过滤。例如：15082。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"></p> <li><strong> sn</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>设备 SN 码</strong>】进行过滤，设备 SN 例如：TEN948P004。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong> idc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机房ID</strong>】进行过滤，机房ID例如：159。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>  <li><strong>idc-unit-id </strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机房管理单元ID</strong>】进行过滤，机房管理ID例如：568。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>server-type-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机器子类型</strong>】进行过滤，只包含以下几种：1:服务器, 2:Twins主机, 3:Twins子机,5:虚拟机, 6:2U4S主机, 7:2U4S子机,8 Rack主机,9 Rack子机，例如： 1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>status</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>设备状态</strong>】进行过滤，操作状态只包含：POWER_ON 设备开电，POWER_OFF 设备关电，RACK_OFF 未上架，MOVING 搬迁中 。例如： POWER_OFF。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>svr-is-special</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>是否</strong>】进行过滤，支持 0：自有，1 租用。例如： 1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为1000",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "传入目标服务，返回允许进行此服务的设备列表；可以和Filters一起使用。允许的值：('rackOn', 'powerOn', 'powerOff', 'rackOff', 'quit', 'moving'，'netDeviceCommon', 'serverCommon')",
+          "example": "rackOn",
+          "member": "string",
+          "name": "DstService",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceListResponse": {
+      "document": "DescribeDeviceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器列表",
+          "example": "无",
+          "member": "Device",
+          "name": "DeviceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceWorkOrderDetailRequest": {
+      "document": "DescribeDeviceWorkOrderDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单ID",
+          "example": "ord-24121717264943561",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceWorkOrderDetailResponse": {
+      "document": "DescribeDeviceWorkOrderDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单ID",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型",
+          "example": "无",
+          "member": "string",
+          "name": "OrderType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单状态",
+          "example": "无",
+          "member": "string",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单流程状态",
+          "example": "无",
+          "member": "OrderStep",
+          "name": "StepSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单设备信息",
+          "example": "无",
+          "member": "DeviceHistory",
+          "name": "DeviceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单的入参信息",
+          "example": "无",
+          "member": "DeviceOrderBaseInfo",
+          "name": "BaseInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单的拒绝原因，工单状态为reject的时候返回",
+          "example": "无",
+          "member": "string",
+          "name": "RejectReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdcUnitAssetDetailRequest": {
+      "document": "DescribeIdcUnitAssetDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元ID",
+          "example": "12417",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdcUnitAssetDetailResponse": {
+      "document": "DescribeIdcUnitAssetDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元详情",
+          "example": "无",
+          "member": "IdcUnitInfo",
+          "name": "IdcUnitDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdcUnitDetailRequest": {
+      "document": "DescribeIdcUnitDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元ID",
+          "example": "12417",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdcUnitDetailResponse": {
+      "document": "DescribeIdcUnitDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元详情",
+          "example": "{     \"Address\": \"山东省济南市经十西路宋庄立交南首担山屯中国联通国家数据中心担山屯南楼二楼南机房\",     \"Operator\": \"tonyzhu\",     \"TelNumber\": \"0531-87581111\" }",
+          "member": "IdcUnitInfo",
+          "name": "IdcUnitDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIdcsRequest": {
+      "document": "DescribeIdcs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeIdcsResponse": {
+      "document": "DescribeIdcs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元列表",
+          "example": "[     {         \"IdcName\": \"天津数据备份中心东区DC\",         \"IdcId\": 555,         \"IdcUnitSet\": [             {                 \"IdcUnitId\": 568,                 \"IdcUnitName\": \"天津数据备份中心东区DC1栋M301\"             }         ]     } ]",
+          "member": "Idc",
+          "name": "IdcSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelEvaluationWorkOrderDetailRequest": {
+      "document": "DescribeModelEvaluationWorkOrderDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单ID",
+          "example": "ord-24111418091245911",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelEvaluationWorkOrderDetailResponse": {
+      "document": "DescribeModelEvaluationWorkOrderDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单进度",
+          "example": "无",
+          "member": "OrderStep",
+          "name": "StepSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单详情",
+          "example": "无",
+          "member": "ModelEvaluationBaseInfo",
+          "name": "BaseInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估中的网络设备型号详情",
+          "example": "无",
+          "member": "ModelVersionDetail",
+          "name": "NetDeviceModelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估中的服务器型号详情",
+          "example": "无",
+          "member": "ModelVersionDetail",
+          "name": "ServerModelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态, process 处理中 ，reject 已拒绝 ，finish 已完成，exception 异常",
+          "example": "process",
+          "member": "string",
+          "name": "OrderStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单拒绝原因",
+          "example": "不符合机房要求",
+          "member": "string",
+          "name": "RejectReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelRequest": {
+      "document": "DescribeModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器设备型号",
+          "example": "SFT1502-III",
+          "member": "string",
+          "name": "DevModel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "园区ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "CampusId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型，服务器传入 server，网络设备传入 netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只返回已评估的版本",
+          "example": "false",
+          "member": "bool",
+          "name": "Checked",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelResponse": {
+      "document": "DescribeModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备型号详情",
+          "example": "无",
+          "member": "ModelVersionDetail",
+          "name": "ModelSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelTemplateRequest": {
+      "document": "DescribeModelTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号类型，只支持传入 server 和 netDevice",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelTemplateResponse": {
+      "document": "DescribeModelTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该型号模板的选项列表",
+          "example": "[{   \"OptionName\": \"深度(mm)\",   \"Standard\": \"≤780(mm)\",   \"StandardInfo\": \"≤780\",   \"OptionKey\": \"devDepth\",   \"InputType\": \"dropDown\",   \"ValueType\": \"string\",   \"CompareType\": \"=\",   \"OptionValueSet\": [{\"OptionValue\": \"1\", \"Selected\": true}],   \"InputHint\": \"\",   \"InputInfo\": \"\" }]",
+          "member": "TemplateOption",
+          "name": "TemplateDetail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelVersionListRequest": {
+      "document": "DescribeModelVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号类型，只支持传入 netDevice 和 server",
+          "example": "netDevice",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "model-name  型号名称  类型：String  必选：否",
+          "example": "[       {           \"Values\": [               'TEST',        ],           \"Name\": \"model-name\"       }     ]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否已评估",
+          "example": "true",
+          "member": "bool",
+          "name": "Checked",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "园区ID，当 Checked 参数传 True 时，该参数必须传值",
+          "example": "1",
+          "member": "uint64",
+          "name": "CampusId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelVersionListResponse": {
+      "document": "DescribeModelVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号和对应的版本数量",
+          "example": "[             {                 \"DevModel\": \"ASA 5555\",                  \"VersionCount\": 1             }         ]",
+          "member": "ModelVersionCount",
+          "name": "ModelVersionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePersonnelVisitWorkOrderDetailRequest": {
+      "document": "DescribePersonnelVisitWorkOrderDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单ID",
+          "example": "ord-24112819463984820",
+          "member": "string",
+          "name": "OrderId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePersonnelVisitWorkOrderDetailResponse": {
+      "document": "DescribePersonnelVisitWorkOrderDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单进度\t",
+          "example": "无",
+          "member": "OrderStep",
+          "name": "StepSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单详情",
+          "example": "无",
+          "member": "PersonnelVisitBaseInfo",
+          "name": "BaseInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到访人员详情",
+          "example": "无",
+          "member": "Personnel",
+          "name": "PersonnelSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单状态 订单状态, processing 处理中 ，reject 已拒绝 ，finish 已完成，exception 异常",
+          "example": "processing",
+          "member": "string",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拒绝原因",
+          "example": "不符合要求",
+          "member": "string",
+          "name": "RejectReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePositionStatusSummaryRequest": {
+      "document": "DescribePositionStatusSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li><strong>rack-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机架ID</strong>】进行过滤。例如：15082。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"></p> <li><strong> rack-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机架名称</strong>】进行过滤，机架名称例如：M301-E10。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong> idc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机房ID</strong>】进行过滤，机房ID例如：159。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>  <li><strong>idc-unit-id </strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机房管理单元ID</strong>】进行过滤，机房管理ID例如：568。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>position-status</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机位状态</strong>】进行过滤，机位状态只包含以下四种：机位状态,0 空闲,1 已用,2 不可用,3 预占用,4 预留，例如： 0。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>op-status</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>操作状态</strong>】进行过滤，操作状态只包含两种：FINISH 操作完成，PENDING 操作中，例如： PENDING。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePositionStatusSummaryResponse": {
+      "document": "DescribePositionStatusSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态及对应数量",
+          "example": "无",
+          "member": "PositionStatusItem",
+          "name": "StatusCountSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePositionsRequest": {
+      "document": "DescribePositions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<li><strong>rack-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机架ID</strong>】进行过滤。例如：15082。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\"></p> <li><strong> rack-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机架名称</strong>】进行过滤，机架名称例如：M301-E10。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong> idc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机房ID</strong>】进行过滤，机房ID例如：159。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>  <li><strong>idc-unit-id </strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机房管理单元ID</strong>】进行过滤，机房管理ID例如：568。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>position-status</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>机位状态</strong>】进行过滤，机位状态只包含以下四种：机位状态,0 空闲,1 已用,2 不可用,3 预占用,4 预留，例如： 0。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>op-status</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>操作状态</strong>】进行过滤，操作状态只包含两种：FINISH 操作完成，PENDING 操作中，例如： PENDING。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePositionsResponse": {
+      "document": "DescribePositions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户拥有的机位列表",
+          "example": "无",
+          "member": "Position",
+          "name": "PositionSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRacksDistributionRequest": {
+      "document": "DescribeRacksDistribution请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元ID",
+          "example": "4261",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRacksDistributionResponse": {
+      "document": "DescribeRacksDistribution返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机架的用量分布",
+          "example": "[     {         \"RackNumber\": \"C\",         \"RackUsageSet\": [             {                 \"RackId\": 132316,                 \"UsedNum\": 1,                 \"UnusedNum\": 0,                 \"RackShortName\": \"C05\"             }         ]     } ]",
+          "member": "Distribution",
+          "name": "DistributionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRacksRequest": {
+      "document": "DescribeRacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件\n\nrack-id\n按照机架id进行过滤。\n类型：String\n必选：否\n\nrack-name\n按照机架名称进行过滤。\n类型：String\n必选：否\n\nidc-id\n按照机房id进行过滤。\n类型：String\n必选：否\n\nidc-unit-id\n按照机房管理单元id过滤\n类型： String\n必选： 否\n\nis-power-on\n按照是否开电进行过滤，支持传入 0 和 1。1 代表开电，0 代表关电\n类型： String\n必选： 否\n\nhosting-type\n按照托管类型进行过滤。支持传入 CUSTOMER_MIX 代表客户混合，CUSTOMER_ONLY 代表客户独享 ，NOT_INIT 代表未初始化\n类型： String\n必选： 否\n\n",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "传入目标服务，返回允许进行此服务的机架列表；可以和Filters一起使用。允许的值：('rackPowerOn', 'rackPowerOff')",
+          "example": "rackPowerOn",
+          "member": "string",
+          "name": "DstService",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRacksResponse": {
+      "document": "DescribeRacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户拥有的机架列表",
+          "example": "无",
+          "member": "Rack",
+          "name": "RackSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUsageRequest": {
+      "document": "DescribeResourceUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "[     {         \"Values\": [             691         ],         \"Name\": \"idc-id\"     },     {         \"Values\": [             2725         ],         \"Name\": \"idc-unit-id\"     } ]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeResourceUsageResponse": {
+      "document": "DescribeResourceUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管服务器数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "HostingServerCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租用服务器数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "RentServerCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络设备数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "NetDeviceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "RackTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开电机架总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "RackPowerOnCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位使用数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "PositionUsedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "PositionTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架开电率，保留一位小数",
+          "example": "69.2",
+          "member": "string",
+          "name": "RackPowerOnRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位使用率，",
+          "example": "69.2",
+          "member": "string",
+          "name": "PositionUsedRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkOrderListRequest": {
+      "document": "DescribeWorkOrderList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。支持：service-type、order-type、order-status、order-id",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通过sn过滤工单，上限10个",
+          "example": "[td123456]",
+          "member": "string",
+          "name": "SnList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "起始",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "长度",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkOrderListResponse": {
+      "document": "DescribeWorkOrderList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果",
+          "example": "无",
+          "member": "WorkOrderData",
+          "name": "WorkOrderSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkOrderStatisticsRequest": {
+      "document": "DescribeWorkOrderStatistics请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWorkOrderStatisticsResponse": {
+      "document": "DescribeWorkOrderStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总工单数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进行中的工单数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "ProcessingNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待确认的工单数量",
+          "example": "11",
+          "member": "uint64",
+          "name": "ConfirmingNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成的工单数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "FinishNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拒绝的工单数量",
+          "example": "5",
+          "member": "uint64",
+          "name": "RejectNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常的工单数量",
+          "example": "6",
+          "member": "uint64",
+          "name": "ExceptionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户取消的工单数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "CancelNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "围笼进出审核的工单数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "CheckingNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkOrderTypesRequest": {
+      "document": "DescribeWorkOrderTypes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWorkOrderTypesResponse": {
+      "document": "DescribeWorkOrderTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已收藏的工单类型列表",
+          "example": "[             {                 \"WorkOrderFamily\": \"设备服务\",                 \"WorkOrderName\": \"设备型号评估\",                 \"WorkOrderType\": \"modelEvaluation\",                 \"WorkOrderDescription\": \"客户设备托管到腾讯IDC机房，为了确保设备符合机房的上架标准， 在入场前，需要提前进行托管设备入场的评估。\",                 \"CollectFlag\": true,                 \"SlaMessage\": \"2 个工作日\"             }         ]",
+          "member": "WorkOrderTypeDetail",
+          "name": "CollectedWorkOderTypeSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全部工单类型列表",
+          "example": "[             {                 \"WorkOrderFamily\": \"设备服务\",                 \"WorkOrderTypeSet\": [                     {                         \"WorkOrderFamily\": \"设备服务\",                         \"WorkOrderName\": \"设备型号评估\",                         \"WorkOrderType\": \"modelEvaluation\",                         \"WorkOrderDescription\": \"客户设备托管到腾讯IDC机房，为了确保设备符合机房的上架标准， 在入场前，需要提前进行托管设备入场的评估。\",                         \"CollectFlag\": true,                         \"SlaMessage\": \"2 个工作日\"                      },                     {                         \"WorkOrderFamily\": \"设备服务\",                         \"WorkOrderName\": \"设备上架\",                         \"WorkOrderType\": \"rackOn\",                         \"WorkOrderDescription\": \"提供现场外包工程师，将指定设备上到机位上。 \",                         \"CollectFlag\": false,                         \"SlaMessage\": \"2 个工作日\"                     }                 ]             }         ]",
+          "member": "WorkOrderFamilyDetail",
+          "name": "WorkOrderFamilySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Device": {
+      "document": "服务器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备 SN 码",
+          "example": "TYSV09090399",
+          "member": "string",
+          "name": "Sn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备型号版本",
+          "example": "DELL R410-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备固资号。只有设备类型为服务器时才返回",
+          "example": "67DGQ2X",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 自有，1 租用。只有设备类型为服务器时才返回",
+          "example": "是否租用",
+          "member": "uint64",
+          "name": "SvrIsSpecial",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP。",
+          "example": "9.8.174.45 ",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备所属的机房名称",
+          "example": "上海腾讯宝信DC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备所属的机房ID",
+          "example": "122",
+          "member": "uint64",
+          "name": "IdcId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备所属的机房管理单元ID",
+          "example": "5587",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备所属的机房管理单元名称",
+          "example": "上海腾讯宝信DC电信2号楼0203",
+          "member": "string",
+          "name": "IdcUnitName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已上架设备所在的机架ID，未上架设备不返回",
+          "example": "1265",
+          "member": "uint64",
+          "name": "RackId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器类型， 1 代表服务器， 7 代表 2U4S。只有设备类型为服务器时才返回",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServerTypeId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已上架设备所在的机架名称，未上架设备不返回",
+          "example": "0203-F01",
+          "member": "string",
+          "name": "RackName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已上架设备所在的机位编号，未上架设备不返回。只有设备类型为服务器时才返回",
+          "example": "2",
+          "member": "uint64",
+          "name": "PositionCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备状态：POWER_ON 已开电 POWER_OFF 未开电 RACK_OFF 未上架 MOVING 搬迁中",
+          "example": "POWER_ON",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备最近一次的开电时间，YYYY-MM-DD 格式。",
+          "example": "2024-11-05",
+          "member": "string",
+          "name": "PowerOnTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备最近一次的上架时间，YYYY-MM-DD 格式。",
+          "example": "2024-11-05",
+          "member": "string",
+          "name": "OnshelfDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备类型 server 服务器，netDevice 网络设备",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "厂商",
+          "example": "无",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他设备-设备子类型",
+          "example": "'USB', '移动硬盘', '网络设备板卡', '网络设备模块', '服务器硬盘', '服务器内存', '其他'",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件备注",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareMemo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceHistory": {
+      "document": "工单的设备信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备sn",
+          "example": "无",
+          "member": "string",
+          "name": "Sn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架名",
+          "example": "无",
+          "member": "string",
+          "name": "RackName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位号",
+          "example": "无",
+          "member": "uint64",
+          "name": "PositionCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "357",
+          "member": "uint64",
+          "name": "IdcId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房名称",
+          "example": "无",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元id",
+          "example": "无",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元名称",
+          "example": "无",
+          "member": "string",
+          "name": "IdcUnitName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固资号",
+          "example": "无",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备型号-版本，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备高度，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceHeight",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要万兆机位，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "Need10GbSlot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要直流电，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "NeedDCPower",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要外网，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "NeedExtranet",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要虚拟化，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "NeedVirtualization",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "厂商,只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件备注",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareMemo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标机架",
+          "example": "无",
+          "member": "string",
+          "name": "DstRackName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标机位",
+          "example": "无",
+          "member": "string",
+          "name": "DstPositionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标ip",
+          "example": "无",
+          "member": "string",
+          "name": "DstIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备子类型, 其他设备/线材用",
+          "example": "移动硬盘",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线材-数量，只有收货单详情返回",
+          "example": "2",
+          "member": "uint64",
+          "name": "Quantity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计量单位，，只有收货单详情返回，'箱', '卷', '套'",
+          "example": "箱",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线材-收货凭证号，只有收货单详情返回",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiptNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceOrderBaseInfo": {
+      "document": "设备类工单的基础历史入参信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房id",
+          "example": "无",
+          "member": "uint64",
+          "name": "IdcId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备类型",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1.收货-仅核对外包装完整和数量，不开箱 2.验收-开箱核对型号SN一致",
+          "example": "2",
+          "member": "string",
+          "name": "ReceivingOperation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备收货-进入时间",
+          "example": "2024-12-12 08:00:00",
+          "member": "string",
+          "name": "EntryTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备收货-是否快递寄件",
+          "example": "无",
+          "member": "bool",
+          "name": "IsExpressDelivery",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备收货-快递寄件信息",
+          "example": "无",
+          "member": "ExpressDelivery",
+          "name": "ExpressInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上/下架人员 1.自行解决 2.由腾讯IDC负责",
+          "example": "1",
+          "member": "string",
+          "name": "StuffOption",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上/下架自行解决信息",
+          "example": "无",
+          "member": "SelfOperation",
+          "name": "SelfOperationInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上架后开电",
+          "example": "true",
+          "member": "bool",
+          "name": "WithPowerOn",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关电确认 1.授权时关电 2.关电前需要确认",
+          "example": "1",
+          "member": "string",
+          "name": "IsPowerOffConfirm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关电前需要确认信息",
+          "example": "无",
+          "member": "PowerOffConfirm",
+          "name": "PowerOffConfirmInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "退出交接方式 1.物流上门收货 2.客户上门自提",
+          "example": "1",
+          "member": "string",
+          "name": "HandoverMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户上门自提信息",
+          "example": "无",
+          "member": "CustomerReceipt",
+          "name": "CustomerReceipt",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物流上门收货信息",
+          "example": "无",
+          "member": "LogisticsReceipt",
+          "name": "LogisticsReceipt",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DevicePosition": {
+      "document": "设备及位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备SN",
+          "example": "2174042",
+          "member": "string",
+          "name": "Sn",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架名称",
+          "example": "M303-C15",
+          "member": "string",
+          "name": "RackName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元ID",
+          "example": "159",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房名称",
+          "example": "天津数据备份中心东区DC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元名称",
+          "example": "天津数据备份中心东区DC1栋M303",
+          "member": "string",
+          "name": "IdcUnitName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备固资。只有服务器设备才需要这个值",
+          "example": "TYSV17092XXX",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位编号，只有服务器设备才需要传这个值",
+          "example": "20",
+          "member": "uint64",
+          "name": "PositionCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "server 代表服务器，netDevice 代表网络设备",
+          "example": "server",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceRackOn": {
+      "document": "设备上架信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备sn",
+          "example": "SN123456w-2",
+          "member": "string",
+          "name": "DeviceSn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标机架",
+          "example": "M302-J01",
+          "member": "string",
+          "name": "DstRackName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标机位,服务器必传,网络设备不用传",
+          "example": "2",
+          "member": "string",
+          "name": "DstPositionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "DstIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Distribution": {
+      "document": "机架用量分布",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机架编号",
+          "example": "C",
+          "member": "string",
+          "name": "RackNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架的用量分布",
+          "example": "[     {         \"RackId\": 132316,         \"UsedNum\": 1,         \"UnusedNum\": 0,         \"RackShortName\": \"C05\"     } ]",
+          "member": "RackUsage",
+          "name": "RackUsageSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExpressDelivery": {
+      "document": "快递寄件信息,快递寄件必填",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物流公司",
+          "example": "无",
+          "member": "string",
+          "name": "LogisticsCompany",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快递单号",
+          "example": "无",
+          "member": "string",
+          "name": "ExpressNumber",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等\n\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。\t",
+          "example": "idc-id",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值。\t",
+          "example": "214",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Idc": {
+      "document": "机房信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房名称",
+          "example": "天津数据备份中心东区DC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房ID",
+          "example": "568",
+          "member": "uint64",
+          "name": "IdcId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元详情列表",
+          "example": "[     {         \"IdcUnitId\": 568,         \"IdcUnitName\": \"天津数据备份中心东区DC1栋M301\"     } ]",
+          "member": "IdcUnit",
+          "name": "IdcUnitSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IdcUnit": {
+      "document": "机房管理单元",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元 ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元名称",
+          "example": "天津数据备份中心东区DC1栋M301",
+          "member": "string",
+          "name": "IdcUnitName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "围笼列表",
+          "example": "[{\"CageName\": \"W1\", \"CheckerSet\": [\"700000442974\"]}]",
+          "member": "Cage",
+          "name": "CageSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IdcUnitInfo": {
+      "document": "机房管理单元",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房管理单元地址",
+          "example": "山东省济南市经十西路宋庄立交南首担山屯中国联通国家数据中心担山屯南楼二楼南机房",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房经理",
+          "example": "tonyzhang",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系电话",
+          "example": "0531-87581111",
+          "member": "string",
+          "name": "TelNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产管理员",
+          "example": "tonyzhang",
+          "member": "string",
+          "name": "AssetManager",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产管理员电话",
+          "example": "0531-87581111",
+          "member": "string",
+          "name": "AssetManagerTelNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogisticsReceipt": {
+      "document": "物流上门收货信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物流预计上门时间",
+          "example": "2024-12-11 12:00:00",
+          "member": "string",
+          "name": "LogisticsArrivalTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物流公司名称",
+          "example": "无",
+          "member": "string",
+          "name": "LogisticsCompany",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物流联系人",
+          "example": "无",
+          "member": "string",
+          "name": "LogisticsStuff",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物流电话",
+          "example": "无",
+          "member": "string",
+          "name": "LogisticsStuffContact",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收货人电话",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiverContact",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收货人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiverName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收货地址",
+          "example": "无",
+          "member": "string",
+          "name": "ShippingAddress",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelEvaluationBaseInfo": {
+      "document": "设备评估工单基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户名称",
+          "example": "腾讯",
+          "member": "string",
+          "name": "CustomerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "server 服务器  netDevice 网络设备",
+          "example": "设备类型",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "园区名称",
+          "example": "天津-武清",
+          "member": "string",
+          "name": "CampusName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "设备入场",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelVersion": {
+      "document": "型号以及版本号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号名称",
+          "example": "SFT1502-III",
+          "member": "string",
+          "name": "DevModel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "V1",
+          "member": "string",
+          "name": "Version",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModelVersionCount": {
+      "document": "型号和对应的版本数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号名称",
+          "example": "ASA 5555",
+          "member": "string",
+          "name": "DevModel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "VersionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelVersionDetail": {
+      "document": "带有园区评估记录的型号详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "V1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 代表在当前园区没评估过，1 代表完全满足IDC准入标准 2 代表存在托管风险 3 代表不满足IDC准入标准",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckResult",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "型号各个配置项的详情",
+          "example": "无",
+          "member": "TemplateOption",
+          "name": "OptionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备型号名称及版本",
+          "example": "IBM X3650 M5-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyWorkOrderTypeCollectFlagRequest": {
+      "document": "ModifyWorkOrderTypeCollectFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单类型的唯一英文标识",
+          "example": "modelEvaluation",
+          "member": "string",
+          "name": "WorkOrderType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkOrderTypeCollectFlagResponse": {
+      "document": "ModifyWorkOrderTypeCollectFlag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单类型当前的收藏状态",
+          "example": "true",
+          "member": "bool",
+          "name": "CurrentCollectFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NetDeviceModel": {
+      "document": "网络设备型号详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "V1",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "型号和版本的组合名称",
+          "example": "Cisco IronPort 370-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "型号名",
+          "example": "Cisco IronPort 370",
+          "member": "string",
+          "name": "DevModel",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宽度",
+          "example": "370－446",
+          "member": "string",
+          "name": "DevWidth",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "深度",
+          "example": "≤780",
+          "member": "string",
+          "name": "DevDepth",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重量",
+          "example": "≤50",
+          "member": "string",
+          "name": "DevWeight",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否携带挂耳",
+          "example": "是",
+          "member": "string",
+          "name": "MountEar",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否符合CCC认证",
+          "example": "是",
+          "member": "string",
+          "name": "AccordCCC",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否通过入网许可认证",
+          "example": "是",
+          "member": "string",
+          "name": "PassNetwork",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源接口型号",
+          "example": "C13",
+          "member": "string",
+          "name": "PowerportType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源模块",
+          "example": "直流-270DC",
+          "member": "string",
+          "name": "PowerModule",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源模块数量",
+          "example": "2",
+          "member": "string",
+          "name": "PowermoduleNum",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源模块位置",
+          "example": "设备后端",
+          "member": "string",
+          "name": "PowermodulePosition",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高压直流自适应",
+          "example": "是",
+          "member": "string",
+          "name": "HighVoltageAdapt",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际工作功耗(W)",
+          "example": "400",
+          "member": "string",
+          "name": "PowerEnergy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进风口位置",
+          "example": "前",
+          "member": "string",
+          "name": "InwindPosition",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出风口位置",
+          "example": "后",
+          "member": "string",
+          "name": "OutwindPosition",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务端口位置",
+          "example": "前",
+          "member": "string",
+          "name": "BusinessPortPosition",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带有理线器",
+          "example": "是",
+          "member": "string",
+          "name": "LineManager",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 代表在当前园区没评估过，1 代表完全满足IDC准入标准  2 代表存在托管风险  3 代表不满足IDC准入标准",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckResult",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备高度",
+          "example": "2",
+          "member": "string",
+          "name": "DevHeight",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NetReceivingInfo": {
+      "document": "网络设备收货详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备sn",
+          "example": "TH55555",
+          "member": "string",
+          "name": "DeviceSn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备型号-版本",
+          "example": "HUAWEI RH2288-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "硬件备注",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareMemo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "厂商",
+          "example": "无",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "OptionValueItem": {
+      "document": "型号选项下拉框中的选项值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "选项的值",
+          "example": "1",
+          "member": "string",
+          "name": "OptionValue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否默认选中",
+          "example": "true",
+          "member": "bool",
+          "name": "Selected",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OrderStep": {
+      "document": "工单详情中的工单流程步骤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤名",
+          "example": "数经审核",
+          "member": "string",
+          "name": "StepName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理人",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成时间",
+          "example": "2024-12-12 08:00:00",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此步骤状态",
+          "example": "finish",
+          "member": "string",
+          "name": "StepStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OtherDevReceivingInfo": {
+      "document": "其他设备收货信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备sn",
+          "example": "td11111",
+          "member": "string",
+          "name": "DeviceSn",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "'USB', '移动硬盘', '网络设备板卡', '网络设备模块', '服务器硬盘', '服务器内存', '其他'",
+          "example": "移动硬盘",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "厂商",
+          "example": "无",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件备注",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareMemo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Personnel": {
+      "document": "到访人员",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456789012345678",
+          "member": "string",
+          "name": "IDCardNumber",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件类型。对应关系如下：IDENTITY_CARD: 身份证,\nHONG_KONG_AND_MACAO_PASS: 港澳通行证',\nPASSPORT: 护照,\nDRIVING_LICENSE: 驾照,\nOTHER: 其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IDENTITY_CARD",
+          "member": "string",
+          "name": "IDCardType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "某某科技有限公司",
+          "member": "string",
+          "name": "Company",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言。对应关系：ENGLISH: 英文, CHINESE: 中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENGLISH",
+          "member": "string",
+          "name": "LanguageType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13800138000",
+          "member": "string",
+          "name": "TelNumber",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "职位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "工程师",
+          "member": "string",
+          "name": "Position",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "微信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhangsan_wechat",
+          "member": "string",
+          "name": "Wechat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhangsan@example.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PersonnelVisitBaseInfo": {
+      "document": "人员到访工单基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机房名称",
+          "example": "天津数据备份中心东区DC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到访原因。到访原因，映射关系：DEVICE_MAINTENANCE 设备维护 DEVICE_MOVE 设备收货上下架 CHECK 盘点 OTHER 其他",
+          "example": "设备类型",
+          "member": "string",
+          "name": "VisitReason",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到访原因",
+          "example": "检查设备",
+          "member": "string",
+          "name": "VisitRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到访结束时间",
+          "example": "2024-10-27 00:25:56",
+          "member": "string",
+          "name": "EnterStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到访开始时间",
+          "example": "2024-10-27 00:25:56",
+          "member": "string",
+          "name": "EnterEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机房管理单元列表",
+          "example": "[                 \"天津数据备份中心东区DC1栋M301\",                 \"天津数据备份中心东区DC1栋M303\"             ]",
+          "member": "string",
+          "name": "IdcUnitNameList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Position": {
+      "document": "机位信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机位ID",
+          "example": "1787308",
+          "member": "uint64",
+          "name": "PositionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位高度",
+          "example": "2",
+          "member": "uint64",
+          "name": "Height",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位编号",
+          "example": "2",
+          "member": "string",
+          "name": "PositionCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位状态,0 空闲,1 已用,2 不可用,3 预占用,4 预留",
+          "example": "1",
+          "member": "uint64",
+          "name": "PositionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备规划类型ID",
+          "example": "1",
+          "member": "int64",
+          "name": "PlanDeviceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位所属的机房管理单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位所属的机架ID",
+          "example": "1321",
+          "member": "uint64",
+          "name": "RackId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位所属的机架名称",
+          "example": "2D-C05",
+          "member": "string",
+          "name": "RackName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位所属的机房管理单元名称",
+          "example": "上海腾讯宝信DC移动3号楼2D",
+          "member": "string",
+          "name": "IdcUnitName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位所属的机房名称",
+          "example": "上海腾讯宝信DC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位所属的机房ID",
+          "example": "106",
+          "member": "uint64",
+          "name": "IdcId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位上如果有设备，该字段代表设备的 SN 码，如果是空闲机位，不返回该字段。",
+          "example": "SN123456w-2",
+          "member": "string",
+          "name": "Sn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位上如果有设备，该字段代表设备的固资号，如果是空闲机位，不返回该字段。",
+          "example": "TYSV09090338",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位上如果有设备，该字段代表设备的设备型号加版本号，如果是空闲机位，不返回该字段。",
+          "example": "DELL R410-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PositionStatusItem": {
+      "document": "机位状态及对应的数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态值",
+          "example": "0",
+          "member": "uint64",
+          "name": "PositionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应的机位数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PowerOffConfirm": {
+      "document": "关电确认信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "联系人",
+          "example": "张三",
+          "member": "string",
+          "name": "ConfirmContact",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联系人电话",
+          "example": "15311111111",
+          "member": "string",
+          "name": "ConfirmContactNumber",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Rack": {
+      "document": "机架的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机架名称",
+          "example": "M301-E10",
+          "member": "string",
+          "name": "RackName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架所属的机房管理单元ID",
+          "example": "8",
+          "member": "uint64",
+          "name": "IdcUnitId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架所属的机房管理单元名称",
+          "example": "北京腾讯银C16楼",
+          "member": "string",
+          "name": "IdcUnitName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架所属的机房名称",
+          "example": "北京腾讯银科大厦ODC",
+          "member": "string",
+          "name": "IdcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架所属的机房ID",
+          "example": "106",
+          "member": "uint64",
+          "name": "IdcId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架ID",
+          "example": "1211",
+          "member": "uint64",
+          "name": "RackId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开电",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPowerOn",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架最近一次开电时间，YYYY-MM-DD 格式",
+          "example": "2008-10-31",
+          "member": "string",
+          "name": "RackOpenTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管类型",
+          "example": "客户独享",
+          "member": "string",
+          "name": "HostingType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RackUsage": {
+      "document": "机架用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机架ID",
+          "example": "132316",
+          "member": "uint64",
+          "name": "RackId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用的机位数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "UsedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空闲机位数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "UnusedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机架简称",
+          "example": "C05",
+          "member": "string",
+          "name": "RackShortName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机位使用率",
+          "example": "0.29",
+          "member": "float",
+          "name": "UsedRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SelfOperation": {
+      "document": "客户自行上门信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "联系人员电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StuffContact",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StuffIDCard",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "人员姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StuffName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上门时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-11-20 12:00:00",
+          "member": "string",
+          "name": "OperationTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServerModel": {
+      "document": "服务器设备型号",
+      "members": [
+        {
+          "disabled": false,
+          "document": "型号名称",
+          "example": "SFT1502-III",
+          "member": "string",
+          "name": "DevModel",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数",
+          "example": "1",
+          "member": "string",
+          "name": "DevNode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备高度",
+          "example": "2",
+          "member": "string",
+          "name": "DevHeight",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "功耗",
+          "example": "500",
+          "member": "string",
+          "name": "PowerEnergy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源接口型号",
+          "example": "C14",
+          "member": "string",
+          "name": "PowerportType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源模块数量",
+          "example": "2",
+          "member": "string",
+          "name": "PowermoduleNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进风口位置",
+          "example": "前",
+          "member": "string",
+          "name": "InwindPosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出风口位置",
+          "example": "后",
+          "member": "string",
+          "name": "OutwindPosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网卡接口位置",
+          "example": "设备后端",
+          "member": "string",
+          "name": "NetportPosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "宽度",
+          "example": "430",
+          "member": "string",
+          "name": "DevWidth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "深度",
+          "example": "500",
+          "member": "string",
+          "name": "DevDepth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重量",
+          "example": "18",
+          "member": "string",
+          "name": "DevWeight",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源模块",
+          "example": "兼容直流270DC和交流",
+          "member": "string",
+          "name": "PowerModule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电源模块位置",
+          "example": "设备后端",
+          "member": "string",
+          "name": "PowermodulePosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络接口类型",
+          "example": "电口",
+          "member": "string",
+          "name": "NetportType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网卡速率",
+          "example": "千兆",
+          "member": "string",
+          "name": "NetSpeed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 代表在当前园区没评估过，1 代表完全满足IDC准入标准 2 代表存在托管风险 3 代表不满足IDC准入标准",
+          "example": "0",
+          "member": "uint64",
+          "name": "CheckResult",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "V1",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "型号和版本的组合名称",
+          "example": "Cisco IronPort 370-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServerReceivingInfo": {
+      "document": "服务器收货信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备sn",
+          "example": "TH55555",
+          "member": "string",
+          "name": "DeviceSn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备型号-版本",
+          "example": "HUAWEI RH2288-V1",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要万兆机位",
+          "example": "NO",
+          "member": "string",
+          "name": "Need10GbSlot",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要直流电",
+          "example": "NO",
+          "member": "string",
+          "name": "NeedDCPower",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要外网",
+          "example": "YES",
+          "member": "string",
+          "name": "NeedExtranet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要虚拟化",
+          "example": "YES",
+          "member": "string",
+          "name": "NeedVirtualization",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "硬件备注",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareMemo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "TemplateOption": {
+      "document": "型号模板的选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "选项名称",
+          "example": "高度(u)",
+          "member": "string",
+          "name": "OptionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯的标准",
+          "example": "40",
+          "member": "string",
+          "name": "Standard",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯标准的展示字段",
+          "example": "≤40u(1u=44.45mm)",
+          "member": "string",
+          "name": "StandardInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选项的唯一标识",
+          "example": "devHeight",
+          "member": "string",
+          "name": "OptionKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入的类型",
+          "example": "int",
+          "member": "string",
+          "name": "InputType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入值的类型",
+          "example": "number",
+          "member": "string",
+          "name": "ValueType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否符合腾讯标准的比较方式，-- 为不做比较",
+          "example": "<=",
+          "member": "string",
+          "name": "CompareType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下拉列表中填充的选项值",
+          "example": " [{\"OptionValue\": \"1\", \"Selected\": true}]",
+          "member": "OptionValueItem",
+          "name": "OptionValueSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入框中的占位的提示符",
+          "example": "填写U数",
+          "member": "string",
+          "name": "InputHint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入框下方的提示文案",
+          "example": "请选择",
+          "member": "string",
+          "name": "InputInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户写入的值",
+          "example": "C14",
+          "member": "string",
+          "name": "OptionValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WireReceivingInfo": {
+      "document": "线材收货信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "'光纤', '网线', '电源线'",
+          "example": "光纤",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "Quantity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "'箱', '卷', '套'",
+          "example": "箱",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "收货凭证号",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiptNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "硬件备注",
+          "example": "无",
+          "member": "string",
+          "name": "HardwareMemo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkOrderData": {
+      "document": "工单的常用信息返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单号",
+          "example": "ord-24111418091131849",
+          "member": "string",
+          "name": "WorkOrderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型，一个服务可能会产生多个工单",
+          "example": "moving",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型",
+          "example": "rackOn",
+          "member": "string",
+          "name": "OrderType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单状态",
+          "example": "processing",
+          "member": "string",
+          "name": "OrderStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单创建人",
+          "example": "tornado",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单创建时间",
+          "example": "2024-11-14 18:09:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-11-15 20:04:11",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkOrderFamilyDetail": {
+      "document": "带有分类的工单类型列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单类型大类的名称",
+          "example": "设备服务",
+          "member": "string",
+          "name": "WorkOrderFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型详情列表",
+          "example": "[                     {                         \"WorkOrderFamily\": \"设备服务\",                         \"WorkOrderName\": \"设备型号评估\",                         \"WorkOrderType\": \"modelEvaluation\",                         \"WorkOrderDescription\": \"客户设备托管到腾讯IDC机房，为了确保设备符合机房的上架标准， 在入场前，需要提前进行托管设备入场的评估。\",                         \"CollectFlag\": true,                         \"SlaMessage\": \"2 个工作日\"                      }]",
+          "member": "WorkOrderTypeDetail",
+          "name": "WorkOrderTypeSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkOrderTinyInfo": {
+      "document": "工单信息的简要，一般用于工单创建的返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单id",
+          "example": "ord-24111418091171613",
+          "member": "string",
+          "name": "WorkOrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型，一个服务可能会产生多个工单",
+          "example": "powerOn",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型",
+          "example": "rackOff",
+          "member": "string",
+          "name": "OrderType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkOrderTypeDetail": {
+      "document": "工单类型详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工单类型所属的大类",
+          "example": "设备服务",
+          "member": "string",
+          "name": "WorkOrderFamily",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型名称",
+          "example": "设备型号评估",
+          "member": "string",
+          "name": "WorkOrderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型的唯一英文标识",
+          "example": "modelEvaluation",
+          "member": "string",
+          "name": "WorkOrderType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工单类型简述",
+          "example": "客户设备托管到腾讯IDC机房，为了确保设备符合机房的上架标准， 在入场前，需要提前进行托管设备入场的评估。",
+          "member": "string",
+          "name": "WorkOrderDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否被收藏",
+          "example": "true",
+          "member": "bool",
+          "name": "CollectFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务时效",
+          "example": "2 个工作日",
+          "member": "string",
+          "name": "SlaMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

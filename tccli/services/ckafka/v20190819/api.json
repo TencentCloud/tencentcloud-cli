@@ -1039,13 +1039,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 成功",
           "example": "0",
           "member": "int64",
           "name": "Result",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1544,13 +1544,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 成功 非0 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 成功 非0 失败",
           "example": "0",
           "member": "int64",
           "name": "Result",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1597,13 +1597,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果状态Success\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果状态Success",
           "example": "Success",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1696,14 +1696,14 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Datahub任务",
+          "document": "是否更新到关联的Datahub任务\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2550,23 +2550,23 @@
         },
         {
           "disabled": false,
-          "document": "消息key",
+          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "key-test",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "消息value",
+          "document": "消息value\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "value-test",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -2580,13 +2580,13 @@
         },
         {
           "disabled": false,
-          "document": "消息headers",
+          "document": "消息headers\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "header-test",
           "member": "string",
           "name": "Headers",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4484,13 +4484,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "token串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "token串",
           "example": "904b75130b4b4102bdeb071a7f48523a",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5687,13 +5687,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果",
           "example": "{\"TaskId\":\"task-test\"}",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6845,13 +6845,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "连接源的Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ResourceId\":\"resource-test\",\"ResourceName\":\"resource-test\",\"Description\":\"description\",\"Type\":\"\",\"Status\":1,\"CreateTime\":\"2019-10-01 00:00:00\",\"ErrorMessage\":\"\",\"CurrentStep\":\"WAIT_CREATE_PRIVATELINK\",\"StepList\":[\"WAIT_CREATE_PRIVATELINK\",\"WAIT_CONNECT_PORT\",\"WAIT_CONNECT_RESOURCE\"],\"MySQLConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":0,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"IsUpdate\":true,\"ClusterId\":\"cluster-test\",\"SelfBuilt\":true},\"PostgreSQLConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":0,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"IsUpdate\":true,\"ClusterId\":\"cluster-test\",\"SelfBuilt\":true},\"DtsConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"GroupId\":\"group-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"IsUpdate\":true,\"Topic\":\"topic-test\",\"SelfBuilt\":true},\"MongoDBConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true},\"EsConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true},\"ClickHouseConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true},\"MariaDBConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true},\"SQLServerConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true},\"CtsdbConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true},\"DorisConnectParam\":{\"Ip\":\"10.0.0.30\",\"Port\":9092,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"BePort\":13001},\"KafkaConnectParam\":{\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"BrokerAddress\":\"10.0.0.30\",\"Region\":\"region-test\",\"NetworkType\":\"PUBLIC\",\"UniqVpcId\":\"vpc-test\",\"ServiceVip\":\"10.0.0.30\",\"Port\":13002,\"AclEnable\":true,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Ip\":\"10.0.0.30\",\"CrossNetResourceUniqueId\":\"zbpt_perf_kafka\",\"AppId\":1000000001},\"MqttConnectParam\":{\"Port\":13001,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Resource\":\"resource-test\",\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":true,\"IsUpdate\":true,\"Region\":\"region-test\",\"NetworkType\":\"PUBLIC\",\"AclEnable\":true,\"Ip\":\"10.0.0.30\"}}",
+          "document": "连接源的Id",
+          "example": "无",
           "member": "DescribeConnectResourceResp",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7651,13 +7651,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题列表",
           "example": "{\"TotalCount\":1,\"TopicList\":[{\"Name\":\"appId-test\",\"TopicName\":\"topic-test\",\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"RetentionMs\":1,\"Note\":\"note-test\",\"Status\":1}]}",
           "member": "DescribeDatahubTopicsResp",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7723,13 +7723,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的结果",
           "example": "[{\"ErrorCode\":\"0\",\"Group\":\"group-test\",\"Members\":[],\"Protocol\":\"\",\"ProtocolType\":\"consumer\",\"State\":\"Empty\"}]",
           "member": "GroupInfoResponse",
           "name": "Result",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8225,13 +8225,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回地域枚举结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"RegionId\":8,\"RegionName\":\"北京\",\"AreaName\":\"华北地区\",\"RegionCode\":\"bj\",\"RegionCodeV3\":\"ap-beijing\"},{\"RegionId\":16,\"RegionName\":\"成都\",\"AreaName\":\"西南地区\",\"RegionCode\":\"cd\",\"RegionCodeV3\":\"ap-chengdu\"},{\"RegionId\":19,\"RegionName\":\"重庆\",\"AreaName\":\"西南地区\",\"RegionCode\":\"cq\",\"RegionCodeV3\":\"ap-chongqing\"},{\"RegionId\":5,\"RegionName\":\"香港\",\"AreaName\":\"东南亚地区\",\"RegionCode\":\"hk\",\"RegionCodeV3\":\"ap-hongkong\"},{\"RegionId\":9,\"RegionName\":\"新加坡\",\"AreaName\":\"东南亚地区\",\"RegionCode\":\"sg\",\"RegionCodeV3\":\"ap-singapore\"},{\"RegionId\":21,\"RegionName\":\"孟买\",\"AreaName\":\"亚太地区\",\"RegionCode\":\"in\",\"RegionCodeV3\":\"ap-mumbai\"},{\"RegionId\":25,\"RegionName\":\"东京\",\"AreaName\":\"亚太地区\",\"RegionCode\":\"jp\",\"RegionCodeV3\":\"ap-tokyo\"},{\"RegionId\":6,\"RegionName\":\"多伦多\",\"AreaName\":\"北美地区\",\"RegionCode\":\"ca\",\"RegionCodeV3\":\"na-toronto\"},{\"RegionId\":15,\"RegionName\":\"硅谷\",\"AreaName\":\"美国西部\",\"RegionCode\":\"usw\",\"RegionCodeV3\":\"na-siliconvalley\"},{\"RegionId\":22,\"RegionName\":\"弗吉尼亚\",\"AreaName\":\"美国东部\",\"RegionCode\":\"use\",\"RegionCodeV3\":\"na-ashburn\"}]",
+          "document": "返回地域枚举结果列表",
+          "example": "无",
           "member": "Region",
           "name": "Result",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8646,13 +8646,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的结果",
           "example": "{\"TopicList\":[{\"TopicId\":\"topic-test\",\"TopicName\":\"topic-test\",\"Note\":\"note-test\"}],\"TotalCount\":1}",
           "member": "TopicResult",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12393,13 +12393,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果",
           "example": "{\"DealNames\":[\"20190819000001\"]}",
           "member": "ScalingDownResp",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13369,13 +13369,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务id",
           "example": "{\"taskId\":\"task-test\"}",
           "member": "DatahubTaskIdRes",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -224,7 +224,7 @@
           "example": "1",
           "member": "int64",
           "name": "NormalCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -234,19 +234,19 @@
           "example": "1",
           "member": "int64",
           "name": "NotifyCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "异常状态的数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异常状态的数目",
           "example": "1",
           "member": "int64",
           "name": "AbnormalCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

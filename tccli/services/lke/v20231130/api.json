@@ -659,7 +659,7 @@
       "status": "online"
     },
     "SaveDoc": {
-      "document": "知识库文档问答保存。\n将文件存储到应用的知识库内需要三步：\n1.获取临时密钥，参考[接口文档](https://cloud.tencent.com/document/product/1759/105050)。\n2.调用腾讯云提供的 cos 存储接口，将文件存储到知识引擎 cos 中：参考[PUT Objectufeff](https://cloud.tencent.com/document/product/436/7749)\n3.调用本接口，将文件的基础信息存储到知识引擎中。\n以上步骤可参考[文档](https://cloud.tencent.com/document/product/1759/108903)，文档最后有[代码demo](https://cloud.tencent.com/document/product/1759/108903#demo)，可作为参考。",
+      "document": "知识库文档问答保存。\n将文件存储到应用的知识库内需要三步：\n1.获取临时密钥，参考[接口文档](https://cloud.tencent.com/document/product/1759/105050)。获取临时密钥不同参数组合权限不一样，可参考 [知识引擎操作 cos 指南](https://cloud.tencent.com/document/product/1759/116238)\n2.调用腾讯云提供的 cos 存储接口，将文件存储到知识引擎 cos 中：具体可参考[ COS SDK 概览](https://cloud.tencent.com/document/product/436/6474), 注意使用的是临时密钥的方式操作 COS \n3.调用本接口，将文件的基础信息存储到知识引擎中。\n以上步骤可参考[文档](https://cloud.tencent.com/document/product/1759/108903)，文档最后有[代码demo](https://cloud.tencent.com/document/product/1759/108903#demo)，可作为参考。",
       "input": "SaveDocRequest",
       "name": "知识库文档问答保存",
       "output": "SaveDocResponse",
@@ -4469,7 +4469,7 @@
         {
           "disabled": false,
           "document": "QA业务ID\n",
-          "example": "无",
+          "example": "1903999940055016768",
           "member": "string",
           "name": "QaBizId",
           "required": true,
@@ -4478,7 +4478,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1887842680054218000",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -4493,7 +4493,7 @@
         {
           "disabled": false,
           "document": "QA业务ID\n",
-          "example": "无",
+          "example": "1903999940055016768",
           "member": "string",
           "name": "QaBizId",
           "output_required": false,
@@ -4503,7 +4503,7 @@
         {
           "disabled": false,
           "document": "问题\n",
-          "example": "无",
+          "example": "哪吒2",
           "member": "string",
           "name": "Question",
           "output_required": false,
@@ -4513,7 +4513,7 @@
         {
           "disabled": false,
           "document": "答案\n",
-          "example": "无",
+          "example": "《哪吒之魔童闹海》（亦称《哪吒贰之魔童闹海》，简称《哪吒2》",
           "member": "string",
           "name": "Answer",
           "output_required": false,
@@ -4532,8 +4532,8 @@
         },
         {
           "disabled": false,
-          "document": "来源\n",
-          "example": "无",
+          "document": "来源 1-文档生成问答对  2-批量导入问答对  3-单条手动录入问答对",
+          "example": "3",
           "member": "uint64",
           "name": "Source",
           "output_required": false,
@@ -4543,7 +4543,7 @@
         {
           "disabled": false,
           "document": "来源描述\n",
-          "example": "无",
+          "example": "手动录入",
           "member": "string",
           "name": "SourceDesc",
           "output_required": false,
@@ -4553,7 +4553,7 @@
         {
           "disabled": false,
           "document": "更新时间\n",
-          "example": "无",
+          "example": "1742783938",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -4562,8 +4562,8 @@
         },
         {
           "disabled": false,
-          "document": "状态\n",
-          "example": "无",
+          "document": "状态 <br>1-未校验  2-未发布 3-发布中 4-已发布  5-发布失败 6-不采纳 7-审核中  8-审核失败  9-审核失败申诉后人工审核中  11-审核失败申诉后人工审核不通过  12-已过期  13-超量失效  14-超量失效恢复 19-学习中  20-学习失败",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -4573,7 +4573,7 @@
         {
           "disabled": false,
           "document": "状态描述\n",
-          "example": "无",
+          "example": "未发布",
           "member": "string",
           "name": "StatusDesc",
           "output_required": false,
@@ -4583,7 +4583,7 @@
         {
           "disabled": false,
           "document": "分类ID\n",
-          "example": "无",
+          "example": "1887842680872108032",
           "member": "string",
           "name": "CateBizId",
           "output_required": false,

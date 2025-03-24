@@ -3471,43 +3471,43 @@
         },
         {
           "disabled": false,
-          "document": "最后一次探测到该状态的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次探测到该状态的时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "datetime",
           "name": "LastProbeTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后一次转换到该过程的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次转换到该过程的时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "datetime",
           "name": "LastTransitionTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转换到该过程的简明原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转换到该过程的简明原因",
           "example": "True",
           "member": "string",
           "name": "Reason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转换到该过程的更多信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转换到该过程的更多信息",
           "example": "True",
           "member": "string",
           "name": "Message",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3595,14 +3595,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启内网访问LB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启内网访问LB",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3988,58 +3988,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启公网访问LB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启公网访问LB",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "允许访问的来源CIDR列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "允许访问的来源CIDR列表",
           "example": "172.168.1.0/24",
           "member": "string",
           "name": "AllowFromCidrs",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全策略放通单个IP或CIDR(例如: \"192.168.1.0/24\",默认为拒绝所有)",
           "example": "[\"172.168.1.0/24\"]",
           "member": "string",
           "name": "SecurityPolicies",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网访问相关的扩展参数，格式为json\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网访问相关的扩展参数，格式为json",
           "example": "{\"key1\":\"value1\"}}",
           "member": "string",
           "name": "ExtraParam",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "新内外网功能，需要传递安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "新内外网功能，需要传递安全组",
           "example": "sg-1cghhuuu",
           "member": "string",
           "name": "SecurityGroup",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6134,13 +6134,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志采集topicid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志采集topicid",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20406,36 +20406,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略实例名称",
           "example": "block-namespace-deletion-rule",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略实例关联事件数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略实例关联事件数",
           "example": "3",
           "member": "uint64",
           "name": "EventNums",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例yaml详情base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "apiVersion: constraints.gatekeeper.sh/v1beta1 kind: BlockNamespaceDeletion metadata:   name: block-namespace-deletion-rule   annotations:     \"helm.sh/hook\": post-install,post-upgrade spec:   enforcementAction: dryrun   match:     kinds:       - apiGroups: [\"*\"]         kinds: [\"Namespace\"]",
+          "document": "实例yaml详情base64编码",
+          "example": "YXBpVmVyc2lvbjogY29uc3RyYWludHMuZ2F0ZWtlZXBlci5zaC92MWJldGExIApraW5kOiBCbG9ja05hbWVzcGFjZURlbGV0aW9uIAptZXRhZGF0YTogCiAgbmFtZTogYmxvY2stbmFtZXNwYWNlLWRlbGV0aW9uLXJ1bGUgCnNwZWM6IAogIGVuZm9yY2VtZW50QWN0aW9uOiBkcnlydW4=",
           "member": "string",
           "name": "YamlDetail",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
