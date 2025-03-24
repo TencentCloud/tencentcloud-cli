@@ -5105,7 +5105,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，用于分页",
+          "document": "页数，第几页，用于分页",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -5114,7 +5114,7 @@
         },
         {
           "disabled": false,
-          "document": "每页个数，用于分页",
+          "document": "每页个数，用于分页，最大值为100",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5139,7 +5139,7 @@
         {
           "disabled": false,
           "document": "仓库信息列表",
-          "example": "[       {         \"BriefDescription\": \"\",         \"CreationTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\",         \"Description\": \"\",         \"Name\": \"library/busybox\",         \"Namespace\": \"library\",         \"Public\": false,         \"UpdateTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\"       }     ],",
+          "example": "[{\"BriefDescription\": \"\",\"CreationTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\",\"Description\": \"\", \"Name\": \"library/busybox\",         \"Namespace\": \"library\",\"Public\": false,\"UpdateTime\": \"2022-08-02 03:52:06.915755 +0000 UTC\"}],",
           "member": "TcrRepositoryInfo",
           "name": "RepositoryList",
           "output_required": true,
@@ -5851,7 +5851,7 @@
           "example": "130",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5861,7 +5861,7 @@
           "example": "无",
           "member": "WebhookTrigger",
           "name": "Triggers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8807,25 +8807,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的策略，可选值为latestPushedK（保留最新推送多少个版本）nDaysSinceLastPush（保留近天内推送）",
           "example": "latestPushedK",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则设置下的对应值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则设置下的对应值",
           "example": "0",
           "member": "int64",
           "name": "Value",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9692,7 +9692,7 @@
           "example": "ns/repoName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9702,7 +9702,7 @@
           "example": "ns",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9712,7 +9712,7 @@
           "example": "2022-07-16 10:34:42.697947 +0000 UTC",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9722,29 +9722,29 @@
           "example": "false",
           "member": "bool",
           "name": "Public",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库详细描述",
           "example": "this is a description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "简单描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "简单描述",
           "example": "this is a brief description",
           "member": "string",
           "name": "BriefDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9752,7 +9752,7 @@
           "example": "2022-07-16 10:34:42.697947 +0000 UTC",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10334,14 +10334,14 @@
         },
         {
           "disabled": false,
-          "document": "触发器所属命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发器所属命名空间名称",
           "example": "ns1",
           "member": "string",
           "name": "NamespaceName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

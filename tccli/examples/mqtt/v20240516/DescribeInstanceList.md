@@ -13,42 +13,58 @@ tccli mqtt DescribeInstanceList --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Error": null,
     "RequestId": null,
     "Response": {
+        "RequestId": "33a9cba9-f885-47aa-8235-8bdcbd9c90bf",
+        "TotalCount": 2,
         "Data": [
             {
-                "ClientNumLimit": 1,
-                "CreateTime": 1705565760,
-                "InstanceId": "mqtt-wjgxr8jg",
-                "InstanceName": "su-0118-no-pub",
-                "InstanceStatus": "CREATE_FAILURE",
-                "InstanceType": "BASIC",
-                "Remark": "this is remark",
-                "SkuCode": "mqtt_1k",
-                "TopicNum": 0,
-                "TopicNumLimit": 1,
-                "TpsLimit": 1,
-                "Version": "1"
+                "InstanceId": "mqtt-zxjwkr98",
+                "InstanceName": "mqtt-instance",
+                "Version": "1",
+                "InstanceType": "PRO",
+                "InstanceStatus": "RUNNING",
+                "PayMode": "POSTPAID",
+                "ExpiryTime": 0,
+                "Remark": "",
+                "TopicNum": 1,
+                "SkuCode": "pro_6k_1",
+                "TpsLimit": 6000,
+                "CreateTime": 1741832627,
+                "MaxSubscriptionPerClient": 30,
+                "MaxSubscription": 180000,
+                "AuthorizationPolicyLimit": 20,
+                "ClientNumLimit": 6000,
+                "MaxCaNum": 20,
+                "RenewFlag": 1,
+                "DestroyTime": 0,
+                "TopicNumLimit": 300
             },
             {
-                "ClientNumLimit": 1000,
-                "CreateTime": 1705391046,
-                "InstanceId": "mqtt-47ka4rdr",
-                "InstanceName": "sun-0116",
+                "InstanceId": "mqtt-w45zn79z",
+                "InstanceName": "mqtt-1226",
+                "Version": "1",
+                "InstanceType": "PRO",
                 "InstanceStatus": "RUNNING",
-                "InstanceType": "BASIC",
-                "Remark": "this is remark",
-                "SkuCode": "basic_1k",
-                "TopicNum": 25,
-                "TopicNumLimit": 25,
-                "TpsLimit": 1000,
-                "Version": "1"
+                "PayMode": "PREPAID",
+                "ExpiryTime": 1742972038844,
+                "Remark": "",
+                "TopicNum": 2,
+                "SkuCode": "pro_10k_1",
+                "TpsLimit": 10000,
+                "CreateTime": 1735196039,
+                "MaxSubscriptionPerClient": 30,
+                "MaxSubscription": 300000,
+                "AuthorizationPolicyLimit": 20,
+                "ClientNumLimit": 10000,
+                "MaxCaNum": 20,
+                "RenewFlag": 1,
+                "DestroyTime": 0,
+                "TopicNumLimit": 300
             }
-        ],
-        "RequestId": "9424369d-904f-4fa2-b407-0bd5e536e989",
-        "TotalCount": 10
-    }
+        ]
+    },
+    "Error": null
 }
 ```
 

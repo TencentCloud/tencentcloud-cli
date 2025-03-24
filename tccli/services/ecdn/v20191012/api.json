@@ -1,26 +1,5 @@
 {
   "actions": {
-    "AddEcdnDomain": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n本接口（AddEcdnDomain）用于创建加速域名。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41123\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "AddEcdnDomainRequest",
-      "name": "新增加速域名",
-      "output": "AddEcdnDomainResponse",
-      "status": "deprecated"
-    },
-    "CreateVerifyRecord": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"\thttps://cloud.tencent.com/document/api/228/48118\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "CreateVerifyRecordRequest",
-      "name": "生成解析记录",
-      "output": "CreateVerifyRecordResponse",
-      "status": "deprecated"
-    },
-    "DeleteEcdnDomain": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n本接口（DeleteEcdnDomain）用于删除指定加速域名。待删除域名必须处于已停用状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41122\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "DeleteEcdnDomainRequest",
-      "name": "删除加速域名",
-      "output": "DeleteEcdnDomainResponse",
-      "status": "deprecated"
-    },
     "DescribeDomains": {
       "document": "本接口（DescribeDomains）用于查询CDN域名基本信息，包括项目id，状态，业务类型，创建时间，更新时间等。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41118\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribeDomainsRequest",
@@ -63,13 +42,6 @@
       "output": "DescribeIpStatusResponse",
       "status": "online"
     },
-    "DescribePurgeQuota": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n查询刷新接口的用量配额。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/41956\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "DescribePurgeQuotaRequest",
-      "name": "查询刷新用量配额",
-      "output": "DescribePurgeQuotaResponse",
-      "status": "deprecated"
-    },
     "DescribePurgeTasks": {
       "document": "DescribePurgeTasks 用于查询刷新任务提交历史记录及执行进度。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/37873\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "DescribePurgeTasksRequest",
@@ -77,40 +49,12 @@
       "output": "DescribePurgeTasksResponse",
       "status": "online"
     },
-    "PurgePathCache": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\nPurgePathCache 用于批量刷新目录缓存，一次提交将返回一个刷新任务id。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"\thttps://cloud.tencent.com/document/api/570/42475\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "PurgePathCacheRequest",
-      "name": "刷新目录",
-      "output": "PurgePathCacheResponse",
-      "status": "deprecated"
-    },
     "PurgeUrlsCache": {
       "document": "PurgeUrlsCache 用于批量刷新Url，一次提交将返回一个刷新任务id。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/api/228/37870\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
       "input": "PurgeUrlsCacheRequest",
       "name": "刷新 URL",
       "output": "PurgeUrlsCacheResponse",
       "status": "online"
-    },
-    "StartEcdnDomain": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n本接口（StartEcdnDomain）用于启用加速域名，待启用域名必须处于已下线状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/product/228/41121\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "StartEcdnDomainRequest",
-      "name": "启用加速域名",
-      "output": "StartEcdnDomainResponse",
-      "status": "deprecated"
-    },
-    "StopEcdnDomain": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n本接口（StopCdnDomain）用于停止加速域名，待停用加速域名必须处于已上线或部署中状态。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/product/228/41120\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。",
-      "input": "StopEcdnDomainRequest",
-      "name": "停用加速域名",
-      "output": "StopEcdnDomainResponse",
-      "status": "deprecated"
-    },
-    "UpdateDomainConfig": {
-      "document": "ECDN融合CDN后，接口都用CDN的，此接口已经废弃\n\n本接口（UpdateDomainConfig）用于更新ECDN加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值。建议通过查询接口获取配置属性后，直接修改后传递给本接口。Https配置由于证书的特殊性，更新时不用传递证书和密钥字段。\n\n>?  若您的业务已迁移至 CDN 控制台，请参考<a href=\"https://cloud.tencent.com/document/product/228/41116\"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。\n",
-      "input": "UpdateDomainConfigRequest",
-      "name": "更新域名配置",
-      "output": "UpdateDomainConfigResponse",
-      "status": "deprecated"
     }
   },
   "metadata": {
@@ -120,141 +64,6 @@
     "serviceShortName": "ecdn"
   },
   "objects": {
-    "AddEcdnDomainRequest": {
-      "document": "AddEcdnDomain请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "域名。",
-          "example": "www.test.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站配置。",
-          "example": "无",
-          "member": "Origin",
-          "name": "Origin",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "域名加速区域，mainland，overseas或global，分别表示中国境内加速，海外加速或全球加速。",
-          "example": "global",
-          "member": "string",
-          "name": "Area",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "项目id，默认0。",
-          "example": "0",
-          "member": "int64",
-          "name": "ProjectId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "IP黑白名单配置。",
-          "example": "无",
-          "member": "IpFilter",
-          "name": "IpFilter",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "IP限频配置。",
-          "example": "无",
-          "member": "IpFreqLimit",
-          "name": "IpFreqLimit",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "源站响应头部配置。",
-          "example": "无",
-          "member": "ResponseHeader",
-          "name": "ResponseHeader",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "节点缓存配置。",
-          "example": "无",
-          "member": "CacheKey",
-          "name": "CacheKey",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "缓存规则配置。",
-          "example": "无",
-          "member": "Cache",
-          "name": "Cache",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "Https配置。",
-          "example": "无",
-          "member": "Https",
-          "name": "Https",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "访问协议强制跳转配置。",
-          "example": "无",
-          "member": "ForceRedirect",
-          "name": "ForceRedirect",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "域名绑定的标签",
-          "example": "无",
-          "member": "Tag",
-          "name": "Tag",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "WebSocket配置",
-          "example": "无",
-          "member": "WebSocket",
-          "name": "WebSocket",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "AddEcdnDomainResponse": {
-      "document": "AddEcdnDomain返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "AdvanceHttps": {
       "document": "回源的自定义Https配置",
       "members": [
@@ -444,90 +253,6 @@
         }
       ],
       "usage": "both"
-    },
-    "CreateVerifyRecordRequest": {
-      "document": "CreateVerifyRecord请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "要取回的域名",
-          "example": "www.qq.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateVerifyRecordResponse": {
-      "document": "CreateVerifyRecord返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "子解析",
-          "example": "_cdnauth",
-          "member": "string",
-          "name": "SubDomain",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "解析值",
-          "example": "202009071516044acd018wf498457628cn75ba018ec9cv",
-          "member": "string",
-          "name": "Record",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "解析类型",
-          "example": "TXT",
-          "member": "string",
-          "name": "RecordType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteEcdnDomainRequest": {
-      "document": "DeleteEcdnDomain请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "待删除域名。",
-          "example": "www.test.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteEcdnDomainResponse": {
-      "document": "DeleteEcdnDomain返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "DescribeDomainsConfigRequest": {
       "document": "DescribeDomainsConfig请求参数结构体",
@@ -997,43 +722,6 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribePurgeQuotaRequest": {
-      "document": "DescribePurgeQuota请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribePurgeQuotaResponse": {
-      "document": "DescribePurgeQuota返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Url刷新用量及配额。",
-          "example": "无",
-          "member": "Quota",
-          "name": "UrlPurge",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "目录刷新用量及配额。",
-          "example": "无",
-          "member": "Quota",
-          "name": "PathPurge",
-          "required": true,
-          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2085,52 +1773,6 @@
       ],
       "usage": "both"
     },
-    "PurgePathCacheRequest": {
-      "document": "PurgePathCache请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "要刷新的目录列表，必须包含协议头部。",
-          "example": "[\"http:\\/\\/www.test.com\\/test\\/\"]",
-          "member": "string",
-          "name": "Paths",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "刷新类型，flush 代表刷新有更新的资源，delete 表示刷新全部资源。",
-          "example": "flush",
-          "member": "string",
-          "name": "FlushType",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "PurgePathCacheResponse": {
-      "document": "PurgePathCache返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "刷新任务Id。",
-          "example": "1533045796-i60rfmzm",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "PurgeTask": {
       "document": "刷新任务日志详情",
       "members": [
@@ -2233,42 +1875,6 @@
         }
       ],
       "type": "object"
-    },
-    "Quota": {
-      "document": "刷新用量及刷新配额",
-      "members": [
-        {
-          "disabled": false,
-          "document": "单次批量提交配额上限。",
-          "example": "",
-          "member": "int64",
-          "name": "Batch",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每日提交配额上限。",
-          "example": "",
-          "member": "int64",
-          "name": "Total",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "每日剩余的可提交配额。",
-          "example": "",
-          "member": "int64",
-          "name": "Available",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "ResourceData": {
       "document": "查询对象及其对应的访问明细数据",
@@ -2424,60 +2030,6 @@
       ],
       "usage": "in"
     },
-    "StartEcdnDomainRequest": {
-      "document": "StartEcdnDomain请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "待启用域名。",
-          "example": "www.test.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StartEcdnDomainResponse": {
-      "document": "StartEcdnDomain返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopEcdnDomainRequest": {
-      "document": "StopEcdnDomain请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "待停用域名。",
-          "example": "www.test.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "StopEcdnDomainResponse": {
-      "document": "StopEcdnDomain返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "Tag": {
       "document": "标签键和标签值",
       "members": [
@@ -2529,132 +2081,6 @@
         }
       ],
       "usage": "out"
-    },
-    "UpdateDomainConfigRequest": {
-      "document": "UpdateDomainConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "域名。",
-          "example": "www.test.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站配置。",
-          "example": "无",
-          "member": "Origin",
-          "name": "Origin",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "项目id。",
-          "example": "0",
-          "member": "int64",
-          "name": "ProjectId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "IP黑白名单配置。",
-          "example": "无",
-          "member": "IpFilter",
-          "name": "IpFilter",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "IP限频配置。",
-          "example": "无",
-          "member": "IpFreqLimit",
-          "name": "IpFreqLimit",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "源站响应头部配置。",
-          "example": "无",
-          "member": "ResponseHeader",
-          "name": "ResponseHeader",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "节点缓存配置。",
-          "example": "无",
-          "member": "CacheKey",
-          "name": "CacheKey",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "缓存规则配置。",
-          "example": "无",
-          "member": "Cache",
-          "name": "Cache",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "Https配置。",
-          "example": "无",
-          "member": "Https",
-          "name": "Https",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "访问协议强制跳转配置。",
-          "example": "无",
-          "member": "ForceRedirect",
-          "name": "ForceRedirect",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "域名加速区域，mainland，overseas或global，分别表示中国境内加速，海外加速或全球加速。",
-          "example": "mainland",
-          "member": "string",
-          "name": "Area",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WebSocket配置",
-          "example": "无",
-          "member": "WebSocket",
-          "name": "WebSocket",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateDomainConfigResponse": {
-      "document": "UpdateDomainConfig返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "WebSocket": {
       "document": "WebSocket配置。",

@@ -1725,12 +1725,50 @@
   "objects": {
     "AddProjectUserRoleRequest": {
       "document": "AddProjectUserRole请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1 2627832231084032",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "[\"46116860184342759\", \"1000357654\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "[\"3083352602742340\", \"3083352606768904\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "AddProjectUserRoleResponse": {
       "document": "AddProjectUserRole返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2943,6 +2981,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送结果 大json格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"a\":\"1\"}",
+          "member": "string",
+          "name": "AlarmMessageSendResult",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -45021,6 +45070,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "alarm message rule\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"\":\"\"}",
+          "member": "string",
+          "name": "AlarmMessageRule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

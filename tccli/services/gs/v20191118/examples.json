@@ -1,11 +1,131 @@
 {
   "actions": {
+    "ConnectAndroidInstance": [
+      {
+        "document": "连接安卓实例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConnectAndroidInstance\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"aaa\",\n    \"ClientSession\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ServerSession\": \"abc\",\n        \"RequestId\": \"req123\"\n    }\n}",
+        "title": "连接安卓实例"
+      }
+    ],
+    "CopyAndroidInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyAndroidInstance\n<公共请求参数>\n\n{\n    \"SourceAndroidInstanceId\": \"cai-1300055477-ea99GVmmMxh\",\n    \"TargetAndroidInstanceId\": \"cai-1300055477-ea999ohpfry\",\n    \"Excludes\": [\n        \"/data/media/0/Android/data/com.zlongame.cn.ro\",\n        \"/data/app/com.zlongame.cn.ro*\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69054011-bd78-4ac3-b091-e32d025de527\",\n        \"TaskId\": \"b2979beb-2ac1-4e9a-bd77-68039dfeeb80\"\n    }\n}",
+        "title": "CopyAndroidInstance 示例"
+      }
+    ],
+    "CreateAndroidInstanceImage": [
+      {
+        "document": "创建安卓实例镜像",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceImages\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"abc\",\n    \"AndroidInstanceImageName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"AndroidInstanceImageId\": \"abc\"\n    }\n}",
+        "title": "创建安卓实例镜像"
+      }
+    ],
+    "CreateAndroidInstanceLabel": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceLabel\n<公共请求参数>\n\n{\n    \"Key\": \"key1\",\n    \"Value\": \"value1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3456acfd-fcad-4b97-9bfe-e014343007c4\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateAndroidInstanceSSH": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceSSH\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-123456-abc\",\n    \"ExpiredTime\": \"2021-05-04T11:00:00Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectCommand\": \"ssh -i private_key.pem -p 12222 root@10.0.0.1\",\n        \"PrivateKey\": \"xxxxx\",\n        \"UserName\": \"root\",\n        \"HostName\": \"10.0.0.1\",\n        \"Port\": 12222,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建安卓实例 SSH 连接"
+      }
+    ],
+    "CreateAndroidInstanceWebShell": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceWebShell\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-123456-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Key\": \"xxxxx\",\n        \"Address\": \"ap-shenzhen-1.webssh.crtrcloud.com\",\n        \"Zone\": \"ap-shenzhen-1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建安卓实例 WebShell 连接"
+      }
+    ],
+    "CreateAndroidInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"abc\",\n    \"Type\": \"abc\",\n    \"Number\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AndroidInstanceIds\": [\n            \"abc\",\n            \"def\",\n            \"hij\"\n        ],\n        \"RequestId\": \"5f21d5f7-6f2e-4bb6-8124-c7918db7d868\"\n    }\n}",
+        "title": "CreateAndroidInstances"
+      }
+    ],
     "CreateSession": [
       {
         "document": "锁定实例后，创建会话，以连接实例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"GameRegion\": \"字符串型\",\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\",\n    \"ClientSession\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"1\",\n        \"ServerSession\": \"e30=\",\n        \"Role\": \"Player\",\n        \"RequestId\": \"req123\"\n    }\n}",
         "title": "CreateSession示例"
+      }
+    ],
+    "DeleteAndroidInstanceImages": [
+      {
+        "document": "删除安卓实例镜像",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceImages\n<公共请求参数>\n\n{\n    \"AndroidInstanceImageIds\": [\n        \"agc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "删除安卓实例镜像"
+      }
+    ],
+    "DeleteAndroidInstanceLabel": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceLabel\n<公共请求参数>\n\n{\n    \"Key\": \"key10\",\n    \"Value\": \"value10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac83a4cd-1844-4a32-8b95-0d9452f31f9e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeAndroidApps": [
+      {
+        "document": "查询安卓应用信息",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidApps\n<公共请求参数>\n\n{\n    \"Offset\": 2,\n    \"Limit\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-ne70ubtu\",\n                \"AndroidAppVersionInfo\": [\n                    {\n                        \"AndroidAppVersion\": \"1705404913631168348\",\n                        \"CreateTime\": \"2024-01-16T11:36:20Z\",\n                        \"State\": \"CREATE_SUCCESS\"\n                    },\n                    {\n                        \"AndroidAppVersion\": \"1705406075397560877\",\n                        \"CreateTime\": \"2024-01-16T11:54:35Z\",\n                        \"State\": \"CREATE_FAIL\"\n                    }\n                ],\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            },\n            {\n                \"AndroidAppId\": \"apk-d6fyydrc\",\n                \"AndroidAppVersionInfo\": null,\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            }\n        ],\n        \"RequestId\": \"5eae7edb-7e12-451e-a4c1-7cf0b777c6e7\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询安卓应用信息"
+      }
+    ],
+    "DescribeAndroidInstanceApps": [
+      {
+        "document": "查询安卓实例应用",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceApps\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-nm5r03gm\",\n                \"Name\": \"测试2\",\n                \"AndroidAppVersion\": \"xxx\"\n            },\n            {\n                \"AndroidAppId\": \"apk-qekh35py\",\n                \"Name\": \"does\",\n                \"AndroidAppVersion\": \"xxx\"\n            }\n        ]\n    }\n}",
+        "title": "查询安卓实例应用"
+      }
+    ],
+    "DescribeAndroidInstanceImages": [
+      {
+        "document": "查询安卓实例镜像",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceImages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"AndroidInstanceImages\": [\n            {\n                \"AndroidInstanceImageId\": \"abc\",\n                \"AndroidInstanceImageName\": \"abc\",\n                \"AndroidInstanceImageState\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "查询安卓实例镜像"
+      }
+    ],
+    "DescribeAndroidInstanceLabels": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceLabels\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Labels\": [\n            {\n                \"Key\": \"key1\",\n                \"Value\": \"value1\"\n            },\n            {\n                \"Key\": \"key2\",\n                \"Value\": \"value2\"\n            },\n            {\n                \"Key\": \"key3\",\n                \"Value\": \"value3\"\n            }\n        ],\n        \"RequestId\": \"ea6152f5-b6f4-4ef8-b828-acd85581d042\",\n        \"Total\": 3\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeAndroidInstanceTasksStatus": [
+      {
+        "document": "查询安卓实例任务状态",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceTasksStatus\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"123\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskStatusSet\": [\n            {\n                \"TaskId\": \"123\",\n                \"Status\": \"SUCCESS\",\n                \"AndroidInstanceId\": \"id-test\"\n            }\n        ],\n        \"RequestId\": \"e54a0e39-4d84-41ab-953f-2f2a72d92546\"\n    }\n}",
+        "title": "查询安卓实例任务状态"
+      }
+    ],
+    "DescribeAndroidInstances": [
+      {
+        "document": "查询安卓实例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstances\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"AndroidInstanceIds\": [\n        \"xx\"\n    ],\n    \"AndroidInstanceRegion\": \"xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TotalCount\": 1,\n        \"AndroidInstances\": [\n            {\n                \"AndroidInstanceId\": \"xxx\",\n                \"AndroidInstanceRegion\": \"ap-guagnzhou\",\n                \"State\": \"xxx\",\n                \"AndroidInstanceType\": \"xxx\"\n            }\n        ]\n    }\n}",
+        "title": "查询安卓实例"
       }
     ],
     "DescribeInstancesCount": [
@@ -16,12 +136,108 @@
         "title": "获取实例总数和运行数"
       }
     ],
+    "DestroyAndroidInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99W33CnVL\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"685474f8-3854-496c-8f7b-40a02b019a90\"\n    }\n}",
+        "title": "DestroyAndroidInstances 示例"
+      }
+    ],
+    "ExecuteCommandOnAndroidInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteCommandOnAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"abc\"\n    ],\n    \"Command\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "ExecuteCommandOnAndroidInstances 示例"
+      }
+    ],
+    "InstallAndroidInstancesApp": [
+      {
+        "document": "安装安卓实例应用",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"xxx\"\n    ],\n    \"AndroidAppId\": \"xxx\",\n    \"AndroidAppVersion\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"abc\",\n                \"AndroidInstanceId\": \"abc\"\n            }\n        ]\n    }\n}",
+        "title": "安装安卓实例应用"
+      }
+    ],
+    "ModifyAndroidInstanceInformation": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstanceInformation\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99cM7rbg6\",\n    \"Name\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9207f7b7-06a0-44fc-932a-6a95baf7164e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyAndroidInstanceResolution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstanceResolution\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"abc\",\n    \"Width\": 1080,\n    \"Height\": 1920\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "ModifyAndroidInstanceResolution 示例"
+      }
+    ],
+    "ModifyAndroidInstancesLabels": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesLabels\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99cM7rbg6\",\n        \"cai-251006279-ea993NPwvHN\"\n    ],\n    \"AndroidInstanceLabels\": [\n        {\n            \"Key\": \"key1\",\n            \"Value\": \"value1\"\n        },\n        {\n            \"Key\": \"key2\",\n            \"Value\": \"value2\"\n        },\n        {\n            \"Key\": \"key3\",\n            \"Value\": \"value3\"\n        }\n    ],\n    \"Operation\": \"ADD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe0851d4-fda2-4d73-9efc-9952971b611c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyAndroidInstancesUserId": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesUserId\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99cM7rbg6\",\n        \"cai-251006279-ea993NPwvHN\"\n    ],\n    \"UserId\": \"usertest01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"297260fb-90bf-4be4-8bfb-8a30a8fb03e5\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RebootAndroidInstances": [
+      {
+        "document": "重启安卓实例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"xxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"abc\",\n                \"AndroidInstanceId\": \"abc\"\n            }\n        ]\n    }\n}",
+        "title": "重启安卓实例"
+      }
+    ],
+    "ResetAndroidInstances": [
+      {
+        "document": "重置安卓实例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"xxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"abc\",\n                \"AndroidInstanceId\": \"abc\"\n            }\n        ]\n    }\n}",
+        "title": "重置安卓实例"
+      }
+    ],
+    "RestartAndroidInstancesApp": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJh1iNOc\"\n    ],\n    \"PackageName\": \"pkg.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b92629aa-96ed-4e01-83ec-cb837e683c78\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "SaveGameArchive": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveGameArchive\n<公共请求参数>\n\n{\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "SaveGameArchive示例"
+      }
+    ],
+    "StartAndroidInstances": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJHjuvBH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60d562ee-d90f-43f2-9904-be2cb8e4c5ca\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-6c8fJHjuvBH\",\n                \"TaskId\": \"80c7f175-e5f8-439f-bc63-44f0bdd6ce97\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "StartAndroidInstancesApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"xxx\"\n    ],\n    \"PackageName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\"\n    }\n}",
+        "title": "启动安卓实例应用示例"
       }
     ],
     "StartPublishStream": [
@@ -38,6 +254,22 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStreamToCSS\n<公共请求参数>\n\n{\n    \"UserId\": \"abc123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "StartPublishStreamToCSS 示例"
+      }
+    ],
+    "StopAndroidInstances": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJHjuvBH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7bba9bf8-6d0e-495b-a0c4-bf4d182c4dde\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-6c8fJHjuvBH\",\n                \"TaskId\": \"33316044-c02e-4324-8bf4-2e089ad0d818\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "StopAndroidInstancesApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"xxx\"\n    ],\n    \"PackageName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\"\n    }\n}",
+        "title": "停止安卓实例应用示例"
       }
     ],
     "StopGame": [
@@ -64,12 +296,44 @@
         "title": "SwitchGameArchive示例"
       }
     ],
+    "SyncAndroidInstanceImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncAndroidInstanceImage\n<公共请求参数>\n\n{\n    \"AndroidInstanceImageId\": \"image-abcd1234\",\n    \"DestinationZones\": [\n        \"ap-guangzhou-3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SyncAndroidInstanceImages\": [\n            {\n                \"AndroidInstanceImageId\": \"abc\",\n                \"AndroidInstanceImageZone\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "SyncAndroidInstanceImage 示例"
+      }
+    ],
+    "SyncExecuteCommandOnAndroidInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncExecuteCommandOnAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-1300055477-ea990LbMLbq\"\n    ],\n    \"Command\": \"ls\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CommandResults\": [\n            {\n                \"InstanceId\": \"cai-1300055477-ea990LbMLbq\",\n                \"Output\": \"{\\\"StdOut\\\":\\\"acct\\\\napex\\\\nbin\\\\nbugreports\\\\ncache\\\\ncharger\\\\nconfig\\\\ncontainer.prop\\\\nd\\\\ndata\\\\ndebug_ramdisk\\\\ndefault.prop\\\\ndev\\\\netc\\\\ninit\\\\ninit.environ.rc\\\\ninit.rc\\\\ninit.usb.rc\\\\ninit.zygote32.rc\\\\ninit.zygote64_32.rc\\\\nlost+found\\\\nmetadata\\\\nmnt\\\\nodm\\\\noem\\\\nproc\\\\nproduct\\\\nproduct_services\\\\nres\\\\nsbin\\\\nsdcard\\\\nstorage\\\\nsys\\\\nsystem\\\\ntcg_share_data\\\\nueventd.rc\\\\nvendor\\\\nwebrtc_ctrl_20240914.log\\\\nwebrtc_ctrl_20240915.log\\\\nwebrtc_ctrl_20240916.log\\\\nwebrtc_ctrl_20240917.log\\\\nwebrtc_ctrl_20240918.log\\\\nwebrtc_ctrl_20240919.log\\\\n\\\",\\\"StdError\\\":\\\"\\\"}\",\n                \"Status\": \"SUCCESS\"\n            }\n        ],\n        \"RequestId\": \"bc62efee-0e09-4267-9f0b-aabdc80bf2eb\"\n    }\n}",
+        "title": "SyncExecuteCommandOnAndroidInstances 示例"
+      }
+    ],
     "TrylockWorker": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TrylockWorker\n<公共请求参数>\n\n{\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"42a7c28d-6b1c-4b47-927c-035e3ffc1098\"\n    }\n}",
         "title": "TrylockWorker示例"
+      }
+    ],
+    "UninstallAndroidInstancesApp": [
+      {
+        "document": "卸载安卓实例应用",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"xxx\"\n    ],\n    \"AndroidAppId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"abc\",\n                \"AndroidInstanceId\": \"abc\"\n            }\n        ]\n    }\n}",
+        "title": "卸载安卓实例应用"
+      }
+    ],
+    "UploadFileToAndroidInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFileToAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"abc\"\n    ],\n    \"FileURL\": \"http://xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"abc\",\n                \"AndroidInstanceId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"af454786-99e1-4fc7-8ffa-2ecef1e69715\"\n    }\n}",
+        "title": "上传文件到安卓实例示例"
       }
     ]
   },

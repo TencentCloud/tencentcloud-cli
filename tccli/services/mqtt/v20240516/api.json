@@ -2611,7 +2611,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件列表,支持以下子弹\nInstanceName：集群名模糊搜索\nInstanceId：集群id精确搜索\nInstanceStatus：集群状态搜索",
+          "document": "查询条件列表,支持以下字段\nInstanceName：集群名模糊搜索\nInstanceId：集群id精确搜索\nInstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）",
           "example": "[{\"Name\":\"InstanceName\",\"Values\":[\"instance1\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -2620,7 +2620,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2629,7 +2629,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
+          "document": "查询结果限制数量，默认20，最大100",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -3136,8 +3136,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3914,8 +3914,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，\nEXPERIMENT，体验版\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
-          "example": "EXPERIMENT",
+          "document": "实例类型\nBASIC，基础版\nPRO，专业版\nPLATINUM，铂金版",
+          "example": "PRO",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -3965,7 +3965,7 @@
         {
           "disabled": false,
           "document": "商品规格",
-          "example": "basic_1k",
+          "example": "pro_10k_1",
           "member": "string",
           "name": "SkuCode",
           "output_required": true,
@@ -3984,7 +3984,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，毫秒级时间戳",
           "example": "1713164969433",
           "member": "int64",
           "name": "CreateTime",
@@ -4014,7 +4014,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费",
+          "document": "是否自动续费。仅包年包月就去那生效。\n1:自动续费\n0:非自动续费",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -4034,8 +4034,8 @@
         },
         {
           "disabled": false,
-          "document": "到期时间，秒为单位",
-          "example": "100000",
+          "document": "到期时间，毫秒级时间戳",
+          "example": "1742455643000",
           "member": "int64",
           "name": "ExpiryTime",
           "output_required": false,
@@ -4044,7 +4044,7 @@
         },
         {
           "disabled": false,
-          "document": "预销毁时间",
+          "document": "预销毁时间，毫秒级时间戳",
           "example": "1713164969433",
           "member": "int64",
           "name": "DestroyTime",

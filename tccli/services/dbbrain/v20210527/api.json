@@ -224,6 +224,13 @@
       "output": "DescribeDBDiagReportTasksResponse",
       "status": "online"
     },
+    "DescribeDBPerfTimeSeries": {
+      "document": "根据实例ID获取指定时间段的性能趋势。",
+      "input": "DescribeDBPerfTimeSeriesRequest",
+      "name": "获取性能趋势",
+      "output": "DescribeDBPerfTimeSeriesResponse",
+      "status": "online"
+    },
     "DescribeDBSpaceStatus": {
       "document": "获取指定时间段内的实例空间使用概览，包括磁盘增长量(MB)、磁盘剩余(MB)、磁盘总量(MB)及预计可用天数。",
       "input": "DescribeDBSpaceStatusRequest",
@@ -299,6 +306,27 @@
       "input": "DescribeRedisBigKeyAnalysisTasksRequest",
       "name": "查询redis大key分析任务列表",
       "output": "DescribeRedisBigKeyAnalysisTasksResponse",
+      "status": "online"
+    },
+    "DescribeRedisCmdPerfTimeSeries": {
+      "document": "延迟分析-命令字分析-查询命令延迟趋势",
+      "input": "DescribeRedisCmdPerfTimeSeriesRequest",
+      "name": "查询命令延迟趋势",
+      "output": "DescribeRedisCmdPerfTimeSeriesResponse",
+      "status": "online"
+    },
+    "DescribeRedisCommandCostStatistics": {
+      "document": "延迟分析-查询命令延迟分布",
+      "input": "DescribeRedisCommandCostStatisticsRequest",
+      "name": "查询命令延迟分布",
+      "output": "DescribeRedisCommandCostStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeRedisCommandOverview": {
+      "document": "延迟分析-查询实例访问命令统计",
+      "input": "DescribeRedisCommandOverviewRequest",
+      "name": "查询访问命令统计",
+      "output": "DescribeRedisCommandOverviewResponse",
       "status": "online"
     },
     "DescribeRedisProcessList": {
@@ -1652,6 +1680,78 @@
         }
       ],
       "type": "object"
+    },
+    "CmdCostGroup": {
+      "document": "redis延迟分布区间详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该延迟区间内命令数占总命令数百分比",
+          "example": "1.2",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟区间上界，单位ms",
+          "example": "\"200\"",
+          "member": "string",
+          "name": "CostUpperLimit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟区间下界，单位ms",
+          "example": "\"100\"",
+          "member": "string",
+          "name": "CostLowerLimit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该延迟区间内命令次数",
+          "example": "1990",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CmdPerfInfo": {
+      "document": "redis命令延迟趋势",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis命令",
+          "example": "\"auth\"",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控数据",
+          "example": "无",
+          "member": "MonitorMetricSeriesData",
+          "name": "SeriesData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ContactItem": {
       "document": "联系人contact描述。",
@@ -3112,23 +3212,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的审计日志文件个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的审计日志文件个数。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审计日志文件详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Status\":\"creating\",\"Progress\":36,\"AsyncRequestId\":129544793,\"ErrMsg\":\"\",\"CreateTime\":\"2024-12-23 20:27:19\",\"FileName\":null,\"FileSize\":0}",
+          "document": "审计日志文件详情。",
+          "example": "无",
           "member": "AuditLogFile",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3735,6 +3835,124 @@
       ],
       "type": "object"
     },
+    "DescribeDBPerfTimeSeriesRequest": {
+      "document": "DescribeDBPerfTimeSeries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要获取性能趋势的实例ID。",
+          "example": "cdb-test123",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。",
+          "example": "2019-01-01T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。",
+          "example": "2019-01-01T01:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称，多个指标之间用逗号分隔。",
+          "example": "binlog_disk_available,data_disk_available",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取性能趋势的集群ID。",
+          "example": "tdsqlshard-1eu5znlw",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "性能数据统计粒度。",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实列节点ID。",
+          "example": "95397a1418f36495af7d09433f2f575f3d53d852",
+          "member": "string",
+          "name": "InstanceNodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实列代理ID。",
+          "example": "a267221bfa30c571cabbea555121bc1c2c97e518",
+          "member": "string",
+          "name": "InstanceProxyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理节点ID。",
+          "example": "a267221bfa30c571cabbea555121bc1c2c97e518",
+          "member": "string",
+          "name": "ProxyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBPerfTimeSeriesResponse": {
+      "document": "DescribeDBPerfTimeSeries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实列性能数据。",
+          "example": "无",
+          "member": "MonitorMetricSeriesData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBSpaceStatusRequest": {
       "document": "DescribeDBSpaceStatus请求参数结构体",
       "members": [
@@ -4211,23 +4429,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "邮件配置详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ProfileId\":\"1433288\",\"ProfileType\":\"dbScan_mail_configuration\",\"ProfileLevel\":\"User\",\"ProfileName\":\"测试uin\",\"ProfileInfo\":{\"MailConfiguration\":{\"HealthStatus\":[\"HEALTH\",\"SUB_HEALTH\",\"RISK\",\"HIGH_RISK\"],\"Region\":[\"ap-guangzhou\"],\"ContactGroup\":[],\"SendMail\":0,\"ContactPerson\":[24332]},\"Language\":\"zh\"}}]",
+          "document": "邮件配置详情。",
+          "example": "无",
           "member": "UserProfile",
           "name": "ProfileList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "邮件配置总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮件配置总数。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4715,6 +4933,225 @@
           "member": "RedisBigKeyTask",
           "name": "Tasks",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisCmdPerfTimeSeriesRequest": {
+      "document": "DescribeRedisCmdPerfTimeSeries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "crs-test1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，仅仅支持值 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，如“2025-03-17T00:00:00+00:00”。0天 < 当前服务器时间 - 开始时间 <= 10天。",
+          "example": "2025-03-17T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2025-03-17T01:00:00+00:00”，0天 < 结束时间 - 开始时间 <= 10天。",
+          "example": "2025-03-17T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要分析的redis命令",
+          "example": "[\"auth\",\"eval\",\"select\",\"get\",\"incrby\",\"ping\",\"set\"]",
+          "member": "string",
+          "name": "CommandList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监控指标，以逗号分隔",
+          "example": "\"qps,latency_p99,latency_avg,latency_max\"",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控指标时间粒度，单位秒，若不提供则根据开始时间和结束时间取默认值",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisCmdPerfTimeSeriesResponse": {
+      "document": "DescribeRedisCmdPerfTimeSeries返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis命令延迟趋势",
+          "example": "无",
+          "member": "CmdPerfInfo",
+          "name": "CmdPerfList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisCommandCostStatisticsRequest": {
+      "document": "DescribeRedisCommandCostStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "crs-test1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，如“2025-03-17T00:00:00+00:00”。0天 < 当前服务器时间 - 开始时间 <= 10天。",
+          "example": "2025-03-17T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2025-03-17T01:00:00+00:00”，0天 < 结束时间 - 开始时间 <= 10天。",
+          "example": "2025-03-17T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，仅仅支持值 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisCommandCostStatisticsResponse": {
+      "document": "DescribeRedisCommandCostStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis延迟分布区间",
+          "example": "无",
+          "member": "CmdCostGroup",
+          "name": "CmdCostGroups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisCommandOverviewRequest": {
+      "document": "DescribeRedisCommandOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "crs-test1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，如“2025-03-17T00:00:00+00:00”。0天 < 当前服务器时间 - 开始时间 <= 10天。",
+          "example": "2025-03-17T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2025-03-17T01:00:00+00:00”，0天 < 结束时间 - 开始时间 <= 10天。",
+          "example": "2025-03-17T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，仅仅支持值 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisCommandOverviewResponse": {
+      "document": "DescribeRedisCommandOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis访问命令统计",
+          "example": "无",
+          "member": "RedisCmdInfo",
+          "name": "CmdList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8686,6 +9123,32 @@
           "name": "ShardIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RedisCmdInfo": {
+      "document": "redis访问命令详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "redis命令",
+          "example": "\"get\"",
+          "member": "string",
+          "name": "Cmd",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令次数",
+          "example": "17418",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

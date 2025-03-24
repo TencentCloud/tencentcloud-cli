@@ -13,55 +13,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "111",
+        "RequestId": "aa-bb-cc-dd",
         "RiskFieldsDesc": [
             {
-                "Field": "InstanceId",
-                "FieldName": "ID",
+                "Field": "Level",
+                "FieldName": "风险等级",
                 "FieldType": "string",
-                "FieldDict": {}
+                "FieldDict": [
+                    {
+                        "Key": "3",
+                        "Value": "高风险"
+                    },
+                    {
+                        "Key": "2",
+                        "Value": "中风险"
+                    }
+                ]
             },
             {
-                "Field": "InstanceName",
-                "FieldName": "名称",
-                "FieldType": "string",
-                "FieldDict": {}
+                "Field": "AppId",
+                "FieldName": "appid",
+                "FieldType": "int",
+                "FieldDict": null
             },
             {
-                "Field": "InstanceState",
-                "FieldName": "状态",
-                "FieldType": "string",
-                "FieldDict": {}
+                "Field": "RiskDays",
+                "FieldName": "风险持续天数",
+                "FieldType": "int",
+                "FieldDict": null
             },
             {
-                "Field": "Zone",
-                "FieldName": "可用区",
-                "FieldType": "string",
-                "FieldDict": {}
-            },
-            {
-                "Field": "PrivateIPAddresses",
-                "FieldName": "IP地址(内)",
-                "FieldType": "stringSlice",
-                "FieldDict": {}
-            },
-            {
-                "Field": "PublicIPAddresses",
-                "FieldName": "IP地址(公)",
-                "FieldType": "stringSlice",
-                "FieldDict": {}
-            },
-            {
-                "Field": "Region",
-                "FieldName": "地域",
-                "FieldType": "string",
-                "FieldDict": {}
-            },
-            {
-                "Field": "Tags",
-                "FieldName": "标签",
-                "FieldType": "tags",
-                "FieldDict": {}
+                "Field": "conditionID",
+                "FieldName": "条件ID",
+                "FieldType": "int",
+                "FieldDict": null
             }
         ],
         "RiskTotalCount": 3,

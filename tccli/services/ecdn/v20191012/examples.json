@@ -1,29 +1,5 @@
 {
   "actions": {
-    "AddEcdnDomain": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=AddEcdnDomain\n&Domain=www.test.com\n&Origin.Origins.0=2.2.2.2\n&Area=global\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
-        "title": "新增加速域名"
-      }
-    ],
-    "CreateVerifyRecord": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=CreateVerifyRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8518c99c-a8eb-4930-a7d0-eff586d9cc37\",\n        \"SubDomain\": \"_cdnauth\",\n        \"Record\": \"202009071516044acd018wf498457628cn75ba018ec9cv\",\n        \"RecordType\": \"TXT\"\n    }\n}",
-        "title": "生成解析记录"
-      }
-    ],
-    "DeleteEcdnDomain": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DeleteEcdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\"\n    }\n}",
-        "title": "删除加速域名"
-      }
-    ],
     "DescribeDomains": [
       {
         "document": "",
@@ -72,14 +48,6 @@
         "title": "查询域名节点信息"
       }
     ],
-    "DescribePurgeQuota": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=DescribePurgeQuota\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f5a231e-f629-42fa-a9f0-5a9ebc127c04\",\n        \"UrlPurge\": {\n            \"Batch\": 1000,\n            \"Total\": 10000,\n            \"Available\": 10000\n        },\n        \"PathPurge\": {\n            \"Batch\": 20,\n            \"Total\": 100,\n            \"Available\": 100\n        }\n    }\n}",
-        "title": "DescribePurgeQuota"
-      }
-    ],
     "DescribePurgeTasks": [
       {
         "document": "",
@@ -88,44 +56,12 @@
         "title": "刷新历史查询"
       }
     ],
-    "PurgePathCache": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=PurgePathCache\n&Paths.0=http://www.test.com/test/\n&FlushType=flush\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
-        "title": "刷新Url目录"
-      }
-    ],
     "PurgeUrlsCache": [
       {
         "document": "",
         "input": "https://ecdn.tencentcloudapi.com/?Action=PurgeUrlsCache\n&Urls.0=http://www.test.com/1.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"TaskId\": \"1533045796-i60rfmzm\"\n    }\n}",
         "title": "刷新Url"
-      }
-    ],
-    "StartEcdnDomain": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=StartEcdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\"\n    }\n}",
-        "title": "启用加速域名"
-      }
-    ],
-    "StopEcdnDomain": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=StopEcdnDomain\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13d41d37-546f-42ed-a3b9-ff82a51ecd0a\"\n    }\n}",
-        "title": "停用加速域名"
-      }
-    ],
-    "UpdateDomainConfig": [
-      {
-        "document": "",
-        "input": "https://ecdn.tencentcloudapi.com/?Action=UpdateDomainConfig\n&ProjectId=0\n&Domain=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23cd4005-496f-4bc4-87d8-ab348d5b0c17\"\n    }\n}",
-        "title": "更新域名配置"
       }
     ]
   },

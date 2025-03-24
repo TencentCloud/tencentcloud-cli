@@ -4050,13 +4050,13 @@
         },
         {
           "disabled": false,
-          "document": "域名实名认证不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名实名认证不通过原因。",
           "example": "证件照片不清晰",
           "member": "string",
           "name": "RealNameAuditUnpassReason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
