@@ -1567,13 +1567,13 @@
         },
         {
           "disabled": false,
-          "document": "订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单对应的实例 ID 列表，如果此处没有返回实例 ID，可以通过订单查询接口获取。还可通过实例查询接口查询实例是否创建完成。",
           "example": "[\"dcdbt-avw0207d\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2785,13 +2785,13 @@
         },
         {
           "disabled": false,
-          "document": "实例处于异步任务状态时，表示异步任务流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例处于异步任务状态时，表示异步任务流程ID",
           "example": "0",
           "member": "int64",
           "name": "Locker",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2825,113 +2825,113 @@
         },
         {
           "disabled": false,
-          "document": "实例IPv6标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例IPv6标志",
           "example": "1",
           "member": "uint64",
           "name": "Ipv6Flag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网IPv6",
           "example": "240d:c000:f05f:b200:f200:b20f",
           "member": "string",
           "name": "Vipv6",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网IPv6",
           "example": "140f:c010:*",
           "member": "string",
           "name": "WanVipv6",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网IPv6端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网IPv6端口",
           "example": "24450",
           "member": "uint64",
           "name": "WanPortIpv6",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网IPv6状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网IPv6状态",
           "example": "1",
           "member": "uint64",
           "name": "WanStatusIpv6",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DCN标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN标志，0-无，1-主实例，2-灾备实例",
           "example": "1",
           "member": "int64",
           "name": "DcnFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开",
           "example": "2",
           "member": "int64",
           "name": "DcnStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DCN灾备实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN灾备实例数",
           "example": "2",
           "member": "int64",
           "name": "DcnDstNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）",
           "example": "2",
           "member": "int64",
           "name": "InstanceType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例标签信息",
           "example": "[{\"TagKey\":\"qta_tdsql54\",\"TagValue\":\"other54\"},{\"TagKey\":\"qta_tdsql50\",\"TagValue\":\"other50\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据库引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库引擎版本",
           "example": "8.0",
           "member": "string",
           "name": "DbVersionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3934,19 +3934,19 @@
           "example": "dcdbt-fdpjf5zh",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例用户列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例用户列表。",
           "example": "无",
           "member": "DBAccount",
           "name": "Users",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5107,83 +5107,83 @@
         },
         {
           "disabled": false,
-          "document": "内网IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网IPv6",
           "example": "2402:5e00:1011:2d01:1:90cb:55fa:e4f4",
           "member": "string",
           "name": "Vip6",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例Cpu核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例Cpu核数",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例QPS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例QPS",
           "example": "4000",
           "member": "int64",
           "name": "Qps",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DB引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DB引擎",
           "example": "Mysql",
           "member": "string",
           "name": "DbEngine",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否支持IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持IPv6",
           "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网IPv6地址，公网可访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网IPv6地址，公网可访问",
           "example": "2402:4e00:1012:2c01:1:90cb:55fa:e4d2",
           "member": "string",
           "name": "WanVipv6",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网状态，0-未开通；1-已开通；2-关闭；3-开通中；4-关闭中",
           "example": "0",
           "member": "int64",
           "name": "WanStatusIpv6",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网IPv6端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网IPv6端口",
           "example": "0",
           "member": "int64",
           "name": "WanPortIpv6",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5197,93 +5197,93 @@
         },
         {
           "disabled": false,
-          "document": "DCN标志，0-无，1-主实例，2-灾备实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN标志，0-无，1-主实例，2-灾备实例",
           "example": "0",
           "member": "int64",
           "name": "DcnFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN状态，0-无，1-创建中，2-同步中，3-已断开",
           "example": "0",
           "member": "int64",
           "name": "DcnStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DCN灾备实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DCN灾备实例数",
           "example": "0",
           "member": "int64",
           "name": "DcnDstNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）",
           "example": "2",
           "member": "int64",
           "name": "InstanceType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例是否支持设置用户连接数限制，内核为10.1暂不支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例是否支持设置用户连接数限制，内核为10.1暂不支持。",
           "example": "true",
           "member": "bool",
           "name": "IsMaxUserConnectionsSupported",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对外显示的数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对外显示的数据库版本",
           "example": "5.7",
           "member": "string",
           "name": "DbVersionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "加密状态, 0-未开启，1-已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密状态, 0-未开启，1-已开启",
           "example": "0",
           "member": "int64",
           "name": "EncryptStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享集群类型，0:公有云, 1:金融围笼, 2:CDC集群",
           "example": "0",
           "member": "int64",
           "name": "ExclusterType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC就近访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC就近访问",
           "example": "0",
           "member": "int64",
           "name": "RsAccessStrategy",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9173,13 +9173,13 @@
         },
         {
           "disabled": false,
-          "document": "DB节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DB节点信息",
           "example": "[{\"NodeId\": \"4ddc0ea18433\", \"Role\": \"master\"}, { \"NodeId\": \"5d51cf1f018c\",\"Role\": \"slave\" }]",
           "member": "NodeInfo",
           "name": "NodesInfo",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

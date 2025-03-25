@@ -30,7 +30,7 @@ Output:
                 "UserProvisioningId": "upe-d8n3d9***",
                 "PrincipalId": "u-dend83***",
                 "PrincipalType": "User",
-                "PrincipalName": "test",
+                "PrincipalName": "user1",
                 "DuplicationStrategy": "KeepBoth",
                 "DeletionStrategy": "Delete"
             }

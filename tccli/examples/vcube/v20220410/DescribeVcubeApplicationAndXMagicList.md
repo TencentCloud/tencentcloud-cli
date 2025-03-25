@@ -13,65 +13,48 @@ Output:
     "Response": {
         "ApplicationInfoList": [
             {
-                "AppName": "abc",
-                "BundleId": "abc",
-                "AppType": "abc",
-                "Licenses": [
-                    {
-                        "Type": "abc",
-                        "Remark": "abc",
-                        "StartTime": "abc",
-                        "EndTime": "abc",
-                        "FeatureId": 1,
-                        "LicenseType": "abc",
-                        "Renewal": true,
-                        "LicenseId": 1,
-                        "Name": "abc",
-                        "Update": true,
-                        "OldLicenseUrl": "abc",
-                        "Group": 1,
-                        "Expired": true,
-                        "RestTime": 1,
-                        "CreatedAt": "abc",
-                        "UpdatedAt": "abc"
-                    }
-                ],
-                "LicenseKey": "abc",
-                "PackageName": "abc",
-                "CreatedAt": "abc",
-                "UpdatedAt": "abc",
-                "ApplicationId": 1,
-                "LicenseUrl": "abc",
+                "AppId": "1324373818_1",
+                "AppName": "nengc",
+                "AppType": "test",
+                "ApplicationId": 1279,
+                "BundleId": "nengc",
+                "CreatedAt": "2024-05-28T10:56:07+08:00",
+                "DomainList": null,
+                "LicenseKey": "364d********580f",
+                "LicenseUrl": "https://license.vod-pro.com/license/v2/1324373818_1/v_cube.license",
+                "Licenses": [],
+                "MacBundleId": null,
+                "PackageName": "nengc",
+                "UpdatedAt": "2024-09-05T16:32:57+08:00",
+                "WinProcessName": null,
                 "XMagics": [
                     {
-                        "Id": 1,
-                        "CompanyName": "abc",
-                        "CompanyPermit": "abc",
-                        "CompanyType": "abc",
-                        "Plan": "abc",
-                        "LicenseType": "abc",
-                        "Status": 1,
-                        "Update": true,
-                        "StartTime": "abc",
-                        "EndTime": "abc",
-                        "RenewalCount": 1,
-                        "Reply": [
-                            "abc"
-                        ],
-                        "CreatedAt": "abc",
-                        "UpdatedAt": "abc",
-                        "UpdateTime": "abc",
+                        "CompanyName": null,
+                        "CompanyPermit": null,
+                        "CompanyType": null,
+                        "CreatedAt": "2024-05-28T10:56:07+08:00",
+                        "EndTime": "2024-06-11T10:56:07+08:00",
                         "Expired": true,
-                        "RestTime": 1,
-                        "XMagicType": "abc",
-                        "Name": "abc"
+                        "Id": 548,
+                        "IsVest": false,
+                        "LicenseType": "test",
+                        "Name": "原子能力X1-03",
+                        "Plan": "X1-03",
+                        "RenewalCount": 1,
+                        "Reply": [],
+                        "Resource": null,
+                        "RestTime": 0,
+                        "StartTime": "2024-05-28T10:56:07+08:00",
+                        "Status": 1,
+                        "Update": null,
+                        "UpdateTime": "2024-05-28T10:56:07+08:00",
+                        "UpdatedAt": "2024-05-28T10:56:07+08:00",
+                        "XMagicType": "single"
                     }
-                ],
-                "MacBundleId": "abc",
-                "WinProcessName": "abc"
+                ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "cd1a74a4-5d28-4f92-809d-aa9780cf2dd8"
     }
 }
 ```

@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "124",
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
         "Bucket": "live-portal-1258344699",
         "Region": "ap-shanghai",
         "StartTime": 1639482026,

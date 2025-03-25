@@ -8,8 +8,8 @@ Input:
 tccli gs DescribeAndroidInstances --cli-unfold-argument  \
     --Offset 0 \
     --Limit 100 \
-    --AndroidInstanceIds xx \
-    --AndroidInstanceRegion xxxx
+    --AndroidInstanceIds cai-abcd1234 \
+    --AndroidInstanceRegion ap-guangzhou
 ```
 
 Output: 
@@ -20,10 +20,10 @@ Output:
         "TotalCount": 1,
         "AndroidInstances": [
             {
-                "AndroidInstanceId": "xxx",
+                "AndroidInstanceId": "cai-abcd1234",
                 "AndroidInstanceRegion": "ap-guagnzhou",
-                "State": "xxx",
-                "AndroidInstanceType": "xxx"
+                "State": "NORMAL",
+                "AndroidInstanceType": "A6"
             }
         ]
     }

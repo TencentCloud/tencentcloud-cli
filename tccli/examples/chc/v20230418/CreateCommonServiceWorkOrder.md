@@ -15,7 +15,7 @@ tccli chc CreateCommonServiceWorkOrder --cli-unfold-argument  \
     --ContactName 张三 \
     --ContactPhone 13800138000 \
     --DeviceType server \
-    --Instructions test
+    --Instructions 检查五台设备
 ```
 
 Output: 

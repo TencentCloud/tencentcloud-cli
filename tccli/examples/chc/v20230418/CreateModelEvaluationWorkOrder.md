@@ -10,7 +10,7 @@ tccli chc CreateModelEvaluationWorkOrder --cli-unfold-argument  \
     --ModelSet.0.Version V1 \
     --CampusId 163 \
     --DeviceType server \
-    --Remark test
+    --Remark 服务器型号评估
 ```
 
 Output: 

@@ -8506,23 +8506,23 @@
         },
         {
           "disabled": false,
-          "document": "推荐索引列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推荐索引列表。",
           "example": "无",
           "member": "IndexesToBuild",
           "name": "IndexesToBuild",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "无效索引列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "无效索引列表。",
           "example": "无",
           "member": "IndexesToDrop",
           "name": "IndexesToDrop",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9031,23 +9031,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名",
           "example": "zhangsan",
           "member": "string",
           "name": "UinName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户id",
           "example": "100001",
           "member": "string",
           "name": "Uin",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

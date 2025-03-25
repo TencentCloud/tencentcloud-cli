@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gs ExecuteCommandOnAndroidInstances --cli-unfold-argument  \
-    --AndroidInstanceIds abc \
-    --Command abc
+    --AndroidInstanceIds cai-abcd1234 \
+    --Command ls
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "TaskSet": [
             {
-                "TaskId": "abc"
+                "TaskId": "615cf0a4-075e-4cf5-b26f-d786363dacce"
             }
         ],
         "RequestId": "requestid"

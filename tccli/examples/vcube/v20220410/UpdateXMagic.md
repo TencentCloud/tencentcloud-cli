@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli vcube UpdateXMagic --cli-unfold-argument  \
-    --XMagicResourceId abc \
-    --CompanyPermit abc \
-    --CompanyType abc \
-    --CompanyName abc \
-    --XMagicId 1
+    --XMagicResourceId xmc11671a6134d082bf79 \
+    --CompanyPermit http://tencent.com/nengc.jpg \
+    --CompanyType 娱乐 \
+    --CompanyName nengc \
+    --XMagicId 23487235
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vcube ModifyXMagic --cli-unfold-argument  \
-    --ResourceId abc \
-    --XMagicId abc
+    --ResourceId xmc534db52193ab436e89 \
+    --XMagicId 4102
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

@@ -11,12 +11,12 @@ Output:
 ```
 {
     "Response": {
-        "Total": 0,
+        "Total": 1,
         "AndroidInstanceImages": [
             {
-                "AndroidInstanceImageId": "abc",
-                "AndroidInstanceImageName": "abc",
-                "AndroidInstanceImageState": "abc"
+                "AndroidInstanceImageId": "image-abc",
+                "AndroidInstanceImageName": "imagetestname",
+                "AndroidInstanceImageState": "NORMAL"
             }
         ],
         "RequestId": "requestid"

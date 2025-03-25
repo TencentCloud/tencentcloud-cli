@@ -8,7 +8,7 @@ Input:
 tccli organization UpdateCustomPolicyForRoleConfiguration --cli-unfold-argument  \
     --ZoneId z-fdk3o32kqw \
     --RoleConfigurationId rc-sin23wj29s \
-    --CustomPolicyName test \
+    --CustomPolicyName policy1 \
     --NewCustomPolicyDocument {"statement":{"action":["name/cvm:*","name/vpc:*","name/cos:*","name/cmqtopic:*","name/cmqqueue:*"],"effect":"allow","resource":"*"},"version":"2.0"}
 ```
 

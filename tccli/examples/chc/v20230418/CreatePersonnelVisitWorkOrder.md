@@ -20,7 +20,7 @@ tccli chc CreatePersonnelVisitWorkOrder --cli-unfold-argument  \
     --EnterStartTime 2025-03-08 17:25:04 \
     --EnterEndTime 2025-03-10 17:25:04 \
     --VisitReason IT_OPERATION \
-    --VisitRemark test
+    --VisitRemark 需要参观
 ```
 
 Output: 

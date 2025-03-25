@@ -6,18 +6,15 @@ Input:
 
 ```
 tccli vcube CreateXMagic --cli-unfold-argument  \
-    --ApplicationId 1 \
-    --CompanyPermit abc \
-    --CompanyType abc \
-    --CompanyName abc \
-    --XMagicResourceIds abc
+    --ApplicationId 55480 \
+    --XMagicResourceIds xmc27da704193b8e94291
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

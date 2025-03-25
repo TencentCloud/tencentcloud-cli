@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli vcube RenewVideo --cli-unfold-argument  \
-    --LicenseId 1
+    --LicenseId 3458
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

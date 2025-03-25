@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "ConnectCommand": "ssh -i private_key.pem -p 12222 root@10.0.0.1",
-        "PrivateKey": "xxxxx",
+        "PrivateKey": "private-key",
         "UserName": "root",
         "HostName": "10.0.0.1",
         "Port": 12222,

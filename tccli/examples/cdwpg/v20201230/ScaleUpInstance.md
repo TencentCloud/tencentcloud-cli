@@ -1,4 +1,4 @@
-**Example 1: 1**
+**Example 1: 垂直变配集群**
 
 
 
@@ -7,8 +7,7 @@ Input:
 ```
 tccli cdwpg ScaleUpInstance --cli-unfold-argument  \
     --InstanceId cdwpg-xxxxx \
-    --InstanceName test1 \
-    --Case vm \
+    --Case scale_up_instance \
     --ModifySpec.Type cn \
     --ModifySpec.SpecName S_8_32_S \
     --ModifySpec.Count 4 \
@@ -22,8 +21,8 @@ Output:
 {
     "Response": {
         "FlowId": 43,
-        "RequestId": "errorstest",
-        "ErrorMsg": "errorstest"
+        "RequestId": "cdssxxxx-dds",
+        "ErrorMsg": ""
     }
 }
 ```

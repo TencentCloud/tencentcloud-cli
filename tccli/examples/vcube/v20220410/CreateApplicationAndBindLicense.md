@@ -6,23 +6,18 @@ Input:
 
 ```
 tccli vcube CreateApplicationAndBindLicense --cli-unfold-argument  \
-    --AppName abc \
-    --BundleId abc \
-    --PackageName abc \
-    --ResourceIds abc \
-    --CompanyPermit abc \
-    --CompanyType abc \
-    --CompanyName abc \
-    --XMagicResourceIds abc \
-    --MacBundleId abc \
-    --WinProcessName abc
+    --AppName com.peipei.ppapp \
+    --BundleId com.peipei.ppapp \
+    --PackageName com.peipei.ppapp \
+    --Platform mobile \
+    --ResourceIds luvcf7c026193b54454f1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "aaa"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

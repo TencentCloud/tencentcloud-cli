@@ -13,34 +13,34 @@ Output:
     "Response": {
         "FeatureList": [
             {
-                "Id": 1,
-                "FeatureId": 1,
-                "Name": "abc",
-                "Type": "abc",
+                "CreatedAt": "2021-08-09T03:29:19.404Z",
+                "Duration": 14,
+                "FeatureId": 3,
+                "Id": 2,
+                "Name": "短视频基础版",
                 "Trial": true,
-                "TrialCount": 1,
-                "Duration": 1,
-                "CreatedAt": "abc",
-                "UpdatedAt": "abc"
+                "TrialCount": 2,
+                "Type": "短视频制作基础版+视频播放",
+                "UpdatedAt": "2023-11-09T06:32:36.000Z"
             }
         ],
         "XMagicTrial": {
-            "Name": "abc",
-            "TrialCount": 1,
-            "Duration": 1,
-            "Plan": "abc",
-            "XMagicType": "abc"
+            "Duration": 0,
+            "Name": "高级套餐S1-04",
+            "Plan": "S1-04",
+            "TrialCount": 0,
+            "XMagicType": "combined"
         },
         "XMagicTrialList": [
             {
-                "Name": "abc",
-                "TrialCount": 1,
-                "Duration": 1,
-                "Plan": "abc",
-                "XMagicType": "abc"
+                "Duration": 0,
+                "Name": "高级套餐S1-04",
+                "Plan": "S1-04",
+                "TrialCount": 0,
+                "XMagicType": "combined"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

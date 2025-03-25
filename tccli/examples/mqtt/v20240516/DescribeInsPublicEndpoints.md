@@ -20,26 +20,26 @@ Output:
             {
                 "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
                 "Port": 8888,
-                "SubnetId": null,
+                "SubnetId": "subnet-1",
                 "Type": "mqtt-ws",
                 "Url": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com:8888",
-                "VpcId": null
+                "VpcId": "vpc-1"
             },
             {
                 "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
                 "Port": 1883,
-                "SubnetId": null,
+                "SubnetId": "subnet-1",
                 "Type": "mqtt-tcp",
                 "Url": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com:1883",
-                "VpcId": null
+                "VpcId": "vpc-1"
             },
             {
                 "Host": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com",
                 "Port": 8883,
-                "SubnetId": null,
+                "SubnetId": "subnet-1",
                 "Type": "mqtt-tls",
                 "Url": "mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com:8883",
-                "VpcId": null
+                "VpcId": "vpc-1"
             }
         ],
         "InstanceId": "mqtt-gn8qoq3z",

@@ -23,7 +23,7 @@ Output:
             "VisitReason": [
                 "OTHER"
             ],
-            "VisitRemark": "test"
+            "VisitRemark": "参观"
         },
         "OrderStatus": "processing",
         "PersonnelSet": [

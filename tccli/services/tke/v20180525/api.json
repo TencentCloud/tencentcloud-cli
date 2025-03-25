@@ -17978,23 +17978,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "目录级别，支持参数：\nfirst：一级目录\nsecond：二级目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目录级别，支持参数：\nfirst：一级目录\nsecond：二级目录",
           "example": "first",
           "member": "string",
           "name": "CatalogueLevel",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目录名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目录名",
           "example": "quota",
           "member": "string",
           "name": "CatalogueName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18004,83 +18004,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断开始时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结束时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断目录",
           "example": "无",
           "member": "KubeJarvisStateCatalogue",
           "name": "Catalogues",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断类型",
           "example": "pod",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断名称",
           "example": "tke",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断描述",
           "example": "tke pods",
           "member": "string",
           "name": "Desc",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果列表",
           "example": "无",
           "member": "KubeJarvisStateResultsItem",
           "name": "Results",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果统计",
           "example": "无",
           "member": "KubeJarvisStateStatistic",
           "name": "Statistics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18090,23 +18090,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断目录",
           "example": "无",
           "member": "KubeJarvisStateCatalogue",
           "name": "Catalogues",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果统计",
           "example": "无",
           "member": "KubeJarvisStateStatistic",
           "name": "Statistics",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18116,33 +18116,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "cls-dsffsd",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果统计",
           "example": "无",
           "member": "KubeJarvisStateStatistic",
           "name": "Statistics",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果详情",
           "example": "无",
           "member": "KubeJarvisStateDiagnosticOverview",
           "name": "Diagnostics",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18152,63 +18152,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断开始时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结束时间",
           "example": "2024-06-01T00:00:00Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果统计",
           "example": "无",
           "member": "KubeJarvisStateStatistic",
           "name": "Statistics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果详情",
           "example": "无",
           "member": "KubeJarvisStateDiagnostic",
           "name": "Diagnostics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询巡检报告相关报错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询巡检报告相关报错",
           "example": "failed to inspect",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18218,23 +18218,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "巡检结果名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "巡检结果名称",
           "example": "tke",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果统计",
           "example": "无",
           "member": "KubeJarvisStateStatistic",
           "name": "Statistics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18244,23 +18244,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "对象属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象属性名称",
           "example": "Name",
           "member": "string",
           "name": "PropertyName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对象属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象属性值",
           "example": "pod-test",
           "member": "string",
           "name": "PropertyValue",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18270,23 +18270,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断结果级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果级别",
           "example": "failed",
           "member": "string",
           "name": "Level",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断对象名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断对象名",
           "example": "nginx-ingress-ingress-nginx-controller-t4scx",
           "member": "string",
           "name": "ObjName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18300,23 +18300,23 @@
         },
         {
           "disabled": false,
-          "document": "诊断项标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断项标题",
           "example": "Master Capacity Check",
           "member": "string",
           "name": "Title",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断项描述",
           "example": "Master Capacity Check",
           "member": "string",
           "name": "Desc",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18330,23 +18330,23 @@
         },
         {
           "disabled": false,
-          "document": "诊断建议文档链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断建议文档链接",
           "example": "http://tke.tencentcloud.com",
           "member": "string",
           "name": "ProposalDocUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断建议文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断建议文档名称",
           "example": "Pod",
           "member": "string",
           "name": "ProposalDocName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18356,23 +18356,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "诊断结果的健康水平\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果的健康水平",
           "example": "good",
           "member": "string",
           "name": "HealthyLevel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断结果的统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断结果的统计",
           "example": "2",
           "member": "int64",
           "name": "Count",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

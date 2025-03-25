@@ -4593,7 +4593,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以编辑签署人包括新增，修改，删除 \n<ul><li>（默认） false -可以编辑签署人</li> <li> true - 可以编辑签署人</li></ul>\n\n注意：如果设置参数为 false， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空",
+          "document": "是否可以编辑签署人包括新增，修改，删除 \n<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>\n\n注意：如果设置参数为  true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空",
           "example": "false",
           "member": "bool",
           "name": "ForbidEditApprover",

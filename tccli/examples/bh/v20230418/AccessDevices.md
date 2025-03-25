@@ -8,8 +8,6 @@ Input:
 tccli bh AccessDevices --cli-unfold-argument  \
     --InstanceId ins-2ftyp2vu \
     --Account zhangsan \
-    --LoginAccount account \
-    --LoginPassword pass \
     --Password  \
     --PrivateKey  \
     --PrivateKeyPassword  \

@@ -13,7 +13,7 @@ Output:
     "Response": {
         "AuthorizationEndpoint": "https://accounts.g**gle.com/o/oauth2/v2/auth",
         "ClientId": "47***01-pu1e*****7tj.apps.g**gleusercontent.com",
-        "Description": "222",
+        "Description": "idp name",
         "IdentityKey": "ewogICAgImtletVUkttZ0I***GTHVVRUJkdyIKICAgICAgICB9CiAgICBdCn0=",
         "IdentityUrl": "https://accounts.g**gle.com",
         "MappingFiled": "email",

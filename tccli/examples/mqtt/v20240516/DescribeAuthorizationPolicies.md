@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mqtt DescribeAuthorizationPolicies --cli-unfold-argument  \
-    --InstanceId mqtt-g4r4x85z
+    --InstanceId mqtt-mzd7ewkr
 ```
 
 Output: 
@@ -17,61 +17,25 @@ Output:
     "Response": {
         "Data": [
             {
-                "Actions": "connect",
-                "ClientId": null,
-                "CreatedTime": 1721813514000,
+                "Actions": "connect,pub,sub",
+                "ClientId": "client1",
+                "CreatedTime": 1742387322000,
                 "Effect": "allow",
-                "Id": 6,
-                "InstanceId": "mqtt-g4r4x85z",
-                "Ip": null,
-                "PolicyName": "policy1",
+                "Id": 3867,
+                "InstanceId": "mqtt-mzd7ewkr",
+                "Ip": "0.0.0.0/0",
+                "PolicyName": "default_policy",
                 "Priority": 1,
-                "Qos": null,
+                "Qos": "0,1,2",
                 "Remark": "",
-                "Resources": "topic1",
-                "Retain": 1,
-                "UpdateTime": 1721813670000,
-                "Username": null,
-                "Version": 1
-            },
-            {
-                "Actions": "connect",
-                "ClientId": null,
-                "CreatedTime": 1721813529000,
-                "Effect": "allow",
-                "Id": 7,
-                "InstanceId": "mqtt-g4r4x85z",
-                "Ip": null,
-                "PolicyName": "policy2",
-                "Priority": 2,
-                "Qos": null,
-                "Remark": "",
-                "Resources": "topic1",
-                "Retain": 2,
-                "UpdateTime": 1721813529000,
-                "Username": null,
-                "Version": 1
-            },
-            {
-                "Actions": "connect",
-                "ClientId": null,
-                "CreatedTime": 1721813039000,
-                "Effect": "allow",
-                "Id": 1,
-                "InstanceId": "mqtt-g4r4x85z",
-                "Ip": null,
-                "PolicyName": "policy3",
-                "Priority": 3,
-                "Qos": null,
-                "Remark": "this is remark",
                 "Resources": "topic1",
                 "Retain": 3,
-                "UpdateTime": 1721813039000,
-                "Username": "user1",
+                "UpdateTime": 1742458867000,
+                "Username": "default_user",
                 "Version": 1
             }
         ],
-        "RequestId": "27038a36-3a3a-4f45-a0cb-a3d075325816"
+        "RequestId": "9c44531d-37bd-4c8f-ab9f-b35589fa5b4d"
     }
 }
 ```

@@ -7111,23 +7111,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划ID",
           "example": "planxxx-0",
           "member": "string",
           "name": "PlanId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计划名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计划名称",
           "example": "namexxx0",
           "member": "string",
           "name": "PlanName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8090,33 +8090,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "期望执行时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "期望执行时间 秒",
           "example": "1624204800",
           "member": "int64",
           "name": "ExpectTimeLen",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实际执行时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际执行时间 秒",
           "example": "1624204800",
           "member": "int64",
           "name": "RecordTimeLen",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "存储大小 G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储大小 G",
           "example": "1.3",
           "member": "float",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8400,23 +8400,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "日期。格式【YYYY-MM-DD】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日期。格式【YYYY-MM-DD】",
           "example": "2022-12-32",
           "member": "string",
           "name": "Date",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "统计数额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计数额",
           "example": "98",
           "member": "float",
           "name": "Sum",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8426,53 +8426,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流ID",
           "example": "100091979791_99335023091329000012_99335023091329000012_live",
           "member": "string",
           "name": "StreamId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "rtsp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "rtsp流地址",
           "example": "rtsp://somedomain.com/live/0",
           "member": "string",
           "name": "RtspAddr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "rtmp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "rtmp流地址",
           "example": "rtmp://somedomain.com/live/0",
           "member": "string",
           "name": "RtmpAddr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "hls流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "hls流地址",
           "example": "http://somedomain.com/live/0.live.flv",
           "member": "string",
           "name": "HlsAddr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "flv流地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "flv流地址",
           "example": "http://somedomain.com/live/0.live.flv",
           "member": "string",
           "name": "FlvAddr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8543,33 +8543,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "一周中的周几\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "一周中的周几",
           "example": "2",
           "member": "int64",
           "name": "DayofWeek",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时间片段的开始时分。格式【HH:MM】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间片段的开始时分。格式【HH:MM】",
           "example": "12:30",
           "member": "string",
           "name": "BeginTime",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时间片段的结束时分。格式【HH:MM】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间片段的结束时分。格式【HH:MM】",
           "example": "14:30",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cam AddUser --cli-unfold-argument  \
-    --Remark test \
-    --Name test124 \
+    --Remark jack account \
+    --Name jack \
     --CountryCode 86 \
     --NeedResetPassword 0 \
     --PhoneNum 10086 \
@@ -23,7 +23,7 @@ Output:
     "Response": {
         "Uid": 5648765,
         "Uin": 100000546533,
-        "Name": "test124",
+        "Name": "jack",
         "Password": "test123456",
         "SecretId": "faweffewagwaegawe",
         "SecretKey": "fawef23rjhiuaefhuaifhiuawef",

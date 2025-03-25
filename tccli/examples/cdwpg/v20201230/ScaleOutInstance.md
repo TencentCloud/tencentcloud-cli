@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwpg ScaleOutInstance --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId cdwpg-abcxxxxx \
     --NodeType dn \
     --ScaleOutCount 2
 ```
@@ -15,9 +15,9 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": "abc",
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "FlowId": "1324",
+        "ErrorMsg": "",
+        "RequestId": "abcds-xxxss"
     }
 }
 ```

@@ -7,14 +7,14 @@ Input:
 ```
 tccli vcube CreateApplicationAndWebPlayerLicense --cli-unfold-argument  \
     --AppName 我的应用 \
-    --DomainList abc.com ddd.cn
+    --DomainList nengc.com nengc.cn
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

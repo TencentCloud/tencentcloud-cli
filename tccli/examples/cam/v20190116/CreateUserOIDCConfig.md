@@ -9,7 +9,7 @@ tccli cam CreateUserOIDCConfig --cli-unfold-argument  \
     --ResponseType id_token \
     --IdentityUrl https://tencent.auth***.cn/ \
     --ResponseMode form_post \
-    --Description 测试 \
+    --Description this is description \
     --IdentityKey ewogICAgImtleXMiOiBbCi****** \
     --ClientId 61adcf00620c31e3*** \
     --MappingFiled sub \
