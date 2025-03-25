@@ -9,15 +9,15 @@ Input:
 
 ```
 tccli vcube ModifyLicense --cli-unfold-argument  \
-    --LicenseId 123 \
-    --ResourceId 123
+    --LicenseId 234274 \
+    --ResourceId luvc11671a6134d082bf79
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

@@ -9,7 +9,7 @@ tccli cam UpdateUserOIDCConfig --cli-unfold-argument  \
     --ResponseType id_token \
     --IdentityUrl https://tencent.auth**.com \
     --ResponseMode form_post \
-    --Description 描述 \
+    --Description this is description \
     --IdentityKey key \
     --ClientId cbaefefes9823*** \
     --MappingFiled sub \

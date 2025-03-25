@@ -24,7 +24,7 @@
     "CreateApplicationAndWebPlayerLicense": {
       "document": "创建 web 播放器基础版",
       "input": "CreateApplicationAndWebPlayerLicenseRequest",
-      "name": "创建播发器web基础版",
+      "name": "创建播放器web基础版",
       "output": "CreateApplicationAndWebPlayerLicenseResponse",
       "status": "online"
     },
@@ -36,9 +36,9 @@
       "status": "online"
     },
     "CreateTestXMagic": {
-      "document": "申请开通测试版优图",
+      "document": "申请开通测试版腾讯特效",
       "input": "CreateTestXMagicRequest",
-      "name": "创建测试XMagic",
+      "name": "创建测试版腾讯特效",
       "output": "CreateTestXMagicResponse",
       "status": "online"
     },
@@ -155,9 +155,9 @@
       "status": "online"
     },
     "ModifyApplication": {
-      "document": "编辑更改应用",
+      "document": "更改测试包名信息",
       "input": "ModifyApplicationRequest",
-      "name": "编辑更改应用",
+      "name": "更改应用名称",
       "output": "ModifyApplicationResponse",
       "status": "online"
     },
@@ -252,7 +252,7 @@
         {
           "disabled": false,
           "document": "应用Id",
-          "example": "1",
+          "example": "23423",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -262,7 +262,7 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "123",
+          "example": "12524561497",
           "member": "string",
           "name": "AppId",
           "output_required": true,
@@ -271,13 +271,13 @@
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "云智",
           "member": "string",
           "name": "AppName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -397,23 +397,23 @@
         },
         {
           "disabled": false,
-          "document": "license数组",
+          "document": "license数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "License",
           "name": "Licenses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "license 秘钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license 秘钥",
           "example": "2hfais73whfasf23",
           "member": "string",
           "name": "LicenseKey",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -427,43 +427,43 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-07-07T11:24:41.995Z",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-07-07T11:24:41.995Z",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户应用Id",
           "example": "1",
           "member": "uint64",
           "name": "ApplicationId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视立方下载license的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视立方下载license的url",
           "example": "http://host/license/v2/appid_group/v_cube.license",
           "member": "string",
           "name": "LicenseUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -478,7 +478,7 @@
         {
           "disabled": false,
           "document": "Mac  进程名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "com.nengc.cc",
           "member": "string",
           "name": "MacBundleId",
           "output_required": true,
@@ -488,7 +488,7 @@
         {
           "disabled": false,
           "document": "windows 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "com.nengc.ss",
           "member": "string",
           "name": "WinProcessName",
           "output_required": true,
@@ -498,7 +498,7 @@
         {
           "disabled": false,
           "document": "web端Domain列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"nengc.com\"]",
           "member": "string",
           "name": "DomainList",
           "output_required": false,
@@ -539,29 +539,32 @@
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "123",
+          "example": "1302441226",
           "member": "string",
           "name": "AppId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "app名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "app名称",
           "example": "连麦测试License",
           "member": "string",
           "name": "AppName",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ios包名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ios包名",
           "example": "com.tencent.mlvb.apiexample",
           "member": "string",
           "name": "BundleId",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -569,17 +572,19 @@
           "example": "com.tencent.mlvb.apiexample",
           "member": "string",
           "name": "PackageName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "有效时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "有效时长",
           "example": "14",
           "member": "uint64",
           "name": "Duration",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -587,6 +592,7 @@
           "example": "2022-03-25 17:49:10",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -596,6 +602,7 @@
           "example": "2022-04-09 17:49:10",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -605,6 +612,7 @@
           "example": "3294979b75e46fb218f23460",
           "member": "string",
           "name": "LicenseKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -614,26 +622,29 @@
           "example": "https://license-test.vod2.myqcloud.com/license/testV2/124_1/v_cu",
           "member": "string",
           "name": "LicenseUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "license剩余天数，最后一天以及过期显示0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license剩余天数，最后一天以及过期显示0",
           "example": "12",
           "member": "uint64",
           "name": "ResidueDay",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "license剩余秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license剩余秒数",
           "example": "424324",
           "member": "uint64",
           "name": "Residue",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -677,7 +688,7 @@
         {
           "disabled": false,
           "document": "资源包ID",
-          "example": "123",
+          "example": "luvcf7c026193b54454f1",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -686,7 +697,7 @@
         {
           "disabled": false,
           "document": "营业执照",
-          "example": "http://xxx",
+          "example": "http://www.tencent.com/business.jpg",
           "member": "string",
           "name": "CompanyPermit",
           "required": false,
@@ -713,7 +724,7 @@
         {
           "disabled": false,
           "document": "优图资源id列表",
-          "example": "[12]",
+          "example": "[\"luvcf7c026193b54454f1\"]",
           "member": "string",
           "name": "XMagicResourceIds",
           "required": false,
@@ -857,7 +868,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "12345",
+          "example": "12832143",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -866,7 +877,7 @@
         {
           "disabled": false,
           "document": "资源包ID",
-          "example": "[1]",
+          "example": "[\"xmc534db52193ab436e89\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -901,8 +912,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用id",
-          "example": "1",
+          "document": "将腾讯特效创建到哪个应用下",
+          "example": "12323",
           "member": "uint64",
           "name": "ApplicationId",
           "required": true,
@@ -1010,7 +1021,7 @@
         {
           "disabled": false,
           "document": "营业执照",
-          "example": "http://xxx",
+          "example": "http://tencent.com/nengc.jpg",
           "member": "string",
           "name": "CompanyPermit",
           "required": false,
@@ -1100,7 +1111,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "12345",
+          "example": "8345463242",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -1145,7 +1156,7 @@
         {
           "disabled": false,
           "document": "应用ApplicationId",
-          "example": "1",
+          "example": "352454",
           "member": "uint64",
           "name": "ApplicationId",
           "required": true,
@@ -1154,7 +1165,7 @@
         {
           "disabled": false,
           "document": "营业执照",
-          "example": "http://xxx",
+          "example": "http://tencent.com/business.com",
           "member": "string",
           "name": "CompanyPermit",
           "required": false,
@@ -1181,7 +1192,7 @@
         {
           "disabled": false,
           "document": "优图资源id列表",
-          "example": "[1]",
+          "example": "[\"xmc428f122193b88fb32a\"]",
           "member": "string",
           "name": "XMagicResourceIds",
           "required": false,
@@ -1212,21 +1223,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能列表",
           "example": "无",
           "member": "VideoFeature",
           "name": "FeatureList",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "优图功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优图功能列表",
           "example": "无",
           "member": "XMagicFeature",
           "name": "XMagicFeatureList",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1287,15 +1300,17 @@
           "example": "无",
           "member": "NewsInfo",
           "name": "NewsList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总数据量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1322,6 +1337,7 @@
           "example": "live-12341235",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1331,6 +1347,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1340,6 +1357,7 @@
           "example": "1639482026",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1349,6 +1367,7 @@
           "example": "1639483826",
           "member": "uint64",
           "name": "ExpiredTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1358,6 +1377,7 @@
           "example": "1P49YEmR9Y4NVdd8Dk9ZoF5IRvw1Bzxad259d39e50bb87e79b1a0ddd95e08119",
           "member": "string",
           "name": "SessionToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1367,6 +1387,7 @@
           "example": "AKIDnFOPqA0vO6dHi16X8KaLOgROAyhS_Bf5U0C4ISDqHdihgPn",
           "member": "string",
           "name": "TmpSecretId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1376,6 +1397,7 @@
           "example": "S4naHXe2ud562M5jkWmgLjYdlgyVpxmKoM",
           "member": "string",
           "name": "TmpSecretKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1385,6 +1407,7 @@
           "example": "ar-effect/test/123/1639482025554/",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1411,6 +1434,7 @@
           "example": "无",
           "member": "Feature",
           "name": "FeatureList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1420,17 +1444,19 @@
           "example": "无",
           "member": "XMagicTrial",
           "name": "XMagicTrial",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "可以开通的优图测试功能列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可以开通的优图测试功能列表",
           "example": "无",
           "member": "XMagicTrial",
           "name": "XMagicTrialList",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1473,7 +1499,7 @@
         {
           "disabled": false,
           "document": "应用类型测试：test，正式：formal",
-          "example": "test",
+          "example": "formal",
           "member": "string",
           "name": "AppType",
           "required": false,
@@ -1518,7 +1544,7 @@
         {
           "disabled": false,
           "document": "Mac 进程名",
-          "example": "tencent",
+          "example": "com.tencent",
           "member": "string",
           "name": "MacBundleId",
           "required": false,
@@ -1527,7 +1553,7 @@
         {
           "disabled": false,
           "document": "Windows 进程名",
-          "example": "tencent",
+          "example": "com.tencent",
           "member": "string",
           "name": "WinProcessName",
           "required": false,
@@ -1545,6 +1571,7 @@
           "example": "无",
           "member": "ApplicationInfo",
           "name": "ApplicationInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1572,7 +1599,7 @@
         {
           "disabled": false,
           "document": "应用类型测试：test，正式：formal",
-          "example": "test",
+          "example": "formal",
           "member": "string",
           "name": "AppType",
           "required": false,
@@ -1617,7 +1644,7 @@
         {
           "disabled": false,
           "document": "Mac 进程名",
-          "example": "tencent",
+          "example": "com.tencent.vcube",
           "member": "string",
           "name": "MacBundleId",
           "required": false,
@@ -1626,7 +1653,7 @@
         {
           "disabled": false,
           "document": "Windows 进程名",
-          "example": "tencent",
+          "example": "com.tencent.vcube",
           "member": "string",
           "name": "WinProcessName",
           "required": false,
@@ -1644,6 +1671,7 @@
           "example": "无",
           "member": "ApplicationInfo",
           "name": "ApplicationInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1671,7 +1699,7 @@
         {
           "disabled": false,
           "document": "应用类型测试：test，正式：formal",
-          "example": "test",
+          "example": "formal",
           "member": "string",
           "name": "AppType",
           "required": false,
@@ -1743,6 +1771,7 @@
           "example": "无",
           "member": "ApplicationInfo",
           "name": "ApplicationInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1788,7 +1817,7 @@
         {
           "disabled": false,
           "document": "资源Id，资源包id或者license资源id",
-          "example": "123",
+          "example": "luvc3696195679763e4",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1797,7 +1826,7 @@
         {
           "disabled": false,
           "document": "资源Id、应用名称、包名",
-          "example": "12",
+          "example": "nengc",
           "member": "string",
           "name": "Word",
           "required": false,
@@ -1831,7 +1860,7 @@
         {
           "disabled": false,
           "document": "总数据量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -1917,7 +1946,7 @@
         {
           "disabled": false,
           "document": "优图资源Id",
-          "example": "12",
+          "example": "xmc11671a6134d082bf79",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1926,7 +1955,7 @@
         {
           "disabled": false,
           "document": "查询关键字，资源Id、应用名称、包名",
-          "example": "12",
+          "example": "nengc",
           "member": "string",
           "name": "Word",
           "required": false,
@@ -1958,21 +1987,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "优图资源包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优图资源包信息",
           "example": "无",
           "member": "XMagicResourceSimpleInfo",
           "name": "Resources",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源数量",
           "example": "12",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2012,21 +2043,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "优图资源包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优图资源包信息",
           "example": "无",
           "member": "XMagicResource",
           "name": "Resources",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源数量",
           "example": "12",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2043,20 +2076,20 @@
         {
           "disabled": false,
           "document": "索引",
-          "example": "1",
+          "example": "43253",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "功能ID",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "FeatureId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2066,7 +2099,7 @@
           "example": "短视频SDK lic精简版",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2076,7 +2109,7 @@
           "example": "20015",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2086,7 +2119,7 @@
           "example": "false",
           "member": "bool",
           "name": "Trial",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2096,7 +2129,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TrialCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2106,29 +2139,29 @@
           "example": "14",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-07-05T03:09:46.153Z",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-07-05T03:09:46.153Z",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2189,7 +2222,7 @@
         {
           "disabled": false,
           "document": "license是测试：test还是正式：formal",
-          "example": "test",
+          "example": "formal",
           "member": "string",
           "name": "LicenseType",
           "output_required": true,
@@ -2198,18 +2231,18 @@
         },
         {
           "disabled": false,
-          "document": "测试license 是否可以续期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "测试license 是否可以续期",
           "example": "true",
           "member": "bool",
           "name": "Renewal",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "license索引",
-          "example": "123",
+          "example": "234234",
           "member": "uint64",
           "name": "LicenseId",
           "output_required": true,
@@ -2218,23 +2251,23 @@
         },
         {
           "disabled": false,
-          "document": "license名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license名称",
           "example": "短视频",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "测试license 是否升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "测试license 是否升级",
           "example": "true",
           "member": "bool",
           "name": "Update",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2258,13 +2291,13 @@
         },
         {
           "disabled": false,
-          "document": "过期：true ，未过期：其它\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "过期：true ，未过期：其它",
           "example": "true",
           "member": "bool",
           "name": "Expired",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2278,23 +2311,23 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2022-05-07T10:12:01+08:00",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2022-05-07T10:12:01+08:00",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2308,13 +2341,13 @@
         },
         {
           "disabled": false,
-          "document": "是否为马甲包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为马甲包",
           "example": "false",
           "member": "bool",
           "name": "IsVest",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2328,7 +2361,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2338,17 +2371,17 @@
           "example": "10000",
           "member": "string",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有效期时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "10",
           "member": "string",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2358,29 +2391,29 @@
           "example": "16",
           "member": "uint64",
           "name": "FeatureId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此license资源的开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此license资源的开始生效时间",
           "example": "2021-08-01 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此license资源的生效结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此license资源的生效结束时间",
           "example": "2022-08-01 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2388,7 +2421,7 @@
           "example": "2022-04-29T07:19:42.877Z",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2398,29 +2431,29 @@
           "example": "2023-04-29T07:19:42.877Z",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此资源是否可用于续期和更新有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此资源是否可用于续期和更新有效期",
           "example": "true",
           "member": "bool",
           "name": "IsUse",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此资源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此资源的状态",
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2428,29 +2461,29 @@
           "example": "2021-08-01 00:00:00",
           "member": "string",
           "name": "IsolatedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能模块名称",
           "example": "直播",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "功能模块类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能模块类型",
           "example": "企业版",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2458,7 +2491,7 @@
           "example": "无",
           "member": "Package",
           "name": "Package",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2468,29 +2501,29 @@
           "example": "无",
           "member": "AppInfo",
           "name": "Application",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源Id",
           "example": "luv32543dfsdsaf",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费状态",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2504,7 +2537,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2514,7 +2547,7 @@
           "example": "10000",
           "member": "string",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2524,7 +2557,7 @@
           "example": "1",
           "member": "string",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2534,29 +2567,29 @@
           "example": "16",
           "member": "uint64",
           "name": "FeatureId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此license资源的开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此license资源的开始生效时间",
           "example": "2021-08-01 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此license资源的生效结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此license资源的生效结束时间",
           "example": "2022-08-01 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2564,7 +2597,7 @@
           "example": "2022-04-29T07:19:42.877Z",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2574,29 +2607,29 @@
           "example": "2023-04-29T07:19:42.877Z",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此资源是否可用于续期和更新有效期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此资源是否可用于续期和更新有效期",
           "example": "true",
           "member": "bool",
           "name": "IsUse",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此资源的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此资源的状态",
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2604,29 +2637,29 @@
           "example": "2021-08-01 00:00:00",
           "member": "string",
           "name": "IsolatedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能模块名称",
           "example": "直播",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "功能模块类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能模块类型",
           "example": "企业版",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2634,29 +2667,29 @@
           "example": "无",
           "member": "Package",
           "name": "Package",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源id",
           "example": "lvudaf23adfs4s",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费状态",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2667,7 +2700,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "12345",
+          "example": "12323",
           "member": "uint64",
           "name": "ApplicationId",
           "required": true,
@@ -2676,7 +2709,7 @@
         {
           "disabled": false,
           "document": "应用名",
-          "example": "QQ",
+          "example": "Tencent",
           "member": "string",
           "name": "AppName",
           "required": false,
@@ -2721,7 +2754,7 @@
         {
           "disabled": false,
           "document": "要追加的web域名列表",
-          "example": "[\"xxx.com\"]",
+          "example": "[\"tencnetcloud.com\"]",
           "member": "string",
           "name": "DomainList",
           "required": false,
@@ -2748,7 +2781,7 @@
         {
           "disabled": false,
           "document": "应用Id",
-          "example": "1223",
+          "example": "223823",
           "member": "uint64",
           "name": "ApplicationId",
           "required": true,
@@ -2802,7 +2835,7 @@
         {
           "disabled": false,
           "document": "License 功能模块 Id",
-          "example": "1",
+          "example": "234322",
           "member": "string",
           "name": "LicenseId",
           "required": true,
@@ -2811,7 +2844,7 @@
         {
           "disabled": false,
           "document": "资源包 Id",
-          "example": "12",
+          "example": "luc11671a6134d082bf79",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -2838,7 +2871,7 @@
         {
           "disabled": false,
           "document": "应用Id",
-          "example": "12",
+          "example": "2543655",
           "member": "uint64",
           "name": "ApplicationId",
           "required": true,
@@ -2891,8 +2924,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "执照ID",
-          "example": "12345",
+          "document": "授权ID",
+          "example": "348278",
           "member": "string",
           "name": "LicenseId",
           "required": true,
@@ -2919,7 +2952,7 @@
         {
           "disabled": false,
           "document": "资源Id",
-          "example": "无",
+          "example": "xmc534db52193ab436e89",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -2928,7 +2961,7 @@
         {
           "disabled": false,
           "document": "优图licenseId",
-          "example": "无",
+          "example": "4102",
           "member": "string",
           "name": "XMagicId",
           "required": true,
@@ -2951,7 +2984,19 @@
     },
     "NewsInfo": {
       "document": "视立方产品概览页新闻动态",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "新闻Id",
+          "example": "234423",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "Package": {
@@ -2960,20 +3005,20 @@
         {
           "disabled": false,
           "document": "资源包Id",
-          "example": "1",
+          "example": "234234",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源包资源Id",
-          "example": "100",
+          "example": "51386",
           "member": "string",
           "name": "BizResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2983,7 +3028,7 @@
           "example": "China",
           "member": "string",
           "name": "Site",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2993,7 +3038,7 @@
           "example": "2020-09-01",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3003,7 +3048,7 @@
           "example": "2021-09-01",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3013,7 +3058,7 @@
           "example": "2021-06-01",
           "member": "string",
           "name": "RefundTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3023,19 +3068,19 @@
           "example": "10TB点播流量包",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源包类型ID,对应点播：PackageId 对应直播：TypeId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "6",
+          "document": "资源包类型ID,对应点播：PackageId 对应直播：TypeId",
+          "example": "159230",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3046,7 +3091,7 @@
         {
           "disabled": false,
           "document": "License 功能模块 Id",
-          "example": "1",
+          "example": "234764",
           "member": "string",
           "name": "LicenseId",
           "required": true,
@@ -3055,7 +3100,7 @@
         {
           "disabled": false,
           "document": "资源包 Id",
-          "example": "12",
+          "example": "luvc343sfeds3245442",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -3081,23 +3126,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源Id",
           "example": "34",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续期标记，0：默认，1：自动续期，2：不续期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续期标记，0：默认，1：自动续期，2：不续期",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3121,23 +3166,23 @@
         },
         {
           "disabled": false,
-          "document": "子产品码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子产品码",
           "example": "sp_vcube_0014417",
           "member": "string",
           "name": "SubProductCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源到期时间",
           "example": "2021-06-01 10:27:32",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3148,7 +3193,7 @@
         {
           "disabled": false,
           "document": "优图美视Id",
-          "example": "1",
+          "example": "42897434",
           "member": "uint64",
           "name": "XMagicId",
           "required": true,
@@ -3175,7 +3220,7 @@
         {
           "disabled": false,
           "document": "要续期的视频播放license Id",
-          "example": "1",
+          "example": "345987",
           "member": "uint64",
           "name": "LicenseId",
           "required": true,
@@ -3202,7 +3247,7 @@
         {
           "disabled": false,
           "document": "优图美视功能Id",
-          "example": "1",
+          "example": "23487253",
           "member": "uint64",
           "name": "XMagicId",
           "required": true,
@@ -3211,7 +3256,7 @@
         {
           "disabled": false,
           "document": "XMagic套餐包Id",
-          "example": "1",
+          "example": "xmc11671a6134der082bf79",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -3238,7 +3283,7 @@
         {
           "disabled": false,
           "document": "执照ID",
-          "example": "12345",
+          "example": "51352",
           "member": "string",
           "name": "LicenseId",
           "required": true,
@@ -3247,7 +3292,7 @@
         {
           "disabled": false,
           "document": "资源包ID",
-          "example": "12345",
+          "example": "luvc1bbcc99191f2dd69a5",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -3274,7 +3319,7 @@
         {
           "disabled": false,
           "document": "要修改的XMagic Id",
-          "example": "1",
+          "example": "2358743",
           "member": "uint64",
           "name": "XMagicId",
           "required": true,
@@ -3283,7 +3328,7 @@
         {
           "disabled": false,
           "document": "资源id",
-          "example": "1",
+          "example": "xmc11671a6134d082bf79",
           "member": "string",
           "name": "XMagicResourceId",
           "required": false,
@@ -3292,7 +3337,7 @@
         {
           "disabled": false,
           "document": "营业执照地址",
-          "example": "http://xxx",
+          "example": "http://tencent.com/nengc.jpg",
           "member": "string",
           "name": "CompanyPermit",
           "required": false,
@@ -3337,7 +3382,7 @@
         {
           "disabled": false,
           "document": "索引",
-          "example": "1",
+          "example": "234234",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -3347,7 +3392,7 @@
         {
           "disabled": false,
           "document": "功能ID",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "FeatureId",
           "output_required": true,
@@ -3356,33 +3401,33 @@
         },
         {
           "disabled": false,
-          "document": "功能名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能名称",
           "example": "短视频SDK lic精简版",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "功能类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能类型",
           "example": "20015",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否可以申请试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可以申请试用",
           "example": "false",
           "member": "bool",
           "name": "Trial",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3406,43 +3451,43 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-07-05T03:09:46.153Z",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-07-05T03:09:46.153Z",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "功能所属业务方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能所属业务方",
           "example": "live",
           "member": "string",
           "name": "BizType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平台类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平台类型",
           "example": "mobile",
           "member": "string",
           "name": "Platform",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3456,7 +3501,7 @@
           "example": "高级套餐",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3466,7 +3511,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TrialCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3476,7 +3521,7 @@
           "example": "14",
           "member": "uint64",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3486,7 +3531,7 @@
           "example": "S1-04",
           "member": "string",
           "name": "Plan",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3496,7 +3541,7 @@
           "example": "single",
           "member": "string",
           "name": "XMagicType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3506,7 +3551,7 @@
           "example": "true",
           "member": "bool",
           "name": "Trial",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3516,7 +3561,7 @@
           "example": "xmagic",
           "member": "string",
           "name": "BizType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3529,7 +3574,7 @@
         {
           "disabled": false,
           "document": "优图Id",
-          "example": "1",
+          "example": "23524",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -3568,18 +3613,18 @@
         },
         {
           "disabled": false,
-          "document": "优图套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优图套餐类型",
           "example": "S1-04",
           "member": "string",
           "name": "Plan",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "测试版还是正式版 test | formal",
-          "example": "test",
+          "example": "formal",
           "member": "string",
           "name": "LicenseType",
           "output_required": true,
@@ -3629,7 +3674,7 @@
         {
           "disabled": false,
           "document": "续期次数， LicenseType=test时有此字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "RenewalCount",
           "output_required": true,
@@ -3638,13 +3683,13 @@
         },
         {
           "disabled": false,
-          "document": "历次审批的回复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "历次审批的回复",
           "example": "[\"请修改包名\"，\"ok\"]",
           "member": "string",
           "name": "Reply",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3668,13 +3713,13 @@
         },
         {
           "disabled": false,
-          "document": "用户更新信息的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户更新信息的时间",
           "example": "2021-11-24 18:44:46",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3698,23 +3743,23 @@
         },
         {
           "disabled": false,
-          "document": "single: 原子能力,combined:套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "single: 原子能力,combined:套餐",
           "example": "single",
           "member": "string",
           "name": "XMagicType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "优图模块名称，自动中英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优图模块名称，自动中英文",
           "example": "人像分割X1-01",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3728,13 +3773,13 @@
         },
         {
           "disabled": false,
-          "document": "是否是马甲包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是马甲包",
           "example": "false",
           "member": "bool",
           "name": "IsVest",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3748,17 +3793,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "123",
+          "example": "12524561497",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3768,7 +3813,7 @@
           "example": "A1-01",
           "member": "string",
           "name": "Plan",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3778,7 +3823,7 @@
           "example": "有效时长",
           "member": "string",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3788,7 +3833,7 @@
           "example": "2021-11-29 20:40:13",
           "member": "string",
           "name": "CreatedAt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3798,7 +3843,7 @@
           "example": "2021-11-29 20:40:13",
           "member": "string",
           "name": "UpdatedAt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3808,89 +3853,89 @@
           "example": "true",
           "member": "bool",
           "name": "XMagic",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "资源开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源开始生效时间",
           "example": "2021-11-29 18:04:45",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源结束生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源结束生效时间",
           "example": "2022-11-29 18:04:45",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源包是否过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源包是否过期",
           "example": "true",
           "member": "bool",
           "name": "Expired",
-          "required": false,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能模块名称",
           "example": "基础套餐A1-04",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "single: 原子能力,combined:套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "single: 原子能力,combined:套餐",
           "example": "combined",
           "member": "string",
           "name": "XMagicType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "xmagic:优图， avatar：虚拟人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "xmagic:优图， avatar：虚拟人",
           "example": "xmagic",
           "member": "string",
           "name": "BizType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "85",
+          "document": "资源Id",
+          "example": "luvc1592345345dfgdf345",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源是否可以使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源是否可以使用",
           "example": "true",
           "member": "bool",
           "name": "IsUse",
-          "required": false,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3904,17 +3949,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户appid",
-          "example": "123",
+          "example": "12524561497",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3924,7 +3969,7 @@
           "example": "A1-01",
           "member": "string",
           "name": "Plan",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3934,7 +3979,7 @@
           "example": "有效时长",
           "member": "string",
           "name": "Duration",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3944,7 +3989,7 @@
           "example": "2021-11-29 20:40:13",
           "member": "string",
           "name": "CreatedAt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3954,29 +3999,29 @@
           "example": "2021-11-29 20:40:13",
           "member": "string",
           "name": "UpdatedAt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源开始生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源开始生效时间",
           "example": "2021-11-29 18:04:45",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源结束生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源结束生效时间",
           "example": "2022-11-29 18:04:45",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3984,7 +4029,7 @@
           "example": "无",
           "member": "AppInfo",
           "name": "Application",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3994,7 +4039,7 @@
           "example": "无",
           "member": "XMagicSimpleInfo",
           "name": "XMagic",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4004,7 +4049,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4014,69 +4059,69 @@
           "example": "[\"2022-01-01\"]",
           "member": "string",
           "name": "Operation",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否可以使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可以使用",
           "example": "true",
           "member": "bool",
           "name": "IsUse",
-          "required": false,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "single: 原子能力,combined:套餐\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "single: 原子能力,combined:套餐",
           "example": "single",
           "member": "string",
           "name": "XMagicType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "功能模块名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "功能模块名称",
           "example": "高级套餐S1-07",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源所属业务方 xmagic：优图，avatar：虚拟形象 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源所属业务方 xmagic：优图，avatar：虚拟形象 ",
           "example": "xmagic",
           "member": "string",
           "name": "BizType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "85",
+          "document": "资源id",
+          "example": "luvc2342834ksfsdfdf345345",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源自动续费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源自动续费状态",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4116,7 +4161,7 @@
           "example": "高级套餐",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4126,7 +4171,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TrialCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4136,7 +4181,7 @@
           "example": "14",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4146,7 +4191,7 @@
           "example": "S1-04",
           "member": "string",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4156,7 +4201,17 @@
           "example": "single",
           "member": "string",
           "name": "XMagicType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vod：点播 live：直播",
+          "example": "vod",
+          "member": "string",
+          "name": "BizType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

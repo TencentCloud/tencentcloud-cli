@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli vcube ModifyPresetApplication --cli-unfold-argument  \
-    --ApplicationId 1 \
-    --AppName abc \
-    --BundleId abc \
-    --PackageName abc
+    --ApplicationId 2342343 \
+    --AppName com.nengc \
+    --BundleId com.nengc \
+    --PackageName com.nengc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1111111-2222-3333"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

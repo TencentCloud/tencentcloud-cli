@@ -2354,7 +2354,7 @@
         {
           "disabled": false,
           "document": "任务详情。",
-          "example": "[{\"TaskId\":\"t-sowmiwm\",\"RoleConfigurationId\":\"r-sjsosmsss\",\"RoleConfigurationName\":\"test\",\"TargetUin\":10000323432,\"TargetType\":\"MemberUin\",\"PrincipalId\":\"u-djiem3o***\",\"PrincipalType\":\"User\",\"TaskType\":\"CreateRoleAssignment\",\"Status\":\"InProgress\"}]",
+          "example": "无",
           "member": "TaskInfo",
           "name": "Tasks",
           "output_required": true,
@@ -2385,7 +2385,7 @@
         {
           "disabled": false,
           "document": "权限配置名称。格式：包含英文字母、数字或短划线（-）。 长度：最大 128 个字符。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "RoleConfigurationName",
           "required": true,
@@ -2427,7 +2427,7 @@
         {
           "disabled": false,
           "document": "配置访问详情",
-          "example": "{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}",
+          "example": "无",
           "member": "RoleConfiguration",
           "name": "RoleConfigurationInfo",
           "output_required": true,
@@ -2679,7 +2679,7 @@
         {
           "disabled": false,
           "document": "任务详细。",
-          "example": "[{\"TaskId\":\"t-duedin****\",\"TargetUin\":1000289211,\"TargetType\":\"MemberUin\",\"TaskType\":\"StartProvisioning\",\"TaskStatus\":\"InProgress\",\"UserProvisioningId\":\"upe-d8n3d9***\",\"PrincipalId\":\"u-dend83***\",\"PrincipalType\":\"User\",\"PrincipalName\":\"test\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\"}]",
+          "example": "无",
           "member": "UserProvisioningsTask",
           "name": "Tasks",
           "output_required": true,
@@ -3060,7 +3060,7 @@
         {
           "disabled": false,
           "document": "当您移除一个集团账号目标账号上使用某权限配置的最后一个授权时，是否同时解除权限配置部署。取值： DeprovisionForLastRoleAssignmentOnAccount：解除权限配置部署。 None（默认值）：不解除权限配置部署。",
-          "example": "无",
+          "example": "None",
           "member": "string",
           "name": "DeprovisionStrategy",
           "required": false,
@@ -3075,7 +3075,7 @@
         {
           "disabled": false,
           "document": "任务详情",
-          "example": "{\"TaskId\":\"t-0md93jfd3\",\"RoleConfigurationId\":\"rc-dsk3323\",\"RoleConfigurationName\":\"test\",\"TargetUin\":100032333,\"TargetType\":\"MemberUin\",\"PrincipalId\":\"u-siwnwiene\",\"PrincipalType\":\"User\",\"TaskType\":\"DeleteRolesAssignment\",\"Status\":\"InProgress\"}",
+          "example": "无",
           "member": "TaskInfo",
           "name": "Task",
           "output_required": false,
@@ -3355,7 +3355,7 @@
         {
           "disabled": false,
           "document": "任务详情。",
-          "example": "{\"TaskId\":\"t-duedin****\",\"TargetUin\":1000289211,\"TargetType\":\"MemberUin\",\"TaskType\":\"DeleteProvisioning\",\"TaskStatus\":\"InProgress\",\"UserProvisioningId\":\"upe-d8n3d9***\",\"PrincipalId\":\"u-dend83***\",\"PrincipalType\":\"User\",\"PrincipalName\":\"test\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\"}",
+          "example": "无",
           "member": "UserProvisioningsTask",
           "name": "Tasks",
           "output_required": true,
@@ -4222,6 +4222,24 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组织单元ID",
+          "example": "1001",
+          "member": "uint64",
+          "name": "NodeId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "组织单元名称",
+          "example": "node_name",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4232,7 +4250,7 @@
         {
           "disabled": false,
           "document": "成员列表。",
-          "example": "[{\"CreateTime\":\"2021-04-17 12:19:07\",\"MemberType\":\"Invite\",\"MemberUin\":111111111111,\"Name\":\"member_name\",\"NodeId\":101,\"NodeName\":\"node_name\",\"IsAllowQuit\":\"Denied\",\"OrgPermission\":[{\"Id\":1,\"Name\":\"允许主账号查看子账号的消费信息\"},{\"Id\":2,\"Name\":\"允许主账号查看子账号的财务信息\"}],\"OrgPolicyName\":\"财务管理\",\"OrgPolicyType\":\"Financial\",\"Remark\":\"member1\",\"PayUin\":\"\",\"PayName\":\"\",\"OrgIdentity\":[],\"BindStatus\":\"Unbound\",\"PermissionStatus\":\"Confirmed\",\"UpdateTime\":\"2021-04-17 12:19:07\"}]",
+          "example": "参考输出示例",
           "member": "OrgMember",
           "name": "Items",
           "output_required": true,
@@ -5306,7 +5324,7 @@
         {
           "disabled": false,
           "document": "任务状态信息。",
-          "example": "{\"Status\":\"Success\",\"TaskId\":\"z-dnsudniw****\",\"TaskType\":\"StartProvisioning\",\"FailureReason\":\"\"}",
+          "example": "无",
           "member": "TaskStatus",
           "name": "TaskStatus",
           "output_required": true,
@@ -5352,7 +5370,7 @@
         {
           "disabled": false,
           "document": "权限配置详情",
-          "example": "{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}",
+          "example": "无",
           "member": "RoleConfiguration",
           "name": "RoleConfigurationInfo",
           "output_required": true,
@@ -5481,7 +5499,7 @@
         {
           "disabled": false,
           "document": "用户信息。",
-          "example": "{\"UserName\":\"test\",\"FirstName\":\"test\",\"LastName\":\"test\",\"DisplayName\":\"test\",\"Description\":\"this is user\",\"Email\":\"test@example.com\",\"UserStatus\":\"Enabled\",\"UserType\":\"Manual\",\"UserId\":\"u-2jsal3jdxk\",\"CreateTime\":\"2024-03-12 12:12:12\",\"UpdateTime\":\"2024-03-12 12:12:12\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
           "output_required": true,
@@ -5527,7 +5545,7 @@
         {
           "disabled": false,
           "document": "CAM 用户同步信息。",
-          "example": "{\"UserProvisioningId\":\"up-siwnei3nso\",\"Description\":\"this is cam user sync\",\"Status\":\"Enabled\",\"PrincipalId\":\"u-swnd8wn3\",\"PrincipalName\":\"test\",\"PrincipalType\":\"User\",\"TargetUin\":\"10000338332\",\"TargetName\":\"test\",\"TargetType\":\"MemberUin\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}",
+          "example": "无",
           "member": "UserProvisioning",
           "name": "UserProvisioning",
           "output_required": true,
@@ -6177,7 +6195,7 @@
         {
           "disabled": false,
           "document": "用户组的用户列表",
-          "example": " [{\"UserName\": \"test\",\"DisplayName\": \"test\",\"Description\": \"this is test user\",\"Email\": \"123456@qq.com\",\"UserStatus\": \"Enabled\",\"UserType\": \"Manual\",\"UserId\": \"u-d032med3\", \"JoinTime\": \"2024-01-01 12:12:12\"}]",
+          "example": "无",
           "member": "GroupMembers",
           "name": "GroupMembers",
           "output_required": true,
@@ -6375,7 +6393,7 @@
         {
           "disabled": false,
           "document": "每页的最大数据条数。  取值范围：1~100。  默认值：10。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "MaxResults",
           "required": false,
@@ -6800,7 +6818,7 @@
         {
           "disabled": false,
           "document": "权限策略列表。",
-          "example": "[{\"RolePolicyName\":\"adminPolciy\",\"RolePolicyType\":\"System\",\"RolePolicyDocument\":\"\",\"AddTime\":\"2020-01-01 12:12:12\"}]",
+          "example": "无",
           "member": "RolePolicie",
           "name": "RolePolicies",
           "output_required": true,
@@ -7232,7 +7250,7 @@
         {
           "disabled": false,
           "document": "查询条件，目前只支持权限配置名称查询。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -7247,7 +7265,7 @@
         {
           "disabled": false,
           "document": "查询返回结果下一页的令牌。  说明 只有IsTruncated为true时，才显示该参数。",
-          "example": "OTM0YzE4MzY2ZjdhMWM0MYZDhnYaxsiYTLI=",
+          "example": "OTM0****",
           "member": "string",
           "name": "NextToken",
           "output_required": true,
@@ -7287,7 +7305,7 @@
         {
           "disabled": false,
           "document": "集团账号目标账号的授权列表。",
-          "example": "[{\"RoleConfigurationId\":\"ec-swidn****\",\"RoleConfigurationName\":\"test\",\"TargetUin\":100000322,\"TargetType\":\"MemberUin\",\"TargetName\":\"test\",\"PrincipalId\":\"u-ssiisn***\",\"PrincipalType\":\"User\",\"PrincipalName\":\"testConfig\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}]",
+          "example": "无",
           "member": "RoleAssignments",
           "name": "RoleAssignments",
           "output_required": true,
@@ -7372,7 +7390,7 @@
         {
           "disabled": false,
           "document": "支持配置名称搜索。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -7427,7 +7445,7 @@
         {
           "disabled": false,
           "document": "部成员账号列表。",
-          "example": "[{\"DeploymentStatus\":\"DeployedRequired\",\"RoleConfigurationId\":\"rc-sjwiwm2ww**\",\"RoleConfigurationName\":\"testConfiguration\",\"TargetUin\":10003292021,\"TargetName\":\"test\",\"TargetType\":\"MemberUin\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}]",
+          "example": "无",
           "member": "RoleConfigurationProvisionings",
           "name": "RoleConfigurationProvisionings",
           "output_required": true,
@@ -7476,7 +7494,7 @@
         {
           "disabled": false,
           "document": "过滤文本。不区分大小写。目前，支持 RoleConfigurationName和Description. 示例：Filter = \"test\"，表示查询名称或描述里包含 test 的权限配置。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -7549,7 +7567,7 @@
         {
           "disabled": false,
           "document": "权限配置列表。",
-          "example": "[{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}]",
+          "example": "无",
           "member": "RoleConfiguration",
           "name": "RoleConfigurations",
           "output_required": false,
@@ -7605,7 +7623,7 @@
         {
           "disabled": false,
           "document": "SCIM 密钥信息。",
-          "example": "[]",
+          "example": "无",
           "member": "SCIMCredential",
           "name": "SCIMCredentials",
           "output_required": true,
@@ -7901,7 +7919,7 @@
         {
           "disabled": false,
           "document": "任务详情",
-          "example": "[{\"TaskId\":\"t-xsinsxinsdk\",\"RoleConfigurationId\":\"rc-xmw9xjdsd\",\"RoleConfigurationName\":\"配置\",\"TargetUin\":1000232234,\"TargetType\":\"User\",\"PrincipalId\":\"u-xm89dnsujs\",\"PrincipalType\":\"Member\",\"TaskType\":\"CreateRoleAssignment\",\"Status\":\"InProgress\",\"FailureReason\":\"test\"}]",
+          "example": "无",
           "member": "TaskInfo",
           "name": "Tasks",
           "output_required": true,
@@ -7959,7 +7977,7 @@
         {
           "disabled": false,
           "document": "CAM 用户同步的身份类型。取值： User：表示同步的身份是用户。 Group：表示同步的身份是用户组。",
-          "example": "无",
+          "example": "User",
           "member": "string",
           "name": "PrincipalType",
           "required": false,
@@ -8041,7 +8059,7 @@
         {
           "disabled": false,
           "document": "CAM同步的用户列表。",
-          "example": "[{\"UserProvisioningId\":\"up-siwnei3nso\",\"Description\":\"this is cam user sync\",\"Status\":\"Enabled\",\"PrincipalId\":\"u-swnd8wn3\",\"PrincipalName\":\"test\",\"PrincipalType\":\"User\",\"TargetUin\":\"10000338332\",\"TargetName\":\"test\",\"DuplicationStrategy\":\"KeepBoth\",\"DeletionStrategy\":\"Delete\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\",\"TargetType\":\"MemberUin\"}]",
+          "example": "无",
           "member": "UserProvisioning",
           "name": "UserProvisionings",
           "output_required": true,
@@ -8090,7 +8108,7 @@
         {
           "disabled": false,
           "document": "过滤条件。  目前仅支持用户名，邮箱，用户userId，描述",
-          "example": "test",
+          "example": "user1",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -8179,7 +8197,7 @@
         {
           "disabled": false,
           "document": "用户列表。",
-          "example": "[{\"UserName\": \"test\",         \"FirstName\": \"test\",         \"LastName\": \"test\",         \"DisplayName\": \"test\",         \"Description\": \"this is user\",         \"Email\": \"test@example\",         \"UserStatus\": \"Enabled\",         \"UserType\": \"Manual\",         \"UserId\": \"u-2s334e3***\",         \"CreateTime\": \"2024-03-12 12:12:12\",         \"UpdateTime\": \"2024-03-12 12:12:12\"}]",
+          "example": "无",
           "member": "UserInfo",
           "name": "Users",
           "output_required": true,
@@ -10018,7 +10036,7 @@
         {
           "disabled": false,
           "document": "权限配置名称。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "RoleConfigurationName",
           "output_required": true,
@@ -10073,7 +10091,7 @@
         {
           "disabled": false,
           "document": "用户名称或者用户组名称",
-          "example": "test",
+          "example": "user1",
           "member": "string",
           "name": "PrincipalName",
           "output_required": true,
@@ -10106,7 +10124,7 @@
         {
           "disabled": false,
           "document": "集团账号目标账号的名称。",
-          "example": "test",
+          "example": "user2",
           "member": "string",
           "name": "TargetName",
           "output_required": true,
@@ -10134,7 +10152,7 @@
         {
           "disabled": false,
           "document": "权限配置配名称。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "RoleConfigurationName",
           "output_required": true,
@@ -10239,7 +10257,7 @@
         {
           "disabled": false,
           "document": "权限配置名称。",
-          "example": "test",
+          "example": "conf1",
           "member": "string",
           "name": "RoleConfigurationName",
           "output_required": true,
@@ -10261,7 +10279,7 @@
         {
           "disabled": false,
           "document": "集团账号目标账号的名称。",
-          "example": "test",
+          "example": "user1",
           "member": "string",
           "name": "TargetName",
           "output_required": true,
@@ -11640,7 +11658,7 @@
         {
           "disabled": false,
           "document": "成员访问策略Id。可通过DescribeOrganizationMemberPolicies获取",
-          "example": "123",
+          "example": "101",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -11658,7 +11676,7 @@
         {
           "disabled": false,
           "document": "策略描述。最大长度为128个字符",
-          "example": "\"\"",
+          "example": "admin policy",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -11844,7 +11862,7 @@
         {
           "disabled": false,
           "document": "权限配置详情",
-          "example": "{\"RoleConfigurationId\":\"rc-s2ns92ns***\",\"RoleConfigurationName\":\"test\",\"Description\":\"this is role configuration\",\"SessionDuration\":900,\"RelayState\":\"https://console.cloud.tencent.com\",\"CreateTime\":\"2019-01-01 12:12:12\",\"UpdateTime\":\"2019-01-01 12:12:12\"}",
+          "example": "无",
           "member": "RoleConfiguration",
           "name": "RoleConfigurationInfo",
           "output_required": true,
@@ -12019,7 +12037,7 @@
         {
           "disabled": false,
           "document": "用户的名。",
-          "example": "test",
+          "example": "John",
           "member": "string",
           "name": "NewFirstName",
           "required": false,
@@ -12028,7 +12046,7 @@
         {
           "disabled": false,
           "document": "用户的姓。",
-          "example": "test",
+          "example": "White",
           "member": "string",
           "name": "NewLastName",
           "required": false,
@@ -12037,7 +12055,7 @@
         {
           "disabled": false,
           "document": "用户的显示名称。",
-          "example": "test",
+          "example": "John White",
           "member": "string",
           "name": "NewDisplayName",
           "required": false,
@@ -12070,7 +12088,7 @@
         {
           "disabled": false,
           "document": "用户信息",
-          "example": "{\"UserName\":\"test\",\"FirstName\":\"test\",\"LastName\":\"test\",\"DisplayName\":\"test\",\"Description\":\"this is user\",\"Email\":\"test@example.com\",\"UserStatus\":\"test\",\"UserType\":\"Manual\",\"UserId\":\"u-33sjadjsk\",\"CreateTime\":\"2024-01-01 12:12:12\",\"UpdateTime\":\"2024-01-01 12:12:12\"}",
+          "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
           "output_required": false,
@@ -12451,7 +12469,7 @@
         {
           "disabled": false,
           "document": "集团账号目标账号的名称。",
-          "example": "test",
+          "example": "user1",
           "member": "string",
           "name": "TargetName",
           "output_required": true,
@@ -12611,7 +12629,7 @@
         {
           "disabled": false,
           "document": "用户或者用户组名称。",
-          "example": "test",
+          "example": "user1",
           "member": "string",
           "name": "PrincipalName",
           "output_required": true,

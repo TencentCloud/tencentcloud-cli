@@ -7,25 +7,26 @@ Input:
 ```
 tccli cdwpg DescribeAccounts --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 0 \
-    --InstanceId cdwpg_xx
+    --Limit 10 \
+    --InstanceId cdwpg_rzshdeh1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "Accounts": [
             {
-                "InstanceId": "cdwpg_xx",
-                "UserName": "cran",
+                "InstanceId": "cdwpg-rzshdeh1",
                 "Perms": [
-                    "sds"
-                ]
+                    "Create role",
+                    "Create DB"
+                ],
+                "UserName": "dbadmin"
             }
         ],
-        "RequestId": "xxdsds"
+        "RequestId": "88aeb3ac-19d8-4c89-b4e2-905cbf74100d",
+        "TotalCount": 1
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gs DescribeAndroidInstanceApps --cli-unfold-argument  \
-    --AndroidInstanceId xxx
+    --AndroidInstanceId cai-abcd1234
 ```
 
 Output: 
@@ -18,12 +18,12 @@ Output:
             {
                 "AndroidAppId": "apk-nm5r03gm",
                 "Name": "测试2",
-                "AndroidAppVersion": "xxx"
+                "AndroidAppVersion": "1719564791910084130"
             },
             {
                 "AndroidAppId": "apk-qekh35py",
                 "Name": "does",
-                "AndroidAppVersion": "xxx"
+                "AndroidAppVersion": "1719564791910084133"
             }
         ]
     }

@@ -101,7 +101,7 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoom\n<公共请求参数>\n\n{\n    \"Name\": \"abcdfdsf\",\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abcdfgdf\",\n    \"SdkAppId\": 1,\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"TurnOffMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abcdfgd\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abcxdfgdfg\"\n    ],\n    \"AudienceType\": 1,\n    \"RecordLayout\": 1,\n    \"GroupId\": \"abcdfgdf\",\n    \"InteractionMode\": 1,\n    \"VideoOrientation\": 1,\n    \"IsGradingRequiredPostClass\": 1,\n    \"RoomType\": 1,\n    \"EnableDirectControl\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RoomId\": 1,\n        \"RequestId\": \"abcdfgdfgfdrg\"\n    }\n}",
-        "title": "创建房间"
+        "title": "创建课堂"
       }
     ],
     "CreateSupervisor": [

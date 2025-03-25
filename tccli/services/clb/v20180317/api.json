@@ -507,7 +507,7 @@
     "ModifyLoadBalancerMixIpTarget": {
       "document": "修改IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。",
       "input": "ModifyLoadBalancerMixIpTargetRequest",
-      "name": "修改IPv6FullChain负载均衡7层监听器支持混绑目标特性",
+      "name": "修改IPv6负载均衡7层监听器支持混绑目标特性",
       "output": "ModifyLoadBalancerMixIpTargetResponse",
       "status": "online"
     },
@@ -957,7 +957,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的监听端口",
+          "document": "后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -3493,7 +3493,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。\n",
+          "document": "目标组的默认端口， 后续添加服务器时可使用该默认端口。全监听目标组不支持此参数，非全监听目标组Port和TargetGroupInstances.N中的port二者必填其一。\n",
           "example": "80",
           "member": "uint64",
           "name": "Port",
@@ -3544,6 +3544,15 @@
           "name": "Weight",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。",
+          "example": "true",
+          "member": "bool",
+          "name": "FullListenSwitch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9454,7 +9463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例ID数组。",
+          "document": "负载均衡实例ID数组，默认支持20个负载均衡实例ID。",
           "example": "[\"lb-1234abcd\\r\\n\",\"lb-5678wwqq\\r\\n\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -9697,7 +9706,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的新默认端口。",
+          "document": "目标组的新默认端口。全监听目标组不支持此参数。",
           "example": "22",
           "member": "uint64",
           "name": "Port",
@@ -11654,7 +11663,7 @@
           "example": "lbtg-5f37****",
           "member": "string",
           "name": "TargetGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11664,7 +11673,7 @@
           "example": "CVM",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11674,17 +11683,17 @@
           "example": "ins-2bei****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后端服务的监听端口",
+          "document": "后端服务的监听端口，全端口段监听器此字段返回0，代表无效端口，即不支持设置。",
           "example": "80",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11694,7 +11703,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11704,7 +11713,7 @@
           "example": "[1.1.1.1]",
           "member": "string",
           "name": "PublicIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11714,7 +11723,7 @@
           "example": "[2.2.2.2]",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11724,7 +11733,7 @@
           "example": "testName",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11734,7 +11743,7 @@
           "example": "2021-03-16 00:00:00",
           "member": "datetime",
           "name": "RegisteredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11744,7 +11753,7 @@
           "example": "eni-jf7u****",
           "member": "string",
           "name": "EniId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11754,7 +11763,7 @@
           "example": "400001",
           "member": "uint64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -11796,7 +11805,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的默认端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标组的默认端口，全监听目标组此字段返回0，表示无效端口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
           "name": "Port",
@@ -11883,6 +11892,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否全监听目标组",
+          "example": "true",
+          "member": "bool",
+          "name": "FullListenSwitch",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11901,7 +11920,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组实例的端口",
+          "document": "目标组实例的端口，全监听目标组不支持传此字段。",
           "example": "80",
           "member": "uint64",
           "name": "Port",
@@ -11919,7 +11938,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组实例的新端口",
+          "document": "目标组实例的新端口，全监听目标组不支持传此字段。",
           "example": "80",
           "member": "uint64",
           "name": "NewPort",

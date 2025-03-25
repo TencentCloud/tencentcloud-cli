@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cdwpg UpgradeInstance --cli-unfold-argument  \
-    --InstanceId cdwpg-xxx \
-    --PackageVersion 3.15.3.0
+    --InstanceId cdwpg-dsfsccxxx \
+    --PackageVersion 3.16.9.4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 0,
+        "FlowId": 1242,
         "ErrorMsg": "",
-        "RequestId": "abcss"
+        "RequestId": "abcss-csdff"
     }
 }
 ```

@@ -110,7 +110,7 @@
         {
           "disabled": false,
           "document": "签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。",
-          "example": "无",
+          "example": "baz****",
           "member": "string",
           "name": "IdentityKey",
           "required": true,
@@ -119,7 +119,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。",
-          "example": "无",
+          "example": "openid",
           "member": "string",
           "name": "Scope",
           "required": false,
@@ -128,7 +128,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "idp name",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -197,7 +197,7 @@
         {
           "disabled": false,
           "document": "身份提供商URL",
-          "example": "1111",
+          "example": "https://xxx.qq.cn/oidc",
           "member": "string",
           "name": "IdentityUrl",
           "output_required": true,
@@ -207,7 +207,7 @@
         {
           "disabled": false,
           "document": "签名公钥",
-          "example": "无",
+          "example": "baz****",
           "member": "string",
           "name": "IdentityKey",
           "output_required": true,
@@ -217,7 +217,7 @@
         {
           "disabled": false,
           "document": "客户端id",
-          "example": "无",
+          "example": "61adcf00620c31e3ddbc9546",
           "member": "string",
           "name": "ClientId",
           "output_required": true,
@@ -257,7 +257,7 @@
         {
           "disabled": false,
           "document": "授权请求Endpoint",
-          "example": "无",
+          "example": "https://console.authing.cn/console/get-started/61adcf00620c31e3d",
           "member": "string",
           "name": "AuthorizationEndpoint",
           "output_required": true,
@@ -267,7 +267,7 @@
         {
           "disabled": false,
           "document": "授权请求Scope",
-          "example": "无",
+          "example": "openid",
           "member": "string",
           "name": "Scope",
           "output_required": true,
@@ -277,7 +277,7 @@
         {
           "disabled": false,
           "document": "授权请求Response type",
-          "example": "无",
+          "example": "id_token",
           "member": "string",
           "name": "ResponseType",
           "output_required": true,
@@ -287,7 +287,7 @@
         {
           "disabled": false,
           "document": "授权请求Response mode",
-          "example": "无",
+          "example": "fragment",
           "member": "string",
           "name": "ResponseMode",
           "output_required": true,
@@ -297,7 +297,7 @@
         {
           "disabled": false,
           "document": "映射字段名称",
-          "example": "无",
+          "example": "sub",
           "member": "string",
           "name": "MappingFiled",
           "output_required": true,
@@ -307,7 +307,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "idp name",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -445,7 +445,7 @@
         {
           "disabled": false,
           "document": "描述，长度为1~255个英文或中文字符，默认值为空。",
-          "example": "描述",
+          "example": "idp name",
           "member": "string",
           "name": "Description",
           "required": false,

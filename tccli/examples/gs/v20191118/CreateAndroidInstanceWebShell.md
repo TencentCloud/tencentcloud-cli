@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "Key": "xxxxx",
+        "Key": "key-01",
         "Address": "ap-shenzhen-1.webssh.crtrcloud.com",
         "Zone": "ap-shenzhen-1",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"

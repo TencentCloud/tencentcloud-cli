@@ -1,4 +1,4 @@
-**Example 1: 1**
+**Example 1: 配置描述**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cdwpg DescribeDBParams --cli-unfold-argument  \
-    --InstanceId cdwpg-xx \
-    --Limit 20 \
-    --NodeTypes dn \
+    --InstanceId cdwpg-xdsccxxx \
+    --Limit 1 \
+    --NodeTypes cn \
     --Offset 0
 ```
 
@@ -16,40 +16,64 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "xxss",
         "Items": [
             {
-                "NodeType": "cn",
-                "NodeName": "cn001",
-                "TotalCount": 2,
                 "Details": [
                     {
-                        "ParamName": "MaxConnections",
-                        "DefaultValue": "100",
+                        "DefaultValue": "off",
                         "NeedRestart": false,
-                        "RunningValue": "100",
+                        "ParamName": "enable_audit",
+                        "ParameterName": "enable_audit",
+                        "RunningValue": "off",
+                        "ShortDesc": "Enable to audit user operations on the database objects.",
+                        "Unit": "NULL",
                         "ValueRange": {
-                            "Type": "enum",
                             "Enum": [
-                                "DEBUG",
-                                "INFO",
-                                "WARN",
-                                "ERROR"
+                                ""
                             ],
                             "Range": {
-                                "Min": "1024",
-                                "Max": "4096"
+                                "Max": "on",
+                                "Min": "off"
                             },
-                            "String": ""
-                        },
-                        "Unit": "connections",
-                        "ShortDesc": "Maximum number of concurrent connections",
-                        "ParameterName": "cds"
+                            "String": "",
+                            "Type": "section"
+                        }
                     }
-                ]
+                ],
+                "NodeName": "cn0001",
+                "NodeType": "cn",
+                "TotalCount": 1
+            },
+            {
+                "Details": [
+                    {
+                        "DefaultValue": "off",
+                        "NeedRestart": false,
+                        "ParamName": "enable_audit",
+                        "ParameterName": "enable_audit",
+                        "RunningValue": "off",
+                        "ShortDesc": "Enable to audit user operations on the database objects.",
+                        "Unit": "NULL",
+                        "ValueRange": {
+                            "Enum": [
+                                ""
+                            ],
+                            "Range": {
+                                "Max": "on",
+                                "Min": "off"
+                            },
+                            "String": "",
+                            "Type": "section"
+                        }
+                    }
+                ],
+                "NodeName": "cn0002",
+                "NodeType": "cn",
+                "TotalCount": 1
             }
-        ]
+        ],
+        "RequestId": "c5855fc1-e653-4eb6-958c-556ee7942c4c",
+        "TotalCount": 2
     }
 }
 ```

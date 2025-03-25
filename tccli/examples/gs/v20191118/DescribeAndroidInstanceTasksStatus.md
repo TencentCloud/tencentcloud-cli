@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gs DescribeAndroidInstanceTasksStatus --cli-unfold-argument  \
-    --TaskIds 123
+    --TaskIds 615cf0a4-075e-4cf5-b26f-d786363daccd
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
     "Response": {
         "TaskStatusSet": [
             {
-                "TaskId": "123",
+                "TaskId": "615cf0a4-075e-4cf5-b26f-d786363daccd",
                 "Status": "SUCCESS",
-                "AndroidInstanceId": "id-test"
+                "AndroidInstanceId": "cai-abcd1234"
             }
         ],
         "RequestId": "e54a0e39-4d84-41ab-953f-2f2a72d92546"

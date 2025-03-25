@@ -7,9 +7,9 @@ Input:
 ```
 tccli organization UpdateOrganizationMembersPolicy --cli-unfold-argument  \
     --MemberUins 111111111111 \
-    --PolicyId 123 \
-    --IdentityId 1 \
-    --Description 
+    --PolicyId 101 \
+    --IdentityId 11 \
+    --Description admin policy
 ```
 
 Output: 

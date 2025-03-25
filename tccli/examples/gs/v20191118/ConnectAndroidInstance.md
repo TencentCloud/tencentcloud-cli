@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli gs ConnectAndroidInstance --cli-unfold-argument  \
-    --AndroidInstanceId aaa \
-    --ClientSession test
+    --AndroidInstanceId cai-abcd1234 \
+    --ClientSession e30=
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ServerSession": "abc",
-        "RequestId": "req123"
+        "ServerSession": "e30=",
+        "RequestId": "requestid"
     }
 }
 ```

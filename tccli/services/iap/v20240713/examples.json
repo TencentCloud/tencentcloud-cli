@@ -3,7 +3,7 @@
     "CreateIAPUserOIDCConfig": [
       {
         "document": "创建IAP的OIDC配置",
-        "input": "POST / HTTP/1.1\nHost: iap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIAPUserOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityUrl\": \"https://accounts.g**gle.com\",\n    \"ClientId\": \"47***4801-pu***e7tj.apps.g**gleusercontent.com\",\n    \"AuthorizationEndpoint\": \"https://accounts.g**gle.com/o/oauth2/v2/auth\",\n    \"ResponseType\": \"id_token\",\n    \"ResponseMode\": \"form_post\",\n    \"MappingFiled\": \"email\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBb*******gICBdCn0=\",\n    \"Scope\": [\n        \"openid\",\n        \"email\",\n        \"profile\"\n    ],\n    \"Description\": \"111\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIAPUserOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityUrl\": \"https://accounts.g**gle.com\",\n    \"ClientId\": \"47***4801-pu***e7tj.apps.g**gleusercontent.com\",\n    \"AuthorizationEndpoint\": \"https://accounts.g**gle.com/o/oauth2/v2/auth\",\n    \"ResponseType\": \"id_token\",\n    \"ResponseMode\": \"form_post\",\n    \"MappingFiled\": \"email\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBb*******gICBdCn0=\",\n    \"Scope\": [\n        \"openid\",\n        \"email\",\n        \"profile\"\n    ],\n    \"Description\": \"idp name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ccecfc6-14a0-4aaa-bcf4-0d5b77835bfb\"\n    }\n}",
         "title": "创建IAP的OIDC配置"
       }
@@ -26,7 +26,7 @@
       {
         "document": "查询IAP的OIDC配置",
         "input": "POST / HTTP/1.1\nHost: iap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIAPUserOIDCConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AuthorizationEndpoint\": \"https://accounts.g**gle.com/o/oauth2/v2/auth\",\n        \"ClientId\": \"47***01-pu1e*****7tj.apps.g**gleusercontent.com\",\n        \"Description\": \"222\",\n        \"IdentityKey\": \"ewogICAgImtletVUkttZ0I***GTHVVRUJkdyIKICAgICAgICB9CiAgICBdCn0=\",\n        \"IdentityUrl\": \"https://accounts.g**gle.com\",\n        \"MappingFiled\": \"email\",\n        \"ProviderType\": 13,\n        \"RequestId\": \"f87e5dab-426a-4a50-ac5b-1c08151cd6a2\",\n        \"ResponseMode\": \"form_post\",\n        \"ResponseType\": \"id_token\",\n        \"Scope\": [\n            \"openid\",\n            \"email\",\n            \"profile\"\n        ],\n        \"Status\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthorizationEndpoint\": \"https://accounts.g**gle.com/o/oauth2/v2/auth\",\n        \"ClientId\": \"47***01-pu1e*****7tj.apps.g**gleusercontent.com\",\n        \"Description\": \"idp name\",\n        \"IdentityKey\": \"ewogICAgImtletVUkttZ0I***GTHVVRUJkdyIKICAgICAgICB9CiAgICBdCn0=\",\n        \"IdentityUrl\": \"https://accounts.g**gle.com\",\n        \"MappingFiled\": \"email\",\n        \"ProviderType\": 13,\n        \"RequestId\": \"f87e5dab-426a-4a50-ac5b-1c08151cd6a2\",\n        \"ResponseMode\": \"form_post\",\n        \"ResponseType\": \"id_token\",\n        \"Scope\": [\n            \"openid\",\n            \"email\",\n            \"profile\"\n        ],\n        \"Status\": 2\n    }\n}",
         "title": "查询IAP的OIDC配置"
       }
     ],
@@ -49,7 +49,7 @@
     "UpdateIAPUserOIDCConfig": [
       {
         "document": "修改IAP的OIDC配置",
-        "input": "POST / HTTP/1.1\nHost: iap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIAPUserOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityUrl\": \"https://accounts.g**gle.com\",\n    \"ClientId\": \"47***01-pu***mvj4lj1de7tj.apps.g**gleusercontent.com\",\n    \"AuthorizationEndpoint\": \"https://accounts.g**gle.com/o/oauth2/v2/auth\",\n    \"ResponseType\": \"id_token\",\n    \"ResponseMode\": \"form_post\",\n    \"MappingFiled\": \"email\",\n    \"IdentityKey\": \"ewogICAgImtle***xkd09GTHVVRUJkdyIKICAgICAgICB9CiAgICBdCn0=\",\n    \"Scope\": [\n        \"openid\",\n        \"email\",\n        \"profile\"\n    ],\n    \"Description\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIAPUserOIDCConfig\n<公共请求参数>\n\n{\n    \"IdentityUrl\": \"https://accounts.g**gle.com\",\n    \"ClientId\": \"47***01-pu***mvj4lj1de7tj.apps.g**gleusercontent.com\",\n    \"AuthorizationEndpoint\": \"https://accounts.g**gle.com/o/oauth2/v2/auth\",\n    \"ResponseType\": \"id_token\",\n    \"ResponseMode\": \"form_post\",\n    \"MappingFiled\": \"email\",\n    \"IdentityKey\": \"ewogICAgImtle***xkd09GTHVVRUJkdyIKICAgICAgICB9CiAgICBdCn0=\",\n    \"Scope\": [\n        \"openid\",\n        \"email\",\n        \"profile\"\n    ],\n    \"Description\": \"idp name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b83e3152-6d18-4617-986d-ff4c666750ed\"\n    }\n}",
         "title": "修改IAP的OIDC配置"
       }

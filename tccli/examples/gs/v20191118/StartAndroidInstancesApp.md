@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gs StartAndroidInstancesApp --cli-unfold-argument  \
-    --AndroidInstanceIds xxx \
-    --PackageName xxx
+    --AndroidInstanceIds cai-abcd1234 \
+    --PackageName com.example.app
 ```
 
 Output: 

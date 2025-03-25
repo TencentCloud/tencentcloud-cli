@@ -3,8 +3,8 @@
     "AddUser": [
       {
         "document": "创建子账号",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"test124\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"jack account\",\n    \"Name\": \"jack\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"jack\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加子用户"
       }
     ],
@@ -131,7 +131,7 @@
     "CreateUserOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth***.cn/\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"测试\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCi******\",\n    \"ClientId\": \"61adcf00620c31e3***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n    \"Scope\": [\n        \"openidScope.1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth***.cn/\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"ewogICAgImtleXMiOiBbCi******\",\n    \"ClientId\": \"61adcf00620c31e3***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.cn\",\n    \"Scope\": [\n        \"openidScope.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a70d447-3c04-43c0-94ca-db899d4d05ac\"\n    }\n}",
         "title": "添加用户OIDC配置"
       }
@@ -163,7 +163,7 @@
     "DeleteMessageReceiver": [
       {
         "document": "删除消息接收人",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"zhangshan\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"af3a7188-5b3e-41a6-b489-8443e5816494\"\n    }\n}",
         "title": "删除消息接收人"
       }
@@ -727,7 +727,7 @@
     "UpdateUserOIDCConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth**.com\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"描述\",\n    \"IdentityKey\": \"key\",\n    \"ClientId\": \"cbaefefes9823***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.com\",\n    \"Scope\": [\n        \"email\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserOIDCConfig\n<公共请求参数>\n\n{\n    \"ResponseType\": \"id_token\",\n    \"IdentityUrl\": \"https://tencent.auth**.com\",\n    \"ResponseMode\": \"form_post\",\n    \"Description\": \"this is description\",\n    \"IdentityKey\": \"key\",\n    \"ClientId\": \"cbaefefes9823***\",\n    \"MappingFiled\": \"sub\",\n    \"AuthorizationEndpoint\": \"https://tencent.auth**.com\",\n    \"Scope\": [\n        \"email\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"10a20884-070e-48a8-aa40-9ed295a33ea2\"\n    }\n}",
         "title": "修改用户OIDC配置"
       }

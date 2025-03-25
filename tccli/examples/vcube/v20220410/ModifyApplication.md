@@ -1,4 +1,4 @@
-**Example 1: 编辑更改应用**
+**Example 1: 更改测试包名信息**
 
 修改应用名称、修改mobile和pc包名信息、追加web播放器域名
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

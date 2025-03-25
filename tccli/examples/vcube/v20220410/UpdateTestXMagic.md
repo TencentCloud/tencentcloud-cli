@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vcube UpdateTestXMagic --cli-unfold-argument  \
-    --XMagicId 1 \
-    --ResourceId 1
+    --XMagicId 2348725 \
+    --ResourceId xmc11671a6134d082bf79
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

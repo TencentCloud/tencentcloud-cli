@@ -326,7 +326,7 @@
     ],
     "DeleteRepository": [
       {
-        "document": "",
+        "document": "删除镜像仓库以及仓库内的镜像列表",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepository\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"private\",\n    \"RepositoryName\": \"golang\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca2eddea-14cc-4c3f-96e5-de50fd1fd4c0\"\n    }\n}",
         "title": "删除镜像仓库"

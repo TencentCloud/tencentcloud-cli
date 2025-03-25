@@ -14,85 +14,129 @@ Output:
 {
     "Response": {
         "InstanceInfo": {
-            "ID": 20230915001,
-            "InstanceType": "cdwpg-cn",
-            "InstanceName": "analytics-prod-01",
-            "Status": "Serving",
-            "StatusDesc": "服务中",
-            "InstanceStateInfo": {
-                "InstanceState": "Serving",
-                "FlowCreateTime": "2023-09-15 09:30:00",
-                "FlowName": "ClusterScaleOut",
-                "FlowProgress": 75,
-                "InstanceStateDesc": "集群扩容中",
-                "FlowMsg": "正在添加3个计算节点",
-                "ProcessName": "资源扩容中",
-                "BackupStatus": 0,
-                "RequestId": "req-5f82b735",
-                "BackupOpenStatus": 1
-            },
-            "InstanceID": "inst-9d7e2f4a",
-            "CreateTime": "2023-01-15 14:20:00",
-            "Region": "ap-shanghai",
-            "Zone": "ap-shanghai-2",
-            "RegionDesc": "上海地域",
-            "ZoneDesc": "上海二区",
-            "Tags": [
-                {
-                    "TagKey": "Environment",
-                    "TagValue": "Production"
-                },
-                {
-                    "TagKey": "Department",
-                    "TagValue": "DataAnalytics"
-                }
-            ],
-            "Version": "v3.2.1",
-            "Charset": "UTF-8",
-            "CNNodes": [
-                {
-                    "SpecName": "CN8x32",
-                    "DataDisk": {
-                        "DiskCount": 2,
-                        "MaxDiskSize": 2048,
-                        "MinDiskSize": 512,
-                        "DiskType": "Cloud_SSD",
-                        "DiskDesc": "高性能云盘",
-                        "CvmClass": "S5.MEDIUM8"
-                    },
-                    "CvmCount": 3
-                }
-            ],
-            "DNNodes": [
-                {
-                    "SpecName": "DN4x64",
-                    "DataDisk": {
-                        "DiskCount": 4,
-                        "MaxDiskSize": 4096,
-                        "MinDiskSize": 1024,
-                        "DiskType": "Cloud_Premium",
-                        "DiskDesc": "企业级云盘",
-                        "CvmClass": "S5.LARGE16"
-                    },
-                    "CvmCount": 2
-                }
-            ],
-            "RegionId": 21,
-            "ZoneId": 210002,
-            "VpcId": "vpc-89f2d1e3",
-            "SubnetId": "subnet-45c9b2f1",
-            "ExpireTime": "2025-12-31 23:59:59",
-            "PayMode": "PrePaid",
-            "RenewFlag": true,
-            "InstanceId": "cluster-9a8b7c6d",
             "AccessDetails": [
                 {
-                    "Address": "10.16.32.45:3306",
-                    "Protocol": "MySQL"
+                    "Address": "10.0.16.19:9000",
+                    "Protocol": "tcp"
                 }
-            ]
+            ],
+            "CNNodes": [
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 1,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 32000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H_CN"
+                },
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 1,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 32000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H_CN"
+                },
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 1,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 32000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H_CN"
+                },
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 1,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 32000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H_CN"
+                }
+            ],
+            "Charset": "UTF8",
+            "CreateTime": "2025-03-19 16:37:38",
+            "DNNodes": [
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 10,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 320000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H"
+                },
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 10,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 320000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H"
+                },
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 10,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 320000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H"
+                },
+                {
+                    "CvmCount": 2,
+                    "DataDisk": {
+                        "CvmClass": "STANDARD",
+                        "DiskCount": 10,
+                        "DiskDesc": "增强型SSD云硬盘",
+                        "DiskType": "CLOUD_HSSD",
+                        "MaxDiskSize": 320000,
+                        "MinDiskSize": 200
+                    },
+                    "SpecName": "S_4_16_H"
+                }
+            ],
+            "ExpireTime": "0000.00.00 00:00:00",
+            "ID": 1094,
+            "InstanceId": "cdwpg-rzshdeh1",
+            "InstanceName": "hugogao_test",
+            "InstanceType": "TbaseV3",
+            "PayMode": "POSTPAID_BY_HOUR",
+            "Region": "ap-chongqing",
+            "RenewFlag": false,
+            "SubnetId": "subnet-rdlodajk",
+            "Tags": [],
+            "Version": "3.16.9.4",
+            "VpcId": "vpc-1asw4o73",
+            "Zone": "ap-chongqing-1"
         },
-        "RequestId": "xdsx"
+        "RequestId": "d7cde91a-be80-4297-ac48-a5eebd63a397"
     }
 }
 ```

@@ -104,93 +104,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用id\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用id\n",
           "example": "app-12345678",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "Llama2 13B",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用描述\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用描述\n",
           "example": "Llama2 13B是一款由Meta AI开源的LLM模型。Llama-2-13b-chat是高性能原生开源版本，适用于多种对话场景。注：该环境暂无 webui 可视化调试页面，需通过命令行调试。",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用的环境配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用的环境配置",
           "example": "Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab",
           "member": "string",
           "name": "ConfigEnvironment",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "系统盘大小下限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘大小下限",
           "example": "80",
           "member": "int64",
           "name": "MinSystemDiskSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION",
           "example": "PRIVATE_APPLICATION",
           "member": "string",
           "name": "ApplicationType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离\n示例值：ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离\n示例值：ONLINE",
           "example": "ONLINE",
           "member": "string",
           "name": "ApplicationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用创建时间",
           "example": "2023-11-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用大小",
           "example": "50",
           "member": "int64",
           "name": "ApplicationSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -326,7 +326,7 @@
         {
           "disabled": false,
           "document": "分页返回的应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ApplicationId\":\"app-12345678\",\"ApplicationName\":\"Llama2 13B\",\"ConfigEnvironment\":\"Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab\",\"Description\":\"Llama2 13B是一款由Meta AI开源的LLM模型。Llama-2-13b-chat是高性能原生开源版本，适用于多种对话场景。注：该环境暂无 webui 可视化调试页面，需通过命令行调试。\",\"MinSystemDiskSize\":80}]",
+          "example": "[{\"ApplicationId\":\"app-12345678\",\"ApplicationName\":\"Llama2 13B\",\"ConfigEnvironment\":\"Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab\",\"Description\":\"xxx\",\"MinSystemDiskSize\":80}]",
           "member": "ApplicationInfo",
           "name": "ApplicationSet",
           "output_required": true,
@@ -772,13 +772,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "发货参数对应的价格组合，当DryRun=True，会返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发货参数对应的价格组合，当DryRun=True，会返回空",
           "example": "{\"Price\":{\"CloudDiskPrice\":{\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01},\"InstancePrice\":{\"DiscountUnitPrice\":1,\"UnitPrice\":1}}}",
           "member": "Price",
           "name": "Price",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1053,53 +1053,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "原单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原单价",
           "example": "100.00",
           "member": "float",
           "name": "UnitPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣后单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣后单价",
           "example": "50.00",
           "member": "float",
           "name": "DiscountUnitPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣",
           "example": "0.5",
           "member": "float",
           "name": "Discount",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "单位：时/月\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单位：时/月\n",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品数量",
           "example": "1",
           "member": "uint64",
           "name": "Amount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1109,43 +1109,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "hai-k31lvhiv",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例价格详情",
           "example": "无",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "磁盘价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘价格详情",
           "example": "无",
           "member": "ItemPrice",
           "name": "CloudDiskPrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该实例的总价钱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该实例的总价钱",
           "example": "无",
           "member": "ItemPrice",
           "name": "InstanceTotalPrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1358,33 +1358,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例价格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例价格信息",
           "example": "{\"Amount\":1,\"ChargeUnit\":\"HOUR\",\"Discount\":100,\"DiscountUnitPrice\":1.2,\"UnitPrice\":1.2}",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘价格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘价格信息",
           "example": "{\"Amount\":1,\"ChargeUnit\":\"HOUR\",\"Discount\":100,\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01}",
           "member": "ItemPrice",
           "name": "CloudDiskPrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分实例价格",
           "example": "{\"InstanceId\":\"hai-xxx\",\"InstancePrice\":{\"OriginPrice\":1.0,\"DiscountPrice\":1.0,\"Discount\":100,\"ChargeUnit\":\"MONTH\"},\"CloudDiskPrice\":{\"OriginPrice\":1.0,\"DiscountPrice\":1.0,\"Discount\":100,\"ChargeUnit\":\"MONTH\"}}",
           "member": "ItemPriceDetail",
           "name": "PriceDetailSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

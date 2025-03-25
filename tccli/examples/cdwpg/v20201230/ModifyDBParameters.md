@@ -1,24 +1,24 @@
-**Example 1: 1**
+**Example 1: 修改集群配置**
 
-
+修改集群配置
 
 Input: 
 
 ```
 tccli cdwpg ModifyDBParameters --cli-unfold-argument  \
-    --InstanceId cdwpg-abc \
-    --NodeConfigParams.0.NodeType dn \
-    --NodeConfigParams.0.ConfigParams.0.ParameterName k1 \
-    --NodeConfigParams.0.ConfigParams.0.ParameterValue v1 \
-    --NodeConfigParams.0.ConfigParams.0.ParameterOldValue v0
+    --InstanceId cdwpg-rzshdeh1 \
+    --NodeConfigParams.0.NodeType cn \
+    --NodeConfigParams.0.ConfigParams.0.ParameterName max_connections \
+    --NodeConfigParams.0.ConfigParams.0.ParameterValue 630 \
+    --NodeConfigParams.0.ConfigParams.0.ParameterOldValue 625
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": 0,
-        "RequestId": "abddc"
+        "RequestId": "d455ac94-9ab9-4794-95af-41ee85a71f5a",
+        "TaskId": 9897
     }
 }
 ```

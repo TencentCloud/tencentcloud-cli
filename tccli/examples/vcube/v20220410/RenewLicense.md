@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vcube RenewLicense --cli-unfold-argument  \
-    --LicenseId 123 \
-    --ResourceId 123
+    --LicenseId 345768234 \
+    --ResourceId luvc348243isdfser2342
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

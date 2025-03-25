@@ -9,11 +9,11 @@ tccli organization ListRoleConfigurationProvisionings --cli-unfold-argument  \
     --ZoneId z-d8wj \
     --RoleConfigurationId up-dnsisns*** \
     --MaxResults 20 \
-    --NextToken abc \
+    --NextToken sgt**** \
     --TargetType MemberUin \
     --TargetUin 1000329122 \
     --DeploymentStatus DeployedRequired \
-    --Filter test
+    --Filter conf1
 ```
 
 Output: 
@@ -28,9 +28,9 @@ Output:
             {
                 "DeploymentStatus": "DeployedRequired",
                 "RoleConfigurationId": "rc-sjwiwm2ww**",
-                "RoleConfigurationName": "testConfiguration",
+                "RoleConfigurationName": "conf1",
                 "TargetUin": 10003292021,
-                "TargetName": "test",
+                "TargetName": "user1",
                 "TargetType": "MemberUin",
                 "CreateTime": "2024-01-01 12:12:12",
                 "UpdateTime": "2024-01-01 12:12:12"

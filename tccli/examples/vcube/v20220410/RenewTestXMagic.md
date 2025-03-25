@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli vcube RenewTestXMagic --cli-unfold-argument  \
-    --XMagicId 1
+    --XMagicId 23487352
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

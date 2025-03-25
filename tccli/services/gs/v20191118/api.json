@@ -317,13 +317,13 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安卓应用名称",
           "example": "猫耳",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -337,13 +337,13 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安卓应用版本列表",
           "example": "[{\"ver-a1b2c3\",\"NORMAL\"}]",
           "member": "AndroidAppVersionInfo",
           "name": "AndroidAppVersionInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -421,14 +421,14 @@
         },
         {
           "disabled": false,
-          "document": "实例可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "AndroidInstanceZone",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -454,14 +454,14 @@
         },
         {
           "disabled": false,
-          "document": "实例镜像 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例镜像 ID",
           "example": "image-abcd1234",
           "member": "string",
           "name": "AndroidInstanceImageId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -548,36 +548,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用id",
           "example": "apk-i37e2134",
           "member": "string",
           "name": "AndroidAppId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "testapp",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用版本",
           "example": "1",
           "member": "string",
           "name": "AndroidAppVersion",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -620,43 +620,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像 ID",
           "example": "image-abcd1234",
           "member": "string",
           "name": "AndroidInstanceImageId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像名称，由业务方自定义，仅用于展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像名称，由业务方自定义，仅用于展示",
           "example": "img-123",
           "member": "string",
           "name": "AndroidInstanceImageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像状态",
           "example": "NORMAL",
           "member": "string",
           "name": "AndroidInstanceImageState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "AndroidInstanceImageZone",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -694,23 +694,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务ID",
+          "example": "615cf0a4-075e-4cf5-b26f-d786363daccd",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例ID",
+          "example": "cai-abcd1234",
           "member": "string",
           "name": "AndroidInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -721,7 +721,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "615cf0a4-075e-4cf5-b26f-d786363daccd",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -743,7 +743,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "cai-abcd1234",
           "member": "string",
           "name": "AndroidInstanceId",
           "output_required": true,
@@ -753,14 +753,14 @@
         },
         {
           "disabled": false,
-          "document": "任务执行结果描述，针对某些任务，可以是可解析的 json\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务执行结果描述，针对某些任务，可以是可解析的 json",
+          "example": "{\"Error\":{}}",
           "member": "string",
           "name": "TaskResult",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -771,7 +771,7 @@
         {
           "disabled": false,
           "document": "用户Session信息",
-          "example": "无",
+          "example": "e30=",
           "member": "string",
           "name": "ClientSession",
           "required": true,
@@ -780,7 +780,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "cai-abcd1234",
           "member": "string",
           "name": "AndroidInstanceId",
           "required": true,
@@ -804,7 +804,7 @@
         {
           "disabled": false,
           "document": "服务端session信息",
-          "example": "无",
+          "example": "e30=",
           "member": "string",
           "name": "ServerSession",
           "output_required": true,
@@ -913,13 +913,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓实例镜像 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安卓实例镜像 ID",
           "example": "image-abc",
           "member": "string",
           "name": "AndroidInstanceImageId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1398,7 +1398,7 @@
         {
           "disabled": false,
           "document": "镜像 ID 列表",
-          "example": "无",
+          "example": "image-abc",
           "member": "string",
           "name": "AndroidInstanceImageIds",
           "required": true,
@@ -1493,13 +1493,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安卓应用列表",
           "example": "无",
           "member": "AndroidApp",
           "name": "Apps",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1526,7 +1526,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "cai-abcd1234",
           "member": "string",
           "name": "AndroidInstanceId",
           "required": true,
@@ -1540,13 +1540,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "安卓应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安卓应用列表",
           "example": "无",
           "member": "AndroidInstanceAppInfo",
           "name": "Apps",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1595,23 +1595,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像总数",
           "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像列表",
           "example": "无",
           "member": "AndroidInstanceImage",
           "name": "AndroidInstanceImages",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1702,7 +1702,7 @@
         {
           "disabled": false,
           "document": "任务ID列表",
-          "example": "无",
+          "example": "[ \"615cf0a4-075e-4cf5-b26f-d786363daccd\" ]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -1716,13 +1716,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态集合",
           "example": "无",
           "member": "AndroidInstanceTaskStatus",
           "name": "TaskStatusSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1817,7 +1817,7 @@
         {
           "disabled": false,
           "document": "实例总数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1948,7 +1948,7 @@
         {
           "disabled": false,
           "document": "安卓实例 ID 列表",
-          "example": "[\"android_instance_id\"]",
+          "example": "[\"cai-abcd1234\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -1993,23 +1993,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "\"aaa\"",
-          "example": "",
+          "document": "字段名",
+          "example": "key01",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "[\"bbb\", \"ccc\"]",
-          "example": "",
+          "document": "字段值列表",
+          "example": "[ \"value01\", \"value11\" ]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2020,7 +2018,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "[ \"cai-abcd1234\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -2029,7 +2027,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "apk-drkmskme",
           "member": "string",
           "name": "AndroidAppId",
           "required": true,
@@ -2038,7 +2036,7 @@
         {
           "disabled": false,
           "document": "应用版本",
-          "example": "无",
+          "example": "1719564791910084130",
           "member": "string",
           "name": "AndroidAppVersion",
           "required": false,
@@ -2052,13 +2050,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2285,7 +2283,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "[ \"cai-abcd1234\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -2299,13 +2297,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2354,13 +2352,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2485,7 +2483,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "[ \"cai-abcd1234\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -2499,13 +2497,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2630,7 +2628,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "[ \"cai-abcd1234\" ]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": true,
@@ -2644,13 +2642,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2911,13 +2909,13 @@
         },
         {
           "disabled": false,
-          "document": "命令执行输出内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "命令执行输出内容",
+          "example": "ok",
           "member": "string",
           "name": "Output",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3042,13 +3040,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务集合",
           "example": "无",
           "member": "AndroidInstanceTask",
           "name": "TaskSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

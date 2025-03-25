@@ -30,7 +30,7 @@ Output:
             }
         ],
         "RequestId": "d9042e88-c70e-4158-958c-8bb57d6c809f",
-        "TotalCount": 3
+        "TotalCount": 2
     }
 }
 ```

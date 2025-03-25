@@ -22,9 +22,9 @@ Output:
 ```
 {
     "Response": {
-        "NextToken": "abc",
-        "TotalCounts": 0,
-        "MaxResults": 0,
+        "NextToken": "sgt*****",
+        "TotalCounts": 1,
+        "MaxResults": 10,
         "IsTruncated": true,
         "Tasks": [
             {
@@ -37,7 +37,7 @@ Output:
                 "PrincipalType": "Member",
                 "TaskType": "CreateRoleAssignment",
                 "Status": "InProgress",
-                "FailureReason": "test"
+                "FailureReason": ""
             }
         ],
         "RequestId": "e297543a-80de-4039-83c8-9d35d4545"

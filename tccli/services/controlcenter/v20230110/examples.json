@@ -12,7 +12,7 @@
       {
         "document": "获取用户基线配置",
         "input": "POST / HTTP/1.1\nHost: controlcenter.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAccountFactoryBaseline\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"OwnerUin\": 126464647,\n        \"Name\": \"test\",\n        \"BaselineConfigItems\": [\n            {\n                \"Identifier\": \"ACS-BP_ACCOUNT_FACTORY_ACCOUNT_CONTACT\",\n                \"Configuration\": \"{\\\"Contacts\\\":[{\\\"Name\\\":\\\"dest\\\",\\\"Email\\\":\\\"ia@22.com\\\",\\\"Mobile\\\":\\\"12345678910\\\",\\\"Position\\\":\\\"Technical Director\\\"}]}\",\n                \"ApplyCount\": 5\n            }\n        ],\n        \"CreateTime\": \"2022-08-18 12:00:00\",\n        \"UpdateTime\": \"2022-08-18 12:00:00\",\n        \"RequestId\": \"e2f35fb3-3c8c-431e-b318-b4746cfe076c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnerUin\": 100000000001,\n        \"Name\": \"default\",\n        \"BaselineConfigItems\": [\n            {\n                \"Identifier\": \"ACS-BP_ACCOUNT_FACTORY_ACCOUNT_CONTACT\",\n                \"Configuration\": \"{\\\"Contacts\\\":[{\\\"Name\\\":\\\"dest\\\",\\\"Email\\\":\\\"ia@22.com\\\",\\\"Mobile\\\":\\\"12345678910\\\",\\\"Position\\\":\\\"Technical Director\\\"}]}\",\n                \"ApplyCount\": 5\n            }\n        ],\n        \"CreateTime\": \"2022-08-18 12:00:00\",\n        \"UpdateTime\": \"2022-08-18 12:00:00\",\n        \"RequestId\": \"e2f35fb3-3c8c-431e-b318-b4746cfe076c\"\n    }\n}",
         "title": "示例"
       }
     ],

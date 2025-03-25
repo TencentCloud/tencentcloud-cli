@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vcube UpdateTrialLicense --cli-unfold-argument  \
-    --LicenseId 123 \
-    --ResourceId 123
+    --LicenseId 51352 \
+    --ResourceId luvc1bbcc99193f2dd69a5
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

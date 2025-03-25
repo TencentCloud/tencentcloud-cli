@@ -13,15 +13,15 @@ Output:
 ```
 {
     "Response": {
-        "FlowName": "test",
-        "FlowMsg": "test",
-        "FlowProgress": 0.0,
-        "ProcessName": "test",
-        "InstanceState": "test",
-        "FlowCreateTime": "test",
-        "RequestId": "test",
-        "InstanceStateDesc": "test",
-        "BackupStatus": 1
+        "BackupStatus": 0,
+        "FlowCreateTime": "",
+        "FlowMsg": "",
+        "FlowName": "",
+        "FlowProgress": 0,
+        "InstanceState": "Serving",
+        "InstanceStateDesc": "运行中",
+        "ProcessName": "",
+        "RequestId": "07fc03a7-0e42-4a21-b10d-ed0ceda4ab27"
     }
 }
 ```

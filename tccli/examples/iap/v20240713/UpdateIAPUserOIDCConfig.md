@@ -14,7 +14,7 @@ tccli iap UpdateIAPUserOIDCConfig --cli-unfold-argument  \
     --MappingFiled email \
     --IdentityKey ewogICAgImtle***xkd09GTHVVRUJkdyIKICAgICAgICB9CiAgICBdCn0= \
     --Scope openid email profile \
-    --Description 1
+    --Description idp name
 ```
 
 Output: 

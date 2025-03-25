@@ -2192,7 +2192,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "描述信息。由用户自行定义。",
           "example": "this is description",
           "member": "string",
           "name": "Description",

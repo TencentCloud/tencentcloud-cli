@@ -22,8 +22,8 @@ Output:
         "IsTruncated": true,
         "GroupMembers": [
             {
-                "UserName": "test",
-                "DisplayName": "test",
+                "UserName": "user1",
+                "DisplayName": "john",
                 "Description": "this is test user",
                 "Email": "123456@qq.com",
                 "UserStatus": "Enabled",

@@ -14,11 +14,16 @@ Output:
 ```
 {
     "Response": {
+        "Count": 4,
         "NewsList": [
-            {}
+            {
+                "Id": 11
+            },
+            {
+                "Id": 10
+            }
         ],
-        "Count": 1,
-        "RequestId": "1111111-2222-3333"
+        "RequestId": "02b4f484-89b7-44fd-9416-3d5bfd18ffab"
     }
 }
 ```

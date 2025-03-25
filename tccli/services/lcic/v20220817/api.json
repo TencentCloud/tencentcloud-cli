@@ -24,7 +24,7 @@
     "BatchCreateRoom": {
       "document": "批量创建房间接口",
       "input": "BatchCreateRoomRequest",
-      "name": "批量创建房间",
+      "name": "批量创建课堂",
       "output": "BatchCreateRoomResponse",
       "status": "online"
     },
@@ -85,9 +85,9 @@
       "status": "online"
     },
     "CreateRoom": {
-      "document": "创建房间",
+      "document": "创建课堂",
       "input": "CreateRoomRequest",
-      "name": "创建房间",
+      "name": "创建课堂",
       "output": "CreateRoomResponse",
       "status": "online"
     },
@@ -136,7 +136,7 @@
     "DeleteRoom": {
       "document": "删除房间",
       "input": "DeleteRoomRequest",
-      "name": "删除房间",
+      "name": "删除课堂",
       "output": "DeleteRoomResponse",
       "status": "online"
     },
@@ -164,7 +164,7 @@
     "DescribeAnswerList": {
       "document": "获取房间答题详情",
       "input": "DescribeAnswerListRequest",
-      "name": "获取房间答题详情",
+      "name": "获取课堂答题详情",
       "output": "DescribeAnswerListResponse",
       "status": "online"
     },
@@ -178,7 +178,7 @@
     "DescribeCurrentMemberList": {
       "document": "获取当前房间的成员列表，房间结束或过期后无法使用。",
       "input": "DescribeCurrentMemberListRequest",
-      "name": "获取当前房间的成员列表",
+      "name": "获取当前课堂的成员列表",
       "output": "DescribeCurrentMemberListResponse",
       "status": "online"
     },
@@ -269,7 +269,7 @@
     "DescribeRoom": {
       "document": "获取房间配置信息",
       "input": "DescribeRoomRequest",
-      "name": "获取房间配置信息",
+      "name": "获取课堂配置信息",
       "output": "DescribeRoomResponse",
       "status": "online"
     },
@@ -283,7 +283,7 @@
     "DescribeRoomStatistics": {
       "document": "获取房间统计信息，仅可在房间结束后调用。",
       "input": "DescribeRoomStatisticsRequest",
-      "name": "获取房间统计信息",
+      "name": "获取课堂统计信息",
       "output": "DescribeRoomStatisticsResponse",
       "status": "online"
     },
@@ -325,7 +325,7 @@
     "EndRoom": {
       "document": "结束房间的直播",
       "input": "EndRoomRequest",
-      "name": "结束直播",
+      "name": "结束课堂",
       "output": "EndRoomResponse",
       "status": "online"
     },
@@ -339,21 +339,21 @@
     "GetRoomEvent": {
       "document": "获取房间事件,仅在课堂结束1小时内有效。",
       "input": "GetRoomEventRequest",
-      "name": "获取房间事件",
+      "name": "获取课堂事件",
       "output": "GetRoomEventResponse",
       "status": "online"
     },
     "GetRoomMessage": {
       "document": "获取房间历史消息(房间历史消息保存7天)",
       "input": "GetRoomMessageRequest",
-      "name": "获取房间历史消息",
+      "name": "获取课堂历史消息",
       "output": "GetRoomMessageResponse",
       "status": "online"
     },
     "GetRooms": {
       "document": "获取房间列表",
       "input": "GetRoomsRequest",
-      "name": "获取房间列表",
+      "name": "获取课堂列表",
       "output": "GetRoomsResponse",
       "status": "online"
     },
@@ -367,7 +367,7 @@
     "KickUserFromRoom": {
       "document": "从房间里面踢出用户",
       "input": "KickUserFromRoomRequest",
-      "name": "踢出房间用户",
+      "name": "踢出课堂用户",
       "output": "KickUserFromRoomResponse",
       "status": "online"
     },
@@ -402,7 +402,7 @@
     "ModifyRoom": {
       "document": "修改房间",
       "input": "ModifyRoomRequest",
-      "name": "修改房间",
+      "name": "修改课堂",
       "output": "ModifyRoomResponse",
       "status": "online"
     },
@@ -465,7 +465,7 @@
     "StartRoom": {
       "document": "开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。",
       "input": "StartRoomRequest",
-      "name": "开始直播",
+      "name": "开始课堂",
       "output": "StartRoomResponse",
       "status": "online"
     },
@@ -486,7 +486,7 @@
     "UnblockKickedUser": {
       "document": "解禁从房间里面踢出的用户",
       "input": "UnblockKickedUserRequest",
-      "name": "解禁房间被踢用户",
+      "name": "解禁课堂被踢用户",
       "output": "UnblockKickedUserResponse",
       "status": "online"
     }
@@ -882,7 +882,7 @@
         },
         {
           "disabled": false,
-          "document": "创建房间ID列表",
+          "document": "创建课堂ID列表",
           "example": "[123,456]",
           "member": "RoomInfo",
           "name": "RoomInfos",
@@ -1573,7 +1573,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间名称。",
+          "document": "课堂名称。",
           "example": "房间名称",
           "member": "string",
           "name": "Name",
@@ -1582,7 +1582,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳（秒）。",
+          "document": "预定的课堂开始时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -1591,7 +1591,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳（秒）。",
+          "document": "预定的课堂结束时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -1618,7 +1618,7 @@
         },
         {
           "disabled": false,
-          "document": "设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。",
+          "document": "设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。",
           "example": "0",
           "member": "uint64",
           "name": "MaxMicNumber",
@@ -1627,7 +1627,7 @@
         },
         {
           "disabled": false,
-          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
+          "document": "课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频",
           "example": "videodoc",
           "member": "string",
           "name": "SubType",
@@ -1717,7 +1717,7 @@
         },
         {
           "disabled": false,
-          "document": "房间绑定的群组ID,非空时限制组成员进入",
+          "document": "课堂绑定的群组ID,非空时限制组成员进入",
           "example": "abcdfgd",
           "member": "string",
           "name": "GroupId",
@@ -1762,7 +1762,7 @@
         },
         {
           "disabled": false,
-          "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)\n注：大班课的布局(layout)只有三分屏",
+          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -2229,7 +2229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间ID。",
+          "document": "课堂ID。",
           "example": "3123456789",
           "member": "uint64",
           "name": "RoomId",
@@ -2383,6 +2383,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2392,6 +2393,7 @@
           "example": "无",
           "member": "AnswerInfo",
           "name": "AnswerInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2485,7 +2487,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间Id。",
+          "document": "课堂Id。",
           "example": "2981712",
           "member": "uint64",
           "name": "RoomId",
@@ -3663,7 +3665,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间Id。",
+          "document": "课堂Id。",
           "example": "301234567",
           "member": "uint64",
           "name": "RoomId",
@@ -3687,7 +3689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间名称。",
+          "document": "课堂名称。",
           "example": "房间名称",
           "member": "string",
           "name": "Name",
@@ -3697,7 +3699,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间开始时间，unix时间戳（秒）。",
+          "document": "预定的课堂开始时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "StartTime",
@@ -3707,7 +3709,7 @@
         },
         {
           "disabled": false,
-          "document": "预定的房间结束时间，unix时间戳（秒）。",
+          "document": "预定的课堂结束时间，unix时间戳（秒）。",
           "example": "1659600138",
           "member": "uint64",
           "name": "EndTime",
@@ -3757,7 +3759,7 @@
         },
         {
           "disabled": false,
-          "document": "设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。",
+          "document": "设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。",
           "example": "1",
           "member": "uint64",
           "name": "MaxMicNumber",
@@ -3787,7 +3789,7 @@
         },
         {
           "disabled": false,
-          "document": "房间子类型，可以有以下取值：\nvideodoc 文档+视频\nvideo 纯视频",
+          "document": "课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频",
           "example": "video",
           "member": "string",
           "name": "SubType",
@@ -3837,7 +3839,7 @@
         },
         {
           "disabled": false,
-          "document": "房间绑定的群组ID",
+          "document": "课堂绑定的群组ID",
           "example": "2435342",
           "member": "string",
           "name": "GroupId",
@@ -3877,7 +3879,7 @@
         },
         {
           "disabled": false,
-          "document": "该房间是否开启了课后评分功能。0：未开启  1：开启",
+          "document": "该课堂是否开启了课后评分功能。0：未开启  1：开启",
           "example": "0",
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
@@ -3887,7 +3889,7 @@
         },
         {
           "disabled": false,
-          "document": "房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)\n注：大班课的布局(layout)只有三分屏",
+          "document": "课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
@@ -4029,7 +4031,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间Id。",
+          "document": "课堂Id。",
           "example": "1234657",
           "member": "uint64",
           "name": "RoomId",
@@ -4122,7 +4124,7 @@
         },
         {
           "disabled": false,
-          "document": "房间消息总数。",
+          "document": "课堂消息总数。",
           "example": "1",
           "member": "uint64",
           "name": "MessageCount",
@@ -4132,7 +4134,7 @@
         },
         {
           "disabled": false,
-          "document": "房间连麦总数。",
+          "document": "课堂连麦总数。",
           "example": "1",
           "member": "uint64",
           "name": "MicCount",
@@ -4945,7 +4947,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间Id。",
+          "document": "课堂Id。",
           "example": "301234567",
           "member": "uint64",
           "name": "RoomId",
@@ -4996,7 +4998,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "该房间的事件总数，keyword搜索不影响该值。",
+          "document": "该课堂的事件总数，keyword搜索不影响该值。",
           "example": "100",
           "member": "uint64",
           "name": "Total",
@@ -5037,7 +5039,7 @@
         },
         {
           "disabled": false,
-          "document": "房间Id。\t",
+          "document": "课堂Id。\t",
           "example": "9028",
           "member": "uint64",
           "name": "RoomId",
@@ -5162,7 +5164,7 @@
         },
         {
           "disabled": false,
-          "document": "房间列表",
+          "document": "课堂列表",
           "example": "无",
           "member": "RoomItem",
           "name": "Rooms",
@@ -5415,7 +5417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "房间Id。",
+          "document": "课堂Id。",
           "example": "30123456",
           "member": "uint64",
           "name": "RoomId",
@@ -7864,7 +7866,7 @@
         },
         {
           "disabled": false,
-          "document": "房间Id。",
+          "document": "课堂Id。",
           "example": "30123456",
           "member": "uint64",
           "name": "RoomId",

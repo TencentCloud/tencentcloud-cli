@@ -9,7 +9,7 @@ tccli organization ListRoleConfigurations --cli-unfold-argument  \
     --ZoneId z-s9h39sdn2 \
     --NextToken sisndpmfisdnlk \
     --MaxResults 10 \
-    --Filter test
+    --Filter conf1
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
         "RoleConfigurations": [
             {
                 "RoleConfigurationId": "rc-s2ns92ns***",
-                "RoleConfigurationName": "test",
+                "RoleConfigurationName": "conf1",
                 "Description": "this is role configuration",
                 "SessionDuration": 900,
                 "RelayState": "https://console.cloud.tencent.com",
