@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribeFirmwareTask --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID product \
     --FirmwareVersion 1.0.0 \
     --TaskId 10000
 ```
@@ -20,10 +20,10 @@ Output:
         "CreateTime": 1589466879,
         "Type": 1,
         "ProductName": "门锁",
-        "OriginalVersion": "xx",
+        "OriginalVersion": "1.1.1",
         "UpgradeMode": "originalVersion",
-        "ProductId": "ABCDE12345",
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "ProductId": "product",
+        "RequestId": "id"
     }
 }
 ```

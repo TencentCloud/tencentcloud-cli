@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo ListFirmwares --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID product \
     --PageNum 1 \
     --PageSize 10
 ```
@@ -18,16 +18,16 @@ Output:
         "TotalCount": 1,
         "Firmwares": [
             {
-                "Name": "xx",
-                "ProductName": "xx",
-                "ProductId": "xx",
-                "Description": "xx",
+                "Name": "bane",
+                "ProductName": "product",
+                "ProductId": "id",
+                "Description": "desc",
                 "Version": "1.0.0",
                 "Md5sum": "ahbdjshfuisdfoisjfos",
                 "CreateTime": "147873872173"
             }
         ],
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "id"
     }
 }
 ```

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo DescribeCloudStorageUsers --cli-unfold-argument  \
-    --DeviceName xx \
+    --DeviceName dev \
     --Offset 0 \
     --Limit 10 \
-    --ProductId xx
+    --ProductId product
 ```
 
 Output: 
@@ -19,10 +19,10 @@ Output:
         "TotalCount": 1,
         "Users": [
             {
-                "UserId": "xx"
+                "UserId": "user"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

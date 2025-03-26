@@ -2540,13 +2540,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述计费项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述计费项目名称。",
           "example": "DiskSpace",
           "member": "string",
           "name": "PriceTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2554,7 +2554,7 @@
           "example": "云盘空间",
           "member": "string",
           "name": "PriceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2564,7 +2564,7 @@
           "example": "100.0",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2574,7 +2574,7 @@
           "example": "100.0",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2584,7 +2584,7 @@
           "example": "10.0",
           "member": "float",
           "name": "UnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2594,7 +2594,7 @@
           "example": "10.0",
           "member": "float",
           "name": "UnitPriceDiscount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2604,7 +2604,7 @@
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2614,7 +2614,7 @@
           "example": "100",
           "member": "string",
           "name": "OriginalPriceHigh",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2624,7 +2624,7 @@
           "example": "100",
           "member": "string",
           "name": "DiscountPriceHigh",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2634,7 +2634,7 @@
           "example": "100",
           "member": "string",
           "name": "UnitPriceHigh",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2644,7 +2644,7 @@
           "example": "100",
           "member": "string",
           "name": "UnitPriceDiscountHigh",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4426,13 +4426,13 @@
         },
         {
           "disabled": false,
-          "document": "计费项目明细列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"PriceTitle\":\"云硬盘空间\",\"DiscountPrice\":2250,\"ChargeUnit\":null,\"UnitPriceHigh\":null,\"OriginalPriceHigh\":null,\"PriceName\":\"DiskSpace\",\"OriginalPrice\":2250,\"UnitPriceDiscountHigh\":null,\"UnitPriceDiscount\":null,\"DiscountPriceHigh\":null,\"UnitPrice\":null}",
+          "document": "计费项目明细列表。",
+          "example": "无",
           "member": "DetailPrice",
           "name": "DetailPrices",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

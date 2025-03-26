@@ -18,7 +18,7 @@ Output:
         "Devices": [
             {
                 "TaskId": 1,
-                "DeviceName": "123",
+                "DeviceName": "dev",
                 "LastProcessTime": 1597141763,
                 "Status": 5,
                 "ErrMsg": "",
@@ -30,7 +30,7 @@ Output:
             {
                 "TaskId": 2,
                 "OriVersion": "0.1",
-                "DeviceName": "abc",
+                "DeviceName": "dev",
                 "LastProcessTime": 1597140525,
                 "Status": 0,
                 "ErrMsg": "",
@@ -47,7 +47,7 @@ Output:
                 "Retcode": 0,
                 "Percent": 0,
                 "OriVersion": "0.1",
-                "DeviceName": "123"
+                "DeviceName": "dev"
             }
         ],
         "RequestId": "968ac21f-815f-4f32-852f-c0729c40e724"

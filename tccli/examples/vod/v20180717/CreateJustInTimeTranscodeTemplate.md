@@ -12,7 +12,7 @@ tccli vod CreateJustInTimeTranscodeTemplate --cli-unfold-argument  \
     --VideoConfigure.Bitrate 10000 \
     --VideoConfigure.ResolutionAdaptive open \
     --WatermarkConfigure.Switch ON \
-    --WatermarkConfigure.ImageContent 111 \
+    --WatermarkConfigure.ImageContent NmJiNTZhMDkyNzg3NDBiYzgwYzVkYzZkYWI3ODM= \
     --WatermarkConfigure.Width 10% \
     --WatermarkConfigure.Height 10% \
     --WatermarkConfigure.XPos 10% \

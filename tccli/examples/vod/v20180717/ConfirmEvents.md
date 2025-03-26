@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ConfirmEvents --cli-unfold-argument  \
-    --EventHandles 111 222
+    --EventHandles 12ae8d3e 13ae8d8e
 ```
 
 Output: 

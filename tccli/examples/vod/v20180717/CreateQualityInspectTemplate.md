@@ -7,8 +7,8 @@ Input:
 ```
 tccli vod CreateQualityInspectTemplate --cli-unfold-argument  \
     --SubAppId 123 \
-    --Name test \
-    --Comment abc \
+    --Name MyTemplate \
+    --Comment my template for jitter \
     --JitterConfigure.Switch ON
 ```
 

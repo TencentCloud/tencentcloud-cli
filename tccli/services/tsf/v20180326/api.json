@@ -3571,14 +3571,14 @@
         },
         {
           "disabled": false,
-          "document": "配置项日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项日志路径",
           "example": "/config",
           "member": "string",
           "name": "ConfigPath",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3604,14 +3604,14 @@
         },
         {
           "disabled": false,
-          "document": "配置项对应的ES管道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项对应的ES管道",
           "example": "pipeline1",
           "member": "string",
           "name": "ConfigPipeline",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3637,14 +3637,14 @@
         },
         {
           "disabled": false,
-          "document": "配置项解析规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项解析规则",
           "example": "无",
           "member": "BusinessLogConfigSchema",
           "name": "ConfigSchema",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
@@ -3659,13 +3659,35 @@
         },
         {
           "disabled": false,
-          "document": "配置项关联部署组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项关联部署组",
           "example": "无",
           "member": "BusinessLogConfigAssociatedGroup",
           "name": "ConfigAssociatedGroupList",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启filebeat高级配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "FilebeatConfigEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "close_timeout参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FilebeatCloseTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -12093,13 +12115,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志配置项",
           "example": "无",
           "member": "BusinessLogConfig",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15245,13 +15267,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "Java实例jvm监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Java实例jvm监控数据",
           "example": "无",
           "member": "JvmMonitorData",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -28955,11 +28977,21 @@
         },
         {
           "disabled": false,
-          "document": "守护线程数",
+          "document": "守护线程数 拼写错误，废弃",
           "example": "无",
           "member": "CurvePoint",
           "name": "DeamonThreadCount",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "守护线程数",
+          "example": "无",
+          "member": "CurvePoint",
+          "name": "DaemonThreadCount",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         }

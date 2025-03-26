@@ -47,7 +47,7 @@
     "ConfirmEvents": [
       {
         "document": "确认事件通知.",
-        "input": "https://vod.tencentcloudapi.com/?Action=ConfirmEvents\n&EventHandles.0=111\n&EventHandles.1=222\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ConfirmEvents\n&EventHandles.0=12ae8d3e\n&EventHandles.1=13ae8d8e\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "确认事件通知"
       }
@@ -221,7 +221,7 @@
     "CreateJustInTimeTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\",\n    \"VideoConfigure\": {\n        \"Width\": 720,\n        \"Height\": 1080,\n        \"Bitrate\": 10000,\n        \"ResolutionAdaptive\": \"open\"\n    },\n    \"WatermarkConfigure\": {\n        \"Switch\": \"ON\",\n        \"ImageContent\": \"111\",\n        \"Width\": \"10%\",\n        \"Height\": \"10%\",\n        \"XPos\": \"10%\",\n        \"YPos\": \"10%\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\",\n    \"VideoConfigure\": {\n        \"Width\": 720,\n        \"Height\": 1080,\n        \"Bitrate\": 10000,\n        \"ResolutionAdaptive\": \"open\"\n    },\n    \"WatermarkConfigure\": {\n        \"Switch\": \"ON\",\n        \"ImageContent\": \"NmJiNTZhMDkyNzg3NDBiYzgwYzVkYzZkYWI3ODM=\",\n        \"Width\": \"10%\",\n        \"Height\": \"10%\",\n        \"XPos\": \"10%\",\n        \"YPos\": \"10%\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "创建即时转码模板"
       }
@@ -263,7 +263,7 @@
     "CreateQualityInspectTemplate": [
       {
         "document": "创建音画质检测模板。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQualityInspectTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 123,\n    \"Name\": \"test\",\n    \"Comment\": \"abc\",\n    \"JitterConfigure\": {\n        \"Switch\": \"ON\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQualityInspectTemplate\n<公共请求参数>\n\n{\n    \"SubAppId\": 123,\n    \"Name\": \"MyTemplate\",\n    \"Comment\": \"my template for jitter\",\n    \"JitterConfigure\": {\n        \"Switch\": \"ON\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 20001,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907873d6fb03\"\n    }\n}",
         "title": "创建音画质检测模板。"
       }
@@ -279,7 +279,7 @@
     "CreateReviewTemplate": [
       {
         "document": "开启涉黄、涉暴、广告检测。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReviewTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Comment\": \"开启涉黄、涉暴、广告检测\",\n    \"Labels\": [\n        \"Porn\",\n        \"Terror\",\n        \"Ad\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReviewTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplate\",\n    \"Comment\": \"开启涉黄、涉暴、广告检测\",\n    \"Labels\": [\n        \"Porn\",\n        \"Terror\",\n        \"Ad\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Definition\": 20123,\n        \"RequestId\": \"88aee3e9-2qd3-4151-9d4b-4390a45228a9\"\n    }\n}",
         "title": "创建开启检测多项违规标签的审核模板"
       }
@@ -331,8 +331,8 @@
     "CreateSubAppId": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubAppId\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Description\": \"demo\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"SubAppId\": 12345\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubAppId\n<公共请求参数>\n\n{\n    \"Name\": \"MyAppName\",\n    \"Description\": \"description of my app\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ca61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"SubAppId\": 1490012345\n    }\n}",
         "title": "创建应用"
       }
     ],
@@ -479,8 +479,8 @@
     "DeleteJustInTimeTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplateName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "删除即时转码模板"
       }
     ],
@@ -746,7 +746,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DesribeCurrentPlaylistForCtrip\n<公共请求参数>\n\n{\n    \"RoundPlayId\": \"1323\",\n    \"SubAppId\": 123\n}",
-        "output": "{\n    \"Response\": {\n        \"CurrentPlaylist\": [\n            {\n                \"ItemId\": \"a001\",\n                \"FileId\": \"528xxx5487985271487\",\n                \"StartPlayTime\": \"2024-07-25T10:12:00+08:00\",\n                \"Duration\": 100\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CurrentPlaylist\": [\n            {\n                \"ItemId\": \"a001\",\n                \"FileId\": \"528xxx5487985271487\",\n                \"StartPlayTime\": \"2024-07-25T10:12:00+08:00\",\n                \"Duration\": 100\n            }\n        ],\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "查询轮播当前播放列表。"
       }
     ],
@@ -858,7 +858,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\n&Definitions.0=10001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"雪碧图模板1\",\n                \"Format\": \"jpg\",\n                \"Comment\": \"test\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"ResolutionAdaptive\": \"open\",\n                \"FillType\": \"black\",\n                \"ColumnCount\": 1,\n                \"RowCount\": 1,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"MyImageSpriteTemplate\",\n                \"Format\": \"jpg\",\n                \"Comment\": \"image sprite template\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"ResolutionAdaptive\": \"open\",\n                \"FillType\": \"black\",\n                \"ColumnCount\": 1,\n                \"RowCount\": 1,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取雪碧图模板列表"
       }
     ],
@@ -942,7 +942,7 @@
       {
         "document": "获取音画质检测模板列表。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQualityInspectTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        20001\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"QualityInspectTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"test\",\n                \"Comment\": \"\",\n                \"Type\": \"Custom\",\n                \"ScreenshotInterval\": 1,\n                \"JitterConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"BlurConfigure\": null,\n                \"AbnormalLightingConfigure\": null,\n                \"CrashScreenConfigure\": null,\n                \"BlackWhiteEdgeConfigure\": null,\n                \"NoiseConfigure\": null,\n                \"MosaicConfigure\": null,\n                \"QRCodeConfigure\": null,\n                \"QualityEvaluationConfigure\": null,\n                \"VoiceConfigure\": null,\n                \"CreateTime\": \"2023-06-01T10:00:00Z\",\n                \"UpdateTime\": \"2023-06-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"QualityInspectTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"MyDescribeQualityInspectTemplate\",\n                \"Comment\": \"\",\n                \"Type\": \"Custom\",\n                \"ScreenshotInterval\": 1,\n                \"JitterConfigure\": {\n                    \"Switch\": \"ON\"\n                },\n                \"BlurConfigure\": null,\n                \"AbnormalLightingConfigure\": null,\n                \"CrashScreenConfigure\": null,\n                \"BlackWhiteEdgeConfigure\": null,\n                \"NoiseConfigure\": null,\n                \"MosaicConfigure\": null,\n                \"QRCodeConfigure\": null,\n                \"QualityEvaluationConfigure\": null,\n                \"VoiceConfigure\": null,\n                \"CreateTime\": \"2023-06-01T10:00:00Z\",\n                \"UpdateTime\": \"2023-06-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "获取音画质检测模板列表。"
       }
     ],
@@ -1070,13 +1070,13 @@
       {
         "document": "获取任务列表-翻页",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeTasks\n&Status=FINISH\n&Limit=5\n&ScrollToken=taskId6\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId6\",\n                \"Status\": \"FINISH\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"abc\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId6\",\n                \"Status\": \"FINISH\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"token-test\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取任务列表-翻页"
       },
       {
         "document": "获取任务列表-处理中",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeTasks\n&Status=PROCESSING\n&Limit=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId7\",\n                \"Status\": \"PROCESSING\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"0001-01-01T00:00:00Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"abc\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId7\",\n                \"Status\": \"PROCESSING\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"0001-01-01T00:00:00Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"token-test\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取任务列表-处理中"
       }
     ],
@@ -1084,7 +1084,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeTranscodeTemplates\n&Definitions.0=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": \"1008\",\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": \"test\",\n                \"Type\": \"Custom\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"SegmentType\": \"\",\n                \"ContainerType\": \"Video\",\n                \"TEHDConfig\": null,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"FillType\": \"black\",\n                    \"Bitrate\": 256,\n                    \"CodecTag\": \"hvc1\",\n                    \"Gop\": 0,\n                    \"Vcrf\": 23,\n                    \"PreserveHDRSwitch\": \"OFF\",\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TranscodeTemplateSet\": [\n            {\n                \"Definition\": \"1008\",\n                \"Container\": \"mp4\",\n                \"Name\": \"模板1\",\n                \"Comment\": \"MyTranscodeTemplate\",\n                \"Type\": \"Custom\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"SegmentType\": \"\",\n                \"ContainerType\": \"Video\",\n                \"TEHDConfig\": null,\n                \"VideoTemplate\": {\n                    \"Codec\": \"libx264\",\n                    \"Fps\": 24,\n                    \"FillType\": \"black\",\n                    \"Bitrate\": 256,\n                    \"CodecTag\": \"hvc1\",\n                    \"Gop\": 0,\n                    \"Vcrf\": 23,\n                    \"PreserveHDRSwitch\": \"OFF\",\n                    \"ResolutionAdaptive\": \"open\",\n                    \"Width\": 0,\n                    \"Height\": 0\n                },\n                \"AudioTemplate\": {\n                    \"Codec\": \"libfdk_aac\",\n                    \"Bitrate\": 48,\n                    \"SampleRate\": 48000,\n                    \"AudioChannel\": 2\n                },\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取转码模板"
       }
     ],
@@ -1100,7 +1100,7 @@
       {
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeWatermarkTemplates\n&Definitions.0=1001\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WatermarkTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"image\",\n                \"Name\": \"示例结构体待完善\",\n                \"Comment\": \"测试模板\",\n                \"XPos\": \"10%\",\n                \"YPos\": \"10%\",\n                \"ImageTemplate\": {\n                    \"ImageUrl\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg\",\n                    \"Width\": \"80%\",\n                    \"Height\": \"80%\",\n                    \"RepeatType\": \"repeat\",\n                    \"Transparency\": 0\n                },\n                \"TextTemplate\": {\n                    \"FontType\": \"arial.ttf\",\n                    \"FontSize\": \"16px\",\n                    \"FontColor\": \"0xFF0000\",\n                    \"FontAlpha\": 1\n                },\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WatermarkTemplateSet\": [\n            {\n                \"Definition\": 1001,\n                \"Type\": \"image\",\n                \"Name\": \"示例结构体待完善\",\n                \"Comment\": \"测试模板\",\n                \"XPos\": \"10%\",\n                \"YPos\": \"10%\",\n                \"ImageTemplate\": {\n                    \"ImageUrl\": \"http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg\",\n                    \"Width\": \"80%\",\n                    \"Height\": \"80%\",\n                    \"RepeatType\": \"repeat\",\n                    \"Transparency\": 0\n                },\n                \"TextTemplate\": {\n                    \"FontType\": \"arial.ttf\",\n                    \"FontSize\": \"16px\",\n                    \"FontColor\": \"0xFF0000\",\n                    \"FontAlpha\": 1\n                },\n                \"SvgTemplate\": {\n                    \"Width\": \"10px\",\n                    \"Height\": \"10px\"\n                },\n                \"CoordinateOrigin\": \"topLeft\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取水印模板"
       }
     ],
@@ -1403,8 +1403,8 @@
     "ModifyJustInTimeTranscodeTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\",\n    \"Comment\": \"this is a test comment\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"MyTemplateName\",\n    \"Comment\": \"comment\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"58759c60-aceb-4b02-b0ed-6c62bfea88cc\"\n    }\n}",
         "title": "修改即时转码模板"
       }
     ],
@@ -1833,8 +1833,8 @@
     "SetCLSPushTarget": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCLSPushTarget\n<公共请求参数>\n\n{\n    \"SubAppId\": 0,\n    \"Domain\": \"abc.com\",\n    \"ChineseMainlandCLSTargetInfo\": {\n        \"Switch\": \"ON\",\n        \"CLSRegion\": \"ap-guangzhou\",\n        \"TopicId\": \"abc\",\n        \"LogsetId\": \"abc\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCLSPushTarget\n<公共请求参数>\n\n{\n    \"SubAppId\": 0,\n    \"Domain\": \"abc.com\",\n    \"ChineseMainlandCLSTargetInfo\": {\n        \"Switch\": \"ON\",\n        \"CLSRegion\": \"ap-guangzhou\",\n        \"TopicId\": \"topic***001\",\n        \"LogsetId\": \"logset***001\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dsew***d2a\"\n    }\n}",
         "title": "设置中国大陆地区的日志投递目标"
       }
     ],

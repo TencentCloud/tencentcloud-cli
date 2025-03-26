@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribePushChannel --cli-unfold-argument  \
-    --ProductId test
+    --ProductId product
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "ForwardAddress": "",
         "CKafkaTopic": "test_ai_result",
         "CKafkaRegion": "gz",
-        "RequestId": "xx",
+        "RequestId": "id",
         "CKafkaInstance": "ckafka-insfeae",
         "Type": "ckafka"
     }

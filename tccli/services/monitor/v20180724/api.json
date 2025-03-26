@@ -2175,7 +2175,7 @@
         {
           "disabled": false,
           "document": "策略关联的过滤维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "FilterDimensionsParam",
           "output_required": true,
@@ -2261,6 +2261,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板通知的等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmHierarchicalNotice",
+          "name": "HierarchicalNotices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知模板绑定内容模板信息，同NoticeTmplBindInfos\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoticeContentTmplBindInfo",
+          "name": "NoticeContentTmplBindInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预设配置id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pre-sss",
+          "member": "string",
+          "name": "PredefinedConfigID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7064,7 +7094,7 @@
         },
         {
           "disabled": false,
-          "document": "告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：\n`[ {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555g\"}}, {\"Dimensions\": {\"unInstanceId\": \"ins-qr8d555h\"}} ]`\n具体也可以参考下方的示例 2。\n\n不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)\n\n注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时",
+          "document": "告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：`[[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}]]`具体也可以参考下方的示例 2。不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时",
           "example": "[[{\"name\":\"unInstanceId\",\"value\":\"ins-qr888845g\"}]]",
           "member": "string",
           "name": "Dimensions",
@@ -7250,6 +7280,15 @@
           "name": "NoticeContentTmplIDs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否为预设策略，1是，0否",
+          "example": "1",
+          "member": "int64",
+          "name": "IsPredefined",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -20891,6 +20930,7 @@
           "example": "http://www.123.com",
           "member": "string",
           "name": "URL",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -20901,6 +20941,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsValid",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -20911,6 +20952,7 @@
           "example": "82hf8t",
           "member": "string",
           "name": "ValidationCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -20921,6 +20963,7 @@
           "example": "0",
           "member": "int64",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -20931,6 +20974,7 @@
           "example": "86399",
           "member": "int64",
           "name": "EndTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -20941,8 +20985,20 @@
           "example": "[1,2,5]",
           "member": "int64",
           "name": "Weekday",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "udo",
+          "member": "string",
+          "name": "GroupMembers",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -22342,7 +22398,7 @@
           "example": "SYNC",
           "member": "string",
           "name": "PhoneCallType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

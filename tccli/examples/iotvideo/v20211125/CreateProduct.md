@@ -16,7 +16,7 @@ tccli iotvideo CreateProduct --cli-unfold-argument  \
     --ChipManufactureId default \
     --ChipOs default \
     --CategoryId 595 \
-    --Features xxx
+    --Features ypsxth
 ```
 
 Output: 

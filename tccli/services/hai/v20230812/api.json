@@ -436,23 +436,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例总数\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例总数\n",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分页实例详情\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "分页实例详情\n",
+          "example": "[{\"InstanceId\":\"hai-oeifqhon\"}]",
           "member": "Instance",
           "name": "InstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -639,13 +639,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务登录配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务登录配置详情",
           "example": "[{\"ServiceName\":\"JupyterLab\",\"Url\":\"http://1.1.1.1:80/lab?token=ed68d8b88aaa15c1b8309c921ae1e76e9cf0ff48d3fb6407b7beb41b716f464e\"}]",
           "member": "LoginSetting",
           "name": "LoginSettings",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -794,223 +794,223 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "hai-12345678",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "PENDING",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示待回收\nSTOPPED_NO_CHARGE：表示关机不收费\nTERMINATING：表示销毁中\nTERMINATED：表示已销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示待回收\nSTOPPED_NO_CHARGE：表示关机不收费\nTERMINATING：表示销毁中\nTERMINATED：表示已销毁",
           "example": "PENDING",
           "member": "string",
           "name": "InstanceState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称\n",
           "example": "Pytorch2.0.0",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "算力套餐名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "算力套餐名称\n",
           "example": "基础型",
           "member": "string",
           "name": "BundleName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所包含的GPU卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所包含的GPU卡数",
           "example": "1",
           "member": "uint64",
           "name": "GPUCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "算力\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "算力\n",
           "example": "8+TFlops SP",
           "member": "string",
           "name": "GPUPerformance",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "显存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "显存",
           "example": "16GB+",
           "member": "string",
           "name": "GPUMemory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU核数",
           "example": "8核",
           "member": "string",
           "name": "CPU",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存\n",
           "example": "32GB",
           "member": "string",
           "name": "Memory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "系统盘数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘数据",
           "example": "{\"DiskType\":\"CLOUD_PREMIUM\", \"DiskSize\":100}",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网ip地址",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公网ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网ip地址",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组ID\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组ID\n",
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例最新操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最新操作",
           "example": "RunInstances",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例最新操作状态：\nSUCCESS：表示操作成功\nOPERATING：表示操作执行中\nFAILED：表示操作失败\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最新操作状态：\nSUCCESS：表示操作成功\nOPERATING：表示操作执行中\nFAILED：表示操作失败\n",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例创建时间",
           "example": "2023-11-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，默认10Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网出带宽上限，默认10Mbps",
           "example": "10Mbps",
           "member": "string",
           "name": "MaxOutBandwidth",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每月免费流量，默认500G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每月免费流量，默认500G",
           "example": "500",
           "member": "string",
           "name": "MaxFreeTraffic",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用配置环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用配置环境",
           "example": "Ubuntu20.04, Python 3.8, Pytorch 2.0.0, CUDA 11.7, cuDNN 8，JupyteLab",
           "member": "string",
           "name": "ConfigurationEnvironment",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例包含的登录服务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例包含的登录服务详情",
           "example": "{\"ServiceName\":\"Jupyter\"}",
           "member": "LoginService",
           "name": "LoginServices",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用服务的操作系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用服务的操作系统类型",
           "example": "linux or windows",
           "member": "string",
           "name": "OSType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1155,13 +1155,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "登录方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "登录方式名称",
           "example": "Jupyter",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo GetFirmwareURL --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID product \
     --FirmwareVersion 1.0.0
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "Url": "xx",
-        "RequestId": "xx"
+        "Url": "https://test.com/file",
+        "RequestId": "id"
     }
 }
 ```

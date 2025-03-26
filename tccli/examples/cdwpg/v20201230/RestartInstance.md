@@ -6,18 +6,16 @@ Input:
 
 ```
 tccli cdwpg RestartInstance --cli-unfold-argument  \
-    --InstanceId cdwpg-13456 \
-    --NodeTypes cn dn \
-    --NodeIds 102 103
+    --InstanceId cdwpg-13456
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fdsfsd",
-        "FlowId": 1,
-        "ErrorMsg": "faile to restart intance"
+        "RequestId": "fdsfsd-xxsss",
+        "FlowId": 1023,
+        "ErrorMsg": ""
     }
 }
 ```

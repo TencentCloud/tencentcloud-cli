@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideo CreateProduct --cli-unfold-argument  \
-    --ProductDescription test \
-    --Features test1 \
+    --ProductDescription desc \
+    --Features zxzj \
     --ChipId chip1 \
-    --ProductName test \
+    --ProductName name \
     --DeviceType 1 \
     --ProductVaildYears 1 \
     --ChipManufactureId x86 \
@@ -24,19 +24,20 @@ Output:
     "Response": {
         "Data": {
             "UpdateTime": 1,
-            "ProductDescription": "test",
+            "ProductDescription": "desc",
             "EncryptionType": 2,
             "ChipId": "chip1",
-            "ProductName": "test",
+            "ProductName": "name",
             "DeviceType": 1,
             "ChipManufactureId": "x86",
             "ChipOs": "linux",
             "ProductId": "ZPDHQH7YHR",
             "CreateTime": 1612216201,
             "Features": [
-                "test1"
+                "zxzj"
             ],
-            "NetType": "wifi"
+            "NetType": "wifi",
+            "CategoryId": 601
         },
         "RequestId": "055cdcffeed5"
     }

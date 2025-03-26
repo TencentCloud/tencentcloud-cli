@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli vod DeleteJustInTimeTranscodeTemplate --cli-unfold-argument  \
-    --Name testtempaltename
+    --Name MyTemplateName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "58759c60-aceb-4b02-b0ed-6c62bfea88cc"
     }
 }
 ```

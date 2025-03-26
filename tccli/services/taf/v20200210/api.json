@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ManageDeviceRisk": {
+      "document": "oaid 设备风险接口",
+      "input": "ManageDeviceRiskRequest",
+      "name": "设备风险评分接口",
+      "output": "ManageDeviceRiskResponse",
+      "status": "online"
+    },
     "ManagePortraitRisk": {
       "document": "虚假流量识别",
       "input": "ManagePortraitRiskRequest",
@@ -15,6 +22,137 @@
     "serviceShortName": "taf"
   },
   "objects": {
+    "ManageDeviceRiskInput": {
+      "document": "业务入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备操作平台  1：android",
+          "example": "1",
+          "member": "int64",
+          "name": "OsType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型  6: oaid_md5(32位小写)",
+          "example": "6",
+          "member": "int64",
+          "name": "DeviceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据 DeviceType 填写设备标识",
+          "example": "6c31deb89af12f3bc1aa1e694f919820",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ip，只支持ipv4",
+          "example": "81.177.207.88",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ManageDeviceRiskOutput": {
+      "document": "业务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码（0：成功，1002: 参数错误 ， 4300： 权限错误，其他：失败）",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回码对应的信息",
+          "example": "OK",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManageDeviceRiskValueOutput",
+          "name": "Value",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ManageDeviceRiskRequest": {
+      "document": "ManageDeviceRisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务入参",
+          "example": "无",
+          "member": "ManageDeviceRiskInput",
+          "name": "BusinessSecurityData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageDeviceRiskResponse": {
+      "document": "ManageDeviceRisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "ManageDeviceRiskOutput",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ManageDeviceRiskValueOutput": {
+      "document": "业务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备评分",
+          "example": "100",
+          "member": "int64",
+          "name": "Score",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ManagePortraitRiskInput": {
       "document": "业务入参",
       "members": [

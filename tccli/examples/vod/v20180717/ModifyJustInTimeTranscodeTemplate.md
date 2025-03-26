@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli vod ModifyJustInTimeTranscodeTemplate --cli-unfold-argument  \
-    --Name testtempaltename \
-    --Comment this is a test comment
+    --Name MyTemplateName \
+    --Comment comment
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "58759c60-aceb-4b02-b0ed-6c62bfea88cc"
     }
 }
 ```

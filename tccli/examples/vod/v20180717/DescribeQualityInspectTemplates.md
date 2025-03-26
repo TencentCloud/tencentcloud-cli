@@ -17,7 +17,7 @@ Output:
         "QualityInspectTemplateSet": [
             {
                 "Definition": 20001,
-                "Name": "test",
+                "Name": "MyDescribeQualityInspectTemplate",
                 "Comment": "",
                 "Type": "Custom",
                 "ScreenshotInterval": 1,

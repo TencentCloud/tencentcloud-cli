@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli iotvideo InheritCloudStorageUser --cli-unfold-argument  \
-    --DeviceName xx \
-    --ToUserId xx2 \
-    --UserId xx \
-    --ProductId xx
+    --DeviceName dev \
+    --ToUserId to \
+    --UserId user \
+    --ProductId product
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

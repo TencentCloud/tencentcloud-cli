@@ -7,7 +7,7 @@ Input:
 ```
 tccli iotvideo DescribeAIModelApplications --cli-unfold-argument  \
     --Offset 0 \
-    --ProductId test \
+    --ProductId product \
     --Limit 1 \
     --ModelId body_detect
 ```
@@ -17,12 +17,12 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "id",
         "Applications": [
             {
                 "Status": 1,
                 "ProductName": "name",
-                "ProductId": "test"
+                "ProductId": "product"
             }
         ]
     }
