@@ -52,7 +52,7 @@
       {
         "document": "创建任务",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoCalloutTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400123455,\n    \"NotBefore\": 1642500621,\n    \"Callees\": [\n        \"008613012345678\"\n    ],\n    \"Callers\": [\n        \"008602012345678\"\n    ],\n    \"IvrId\": 8\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"a561d5e7-2680-481f-b86e-a9ad7316f4d5\"\n    }\n}",
         "title": "创建任务"
       }
     ],

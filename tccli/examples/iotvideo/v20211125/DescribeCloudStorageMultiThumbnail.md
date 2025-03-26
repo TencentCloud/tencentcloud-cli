@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo DescribeCloudStorageMultiThumbnail --cli-unfold-argument  \
-    --ProductId abc \
-    --DeviceName abc \
+    --ProductId product \
+    --DeviceName dev \
     --MultiThumbnail /100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg|/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg
 ```
 
@@ -17,11 +17,11 @@ Output:
     "Response": {
         "ThumbnailURLInfoList": [
             {
-                "ThumbnailURL": "abc",
+                "ThumbnailURL": "https",
                 "ExpireTime": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "id"
     }
 }
 ```

@@ -10,15 +10,15 @@ tccli vod SetCLSPushTarget --cli-unfold-argument  \
     --Domain abc.com \
     --ChineseMainlandCLSTargetInfo.Switch ON \
     --ChineseMainlandCLSTargetInfo.CLSRegion ap-guangzhou \
-    --ChineseMainlandCLSTargetInfo.TopicId abc \
-    --ChineseMainlandCLSTargetInfo.LogsetId abc
+    --ChineseMainlandCLSTargetInfo.TopicId topic***001 \
+    --ChineseMainlandCLSTargetInfo.LogsetId logset***001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "2dsew***d2a"
     }
 }
 ```

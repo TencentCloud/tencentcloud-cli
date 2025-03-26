@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo CreateTaskFileUrl --cli-unfold-argument  \
-    --ProductId ABCDE12345
+    --ProductId product
 ```
 
 Output: 

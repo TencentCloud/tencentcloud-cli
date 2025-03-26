@@ -1783,6 +1783,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频参数信息列表。\n注意：参数数组长度最大为64。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioTemplateInfo",
+          "name": "AudioList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6808,6 +6819,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合并音轨信息。\n注意：此字段只是自适应转码生效，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioTrackChannelInfo",
+          "name": "TrackChannelInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6865,6 +6887,45 @@
           "example": "NULL",
           "member": "int64",
           "name": "StreamSelects",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AudioTrackChannelInfo": {
+      "document": "音轨信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启混音，可选值：\n0：表示不开启混音\n1：表示开启混音\n默认值：0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ChannelsRemix",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合并音轨输入类型，可选值：\ntrask：表示使用音轨id；\ntrask_channel： 表示使用音轨id和声道id；\n默认：trask。\n注意：如果原视频是多声道，建议使用trask_channel。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "trask",
+          "member": "string",
+          "name": "SelectType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音轨信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrackInfo",
+          "name": "InputTrackInfo",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -17758,7 +17819,7 @@
         {
           "disabled": false,
           "document": "置信度。",
-          "example": "无",
+          "example": "80.55",
           "member": "float",
           "name": "Confidence",
           "output_required": true,
@@ -17768,7 +17829,7 @@
         {
           "disabled": false,
           "document": "片段起始时间偏移。",
-          "example": "无",
+          "example": "10.05",
           "member": "float",
           "name": "StartTimeOffset",
           "output_required": true,
@@ -17778,7 +17839,7 @@
         {
           "disabled": false,
           "document": "片段结束时间偏移。",
-          "example": "无",
+          "example": "20.05",
           "member": "float",
           "name": "EndTimeOffset",
           "output_required": true,
@@ -17788,11 +17849,31 @@
         {
           "disabled": false,
           "document": "片段标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"Goal\"]",
           "member": "string",
           "name": "SegmentTags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播切片对应直播起始时间点，采用 ISO 日期格式。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-21T17:18:34+08:00\t",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播切片对应直播结束时间点，采用 ISO 日期格式。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-21T17:26:19+08:00\t",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -28076,6 +28157,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定人物ID。",
+          "example": "party_xxxxxx",
+          "member": "string",
+          "name": "PersonId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29871,6 +29962,34 @@
         }
       ],
       "usage": "in"
+    },
+    "TrackInfo": {
+      "document": "音轨信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音轨和声道数字，说明：\n当：SelectType值为trask，此值为整数类型，例如：1；\n当：SelectType值为trask_channel，此值为小数类型，例如：1.0；\n默认值：1.0\n注意：整数部分代表音轨序号，以小数部分代表声道。音轨序号即为音轨的stream index，支持输入0和正整数。小数部分最多支持2位小数，并且仅支持0-63，但是如果Codec为aac/eac3/ac3时，小数部分仅支持0-15。例如：对于stream index为1的音轨，1.0代表这个音轨的第1个声道，1.1代表这个音轨的第2个声道。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "TrackNum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "声道音量大小，说明：\n当：AudioChannel的值为1时，此值长度为1；\n当：AudioChannel的值为2时，此值长度为2；\n当：AudioChannel的值为6时，此值长度大于2。\n此值数组值取值范围：[-60, 6]，其中-60代表静音、0代表保持原音量，6表示原音量增加一倍，默认值为-60。\n注意：支持3位小数。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[-60, 6]",
+          "member": "float",
+          "name": "ChannelVolume",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TranscodeTaskInput": {
       "document": "转码任务输入参数类型",

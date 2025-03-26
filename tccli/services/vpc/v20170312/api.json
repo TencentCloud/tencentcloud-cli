@@ -10551,11 +10551,20 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10647,6 +10656,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13485,6 +13503,15 @@
           "name": "EndPointId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13511,6 +13538,15 @@
           "member": "string",
           "name": "EndPointServiceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -20132,6 +20168,15 @@
           "name": "EndPointId",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20142,7 +20187,7 @@
         {
           "disabled": false,
           "document": "终端节点对象。",
-          "example": "[{\"ServiceVpcId\": \"vpc-hj3he929\", \"GroupSet\": [\"sg-tyhgrwet\"], \"SubnetId\": \"subnet-4t7fr3fi\", \"State\": \"PENDING\", \"ServiceName\": \"demo\", \"EndPointOwner\": \"1302384414\", \"EndPointServiceId\": \"vpcsvc-kngiybxl\", \"VpcId\": \"vpc-hj3he929\", \"EndPointName\": \"demo\", \"EndPointId\": \"vpce-h0fk8lfc\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"2021-06-08 10:00:00\", \"EndPointVip\": \"10.101.1.11\"}]",
+          "example": "无",
           "member": "EndPoint",
           "name": "EndPointSet",
           "output_required": true,
@@ -20215,6 +20260,15 @@
           "name": "IsListAuthorizedEndPointService",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20225,7 +20279,7 @@
         {
           "disabled": false,
           "document": "终端节点服务对象数组。",
-          "example": "[{\"EndPointSet\": [{\"ServiceVpcId\": \"vpc-hj3he929\", \"GroupSet\": [\"sg-tyhgrwet\"], \"Region\": \"ap-guangzhou\", \"SubnetId\": \"subnet-4t7fr3fi\", \"State\": \"PENDING\", \"ServiceName\": \"demo\", \"EndPointOwner\": \"1302384414\", \"EndPointServiceId\": \"vpcsvc-kngiybxl\", \"VpcId\": \"vpc-hj3he929\", \"EndPointName\": \"demo\", \"EndPointId\": \"vpce-h0fk8lfc\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"0000-00-00 00:00:00\", \"EndPointVip\": \"10.101.1.11\"}], \"AutoAcceptFlag\": true, \"Region\": \"ap-guangzhou\", \"ServiceName\": \"demo\", \"ServiceOwner\": \"1254277469\", \"ServiceType\": \"CLB\", \"VpcId\": \"vpc-hj3he929\", \"EndPointServiceId\": \"vpcsvc-pnpcflil\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"2021-06-08 10:00:00\", \"ServiceInstanceId\": \"lb-nswq8wkq\", \"EndPointCount\": 1}]",
+          "example": "无",
           "member": "EndPointService",
           "name": "EndPointServiceSet",
           "output_required": true,
@@ -22900,6 +22954,15 @@
           "name": "AcceptFlag",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -28624,6 +28687,15 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -28685,6 +28757,15 @@
           "example": "lb-75d88uw8",
           "member": "string",
           "name": "ServiceInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
           "required": false,
           "type": "string"
         }

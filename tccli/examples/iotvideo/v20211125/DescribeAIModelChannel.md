@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribeAIModelChannel --cli-unfold-argument  \
-    --ProductId test \
+    --ProductId product \
     --ModelId body_detect
 ```
 
@@ -18,7 +18,7 @@ Output:
         "ForwardAddress": "",
         "CKafkaTopic": "test_ai_result",
         "CKafkaRegion": "gz",
-        "RequestId": "xx",
+        "RequestId": "id",
         "CKafkaInstance": "ckafka-insfeae",
         "Type": "ckafka"
     }

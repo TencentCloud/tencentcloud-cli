@@ -1608,13 +1608,13 @@
         },
         {
           "disabled": false,
-          "document": "查询范围内的请求总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询范围内的请求总量",
           "example": "100",
           "member": "int64",
           "name": "MetricCount",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1967,7 +1967,7 @@
         {
           "disabled": false,
           "document": "私有域id: zone-xxxxxxxx",
-          "example": "1782",
+          "example": "zone-xxxxxxxx",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -2026,13 +2026,13 @@
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2076,23 +2076,23 @@
         },
         {
           "disabled": false,
-          "document": "绑定的关联账号的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的关联账号的vpc列表",
           "example": "[{Uin: \"1000783200\", UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "AccountVpcInfoOutput",
           "name": "AccountVpcSet",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否自定义TLD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否自定义TLD",
           "example": "false",
           "member": "bool",
           "name": "IsCustomTld",
-          "output_required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2106,33 +2106,33 @@
         },
         {
           "disabled": false,
-          "document": "转发规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则名称",
           "example": "转发规则名",
           "member": "string",
           "name": "ForwardRuleName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN",
           "example": "DOWN",
           "member": "string",
           "name": "ForwardRuleType",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转发的地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发的地址",
           "example": "10.0.23.41:53,10.0.23.42:53,",
           "member": "string",
           "name": "ForwardAddress",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2146,13 +2146,13 @@
         },
         {
           "disabled": false,
-          "document": "已删除的vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已删除的vpc",
           "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "VpcInfo",
           "name": "DeletedVpcSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2222,13 +2222,13 @@
         },
         {
           "disabled": false,
-          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "MX优先级：记录类型为MX时必填。取值范围：5,10,15,20,30,40,50",
           "example": "0",
           "member": "int64",
           "name": "MX",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2282,23 +2282,23 @@
         },
         {
           "disabled": false,
-          "document": "0暂停，1启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0暂停，1启用",
           "example": "是否暂停",
           "member": "uint64",
           "name": "Enabled",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "这是备注",
           "member": "string",
           "name": "Remark",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

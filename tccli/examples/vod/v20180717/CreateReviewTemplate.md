@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateReviewTemplate --cli-unfold-argument  \
-    --Name test \
+    --Name MyTemplate \
     --Comment 开启涉黄、涉暴、广告检测 \
     --Labels Porn Terror Ad
 ```

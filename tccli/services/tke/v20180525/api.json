@@ -861,6 +861,13 @@
       "output": "DescribeLogSwitchesResponse",
       "status": "online"
     },
+    "DescribeOSImages": {
+      "document": "获取OS聚合信息",
+      "input": "DescribeOSImagesRequest",
+      "name": "获取OS聚合信息",
+      "output": "DescribeOSImagesResponse",
+      "status": "online"
+    },
     "DescribeOpenPolicyList": {
       "document": "查询opa策略列表",
       "input": "DescribeOpenPolicyListRequest",
@@ -2373,10 +2380,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "cbs volume 数据卷名称",
-          "example": "cbs",
+          "document": "腾讯云cbs盘Id",
+          "example": "cbs-1cghhuuu",
           "member": "string",
-          "name": "Name",
+          "name": "CbsDiskId",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -2384,10 +2391,10 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云cbs盘Id",
-          "example": "cbs-1cghhuuu",
+          "document": "cbs volume 数据卷名称",
+          "example": "cbs",
           "member": "string",
-          "name": "CbsDiskId",
+          "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -4239,17 +4246,6 @@
         },
         {
           "disabled": false,
-          "document": "容器启动命令",
-          "example": "[\"sleep\"]",
-          "member": "string",
-          "name": "Commands",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "容器启动参数",
           "example": "[\"36000\"]",
           "member": "string",
@@ -4261,10 +4257,10 @@
         },
         {
           "disabled": false,
-          "document": "容器内操作系统的环境变量",
-          "example": "无",
-          "member": "EnvironmentVariable",
-          "name": "EnvironmentVars",
+          "document": "容器启动命令",
+          "example": "[\"sleep\"]",
+          "member": "string",
+          "name": "Commands",
           "output_required": true,
           "required": false,
           "type": "list",
@@ -4283,6 +4279,50 @@
         },
         {
           "disabled": false,
+          "document": "当前状态",
+          "example": "无",
+          "member": "ContainerState",
+          "name": "CurrentState",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器内操作系统的环境变量",
+          "example": "无",
+          "member": "EnvironmentVariable",
+          "name": "EnvironmentVars",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gpu限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "uint64",
+          "name": "GpuLimit",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存活探针\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LivenessOrReadinessProbe",
+          "name": "LivenessProbe",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "内存，限制该容器最多可使用的内存值，该值不可超过容器实例的总内存值。单位：GiB",
           "example": "4",
           "member": "float",
@@ -4294,21 +4334,10 @@
         },
         {
           "disabled": false,
-          "document": "数据卷挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "就绪探针\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "VolumeMount",
-          "name": "VolumeMounts",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ContainerState",
-          "name": "CurrentState",
+          "member": "LivenessOrReadinessProbe",
+          "name": "ReadinessProbe",
           "output_required": true,
           "required": false,
           "type": "object",
@@ -4327,50 +4356,6 @@
         },
         {
           "disabled": false,
-          "document": "容器工作目录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/data",
-          "member": "string",
-          "name": "WorkingDir",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "存活探针\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "LivenessOrReadinessProbe",
-          "name": "LivenessProbe",
-          "output_required": true,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "就绪探针\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "LivenessOrReadinessProbe",
-          "name": "ReadinessProbe",
-          "output_required": true,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "Gpu限制\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "16",
-          "member": "uint64",
-          "name": "GpuLimit",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "容器的安全上下文\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SecurityContext",
@@ -4379,6 +4364,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据卷挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMounts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器工作目录",
+          "example": "/data",
+          "member": "string",
+          "name": "WorkingDir",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4386,6 +4393,61 @@
     "ContainerState": {
       "document": "容器状态",
       "members": [
+        {
+          "disabled": false,
+          "document": "容器运行退出码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExitCode",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器运行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-22T06:56:09Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " todo",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器状态 Reason\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "todo ",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RestartCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "disabled": false,
           "document": "容器运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
@@ -4407,61 +4469,6 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "容器运行结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2021-01-22T06:56:09Z",
-          "member": "string",
-          "name": "FinishTime",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器运行退出码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
-          "member": "int64",
-          "name": "ExitCode",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器状态 Reason\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "todo ",
-          "member": "string",
-          "name": "Reason",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " todo",
-          "member": "string",
-          "name": "Message",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器重启次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " 1",
-          "member": "int64",
-          "name": "RestartCount",
-          "output_required": true,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6973,36 +6980,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "DNS 服务器IP地址列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DNS 服务器IP地址列表",
           "example": "8.8.8.8",
           "member": "string",
           "name": "Nameservers",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DNS搜索域列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"8.8.8.8\",\"8.8.4.4\"]",
-          "member": "string",
-          "name": "Searches",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "对象选项列表，每个对象由name和value（可选）构成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对象选项列表，每个对象由name和value（可选）构成",
           "example": "无",
           "member": "DNSConfigOption",
           "name": "Options",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS搜索域列表",
+          "example": "[\"8.8.8.8\",\"8.8.4.4\"]",
+          "member": "string",
+          "name": "Searches",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10645,13 +10652,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "EKS Container Instance支持的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EKS Container Instance支持的地域信息",
           "example": "[\"xx1\", \"xx2\"]",
           "member": "EksCiRegionInfo",
           "name": "Regions",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10659,7 +10666,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11910,6 +11917,43 @@
           "name": "SwitchSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOSImagesRequest": {
+      "document": "DescribeOSImages请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOSImagesResponse": {
+      "document": "DescribeOSImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "OSImage",
+          "name": "OSImageSeriesSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -15264,6 +15308,83 @@
       "members": [
         {
           "disabled": false,
+          "document": "自动为用户创建的EipId",
+          "example": "true",
+          "member": "string",
+          "name": "AutoCreatedEipId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "为容器实例关联 CAM 角色，value 填写 CAM 角色名称，容器实例可获取该 CAM 角色包含的权限策略，方便 容器实例 内的程序进行如购买资源、读写存储等云资源操作。",
+          "example": "eks",
+          "member": "string",
+          "name": "CamRoleName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器列表",
+          "example": "无",
+          "member": "Container",
+          "name": "Containers",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU大小",
+          "example": "2",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU类型",
+          "example": "intel",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接到请求后的系统创建时间。",
+          "example": "2024-09-09T00:00:00+00:00",
+          "member": "string",
+          "name": "CreationTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器实例绑定的Eip地址，注意可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.16.17.3",
+          "member": "string",
+          "name": "EipAddress",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "EKS Cotainer Instance Id",
           "example": "eksci-xxx",
           "member": "string",
@@ -15286,190 +15407,36 @@
         },
         {
           "disabled": false,
-          "document": "内存大小",
-          "example": "4",
-          "member": "float",
-          "name": "Memory",
-          "output_required": true,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CPU大小",
-          "example": "2",
-          "member": "float",
-          "name": "Cpu",
-          "output_required": true,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "安全组ID",
-          "example": "sg-1cghhuuu",
-          "member": "string",
-          "name": "SecurityGroupIds",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "容器组的重启策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Never",
-          "member": "string",
-          "name": "RestartPolicy",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "返回容器组创建状态：Pending，Running，Succeeded，Failed。其中：\nFailed （运行失败）指的容器组退出，RestartPolilcy为Never， 有容器exitCode非0；\nSucceeded（运行成功）指的是容器组退出了，RestartPolicy为Never或onFailure，所有容器exitCode都为0；\nFailed和Succeeded这两种状态都会停止运行，停止计费。\nPending是创建中，Running是 运行中。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Running",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "接到请求后的系统创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2024-09-09T00:00:00+00:00",
-          "member": "string",
-          "name": "CreationTime",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器全部成功退出后的时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2024-09-09T00:00:00+00:00",
-          "member": "string",
-          "name": "SucceededTime",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Container",
-          "name": "Containers",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "数据卷信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据卷信息",
           "example": "无",
           "member": "EksCiVolume",
           "name": "EksCiVolume",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容器组运行的安全上下文\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "SecurityContext",
-          "name": "SecurityContext",
-          "output_required": true,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "内网ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "172.16.17.3",
-          "member": "string",
-          "name": "PrivateIp",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "容器实例绑定的Eip地址，注意可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "172.16.17.3",
-          "member": "string",
-          "name": "EipAddress",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "GPU类型。如无使用GPU则不返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "V100",
-          "member": "string",
-          "name": "GpuType",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "CPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "intel",
-          "member": "string",
-          "name": "CpuType",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "GPU卡数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU卡数量",
           "example": "16",
           "member": "uint64",
           "name": "GpuCount",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所属VPC的Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-1cghhuuu",
+          "document": "GPU类型。如无使用GPU则不返回",
+          "example": "V100",
           "member": "string",
-          "name": "VpcId",
+          "name": "GpuType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "实例所属子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-1cghhuuu",
-          "member": "string",
-          "name": "SubnetId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15484,25 +15451,14 @@
         },
         {
           "disabled": false,
-          "document": "为容器实例关联 CAM 角色，value 填写 CAM 角色名称，容器实例可获取该 CAM 角色包含的权限策略，方便 容器实例 内的程序进行如购买资源、读写存储等云资源操作。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "eks",
-          "member": "string",
-          "name": "CamRoleName",
+          "document": "内存大小",
+          "example": "4",
+          "member": "float",
+          "name": "Memory",
           "output_required": true,
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "自动为用户创建的EipId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "true",
-          "member": "string",
-          "name": "AutoCreatedEipId",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "float",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15514,6 +15470,94 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网ip地址",
+          "example": "172.16.17.3",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器组的重启策略",
+          "example": "Never",
+          "member": "string",
+          "name": "RestartPolicy",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器组运行的安全上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityContext",
+          "name": "SecurityContext",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID",
+          "example": "sg-1cghhuuu",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回容器组创建状态：Pending，Running，Succeeded，Failed。其中：\nFailed （运行失败）指的容器组退出，RestartPolilcy为Never， 有容器exitCode非0；\nSucceeded（运行成功）指的是容器组退出了，RestartPolicy为Never或onFailure，所有容器exitCode都为0；\nFailed和Succeeded这两种状态都会停止运行，停止计费。\nPending是创建中，Running是 运行中。",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属子网Id",
+          "example": "subnet-1cghhuuu",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器全部成功退出后的时间",
+          "example": "2024-09-09T00:00:00+00:00",
+          "member": "string",
+          "name": "SucceededTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属VPC的Id",
+          "example": "vpc-1cghhuuu",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18519,25 +18563,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "探针参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "探针参数",
           "example": "无",
           "member": "Probe",
           "name": "Probe",
           "output_required": true,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "HttpGet检测参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "HttpGet",
-          "name": "HttpGet",
-          "output_required": true,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18549,6 +18582,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HttpGet检测参数",
+          "example": "无",
+          "member": "HttpGet",
+          "name": "HttpGet",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -19933,10 +19977,10 @@
         },
         {
           "disabled": false,
-          "document": "NFS 服务器地址",
-          "example": "192.168.127.12",
+          "document": "NFS 数据卷路径",
+          "example": "/nfs",
           "member": "string",
-          "name": "Server",
+          "name": "Path",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -19944,10 +19988,10 @@
         },
         {
           "disabled": false,
-          "document": "NFS 数据卷路径",
-          "example": "/nfs",
+          "document": "NFS 服务器地址",
+          "example": "192.168.127.12",
           "member": "string",
-          "name": "Path",
+          "name": "Server",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -20400,6 +20444,72 @@
         }
       ],
       "usage": "both"
+    },
+    "OSImage": {
+      "document": "操作系统描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "os聚合名称",
+          "example": "centos7.2x86_64",
+          "member": "string",
+          "name": "SeriesName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "os别名",
+          "example": "CentOS 7.2 64bit",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "os名称",
+          "example": "centos7.2x86_64",
+          "member": "string",
+          "name": "OsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统类型(分为定制和非定制，取值分别为:DOCKER_CUSTOMIZE、GENERAL)",
+          "example": "GENERAL",
+          "member": "string",
+          "name": "OsCustomizeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "os是否下线(online表示在线,offline表示下线)",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像id",
+          "example": "img-pb422c9z",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OpenConstraintInfo": {
       "document": "策略实例信息",
@@ -21027,10 +21137,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "Number of seconds after the container has started before liveness probes are initiated.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Minimum consecutive failures for the probe to be considered failed after having succeeded.Defaults to 3. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
-          "name": "InitialDelaySeconds",
+          "name": "FailureThreshold",
           "output_required": true,
           "required": false,
           "type": "int",
@@ -21038,10 +21148,10 @@
         },
         {
           "disabled": false,
-          "document": "Number of seconds after which the probe times out.\nDefaults to 1 second. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Number of seconds after the container has started before liveness probes are initiated.\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
-          "name": "TimeoutSeconds",
+          "name": "InitialDelaySeconds",
           "output_required": true,
           "required": false,
           "type": "int",
@@ -21071,10 +21181,10 @@
         },
         {
           "disabled": false,
-          "document": "Minimum consecutive failures for the probe to be considered failed after having succeeded.Defaults to 3. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Number of seconds after which the probe times out.\nDefaults to 1 second. Minimum value is 1.\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
-          "name": "FailureThreshold",
+          "name": "TimeoutSeconds",
           "output_required": true,
           "required": false,
           "type": "int",
@@ -25370,14 +25480,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "TcpSocket检测的端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TcpSocket检测的端口",
           "example": "80",
           "member": "uint64",
           "name": "Port",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -25940,13 +26050,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器实例 ID",
           "example": "eksci-1cghhuuu",
           "member": "string",
           "name": "EksCiId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26737,6 +26847,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/data",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "volume名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "tke",
           "member": "string",
@@ -26748,12 +26869,12 @@
         },
         {
           "disabled": false,
-          "document": "挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/data",
+          "document": "传播挂载方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Bidirectional",
           "member": "string",
-          "name": "MountPath",
+          "name": "MountPropagation",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26774,17 +26895,6 @@
           "example": "tke",
           "member": "string",
           "name": "SubPath",
-          "output_required": true,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "传播挂载方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Bidirectional",
-          "member": "string",
-          "name": "MountPropagation",
           "output_required": true,
           "required": false,
           "type": "string",

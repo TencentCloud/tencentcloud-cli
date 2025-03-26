@@ -1243,8 +1243,8 @@
     "UpdateProtectionModes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProtectionModes\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"Edition\": \"abc\",\n    \"TypeIDs\": [\n        \"abc\"\n    ],\n    \"Mode\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"CommonRsp\": {\n            \"Code\": 0,\n            \"Msg\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProtectionModes\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Edition\": \"clb-waf\",\n    \"TypeIDs\": [\n        \"01000111\"\n    ],\n    \"Mode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"CommonRsp\": {\n            \"Code\": 0,\n            \"Msg\": \"success\"\n        },\n        \"RequestId\": \"3bd023947880421b3662db4abe\"\n    }\n}",
         "title": "更新Tiga引擎下大类规则的防护模式"
       }
     ],

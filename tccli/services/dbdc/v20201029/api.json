@@ -432,7 +432,7 @@
           "example": "dbdc-test",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -442,7 +442,7 @@
           "example": "dbdc-test",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -452,7 +452,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -462,7 +462,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -472,7 +472,7 @@
           "example": "0",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -482,7 +482,7 @@
           "example": "0",
           "member": "int64",
           "name": "HostType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -492,7 +492,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -502,7 +502,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -512,7 +512,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -522,7 +522,7 @@
           "example": "2021-04-28 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -532,7 +532,7 @@
           "example": "2021-05-28 00:00:00",
           "member": "string",
           "name": "PeriodEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -542,7 +542,7 @@
           "example": "1",
           "member": "int64",
           "name": "HostNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -552,7 +552,7 @@
           "example": "1",
           "member": "int64",
           "name": "DbNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -562,7 +562,7 @@
           "example": "0",
           "member": "int64",
           "name": "AssignStrategy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -572,7 +572,7 @@
           "example": "100",
           "member": "int64",
           "name": "CpuSpec",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -582,7 +582,7 @@
           "example": "100",
           "member": "int64",
           "name": "CpuAssigned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -592,7 +592,7 @@
           "example": "100",
           "member": "int64",
           "name": "CpuAssignable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -602,7 +602,7 @@
           "example": "100",
           "member": "int64",
           "name": "MemorySpec",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -612,7 +612,7 @@
           "example": "100",
           "member": "int64",
           "name": "MemoryAssigned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -622,7 +622,7 @@
           "example": "100",
           "member": "int64",
           "name": "MemoryAssignable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -632,7 +632,7 @@
           "example": "1000",
           "member": "int64",
           "name": "DiskSpec",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -642,7 +642,7 @@
           "example": "1000",
           "member": "int64",
           "name": "DiskAssigned",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -652,7 +652,7 @@
           "example": "1000",
           "member": "int64",
           "name": "DiskAssignable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -662,29 +662,29 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "金融围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "金融围笼ID",
           "example": "cage-x-x",
           "member": "string",
           "name": "FenceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属集群ID(默认集群为空)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属集群ID(默认集群为空)",
           "example": "cluster-xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -949,23 +949,23 @@
         },
         {
           "disabled": false,
-          "document": "金融围笼ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "金融围笼ID",
           "example": "cage-1-1",
           "member": "string",
           "name": "FenceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属集群ID(默认集群为空)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属集群ID(默认集群为空)",
           "example": "cluster-jlfwfew",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1685,43 +1685,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "cage-gz-3-7",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "读写设备组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "读写设备组",
           "example": "详见DeviceInfo",
           "member": "DeviceInfo",
           "name": "ReadWriteDevice",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "只读设备组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读设备组",
           "example": "详见DeviceInfo",
           "member": "DeviceInfo",
           "name": "ReadOnlyDevice",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "空闲设备组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "空闲设备组",
           "example": "详见DeviceInfo",
           "member": "DeviceInfo",
           "name": "FreeDevice",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

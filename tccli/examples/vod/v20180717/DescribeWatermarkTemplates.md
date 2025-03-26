@@ -37,6 +37,11 @@ Output:
                     "FontColor": "0xFF0000",
                     "FontAlpha": 1
                 },
+                "SvgTemplate": {
+                    "Width": "10px",
+                    "Height": "10px"
+                },
+                "CoordinateOrigin": "topLeft",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z"
             }

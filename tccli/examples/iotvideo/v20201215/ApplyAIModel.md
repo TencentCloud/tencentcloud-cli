@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo ApplyAIModel --cli-unfold-argument  \
-    --ProductId test \
+    --ProductId product \
     --ModelId body_detect
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

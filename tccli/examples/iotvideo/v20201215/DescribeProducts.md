@@ -16,6 +16,8 @@ Output:
     "Response": {
         "Data": [
             {
+                "CategoryId": 113,
+                "NetType": "wifi",
                 "ProductId": "PTROMP3AOB",
                 "ProductName": "siva_003",
                 "DeviceType": 1,
@@ -27,11 +29,13 @@ Output:
                 "ChipOs": "Linux",
                 "ChipManufactureId": "x86",
                 "ChipId": "x86",
-                "ProductDescription": "123",
+                "ProductDescription": "desc",
                 "CreateTime": 1608880525,
                 "UpdateTime": 1611830563
             },
             {
+                "CategoryId": 113,
+                "NetType": "wifi",
                 "ProductId": "BPCJPETFZU",
                 "ProductName": "test_siva_123",
                 "DeviceType": 1,

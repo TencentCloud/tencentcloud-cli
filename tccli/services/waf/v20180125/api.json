@@ -20987,7 +20987,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.testwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -21029,7 +21029,7 @@
         {
           "disabled": false,
           "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Code\":0, \"Msg\":\"success\"}",
           "member": "CommonRspData",
           "name": "CommonRsp",
           "output_required": false,

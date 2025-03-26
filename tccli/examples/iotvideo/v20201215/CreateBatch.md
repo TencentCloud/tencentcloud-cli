@@ -7,7 +7,7 @@ Input:
 ```
 tccli iotvideo CreateBatch --cli-unfold-argument  \
     --DevNum 1 \
-    --DevPre test \
+    --DevPre pre \
     --ProductId 37MFSSRMZY
 ```
 

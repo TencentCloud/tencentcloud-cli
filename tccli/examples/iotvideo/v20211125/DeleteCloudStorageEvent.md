@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotvideo DeleteCloudStorageEvent --cli-unfold-argument  \
-    --ProductId abc \
-    --DeviceName abc \
-    --EventId abc \
+    --ProductId product \
+    --DeviceName dev \
+    --EventId event \
     --StartTime 1 \
     --EndTime 1 \
-    --UserId abc \
+    --UserId user \
     --ChannelId 1
 ```
 
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "id"
     }
 }
 ```

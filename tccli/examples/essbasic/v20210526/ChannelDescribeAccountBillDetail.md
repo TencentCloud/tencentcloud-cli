@@ -1,6 +1,6 @@
-**Example 1: 查询该第三方平台子客账号计费详情**
+**Example 1: 查询该第三方平台子客账号绑定中、剩余可绑定账号等套餐使用情况**
 
-查询平台子客（对应的OrganizationOpenId为org_dianziqian）计费详情
+查询平台子客（对应的OrganizationOpenId为org_dianziqian）子客账号绑定中、剩余可绑定账号等套餐使用情况
 
 Input: 
 

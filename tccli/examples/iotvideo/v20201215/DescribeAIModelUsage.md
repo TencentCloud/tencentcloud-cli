@@ -7,7 +7,7 @@ Input:
 ```
 tccli iotvideo DescribeAIModelUsage --cli-unfold-argument  \
     --Offset 0 \
-    --ProductId test \
+    --ProductId product \
     --Limit 1 \
     --ModelId body_detect
 ```
@@ -24,7 +24,7 @@ Output:
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

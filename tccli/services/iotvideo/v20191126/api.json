@@ -1179,7 +1179,7 @@
         {
           "disabled": false,
           "document": "产器型号(APP产品,为APP包名)",
-          "example": "",
+          "example": "ipc",
           "member": "string",
           "name": "ProductModel",
           "required": true,
@@ -1188,7 +1188,7 @@
         {
           "disabled": false,
           "document": "产品名称\n仅支持中文、英文、数字、下划线，不超过32个字符",
-          "example": "",
+          "example": "dev-001",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -1197,7 +1197,7 @@
         {
           "disabled": false,
           "document": "产品描述信息\n不支持单引号、双引号、退格符、回车符、换行符、制表符、反斜杠、下划线、“%”、“#”、“$”，不超过128字符",
-          "example": "",
+          "example": "my ipc",
           "member": "string",
           "name": "ProductDescription",
           "required": true,
@@ -1206,7 +1206,7 @@
         {
           "disabled": false,
           "document": "设备功能码（ypsxth:音频双向通话 ，spdxth:视频单向通话）",
-          "example": "",
+          "example": "ypsxth",
           "member": "string",
           "name": "Features",
           "required": false,
@@ -1215,7 +1215,7 @@
         {
           "disabled": false,
           "document": "主芯片产商ID",
-          "example": "",
+          "example": "fgrt265",
           "member": "string",
           "name": "ChipManufactureId",
           "required": false,
@@ -1224,7 +1224,7 @@
         {
           "disabled": false,
           "document": "主芯片ID",
-          "example": "",
+          "example": "134dgfer",
           "member": "string",
           "name": "ChipId",
           "required": false,
@@ -1232,8 +1232,8 @@
         },
         {
           "disabled": false,
-          "document": "地域：\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nIndia（印度）\nOther-Overseas（其他境外地区）",
-          "example": "",
+          "document": "地域：\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nOther-Overseas（其他境外地区）",
+          "example": "China-Mainland",
           "member": "string",
           "name": "ProductRegion",
           "required": false,
@@ -1242,7 +1242,7 @@
         {
           "disabled": false,
           "document": "设备类型, 0-普通视频设备，1-NVR设备",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "ProductCate",
           "required": false,
@@ -1251,7 +1251,7 @@
         {
           "disabled": false,
           "document": "接入模型，bit0是0：公版小程序未接入，bit0是1：公版小程序已接入",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "AccessMode",
           "required": false,
@@ -1260,7 +1260,7 @@
         {
           "disabled": false,
           "document": "Linux,Android,Liteos等系统",
-          "example": "",
+          "example": "Linux",
           "member": "string",
           "name": "Os",
           "required": false,
@@ -1269,7 +1269,7 @@
         {
           "disabled": false,
           "document": "芯片架构，只是针对操作系统为android的",
-          "example": "",
+          "example": "X86",
           "member": "string",
           "name": "ChipArch",
           "required": false,
@@ -1284,9 +1284,10 @@
         {
           "disabled": false,
           "document": "产品详细信息",
-          "example": "",
+          "example": "{ \"ProductRegion\": \"ypsxth\", }",
           "member": "ProductBase",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4418,100 +4419,100 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "",
+          "example": "6WD38Z392L",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产器型号(APP产品,为APP包名)",
-          "example": "",
+          "example": "ipc",
           "member": "string",
           "name": "ProductModel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品名称",
-          "example": "",
+          "example": "dev-001",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品描述信息",
-          "example": "",
+          "example": "my ipc",
           "member": "string",
           "name": "ProductDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，UNIX 时间戳，单位秒",
-          "example": "",
+          "example": "1546315200",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "物模型发布版本号,0代表物模型尚未发布",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "IotModelRevision",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品密钥",
-          "example": "",
+          "example": "gsfghrtrte",
           "member": "string",
           "name": "SecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备功能码\nypsxth : 音频双向通话;\t\nspdxth : 视频单向通话(监控);\nNVR0824 : NVR设备,大于8路，小于等于24路;\nWifiKeepalive : Wifi保活(低功耗产品);\nAlexa : Alexa接入;\nGoogle : Google接入;\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ypsxth",
           "member": "string",
           "name": "FuncCode",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "产品类别，0 : 普通视频设备；1 : NVR设备\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ProductCate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "产品地域\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nIndia（印度）\nOther-Overseas（其他境外地区）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "产品地域\nChina-Mainland（中国大陆）\nChina-Hong Kong, Macao and Taiwan（港澳台地区）\nAmerica（美国）\nEurope（欧洲）\nOther-Overseas（其他境外地区）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "China-Mainland",
           "member": "string",
           "name": "ProductRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

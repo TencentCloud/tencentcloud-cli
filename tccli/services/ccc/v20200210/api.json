@@ -2148,11 +2148,11 @@
         },
         {
           "disabled": false,
-          "document": "呼叫使用的Ivr",
+          "document": "呼叫使用的 IVR Id，不填时需要填写 AIAgentId",
           "example": "3",
           "member": "uint64",
           "name": "IvrId",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -2217,6 +2217,33 @@
           "name": "CalleeAttributes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用时间段",
+          "example": "[{\"StartTime\":\"09:00:00\",\"EndTime\":\"11:30:00\"},{\"StartTime\":\"14:00:00\",\"EndTime\":\"18:00:00\"}]",
+          "member": "TimeRange",
+          "name": "AvailableTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "智能体 ID，不填写时需要填写 IvrId",
+          "example": "5845",
+          "member": "int64",
+          "name": "AIAgentId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2861,6 +2888,24 @@
           "example": "[{\"Callee\":\"13012345678\",\"UUI\":\"foobar\",\"Variables\":[{\"Key\":\"foo\":\"Value\":\"bar\"}]}]",
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用时间段",
+          "example": "[{\"StartTime\":\"09:00:00\",\"EndTime\":\"11:30:00\"},{\"StartTime\":\"14:00:00\",\"EndTime\":\"18:00:00\"}]",
+          "member": "TimeRange",
+          "name": "AvailableTime",
           "required": false,
           "type": "list"
         }
@@ -5167,7 +5212,7 @@
         {
           "disabled": false,
           "document": "技能组ID",
-          "example": "123",
+          "example": "1145",
           "member": "int64",
           "name": "SkillGroupId",
           "required": false,
@@ -5192,7 +5237,7 @@
         {
           "disabled": false,
           "document": "坐席用户信息列表",
-          "example": "[{\"Name\":\"xiao\",\"Mail\":\"1000273@qq.com\",\"Phone\":\"008617636049517\",\"Nick\":\"测试3\",\"StaffNumber\":\"125\",\"RoleId\":1,\"SkillGroupList\":[{\"SkillGroupId\":53,\"SkillGroupName\":\"ALL-dingoding-测试\",\"Priority\":3,\"Type\":\"ALL\"},{\"SkillGroupId\":82,\"SkillGroupName\":\"uu\",\"Priority\":1,\"Type\":\"IM\"}],\"LastModifyTimestamp\":1613988825}]",
+          "example": "[{\"Name\":\"n\",\"Mail\":\"m@e.com\",\"Phone\":\"123\",\"Nick\":\"t\",\"StaffNumber\":\"1\",\"RoleId\":1,\"SkillGroupList\":[{\"SkillGroupId\":1,\"SkillGroupName\":\"sg\",\"Priority\":1,\"Type\":\"IM\"}],\"LastModifyTimestamp\":1}]",
           "member": "StaffInfo",
           "name": "StaffList",
           "output_required": true,
@@ -7690,12 +7735,22 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "用户角色id",
+          "disabled": true,
+          "document": "用户角色id\n一个用户绑定了多个角色时以RoleIdList为准",
           "example": "1",
           "member": "uint64",
           "name": "RoleId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色id列表",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "RoleIdList",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8359,6 +8414,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TimeRange": {
+      "document": "时间范围，24 小时制，格式为 09:00:00",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "09:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "14:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UnbindNumberCallOutSkillGroupRequest": {
       "document": "UnbindNumberCallOutSkillGroup请求参数结构体",

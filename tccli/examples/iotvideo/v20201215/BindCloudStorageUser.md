@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli iotvideo BindCloudStorageUser --cli-unfold-argument  \
-    --DeviceName xx \
-    --UserId xx \
-    --ProductId xx
+    --DeviceName dev \
+    --UserId user \
+    --ProductId product
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

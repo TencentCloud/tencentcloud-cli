@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DeleteFirmware --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID product \
     --FirmwareVersion 2.0.0
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "id"
     }
 }
 ```

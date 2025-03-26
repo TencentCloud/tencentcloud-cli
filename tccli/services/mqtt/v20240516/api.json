@@ -337,14 +337,14 @@
       "status": "online"
     },
     "RegisterCaCertificate": {
-      "document": "注册ca证书",
+      "document": "注册CA证书（仅一机一证场景支持），可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817)",
       "input": "RegisterCaCertificateRequest",
       "name": "注册CA证书",
       "output": "RegisterCaCertificateResponse",
       "status": "online"
     },
     "RegisterDeviceCertificate": {
-      "document": "注册设备证书",
+      "document": "注册设备证书（仅一机一证场景生效），可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817#6cb39d46-efad-4220-8f11-2e7fab207bc8)",
       "input": "RegisterDeviceCertificateRequest",
       "name": "注册设备证书",
       "output": "RegisterDeviceCertificateResponse",
@@ -377,8 +377,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
-          "example": "mqtt-1234567",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -386,8 +386,8 @@
         },
         {
           "disabled": false,
-          "document": "证书序列号",
-          "example": "1a2b3c",
+          "document": "CA证书的SN序列号，可以从 [DescribeCaCertificates](https://cloud.tencent.com/document/api/1778/116206)接口、控制台、证书文件中获得。",
+          "example": "40597e878dc36d4dd13a25da70271f7b4ba6fe63",
           "member": "string",
           "name": "CaSn",
           "required": true,
@@ -586,7 +586,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n",
+          "document": "条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
           "example": "user1",
           "member": "string",
           "name": "Username",
@@ -1519,7 +1519,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，该字段为空时候则后端会默认生成",
+          "document": "密码，该字段为空时候则后端会默认生成。用户自定义密码时，不能为空，只支持数字 大小写字母 分隔符(\"_\",\"-\")，不能超过 64 个字符。",
           "example": "pwd",
           "member": "string",
           "name": "Password",
@@ -1708,8 +1708,8 @@
         },
         {
           "disabled": false,
-          "document": "证书序列号，可以从 [DescribeCaCertificates](https://cloud.tencent.com/document/api/1778/116206)接口、控制台、证书文件中获得。",
-          "example": "1a2b3c",
+          "document": "CA证书序列号，可以从 [DescribeCaCertificates](https://cloud.tencent.com/document/api/1778/116206)接口、控制台、证书文件中获得。",
+          "example": "40597e878dc36d4dd13a25da70271f7b4ba6fe63",
           "member": "string",
           "name": "CaSn",
           "required": true,
@@ -1798,7 +1798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1898,7 +1898,7 @@
         {
           "disabled": false,
           "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1980,7 +1980,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ca证书sn",
+          "document": "CA证书的SN序列号，可以从 [DescribeCaCertificates](https://cloud.tencent.com/document/api/1778/116206)接口、控制台、证书文件中获得。",
           "example": "40597e878dc36d4dd13a25da70271f7b4ba6fe63",
           "member": "string",
           "name": "CaSn",
@@ -1989,8 +1989,8 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
-          "example": "mqtt-12345",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2004,7 +2004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "CreatedTime",
@@ -2014,7 +2014,7 @@
         },
         {
           "disabled": false,
-          "document": "上次更新时间",
+          "document": "上次更新时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "UpdateTime",
@@ -2024,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "失效日期",
+          "document": "失效日期，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "NotAfterTime",
@@ -2034,7 +2034,7 @@
         },
         {
           "disabled": false,
-          "document": "上次激活时间",
+          "document": "上次激活时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "LastActivationTime",
@@ -2044,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "上次吊销时间",
+          "document": "上次吊销时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "LastInactivationTime",
@@ -2054,7 +2054,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态",
+          "document": "CA证书状态\n ACTIVE：激活\nINACTIVE：未激活\n",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -2074,8 +2074,8 @@
         },
         {
           "disabled": false,
-          "document": "common name",
-          "example": "common name",
+          "document": "证书的CN（Common Name），证书中用于标识主体的名称，通常是域名或组织名称",
+          "example": "ca.cloud.tencent.com",
           "member": "string",
           "name": "CaCn",
           "output_required": false,
@@ -2094,7 +2094,7 @@
         },
         {
           "disabled": false,
-          "document": "证书格式",
+          "document": "证书格式，当仅支持PEM格式",
           "example": "PEM",
           "member": "string",
           "name": "Format",
@@ -2105,7 +2105,7 @@
         {
           "disabled": false,
           "document": "Ca证书颁发者CN",
-          "example": "Issuer",
+          "example": "ca.cloud.tencent.com",
           "member": "string",
           "name": "CaIssuerCn",
           "output_required": false,
@@ -2114,7 +2114,7 @@
         },
         {
           "disabled": false,
-          "document": "生效开始时间",
+          "document": "生效开始时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "NotBeforeTime",
@@ -2182,7 +2182,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端名",
+          "document": "客户端ID",
           "example": "client1",
           "member": "string",
           "name": "ClientId",
@@ -2414,7 +2414,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -2423,8 +2423,8 @@
         },
         {
           "disabled": false,
-          "document": "支持搜索参数\nClientId：客户端id\nCaSn：所属的CA证书SN\nDeviceCertificateSn：设备证书SN\nDeviceCertificateCn：设备证书CN\nOrganizationalUnit：证书OU\nNotAfterEnd：过期时间小于等于指定时间的证书\nNotAfterStart：过期时间大于等于指定时间的证书\nStatus：证书状态\n",
-          "example": "[{\"Name\":\"DeviceCertificateSn\",\"Values\":[\"mqtt\"]}]",
+          "document": "支持搜索参数\nClientId：客户端id，根据实际业务使用获取\nCaSn：所属的CA证书SN序列号 可以从 [查询集群CA证书列表](https://cloud.tencent.com/document/api/1778/116206) 或者实际业务使用获取\nDeviceCertificateSn：设备证书SN序列号 可从[查询设备证书详情](https://cloud.tencent.com/document/api/1778/113748) 获取\nDeviceCertificateCn：设备证书CN 可从[查询设备证书详情](https://cloud.tencent.com/document/api/1778/113748) 获取\nOrganizationalUnit：证书OU\nNotAfterEnd：过期时间小于等于指定时间的证书\nNotAfterStart：过期时间大于等于指定时间的证书\nStatus：设备证书状态     ACTIVE（激活）； INACTIVE（未激活）REVOKED（吊销）；PENDING_ACTIVATION（注册待激活）\n",
+          "example": "[{\"Name\":\"ClientId\",\"Values\":[\"client-1\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2432,7 +2432,7 @@
         },
         {
           "disabled": false,
-          "document": "分页limit",
+          "document": "分页limit，默认20，最大100",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2441,7 +2441,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
+          "document": "分页偏移量，默认0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2450,7 +2450,7 @@
         },
         {
           "disabled": false,
-          "document": "CREATE_TIME_DESC, 创建时间降序\n    CREATE_TIME_ASC,创建时间升序\n    UPDATE_TIME_DESC,更新时间降序\n    UPDATE_TIME_ASC,更新时间升序",
+          "document": "排序规则\n    CREATE_TIME_DESC, 创建时间降序\n    CREATE_TIME_ASC,创建时间升序\n    UPDATE_TIME_DESC,更新时间降序\n    UPDATE_TIME_ASC,更新时间升序",
           "example": "CREATE_TIME_DESC",
           "member": "string",
           "name": "OrderBy",
@@ -2475,8 +2475,8 @@
         },
         {
           "disabled": false,
-          "document": "设备证书",
-          "example": "[                     {                         \"ClientId\": \"mqtt_495bf0d1\"                               }                 ]",
+          "document": "设备证书列表",
+          "example": "无",
           "member": "DeviceCertificateItem",
           "name": "Data",
           "output_required": true,
@@ -3163,7 +3163,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量，默认0，最大20",
+          "document": "查询结果限制数量，默认20，最大20",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -3380,8 +3380,8 @@
         },
         {
           "disabled": false,
-          "document": "设备证书Sn",
-          "example": "sn",
+          "document": "设备证书SN序列号，用于唯一标识一个设备证书",
+          "example": "181cf3245523979e",
           "member": "string",
           "name": "DeviceCertificateSn",
           "output_required": true,
@@ -3391,7 +3391,7 @@
         {
           "disabled": false,
           "document": "设备证书Cn",
-          "example": "common name",
+          "example": "***.cloud.tencent.com",
           "member": "string",
           "name": "DeviceCertificateCn",
           "output_required": true,
@@ -3400,8 +3400,8 @@
         },
         {
           "disabled": false,
-          "document": "签发ca的序列号",
-          "example": "casn",
+          "document": "签发该证书的CA证书的序列号",
+          "example": "40597e878dc36d4dd13a25da70271f7b4ba6fe63",
           "member": "string",
           "name": "CaSn",
           "output_required": true,
@@ -3410,7 +3410,7 @@
         },
         {
           "disabled": false,
-          "document": "证书格式",
+          "document": "证书格式，当前仅支持PEM",
           "example": "PEM",
           "member": "string",
           "name": "Format",
@@ -3420,7 +3420,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态\n    ACTIVE,//激活\n    INACTIVE,//未激活\n    REVOKED,//吊销\n    PENDING_ACTIVATION,//注册待激活",
+          "document": "设备证书状态\n    ACTIVE：激活\n    INACTIVE：未激活\n    REVOKED：吊销\n    PENDING_ACTIVATION：注册待激活",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -3440,7 +3440,7 @@
         },
         {
           "disabled": false,
-          "document": "上次激活时间",
+          "document": "上次激活时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "LastActivationTime",
@@ -3450,7 +3450,7 @@
         },
         {
           "disabled": false,
-          "document": "上次取消激活时间",
+          "document": "上次取消激活时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "LastInactivationTime",
@@ -3460,7 +3460,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "CreatedTime",
@@ -3470,7 +3470,7 @@
         },
         {
           "disabled": false,
-          "document": "预销毁时间",
+          "document": "更新时间，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "UpdateTime",
@@ -3490,7 +3490,7 @@
         },
         {
           "disabled": false,
-          "document": "证书失效日期",
+          "document": "证书失效日期，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "NotAfterTime",
@@ -3500,7 +3500,7 @@
         },
         {
           "disabled": false,
-          "document": "证书生效开始日期",
+          "document": "证书生效开始日期，毫秒级时间戳 。",
           "example": "1713164969433",
           "member": "int64",
           "name": "NotBeforeTime",
@@ -4014,7 +4014,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费。仅包年包月就去那生效。\n1:自动续费\n0:非自动续费",
+          "document": "是否自动续费。仅包年包月集群生效。\n1:自动续费\n0:非自动续费",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -5233,8 +5233,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
-          "example": "mqtt-12345",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5242,7 +5242,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书",
+          "document": "CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA",
           "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
           "member": "string",
           "name": "CaCertificate",
@@ -5251,7 +5251,7 @@
         },
         {
           "disabled": false,
-          "document": "验证证书",
+          "document": "验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节",
           "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
           "member": "string",
           "name": "VerificationCertificate",
@@ -5260,7 +5260,7 @@
         },
         {
           "disabled": false,
-          "document": "证书格式，不传默认PEM格式",
+          "document": "证书格式，不传默认PEM格式，当前仅支持PEM格式",
           "example": "PEM",
           "member": "string",
           "name": "Format",
@@ -5269,7 +5269,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态，不传默认ACTIVE状态\n    ACTIVE,//激活\n    INACTIVE,//未激活\n    REVOKED,//吊销\n    PENDING_ACTIVATION,//注册待激活",
+          "document": "证书状态，不传默认ACTIVE状态\n    ACTIVE：激活\n    INACTIVE：未激活",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -5296,7 +5296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-12345",
           "member": "string",
           "name": "InstanceId",
@@ -5305,7 +5305,7 @@
         },
         {
           "disabled": false,
-          "document": "设备证书",
+          "document": "设备证书内容，可参考 [使用 CA 证书生成服务端/客户端证书](https://cloud.tencent.com/document/product/1778/114817#aab79cc8-a148-412e-beb8-9c9e158eb944) 生成",
           "example": "-----BEGIN CERTIFICATE-----END CERTIFICATE-----",
           "member": "string",
           "name": "DeviceCertificate",
@@ -5323,7 +5323,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID",
+          "document": "客户端ID，需要关联该证书的客户端ID。根据实际业务使用填写",
           "example": "VIN0001",
           "member": "string",
           "name": "ClientId",
@@ -5332,8 +5332,8 @@
         },
         {
           "disabled": false,
-          "document": "证书格式",
-          "example": "pem",
+          "document": "证书格式，默认为PEM，当前仅支持PEM格式",
+          "example": "PEM",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -5341,7 +5341,7 @@
         },
         {
           "disabled": false,
-          "document": "    ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活",
+          "document": " 客户端证书状态，默认激活状态（ACTIVE）\nACTIVE：激活     \nINACTIVE：未激活     \nREVOKED：吊销 \nPENDING_ACTIVATION：注册待激活",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",

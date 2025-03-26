@@ -19,7 +19,7 @@ Output:
                 "Definition": "1008",
                 "Container": "mp4",
                 "Name": "模板1",
-                "Comment": "test",
+                "Comment": "MyTranscodeTemplate",
                 "Type": "Custom",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,

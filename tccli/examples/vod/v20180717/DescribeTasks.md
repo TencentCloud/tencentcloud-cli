@@ -107,7 +107,7 @@ Output:
                 "FileId": "528xx124"
             }
         ],
-        "ScrollToken": "abc",
+        "ScrollToken": "token-test",
         "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
     }
 }
@@ -142,7 +142,7 @@ Output:
                 "FileId": "528xx124"
             }
         ],
-        "ScrollToken": "abc",
+        "ScrollToken": "token-test",
         "RequestId": "46311b39-10ce-47eb-b2b6-7ce82bb4476d"
     }
 }

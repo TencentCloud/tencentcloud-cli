@@ -2324,7 +2324,7 @@
         {
           "disabled": false,
           "document": "站点详情",
-          "example": "[{ \t\t\t\"SiteId\": \"site-98dj3kd\", \t\t\t\"Name\": \"sitename\", \t\t\t\"Description\": \"this is a description\", \t\t\t\"CreateTime\": \"2020-12-25T08:39:57Z\", \t\t\t\"FiberType\": \"MM\", \t\t\t\"UplinkSpeedGbps\": 0, \t\t\t\"UplinkCount\": 0, \t\t\t\"OpticalStandard\": \"MM\", \t\t\t\"RedundantNetworking\": false, \t\t\t\"PowerConnectors\": \"1000Base-SX\", \t\t\t\"PowerFeedDrop\": \"above\", \t\t\t\"PowerDrawKva\": 0.0, \t\t\t\"ConditionRequirement\": false, \t\t\t\"DimensionRequirement\": false, \t\t\t\"NeedHelp\": false, \t\t\t\"BreakerRequirement\": false, \t\t\t\"RedundantPower\": false, \t\t\t\"MaxWeight\": 0, \t\t\t\"AddressLine\": \"Nanshan Road\", \t\t\t\"OptionalAddressLine\": \"详细地址\", \t\t\t\"Country\": \"China\", \t\t\t\"Province\": \"guangdong\", \t\t\t\"City\": \"shenzhen\", \t\t\t\"PostalCode\": 518000 \t\t}]",
+          "example": "[{\"SiteId\": \"site-98dj3kd\",\"Name\": \"sitename\",\"Description\": \"this is a description\",\"PowerConnectors\": \"1000Base-SX\",\"OptionalAddressLine\": \"详细地址\",\"Country\": \"China\",\"Province\": \"guangdong\",\"City\": \"shenzhen\",\"PostalCode\": 518000}]",
           "member": "SiteDetail",
           "name": "SiteDetailSet",
           "output_required": true,

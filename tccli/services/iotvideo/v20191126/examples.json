@@ -75,8 +75,8 @@
     "CreateProduct": [
       {
         "document": "",
-        "input": "https://iotvideo.tencentcloudapi.com/?Action=CreateProduct\n&ProductModel=test\n&ProductName=TEST_001\n&ProductDescription=TestProduct\n&Features.0=spdxth\n&Features.1=ypsxth\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductRegion\": \"xx\",\n            \"ProductDescription\": \"xx\",\n            \"ProductModel\": \"xx\",\n            \"ProductName\": \"xx\",\n            \"SecretKey\": \"xx\",\n            \"FuncCode\": [\n                \"xx\"\n            ],\n            \"IotModelRevision\": 1,\n            \"ProductCate\": 0,\n            \"CreateTime\": 1,\n            \"ProductId\": \"xx\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://iotvideo.tencentcloudapi.com/?Action=CreateProduct\n&ProductModel=ipc\n&ProductName=dev-001\n&ProductDescription=myProduct\n&Features.0=spdxth\n&Features.1=ypsxth\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductRegion\": \"ypsxth\",\n            \"ProductDescription\": \"my ipc\",\n            \"ProductModel\": \"ypsxth\",\n            \"ProductName\": \"ypsxth\",\n            \"SecretKey\": \"fdsfdhgdfg\",\n            \"FuncCode\": [\n                \"11\"\n            ],\n            \"IotModelRevision\": 1,\n            \"ProductCate\": 0,\n            \"CreateTime\": 1,\n            \"ProductId\": \"6WD38Z392L\"\n        },\n        \"RequestId\": \"92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "创建产品"
       }
     ],

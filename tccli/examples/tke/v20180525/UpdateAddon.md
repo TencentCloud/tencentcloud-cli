@@ -142,3 +142,41 @@ Output:
 }
 ```
 
+**Example 4: 更新cluster-autoscaler参数**
+
+用户可以通过RawValues参数更新cluster-autoscaler组件支持的自定义配置参数，比如关闭缩容，可以将 {"extraArgs":{"scale-down-enabled":false}}  进行base64编码后放入到 RawValues 参数中。cluster-autoscaler组件支持的自定义配置参数说明如下：
+```
+{
+  "extraArgs": {
+    "expander": string, 扩容策略，例如：random
+    "ignore-daemonsets-utilization": bool, ds类型不计入利用率，例如：false
+    "max-empty-bulk-delete": int, 空节点最大并发缩容数，例如：10
+    "scale-down-delay-after-add": string, 扩容后再触发缩容等待时间，例如：10m
+    "scale-down-enabled": bool, 开启缩容能力，例如：false
+    "scale-down-unneeded-time": string, 节点连续空闲触发缩容时间，例如：10m
+    "scale-down-utilization-threshold": float, 触发缩容节点利用率阈值，例如：0.5
+    "skip-nodes-with-local-storage": bool, 不缩容包含本地存储的节点，例如：true
+    "skip-nodes-with-system-pods": bool 不缩容kube-system namespace下非DaemonSet管理的Pod的节点，例如：ture
+  }
+}
+```
+
+Input: 
+
+```
+tccli tke UpdateAddon --cli-unfold-argument  \
+    --ClusterId cls-qbc3zefo \
+    --AddonName cluster-autoscaler \
+    --RawValues eyJleHRyYUFyZ3MiOnsic2NhbGUtZG93bi1lbmFibGVkIjpmYWxzZX19 \
+    --UpdateStrategy merge
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "b0a2e412-6e5e-4a93-9a22-edf5102e9eae"
+    }
+}
+```
+
