@@ -294,13 +294,6 @@
       "output": "DescribeGoodsVoucherListResponse",
       "status": "online"
     },
-    "DescribeIsMeasureGrayUin": {
-      "document": "查询UIN是否在计量灰度名单中",
-      "input": "DescribeIsMeasureGrayUinRequest",
-      "name": "查询UIN是否在计量灰度名单中",
-      "output": "DescribeIsMeasureGrayUinResponse",
-      "status": "online"
-    },
     "DescribeMeasureDeductionDetailFlow": {
       "document": "管理端查询计量抵扣详情",
       "input": "DescribeMeasureDeductionDetailFlowRequest",
@@ -15063,79 +15056,6 @@
       ],
       "type": "object"
     },
-    "DescribeIsMeasureGrayUinRequest": {
-      "document": "DescribeIsMeasureGrayUin请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeIsMeasureGrayUinRes": {
-      "document": "查询是否灰度名单返回值",
-      "members": [
-        {
-          "disabled": false,
-          "document": "查询UIN",
-          "example": "251009432",
-          "member": "string",
-          "name": "Uin",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "查询时间；计量系统时间",
-          "example": "2021-11-11 00:00:00",
-          "member": "string",
-          "name": "QueryTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "true表示在2k,4k分辨率灰度名单中",
-          "example": "true",
-          "member": "bool",
-          "name": "GrayVideoType",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "true表示新录制的用量要推送结算",
-          "example": "true",
-          "member": "bool",
-          "name": "GrayNewRecord",
-          "required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "DescribeIsMeasureGrayUinResponse": {
-      "document": "DescribeIsMeasureGrayUin返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "灰度接口返回结果",
-          "example": "{}",
-          "member": "DescribeIsMeasureGrayUinRes",
-          "name": "Data",
-          "required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeMeasureDeductionDetailFlowRequest": {
       "document": "DescribeMeasureDeductionDetailFlow请求参数结构体",
       "members": [
@@ -17469,7 +17389,7 @@
         {
           "disabled": false,
           "document": "详细数据",
-          "example": "[]",
+          "example": "[{\"BuyTime\":\"2023-09-07 10:30:11\",\"EndTime\":\"2023-09-17 10:00:00\",\"MatchingSavingPlanProductRule\":[],\"MatchingSavingPlanRegionRule\":[],\"SpId\":\"svp-victotman-test2\",\"SpType\":\"svp_common\",\"StartTime\":\"2023-09-17 10:00:00\",\"Status\":1}]",
           "member": "SavingPlanInfo",
           "name": "SavingPlanInfoData",
           "output_required": true,

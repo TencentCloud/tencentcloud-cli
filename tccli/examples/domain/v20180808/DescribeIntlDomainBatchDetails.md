@@ -26,7 +26,10 @@ Output:
                 "Reason": "",
                 "ReasonZh": "修改DNS失败",
                 "Action": "new",
-                "Id": 85215
+                "Id": 85215,
+                "TransferDnsResult": true,
+                "PayStatus": 0,
+                "BigDealId": ""
             }
         ]
     }

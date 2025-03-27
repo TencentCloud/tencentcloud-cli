@@ -1,3 +1,579 @@
+# Release 3.0.1169.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 85 次发布
+
+发布时间：2025-03-27 01:11:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeIsMeasureGrayUin
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* DescribeIsMeasureGrayUinRes
+
+
+
+## 验证码(captcha) 版本：2019-07-22
+
+### 第 12 次发布
+
+发布时间：2025-03-27 01:13:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCaptchaRceResult](http://document.tencentcloudapi.woa.com/document/product/1110/82759)
+
+	* 新增出参：DeviceRiskCategory
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 44 次发布
+
+发布时间：2025-03-27 01:14:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetailPrice](http://document.tencentcloudapi.woa.com/document/product/362/15669#DetailPrice)
+
+	* <font color="#dd0000">**修改成员**：</font>OriginalPriceHigh, DiscountPriceHigh, UnitPriceHigh, UnitPriceDiscountHigh
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 77 次发布
+
+发布时间：2025-03-27 01:14:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAutoCalloutTask](http://document.tencentcloudapi.woa.com/document/product/679/69194)
+
+	* 新增入参：TimeZone, AvailableTime, AIAgentId
+
+	* <font color="#dd0000">**修改入参**：</font>IvrId
+
+* [CreatePredictiveDialingCampaign](http://document.tencentcloudapi.woa.com/document/product/679/83370)
+
+	* 新增入参：TimeZone, AvailableTime
+
+
+新增数据结构：
+
+* [TimeRange](http://document.tencentcloudapi.woa.com/document/product/679/47715#TimeRange)
+
+修改数据结构：
+
+* [StaffInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#StaffInfo)
+
+	* 新增成员：RoleIdList
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 108 次发布
+
+发布时间：2025-03-27 01:21:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83989)
+* [DeleteCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83988)
+* [DescribeCloudProductLogTasks](http://document.tencentcloudapi.woa.com/document/product/614/83987)
+* [ModifyCloudProductLogCollection](http://document.tencentcloudapi.woa.com/document/product/614/86025)
+* [ModifyCloudProductLogTask](http://document.tencentcloudapi.woa.com/document/product/614/83986)
+
+新增数据结构：
+
+* [CloudProductLogTaskInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#CloudProductLogTaskInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 121 次发布
+
+发布时间：2025-03-27 01:26:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusters](http://document.tencentcloudapi.woa.com/document/product/1003/48087)
+
+	* 新增入参：StainServerless
+
+
+
+
+## DDoS 高防包(dayu) 版本：2018-07-09
+
+### 第 3 次发布
+
+发布时间：2025-03-27 01:28:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateBasicDDoSAlarmThreshold
+* CreateBoundIP
+* CreateCCFrequencyRules
+* CreateCCSelfDefinePolicy
+* CreateDDoSPolicy
+* CreateDDoSPolicyCase
+* CreateInstanceName
+* CreateL4HealthConfig
+* CreateL4Rules
+* CreateL7CCRule
+* CreateL7HealthConfig
+* CreateL7RuleCert
+* CreateL7Rules
+* CreateL7RulesUpload
+* CreateNetReturn
+* CreateNewL4Rules
+* CreateNewL7Rules
+* CreateNewL7RulesUpload
+* CreateUnblockIp
+* DeleteCCFrequencyRules
+* DeleteCCSelfDefinePolicy
+* DeleteDDoSPolicy
+* DeleteDDoSPolicyCase
+* DeleteL4Rules
+* DeleteL7Rules
+* DeleteNewL4Rules
+* DeleteNewL7Rules
+* DescribeActionLog
+* DescribeBGPIPL7RuleMaxCnt
+* DescribeBaradData
+* DescribeBasicCCThreshold
+* DescribeBasicDeviceThreshold
+* DescribeBizHttpStatus
+* DescribeBizTrend
+* DescribeCCAlarmThreshold
+* DescribeCCEvList
+* DescribeCCFrequencyRules
+* DescribeCCIpAllowDeny
+* DescribeCCSelfDefinePolicy
+* DescribeCCTrend
+* DescribeCCUrlAllow
+* DescribeDDoSAlarmThreshold
+* DescribeDDoSAttackIPRegionMap
+* DescribeDDoSAttackSource
+* DescribeDDoSCount
+* DescribeDDoSDefendStatus
+* DescribeDDoSEvInfo
+* DescribeDDoSEvList
+* DescribeDDoSIpLog
+* DescribeDDoSNetCount
+* DescribeDDoSNetEvInfo
+* DescribeDDoSNetEvList
+* DescribeDDoSNetIpLog
+* DescribeDDoSNetTrend
+* DescribeDDoSPolicy
+* DescribeDDoSTrend
+* DescribeDDoSUsedStatis
+* DescribeIPProductInfo
+* DescribeInsurePacks
+* DescribeIpBlockList
+* DescribeIpUnBlockList
+* DescribeL4HealthConfig
+* DescribeL4RulesErrHealth
+* DescribeL7HealthConfig
+* DescribeNewL4Rules
+* DescribeNewL4RulesErrHealth
+* DescribeNewL7RulesErrHealth
+* DescribePackIndex
+* DescribePcap
+* DescribePolicyCase
+* DescribeResIpList
+* DescribeResourceList
+* DescribeRuleSets
+* DescribeSchedulingDomainList
+* DescribeSecIndex
+* DescribeSourceIpSegment
+* DescribeTransmitStatis
+* DescribeUnBlockStatis
+* DescribleL4Rules
+* DescribleL7Rules
+* DescribleNewL7Rules
+* DescribleRegionCount
+* ModifyCCAlarmThreshold
+* ModifyCCFrequencyRules
+* ModifyCCFrequencyRulesStatus
+* ModifyCCHostProtection
+* ModifyCCIpAllowDeny
+* ModifyCCLevel
+* ModifyCCPolicySwitch
+* ModifyCCSelfDefinePolicy
+* ModifyCCThreshold
+* ModifyCCUrlAllow
+* ModifyDDoSAIStatus
+* ModifyDDoSAlarmThreshold
+* ModifyDDoSDefendStatus
+* ModifyDDoSLevel
+* ModifyDDoSPolicy
+* ModifyDDoSPolicyCase
+* ModifyDDoSPolicyName
+* ModifyDDoSSwitch
+* ModifyDDoSThreshold
+* ModifyDDoSWaterKey
+* ModifyElasticLimit
+* ModifyL4Health
+* ModifyL4KeepTime
+* ModifyL4Rules
+* ModifyL7Rules
+* ModifyNetReturnSwitch
+* ModifyNewDomainRules
+* ModifyNewL4Rule
+* ModifyResBindDDoSPolicy
+* ModifyResourceRenewFlag
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 131 次发布
+
+发布时间：2025-03-27 01:38:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [NetWork](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NetWork)
+* [TccHive](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TccHive)
+
+修改数据结构：
+
+* [DatasourceConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DatasourceConnectionConfig)
+
+	* 新增成员：TccHive
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 30 次发布
+
+发布时间：2025-03-27 01:56:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TRTCParams](http://document.tencentcloudapi.woa.com/document/product/1131/75389#TRTCParams)
+
+	* <font color="#dd0000">**修改成员**：</font>SDKAppId, UserId, UserSig, StrRoomId, PrivateMapKey
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+### 第 8 次发布
+
+发布时间：2025-03-27 01:52:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VideoProduct](http://document.tencentcloudapi.woa.com/document/product/1131/53113#VideoProduct)
+
+	* 新增成员：CategoryId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 93 次发布
+
+发布时间：2025-03-27 10:57:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAlarmShield](http://document.tencentcloudapi.woa.com/document/product/248/86019)
+* [CreateConditionsTemplate](http://document.tencentcloudapi.woa.com/document/product/248/86018)
+* [DescribePrometheusIntegrationMetrics](http://document.tencentcloudapi.woa.com/document/product/248/86023)
+* [DescribeRemoteURLs](http://document.tencentcloudapi.woa.com/document/product/248/86021)
+* [DescribeTMPAgentArchitectureStatuses](http://document.tencentcloudapi.woa.com/document/product/248/86022)
+* [GetStatisticsBatch](http://document.tencentcloudapi.woa.com/document/product/248/86017)
+* [ModifyRemoteURLs](http://document.tencentcloudapi.woa.com/document/product/248/86020)
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* RegisterTable
+
+修改接口：
+
+* [CreateAlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/51287)
+
+	* 新增入参：AdditionalAlarmContent, NoticeContentTmplBindInfos
+
+* [DescribeAlarmPolicies](http://document.tencentcloudapi.woa.com/document/product/248/51279)
+
+	* 新增入参：NoticeContentTmplIDs, IsPredefined
+
+* [ModifyAlarmPolicyNotice](http://document.tencentcloudapi.woa.com/document/product/248/51274)
+
+	* 新增入参：NoticeContentTmplBindInfos
+
+
+新增数据结构：
+
+* [BasicAuth](http://document.tencentcloudapi.woa.com/document/product/248/30354#BasicAuth)
+* [IntegrationMetric](http://document.tencentcloudapi.woa.com/document/product/248/30354#IntegrationMetric)
+* [IntegrationMetricGroup](http://document.tencentcloudapi.woa.com/document/product/248/30354#IntegrationMetricGroup)
+* [ModifyConditionsTemplateRequestCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#ModifyConditionsTemplateRequestCondition)
+* [ModifyConditionsTemplateRequestEventCondition](http://document.tencentcloudapi.woa.com/document/product/248/30354#ModifyConditionsTemplateRequestEventCondition)
+* [NoticeContentTmplBindInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#NoticeContentTmplBindInfo)
+* [RemoteWrite](http://document.tencentcloudapi.woa.com/document/product/248/30354#RemoteWrite)
+* [RemoteWriteHeader](http://document.tencentcloudapi.woa.com/document/product/248/30354#RemoteWriteHeader)
+
+修改数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
+
+	* 新增成员：NoticeTmplBindInfos, HierarchicalNotices, NoticeContentTmplBindInfos, PredefinedConfigID
+
+* [PrometheusTarget](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusTarget)
+
+	* 新增成员：Url, State
+
+* [URLNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#URLNotice)
+
+	* 新增成员：GroupMembers
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 83 次发布
+
+发布时间：2025-03-27 02:05:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AudioTrackChannelInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AudioTrackChannelInfo)
+* [TrackInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#TrackInfo)
+
+修改数据结构：
+
+* [AdaptiveStreamTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AdaptiveStreamTemplate)
+
+	* 新增成员：AudioList
+
+* [AudioTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AudioTemplateInfo)
+
+	* 新增成员：TrackChannelInfo
+
+* [HighlightSegmentItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#HighlightSegmentItem)
+
+	* 新增成员：BeginTime, EndTime
+
+* [SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)
+
+	* 新增成员：PersonId
+
+
+
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 15 次发布
+
+发布时间：2025-03-27 02:16:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ManageDeviceRisk](http://document.tencentcloudapi.woa.com/document/product/1031/86026)
+
+新增数据结构：
+
+* [ManageDeviceRiskInput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManageDeviceRiskInput)
+* [ManageDeviceRiskOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManageDeviceRiskOutput)
+* [ManageDeviceRiskValueOutput](http://document.tencentcloudapi.woa.com/document/product/1031/43310#ManageDeviceRiskValueOutput)
+
+
+
+## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+
+### 第 5 次发布
+
+发布时间：2025-03-27 02:18:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [VipInfo](http://document.tencentcloudapi.woa.com/document/product/1741/81616#VipInfo)
+
+	* 新增成员：VirtualClusterName, NodeSpec, NodeNum
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 37 次发布
+
+发布时间：2025-03-27 02:18:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImmutableTagRules](http://document.tencentcloudapi.woa.com/document/product/1141/58195)
+
+	* 新增入参：Page, PageSize
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 59 次发布
+
+发布时间：2025-03-27 02:27:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BusinessLogConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfig)
+
+	* 新增成员：FilebeatConfigEnable, FilebeatCloseTimeout
+
+* [ThreadPicture](http://document.tencentcloudapi.woa.com/document/product/649/36099#ThreadPicture)
+
+	* 新增成员：DaemonThreadCount
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 202 次发布
+
+发布时间：2025-03-27 02:29:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpcEndPoint](http://document.tencentcloudapi.woa.com/document/product/215/54685)
+
+	* 新增入参：IpAddressType
+
+* [CreateVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54684)
+
+	* 新增入参：IpAddressType, IsPublicService, ServiceVip
+
+* [DeleteVpcEndPoint](http://document.tencentcloudapi.woa.com/document/product/215/54682)
+
+	* 新增入参：IpAddressType
+
+* [DeleteVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54681)
+
+	* 新增入参：IpAddressType
+
+* [DescribeVpcEndPoint](http://document.tencentcloudapi.woa.com/document/product/215/54679)
+
+	* 新增入参：IpAddressType
+
+* [DescribeVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54678)
+
+	* 新增入参：IpAddressType
+
+* [EnableVpcEndPointConnect](http://document.tencentcloudapi.woa.com/document/product/215/54675)
+
+	* 新增入参：IpAddressType
+
+* [ModifyVpcEndPointAttribute](http://document.tencentcloudapi.woa.com/document/product/215/54674)
+
+	* 新增入参：IpAddressType
+
+* [ModifyVpcEndPointServiceAttribute](http://document.tencentcloudapi.woa.com/document/product/215/54673)
+
+	* 新增入参：IpAddressType
+
+
+修改数据结构：
+
+* [VpcOssAddServiceIpv6](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcOssAddServiceIpv6)
+
+	* 新增成员：HostType, VpcGwIp, UniqVpcgwId, IpType
+
+
+
+
 # Release 3.0.1168.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

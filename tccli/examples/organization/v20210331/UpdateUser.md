@@ -8,9 +8,9 @@ Input:
 tccli organization UpdateUser --cli-unfold-argument  \
     --ZoneId z-343nh23kn \
     --UserId u-3324sfdds \
-    --NewFirstName test \
-    --NewLastName test \
-    --NewDisplayName test \
+    --NewFirstName john \
+    --NewLastName smith \
+    --NewDisplayName john \
     --NewDescription this is user. \
     --NewEmail test@example.com
 ```
@@ -20,13 +20,13 @@ Output:
 {
     "Response": {
         "UserInfo": {
-            "UserName": "test",
-            "FirstName": "test",
-            "LastName": "test",
-            "DisplayName": "test",
+            "UserName": "user1",
+            "FirstName": "john",
+            "LastName": "smith",
+            "DisplayName": "john",
             "Description": "this is user",
             "Email": "test@example.com",
-            "UserStatus": "test",
+            "UserStatus": "Enabled",
             "UserType": "Manual",
             "UserId": "u-33sjadjsk",
             "CreateTime": "2024-01-01 12:12:12",

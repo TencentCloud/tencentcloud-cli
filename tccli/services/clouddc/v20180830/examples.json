@@ -144,14 +144,6 @@
         "title": "产研接口-获取产品信息接口"
       }
     ],
-    "DescribeProjectInfo": [
-      {
-        "document": "通过项目编码获取简要的项目信息",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DescribeProjectInfo\n<公共请求参数>\n\n{\n    \"ProjectCode\": \"2018091401522\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"JsonString\": \"[{\\\"ProjectName\\\":\\\"南宁市公安局警务云一期\\\",\\\"ProjectCode\\\":\\\"20190325114798\\\",\\\"ScenarioName\\\":null,\\\"ScenarioId\\\":null,\\\"SubScenarioName\\\":null,\\\"SubScenarioId\\\":null}]\"\n    }\n}",
-        "title": "pms与计费中心接口示例"
-      }
-    ],
     "DescribeQflowConfig": [
       {
         "document": "交付中心项目在andon 创建工单时需要获取交付配置信息。\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",

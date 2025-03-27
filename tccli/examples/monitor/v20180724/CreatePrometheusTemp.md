@@ -8,8 +8,8 @@ Input:
 tccli monitor CreatePrometheusTemp --cli-unfold-argument  \
     --Template.Name t1 \
     --Template.Describe 一个模板 \
-    --Template.ServiceMonitors.0.Name s \
-    --Template.ServiceMonitors.0.Config abc \
+    --Template.ServiceMonitors.0.Name name \
+    --Template.ServiceMonitors.0.Config config \
     --Template.Level 'cluster
 
 

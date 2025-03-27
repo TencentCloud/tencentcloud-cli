@@ -6250,6 +6250,15 @@
           "name": "LogType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递的CLS所在日志主题的名称，默认为 waf_post_logtopic",
+          "example": "waf-post-logtopic",
+          "member": "string",
+          "name": "LogTopicName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -24468,7 +24477,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.testwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -24510,7 +24519,7 @@
         {
           "disabled": false,
           "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Code\":0, \"Msg\":\"success\"}",
           "member": "CommonRspData",
           "name": "CommonRsp",
           "output_required": false,

@@ -161,16 +161,16 @@
     "DescribeDeviceResource": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceResource\n&ProductID=ABCDE12345\n&Name=test\n&DeviceName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": 1,\n            \"DeviceName\": \"xx\",\n            \"UpdateTime\": \"xx\",\n            \"Name\": \"xx\",\n            \"Percent\": 1,\n            \"ProductName\": \"xx\",\n            \"Md5\": \"xx\",\n            \"ProductID\": \"xx\",\n            \"Size\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceResource\n&ProductID=EQPOKD5111\n&Name=myname\n&DeviceName=dev-001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": 1,\n            \"DeviceName\": \"myname\",\n            \"UpdateTime\": \"1740563445\",\n            \"Name\": \"myname\",\n            \"Percent\": 1,\n            \"ProductName\": \"dev-001\",\n            \"Md5\": \"b59c67bf196a4758191e42f76670ceba\",\n            \"ProductID\": \"EQPOKD5111\",\n            \"Size\": 1\n        },\n        \"RequestId\": \"5186e731-d43c-43ef-955c-12ff9b0ce9f9\"\n    }\n}",
         "title": "查询设备资源详情"
       }
     ],
     "DescribeDeviceResources": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceResources\n&ProductID=ABCDE12345\n&Offset=0\n&Limit=10\n&DeviceName=test\n&StartTime=xxx\n&EndTime=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Result\": [\n            {\n                \"Name\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"Md5\": \"xx\",\n                \"DeviceName\": \"xx\",\n                \"ProductID\": \"xx\",\n                \"UpdateTime\": \"xx\",\n                \"Size\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceResources\n&ProductID=EQPOKD5111\n&Offset=0\n&Limit=10\n&DeviceName=dev-001\n&StartTime=2021-10-21 15:11:11\n&EndTime=2021-10-21 18:11:11\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Result\": [\n            {\n                \"Name\": \"myname\",\n                \"ProductName\": \"dev-001\",\n                \"Md5\": \"418806da363b5b57199e5a9f88fc69c3\",\n                \"DeviceName\": \"device-001\",\n                \"ProductID\": \"EQPOKD5111\",\n                \"UpdateTime\": \"1740563445\",\n                \"Size\": 1\n            }\n        ],\n        \"RequestId\": \"5186e731-d43c-43ef-955c-12ff9b0ce9f2\"\n    }\n}",
         "title": "获取设备资源列表"
       }
     ],
@@ -289,8 +289,8 @@
     "DescribeProductResource": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProductResource\n&ProductID=ABCDE12345\n&Name=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Name\": \"xx\",\n            \"ProductName\": \"xx\",\n            \"Md5\": \"xx\",\n            \"Description\": \"xx\",\n            \"ProductID\": \"xx\",\n            \"CreateTime\": \"xx\",\n            \"Size\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProductResource\n&ProductID=EQPOKD5111\n&Name=myname\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Name\": \"myname\",\n            \"ProductName\": \"dev-001\",\n            \"Md5\": \"EQPOefdgad1\",\n            \"Description\": \"mydescription\",\n            \"ProductID\": \"EQPOKD5111\",\n            \"CreateTime\": \"2021-04-20 12:07:28\",\n            \"Size\": 1\n        },\n        \"RequestId\": \"ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc\"\n    }\n}",
         "title": "查询产品资源详情"
       }
     ],

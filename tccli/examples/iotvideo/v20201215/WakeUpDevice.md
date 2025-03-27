@@ -7,14 +7,14 @@ Input:
 ```
 tccli iotvideo WakeUpDevice --cli-unfold-argument  \
     --DeviceName dev \
-    --ProductId xx
+    --ProductId product
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

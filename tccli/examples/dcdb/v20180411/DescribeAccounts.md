@@ -1,4 +1,4 @@
-**Example 1: 无**
+**Example 1: 获取实例账号信息**
 
 
 
@@ -6,33 +6,26 @@ Input:
 
 ```
 tccli dcdb DescribeAccounts --cli-unfold-argument  \
-    --InstanceId dcdbt-21dfpcv1
+    --InstanceId tdsqlshard-jsn16bwh
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "dcdbt-21dfpcv1",
-        "RequestId": "5556e867-3f06-4bc8-8f3e-45112d9ce799",
+        "InstanceId": "tdsqlshard-jsn16bwh",
+        "RequestId": "63b981d8-157c-436a-b8d9-4f401fc3e435",
         "Users": [
             {
-                "CreateTime": "2022-03-24 15:46:18",
+                "CreateTime": "2025-03-18 12:39:36",
                 "DelayThresh": 0,
                 "Description": "",
                 "Host": "%",
+                "MaxUserConnections": 0,
                 "ReadOnly": 0,
-                "UpdateTime": "2022-03-24 15:46:18",
-                "UserName": "gdx"
-            },
-            {
-                "CreateTime": "2022-03-24 15:46:18",
-                "DelayThresh": 0,
-                "Description": "",
-                "Host": "%",
-                "ReadOnly": 0,
-                "UpdateTime": "2022-03-24 15:46:18",
-                "UserName": "h1"
+                "SlaveConst": 0,
+                "UpdateTime": "2025-03-18 12:40:09",
+                "UserName": "qt4s_test"
             }
         ]
     }

@@ -7,7 +7,7 @@ Input:
 ```
 tccli market GetOrderForYUNDING --cli-unfold-argument  \
     --EndTime 1 \
-    --OwnerUin xx \
+    --OwnerUin xdx \
     --StartTime 1
 ```
 
@@ -17,21 +17,21 @@ Output:
     "Response": {
         "DataList": [
             {
-                "OrderName": "xx",
-                "OwnerUin": "xx",
-                "OrderCreateTime": "xx",
-                "OrderEndTime": "xx",
+                "OrderName": "name",
+                "OwnerUin": "name",
+                "OrderCreateTime": "name",
+                "OrderEndTime": "name",
                 "ProductID": 0,
-                "ProductName": "xx",
+                "ProductName": "name",
                 "RealTotalCost": 0,
                 "CycleNum": 0,
-                "OrderState": "xx",
-                "ProviderUin": "xx",
-                "Number": "xx"
+                "OrderState": "name",
+                "ProviderUin": "name",
+                "Number": "name"
             }
         ],
         "Total": 0,
-        "RequestId": "xx"
+        "RequestId": "name"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo BatchUpdateFirmware --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID product \
     --FirmwareVersion 2.0.0 \
     --FirmwareOriVersion 1.0.0
 ```
@@ -15,8 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "TaskId": 123456,
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "TaskId": 1,
+        "RequestId": "id"
     }
 }
 ```

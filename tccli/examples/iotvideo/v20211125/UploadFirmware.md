@@ -9,14 +9,14 @@ tccli iotvideo UploadFirmware --cli-unfold-argument  \
     --Md5sum hfshfspodkoiwuidoiwjcuie \
     --FileSize 1024 \
     --FirmwareVersion 1.0.0 \
-    --ProductID ABCDE12345
+    --ProductID product
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "id"
     }
 }
 ```

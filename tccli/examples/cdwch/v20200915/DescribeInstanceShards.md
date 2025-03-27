@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "f510b0e8-4bc7-44c7-a191-79e467b556c4",
-        "InstanceShardsList": "[]"
+        "InstanceShardsList": "[{\"HA\": 1, \"ZKHost\": \"10.x.x.xx\"}]"
     }
 }
 ```

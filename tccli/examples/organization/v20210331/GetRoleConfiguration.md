@@ -16,7 +16,7 @@ Output:
     "Response": {
         "RoleConfigurationInfo": {
             "RoleConfigurationId": "rc-s2ns92ns***",
-            "RoleConfigurationName": "test",
+            "RoleConfigurationName": "conf1",
             "Description": "this is role configuration",
             "SessionDuration": 900,
             "RelayState": "https://console.cloud.tencent.com",

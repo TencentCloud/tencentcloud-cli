@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo ModifyModelDefinition --cli-unfold-argument  \
-    --ModelSchema {} \
+    --ModelSchema {"test":"str"} \
     --ProductId 51QVOSSPT9
 ```
 

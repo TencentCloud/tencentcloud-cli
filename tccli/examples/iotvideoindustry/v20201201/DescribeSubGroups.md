@@ -22,7 +22,10 @@ Output:
                 "GroupDescribe": "this is xxx",
                 "DeviceNum": 2,
                 "SubGroupNum": 0,
-                "CreateTime": 1608256825
+                "CreateTime": 1608256825,
+                "GroupType": "NormalGroup",
+                "ExtraInformation": "",
+                "GroupStatus": 1
             }
         ],
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8",

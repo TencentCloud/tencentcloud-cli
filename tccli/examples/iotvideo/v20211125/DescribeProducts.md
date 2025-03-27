@@ -16,10 +16,12 @@ Output:
     "Response": {
         "Data": [
             {
+                "CategoryId": 113,
+                "ProductVaildYears": 1,
                 "ProductId": "PTROMP3AOB",
                 "ProductName": "siva_003",
                 "DeviceType": 1,
-                "NetType": "xx",
+                "NetType": "wifi",
                 "EncryptionType": 2,
                 "Features": [
                     "ypsxth",
@@ -33,10 +35,12 @@ Output:
                 "UpdateTime": 1611830563
             },
             {
+                "CategoryId": 113,
+                "ProductVaildYears": 1,
                 "ProductId": "BPCJPETFZU",
                 "ProductName": "test_siva_123",
                 "DeviceType": 1,
-                "NetType": "xx",
+                "NetType": "wifi",
                 "EncryptionType": 2,
                 "Features": [
                     "ypsxth",

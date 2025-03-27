@@ -15,10 +15,10 @@ Output:
 {
     "Response": {
         "UserInfo": {
-            "UserName": "test",
-            "FirstName": "test",
-            "LastName": "test",
-            "DisplayName": "test",
+            "UserName": "user1",
+            "FirstName": "john",
+            "LastName": "smith",
+            "DisplayName": "john",
             "Description": "this is user",
             "Email": "test@example.com",
             "UserStatus": "Enabled",

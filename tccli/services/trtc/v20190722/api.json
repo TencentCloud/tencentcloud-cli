@@ -902,6 +902,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级分类描述信息",
+          "example": "核心领导人",
+          "member": "string",
+          "name": "Label2Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8888,6 +8898,15 @@
           "name": "Source",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略BizType，1-32位英文数字字符",
+          "example": "TestBizType",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8911,6 +8930,16 @@
           "example": "illegal",
           "member": "string",
           "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回检测结果中优先级最高的敏感二级标签",
+          "example": "赌博类",
+          "member": "string",
+          "name": "Label2Desc",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8943,6 +8972,16 @@
           "name": "Score",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回处理流程",
+          "example": "model1->model2",
+          "member": "string",
+          "name": "Traces",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

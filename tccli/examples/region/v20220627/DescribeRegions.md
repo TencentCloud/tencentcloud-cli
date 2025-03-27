@@ -166,15 +166,6 @@ Output:
                 "LocationMC": null,
                 "RegionState": "AVAILABLE",
                 "RegionNameMC": null,
-                "Region": "ap-mumbai",
-                "RegionTypeMC": null,
-                "RegionName": "亚太南部(孟买)"
-            },
-            {
-                "RegionIdMC": null,
-                "LocationMC": null,
-                "RegionState": "AVAILABLE",
-                "RegionNameMC": null,
                 "Region": "na-ashburn",
                 "RegionTypeMC": null,
                 "RegionName": "美国东部(弗吉尼亚)"

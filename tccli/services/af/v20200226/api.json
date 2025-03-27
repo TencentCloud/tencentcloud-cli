@@ -304,7 +304,7 @@
         {
           "disabled": false,
           "document": "是否使用旧回包",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "OldResponseType",
           "required": false,
@@ -379,7 +379,7 @@
         {
           "disabled": false,
           "document": "扩展字段，对风险类型的说明。扩展字段并非必\n然出现。",
-          "example": "无",
+          "example": "[{\"RiskCode\":\"12002\",\"RiskCodeValue\":\"1\"},{\"RiskCode\":\"21001\",\"RiskCodeValue\":\"1\"},{\"RiskCode\":\"21002\",\"RiskCodeValue\":\"2\"}]",
           "member": "SimpleKindRiskDetail",
           "name": "RiskInfo",
           "output_required": true,
@@ -389,7 +389,7 @@
         {
           "disabled": false,
           "document": "默认出现，提供模型版本号说明及多模型返回需\n要时用到；",
-          "example": "无",
+          "example": "[{\"ModelId\":\"0\",\"ModelScore\":\"55\"}]",
           "member": "OtherModelScoresDetail",
           "name": "OtherModelScores",
           "output_required": true,
@@ -409,7 +409,7 @@
         {
           "disabled": false,
           "document": "拓展字段，非必然出现，和 ExtensionIn 对应；\n注：非必然出现，需要返回时天御侧将说明；",
-          "example": "无",
+          "example": "{\"OldResponse\":\"\"}",
           "member": "string",
           "name": "ExtensionOut",
           "output_required": true,
@@ -779,7 +779,7 @@
         {
           "disabled": false,
           "document": "风险码",
-          "example": "0",
+          "example": "30001",
           "member": "string",
           "name": "RiskCode",
           "output_required": true,
@@ -789,7 +789,7 @@
         {
           "disabled": false,
           "document": "风险码详情",
-          "example": "\"210\"",
+          "example": "21",
           "member": "string",
           "name": "RiskCodeValue",
           "output_required": false,

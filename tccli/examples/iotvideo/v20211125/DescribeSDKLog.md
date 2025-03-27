@@ -9,7 +9,7 @@ tccli iotvideo DescribeSDKLog --cli-unfold-argument  \
     --MinTime 1591089960000 \
     --MaxTime 1591091819999 \
     --Keywords productid%3ABJQM4UXMKN+devicename%3Adev01 \
-    --Context xxx
+    --Context context
 ```
 
 Output: 

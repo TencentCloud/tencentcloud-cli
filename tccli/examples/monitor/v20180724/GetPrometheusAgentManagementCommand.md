@@ -15,11 +15,11 @@ Output:
 {
     "Response": {
         "Command": {
-            "Install": "xx",
-            "Restart": "xx",
-            "Stop": "xx",
-            "StatusCheck": "xx",
-            "LogCheck": "xx"
+            "Install": "/bin/bash -c \"$(curl -fsSL https:/cos-url/install.sh)\"",
+            "Restart": "systemctl restart prometheus-agent",
+            "Stop": "systemctl stop prometheus-agent",
+            "StatusCheck": "systemctl status prometheus-agent",
+            "LogCheck": "journalctl -u prometheus-agent"
         },
         "RequestId": "as131asfjl23dsf342lxdsf"
     }

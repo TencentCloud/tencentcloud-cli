@@ -9,7 +9,7 @@ tccli organization RemovePermissionPolicyFromRoleConfiguration --cli-unfold-argu
     --ZoneId z-djw9dn3i**** \
     --RoleConfigurationId rc-swidddws*** \
     --RolePolicyType System \
-    --RolePolicyName test
+    --RolePolicyName policy1
 ```
 
 Output: 

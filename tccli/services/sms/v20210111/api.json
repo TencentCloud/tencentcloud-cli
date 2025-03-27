@@ -35,6 +35,13 @@
       "output": "DeleteSmsTemplateResponse",
       "status": "online"
     },
+    "DescribeAppBizRelation": {
+      "document": "校验腾讯云appid和应用id的关系是否正确",
+      "input": "DescribeAppBizRelationRequest",
+      "name": "校验腾讯云appid和应用id的关系是否正确",
+      "output": "DescribeAppBizRelationResponse",
+      "status": "online"
+    },
     "DescribePhoneNumberInfo": {
       "document": "本接口 (DescribePhoneNumberInfo) 用于提供电话号码的信息查询，包括国家（或地区）码、规范的 E.164 格式号码等。\n- 例如：查询号码 +86018501234444，可以得到国家码 86、规范的 E.164 号码 +8618501234444 等信息。",
       "input": "DescribePhoneNumberInfoRequest",
@@ -644,6 +651,51 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAppBizRelationRequest": {
+      "document": "DescribeAppBizRelation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云AppId",
+          "example": "",
+          "member": "uint64",
+          "name": "QueryAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用Id",
+          "example": "",
+          "member": "uint64",
+          "name": "QueryBizId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppBizRelationResponse": {
+      "document": "DescribeAppBizRelation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否有对应关系，1表示有关系，0表示没关系。",
+          "example": "",
+          "member": "uint64",
+          "name": "RelationShip",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribePhoneNumberInfoRequest": {
       "document": "DescribePhoneNumberInfo请求参数结构体",

@@ -14251,7 +14251,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -14263,6 +14263,15 @@
           "example": "Bypass",
           "member": "string",
           "name": "TargetFaultAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
           "required": false,
           "type": "string"
         }
@@ -14374,6 +14383,33 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "true：表示为公共服务，例如业务方提供 COS公共终端节点服务，其它租户可以跨账号直接查看到\nfalse: 默认值，表示非公共终端节点服务\n该参数可以配合IsPassService使用，如果公共服务对租户免费IsPassService = true，默认走计费模式。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPublicService",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "可以直接填写后端PAAS服务的VIP，根据IpAddressType类型填写Ipv4或者Ipv6地址。",
+          "example": "2402:4e00:1717:bc01::20",
+          "member": "string",
+          "name": "ServiceVip",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18131,6 +18167,15 @@
           "name": "EndPointId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18157,6 +18202,15 @@
           "member": "string",
           "name": "EndPointServiceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -30248,6 +30302,15 @@
           "name": "Regions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -30258,7 +30321,7 @@
         {
           "disabled": false,
           "document": "终端节点对象。",
-          "example": "[{\"ServiceVpcId\": \"vpc-hj3he929\", \"GroupSet\": [\"sg-tyhgrwet\"], \"SubnetId\": \"subnet-4t7fr3fi\", \"State\": \"PENDING\", \"ServiceName\": \"demo\", \"EndPointOwner\": \"1302384414\", \"EndPointServiceId\": \"vpcsvc-kngiybxl\", \"VpcId\": \"vpc-hj3he929\", \"EndPointName\": \"demo\", \"EndPointId\": \"vpce-h0fk8lfc\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"2021-06-08 10:00:00\", \"EndPointVip\": \"10.101.1.11\"}]",
+          "example": "无",
           "member": "EndPoint",
           "name": "EndPointSet",
           "output_required": true,
@@ -30278,7 +30341,7 @@
         {
           "disabled": false,
           "document": "地域资源统计对象。",
-          "example": "[]",
+          "example": "[{\"TotalCount\":1,\"Region\":\"ap-guangzhou\"}]",
           "member": "RegionStatistics",
           "name": "RegionStatistics",
           "output_required": true,
@@ -30350,6 +30413,15 @@
           "name": "IsListAuthorizedEndPointService",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -30360,7 +30432,7 @@
         {
           "disabled": false,
           "document": "终端节点服务对象数组。",
-          "example": "[{\"EndPointSet\": [{\"ServiceVpcId\": \"vpc-hj3he929\", \"GroupSet\": [\"sg-tyhgrwet\"], \"Region\": \"ap-guangzhou\", \"SubnetId\": \"subnet-4t7fr3fi\", \"State\": \"PENDING\", \"ServiceName\": \"demo\", \"EndPointOwner\": \"1302384414\", \"EndPointServiceId\": \"vpcsvc-kngiybxl\", \"VpcId\": \"vpc-hj3he929\", \"EndPointName\": \"demo\", \"EndPointId\": \"vpce-h0fk8lfc\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"0000-00-00 00:00:00\", \"EndPointVip\": \"10.101.1.11\"}], \"AutoAcceptFlag\": true, \"Region\": \"ap-guangzhou\", \"ServiceName\": \"demo\", \"ServiceOwner\": \"1254277469\", \"ServiceType\": \"CLB\", \"VpcId\": \"vpc-hj3he929\", \"EndPointServiceId\": \"vpcsvc-pnpcflil\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"2021-06-08 10:00:00\", \"ServiceInstanceId\": \"lb-nswq8wkq\", \"EndPointCount\": 1}]",
+          "example": "无",
           "member": "EndPointService",
           "name": "EndPointServiceSet",
           "output_required": true,
@@ -30380,7 +30452,7 @@
         {
           "disabled": false,
           "document": "地域资源统计对象。",
-          "example": "[]",
+          "example": "[{\"TotalCount\":1,\"Region\":\"ap-guangzhou\"}]",
           "member": "RegionStatistics",
           "name": "RegionStatistics",
           "output_required": true,
@@ -36253,6 +36325,15 @@
           "name": "AcceptFlag",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -37467,12 +37548,22 @@
         {
           "disabled": false,
           "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "虚拟IPv6地址。",
+          "example": "240d:c000:f030:900:0:9d0b:92a5:af00",
+          "member": "string",
+          "name": "Ipv6Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -38645,23 +38736,23 @@
         },
         {
           "disabled": false,
-          "document": "折扣后的价格，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣后的价格，单位：元。",
           "example": "80",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -39039,93 +39130,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "国家信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国家信息",
           "example": "中国",
           "member": "string",
           "name": "Country",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "省、州、郡一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省、州、郡一级行政区域信息",
           "example": "安徽省",
           "member": "string",
           "name": "Province",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "市一级行政区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "市一级行政区域信息",
           "example": "未知",
           "member": "string",
           "name": "City",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "市内区域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "市内区域信息",
           "example": "未知",
           "member": "string",
           "name": "Region",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入运营商信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入运营商信息",
           "example": "中国电信",
           "member": "string",
           "name": "Isp",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "骨干运营商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "骨干运营商名称",
           "example": "中国电信",
           "member": "string",
           "name": "AsName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "骨干运营商AS号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "骨干运营商AS号",
           "example": "4134",
           "member": "string",
           "name": "AsId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "注释信息。目前的填充值为移动接入用户的APN值，如无APN属性则为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "注释信息。目前的填充值为移动接入用户的APN值，如无APN属性则为空",
+          "example": "未知",
           "member": "string",
           "name": "Comment",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址",
           "example": "223.246.170.250",
           "member": "string",
           "name": "AddressIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -42737,6 +42828,15 @@
           "name": "EnableJumbo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -42807,6 +42907,15 @@
           "example": "CLB",
           "member": "string",
           "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
           "required": false,
           "type": "string"
         }
@@ -46094,13 +46203,13 @@
         },
         {
           "disabled": false,
-          "document": "配额所属的网络组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配额所属的网络组",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "QuotaGroup",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -51226,23 +51335,23 @@
         },
         {
           "disabled": false,
-          "document": "格式化后的流量，单位见参数 FormatUnit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "格式化后的流量，单位见参数 FormatUnit",
           "example": "10.0",
           "member": "float",
           "name": "FormatValue",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "格式化后流量的单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "格式化后流量的单位",
           "example": "GB",
           "member": "string",
           "name": "FormatUnit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -51541,13 +51650,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包名称",
           "example": "未命名",
           "member": "string",
           "name": "TrafficPackageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -51611,13 +51720,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "流量包标签",
+          "example": "[{\"Key\": \"Env\", \"Value\": \"Prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -51631,13 +51740,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包类型",
           "example": "BGP",
           "member": "string",
           "name": "NetType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -53020,13 +53129,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包名称",
           "example": "demo",
           "member": "string",
           "name": "TrafficPackageName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -54457,6 +54566,7 @@
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -54467,6 +54577,7 @@
           "example": "10.6.2.3",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -54477,6 +54588,7 @@
           "example": "80",
           "member": "int64",
           "name": "VirtualPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -54487,6 +54599,7 @@
           "example": "1",
           "member": "int64",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -54497,6 +54610,7 @@
           "example": "vpc-asdasd",
           "member": "string",
           "name": "UniqueVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -54504,9 +54618,10 @@
         {
           "disabled": false,
           "document": "原VPC OSS APIv2名称: AddServiceIPv6.route",
-          "example": "无",
+          "example": "[{\"Weight\":\"1\",\"RemoteVpcId\":\"1\",\"ZoneId\":\"100002\",\"HostIp\":\"1.1.1.1\",\"ProtocolPort\":\"80\",\"PrivateIp\":\"1.1.1.1\"}]",
           "member": "VpcOssServiceIpv6Route",
           "name": "Route",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -54517,6 +54632,7 @@
           "example": "1",
           "member": "int64",
           "name": "StickyFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -54527,6 +54643,7 @@
           "example": "30",
           "member": "int64",
           "name": "StickyTimeout",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -54537,6 +54654,7 @@
           "example": "100",
           "member": "int64",
           "name": "StickyMaxCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -54547,6 +54665,51 @@
           "example": "1",
           "member": "int64",
           "name": "RstFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: AddServiceIPv6.hostType",
+          "example": "1",
+          "member": "int64",
+          "name": "HostType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: AddServiceIPv6.vpcGwIp",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "VpcGwIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: AddServiceIPv6.uniqVpcgwId",
+          "example": "vpcgw-7hk7255d",
+          "member": "string",
+          "name": "UniqVpcgwId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原VPC OSS APIv2名称: AddServiceIPv6.ipType",
+          "example": "1",
+          "member": "uint64",
+          "name": "IpType",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -60409,6 +60572,7 @@
           "example": "1",
           "member": "int64",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -60419,6 +60583,7 @@
           "example": "10.0.0.0",
           "member": "string",
           "name": "Subnet",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -60429,6 +60594,7 @@
           "example": "16",
           "member": "int64",
           "name": "IntMask",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -60439,6 +60605,7 @@
           "example": "172.16.0.18",
           "member": "string",
           "name": "Remote",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -60449,6 +60616,18 @@
           "example": "0",
           "member": "int64",
           "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示是否支持 ecmp , 默认1是支持的。",
+          "example": "1",
+          "member": "int64",
+          "name": "CanEcmpFlag",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

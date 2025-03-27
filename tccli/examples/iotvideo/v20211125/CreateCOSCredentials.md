@@ -7,7 +7,7 @@ Input:
 ```
 tccli iotvideo CreateCOSCredentials --cli-unfold-argument  \
     --DeviceName device \
-    --ProductId test
+    --ProductId product
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "Token": "token",
         "ExpiredTime": 1625556088,
         "StorageBucket": "bucket",
-        "RequestId": "xx",
+        "RequestId": "id",
         "SecretID": "id",
         "StorageRegion": "gz"
     }

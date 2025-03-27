@@ -22,13 +22,13 @@ Output:
                 "ApprovalTime": 1625555521,
                 "Used": 0,
                 "ApplyTime": 1625555521,
-                "ProductName": "test",
+                "ProductName": "name",
                 "Total": 0,
-                "ProductId": "testid"
+                "ProductId": "product"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "id"
     }
 }
 ```

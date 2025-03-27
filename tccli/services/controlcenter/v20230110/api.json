@@ -109,7 +109,7 @@
         {
           "disabled": false,
           "document": "基线描述，长度为2~256个英文或中文字符，默认值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "example": "为新账号设置联系人，以配置消息通知。",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -119,7 +119,7 @@
         {
           "disabled": false,
           "document": "基线项英文描述，长度为2~1024个英文字符，默认值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "description",
+          "example": "Add contacts for new accounts to receive notifications. ",
           "member": "string",
           "name": "DescriptionEn",
           "output_required": false,

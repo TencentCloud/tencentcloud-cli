@@ -6758,6 +6758,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件本地存储大小，单位MB",
+          "example": "512",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

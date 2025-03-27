@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateModelVersionRegister": [
+      {
+        "document": "创建模型",
+        "input": "POST / HTTP/1.1\nHost: afc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelVersionRegister\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"ModelName\": \"mstest2_xyxj_dezg20241010_model_0325_000169830\",\n        \"Description\": \"mstest2-1309242001】-【mstest2_xyxj_dezg20241010_model_0325_000169830】_mstest2_xyxj_dezg20241010_model_0325_000169830_vignyshen_模型平台\",\n        \"MissingValue\": \"123\",\n        \"DoubleFeatures\": \"s2434\",\n        \"RequiredFeaturesWeight\": \"1\",\n        \"ModelFound\": \"1\",\n        \"StringFeatures\": \"s6534\",\n        \"ModelType\": 0,\n        \"RequiredFeatures\": \"s6555\",\n        \"ModelPassThrough\": \"1\",\n        \"FailedThreshold\": \"10\",\n        \"PackageTag\": \"HJ2DMAU2\",\n        \"Backups\": \"1\",\n        \"Backup\": \"1\",\n        \"FullUrl\": \"https://finance-model-1300429106.cos.ap-guangzhou.myqcloud.com/HJ2DMAU2/2/mstest2_xyxj_dezg20241010_model_0325_000169830.zip\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": \"0\"\n        },\n        \"RequestId\": \"7796f52d-f5ca-42d4-b52c-82c2dd50bb7f\"\n    }\n}",
+        "title": "CreateModelVersionRegister"
+      }
+    ],
     "GetAntiFraudVip": [
       {
         "document": "反欺诈VIP",

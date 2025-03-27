@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli waf UpdateProtectionModes --cli-unfold-argument  \
-    --Domain abc \
-    --Edition abc \
-    --TypeIDs abc \
+    --Domain www.testwaf.com \
+    --Edition clb-waf \
+    --TypeIDs 01000111 \
     --Mode 0
 ```
 
@@ -18,9 +18,9 @@ Output:
     "Response": {
         "CommonRsp": {
             "Code": 0,
-            "Msg": "abc"
+            "Msg": "success"
         },
-        "RequestId": "abc"
+        "RequestId": "3bd023947880421b3662db4abe"
     }
 }
 ```

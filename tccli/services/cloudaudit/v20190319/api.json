@@ -258,7 +258,7 @@
         {
           "disabled": false,
           "document": "地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "广州地域",
           "member": "string",
           "name": "CmqRegionName",
           "output_required": false,
@@ -269,7 +269,7 @@
         {
           "disabled": false,
           "document": "cmq地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "CmqRegion",
           "output_required": false,
@@ -956,9 +956,10 @@
         {
           "disabled": false,
           "document": "日志ID",
-          "example": "xx",
+          "example": "9aa70d53-6d28-4b5d-94ca-f965816bf8a6",
           "member": "string",
           "name": "EventId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -966,9 +967,10 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "xx",
+          "example": "console",
           "member": "string",
           "name": "Username",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -976,9 +978,10 @@
         {
           "disabled": false,
           "document": "事件时间",
-          "example": "xx",
+          "example": "1742884755",
           "member": "string",
           "name": "EventTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -986,9 +989,10 @@
         {
           "disabled": false,
           "document": "日志详情",
-          "example": "xx",
+          "example": "{\"userIdentity\":{}}",
           "member": "string",
           "name": "CloudAuditEvent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -996,9 +1000,10 @@
         {
           "disabled": false,
           "document": "资源类型中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）",
-          "example": "xx",
+          "example": "账号中心",
           "member": "string",
           "name": "ResourceTypeCn",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1009,6 +1014,7 @@
           "example": "1",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1016,9 +1022,10 @@
         {
           "disabled": false,
           "document": "事件名称",
-          "example": "xx",
+          "example": "ConsoleLogin",
           "member": "string",
           "name": "EventName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1026,9 +1033,10 @@
         {
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "AKIDY3c****N0DyAaUPZRd",
           "member": "string",
           "name": "SecretId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1036,9 +1044,10 @@
         {
           "disabled": false,
           "document": "请求来源",
-          "example": "xx",
+          "example": "account.tencentcloudapi.com",
           "member": "string",
           "name": "EventSource",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1046,9 +1055,10 @@
         {
           "disabled": false,
           "document": "请求ID",
-          "example": "xx",
+          "example": "9aa70d53-6d28-4b5d-94ca-f965816bf8a6",
           "member": "string",
           "name": "RequestID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1056,9 +1066,10 @@
         {
           "disabled": false,
           "document": "资源地域",
-          "example": "xx",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1066,9 +1077,10 @@
         {
           "disabled": false,
           "document": "主账号ID",
-          "example": "1",
+          "example": "1000100007530",
           "member": "int64",
           "name": "AccountID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1076,9 +1088,10 @@
         {
           "disabled": false,
           "document": "源IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "SourceIPAddress",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1086,9 +1099,10 @@
         {
           "disabled": false,
           "document": "事件名称中文描述（此字段请按需使用，如果您是其他语言使用者，可以忽略该字段描述）",
-          "example": "xx",
+          "example": "登录",
           "member": "string",
           "name": "EventNameCn",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1096,9 +1110,10 @@
         {
           "disabled": false,
           "document": "资源对",
-          "example": "xx",
+          "example": "无",
           "member": "Resource",
           "name": "Resources",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -1106,9 +1121,10 @@
         {
           "disabled": false,
           "document": "事件地域",
-          "example": "xx",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "EventRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1119,6 +1135,7 @@
           "example": "中国 江苏省 南京市 腾讯网络",
           "member": "string",
           "name": "Location",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1519,22 +1536,20 @@
         {
           "disabled": false,
           "document": "AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId",
-          "example": "xx",
+          "example": "EventName",
           "member": "string",
           "name": "AttributeKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "AttributeValue的值",
-          "example": "xx",
+          "example": "ConsoleLogin",
           "member": "string",
           "name": "AttributeValue",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

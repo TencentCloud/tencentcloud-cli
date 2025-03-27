@@ -253,7 +253,7 @@
         {
           "disabled": false,
           "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "instance-d7aiojkc",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -262,8 +262,8 @@
         },
         {
           "disabled": false,
-          "document": "虚拟集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "虚拟集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vw-abc",
           "member": "string",
           "name": "VirtualCluster",
           "output_required": false,
@@ -273,7 +273,7 @@
         {
           "disabled": false,
           "document": "每个虚拟集群下的节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
@@ -293,7 +293,7 @@
         {
           "disabled": false,
           "document": "ResourceId的vip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
           "output_required": false,
@@ -303,12 +303,42 @@
         {
           "disabled": false,
           "document": "ResourceId的vip端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "4321",
+          "example": "33060",
           "member": "int64",
           "name": "Port",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "虚拟集群名称",
+          "example": "我的虚拟集群",
+          "member": "string",
+          "name": "VirtualClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点规格",
+          "example": "2X-Small",
+          "member": "string",
+          "name": "NodeSpec",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

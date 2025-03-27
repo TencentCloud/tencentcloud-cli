@@ -390,20 +390,6 @@
         "title": "获取商品信息"
       }
     ],
-    "DescribeIsMeasureGrayUin": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIsMeasureGrayUin\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba02cd16-9725-4ed3-932c-659b9fc05cb2\",\n        \"Data\": {\n            \"Uin\": \"1122344554\",\n            \"QueryTime\": \"2022-03-29 00:00:00\",\n            \"GrayVideoType\": true,\n            \"GrayNewRecord\": true\n        }\n    }\n}",
-        "title": "查询UIN 1122344554 灰度状态"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIsMeasureGrayUin\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff49ab33-cf6f-4ff8-8cb7-d5902c9eebb4\",\n        \"Data\": {\n            \"Uin\": \"1223\",\n            \"QueryTime\": \"2022-03-29 20:01:30\",\n            \"GrayVideoType\": true,\n            \"GrayNewRecord\": true\n        }\n    }\n}",
-        "title": "查询 UIN 1223 当前的灰度状态"
-      }
-    ],
     "DescribeMeasureDeductionDetailFlow": [
       {
         "document": "无",
@@ -548,7 +534,7 @@
       {
         "document": "查询名下可共享的sp资源详细",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanResourceInfo\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 1,\n    \"CreateStartDate\": \"2023-06-01\",\n    \"CreateEndDate\": \"2023-09-30\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37963bb4-f4ac-4c20-8c83-97d751f1aa91\",\n        \"SavingPlanInfoData\": [\n            {\n                \"BuyTime\": \"2023-09-07 10:30:11\",\n                \"EndTime\": \"2023-09-17 10:00:00\",\n                \"MatchingSavingPlanProductRule\": [\n                    {\n                        \"BillingItemCode\": \"v_cvm_cpu\",\n                        \"MatchFlag\": \"include\",\n                        \"ProductCode\": \"p_cvm\",\n                        \"SubBillingItemCode\": \"sv_cvm_cpu_s2\",\n                        \"SubProductCode\": \"sp_cvm_s2\"\n                    }\n                ],\n                \"MatchingSavingPlanRegionRule\": [\n                    {\n                        \"RegionId\": \"1\",\n                        \"ZoneIdList\": [\n                            \"*\"\n                        ]\n                    }\n                ],\n                \"SpId\": \"svp-victotman-test2\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-09-17 10:00:00\",\n                \"Status\": 1\n            }\n        ],\n        \"Total\": 3\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37963bb4-f4ac-4c20-8c83-97d751f1aa91\",\n        \"SavingPlanInfoData\": [\n            {\n                \"BuyTime\": \"2023-09-07 10:30:11\",\n                \"EndTime\": \"2023-09-17 10:00:00\",\n                \"MatchingSavingPlanProductRule\": [\n                    {\n                        \"BillingItemCode\": \"v_cvm_cpu\",\n                        \"MatchFlag\": \"include\",\n                        \"ProductCode\": \"p_cvm\",\n                        \"SubBillingItemCode\": \"sv_cvm_cpu_s2\",\n                        \"SubProductCode\": \"sp_cvm_s2\"\n                    }\n                ],\n                \"MatchingSavingPlanRegionRule\": [\n                    {\n                        \"RegionId\": \"1\",\n                        \"ZoneIdList\": [\n                            \"100001\",\n                            \"100002\",\n                            \"100003\",\n                            \"100004\"\n                        ]\n                    }\n                ],\n                \"SpId\": \"svp-victotman-test2\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-09-17 10:00:00\",\n                \"Status\": 1\n            }\n        ],\n        \"Total\": 3\n    }\n}",
         "title": "输出示例"
       }
     ],

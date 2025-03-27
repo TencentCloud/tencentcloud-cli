@@ -8000,6 +8000,7 @@
           "example": "datasource-test",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8010,6 +8011,7 @@
           "example": "test_datasource",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8020,6 +8022,7 @@
           "example": "jdbc:postgresql://ip:port/",
           "member": "string",
           "name": "JdbcUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8030,6 +8033,7 @@
           "example": "root",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8040,6 +8044,7 @@
           "example": "xaskdowq+=",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8050,6 +8055,7 @@
           "example": "无",
           "member": "DatasourceConnectionLocation",
           "name": "Location",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -8060,6 +8066,7 @@
           "example": "default",
           "member": "string",
           "name": "DbName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8331,6 +8338,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TccHive数据目录连接信息",
+          "example": "无",
+          "member": "TccHive",
+          "name": "TccHive",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14773,6 +14791,7 @@
           "example": "datasource-test",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14783,6 +14802,7 @@
           "example": "test_datasource",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14793,6 +14813,7 @@
           "example": "root",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14803,6 +14824,7 @@
           "example": "asdfcjaidf-=",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14813,6 +14835,7 @@
           "example": "无",
           "member": "DatasourceConnectionLocation",
           "name": "Location",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -14823,6 +14846,7 @@
           "example": "default",
           "member": "string",
           "name": "DbName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14833,6 +14857,7 @@
           "example": "无",
           "member": "IpPortPair",
           "name": "ServiceInfo",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -15289,6 +15314,7 @@
           "example": "thrift://127.0.0.1:9083",
           "member": "string",
           "name": "MetaStoreUrl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15299,6 +15325,7 @@
           "example": "COS",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15309,6 +15336,7 @@
           "example": "无",
           "member": "DatasourceConnectionLocation",
           "name": "Location",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -15319,6 +15347,7 @@
           "example": "hadoop",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15329,6 +15358,7 @@
           "example": "false",
           "member": "bool",
           "name": "HighAvailability",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -15339,6 +15369,7 @@
           "example": "cosn://bucketname/path",
           "member": "string",
           "name": "BucketUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15349,6 +15380,7 @@
           "example": "fs.defaultFS=hdfs://ip:port",
           "member": "string",
           "name": "HdfsProperties",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15359,6 +15391,7 @@
           "example": "无",
           "member": "MysqlInfo",
           "name": "Mysql",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -15369,6 +15402,7 @@
           "example": "emr-adp0c9v8",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -15379,19 +15413,21 @@
           "example": "testEmr",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "EMR集群中hive组件的版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EMR集群中hive组件的版本号",
           "example": "2.3.7",
           "member": "string",
           "name": "HiveVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15399,6 +15435,7 @@
           "example": "无",
           "member": "KerberosInfo",
           "name": "KerberosInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -15409,6 +15446,7 @@
           "example": "false",
           "member": "bool",
           "name": "KerberosEnable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -15458,9 +15496,10 @@
         {
           "disabled": false,
           "document": "ip信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "192.108.1.1",
+          "example": "192.*.*.*",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -15471,6 +15510,7 @@
           "example": "8080",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16949,6 +16989,78 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NetWork": {
+      "document": "网络配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务clbip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ClbIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务clbPort",
+          "example": "11808",
+          "member": "string",
+          "name": "ClbPort",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc实例id",
+          "example": "vpc-test",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc网段",
+          "example": "10.0.0.1/12",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网实例id",
+          "example": "subnet-test",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网网段",
+          "example": "10.0.0.1/24",
+          "member": "string",
+          "name": "SubnetCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20966,58 +21078,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源实例的唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源实例的唯一ID",
           "example": "datasource-test",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源名称",
           "example": "test_datasource",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据源的JDBC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源的JDBC",
           "example": "jdbc:mysql//",
           "member": "string",
           "name": "JdbcUrl",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用于访问数据源的用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于访问数据源的用户",
           "example": "root",
           "member": "string",
           "name": "User",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据源访问密码，需要base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源访问密码，需要base64编码",
           "example": "xaskdowq+=",
           "member": "string",
           "name": "Password",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21032,25 +21144,25 @@
         },
         {
           "disabled": false,
-          "document": "默认数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认数据库名",
           "example": "default",
           "member": "string",
           "name": "DbName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "访问信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "访问信息",
           "example": "\"[{\\\"address\\\":\\\"10.0.0.6:9030\\\",\\\"protocol\\\":\\\"tcp\\\"},{\\\"address\\\":\\\"10.0.0.6:8030\\\",\\\"protocol\\\":\\\"http\\\"},{\\\"address\\\":\\\"10.0.0.6:8040\\\",\\\"protocol\\\":\\\"be_http\\\"}]\"",
           "member": "string",
           "name": "AccessInfo",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22472,6 +22584,89 @@
         }
       ],
       "usage": "out"
+    },
+    "TccHive": {
+      "document": "TccHive数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "tcc-wiot2q1i",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "测试实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点服务ID",
+          "example": "vpcs-9shj2xs1",
+          "member": "string",
+          "name": "EndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "thrift连接地址",
+          "example": "thrift://127.0.0.1:7004",
+          "member": "string",
+          "name": "MetaStoreUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hive版本",
+          "example": "3.1.3",
+          "member": "string",
+          "name": "HiveVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络信息",
+          "example": "复杂类型",
+          "member": "NetWork",
+          "name": "TccConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Hms终端节点服务ID",
+          "example": "vpcsvc-6jsiek7s",
+          "member": "string",
+          "name": "HmsEndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TenantGovernEventRules": {
       "document": "用户数据治理事件阈值",

@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "id",
         "ForwardKey": ""
     }
 }

@@ -3560,7 +3560,7 @@
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3570,7 +3570,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

@@ -13,31 +13,31 @@ Output:
     "Response": {
         "TrialDetail": [
             {
-                "TrialTitle": "abc",
+                "TrialTitle": "name",
                 "SubTrialInfo": [
                     {
-                        "SubTitle": "abc",
+                        "SubTitle": "name",
                         "ProductInfo": [
                             {
                                 "ProductID": 1,
-                                "ProductName": "abc",
-                                "ProductDesc": "abc",
-                                "ProductIcon": "abc",
-                                "TrialDesc": "abc",
-                                "InfoDesc": "abc",
-                                "AssignSpecID": "abc",
-                                "AssignCycleId": "abc",
-                                "AssignSubChargedItem": "abc",
-                                "AuthType": "abc",
+                                "ProductName": "name",
+                                "ProductDesc": "name",
+                                "ProductIcon": "name",
+                                "TrialDesc": "name",
+                                "InfoDesc": "name",
+                                "AssignSpecID": "name",
+                                "AssignCycleId": "name",
+                                "AssignSubChargedItem": "name",
+                                "AuthType": "name",
                                 "IsHot": true,
-                                "SpecName": "abc"
+                                "SpecName": "name"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "name"
     }
 }
 ```

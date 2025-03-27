@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideo DescribeDevicePackages --cli-unfold-argument  \
-    --ProductId abc \
-    --DeviceName abc \
+    --ProductId product \
+    --DeviceName dev \
     --CSUserId sdfsdf \
     --Limit 1 \
     --Offset 1
@@ -30,7 +30,7 @@ Output:
                 "UpdatedAt": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "id"
     }
 }
 ```

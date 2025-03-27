@@ -18,7 +18,7 @@ Output:
             "DevNum": 1,
             "UpdateTime": 1612237826,
             "DevNumCreated": 1,
-            "DevPre": "test",
+            "DevPre": "pre",
             "UserId": "100004557990",
             "CreateTime": 1612237826,
             "BatchURL": "url",

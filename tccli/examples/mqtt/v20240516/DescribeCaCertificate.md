@@ -17,8 +17,8 @@ Output:
     "RequestId": null,
     "Response": {
         "CaCertificate": "-----BEGIN CERTIFICATE-----\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\nBQAwgZIxCzAJBgNVBAYTAmNuMQ0wCwYDVQQIDAR4aWFuMQ0wCwYDVQQHDARodXlp\nMREwDwYDVQQKDAhqZWhhbnN1bjEWMBQGA1UECwwNdW5pdCBqZWhhbnN1bjEVMBMG\nA1UEAwwMc3Vuamlhbnhpb25nMSMwIQYJKoZIhvc1UEBwwEaHV5aTERMA8GA1UECgwI\namVoYW5zdW4xFjAUBgNVB\n-----END CERTIFICATE-----\n",
-        "CaCn": "sn",
-        "CaIssuerCn": "cn",
+        "CaCn": "ca.cloud.tencent.com",
+        "CaIssuerCn": "a.cloud.tencent.com",
         "CaSn": "1b1e3bf3702110125887a3a721a7e66f05522513",
         "CreatedTime": 1724050364000,
         "Format": "PEM",

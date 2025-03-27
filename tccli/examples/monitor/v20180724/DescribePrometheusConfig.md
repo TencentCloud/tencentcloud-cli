@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli monitor DescribePrometheusConfig --cli-unfold-argument  \
-    --InstanceId prom-xxx \
+    --InstanceId prom-fdfasasf \
     --ClusterType tke \
-    --ClusterId cls-xxx
+    --ClusterId cls-gdgdge
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Config": "abc",
+        "Config": "global:\n  scrape_interval: 15s",
         "ServiceMonitors": [
             {
                 "Name": "test-sm",
@@ -69,7 +69,7 @@ Output:
             }
         ],
         "ImageNeedUpdate": true,
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

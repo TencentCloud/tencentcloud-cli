@@ -650,14 +650,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurchaseConfig\n<公共请求参数>\n\n{\n    \"Type\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74a0e9ba-8e65-4124-b525-529cc98a51dc\",\n        \"Regions\": [\n            {\n                \"RegionId\": 1,\n                \"MaxStorage\": 1000,\n                \"MinStorage\": 100,\n                \"Zones\": [\n                    {\n                        \"ZoneId\": 100001,\n                        \"Products\": [\n                            {\n                                \"Name\": \"vip-basic-1\",\n                                \"MaxNodes\": 20,\n                                \"MinNodes\": 2,\n                                \"SoldOut\": false\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"Products\": [\n            {\n                \"Name\": \"vip-basic-1\",\n                \"Tps\": 4000,\n                \"Topic\": 6000,\n                \"Throughput\": 480,\n                \"BasicSvCode\": \"sv_tdmq_pro_c_basic_1\",\n                \"NodeSvCode\": \"sv_tdmq_pro_c_node_1\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Regions\": [\n            {\n                \"RegionId\": 1,\n                \"Zones\": [\n                    {\n                        \"ZoneId\": 1,\n                        \"Products\": [\n                            {\n                                \"Name\": \"devName\",\n                                \"MaxNodes\": 1,\n                                \"MinNodes\": 1,\n                                \"SoldOut\": true,\n                                \"SingleMinNodes\": 0,\n                                \"SingleMaxNodes\": 0\n                            }\n                        ]\n                    }\n                ],\n                \"MaxStorage\": 1,\n                \"MinStorage\": 1,\n                \"Available\": true\n            }\n        ],\n        \"Products\": [\n            {\n                \"MaxDelayedMessages\": 200,\n                \"Name\": \"DevName\",\n                \"Tps\": 1,\n                \"Topic\": 1,\n                \"Throughput\": 1,\n                \"BasicSvCode\": \"sv_tdmq_pro_c_basic_1\",\n                \"NodeSvCode\": \"sv_tdmq_pro_c_node_1\",\n                \"DisplayName\": \"devTest\",\n                \"Remark\": \"devRemark\",\n                \"IsRecommended\": true,\n                \"MaxNamespaces\": 1,\n                \"MaxTopics\": 1,\n                \"Queues\": 1,\n                \"Connections\": 1,\n                \"Deployment\": 0,\n                \"Environment\": 0,\n                \"BillingLabelVersion\": \"P1\",\n                \"MaxZones\": 0,\n                \"MaxSumPartitions\": 0\n            }\n        ],\n        \"RequestId\": \"asdaaddas-dfasaasd-afdfassad-sddfs\"\n    }\n}",
         "title": "获取购买配置"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePurchaseConfig\n<公共请求参数>\n\n{\n    \"Type\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a4e1aa6-a309-41f0-9fcc-69e8b8f058e6\",\n        \"Regions\": [\n            {\n                \"RegionId\": 1,\n                \"MaxStorage\": 1000,\n                \"MinStorage\": 100,\n                \"Zones\": [\n                    {\n                        \"ZoneId\": 100001,\n                        \"Products\": [\n                            {\n                                \"Name\": \"vip-basic-1\",\n                                \"MaxNodes\": 20,\n                                \"MinNodes\": 2,\n                                \"SoldOut\": false\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"Products\": [\n            {\n                \"Name\": \"vip-basic-1\",\n                \"Tps\": 4000,\n                \"Topic\": 6000,\n                \"Throughput\": 480,\n                \"BasicSvCode\": \"sv_tdmq_pro_c_basic_1\",\n                \"NodeSvCode\": \"sv_tdmq_pro_c_node_1\",\n                \"DisplayName\": \"基础型\",\n                \"Remark\": \"\",\n                \"IsRecommended\": false\n            }\n        ]\n    }\n}",
-        "title": "获取可用区配置"
       }
     ],
     "DescribeRabbitMQBindings": [
@@ -1204,14 +1198,6 @@
         "input": "{\n  \"InstanceId\": \"xx\",\n  \"Namespace\": \"xx\",\n  \"Topic\": \"xx\",\n  \"QueueNum\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改主题属性"
-      }
-    ],
-    "ModifyPublicNetworkAccessPoint": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkAccessPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-jero744g\",\n    \"PublicNetworkAccessPointStatus\": true,\n    \"SwitchOwner\": \"Public\",\n    \"VpcId\": \"vpc-d\",\n    \"SubnetId\": \"subnet-67y9wil4\",\n    \"SelectIp\": \"10.1.0.1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"ModifyResult\": \"修改成功\"\n    }\n}",
-        "title": "RabbitMQ专享版修改公网管控台，数据流开关"
       }
     ],
     "ModifyPublicNetworkSecurityPolicy": [

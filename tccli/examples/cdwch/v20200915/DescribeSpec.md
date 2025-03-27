@@ -11,7 +11,7 @@ tccli cdwch DescribeSpec --cli-unfold-argument  \
 
 {
   "Zone": "abc",
-"PayMode":"xxxx",
+"PayMode":"postpay",
 
 }'
 ```
@@ -25,35 +25,35 @@ Output:
                 "Available": true,
                 "InstanceQuota": 1000,
                 "SystemDisk": {
-                    "DiskDesc": "abc",
-                    "MaxDiskSize": 50,
-                    "MinDiskSize": 50,
-                    "DiskCount": 1,
-                    "DiskType": "abc"
+                    "DiskCount": 10,
+                    "MaxDiskSize": 320000,
+                    "MinDiskSize": 200,
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskDesc": "高性能云硬盘"
                 },
-                "DisplayName": "abc",
-                "Name": "abc",
-                "ComputeSpecDesc": "abc",
+                "DisplayName": "4核16G",
+                "Name": "4核16G",
+                "ComputeSpecDesc": "4核16G",
                 "Mem": 16,
                 "MaxNodeSize": 50,
-                "Type": "abc",
+                "Type": "4核16G",
                 "Cpu": 4,
                 "DataDisk": {
-                    "DiskDesc": "abc",
-                    "MaxDiskSize": 32000,
-                    "MinDiskSize": 100,
-                    "DiskCount": 1,
-                    "DiskType": "abc"
+                    "DiskCount": 10,
+                    "MaxDiskSize": 320000,
+                    "MinDiskSize": 200,
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskDesc": "高性能云硬盘"
                 }
             }
         ],
         "AttachCBSSpec": [
             {
-                "DiskDesc": "abc",
-                "MaxDiskSize": 32000,
-                "MinDiskSize": 100,
                 "DiskCount": 1,
-                "DiskType": "abc"
+                "MaxDiskSize": 32000,
+                "MinDiskSize": 1000,
+                "DiskType": "CLOUD_HSSD",
+                "DiskDesc": "增强型SSD云硬盘"
             }
         ],
         "CommonSpec": [
@@ -61,29 +61,29 @@ Output:
                 "Available": true,
                 "InstanceQuota": 1000,
                 "SystemDisk": {
-                    "DiskDesc": "abc",
-                    "MaxDiskSize": 50,
-                    "MinDiskSize": 50,
-                    "DiskCount": 1,
-                    "DiskType": "abc"
+                    "DiskCount": 10,
+                    "MaxDiskSize": 320000,
+                    "MinDiskSize": 200,
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskDesc": "高性能云硬盘"
                 },
-                "DisplayName": "abc",
-                "Name": "abc",
-                "ComputeSpecDesc": "abc",
+                "DisplayName": "4核16G",
+                "Name": "4核16G",
+                "ComputeSpecDesc": "4核16G",
                 "Mem": 4,
                 "MaxNodeSize": 50,
-                "Type": "abc",
+                "Type": "4核16G",
                 "Cpu": 2,
                 "DataDisk": {
-                    "DiskDesc": "abc",
-                    "MaxDiskSize": 32000,
-                    "MinDiskSize": 100,
-                    "DiskCount": 1,
-                    "DiskType": "abc"
+                    "DiskCount": 10,
+                    "MaxDiskSize": 320000,
+                    "MinDiskSize": 200,
+                    "DiskType": "CLOUD_PREMIUM",
+                    "DiskDesc": "高性能云硬盘"
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e378c73e-a52a-4897-9155-ba2aa797006d"
     }
 }
 ```

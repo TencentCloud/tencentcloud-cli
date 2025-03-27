@@ -40,6 +40,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeAppBizRelation": [
+      {
+        "document": "",
+        "input": "https://sms.tencentcloudapi.com/?Action=DescribeAppBizRelation\n&QueryAppId=13456\n&QueryBizId=12\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RelationShip\": 0,\n        \"RequestId\": \"91260bb8-c55e-4bff-887f-0a9484211fa3\"\n    }\n}",
+        "title": "DescribeAppBizRelation"
+      }
+    ],
     "DescribePhoneNumberInfo": [
       {
         "document": "",

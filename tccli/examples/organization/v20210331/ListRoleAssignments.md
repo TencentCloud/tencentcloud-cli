@@ -20,17 +20,17 @@ Output:
 ```
 {
     "Response": {
-        "NextToken": "abc",
+        "NextToken": "xgt******",
         "TotalCounts": 30,
         "MaxResults": 10,
         "IsTruncated": true,
         "RoleAssignments": [
             {
                 "RoleConfigurationId": "ec-swidn****",
-                "RoleConfigurationName": "test",
+                "RoleConfigurationName": "conf1",
                 "TargetUin": 100000322,
                 "TargetType": "MemberUin",
-                "TargetName": "test",
+                "TargetName": "user1",
                 "PrincipalId": "u-ssiisn***",
                 "PrincipalType": "User",
                 "PrincipalName": "testConfig",

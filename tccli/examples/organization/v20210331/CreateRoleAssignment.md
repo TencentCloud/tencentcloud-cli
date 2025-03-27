@@ -22,7 +22,7 @@ Output:
             {
                 "TaskId": "t-sowmiwm",
                 "RoleConfigurationId": "r-sjsosmsss",
-                "RoleConfigurationName": "test",
+                "RoleConfigurationName": "conf1",
                 "TargetUin": 10000323432,
                 "TargetType": "MemberUin",
                 "PrincipalId": "u-djiem3o***",

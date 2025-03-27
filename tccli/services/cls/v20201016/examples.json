@@ -533,7 +533,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleSharingList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
-        "title": "批量查询控制台检索页/仪表盘免登陆分享站点示例"
+        "title": "批量查询控制台检索页/仪表盘免登录分享站点示例"
       }
     ],
     "DescribeConsumer": [
@@ -810,6 +810,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmShield\n<公共请求参数>\n\n{\n    \"TaskId\": \"bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"AlarmNoticeId\": \"notice-bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"StartTime\": 1701872657,\n    \"EndTime\": 1701892657,\n    \"Type\": 1,\n    \"Rule\": \"\",\n    \"Reason\": \"修改原因\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1142f112-a74d-456e-b3c4-ff5472911b11\"\n    }\n}",
         "title": "修改告警屏蔽"
+      }
+    ],
+    "ModifyCloudProductLogCollection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudProductLogCollection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-9edkkbdc\",\n    \"AssumerName\": \"CDB\",\n    \"LogType\": \"CDB-AUDIT\",\n    \"CloudProductRegion\": \"qy\",\n    \"Extend\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c254ce5d-9834-4146-bfb5-a2dc35b0d5cc\"\n    }\n}",
+        "title": "修改云产品投递任务"
       }
     ],
     "ModifyCloudProductLogTask": [

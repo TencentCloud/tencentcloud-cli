@@ -493,16 +493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id",
-          "example": "ins-bhtest",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "账号",
+          "document": "资产的登录账号",
           "example": "root",
           "member": "string",
           "name": "Account",
@@ -510,26 +501,44 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "运维端登录账号",
           "example": "zhangsan",
           "member": "string",
           "name": "LoginAccount",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "运维端登录密码",
           "example": "980930",
           "member": "string",
           "name": "LoginPassword",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "资产ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "DeviceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源id(优先使用DeviceId)",
+          "example": "ins-bhtest",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "未托管密码私钥时，填入",
           "example": "1a2b3c",
           "member": "string",
           "name": "Password",
@@ -538,7 +547,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥",
+          "document": "未托管密码私钥时，填入",
           "example": "bh-test-private-key",
           "member": "string",
           "name": "PrivateKey",
@@ -547,7 +556,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥密码",
+          "document": "未托管密码私钥时，填入",
           "example": "1a2b3c",
           "member": "string",
           "name": "PrivateKeyPassword",
@@ -596,6 +605,15 @@
           "example": "false",
           "member": "bool",
           "name": "IntranetAccess",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动管理访问串，删掉过期的，新建可用的（默认false）",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoManageAccessCredential",
           "required": false,
           "type": "bool"
         }

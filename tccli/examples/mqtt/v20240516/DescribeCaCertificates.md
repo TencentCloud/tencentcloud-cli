@@ -18,7 +18,7 @@ Output:
         "Data": [
             {
                 "CaCertificate": "-----BEGIN CERTIFICATE-----\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\n-----END CERTIFICATE-----",
-                "CaCn": "cn",
+                "CaCn": "ca.cloud.tencent.com",
                 "CaSn": "1b1e3bf3702110125887a3a721a7e66f05522513",
                 "CreatedTime": 1719992244000,
                 "Format": "PEM",
@@ -26,6 +26,9 @@ Output:
                 "UpdateTime": 1719992244000,
                 "LastInactivationTime": 1719992244000,
                 "LastActivationTime": 1719992244000,
+                "CaIssuerCn": "issuer",
+                "NotBeforeTime": 1719992244000,
+                "NotAfterTime": 1719992244000,
                 "VerificationCertificate": "-----BEGIN CERTIFICATE-----\nMIID7TCCAtWgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmRIwDQYJKoZIhvcNAQEL\n-----END CERTIFICATE-----"
             }
         ],

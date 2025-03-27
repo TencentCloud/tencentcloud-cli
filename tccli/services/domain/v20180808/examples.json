@@ -332,7 +332,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntlBatchOperationLogs\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 204,\n        \"DomainBatchLogSet\": [\n            {\n                \"LogId\": 318,\n                \"Action\": \"new\",\n                \"CreatedOn\": \"2020-06-10 20:08:43\",\n                \"Number\": 12,\n                \"Status\": \"doing\"\n            }\n        ],\n        \"RequestId\": \"1af07f55-2b13-4076-a301-74c2480f7af7\"\n    },\n    \"ResultStatus\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 204,\n        \"DomainBatchLogSet\": [\n            {\n                \"LogId\": 318,\n                \"Action\": \"new\",\n                \"CreatedOn\": \"2020-06-10 20:08:43\",\n                \"Number\": 12,\n                \"Status\": \"doing\",\n                \"Success\": 0,\n                \"Doing\": 0,\n                \"Failed\": 0,\n                \"PayStatus\": false,\n                \"BigDealId\": \"\"\n            }\n        ],\n        \"RequestId\": \"1af07f55-2b13-4076-a301-74c2480f7af7\"\n    },\n    \"ResultStatus\": true\n}",
         "title": "批量购买域名日志"
       }
     ],
@@ -348,7 +348,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntlDomainBatchDetails\n<公共请求参数>\n\n{\n    \"LogId\": 1,\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 12,\n        \"RequestId\": \"13f43fa6-7282-4652-a99c-66819145ba5f\",\n        \"DomainBatchDetailSet\": [\n            {\n                \"Status\": \"doing\",\n                \"Domain\": \"batchzz426.club\",\n                \"UpdatedOn\": \"2020-06-10 20:08:50\",\n                \"CreatedOn\": \"2020-06-10 20:08:44\",\n                \"Reason\": \"\",\n                \"ReasonZh\": \"修改DNS失败\",\n                \"Action\": \"new\",\n                \"Id\": 85215\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 12,\n        \"RequestId\": \"13f43fa6-7282-4652-a99c-66819145ba5f\",\n        \"DomainBatchDetailSet\": [\n            {\n                \"Status\": \"doing\",\n                \"Domain\": \"batchzz426.club\",\n                \"UpdatedOn\": \"2020-06-10 20:08:50\",\n                \"CreatedOn\": \"2020-06-10 20:08:44\",\n                \"Reason\": \"\",\n                \"ReasonZh\": \"修改DNS失败\",\n                \"Action\": \"new\",\n                \"Id\": 85215,\n                \"TransferDnsResult\": true,\n                \"PayStatus\": 0,\n                \"BigDealId\": \"\"\n            }\n        ]\n    }\n}",
         "title": "获取批量购买域名日志详情"
       }
     ],

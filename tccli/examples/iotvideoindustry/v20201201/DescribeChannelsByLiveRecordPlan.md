@@ -17,7 +17,8 @@ Output:
         "TotalCount": 1,
         "LiveChannels": [
             {
-                "ChannelId": "id0"
+                "ChannelId": "id0",
+                "ChannelName": "channel_live_001"
             }
         ]
     }

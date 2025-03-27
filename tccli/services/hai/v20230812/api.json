@@ -104,93 +104,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用id\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用id\n",
           "example": "app-12345678",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "Llama2 13B",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用描述\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用描述\n",
           "example": "Llama2 13B是一款由Meta AI开源的LLM模型。Llama-2-13b-chat是高性能原生开源版本，适用于多种对话场景。注：该环境暂无 webui 可视化调试页面，需通过命令行调试。",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用的环境配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用的环境配置",
           "example": "Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab",
           "member": "string",
           "name": "ConfigEnvironment",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "系统盘大小下限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘大小下限",
           "example": "80",
           "member": "int64",
           "name": "MinSystemDiskSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION",
           "example": "PRIVATE_APPLICATION",
           "member": "string",
           "name": "ApplicationType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离\n示例值：ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离\n示例值：ONLINE",
           "example": "ONLINE",
           "member": "string",
           "name": "ApplicationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用创建时间",
           "example": "2023-11-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用大小",
           "example": "50",
           "member": "int64",
           "name": "ApplicationSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -306,6 +306,15 @@
           "name": "Order",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算力套餐类型",
+          "example": "XL",
+          "member": "string",
+          "name": "BundleType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -326,7 +335,7 @@
         {
           "disabled": false,
           "document": "分页返回的应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ApplicationId\":\"app-12345678\",\"ApplicationName\":\"Llama2 13B\",\"ConfigEnvironment\":\"Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab\",\"Description\":\"Llama2 13B是一款由Meta AI开源的LLM模型。Llama-2-13b-chat是高性能原生开源版本，适用于多种对话场景。注：该环境暂无 webui 可视化调试页面，需通过命令行调试。\",\"MinSystemDiskSize\":80}]",
+          "example": "[{\"ApplicationId\":\"app-12345678\",\"ApplicationName\":\"Llama2 13B\",\"ConfigEnvironment\":\"Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab\",\"Description\":\"xxx\",\"MinSystemDiskSize\":80}]",
           "member": "ApplicationInfo",
           "name": "ApplicationSet",
           "output_required": true,
@@ -436,23 +445,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例总数\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例总数\n",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分页实例详情\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "分页实例详情\n",
+          "example": "[{\"InstanceId\":\"hai-oeifqhon\"}]",
           "member": "Instance",
           "name": "InstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -556,13 +565,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域列表",
           "example": "[{\"Region\":\"ap-guangzhou\",\"RegionName\":\"广州\",\"RegionState\":\"AVAILABLE\",\"ScholarRocketSupportState\":\"ALREADY_SUPPORT\"}]",
           "member": "RegionInfo",
           "name": "RegionSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -593,13 +602,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景详情",
           "example": "[{\"SceneId\":\"sc-7ramp21e\",\"SceneName\":\"AI模型\"}]",
           "member": "SceneInfo",
           "name": "SceneSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -639,13 +648,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务登录配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务登录配置详情",
           "example": "[{\"ServiceName\":\"JupyterLab\",\"Url\":\"http://1.1.1.1:80/lab?token=ed68d8b88aaa15c1b8309c921ae1e76e9cf0ff48d3fb6407b7beb41b716f464e\"}]",
           "member": "LoginSetting",
           "name": "LoginSettings",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -799,13 +808,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "发货参数对应的价格组合，当DryRun=True，会返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发货参数对应的价格组合，当DryRun=True，会返回空",
           "example": "{\"Price\":{\"CloudDiskPrice\":{\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01},\"InstancePrice\":{\"DiscountUnitPrice\":1,\"UnitPrice\":1}}}",
           "member": "Price",
           "name": "Price",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -821,223 +830,223 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "hai-12345678",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "PENDING",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示待回收\nSTOPPED_NO_CHARGE：表示关机不收费\nTERMINATING：表示销毁中\nTERMINATED：表示已销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示待回收\nSTOPPED_NO_CHARGE：表示关机不收费\nTERMINATING：表示销毁中\nTERMINATED：表示已销毁",
           "example": "PENDING",
           "member": "string",
           "name": "InstanceState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称\n",
           "example": "Pytorch2.0.0",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "算力套餐名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "算力套餐名称\n",
           "example": "基础型",
           "member": "string",
           "name": "BundleName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所包含的GPU卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所包含的GPU卡数",
           "example": "1",
           "member": "uint64",
           "name": "GPUCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "算力\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "算力\n",
           "example": "8+TFlops SP",
           "member": "string",
           "name": "GPUPerformance",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "显存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "显存",
           "example": "16GB+",
           "member": "string",
           "name": "GPUMemory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPU核数",
           "example": "8核",
           "member": "string",
           "name": "CPU",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存\n",
           "example": "32GB",
           "member": "string",
           "name": "Memory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "系统盘数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘数据",
           "example": "{\"DiskType\":\"CLOUD_PREMIUM\", \"DiskSize\":100}",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网ip地址",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公网ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网ip地址",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组ID\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组ID\n",
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例最新操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最新操作",
           "example": "RunInstances",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例最新操作状态：\nSUCCESS：表示操作成功\nOPERATING：表示操作执行中\nFAILED：表示操作失败\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例最新操作状态：\nSUCCESS：表示操作成功\nOPERATING：表示操作执行中\nFAILED：表示操作失败\n",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例创建时间",
           "example": "2023-11-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，默认10Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网出带宽上限，默认10Mbps",
           "example": "10Mbps",
           "member": "string",
           "name": "MaxOutBandwidth",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每月免费流量，默认500G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每月免费流量，默认500G",
           "example": "500",
           "member": "string",
           "name": "MaxFreeTraffic",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用配置环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用配置环境",
           "example": "Ubuntu20.04, Python 3.8, Pytorch 2.0.0, CUDA 11.7, cuDNN 8，JupyteLab",
           "member": "string",
           "name": "ConfigurationEnvironment",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例包含的登录服务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例包含的登录服务详情",
           "example": "{\"ServiceName\":\"Jupyter\"}",
           "member": "LoginService",
           "name": "LoginServices",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用服务的操作系统类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用服务的操作系统类型",
           "example": "linux or windows",
           "member": "string",
           "name": "OSType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1080,53 +1089,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "原单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原单价",
           "example": "100.00",
           "member": "float",
           "name": "UnitPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣后单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣后单价",
           "example": "50.00",
           "member": "float",
           "name": "DiscountUnitPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣",
           "example": "0.5",
           "member": "float",
           "name": "Discount",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "单位：时/月\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单位：时/月\n",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品数量",
           "example": "1",
           "member": "uint64",
           "name": "Amount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1136,43 +1145,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例id",
           "example": "hai-k31lvhiv",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例价格详情",
           "example": "无",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "磁盘价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘价格详情",
           "example": "无",
           "member": "ItemPrice",
           "name": "CloudDiskPrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该实例的总价钱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该实例的总价钱",
           "example": "无",
           "member": "ItemPrice",
           "name": "InstanceTotalPrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1182,13 +1191,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "登录方式名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "登录方式名称",
           "example": "Jupyter",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1329,13 +1338,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "HAI 的实例 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HAI 的实例 ID",
           "example": "hai-12345678",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1359,23 +1368,23 @@
         },
         {
           "disabled": false,
-          "document": "流量包总量，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包总量，单位GB",
           "example": "500.0",
           "member": "float",
           "name": "TotalTrafficAmount",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量包剩余量，单位GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包剩余量，单位GB",
           "example": "499.5",
           "member": "float",
           "name": "RemainingTrafficAmount",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1385,33 +1394,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例价格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例价格信息",
           "example": "{\"Amount\":1,\"ChargeUnit\":\"HOUR\",\"Discount\":100,\"DiscountUnitPrice\":1.2,\"UnitPrice\":1.2}",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云盘价格信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云盘价格信息",
           "example": "{\"Amount\":1,\"ChargeUnit\":\"HOUR\",\"Discount\":100,\"DiscountUnitPrice\":0.01,\"UnitPrice\":0.01}",
           "member": "ItemPrice",
           "name": "CloudDiskPrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分实例价格",
           "example": "{\"InstanceId\":\"hai-xxx\",\"InstancePrice\":{\"OriginPrice\":1.0,\"DiscountPrice\":1.0,\"Discount\":100,\"ChargeUnit\":\"MONTH\"},\"CloudDiskPrice\":{\"OriginPrice\":1.0,\"DiscountPrice\":1.0,\"Discount\":100,\"ChargeUnit\":\"MONTH\"}}",
           "member": "ItemPriceDetail",
           "name": "PriceDetailSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1454,43 +1463,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "ap-guangzhou\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ap-guangzhou\n",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "华南地区(广州)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "华南地区(广州)",
           "example": "华南地区(广州)",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域是否可用状态\nAVAILABLE：可用\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域是否可用状态\nAVAILABLE：可用\n",
           "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "学术加速是否支持：\nNO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "学术加速是否支持：\nNO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭",
           "example": "ALREADY_SUPPORT",
           "member": "string",
           "name": "ScholarRocketSupportState",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1618,25 +1627,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景id\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景id\n",
           "example": "sc-abcdefgh",
           "member": "string",
           "name": "SceneId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景名\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景名\n",
           "example": "AI框架",
           "member": "string",
           "name": "SceneName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

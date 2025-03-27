@@ -8,6 +8,22 @@
         "title": "创建异步审核任务示例"
       }
     ],
+    "DetectImageReproduction": [
+      {
+        "document": "识别图片是否为翻拍图片，返回图片的判定类别和置信度。目前支持二维码翻拍和陈列翻拍的识别；",
+        "input": "POST / HTTP/1.1\nHost: ims.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectImageReproduction\n<公共请求参数>\n\n{\n    \"ImageBase64\": \"picture base64 data\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasd\",\n        \"Results\": [\n            {\n                \"Label\": 1,\n                \"Confidence\": 0.9578\n            }\n        ]\n    }\n}",
+        "title": "图片翻拍检测"
+      }
+    ],
+    "DetectProductCommon": [
+      {
+        "document": "针对上传图片数据，进行商品识别检测，获取检测商品信息",
+        "input": "POST / HTTP/1.1\nHost: ims.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectProductCommon\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdasd\"\n    }\n}",
+        "title": "商品检测标准版"
+      }
+    ],
     "ImageModeration": [
       {
         "document": "图片同步检测",

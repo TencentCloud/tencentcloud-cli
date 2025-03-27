@@ -21,7 +21,9 @@ Output:
     "Response": {
         "RequestId": "8c4fba95-01e4-61d9-4146-59fc5afdf962",
         "DealName": "20171103110163",
-        "InstanceIds": null
+        "InstanceIds": [
+            "tdsql-alkoiuyh"
+        ]
     }
 }
 ```

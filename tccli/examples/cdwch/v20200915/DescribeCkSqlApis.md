@@ -16,8 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "ReturnData": "abc",
-        "RequestId": "abc"
+        "ReturnData": "[{\"InstanceId\":\"cdwch-xxxxxxxx\",\"UserName\":\"test_user\",\"Describe\":\"\",\"Type\":\"RBAC\",\"Cluster\":\"default_cluster\"}]",
+        "RequestId": "23808b41-a7ac-48fa-9b6b-6686a1814d0a"
     }
 }
 ```

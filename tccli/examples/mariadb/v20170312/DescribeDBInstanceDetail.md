@@ -1,12 +1,12 @@
-**Example 1: 查询实例详细信息**
+**Example 1: 获取实例详情**
 
-查询集中式实例的详细信息
+获取实例详情
 
 Input: 
 
 ```
 tccli mariadb DescribeDBInstanceDetail --cli-unfold-argument  \
-    --InstanceId tdsql-h178kq75
+    --InstanceId tdsql-pkahzscp
 ```
 
 Output: 
@@ -15,23 +15,26 @@ Output:
     "Response": {
         "AutoRenewFlag": 0,
         "Cpu": 1,
-        "CreateTime": "2023-02-27 17:58:50",
+        "CreateTime": "2025-03-24 21:10:39",
         "DbEngine": "MySQL",
-        "DbVersion": "8.0.24",
+        "DbVersion": "8.0.30",
         "DbVersionId": "8.0",
-        "DcnDstNum": 1,
-        "DcnFlag": 1,
-        "DcnStatus": 2,
+        "DcnDstNum": 0,
+        "DcnFlag": 0,
+        "DcnStatus": 0,
         "EncryptStatus": 0,
         "ExclusterId": "",
         "ExclusterType": 0,
-        "InstanceId": "tdsql-h178kq75",
-        "InstanceName": "cdz",
+        "InstanceId": "tdsql-pkahzscp",
+        "InstanceName": "tdsql-pkahzscp",
         "InstanceType": 2,
         "Ipv6Flag": 0,
         "IsAuditSupported": true,
-        "IsEncryptSupported": 0,
+        "IsDcnStrongSyncSupported": 0,
+        "IsDcnSwitchSupported": 1,
+        "IsEncryptSupported": 1,
         "IsMaxUserConnectionsSupported": true,
+        "IsPhysicalReplicationSupported": false,
         "IsTmp": 0,
         "LogStorage": 8,
         "Machine": "TS85",
@@ -40,37 +43,39 @@ Output:
         "NodeCount": 2,
         "NodesInfo": [
             {
-                "NodeId": "60af5538060f",
+                "NodeId": "289d9348f2b7",
                 "Role": "master"
             },
             {
-                "NodeId": "12c58811dbfd",
+                "NodeId": "fae3b3bdf61b",
                 "Role": "slave"
             }
         ],
-        "PayMode": "postpaid",
-        "PeriodEndTime": "0001-01-01 00:00:00",
+        "PayMode": "prepaid",
+        "PeriodEndTime": "2025-04-24 21:10:39",
         "Pid": 1002231,
         "ProjectId": 0,
+        "ProxyVersion": "proxy-22.3.11",
         "Qps": 2100,
         "Region": "ap-guangzhou",
         "ReplicaConfig": null,
         "ReplicaStatus": null,
-        "RequestId": "40b4a902-5217-4e18-8db1-10e0ff01be62",
+        "RequestId": "1e82daa5-5111-4f1c-9cc6-9b4e1609f3f2",
+        "ReservedNetResources": [],
         "ResourceTags": [],
         "RsAccessStrategy": 0,
         "SlaveZones": [
             "ap-guangzhou-3"
         ],
-        "Status": 2,
-        "StatusDesc": "运行中",
+        "Status": 3,
+        "StatusDesc": "未初始化",
         "Storage": 10,
         "StorageUsage": "0.010",
-        "SubnetId": "subnet-8ve8m3xy",
-        "TdsqlVersion": "基于MySQL 8.0.24设计(兼容Mysql 8.0)",
-        "Vip": "10.1.0.13",
+        "SubnetId": "subnet-25p24z86",
+        "TdsqlVersion": "基于MySQL 8.0.30设计(兼容Mysql 8.0)",
+        "Vip": "10.0.0.2",
         "Vip6": "",
-        "VpcId": "vpc-0rjtvrlz",
+        "VpcId": "vpc-fqie18p3",
         "Vport": 3306,
         "WanDomain": "",
         "WanPort": 0,
@@ -79,22 +84,7 @@ Output:
         "WanStatusIpv6": 0,
         "WanVip": "",
         "WanVipv6": "",
-        "Zone": "ap-guangzhou-3",
-        "ReservedNetResources": [
-            {
-                "VpcId": "vpc-5rske1or",
-                "SubnetId": "subnet-0z3os0xe",
-                "Vip": "10.1.0.6",
-                "Vports": [
-                    3306
-                ],
-                "RecycleTime": "2023-05-19 16:12:32"
-            }
-        ],
-        "IsPhysicalReplicationSupported": true,
-        "IsDcnStrongSyncSupported": 1,
-        "IsDcnSwitchSupported": 1,
-        "ProxyVersion": "proxy-22.1.7"
+        "Zone": "ap-guangzhou-3"
     }
 }
 ```

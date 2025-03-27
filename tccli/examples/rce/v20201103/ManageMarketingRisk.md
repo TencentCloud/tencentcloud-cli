@@ -17,8 +17,7 @@ tccli rce ManageMarketingRisk --cli-unfold-argument  \
     --BusinessSecurityData.DataAuthorization.IsAuthorize 1 \
     --BusinessSecurityData.DataAuthorization.IsOrderHandling 1 \
     --BusinessSecurityData.DataAuthorization.AuthorizationTerm 1728714893 \
-    --BusinessSecurityData.DataAuthorization.PrivacyPolicyLink https://www.*****.com/ \
-    --BusinessSecurityData.DataAuthorization.IsPersonalData 1
+    --BusinessSecurityData.DataAuthorization.PrivacyPolicyLink https://www.*****.com/
 ```
 
 Output: 

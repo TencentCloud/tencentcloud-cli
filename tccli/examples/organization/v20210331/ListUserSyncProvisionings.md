@@ -13,7 +13,7 @@ tccli organization ListUserSyncProvisionings --cli-unfold-argument  \
     --PrincipalType User \
     --TargetUin 100003324902 \
     --TargetType MemberUin \
-    --Filter test
+    --Filter user1
 ```
 
 Output: 
@@ -30,10 +30,10 @@ Output:
                 "Description": "this is cam user sync",
                 "Status": "Enabled",
                 "PrincipalId": "u-swnd8wn3",
-                "PrincipalName": "test",
+                "PrincipalName": "user1",
                 "PrincipalType": "User",
                 "TargetUin": "10000338332",
-                "TargetName": "test",
+                "TargetName": "user2",
                 "DuplicationStrategy": "KeepBoth",
                 "DeletionStrategy": "Delete",
                 "CreateTime": "2024-01-01 12:12:12",

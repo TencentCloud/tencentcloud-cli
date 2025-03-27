@@ -22,7 +22,7 @@ Output:
         "Task": {
             "TaskId": "t-0md93jfd3",
             "RoleConfigurationId": "rc-dsk3323",
-            "RoleConfigurationName": "test",
+            "RoleConfigurationName": "conf1",
             "TargetUin": 100032333,
             "TargetType": "MemberUin",
             "PrincipalId": "u-siwnwiene",
@@ -30,7 +30,7 @@ Output:
             "TaskType": "DeleteRolesAssignment",
             "Status": "InProgress"
         },
-        "RequestId": "abc"
+        "RequestId": "abgt*******"
     }
 }
 ```

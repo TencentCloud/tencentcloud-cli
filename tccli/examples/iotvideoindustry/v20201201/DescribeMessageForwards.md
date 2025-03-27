@@ -19,6 +19,7 @@ Output:
                 "IntId": 1,
                 "Uin": "admin",
                 "MessageType": "[1]",
+                "RegionId": "gz",
                 "RegionName": "广州",
                 "Instance": "ckafka",
                 "InstanceName": "卡夫卡",
