@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme ListMedia --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ClassPath /素材/视频 \
     --Owner.Id 6b6ef043-85f3-4614-b735-768bb466ae5b \
     --Owner.Type PERSON

@@ -6,25 +6,26 @@ Input:
 
 ```
 tccli bi CreateDatasourceCloud --cli-unfold-argument  \
-    --ServiceType MYSQL \
-    --DbType MYSQL \
-    --Charset utf8 \
-    --DbUser root \
-    --DbPwd ****** \
-    --DbName bi_demo \
-    --SourceName  \
-    --ProjectId  \
-    --Vip  \
-    --Vport  \
-    --VpcId  \
-    --UniqVpcId  \
-    --RegionId 1 \
-    --ExtraParam  \
-    --InstanceId 1 \
-    --ProdDbName 1 \
-    --DataOrigin 1 \
-    --DataOriginProjectId 1 \
-    --DataOriginDatasourceId 1
+    --ServiceType ServiceType \
+    --DbType DbType \
+    --Charset Charset \
+    --DbUser DbUser \
+    --DbPwd DbPwd \
+    --DbName DbName \
+    --SourceName SourceName \
+    --ProjectId ProjectId \
+    --Vip Vip \
+    --Vport Vport \
+    --VpcId VpcId \
+    --UniqVpcId UniqVpcId \
+    --RegionId RegionId \
+    --ExtraParam ExtraParam \
+    --InstanceId InstanceId \
+    --ProdDbName ProdDbName \
+    --DataOrigin DataOrigin \
+    --DataOriginProjectId DataOriginProjectId \
+    --DataOriginDatasourceId DataOriginDatasourceId \
+    --ClusterId ClusterId
 ```
 
 Output: 
@@ -33,14 +34,14 @@ Output:
     "Response": {
         "Data": {
             "Id": 0,
-            "AccessKey": "asakdsmsk**sdsmdsff",
+            "AccessKey": "AccessKey***AccessKey",
             "ProjectId": 1,
             "TranId": "jgvk213439",
             "TranStatus": 0
         },
         "Extra": "",
         "Msg": "成功",
-        "RequestId": "djdkssadlflksdkasjfrejq"
+        "RequestId": "RequestId-123"
     }
 }
 ```

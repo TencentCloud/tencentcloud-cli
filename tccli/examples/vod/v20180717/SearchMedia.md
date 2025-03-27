@@ -30,8 +30,8 @@ Output:
                     "UpdateTime": "2020-12-11T07:25:52Z",
                     "ExpireTime": "9999-12-31T23:59:59Z",
                     "ClassId": 123,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "音视频录播",
+                    "ClassPath": "音视频录播",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
@@ -273,7 +273,7 @@ Output:
                     "KeyFrameDescSet": [
                         {
                             "TimeOffset": 1,
-                            "Content": "abc"
+                            "Content": "打点内容"
                         },
                         {
                             "TimeOffset": 100,
@@ -351,7 +351,8 @@ Output:
                             "Format": "vtt",
                             "Name": "name",
                             "Language": "cn",
-                            "Id": "id"
+                            "Id": "id",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },
@@ -393,8 +394,8 @@ Output:
                     "UpdateTime": "2020-12-11T07:25:52Z",
                     "ExpireTime": "9999-12-31T23:59:59Z",
                     "ClassId": 123,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "音视频录播",
+                    "ClassPath": "音视频录播",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
@@ -633,7 +634,7 @@ Output:
                     "KeyFrameDescSet": [
                         {
                             "TimeOffset": 1,
-                            "Content": "abc"
+                            "Content": "打点内容"
                         },
                         {
                             "TimeOffset": 100,
@@ -711,7 +712,8 @@ Output:
                             "Format": "vtt",
                             "Name": "name",
                             "Language": "cn",
-                            "Id": "id"
+                            "Id": "id",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },
@@ -753,8 +755,8 @@ Output:
                     "UpdateTime": "2020-12-11T07:25:52Z",
                     "ExpireTime": "9999-12-31T23:59:59Z",
                     "ClassId": 123,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "音视频录播",
+                    "ClassPath": "音视频录播",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
@@ -993,7 +995,7 @@ Output:
                     "KeyFrameDescSet": [
                         {
                             "TimeOffset": 1,
-                            "Content": "abc"
+                            "Content": "打点内容"
                         },
                         {
                             "TimeOffset": 100,
@@ -1071,7 +1073,8 @@ Output:
                             "Format": "vtt",
                             "Name": "name",
                             "Language": "cn",
-                            "Id": "id"
+                            "Id": "id",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },
@@ -1116,8 +1119,8 @@ Output:
                     "UpdateTime": "2020-12-11T07:25:52Z",
                     "ExpireTime": "9999-12-31T23:59:59Z",
                     "ClassId": 123,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "音视频录播",
+                    "ClassPath": "音视频录播",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xxx/xx/f0.mp4",
@@ -1359,7 +1362,7 @@ Output:
                     "KeyFrameDescSet": [
                         {
                             "TimeOffset": 1,
-                            "Content": "abc"
+                            "Content": "打点内容"
                         },
                         {
                             "TimeOffset": 100,
@@ -1437,7 +1440,8 @@ Output:
                             "Format": "vtt",
                             "Name": "name",
                             "Language": "cn",
-                            "Id": "id"
+                            "Id": "id",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },
@@ -1514,7 +1518,8 @@ Output:
                             "Format": "vtt",
                             "Name": "name",
                             "Language": "cn",
-                            "Id": "id"
+                            "Id": "id",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },
@@ -1571,7 +1576,8 @@ Output:
                             "Format": "vtt",
                             "Name": "name",
                             "Language": "cn",
-                            "Id": "id"
+                            "Id": "id",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },

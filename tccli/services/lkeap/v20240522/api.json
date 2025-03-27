@@ -1032,6 +1032,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "思维链内容。 ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。",
+          "example": "无",
+          "member": "string",
+          "name": "ReasoningContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

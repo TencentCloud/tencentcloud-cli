@@ -719,7 +719,7 @@
     "UpdateUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test124\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUser\n<公共请求参数>\n\n{\n    \"Remark\": \"财务管理\",\n    \"Name\": \"jack\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"132*******86\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"2sd82*****ddw832je\",\n    \"Email\": \"3729*****qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新子用户"
       }

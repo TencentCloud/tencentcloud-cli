@@ -12,31 +12,34 @@ tccli mqtt DescribeInstance --cli-unfold-argument  \
 Output: 
 ```
 {
-    "Error": null,
     "RequestId": null,
     "Response": {
-        "AuthorizationPolicyLimit": 10,
-        "AutomaticActivation": false,
-        "ClientNumLimit": 1000,
-        "CreatedTime": 1722572792,
-        "DestroyTime": 0,
-        "DeviceCertificateProvisionType": "MANUAL",
-        "ExpiryTime": 0,
-        "InstanceId": "mqtt-bg8k8v8o",
-        "InstanceName": "instance-0802",
+        "RequestId": "5a2634e3-effd-4380-a9ff-3658ec6c1fdc",
+        "InstanceType": "PRO",
         "InstanceStatus": "RUNNING",
-        "InstanceType": "BASIC",
-        "MaxSubscriptionPerClient": 30,
         "PayMode": "POSTPAID",
-        "Remark": "",
         "RenewFlag": 1,
-        "RequestId": "3e180cf0-ddb8-4a0b-8855-c69c5dc02f35",
-        "SkuCode": "basic_1k",
-        "TopicNum": 0,
-        "TopicNumLimit": 100,
-        "TpsLimit": 1000,
-        "X509Mode": "TLS"
-    }
+        "DestroyTime": 0,
+        "CreatedTime": 1741832627,
+        "TpsLimit": 6000,
+        "Remark": "",
+        "SkuCode": "pro_6k_1",
+        "MaxSubscriptionPerClient": 30,
+        "MaxSubscription": 180000,
+        "AuthorizationPolicyLimit": 20,
+        "ClientNumLimit": 6000,
+        "MaxCaNum": 20,
+        "DeviceCertificateProvisionType": "JITP",
+        "RegistrationCode": "66a00d75-8272-421f-be2a-166e2c2e7813",
+        "AutomaticActivation": true,
+        "X509Mode": "BYOC",
+        "ExpiryTime": 0,
+        "TopicNumLimit": 300,
+        "InstanceId": "mqtt-zxjwkr98",
+        "TopicNum": 1,
+        "InstanceName": "mqtt-instance1"
+    },
+    "Error": null
 }
 ```
 

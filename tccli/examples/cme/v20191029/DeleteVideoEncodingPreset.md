@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DeleteVideoEncodingPreset --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Id 100050
 ```
 

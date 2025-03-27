@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme CreateClass --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Id a-4d6c-8ee5-9a3c \
     --Owner.Type PERSON \
     --ClassPath /a/b
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "requestId"
+        "RequestId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
     }
 }
 ```

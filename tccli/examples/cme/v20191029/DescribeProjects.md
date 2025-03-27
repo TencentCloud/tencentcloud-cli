@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectIds cmepid_60599df66a6b440001518159
 ```
 
@@ -18,7 +18,7 @@ Output:
         "ProjectInfoSet": [
             {
                 "ProjectId": "cmepid_60599df66a6b440001518159",
-                "Name": "test",
+                "Name": "my_project",
                 "AspectRatio": "16:9",
                 "Category": "VIDEO_EDIT",
                 "Owner": {
@@ -45,7 +45,7 @@ Input:
 
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --CategorySet STREAM_CONNECT \
     --ProjectIds cmepid_60599df66a6b440001518169
 ```
@@ -58,7 +58,7 @@ Output:
         "ProjectInfoSet": [
             {
                 "ProjectId": "cmepid_60599df66a6b440001518169",
-                "Name": "test",
+                "Name": "my_project",
                 "AspectRatio": "",
                 "Category": "STREAM_CONNECT",
                 "Owner": {
@@ -86,6 +86,7 @@ Output:
                             "PushSwitch": "On",
                             "StreamConnectOutput": {
                                 "Id": "124522",
+                                "Type": "URL",
                                 "PushUrl": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08",
                                 "Name": "test"
                             }
@@ -107,7 +108,7 @@ Input:
 
 ```
 tccli cme DescribeProjects --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --CategorySet MEDIA_CAST \
     --ProjectIds cmepid_60599df66a6b440001518169
 ```
@@ -120,7 +121,7 @@ Output:
         "ProjectInfoSet": [
             {
                 "ProjectId": "cmepid_60599df66a6b440001518169",
-                "Name": "test",
+                "Name": "my_project",
                 "AspectRatio": "",
                 "Category": "MEDIA_CAST",
                 "Owner": {
@@ -135,16 +136,25 @@ Output:
                     "Status": "Working",
                     "StartTime": "2020-11-13T06:41:34.808Z",
                     "StopTime": "2020-11-14T06:41:34.808Z",
+                    "Duration": 60,
                     "SourceInfos": [
                         {
                             "Id": "fsdf",
                             "Type": "CME",
-                            "MaterialId": "a123"
+                            "MaterialId": "a123",
+                            "Offset": 10,
+                            "Duration": 60,
+                            "FileId": "bee50aae5845",
+                            "Url": "http://1000000009.vod2.myqcloud.com/6cac69e3vodcq123/c53b8681557667123/123.mp4"
                         },
                         {
                             "Id": "sdfs",
                             "Type": "VOD",
-                            "FileId": "53434"
+                            "MaterialId": "a345",
+                            "Offset": 10,
+                            "Duration": 60,
+                            "FileId": "bee50aae1234",
+                            "Url": "http://1000000009.vod2.myqcloud.com/6cac69e3vodcq123/c53b8681557667123/345.mp4"
                         }
                     ],
                     "DestinationInfos": [
@@ -155,7 +165,9 @@ Output:
                         }
                     ],
                     "PlaySetting": {
-                        "LoopCount": 2
+                        "LoopCount": 2,
+                        "EndTime": "2023-09-13T02:19:06Z",
+                        "AutoStartTime": "0001-01-01T00:00:00Z"
                     },
                     "OutputMediaSetting": {
                         "VideoSetting": {

@@ -1024,7 +1024,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOSImages\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"OSImageSeriesSet\": [\n            {\n                \"Alias\": \"CentOS 7.2 64bit\",\n                \"ImageId\": \"img-rkiynh11\",\n                \"OsCustomizeType\": \"GENERAL\",\n                \"OsName\": \"centos7.2x86_64\",\n                \"SeriesName\": \"centos7.2x86_64\",\n                \"Status\": \"online\"\n            }\n        ],\n        \"RequestId\": \"899c6fe7-f87d-4232-b1a8-82b81acfa037\",\n        \"TotalCount\": 11\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OSImageSeriesSet\": [\n            {\n                \"Alias\": \"CentOS 7.2 64bit\",\n                \"ImageId\": \"img-rkiynh11\",\n                \"OsCustomizeType\": \"GENERAL\",\n                \"OsName\": \"centos7.2x86_64\",\n                \"SeriesName\": \"centos7.2x86_64\",\n                \"Status\": \"online\"\n            }\n        ],\n        \"RequestId\": \"899c6fe7-f87d-4232-b1a8-82b81acfa037\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取镜像聚合信息"
       }
     ],

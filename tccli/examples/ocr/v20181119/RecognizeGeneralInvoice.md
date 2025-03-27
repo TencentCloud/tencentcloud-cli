@@ -132,7 +132,8 @@ Output:
                                 "VehicleType": ""
                             }
                         ]
-                    }
+                    },
+                    "BankSlip": null
                 },
                 "Page": 1,
                 "CutImage": "",
@@ -204,7 +205,8 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "VatSpecialInvoice": null
+                    "VatSpecialInvoice": null,
+                    "BankSlip": null
                 },
                 "Page": 1,
                 "CutImage": "",
@@ -291,7 +293,8 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "VatSpecialInvoice": null
+                    "VatSpecialInvoice": null,
+                    "BankSlip": null
                 },
                 "Page": 1,
                 "CutImage": "",

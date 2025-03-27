@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateDevice": {
-      "document": "本接口（CreateDevice）用于新建一个物联网通信设备。 ",
+      "document": "本接口（CreateDevice）用于新建一个物联网通信设备。",
       "input": "CreateDeviceRequest",
       "name": "创建设备",
       "output": "CreateDeviceResponse",
@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DeleteDevice": {
-      "document": "本接口（DeleteDevice）用于删除物联网通信设备。 ",
+      "document": "本接口（DeleteDevice）用于删除物联网通信设备。",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse",
@@ -768,20 +768,20 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1054,7 +1054,7 @@
         {
           "disabled": false,
           "document": "产品 ID 。创建产品时腾讯云为用户分配全局唯一的 ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1063,7 +1063,7 @@
         {
           "disabled": false,
           "document": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。",
-          "example": "test_device",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1072,7 +1072,7 @@
         {
           "disabled": false,
           "document": "设备属性",
-          "example": "无",
+          "example": "{\"type\":1}",
           "member": "Attribute",
           "name": "Attribute",
           "required": false,
@@ -1081,7 +1081,7 @@
         {
           "disabled": false,
           "document": "是否使用自定义PSK，默认不使用",
-          "example": "ABC",
+          "example": "adferdfwe",
           "member": "string",
           "name": "DefinedPsk",
           "required": false,
@@ -1159,20 +1159,20 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "test_device",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对称加密密钥，base64编码。采用对称加密时返回该参数",
-          "example": "xxxxxxxxxxxxx",
+          "example": "9MTpKyUBRpsPLB3hQyVfeQ==",
           "member": "string",
           "name": "DevicePsk",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1182,7 +1182,7 @@
           "example": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
           "member": "string",
           "name": "DeviceCert",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1192,47 +1192,47 @@
           "example": "-----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgw",
           "member": "string",
           "name": "DevicePrivateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "LoRa设备的DevEui，当设备是LoRa设备时，会返回该字段",
-          "example": "xxx",
+          "example": "DevEui",
           "member": "string",
           "name": "LoraDevEui",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "LoRa设备的MoteType，当设备是LoRa设备时，会返回该字段",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "LoraMoteType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "LoRa设备的AppKey，当设备是LoRa设备时，会返回该字段",
-          "example": "xxx",
+          "example": "ddgergsdfretger",
           "member": "string",
           "name": "LoraAppKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "LoRa设备的NwkKey，当设备是LoRa设备时，会返回该字段",
-          "example": "xxx",
+          "example": "3fgrtsdfsdgfdga",
           "member": "string",
           "name": "LoraNwkKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1387,7 +1387,7 @@
         {
           "disabled": false,
           "document": "产品属性",
-          "example": "无",
+          "example": "{\"EncryptionType=1\",}",
           "member": "ProductProperties",
           "name": "ProductProperties",
           "required": false,
@@ -1431,7 +1431,7 @@
         {
           "disabled": false,
           "document": "产品属性",
-          "example": "无",
+          "example": "{\"EncryptionType=1\",}",
           "member": "ProductProperties",
           "name": "ProductProperties",
           "output_required": true,
@@ -1590,7 +1590,7 @@
         {
           "disabled": false,
           "document": "设备所属的产品 ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1599,7 +1599,7 @@
         {
           "disabled": false,
           "document": "需要删除的设备名称",
-          "example": "abc",
+          "example": "dev001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1608,7 +1608,7 @@
         {
           "disabled": false,
           "document": "删除LoRa设备以及LoRa网关设备需要skey",
-          "example": "xxx",
+          "example": "adferdfwe",
           "member": "string",
           "name": "Skey",
           "required": false,
@@ -3412,7 +3412,7 @@
         {
           "disabled": false,
           "document": "产品属性",
-          "example": "{\"AppEUI\": \"\",}",
+          "example": "{\"AppEUI\": \"345352543\",}",
           "member": "ProductProperties",
           "name": "ProductProperties",
           "output_required": true,
@@ -4141,6 +4141,7 @@
           "example": "tagkey",
           "member": "string",
           "name": "Tag",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4151,6 +4152,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -4158,9 +4160,10 @@
         {
           "disabled": false,
           "document": "属性的值",
-          "example": "123",
+          "example": "34231",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4171,6 +4174,7 @@
           "example": "xyz",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

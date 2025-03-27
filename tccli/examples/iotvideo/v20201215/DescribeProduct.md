@@ -25,9 +25,11 @@ Output:
             "ChipOs": "Linux",
             "ChipManufactureId": "x86",
             "ChipId": "x86",
-            "ProductDescription": "123",
+            "ProductDescription": "desc",
             "CreateTime": 1608880525,
-            "UpdateTime": 1611830563
+            "UpdateTime": 1611830563,
+            "CategoryId": 113,
+            "NetType": "wifi"
         },
         "RequestId": "2172b7d1-9a49-4142-938a-ff4fa3d55881"
     }

@@ -93,7 +93,7 @@ Output:
                     "FaceReviewInfo": {
                         "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "face"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
@@ -288,7 +288,7 @@ Output:
                     "FaceReviewInfo": {
                         "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "face"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0

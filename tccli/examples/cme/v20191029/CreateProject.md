@@ -7,7 +7,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category VIDEO_EDIT \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name first_project \
@@ -34,7 +34,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category SWITCHER \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name 导播台 \
@@ -61,7 +61,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category VIDEO_EDIT \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name 视频剪辑项目并初始化轨道 \
@@ -94,7 +94,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category VIDEO_EDIT \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name 剪辑模板项目 \
@@ -122,7 +122,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category STREAM_CONNECT \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name stream_connect \
@@ -151,7 +151,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category STREAM_CONNECT \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name 云转推 \
@@ -189,7 +189,7 @@ Input:
 ```
 tccli cme CreateProject --cli-unfold-argument  \
     --Category MEDIA_CAST \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_61978823e6a253000100fb0f \
     --Name 点播转直播项目 \
@@ -203,7 +203,7 @@ tccli cme CreateProject --cli-unfold-argument  \
     --MediaCastProjectInput.SourceInfos.1.Type CME \
     --MediaCastProjectInput.SourceInfos.1.MaterialId aaa12323 \
     --MediaCastProjectInput.DestinationInfos.0.PushUrl rtmp://livetest.com/live/a?t=11 \
-    --MediaCastProjectInput.DestinationInfos.0.Name test
+    --MediaCastProjectInput.DestinationInfos.0.Name media_name
 ```
 
 Output: 

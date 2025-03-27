@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme MoveResource --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceResource.Resource.Id 123245678 \
     --SourceResource.Resource.Type MATERIAL \
     --SourceResource.Owner.Id 6b6ef043-85f3-4614-b735-xxx \
@@ -34,7 +34,7 @@ Input:
 
 ```
 tccli cme MoveResource --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceResource.Resource.Id 123245678 \
     --SourceResource.Resource.Type MATERIAL \
     --SourceResource.Owner.Id 6b6ef043-85f3-4614-b735-768bb466ae5b \
@@ -62,7 +62,7 @@ Input:
 
 ```
 tccli cme MoveResource --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceResource.Resource.Id /个人/综艺 \
     --SourceResource.Resource.Type CLASS \
     --SourceResource.Owner.Id 6b6ef043-85f3-4614-b735-768bb466ae5b \
@@ -90,7 +90,7 @@ Input:
 
 ```
 tccli cme MoveResource --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceResource.Resource.Id /个人/综艺 \
     --SourceResource.Resource.Type CLASS \
     --SourceResource.Owner.Id 6b6ef043-85f3-4614-b735-768bb466ae5b \

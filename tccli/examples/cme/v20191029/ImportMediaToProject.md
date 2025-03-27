@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme ImportMediaToProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_6f16967b64436100015fb046 \
     --SourceType EXTERNAL \
     --Name 视频2 \
@@ -33,7 +33,7 @@ Input:
 
 ```
 tccli cme ImportMediaToProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_6f16967b64436100015fb046 \
     --SourceType VOD \
     --VodFileId 52858908114334690679 \

@@ -13,7 +13,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyInput \
     --InputEndpoint Main \
     --InputInfo.VodPullInputInfo.LoopTimes -1 \
@@ -47,7 +47,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyOutput \
     --OutputInfo.PushUrl rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xxxx \
     --OutputInfo.Id 12357877 \
@@ -80,7 +80,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation Stop \
     --ProjectId 12522d74de35ff
 ```
@@ -112,7 +112,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation SwitchInput \
     --InputEndpoint Backup \
     --ProjectId 12522d74de35ff
@@ -143,7 +143,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DeleteInput \
     --InputEndpoint Main \
     --ProjectId 12522d74de35ff
@@ -174,7 +174,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DeleteOutput \
     --OutputInfo.Id 12357877 \
     --ProjectId 12522d74de35ff
@@ -206,7 +206,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation Start \
     --ProjectId 12522d74de35ff
 ```
@@ -236,10 +236,10 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddOutput \
     --OutputInfo.PushUrl rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08xx \
-    --OutputInfo.Name test \
+    --OutputInfo.Name 媒体 \
     --ProjectId 12522d74de35ff
 ```
 
@@ -270,7 +270,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyCurrentStopTime \
     --CurrentStopTime 2021-03-23T07:51:18.029Z \
     --ProjectId 12522d74de35ff
@@ -302,7 +302,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddInput \
     --InputEndpoint Main \
     --InputInfo.LivePullInputInfo.InputUrl rtmp://liveplay.video-studio.myqcloud.com/output/1250000001-600e8e7fb1cc1c0001293759 \
@@ -336,7 +336,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddInput \
     --InputEndpoint Main \
     --InputInfo.InputType RtmpPush \
@@ -348,7 +348,7 @@ Output:
 ```
 {
     "Response": {
-        "StreamInputRtmpPushUrl": "rtmp://liveplay-xx.video-studio.myqcloud.com/output/1250000001-6086674e265b4500018xxx?txSecret=4478cfdfe0fd0eb3820705aebaa328ed&txTime=608FA1CE",
+        "StreamInputRtmpPushUrl": "rtmp://liveplay-xx.video-studio.myqcloud.com/output/1250000001-6086674e265b4500018xxx?txSecret=******&txTime=608FA1CE",
         "VodPullInputPlayInfo": null,
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
     }
@@ -371,7 +371,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DescribeInputPlayInfo \
     --InputEndpoint Main  \
     --ProjectId 12522d74de35ff
@@ -406,7 +406,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddInput \
     --InputEndpoint Main \
     --InputInfo.VodPullInputInfo.LoopTimes 0 \
@@ -441,7 +441,7 @@ Input:
 
 ```
 tccli cme HandleStreamConnectProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddInput \
     --InputEndpoint Main \
     --InputInfo.VodPullInputInfo.LoopTimes -1 \

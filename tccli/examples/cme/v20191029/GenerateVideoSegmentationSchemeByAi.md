@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cme GenerateVideoSegmentationSchemeByAi --cli-unfold-argument  \
-    --Platform test \
-    --ProjectId 1111
+    --Platform 1000000009 \
+    --ProjectId 67e105de4fb8950001052fff
 ```
 
 Output: 

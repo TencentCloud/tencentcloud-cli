@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cme SearchMaterial --cli-unfold-argument  \
-    --Platform test \
-    --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
+    --Platform 1000000009 \
+    --Text 滨海 \
     --SearchScopes.0.Owner.Type PERSON \
-    --SearchScopes.0.ClassPath /a/b \
-    --Text 滨海
+    --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
+    --SearchScopes.0.ClassPath /a/b
 ```
 
 Output: 
@@ -57,11 +57,11 @@ Input:
 
 ```
 tccli cme SearchMaterial --cli-unfold-argument  \
-    --Platform test \
-    --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
+    --Platform 1000000009 \
+    --MaterialTypes VIDEO \
     --SearchScopes.0.Owner.Type PERSON \
-    --SearchScopes.0.ClassPath /a/b \
-    --MaterialTypes VIDEO
+    --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
+    --SearchScopes.0.ClassPath /a/b
 ```
 
 Output: 
@@ -108,9 +108,10 @@ Input:
 
 ```
 tccli cme SearchMaterial --cli-unfold-argument  \
-    --Platform test \
-    --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
+    --Platform 1000000009 \
+    --MaterialTypes VIDEO \
     --SearchScopes.0.Owner.Type PERSON \
+    --SearchScopes.0.Owner.Id 3bfd339c-4e0d-4742-933e-eb71abde0965 \
     --SearchScopes.0.ClassPath /a/b
 ```
 

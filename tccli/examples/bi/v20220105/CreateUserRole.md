@@ -6,27 +6,31 @@ Input:
 
 ```
 tccli bi CreateUserRole --cli-unfold-argument  \
-    --RoleIdList 0 \
-    --UserList.0.UserId 1101 \
-    --UserList.0.UserName 张三 \
-    --UserList.0.CorpId 150101 \
-    --UserList.0.Email 242113***@qq.com \
-    --UserList.0.LastLogin 2020-09-22T00:00:00+00:00 \
-    --UserList.0.Status 0 \
-    --UserList.0.FirstModify 0 \
-    --UserList.0.PhoneNumber 86******8998 \
-    --UserList.0.AreaCode 001 \
-    --UserList.0.CreatedUser 1210201 \
-    --UserList.0.CreatedAt 2020-09-22T00:00:00+00:00 \
-    --UserList.0.UpdatedUser 1210201 \
-    --UserList.0.UpdatedAt 2020-09-22T00:00:00+00:00 \
-    --UserList.0.GlobalUserName 张三 \
-    --UserList.0.Mobile 139******8998 \
-    --UserInfoList.0.UserId 1101 \
-    --UserInfoList.0.UserName 张三 \
-    --UserInfoList.0.Email 242113***@qq.com \
-    --UserInfoList.0.PhoneNumber 86******8998 \
-    --UserInfoList.0.AreaCode 001
+    --RoleIdList 1982493789748932 \
+    --UserInfoList.0.UserId 用户ID \
+    --UserInfoList.0.UserName 用户名 \
+    --UserInfoList.0.Email 邮箱 \
+    --UserInfoList.0.PhoneNumber 手机号 \
+    --UserInfoList.0.AreaCode 手机号区号 \
+    --UserInfoList.0.AppUserId 企微账号id \
+    --UserInfoList.0.AppUserName 企微账号名称 \
+    --UserList.0.UserId 用户ID \
+    --UserList.0.UserName 用户名 \
+    --UserList.0.CorpId 企业ID \
+    --UserList.0.Email 电子邮箱 \
+    --UserList.0.Status 1982493789748932 \
+    --UserList.0.FirstModify 1982493789748932 \
+    --UserList.0.PhoneNumber 手机号码 \
+    --UserList.0.AreaCode 手机区号 \
+    --UserList.0.CreatedUser 创建人 \
+    --UserList.0.UpdatedUser 更改人 \
+    --UserList.0.GlobalUserName 全局角色 \
+    --UserList.0.Mobile 手机号 \
+    --UserList.0.AppId 1 \
+    --UserList.0.AppUserId 1 \
+    --UserList.0.AppUserAliasName 1 \
+    --UserList.0.AppUserName 1 \
+    --UserList.0.InValidateAppRange False
 ```
 
 Output: 

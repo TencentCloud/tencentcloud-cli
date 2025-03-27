@@ -134,7 +134,7 @@
       "status": "online"
     },
     "DescribePlatforms": {
-      "document": "<li>支持获取所创建的所有平台列表信息；</li>\n<li>支持获取指定的平台列表信息。</li>\n\n关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。\n\n",
+      "document": "<li>支持获取所创建的所有平台列表信息；</li>\n<li>支持获取指定的平台列表信息。</li>\n\n关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
       "input": "DescribePlatformsRequest",
       "name": "获取平台列表",
       "output": "DescribePlatformsResponse",
@@ -337,7 +337,7 @@
       "status": "online"
     },
     "RevokeResourceAuthorization": {
-      "document": " 资源所属实体对目标实体撤销目标资源的相应权限，若原本没有相应权限则不产生变更。",
+      "document": "资源所属实体对目标实体撤销目标资源的相应权限，若原本没有相应权限则不产生变更。",
       "input": "RevokeResourceAuthorizationRequest",
       "name": "撤销资源授权",
       "output": "RevokeResourceAuthorizationResponse",
@@ -410,32 +410,29 @@
         {
           "disabled": false,
           "document": "团队成员 ID。",
-          "example": "",
+          "example": "c9bf9e57-1685-4c89-bafb-ff5af830be8a",
           "member": "string",
           "name": "MemberId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "团队成员备注。",
-          "example": "",
+          "example": "new_admin",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "团队成员角色，不填则默认添加普通成员。可选值：\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
-          "example": "",
+          "example": "Member",
           "member": "string",
           "name": "Role",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -446,7 +443,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -500,60 +497,60 @@
         {
           "disabled": false,
           "document": "素材元信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材媒体文件的播放 URL 地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp3",
           "member": "string",
           "name": "MaterialUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材媒体文件的封面图片地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.jpg",
           "member": "string",
           "name": "CoverUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材状态。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MaterialStatus",
           "name": "MaterialStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "素材媒体文件的原始 URL 地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/original/xxxxx/cemdemo.mp3",
           "member": "string",
           "name": "OriginalUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云点播媒资 FileId。",
-          "example": "",
+          "example": "15e83cf8b48b147223",
           "member": "string",
           "name": "VodFileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -566,30 +563,30 @@
         {
           "disabled": false,
           "document": "码率，单位：bps。",
-          "example": "",
+          "example": "1411000",
           "member": "uint64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采样率，单位：hz。",
-          "example": "",
+          "example": "44100",
           "member": "uint64",
           "name": "SamplingRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "编码格式。",
-          "example": "",
+          "example": "aac",
           "member": "string",
           "name": "Codec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -658,7 +655,7 @@
         {
           "disabled": false,
           "document": "详细授权值。 取值有：\n<li>R：可读，可以浏览素材，但不能使用该素材（将其添加到 Project），或复制到自己的媒资库中。</li>\n<li>X：可用，可以使用该素材（将其添加到 Project），但不能将其复制到自己的媒资库中，意味着被授权者无法将该资源进一步扩散给其他个人或团队。</li>\n<li>C：可复制，既可以使用该素材（将其添加到 Project），也可以将其复制到自己的媒资库中。</li>\n<li>W：可修改、删除媒资。</li>",
-          "example": "无",
+          "example": "[\"R\"]",
           "member": "string",
           "name": "PermissionSet",
           "output_required": true,
@@ -674,9 +671,10 @@
         {
           "disabled": false,
           "document": "授权者类型，取值有：\n<li>PERSON：个人。</li>\n<li>TEAM：团队。</li>",
-          "example": "",
+          "example": "PERSON",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -684,9 +682,10 @@
         {
           "disabled": false,
           "document": "Id，当 Type=PERSON，取值为用户 Id。当Type=TEAM，取值为团队 ID。",
-          "example": "",
+          "example": "c9bf9e57-1685-psid-demo-ff5af830be8a",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -789,17 +788,17 @@
           "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "删除的分类路径列表。",
-          "example": "无",
+          "example": "[\"/path\"]",
           "member": "string",
           "name": "ClassPathSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -812,20 +811,20 @@
         {
           "disabled": false,
           "document": "归属者。",
-          "example": "",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分类路径。",
-          "example": "",
+          "example": "/my/media/class",
           "member": "string",
           "name": "ClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -841,17 +840,17 @@
           "example": "无",
           "member": "Entity",
           "name": "SourceOwner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源分类路径列表。",
-          "example": "无",
+          "example": "/素材",
           "member": "string",
           "name": "SourceClassPathSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -861,7 +860,7 @@
           "example": "无",
           "member": "Entity",
           "name": "DestinationOwner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -871,7 +870,7 @@
           "example": "/媒体",
           "member": "string",
           "name": "DestinationClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -884,7 +883,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -938,6 +937,7 @@
           "example": "mepid_88kkdkkkkd009d9duujde77",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -998,7 +998,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1052,7 +1052,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1152,7 +1152,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1188,7 +1188,7 @@
         {
           "disabled": false,
           "document": "项目模式，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式，即普通视频编辑项目。</li>\n<li>VideoEditTemplate：剪辑模板制作模式，用于制作剪辑模板。</li>\n\n注：不填则为默认模式。",
-          "example": "无",
+          "example": "Default",
           "member": "string",
           "name": "Mode",
           "required": false,
@@ -1316,7 +1316,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1352,7 +1352,7 @@
         {
           "disabled": false,
           "document": "自定义团队 ID。创建后不可修改，限20个英文字符及\"-\"。同时不能以 cmetid_开头。不填会生成默认团队 ID。",
-          "example": "无",
+          "example": "fa3a12938b007acff7adb59a9e4ae7b9",
           "member": "string",
           "name": "TeamId",
           "required": false,
@@ -1370,7 +1370,7 @@
           "example": "cmetid_19882998399iieii87neu78",
           "member": "string",
           "name": "TeamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1389,7 +1389,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1461,7 +1461,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1480,7 +1480,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1507,7 +1507,7 @@
         {
           "disabled": false,
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
-          "example": "test",
+          "example": "c9bf9e57-1685-4c89-bafb-ff5af830be8a",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1534,7 +1534,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1570,7 +1570,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1579,7 +1579,7 @@
         {
           "disabled": false,
           "document": "媒体 Id。",
-          "example": "123456789",
+          "example": "397ff3d4730c2e09ba24298f742add6346107826",
           "member": "string",
           "name": "MaterialId",
           "required": true,
@@ -1615,7 +1615,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1660,7 +1660,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1714,7 +1714,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1759,7 +1759,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "无",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1768,7 +1768,7 @@
         {
           "disabled": false,
           "document": "要删除的视频编码配置 ID。",
-          "example": "无",
+          "example": "100050",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -1795,7 +1795,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1840,6 +1840,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1849,6 +1850,7 @@
           "example": "无",
           "member": "AccountInfo",
           "name": "AccountInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1867,7 +1869,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1885,7 +1887,7 @@
         {
           "disabled": false,
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
-          "example": "userId",
+          "example": "c9bf9e57-1685-4c89-bafb-ff5af830be8a",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -1903,7 +1905,7 @@
           "example": "无",
           "member": "ClassInfo",
           "name": "ClassInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1922,7 +1924,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -1967,7 +1969,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1977,7 +1979,7 @@
           "example": "无",
           "member": "JoinTeamInfo",
           "name": "TeamSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1996,7 +1998,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2005,7 +2007,7 @@
         {
           "disabled": false,
           "document": "用户 Id 列表，N 从0开始取值，最大19。",
-          "example": "[\"111\"]",
+          "example": "[\"c9bf9e57-1685-4c89-bafb-ff5af830be8a\"]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -2023,6 +2025,7 @@
           "example": "无",
           "member": "LoginStatusInfo",
           "name": "LoginStatusInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2041,7 +2044,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2105,7 +2108,7 @@
         {
           "disabled": false,
           "document": "平台 Id 列表。如果不填，则不按平台 Id 进行过滤。",
-          "example": "test",
+          "example": "[\"1000000009\"]",
           "member": "string",
           "name": "Platforms",
           "required": false,
@@ -2150,7 +2153,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2160,7 +2163,7 @@
           "example": "无",
           "member": "PlatformInfo",
           "name": "PlatformInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2179,7 +2182,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2188,7 +2191,7 @@
         {
           "disabled": false,
           "document": "项目 Id 过滤参数列表，最大支持20个项目 Id 过滤。如果不填不需要项目 Id 进行过滤。",
-          "example": "[\"1111\"]",
+          "example": "[\"a82b830e765aa979\"]",
           "member": "string",
           "name": "ProjectIds",
           "required": false,
@@ -2197,7 +2200,7 @@
         {
           "disabled": false,
           "document": "画布宽高比过滤参数列表。如果不填则不用画布宽高比进行过滤。",
-          "example": "无",
+          "example": "[\"16:9\"]",
           "member": "string",
           "name": "AspectRatioSet",
           "required": false,
@@ -2206,7 +2209,7 @@
         {
           "disabled": false,
           "document": "项目类型过滤参数列表，取值有：\n<li>VIDEO_EDIT：视频编辑。</li>\n<li>SWITCHER：导播台。</li>\n<li>VIDEO_SEGMENTATION：视频拆条。</li>\n<li>STREAM_CONNECT：云转推。</li>\n<li>RECORD_REPLAY：录制回放。</li>\n<li>MEDIA_CAST：点播转直播。</li>\n\n注：如果不填则不使用项目类型进行过滤。",
-          "example": "无",
+          "example": "[\"VIDEO_EDIT\"]",
           "member": "string",
           "name": "CategorySet",
           "required": false,
@@ -2215,7 +2218,7 @@
         {
           "disabled": false,
           "document": "项目模式过滤参数列表，一个项目可以有多种模式并相互切换。\n当 Category 为 VIDEO_EDIT 时，可选模式有：\n<li>Default：默认模式。</li>\n<li>VideoEditTemplate：视频编辑模板制作模式。</li>\n\n注：不填不使用项目模式进行过滤。",
-          "example": "无",
+          "example": "[\"Default\"]",
           "member": "string",
           "name": "Modes",
           "required": false,
@@ -2260,7 +2263,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以查询一切用户项目信息。如果指定操作者，则操作者必须为项目所有者。",
-          "example": "无",
+          "example": "378b753f-f91f-4c42-8fa3-34a2a3bf3c56",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2278,6 +2281,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2287,6 +2291,7 @@
           "example": "无",
           "member": "ProjectInfo",
           "name": "ProjectInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2346,13 +2351,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的资源授权记录总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的资源授权记录总数。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2360,7 +2365,7 @@
           "example": "[{\"Authorizee\":{\"Type\":\"PERSON\",\"Id\":\"234\"},\"PermissionSet\":[\"R\"",
           "member": "AuthorizationInfo",
           "name": "AuthorizationInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2379,7 +2384,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2415,7 +2420,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2425,7 +2430,7 @@
           "example": "无",
           "member": "Authorizer",
           "name": "AuthorizerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2444,7 +2449,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2559,7 +2564,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2568,7 +2573,7 @@
         {
           "disabled": false,
           "document": "项目 Id，使用项目 Id 进行过滤。",
-          "example": "无",
+          "example": "a82b830e765aa979",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -2577,7 +2582,7 @@
         {
           "disabled": false,
           "document": "任务类型集合，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：视频编辑项目导出。</li>\n\n注：不填不使用任务类型进行过滤。",
-          "example": "无",
+          "example": "[\"VIDEO_EDIT_PROJECT_EXPORT\"]",
           "member": "string",
           "name": "TaskTypeSet",
           "required": false,
@@ -2586,7 +2591,7 @@
         {
           "disabled": false,
           "document": "任务状态集合，取值有：\n<li>PROCESSING：处理中；</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>\n\n注：不填则不使用任务状态进行过滤。",
-          "example": "PROCESSING",
+          "example": "[\"PROCESSING\"]",
           "member": "string",
           "name": "StatusSet",
           "required": false,
@@ -2613,7 +2618,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以获取所有任务信息。如果指定操作者，则操作者需要是任务发起者。",
-          "example": "无",
+          "example": "378b753f-f91f-4c42-8fa3-34a2a3bf3c56",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -2631,6 +2636,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2640,6 +2646,7 @@
           "example": "无",
           "member": "TaskBaseInfo",
           "name": "TaskBaseInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2658,7 +2665,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2676,7 +2683,7 @@
         {
           "disabled": false,
           "document": "成员 ID 列表，限指定30个指定成员。如不填，则返回指定团队下的所有成员。",
-          "example": "无",
+          "example": "[\"378b753f-f91f-4c42-8fa3-34a2a3bf3c56\"]",
           "member": "string",
           "name": "MemberIds",
           "required": false,
@@ -2721,7 +2728,7 @@
           "example": "30",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2731,7 +2738,7 @@
           "example": "无",
           "member": "TeamMemberInfo",
           "name": "MemberSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2750,7 +2757,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2795,7 +2802,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2805,7 +2812,7 @@
           "example": "无",
           "member": "TeamInfo",
           "name": "TeamSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2823,8 +2830,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台名称，指定访问的平台。",
-          "example": "无",
+          "document": "平台名称，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -2833,7 +2840,7 @@
         {
           "disabled": false,
           "document": "要查询的配置 ID 列表。填写该参数则按照配置 ID 进行查询。",
-          "example": "无",
+          "example": "[100047]",
           "member": "uint64",
           "name": "Ids",
           "required": false,
@@ -2842,7 +2849,7 @@
         {
           "disabled": false,
           "document": "分页大小，默认20。最大值50。",
-          "example": "无",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2851,7 +2858,7 @@
         {
           "disabled": false,
           "document": "分页起始，默认0。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2869,7 +2876,7 @@
           "example": "32",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2879,7 +2886,7 @@
           "example": "无",
           "member": "VideoEncodingPreset",
           "name": "VideoEncodingPresetSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2898,12 +2905,11 @@
         {
           "disabled": false,
           "document": "持续时间，单位为秒。",
-          "example": "",
+          "example": "30.0",
           "member": "float",
           "name": "Duration",
           "required": true,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
         }
       ],
       "usage": "in"
@@ -2914,9 +2920,10 @@
         {
           "disabled": false,
           "document": "类型，取值有：\n<li>PERSON：个人。</li>\n<li>TEAM：团队。</li>",
-          "example": "",
+          "example": "PERSON",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2924,9 +2931,10 @@
         {
           "disabled": false,
           "document": "Id，当 Type=PERSON，取值为用户 Id，当 Type=TEAM，取值为团队 Id。",
-          "example": "",
+          "example": "c9bf9e57-1685-4c89-bafb-ff5af830be8a",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2943,17 +2951,17 @@
           "example": "Storage.NewFileCreated",
           "member": "string",
           "name": "EventType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作者，表示触发事件的操作者。如果是 `cmeid_system` 表示平台管理员操作。",
-          "example": "无",
+          "example": "378b753f-f91f-4c42-8fa3-34a2a3bf3c56",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2963,7 +2971,7 @@
           "example": "无",
           "member": "StorageNewFileCreatedEvent",
           "name": "StorageNewFileCreatedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2973,7 +2981,7 @@
           "example": "无",
           "member": "ProjectStreamConnectStatusChangedEvent",
           "name": "ProjectStreamConnectStatusChangedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2983,7 +2991,7 @@
           "example": "无",
           "member": "ProjectSwitcherStatusChangedEvent",
           "name": "ProjectSwitcherStatusChangedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2993,7 +3001,7 @@
           "example": "无",
           "member": "MaterialImportedEvent",
           "name": "MaterialImportedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3003,7 +3011,7 @@
           "example": "无",
           "member": "MaterialAddedEvent",
           "name": "MaterialAddedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3013,7 +3021,7 @@
           "example": "无",
           "member": "MaterialMovedEvent",
           "name": "MaterialMovedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3023,7 +3031,7 @@
           "example": "无",
           "member": "MaterialModifiedEvent",
           "name": "MaterialModifiedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3033,7 +3041,7 @@
           "example": "无",
           "member": "MaterialDeletedEvent",
           "name": "MaterialDeletedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3043,7 +3051,7 @@
           "example": "无",
           "member": "ClassCreatedEvent",
           "name": "ClassCreatedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3053,7 +3061,7 @@
           "example": "无",
           "member": "ClassMovedEvent",
           "name": "ClassMovedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3063,7 +3071,7 @@
           "example": "无",
           "member": "ClassDeletedEvent",
           "name": "ClassDeletedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3073,7 +3081,7 @@
           "example": "无",
           "member": "VideoExportCompletedEvent",
           "name": "VideoExportCompletedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3083,7 +3091,7 @@
           "example": "无",
           "member": "ProjectMediaCastStatusChangedEvent",
           "name": "ProjectMediaCastStatusChangedEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3123,7 +3131,7 @@
         {
           "disabled": false,
           "document": "轨道数据，用于描述待导出视频的内容。关于轨道数据的格式请查看 [视频合成协议](https://cloud.tencent.com/document/product/1156/51225)。文档中也描述了如何在页面上查看一个剪辑项目的轨道数据，该能力可以帮助开发者更方便地构造自己的轨道数据。",
-          "example": "无",
+          "example": "[{\"id\":\"469f6d6e\",\"type\":\"video\",\"items\":[]}]",
           "member": "string",
           "name": "TrackData",
           "required": true,
@@ -3141,7 +3149,7 @@
         {
           "disabled": false,
           "document": "视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。",
-          "example": "无",
+          "example": "SGVsbG8sIFdvcmxkIQ==",
           "member": "string",
           "name": "CoverData",
           "required": false,
@@ -3214,7 +3222,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3432,7 +3440,7 @@
         {
           "disabled": false,
           "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3441,7 +3449,7 @@
         {
           "disabled": false,
           "document": "项目 Id。",
-          "example": "1111",
+          "example": "cmepid_503f1c85000152217601dfa6",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3468,7 +3476,7 @@
         {
           "disabled": false,
           "document": "视频封面图片文件（如 jpeg, png 等）进行 Base64 编码后的字符串，仅支持 gif、jpeg、png 三种图片格式，原图片文件不能超过2 M大 小。",
-          "example": "无",
+          "example": "Y292ZXJJbWFnZQ==",
           "member": "string",
           "name": "CoverData",
           "required": false,
@@ -3504,7 +3512,7 @@
         {
           "disabled": false,
           "document": "操作者。填写用户的 Id，用于标识调用者及校验项目导出权限。",
-          "example": "无",
+          "example": "9b92a8e7-a5ef-4e28-d72e-4eff571fabf0",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3522,6 +3530,7 @@
           "example": "24820810452266399",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3576,7 +3585,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3621,7 +3630,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以平铺查询任意分类下的媒体信息。如果指定操作者，则操作者必须对当前分类有读权限。",
-          "example": "user_id",
+          "example": "cmeid_system",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3639,7 +3648,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3649,7 +3658,7 @@
           "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3668,7 +3677,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3686,7 +3695,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以对任务视频拆条项目发起拆条任务。如果指定操作者，则操作者必须为项目所有者。",
-          "example": "user_id",
+          "example": "cmeid_system",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3704,7 +3713,7 @@
           "example": "1400xxx8-procxxx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3723,7 +3732,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3768,7 +3777,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以授权任意归属者的资源。如果指定操作者，则操作者必须对资源拥有写权限。",
-          "example": "123",
+          "example": "cmeid_system",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3795,7 +3804,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3804,7 +3813,7 @@
         {
           "disabled": false,
           "document": "媒体转推项目 Id 。",
-          "example": "project_id",
+          "example": "67e105de4fb8950001052fff",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3858,7 +3867,7 @@
         {
           "disabled": false,
           "document": "新添加的输入源位于输入源列表的位置，从0开始。默认加在输入源列表的后面。具体操作方式详见 [操作类型](#Operation) 及下文示例。\n当 Operation 为 AddSource 时必填。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Position",
           "required": false,
@@ -3924,7 +3933,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3933,7 +3942,7 @@
         {
           "disabled": false,
           "document": "云转推项目 Id 。",
-          "example": "project_id",
+          "example": "67e105de4fb8950001052fff",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4005,6 +4014,7 @@
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-6086",
           "member": "string",
           "name": "StreamInputRtmpPushUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4014,6 +4024,7 @@
           "example": "无",
           "member": "VodPullInputPlayInfo",
           "name": "VodPullInputPlayInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4032,60 +4043,60 @@
         {
           "disabled": false,
           "document": "图片高度，单位：px。",
-          "example": "",
+          "example": "1024",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片宽度，单位：px。",
-          "example": "",
+          "example": "1024",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材媒体文件的展示 URL 地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.png",
           "member": "string",
           "name": "MaterialUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片大小，单位：字节。",
-          "example": "",
+          "example": "596106",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材媒体文件的原始 URL 地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/original/xxxxx/cemdemo.png",
           "member": "string",
           "name": "OriginalUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云点播媒资 FileId。",
-          "example": "",
+          "example": "15e83cf8b48b14712",
           "member": "string",
           "name": "VodFileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4098,7 +4109,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4152,7 +4163,7 @@
         {
           "disabled": false,
           "document": "媒体分类路径，形如：\"/a/b\"，层级数不能超过10，每个层级长度不能超过15字符。若不填则默认为根路径。",
-          "example": "/test",
+          "example": "/media",
           "member": "string",
           "name": "ClassPath",
           "required": false,
@@ -4243,7 +4254,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "cme_platform",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4288,7 +4299,7 @@
         {
           "disabled": false,
           "document": "媒体名称，不能超过30个字符。如果不填，则媒体名称为点播媒资文件名称。",
-          "example": "测试",
+          "example": "素材一",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4324,6 +4335,7 @@
           "example": "600a2c94e5c6aa0001b9ef78",
           "member": "string",
           "name": "MaterialId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4333,6 +4345,7 @@
           "example": "1900001191-tfusion-5e299c12c63f6af4c95f34159f19137345t0",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4351,22 +4364,20 @@
         {
           "disabled": false,
           "document": "按整形代表值的下限检索。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "LowerBound",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "按整形代表值的上限检索。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "UpperBound",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -4380,17 +4391,17 @@
           "example": "teamid",
           "member": "string",
           "name": "TeamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "团队名称。",
-          "example": "test",
+          "example": "团队一",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4400,7 +4411,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MemberCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4410,7 +4421,7 @@
           "example": "Member",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4423,9 +4434,10 @@
         {
           "disabled": false,
           "document": "视频发布标题，限30个字符。",
-          "example": "",
+          "example": "my_news",
           "member": "string",
           "name": "Title",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4439,40 +4451,40 @@
         {
           "disabled": false,
           "document": "链接类型取值:\n<li>CLASS: 分类链接;</li>\n<li> MATERIAL：素材链接。</li>",
-          "example": "",
+          "example": "CLASS",
           "member": "string",
           "name": "LinkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "链接状态取值：\n<li> Normal：正常 ；</li>\n<li>NotFound：链接目标不存在；</li> <li>Forbidden：无权限。</li>",
-          "example": "",
+          "example": "Normal",
           "member": "string",
           "name": "LinkStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材链接详细信息，当LinkType=\"MATERIAL\"时有值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "LinkMaterialInfo",
           "name": "LinkMaterialInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分类链接目标信息，当LinkType=“CLASS”时有值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ClassInfo",
           "name": "LinkClassInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4531,7 +4543,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -4594,6 +4606,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaterialTotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4603,6 +4616,7 @@
           "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4612,6 +4626,7 @@
           "example": "无",
           "member": "ClassInfo",
           "name": "ClassInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4646,9 +4661,10 @@
         {
           "disabled": false,
           "document": "直播流播放地址，目前仅支持 HLS 和 FLV 格式。",
-          "example": "",
+          "example": "https://liveplay.video-studio.myqcloud.com/live.flv",
           "member": "string",
           "name": "Url",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4656,15 +4672,16 @@
         {
           "disabled": false,
           "document": "直播流录制时长，单位为秒，最大值为 7200。",
-          "example": "",
+          "example": "60",
           "member": "uint64",
           "name": "StreamRecordDuration",
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "LoginStatusInfo": {
       "document": "登录态信息",
@@ -4672,20 +4689,20 @@
         {
           "disabled": false,
           "document": "用户 Id。",
-          "example": "",
+          "example": "c9bf9e57-1685-4c89-bafb-ff5af830be8a",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户登录状态。\n<li>Online：在线；</li>\n<li>Offline：离线。</li>",
-          "example": "",
+          "example": "Online",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4698,10 +4715,10 @@
         {
           "disabled": false,
           "document": "添加的媒体 Id 列表。",
-          "example": "无",
+          "example": "[\"445ecdf88f7071998672\"]",
           "member": "string",
           "name": "MaterialIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4711,7 +4728,7 @@
           "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4721,7 +4738,7 @@
           "example": "/媒体",
           "member": "string",
           "name": "ClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4734,20 +4751,20 @@
         {
           "disabled": false,
           "document": "媒体 Id。",
-          "example": "无",
+          "example": "445ecdf88f7071998672",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体类型，取值为：\n<li> AUDIO :音频;</li>\n<li> VIDEO :视频;</li>\n<li> IMAGE :图片;</li>\n<li> LINK  :链接.</li>\n<li> OTHER : 其他.</li>",
-          "example": "无",
+          "example": "VIDEO",
           "member": "string",
           "name": "MaterialType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4757,47 +4774,47 @@
           "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体名称。",
-          "example": "无",
+          "example": "素材",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件的创建时间，使用 ISO 日期格式。",
-          "example": "无",
+          "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件的最近更新时间（如修改视频属性、发起视频处理等会触发更新媒体文件信息的操作），使用 ISO 日期格式。",
-          "example": "无",
+          "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体的分类路径。",
-          "example": "无",
+          "example": "/媒资",
           "member": "string",
           "name": "ClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4807,27 +4824,27 @@
           "example": "无",
           "member": "PresetTagInfo",
           "name": "PresetTagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人工标签列表。",
-          "example": "无",
+          "example": "[\"tag\"]",
           "member": "string",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件的预览图。",
-          "example": "无",
+          "example": "http://cme.vod-qcloud.com/123/f0.jpg",
           "member": "string",
           "name": "PreviewUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4837,7 +4854,7 @@
           "example": "无",
           "member": "MaterialTagInfo",
           "name": "TagInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -4850,10 +4867,10 @@
         {
           "disabled": false,
           "document": "删除的媒体 Id 列表。",
-          "example": "无",
+          "example": "[\"445ecdf88f7071998672\"]",
           "member": "string",
           "name": "MaterialIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4981,37 +4998,37 @@
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新后的媒体名称。如未更新则为空。",
-          "example": "test",
+          "example": "素材",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新后的媒体预置标签列表。如未更新媒体预置标签，则该字段为空数组。",
-          "example": "无",
+          "example": "[\"tag\"]",
           "member": "string",
           "name": "PresetTagIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新后的媒体自定义标签列表。如未更新媒体自定义标签，则该字段为空数组。",
-          "example": "无",
+          "example": "[\"tag\"]",
           "member": "string",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5024,10 +5041,10 @@
         {
           "disabled": false,
           "document": "要移动的媒体 Id 列表。",
-          "example": "无",
+          "example": "[\"445ecdf88f7071998672\"]",
           "member": "string",
           "name": "MaterialIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5037,7 +5054,7 @@
           "example": "无",
           "member": "Entity",
           "name": "SourceOwner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5047,7 +5064,7 @@
           "example": "/媒体",
           "member": "string",
           "name": "SourceClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5057,7 +5074,7 @@
           "example": "0",
           "member": "Entity",
           "name": "DestinationOwner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5067,7 +5084,7 @@
           "example": "/媒体/视频",
           "member": "string",
           "name": "DestinationClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5080,10 +5097,10 @@
         {
           "disabled": false,
           "document": "素材编辑可用状态，取值有：\n<li>NORMAL：正常，可直接用于编辑；</li>\n<li>ABNORMAL : 异常，不可用于编辑；</li>\n<li>PROCESSING：处理中，暂不可用于编辑。</li>",
-          "example": "",
+          "example": "NORMAL",
           "member": "string",
           "name": "EditorUsableStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5095,10 +5112,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签类型，取值为：\n<li>PRESET：预置标签；</li>",
-          "example": "",
+          "document": "标签类型，取值为：\n<li>PRESET：预置标签。</li>",
+          "example": "PRESET",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5106,9 +5124,10 @@
         {
           "disabled": false,
           "document": "标签 Id 。当标签类型为 PRESET 时，标签 Id 为预置标签 Id 。",
-          "example": "",
+          "example": "cmetagid_251a115e88000a0ff7f5fb62",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5116,9 +5135,10 @@
         {
           "disabled": false,
           "document": "标签名称。",
-          "example": "",
+          "example": "MyTag",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5132,9 +5152,10 @@
         {
           "disabled": false,
           "document": "输出源 Id。由系统进行分配。",
-          "example": "无",
+          "example": "fa3a12938b007acff7adb59a9e4ae7b9",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5142,9 +5163,10 @@
         {
           "disabled": false,
           "document": "输出直播流地址。支持的直播流类型为 RTMP 和 SRT。",
-          "example": "无",
+          "example": "rtmp://push.example.com/cme/live1",
           "member": "string",
           "name": "PushUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5152,9 +5174,10 @@
         {
           "disabled": false,
           "document": "输出源的名称。",
-          "example": "无",
+          "example": "输出",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5194,20 +5217,20 @@
         {
           "disabled": false,
           "document": "输出源 Id，由系统分配。",
-          "example": "无",
+          "example": "209dcbca1d7ba343ba51",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "输出源直播地址。",
-          "example": "无",
+          "example": "rtmp://push.example.com/cme/live1",
           "member": "string",
           "name": "PushUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5217,7 +5240,7 @@
           "example": "Working",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5241,7 +5264,7 @@
         {
           "disabled": false,
           "document": "视频配置是否和第一个输入源的视频配置相同，默认值：false。如果 FollowSourceInfo 的值为 true，忽略 VideoSetting 参数。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "FollowSourceInfo",
           "output_required": false,
@@ -5261,17 +5284,17 @@
           "example": "Working",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前播放的输入源 Id。",
-          "example": "无",
+          "example": "209dcbca1d7ba343ba51",
           "member": "string",
           "name": "CurrentSourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5281,7 +5304,7 @@
           "example": "100",
           "member": "float",
           "name": "CurrentSourcePosition",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5291,7 +5314,7 @@
           "example": "100",
           "member": "float",
           "name": "CurrentSourceDuration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5301,7 +5324,7 @@
           "example": "无",
           "member": "MediaCastDestinationStatus",
           "name": "DestinationStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5311,7 +5334,7 @@
           "example": "1",
           "member": "int64",
           "name": "LoopCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5430,7 +5453,7 @@
         {
           "disabled": false,
           "document": "推流时长，单位：秒。项目结束后，返回上次项目运行时的推流时长。如果项目是 Working 状态，返回的时长是0。",
-          "example": "无",
+          "example": "23",
           "member": "float",
           "name": "Duration",
           "output_required": true,
@@ -5491,14 +5514,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入源 Id，由系统分配。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "输入源 Id，由系统分配。",
+          "example": "fa98bf72ad3d334bb3a8",
           "member": "string",
           "name": "Id",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5514,7 +5537,7 @@
         {
           "disabled": false,
           "document": "云点播媒体文件 ID。当 Type = VOD 时必填。",
-          "example": "无",
+          "example": "a82b830e765aa979",
           "member": "string",
           "name": "FileId",
           "output_required": true,
@@ -5525,7 +5548,7 @@
         {
           "disabled": false,
           "document": "多媒体创作引擎的媒体 ID。当 Type = CME  时必填。",
-          "example": "无",
+          "example": "7d7ac177781a48c14198",
           "member": "string",
           "name": "MaterialId",
           "output_required": true,
@@ -5536,7 +5559,7 @@
         {
           "disabled": false,
           "document": "文件播放的起始位置，单位：秒。默认为0，从文件头开始播放。当 Type = CME  或者 VOD 时有效。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "Offset",
           "output_required": true,
@@ -5547,7 +5570,7 @@
         {
           "disabled": false,
           "document": "播放时长，单位：秒。默认播放整个文件。当 Type = CME  或者 VOD 时有效。",
-          "example": "无",
+          "example": "23",
           "member": "float",
           "name": "Duration",
           "output_required": true,
@@ -5558,7 +5581,7 @@
         {
           "disabled": false,
           "document": "外部文件的 Url， Type=EXTERNAL 时必填，可以是点播文件或者直播文件，支持的 Scheme 包括HTTP、HTTPS、RTMP。",
-          "example": "无",
+          "example": "rtmp://push.example.com/cme/live1",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -5647,50 +5670,50 @@
         {
           "disabled": false,
           "document": "雪碧图小图的高度。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "雪碧图小图的宽度。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "雪碧图小图的总数量。",
-          "example": "",
+          "example": "200",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "截取雪碧图输出的地址。",
-          "example": "",
+          "example": "[\"http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.jpg\"]",
           "member": "string",
           "name": "ImageUrlSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "雪碧图子图位置与时间关系的 WebVtt 文件地址。WebVtt 文件表明了各个雪碧图小图对应的时间点，以及在雪碧大图里的坐标位置，一般被播放器用于实现预览。",
-          "example": "",
+          "example": "https://xxx.vod2.myqcloud.com/xxx/xxx.vtt",
           "member": "string",
           "name": "WebVttUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5703,90 +5726,90 @@
         {
           "disabled": false,
           "document": "大小。",
-          "example": "",
+          "example": "97561",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "容器类型。",
-          "example": "",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。",
-          "example": "",
+          "example": "64000",
           "member": "uint64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流高度的最大值，单位：px。",
-          "example": "",
+          "example": "540",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流宽度的最大值，单位：px。",
-          "example": "",
+          "example": "960",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "时长，单位：秒。",
-          "example": "",
+          "example": "20",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频拍摄时的选择角度，单位：度",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Rotate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流信息。",
-          "example": "",
+          "example": "无",
           "member": "VideoStreamInfo",
           "name": "VideoStreamInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音频流信息。",
-          "example": "",
+          "example": "无",
           "member": "AudioStreamInfo",
           "name": "AudioStreamInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5982,7 +6005,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -5991,7 +6014,7 @@
         {
           "disabled": false,
           "document": "要修改的媒体 Id。",
-          "example": "123245678",
+          "example": "67e0e02c1ac4270001501fff",
           "member": "string",
           "name": "MaterialId",
           "required": true,
@@ -6054,7 +6077,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6063,7 +6086,7 @@
         {
           "disabled": false,
           "document": "项目 Id。",
-          "example": "1111",
+          "example": "67e105de4fb8950001052fff",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -6081,7 +6104,7 @@
         {
           "disabled": false,
           "document": "画布宽高比，值为视频编辑项目画布宽与高的像素值的比值，如 16:9、9:16 等。",
-          "example": "无",
+          "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
           "required": false,
@@ -6126,7 +6149,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6198,7 +6221,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6251,8 +6274,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台名称，指定访问的平台。",
-          "example": "无",
+          "document": "平台名称，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6261,7 +6284,7 @@
         {
           "disabled": false,
           "document": "配置 ID。",
-          "example": "无",
+          "example": "100048",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -6270,7 +6293,7 @@
         {
           "disabled": false,
           "document": "更改后的视频编码配置名，不填则不修改。",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -6279,7 +6302,7 @@
         {
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": false,
@@ -6288,7 +6311,7 @@
         {
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": false,
@@ -6332,8 +6355,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "document": "平台名称，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6369,7 +6392,7 @@
         {
           "disabled": false,
           "document": "操作者。填写用户的 Id，用于标识调用者及校验操作权限。",
-          "example": "无",
+          "example": "9b92a8e7-a5ef-4e28-d72e-4eff571fabf0",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -6396,7 +6419,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "your_platform",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6423,7 +6446,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，可以移动任务资源。如果指定操作者，则操作者必须对源及目标资源有写权限。",
-          "example": "user_id",
+          "example": "c9bf9e57-1685-4c89-bafb-ff5af830be8a",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -6450,20 +6473,20 @@
         {
           "disabled": false,
           "document": "素材媒体文件的播放 URL 地址。",
-          "example": "无",
+          "example": "http://cme.vod2.myqcloud.com/123/f0.jpg",
           "member": "string",
           "name": "MaterialUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云点播媒资 FileId。",
-          "example": "无",
+          "example": "a754bf0c6d0e727c",
           "member": "string",
           "name": "VodFileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6475,8 +6498,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台名称，指定访问的平台。",
-          "example": "test",
+          "document": "平台名称，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -6485,7 +6508,7 @@
         {
           "disabled": false,
           "document": "回调事件内容。",
-          "example": "无",
+          "example": "{\"EventType\":\"Class.Created\",\"Operator\":\"3fa6b09e-05c6-433e-bc1e-6457d290d9d9\",\"MaterialImportedEvent\":{\"Owner\":{\"Id\":\"user_9949009d9d9\",\"Type\":\"PERSON\"},\"ClassPath\":\"/媒体\"}}",
           "member": "string",
           "name": "EventContent",
           "required": true,
@@ -6503,6 +6526,7 @@
           "example": "无",
           "member": "EventContent",
           "name": "EventContent",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6521,42 +6545,38 @@
         {
           "disabled": false,
           "document": "视频发布标题。",
-          "example": "",
+          "example": "视频能力",
           "member": "string",
           "name": "Title",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "视频发布描述信息。",
-          "example": "",
+          "example": "视频能力描述",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "视频标签。",
-          "example": "",
+          "example": "视频",
           "member": "string",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "视频分类，详见[企鹅号官网](https://open.om.qq.com/resources/resourcesCenter)视频分类。",
-          "example": "",
+          "example": "64",
           "member": "int64",
           "name": "Category",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -6567,10 +6587,10 @@
         {
           "disabled": false,
           "document": "平台标识。",
-          "example": "test",
+          "example": "1000000001",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6580,7 +6600,7 @@
           "example": "describetion",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6590,7 +6610,7 @@
           "example": "1402233125",
           "member": "uint64",
           "name": "VodSubAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6600,7 +6620,7 @@
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "LicenseId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6610,7 +6630,7 @@
           "example": "Normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6620,7 +6640,7 @@
           "example": "2021-09-02T03:13:08Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6630,7 +6650,7 @@
           "example": "2021-09-02T03:13:08Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6643,9 +6663,10 @@
         {
           "disabled": false,
           "document": "标签 Id 。",
-          "example": "",
+          "example": "ca24d5c6cb360a98a9dc6ae1245a0f90",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6653,9 +6674,10 @@
         {
           "disabled": false,
           "document": "标签名称。",
-          "example": "",
+          "example": "视频",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6663,9 +6685,10 @@
         {
           "disabled": false,
           "document": "父级预设 Id。",
-          "example": "",
+          "example": "755d4edf7550762526088161f5cf9ae0",
           "member": "string",
           "name": "ParentTagId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6679,10 +6702,10 @@
         {
           "disabled": false,
           "document": "项目 Id。",
-          "example": "project_id",
+          "example": "445ecdf88f7071998672",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6692,17 +6715,17 @@
           "example": "新建",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "画布宽高比。",
-          "example": "无",
+          "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6712,7 +6735,7 @@
           "example": "STREAM_CONNECT",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6722,17 +6745,17 @@
           "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目封面图片地址。",
-          "example": "无",
+          "example": "http://cme.vod2.myqcloud.com/123/f0.png",
           "member": "string",
           "name": "CoverUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6742,7 +6765,7 @@
           "example": "无",
           "member": "StreamConnectProjectInfo",
           "name": "StreamConnectProjectInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6752,7 +6775,7 @@
           "example": "无",
           "member": "MediaCastProjectInfo",
           "name": "MediaCastProjectInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6762,7 +6785,7 @@
           "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6772,7 +6795,7 @@
           "example": "2021-03-23T07:51:18.029Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6903,12 +6926,11 @@
         {
           "disabled": false,
           "document": "录制拉流地址。",
-          "example": "无",
+          "example": "https://liveplay.video-studio.myqcloud.com/live.flv",
           "member": "string",
           "name": "PullStreamUrl",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6917,28 +6939,25 @@
           "member": "Entity",
           "name": "MaterialOwner",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "录制文件存储分类路径。",
-          "example": "无",
+          "example": "/录制",
           "member": "string",
           "name": "MaterialClassPath",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "回放推流地址。",
-          "example": "无",
+          "example": "rtmp://push.example.com/cme/live1",
           "member": "string",
           "name": "PushStreamUrl",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6949,9 +6968,10 @@
         {
           "disabled": false,
           "document": "类型，取值有：\n<li>MATERIAL：素材。</li>\n<li>CLASS：分类。</li>",
-          "example": "",
+          "example": "MATERIAL",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6959,9 +6979,10 @@
         {
           "disabled": false,
           "document": "资源 Id，当 Type 为 MATERIAL 时，取值为素材 Id；当 Type 为 CLASS 时，取值为分类路径 ClassPath。",
-          "example": "",
+          "example": "67e105de4fb8950001052fff",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7001,7 +7022,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -7046,7 +7067,7 @@
         {
           "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，撤销任意资源的授权权限。如果指定操作者，则操作者必须对被授权资源有写权限。",
-          "example": "123",
+          "example": "cmeid_system",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -7099,7 +7120,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -7117,7 +7138,7 @@
         {
           "disabled": false,
           "document": "媒体类型，可取值有：\n<li>AUDIO：音频；</li>\n<li>VIDEO：视频 ；</li>\n<li>IMAGE：图片；</li>\n<li>VIDEO_EDIT_TEMPLATE：剪辑模板。</li>",
-          "example": "无",
+          "example": "[\"VIDEO\"]",
           "member": "string",
           "name": "MaterialTypes",
           "required": false,
@@ -7135,7 +7156,7 @@
         {
           "disabled": false,
           "document": "按画质检索，取值为：LD/SD/HD/FHD/2K/4K。",
-          "example": "无",
+          "example": "HD",
           "member": "string",
           "name": "Resolution",
           "required": false,
@@ -7162,7 +7183,7 @@
         {
           "disabled": false,
           "document": "按标签检索，填入检索的标签名。",
-          "example": "无",
+          "example": "[\"zoo\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -7216,6 +7237,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7225,6 +7247,7 @@
           "example": "无",
           "member": "MaterialInfo",
           "name": "MaterialInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7243,22 +7266,20 @@
         {
           "disabled": false,
           "document": "分类路径归属。",
-          "example": "",
+          "example": "无",
           "member": "Entity",
           "name": "Owner",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "按分类路径检索。 不填则默认按根分类路径检索。",
-          "example": "",
+          "example": "/media",
           "member": "string",
           "name": "ClassPath",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -7381,22 +7402,20 @@
         {
           "disabled": false,
           "document": "排序字段。",
-          "example": "",
+          "example": "CreateTime",
           "member": "string",
           "name": "Field",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "排序方式，可选值：Asc（升序）、Desc（降序），默认降序。",
-          "example": "",
+          "example": "Asc",
           "member": "string",
           "name": "Order",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -7512,6 +7531,7 @@
           "example": "135ed54d55d",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7519,9 +7539,10 @@
         {
           "disabled": false,
           "document": "云转推输出源名称。",
-          "example": "test",
+          "example": "MyStreamName",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7532,6 +7553,7 @@
           "example": "URL",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7542,6 +7564,7 @@
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
           "member": "string",
           "name": "PushUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7584,17 +7607,17 @@
           "example": "outputId",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云转推输出名称。",
-          "example": "test",
+          "example": "MyStreamName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7604,7 +7627,7 @@
           "example": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600c",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7785,9 +7808,10 @@
         {
           "disabled": false,
           "document": "导播台输出模板 ID，可取值：\n<li>10001：分辨率为1080 P；</li>\n<li>10002：分辨率为720 P；</li>\n<li>10003：分辨率为480 P。</li>",
-          "example": "",
+          "example": "10001",
           "member": "int64",
           "name": "TemplateId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7795,9 +7819,10 @@
         {
           "disabled": false,
           "document": "导播台输出宽，单位：像素。",
-          "example": "",
+          "example": "960",
           "member": "uint64",
           "name": "Width",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7805,9 +7830,10 @@
         {
           "disabled": false,
           "document": "导播台输出高，单位：像素。",
-          "example": "",
+          "example": "540",
           "member": "uint64",
           "name": "Height",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7815,9 +7841,10 @@
         {
           "disabled": false,
           "document": "导播台输出帧率，单位：帧/秒",
-          "example": "",
+          "example": "25",
           "member": "uint64",
           "name": "Fps",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7825,9 +7852,10 @@
         {
           "disabled": false,
           "document": "导播台输出码率， 单位：bit/s。",
-          "example": "",
+          "example": "64000",
           "member": "uint64",
           "name": "BitRate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7841,22 +7869,20 @@
         {
           "disabled": false,
           "document": "导播台停止时间，格式按照 ISO 8601 标准表示。若不填，该值默认为当前时间加七天。",
-          "example": "",
+          "example": "2024-01-01T12:34:56+00:00",
           "member": "string",
           "name": "StopTime",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "导播台主监输出配置信息。若不填，默认输出 720P。",
-          "example": "",
+          "example": "无",
           "member": "SwitcherPgmOutputConfig",
           "name": "PgmOutputConfig",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -7867,70 +7893,70 @@
         {
           "disabled": false,
           "document": "任务 Id。",
-          "example": "",
+          "example": "1000000009-procedurev2-b718fcee09a72470bf665cffff",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务类型，取值有：\n<li>VIDEO_EDIT_PROJECT_EXPORT：项目导出。</li>",
-          "example": "",
+          "example": "VIDEO_EDIT_PROJECT_EXPORT",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务状态，取值有：\n<li>PROCESSING：处理中：</li>\n<li>SUCCESS：成功；</li>\n<li>FAIL：失败。</li>",
-          "example": "",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务进度，取值为：0~100。",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误码。\n<li>0：成功；</li>\n<li>其他值：失败。</li>",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "",
+          "example": "SUCCESS",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，格式按照 ISO 8601 标准表示。",
-          "example": "",
+          "example": "2024-04-30T03:26:37Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7943,50 +7969,50 @@
         {
           "disabled": false,
           "document": "团队 ID。",
-          "example": "",
+          "example": "aeebb1372a0472e775047027e1f35e3f",
           "member": "string",
           "name": "TeamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "团队名称。",
-          "example": "",
+          "example": "分队",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "团队成员个数",
-          "example": "",
+          "example": "5",
           "member": "uint64",
           "name": "MemberCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "团队创建时间，格式按照 ISO 8601 标准表示。",
-          "example": "",
+          "example": "2024-01-01T12:34:56+00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "团队最后更新时间，格式按照 ISO 8601 标准表示。",
-          "example": "",
+          "example": "2024-02-01T12:34:56+00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7999,9 +8025,10 @@
         {
           "disabled": false,
           "document": "团队成员 ID。",
-          "example": "",
+          "example": "59198a95d991f120005",
           "member": "string",
           "name": "MemberId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8009,9 +8036,10 @@
         {
           "disabled": false,
           "document": "团队成员备注。",
-          "example": "",
+          "example": "成员",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8019,9 +8047,10 @@
         {
           "disabled": false,
           "document": "团队成员角色，取值：\n<li>Owner：团队所有者，添加团队成员及修改团队成员解决时不能填此角色；</li>\n<li>Admin：团队管理员；</li>\n<li>Member：普通成员。</li>",
-          "example": "",
+          "example": "Member",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8117,22 +8146,20 @@
         {
           "disabled": false,
           "document": "开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "无",
+          "example": "2018-10-01T18:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "无",
+          "example": "2018-11-01T18:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8143,7 +8170,7 @@
         {
           "disabled": false,
           "document": "导出的媒资名称。",
-          "example": "无",
+          "example": "MaterialName",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8152,7 +8179,7 @@
         {
           "disabled": false,
           "document": "导出的媒资分类 Id。",
-          "example": "无",
+          "example": "9",
           "member": "uint64",
           "name": "ClassId",
           "required": false,
@@ -8180,18 +8207,16 @@
           "member": "string",
           "name": "AspectRatio",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "视频编辑模板媒体 ID ，通过模板媒体导入项目轨道数据时填写。",
-          "example": "无",
+          "example": "36f19218d1c35ae5",
           "member": "string",
           "name": "VideoEditTemplateId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8200,8 +8225,7 @@
           "member": "MediaTrack",
           "name": "InitTracks",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -8271,7 +8295,7 @@
           "example": "16:9",
           "member": "string",
           "name": "AspectRatio",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8281,17 +8305,17 @@
           "example": "无",
           "member": "SlotInfo",
           "name": "SlotSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板预览视频 URL 地址 。",
-          "example": "无",
+          "example": "http://cme.vod2.myqcloud.com/123/f0.mp4",
           "member": "string",
           "name": "PreviewVideoUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8304,50 +8328,50 @@
         {
           "disabled": false,
           "document": "配置 ID。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置名。",
-          "example": "无",
+          "example": "默认编码",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "封装格式，可选值：\n<li>mp4 ；</li>\n<li>mov 。</li>",
-          "example": "无",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留；</li>\n<li>1：去除。</li>\n默认值：0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8357,7 +8381,7 @@
           "example": "无",
           "member": "VideoEncodingPresetVideoSetting",
           "name": "VideoSetting",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8367,7 +8391,7 @@
           "example": "无",
           "member": "VideoEncodingPresetAudioSetting",
           "name": "AudioSetting",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -8676,80 +8700,80 @@
         {
           "disabled": false,
           "document": "素材元信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "雪碧图信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaImageSpriteInfo",
           "name": "ImageSpriteInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材媒体文件的播放 URL 地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
           "member": "string",
           "name": "MaterialUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材媒体文件的封面图片地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.jpg",
           "member": "string",
           "name": "CoverUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件分辨率。取值为：LD/SD/HD/FHD/2K/4K。",
-          "example": "",
+          "example": "HD",
           "member": "string",
           "name": "Resolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "素材状态。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MaterialStatus",
           "name": "MaterialStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "素材媒体文件的原始 URL 地址。",
-          "example": "",
+          "example": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
           "member": "string",
           "name": "OriginalUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云点播媒资 FileId。",
-          "example": "",
+          "example": "15e83cf8b48b147",
           "member": "string",
           "name": "VodFileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8766,18 +8790,16 @@
           "member": "string",
           "name": "AspectRatio",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "视频拆条处理模型，不填则默认为手工分割视频。取值 ：\n<li>AI.GameHighlights.PUBG：和平精英集锦 ;</li>\n<li>AI.GameHighlights.Honor OfKings：王者荣耀集锦 ;</li>\n<li>AI.SportHighlights.Football：足球集锦 </li>\n<li>AI.SportHighlights.Basketball：篮球集锦 ；</li>\n<li>AI.PersonSegmentation：人物集锦  ;</li>\n<li>AI.NewsSegmentation：新闻拆条。</li>",
-          "example": "无",
+          "example": "AI.NewsSegmentation",
           "member": "string",
           "name": "ProcessModel",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8788,50 +8810,50 @@
         {
           "disabled": false,
           "document": "码率，单位：bps。",
-          "example": "",
+          "example": "64000",
           "member": "uint64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高度，单位：px。",
-          "example": "",
+          "example": "540",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "宽度，单位：px。",
-          "example": "",
+          "example": "960",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "编码格式。",
-          "example": "",
+          "example": "h264",
           "member": "string",
           "name": "Codec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "帧率，单位：hz。",
-          "example": "",
+          "example": "24",
           "member": "uint64",
           "name": "Fps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -8940,9 +8962,10 @@
         {
           "disabled": false,
           "document": "点播输入拉流 URL 。",
-          "example": "无",
+          "example": "[\"http://example.com/file1.mp4\"]",
           "member": "string",
           "name": "InputUrls",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -8953,6 +8976,7 @@
           "example": "-1",
           "member": "int64",
           "name": "LoopTimes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -8992,32 +9016,29 @@
         {
           "disabled": false,
           "document": "视频发布标题。",
-          "example": "",
+          "example": "视频能力",
           "member": "string",
           "name": "Title",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "视频发布描述信息。",
-          "example": "",
+          "example": "视频能力描述",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "微博可见性，可取值为：\n<li>Public：公开，所有人可见；</li>\n<li>Private：私有，仅自己可见。</li>\n\n默认为 Public，所有人可见。",
-          "example": "",
+          "example": "Public",
           "member": "string",
           "name": "Visible",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

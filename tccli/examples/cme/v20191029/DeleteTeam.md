@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DeleteTeam --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TeamId 9aoodiiiekj899dkk99d7d6d5dff77f
 ```
 

@@ -1,18 +1,18 @@
 **Example 1: 示例**
 
-示例
+
 
 Input: 
 
 ```
 tccli mqtt DescribeMessageList --cli-unfold-argument  \
-    --InstanceId mqtt-47ka4rdr \
-    --Topic topic24 \
+    --InstanceId mqtt-g839agr2 \
+    --Topic home \
+    --StartTime 1743058422270 \
+    --EndTime 1743060222270 \
+    --TaskRequestId  \
     --Offset 0 \
-    --Limit 20 \
-    --StartTime 1705373755266 \
-    --EndTime 1705632955266 \
-    --TaskRequestId  
+    --Limit 20
 ```
 
 Output: 
@@ -23,30 +23,30 @@ Output:
     "Response": {
         "Data": [
             {
-                "DeadLetterResendSuccessTimes": null,
-                "DeadLetterResendTimes": null,
-                "Keys": null,
-                "MsgId": "0B8D67F0002D6ACBCFC0557BCEBA0001",
-                "ProduceTime": "2024-01-17 14:22:57",
-                "ProducerAddr": "11.176.16.153:51134",
+                "DeadLetterResendSuccessTimes": 0,
+                "DeadLetterResendTimes": 0,
+                "Keys": "",
+                "MsgId": "153970740050639FEE488932E9830036",
+                "ProduceTime": "2025-03-27 15:23:35",
+                "ProducerAddr": "21.57.114.216:34679",
                 "Qos": "1",
-                "SubTopic": "/1/",
+                "SubTopic": "/11/",
                 "Tags": "MQTT_COMMON"
             },
             {
-                "DeadLetterResendSuccessTimes": null,
-                "DeadLetterResendTimes": null,
-                "Keys": null,
-                "MsgId": "0B8D67F0002D6ACBCFC0557B1A980000",
-                "ProduceTime": "2024-01-17 14:22:11",
-                "ProducerAddr": "11.176.16.153:44044",
-                "Qos": "0",
-                "SubTopic": "",
+                "DeadLetterResendSuccessTimes": 0,
+                "DeadLetterResendTimes": 0,
+                "Keys": "",
+                "MsgId": "153970740050639FEE488932EB200037",
+                "ProduceTime": "2025-03-27 15:23:35",
+                "ProducerAddr": "21.57.114.216:34679",
+                "Qos": "1",
+                "SubTopic": "/11/",
                 "Tags": "MQTT_COMMON"
             }
         ],
-        "RequestId": "116cd3f5-668f-42fe-8572-fcd5d3a31377",
-        "TaskRequestId": "e3d14393-4701-4f62-8a7d-b52bd59b5ace",
+        "RequestId": "3381468d-6a5d-4fac-917f-726109bb968b",
+        "TaskRequestId": "d43a8003-6359-4b25-a802-1ad46c98732a",
         "TotalCount": 2
     }
 }

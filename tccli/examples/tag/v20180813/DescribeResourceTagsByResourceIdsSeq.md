@@ -22,8 +22,8 @@ Output:
         "Tags": [
             {
                 "ServiceType": "cvm",
-                "TagKey": "字符串",
-                "TagValue": "字符串",
+                "TagKey": "key1",
+                "TagValue": "val1",
                 "TagKeyMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
                 "TagValueMd5": "cc4dd1da7e1a754534215f02fb9ba85d",
                 "ResourceId": "ins-1234"

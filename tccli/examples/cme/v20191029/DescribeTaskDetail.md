@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeTaskDetail --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TaskId 181xxxxxxxx9-procedurev2-b718fcee09a72470bf665cf55351d810t0
 ```
 

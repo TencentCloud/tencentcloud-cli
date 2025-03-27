@@ -18,7 +18,7 @@ Output:
             {
                 "Definition": 20001,
                 "Type": "preset",
-                "Name": "test",
+                "Name": "enhance media template name",
                 "Comment": "",
                 "RebuildVideoInfo": null,
                 "RebuildAudioInfo": null,

@@ -915,7 +915,7 @@
         {
           "disabled": false,
           "document": "设备sn列表",
-          "example": "无",
+          "example": "['chc001','chc002']",
           "member": "string",
           "name": "DeviceSnList",
           "required": true,

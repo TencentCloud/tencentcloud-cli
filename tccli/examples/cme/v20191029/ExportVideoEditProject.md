@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cme ExportVideoEditProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_eb94392053f840539229ed9 \
     --Definition 10 \
     --ExportDestination VOD \
-    --VODExportInfo.Name 测试视频 \
-    --VODExportInfo.ClassId 10000 \
-    --Operator user_id_9394392053f8405394299d8
+    --VODExportInfo.Name 在线编辑视频 \
+    --VODExportInfo.ClassId 10 \
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -33,18 +33,18 @@ Input:
 
 ```
 tccli cme ExportVideoEditProject --cli-unfold-argument  \
-    --Platform test \
-    --ProjectId cmepid_eb94392053f840539229ed9 \
+    --Platform 1000000009 \
     --Definition 10 \
+    --ProjectId cmepid_eb94392053f840539229ed9 \
     --ExportDestination VOD \
-    --VODExportInfo.Name 测试视频 \
-    --VODExportInfo.ClassId 10000 \
+    --VODExportInfo.Name 在线编辑视频 \
+    --VODExportInfo.ClassId 10 \
     --VODExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId 5fd8ad3d628dc30001bd0895 \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title 企鹅视频 \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description 新闻 \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags 娱乐 \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category 100 \
-    --Operator user_id_9394392053f8405394299d8
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -65,13 +65,13 @@ Input:
 
 ```
 tccli cme ExportVideoEditProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_eb94392053f840539229ed9 \
     --Definition 10 \
     --ExportDestination CME \
     --CMEExportInfo.Owner.Type PERSON \
-    --CMEExportInfo.Owner.Id user_id_9394392053f8405394299d8 \
-    --Operator user_id_9394392053f8405394299d8
+    --CMEExportInfo.Owner.Id 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0 \
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -92,20 +92,20 @@ Input:
 
 ```
 tccli cme ExportVideoEditProject --cli-unfold-argument  \
-    --Platform test \
-    --ProjectId cmepid_eb94392053f840539229ed9 \
+    --Platform 1000000009 \
     --Definition 10 \
     --ExportDestination CME \
+    --ProjectId cmepid_eb94392053f840539229ed9 \
     --CMEExportInfo.Owner.Type PERSON \
-    --CMEExportInfo.Owner.Id user_id_9394392053f8405394299d8 \
-    --CMEExportInfo.Name 测试视频 \
+    --CMEExportInfo.Owner.Id 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0 \
+    --CMEExportInfo.Name 新建项目 \
     --CMEExportInfo.ClassPath /成片 \
-    --CMEExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId 5fd8ad3d628dc30001bd0896 \
+    --CMEExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId 5fd8ad3d628dc30001bd0895 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Title 企鹅视频 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description 新闻 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags 娱乐 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category 100 \
-    --Operator user_id_9394392053f8405394299d8
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -126,14 +126,14 @@ Input:
 
 ```
 tccli cme ExportVideoEditProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_eb94392053f840539229ed9 \
     --Definition 10 \
     --ExportDestination CME \
     --CMEExportInfo.Owner.Type PERSON \
-    --CMEExportInfo.Owner.Id user_id_9394392053f8405394299d8 \
+    --CMEExportInfo.Owner.Id 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0 \
     --ExportExtensionArgs.VideoBitrate 3145728 \
-    --Operator user_id_9394392053f8405394299d8
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 

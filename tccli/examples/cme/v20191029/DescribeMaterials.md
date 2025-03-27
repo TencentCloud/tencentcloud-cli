@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --MaterialIds 5fd8ad3d628dc30001bd08894 \
     --Operator user_id4114428941bd0420
 ```
@@ -38,7 +38,9 @@ Output:
                     "Height": 153,
                     "MaterialUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
                     "Size": 52421,
-                    "Width": 213
+                    "Width": 213,
+                    "VodFileId": "15e83cf8b48b147",
+                    "OriginalUrl": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.png"
                 },
                 "LinkMaterial": null,
                 "VideoMaterial": null,
@@ -59,7 +61,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --MaterialIds 5fd8ad3d628dc30001bd0895 \
     --Operator user_id4114428941bd0420
 ```
@@ -76,7 +78,7 @@ Output:
                     "Name": "9Qvacao2r7EA",
                     "CreateTime": "2019-12-31T03:59:14Z",
                     "UpdateTime": "2019-12-31T03:59:14Z",
-                    "ClassPath": "/",
+                    "ClassPath": "/media",
                     "TagSet": [],
                     "TagInfoSet": [],
                     "PresetTagSet": [],
@@ -92,6 +94,8 @@ Output:
                 "VideoEditTemplateMaterial": null,
                 "OtherMaterial": null,
                 "VideoMaterial": {
+                    "VodFileId": "15e83cf8b48b1472",
+                    "OriginalUrl": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
                     "MaterialStatus": {
                         "EditorUsableStatus": "NORMAL"
                     },
@@ -148,7 +152,7 @@ Input:
 
 ```
 tccli cme DescribeMaterials --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --MaterialIds 5fd8ad3d628dc30001bd08893 \
     --Operator user_id4114428941bd0420
 ```
@@ -160,6 +164,8 @@ Output:
         "MaterialInfoSet": [
             {
                 "AudioMaterial": {
+                    "VodFileId": "15e83cf8b48b1473",
+                    "OriginalUrl": "http://cmedemo.vod2.myqcloud.com/xxxxx/cemdemo.mp4",
                     "CoverUrl": "",
                     "MaterialStatus": {
                         "EditorUsableStatus": "NORMAL"
@@ -184,7 +190,7 @@ Output:
                     }
                 },
                 "BasicInfo": {
-                    "ClassPath": "",
+                    "ClassPath": "/media",
                     "CreateTime": "2019-10-29T09:36:33Z",
                     "MaterialId": "5fd8ad3d628dc30001bd08893",
                     "MaterialType": "AUDIO",

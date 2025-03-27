@@ -2200,13 +2200,13 @@
         },
         {
           "disabled": false,
-          "document": "规则模板描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板描述。",
           "example": "规则模板描述",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2220,53 +2220,53 @@
         },
         {
           "disabled": false,
-          "document": "规则模板修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板修改时间。",
           "example": "2022-11-15 12:00:00",
           "member": "string",
           "name": "UpdateAt",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警等级。1-低风险，2-中风险，3-高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。",
           "example": "1",
           "member": "uint64",
           "name": "AlarmLevel",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警策略。0-不告警，1-告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警策略。0-不告警，1-告警。",
           "example": "0",
           "member": "uint64",
           "name": "AlarmPolicy",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板状态。0-无任务 ，1-修改中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板状态。0-无任务 ，1-修改中。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则模板应用在哪些在实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板应用在哪些在实例。",
           "example": "[\"cynosdbmysql-ins-6dgls111\",\"cynosdbmysql-ins-6dgls222\"]",
           "member": "string",
           "name": "AffectedInstances",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8707,13 +8707,13 @@
         },
         {
           "disabled": false,
-          "document": "规则模板详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"AffectedInstances\": null,\"AlarmLevel\": 1,\"AlarmPolicy\": 0,\"CreateAt\": \"2023-04-24 15:06:04\",\"Description\": \"\",\"RuleFilters\": [{\"Compare\": \"INC\",\"Type\": \"user\",\"Value\": [\"d\"]}],\"RuleTemplateId\": \"cynosdb-art-c1jo4ql8\",\"RuleTemplateName\": \"dhui2\",\"Status\": 0,\"UpdateAt\": \"2023-04-24 15:06:04\"}]",
+          "document": "规则模板详细信息列表。",
+          "example": "[{ \t\"AlarmLevel\": 1, \t\"AlarmPolicy\": 0 }]",
           "member": "AuditRuleTemplateInfo",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

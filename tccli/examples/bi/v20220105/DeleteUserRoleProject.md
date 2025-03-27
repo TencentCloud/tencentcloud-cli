@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli bi DeleteUserRoleProject --cli-unfold-argument  \
-    --ProjectId 1 \
-    --UserId lenwang
+    --ProjectId 1982493789748932 \
+    --UserId zhangsan
 ```
 
 Output: 

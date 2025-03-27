@@ -7,20 +7,22 @@ Input:
 ```
 tccli cdn DescribeDomainsConfig --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 1
+    --Limit 1 \
+    --Filters.0.Name domainType \
+    --Filters.0.Value cname
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "07f7dd0b-3936-4bdb-9a85-92b4e20d1b03",
+        "RequestId": "7c152eaf-a4a4-4fc2-8204-c586ad91e8ec",
         "Domains": [
             {
                 "AccessControl": {
-                    "Switch": "off",
                     "AccessControlRules": [],
-                    "ReturnCode": 403
+                    "ReturnCode": 403,
+                    "Switch": "off"
                 },
                 "AccessPort": [
                     80,
@@ -35,14 +37,38 @@ Output:
                     },
                     {
                         "Name": "last",
-                        "Value": "off"
+                        "Value": "on"
                     },
                     {
                         "Name": "full",
-                        "Value": "off"
+                        "Value": "on"
                     },
                     {
                         "Name": "quic",
+                        "Value": "on"
+                    },
+                    {
+                        "Name": "staging",
+                        "Value": "off"
+                    },
+                    {
+                        "Name": "tes_staging",
+                        "Value": "off"
+                    },
+                    {
+                        "Name": "overdue_offline_https",
+                        "Value": "off"
+                    },
+                    {
+                        "Name": "overdue_offline_apk",
+                        "Value": "off"
+                    },
+                    {
+                        "Name": "overdue_offline_quic",
+                        "Value": "off"
+                    },
+                    {
+                        "Name": "overdue_offline_single_area",
                         "Value": "off"
                     }
                 ],
@@ -55,9 +81,10 @@ Output:
                     "TypeE": null,
                     "TypeF": null
                 },
-                "AppId": 123456789,
-                "Area": "global",
+                "AppId": 12345,
+                "Area": "mainland",
                 "Authentication": {
+                    "AuthAlgorithm": "md5",
                     "Switch": "off",
                     "TypeA": null,
                     "TypeB": null,
@@ -65,46 +92,57 @@ Output:
                     "TypeD": null
                 },
                 "AwsPrivateAccess": {
-                    "Switch": "off",
-                    "AccessKey": "",
-                    "SecretKey": ""
+                    "AccessKey": null,
+                    "Bucket": null,
+                    "Region": null,
+                    "SecretKey": null,
+                    "Switch": "off"
                 },
                 "BandwidthAlert": {
-                    "Switch": "off",
+                    "AlertPercentage": 80,
+                    "AlertSwitch": "off",
                     "BpsThreshold": 10000000000,
                     "CounterMeasure": "RETURN_404",
-                    "LastTriggerTime": null
+                    "LastTriggerTime": null,
+                    "LastTriggerTimeOverseas": null,
+                    "Metric": "bandwidth",
+                    "StatisticItems": [],
+                    "Switch": "off"
                 },
                 "Cache": {
-                    "RuleCache": [
-                        {
-                            "CacheConfig": {
-                                "Cache": {
-                                    "CacheTime": 86400,
-                                    "CompareMaxAge": "off",
-                                    "IgnoreCacheControl": "off",
-                                    "IgnoreSetCookie": "off",
-                                    "Switch": "on"
-                                },
-                                "NoCache": {
-                                    "Switch": "off",
-                                    "Revalidate": "off"
-                                },
-                                "FollowOrigin": {
-                                    "Switch": "off"
-                                }
+                    "AdvancedCache": null,
+                    "RuleCache": null,
+                    "SimpleCache": {
+                        "CacheRules": [
+                            {
+                                "CacheContents": [
+                                    "/data"
+                                ],
+                                "CacheTime": 2592000,
+                                "CacheType": "all"
                             },
-                            "RulePaths": [
-                                "*"
-                            ],
-                            "RuleType": "all"
+                            {
+                                "CacheContents": [
+                                    "php",
+                                    "jsp",
+                                    "asp",
+                                    "aspx"
+                                ],
+                                "CacheTime": 0,
+                                "CacheType": "file"
+                            }
+                        ],
+                        "CompareMaxAge": "off",
+                        "FollowOrigin": "off",
+                        "IgnoreCacheControl": "off",
+                        "IgnoreSetCookie": "off",
+                        "Revalidate": {
+                            "Path": "/data",
+                            "Switch": "off"
                         }
-                    ],
-                    "SimpleCache": null,
-                    "AdvancedCache": null
+                    }
                 },
                 "CacheKey": {
-                    "FullUrlCache": "off",
                     "CacheTag": {
                         "Switch": "off",
                         "Value": null
@@ -113,45 +151,33 @@ Output:
                         "Switch": "off",
                         "Value": ""
                     },
+                    "FullUrlCache": "on",
                     "Header": {
                         "Switch": "off",
                         "Value": ""
                     },
                     "IgnoreCase": "off",
-                    "KeyRules": [
-                        {
-                            "FullUrlCache": "on",
-                            "IgnoreCase": "off",
-                            "QueryString": {
-                                "Switch": "off",
-                                "Action": null,
-                                "Value": ""
-                            },
-                            "RulePaths": [
-                                ".1"
-                            ],
-                            "RuleType": "file",
-                            "RuleTag": "user"
-                        }
-                    ],
+                    "KeyRules": [],
                     "QueryString": {
-                        "Switch": "off",
-                        "Reorder": "off",
                         "Action": null,
+                        "Reorder": "off",
+                        "Switch": "off",
                         "Value": ""
                     },
                     "Scheme": {
                         "Switch": "off"
                     }
                 },
-                "Cname": "www.test.com.cdn.dnsv1.com",
+                "Cname": "qq.com.cdntest.cdn.dnsv1.com",
                 "Compatibility": {
                     "Code": 0
                 },
                 "Compression": {
-                    "Switch": "on",
                     "CompressionRules": [
                         {
+                            "Algorithms": [
+                                "gzip"
+                            ],
                             "Compress": true,
                             "FileExtensions": [
                                 "js",
@@ -162,119 +188,146 @@ Output:
                                 "shtml",
                                 "htm"
                             ],
-                            "MinLength": 256,
                             "MaxLength": 2097152,
-                            "Algorithms": [
-                                "gzip"
-                            ]
+                            "MinLength": 256,
+                            "RulePaths": [],
+                            "RuleType": null
                         }
-                    ]
+                    ],
+                    "Switch": "on"
                 },
-                "CreateTime": "2020-12-14 21:14:36",
+                "CreateTime": "2024-12-18 14:29:28",
                 "Disable": "normal",
-                "Domain": "www.test.com",
+                "Domain": "qq.com",
                 "DownstreamCapping": {
-                    "Switch": "off",
-                    "CappingRules": []
+                    "CappingRules": [],
+                    "Switch": "off"
                 },
                 "ErrorPage": {
-                    "Switch": "off",
-                    "PageRules": []
+                    "PageRules": [],
+                    "Switch": "off"
                 },
                 "FollowRedirect": {
+                    "RedirectConfig": {
+                        "FollowRedirectBackupHost": "",
+                        "FollowRedirectHost": "",
+                        "Switch": "off"
+                    },
                     "Switch": "off"
                 },
                 "ForceRedirect": {
-                    "Switch": "off",
-                    "RedirectType": "http",
+                    "CarryHeaders": "off",
                     "RedirectStatusCode": 302,
-                    "CarryHeaders": "off"
+                    "RedirectType": "http",
+                    "Switch": "off"
                 },
                 "Https": {
-                    "Switch": "off",
-                    "Http2": "off",
-                    "Spdy": "off",
-                    "OcspStapling": "off",
-                    "VerifyClient": "off",
                     "CertInfo": null,
                     "ClientCertInfo": null,
+                    "Hsts": {
+                        "IncludeSubDomains": "off",
+                        "MaxAge": 0,
+                        "Switch": "off"
+                    },
+                    "Http2": "off",
+                    "OcspStapling": "off",
+                    "Spdy": "off",
+                    "Switch": "off",
                     "TlsVersion": [
                         "TLSv1",
                         "TLSv1.1",
-                        "TLSv1.2"
+                        "TLSv1.2",
+                        "TLSv1.3"
                     ],
-                    "Hsts": {
-                        "Switch": "off",
-                        "MaxAge": 0,
-                        "IncludeSubDomains": "off"
-                    },
+                    "VerifyClient": "off",
                     "SslStatus": "closed"
                 },
+                "HttpsBilling": {
+                    "Switch": "off"
+                },
+                "HwPrivateAccess": {
+                    "AccessKey": null,
+                    "Bucket": null,
+                    "SecretKey": null,
+                    "Switch": "off"
+                },
                 "ImageOptimization": {
-                    "WebpAdapter": {
+                    "AvifAdapter": {
+                        "FallbackFormats": [],
+                        "Switch": "off"
+                    },
+                    "GuetzliAdapter": {
                         "Switch": "off"
                     },
                     "TpgAdapter": {
                         "Switch": "off"
                     },
-                    "GuetzliAdapter": {
+                    "WebpAdapter": {
                         "Switch": "off"
                     }
                 },
                 "IpFilter": {
-                    "Switch": "off",
+                    "FilterRules": [],
                     "FilterType": "blacklist",
                     "Filters": [],
-                    "FilterRules": []
+                    "ReturnCode": 514,
+                    "Switch": "off"
                 },
                 "IpFreqLimit": {
-                    "Switch": "off",
-                    "Qps": null
+                    "Qps": null,
+                    "Switch": "off"
                 },
                 "Ipv6": {
-                    "Switch": "off"
+                    "Switch": "on"
                 },
                 "Ipv6Access": {
                     "Switch": "off"
                 },
                 "MaxAge": {
-                    "MaxAgeRules": [
-                        {
-                            "MaxAgeType": "all",
-                            "MaxAgeContents": [
-                                "*"
-                            ],
-                            "MaxAgeTime": 0,
-                            "FollowOrigin": "on"
-                        }
-                    ],
-                    "Switch": "on"
+                    "MaxAgeCodeRule": null,
+                    "MaxAgeRules": [],
+                    "Switch": "off"
                 },
                 "OfflineCache": {
                     "Switch": "off"
                 },
                 "Origin": {
-                    "Origins": [
-                        "1.1.1.1"
-                    ],
-                    "OriginType": "ip",
-                    "ServerName": "www.a.com",
-                    "CosPrivateAccess": "off",
-                    "OriginPullProtocol": "http",
-                    "BackupOrigins": [
-                        "2.2.2.2"
-                    ],
-                    "BackupOriginType": "ip",
-                    "BackupServerName": "www.a.com",
-                    "PathRules": [],
+                    "AdvanceHttps": {
+                        "CertInfo": null,
+                        "Cipher": "DEFAULT",
+                        "CustomTlsStatus": "off",
+                        "OriginCertInfo": null,
+                        "TlsVersion": [
+                            "TLSv1",
+                            "TLSv1.1",
+                            "TLSv1.2",
+                            "TLSv1.3"
+                        ],
+                        "VerifyOriginType": "off"
+                    },
+                    "BackupOriginType": null,
+                    "BackupOrigins": [],
+                    "BackupServerName": null,
                     "BasePath": null,
+                    "CosPrivateAccess": "off",
+                    "OriginCompany": null,
+                    "OriginPullProtocol": "http",
+                    "OriginType": "domain",
+                    "Origins": [
+                        "httpbin.org"
+                    ],
                     "PathBasedOrigin": [],
+                    "PathRules": [],
+                    "ServerName": "qq.com",
                     "Sni": {
-                        "Switch": "off",
-                        "ServerName": null
+                        "ServerName": null,
+                        "Switch": "off"
                     }
                 },
-                "OriginAuthentication": null,
+                "OriginAuthentication": {
+                    "Switch": "off",
+                    "TypeA": null
+                },
                 "OriginCombine": {
                     "Switch": "off"
                 },
@@ -286,45 +339,77 @@ Output:
                     "ConnectTimeout": 5,
                     "ReceiveTimeout": 10
                 },
+                "OssPrivateAccess": {
+                    "AccessKey": null,
+                    "Bucket": null,
+                    "Region": null,
+                    "SecretKey": null,
+                    "Switch": "off"
+                },
+                "OthersPrivateAccess": {
+                    "AccessKey": null,
+                    "Bucket": null,
+                    "Region": null,
+                    "SecretKey": null,
+                    "Switch": "off"
+                },
+                "ParamFilter": {
+                    "FilterRules": [],
+                    "Switch": "off"
+                },
+                "ParentHost": "",
                 "PostMaxSize": {
-                    "Switch": "off",
-                    "MaxSize": 33554432
+                    "MaxSize": 33554432,
+                    "Switch": "off"
                 },
                 "ProjectId": 0,
+                "QnPrivateAccess": {
+                    "AccessKey": "",
+                    "SecretKey": "",
+                    "Switch": "off"
+                },
                 "Quic": {
                     "Switch": "off"
                 },
                 "RangeOriginPull": {
-                    "Switch": "off"
+                    "RangeRules": [],
+                    "Switch": "on"
                 },
                 "Readonly": "normal",
                 "Referer": {
-                    "Switch": "off",
-                    "RefererRules": [
-                        {
-                            "RuleType": "all",
-                            "RulePaths": [
-                                "*"
-                            ],
-                            "RefererType": "whitelist",
-                            "Referers": [
-                                "1.1.1.1"
-                            ],
-                            "AllowEmpty": false
-                        }
-                    ]
+                    "RefererRules": [],
+                    "Switch": "off"
+                },
+                "RemoteAuthentication": {
+                    "RemoteAuthenticationRules": null,
+                    "Server": null,
+                    "Switch": "off"
                 },
                 "RequestHeader": {
-                    "Switch": "off",
-                    "HeaderRules": []
+                    "HeaderRules": [
+                        {
+                            "HeaderMode": "add",
+                            "HeaderName": "Tencent-Acceleration-Domain-Name",
+                            "HeaderValue": "$host",
+                            "RulePaths": [
+                                "/data"
+                            ],
+                            "RuleType": "all"
+                        }
+                    ],
+                    "Switch": "on"
                 },
-                "ResourceId": "cdn-5ndlcoas",
+                "ResourceId": "cdn-clrsr",
                 "ResponseHeader": {
                     "HeaderRules": [],
                     "Switch": "off"
                 },
                 "ResponseHeaderCache": {
                     "Switch": "on"
+                },
+                "RuleEngine": {
+                    "Content": null,
+                    "Switch": "off"
                 },
                 "SecurityConfig": {
                     "Switch": "off"
@@ -333,6 +418,10 @@ Output:
                     "Switch": "off"
                 },
                 "ServiceType": "web",
+                "ShareCname": {
+                    "Cname": null,
+                    "Switch": "off"
+                },
                 "SpecificConfig": {
                     "Mainland": null,
                     "Overseas": null
@@ -341,40 +430,29 @@ Output:
                 "StatusCodeCache": {
                     "CacheRules": [
                         {
-                            "StatusCode": "403",
-                            "CacheTime": 0
+                            "CacheTime": 10,
+                            "StatusCode": "404"
                         }
                     ],
                     "Switch": "on"
                 },
-                "Tag": [
-                    {
-                        "TagKey": "testfornewtag",
-                        "TagValue": "brandnew"
-                    },
-                    {
-                        "TagKey": "zzz",
-                        "TagValue": "aaa"
-                    }
-                ],
-                "UpdateTime": "2021-03-16 21:04:04",
+                "Tag": null,
+                "UpdateTime": "2024-12-18 14:31:34",
                 "UrlRedirect": {
-                    "Switch": "off",
-                    "PathRules": []
+                    "PathRules": [],
+                    "Switch": "off"
                 },
                 "UserAgentFilter": {
-                    "Switch": "off",
-                    "FilterRules": []
+                    "FilterRules": [],
+                    "Switch": "off"
                 },
                 "VideoSeek": {
                     "Switch": "off"
                 },
-                "OssPrivateAccess": null,
-                "WebSocket": null,
-                "RemoteAuthentication": null,
-                "ShareCname": null,
-                "ParentHost": null,
-                "RuleEngine": null
+                "WebSocket": {
+                    "Switch": "off",
+                    "Timeout": 30
+                }
             }
         ],
         "TotalNumber": 1

@@ -8,7 +8,7 @@ Input:
 tccli cme FlattenListMedia --cli-unfold-argument  \
     --Owner.Type PERSON \
     --Owner.Id user_id_8ad3d628dc30001bd0343 \
-    --Platform test \
+    --Platform 1000000009 \
     --ClassPath /a/b
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceType VOD \
     --VodFileId 5285890796182734267 \
     --Owner.Id cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce \
@@ -35,7 +35,7 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceType VOD \
     --VodFileId 528589079618273426711 \
     --Owner.Id user_id_0a54392053f84053942f930 \
@@ -63,7 +63,7 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceType EXTERNAL \
     --Owner.Id user_id_0a54392053f84053942f930 \
     --Owner.Type PERSON \
@@ -93,7 +93,7 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceType EXTERNAL \
     --Owner.Id cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce \
     --Owner.Type TEAM \
@@ -123,7 +123,7 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceType VOD \
     --VodFileId 5285890796182734267 \
     --Owner.Id cmetid_37b1bb3bf8fb2eb3ba00e41dcca0ce \
@@ -153,7 +153,7 @@ Input:
 
 ```
 tccli cme ImportMaterial --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --SourceType VOD \
     --VodFileId 528589079618273426711 \
     --Owner.Id user_id_0a54392053f84053942f930 \

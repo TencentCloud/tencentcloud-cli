@@ -70,13 +70,6 @@
       "output": "ClassifyStoreNameResponse",
       "status": "online"
     },
-    "CreateAIFormTask": {
-      "document": "智慧表单产品已下线，需要下线相关API\n\n本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。\n\n智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
-      "input": "CreateAIFormTaskRequest",
-      "name": "创建智慧表单文件识别任务",
-      "output": "CreateAIFormTaskResponse",
-      "status": "deprecated"
-    },
     "DriverLicenseOCR": {
       "document": "本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。\n\n驾驶证主页：包括证号、姓名、性别、国籍、住址、出生日期、初次领证日期、准驾车型、有效期限、发证单位\n\n驾驶证副页：包括证号、姓名、档案编号、记录。\n\n另外，本接口还支持复印件、翻拍告警功能。同时支持识别交管12123 APP发放的电子驾驶证正页。\n\n电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。\n\n默认接口请求频率限制：10次/秒。",
       "input": "DriverLicenseOCRRequest",
@@ -195,13 +188,6 @@
       "name": "获取OCR Token",
       "output": "GetOCRTokenResponse",
       "status": "online"
-    },
-    "GetTaskState": {
-      "document": "智慧表单产品已下线，需要下线相关API\n\n支持查询智能表单录入任务的状态。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。",
-      "input": "GetTaskStateRequest",
-      "name": "查询智慧表单任务状态",
-      "output": "GetTaskStateResponse",
-      "status": "deprecated"
     },
     "HKIDCardOCR": {
       "document": "本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备人像照片裁剪等扩展功能。\n\n默认接口请求频率限制：5次/秒。",
@@ -386,7 +372,7 @@
       "status": "online"
     },
     "RecognizeGeneralInvoice": {
-      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票等常用标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicFlightTicketFull</td>\n          <td> 电子发票(机票行程单)</td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicTrainTicketFull</td>\n          <td> 电子发票(铁路电子客票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> TaxPayment </td>\n          <td> 完税凭证 </td>\n          <td> 18 </td>\n        </tr>\n        <tr>\n          <td> CustomsPaymentReceipt </td>\n          <td> 海关缴款 </td>\n          <td> 19 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票等常用标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicFlightTicketFull</td>\n          <td> 电子发票(机票行程单)</td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicTrainTicketFull</td>\n          <td> 电子发票(铁路电子客票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> TaxPayment </td>\n          <td> 完税凭证 </td>\n          <td> 18 </td>\n        </tr>\n        <tr>\n          <td> CustomsPaymentReceipt </td>\n          <td> 海关缴款 </td>\n          <td> 19 </td>\n        </tr>\n        <tr>\n          <td> BankSlip </td>\n          <td> 银行回单 </td>\n          <td> 20 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "RecognizeGeneralInvoiceRequest",
       "name": "通用票据识别（高级版）",
       "output": "RecognizeGeneralInvoiceResponse",
@@ -566,13 +552,6 @@
       "name": "增值税发票识别",
       "output": "VatInvoiceOCRResponse",
       "status": "online"
-    },
-    "VatInvoiceVerify": {
-      "document": "已上线VatInvoiceVerifyNew，VatInvoiceVerify需要下线，产品在官网已发通告\n\n本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。\n\n默认接口请求频率限制：20次/秒。",
-      "input": "VatInvoiceVerifyRequest",
-      "name": "增值税发票核验",
-      "output": "VatInvoiceVerifyResponse",
-      "status": "deprecated"
     },
     "VatInvoiceVerifyNew": {
       "document": "本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票、通用机打电子发票（广东和浙江）。\n\n默认接口请求频率限制：20次/秒。",
@@ -2883,80 +2862,6 @@
         }
       ],
       "usage": "out"
-    },
-    "CreateAIFormTaskRequest": {
-      "document": "CreateAIFormTask请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "多个文件的URL列表",
-          "example": "无",
-          "member": "SmartFormFileUrl",
-          "name": "FileList",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "备注信息1",
-          "example": "无",
-          "member": "string",
-          "name": "FirstNotes",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "备注信息2",
-          "example": "无",
-          "member": "string",
-          "name": "SecondNotes",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文件类型",
-          "example": "0",
-          "member": "uint64",
-          "name": "FileType",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateAIFormTaskResponse": {
-      "document": "CreateAIFormTask返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "本次识别任务的唯一身份ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"209fef6e-117c-11ed-9368-525400e51a47\"",
-          "member": "string",
-          "name": "TaskId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "本次识别任务的操作URL，有效期自生成之时起共24小时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"https://ocr.smartform.cloud.tencent.com?taskId=209fef6e-117c-1\"",
-          "member": "string",
-          "name": "OperateUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "CustomsPaymentReceipt": {
       "document": "海关缴款书",
@@ -6806,43 +6711,6 @@
       ],
       "type": "object"
     },
-    "GetTaskStateRequest": {
-      "document": "GetTaskState请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智慧表单任务唯一身份ID",
-          "example": "\"209fef6e-117c-11ed-9368-525400e51a47\"",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTaskStateResponse": {
-      "document": "GetTaskState返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "1:任务识别完成，还未提交\n2:任务已手动关闭\n3:任务已提交\n4:任务识别中\n5:超时：任务超过了可操作的24H时限\n6:任务识别失败",
-          "example": "1",
-          "member": "uint64",
-          "name": "TaskState",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "GroupInfo": {
       "document": "组在图中的序号",
       "members": [
@@ -8239,7 +8107,7 @@
         },
         {
           "disabled": false,
-          "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书",
+          "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书\n20：银行回单",
           "example": "3",
           "member": "int64",
           "name": "Type",
@@ -8800,7 +8668,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。",
+          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -8818,7 +8686,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/MLIDPassportOCR/MLIDPassportOCR1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -13585,7 +13453,7 @@
         },
         {
           "disabled": false,
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。\n暂不支持多个参数进行局部控制。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书\n-1：其他发票",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。\n暂不支持多个参数进行局部控制。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书\n20：银行回单\n-1：其他发票",
           "example": "[0,1]",
           "member": "int64",
           "name": "Types",
@@ -16462,32 +16330,6 @@
       ],
       "usage": "out"
     },
-    "SmartFormFileUrl": {
-      "document": "智慧表单上传文件信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "文件url地址",
-          "example": "无",
-          "member": "string",
-          "name": "FileUrl",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文件的顺序，顺序从1开始",
-          "example": "1",
-          "member": "uint64",
-          "name": "FileOrderNumber",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
     "SmartStructuralOCRRequest": {
       "document": "SmartStructuralOCR请求参数结构体",
       "members": [
@@ -16750,7 +16592,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nDispatchWeightNote -- 磅单发货单识别模板\nReceiptWeightNote -- 磅单收货单识别模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -16763,6 +16605,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnableCoord",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启父子key识别，默认是",
+          "example": "true",
+          "member": "bool",
+          "name": "OutputParentKey",
           "required": false,
           "type": "bool"
         }
@@ -22363,87 +22214,6 @@
           "member": "FinancialBill",
           "name": "FinancialBill",
           "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VatInvoiceVerifyRequest": {
-      "document": "VatInvoiceVerify请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "发票代码， 一张发票一天只能查询5次。",
-          "example": "1300000000",
-          "member": "string",
-          "name": "InvoiceCode",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "发票号码（8位）",
-          "example": "04000000",
-          "member": "string",
-          "name": "InvoiceNo",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。",
-          "example": "2019-12-11",
-          "member": "string",
-          "name": "InvoiceDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "根据票种传递对应值，如果报参数错误，请仔细检查每个票种对应的值\n\n增值税专用发票：开具金额（不含税）\n\n增值税普通发票、增值税电子普通发票（含通行费发票）、增值税普通发票（卷票）：校验码后6位\n\n区块链发票：不含税金额/校验码，例如：“285.01/856ab”\n\n机动车销售统一发票：不含税价\n\n货物运输业增值税专用发票：合计金额\n\n二手车销售统一发票：车价合计",
-          "example": "88.50",
-          "member": "string",
-          "name": "Additional",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VatInvoiceVerifyResponse": {
-      "document": "VatInvoiceVerify返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "增值税发票信息，详情请点击左侧链接。",
-          "example": "无",
-          "member": "VatInvoice",
-          "name": "Invoice",
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "机动车销售统一发票信息",
-          "example": "无",
-          "member": "VehicleInvoiceInfo",
-          "name": "VehicleInvoiceInfo",
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "二手车销售统一发票信息",
-          "example": "无",
-          "member": "UsedVehicleInvoiceInfo",
-          "name": "UsedVehicleInvoiceInfo",
           "type": "object",
           "value_allowed_null": false
         },

@@ -6,15 +6,32 @@ Input:
 
 ```
 tccli bi CreateUserRoleProject --cli-unfold-argument  \
-    --UserList.0.UserName null \
-    --UserList.0.UserId null \
-    --ProjectId 000 \
-    --RoleIdList 100100 \
-    --UserInfoList.0.UserName tommyho \
-    --UserInfoList.0.PhoneNumber 152****12313 \
-    --UserInfoList.0.AreaCode 86 \
-    --UserInfoList.0.UserId tommyho \
-    --UserInfoList.0.Email 123@qq.com
+    --ProjectId 1982493789748932 \
+    --RoleIdList 1982493789748932 \
+    --UserInfoList.0.UserId zhangsan \
+    --UserInfoList.0.UserName 用户名 \
+    --UserInfoList.0.Email 邮箱 \
+    --UserInfoList.0.PhoneNumber 手机号 \
+    --UserInfoList.0.AreaCode 手机号区号 \
+    --UserInfoList.0.AppUserId 企微账号id \
+    --UserInfoList.0.AppUserName 企微账号名称 \
+    --UserList.0.UserId zhangsan \
+    --UserList.0.UserName 用户名 \
+    --UserList.0.CorpId 企业ID \
+    --UserList.0.Email 电子邮箱 \
+    --UserList.0.Status 1982493789748932 \
+    --UserList.0.FirstModify 1982493789748932 \
+    --UserList.0.PhoneNumber 手机号码 \
+    --UserList.0.AreaCode 手机区号 \
+    --UserList.0.CreatedUser 创建人 \
+    --UserList.0.UpdatedUser 更改人 \
+    --UserList.0.GlobalUserName 全局角色 \
+    --UserList.0.Mobile 手机号 \
+    --UserList.0.AppId 1 \
+    --UserList.0.AppUserId 1 \
+    --UserList.0.AppUserAliasName 1 \
+    --UserList.0.AppUserName 1 \
+    --UserList.0.InValidateAppRange False
 ```
 
 Output: 
@@ -39,8 +56,8 @@ Input:
 
 ```
 tccli bi CreateUserRoleProject --cli-unfold-argument  \
-    --UserList.0.UserName 王成林 \
-    --UserList.0.UserId lenwang \
+    --UserList.0.UserName 张三 \
+    --UserList.0.UserId zhangsan \
     --ProjectId 1 \
     --RoleIdList 100090
 ```

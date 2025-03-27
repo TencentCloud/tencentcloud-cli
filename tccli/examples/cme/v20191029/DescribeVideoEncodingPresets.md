@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeVideoEncodingPresets --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Ids 100047
 ```
 
@@ -48,7 +48,7 @@ Input:
 
 ```
 tccli cme DescribeVideoEncodingPresets --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Offset 0 \
     --Limit 2
 ```

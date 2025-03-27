@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tag DescribeTagValues --cli-unfold-argument  \
-    --TagKeys test1
+    --TagKeys key1
 ```
 
 Output: 
@@ -18,8 +18,8 @@ Output:
         "Limit": 15,
         "Tags": [
             {
-                "TagKey": "test1",
-                "TagValue": "test"
+                "TagKey": "key1",
+                "TagValue": "val1"
             }
         ],
         "RequestId": "69e59dbe-71e4-4497-a735-abdd7bf5f50a"

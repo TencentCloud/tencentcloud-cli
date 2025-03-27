@@ -10,7 +10,7 @@ tccli vpc CreateAndAttachNetworkInterface --cli-unfold-argument  \
     --Tags.0.Value shanghai \
     --Tags.0.Key city \
     --InstanceId ins-ms7c7gcr \
-    --PrivateIpAddresses.0.Primary true \
+    --PrivateIpAddresses.0.Primary True \
     --PrivateIpAddresses.0.PrivateIpAddress 172.16.64.13 \
     --SecurityGroupIds sg-05bb4upy \
     --NetworkInterfaceDescription demo \

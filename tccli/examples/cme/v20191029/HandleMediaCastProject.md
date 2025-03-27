@@ -13,7 +13,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyDestination \
     --DestinationInfos.0.Id dt_01 \
     --DestinationInfos.0.Name new name \
@@ -48,7 +48,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DisableDestination \
     --DestinationInfos.0.Id dt_01 \
     --ProjectId 12522d74de35ff
@@ -82,7 +82,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DeleteSource \
     --SourceInfos.0.Id st_02 \
     --ProjectId 12522d74de35ff
@@ -115,7 +115,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DeleteDestination \
     --DestinationInfos.0.Id dt_02 \
     --ProjectId 12522d74de35ff
@@ -148,7 +148,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation EnableDestination \
     --DestinationInfos.0.Id dt_02 \
     --ProjectId 12522d74de35ff
@@ -182,7 +182,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddSource \
     --Position 0 \
     --SourceInfos.0.Type CME \
@@ -201,12 +201,20 @@ Output:
             {
                 "Id": "st_01",
                 "Type": "CME",
-                "MaterialId": "5fd8ad3d628dc30001bd0895"
+                "MaterialId": "7d7ac177781a48c14198",
+                "FileId": "a82b830e765aa979",
+                "Offset": 0,
+                "Duration": 23,
+                "Url": "rtmp://push.example.com/cme/live1"
             },
             {
                 "Id": "st_02",
                 "Type": "VOD",
-                "FileId": "5285485487985271487"
+                "MaterialId": "7d7ac177781a48c12223",
+                "FileId": "5285485487985271487",
+                "Offset": 0,
+                "Duration": 23,
+                "Url": "rtmp://push.example.com/cme/live1"
             }
         ],
         "DestinationInfoSet": [],
@@ -230,9 +238,9 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation AddDestination \
-    --DestinationInfos.0.Name test \
+    --DestinationInfos.0.Name demo \
     --DestinationInfos.0.PushUrl rtmp://test.com/live/abc?t=xxx \
     --ProjectId 12522d74de35ff
 ```
@@ -246,7 +254,8 @@ Output:
         "DestinationInfoSet": [
             {
                 "Id": "dt_02",
-                "PushUrl": "rtmp://test.com/live/aa?t=xx"
+                "PushUrl": "rtmp://test.com/live/aa?t=xx",
+                "Name": "demo"
             }
         ],
         "RequestId": "c44cbb5b-b809-4061-8c45-7469b64e8e5x"
@@ -269,7 +278,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyPlaySetting \
     --PlaySetting.EndTime 2022-12-20T20:00:00Z \
     --ProjectId 12522d74de35ff
@@ -302,7 +311,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation Stop \
     --ProjectId 12522d74de35ff
 ```
@@ -334,7 +343,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation Start \
     --ProjectId 12522d74de35ff
 ```
@@ -366,7 +375,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyPlaySetting \
     --PlaySetting.AutoStartTime 2022-12-20T20:00:00Z \
     --ProjectId 12522d74de35ff
@@ -399,7 +408,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation ModifyOutputMediaSetting \
     --OutputMediaSetting.VideoSetting.Width 1920 \
     --OutputMediaSetting.VideoSetting.Height 1080 \
@@ -435,7 +444,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation SwitchSource \
     --SourceInfos.0.Id st_02 \
     --ProjectId 12522d74de35ff
@@ -468,7 +477,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation Confirm \
     --ProjectId 12522d74de35ff
 ```
@@ -498,7 +507,7 @@ Input:
 
 ```
 tccli cme HandleMediaCastProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Operation DescribePlayInfo \
     --ProjectId 12522d74de35ff
 ```

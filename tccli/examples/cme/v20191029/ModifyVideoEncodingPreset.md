@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cme ModifyVideoEncodingPreset --cli-unfold-argument  \
-    --Platform test \
-    --Name test1 \
+    --Platform 1000000009 \
+    --Name demo \
     --Id 100048
 ```
 
@@ -28,7 +28,7 @@ Input:
 
 ```
 tccli cme ModifyVideoEncodingPreset --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Id 100048 \
     --VideoSetting.ShortEdge 1024
 ```

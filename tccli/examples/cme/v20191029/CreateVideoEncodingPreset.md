@@ -7,7 +7,7 @@ Input:
 
 ```
 tccli cme CreateVideoEncodingPreset --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Name 自定义360p编码配置 \
     --RemoveAudio 1 \
     --VideoSetting.ShortEdge 360 \
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli cme CreateVideoEncodingPreset --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Name 自定义单声道音频编码配置 \
     --AudioSetting.Channels 1
 ```

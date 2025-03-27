@@ -64,7 +64,7 @@
       "status": "online"
     },
     "AssignIpv6Addresses": {
-      "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。",
+      "document": "本接口（AssignIpv6Addresses）用于弹性网卡申请`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037)接口。\n* 一个弹性网卡支持绑定的IP地址是有限制的，更多资源限制信息详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。\n* 可以指定`IPv6`地址申请，地址类型不能为主`IP`，`IPv6`地址暂时只支持作为辅助`IP`。\n* 地址必须要在弹性网卡所在子网内，而且不能被占用。\n* 在弹性网卡上申请一个到多个辅助`IPv6`地址，接口会在弹性网卡所在子网段内返回指定数量的辅助`IPv6`地址。",
       "input": "AssignIpv6AddressesRequest",
       "name": "分配IPv6地址",
       "output": "AssignIpv6AddressesResponse",
@@ -162,7 +162,7 @@
       "status": "online"
     },
     "AttachNetworkInterface": {
-      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个弹性网卡请至少绑定一个安全组，如需绑定请参见<a href=\"https://cloud.tencent.com/document/product/215/43132\">弹性网卡绑定安全组</a>。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。\n* 一个弹性网卡请至少绑定一个安全组，如需绑定请参见<a href=\"https://cloud.tencent.com/document/product/215/43132\">弹性网卡绑定安全组</a>。\n* 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href=\"https://cloud.tencent.com/document/product/576/18527\">弹性网卡使用限制</a>。\n* 一个弹性网卡只能同时绑定一个云服务器。\n* 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href=\"https://cloud.tencent.com/document/api/213/9452#InstanceStatus\">腾讯云服务器信息</a>。\n* 弹性网卡绑定的云服务器必须是私有网络的，而且云服务器所在可用区必须和弹性网卡子网的可用区相同。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037)\n接口。",
       "input": "AttachNetworkInterfaceRequest",
       "name": "弹性网卡绑定云服务器",
       "output": "AttachNetworkInterfaceResponse",
@@ -1758,7 +1758,7 @@
       "status": "online"
     },
     "DetachNetworkInterface": {
-      "document": "本接口（DetachNetworkInterface）用于弹性网卡解绑云服务器。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（DetachNetworkInterface）用于弹性网卡解绑云服务器。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037)\n接口。",
       "input": "DetachNetworkInterfaceRequest",
       "name": "弹性网卡解绑云服务器",
       "output": "DetachNetworkInterfaceResponse",
@@ -2759,7 +2759,7 @@
       "status": "online"
     },
     "UnassignIpv6Addresses": {
-      "document": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（UnassignIpv6Addresses）用于释放弹性网卡`IPv6`地址。<br />\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037)接口。",
       "input": "UnassignIpv6AddressesRequest",
       "name": "释放IPv6地址",
       "output": "UnassignIpv6AddressesResponse",
@@ -2780,7 +2780,7 @@
       "status": "online"
     },
     "UnassignPrivateIpAddresses": {
-      "document": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解除关联弹性公网 IP。不能退还弹性网卡的主内网IP。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（UnassignPrivateIpAddresses）用于弹性网卡退还内网 IP。\n* 退还弹性网卡上的辅助内网IP，接口自动解除关联弹性公网 IP。不能退还弹性网卡的主内网IP。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037)\n接口。",
       "input": "UnassignPrivateIpAddressesRequest",
       "name": "弹性网卡退还内网 IP",
       "output": "UnassignPrivateIpAddressesResponse",
@@ -4196,7 +4196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。",
+          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-5u5biujl",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -4206,7 +4206,7 @@
         {
           "disabled": false,
           "document": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。",
-          "example": "[{\"3402:4e00:20:1202:0:8d05:c272:f514\"}]",
+          "example": "[{\"Address\":\"3402:4e00:20:1202:0:8d05:c272:f514\"}]",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
@@ -4239,7 +4239,7 @@
         {
           "disabled": false,
           "document": "分配给弹性网卡的`IPv6`地址列表。",
-          "example": "[{\"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\", \"AddressId\": \"\", \"Primary\": false, \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\"}, {\"Address\": \"3402:4e00:20:1202:0:8d05:c272:f559\", \"AddressId\": \"\", \"Primary\": false, \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\"}]",
+          "example": "[{\"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\", \"AddressId\": \"\", \"Primary\": false, \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\"}]",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "output_required": true,
@@ -4352,7 +4352,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -4379,7 +4379,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -4841,7 +4841,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。",
+          "document": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。本接口不支持主网卡绑定安全组。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "[\"eni-1a2b3c4d\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
@@ -4850,7 +4850,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。",
+          "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n",
           "example": "[\"sg-1a2b3c4d\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -4958,7 +4958,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -4967,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID。形如：ins-r8hr2upy。",
+          "document": "CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -7483,7 +7483,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
@@ -7501,7 +7501,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。",
+          "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。",
           "example": "subnet-76r802pg",
           "member": "string",
           "name": "SubnetId",
@@ -7510,7 +7510,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器实例ID。",
+          "document": "云服务器实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。",
           "example": "ins-efe0238e",
           "member": "string",
           "name": "InstanceId",
@@ -7537,7 +7537,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -7546,7 +7546,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
+          "document": "指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n",
           "example": "[\"sg-lb68uglp\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -9229,7 +9229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-0akbol5v",
           "member": "string",
           "name": "VpcId",
@@ -9247,7 +9247,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。",
+          "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。",
           "example": "subnet-76r802pg",
           "member": "string",
           "name": "SubnetId",
@@ -9274,7 +9274,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
+          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -9283,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
+          "document": "指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n",
           "example": "[\"sg-05bb4upy\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -17646,7 +17646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。",
+          "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "[\"eni-f9qln349\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
@@ -17655,8 +17655,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。“AG”-服务质量为云铜，“AU”-服务质量为云银。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>",
-          "example": "[]",
+          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。\n</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。\n</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>",
+          "example": "[{'Name': 'vpc-id', 'Values': ['vpc-q26u781x']}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -17689,7 +17689,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "[{\"MacAddress\": \"20:90:6F:F5:34:C7\", \"VpcId\": \"vpc-2kx9z6h3\", \"SubNetworkInterfaces\": [], \"Zone\": \"ap-guangzhou-2\", \"Business\": \"cvm\", \"NetworkInterfaceId\": \"eni-f1xjkw1b\", \"Primary\": false, \"CdcId\": \"\", \"PrivateIpAddressSet\": [{\"IsWanIpBlocked\": false, \"Primary\": true, \"State\": \"AVAILABLE\", \"PublicIpAddress\": \"\", \"PrivateIpAddress\": \"192.168.0.13\", \"Description\": \"\"}], \"NetworkInterfaceDescription\": \"demo\", \"Ipv6AddressSet\": [], \"State\": \"AVAILABLE\", \"GroupSet\": [\"sg-c2r7lnxh\"], \"Attachment\": {}, \"TagSet\": [], \"EniType\": 1, \"CreatedTime\": \"2021-01-07 16:32:55\", \"SubnetId\": \"subnet-nao8lfro\", \"NetworkInterfaceName\": \"main\", \"AttachType\": 1}]",
+          "example": "[{\"MacAddress\": \"20:90:6F:F5:34:C7\", \"VpcId\": \"vpc-2kx9z6h3\", \"SubNetworkInterfaces\": []]",
           "member": "NetworkInterface",
           "name": "NetworkInterfaceSet",
           "output_required": true,
@@ -21594,7 +21594,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -21603,7 +21603,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID。形如：ins-r8hr2upy。",
+          "document": "CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -25611,7 +25611,7 @@
         },
         {
           "disabled": false,
-          "document": "`EIP`实例`ID`，形如：`eip-hxlqja90`。",
+          "document": "`EIP`实例`ID`，形如：`eip-hxlqja90`。作为入参数时，可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取。",
           "example": "eip-5k6fot41",
           "member": "string",
           "name": "AddressId",
@@ -25666,7 +25666,7 @@
         },
         {
           "disabled": false,
-          "document": "`IPv6`地址的类型: `GUA`, `OTHER`, `ULA`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "`IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ULA",
           "member": "string",
           "name": "AddressType",
@@ -25983,7 +25983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -25992,7 +25992,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。",
+          "document": "弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "SourceInstanceId",
@@ -26001,7 +26001,7 @@
         },
         {
           "disabled": false,
-          "document": "待迁移的目的CVM实例ID。",
+          "document": "待迁移的目的CVM实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n",
           "example": "ins-7qs3ou6z",
           "member": "string",
           "name": "DestinationInstanceId",
@@ -26010,7 +26010,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡绑定类型：0 标准型 1 扩展型。",
+          "document": "网卡绑定类型：0 标准型 1 扩展型。默认：0。",
           "example": "0",
           "member": "uint64",
           "name": "AttachType",
@@ -27316,7 +27316,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。",
+          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -27748,7 +27748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-pxir56ns。",
+          "document": "弹性网卡实例ID，例如：eni-pxir56ns。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -27758,7 +27758,7 @@
         {
           "disabled": false,
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
-          "example": "demo",
+          "example": "NetworkInterfaceName1",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": false,
@@ -27767,7 +27767,7 @@
         {
           "disabled": false,
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
-          "example": "demo",
+          "example": "NetworkInterfaceDescription1",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -27775,7 +27775,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的安全组，例如:['sg-1dd51d']。",
+          "document": "指定绑定的安全组，例如:['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n",
           "example": "[\"sg-h0fk8lfc\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -27811,7 +27811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡ID，支持批量修改。",
+          "document": "弹性网卡ID，支持批量修改。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "[\"eni-nswq8wkq\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
@@ -27820,7 +27820,7 @@
         },
         {
           "disabled": false,
-          "document": "服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
+          "document": "服务质量，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
           "example": "AG",
           "member": "string",
           "name": "QosLevel",
@@ -27829,7 +27829,7 @@
         },
         {
           "disabled": false,
-          "document": "DirectSend端口范围最大值。",
+          "document": "DirectSend端口范围最大值。最大值: 65535。",
           "example": "8090",
           "member": "uint64",
           "name": "DirectSendMaxPort",
@@ -27856,7 +27856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -30531,7 +30531,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59",
           "example": "2020-10-28 08:23:59",
           "member": "string",
           "name": "CreatedTime",
@@ -30564,7 +30564,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡类型。0 - 弹性网卡；1 - evm弹性网卡。",
+          "document": "网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡",
           "example": "0",
           "member": "uint64",
           "name": "EniType",
@@ -30575,7 +30575,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡绑定的子机类型：cvm，eks。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TKE",
           "member": "string",
           "name": "Business",
@@ -30619,7 +30619,7 @@
         },
         {
           "disabled": false,
-          "document": "服务质量级别：\n<li>`DEFAULT`：默认</li>\n<li>`PT`：云金</li>\n<li>`AU`：云银</li>\n<li>`AG`：云铜</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务质量级别：\nPT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n\n可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AG",
           "member": "string",
           "name": "QosLevel",
@@ -30999,7 +30999,7 @@
           "member": "string",
           "name": "PrivateIpAddress",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -31071,7 +31071,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。",
+          "document": "IP服务质量等级，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -36499,7 +36499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。",
+          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-9c8zkfev",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -36607,7 +36607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -36625,7 +36625,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。",
+          "document": "网卡绑定的子机实例ID，该参数仅用于指定网卡退还IP并解绑子机的场景，如果不涉及解绑子机，请勿填写。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n",
           "example": "ins-3456tghy",
           "member": "string",
           "name": "InstanceId",

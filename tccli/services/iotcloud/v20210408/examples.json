@@ -27,14 +27,14 @@
     "CreateDevice": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&Attribute.Tags.0.Tag=note\n&Attribute.Tags.0.Type=2\n&Attribute.Tags.0.Value=test_note\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"test_device\",\n        \"DevicePsk\": \"xxxxxxxxxxxxx\",\n        \"DeviceCert\": \"\",\n        \"DevicePrivateKey\": \"\",\n        \"LoraDevEui\": \"\",\n        \"LoraMoteType\": 1,\n        \"LoraNwkKey\": \"\",\n        \"LoraAppKey\": \"xx\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=EQPOKD5111\n&DeviceName=dev-001\n&Attribute.Tags.0.Tag=note\n&Attribute.Tags.0.Type=2\n&Attribute.Tags.0.Value=test_note\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"dev-001\",\n        \"DevicePsk\": \"9MTpKyUBRpsPLB3hQyVfeQ==\",\n        \"DeviceCert\": \"\",\n        \"DevicePrivateKey\": \"9MTpKyUBRpsP\",\n        \"LoraDevEui\": \"1\",\n        \"LoraMoteType\": 1,\n        \"LoraNwkKey\": \"ddgergsdfretger\",\n        \"LoraAppKey\": \"3fgrtsdfsdgfdga\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "创建设备（采用对称加密）"
       },
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=ABCDE12345\n&DeviceName=test_device\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"test_device\",\n        \"DevicePsk\": \"\",\n        \"DeviceCert\": \"xxxxxxxxxxxxxxxxxxxx\",\n        \"DevicePrivateKey\": \"xxxxxxxxxxxxxxxxxxxxxxx\",\n        \"LoraDevEui\": \"\",\n        \"LoraMoteType\": 1,\n        \"LoraNwkKey\": \"\",\n        \"LoraAppKey\": \"xx\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=UTY5QRLMQY\n&DeviceName=dev-001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DeviceName\": \"dev-001\",\n        \"DevicePsk\": \"9MTpKyUBRpsPLB3hQyVfeQ==\",\n        \"DeviceCert\": \"-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf\",\n        \"DevicePrivateKey\": \"-----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgw\",\n        \"LoraDevEui\": \"1\",\n        \"LoraMoteType\": 1,\n        \"LoraNwkKey\": \"ddgergsdfretger\",\n        \"LoraAppKey\": \"3fgrtsdfsdgfdga\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "创建设备（采用非对称加密）"
       }
     ],
@@ -89,8 +89,8 @@
     "DeleteDevice": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteDevice\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DeleteDevice\n&ProductId=EQPOKD5111\n&DeviceName=dev-001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "删除设备"
       }
     ],
@@ -274,7 +274,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeProduct\n&ProductId=UTY6QRLMQY\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ProductId\": \"UTY6QRLMQY\",\n        \"ProductMetadata\": {\n            \"CreateUserId\": 630811165,\n            \"CreationDate\": 1740475425,\n            \"UserId\": 630811165\n        },\n        \"ProductName\": \"dev02\",\n        \"ProductProperties\": {\n            \"AppEUI\": \"\",\n            \"DeviceLimit\": 0,\n            \"EncryptionType\": \"1\",\n            \"ForbiddenStatus\": 0,\n            \"Format\": \"json\",\n            \"ModelId\": \"-1\",\n            \"ModelName\": \"\",\n            \"OriginProductId\": \"\",\n            \"OriginUserId\": 0,\n            \"Platform\": \"DEFAULT\",\n            \"PrivateCAName\": \"\",\n            \"ProductDescription\": \"\",\n            \"ProductKey\": \"\",\n            \"ProductSecret\": \"\",\n            \"ProductType\": 0,\n            \"Region\": \"\",\n            \"RegisterLimit\": 10000,\n            \"RegisterType\": 0\n        },\n        \"RequestId\": \"e2e44a73-6612-4355-88cf-b8a35041ac10\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ProductId\": \"UTY6QRLMQY\",\n        \"ProductMetadata\": {\n            \"CreateUserId\": 630811165,\n            \"CreationDate\": 1740475425,\n            \"UserId\": 630811165\n        },\n        \"ProductName\": \"dev02\",\n        \"ProductProperties\": {\n            \"AppEUI\": \"\",\n            \"DeviceLimit\": 0,\n            \"EncryptionType\": \"1\",\n            \"ForbiddenStatus\": 0,\n            \"Format\": \"json\",\n            \"ModelId\": \"-1\",\n            \"ModelName\": \"\",\n            \"OriginProductId\": \"\",\n            \"OriginUserId\": \"1034534234\",\n            \"Platform\": \"DEFAULT\",\n            \"PrivateCAName\": \"\",\n            \"ProductDescription\": \"\",\n            \"ProductKey\": \"\",\n            \"ProductSecret\": \"\",\n            \"ProductType\": 0,\n            \"Region\": \"\",\n            \"RegisterLimit\": 10000,\n            \"RegisterType\": 0\n        },\n        \"RequestId\": \"e2e44a73-6612-4355-88cf-b8a35041ac10\"\n    }\n}",
         "title": "查看产品详情示例"
       }
     ],

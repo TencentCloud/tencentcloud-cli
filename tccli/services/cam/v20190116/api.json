@@ -7504,7 +7504,7 @@
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "test124",
+          "example": "jack",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7567,7 +7567,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "123%40qq.com",
+          "example": "123**0qq.com",
           "member": "string",
           "name": "Email",
           "required": false,

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli bi ModifyUserRoleProject --cli-unfold-argument  \
-    --ProjectId 0 \
-    --UserId 12233 \
-    --RoleIdList 0 \
-    --Email 2313***312@qq.com \
-    --UserName zhangsn \
-    --AppUserId dsfg
+    --ProjectId 1982493789748932 \
+    --UserId UserId \
+    --RoleIdList 1982493789748932 \
+    --Email 123***@qq.com \
+    --UserName zhangsan \
+    --AppUserId AppUserId
 ```
 
 Output: 

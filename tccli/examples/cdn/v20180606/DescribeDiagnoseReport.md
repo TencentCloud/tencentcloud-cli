@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdn DescribeDiagnoseReport --cli-unfold-argument  \
-    --ReportId 123
+    --ReportId 9597132511111
 ```
 
 Output: 
@@ -19,8 +19,8 @@ Output:
                 {
                     "Key": "report_id",
                     "KeyText": "报告ID",
-                    "Value": "123",
-                    "ValueText": "123"
+                    "Value": "report content",
+                    "ValueText": "report content"
                 },
                 {
                     "Key": "diagnose_url",
