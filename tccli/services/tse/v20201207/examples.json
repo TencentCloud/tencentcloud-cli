@@ -574,6 +574,14 @@
         "title": "查询引擎实例访问地址"
       }
     ],
+    "DescribeEngineClbIntranetAccessAddressList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEngineClbIntranetAccessAddressList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-xxx\",\n    \"EngineRegion\": \"ap-beijing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"VpcId\": \"vpc-123456\",\n                \"SubnetId\": \"subnet-123456\",\n                \"IntranetAddress\": \"10.1.0.1:2181\",\n                \"Status\": \"normal\",\n                \"Msg\": \"\"\n            }\n        ],\n        \"RequestId\": \"3a2e00dd-1870-44b8-8b45-73ca8064ec47\"\n    }\n}",
+        "title": "查询引擎实例云梯环境下的CLB地址列表"
+      }
+    ],
     "DescribeGovernanceAliases": [
       {
         "document": "",
@@ -748,6 +756,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZookeeperServerInterfaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-id\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Content\": [\n            {\n                \"Interface\": \"addWatch\"\n            }\n        ],\n        \"RequestId\": \"req-id\"\n    }\n}",
         "title": "查询nacos服务接口列表"
+      }
+    ],
+    "ManageCLB": [
+      {
+        "document": "管理云梯内网CLB",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageCLB\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-xxxxx\",\n    \"InstanceId\": \"ins-xxxx\",\n    \"VpcId\": \"vpc-123456\",\n    \"Command\": \"create\",\n    \"EngineRegion\": \"ap-beijing\",\n    \"Vip\": \"10.0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"3a2e00dd-1870-44b8-8b45-73ca8064ec47\"\n    }\n}",
+        "title": "管理云梯内网CLB"
       }
     ],
     "ModifyAutoScalerResourceStrategy": [

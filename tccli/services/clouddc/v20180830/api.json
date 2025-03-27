@@ -1,11 +1,11 @@
 {
   "actions": {
     "AddBatch": {
-      "document": "创建批次",
+      "document": "已迁移，无调用\n\n创建批次",
       "input": "AddBatchRequest",
       "name": "创建批次",
       "output": "AddBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AuditActivity": {
       "document": "审核代金劵活动，有白名单限制，需要的童鞋，请联系hansonwchen 或 joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
@@ -29,11 +29,11 @@
       "status": "online"
     },
     "DeleteBatch": {
-      "document": "删除批次",
+      "document": "已迁移，无调用\n\n删除批次",
       "input": "DeleteBatchRequest",
       "name": "删除批次",
       "output": "DeleteBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteMarkCustomerLabel": {
       "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
@@ -162,11 +162,11 @@
       "status": "online"
     },
     "GetBatchList": {
-      "document": "获取批次列表",
+      "document": "已迁移，无调用\n\n获取批次列表",
       "input": "GetBatchListRequest",
       "name": "获取批次列表",
       "output": "GetBatchListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetExportControlUnderwriting": {
       "document": "通过测算单获取出口管制、包销",
@@ -211,11 +211,11 @@
       "status": "online"
     },
     "UpdateBatch": {
-      "document": "更新批次",
+      "document": "已迁移，无调用\n\n更新批次",
       "input": "UpdateBatchRequest",
       "name": "更新批次",
       "output": "UpdateBatchResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

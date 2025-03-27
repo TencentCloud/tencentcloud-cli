@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc AssignIpv6Addresses --cli-unfold-argument  \
-    --Ipv6Addresses.0.Description test2 \
+    --Ipv6Addresses.0.Description Ipv6Addresse1 \
     --Ipv6Addresses.0.Primary false \
     --Ipv6Addresses.0.Address 3402:4e00:20:1202::2 \
-    --Ipv6Addresses.1.Description test1 \
+    --Ipv6Addresses.1.Description Ipv6Addresse2 \
     --Ipv6Addresses.1.Primary false \
     --Ipv6Addresses.1.Address 3402:4e00:20:1202::1 \
     --NetworkInterfaceId eni-5u5biujl
@@ -24,7 +24,7 @@ Output:
                 "Address": "3402:4e00:20:1202::1",
                 "AddressId": "",
                 "Primary": false,
-                "Description": "test1",
+                "Description": "Ipv6AddressSet1",
                 "IsWanIpBlocked": false,
                 "State": "PENDING"
             },
@@ -32,7 +32,7 @@ Output:
                 "Address": "3402:4e00:20:1202::2",
                 "AddressId": "",
                 "Primary": false,
-                "Description": "test2",
+                "Description": "Ipv6AddressSe2",
                 "IsWanIpBlocked": false,
                 "State": "PENDING"
             }

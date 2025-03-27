@@ -8,7 +8,7 @@ Input:
 tccli afc CreateModelVersionRegister --cli-unfold-argument  \
     --BusinessSecurityData.ModelName mstest2_xyxj_dezg20241010_model_0325_000169830 \
     --BusinessSecurityData.Description mstest2-1309242001】-【mstest2_xyxj_dezg20241010_model_0325_000169830】_mstest2_xyxj_dezg20241010_model_0325_000169830_vignyshen_模型平台 \
-    --BusinessSecurityData.MissingValue 123 \
+    --BusinessSecurityData.MissingValue s5442 \
     --BusinessSecurityData.DoubleFeatures s2434 \
     --BusinessSecurityData.RequiredFeaturesWeight 1 \
     --BusinessSecurityData.ModelFound 1 \

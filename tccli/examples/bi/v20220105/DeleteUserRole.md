@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli bi DeleteUserRole --cli-unfold-argument  \
-    --UserId lenwang
+    --UserId zhansan
 ```
 
 Output: 

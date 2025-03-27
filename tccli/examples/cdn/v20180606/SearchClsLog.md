@@ -11,7 +11,7 @@ tccli cdn SearchClsLog --cli-unfold-argument  \
     --TopicIds 57460798-8723-45e3-9c75-a0599ef9143a,57460798-8723-45e3-9c75-22242141 \
     --StartTime '2019-11-18 00:00:00' \
     --EndTime '2019-11-18 02:00:00' \
-    --Query abc \
+    --Query http_status:200 \
     --Limit 10
 ```
 

@@ -953,6 +953,58 @@ def doDeleteGovernanceInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doManageCLB(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ManageCLBRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ManageCLB(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doCreateCloudNativeAPIGatewayCanaryRule(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1473,7 +1525,7 @@ def doDescribeAllConfigFileTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribePublicNetwork(args, parsed_globals):
+def doCreateNativeGatewayServerGroup(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1502,11 +1554,11 @@ def doDescribePublicNetwork(args, parsed_globals):
     client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribePublicNetworkRequest()
+    model = models.CreateNativeGatewayServerGroupRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribePublicNetwork(model)
+        rsp = client.CreateNativeGatewayServerGroup(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3761,6 +3813,58 @@ def doDeleteCloudNativeAPIGatewayCanaryRule(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeEngineClbIntranetAccessAddressList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeEngineClbIntranetAccessAddressListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeEngineClbIntranetAccessAddressList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeConfigFileReleaseVersions(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -4437,7 +4541,7 @@ def doModifyGovernanceNamespaces(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNativeGatewayServerGroup(args, parsed_globals):
+def doDescribePublicNetwork(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4466,11 +4570,11 @@ def doCreateNativeGatewayServerGroup(args, parsed_globals):
     client = mod.TseClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNativeGatewayServerGroupRequest()
+    model = models.DescribePublicNetworkRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateNativeGatewayServerGroup(model)
+        rsp = client.DescribePublicNetwork(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6494,6 +6598,7 @@ ACTION_MAP = {
     "DeleteGovernanceAliases": doDeleteGovernanceAliases,
     "DescribeZookeeperReplicas": doDescribeZookeeperReplicas,
     "DeleteGovernanceInstances": doDeleteGovernanceInstances,
+    "ManageCLB": doManageCLB,
     "CreateCloudNativeAPIGatewayCanaryRule": doCreateCloudNativeAPIGatewayCanaryRule,
     "DeleteNativeGatewayServiceSource": doDeleteNativeGatewayServiceSource,
     "DescribeCloudNativeAPIGatewayCertificateDetails": doDescribeCloudNativeAPIGatewayCertificateDetails,
@@ -6504,7 +6609,7 @@ ACTION_MAP = {
     "DescribeGovernanceServiceContracts": doDescribeGovernanceServiceContracts,
     "UpdateCloudNativeAPIGatewayCertificateInfo": doUpdateCloudNativeAPIGatewayCertificateInfo,
     "DescribeAllConfigFileTemplates": doDescribeAllConfigFileTemplates,
-    "DescribePublicNetwork": doDescribePublicNetwork,
+    "CreateNativeGatewayServerGroup": doCreateNativeGatewayServerGroup,
     "DescribeConfigFilesByGroup": doDescribeConfigFilesByGroup,
     "DescribeZookeeperServerInterfaces": doDescribeZookeeperServerInterfaces,
     "DeleteConfigFiles": doDeleteConfigFiles,
@@ -6548,6 +6653,7 @@ ACTION_MAP = {
     "DescribeGovernanceInstances": doDescribeGovernanceInstances,
     "DescribeGovernanceServices": doDescribeGovernanceServices,
     "DeleteCloudNativeAPIGatewayCanaryRule": doDeleteCloudNativeAPIGatewayCanaryRule,
+    "DescribeEngineClbIntranetAccessAddressList": doDescribeEngineClbIntranetAccessAddressList,
     "DescribeConfigFileReleaseVersions": doDescribeConfigFileReleaseVersions,
     "CreateOrUpdateConfigFileAndRelease": doCreateOrUpdateConfigFileAndRelease,
     "DescribeSREInstances": doDescribeSREInstances,
@@ -6561,7 +6667,7 @@ ACTION_MAP = {
     "CreateCloudNativeAPIGatewayService": doCreateCloudNativeAPIGatewayService,
     "DeleteCloudNativeAPIGateway": doDeleteCloudNativeAPIGateway,
     "ModifyGovernanceNamespaces": doModifyGovernanceNamespaces,
-    "CreateNativeGatewayServerGroup": doCreateNativeGatewayServerGroup,
+    "DescribePublicNetwork": doDescribePublicNetwork,
     "CreateAutoScalerResourceStrategy": doCreateAutoScalerResourceStrategy,
     "CreateConfigFile": doCreateConfigFile,
     "ModifyNetworkAccessStrategy": doModifyNetworkAccessStrategy,

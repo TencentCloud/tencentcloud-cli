@@ -1,0 +1,407 @@
+{
+  "actions": {
+    "DescribeFreqLimiter": {
+      "document": "查询接口限频限制器设置",
+      "input": "DescribeFreqLimiterRequest",
+      "name": "查询限频限制器",
+      "output": "DescribeFreqLimiterResponse",
+      "status": "online"
+    },
+    "DescribeFreqLimiterList": {
+      "document": "查询限频过滤器列表",
+      "input": "DescribeFreqLimiterListRequest",
+      "name": "查询限频过滤器列表",
+      "output": "DescribeFreqLimiterListResponse",
+      "status": "online"
+    },
+    "ModifyFreqLimiter": {
+      "document": "修改限频过滤器配置",
+      "input": "ModifyFreqLimiterRequest",
+      "name": "修改限频过滤器",
+      "output": "ModifyFreqLimiterResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-12-29",
+    "api_brief": "云API oss后台接口服务，能通过接口直接操作OSS资源",
+    "serviceNameCN": "云图",
+    "serviceShortName": "capioss"
+  },
+  "objects": {
+    "DescribeFreqLimiterListReq": {
+      "document": "req",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名",
+          "example": "cvm",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云API环境，取值范围\n\n- api_dev\n- api_test_master\n- api_test_branch\n- api_test_1\n- api_test_2\n- api_test_3\n- api_pre_release\n- api_formal",
+          "example": "api_dev",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeFreqLimiterListRequest": {
+      "document": "DescribeFreqLimiterList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品",
+          "example": "无",
+          "member": "DescribeFreqLimiterListReq",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFreqLimiterListResponse": {
+      "document": "DescribeFreqLimiterList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器列表",
+          "example": "[{}]",
+          "member": "FilterInfo",
+          "name": "Filters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFreqLimiterReq": {
+      "document": "req",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名",
+          "example": "cvm",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云API环境，取值范围，默认 api_dev\n\n- api_dev\n- api_test_master\n- api_test_branch\n- api_test_1\n- api_test_2\n- api_test_3\n- api_pre_release\n- api_formal",
+          "example": "api_dev",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "filter 名",
+          "example": "my_filter_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeFreqLimiterRequest": {
+      "document": "DescribeFreqLimiter请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限频过滤器名称",
+          "example": "无",
+          "member": "DescribeFreqLimiterReq",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFreqLimiterResponse": {
+      "document": "DescribeFreqLimiter返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"\"}",
+          "member": "FilterInfo",
+          "name": "Filter",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FilterInfo": {
+      "document": "过滤器详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名",
+          "example": "cvm",
+          "member": "string",
+          "name": "Module",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤器名称",
+          "example": "$module.$version.$action",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤器规格",
+          "example": "{\"\"}",
+          "member": "FilterSpec",
+          "name": "Spec",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FilterSpec": {
+      "document": "过滤器规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "$module/$version/$action/$uin",
+          "member": "string",
+          "name": "KeyPattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "matcher数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "MatcherInfo",
+          "name": "Matchers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "UinGroup",
+          "name": "UinGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MatcherInfo": {
+      "document": "matcher详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "matcher值",
+          "example": "apitest/2021-10-30/AddHan2/haha_group",
+          "member": "string",
+          "name": "Matcher",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限频值",
+          "example": "1",
+          "member": "int64",
+          "name": "FrequencyLimit",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyFreqLimiterReq": {
+      "document": "req",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名",
+          "example": "cvm",
+          "member": "string",
+          "name": "Module",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Filter 名",
+          "example": "my_filter_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云API环境，取值范围，默认 api_dev\n\n- api_dev\n- api_test_master\n- api_test_branch\n- api_test_1\n- api_test_2\n- api_test_3\n- api_pre_release\n- api_formal",
+          "example": "api_dev",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "spec",
+          "example": "无",
+          "member": "FilterSpec",
+          "name": "Spec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "云API环境，取值范围，默认 api_dev\n\n- ap-bangkok: 曼谷\n- ap-beijing: 北京\n- ap-beijing-data: 北京-数据类\n- ap-beijing-finance: 北京-金融集群\n- ap-beijing-woa: 北京-内部集群\n- ap-chengdu: 成都\n- ap-chengdu-woa: 成都-内部集群\n- ap-chongqing: 重庆\n- ap-chongqing-mc: 重庆-控制台\n- ap-guangzhou: 广州\n- ap-guangzhou-mc: 广州-控制台\n- ap-guangzhou-woa: 广州-内部集群\n- ap-guangzhou-wxzf: 广州-微信支付\n- ap-hongkong: 香港\n- ap-hongkong-woa: 香港-内部集群\n- ap-jakarta: 雅加达\n- ap-nanjing: 南京\n- ap-nanjing-xfcft: 南京-学府财付通\n- ap-seoul: 首尔\n- ap-shanghai: 上海\n- ap-shanghai-finance: 上海-金融集群\n- ap-shanghai-hqcft: 上海-花桥财付通\n- ap-shanghai-woa: 上海-内部集群\n- ap-shanghai-wxzf: 上海-微信支付\n- ap-shanghai-wxzfjpyzc: 上海-微信支付精品云支撑\n- ap-shenzhen: 深圳\n- ap-shenzhen-finance: 深圳-金融集群\n- ap-shenzhen-jxcft: 深圳锦绣财付通\n- ap-singapore: 新加坡\n- ap-singapore-mc: 新加坡-控制台\n- ap-singapore-woa: 新加坡-内部集群\n- ap-taipei: 台北\n- ap-tianjin: 天津\n- ap-tokyo: 东京\n- eu-frankfurt: 法兰克福\n- eu-frankfurt-woa: 法兰克福-内部集群\n- na-ashburn: 弗吉尼亚\n- na-ashburn-woa: 弗吉尼亚-内部集群\n- na-siliconvalley: 硅谷\n- na-siliconvalley-woa: 硅谷-内部集群\n- sa-saopaulo: 圣保罗",
+          "example": "优先地域",
+          "member": "string",
+          "name": "PriorityRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyFreqLimiterRequest": {
+      "document": "ModifyFreqLimiter请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器详情",
+          "example": "无",
+          "member": "ModifyFreqLimiterReq",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFreqLimiterResponse": {
+      "document": "ModifyFreqLimiter返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名",
+          "example": "cvm",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤器名称",
+          "example": "$module.$version.$action",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤器规格",
+          "example": "过滤器规格",
+          "member": "FilterSpec",
+          "name": "Spec",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UinGroup": {
+      "document": "用户组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "group1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin列表",
+          "example": "[\"123\",\"456\"]",
+          "member": "string",
+          "name": "UinList",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

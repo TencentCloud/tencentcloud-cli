@@ -18,10 +18,12 @@ Output:
         "DataInfoList": [
             {
                 "Time": "2019-03-01T00:00:00+08:00",
-                "Duration": 100
+                "Duration": 100,
+                "DurationSecond": 6000
             }
         ],
         "TotalDuration": 2000,
+        "TotalDurationSecond": 120000,
         "RequestId": "c8465603-c3a6-44bc-8354-a9b67bf44301"
     }
 }

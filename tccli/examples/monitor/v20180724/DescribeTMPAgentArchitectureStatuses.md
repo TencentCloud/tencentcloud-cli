@@ -5,12 +5,26 @@
 Input: 
 
 ```
-tccli monitor DescribeTMPAgentArchitectureStatuses --cli-unfold-argument ```
+tccli monitor DescribeTMPAgentArchitectureStatuses --cli-unfold-argument  \
+    --InstanceId prom-asdf
+```
 
 Output: 
 ```
 {
     "Response": {
+        "ArchitectureStatuses": [
+            {
+                "InstanceId": "prom-asdf",
+                "ClusterId": "cls-asdf1",
+                "IsNewArchitecture": true
+            },
+            {
+                "InstanceId": "prom-asdf",
+                "ClusterId": "cls-asdf2",
+                "IsNewArchitecture": false
+            }
+        ],
         "RequestId": "f5c04cb5-869d-7426-78b8-e978c01875b1"
     }
 }
@@ -23,12 +37,22 @@ Output:
 Input: 
 
 ```
-tccli monitor DescribeTMPAgentArchitectureStatuses --cli-unfold-argument ```
+tccli monitor DescribeTMPAgentArchitectureStatuses --cli-unfold-argument  \
+    --InstanceId prom-asdf \
+    --ClusterId cls-asdf
+```
 
 Output: 
 ```
 {
     "Response": {
+        "ArchitectureStatuses": [
+            {
+                "InstanceId": "prom-asdf",
+                "ClusterId": "cls-asdf",
+                "IsNewArchitecture": true
+            }
+        ],
         "RequestId": "f5c04cb5-869d-7426-78b8-e978c01875b1"
     }
 }

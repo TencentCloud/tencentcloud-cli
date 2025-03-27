@@ -1,0 +1,35 @@
+{
+  "actions": {
+    "DescribeFreqLimiter": [
+      {
+        "document": "查询apitest下指定过滤器",
+        "input": "POST / HTTP/1.1\nHost: capioss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFreqLimiter\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"Module\": \"apitest\",\n        \"Name\": \"$module.$version.$action.$uin\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Filter\": {\n            \"Module\": \"apitest\",\n            \"Name\": \"$module.$version.$action.$uin\",\n            \"Spec\": {\n                \"KeyPattern\": \"$module/$version/$action/$uin\",\n                \"Matchers\": [\n                    {\n                        \"FrequencyLimit\": 2,\n                        \"Matcher\": \"apitest/2021-10-30/AddHan2/123\"\n                    },\n                    {\n                        \"FrequencyLimit\": 1,\n                        \"Matcher\": \"apitest/2021-10-30/AddHan2/*\"\n                    },\n                    {\n                        \"FrequencyLimit\": -1,\n                        \"Matcher\": \"*/*/*/*\"\n                    },\n                    {\n                        \"FrequencyLimit\": 1,\n                        \"Matcher\": \"apitest/2017-03-12/InstanceTest/*\"\n                    }\n                ]\n            }\n        },\n        \"RequestId\": \"b39b9138-64a3-4107-8273-3282d82374b7\"\n    }\n}",
+        "title": "查询指定过滤器"
+      },
+      {
+        "document": "查询apitest下指定接口过滤器",
+        "input": "POST / HTTP/1.1\nHost: capioss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFreqLimiter\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"Module\": \"apitest\",\n        \"Name\": \"$module.$version.$action.$uin\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Filter\": {\n            \"Module\": \"apitest\",\n            \"Name\": \"$module.$version.$action.$uin\",\n            \"Spec\": {\n                \"KeyPattern\": \"$module/$version/$action/$uin\",\n                \"Matchers\": [\n                    {\n                        \"FrequencyLimit\": 1,\n                        \"Matcher\": \"apitest/2017-03-12/InstanceTest/*\"\n                    }\n                ]\n            }\n        },\n        \"RequestId\": \"fe9be21f-b267-45b9-99d9-55cce867dd15\"\n    }\n}",
+        "title": "查询指定接口过滤器"
+      }
+    ],
+    "DescribeFreqLimiterList": [
+      {
+        "document": "查询apitest下所有的过滤器列表",
+        "input": "POST / HTTP/1.1\nHost: capioss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFreqLimiterList\n<公共请求参数>\n\n{\n    \"Data\": {\n        \"Module\": \"apitest\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Filters\": [\n            {\n                \"Module\": \"apitest\",\n                \"Name\": \"$module.$version.$action.$uin\",\n                \"Spec\": {\n                    \"KeyPattern\": \"$module/$version/$action/$uin\",\n                    \"Matchers\": [\n                        {\n                            \"FrequencyLimit\": 2,\n                            \"Matcher\": \"apitest/2021-10-30/AddHan2/123\"\n                        },\n                        {\n                            \"FrequencyLimit\": 1,\n                            \"Matcher\": \"apitest/2021-10-30/AddHan2/*\"\n                        },\n                        {\n                            \"FrequencyLimit\": -1,\n                            \"Matcher\": \"*/*/*/*\"\n                        },\n                        {\n                            \"FrequencyLimit\": 1,\n                            \"Matcher\": \"apitest/2017-03-12/InstanceTest/*\"\n                        }\n                    ]\n                }\n            },\n            {\n                \"Module\": \"apitest\",\n                \"Name\": \"$module.$version.$action.$uin_group\",\n                \"Spec\": {\n                    \"KeyPattern\": \"$module/$version/$action/$uin_group\",\n                    \"Matchers\": [\n                        {\n                            \"FrequencyLimit\": -1,\n                            \"Matcher\": \"*/*/*/*\"\n                        },\n                        {\n                            \"FrequencyLimit\": 100,\n                            \"Matcher\": \"apitest/2017-03-12/InstanceTest/cloudapi\"\n                        },\n                        {\n                            \"FrequencyLimit\": 50,\n                            \"Matcher\": \"apitest/2017-03-12/InstanceTest/yunapi\"\n                        },\n                        {\n                            \"FrequencyLimit\": -1,\n                            \"Matcher\": \"apitest/2017-03-12/InstanceTest/*\"\n                        }\n                    ],\n                    \"UinGroups\": [\n                        {\n                            \"GroupName\": \"cloudapi\",\n                            \"UinList\": [\n                                \"11111\",\n                                \"22222\",\n                                \"33333\"\n                            ]\n                        },\n                        {\n                            \"GroupName\": \"yunapi\",\n                            \"UinList\": [\n                                \"123\",\n                                \"3333\",\n                                \"89721\"\n                            ]\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"c1bae0be-6675-4408-a7ff-0804fcb0b4bb\"\n    }\n}",
+        "title": "查询过滤器列表"
+      }
+    ],
+    "ModifyFreqLimiter": [
+      {
+        "document": "修改cvm指定接口限频过滤器配置",
+        "input": "POST / HTTP/1.1\nHost: capioss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFreqLimiter\n<公共请求参数>\n\n{\n    \"Data\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"Module\": \"cvm\",\n        \"Name\": \"$module.$version.$action.$uin\",\n        \"RequestId\": \"e6a07218-57c3-4ad8-ae26-990e3868a4a8\",\n        \"Spec\": {\n            \"KeyPattern\": \"$module/$version/$action/$uin\",\n            \"Matchers\": [\n                {\n                    \"FrequencyLimit\": -1,\n                    \"Matcher\": \"*/*/*/*\"\n                },\n                {\n                    \"FrequencyLimit\": 100,\n                    \"Matcher\": \"cvm/2017-03-12/DescribeZoneCdhInstanceConfigInfos/*\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "修改限频过滤器配置"
+      }
+    ]
+  },
+  "version": "1.0"
+}

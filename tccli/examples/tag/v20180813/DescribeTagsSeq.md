@@ -19,8 +19,8 @@ Output:
         "Limit": 15,
         "Tags": [
             {
-                "TagKey": "abc",
-                "TagValue": "123",
+                "TagKey": "key1",
+                "TagValue": "val1",
                 "CanDelete": 1
             }
         ],

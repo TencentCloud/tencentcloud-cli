@@ -650,6 +650,15 @@
           "name": "IsNeedDetail",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "[\"abd\"]",
+          "member": "string",
+          "name": "NodeUUIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

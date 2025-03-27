@@ -8609,6 +8609,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享单元最大资源数。",
+          "example": "20",
+          "member": "int64",
+          "name": "ShareResourceMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -29,7 +29,7 @@ Output:
             "ModelId": "-1",
             "ModelName": "",
             "OriginProductId": "",
-            "OriginUserId": 0,
+            "OriginUserId": "1034534234",
             "Platform": "DEFAULT",
             "PrivateCAName": "",
             "ProductDescription": "",

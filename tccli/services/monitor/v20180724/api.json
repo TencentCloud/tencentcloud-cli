@@ -2652,6 +2652,67 @@
       ],
       "usage": "both"
     },
+    "ArchitectureImage": {
+      "document": "采集组件镜像版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tmp-agent",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目前部署的镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v0.0.1",
+          "member": "string",
+          "name": "CurrentVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v0.0.2",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "当前镜像是一个采集组件的镜像",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像版本更新描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"修复了一个问题\", \"新增了一个功能\"]",
+          "member": "string",
+          "name": "UpdateDescriptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BasicAuth": {
       "document": "url鉴权",
       "members": [
@@ -2946,6 +3007,34 @@
         }
       ],
       "type": "object"
+    },
+    "CLBInfo": {
+      "document": "公网clb信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "clb id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lb-asdf",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb vip或hostname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CLSNotice": {
       "document": "告警通知中的推送CLS操作",
@@ -13965,12 +14054,51 @@
     },
     "DescribeTMPAgentArchitectureStatusesRequest": {
       "document": "DescribeTMPAgentArchitectureStatuses请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "Prometheus实例ID",
+          "example": "prom-asdf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定集群ID",
+          "example": "cls-asdf",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeTMPAgentArchitectureStatusesResponse": {
       "document": "DescribeTMPAgentArchitectureStatuses返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "架构状态列表",
+          "example": "[{\"InstanceId\":\"prom-asdf\",\"ClusterId\":\"cls-asdf\",\"IsMigrated\":true}]",
+          "member": "TMPAgentArchitectureStatus",
+          "name": "ArchitectureStatuses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "采集代理组件proxy-server详情列表",
+          "example": "[{\"Name\":\"proxy-server\",\"IP\":[\"10.0.0.25\"],\"CLBInfo\":{\"ID\":\"\",\"Host\":\"\"}}]",
+          "member": "ProxyServerInfo",
+          "name": "ProxyServerInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -20696,6 +20824,45 @@
       ],
       "usage": "out"
     },
+    "ProxyServerInfo": {
+      "document": "采集代理组件proxy-server详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "proxy-server",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.2",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网clb信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{                     \"ID\":\"\",                     \"Host\":\"\"                 }",
+          "member": "CLBInfo",
+          "name": "CLBInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ReceiverInfo": {
       "document": "接收人信息",
       "members": [
@@ -21676,6 +21843,62 @@
         }
       ],
       "type": "object"
+    },
+    "TMPAgentArchitectureStatus": {
+      "document": "tmp-agent采集组件架构状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prom-asdf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-asdf",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是新架构，true新架构，false旧架构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNewArchitecture",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集组件镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Name\":\"config-update\",\"Image\":\"ccr.ccs.tencentyun.com/tkeimages/configmap-update:v1.0.2\"}]",
+          "member": "ArchitectureImage",
+          "name": "Images",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群绑定状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal, abnormal, binding, unbinding, unbound, unknown",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "标签",

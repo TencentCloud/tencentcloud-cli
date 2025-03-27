@@ -295,7 +295,7 @@
         {
           "disabled": false,
           "document": "查询结果列表分页每页数据量",
-          "example": "10",
+          "example": "",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -304,7 +304,7 @@
         {
           "disabled": false,
           "document": "查询结果列表偏移量，等价于数据库查询里的 offset，如offset为10，则从第10条记录开始取",
-          "example": "0",
+          "example": "",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -313,7 +313,7 @@
         {
           "disabled": false,
           "document": "镜像商品所属分类ID",
-          "example": "1001",
+          "example": "",
           "member": "uint64",
           "name": "CategoryId",
           "required": false,
@@ -322,7 +322,7 @@
         {
           "disabled": false,
           "document": "云市场内部镜像ID",
-          "example": "10",
+          "example": "",
           "member": "uint64",
           "name": "ItemId",
           "required": false,
@@ -331,7 +331,7 @@
         {
           "disabled": false,
           "document": "镜像ID",
-          "example": "img-gag",
+          "example": "",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -340,7 +340,7 @@
         {
           "disabled": false,
           "document": "搜索关键词",
-          "example": "test",
+          "example": "",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -349,7 +349,7 @@
         {
           "disabled": false,
           "document": "镜像操作系统家族",
-          "example": "test",
+          "example": "",
           "member": "string",
           "name": "OSVendor",
           "required": false,
@@ -358,7 +358,7 @@
         {
           "disabled": false,
           "document": "镜像操作系统架构",
-          "example": "x86",
+          "example": "",
           "member": "string",
           "name": "OSArch",
           "required": false,
@@ -367,7 +367,7 @@
         {
           "disabled": false,
           "document": "镜像要求的磁盘空间上限（单位：GB）",
-          "example": "0",
+          "example": "",
           "member": "uint64",
           "name": "SpaceRequire",
           "required": false,
@@ -376,7 +376,7 @@
         {
           "disabled": false,
           "document": "镜像支持地域",
-          "example": "test",
+          "example": "",
           "member": "string",
           "name": "SupportRegion",
           "required": false,
@@ -385,7 +385,7 @@
         {
           "disabled": false,
           "document": "付费类型，prepay：预付费，postpay：后付费",
-          "example": "pre",
+          "example": "",
           "member": "string",
           "name": "PayMode",
           "required": false,
@@ -394,7 +394,7 @@
         {
           "disabled": false,
           "document": "CPU核数",
-          "example": "1",
+          "example": "",
           "member": "uint64",
           "name": "CpuType",
           "required": false,
@@ -403,7 +403,7 @@
         {
           "disabled": false,
           "document": "内存大小",
-          "example": "1",
+          "example": "",
           "member": "uint64",
           "name": "MemType",
           "required": false,
@@ -412,7 +412,7 @@
         {
           "disabled": false,
           "document": "OS类型",
-          "example": "1",
+          "example": "",
           "member": "uint64",
           "name": "OsType",
           "required": false,
@@ -421,7 +421,7 @@
         {
           "disabled": false,
           "document": "服务商信息：取值CVM",
-          "example": "test",
+          "example": "",
           "member": "string",
           "name": "IsvInfo",
           "required": false,
@@ -436,20 +436,18 @@
         {
           "disabled": false,
           "document": "查询结果总数",
-          "example": "10",
+          "example": "",
           "member": "uint64",
           "name": "TotalCount",
-          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "镜像结果数组",
-          "example": "无",
+          "example": "",
           "member": "CVMImageElement",
           "name": "ImageSet",
-          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

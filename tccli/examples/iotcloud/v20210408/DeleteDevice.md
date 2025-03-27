@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli iotcloud DeleteDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName abc
+    --ProductId EQPOKD5111 \
+    --DeviceName dev-001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "54f75f05-a87c-45fc-9520-6b59e251e91c"
     }
 }
 ```

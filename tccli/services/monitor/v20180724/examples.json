@@ -1057,14 +1057,14 @@
     "DescribeTMPAgentArchitectureStatuses": [
       {
         "document": "仅传入实例InstanceId，返回所有相关tmp-agent架构状态",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTMPAgentArchitectureStatuses\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5c04cb5-869d-7426-78b8-e978c01875b1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTMPAgentArchitectureStatuses\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-asdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ArchitectureStatuses\": [\n            {\n                \"InstanceId\": \"prom-asdf\",\n                \"ClusterId\": \"cls-asdf1\",\n                \"IsNewArchitecture\": true\n            },\n            {\n                \"InstanceId\": \"prom-asdf\",\n                \"ClusterId\": \"cls-asdf2\",\n                \"IsNewArchitecture\": false\n            }\n        ],\n        \"RequestId\": \"f5c04cb5-869d-7426-78b8-e978c01875b1\"\n    }\n}",
         "title": "仅传入实例InstanceId"
       },
       {
         "document": "传入实例InstacneId和集群ClusterId，返回相关tmp-agent架构状态",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTMPAgentArchitectureStatuses\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5c04cb5-869d-7426-78b8-e978c01875b1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTMPAgentArchitectureStatuses\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-asdf\",\n    \"ClusterId\": \"cls-asdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ArchitectureStatuses\": [\n            {\n                \"InstanceId\": \"prom-asdf\",\n                \"ClusterId\": \"cls-asdf\",\n                \"IsNewArchitecture\": true\n            }\n        ],\n        \"RequestId\": \"f5c04cb5-869d-7426-78b8-e978c01875b1\"\n    }\n}",
         "title": "传入实例InstacneId和集群ClusterId"
       }
     ],

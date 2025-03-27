@@ -30,7 +30,7 @@ Output:
                 "ChipOs": "Linux",
                 "ChipManufactureId": "x86",
                 "ChipId": "x86",
-                "ProductDescription": "123",
+                "ProductDescription": "desc",
                 "CreateTime": 1608880525,
                 "UpdateTime": 1611830563
             },
