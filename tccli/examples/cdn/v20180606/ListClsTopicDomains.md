@@ -17,7 +17,7 @@ Output:
     "Response": {
         "TopicId": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
         "UpdateTime": "2020-09-22 00:00:00",
-        "TopicName": "test",
+        "TopicName": "topic-name",
         "DomainAreaConfigs": [
             {
                 "Domain": "a.b.com",

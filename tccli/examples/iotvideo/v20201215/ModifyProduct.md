@@ -7,8 +7,8 @@ Input:
 ```
 tccli iotvideo ModifyProduct --cli-unfold-argument  \
     --ProductId 37MFSSRMZY \
-    --ProductName 测试 \
-    --ProductDescription test
+    --ProductName name \
+    --ProductDescription desc
 ```
 
 Output: 

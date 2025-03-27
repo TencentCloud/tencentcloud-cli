@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideo DescribeCloudStorageOrder --cli-unfold-argument  \
-    --OrderId abc
+    --OrderId id
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
     "Response": {
         "StartTime": 1,
         "ExpireTime": 1,
-        "PackageId": "abc",
+        "PackageId": "yc",
         "Status": 1,
-        "RequestId": "abc",
+        "RequestId": "id",
         "ChannelId": 1
     }
 }

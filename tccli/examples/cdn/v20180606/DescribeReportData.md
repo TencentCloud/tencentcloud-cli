@@ -46,7 +46,7 @@ Output:
             },
             {
                 "Resource": "默认项目",
-                "ResourceId": "0",
+                "ResourceId": "cdn-8km12345",
                 "Value": 900,
                 "Percentage": 90,
                 "BillingValue": 900,

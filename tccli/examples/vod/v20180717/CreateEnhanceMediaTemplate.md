@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vod CreateEnhanceMediaTemplate --cli-unfold-argument  \
-    --SubAppId 123 \
-    --Name test \
-    --Comment abc \
+    --SubAppId 12511111104 \
+    --Name template1 \
+    --Comment this is a template \
     --RebuildVideoInfo.RepairInfo.Switch ON \
     --Container mp4
 ```

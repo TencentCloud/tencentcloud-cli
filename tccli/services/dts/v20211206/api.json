@@ -5575,14 +5575,14 @@
         },
         {
           "disabled": false,
-          "document": "列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。",
           "example": "[\"id\"]",
           "member": "string",
           "name": "Columns",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8869,13 +8869,13 @@
         },
         {
           "disabled": false,
-          "document": "跳过校验的表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过校验的表详情",
           "example": "无",
           "member": "SkippedItem",
           "name": "Items",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9255,58 +9255,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码",
           "example": "Error: OptimizeCheck",
           "member": "string",
           "name": "Code",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "修改目标库session级别explicit_defaults_for_timestamp参数为`ON`失败，错误信息详情",
           "member": "string",
           "name": "Message",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解决方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解决方式",
           "example": "尝试以下解决方案：1.xxx，2.xxx",
           "member": "string",
           "name": "Solution",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "帮助文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "帮助文档",
           "example": "周边检查: cloud.tencent.com/document/product/571/58690",
           "member": "string",
           "name": "HelpDoc",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前步骤跳过信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前步骤跳过信息",
           "example": "如果目标库explicit_defaults_for_timestamp参数不为`ON`，timestamp列的隐式转换规则可能会导致源库和目标库结构不一致",
           "member": "string",
           "name": "SkipInfo",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

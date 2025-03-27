@@ -589,7 +589,7 @@ def doInvoiceGeneralOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRideHailingTransportLicenseOCR(args, parsed_globals):
+def doReconstructDocument(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -618,11 +618,11 @@ def doRideHailingTransportLicenseOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RideHailingTransportLicenseOCRRequest()
+    model = models.ReconstructDocumentRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RideHailingTransportLicenseOCR(model)
+        rsp = client.ReconstructDocument(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1213,7 +1213,7 @@ def doMainlandPermitOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGeneralBasicOCR(args, parsed_globals):
+def doFlightInvoiceOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1242,11 +1242,11 @@ def doGeneralBasicOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GeneralBasicOCRRequest()
+    model = models.FlightInvoiceOCRRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GeneralBasicOCR(model)
+        rsp = client.FlightInvoiceOCR(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1577,58 +1577,6 @@ def doBizLicenseOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetTaskState(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetTaskStateRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.GetTaskState(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doRecognizeGeneralCardWarn(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1681,7 +1629,7 @@ def doRecognizeGeneralCardWarn(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doFlightInvoiceOCR(args, parsed_globals):
+def doGeneralBasicOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1710,11 +1658,11 @@ def doFlightInvoiceOCR(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.FlightInvoiceOCRRequest()
+    model = models.GeneralBasicOCRRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.FlightInvoiceOCR(model)
+        rsp = client.GeneralBasicOCR(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2027,58 +1975,6 @@ def doBankCardOCR(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.BankCardOCR(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doVatInvoiceVerify(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.VatInvoiceVerifyRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.VatInvoiceVerify(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2859,58 +2755,6 @@ def doRecognizeTableOCR(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.RecognizeTableOCR(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
-def doCreateAIFormTask(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAIFormTaskRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateAIFormTask(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4593,7 +4437,7 @@ def doShipInvoiceOCR(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doReconstructDocument(args, parsed_globals):
+def doRideHailingTransportLicenseOCR(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4622,11 +4466,11 @@ def doReconstructDocument(args, parsed_globals):
     client = mod.OcrClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ReconstructDocumentRequest()
+    model = models.RideHailingTransportLicenseOCRRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ReconstructDocument(model)
+        rsp = client.RideHailingTransportLicenseOCR(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4667,7 +4511,7 @@ ACTION_MAP = {
     "TrainTicketOCR": doTrainTicketOCR,
     "PropOwnerCertOCR": doPropOwnerCertOCR,
     "InvoiceGeneralOCR": doInvoiceGeneralOCR,
-    "RideHailingTransportLicenseOCR": doRideHailingTransportLicenseOCR,
+    "ReconstructDocument": doReconstructDocument,
     "HKIDCardOCR": doHKIDCardOCR,
     "MixedInvoiceOCR": doMixedInvoiceOCR,
     "PermitOCR": doPermitOCR,
@@ -4679,23 +4523,21 @@ ACTION_MAP = {
     "RideHailingDriverLicenseOCR": doRideHailingDriverLicenseOCR,
     "DutyPaidProofOCR": doDutyPaidProofOCR,
     "MainlandPermitOCR": doMainlandPermitOCR,
-    "GeneralBasicOCR": doGeneralBasicOCR,
+    "FlightInvoiceOCR": doFlightInvoiceOCR,
     "RecognizeGeneralInvoice": doRecognizeGeneralInvoice,
     "InsuranceBillOCR": doInsuranceBillOCR,
     "VatInvoiceVerifyNew": doVatInvoiceVerifyNew,
     "VinOCR": doVinOCR,
     "VehicleLicenseOCR": doVehicleLicenseOCR,
     "BizLicenseOCR": doBizLicenseOCR,
-    "GetTaskState": doGetTaskState,
     "RecognizeGeneralCardWarn": doRecognizeGeneralCardWarn,
-    "FlightInvoiceOCR": doFlightInvoiceOCR,
+    "GeneralBasicOCR": doGeneralBasicOCR,
     "RecognizeThaiIDCardOCR": doRecognizeThaiIDCardOCR,
     "TableOCR": doTableOCR,
     "ArithmeticOCR": doArithmeticOCR,
     "EstateCertOCR": doEstateCertOCR,
     "RecognizeValidIDCardOCR": doRecognizeValidIDCardOCR,
     "BankCardOCR": doBankCardOCR,
-    "VatInvoiceVerify": doVatInvoiceVerify,
     "GetOCRToken": doGetOCRToken,
     "EduPaperOCR": doEduPaperOCR,
     "EnterpriseLicenseOCR": doEnterpriseLicenseOCR,
@@ -4711,7 +4553,6 @@ ACTION_MAP = {
     "GeneralHandwritingOCR": doGeneralHandwritingOCR,
     "RecognizeOnlineTaxiItineraryOCR": doRecognizeOnlineTaxiItineraryOCR,
     "RecognizeTableOCR": doRecognizeTableOCR,
-    "CreateAIFormTask": doCreateAIFormTask,
     "WaybillOCR": doWaybillOCR,
     "HmtResidentPermitOCR": doHmtResidentPermitOCR,
     "TollInvoiceOCR": doTollInvoiceOCR,
@@ -4744,7 +4585,7 @@ ACTION_MAP = {
     "FormulaOCR": doFormulaOCR,
     "PassportOCR": doPassportOCR,
     "ShipInvoiceOCR": doShipInvoiceOCR,
-    "ReconstructDocument": doReconstructDocument,
+    "RideHailingTransportLicenseOCR": doRideHailingTransportLicenseOCR,
 
 }
 

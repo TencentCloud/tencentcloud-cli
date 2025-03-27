@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli bi DeleteProject --cli-unfold-argument  \
-    --Id 1 \
-    --Seed sdadfas \
-    --DefaultPanelType 1
+    --Id 1982493789748932 \
+    --Seed Seed \
+    --DefaultPanelType 1982493789748932
 ```
 
 Output: 

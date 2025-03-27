@@ -17,7 +17,7 @@ Output:
                 "Level": 0,
                 "ClassName": "其他",
                 "ParentId": -1,
-                "Name": "abc",
+                "Name": "SystemDefault",
                 "SubClassIdSet": []
             },
             {

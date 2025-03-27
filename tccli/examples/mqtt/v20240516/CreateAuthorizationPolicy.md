@@ -1,19 +1,19 @@
 **Example 1: 示例**
 
-示例
+
 
 Input: 
 
 ```
 tccli mqtt CreateAuthorizationPolicy --cli-unfold-argument  \
-    --InstanceId mqtt-jeredv33 \
-    --PolicyName name \
+    --InstanceId mqtt-xxx \
+    --PolicyName name1 \
     --PolicyVersion 1 \
-    --Priority 2 \
+    --Priority 4 \
     --Effect allow \
-    --Actions connect \
+    --Actions pub \
     --Retain 1 \
-    --Qos 1
+    --Qos 2
 ```
 
 Output: 
@@ -22,7 +22,9 @@ Output:
     "Error": null,
     "RequestId": null,
     "Response": {
-        "RequestId": "6f0f0953-6799-4ea1-94a4-4caa4f44f403"
+        "Id": 6,
+        "InstanceId": "mqtt-xxx",
+        "RequestId": "2e477c8c-abef-46e2-bde3-29433b34f309"
     }
 }
 ```

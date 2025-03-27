@@ -17,7 +17,7 @@ Output:
         "JustInTimeTranscodeTemplateSet": [
             {
                 "Type": "Custom",
-                "Name": "test",
+                "Name": "MyTemplateName",
                 "Comment": "comment",
                 "VideoConfigure": {
                     "Width": 720,
@@ -27,7 +27,7 @@ Output:
                 },
                 "WatermarkConfigure": {
                     "Switch": "ON",
-                    "Url": "http://example.com/aa.png",
+                    "Url": "http://1490012345.vod-qcloud.com/watermark.png",
                     "Width": "10%",
                     "Height": "10%",
                     "XPos": "10%",
@@ -35,7 +35,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "58759c60-aceb-4b02-b0ed-6c62bfea88cc"
     }
 }
 ```

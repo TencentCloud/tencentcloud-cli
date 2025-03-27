@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod AttachMediaSubtitles --cli-unfold-argument  \
-    --FileId 123 \
+    --FileId ' 4564972818519602447' \
     --AdaptiveDynamicStreamingDefinition 10000 \
     --Operation Attach \
     --SubtitleIds subtitle1 subtitle2 \

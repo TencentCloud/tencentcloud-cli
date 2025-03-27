@@ -10,7 +10,7 @@ tccli tag DescribeResourceTagsByTagKeys --cli-unfold-argument  \
     --ResourcePrefix instance \
     --ResourceRegion ap-beijing \
     --ResourceIds ins-1234 \
-    --TagKeys abc edf
+    --TagKeys key1 key2
 ```
 
 Output: 
@@ -25,8 +25,8 @@ Output:
                 "ResourceId": "ins-asdfsadf",
                 "TagKeyValues": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "edf"
+                        "TagKey": "key1",
+                        "TagValue": "val1"
                     }
                 ]
             }

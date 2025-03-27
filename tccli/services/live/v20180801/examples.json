@@ -1148,7 +1148,7 @@
       {
         "document": "查询拉流转推任务的时长信息。",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePullTransformPushInfo\n<公共请求参数>\n\n{\n    \"StartTime\": \"2019-02-01T00:00:00+08:00\",\n    \"EndTime\": \"2019-02-03T00:00:00+08:00\",\n    \"MainlandOrOversea\": \"Mainland\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"Duration\": 100\n            }\n        ],\n        \"TotalDuration\": 2000,\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Time\": \"2019-03-01T00:00:00+08:00\",\n                \"Duration\": 100,\n                \"DurationSecond\": 6000\n            }\n        ],\n        \"TotalDuration\": 2000,\n        \"TotalDurationSecond\": 120000,\n        \"RequestId\": \"c8465603-c3a6-44bc-8354-a9b67bf44301\"\n    }\n}",
         "title": "请求示例"
       }
     ],

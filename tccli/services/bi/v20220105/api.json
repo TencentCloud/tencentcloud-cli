@@ -1270,7 +1270,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用户列表（废弃）",
           "example": "无",
           "member": "UserIdAndUserName",
@@ -1355,7 +1355,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用户列表（废弃）",
           "example": "无",
           "member": "UserIdAndUserName",
@@ -2696,7 +2696,7 @@
         {
           "disabled": false,
           "document": "模糊搜索的关键字",
-          "example": "zhangsn",
+          "example": "zhangsan",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -3269,7 +3269,7 @@
         {
           "disabled": false,
           "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dsasasddaqwdsdaads",
+          "example": "AccessKey***AccessKey",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -3291,7 +3291,7 @@
         {
           "disabled": false,
           "document": "事务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dwedffdssdsd",
+          "example": "TranId***TranId",
           "member": "string",
           "name": "TranId",
           "output_required": false,
@@ -3997,7 +3997,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "323***2121@qq.com",
+          "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -4006,7 +4006,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "zhangsn",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -4100,7 +4100,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "32131***312@qq.com",
+          "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -4109,7 +4109,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "zhangsn",
+          "example": "zhangsan",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -4259,7 +4259,7 @@
         {
           "disabled": false,
           "document": "异步事务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "edwewddfsddadadda",
+          "example": "TranId***TranId",
           "member": "string",
           "name": "TranId",
           "output_required": false,
@@ -4285,7 +4285,7 @@
         {
           "disabled": false,
           "document": "截图base64或 url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"widgetId\": \"dsdda\",\"pageId\":\"1101\"}",
+          "example": "{\"widgetId\": \"mixLineBar_1\",\"pageId\":\"1101\"}",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -4295,7 +4295,7 @@
         {
           "disabled": false,
           "document": "组件Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dsdadd",
+          "example": "mixLineBar_1",
           "member": "string",
           "name": "WidgetId",
           "output_required": false,
@@ -4750,7 +4750,7 @@
         {
           "disabled": false,
           "document": "电子邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2***2123@qq.com",
+          "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -4926,7 +4926,7 @@
         {
           "disabled": false,
           "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "zhangsna",
+          "example": "zhangsan",
           "member": "string",
           "name": "AppUserName",
           "output_required": false,
@@ -5221,7 +5221,7 @@
         {
           "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2133****32@qq.com",
+          "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -5341,7 +5341,7 @@
         {
           "disabled": false,
           "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "biemc",
+          "example": "zhangsan",
           "member": "string",
           "name": "AppUserAliasName",
           "output_required": false,
@@ -5351,7 +5351,7 @@
         {
           "disabled": false,
           "document": "应用用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "fsa",
+          "example": "zhangsan",
           "member": "string",
           "name": "AppUserName",
           "output_required": false,

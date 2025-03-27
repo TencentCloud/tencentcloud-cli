@@ -2536,6 +2536,15 @@
           "name": "TimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘加密标识，0-不加密，1-加密",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskEncryptFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3036,6 +3045,15 @@
           "name": "DrZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘加密标识，0-不加密，1-加密",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskEncryptFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3280,6 +3298,15 @@
           "name": "TimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘加密标识，0-不加密，1-加密",
+          "example": "0",
+          "member": "int64",
+          "name": "DiskEncryptFlag",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7793,6 +7820,16 @@
           "name": "MultiDrReadableInfo",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启磁盘加密，1-开启，0-未开启",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDiskEncryptFlag",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

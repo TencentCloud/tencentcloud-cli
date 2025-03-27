@@ -6,14 +6,16 @@ Input:
 
 ```
 tccli bi ModifyProject --cli-unfold-argument  \
-    --Id 1 \
-    --Name 测试数据源 \
-    --ColorCode #ffffff \
-    --Logo log.png \
-    --Mark beizhu \
-    --IsApply True \
-    --Seed dssa \
-    --PanelScope ALL
+    --Id 1982493789748932 \
+    --Name Name \
+    --ColorCode ColorCode \
+    --Logo Logo \
+    --Mark Mark \
+    --IsApply False \
+    --Seed Seed \
+    --DefaultPanelType 1982493789748932 \
+    --PanelScope PanelScope \
+    --ManagePlatform ManagePlatform
 ```
 
 Output: 
@@ -23,7 +25,7 @@ Output:
         "Extra": "",
         "Data": "",
         "Msg": "成功",
-        "RequestId": "dsweew-22131ds"
+        "RequestId": "RequestId-22131ds"
     }
 }
 ```

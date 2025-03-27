@@ -7,7 +7,7 @@ Input:
 ```
 tccli cme DescribeSharedSpace --cli-unfold-argument  \
     --Operator user_id_d1c5eb0ee4994419b465 \
-    --Platform test \
+    --Platform 1000000009 \
     --Authorizee.Type TEAM \
     --Authorizee.Id cmetid_acc5ddee49933d2b4338ud8d9
 ```

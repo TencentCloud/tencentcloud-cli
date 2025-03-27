@@ -105,6 +105,13 @@
       "output": "DescribeClientJoinIncreaseListResponse",
       "status": "online"
     },
+    "DescribeClientSwitchTraTaskInfo": {
+      "document": "查询客户的交易类型切换任务的信息，查询成功则获取当前用户的切换链接，查询失败则返回失败的原因",
+      "input": "DescribeClientSwitchTraTaskInfoRequest",
+      "name": "查询客户交易类型切换任务信息",
+      "output": "DescribeClientSwitchTraTaskInfoResponse",
+      "status": "online"
+    },
     "DescribeRebateInfos": {
       "document": "【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosRequest",
@@ -2213,6 +2220,92 @@
           "name": "List",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientSwitchTraTaskInfoRequest": {
+      "document": "DescribeClientSwitchTraTaskInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代客UIN",
+          "example": "10000001",
+          "member": "string",
+          "name": "ClientUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1：代理，2：代采",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientSwitchTraTaskInfoResponse": {
+      "document": "DescribeClientSwitchTraTaskInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户UIN",
+          "example": "100000001",
+          "member": "string",
+          "name": "ClientUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切换类型：代理,代采",
+          "example": "代理",
+          "member": "string",
+          "name": "SwitchType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ok，符合，fail，不符合",
+          "example": "ok",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切换链接",
+          "example": "https://xxxx/translate?taskId=xxxx",
+          "member": "string",
+          "name": "SwitchUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不符合的原因",
+          "example": "xxxx处于欠票状态",
+          "member": "string",
+          "name": "ResultMsg",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

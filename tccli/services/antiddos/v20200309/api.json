@@ -675,6 +675,7 @@
           "example": "tcp",
           "member": "string",
           "name": "ForwardProtocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -685,6 +686,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DPortStart",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -695,6 +697,7 @@
           "example": "65535",
           "member": "uint64",
           "name": "DPortEnd",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -705,6 +708,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SPortStart",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -715,6 +719,7 @@
           "example": "65535",
           "member": "uint64",
           "name": "SPortEnd",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -725,19 +730,21 @@
           "example": "65535",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000",
           "example": "10",
           "member": "uint64",
           "name": "Priority",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -773,43 +780,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务带宽(单位M)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务带宽(单位M)",
           "example": "200",
           "member": "uint64",
           "name": "NormalBandwidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转发规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则数",
           "example": "60",
           "member": "uint64",
           "name": "ForwardRulesLimit",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标记",
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间",
           "example": "2022-06-18 18:36:44",
           "member": "string",
           "name": "CurDeadline",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1036,43 +1043,43 @@
         },
         {
           "disabled": false,
-          "document": "区分高防IP境外线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区分高防IP境外线路",
           "example": "1",
           "member": "uint64",
           "name": "ZoneId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区分集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区分集群",
           "example": "1",
           "member": "uint64",
           "name": "Tgw",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高防弹性公网IP状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)。只对高防弹性公网IP实例有效。",
           "example": "UNBIND",
           "member": "string",
           "name": "EipAddressStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否高防弹性公网IP实例，是为1，否为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否高防弹性公网IP实例，是为1，否为0。",
           "example": "1",
           "member": "int64",
           "name": "EipFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1096,13 +1103,13 @@
         },
         {
           "disabled": false,
-          "document": "建议客户接入的域名，客户可使用域名接入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建议客户接入的域名，客户可使用域名接入。",
           "example": "www.8cname.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1116,33 +1123,33 @@
         },
         {
           "disabled": false,
-          "document": "是否Ipv6版本的IP, 是为1，否为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否Ipv6版本的IP, 是为1，否为0",
           "example": "0",
           "member": "uint64",
           "name": "V6Flag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否渠道版高防IP，是为1，否为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否渠道版高防IP，是为1，否为0",
           "example": "0",
           "member": "uint64",
           "name": "BGPIPChannelFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源关联标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源关联标签",
           "example": "null",
           "member": "TagInfo",
           "name": "TagInfoList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1156,43 +1163,43 @@
         },
         {
           "disabled": false,
-          "document": "资源实例版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源实例版本",
           "example": "0",
           "member": "uint64",
           "name": "InstanceVersion",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "重保实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重保实例",
           "example": "id-xxx",
           "member": "string",
           "name": "ConvoyId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带宽后付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽后付费",
           "example": "1000",
           "member": "uint64",
           "name": "ElasticBandwidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为EO代播的ip: 1是，0不是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为EO代播的ip: 1是，0不是",
           "example": "0",
           "member": "uint64",
           "name": "EOFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1600,14 +1607,14 @@
         },
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本",
           "example": "2",
           "member": "uint64",
           "name": "Version",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1777,23 +1784,23 @@
         },
         {
           "disabled": false,
-          "document": "网络线路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络线路",
           "example": "1",
           "member": "uint64",
           "name": "Line",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不计费的业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不计费的业务带宽",
           "example": "10",
           "member": "uint64",
           "name": "FreeServiceBandwidth",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1817,63 +1824,63 @@
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2024.10.1",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是基础防护加强版 0: 不是 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是基础防护加强版 0: 不是 1: 是",
           "example": "1",
           "member": "uint64",
           "name": "BasicPlusFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0",
           "example": "1",
           "member": "uint64",
           "name": "PlanCntFlag",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品",
           "example": "1",
           "member": "uint64",
           "name": "TransRegionFlag",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为超级高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为超级高防包",
           "example": "1",
           "member": "uint64",
           "name": "SuperPackFlag",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属ZoneId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属ZoneId",
           "example": "1",
           "member": "int64",
           "name": "ZoneId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1923,73 +1930,73 @@
         },
         {
           "disabled": false,
-          "document": "联合产品标记，0代表普通高防包，1代表联合高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联合产品标记，0代表普通高防包，1代表联合高防包",
           "example": "0",
           "member": "uint64",
           "name": "UnionPackFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务带宽",
           "example": "0",
           "member": "uint64",
           "name": "ServiceBandWidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "战斗服版本标记，0表示普通高防包，1表示战斗服高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "战斗服版本标记，0表示普通高防包，1表示战斗服高防包",
           "example": "0",
           "member": "uint64",
           "name": "BattleEditionFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "渠道版标记，0表示普通高防包，1表示渠道版高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "渠道版标记，0表示普通高防包，1表示渠道版高防包",
           "example": "0",
           "member": "uint64",
           "name": "ChannelEditionFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高防包企业版标记，0表示普通高防包；1表示企业版高防包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高防包企业版标记，0表示普通高防包；1表示企业版高防包",
           "example": "0",
           "member": "uint64",
           "name": "EnterpriseFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高防包企业版弹性阈值，0表示未开启；大于0为弹性防护阈值",
           "example": "0",
           "member": "uint64",
           "name": "ElasticLimit",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "降配后的防护能力，单位Gbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "降配后的防护能力，单位Gbps",
           "example": "1",
           "member": "uint64",
           "name": "DownGradeProtect",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2146,14 +2153,14 @@
         },
         {
           "disabled": false,
-          "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名化资产对应的域名",
           "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4990,23 +4997,23 @@
         },
         {
           "disabled": false,
-          "document": "域名化资产的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名化资产的名称",
           "example": "无",
           "member": "KeyValue",
           "name": "CLBData",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cnamewaf资源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cnamewaf资源状态",
           "example": "无",
           "member": "KeyValue",
           "name": "CnameWafData",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5314,13 +5321,13 @@
         },
         {
           "disabled": false,
-          "document": "返回DataList中的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回DataList中的最大值",
           "example": "10",
           "member": "uint64",
           "name": "MaxData",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5452,13 +5459,13 @@
         },
         {
           "disabled": false,
-          "document": "返回DataList中的最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回DataList中的最大值",
           "example": "0",
           "member": "uint64",
           "name": "MaxData",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6036,13 +6043,13 @@
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "bgp-00000010",
           "member": "string",
           "name": "Id",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6548,13 +6555,13 @@
         },
         {
           "disabled": false,
-          "document": "资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID",
           "example": "bgp-00000010",
           "member": "string",
           "name": "Id",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8778,53 +8785,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "高防弹性公网IP绑定的实例地区，例如hk代表中国香港\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高防弹性公网IP绑定的实例地区，例如hk代表中国香港",
           "example": "hk",
           "member": "string",
           "name": "EipAddressRegion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定的资源实例ID。可能是一个CVM。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的资源实例ID。可能是一个CVM。",
           "example": "ins-xx",
           "member": "string",
           "name": "EipBoundRscIns",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定的弹性网卡ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的弹性网卡ID",
           "example": "eni-xx",
           "member": "string",
           "name": "EipBoundRscEni",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "绑定的资源内网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的资源内网ip",
           "example": "x.x.x.x",
           "member": "string",
           "name": "EipBoundRscVip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8878,14 +8885,14 @@
         },
         {
           "disabled": false,
-          "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名化资产对应的域名",
           "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9120,14 +9127,14 @@
         },
         {
           "disabled": false,
-          "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名化资产对应的域名",
           "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9397,14 +9404,14 @@
         },
         {
           "disabled": false,
-          "document": "备份源站，1: 备份源站，0: 普通源站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份源站，1: 备份源站，0: 普通源站",
           "example": "backup",
           "member": "uint64",
           "name": "Backup",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9546,14 +9553,14 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
           "example": "1",
           "member": "uint64",
           "name": "HttpsToHttpEnable",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9612,14 +9619,14 @@
         },
         {
           "disabled": false,
-          "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入端口值",
           "example": "80",
           "member": "uint64",
           "name": "VirtualPort",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11071,14 +11078,14 @@
         },
         {
           "disabled": false,
-          "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入端口值",
           "example": "80",
           "member": "uint64",
           "name": "VirtualPort",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11104,14 +11111,14 @@
         },
         {
           "disabled": false,
-          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本",
           "example": "2",
           "member": "uint64",
           "name": "Version",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11868,13 +11875,13 @@
         },
         {
           "disabled": false,
-          "document": "域名名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名名称",
           "example": "name",
           "member": "string",
           "name": "UsrDomainName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11962,53 +11969,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "保底带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保底带宽",
           "example": "10",
           "member": "uint64",
           "name": "ProtectBandwidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务带宽",
           "example": "1",
           "member": "uint64",
           "name": "NormalBandwidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转发规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转发规则",
           "example": "1",
           "member": "uint64",
           "name": "ForwardRulesLimit",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标记",
           "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间",
           "example": "\"2024.12.1\"",
           "member": "string",
           "name": "CurDeadline",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

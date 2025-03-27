@@ -2717,7 +2717,7 @@
         },
         {
           "disabled": false,
-          "document": "权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
+          "document": "权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
           "example": "2",
           "member": "int64",
           "name": "PermissionType",
@@ -5534,7 +5534,7 @@
         },
         {
           "disabled": false,
-          "document": "权限类型，(2:DENY，3:ALLOW)，当前ckakfa支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
+          "document": "权限类型，(2:DENY，3:ALLOW)，当前ckafka支持ALLOW(相当于白名单)，其它用于后续兼容开源kafka的acl时使用",
           "example": "2",
           "member": "int64",
           "name": "PermissionType",
@@ -16632,7 +16632,7 @@
         },
         {
           "disabled": false,
-          "document": "ckakfa版本号(1.1.1/2.4.2/0.10.2)",
+          "document": "ckafka版本号(1.1.1/2.4.2/0.10.2)",
           "example": "1.1.1",
           "member": "string",
           "name": "Version",

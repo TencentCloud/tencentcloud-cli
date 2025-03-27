@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud CreateDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName test_device \
+    --ProductId EQPOKD5111 \
+    --DeviceName dev-001 \
     --Attribute.Tags.0.Tag note \
     --Attribute.Tags.0.Type 2 \
     --Attribute.Tags.0.Value test_note
@@ -17,14 +17,14 @@ Output:
 ```
 {
     "Response": {
-        "DeviceName": "test_device",
-        "DevicePsk": "xxxxxxxxxxxxx",
+        "DeviceName": "dev-001",
+        "DevicePsk": "9MTpKyUBRpsPLB3hQyVfeQ==",
         "DeviceCert": "",
-        "DevicePrivateKey": "",
-        "LoraDevEui": "",
+        "DevicePrivateKey": "9MTpKyUBRpsP",
+        "LoraDevEui": "1",
         "LoraMoteType": 1,
-        "LoraNwkKey": "",
-        "LoraAppKey": "xx",
+        "LoraNwkKey": "ddgergsdfretger",
+        "LoraAppKey": "3fgrtsdfsdgfdga",
         "RequestId": "54f75f05-a87c-45fc-9520-6b59e251e91c"
     }
 }
@@ -38,22 +38,22 @@ Input:
 
 ```
 tccli iotcloud CreateDevice --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName test_device
+    --ProductId UTY5QRLMQY \
+    --DeviceName dev-001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DeviceName": "test_device",
-        "DevicePsk": "",
-        "DeviceCert": "xxxxxxxxxxxxxxxxxxxx",
-        "DevicePrivateKey": "xxxxxxxxxxxxxxxxxxxxxxx",
-        "LoraDevEui": "",
+        "DeviceName": "dev-001",
+        "DevicePsk": "9MTpKyUBRpsPLB3hQyVfeQ==",
+        "DeviceCert": "-----BEGIN CERTIFICATE----- MIIFGjCCBAKgAwIBAgIQCgRw0Ja8ihLIkKbf",
+        "DevicePrivateKey": "-----BEGIN PRIVATE KEY----- MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgw",
+        "LoraDevEui": "1",
         "LoraMoteType": 1,
-        "LoraNwkKey": "",
-        "LoraAppKey": "xx",
+        "LoraNwkKey": "ddgergsdfretger",
+        "LoraAppKey": "3fgrtsdfsdgfdga",
         "RequestId": "54f75f05-a87c-45fc-9520-6b59e251e91c"
     }
 }

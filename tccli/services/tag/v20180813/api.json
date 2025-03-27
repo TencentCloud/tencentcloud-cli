@@ -667,7 +667,7 @@
         {
           "disabled": false,
           "document": "资源ID数组，大小不超过50",
-          "example": "ins-12345",
+          "example": "[ \"ins-12345\" ]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -748,7 +748,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[]",
+          "example": "无",
           "member": "TagResource",
           "name": "Tags",
           "output_required": true,
@@ -860,7 +860,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[ ]",
+          "example": "无",
           "member": "TagResource",
           "name": "Tags",
           "output_required": true,
@@ -909,7 +909,7 @@
         {
           "disabled": false,
           "document": "资源唯一标识ID的列表，列表容量不超过20",
-          "example": "无",
+          "example": "[ \"ins-3dgxhgz\" ]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -918,7 +918,7 @@
         {
           "disabled": false,
           "document": "资源标签键列表，列表容量不超过20",
-          "example": "tagKey",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": true,
@@ -1003,7 +1003,7 @@
         {
           "disabled": false,
           "document": "资源创建者UIN",
-          "example": "123456789",
+          "example": "10004546631",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1111,7 +1111,7 @@
         {
           "disabled": false,
           "document": "资源标签",
-          "example": "[]",
+          "example": "无",
           "member": "TagResource",
           "name": "Rows",
           "output_required": true,
@@ -1142,7 +1142,7 @@
         {
           "disabled": false,
           "document": "创建标签者uin",
-          "example": "1",
+          "example": "1000046384",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1263,7 +1263,7 @@
         {
           "disabled": false,
           "document": "标签过滤数组",
-          "example": "[ { \"TagKey\":\"abc\", \"TagValue\": \"123\"} ]",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": true,
@@ -1272,7 +1272,7 @@
         {
           "disabled": false,
           "document": "创建标签者uin",
-          "example": "12345",
+          "example": "1000343562",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1371,7 +1371,7 @@
         {
           "disabled": false,
           "document": "资源标签",
-          "example": "[ ]",
+          "example": "无",
           "member": "ResourceTag",
           "name": "Rows",
           "output_required": true,
@@ -1393,7 +1393,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "1486445011xxx",
+          "example": "1486445011341",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1444,7 +1444,7 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "9",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -1474,7 +1474,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[\"test2\",\"test1\",\"0\",\"\\u5b57\\u7b26\\u4e32\",\"test\",\"abcbbbb\",\"abcaaaaa\",\"abc\",\"\\u6d4b\\u8bd5\"]",
+          "example": "[ \"tag1\",\"tag2\" ]",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -1496,7 +1496,7 @@
         {
           "disabled": false,
           "document": "标签键列表",
-          "example": "testKey",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": true,
@@ -1505,7 +1505,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "12345",
+          "example": "1000052481",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1567,7 +1567,7 @@
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "output_required": true,
@@ -1599,7 +1599,7 @@
         {
           "disabled": false,
           "document": "标签键列表",
-          "example": "",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": true,
@@ -1608,7 +1608,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "",
+          "example": "10000465248",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1617,7 +1617,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1626,7 +1626,7 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1641,36 +1641,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1734,7 +1738,7 @@
         {
           "disabled": false,
           "document": "标签键数组,与标签值同时存在或同时不存在，不存在时表示查询该用户所有标签,当与TagKey同时传递时只取本值",
-          "example": "Key",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -1846,7 +1850,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "12345",
+          "example": "1000045356",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1909,7 +1913,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[ ]",
+          "example": "无",
           "member": "TagWithDelete",
           "name": "Tags",
           "output_required": true,
@@ -1940,7 +1944,7 @@
         {
           "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
-          "example": "12345",
+          "example": "[ \"ins-3ygfe6\" ]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -2030,7 +2034,7 @@
         {
           "disabled": false,
           "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:${Account}:${ResourcePreifx}/${ResourceId}。\n如果传入了此参数会返回所有匹配的资源列表，指定的MaxResults会失效。\nN取值范围：0~9",
-          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "example": "[ \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\" ]",
           "member": "string",
           "name": "ResourceList",
           "required": false,
@@ -2075,7 +2079,7 @@
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
           "name": "PaginationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2085,7 +2089,7 @@
           "example": "无",
           "member": "ResourceTagMapping",
           "name": "ResourceTagMappingList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2104,7 +2108,7 @@
         {
           "disabled": false,
           "document": "从上一页的响应中获取的下一页的Token值。\n如果是第一次请求，设置为空。",
-          "example": "无",
+          "example": "fgy43h****",
           "member": "string",
           "name": "PaginationToken",
           "required": false,
@@ -2137,7 +2141,7 @@
         {
           "disabled": false,
           "document": "获取的下一页的Token值，如果当前是最后一页，返回为空",
-          "example": "无",
+          "example": "fgy43h****",
           "member": "string",
           "name": "PaginationToken",
           "output_required": true,
@@ -2147,7 +2151,7 @@
         {
           "disabled": false,
           "document": "标签键信息。",
-          "example": "无",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "output_required": true,
@@ -2169,7 +2173,7 @@
         {
           "disabled": false,
           "document": "标签键。\n返回所有标签键列表对应的标签值。\n最大长度：20",
-          "example": "无",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": true,
@@ -2261,7 +2265,7 @@
         {
           "disabled": false,
           "document": "标签键。\n返回所有标签键列表对应的标签。\n最大长度：20",
-          "example": "无",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -2380,7 +2384,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "key",
+          "example": "key1",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -2389,7 +2393,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "value",
+          "example": "value1",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -2490,20 +2494,20 @@
         {
           "disabled": false,
           "document": "资源唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ins-3841",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "TagKeyValues",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2516,50 +2520,50 @@
         {
           "disabled": false,
           "document": "资源所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "业务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源前缀\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源唯一标记\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ins-1399",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2637,22 +2641,20 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "name",
           "member": "string",
           "name": "TagKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签值数组 多个值的话是或的关系",
-          "example": "",
+          "example": "[ \"john\" ]",
           "member": "string",
           "name": "TagValue",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2678,7 +2680,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
@@ -2688,7 +2690,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "john",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
@@ -2698,7 +2700,7 @@
         {
           "disabled": false,
           "document": "资源ID",
-          "example": "无",
+          "example": "ins-2568",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -2708,7 +2710,7 @@
         {
           "disabled": false,
           "document": "标签键MD5值",
-          "example": "无",
+          "example": "b068931cc450442b63f5b3d276ea4297",
           "member": "string",
           "name": "TagKeyMd5",
           "output_required": true,
@@ -2718,7 +2720,7 @@
         {
           "disabled": false,
           "document": "标签值MD5值",
-          "example": "无",
+          "example": "527bd5b5d689e2c32ae974c6229ff785",
           "member": "string",
           "name": "TagValueMd5",
           "output_required": true,
@@ -2728,7 +2730,7 @@
         {
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "output_required": true,
@@ -2738,7 +2740,7 @@
         {
           "disabled": false,
           "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Custom",
           "member": "string",
           "name": "Category",
           "output_required": false,
@@ -2754,7 +2756,7 @@
         {
           "disabled": false,
           "document": "待绑定的云资源，用标准的资源六段式表示。正确的资源六段式请参考：[标准的资源六段式](https://cloud.tencent.com/document/product/598/10606)和[支持标签的云产品及资源描述方式](https://cloud.tencent.com/document/product/651/89122)。\nN取值范围：0~9",
-          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "example": "[ \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\" ]",
           "member": "string",
           "name": "ResourceList",
           "required": true,
@@ -2800,7 +2802,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
@@ -2810,7 +2812,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "john",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
@@ -2820,7 +2822,7 @@
         {
           "disabled": false,
           "document": "是否可以删除",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "CanDelete",
           "output_required": true,
@@ -2830,7 +2832,7 @@
         {
           "disabled": false,
           "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Custom",
           "member": "string",
           "name": "Category",
           "output_required": false,
@@ -2846,7 +2848,7 @@
         {
           "disabled": false,
           "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。\nN取值范围：0~9",
-          "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
+          "example": "[ \"qcs::cvm:ap-beijing:uin/1234567:instance/ins-123\" ]",
           "member": "string",
           "name": "ResourceList",
           "required": true,
@@ -2855,7 +2857,7 @@
         {
           "disabled": false,
           "document": "标签键。\n取值范围：0~9",
-          "example": "无",
+          "example": "[ \"key1\" ]",
           "member": "string",
           "name": "TagKeys",
           "required": true,

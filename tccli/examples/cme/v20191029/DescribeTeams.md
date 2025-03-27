@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeTeams --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Limit 10 \
     --Offset 0
 ```
@@ -39,7 +39,7 @@ Input:
 ```
 tccli cme DescribeTeams --cli-unfold-argument  \
     --TeamIds 1kdk882ddd88338ddd3k4 1kdk882ddd88338ddd3k3 \
-    --Platform test
+    --Platform 1000000009
 ```
 
 Output: 

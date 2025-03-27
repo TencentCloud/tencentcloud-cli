@@ -126,6 +126,14 @@
         "title": "查询客户参与增量激励考核信息"
       }
     ],
+    "DescribeClientSwitchTraTaskInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClientSwitchTraTaskInfo\n<公共请求参数>\n\n{\n    \"ClientUin\": \"100000000001\",\n    \"SwitchType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"ClientUin\": \"100000000001\",\n        \"RequestId\": \"cdfe0563-f4c5-4a2c-9420-0f92dc360e66\",\n        \"Result\": \"ok\",\n        \"ResultMsg\": \"\",\n        \"SwitchType\": \"代采\",\n        \"SwitchUrl\": \"https://partner.cloud.tencent.com/translate?taskId=xxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询客户的交易类型切换任务信息"
+      }
+    ],
     "DescribeRebateInfos": [
       {
         "document": "查询某代理商在2018年2月份的返佣信息",

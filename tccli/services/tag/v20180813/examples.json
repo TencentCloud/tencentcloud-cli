@@ -98,15 +98,15 @@
       {
         "document": "",
         "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByResourceIdsSeq\n&ServiceType=cvm\n&ResourcePrefix=instance\n&ResourceRegion=ap-guangzhou\n&ResourceIds.0=ins-1234\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"ServiceType\": \"cvm\",\n                \"TagKey\": \"字符串\",\n                \"TagValue\": \"字符串\",\n                \"TagKeyMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"TagValueMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"ResourceId\": \"ins-1234\"\n            }\n        ],\n        \"RequestId\": \"34bdd6cc-34b0-4ef4-9051-be9a5294be8e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"ServiceType\": \"cvm\",\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"val1\",\n                \"TagKeyMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"TagValueMd5\": \"cc4dd1da7e1a754534215f02fb9ba85d\",\n                \"ResourceId\": \"ins-1234\"\n            }\n        ],\n        \"RequestId\": \"34bdd6cc-34b0-4ef4-9051-be9a5294be8e\"\n    }\n}",
         "title": "查看资源关联的标签"
       }
     ],
     "DescribeResourceTagsByTagKeys": [
       {
         "document": "根据标签键获取资源标签",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByTagKeys\r\n&ServiceType=cvm\r\n&ResourcePrefix=instance\r\n&ResourceRegion=ap-beijing\r\n&ResourceIds.0=ins-1234\r\n&TagKeys.0=abc\r\n&TagKeys.1=edf\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Rows\": [\n            {\n                \"ResourceId\": \"ins-asdfsadf\",\n                \"TagKeyValues\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"edf\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\n    }\n}",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeResourceTagsByTagKeys\n&ServiceType=cvm\n&ResourcePrefix=instance\n&ResourceRegion=ap-beijing\n&ResourceIds.0=ins-1234\n&TagKeys.0=key1\n&TagKeys.1=key2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Rows\": [\n            {\n                \"ResourceId\": \"ins-asdfsadf\",\n                \"TagKeyValues\": [\n                    {\n                        \"TagKey\": \"key1\",\n                        \"TagValue\": \"val1\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"5024400f-ae5c-4080-b3ca-f45bf9dae21a\"\n    }\n}",
         "title": "根据标签键获取资源标签"
       }
     ],
@@ -130,23 +130,23 @@
       {
         "document": "",
         "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagKeys\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 9,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            \"test2\",\n            \"test1\",\n            \"0\",\n            \"字符串\",\n            \"test\",\n            \"abcbbbb\",\n            \"abcaaaaa\",\n            \"abc\",\n            \"测试\"\n        ],\n        \"RequestId\": \"cec4f865-bc87-4858-994e-80771644094d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 9,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            \"tag1\",\n            \"tag2\"\n        ],\n        \"RequestId\": \"cec4f865-bc87-4858-994e-80771644094d\"\n    }\n}",
         "title": "查询标签键"
       }
     ],
     "DescribeTagValues": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagValues\r\n&TagKeys.0=test1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"test1\",\n                \"TagValue\": \"test\"\n            }\n        ],\n        \"RequestId\": \"69e59dbe-71e4-4497-a735-abdd7bf5f50a\"\n    }\n}",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagValues\n&TagKeys.0=key1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"val1\"\n            }\n        ],\n        \"RequestId\": \"69e59dbe-71e4-4497-a735-abdd7bf5f50a\"\n    }\n}",
         "title": "查询标签值"
       }
     ],
     "DescribeTagValuesSeq": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagValuesSeq\r\n&TagKeys.0=test1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"test1\",\n                \"TagValue\": \"test\"\n            }\n        ],\n        \"RequestId\": \"69e59dbe-71e4-4497-a735-abdd7bf5f50a\"\n    }\n}",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagValuesSeq\n&TagKeys.0=key1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"val1\"\n            }\n        ],\n        \"RequestId\": \"69e59dbe-71e4-4497-a735-abdd7bf5f50a\"\n    }\n}",
         "title": "查询标签值"
       }
     ],
@@ -154,7 +154,7 @@
       {
         "document": "",
         "input": "https://tag.tencentcloudapi.com/?Action=DescribeTags\n&TagKey=testTagKey\n&TagValue=testTagValue\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"123\",\n                \"CanDelete\": 1\n            }\n        ],\n        \"RequestId\": \"0eebf6af-7ae1-44ec-9cae-3752e8bb911a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"val1\",\n                \"CanDelete\": 1\n            }\n        ],\n        \"RequestId\": \"0eebf6af-7ae1-44ec-9cae-3752e8bb911a\"\n    }\n}",
         "title": "查询标签"
       }
     ],
@@ -162,7 +162,7 @@
       {
         "document": "",
         "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagsSeq\n&TagKey=testTagKey\n&TagValue=testTagValue\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"123\",\n                \"CanDelete\": 1\n            }\n        ],\n        \"RequestId\": \"0eebf6af-7ae1-44ec-9cae-3752e8bb911a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"val1\",\n                \"CanDelete\": 1\n            }\n        ],\n        \"RequestId\": \"0eebf6af-7ae1-44ec-9cae-3752e8bb911a\"\n    }\n}",
         "title": "查询标签"
       }
     ],

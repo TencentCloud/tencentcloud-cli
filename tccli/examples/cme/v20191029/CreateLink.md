@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme CreateLink --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Type CLASS \
     --Name link \
     --ClassPath /a/b \
@@ -35,7 +35,7 @@ Input:
 
 ```
 tccli cme CreateLink --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Type MATERIAL \
     --Name link \
     --ClassPath /a/b \
@@ -64,7 +64,7 @@ Input:
 
 ```
 tccli cme CreateLink --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Type MATERIAL \
     --Name link \
     --ClassPath /a/b \
@@ -93,7 +93,7 @@ Input:
 
 ```
 tccli cme CreateLink --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Type MATERIAL \
     --Name link \
     --ClassPath /a/b \

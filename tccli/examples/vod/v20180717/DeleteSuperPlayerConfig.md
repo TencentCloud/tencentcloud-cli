@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DeleteSuperPlayerConfig --cli-unfold-argument  \
-    --Name test
+    --Name SuperPlayerName
 ```
 
 Output: 

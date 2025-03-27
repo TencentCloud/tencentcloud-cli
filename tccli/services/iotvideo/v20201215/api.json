@@ -2024,7 +2024,7 @@
         {
           "disabled": false,
           "document": "设备功能码 ypsxth音频双向通话 spdxth视频单向通话",
-          "example": "无",
+          "example": "[\"ypsxth\"]",
           "member": "string",
           "name": "Features",
           "required": true,
@@ -5180,7 +5180,7 @@
           "example": "无",
           "member": "VideoProduct",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6602,7 +6602,7 @@
         {
           "disabled": false,
           "document": "修改的产品名称 （支持中文、英文、数字、下划线组合，最多不超过20个字符）",
-          "example": "测试",
+          "example": "name",
           "member": "string",
           "name": "ProductName",
           "required": false,
@@ -6611,7 +6611,7 @@
         {
           "disabled": false,
           "document": "修改的产品描述 （最多不超过128个字符）",
-          "example": "test",
+          "example": "desc",
           "member": "string",
           "name": "ProductDescription",
           "required": false,

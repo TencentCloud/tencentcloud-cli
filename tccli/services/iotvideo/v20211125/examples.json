@@ -331,8 +331,8 @@
     "DescribeCloudStorageOrder": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageOrder\n<公共请求参数>\n\n{\n    \"OrderId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StartTime\": 1,\n        \"ExpireTime\": 1,\n        \"PackageId\": \"abc\",\n        \"Status\": 1,\n        \"RequestId\": \"abc\",\n        \"ChannelId\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageOrder\n<公共请求参数>\n\n{\n    \"OrderId\": \"id\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": 1,\n        \"ExpireTime\": 1,\n        \"PackageId\": \"yc\",\n        \"Status\": 1,\n        \"RequestId\": \"id\",\n        \"ChannelId\": 1\n    }\n}",
         "title": "查询云服务详情示例"
       }
     ],
@@ -596,7 +596,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"PTROMP3AOB\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductId\": \"PTROMP3AOB\",\n            \"ProductName\": \"siva_003\",\n            \"DeviceType\": 1,\n            \"NetType\": \"xx\",\n            \"EncryptionType\": 2,\n            \"Features\": [\n                \"ypsxth\",\n                \"spdxth\"\n            ],\n            \"ChipOs\": \"Linux\",\n            \"ChipManufactureId\": \"x86\",\n            \"ChipId\": \"x86\",\n            \"ProductDescription\": \"123\",\n            \"CreateTime\": 1608880525,\n            \"UpdateTime\": 1611830563\n        },\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ProductId\": \"PTROMP3AOB\",\n            \"ProductName\": \"siva_003\",\n            \"DeviceType\": 1,\n            \"NetType\": \"wifi\",\n            \"EncryptionType\": 2,\n            \"Features\": [\n                \"ypsxth\",\n                \"spdxth\"\n            ],\n            \"ChipOs\": \"Linux\",\n            \"ChipManufactureId\": \"x86\",\n            \"ChipId\": \"x86\",\n            \"ProductDescription\": \"desc\",\n            \"CreateTime\": 1608880525,\n            \"UpdateTime\": 1611830563,\n            \"CategoryId\": 113,\n            \"ProductVaildYears\": 1\n        },\n        \"RequestId\": \"2172b7d1-9a49-4142-938a-ff4fa3d55881\"\n    }\n}",
         "title": "获取产品详情"
       }
     ],
@@ -612,7 +612,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CategoryId\": 113,\n                \"ProductVaildYears\": 1,\n                \"ProductId\": \"PTROMP3AOB\",\n                \"ProductName\": \"siva_003\",\n                \"DeviceType\": 1,\n                \"NetType\": \"wifi\",\n                \"EncryptionType\": 2,\n                \"Features\": [\n                    \"ypsxth\",\n                    \"spdxth\"\n                ],\n                \"ChipOs\": \"Linux\",\n                \"ChipManufactureId\": \"x86\",\n                \"ChipId\": \"x86\",\n                \"ProductDescription\": \"123\",\n                \"CreateTime\": 1608880525,\n                \"UpdateTime\": 1611830563\n            },\n            {\n                \"CategoryId\": 113,\n                \"ProductVaildYears\": 1,\n                \"ProductId\": \"BPCJPETFZU\",\n                \"ProductName\": \"test_siva_123\",\n                \"DeviceType\": 1,\n                \"NetType\": \"wifi\",\n                \"EncryptionType\": 2,\n                \"Features\": [\n                    \"ypsxth\",\n                    \"spdxth\"\n                ],\n                \"ChipOs\": \"Linux\",\n                \"ChipManufactureId\": \"ak\",\n                \"ChipId\": \"AK3918EV331\",\n                \"ProductDescription\": \"dd12\",\n                \"CreateTime\": 1608786160,\n                \"UpdateTime\": 1608868038\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"bb92aaff-508b-4d10-8e42-5841e796ffda\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CategoryId\": 113,\n                \"ProductVaildYears\": 1,\n                \"ProductId\": \"PTROMP3AOB\",\n                \"ProductName\": \"siva_003\",\n                \"DeviceType\": 1,\n                \"NetType\": \"wifi\",\n                \"EncryptionType\": 2,\n                \"Features\": [\n                    \"ypsxth\",\n                    \"spdxth\"\n                ],\n                \"ChipOs\": \"Linux\",\n                \"ChipManufactureId\": \"x86\",\n                \"ChipId\": \"x86\",\n                \"ProductDescription\": \"desc\",\n                \"CreateTime\": 1608880525,\n                \"UpdateTime\": 1611830563\n            },\n            {\n                \"CategoryId\": 113,\n                \"ProductVaildYears\": 1,\n                \"ProductId\": \"BPCJPETFZU\",\n                \"ProductName\": \"test_siva_123\",\n                \"DeviceType\": 1,\n                \"NetType\": \"wifi\",\n                \"EncryptionType\": 2,\n                \"Features\": [\n                    \"ypsxth\",\n                    \"spdxth\"\n                ],\n                \"ChipOs\": \"Linux\",\n                \"ChipManufactureId\": \"ak\",\n                \"ChipId\": \"AK3918EV331\",\n                \"ProductDescription\": \"dd12\",\n                \"CreateTime\": 1608786160,\n                \"UpdateTime\": 1608868038\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"bb92aaff-508b-4d10-8e42-5841e796ffda\"\n    }\n}",
         "title": "获取产品列表"
       }
     ],
@@ -755,7 +755,7 @@
     "ModifyProduct": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"37MFSSRMZY\",\n    \"ProductName\": \"测试\",\n    \"ProductDescription\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProduct\n<公共请求参数>\n\n{\n    \"ProductId\": \"37MFSSRMZY\",\n    \"ProductName\": \"name\",\n    \"ProductDescription\": \"desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"719fe65a-40fd-40b3-8fe9-eb166873e050\"\n    }\n}",
         "title": "修改产品信息"
       }

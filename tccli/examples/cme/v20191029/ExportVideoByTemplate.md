@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme ExportVideoByTemplate --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TemplateId 60498a50adaf8f000164a07b@prod@12500000 \
     --SlotReplacements.0.Id 1 \
     --SlotReplacements.0.ReplacementType VIDEO \
@@ -38,7 +38,7 @@ Input:
 
 ```
 tccli cme ExportVideoByTemplate --cli-unfold-argument  \
-    --Platform 123000111 \
+    --Platform 1000000009 \
     --TemplateId 60498a50adaf8f000164a07b@prod@12500000 \
     --SlotReplacements.0.Id 1 \
     --SlotReplacements.0.ReplacementType IMAGE \
@@ -73,7 +73,7 @@ Input:
 
 ```
 tccli cme ExportVideoByTemplate --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TemplateId 60498a50adaf8f000164a07b@prod@12500000 \
     --SlotReplacements.0.Id 1 \
     --SlotReplacements.0.ReplacementType VIDEO \
@@ -110,7 +110,7 @@ Input:
 
 ```
 tccli cme ExportVideoByTemplate --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --TemplateId 60498a50adaf8f000164a07b@prod@12500000 \
     --SlotReplacements.0.Id 1 \
     --SlotReplacements.0.ReplacementType VIDEO \

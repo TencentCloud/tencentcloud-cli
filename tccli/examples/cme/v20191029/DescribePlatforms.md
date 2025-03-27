@@ -14,9 +14,9 @@ Output:
         "TotalCount": 1,
         "PlatformInfoSet": [
             {
-                "Platform": "1112",
+                "Platform": "1000000009",
                 "Status": "Valid",
-                "Description": "test",
+                "Description": "my_platform",
                 "VodSubAppId": 140000303,
                 "LicenseId": "cmelid_8621ba0483c211ea90dc6c92bf621f6e",
                 "CreateTime": "2018-12-01T13:00:00Z",
@@ -46,9 +46,9 @@ Output:
         "TotalCount": 1,
         "PlatformInfoSet": [
             {
-                "Platform": "1112",
+                "Platform": "1000000009",
                 "Status": "Valid",
-                "Description": "test",
+                "Description": "my_platform",
                 "VodSubAppId": 140000303,
                 "LicenseId": "cmelid_8621ba0483c211ea90dc6c92bf621f6e",
                 "CreateTime": "2018-12-01T13:00:00Z",

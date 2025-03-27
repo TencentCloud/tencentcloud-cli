@@ -4050,7 +4050,7 @@
         {
           "disabled": false,
           "document": "日志主题名称",
-          "example": "test",
+          "example": "topic-name",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -4092,10 +4092,10 @@
         {
           "disabled": false,
           "document": "主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123-456-789",
+          "example": "2feewq3-g327-0457-a12m-2e22e5df1111",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4496,6 +4496,7 @@
           "example": "_cdnauth",
           "member": "string",
           "name": "SubDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4505,6 +4506,7 @@
           "example": "202009071516044acd018wf498457628cn75ba018ec9cv",
           "member": "string",
           "name": "Record",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4514,6 +4516,7 @@
           "example": "TXT",
           "member": "string",
           "name": "RecordType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4523,15 +4526,17 @@
           "example": "http://abc.com/verification.html",
           "member": "string",
           "name": "FileVerifyUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文件校验域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "abc.com",
           "member": "string",
           "name": "FileVerifyDomains",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4541,6 +4546,7 @@
           "example": "verification.html",
           "member": "string",
           "name": "FileVerifyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5107,7 +5113,7 @@
         {
           "disabled": false,
           "document": "指定查询域名列表\n查询单域名：指定单个域名\n查询多个域名：指定多个域名，最多可一次性查询 30 个\n查询账号下所有域名：不传参，默认查询账号维度",
-          "example": "无",
+          "example": "qq.com, tencent.com",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -5143,7 +5149,7 @@
         {
           "disabled": false,
           "document": "查询中国境内CDN数据时，指定运营商查询，不填充表示查询所有运营商\n运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)\n指定运营商查询时，不可同时指定省份、IP协议查询",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Isp",
           "required": false,
@@ -5152,7 +5158,7 @@
         {
           "disabled": false,
           "document": "查询中国境内CDN数据时，指定省份查询，不填充表示查询所有省份\n查询中国境外CDN数据时，指定国家/地区查询，不填充表示查询所有国家/地区\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)\n指定（中国境内）省份查询时，不可同时指定运营商、IP协议查询",
-          "example": "无",
+          "example": "4",
           "member": "int64",
           "name": "District",
           "required": false,
@@ -5161,7 +5167,7 @@
         {
           "disabled": false,
           "document": "指定协议查询，不填充表示查询所有协议\nall：所有协议\nhttp：指定查询 HTTP 对应指标\nhttps：指定查询 HTTPS 对应指标",
-          "example": "无",
+          "example": "all",
           "member": "string",
           "name": "Protocol",
           "required": false,
@@ -5170,7 +5176,7 @@
         {
           "disabled": false,
           "document": "指定数据源查询，白名单功能",
-          "example": "无",
+          "example": "monitor",
           "member": "string",
           "name": "DataSource",
           "required": false,
@@ -5179,7 +5185,7 @@
         {
           "disabled": false,
           "document": "指定IP协议查询，不填充表示查询所有协议\nall：所有协议\nipv4：指定查询 ipv4 对应指标\nipv6：指定查询 ipv6 对应指标\n指定IP协议查询时，不可同时指定省份、运营商查询\n注意：非IPv6白名单用户不可指定ipv4、ipv6进行查询",
-          "example": "无",
+          "example": "ipv4",
           "member": "string",
           "name": "IpProtocol",
           "required": false,
@@ -5197,7 +5203,7 @@
         {
           "disabled": false,
           "document": "查询中国境外CDN数据时，可指定地区类型查询，不填充表示查询服务地区数据（仅在 Area 为 overseas 时可用）\nserver：指定查询服务地区（腾讯云 CDN 节点服务器所在地区）数据\nclient：指定查询客户端地区（用户请求终端所在地区）数据",
-          "example": "无",
+          "example": "server",
           "member": "string",
           "name": "AreaType",
           "required": false,
@@ -5577,7 +5583,7 @@
         {
           "disabled": false,
           "document": "报告ID",
-          "example": "123",
+          "example": "9597132511111",
           "member": "string",
           "name": "ReportId",
           "required": true,
@@ -5848,7 +5854,7 @@
           "example": "无",
           "member": "DetailDomain",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5858,7 +5864,7 @@
           "example": "201",
           "member": "int64",
           "name": "TotalNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6341,17 +6347,17 @@
           "example": "无",
           "member": "IpStatus",
           "name": "Ips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点总个数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6388,7 +6394,7 @@
         {
           "disabled": false,
           "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细",
-          "example": "无",
+          "example": "qq.com",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -6424,7 +6430,7 @@
           "example": "5min",
           "member": "string",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6434,7 +6440,7 @@
           "example": "无",
           "member": "ResourceData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6537,7 +6543,7 @@
         {
           "disabled": false,
           "document": "指定查询域名列表，最多可一次性查询 30 个加速域名明细",
-          "example": "无",
+          "example": "qq.com",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -6810,7 +6816,7 @@
         {
           "disabled": false,
           "document": "支持域名过滤，或 http(s):// 开头完整 URL 过滤",
-          "example": "无",
+          "example": " http(s)://abc.com/index.html",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -6846,7 +6852,7 @@
           "example": "无",
           "member": "PurgeTask",
           "name": "PurgeLogs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6856,7 +6862,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6929,7 +6935,7 @@
         {
           "disabled": false,
           "document": "查询关键字，请输入域名或 http(s):// 开头完整 URL",
-          "example": "无",
+          "example": " http(s)://abc.com/index.html",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -7084,7 +7090,7 @@
           "example": "无",
           "member": "ReportData",
           "name": "DomainReport",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7094,7 +7100,7 @@
           "example": "无",
           "member": "ReportData",
           "name": "ProjectReport",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7852,7 +7858,7 @@
         {
           "disabled": false,
           "document": "指定的域名查询",
-          "example": "无",
+          "example": "qq.com",
           "member": "string",
           "name": "Domains",
           "required": false,
@@ -7870,7 +7876,7 @@
           "example": "无",
           "member": "ViolationUrl",
           "name": "UrlRecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7880,7 +7886,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8923,7 +8929,7 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "9597132570124",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -10919,7 +10925,7 @@
           "example": "12345678901",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10929,7 +10935,7 @@
           "example": "cdn",
           "member": "string",
           "name": "Channel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10939,7 +10945,7 @@
           "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10949,7 +10955,7 @@
           "example": "d2256449-c6ff-421b-93ef-aa3a7dde2de2",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10959,17 +10965,17 @@
           "example": "无",
           "member": "DomainAreaConfig",
           "name": "DomainAreaConfigs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志主题名称",
-          "example": "test",
+          "example": "topic-name",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10979,7 +10985,7 @@
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11435,7 +11441,7 @@
         {
           "disabled": false,
           "document": "需要查询的日志集ID",
-          "example": "无",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -11444,7 +11450,7 @@
         {
           "disabled": false,
           "document": "需要查询的日志主题ID组合，多个以逗号分隔",
-          "example": "无",
+          "example": "2feewq3-g327-0457-a12m-2e22e5df1111",
           "member": "string",
           "name": "TopicIds",
           "required": true,
@@ -11525,27 +11531,27 @@
           "example": "无",
           "member": "ClsLogIpData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "获取到Top总记录数",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "获取到的不重复IP条数",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "IpCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13603,7 +13609,7 @@
         {
           "disabled": false,
           "document": "目录列表，需要包含协议头部 http:// 或 https://",
-          "example": "无",
+          "example": " https://qq.com/index.html",
           "member": "string",
           "name": "Paths",
           "required": true,
@@ -13645,7 +13651,7 @@
         {
           "disabled": false,
           "document": "刷新任务 ID，同一批次提交的目录共用一个任务 ID",
-          "example": "123456",
+          "example": "559846958382362894",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -13733,7 +13739,7 @@
         {
           "disabled": false,
           "document": "URL 列表，需要包含协议头部 http:// 或 https://",
-          "example": "无",
+          "example": "http://www.test.com/1.jpg",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -13766,7 +13772,7 @@
         {
           "disabled": false,
           "document": "刷新任务 ID，同一批次提交的 URL 共用一个任务 ID",
-          "example": "123456",
+          "example": "98547009889354471",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -15899,7 +15905,7 @@
         {
           "disabled": false,
           "document": "需要查询的日志集ID",
-          "example": "无",
+          "example": "6d04373b-ba59-4a4f-a96e-9fe53b59a536",
           "member": "string",
           "name": "LogsetId",
           "required": true,
@@ -15908,7 +15914,7 @@
         {
           "disabled": false,
           "document": "需要查询的日志主题ID组合，以逗号分隔",
-          "example": "无",
+          "example": "2feewq3-g327-0457-a12m-2e22e5df1111",
           "member": "string",
           "name": "TopicIds",
           "required": true,
@@ -15953,7 +15959,7 @@
         {
           "disabled": false,
           "document": "需要查询的内容，详情请参考https://cloud.tencent.com/document/product/614/16982",
-          "example": "无",
+          "example": "http_status:200",
           "member": "string",
           "name": "Query",
           "required": false,
@@ -15962,7 +15968,7 @@
         {
           "disabled": false,
           "document": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围",
-          "example": "无",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -15989,7 +15995,7 @@
           "example": "无",
           "member": "ClsSearchLogs",
           "name": "Logs",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

@@ -9,7 +9,7 @@ tccli cme RevokeResourceAuthorization --cli-unfold-argument  \
     --Authorizees.0.Type TEAM \
     --Authorizees.0.Id cmetid_afd3ad3d6289k390d9dk09ad0 \
     --Operator user_id_1c5ebebd4392343b6489560 \
-    --Platform test \
+    --Platform 1000000009 \
     --Owner.Type PERSON \
     --Owner.Id user_id_1c5ebebd4392343b6489560 \
     --Resources.0.Type MATERIAL \

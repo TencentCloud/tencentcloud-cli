@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod ComposeMedia --cli-unfold-argument  \
     --Output.Container mp4 \
-    --Output.FileName test \
+    --Output.FileName output \
     --Tracks.0.TrackItems.0.Type Empty \
     --Tracks.0.TrackItems.0.EmptyItem.Duration 5 \
     --Tracks.0.TrackItems.1.AudioItem.SourceMedia 5285485487985271488 \
@@ -44,7 +44,7 @@ Input:
 ```
 tccli vod ComposeMedia --cli-unfold-argument  \
     --Output.Container mp4 \
-    --Output.FileName test \
+    --Output.FileName output \
     --Tracks.0.TrackItems.0.StickerItem.CoordinateOrigin TopLeft \
     --Tracks.0.TrackItems.0.StickerItem.XPos 20px \
     --Tracks.0.TrackItems.0.StickerItem.YPos 20px \
@@ -88,7 +88,7 @@ Input:
 ```
 tccli vod ComposeMedia --cli-unfold-argument  \
     --Output.Container mp4 \
-    --Output.FileName test \
+    --Output.FileName output \
     --Tracks.0.TrackItems.0.Type Video \
     --Tracks.0.TrackItems.0.VideoItem.SourceMedia 5285485487985271487 \
     --Tracks.0.Type Video \

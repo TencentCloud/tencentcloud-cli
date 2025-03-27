@@ -19,8 +19,8 @@
     "CreateDatasourceCloud": [
       {
         "document": "创建云数据库测示例",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasourceCloud\n<公共请求参数>\n\n{\n    \"ServiceType\": \"MYSQL\",\n    \"DbType\": \"MYSQL\",\n    \"Charset\": \"utf8\",\n    \"DbUser\": \"root\",\n    \"DbPwd\": \"******\",\n    \"DbName\": \"bi_demo\",\n    \"SourceName\": \"\",\n    \"ProjectId\": \"\",\n    \"Vip\": \"\",\n    \"Vport\": \"\",\n    \"VpcId\": \"\",\n    \"UniqVpcId\": \"\",\n    \"RegionId\": \"1\",\n    \"ExtraParam\": \"\",\n    \"InstanceId\": \"1\",\n    \"ProdDbName\": \"1\",\n    \"DataOrigin\": \"1\",\n    \"DataOriginProjectId\": \"1\",\n    \"DataOriginDatasourceId\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0,\n            \"AccessKey\": \"asakdsmsk**sdsmdsff\",\n            \"ProjectId\": 1,\n            \"TranId\": \"jgvk213439\",\n            \"TranStatus\": 0\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"成功\",\n        \"RequestId\": \"djdkssadlflksdkasjfrejq\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasourceCloud\n<公共请求参数>\n\n{\n    \"ServiceType\": \"ServiceType\",\n    \"DbType\": \"DbType\",\n    \"Charset\": \"Charset\",\n    \"DbUser\": \"DbUser\",\n    \"DbPwd\": \"DbPwd\",\n    \"DbName\": \"DbName\",\n    \"SourceName\": \"SourceName\",\n    \"ProjectId\": \"ProjectId\",\n    \"Vip\": \"Vip\",\n    \"Vport\": \"Vport\",\n    \"VpcId\": \"VpcId\",\n    \"UniqVpcId\": \"UniqVpcId\",\n    \"RegionId\": \"RegionId\",\n    \"ExtraParam\": \"ExtraParam\",\n    \"InstanceId\": \"InstanceId\",\n    \"ProdDbName\": \"ProdDbName\",\n    \"DataOrigin\": \"DataOrigin\",\n    \"DataOriginProjectId\": \"DataOriginProjectId\",\n    \"DataOriginDatasourceId\": \"DataOriginDatasourceId\",\n    \"ClusterId\": \"ClusterId\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0,\n            \"AccessKey\": \"AccessKey***AccessKey\",\n            \"ProjectId\": 1,\n            \"TranId\": \"jgvk213439\",\n            \"TranStatus\": 0\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"成功\",\n        \"RequestId\": \"RequestId-123\"\n    }\n}",
         "title": "创建云数据库测示例"
       }
     ],
@@ -43,7 +43,7 @@
     "CreateUserRole": [
       {
         "document": "创建用户",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRole\n<公共请求参数>\n\n{\n    \"RoleIdList\": [\n        0\n    ],\n    \"UserList\": [\n        {\n            \"UserId\": \"1101\",\n            \"UserName\": \"张三\",\n            \"CorpId\": \"150101\",\n            \"Email\": \"242113***@qq.com\",\n            \"LastLogin\": \"2020-09-22T00:00:00+00:00\",\n            \"Status\": 0,\n            \"FirstModify\": 0,\n            \"PhoneNumber\": \"86******8998\",\n            \"AreaCode\": \"001\",\n            \"CreatedUser\": \"1210201\",\n            \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdatedUser\": \"1210201\",\n            \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n            \"GlobalUserName\": \"张三\",\n            \"Mobile\": \"139******8998\"\n        }\n    ],\n    \"UserInfoList\": [\n        {\n            \"UserId\": \"1101\",\n            \"UserName\": \"张三\",\n            \"Email\": \"242113***@qq.com\",\n            \"PhoneNumber\": \"86******8998\",\n            \"AreaCode\": \"001\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRole\n<公共请求参数>\n\n{\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"UserInfoList\": [\n        {\n            \"UserId\": \"用户ID\",\n            \"UserName\": \"用户名\",\n            \"Email\": \"邮箱\",\n            \"PhoneNumber\": \"手机号\",\n            \"AreaCode\": \"手机号区号\",\n            \"AppUserId\": \"企微账号id\",\n            \"AppUserName\": \"企微账号名称\"\n        }\n    ],\n    \"UserList\": [\n        {\n            \"UserId\": \"用户ID\",\n            \"UserName\": \"用户名\",\n            \"CorpId\": \"企业ID\",\n            \"Email\": \"电子邮箱\",\n            \"Status\": 1982493789748932,\n            \"FirstModify\": 1982493789748932,\n            \"PhoneNumber\": \"手机号码\",\n            \"AreaCode\": \"手机区号\",\n            \"CreatedUser\": \"创建人\",\n            \"UpdatedUser\": \"更改人\",\n            \"GlobalUserName\": \"全局角色\",\n            \"Mobile\": \"手机号\",\n            \"AppId\": \"1\",\n            \"AppUserId\": \"1\",\n            \"AppUserAliasName\": \"1\",\n            \"AppUserName\": \"1\",\n            \"InValidateAppRange\": false\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"30672eed-81e6-4d8f-a630-3d472531490b\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 1\n        }\n    }\n}",
         "title": "demo"
       }
@@ -51,13 +51,13 @@
     "CreateUserRoleProject": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"null\",\n            \"UserId\": \"null\"\n        }\n    ],\n    \"ProjectId\": \"000\",\n    \"RoleIdList\": [\n        \"100100\"\n    ],\n    \"UserInfoList\": [\n        {\n            \"UserName\": \"tommyho\",\n            \"PhoneNumber\": \"152****12313\",\n            \"AreaCode\": \"86\",\n            \"UserId\": \"tommyho\",\n            \"Email\": \"123@qq.com\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"UserInfoList\": [\n        {\n            \"UserId\": \"zhangsan\",\n            \"UserName\": \"用户名\",\n            \"Email\": \"邮箱\",\n            \"PhoneNumber\": \"手机号\",\n            \"AreaCode\": \"手机号区号\",\n            \"AppUserId\": \"企微账号id\",\n            \"AppUserName\": \"企微账号名称\"\n        }\n    ],\n    \"UserList\": [\n        {\n            \"UserId\": \"zhangsan\",\n            \"UserName\": \"用户名\",\n            \"CorpId\": \"企业ID\",\n            \"Email\": \"电子邮箱\",\n            \"Status\": 1982493789748932,\n            \"FirstModify\": 1982493789748932,\n            \"PhoneNumber\": \"手机号码\",\n            \"AreaCode\": \"手机区号\",\n            \"CreatedUser\": \"创建人\",\n            \"UpdatedUser\": \"更改人\",\n            \"GlobalUserName\": \"全局角色\",\n            \"Mobile\": \"手机号\",\n            \"AppId\": \"1\",\n            \"AppUserId\": \"1\",\n            \"AppUserAliasName\": \"1\",\n            \"AppUserName\": \"1\",\n            \"InValidateAppRange\": false\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"6cd11622-b240-40ae-8ec0-86b933aab8da\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 0\n        }\n    }\n}",
         "title": "demo"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"王成林\",\n            \"UserId\": \"lenwang\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"RoleIdList\": [\n        \"100090\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserRoleProject\n<公共请求参数>\n\n{\n    \"UserList\": [\n        {\n            \"UserName\": \"张三\",\n            \"UserId\": \"zhangsan\"\n        }\n    ],\n    \"ProjectId\": \"1\",\n    \"RoleIdList\": [\n        \"100090\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed4d2bd1-ee13-4b67-80cf-a8a2794a82ed\",\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Id\": 1\n        },\n        \"Msg\": \"success\"\n    }\n}",
         "title": "项目内-创建用户角色示例接口"
       }
@@ -79,7 +79,7 @@
     "DeleteProject": [
       {
         "document": "删除项目",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Seed\": \"sdadfas\",\n    \"DefaultPanelType\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"Id\": 1982493789748932,\n    \"Seed\": \"Seed\",\n    \"DefaultPanelType\": 1982493789748932\n}",
         "output": "{\n    \"Response\": {\n        \"Extra\": \"额外参数\",\n        \"Data\": \"1\",\n        \"Msg\": \"成功\",\n        \"RequestId\": \"dsdlsdlcdfkdskask212\"\n    }\n}",
         "title": "删除项目"
       }
@@ -87,7 +87,7 @@
     "DeleteUserRole": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserRole\n<公共请求参数>\n\n{\n    \"UserId\": \"lenwang\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserRole\n<公共请求参数>\n\n{\n    \"UserId\": \"zhansan\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"221c07fe-6f67-4995-91fe-9d18c451e933\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"Msg\": \"success\"\n    }\n}",
         "title": "删除用户角色-示例接口"
       }
@@ -95,7 +95,7 @@
     "DeleteUserRoleProject": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"UserId\": \"lenwang\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"UserId\": \"zhangsan\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"13609343-ad23-43cb-92d4-27233296004e\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"Msg\": \"success\"\n    }\n}",
         "title": "项目内-删除用户接口"
       }
@@ -118,7 +118,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePageWidgetList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"662\",\n    \"PageId\": \"6465\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorMessage\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Data\": {\n            \"CorpId\": \"110112\",\n            \"ProjectId\": \"1101\",\n            \"PageId\": \"1\",\n            \"WidgetList\": [\n                {\n                    \"WidgetId\": \"dsjdsk\",\n                    \"WidgetName\": \"表格\"\n                }\n            ]\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"sadadadfdkfdl212313dsds\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorMessage\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Data\": {\n            \"CorpId\": \"110112\",\n            \"ProjectId\": \"1101\",\n            \"PageId\": \"1\",\n            \"WidgetList\": [\n                {\n                    \"WidgetId\": \"WidgetId\",\n                    \"WidgetName\": \"表格\"\n                }\n            ]\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"sadadadfdkfdl212313dsds\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -149,8 +149,8 @@
     "DescribeUserRoleList": [
       {
         "document": "用户信息列表",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserRoleList\n<公共请求参数>\n\n{\n    \"PageNo\": 0,\n    \"PageSize\": 0,\n    \"AllPage\": true,\n    \"UserType\": \"1\",\n    \"Keyword\": \"\",\n    \"ProjectId\": \"1101\",\n    \"IsOnlyBindAppUser\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Total\": 0,\n            \"TotalPages\": 0,\n            \"List\": [\n                {\n                    \"Id\": 1,\n                    \"RoleList\": [\n                        {\n                            \"RoleName\": \"企业管理员\",\n                            \"RoleId\": 0,\n                            \"ProjectId\": 0,\n                            \"ProjectName\": \"测试项目\",\n                            \"ScopeType\": 0,\n                            \"ModuleCollection\": \"datasource\"\n                        }\n                    ],\n                    \"RoleIdList\": [\n                        1\n                    ],\n                    \"UserId\": \"10210\",\n                    \"UserName\": \"zhangsna\",\n                    \"CorpId\": \"30310\",\n                    \"Email\": \"232***12@qq.com\",\n                    \"CreatedUser\": \"zhangsna\",\n                    \"CreatedAt\": \"2020-09-22 00:00:00\",\n                    \"UpdatedUser\": \"zhangsna\",\n                    \"UpdatedAt\": \"2020-09-22 00:00:00\",\n                    \"LastLogin\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 0,\n                    \"PhoneNumber\": \"86312***212\",\n                    \"AreaCode\": \"086\",\n                    \"RootAccount\": true,\n                    \"CorpAdmin\": true,\n                    \"AppUserId\": \"2102\",\n                    \"AppUserAliasName\": \"zhangsn\",\n                    \"AppUserName\": \"zhangsn\",\n                    \"InValidateAppRange\": true\n                }\n            ]\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserRoleList\n<公共请求参数>\n\n{\n    \"PageNo\": 1982493789748932,\n    \"PageSize\": 1982493789748932,\n    \"AllPage\": false,\n    \"UserType\": \"UserType\",\n    \"Keyword\": \"Keyword\",\n    \"ProjectId\": \"ProjectId\",\n    \"IsOnlyBindAppUser\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Data\": {\n            \"Total\": 0,\n            \"TotalPages\": 0,\n            \"List\": [\n                {\n                    \"Id\": 1,\n                    \"RoleList\": [\n                        {\n                            \"RoleName\": \"企业管理员\",\n                            \"RoleId\": 0,\n                            \"ProjectId\": 0,\n                            \"ProjectName\": \"测试项目\",\n                            \"ScopeType\": 0,\n                            \"ModuleCollection\": \"datasource\"\n                        }\n                    ],\n                    \"RoleIdList\": [\n                        1\n                    ],\n                    \"UserId\": \"10210\",\n                    \"UserName\": \"zhangsan\",\n                    \"CorpId\": \"30310\",\n                    \"Email\": \"123***@qq.com\",\n                    \"CreatedUser\": \"zhangsan\",\n                    \"CreatedAt\": \"2020-09-22 00:00:00\",\n                    \"UpdatedUser\": \"zhangsan\",\n                    \"UpdatedAt\": \"2020-09-22 00:00:00\",\n                    \"LastLogin\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 0,\n                    \"PhoneNumber\": \"86312***212\",\n                    \"AreaCode\": \"086\",\n                    \"RootAccount\": true,\n                    \"CorpAdmin\": true,\n                    \"AppUserId\": \"2102\",\n                    \"AppUserAliasName\": \"zhangsan\",\n                    \"AppUserName\": \"zhangsan\",\n                    \"InValidateAppRange\": true\n                }\n            ]\n        },\n        \"Msg\": \"成功\",\n        \"RequestId\": \"\"\n    }\n}",
         "title": "用户信息列表"
       }
     ],
@@ -189,23 +189,23 @@
     "ModifyProject": [
       {
         "document": "修改项目",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"测试数据源\",\n    \"ColorCode\": \"#ffffff\",\n    \"Logo\": \"log.png\",\n    \"Mark\": \"beizhu\",\n    \"IsApply\": true,\n    \"Seed\": \"dssa\",\n    \"PanelScope\": \"ALL\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"成功\",\n        \"RequestId\": \"dsweew-22131ds\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"Id\": 1982493789748932,\n    \"Name\": \"Name\",\n    \"ColorCode\": \"ColorCode\",\n    \"Logo\": \"Logo\",\n    \"Mark\": \"Mark\",\n    \"IsApply\": false,\n    \"Seed\": \"Seed\",\n    \"DefaultPanelType\": 1982493789748932,\n    \"PanelScope\": \"PanelScope\",\n    \"ManagePlatform\": \"ManagePlatform\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"\",\n        \"Data\": \"\",\n        \"Msg\": \"成功\",\n        \"RequestId\": \"RequestId-22131ds\"\n    }\n}",
         "title": "修改项目"
       }
     ],
     "ModifyUserRole": [
       {
         "document": "修改用户角色信息",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRole\n<公共请求参数>\n\n{\n    \"UserId\": \"21021\",\n    \"RoleIdList\": [\n        0,\n        1,\n        231,\n        213\n    ],\n    \"Email\": \"2313**2312@qq.com\",\n    \"UserName\": \"zhangsn\",\n    \"PhoneNumber\": \"86212***12\",\n    \"AreaCode\": \"086\",\n    \"AppUserId\": \"123142\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"ERROR\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"失败\",\n        \"Data\": \"\",\n        \"RequestId\": \"sddsdfsbghbwe1-211ds\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRole\n<公共请求参数>\n\n{\n    \"UserId\": \"UserId\",\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"Email\": \"123***@qq.com\",\n    \"UserName\": \"zhangsan\",\n    \"PhoneNumber\": \"PhoneNumber\",\n    \"AreaCode\": \"AreaCode\",\n    \"AppUserId\": \"AppUserId\",\n    \"LoginSecurityStatus\": 1982493789748932,\n    \"ResetPassWordTip\": 1982493789748932,\n    \"ForceResetPassWord\": 1982493789748932,\n    \"PasswordExpired\": 1982493789748932\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9478b0d0-1e95-4d12-88a6-db36fb27a12b\",\n        \"Extra\": \"Extra\",\n        \"Data\": \"Data\"\n    }\n}",
         "title": "修改用户角色信息"
       }
     ],
     "ModifyUserRoleProject": [
       {
         "document": "项目-修改用户信息",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"UserId\": \"12233\",\n    \"RoleIdList\": [\n        0\n    ],\n    \"Email\": \"2313***312@qq.com\",\n    \"UserName\": \"zhangsn\",\n    \"AppUserId\": \"dsfg\"\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRoleProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1982493789748932,\n    \"UserId\": \"UserId\",\n    \"RoleIdList\": [\n        1982493789748932\n    ],\n    \"Email\": \"123***@qq.com\",\n    \"UserName\": \"zhangsan\",\n    \"AppUserId\": \"AppUserId\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"INFO\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"成功\",\n        \"Data\": \"\",\n        \"RequestId\": \"sadd23jdsh-123cdjds\"\n    }\n}",
         "title": "项目-修改用户信息"
       }

@@ -1,12 +1,12 @@
 **Example 1: 分析分类创建事件内容**
 
-  
+
 
 Input: 
 
 ```
 tccli cme ParseEvent --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --EventContent {"EventType":"Class.Created","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","MaterialImportedEvent":{"Owner":{"Id":"user_9949009d9d9","Type":"PERSON"},"ClassPath":"/媒体"}}
 ```
 
@@ -61,13 +61,13 @@ Output:
 
 **Example 2: 分析媒体导入事件内容**
 
- 
+
 
 Input: 
 
 ```
 tccli cme ParseEvent --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --EventContent {"EventType":"Material.Imported","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","MaterialImportedEvent":{"MediaInfoSet":["9dd28590d08987ujd795d","rdd28590d08187ujd7095d"],"Owner":{"Id":"user_9949009d9d9","Type":"PERSON"},"ClassPath":"/媒体"}}
 ```
 
@@ -130,13 +130,13 @@ Output:
 
 **Example 3: 分析新文件产生事件内容**
 
- 
+
 
 Input: 
 
 ```
 tccli cme ParseEvent --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --EventContent {"EventType":"Storage.NewFileCreated","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","StorageNewFileCreatedEvent":{"FileId":"5285890818667693851","MaterialId":"60a75c1c30fcbe0001cc09d5","Operator":"3fa6b09e-05c6-433e-bc1e-6457d264f1dd","OperationType":"Upload","Owner":{"Type":"PERSON","Id":"3fa6b09e-05c6-433e-bc1e-6457d264f1dd"},"ClassPath":"/媒体"}}
 ```
 
@@ -185,13 +185,13 @@ Output:
 
 **Example 4: 分析云转推项目状态变更事件内容**
 
- 
+
 
 Input: 
 
 ```
 tccli cme ParseEvent --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --EventContent {"EventType":"Project.StreamConnect.StatusChanged","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","ProjectStreamConnectStatusChangedEvent":{"ProjectId":"5285890818667693851","Status":"Working"}}
 ```
 
@@ -240,13 +240,13 @@ Output:
 
 **Example 5: 分析导播台项目状态变更事件内容**
 
- 
+
 
 Input: 
 
 ```
 tccli cme ParseEvent --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --EventContent {"EventType":"Project.Switcher.StatusChanged","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","ProjectSwitcherStatusChangedEvent":{"ProjectId":"add28590d08187ujd7695d","Status":"Started"}}
 ```
 

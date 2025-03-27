@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme CreateTeam --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Name 测试团队名称 \
     --OwnerRemark 管理员李四 \
     --OwnerId 997988688

@@ -1698,6 +1698,15 @@
           "name": "TaskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转推录制任务发起时所填，标识一次录制",
+          "example": "recorder_key_test",
+          "member": "string",
+          "name": "RecorderKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1733,6 +1742,16 @@
           "name": "StorageFileList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转推录制任务发起时所填，标识一次录制",
+          "example": "recorder_key_test",
+          "member": "string",
+          "name": "RecorderKey",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

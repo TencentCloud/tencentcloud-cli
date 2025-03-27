@@ -24,8 +24,8 @@ Output:
                     "UpdateTime": "2017-01-23T07:25:52Z",
                     "ExpireTime": "2017-03-23T07:25:52Z",
                     "ClassId": 1,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "体育",
+                    "ClassPath": "田径",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",
@@ -318,7 +318,7 @@ Output:
                     "KeyFrameDescSet": [
                         {
                             "TimeOffset": 1,
-                            "Content": "abc"
+                            "Content": "路径"
                         },
                         {
                             "TimeOffset": 100,
@@ -333,7 +333,8 @@ Output:
                             "Name": "English",
                             "Language": "en-US",
                             "Format": "vtt",
-                            "Url": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt"
+                            "Url": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt",
+                            "Source": "UserUploaded"
                         }
                     ]
                 },
@@ -382,8 +383,8 @@ Output:
                     "UpdateTime": "2017-01-23T07:25:52Z",
                     "ExpireTime": "2017-03-23T07:25:52Z",
                     "ClassId": 1,
-                    "ClassName": "测试",
-                    "ClassPath": "测试",
+                    "ClassName": "体育",
+                    "ClassPath": "田径",
                     "CoverUrl": "http://xx.vod2.myqcloud.com/xxxxxxxx/shotup/f0.100_0.jpg",
                     "Type": "mp4",
                     "MediaUrl": "http://xx.vod2.myqcloud.com/xx/xx/f0.mp4",

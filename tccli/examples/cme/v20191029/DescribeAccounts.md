@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme DescribeAccounts --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Phone 15517177077 \
     --Offset 0 \
     --Limit 10
@@ -38,7 +38,7 @@ Input:
 
 ```
 tccli cme DescribeAccounts --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --Offset 0 \
     --Limit 10
 ```

@@ -8,7 +8,7 @@ Input:
 tccli vod SetDrmKeyProviderInfo --cli-unfold-argument  \
     --SDMCInfo.SecretKey testKey \
     --SDMCInfo.SecretId testId \
-    --SDMCInfo.Uid 123 \
+    --SDMCInfo.Uid 123**456 \
     --SDMCInfo.FairPlayCertificateUrl https://xx/fairplay.cer
 ```
 

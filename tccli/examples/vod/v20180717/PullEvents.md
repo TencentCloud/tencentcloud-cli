@@ -130,7 +130,8 @@ Output:
                             "SnapshotByTimeOffsetTask": null,
                             "SampleSnapshotTask": null,
                             "ImageSpriteTask": null,
-                            "CoverBySnapshotTask": null
+                            "CoverBySnapshotTask": null,
+                            "AdaptiveDynamicStreamingTask": null
                         }
                     ],
                     "AiContentReviewResultSet": [],
@@ -156,7 +157,9 @@ Output:
                 "ReviewAudioVideoCompleteEvent": null,
                 "DescribeFileAttributesCompleteEvent": null,
                 "ReduceMediaBitrateCompleteEvent": null,
-                "QualityEnhanceCompleteEvent": null
+                "QualityEnhanceCompleteEvent": null,
+                "PersistenceCompleteEvent": null,
+                "ComplexAdaptiveDynamicStreamingCompleteEvent": null
             }
         ],
         "RequestId": "5ca61a3a-6b8e-4b4e-9256-fdc001190064ef0"

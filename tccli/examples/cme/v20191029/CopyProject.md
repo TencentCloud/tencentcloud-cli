@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cme CopyProject --cli-unfold-argument  \
-    --Platform test \
+    --Platform 1000000009 \
     --ProjectId cmepid_88kkdkkkkd009d9d9d99d9 \
     --Name 复制项目
 ```
