@@ -17,7 +17,7 @@ Output:
         "RebuildMediaTemplateSet": [
             {
                 "Definition": 20001,
-                "Name": "test",
+                "Name": "template name",
                 "Type": "Preset",
                 "Comment": "",
                 "RebuildVideoInfo": null,

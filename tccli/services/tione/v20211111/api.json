@@ -42,6 +42,13 @@
       "output": "CreateTrainingModelResponse",
       "status": "online"
     },
+    "CreateTrainingTask": {
+      "document": "创建模型训练任务",
+      "input": "CreateTrainingTaskRequest",
+      "name": "创建模型训练任务",
+      "output": "CreateTrainingTaskResponse",
+      "status": "online"
+    },
     "DeleteDataset": {
       "document": "删除数据集",
       "input": "DeleteDatasetRequest",
@@ -82,6 +89,13 @@
       "input": "DeleteTrainingModelVersionRequest",
       "name": "删除模型版本",
       "output": "DeleteTrainingModelVersionResponse",
+      "status": "online"
+    },
+    "DeleteTrainingTask": {
+      "document": "删除训练任务",
+      "input": "DeleteTrainingTaskRequest",
+      "name": "删除训练任务",
+      "output": "DeleteTrainingTaskResponse",
       "status": "online"
     },
     "DescribeBillingResourceGroup": {
@@ -259,6 +273,13 @@
       "output": "StartNotebookResponse",
       "status": "online"
     },
+    "StartTrainingTask": {
+      "document": "启动模型训练任务",
+      "input": "StartTrainingTaskRequest",
+      "name": "启动模型训练任务",
+      "output": "StartTrainingTaskResponse",
+      "status": "online"
+    },
     "StopModelAccelerateTask": {
       "document": "停止模型加速任务",
       "input": "StopModelAccelerateTaskRequest",
@@ -271,6 +292,13 @@
       "input": "StopNotebookRequest",
       "name": "停止Notebook",
       "output": "StopNotebookResponse",
+      "status": "online"
+    },
+    "StopTrainingTask": {
+      "document": "停止模型训练任务",
+      "input": "StopTrainingTaskRequest",
+      "name": "停止模型训练任务",
+      "output": "StopTrainingTaskResponse",
       "status": "online"
     }
   },
@@ -1728,6 +1756,241 @@
       ],
       "type": "object"
     },
+    "CreateTrainingTaskRequest": {
+      "document": "CreateTrainingTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "训练任务名称，不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
+          "example": "TaskName",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，eg：PREPAID 包年包月（资源组）;\nPOSTPAID_BY_HOUR 按量计费",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源配置，需填写对应算力规格ID和节点数量，算力规格ID查询接口为DescribeBillingSpecsPrice，eg：[{\"Role\":\"WORKER\", \"InstanceType\": \"TI.S.MEDIUM.POST\", \"InstanceNum\": 1}]",
+          "example": "[   {     \"Role\": \"WORKER\",     \"Cpu\": 1000,     \"Memory\": 1024,     \"GpuType\": \"\",     \"Gpu\": 0,     \"InstanceNum\": 1   } ]",
+          "member": "ResourceConfigInfo",
+          "name": "ResourceConfigInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "训练框架名称，通过DescribeTrainingFrameworks接口查询，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH",
+          "example": "TENSORFLOW",
+          "member": "string",
+          "name": "FrameworkName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9",
+          "example": "1.15",
+          "member": "string",
+          "name": "FrameworkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu",
+          "example": "tf1.15-py3.7-cpu",
+          "member": "string",
+          "name": "FrameworkEnvironment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询",
+          "example": "test",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签配置",
+          "example": "[   {     \"TagKey\": \"test_key\",     \"TagValue\": \"test_value\"   } ]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义镜像信息",
+          "example": "{   \"ImageType\": \"TCR\",   \"ImageUrl\": \"tione-live.tencentcloudcr.com/llm_picture/llm_picture_image:v1\",   \"RegistryRegion\": \"ap-shanghai\",   \"RegistryId\": \"tcr-f40c5gin\" }",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "COS代码包路径",
+          "example": "{   \"Bucket\": \"\",   \"Region\": \"\",   \"Paths\": [] }",
+          "member": "CosPathInfo",
+          "name": "CodePackagePath",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数",
+          "example": "{\"StartCmd\":\"bash start.sh\"}",
+          "member": "StartCmdInfo",
+          "name": "StartCmdInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD",
+          "example": "PS_WORKER",
+          "member": "string",
+          "name": "TrainingMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据配置，依赖DataSource字段，数量不超过10个",
+          "example": "[   {     \"DataSourceType\": \"CFS\",     \"DataSourceUsage\": \"\",     \"MappingPath\": \"/opt/ml/input/data/\",     \"CFSSource\": {       \"Id\": \"cfs-2v0cr9jr\",       \"Path\": \"/\"     }   } ]",
+          "member": "DataConfig",
+          "name": "DataConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "VPC Id",
+          "example": "vpc-xxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网Id",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS训练输出路径",
+          "example": "{   \"Bucket\": \"\",   \"Region\": \"\",   \"Paths\": [] }",
+          "member": "CosPathInfo",
+          "name": "Output",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志配置",
+          "example": "{   \"LogsetId\": \"6c517622-a734-4d99-bfb8-1008c46d1108\",   \"TopicId\": \"3cfb6994-e3e9-4085-a624-a654245de6c5\" }",
+          "member": "LogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "调优参数，不超过2048个字符",
+          "example": "{\"TrainMode\":\"DDP\"}",
+          "member": "string",
+          "name": "TuningParameters",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否上报日志",
+          "example": "true",
+          "member": "bool",
+          "name": "LogEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备注，不超过1024个字符",
+          "example": "\"Remark\"",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx",
+          "example": "DATASET",
+          "member": "string",
+          "name": "DataSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调地址，用于创建/启动/停止训练任务的异步回调。回调格式&内容详见：[[TI-ONE接口回调说明]](https://cloud.tencent.com/document/product/851/84292)",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效",
+          "example": "{   \"StartCmdInfo\": \"eyJXb3JrZXJTdGFydENtZCI6InNsZWVwIDEwMDAifQ==\" }",
+          "member": "EncodedStartCmdInfo",
+          "name": "EncodedStartCmdInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTrainingTaskResponse": {
+      "document": "CreateTrainingTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "训练任务ID",
+          "example": "12312313",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CronScaleJob": {
       "document": "定时扩缩任务",
       "members": [
@@ -2924,6 +3187,33 @@
     },
     "DeleteTrainingModelVersionResponse": {
       "document": "DeleteTrainingModelVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrainingTaskRequest": {
+      "document": "DeleteTrainingTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "训练任务ID",
+          "example": "train-123311",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTrainingTaskResponse": {
+      "document": "DeleteTrainingTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4378,6 +4668,21 @@
         }
       ],
       "type": "object"
+    },
+    "EncodedStartCmdInfo": {
+      "document": "编码后的启动命令信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务的启动命令，以base64格式输入，注意转换时需要完整输入{\"StartCmd\":\"\",\"PsStartCmd\":\"\",\"WorkerStartCmd\":\"\"}",
+          "example": "无",
+          "member": "string",
+          "name": "StartCmdInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "EnvVar": {
       "document": "环境变量",
@@ -9490,6 +9795,33 @@
       ],
       "type": "object"
     },
+    "StartTrainingTaskRequest": {
+      "document": "StartTrainingTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "训练任务ID",
+          "example": "train-123311",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartTrainingTaskResponse": {
+      "document": "StartTrainingTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StatefulSetCondition": {
       "document": "实例状况",
       "members": [
@@ -9626,6 +9958,33 @@
     },
     "StopNotebookResponse": {
       "document": "StopNotebook返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopTrainingTaskRequest": {
+      "document": "StopTrainingTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "训练任务ID",
+          "example": "train-123311",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopTrainingTaskResponse": {
+      "document": "StopTrainingTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

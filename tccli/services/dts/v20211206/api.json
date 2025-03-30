@@ -10063,13 +10063,13 @@
         },
         {
           "disabled": false,
-          "document": "当前状态能进行的操作",
+          "document": "当前状态能进行的操作\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"pause\",\"stop\",\"limitRate\",\"view\",\"resize\",\"isolate\",\"postPay2prePay\",\"configureOptObj\"]",
           "member": "string",
           "name": "Actions",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

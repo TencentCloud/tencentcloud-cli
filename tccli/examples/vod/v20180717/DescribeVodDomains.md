@@ -15,6 +15,7 @@ Output:
         "DomainSet": [
             {
                 "Domain": "myexample.com",
+                "Type": "VOD",
                 "AccelerateAreaInfos": [
                     {
                         "Area": "Internation",
@@ -30,7 +31,7 @@ Output:
                 },
                 "DeployStatus": "Deploying",
                 "HTTPSConfig": {
-                    "CloudCertId": "abc",
+                    "CloudCertId": "K******7",
                     "CertExpireTime": "2030-01-23T07:25:52Z"
                 },
                 "UrlSignatureAuthPolicy": {

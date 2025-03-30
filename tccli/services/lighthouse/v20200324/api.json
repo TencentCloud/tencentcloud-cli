@@ -6078,7 +6078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。",
+          "document": "协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。\n\n- 使用ICMP协议时，只支持CidrBlock，不支持使用Port、Ipv6CidrBlock参数；\n- 使用ICMPv6协议时，只支持Ipv6CidrBlock，不支持使用Port、Ipv6CidrBlock参数；",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -6089,7 +6089,7 @@
         },
         {
           "disabled": false,
-          "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。",
+          "document": "端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。注意：单独的端口与离散端口不能同时存在。",
           "example": "80",
           "member": "string",
           "name": "Port",
@@ -6122,7 +6122,7 @@
         },
         {
           "disabled": false,
-          "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
+          "document": "取值：ACCEPT（允许），DROP（拒绝）。默认为 ACCEPT。",
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",

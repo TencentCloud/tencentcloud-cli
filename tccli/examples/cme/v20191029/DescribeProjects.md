@@ -88,7 +88,7 @@ Output:
                                 "Id": "124522",
                                 "Type": "URL",
                                 "PushUrl": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08",
-                                "Name": "test"
+                                "Name": "my_output"
                             }
                         }
                     ]
@@ -160,7 +160,7 @@ Output:
                     "DestinationInfos": [
                         {
                             "Id": "2342342",
-                            "Name": "test",
+                            "Name": "my_output",
                             "PushUrl": "rtmp://livepush.video-studio.myqcloud.com/output/1250000001-600e8e66194ef500012d9b08"
                         }
                     ],

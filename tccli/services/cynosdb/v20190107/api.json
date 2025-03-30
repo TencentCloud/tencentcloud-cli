@@ -1712,23 +1712,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "23414",
+          "document": "项目ID",
+          "example": "1923",
           "member": "int64",
           "name": "ProjectId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签信息",
           "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1878,83 +1878,83 @@
         },
         {
           "disabled": false,
-          "document": "扫描行数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扫描行数。",
           "example": "1",
           "member": "int64",
           "name": "CheckRows",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cpu执行时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cpu执行时间，微秒。",
           "example": "289.474",
           "member": "float",
           "name": "CpuTime",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IO等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IO等待时间，微秒。",
           "example": "1000",
           "member": "int64",
           "name": "IoWaitTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "锁等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "锁等待时间，微秒。",
           "example": "57",
           "member": "int64",
           "name": "LockWaitTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事务持续等待时间，微秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事务持续等待时间，微秒。",
           "example": "1092",
           "member": "int64",
           "name": "TrxLivingTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间，与timestamp构成一个精确到纳秒的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间，与timestamp构成一个精确到纳秒的时间。",
           "example": "106483229",
           "member": "int64",
           "name": "NsTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志命中规则模板的基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志命中规则模板的基本信息",
           "example": "[{\"RuleTemplateId\": \"\tcynosdb-art-ns0u376\",\"RuleTemplateName\": \"andy_rule\",\"AlarmLevel\": \"2\",\"RuleTemplateStatus\": \"1\"}]",
           "member": "LogRuleTemplateInfo",
           "name": "TemplateInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事务ID",
           "example": "13365",
           "member": "int64",
           "name": "TrxId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2153,14 +2153,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "单条审计规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单条审计规则。",
           "example": "[{\"RuleFilters\": [{\"Type\": \"host\",\"Compare\": \"INC\",\"Value\": [\"172.1.1.1\"]}]}]",
           "member": "RuleFilters",
           "name": "RuleFilters",
           "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8093,6 +8093,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递者",
+          "example": "CLS",
+          "member": "string",
+          "name": "DeliverConsumer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递者名称",
+          "example": "client",
+          "member": "string",
+          "name": "DeliverConsumerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13257,43 +13277,43 @@
         },
         {
           "disabled": false,
-          "document": "是否是规则审计。true-规则审计，false-全审计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是规则审计。true-规则审计，false-全审计。",
           "example": "true",
           "member": "bool",
           "name": "AuditRule",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审计规则详情。仅当AuditRule=true时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计规则详情。仅当AuditRule=true时有效。",
           "example": "无",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是审计策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是审计策略",
           "example": "false",
           "member": "bool",
           "name": "OldRule",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例应用的规则模板详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例应用的规则模板详情",
           "example": "无",
           "member": "RuleTemplateInfo",
           "name": "RuleTemplates",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13323,133 +13343,133 @@
         },
         {
           "disabled": false,
-          "document": "日志保留时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志保留时长。",
           "example": "30",
           "member": "uint64",
           "name": "LogExpireDay",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高频存储时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高频存储时长。",
           "example": "7",
           "member": "uint64",
           "name": "HighLogExpireDay",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "低频存储时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "低频存储时长。",
           "example": "23",
           "member": "uint64",
           "name": "LowLogExpireDay",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志存储量。",
           "example": "173749.248",
           "member": "float",
           "name": "BillingAmount",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高频存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高频存储量。",
           "example": "45639.68",
           "member": "float",
           "name": "HighRealStorage",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "低频存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "低频存储量。",
           "example": "128109.568",
           "member": "float",
           "name": "LowRealStorage",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为全审计。true-表示全审计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为全审计。true-表示全审计。",
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审计开通时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审计开通时间。",
           "example": "2022-10-12 11:41:42",
           "member": "string",
           "name": "CreateAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例相关信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例相关信息。",
           "example": "无",
           "member": "AuditInstanceInfo",
           "name": "InstanceInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总存储量。",
           "example": "173749.248",
           "member": "float",
           "name": "RealStorage",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所应用的规则模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所应用的规则模板。",
           "example": "[\"cynosdb-art-l1mlbo59\"]",
           "member": "string",
           "name": "RuleTemplateIds",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启日志投递：ON，OFF\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启日志投递：ON，OFF",
           "example": "ON",
           "member": "string",
           "name": "Deliver",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志投递类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志投递类型",
           "example": "无",
           "member": "DeliverSummary",
           "name": "DeliverSummary",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14047,43 +14067,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID",
           "example": "cynosdb-art-ns0u376",
           "member": "string",
           "name": "RuleTemplateId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则模板名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板名",
           "example": "andy_rule",
           "member": "string",
           "name": "RuleTemplateName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警等级。1-低风险，2-中风险，3-高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。",
           "example": "2",
           "member": "string",
           "name": "AlarmLevel",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则模板变更状态：0-未变更；1-已变更；2-已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板变更状态：0-未变更；1-已变更；2-已删除",
           "example": "1",
           "member": "int64",
           "name": "RuleTemplateStatus",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20107,63 +20127,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板ID。",
           "example": "cynosdb-art-jy6hmgcz",
           "member": "string",
           "name": "RuleTemplateId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则模板名称。",
           "example": "andy",
           "member": "string",
           "name": "RuleTemplateName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则内容。",
           "example": "[{\"Type\":\"host\",\"Compare\":\"INC\",\"Value\":[\"100.122.76.176\"]}]",
           "member": "RuleFilters",
           "name": "RuleFilters",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警等级。1-低风险，2-中风险，3-高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。",
           "example": "1",
           "member": "int64",
           "name": "AlarmLevel",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警策略。0-不告警，1-告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警策略。0-不告警，1-告警。",
           "example": "0",
           "member": "int64",
           "name": "AlarmPolicy",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则描述。",
           "example": "andy_RuleTemplate",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

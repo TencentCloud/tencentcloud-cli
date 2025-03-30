@@ -4836,25 +4836,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "CMQ主题名字，要求主题名有效且关联订阅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CMQ主题名字，要求主题名有效且关联订阅",
           "example": "demo",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件配置",
           "example": "无",
           "member": "EventConfig",
           "name": "EventConfigs",
           "output_required": true,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4962,14 +4962,14 @@
         },
         {
           "disabled": false,
-          "document": "输出映射选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输出映射选项",
           "example": "无",
           "member": "OutputMappingOption",
           "name": "OutputMappingOption",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5018,13 +5018,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器场景下,输出选项从实例映射到容器内的实例侧的工作空间。\nBATCH_WORKSPACE: 工作空间为BATCH在实例内定义的工作空间，BATCH侧保证作业之间的隔离。（默认）\nGLOBAL_WORKSPACE: 工作空间为实例操作系统空间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容器场景下,输出选项从实例映射到容器内的实例侧的工作空间。\nBATCH_WORKSPACE: 工作空间为BATCH在实例内定义的工作空间，BATCH侧保证作业之间的隔离。（默认）\nGLOBAL_WORKSPACE: 工作空间为实例操作系统空间。",
           "example": "BATCH_WORKSPACE",
           "member": "string",
           "name": "Workspace",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

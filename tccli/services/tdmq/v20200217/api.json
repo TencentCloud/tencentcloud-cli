@@ -659,25 +659,25 @@
       "status": "online"
     },
     "DescribeRocketMQSmoothMigrationTaskList": {
-      "document": "用于查询RocketMQ平滑迁移任务列表",
+      "document": "平滑迁移相关接口已迁移至trocket产品下，该接口已废弃\n\n用于查询RocketMQ平滑迁移任务列表",
       "input": "DescribeRocketMQSmoothMigrationTaskListRequest",
       "name": "获取RocketMQ平滑迁移任务列表",
       "output": "DescribeRocketMQSmoothMigrationTaskListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQSourceClusterGroupList": {
-      "document": "平滑迁移过程获取源集群group列表接口",
+      "document": "平滑迁移相关接口已迁移至trocket产品下，该接口已废弃\n\n平滑迁移过程获取源集群group列表接口",
       "input": "DescribeRocketMQSourceClusterGroupListRequest",
       "name": "平滑迁移：获取源集群的group列表",
       "output": "DescribeRocketMQSourceClusterGroupListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQSourceClusterTopicList": {
-      "document": "平滑迁移过程获取源集群topic列表接口",
+      "document": "平滑迁移相关接口已迁移至trocket产品下，该接口已废弃\n\n平滑迁移过程获取源集群topic列表接口",
       "input": "DescribeRocketMQSourceClusterTopicListRequest",
       "name": "平滑迁移：获取源集群的topic列表",
       "output": "DescribeRocketMQSourceClusterTopicListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQSubscriptions": {
       "document": "用于获取RocketMQ消费组订阅关系数据",

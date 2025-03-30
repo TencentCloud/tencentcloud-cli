@@ -30,7 +30,7 @@ Input:
 ```
 tccli vod ModifyMediaInfo --cli-unfold-argument  \
     --DeleteTags 视频 \
-    --AddTags 测试 \
+    --AddTags 音频 \
     --FileId 1397757908182903026
 ```
 

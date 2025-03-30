@@ -6,63 +6,44 @@ Input:
 
 ```
 tccli tione CreateTrainingTask --cli-unfold-argument  \
-    --Name abc \
-    --FrameworkName abc \
-    --FrameworkVersion abc \
-    --FrameworkEnvironment abc \
-    --ChargeType abc \
-    --ResourceGroupId abc \
-    --ResourceConfigInfos.0.Role abc \
-    --ResourceConfigInfos.0.Cpu 1 \
-    --ResourceConfigInfos.0.Memory 1 \
-    --ResourceConfigInfos.0.GpuType abc \
-    --ResourceConfigInfos.0.Gpu 1 \
-    --ResourceConfigInfos.0.InstanceType abc \
+    --Name test \
+    --FrameworkName PYTORCH \
+    --FrameworkEnvironment tilearn-llm1.0-torch2.1-angel-vllm1.0-py3.10-cuda12.1-gpu \
+    --TrainingMode DDP \
+    --ChargeType PREPAID \
+    --ResourceConfigInfos.0.Role WORKER \
+    --ResourceConfigInfos.0.Cpu 1000 \
+    --ResourceConfigInfos.0.Memory 1024 \
+    --ResourceConfigInfos.0.GpuType  \
+    --ResourceConfigInfos.0.Gpu 0 \
+    --ResourceConfigInfos.0.InstanceType  \
+    --ResourceConfigInfos.0.InstanceTypeAlias  \
     --ResourceConfigInfos.0.InstanceNum 1 \
-    --ResourceConfigInfos.0.InstanceTypeAlias abc \
-    --Tags.0.TagKey abc \
-    --Tags.0.TagValue abc \
-    --ImageInfo.ImageType abc \
-    --ImageInfo.ImageUrl abc \
-    --ImageInfo.RegistryRegion abc \
-    --ImageInfo.RegistryId abc \
-    --CodePackagePath.Bucket abc \
-    --CodePackagePath.Region abc \
-    --CodePackagePath.Paths abc \
-    --StartCmdInfo.StartCmd abc \
-    --StartCmdInfo.PsStartCmd abc \
-    --StartCmdInfo.WorkerStartCmd abc \
-    --TrainingMode abc \
-    --DataConfigs.0.MappingPath abc \
-    --DataConfigs.0.DataSourceType abc \
-    --DataConfigs.0.DataSetSource.Id abc \
-    --DataConfigs.0.COSSource.Bucket abc \
-    --DataConfigs.0.COSSource.Region abc \
-    --DataConfigs.0.COSSource.Paths abc \
-    --DataConfigs.0.CFSSource.Id abc \
-    --DataConfigs.0.CFSSource.Path abc \
-    --DataConfigs.0.HDFSSource.Id abc \
-    --DataConfigs.0.HDFSSource.Path abc \
-    --VpcId abc \
-    --SubnetId abc \
-    --Output.Bucket abc \
-    --Output.Region abc \
-    --Output.Paths abc \
-    --LogConfig.LogsetId abc \
-    --LogConfig.TopicId abc \
-    --TuningParameters abc \
-    --LogEnable True \
-    --Remark abc \
-    --DataSource abc \
-    --CallbackUrl abc
+    --ResourceGroupId ersg-rf6p8zb8 \
+    --Remark  \
+    --CodePackagePath.Bucket test-gz-1256580188 \
+    --CodePackagePath.Region ap-guangzhou \
+    --CodePackagePath.Paths test/ \
+    --EncodedStartCmdInfo.StartCmdInfo eyJTdGFydENtZCI6IiIsIlBzU3RhcnRDbWQiOiIiLCJXb3JrZXJTdGFydENtZCI6InNsZWVwIDEwIn0= \
+    --DataConfigs.0.DataSourceType CFS \
+    --DataConfigs.0.MappingPath /opt/ml/input/data/ \
+    --DataConfigs.0.CFSSource.Id cfs-pchxhlg9 \
+    --DataConfigs.0.CFSSource.Path /bin \
+    --TuningParameters {"test":"test"} \
+    --Output.Bucket test-gz-1256580188 \
+    --Output.Region ap-guangzhou \
+    --Output.Paths cos_test/ \
+    --LogEnable False \
+    --VpcId vpc-a26qv3af \
+    --SubnetId subnet-m7xhqcyc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Id": "abc",
-        "RequestId": "abc"
+        "Id": "train-1208038387393233920",
+        "RequestId": "0161f5a9-3f60-4e39-86ab-fb87b225964d"
     }
 }
 ```

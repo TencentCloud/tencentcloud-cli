@@ -950,7 +950,7 @@
       {
         "document": "获取视频重生模板列表。",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRebuildMediaTemplates\n<公共请求参数>\n\n{\n    \"Definitions\": [\n        20001\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RebuildMediaTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"test\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"\",\n                \"RebuildVideoInfo\": null,\n                \"RebuildAudioInfo\": null,\n                \"TargetVideoInfo\": null,\n                \"TargetAudioInfo\": null,\n                \"Container\": \"mp4\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RebuildMediaTemplateSet\": [\n            {\n                \"Definition\": 20001,\n                \"Name\": \"template name\",\n                \"Type\": \"Preset\",\n                \"Comment\": \"\",\n                \"RebuildVideoInfo\": null,\n                \"RebuildAudioInfo\": null,\n                \"TargetVideoInfo\": null,\n                \"TargetAudioInfo\": null,\n                \"Container\": \"mp4\",\n                \"RemoveVideo\": 0,\n                \"RemoveAudio\": 0,\n                \"CreateTime\": \"\",\n                \"UpdateTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "获取视频重生模板列表。"
       }
     ],
@@ -1092,7 +1092,7 @@
       {
         "document": "查询所有域名的信息。",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeVodDomains\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DomainSet\": [\n            {\n                \"Domain\": \"myexample.com\",\n                \"AccelerateAreaInfos\": [\n                    {\n                        \"Area\": \"Internation\",\n                        \"TencentDisableReason\": \"\",\n                        \"TencentEdgeDomain\": \"myexmample.com.dnsv1.com\"\n                    }\n                ],\n                \"RefererAuthPolicy\": {\n                    \"Status\": \"Disabled\",\n                    \"AuthType\": \"\",\n                    \"BlankRefererAllowed\": \"No\",\n                    \"Referers\": []\n                },\n                \"DeployStatus\": \"Deploying\",\n                \"HTTPSConfig\": {\n                    \"CloudCertId\": \"abc\",\n                    \"CertExpireTime\": \"2030-01-23T07:25:52Z\"\n                },\n                \"UrlSignatureAuthPolicy\": {\n                    \"Status\": \"Enabled\",\n                    \"EncryptedKey\": \"acmowmeomeo13432a\"\n                },\n                \"CreateTime\": \"2019-12-23T07:25:52Z\",\n                \"QUICConfig\": null,\n                \"IPFilterPolicy\": null\n            }\n        ],\n        \"RequestId\": \"aeomo-133w3-amomow-22\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DomainSet\": [\n            {\n                \"Domain\": \"myexample.com\",\n                \"Type\": \"VOD\",\n                \"AccelerateAreaInfos\": [\n                    {\n                        \"Area\": \"Internation\",\n                        \"TencentDisableReason\": \"\",\n                        \"TencentEdgeDomain\": \"myexmample.com.dnsv1.com\"\n                    }\n                ],\n                \"RefererAuthPolicy\": {\n                    \"Status\": \"Disabled\",\n                    \"AuthType\": \"\",\n                    \"BlankRefererAllowed\": \"No\",\n                    \"Referers\": []\n                },\n                \"DeployStatus\": \"Deploying\",\n                \"HTTPSConfig\": {\n                    \"CloudCertId\": \"K******7\",\n                    \"CertExpireTime\": \"2030-01-23T07:25:52Z\"\n                },\n                \"UrlSignatureAuthPolicy\": {\n                    \"Status\": \"Enabled\",\n                    \"EncryptedKey\": \"acmowmeomeo13432a\"\n                },\n                \"CreateTime\": \"2019-12-23T07:25:52Z\",\n                \"QUICConfig\": null,\n                \"IPFilterPolicy\": null\n            }\n        ],\n        \"RequestId\": \"aeomo-133w3-amomow-22\"\n    }\n}",
         "title": "查询所有域名"
       }
     ],
@@ -1417,7 +1417,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMediaInfo\n<公共请求参数>\n\n{\n    \"DeleteTags\": [\n        \"视频\"\n    ],\n    \"AddTags\": [\n        \"测试\"\n    ],\n    \"FileId\": \"1397757908182903026\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMediaInfo\n<公共请求参数>\n\n{\n    \"DeleteTags\": [\n        \"视频\"\n    ],\n    \"AddTags\": [\n        \"音频\"\n    ],\n    \"FileId\": \"1397757908182903026\"\n}",
         "output": "{\n    \"Response\": {\n        \"CoverUrl\": \"http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg\",\n        \"AddedSubtitleSet\": [],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "修改媒体文件标签"
       },
@@ -1577,7 +1577,7 @@
       },
       {
         "document": "设置域名的 Key 防盗链",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=Enabled\n&UrlSignatureAuthPolicy.EncryptedKey=xxxx\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=Enabled\n&UrlSignatureAuthPolicy.EncryptedKey=AKIDwgcP1i\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
         "title": "设置域名的 Key 防盗链"
       },

@@ -229,15 +229,6 @@
           "name": "PrivacyPolicyLink",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否是用户个人敏感数据（不推荐使用）。固定填：1。",
-          "example": "1",
-          "member": "uint64",
-          "name": "IsPersonalData",
-          "required": false,
-          "type": "int"
         }
       ],
       "usage": "in"

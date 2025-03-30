@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AbortAgentCruiseDialingCampaign": {
+      "document": "停止座席巡航式外呼任务",
+      "input": "AbortAgentCruiseDialingCampaignRequest",
+      "name": "停止座席巡航式外呼任务",
+      "output": "AbortAgentCruiseDialingCampaignResponse",
+      "status": "online"
+    },
     "AbortPredictiveDialingCampaign": {
       "document": "停止预测式外呼任务",
       "input": "AbortPredictiveDialingCampaignRequest",
@@ -40,6 +47,13 @@
       "input": "CreateAdminURLRequest",
       "name": "创建管理端访问链接",
       "output": "CreateAdminURLResponse",
+      "status": "online"
+    },
+    "CreateAgentCruiseDialingCampaign": {
+      "document": "座席巡航式外呼。",
+      "input": "CreateAgentCruiseDialingCampaignRequest",
+      "name": "创建座席巡航式外呼任务",
+      "output": "CreateAgentCruiseDialingCampaignResponse",
       "status": "online"
     },
     "CreateAutoCalloutTask": {
@@ -159,6 +173,13 @@
       "input": "DescribeActiveCarrierPrivilegeNumberRequest",
       "name": "查询生效运营商白名单规则",
       "output": "DescribeActiveCarrierPrivilegeNumberResponse",
+      "status": "online"
+    },
+    "DescribeAgentCruiseDialingCampaign": {
+      "document": "查询 座席巡航式外呼任务",
+      "input": "DescribeAgentCruiseDialingCampaignRequest",
+      "name": "查询座席巡航式外呼任务",
+      "output": "DescribeAgentCruiseDialingCampaignResponse",
       "status": "online"
     },
     "DescribeAutoCalloutTask": {
@@ -413,6 +434,13 @@
       "output": "StopAutoCalloutTaskResponse",
       "status": "online"
     },
+    "TransferToManual": {
+      "document": "特定场景下讲会话转接到人工坐席",
+      "input": "TransferToManualRequest",
+      "name": "转接人工",
+      "output": "TransferToManualResponse",
+      "status": "online"
+    },
     "UnbindNumberCallOutSkillGroup": {
       "document": "解绑号码外呼技能组",
       "input": "UnbindNumberCallOutSkillGroupRequest",
@@ -631,6 +659,42 @@
         }
       ],
       "usage": "in"
+    },
+    "AbortAgentCruiseDialingCampaignRequest": {
+      "document": "AbortAgentCruiseDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "uint64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AbortAgentCruiseDialingCampaignResponse": {
+      "document": "AbortAgentCruiseDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AbortPredictiveDialingCampaignRequest": {
       "document": "AbortPredictiveDialingCampaign请求参数结构体",
@@ -2125,6 +2189,124 @@
       ],
       "type": "object"
     },
+    "CreateAgentCruiseDialingCampaignRequest": {
+      "document": "CreateAgentCruiseDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "新能源SUV推荐",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "Agent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单轮并发呼叫量 1-20",
+          "example": "3",
+          "member": "int64",
+          "name": "ConcurrencyNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间，Unix 时间戳，到此时间后会自动启动任务",
+          "example": "1708483433",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间，Unix 时间戳，到此时间后会自动终止任务",
+          "example": "1708485433",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "被叫列表，支持 E.164 或不带国家码形式的号码",
+          "example": "+8613012345678",
+          "member": "string",
+          "name": "Callees",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "主叫列表，使用管理端展示的号码格式",
+          "example": "0086075586013388",
+          "member": "string",
+          "name": "Callers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被叫呼叫顺序 0 随机 1 顺序",
+          "example": "0",
+          "member": "int64",
+          "name": "CallOrder",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义数据，最大长度 1024",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentCruiseDialingCampaignResponse": {
+      "document": "CreateAgentCruiseDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAutoCalloutTaskRequest": {
       "document": "CreateAutoCalloutTask请求参数结构体",
       "members": [
@@ -3401,6 +3583,142 @@
           "name": "PendingApplicantIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentCruiseDialingCampaignRequest": {
+      "document": "DescribeAgentCruiseDialingCampaign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "2569",
+          "member": "int64",
+          "name": "CampaignId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentCruiseDialingCampaignResponse": {
+      "document": "DescribeAgentCruiseDialingCampaign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "新能源SUV推荐",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席账号",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "Agent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单轮并发呼叫量 1-20",
+          "example": "3",
+          "member": "int64",
+          "name": "ConcurrencyNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务启动时间，Unix 时间戳，到此时间后会自动启动任务",
+          "example": "1708483433",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间，Unix 时间戳，到此时间后会自动终止任务",
+          "example": "1708485433",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被叫呼叫顺序 0 随机 1 顺序",
+          "example": "0",
+          "member": "int64",
+          "name": "CallOrder",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义数据，最大长度 1024",
+          "example": "foobar",
+          "member": "string",
+          "name": "UUI",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态 0 未启动 1 运行中 2 已完成 3 已终止",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被叫总数",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalCalleeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已呼被叫数",
+          "example": "200",
+          "member": "int64",
+          "name": "CalledCalleeCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8460,6 +8778,51 @@
         }
       ],
       "usage": "both"
+    },
+    "TransferToManualRequest": {
+      "document": "TransferToManual请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话ID",
+          "example": "d6253538-7c28-477b-998a-919059801899",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "技能组Id",
+          "example": "5002",
+          "member": "uint64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferToManualResponse": {
+      "document": "TransferToManual返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UnbindNumberCallOutSkillGroupRequest": {
       "document": "UnbindNumberCallOutSkillGroup请求参数结构体",
