@@ -252,6 +252,14 @@
         "title": "查询直接子客信用"
       }
     ],
+    "QueryInvitationInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryInvitationInfo\n<公共请求参数>\n\n{\n    \"InvitationToken\": [\n        \"17772490a7664fc1f3fd31******63d8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9876218d-3faf-4a7f-ad41-5aba65b80d35\",\n        \"InvitationInfo\": [\n            {\n                \"InvitationToken\": \"17772490a7664fc1f3fd31******63d8\",\n                \"CreateTime\": \"2025-03-28 06:49:30\",\n                \"Status\": 2,\n                \"UseTime\": \"2025-03-25 14:50:14\",\n                \"ClientUin\": 800001808094,\n                \"ClientMail\": \"1**********8@gmail.com\",\n                \"ClientType\": 2,\n                \"BindTime\": \"2025-03-25 14:51:04\"\n            }\n        ]\n    }\n}",
+        "title": "查询邀请链接使用信息"
+      }
+    ],
     "QueryPartnerCredit": [
       {
         "document": "",

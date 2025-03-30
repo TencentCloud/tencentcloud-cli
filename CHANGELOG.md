@@ -1,3 +1,157 @@
+# Release 3.0.1171.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 79 次发布
+
+发布时间：2025-03-31 01:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [TransferToManual](http://document.tencentcloudapi.woa.com/document/product/679/86047)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 122 次发布
+
+发布时间：2025-03-31 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeliverSummary](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DeliverSummary)
+
+	* 新增成员：DeliverConsumer, DeliverConsumerName
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 48 次发布
+
+发布时间：2025-03-31 01:30:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainShareUserInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainShareUserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>DomainShareId, Mode, Nickname, QCloudUIN, Status, SubDomain
+
+* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
+
+	* <font color="#dd0000">**修改成员**：</font>DefaultNS
+
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 10 次发布
+
+发布时间：2025-03-31 01:38:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAndroidInstancesScreenshot](http://document.tencentcloudapi.woa.com/document/product/1162/86048)
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 30 次发布
+
+发布时间：2025-03-31 01:40:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryInvitationInfo](http://document.tencentcloudapi.woa.com/document/product/1724/86049)
+
+新增数据结构：
+
+* [QueryInvitationInfoData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryInvitationInfoData)
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 27 次发布
+
+发布时间：2025-03-31 01:43:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ControlDeviceSnapshot](http://document.tencentcloudapi.woa.com/document/product/1740/86052)
+* [ListDeviceSnapshots](http://document.tencentcloudapi.woa.com/document/product/1740/86051)
+
+新增数据结构：
+
+* [GBDeviceSnapInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#GBDeviceSnapInfo)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 143 次发布
+
+发布时间：2025-03-31 02:03:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeRocketMQSmoothMigrationTaskList
+* DescribeRocketMQSourceClusterGroupList
+* DescribeRocketMQSourceClusterTopicList
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 87 次发布
+
+发布时间：2025-03-31 02:08:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
+
+	* 新增入参：ExperimentalParams
+
+
+
+
 # Release 3.0.1170.1
 
 ## 云顾问(advisor) 版本：2020-07-21

@@ -1,352 +1,68 @@
 # 本版本更新包含以下内容：
 
-## 云顾问(advisor) 版本：2020-07-21
-
-### 第 22 次发布
-
-发布时间：2025-03-28 01:07:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeArchSync](http://document.tencentcloudapi.woa.com/document/product/1660/84043)
-
-	* 新增入参：NodeUUIDs
-
-
-
-
-## 商业智能分析 BI(bi) 版本：2022-01-05
-
-### 第 25 次发布
-
-发布时间：2025-03-28 01:12:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82006)
-
-* [CreateUserRoleProject](http://document.tencentcloudapi.woa.com/document/product/1707/82005)
-
-
-
-
 ## 云联络中心(ccc) 版本：2020-02-10
 
-### 第 78 次发布
+### 第 79 次发布
 
-发布时间：2025-03-28 01:17:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAIAgentCall](http://document.tencentcloudapi.woa.com/document/product/679/85667)
-
-	* 新增入参：Variables
-
-* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
-
-	* 新增入参：Variables
-
-	* <font color="#dd0000">**修改入参**：</font>SystemPrompt, Model
-
-
-
-
-## 磐石(clouddc) 版本：2018-08-30
-
-### 第 17 次发布
-
-发布时间：2025-03-28 01:26:42
+发布时间：2025-03-31 01:14:58
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+新增接口：
 
-* AddBatch
-* DeleteBatch
-* GetBatchList
-* UpdateBatch
+* [TransferToManual](http://document.tencentcloudapi.woa.com/document/product/679/86047)
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 120 次发布
+### 第 122 次发布
 
-发布时间：2025-03-28 01:30:28
+发布时间：2025-03-31 01:25:54
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-修改接口：
-
-* [ScanTaskAgain](http://document.tencentcloudapi.woa.com/document/product/296/82200)
-
-	* 新增出参：SuccessCount, BasicVersionCount
-
 
 修改数据结构：
 
-* [ReverseShell](http://document.tencentcloudapi.woa.com/document/product/296/19867#ReverseShell)
+* [DeliverSummary](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DeliverSummary)
 
-	* 新增成员：CmdLineQuote
-
-* [ReverseShellEventInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#ReverseShellEventInfo)
-
-	* 新增成员：CmdLineQuote
+	* 新增成员：DeliverConsumer, DeliverConsumerName
 
 
 
 
-## 全站加速网络(ecdn) 版本：2019-10-12
+## DNSPod(dnspod) 版本：2021-03-23
 
-### 第 7 次发布
+### 第 48 次发布
 
-发布时间：2025-03-28 01:42:10
+发布时间：2025-03-31 01:30:15
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+修改数据结构：
 
-* DescribePurgeTasks
-* PurgeUrlsCache
+* [DomainShareUserInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainShareUserInfo)
 
+	* <font color="#dd0000">**修改成员**：</font>DomainShareId, Mode, Nickname, QCloudUIN, Status, SubDomain
 
+* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
 
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 131 次发布
-
-发布时间：2025-03-28 01:45:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
-
-	* 新增入参：PickUpAfterJoined
+	* <font color="#dd0000">**修改成员**：</font>DefaultNS
 
 
 
 
 ## 云游戏(gs) 版本：2019-11-18
 
-### 第 9 次发布
-
-发布时间：2025-03-28 01:49:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UploadFileToAndroidInstances](http://document.tencentcloudapi.woa.com/document/product/1162/85989)
-
-	* 新增入参：DestinationDirectory
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 67 次发布
-
-发布时间：2025-03-28 01:54:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [IotApplication](http://document.tencentcloudapi.woa.com/document/product/1081/34988#IotApplication)
-
-	* 新增成员：InterconnectionProducts
-
-* [ProductEntry](http://document.tencentcloudapi.woa.com/document/product/1081/34988#ProductEntry)
-
-	* 新增成员：IsInterconnection
-
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2021-11-25
-
-### 第 31 次发布
-
-发布时间：2025-03-28 01:56:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCloudStorageOrder](http://document.tencentcloudapi.woa.com/document/product/1131/81640)
-
-	* 新增出参：Price, Amount
-
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2020-12-15
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2019-11-26
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 81 次发布
-
-发布时间：2025-03-28 02:00:18
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribePullTransformPushInfo](http://document.tencentcloudapi.woa.com/document/product/267/83431)
-
-	* 新增入参：SourceType
-
-	* 新增出参：TotalDurationSecond
-
-
-修改数据结构：
-
-* [TaskDurationInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TaskDurationInfo)
-
-	* 新增成员：DurationSecond
-
-
-
-
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
-
-### 第 23 次发布
-
-发布时间：2025-03-28 02:01:47
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)
-
-	* 新增成员：ReasoningContent
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 94 次发布
-
-发布时间：2025-03-28 02:04:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeTMPAgentArchitectureStatuses](http://document.tencentcloudapi.woa.com/document/product/248/86022)
-
-	* 新增入参：InstanceId, ClusterId
-
-	* 新增出参：ArchitectureStatuses, ProxyServerInfo
-
-
-新增数据结构：
-
-* [ArchitectureImage](http://document.tencentcloudapi.woa.com/document/product/248/30354#ArchitectureImage)
-* [CLBInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#CLBInfo)
-* [ProxyServerInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#ProxyServerInfo)
-* [TMPAgentArchitectureStatus](http://document.tencentcloudapi.woa.com/document/product/248/30354#TMPAgentArchitectureStatus)
-
-
-
-## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
-
 ### 第 10 次发布
 
-发布时间：2025-03-28 02:07:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAuthorizationPolicy](http://document.tencentcloudapi.woa.com/document/product/1773/84947)
-
-	* 新增出参：InstanceId, Id
-
-* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1773/84913)
-
-	* 新增出参：AuthorizationPolicy
-
-* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1773/85729)
-
-	* 新增入参：AuthorizationPolicy
-
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
-
-### 第 52 次发布
-
-发布时间：2025-03-28 02:09:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ManagerShareUnit](http://document.tencentcloudapi.woa.com/document/product/850/67060#ManagerShareUnit)
-
-	* 新增成员：ShareResourceMax
-
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## 渠道合作伙伴(partners) 版本：2018-03-21
-
-### 第 16 次发布
-
-发布时间：2025-03-28 02:10:54
+发布时间：2025-03-31 01:38:18
 
 本次发布包含了以下内容：
 
@@ -354,89 +70,74 @@
 
 新增接口：
 
-* [DescribeClientSwitchTraTaskInfo](http://document.tencentcloudapi.woa.com/document/product/563/86043)
+* [CreateAndroidInstancesScreenshot](http://document.tencentcloudapi.woa.com/document/product/1162/86048)
 
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
-### 第 50 次发布
+### 第 30 次发布
 
-发布时间：2025-03-28 02:16:36
+发布时间：2025-03-31 01:40:12
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateBasicDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/46808)
+* [QueryInvitationInfo](http://document.tencentcloudapi.woa.com/document/product/1724/86049)
 
-	* 新增入参：DiskEncryptFlag
+新增数据结构：
 
-* [CreateCloudDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77816)
+* [QueryInvitationInfoData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryInvitationInfoData)
 
-	* 新增入参：DiskEncryptFlag
 
-* [CreateCloudReadOnlyDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77815)
 
-	* 新增入参：DiskEncryptFlag
+## 智能视图计算平台(iss) 版本：2023-05-17
 
-* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+### 第 27 次发布
 
-	* 新增出参：IsDiskEncryptFlag
+发布时间：2025-03-31 01:43:50
 
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ControlDeviceSnapshot](http://document.tencentcloudapi.woa.com/document/product/1740/86052)
+* [ListDeviceSnapshots](http://document.tencentcloudapi.woa.com/document/product/1740/86051)
+
+新增数据结构：
+
+* [GBDeviceSnapInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#GBDeviceSnapInfo)
 
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 142 次发布
+### 第 143 次发布
 
-发布时间：2025-03-28 02:26:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ModifyAMQPCluster
-
-
-
-## 高性能计算平台(thpc) 版本：2023-03-21
-
-### 第 16 次发布
-
-发布时间：2025-03-28 02:30:11
+发布时间：2025-03-31 02:03:32
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [ClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ClusterOverview)
-
-	* 新增成员：ClusterType
-
-
-
-
-## 高性能计算平台(thpc) 版本：2022-04-01
-
-
-
-## 高性能计算平台(thpc) 版本：2021-11-09
+* DescribeRocketMQSmoothMigrationTaskList
+* DescribeRocketMQSourceClusterGroupList
+* DescribeRocketMQSourceClusterTopicList
 
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 86 次发布
+### 第 87 次发布
 
-发布时间：2025-03-28 02:32:30
+发布时间：2025-03-31 02:08:00
 
 本次发布包含了以下内容：
 
@@ -444,51 +145,9 @@
 
 修改接口：
 
-* [DescribeCloudRecording](http://document.tencentcloudapi.woa.com/document/product/647/73784)
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
 
-	* 新增入参：RecorderKey
-
-	* 新增出参：RecorderKey
-
-
-
-
-## 微服务引擎(tse) 版本：2020-12-07
-
-### 第 85 次发布
-
-发布时间：2025-03-28 02:34:51
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeEngineClbIntranetAccessAddressList](http://document.tencentcloudapi.woa.com/document/product/1364/86045)
-* [ManageCLB](http://document.tencentcloudapi.woa.com/document/product/1364/86044)
-
-新增数据结构：
-
-* [EngineClbIntranetAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineClbIntranetAccessAddress)
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 203 次发布
-
-发布时间：2025-03-28 02:44:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PrivateIpAddressSpecification](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateIpAddressSpecification)
-
-	* <font color="#dd0000">**修改成员**：</font>PrivateIpAddress
+	* 新增入参：ExperimentalParams
 
 
 
@@ -15028,6 +14687,18 @@
 
 
 ## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 79 次发布
+
+发布时间：2025-03-31 01:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[TransferToManual](http://document.tencentcloudapi.woa.com/document/product/679/86047)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 78 次发布
 
@@ -42535,6 +42206,21 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 122 次发布
+
+发布时间：2025-03-31 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeliverSummary](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DeliverSummary)
+
+	* 新增成员：DeliverConsumer, DeliverConsumerName
+
+
 ### 第 121 次发布
 
 发布时间：2025-03-27 01:26:56
@@ -51403,6 +51089,25 @@
 
 
 ## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 48 次发布
+
+发布时间：2025-03-31 01:30:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainShareUserInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainShareUserInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>DomainShareId, Mode, Nickname, QCloudUIN, Status, SubDomain
+
+* [RecordListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#RecordListItem)
+
+	* <font color="#dd0000">**修改成员**：</font>DefaultNS
+
 
 ### 第 47 次发布
 
@@ -69573,6 +69278,18 @@
 
 ## 云游戏(gs) 版本：2019-11-18
 
+### 第 10 次发布
+
+发布时间：2025-03-31 01:38:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateAndroidInstancesScreenshot](http://document.tencentcloudapi.woa.com/document/product/1162/86048)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 9 次发布
 
 发布时间：2025-03-28 01:49:59
@@ -71941,6 +71658,22 @@
 
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 30 次发布
+
+发布时间：2025-03-31 01:40:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryInvitationInfo](http://document.tencentcloudapi.woa.com/document/product/1724/86049)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[QueryInvitationInfoData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryInvitationInfoData)](http://document.tencentcloudapi.woa.com/document/product/1724/80754#[QueryInvitationInfoData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryInvitationInfoData))
 
 ### 第 29 次发布
 
@@ -75739,6 +75472,23 @@
 
 
 ## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 27 次发布
+
+发布时间：2025-03-31 01:43:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ControlDeviceSnapshot](http://document.tencentcloudapi.woa.com/document/product/1740/86052)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ListDeviceSnapshots](http://document.tencentcloudapi.woa.com/document/product/1740/86051)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[GBDeviceSnapInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#GBDeviceSnapInfo)](http://document.tencentcloudapi.woa.com/document/product/1740/81572#[GBDeviceSnapInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#GBDeviceSnapInfo))
 
 ### 第 26 次发布
 
@@ -84475,10 +84225,10 @@
 
 新增数据结构：
 
-* [[ArchitectureImage](http://document.tencentcloudapi.woa.com/document/product/248/30354#ArchitectureImage)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[ArchitectureImage](http://document.tencentcloudapi.woa.com/document/product/248/30354#ArchitectureImage))
-* [[CLBInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#CLBInfo)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[CLBInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#CLBInfo))
-* [[ProxyServerInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#ProxyServerInfo)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[ProxyServerInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#ProxyServerInfo))
-* [[TMPAgentArchitectureStatus](http://document.tencentcloudapi.woa.com/document/product/248/30354#TMPAgentArchitectureStatus)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[TMPAgentArchitectureStatus](http://document.tencentcloudapi.woa.com/document/product/248/30354#TMPAgentArchitectureStatus))
+* [ArchitectureImage](http://document.tencentcloudapi.woa.com/document/product/248/30354#ArchitectureImage)
+* [CLBInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#CLBInfo)
+* [ProxyServerInfo](http://document.tencentcloudapi.woa.com/document/product/248/30354#ProxyServerInfo)
+* [TMPAgentArchitectureStatus](http://document.tencentcloudapi.woa.com/document/product/248/30354#TMPAgentArchitectureStatus)
 
 ### 第 93 次发布
 
@@ -95047,7 +94797,7 @@
 
 新增接口：
 
-* [[DescribeClientSwitchTraTaskInfo](http://document.tencentcloudapi.woa.com/document/product/563/86043)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeClientSwitchTraTaskInfo](http://document.tencentcloudapi.woa.com/document/product/563/86043)
 
 ### 第 15 次发布
 
@@ -112627,6 +112377,20 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 143 次发布
+
+发布时间：2025-03-31 02:03:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeRocketMQSmoothMigrationTaskList
+* DescribeRocketMQSourceClusterGroupList
+* DescribeRocketMQSourceClusterTopicList
+
 ### 第 142 次发布
 
 发布时间：2025-03-28 02:26:25
@@ -125432,6 +125196,21 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 87 次发布
+
+发布时间：2025-03-31 02:08:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
+
+	* 新增入参：ExperimentalParams
+
+
 ### 第 86 次发布
 
 发布时间：2025-03-28 02:32:30
@@ -127099,12 +126878,12 @@
 
 新增接口：
 
-* [[DescribeEngineClbIntranetAccessAddressList](http://document.tencentcloudapi.woa.com/document/product/1364/86045)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ManageCLB](http://document.tencentcloudapi.woa.com/document/product/1364/86044)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeEngineClbIntranetAccessAddressList](http://document.tencentcloudapi.woa.com/document/product/1364/86045)
+* [ManageCLB](http://document.tencentcloudapi.woa.com/document/product/1364/86044)
 
 新增数据结构：
 
-* [[EngineClbIntranetAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineClbIntranetAccessAddress)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[EngineClbIntranetAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineClbIntranetAccessAddress))
+* [EngineClbIntranetAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineClbIntranetAccessAddress)
 
 ### 第 84 次发布
 

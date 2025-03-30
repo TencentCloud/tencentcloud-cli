@@ -140,6 +140,14 @@
         "title": "成功"
       }
     ],
+    "ControlDeviceSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlDeviceSnapshot\n<公共请求参数>\n\n{\n    \"ChannelId\": \"d29ad54a-c08f-4b5b-9fb2-************\",\n    \"SnapNum\": 1,\n    \"Interval\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d72eb412-2ecf-4ab3-81a1-b0465741d5de\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "ControlDeviceStream": [
       {
         "document": " ",
@@ -542,6 +550,14 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAITasks\n<公共请求参数>\n\n{\n    \"IsContainChannelList\": true,\n    \"IsContainTemplate\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"CallbackUrl\": \"http://********\",\n                    \"ChannelList\": [\n                        \"**********************\"\n                    ],\n                    \"CreatedTime\": \"2023-06-07 00:35:36\",\n                    \"Desc\": \"AI任务描述\",\n                    \"Name\": \"ai-task\",\n                    \"Status\": \"off\",\n                    \"TaskId\": \"at**********************8\",\n                    \"Templates\": [\n                        {\n                            \"AIConfig\": {\n                                \"DetectType\": \"Pet\",\n                                \"OperTimeSlot\": [\n                                    {\n                                        \"End\": \"20:00:00\",\n                                        \"Start\": \"10:00:00\"\n                                    }\n                                ],\n                                \"TimeInterval\": 10\n                            },\n                            \"Tag\": \"AI\"\n                        }\n                    ],\n                    \"UpdatedTime\": \"2023-06-07 00:35:36\"\n                }\n            ]\n        },\n        \"RequestId\": \"a9227772-9f97-4ec8-88bd-a1991b1363d4\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "成功示例"
+      }
+    ],
+    "ListDeviceSnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDeviceSnapshots\n<公共请求参数>\n\n{\n    \"ChannelId\": \"c9b87de2-****-41d7****-328****f240\",\n    \"Start\": 1740544738,\n    \"End\": 1740573538\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreatedTime\": \"2025-02-12 18:05:44\",\n                \"DownloadUrl\": \"https://******/ipts/snapshot/download?source=NzAwMDAwMzg2NjY5XzI1MTIyODMxM18xOGQ5OGMwNy1iOWIzLTRhZmQtYmNiYi0wY2I2ODEwMDY3OGRfYzliODdkZTItYmUyNi00M*************JmMjQwXzQxYjc3Nzg0LWQ3ZjEtNDBjMS1hMDUyLTE1ZmY1ZTU0MGNmZV8zNDAyMDAwMDAwMTMyMDAwMDAxOTAyMjAyNTAyMTIxODA1NDQwMDAwMi5qcGc=.uqzfPoBi*******A5RtMxjcOt7Hhi_7GVnwSuAW2IWM=&token=cms_**********_e4hu23e90PNAur-OBwEfg\",\n                \"FileName\": \"3402000000*****************0002.jpg\",\n                \"ImageSize\": 545335,\n                \"PreviewUrl\": \"https://******/ipts/snapshot/download?source=NzAwMDAwMzg2NjY5XzI1MTIyODMxM18xOGQ5OGMwNy1iOWIzLTRhZmQtYmNiYi0wY2I2ODEwMDY3OGRfYzliODdkZTItYmUyNi00M**************mJmMjQwXzQxYjc3Nzg0LWQ3ZjEtNDBjMS1hMDUyLTE1ZmY1ZTU0MGNmZV8zNDAyMDAwMDAwMTMyMDAwMDAxOTAyMjAyNTAyMTIxODA1NDQwMDAwMi5qcGc=.uqzfPoB********QA5RtMxjcOt7Hhi_7GVnwSuAW2IWM=&token=cms_**********_e4hu23e90PNAur-OBwEfg&preview=true\",\n                \"ReceivedTime\": \"2025-02-26 16:58:30\",\n                \"SessionId\": \"16a8h2e8-****-**********-2ed9****82m80\"\n            }\n        ],\n        \"RequestId\": \"74a881e8-****-**********-2ed9370480\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "成功"
       }
     ],
     "ListDevices": [

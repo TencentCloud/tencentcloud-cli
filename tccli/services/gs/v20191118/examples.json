@@ -56,6 +56,14 @@
         "title": "CreateAndroidInstances"
       }
     ],
+    "CreateAndroidInstancesScreenshot": [
+      {
+        "document": "安卓实例截图",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstancesScreenshot\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d287fa8-d66f-4dd8-b3c6-5bca07f6a162\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-abcd1234\",\n                \"TaskId\": \"78bb4db4-fd51-454d-9ddb-2047db5b3ef6\"\n            }\n        ]\n    }\n}",
+        "title": "安卓实例截图"
+      }
+    ],
     "CreateSession": [
       {
         "document": "锁定实例后，创建会话，以连接实例",

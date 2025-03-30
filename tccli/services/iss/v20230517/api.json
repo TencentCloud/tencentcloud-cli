@@ -91,6 +91,13 @@
       "output": "ControlDevicePresetResponse",
       "status": "online"
     },
+    "ControlDeviceSnapshot": {
+      "document": "控制设备抓拍--单次，当前仅支持国标设备",
+      "input": "ControlDeviceSnapshotRequest",
+      "name": "控制设备抓拍",
+      "output": "ControlDeviceSnapshotResponse",
+      "status": "online"
+    },
     "ControlDeviceStream": {
       "document": "用于获取设备的实时开流地址。",
       "input": "ControlDeviceStreamRequest",
@@ -369,6 +376,13 @@
       "input": "ListAITasksRequest",
       "name": "获取AI任务列表",
       "output": "ListAITasksResponse",
+      "status": "online"
+    },
+    "ListDeviceSnapshots": {
+      "document": "获取设备抓拍结果列表",
+      "input": "ListDeviceSnapshotsRequest",
+      "name": "获取设备抓拍结果列表",
+      "output": "ListDeviceSnapshotsResponse",
       "status": "online"
     },
     "ListDevices": {
@@ -2824,6 +2838,60 @@
     },
     "ControlDevicePresetResponse": {
       "document": "ControlDevicePreset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlDeviceSnapshotRequest": {
+      "document": "ControlDeviceSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "a046406b-a736-496e-a310-***********",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连拍张数，可选值范围1～10",
+          "example": "3",
+          "member": "int64",
+          "name": "SnapNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "抓拍间隔时间，可选值范围1～1800",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片存储时间，默认 7 天，仅支持（7, 15, 30, 60, 90, 180, 365）天",
+          "example": "7",
+          "member": "int64",
+          "name": "Expire",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlDeviceSnapshotResponse": {
+      "document": "ControlDeviceSnapshot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5978,6 +6046,82 @@
       ],
       "usage": "out"
     },
+    "GBDeviceSnapInfo": {
+      "document": "抓拍结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "snap01.jpg",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载地址，空值表示存储图片过期",
+          "example": "https://xxx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片大小，单位B",
+          "example": "2048",
+          "member": "int64",
+          "name": "ImageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的创建时间",
+          "example": "2025-01-30 15:20:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片的接收时间",
+          "example": "2025-01-30 15:20:00",
+          "member": "string",
+          "name": "ReceivedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预览地址，空值表示存储图片过期",
+          "example": "https://xxx",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国标信令会话ID，同时对应控制设备抓拍 ( ControlDeviceSnapshot )接口返回的request_id",
+          "example": "14234c44-****-4a0c-****-daa7ea****c2a",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GatewayDevice": {
       "document": "网关设备数据",
       "members": [
@@ -6475,6 +6619,98 @@
         }
       ],
       "usage": "out"
+    },
+    "ListDeviceSnapshotsRequest": {
+      "document": "ListDeviceSnapshots请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "c9b87de2-****-41d7****-328****f240",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备ID（该字段暂不生效）",
+          "example": "03b12rgw-****-41d7****-328****m240",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间，默认查询当天",
+          "example": "1738375200",
+          "member": "int64",
+          "name": "Start",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，默认查询当天",
+          "example": "1738411200",
+          "member": "int64",
+          "name": "End",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页码，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认200，最大2000",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDeviceSnapshotsResponse": {
+      "document": "ListDeviceSnapshots返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "抓拍结果信息列表",
+          "example": "无",
+          "member": "GBDeviceSnapInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抓拍结果总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListDevicesRequest": {
       "document": "ListDevices请求参数结构体",

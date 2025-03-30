@@ -544,6 +544,14 @@
         "title": "停止任务"
       }
     ],
+    "TransferToManual": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: HangUpCall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"SkillGroupId\": 5002\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\"\n    }\n}",
+        "title": "转人工"
+      }
+    ],
     "UnbindNumberCallOutSkillGroup": [
       {
         "document": "解绑号码外呼技能组",

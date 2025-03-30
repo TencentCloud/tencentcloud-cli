@@ -4562,10 +4562,10 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "1134523",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4575,7 +4575,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4585,7 +4585,7 @@
           "example": "2",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4595,7 +4595,7 @@
           "example": "1617801604",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -6348,28 +6348,25 @@
           "member": "string",
           "name": "Sql",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "行为的JSON字符串，大部分种类举例如下：\n[\n    {\n        \"republish\": {\n            \"topic\": \"TEST/test\"\n        }\n    },\n    {\n        \"forward\": {\n            \"api\": \"http://127.0.0.1:8080\",\n            \"token\":\"xxx\"\n        }\n    },\n    {\n        \"ckafka\": {\n            \"instance\": {\n                \"id\": \"ckafka-test\",\n                \"name\": \"\"\n            },\n            \"topic\": {\n                \"id\": \"topic-test\",\n                \"name\": \"test\"\n            },\n            \"region\": \"gz\"\n        }\n    },\n    {\n        \"cmqqueue\": {\n            \"queuename\": \"queue-test-TEST\",\n            \"region\": \"gz\"\n        }\n    },\n    {\n        \"mysql\": {\n            \"instanceid\": \"cdb-test\",\n            \"region\": \"gz\",\n            \"username\": \"test\",\n            \"userpwd\": \"*****\",\n            \"dbname\": \"d_mqtt\",\n            \"tablename\": \"t_test\",\n            \"fieldpairs\": [\n                {\n                    \"field\": \"test\",\n                    \"value\": \"test\"\n                }\n            ],\n            \"devicetype\": \"CUSTOM\"\n        }\n    }\n]",
-          "example": "[]",
+          "example": "{\"name\",}",
           "member": "string",
           "name": "Actions",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "test",
+          "example": "description1",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6378,8 +6375,7 @@
           "member": "bool",
           "name": "RuleDisabled",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -23,7 +23,9 @@ Output:
                 "RecordLine": "测试啊",
                 "Value": "0.0.0.1",
                 "TTL": "600",
-                "MX": null
+                "MX": null,
+                "Weight": "20",
+                "Reason": "记录重复"
             }
         ],
         "JobId": 1111,
