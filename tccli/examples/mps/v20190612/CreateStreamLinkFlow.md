@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mps CreateStreamLinkFlow --cli-unfold-argument  \
-    --FlowName aaa \
-    --EventId 123 \
+    --FlowName flowtest \
+    --EventId 01937702ecc509dc0f3269ca3420 \
     --MaxBandwidth 20000000 \
     --InputGroup.0.InputName inputname \
     --InputGroup.0.Description inputnameDescription \
@@ -18,8 +18,9 @@ tccli mps CreateStreamLinkFlow --cli-unfold-argument  \
     --InputGroup.0.SRTSettings.RecvLatency 1000 \
     --InputGroup.0.SRTSettings.PeerLatency 1000 \
     --InputGroup.0.SRTSettings.PeerIdleTimeout 1000 \
-    --InputGroup.0.SRTSettings.Passphrase aaa \
+    --InputGroup.0.SRTSettings.Passphrase passphrase \
     --InputGroup.0.SRTSettings.PbKeyLen 10 \
+    --InputGroup.0.HLSPullSettings.SourceAddresses.0.Url http://example.com:8806/live/streamname.m3u8 \
     --InputGroup.0.RTPSettings.FEC none \
     --InputGroup.0.RTPSettings.IdleTimeout 1000
 ```
@@ -39,14 +40,9 @@ Output:
                     "InputName": "inputtest",
                     "Description": "inputtest",
                     "Protocol": "SRT",
-                    "InputAddressList": [
-                        {
-                            "Ip": "inputtest",
-                            "Port": 0
-                        }
-                    ],
+                    "InputAddressList": [],
                     "AllowIpList": [
-                        "127.0.0.1"
+                        "0.0.0.0/0"
                     ],
                     "SRTSettings": {
                         "Mode": "LISTENER",
@@ -59,7 +55,7 @@ Output:
                         "PbKeyLen": 0,
                         "SourceAddresses": [
                             {
-                                "Ip": "127.0.0.1",
+                                "Ip": "227.0.0.101",
                                 "Port": 0
                             }
                         ]
@@ -68,37 +64,37 @@ Output:
                         "FEC": "rtptest",
                         "IdleTimeout": 0
                     },
-                    "InputRegion": "ap-region",
+                    "InputRegion": "ap-shanghai",
                     "RTMPSettings": {
-                        "AppName": "abc",
-                        "StreamKey": "abc"
+                        "AppName": "live",
+                        "StreamKey": "live_test"
                     },
-                    "FailOver": "abc",
+                    "FailOver": "on",
                     "RTMPPullSettings": {
                         "SourceAddresses": [
                             {
-                                "TcUrl": "abc",
-                                "StreamKey": "abc"
+                                "TcUrl": "rtmp://example.com/live",
+                                "StreamKey": "live_test"
                             }
                         ]
                     },
                     "RTSPPullSettings": {
                         "SourceAddresses": [
                             {
-                                "Url": "abc"
-                            }
-                        ]
-                    },
-                    "HLSPullSettings": {
-                        "SourceAddresses": [
-                            {
-                                "Url": "abc"
+                                "Url": "rtsp://120.10.10.10:2355/cam/test"
                             }
                         ]
                     },
                     "ResilientStream": {
                         "Enable": true,
                         "BufferTime": 1
+                    },
+                    "HLSPullSettings": {
+                        "SourceAddresses": [
+                            {
+                                "Url": "http://example.com/live/index.m3u8"
+                            }
+                        ]
                     }
                 }
             ],
@@ -111,14 +107,14 @@ Output:
                     "Protocol": "outputtest",
                     "OutputAddressList": [
                         {
-                            "Ip": "127.0.0.1"
+                            "Ip": "223.223.223.223"
                         }
                     ],
-                    "OutputRegion": "ap-region",
+                    "OutputRegion": "ap-shanghai",
                     "SRTSettings": {
                         "Destinations": [
                             {
-                                "Ip": "127.0.0.1",
+                                "Ip": "223.223.223.223",
                                 "Port": 0
                             }
                         ],
@@ -132,16 +128,16 @@ Output:
                         "Mode": "outputtest",
                         "SourceAddresses": [
                             {
-                                "Ip": "127.0.0.1",
-                                "Port": 0
+                                "Ip": "202.118.80.23",
+                                "Port": 3320
                             }
                         ]
                     },
                     "RTPSettings": {
                         "Destinations": [
                             {
-                                "Ip": "127.0.0.1",
-                                "Port": 0
+                                "Ip": "202.118.80.23",
+                                "Port": 2200
                             }
                         ],
                         "FEC": "outputtest",
@@ -166,27 +162,27 @@ Output:
                         ]
                     },
                     "AllowIpList": [
-                        "127.0.0.1"
+                        "223.223.223.223"
                     ],
                     "RTSPPullSettings": {
                         "ServerUrls": [
                             {
-                                "Url": "outputtest"
+                                "Url": "rtsp://120.10.10.10:2355/cam/test"
                             }
                         ]
                     },
                     "HLSPullSettings": {
                         "ServerUrls": [
                             {
-                                "Url": "outputtest"
+                                "Url": "http://example.com/live/index.m3u8"
                             }
                         ]
                     },
                     "MaxConcurrent": 1
                 }
             ],
-            "EventId": "eventtest",
-            "Region": "ap-region"
+            "EventId": "01937702ecc509dc0f3269ca3420",
+            "Region": "ap-shanghai"
         },
         "RequestId": "0186e91bf25809831f1703c66937"
     }

@@ -29,8 +29,8 @@ Output:
                 "EventMessage": "Access Granted",
                 "RemoteIp": "42.194.229.84",
                 "RemotePort": "29000",
-                "Pipeline": "xx",
-                "InputOutputName": "xx"
+                "Pipeline": "",
+                "InputOutputName": ""
             }
         ],
         "PageNum": 1,

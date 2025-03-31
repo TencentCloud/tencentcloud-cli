@@ -1,12 +1,5 @@
 {
   "actions": {
-    "AddBatch": {
-      "document": "已迁移，无调用\n\n创建批次",
-      "input": "AddBatchRequest",
-      "name": "创建批次",
-      "output": "AddBatchResponse",
-      "status": "deprecated"
-    },
     "AuditActivity": {
       "document": "审核代金劵活动，有白名单限制，需要的童鞋，请联系hansonwchen 或 joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
       "input": "AuditActivityRequest",
@@ -27,13 +20,6 @@
       "name": "推送产品补丁包",
       "output": "CreateProductPatchResponse",
       "status": "online"
-    },
-    "DeleteBatch": {
-      "document": "已迁移，无调用\n\n删除批次",
-      "input": "DeleteBatchRequest",
-      "name": "删除批次",
-      "output": "DeleteBatchResponse",
-      "status": "deprecated"
     },
     "DeleteMarkCustomerLabel": {
       "document": "查帐号信息，有白名单限制，需要的童鞋，请联系 billxu配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661",
@@ -161,13 +147,6 @@
       "output": "DescribeUnitInfoListResponse",
       "status": "online"
     },
-    "GetBatchList": {
-      "document": "已迁移，无调用\n\n获取批次列表",
-      "input": "GetBatchListRequest",
-      "name": "获取批次列表",
-      "output": "GetBatchListResponse",
-      "status": "deprecated"
-    },
     "GetExportControlUnderwriting": {
       "document": "通过测算单获取出口管制、包销",
       "input": "GetExportControlUnderwritingRequest",
@@ -209,13 +188,6 @@
       "name": "给外部客户发送短信和邮件",
       "output": "SendOutsideEmailAndSmsResponse",
       "status": "online"
-    },
-    "UpdateBatch": {
-      "document": "已迁移，无调用\n\n更新批次",
-      "input": "UpdateBatchRequest",
-      "name": "更新批次",
-      "output": "UpdateBatchResponse",
-      "status": "deprecated"
     }
   },
   "metadata": {
@@ -225,61 +197,6 @@
     "serviceShortName": "clouddc"
   },
   "objects": {
-    "AddBatchRequest": {
-      "document": "AddBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次名称",
-          "example": "官网企业认证",
-          "member": "string",
-          "name": "BatchName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "线索下发方标识",
-          "example": "dianshi",
-          "member": "string",
-          "name": "LeadReleaseSource",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "线索下发方原始信息",
-          "example": "官网企业认证",
-          "member": "string",
-          "name": "LeadReleaseOriginMsg",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "AddBatchResponse": {
-      "document": "AddBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "回包",
-          "example": "{\"batchId\":5}",
-          "member": "string",
-          "name": "JsonString",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "AuditActivityRequest": {
       "document": "AuditActivity请求参数结构体",
       "members": [
@@ -484,43 +401,6 @@
           "example": "",
           "member": "string",
           "name": "JsonData",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteBatchRequest": {
-      "document": "DeleteBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "BatchId",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteBatchResponse": {
-      "document": "DeleteBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "回包",
-          "example": "{\"AffectedRows\":1}",
-          "member": "string",
-          "name": "JsonString",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1950,79 +1830,6 @@
         }
       ],
       "usage": "out"
-    },
-    "GetBatchListRequest": {
-      "document": "GetBatchList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次名称",
-          "example": "官网企业认证",
-          "member": "string",
-          "name": "BatchName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "线索下发方标识",
-          "example": "dianshi",
-          "member": "string",
-          "name": "LeadReleaseSource",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "线索下发方原始信息",
-          "example": "官网企业认证",
-          "member": "string",
-          "name": "LeadReleaseOriginMsg",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "当前页码",
-          "example": "1",
-          "member": "uint64",
-          "name": "Page",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页大小（页码和分页大小不填，则拉取全部数据）",
-          "example": "15",
-          "member": "uint64",
-          "name": "PageSize",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "GetBatchListResponse": {
-      "document": "GetBatchList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "回包",
-          "example": "{\"List\":[{\"AccountId\":\"1234\",\"BatchId\":1,\"BatchName\":\"mhy name22",
-          "member": "string",
-          "name": "JsonString",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "GetExportControlUnderwritingRequest": {
       "document": "GetExportControlUnderwriting请求参数结构体",
@@ -3905,61 +3712,6 @@
           "name": "JsonString",
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateBatchRequest": {
-      "document": "UpdateBatch请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "批次ID",
-          "example": "1",
-          "member": "uint64",
-          "name": "BatchId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "批次名称",
-          "example": "官网企业认证",
-          "member": "string",
-          "name": "BatchName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "线索下发方原始信息",
-          "example": "test",
-          "member": "string",
-          "name": "LeadReleaseOriginMsg",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpdateBatchResponse": {
-      "document": "UpdateBatch返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "回包\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
-          "member": "string",
-          "name": "JsonString",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

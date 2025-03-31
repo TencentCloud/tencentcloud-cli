@@ -17,7 +17,7 @@ Output:
         "Rules": [
             {
                 "RuleName": "test_create",
-                "Description": "test",
+                "Description": "规则信息",
                 "CreatedAt": 1599017883,
                 "RuleDisabled": true
             }

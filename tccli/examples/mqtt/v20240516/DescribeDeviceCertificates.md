@@ -35,7 +35,7 @@ Output:
             }
         ],
         "RequestId": "378f8c36-a6a1-406c-85ac-f2379386eed6",
-        "TotalCount": 0
+        "TotalCount": 1
     }
 }
 ```

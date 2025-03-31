@@ -16,9 +16,9 @@ Output:
     "Response": {
         "GatewayDeviceName": "gwdev",
         "GatewayProductId": "NJ27OVLZ",
-        "GatewayName": "xx",
+        "GatewayName": "网关名",
         "GatewayProductOwnerName": "NJ27OVLZ",
-        "GatewayProductOwnerUin": "xx",
+        "GatewayProductOwnerUin": "1852369542",
         "RequestId": "ef9ec631-7337-481b-a6c3-59a34b500198"
     }
 }

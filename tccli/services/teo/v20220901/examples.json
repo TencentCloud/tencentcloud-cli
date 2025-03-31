@@ -348,10 +348,16 @@
     ],
     "CreateSecurityIPGroup": [
       {
-        "document": "正常创建安全 IP 组",
+        "document": "创建安全 IP 组，并设置 2.2.2.2 为永久存在。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 0,\n        \"Name\": \"testip\",\n        \"Content\": [\n            \"2.2.2.2\"\n        ]\n    },\n    \"ZoneId\": \"zone-j94jf0a1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\",\n        \"GroupId\": 128\n    }\n}",
-        "title": "创建安全 IP 组"
+        "title": "创建安全 IP 组，配置永久存在的 IP。"
+      },
+      {
+        "document": "创建安全 IP 组，设置 3.3.3.3 永久存在，且为 1.1.1.1 配置过期时间。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 0,\n        \"Name\": \"test\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"3.3.3.3\"\n        ],\n        \"IPExpireInfo\": [\n            {\n                \"ExpireTime\": \"2026-03-24T16:03:00+08:00\",\n                \"IPList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    },\n    \"ZoneId\": \"zone-j94jf0a1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\",\n        \"GroupId\": 128\n    }\n}",
+        "title": "创建安全 IP 组，并为 IP 配置过期时间"
       }
     ],
     "CreateSharedCNAME": [
@@ -876,10 +882,16 @@
     ],
     "DescribeSecurityIPGroup": [
       {
-        "document": "查询指定站点中，安全 IP 分组的配置信息。",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-nqicqhasui\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IPGroups\": [\n            {\n                \"GroupId\": 123,\n                \"Name\": \"ExampleIpGroup\",\n                \"Content\": [\n                    \"2.2.2.2\",\n                    \"23.23.23.0/24\"\n                ]\n            }\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
-        "title": "查询安全 IP 分组的配置信息"
+        "document": "查询指定站点的所有安全 IP 分组的配置信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityIPGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-nqicqhasui\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IPGroups\": [\n            {\n                \"GroupId\": 97,\n                \"Name\": \"ExampleIpGroup\",\n                \"Content\": [\n                    \"2.2.2.2\",\n                    \"23.23.23.0/24\"\n                ],\n                \"IPExpireInfo\": [\n                    {\n                        \"ExpireTime\": \"2026-03-24T16:03:00+08:00\",\n                        \"IPList\": [\n                            \"2.2.2.2\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "查询站点下所有安全 IP 分组的配置信息"
+      },
+      {
+        "document": "查询站点中指定 ID 的安全 IP 分组配置信息",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityIPGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-ncacqeabax\",\n    \"GroupIds\": [\n        100,\n        200\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IPGroups\": [\n            {\n                \"GroupId\": 100,\n                \"Name\": \"ExampleIpGroup-1\",\n                \"Content\": [\n                    \"2.2.2.2\",\n                    \"23.23.23.0/24\"\n                ],\n                \"IPExpireInfo\": [\n                    {\n                        \"ExpireTime\": \"2026-03-24T16:03:00+08:00\",\n                        \"IPList\": [\n                            \"2.2.2.2\"\n                        ]\n                    }\n                ]\n            },\n            {\n                \"GroupId\": 200,\n                \"Name\": \"ExampleIpGroup-2\",\n                \"Content\": [\n                    \"1.1.1.1\",\n                    \"23.23.23.0/24\"\n                ],\n                \"IPExpireInfo\": [\n                    {\n                        \"ExpireTime\": \"2025-03-24T16:03:00+08:00\",\n                        \"IPList\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"ddf831fc-cf45-40fe-81b0-2d9cdd4c1bd6\"\n    }\n}",
+        "title": "查询指定 ID 的安全 IP 分组的配置信息"
       }
     ],
     "DescribeSecurityIPGroupInfo": [
@@ -1362,22 +1374,46 @@
     ],
     "ModifySecurityIPGroup": [
       {
-        "document": "修改安全 IP 组，其中操作类型是 append",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.3.1.1/16\",\n            \"6.6.6.6\"\n        ]\n    },\n    \"Mode\": \"append\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "document": "若向已存在的 IP 组中追加以下 IP 或网段：1.1.1.1、2.2.2.0/24。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"2.2.2.0/24\"\n        ]\n    },\n    \"Mode\": \"append\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
-        "title": "修改安全 IP 组，其中操作类型是 append"
+        "title": "向 IP 组中追加 IP 或网段"
       },
       {
-        "document": "修改安全 IP 组，其中操作类型是 remove",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.3.1.1/16\",\n            \"6.6.6.6\"\n        ]\n    },\n    \"Mode\": \"remove\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "document": "需要向已存在安全 IP 组中追加以下 IP 或网段：1.1.1.1、2.2.2.0/24、3.3.3.3 和 4.4.4.4，并为 1.1.1.1、2.2.2.0/24 和 4.4.4.4 分别配置过期时间。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"2.2.2.0/24\",\n            \"3.3.3.3\",\n            \"4.4.4.4\"\n        ],\n        \"IPExpireInfo\": [\n            {\n                \"ExpireTime\": \"2022-01-01T00:00:00+08:00\",\n                \"IPList\": [\n                    \"1.1.1.1\",\n                    \"4.4.4.4\"\n                ]\n            },\n            {\n                \"ExpireTime\": \"2022-01-02T00:00:00+08:00\",\n                \"IPList\": [\n                    \"2.2.2.0/24\"\n                ]\n            }\n        ]\n    },\n    \"Mode\": \"append\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
+        "title": "向安全 IP 组中追加 IP 或网段，并配置过期时间。"
+      },
+      {
+        "document": "IP 组中的 1.1.1.1 已配置过期时间，现在需要更改该 IP 的定时过期时间。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [],\n        \"IPExpireInfo\": [\n            {\n                \"ExpireTime\": \"2022-01-01T00:00:00+08:00\",\n                \"IPList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    },\n    \"Mode\": \"append\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
+        "title": "修改 IP 组中 IP 或网段的过期时间"
+      },
+      {
+        "document": "IP 组中存在 1.1.1.1，现在需要删除该 IP。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.1.1.1\"\n        ]\n    },\n    \"Mode\": \"remove\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5bdc699c-68df-4cb7-9d0a-1c174b0374ad\"\n    }\n}",
-        "title": "修改安全 IP 组，其中操作类型是 remove"
+        "title": "删除 IP 组中的 IP 或网段"
       },
       {
-        "document": "修改安全 IP 组，其中操作类型是 update",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.2.1.1/24\",\n            \"3.3.3.3\"\n        ]\n    },\n    \"Mode\": \"update\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "document": "IP 组中存在 1.1.1.1，并已为该 IP 配置过期时间，现在需要删除该 IP 的过期时间。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [],\n        \"IPExpireInfo\": [\n            {\n                \"IPList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    },\n    \"Mode\": \"remove\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
+        "title": "删除 IP 组中 IP 或网段的过期时间"
+      },
+      {
+        "document": "需要全量更新 IP 组内容，需更新的 IP 或网段为：1.1.1.1、2.2.2.0/24。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"2.2.2.0/24\"\n        ]\n    },\n    \"Mode\": \"update\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sh1u8a90-xxxx-49cd-swui-27cb34daa779\"\n    }\n}",
-        "title": "修改安全 IP 组，其中操作类型是 update"
+        "title": "全量更新安全 IP 组中的 IP 或网段"
+      },
+      {
+        "document": "需要全量更新 IP 组内容，新更新的 IP 或网段为：1.1.1.1、2.2.2.0/24、3.3.3.3，并为 1.1.1.1 配置过期时间。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityIPGroup\n<公共请求参数>\n\n{\n    \"IPGroup\": {\n        \"GroupId\": 67,\n        \"Name\": \"test3\",\n        \"Content\": [\n            \"1.1.1.1\",\n            \"2.2.2.0/24\",\n            \"3.3.3.3\"\n        ],\n        \"IPExpireInfo\": [\n            {\n                \"ExpireTime\": \"2022-01-01T00:00:00+08:00\",\n                \"IPList\": [\n                    \"1.1.1.1\"\n                ]\n            }\n        ]\n    },\n    \"Mode\": \"update\",\n    \"ZoneId\": \"zone-hduqwh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"728cb059-8595-44c7-b6c6-b4a539ae823f\"\n    }\n}",
+        "title": "全量更新安全 IP 组中的 IP 或网段以及对应的过期时间"
       }
     ],
     "ModifySecurityPolicy": [

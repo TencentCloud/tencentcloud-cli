@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer ListFirmwares --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID NS74VEP2HY \
     --PageNum 1 \
     --PageSize 10
 ```

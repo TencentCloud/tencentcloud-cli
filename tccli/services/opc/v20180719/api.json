@@ -78,11 +78,11 @@
       "status": "online"
     },
     "SyncProductIntroPageData": {
-      "document": "同步产品介绍页资源位数据",
+      "document": "接口没有在使用，后端接口去年已下线\n\n同步产品介绍页资源位数据",
       "input": "SyncProductIntroPageDataRequest",
       "name": "同步产品介绍页资源位数据",
       "output": "SyncProductIntroPageDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "TryDeductActivityGoodsQuota": {
       "document": "活动商品下单预扣减商品配额",

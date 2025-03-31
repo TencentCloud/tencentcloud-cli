@@ -6,16 +6,15 @@ Input:
 
 ```
 tccli iotexplorer ResetCloudStorageEvent --cli-unfold-argument  \
-    --ProductId abc \
-    --DeviceName abc \
-    --UserId abc
+    --ProductId KH6Q8C4N0D \
+    --DeviceName aaa_31400554_1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

@@ -31,6 +31,7 @@ Output:
                 ],
                 "Name": "控制台测试1",
                 "State": "ONLINE",
+                "UserId": "user1",
                 "CreateTime": "2024-01-16T11:54:35Z"
             },
             {
@@ -38,6 +39,7 @@ Output:
                 "AndroidAppVersionInfo": null,
                 "Name": "控制台测试1",
                 "State": "ONLINE",
+                "UserId": "user2",
                 "CreateTime": "2024-01-16T11:54:35Z"
             }
         ],

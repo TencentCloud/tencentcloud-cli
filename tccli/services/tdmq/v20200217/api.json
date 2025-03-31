@@ -6559,6 +6559,15 @@
           "name": "IsIntl",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否隔离请求，默认 false。当前仅支持后付费实例",
+          "example": "false",
+          "member": "bool",
+          "name": "IsIsolate",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -19109,6 +19118,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始隔离时间",
+          "example": "1666257531143",
+          "member": "int64",
+          "name": "IsolatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为容器实例，默认 true",
+          "example": "true",
+          "member": "bool",
+          "name": "Container",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20052,6 +20081,26 @@
           "name": "InstanceType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，毫秒为单位",
+          "example": "1666257531143",
+          "member": "uint64",
+          "name": "IsolatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Serverless 实例扩展参数",
+          "example": "{\"ext_key\":\"ext_value\"}",
+          "member": "string",
+          "name": "ServerlessExt",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

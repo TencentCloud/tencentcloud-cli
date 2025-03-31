@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli iotexplorer DeleteDevices --cli-unfold-argument  \
-    --DevicesItems.0.DeviceName xx \
-    --DevicesItems.0.ProductId xx
+    --DevicesItems.0.DeviceName d1 \
+    --DevicesItems.0.ProductId Uj9JF5R4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultCode": "xx",
-        "ResultMessage": "xx",
-        "RequestId": "xx"
+        "ResultCode": "fail",
+        "ResultMessage": "device has binded family",
+        "RequestId": "3edc-6yh0-8tghs"
     }
 }
 ```

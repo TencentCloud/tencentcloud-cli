@@ -17,7 +17,7 @@ Output:
         "Rule": {
             "RuleName": "test_create",
             "Sql": "SELECT * FROM '$thing/up/+/ProductId/#'",
-            "Description": "test",
+            "Description": "规则信息",
             "Actions": "[{\"forward\":{\"api\":\"http://127.0.0.1:1088/sub.php\"}}]",
             "RuleDisabled": true
         }

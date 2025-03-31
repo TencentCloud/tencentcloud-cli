@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DescribeGroupAttachFlowsById --cli-unfold-argument  \
-    --Id abc
+    --Id 019202e96d9f09dc0f325e7f7a2a
 ```
 
 Output: 
@@ -15,19 +15,19 @@ Output:
     "Response": {
         "Infos": [
             {
-                "FlowId": "abc",
-                "FlowName": "abc",
-                "EventId": "abc",
-                "FlowRegion": "abc",
-                "OutputRegion": "abc",
-                "EventName": "abc",
-                "InputName": "abc",
-                "OutputName": "abc",
-                "InOutId": "abc",
-                "InOutType": "abc"
+                "FlowId": "01937702c54509dc0f3269ca341f",
+                "FlowName": "test_flow",
+                "EventId": "019202e96d9f09dc0f325e7f7a2a",
+                "FlowRegion": "ap-shanghai",
+                "OutputRegion": "ap-shanghai",
+                "EventName": "test_live",
+                "InputName": "pgm_srt",
+                "OutputName": "pgm_rtmp",
+                "InOutId": "01937722c54509dc0f3269ca356g",
+                "InOutType": "input"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "01937702ecc509dc0f3269ca3420"
     }
 }
 ```

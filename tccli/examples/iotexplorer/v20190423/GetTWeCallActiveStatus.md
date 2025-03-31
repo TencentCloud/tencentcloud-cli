@@ -6,20 +6,18 @@ Input:
 
 ```
 tccli iotexplorer GetTWeCallActiveStatus --cli-unfold-argument  \
-    --MiniProgramAppId abc \
-    --DeviceList.0.ModelId 1qaz \
-    --DeviceList.0.Sn p/d
+    --DeviceList.0.Sn productId_deviceName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "4rfv-6yhj-56hjsg",
         "TWeCallActiveInfos": [
             {
                 "ModelId": "1qaz",
-                "Sn": "p/d",
+                "Sn": "productid_deviceName",
                 "ExpireTime": 45674345567
             }
         ]

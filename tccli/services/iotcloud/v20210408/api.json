@@ -400,7 +400,7 @@
       "status": "online"
     },
     "ReplaceTopicRule": {
-      "document": "本接口（ReplaceTopicRule）用于修改替换规则 ",
+      "document": "本接口（ReplaceTopicRule）用于修改替换规则",
       "input": "ReplaceTopicRuleRequest",
       "name": "替换规则",
       "output": "ReplaceTopicRuleResponse",
@@ -5971,7 +5971,7 @@
         {
           "disabled": false,
           "document": "替换的规则包体",
-          "example": "无",
+          "example": "topic1",
           "member": "TopicRulePayload",
           "name": "TopicRulePayload",
           "required": true,

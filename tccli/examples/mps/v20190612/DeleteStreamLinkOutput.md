@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DeleteStreamLinkOutput --cli-unfold-argument  \
-    --FlowId aaa \
+    --FlowId  \
     --OutputId asd21dsa
 ```
 

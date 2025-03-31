@@ -21,6 +21,13 @@
       "output": "BoundLicensesResponse",
       "status": "online"
     },
+    "CreateCloudRecording": {
+      "document": "启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。",
+      "input": "CreateCloudRecordingRequest",
+      "name": "开始云端录制",
+      "output": "CreateCloudRecordingResponse",
+      "status": "online"
+    },
     "CreateDevice": {
       "document": "用于创建设备",
       "input": "CreateDeviceRequest",
@@ -33,6 +40,13 @@
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "DeleteCloudRecording": {
+      "document": "成功开启录制后，可以使用此接口来停止录制任务。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。",
+      "input": "DeleteCloudRecordingRequest",
+      "name": "停止云端录制",
+      "output": "DeleteCloudRecordingResponse",
       "status": "online"
     },
     "DeleteProject": {
@@ -140,6 +154,13 @@
       "output": "GetLicensesResponse",
       "status": "online"
     },
+    "ModifyCallbackUrl": {
+      "document": "设置回调URL\n录制回调事件内容参考：https://cloud.tencent.com/document/product/647/81113\n转推回调事件内容参考：https://cloud.tencent.com/document/product/647/88552",
+      "input": "ModifyCallbackUrlRequest",
+      "name": "修改录制和转推回调URL",
+      "output": "ModifyCallbackUrlResponse",
+      "status": "online"
+    },
     "ModifyDevice": {
       "document": "用于修改设备信息",
       "input": "ModifyDeviceRequest",
@@ -166,6 +187,20 @@
       "input": "ModifyProjectSecModeRequest",
       "name": "修改项目安全模式",
       "output": "ModifyProjectSecModeResponse",
+      "status": "online"
+    },
+    "StartPublishLiveStream": {
+      "document": "启动一个混流转推任务，将 TRTC 房间的多路音视频流混成一路音视频流，编码后推到直播 CDN 或者回推到 TRTC 房间。也支持不转码直接转推 TRTC 房间的单路流。启动成功后，会返回一个 SdkAppid 维度唯一的任务 Id（TaskId）。您需要保存该 TaskId，后续需要依赖此 TaskId 更新和结束任务。",
+      "input": "StartPublishLiveStreamRequest",
+      "name": "开启旁路转推",
+      "output": "StartPublishLiveStreamResponse",
+      "status": "online"
+    },
+    "StopPublishLiveStream": {
+      "document": "停止指定的混流转推任务。如果没有调用 Stop 接口停止任务，所有参与混流转推的主播离开房间超过MaxIdleTime 设置的时间后，任务也会自动停止。",
+      "input": "StopPublishLiveStreamRequest",
+      "name": "停止旁路转推",
+      "output": "StopPublishLiveStreamResponse",
       "status": "online"
     }
   },
@@ -322,6 +357,157 @@
       ],
       "type": "object"
     },
+    "CloudStorage": {
+      "document": "云端录制文件上传到云存储的参数（对象存储cos）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储COS以及第三方云存储账号信息\n0：腾讯云对象存储 COS\n1：AWS\n【注意】目前第三方云存储仅支持AWS，更多第三方云存储陆续支持中\n示例值：0",
+          "example": "0",
+          "member": "int64",
+          "name": "Vendor",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储的[地域信息]（https://cloud.tencent.com/document/product/436/6224#.E5.9C.B0.E5.9F.9F）。\n示例值：cn-shanghai-1\n\nAWS S3[地域信息]（https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions）\n示例值：ap-shanghai(cos, 具体参考云存储厂商支持的地域)",
+          "example": "ap-nanjing",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储桶名称。",
+          "example": "recording-1304123456",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储的access_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretId值。",
+          "example": "test-accesskey",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储的secret_key账号信息。\n若存储至腾讯云对象存储COS，请前往https://console.cloud.tencent.com/cam/capi 查看或创建，对应链接中密钥字段的SecretKey值。",
+          "example": "test-secretkey",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存储bucket 的指定位置，由字符串数组组成。合法的字符串范围az,AZ,0~9,'_'和'-'，举个例子，录制文件xxx.m3u8在 [\"prefix1\", \"prefix2\"]作用下，会变成prefix1/prefix2/TaskId/xxx.m3u8。",
+          "example": "[\"prefix1\", \"prefix2\"]",
+          "member": "string",
+          "name": "FileNamePrefix",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateCloudRecordingRequest": {
+      "document": "CreateCloudRecording请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "m82k5408n123phvb",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "trro_dev",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频流号",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoStreamId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云对象存储COS以及第三方云存储的账号信息",
+          "example": "无",
+          "member": "CloudStorage",
+          "name": "CloudStorage",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】 Hls 格式录制此参数不生效。",
+          "example": "1440",
+          "member": "int64",
+          "name": "MaxMediaFileDuration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的格式（存储至COS等第三方存储时有效）。0：输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。3：(默认)输出文件格式为mp4。4：输出文件格式为aac。",
+          "example": "3",
+          "member": "int64",
+          "name": "OutputFormat",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间内持续没有主播的状态超过MaxIdleTime的时长，自动停止录制，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于 86400秒(24小时)。 示例值：30",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxIdleTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudRecordingResponse": {
+      "document": "CreateCloudRecording返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。任务 ID需要业务保存下来，作为下次针对这个录制任务操作的参数。",
+          "example": "D1ls6oRRsqxbnpbSM4EHpghzM46sszgfPsEhxrFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHXHxd+m5x662qyDsFSh4TZwA.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDeviceRequest": {
       "document": "CreateDevice请求参数结构体",
       "members": [
@@ -431,6 +617,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudRecordingRequest": {
+      "document": "DeleteCloudRecording请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制任务的唯一Id，在启动录制成功后会返回。",
+          "example": "D1ls6oRRsqxbnpbSM4EHpghzM46sszgfPsEhxrFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHXHxd+m5x662qyDsFSh4TZwA.",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudRecordingResponse": {
+      "document": "DeleteCloudRecording返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1836,6 +2049,71 @@
       ],
       "usage": "out"
     },
+    "ModifyCallbackUrlRequest": {
+      "document": "ModifyCallbackUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "m82k541ovkfsub1h",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调URL",
+          "example": "http://123.1.1.1/cb_url",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调签名密钥，用于校验回调信息的完整性",
+          "example": "abcd1234",
+          "member": "string",
+          "name": "SignKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCallbackUrlResponse": {
+      "document": "ModifyCallbackUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应码，0：成功，其他：失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应消息，ok:成功，其他：失败",
+          "example": "ok",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDeviceRequest": {
       "document": "ModifyDevice请求参数结构体",
       "members": [
@@ -2247,6 +2525,30 @@
         }
       ],
       "usage": "out"
+    },
+    "PublishParams": {
+      "document": "转推参数，一个任务最多支持10个推流URL。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云直播推流地址url",
+          "example": "rtmp://live-push-test.tencentcs.com/live/test2?txSecret=abcd1234567890&txTime=679C9784",
+          "member": "string",
+          "name": "PublishUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是腾讯云CDN，0为转推非腾讯云CDN，1为转推腾讯CDN，不携带该参数默认为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsTencentUrl",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "RecentSessionInfo": {
       "document": "最新会话信息",
@@ -2831,6 +3133,208 @@
         }
       ],
       "usage": "out"
+    },
+    "StartPublishLiveStreamRequest": {
+      "document": "StartPublishLiveStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。 示例值：1",
+          "example": "0",
+          "member": "int64",
+          "name": "WithTranscoding",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "所有参与混流转推的主播持续离开TRTC房间或切换成观众超过MaxIdleTime的时长，自动停止转推，单位：秒。默认值为 30 秒，该值需大于等于 5秒，且小于等于 86400秒(24小时)。",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxIdleTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转推视频参数",
+          "example": "无",
+          "member": "VideoParams",
+          "name": "VideoParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "转推的URL参数，一个任务最多支持10个推流URL",
+          "example": "无",
+          "member": "PublishParams",
+          "name": "PublishParams",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishLiveStreamResponse": {
+      "document": "StartPublishLiveStream返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于唯一标识转推任务，由腾讯云服务端生成，后续停止请求需要携带TaskiD参数。",
+          "example": "D0xOlGVRsurq9PRB-Iuak6f-J0ac-asdaafds-8pZgA.",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopPublishLiveStreamRequest": {
+      "document": "StopPublishLiveStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标识转推任务。",
+          "example": "D0xOlGVRsurq9PRB-Iuak6f-J0ac-twfB4hQwbFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHe96RlTGxKzJwUgzjD-8pZgA.",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopPublishLiveStreamResponse": {
+      "document": "StopPublishLiveStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoList": {
+      "document": "原视频流参数列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "m82k5408n123phvb",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "trro_dev",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流id",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoStreamId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子画面在输出时的宽度，单位为像素值，不填默认为0。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子画面在输出时的高度，单位为像素值，不填默认为0。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "VideoParams": {
+      "document": "转推视频参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出流宽，音视频输出时必填。取值范围[0,1920]，单位为像素值。",
+          "example": "1280",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。",
+          "example": "720",
+          "member": "int64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出流帧率，音视频输出时必填。取值范围[1,60]，表示混流的输出帧率可选范围为1到60fps。",
+          "example": "15",
+          "member": "int64",
+          "name": "Fps",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出流码率，音视频输出时必填。取值范围[1,10000]，单位为kbps。",
+          "example": "1500",
+          "member": "int64",
+          "name": "BitRate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出流gop，音视频输出时必填。取值范围[1,5]，单位为秒。",
+          "example": "2",
+          "member": "int64",
+          "name": "Gop",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转推视频流列表",
+          "example": "[{ \"VideoStreamId\": 0,\"Width\": 1920,\"Height\": 1080,\"DeviceId\": \"geek_gw_2\",\"ProjectId\": \"m82k5408n123phvb\"}]",
+          "member": "VideoList",
+          "name": "VideoList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

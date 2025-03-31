@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps CreateStreamLinkInput --cli-unfold-argument  \
-    --FlowId aaa \
+    --FlowId  \
     --InputGroup.0.InputName inputname \
     --InputGroup.0.Description inputnameDescription \
     --InputGroup.0.Protocol RTP \
@@ -16,7 +16,7 @@ tccli mps CreateStreamLinkInput --cli-unfold-argument  \
     --InputGroup.0.SRTSettings.RecvLatency 1000 \
     --InputGroup.0.SRTSettings.PeerLatency 1000 \
     --InputGroup.0.SRTSettings.PeerIdleTimeout 1000 \
-    --InputGroup.0.SRTSettings.Passphrase aaa \
+    --InputGroup.0.SRTSettings.Passphrase  \
     --InputGroup.0.SRTSettings.PbKeyLen 10 \
     --InputGroup.0.RTPSettings.FEC none \
     --InputGroup.0.RTPSettings.IdleTimeout 1000
@@ -27,70 +27,70 @@ Output:
 {
     "Response": {
         "Info": {
-            "FlowId": "abc",
-            "FlowName": "abc",
-            "State": "abc",
+            "FlowId": "018f09cc50671eb401a6024fcabc",
+            "FlowName": "test",
+            "State": "",
             "MaxBandwidth": 0,
             "InputGroup": [
                 {
-                    "InputId": "abc",
-                    "InputName": "abc",
-                    "Description": "abc",
-                    "Protocol": "abc",
+                    "InputId": "",
+                    "InputName": "",
+                    "Description": "",
+                    "Protocol": "",
                     "InputAddressList": [
                         {
-                            "Ip": "abc",
+                            "Ip": "",
                             "Port": 0
                         }
                     ],
                     "AllowIpList": [
-                        "abc"
+                        ""
                     ],
                     "SRTSettings": {
-                        "Mode": "abc",
-                        "StreamId": "abc",
+                        "Mode": "",
+                        "StreamId": "",
                         "Latency": 0,
                         "RecvLatency": 0,
                         "PeerLatency": 0,
                         "PeerIdleTimeout": 0,
-                        "Passphrase": "abc",
+                        "Passphrase": "",
                         "PbKeyLen": 0,
                         "SourceAddresses": [
                             {
-                                "Ip": "abc",
+                                "Ip": "",
                                 "Port": 0
                             }
                         ]
                     },
                     "RTPSettings": {
-                        "FEC": "abc",
+                        "FEC": "",
                         "IdleTimeout": 0
                     },
-                    "InputRegion": "abc",
+                    "InputRegion": "",
                     "RTMPSettings": {
-                        "AppName": "abc",
-                        "StreamKey": "abc"
+                        "AppName": "",
+                        "StreamKey": ""
                     },
-                    "FailOver": "abc",
+                    "FailOver": "",
                     "RTMPPullSettings": {
                         "SourceAddresses": [
                             {
-                                "TcUrl": "abc",
-                                "StreamKey": "abc"
+                                "TcUrl": "",
+                                "StreamKey": ""
                             }
                         ]
                     },
                     "RTSPPullSettings": {
                         "SourceAddresses": [
                             {
-                                "Url": "abc"
+                                "Url": ""
                             }
                         ]
                     },
                     "HLSPullSettings": {
                         "SourceAddresses": [
                             {
-                                "Url": "abc"
+                                "Url": ""
                             }
                         ]
                     },
@@ -102,35 +102,35 @@ Output:
             ],
             "OutputGroup": [
                 {
-                    "OutputId": "abc",
-                    "OutputName": "abc",
-                    "OutputType": "abc",
-                    "Description": "abc",
-                    "Protocol": "abc",
+                    "OutputId": "",
+                    "OutputName": "",
+                    "OutputType": "",
+                    "Description": "",
+                    "Protocol": "",
                     "OutputAddressList": [
                         {
-                            "Ip": "abc"
+                            "Ip": ""
                         }
                     ],
-                    "OutputRegion": "abc",
+                    "OutputRegion": "",
                     "SRTSettings": {
                         "Destinations": [
                             {
-                                "Ip": "abc",
+                                "Ip": "",
                                 "Port": 0
                             }
                         ],
-                        "StreamId": "abc",
+                        "StreamId": "",
                         "Latency": 0,
                         "RecvLatency": 0,
                         "PeerLatency": 0,
                         "PeerIdleTimeout": 0,
-                        "Passphrase": "abc",
+                        "Passphrase": "",
                         "PbKeyLen": 0,
-                        "Mode": "abc",
+                        "Mode": "",
                         "SourceAddresses": [
                             {
-                                "Ip": "abc",
+                                "Ip": "",
                                 "Port": 0
                             }
                         ]
@@ -138,11 +138,11 @@ Output:
                     "RTPSettings": {
                         "Destinations": [
                             {
-                                "Ip": "abc",
+                                "Ip": "",
                                 "Port": 0
                             }
                         ],
-                        "FEC": "abc",
+                        "FEC": "",
                         "IdleTimeout": 0
                     },
                     "RTMPSettings": {
@@ -150,43 +150,43 @@ Output:
                         "ChunkSize": 0,
                         "Destinations": [
                             {
-                                "Url": "abc",
-                                "StreamKey": "abc"
+                                "Url": "",
+                                "StreamKey": ""
                             }
                         ]
                     },
                     "RTMPPullSettings": {
                         "ServerUrls": [
                             {
-                                "TcUrl": "abc",
-                                "StreamKey": "abc"
+                                "TcUrl": "",
+                                "StreamKey": ""
                             }
                         ]
                     },
                     "AllowIpList": [
-                        "abc"
+                        ""
                     ],
                     "RTSPPullSettings": {
                         "ServerUrls": [
                             {
-                                "Url": "abc"
+                                "Url": ""
                             }
                         ]
                     },
                     "HLSPullSettings": {
                         "ServerUrls": [
                             {
-                                "Url": "abc"
+                                "Url": ""
                             }
                         ]
                     },
                     "MaxConcurrent": 1
                 }
             ],
-            "EventId": "abc",
-            "Region": "abc"
+            "EventId": "",
+            "Region": ""
         },
-        "RequestId": "abc"
+        "RequestId": ""
     }
 }
 ```

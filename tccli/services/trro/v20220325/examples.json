@@ -24,6 +24,14 @@
         "title": "绑定license"
       }
     ],
+    "CreateCloudRecording": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRecording\n<公共请求参数>\n\n{\n    \"DeviceId\": \"dev1\",\n    \"ProjectId\": \"m82k5408n123phvb\",\n    \"OutputFormat\": 3,\n    \"VideoStreamId\": 0,\n    \"MaxMediaFileDuration\": 20,\n    \"MaxIdleTime\": 20,\n    \"CloudStorage\": {\n        \"Vendor\": 0,\n        \"Bucket\": \"recording-1304123456\",\n        \"Region\": \"ap-nanjing\",\n        \"AccessKey\": \"accesskey-test\",\n        \"SecretKey\": \"secretkey-test\",\n        \"FileNamePrefix\": [\n            \"2024-12-24\",\n            \"dev1\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-gCTFWtU7t7DUlo7A8IswFszO9z2O-rbERqJAoK-4pycoZXKjIAAnasdcasdOEycyX4CnzhIm4RAQ..\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "开启云端录制"
+      }
+    ],
     "CreateDevice": [
       {
         "document": "",
@@ -38,6 +46,14 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"ProjectName\": \"my_project\",\n    \"ProjectDescription\": \"project description info\",\n    \"PolicyMode\": \"black\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"ProjectId\": \"f3glr49r3axn0fu2\"\n    }\n}",
         "title": "创建项目示例"
+      }
+    ],
+    "DeleteCloudRecording": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudRecording\n<公共请求参数>\n\n{\n    \"TaskId\": \"D1ls6oRRsqxbnpbSM4EHpghzM46sszgfPsEhxrFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHXHxd+m5x662qyDsFSh4TZwA.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": " 停止云端录制"
       }
     ],
     "DeleteProject": [
@@ -160,6 +176,14 @@
         "title": "license列表"
       }
     ],
+    "ModifyCallbackUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCallbackUrl\n<公共请求参数>\n\n{\n    \"ProjectId\": \"m82k5408n123phvb\",\n    \"CallbackUrl\": \"http://123.45.81.121:9999\",\n    \"SignKey\": \"abcd1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Msg\": \"ok\",\n        \"RequestId\": \"c1f72a62-e199-4d04-bf2c-ee3e97a3c4af\"\n    }\n}",
+        "title": "设置回调URL"
+      }
+    ],
     "ModifyDevice": [
       {
         "document": "",
@@ -190,6 +214,22 @@
         "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProjectSecMode\n<公共请求参数>\n\n{\n    \"ProjectId\": \"m82k540iwduvuuma\",\n    \"Mode\": 1,\n    \"Key\": \"123456789012345678901234567abcde\",\n    \"AutoRegister\": 3,\n    \"FieldListEnable\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\"\n    }\n}",
         "title": "修改项目授权模式"
+      }
+    ],
+    "StartPublishLiveStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishLiveStream\n<公共请求参数>\n\n{\n    \"PublishParams\": [\n        {\n            \"PublishUrl\": \"rtmp://live-push-test.tencentcs.com/live/test1?txSecret=abcd1234567890&txTime=679C9784\",\n            \"IsTencentUrl\": 1\n        }\n    ],\n    \"MaxIdleTime\": 20,\n    \"VideoParams\": {\n        \"Width\": 1920,\n        \"Height\": 1080,\n        \"Fps\": 30,\n        \"BitRate\": 1500,\n        \"Gop\": 2,\n        \"VideoList\": [\n            {\n                \"VideoStreamId\": 0,\n                \"Width\": 1920,\n                \"Height\": 1080,\n                \"DeviceId\": \"geek_gw_2\",\n                \"ProjectId\": \"m82k5408n675phvb\"\n            }\n        ]\n    },\n    \"WithTranscoding\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"StartPublishCdnStream-1\",\n        \"TaskId\": \"D0xOlGVRsurq9PRB-Iuak6f-J0ac-twfB4hQwbFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHe96RlTGxKzJwUgzjD-8pZgA.\"\n    }\n}",
+        "title": "启动腾讯云直播单流转推"
+      }
+    ],
+    "StopPublishLiveStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trro.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishLiveStream\n<公共请求参数>\n\n{\n    \"TaskId\": \"D0xOlGVRsurq9PRB-Iuak6f-J0ac-twfB4hQwbFucIB9muIw9pP0FOpOYkgdMNK52kIoPlhHe96RlTGxKzJwUgzjD-8pZgA.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"StopPublishCdnStream-1\"\n    }\n}",
+        "title": "停止转推任务"
       }
     ]
   },

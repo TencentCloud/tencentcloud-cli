@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer CreateTopicPolicy --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --TopicName abc \
+    --ProductId J2CRPPZ8J4 \
+    --TopicName $thing/up/J2CRPPZ8J4/d1 \
     --Privilege 2
 ```
 

@@ -1496,25 +1496,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "查询key",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "查询values\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "查询values",
+          "example": "[\"val\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

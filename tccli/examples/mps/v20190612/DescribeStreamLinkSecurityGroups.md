@@ -13,18 +13,18 @@ Output:
     "Response": {
         "Infos": [
             {
-                "Id": "abc",
-                "Name": "abc",
+                "Id": "019202e96d9f09dc0f325e7f7a2a",
+                "Name": "live_test",
                 "Whitelist": [
-                    "abc"
+                    "0.0.0.0"
                 ],
                 "OccupiedInputs": [
-                    "abc"
+                    "01937702c54509dc0f3269ca341f"
                 ],
-                "Region": "abc"
+                "Region": "ap-shanghai"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "019202e96d9f09dc0f325e7f7a2a"
     }
 }
 ```

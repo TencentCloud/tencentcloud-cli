@@ -1,13 +1,5 @@
 {
   "actions": {
-    "AddBatch": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=AddBatch\n&BatchName=xx\n&LeadReleaseSource=xiaoshouyi\n&LeadReleaseOriginMsg=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"BatchId\\\":50}\",\n        \"RequestId\": \"25ede15b-f30e-4f5f-8356-c38db98cfa23\"\n    }\n}",
-        "title": "新增批次示例"
-      }
-    ],
     "AuditActivity": [
       {
         "document": "",
@@ -30,14 +22,6 @@
         "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: CreateProductPatch\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"true\"\n    }\n}",
         "title": "产研接口-推送产品补丁包信息接口"
-      }
-    ],
-    "DeleteBatch": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=DeleteBatch\n&BatchId=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"AffectedRows\\\":1}\",\n        \"RequestId\": \"25ede15b-f30e-4f5f-8356-c38db98cfa23\"\n    }\n}",
-        "title": "删除批次示例"
       }
     ],
     "DeleteMarkCustomerLabel": [
@@ -184,14 +168,6 @@
         "title": "根据组织id集合，批量获取组织信息"
       }
     ],
-    "GetBatchList": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=GetBatchList\n&Page=123\n&PageSize=20\n&BatchName=xx\n&LeadReleaseSource=xiaoshouyi\n&LeadReleaseOriginMsg=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"List\\\":[{\\\"AccountId\\\":\\\"1234\\\",\\\"BatchId\\\":1,\\\"BatchName\\\":\\\"mhy name22\\\",\\\"LeadReleaseSource\\\":\\\"\\\",\\\"LeadReleaseOriginMsg\\\":\\\"LeadReleaseOrigin Msg\\\",\\\"UpdateTime\\\":\\\"2021-03-15 17:51:11\\\",\\\"CreateTime\\\":\\\"2021-03-15 17:51:11\\\"}],\\\"Total\\\":1}\",\n        \"RequestId\": \"25ede15b-f30e-4f5f-8356-c38db98cfa23\"\n    }\n}",
-        "title": "获取批次列表"
-      }
-    ],
     "GetExportControlUnderwriting": [
       {
         "document": "",
@@ -238,14 +214,6 @@
         "input": "https://clouddc.tencentcloudapi.com/?Action=SendOutsideEmailAndSms\n&Cid=abc\n&Type=123\n&Name=abc\n&ThemeId=123\n&EmailTemplate.0=123\n&SmsTemplate.0=123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"logIds\\\":[6656359307858385920]}\",\n        \"RequestId\": \"bd8862e5-149a-4e97-a39d-ad07eb819fbd\"\n    }\n}",
         "title": "示例"
-      }
-    ],
-    "UpdateBatch": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=UpdateBatch\n&BatchId=1\n&BatchName=xx\n&LeadReleaseOriginMsg=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"xx\",\n        \"RequestId\": \"25ede15b-f30e-4f5f-8356-c38db98cfa23\"\n    }\n}",
-        "title": "更新批次示例"
       }
     ]
   },

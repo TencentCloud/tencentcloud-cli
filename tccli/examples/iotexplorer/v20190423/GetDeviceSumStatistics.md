@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer GetDeviceSumStatistics --cli-unfold-argument  \
-    --ProjectId abc \
-    --ProductIds abc
+    --ProjectId proj-4rf09hhy \
+    --ProductIds J2CRPPZ8J4
 ```
 
 Output: 

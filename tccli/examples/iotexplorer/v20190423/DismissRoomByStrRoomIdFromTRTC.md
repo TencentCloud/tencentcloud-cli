@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DismissRoomByStrRoomIdFromTRTC --cli-unfold-argument  \
-    --RoomId test
+    --RoomId roomId1
 ```
 
 Output: 
