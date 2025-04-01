@@ -1,4 +1,4 @@
-**Example 1: 同步调用设备行为**
+**Example 1: 同步调用设备行为示例**
 
 云端调用后，设备端上报`$thing/up/action/TOIDHQ3AOQ/light1`
 ```

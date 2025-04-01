@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bi DescribeUserRoleProjectList --cli-unfold-argument  \
-    --PageNo 0 \
-    --PageSize 0 \
-    --ProjectId 0 \
-    --IsOnlyBindAppUser True
+    --PageNo 1982493789748932 \
+    --PageSize 1982493789748932 \
+    --ProjectId 1982493789748932 \
+    --IsOnlyBindAppUser False
 ```
 
 Output: 
@@ -44,12 +44,12 @@ Output:
                         1
                     ],
                     "UserId": "21021",
-                    "UserName": "zhangsn",
+                    "UserName": "zhangsan",
                     "CorpId": "1202101",
-                    "Email": "1213***@qq.com",
-                    "CreatedUser": "zhangsna",
-                    "CreatedAt": "zhangsna",
-                    "UpdatedUser": "zhangsna",
+                    "Email": "123***@qq.com",
+                    "CreatedUser": "zhangsan",
+                    "CreatedAt": "zhangsan",
+                    "UpdatedUser": "zhangsan",
                     "UpdatedAt": "2020-09-22 00:00:00",
                     "LastLogin": "2020-09-22T00:00:00+00:00",
                     "Status": 0,
@@ -58,8 +58,8 @@ Output:
                     "RootAccount": true,
                     "CorpAdmin": true,
                     "AppUserId": "2103",
-                    "AppUserAliasName": "zhangsn",
-                    "AppUserName": "zhjang",
+                    "AppUserAliasName": "zhangsan",
+                    "AppUserName": "zhangsan",
                     "InValidateAppRange": true
                 }
             ]

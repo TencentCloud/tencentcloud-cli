@@ -1008,12 +1008,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误原因",
           "example": "记录线路不正确",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1112,23 +1113,23 @@
         },
         {
           "disabled": false,
-          "document": "检查失败数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查失败数量",
           "example": "13",
           "member": "uint64",
           "name": "Failed",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "失败记录信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败记录信息",
           "example": "无",
           "member": "SnapshotRecord",
           "name": "FailedRecordList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1309,13 +1310,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "见RecordInfoBatch\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "见RecordInfoBatch",
           "example": "无",
           "member": "CreateDomainBatchRecord",
           "name": "RecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1323,29 +1324,29 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名等级",
           "example": "DP_FREE",
           "member": "string",
           "name": "DomainGrade",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1353,29 +1354,29 @@
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该条任务运行状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1385,73 +1386,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "子域名(主机记录)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子域名(主机记录)。",
           "example": "www",
           "member": "string",
           "name": "SubDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录类型, 详见 DescribeRecordType 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录类型, 详见 DescribeRecordType 接口",
           "example": "A",
           "member": "string",
           "name": "RecordType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析记录的线路，详见 DescribeRecordLineList 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析记录的线路，详见 DescribeRecordLineList 接口",
           "example": "百度",
           "member": "string",
           "name": "RecordLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录值",
           "example": "129.23.32.32",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录的 TTL 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录的 TTL 值",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录添加状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录添加状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型",
           "example": "plus",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1459,7 +1460,7 @@
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1469,7 +1470,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1891,13 +1892,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "见RecordInfoBatch\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "见RecordInfoBatch",
           "example": "无",
           "member": "CreateRecordBatchRecord",
           "name": "RecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1905,29 +1906,29 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名等级",
           "example": "DP_FREE",
           "member": "string",
           "name": "DomainGrade",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1935,19 +1936,19 @@
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该条任务运行状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1955,19 +1956,19 @@
           "example": "plus",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名ID",
           "example": "142123",
           "member": "uint64",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1977,63 +1978,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "子域名(主机记录)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子域名(主机记录)。",
           "example": "www",
           "member": "string",
           "name": "SubDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录类型, 详见 DescribeRecordType 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录类型, 详见 DescribeRecordType 接口",
           "example": "A",
           "member": "string",
           "name": "RecordType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "解析记录的线路，详见 DescribeRecordLineList 接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解析记录的线路，详见 DescribeRecordLineList 接口",
           "example": "百度",
           "member": "string",
           "name": "RecordLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录值",
           "example": "129.23.32.32",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录的 TTL 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录的 TTL 值",
           "example": "600",
           "member": "uint64",
           "name": "TTL",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录添加状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录添加状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2041,7 +2042,7 @@
           "example": "plus",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2051,7 +2052,7 @@
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2061,29 +2062,29 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录的MX权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录的MX权重",
           "example": "12",
           "member": "uint64",
           "name": "MX",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录的权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录的权重",
           "example": "10",
           "member": "uint64",
           "name": "Weight",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3388,13 +3389,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "见BatchRecordInfo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "见BatchRecordInfo",
           "example": "无",
           "member": "BatchRecordInfo",
           "name": "RecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3402,7 +3403,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3412,19 +3413,19 @@
           "example": "test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "域名等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名等级",
           "example": "DP_FREE",
           "member": "string",
           "name": "DomainGrade",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3432,19 +3433,19 @@
           "example": "null",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该条任务运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该条任务运行状态",
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3452,7 +3453,7 @@
           "example": "plus",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3462,7 +3463,7 @@
           "example": "142123",
           "member": "uint64",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7515,7 +7516,7 @@
           "example": "10",
           "member": "uint64",
           "name": "FileId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7525,7 +7526,7 @@
           "example": "2023-01-17 14:54:06",
           "member": "string",
           "name": "CreatedOn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7535,7 +7536,7 @@
           "example": "2023-01-17 14:54:07",
           "member": "string",
           "name": "UpdatedOn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7545,7 +7546,7 @@
           "example": "[\"dnspod.cn\"]",
           "member": "string",
           "name": "Domains",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7555,7 +7556,7 @@
           "example": "xxxx.xlsx",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7565,7 +7566,7 @@
           "example": "https://xxxx.xxx.xx",
           "member": "string",
           "name": "FileUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7575,7 +7576,7 @@
           "example": "11",
           "member": "uint64",
           "name": "JobId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7585,7 +7586,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Progress",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7595,7 +7596,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7605,19 +7606,19 @@
           "example": "RECORD_LOG",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "剩余时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余时间",
           "example": "无",
           "member": "LeftTime",
           "name": "LeftTime",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7701,33 +7702,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "剩余天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余天数",
           "example": "2",
           "member": "uint64",
           "name": "Days",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "剩余小时数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余小时数",
           "example": "4",
           "member": "uint64",
           "name": "Hours",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "剩余分钟数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "剩余分钟数",
           "example": "49",
           "member": "uint64",
           "name": "Mins",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

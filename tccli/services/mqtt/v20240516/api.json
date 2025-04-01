@@ -5056,7 +5056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格类型\nBASIC：基础版\nPRO ：专业版",
+          "document": "规格类型\nBASIC：基础版\nPRO ：专业版\nPLATINUM： 铂金版",
           "example": "BASIC",
           "member": "string",
           "name": "InstanceType",
@@ -5067,7 +5067,7 @@
         {
           "disabled": false,
           "document": "规格代码",
-          "example": "basic_1000",
+          "example": "pro_10k_1",
           "member": "string",
           "name": "SkuCode",
           "output_required": false,
@@ -5076,7 +5076,7 @@
         },
         {
           "disabled": false,
-          "document": "是否售卖",
+          "document": "是否售卖\n1: 可售卖\n0: 不可售卖",
           "example": "1",
           "member": "bool",
           "name": "OnSale",
@@ -5096,7 +5096,7 @@
         },
         {
           "disabled": false,
-          "document": "tps",
+          "document": "MQTT 集群下每秒钟生产消息量和消费消息量之和。详细计算方式参考 [计费概述](https://cloud.tencent.com/document/product/1778/109698)",
           "example": "1000",
           "member": "int64",
           "name": "TpsLimit",
@@ -5585,7 +5585,7 @@
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5594,7 +5594,7 @@
           "example": "subnet-xxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],

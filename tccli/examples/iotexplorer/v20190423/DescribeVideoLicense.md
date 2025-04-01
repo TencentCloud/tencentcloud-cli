@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DescribeVideoLicense --cli-unfold-argument  \
-    --InstanceId aa
+    --InstanceId ins-R4rvgd
 ```
 
 Output: 

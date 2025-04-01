@@ -16,14 +16,6 @@
         "title": "创建计算环境"
       }
     ],
-    "CreateCpmComputeEnv": [
-      {
-        "document": "",
-        "input": "https://batch.tencentcloudapi.com/?Action=CreateCpmComputeEnv\n&ComputeEnv.EnvName=cpm-env-win\n&ComputeEnv.EnvData.Zones.0=ap-chongqing-bls-1\n&ComputeEnv.EnvData.InstanceTypes.0=PI100v2\n&ComputeEnv.EnvData.TimeUnit=m\n&ComputeEnv.EnvData.TimeSpan=1\n&ComputeEnv.EnvData.RaidId=3\n&ComputeEnv.EnvData.OsTypeId=125\n&ComputeEnv.EnvData.VirtualPrivateClouds.0.VpcId=vpc-33em4y15\n&ComputeEnv.EnvData.VirtualPrivateClouds.0.SubnetId=subnet-6x83jiie\n&ComputeEnv.EnvData.SysRootSpace=100\n&ComputeEnv.EnvData.SysDataSpace=50\n&ComputeEnv.EnvData.EipPayMode=flow\n&ComputeEnv.EnvData.EipBandwidth=0\n&ComputeEnv.EnvData.ApplyEip=0\n&ComputeEnv.EnvData.HyperThreading=1\n&ComputeEnv.EnvData.AutoRenewFlag=0\n&ComputeEnv.DesiredComputeNodeCount=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-89kunmev\",\n        \"RequestId\": \"c30340b4-a9a7-4204-98f6-725da4bcc117\"\n    }\n}",
-        "title": "创建黑石计算环境"
-      }
-    ],
     "CreateTaskTemplate": [
       {
         "document": "",
@@ -102,14 +94,6 @@
         "input": "https://batch.tencentcloudapi.com/?Action=DescribeComputeEnvs\n&EnvIds.0=env-lcx7qbbr\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ComputeEnvSet\": [\n            {\n                \"EnvId\": \"env-lcx7qbbr\",\n                \"ComputeNodeMetrics\": {\n                    \"CreatedCount\": 0,\n                    \"DeletingCount\": 0,\n                    \"CreationFailedCount\": 0,\n                    \"SubmittedCount\": 0,\n                    \"CreatingCount\": 0,\n                    \"AbnormalCount\": 1,\n                    \"RunningCount\": 0\n                },\n                \"Tags\": [\n                    {\n                        \"Key\": \"batch-test-tag-env-key\",\n                        \"Value\": \"batch-test-tag-env-value\"\n                    }\n                ],\n                \"ResourceType\": \"CVM\",\n                \"EnvType\": \"MANAGED\",\n                \"AttachedComputeNodeCount\": 0,\n                \"DesiredComputeNodeCount\": 1,\n                \"EnvName\": \"test-compute-env\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-4\"\n                },\n                \"NextAction\": \"\",\n                \"CreateTime\": \"2020-09-22T06:51:42Z\"\n            }\n        ],\n        \"RequestId\": \"bedb1750-a09f-4c4d-9f25-6afccda50dea\"\n    }\n}",
         "title": "查看计算环境列表"
-      }
-    ],
-    "DescribeCpmOsInfo": [
-      {
-        "document": "",
-        "input": "https://batch.tencentcloudapi.com/?Action=DescribeCpmOsInfo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"OsInfoSet\": [\n            {\n                \"OsEnglishDescription\": \"Windows Server 2012 datacenter cn 64bit\",\n                \"OsName\": \"BM-XServer_V12cdb_x64\",\n                \"MaxPartitionSize\": 1000000,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 125,\n                \"OsDescription\": \"Windows Server 2012 数据中心中文版 batch\",\n                \"OsClass\": \"Windows\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 7.3 64bit\",\n                \"OsName\": \"BM-centos7.3\",\n                \"MaxPartitionSize\": 50,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 47,\n                \"OsDescription\": \"Centos 7.3 64位\",\n                \"OsClass\": \"CentOS\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 6.8 64bit\",\n                \"OsName\": \"BM-centos6.8\",\n                \"MaxPartitionSize\": 16,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 48,\n                \"OsDescription\": \"Centos 6.8 64位\",\n                \"OsClass\": \"CentOS\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 6.5 64bit\",\n                \"OsName\": \"BM-centos6.5\",\n                \"MaxPartitionSize\": 16,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 1,\n                \"OsDescription\": \"Centos 6.5  64位\",\n                \"OsClass\": \"CentOS\"\n            },\n            {\n                \"OsEnglishDescription\": \"Centos 7.2  64bit\",\n                \"OsName\": \"BM-centos7.2\",\n                \"MaxPartitionSize\": 50,\n                \"ImageTag\": \"public\",\n                \"OsTypeId\": 2,\n                \"OsDescription\": \"Centos 7.2  64位\",\n                \"OsClass\": \"CentOS\"\n            }\n        ],\n        \"RequestId\": \"b53f11cc-8583-4533-8bec-686ca56799eb\"\n    }\n}",
-        "title": "查询批量计算黑石操作系统信息"
       }
     ],
     "DescribeCvmZoneInstanceConfigInfos": [

@@ -1916,6 +1916,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RestoreTaskId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1926,16 +1927,18 @@
           "example": "/test/file0",
           "member": "string",
           "name": "FilePath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持极速）",
+          "document": "回热任务类型（1：标准；2：极速；3：批量，暂时仅支持标准）",
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1946,6 +1949,7 @@
           "example": "7",
           "member": "uint64",
           "name": "Days",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1956,6 +1960,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1966,6 +1971,7 @@
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli bi DescribeUserProjectList --cli-unfold-argument  \
-    --ProjectId 0 \
-    --AllPage True \
-    --PageNo 0 \
-    --PageSize 0
+    --ProjectId 1982493789748932 \
+    --AllPage False \
+    --PageNo 1982493789748932 \
+    --PageSize 1982493789748932
 ```
 
 Output: 
@@ -27,24 +27,24 @@ Output:
             "List": [
                 {
                     "UserId": "1101",
-                    "UserName": "zhangsn",
+                    "UserName": "zhangsan",
                     "CorpId": "1012",
-                    "Email": "242***@qq.com",
+                    "Email": "123***@qq.com",
                     "LastLogin": "2020-09-22T00:00:00+00:00",
                     "Status": 0,
                     "FirstModify": 0,
                     "PhoneNumber": "86212***21",
                     "AreaCode": "086",
-                    "CreatedUser": "zhangsna",
+                    "CreatedUser": "zhangsan",
                     "CreatedAt": "2020-09-22T00:00:00+00:00",
-                    "UpdatedUser": "zhangsn",
+                    "UpdatedUser": "zhangsan",
                     "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                    "GlobalUserName": "zhangsn",
+                    "GlobalUserName": "zhangsan",
                     "Mobile": "153****798",
                     "AppId": "101",
-                    "AppUserId": "zhangsn",
-                    "AppUserAliasName": "zhangsa",
-                    "AppUserName": "zjang",
+                    "AppUserId": "zhangsan",
+                    "AppUserAliasName": "zhangsan",
+                    "AppUserName": "zhangsan",
                     "InValidateAppRange": true
                 }
             ],
@@ -53,7 +53,7 @@ Output:
         },
         "Extra": "",
         "Msg": "成功",
-        "RequestId": "sddfsdf212ffdf-dsdas"
+        "RequestId": "RequestId-123"
     }
 }
 ```

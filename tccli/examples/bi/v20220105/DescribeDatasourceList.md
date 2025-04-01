@@ -6,7 +6,13 @@ Input:
 
 ```
 tccli bi DescribeDatasourceList --cli-unfold-argument  \
-    --ProjectId 2
+    --ProjectId 1982493789748932 \
+    --AllPage False \
+    --DbName DbName \
+    --PageNo 1982493789748932 \
+    --PageSize 1982493789748932 \
+    --Keyword Keyword \
+    --PermissionType 1982493789748932
 ```
 
 Output: 

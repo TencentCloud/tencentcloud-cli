@@ -292,7 +292,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribePushTasks\n&TaskId=1533031853231313311\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"PushLogs\": [\n            {\n                \"TaskId\": \"1533031853231313311\",\n                \"Url\": \"http://www.test.com/\",\n                \"Status\": \"Done\",\n                \"Percent\": 100,\n                \"CreateTime\": \"2018-07-30 18:10:53\",\n                \"Area\": \"mainland\"\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4d5a83f8-a61f-445b-8036-5636be640bef\",\n        \"PushLogs\": [\n            {\n                \"TaskId\": \"1533031853231313311\",\n                \"Url\": \"http://www.test.com/\",\n                \"Status\": \"Done\",\n                \"Percent\": 100,\n                \"CreateTime\": \"2018-07-30 18:10:53\",\n                \"UpdateTime\": \"2018-07-30 18:11:53\",\n                \"Area\": \"mainland\"\n            }\n        ],\n        \"TotalCount\": 20\n    }\n}",
         "title": "预热历史查询"
       }
     ],
