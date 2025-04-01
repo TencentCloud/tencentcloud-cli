@@ -6,31 +6,31 @@ Input:
 
 ```
 tccli mps CreateStreamLinkOutputInfo --cli-unfold-argument  \
-    --FlowId abc \
-    --Output.OutputName abc \
-    --Output.Protocol abc \
-    --Output.Description abc \
-    --Output.RTPSettings.IdleTimeout 1000 \
-    --Output.RTPSettings.FEC abc \
-    --Output.RTPSettings.Destinations.0.Ip abc \
-    --Output.RTPSettings.Destinations.0.Port 0 \
-    --Output.SRTSettings.Latency 1000 \
-    --Output.SRTSettings.PeerLatency 1000 \
+    --FlowId 019202e96d9f09dc0f325e7f7a2a \
+    --Output.OutputName output_name \
+    --Output.OutputType Internet \
+    --Output.Description description \
+    --Output.Protocol SRT \
+    --Output.OutputRegion ap-shanghai \
+    --Output.SRTSettings.Destinations.0.Ip 102.32.56.23 \
+    --Output.SRTSettings.Destinations.0.Port 22300 \
+    --Output.SRTSettings.StreamId  \
+    --Output.SRTSettings.Latency 0 \
+    --Output.SRTSettings.RecvLatency 0 \
+    --Output.SRTSettings.PeerLatency 0 \
+    --Output.SRTSettings.PeerIdleTimeout 0 \
+    --Output.SRTSettings.Passphrase  \
     --Output.SRTSettings.PbKeyLen 0 \
-    --Output.SRTSettings.RecvLatency 1000 \
-    --Output.SRTSettings.Passphrase abc \
-    --Output.SRTSettings.StreamId abc \
-    --Output.SRTSettings.PeerIdleTimeout 1000 \
-    --Output.SRTSettings.Destinations.0.Ip abc \
-    --Output.SRTSettings.Destinations.0.Port 10000 \
-    --Output.SRTSettings.Destinations.1.Ip abc \
-    --Output.SRTSettings.Destinations.1.Port 10000 \
-    --Output.RTMPSettings.ChunkSize 4096 \
-    --Output.RTMPSettings.Destinations.0.Url abc \
-    --Output.RTMPSettings.Destinations.0.StreamKey abc \
-    --Output.RTMPSettings.Destinations.1.Url abc \
-    --Output.RTMPSettings.Destinations.1.StreamKey abc \
-    --Output.OutputRegion abc
+    --Output.SRTSettings.Mode Caller \
+    --Output.RTPSettings.Destinations.0.Ip 102.32.56.23 \
+    --Output.RTPSettings.Destinations.0.Port 22300 \
+    --Output.RTPSettings.FEC off \
+    --Output.RTPSettings.IdleTimeout 0 \
+    --Output.RTMPSettings.ChunkSize 0 \
+    --Output.RTMPSettings.Destinations.0.Url rtmp://example.com/live \
+    --Output.RTMPSettings.Destinations.0.StreamKey live_test \
+    --Output.AllowIpList 0.0.0.0 \
+    --Output.MaxConcurrent 1
 ```
 
 Output: 
@@ -38,90 +38,87 @@ Output:
 {
     "Response": {
         "Info": {
-            "OutputId": "01746d03dd8c0956b92d34d30447",
-            "OutputName": "bbbbaaa",
+            "OutputId": "01937702c54509dc0f3269ca341f",
+            "OutputName": "output_name",
             "OutputType": "Internet",
             "Description": "description",
             "Protocol": "SRT",
             "OutputAddressList": [
                 {
-                    "Ip": "1.1.1.1"
-                },
-                {
-                    "Ip": "2.2.2.2"
+                    "Ip": "102.32.56.23"
                 }
             ],
-            "OutputRegion": "ap-mumbai",
+            "OutputRegion": "ap-shanghai",
             "SRTSettings": {
                 "Destinations": [
                     {
-                        "Ip": "1.1.1.1",
-                        "Port": 10000
-                    },
-                    {
-                        "Ip": "1.1.1.1",
-                        "Port": 10000
+                        "Ip": "102.32.56.23",
+                        "Port": 22300
                     }
                 ],
-                "StreamId": "#!::u=johnny,t=file,m=publish,r=results.csv",
-                "Latency": 1000,
-                "RecvLatency": 1000,
-                "PeerLatency": 1000,
-                "PeerIdleTimeout": 1000,
+                "StreamId": "",
+                "Latency": 0,
+                "RecvLatency": 0,
+                "PeerLatency": 0,
+                "PeerIdleTimeout": 0,
                 "Passphrase": "",
                 "PbKeyLen": 0,
-                "Mode": "abc",
+                "Mode": "Caller",
                 "SourceAddresses": [
                     {
-                        "Ip": "abc",
-                        "Port": 0
+                        "Ip": "102.32.56.23",
+                        "Port": 22300
                     }
                 ]
             },
-            "AllowIpList": [
-                "test"
-            ],
             "RTPSettings": {
-                "Destinations": [],
-                "FEC": "",
+                "Destinations": [
+                    {
+                        "Ip": "102.32.56.23",
+                        "Port": 22300
+                    }
+                ],
+                "FEC": "off",
                 "IdleTimeout": 0
             },
-            "RTSPPullSettings": {
-                "ServerUrls": [
+            "RTMPSettings": {
+                "IdleTimeout": 0,
+                "ChunkSize": 0,
+                "Destinations": [
                     {
-                        "Url": "test"
+                        "Url": "rtmp://example.com/live",
+                        "StreamKey": "live_test"
                     }
                 ]
             },
             "RTMPPullSettings": {
                 "ServerUrls": [
                     {
-                        "StreamKey": "test",
-                        "TcUrl": "test"
+                        "TcUrl": "rtmp://example.com/live",
+                        "StreamKey": "live_test"
                     }
                 ]
             },
-            "RTMPSettings": {
-                "Destinations": [],
-                "IdleTimeout": 0,
-                "ChunkSize": 0
+            "AllowIpList": [
+                "0.0.0.0"
+            ],
+            "RTSPPullSettings": {
+                "ServerUrls": [
+                    {
+                        "Url": "rtsp://example.com/live/test"
+                    }
+                ]
             },
             "HLSPullSettings": {
                 "ServerUrls": [
                     {
-                        "Url": "abc"
+                        "Url": "http://example.com/live/test.m3u8"
                     }
                 ]
             },
-            "MaxConcurrent": 1,
-            "SecurityGroupIds": [
-                "abc"
-            ],
-            "Zones": [
-                "abc"
-            ]
+            "MaxConcurrent": 1
         },
-        "RequestId": "aaaaa"
+        "RequestId": "01937702ecc509dc0f3269ca3420"
     }
 }
 ```

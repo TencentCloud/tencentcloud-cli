@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotexplorer DeleteCloudStorageEvent --cli-unfold-argument  \
-    --ProductId abc \
-    --DeviceName abc \
-    --EventId abc \
-    --StartTime 1 \
-    --EndTime 1 \
-    --UserId abc \
+    --ProductId fjdsklfj \
+    --DeviceName defjujiek \
+    --EventId eventddd \
+    --StartTime 1743475078 \
+    --EndTime 1743475099 \
+    --UserId dsfe \
     --ChannelId 1
 ```
 
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dsjflaiejfkjaewlifkejil"
     }
 }
 ```

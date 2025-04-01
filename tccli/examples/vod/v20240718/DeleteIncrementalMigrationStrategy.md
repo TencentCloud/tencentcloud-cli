@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DeleteIncrementalMigrationStrategy --cli-unfold-argument  \
-    --SubAppId 123456789 \
+    --SubAppId 1020304056 \
     --BucketId bucketid2 \
     --StrategyId im-123-demoid
 ```

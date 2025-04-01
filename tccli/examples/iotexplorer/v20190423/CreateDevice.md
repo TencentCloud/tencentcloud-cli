@@ -20,7 +20,7 @@ Output:
             "DevicePrivateKey": "",
             "DevicePsk": "dvFeQr1zhBS2CDyYlN31XA=="
         },
-        "RequestId": "fee15c53-91sac-488d-855d-c02d9f5f3d91"
+        "RequestId": "fee15c53-91sac-488d-855d-c02d9f5fd91"
     }
 }
 ```
@@ -80,7 +80,7 @@ Output:
             "DevicePrivateKey": "",
             "DevicePsk": "1231"
         },
-        "RequestId": "fee15c53-91sac-488d-855d-c02d9f5f3d91"
+        "RequestId": "fee15c53-91sac-488d-855d-c02d9f53d91"
     }
 }
 ```

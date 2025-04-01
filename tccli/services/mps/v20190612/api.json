@@ -780,7 +780,7 @@
     "ModifyStreamLinkFlow": {
       "document": "修改媒体传输的传输流配置信息。",
       "input": "ModifyStreamLinkFlowRequest",
-      "name": "修改媒体传输流",
+      "name": "修改媒体传输 Flow 信息",
       "output": "ModifyStreamLinkFlowResponse",
       "status": "online"
     },
@@ -7066,7 +7066,7 @@
         {
           "disabled": false,
           "document": "EventId。",
-          "example": "eventid",
+          "example": "0195179307c109dc0f32331b341f",
           "member": "string",
           "name": "EventId",
           "required": true,
@@ -7075,7 +7075,7 @@
         {
           "disabled": false,
           "document": "Event关联的流Id数组，如果不传默认删除Event下面的所有媒体传输流。",
-          "example": "[\"aaa\"]",
+          "example": "[\"01941bb7827509dc0f320a9d3426\"]",
           "member": "string",
           "name": "FlowIds",
           "required": false,
@@ -9446,7 +9446,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。",
+          "document": "输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -14877,7 +14877,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "aaa",
+          "example": "0193d38d0a4f09dc0f326fd4342c",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -14895,7 +14895,7 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14986,7 +14986,7 @@
           "example": "无",
           "member": "FlowSRTInfo",
           "name": "Infos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23827,7 +23827,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "无",
+          "example": "01937702ecc509dc0f3269ca3420",
           "member": "string",
           "name": "FlowId",
           "required": true,

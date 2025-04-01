@@ -27,7 +27,7 @@ Output:
                 "SendPacketDropNumber": 0,
                 "RecvPacketDropNumber": 0,
                 "RTT": 17,
-                "SessionId": "xx",
+                "SessionId": "125489",
                 "SendPacketLossRate": 0,
                 "RecvRetransmissionRate": 0
             }

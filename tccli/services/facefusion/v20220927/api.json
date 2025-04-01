@@ -52,7 +52,7 @@
         },
         {
           "disabled": false,
-          "document": "每次拉取条数",
+          "document": "每次拉取条数。\n每次拉取素材最多可支持拉取20条素材信息，如果需要拉取全部素材信息，可以分多次请求拉取全部素材信息。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -77,7 +77,7 @@
         {
           "disabled": false,
           "document": "素材列表数据",
-          "example": "[{\"CreateTime\":\"2022-11-29 18:46:34\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1597542526641664000_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1597542526641664000\",\"MaterialName\":\"test1.png\",\"MaterialStatus\":0,\"UpdateTime\":\"2022-11-29 18:46:34\"},{\"CreateTime\":\"2022-12-15 14:19:51\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1603273612711829504_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1603273612711829504\",\"MaterialName\":\"test2.png\",\"MaterialStatus\":0,\"UpdateTime\":\"2022-12-15 14:19:51\"},{\"CreateTime\":\"2022-11-10 10:28:10\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1590531733435097088_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1590531733435097088\",\"MaterialName\":\"test3.png\",\"MaterialStatus\":1,\"UpdateTime\":\"2022-12-07 17:10:54\"},{\"CreateTime\":\"2022-12-07 16:13:41\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1600403157392855040_1\",\"FaceInfo\":{\"Height\":236,\"Width\":177,\"X\":186,\"Y\":95}}],\"MaterialId\":\"mt_1600403157392855040\",\"MaterialName\":\"test4.png\",\"MaterialStatus\":3,\"UpdateTime\":\"2022-12-07 16:13:52\"},{\"CreateTime\":\"2022-12-15 14:20:21\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1603273738050215936_1\",\"FaceInfo\":{\"Height\":129,\"Width\":119,\"X\":215,\"Y\":69}}],\"MaterialId\":\"mt_1603273738050215936\",\"MaterialName\":\"test5.jpg\",\"MaterialStatus\":3,\"UpdateTime\":\"2022-12-15 14:25:28\"}]",
+          "example": "[{\"CreateTime\":\"2022-11-29 18:46:34\",\"MaterialFaceList\":[{\"FaceId\":\"mt_1597542526641664000_1\",\"FaceInfo\":{\"Height\":167,\"Width\":128,\"X\":221,\"Y\":125}}],\"MaterialId\":\"mt_1597542526641664000\",\"MaterialName\":\"test1.png\",\"MaterialStatus\":0,\"UpdateTime\":\"\"}]",
           "member": "PublicMaterialInfos",
           "name": "MaterialInfos",
           "output_required": true,

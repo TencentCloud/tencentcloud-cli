@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeStorage --cli-unfold-argument  \
-    --SubAppId 1234567890 \
+    --SubAppId 1020304056 \
     --SortBy.Field CreateTime \
     --SortBy.Order Desc \
     --Offset 0 \
@@ -49,7 +49,7 @@ Input:
 
 ```
 tccli vod DescribeStorage --cli-unfold-argument  \
-    --SubAppId 1234567890 \
+    --SubAppId 1020304056 \
     --Filters.0.Name BucketId \
     --Filters.0.Values bucketId123demo
 ```

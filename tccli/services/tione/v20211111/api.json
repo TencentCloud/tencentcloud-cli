@@ -9004,7 +9004,7 @@
         {
           "disabled": false,
           "document": "主账号",
-          "example": "555555",
+          "example": "999555555",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -9034,7 +9034,7 @@
         {
           "disabled": false,
           "document": "服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "Service",
           "name": "Services",
           "output_required": true,
@@ -9054,7 +9054,7 @@
         {
           "disabled": false,
           "document": "服务组标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -9130,6 +9130,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务组的subuin",
+          "example": "999555555",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务组的app_id",
+          "example": "73598888",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9372,11 +9392,11 @@
           "disabled": false,
           "document": "定时停止的配置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "string",
+          "member": "ScheduledAction",
           "name": "ScheduledAction",
           "output_required": false,
           "required": false,
-          "type": "string",
+          "type": "object",
           "value_allowed_null": true
         },
         {

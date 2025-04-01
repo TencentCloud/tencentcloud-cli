@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotexplorer DescribeDevicePackages --cli-unfold-argument  \
-    --ProductId abc \
-    --DeviceName abc \
-    --CSUserId sdfsdf \
+    --ProductId fdsfsdfe \
+    --DeviceName rrfdsef \
+    --CSUserId sfesd \
     --Limit 1 \
     --Offset 1
 ```
@@ -30,7 +30,7 @@ Output:
                 "UpdatedAt": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "dsffwesrffsdf"
     }
 }
 ```

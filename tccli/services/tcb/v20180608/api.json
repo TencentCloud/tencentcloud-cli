@@ -9400,7 +9400,7 @@
           "example": "lotestapi100004",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -10976,6 +10976,16 @@
           "name": "AccessDomain",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签键值对",
+          "example": "[{'Key': 'key', 'Value': 'value'}]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

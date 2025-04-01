@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeIncrementalMigrationStrategyInfos --cli-unfold-argument  \
-    --SubAppId 123456789 \
+    --SubAppId 1020304056 \
     --SortBy.Field UpdateTime \
     --SortBy.Order Asc \
     --Offset 0 \
@@ -25,7 +25,7 @@ Output:
                     "Mode": "ASYNC",
                     "OriginCondition": {
                         "HttpStatusCode": 404,
-                        "Prefix": "test/"
+                        "Prefix": "prefix/"
                     },
                     "OriginInfo": {
                         "EndpointInfo": {
@@ -65,7 +65,7 @@ Output:
                 },
                 "OriginType": "HTTP",
                 "StrategyId": "im-123-demoid",
-                "StrategyName": "demo1",
+                "StrategyName": "my-strategy-1",
                 "SubAppId": 123456789
             },
             {
@@ -98,7 +98,7 @@ Output:
                 },
                 "OriginType": "HTTP",
                 "StrategyId": "im-123-demoid2",
-                "StrategyName": "demo2",
+                "StrategyName": "my-strategy-2",
                 "SubAppId": 123456789
             }
         ],
@@ -115,7 +115,7 @@ Input:
 
 ```
 tccli vod DescribeIncrementalMigrationStrategyInfos --cli-unfold-argument  \
-    --SubAppId 123456789 \
+    --SubAppId 1020304056 \
     --Filters.0.Name BucketId \
     --Filters.0.Values bucketid2 \
     --SortBy.Field UpdateTime \
@@ -160,7 +160,7 @@ Output:
                 },
                 "OriginType": "HTTP",
                 "StrategyId": "im-123-demoid2",
-                "StrategyName": "demo2",
+                "StrategyName": "my-strategy-2",
                 "SubAppId": 123456789
             }
         ],

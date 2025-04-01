@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli sqlserver RestartDBInstance --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl
+    --InstanceId mssql-njj2mtpl \
+    --WaitSwitch 1
 ```
 
 Output: 

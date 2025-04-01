@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DescribeStreamLinkFlow --cli-unfold-argument  \
-    --FlowId aaa
+    --FlowId 0193d38d0a4f09dc0f326fd4342c
 ```
 
 Output: 
@@ -14,115 +14,166 @@ Output:
 {
     "Response": {
         "Info": {
-            "FlowName": "sacdsad",
+            "FlowId": "0193d38d4e5d09dc0f326fd4342d",
+            "State": "IDLE",
+            "FlowName": "flow_name",
+            "Region": "ap-shanghai",
+            "EventId": "0194407416cf09dc0f321631343d",
             "InputGroup": [
                 {
-                    "AllowIpList": [
-                        "0.0.0.0/0"
-                    ],
-                    "FailOver": "test",
-                    "Protocol": "SRT",
+                    "InputId": "019202e96d9f09dc0f325e7f7a2a",
+                    "InputName": "input_name",
                     "Description": "description",
-                    "RTPSettings": {
-                        "IdleTimeout": 1000,
-                        "FEC": "none"
-                    },
-                    "InputName": "sadsa",
-                    "SRTSettings": {
-                        "Latency": 1000,
-                        "PeerLatency": 1000,
-                        "PbKeyLen": 1000,
-                        "RecvLatency": 1000,
-                        "Passphrase": "aaaa",
-                        "StreamId": "",
-                        "PeerIdleTimeout": 1000
-                    },
-                    "RTSPPullSettings": {},
-                    "RTMPPullSettings": {},
-                    "RTMPSettings": {
-                        "StreamKey": "stream?a=b",
-                        "AppName": "live"
-                    },
-                    "InputRegion": "ap-hongkong",
-                    "InputId": "id",
+                    "Protocol": "SRT",
                     "InputAddressList": [
                         {
-                            "Ip": "2.2.2.2",
-                            "Port": 2
-                        }
-                    ]
-                }
-            ],
-            "FlowId": "",
-            "State": "IDLE",
-            "OutputGroup": [
-                {
-                    "OutputName": "sad231edqsq",
-                    "OutputAddressList": [
-                        {
-                            "Ip": "1.1.1.1"
+                            "Ip": "102.102.2.3",
+                            "Port": 23600
                         }
                     ],
-                    "Protocol": "RTP",
-                    "Description": "description",
-                    "RTPSettings": {
-                        "IdleTimeout": 1000,
-                        "FEC": "none",
-                        "Destinations": [
+                    "AllowIpList": [
+                        "0.0.0.0"
+                    ],
+                    "SRTSettings": {
+                        "Mode": "Listener",
+                        "StreamId": "",
+                        "Latency": 0,
+                        "RecvLatency": 0,
+                        "PeerLatency": 0,
+                        "PeerIdleTimeout": 0,
+                        "Passphrase": "",
+                        "PbKeyLen": 0,
+                        "SourceAddresses": [
                             {
-                                "Ip": "3.3.3.3",
-                                "Port": 3
+                                "Ip": "120.120.23.32",
+                                "Port": 23600
                             }
                         ]
                     },
-                    "OutputType": "Internet",
-                    "RTSPPullSettings": {
-                        "ServerUrls": [
+                    "RTPSettings": {
+                        "FEC": "off",
+                        "IdleTimeout": 0
+                    },
+                    "InputRegion": "ap-shanghai",
+                    "RTMPSettings": {
+                        "AppName": "live",
+                        "StreamKey": "live"
+                    },
+                    "FailOver": "off",
+                    "RTMPPullSettings": {
+                        "SourceAddresses": [
                             {
-                                "Url": "test"
+                                "TcUrl": "rtmp://example.com/live",
+                                "StreamKey": "test_live"
+                            }
+                        ]
+                    },
+                    "RTSPPullSettings": {
+                        "SourceAddresses": [
+                            {
+                                "Url": "rtsp://example.com/live/test"
+                            }
+                        ]
+                    },
+                    "HLSPullSettings": {
+                        "SourceAddresses": [
+                            {
+                                "Url": "http://example.com/live/test.m3u8"
+                            }
+                        ]
+                    },
+                    "ResilientStream": {
+                        "Enable": true,
+                        "BufferTime": 1
+                    }
+                }
+            ],
+            "OutputGroup": [
+                {
+                    "OutputId": "01937702c54509dc0f3269ca341f",
+                    "OutputName": "output_name",
+                    "OutputType": "Internet",
+                    "Description": "description",
+                    "Protocol": "SRT",
+                    "OutputAddressList": [
+                        {
+                            "Ip": "102.32.56.23"
+                        }
+                    ],
+                    "OutputRegion": "ap-shanghai",
+                    "SRTSettings": {
+                        "Destinations": [
+                            {
+                                "Ip": "102.32.56.23",
+                                "Port": 22300
+                            }
+                        ],
+                        "StreamId": "",
+                        "Latency": 0,
+                        "RecvLatency": 0,
+                        "PeerLatency": 0,
+                        "PeerIdleTimeout": 0,
+                        "Passphrase": "",
+                        "PbKeyLen": 0,
+                        "Mode": "Caller",
+                        "SourceAddresses": [
+                            {
+                                "Ip": "102.32.56.23",
+                                "Port": 22300
+                            }
+                        ]
+                    },
+                    "RTPSettings": {
+                        "Destinations": [
+                            {
+                                "Ip": "102.32.56.23",
+                                "Port": 22300
+                            }
+                        ],
+                        "FEC": "off",
+                        "IdleTimeout": 0
+                    },
+                    "RTMPSettings": {
+                        "IdleTimeout": 0,
+                        "ChunkSize": 0,
+                        "Destinations": [
+                            {
+                                "Url": "rtmp://example.com/live",
+                                "StreamKey": "live_test"
                             }
                         ]
                     },
                     "RTMPPullSettings": {
                         "ServerUrls": [
                             {
-                                "StreamKey": "test",
-                                "TcUrl": "test"
+                                "TcUrl": "rtmp://example.com/live",
+                                "StreamKey": "live_test"
                             }
                         ]
                     },
-                    "SRTSettings": {
-                        "Latency": 1000,
-                        "PeerLatency": 1000,
-                        "PbKeyLen": 1000,
-                        "RecvLatency": 1000,
-                        "Passphrase": "aaaa",
-                        "StreamId": "aaaa",
-                        "PeerIdleTimeout": 1000,
-                        "Destinations": [
+                    "AllowIpList": [
+                        "0.0.0.0"
+                    ],
+                    "RTSPPullSettings": {
+                        "ServerUrls": [
                             {
-                                "Ip": "4.4.4.4",
-                                "Port": 4
+                                "Url": "rtsp://example.com/live/test"
                             }
                         ]
                     },
-                    "OutputId": "asd21dsa",
-                    "RTMPSettings": {
-                        "IdleTimeout": 1000,
-                        "ChunkSize": 4096,
-                        "Destinations": [
+                    "HLSPullSettings": {
+                        "ServerUrls": [
                             {
-                                "Url": "rtmp://domain/live",
-                                "StreamKey": "streamid?a=b"
+                                "Url": "http://example.com/live/test.m3u8"
                             }
                         ]
                     },
-                    "OutputRegion": "ap-mumbai"
+                    "MaxConcurrent": 1
                 }
             ],
             "MaxBandwidth": 10000000
         },
-        "RequestId": "fsaasd"
+        "RequestId": "0194407416cf09dc0f321631343d"
     }
 }
 ```

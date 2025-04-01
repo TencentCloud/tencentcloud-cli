@@ -9,7 +9,7 @@ tccli iotexplorer GetStudioProductList --cli-unfold-argument  \
     --ProjectId prj-zunfat46 \
     --DevStatus dev \
     --Limit 0 \
-    --Offset 0
+    --Offset 10
 ```
 
 Output: 
@@ -25,7 +25,7 @@ Output:
                 "EncryptionType": "2",
                 "NetType": "else",
                 "DataProtocol": 1,
-                "ProductDesc": "desc",
+                "ProductDesc": "这是一个测试产品",
                 "ProjectId": "prj-zunfat46",
                 "DevStatus": "dev",
                 "CreateTime": 1560341825,
@@ -35,7 +35,7 @@ Output:
                 "EnableProductScript": "e",
                 "BindStrategy": 0,
                 "CreateUserId": 100034,
-                "CreatorNickName": "-"
+                "CreatorNickName": "leo"
             }
         ],
         "RequestId": "55e612b3-ed75-44fe-b141-1c1a35d9a0da",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateStorage --cli-unfold-argument  \
-    --SubAppId 1234567890 \
+    --SubAppId 1020304056 \
     --StorageRegion ap-chongqing \
     --StorageName my-storage
 ```

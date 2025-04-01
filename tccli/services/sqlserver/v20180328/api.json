@@ -16502,6 +16502,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重启设置，0-立刻重启，1-维护时间窗口内重启，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "WaitSwitch",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

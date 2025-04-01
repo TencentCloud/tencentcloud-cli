@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli bi DescribeProjectInfo --cli-unfold-argument  \
-    --Id 43
+    --Id 1982493789748932 \
+    --DefaultPanelType 1982493789748932
 ```
 
 Output: 
@@ -27,18 +28,18 @@ Output:
             "Logo": "https://cloud.tencetn****/logo.png",
             "Name": "测试项目",
             "ColorCode": "#fff",
-            "CreatedUser": "zhangsna",
+            "CreatedUser": "zhangsan",
             "CreatedAt": "zhangsan",
             "MemberCount": 0,
             "PageCount": 0,
-            "LastModifyName": "zhangsna",
+            "LastModifyName": "zhangsan",
             "Source": "sas",
             "Apply": true,
-            "UpdatedUser": "zhangsna",
-            "UpdatedAt": "zhangsna",
+            "UpdatedUser": "zhangsan",
+            "UpdatedAt": "zhangsan",
             "CorpId": "1010",
-            "Mark": "beiz",
-            "Seed": "safd",
+            "Mark": "Mark",
+            "Seed": "Seed",
             "AuthList": [
                 "110101"
             ],
@@ -58,7 +59,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "sasfsfd21dssfasdsf-fdsdad"
+        "RequestId": "RequestId-123"
     }
 }
 ```

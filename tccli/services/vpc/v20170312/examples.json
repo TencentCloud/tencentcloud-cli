@@ -1732,6 +1732,14 @@
         "title": "查NAT网关路由信息"
       }
     ],
+    "DescribeNatGatewayFlowMonitorDetail": [
+      {
+        "document": "查询一个标准型NAT网关流量监控明细",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeNatGatewayFlowMonitorDetail\n&TimePoint=2021-12-10T09:02:01+08:00\n&NatGatewayId=nat-lz6rjk7n\n&OrderField=OutTraffic\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"NatGatewayFlowMonitorDetailSet\": [\n            {\n                \"OutTraffic\": 15925824,\n                \"PrivateIpAddress\": \"2.2.2.188\",\n                \"InPkg\": 71466,\n                \"OutPkg\": 57276,\n                \"InTraffic\": 13526553,\n                \"ConcurrentConnectionCount\": 999,\n                \"NewConnectionRate\": 888\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d9b0cd80-3b86-4e03-8fc9-bc7de311bc73\"\n    }\n}",
+        "title": "查询一个标准型NAT网关流量监控明细"
+      }
+    ],
     "DescribeNatGatewaySourceIpTranslationNatRules": [
       {
         "document": "用Filter数组拉取NAT网关的SNAT转发规则",

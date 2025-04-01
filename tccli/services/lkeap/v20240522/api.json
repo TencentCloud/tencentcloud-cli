@@ -665,7 +665,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`、`BMP`、`GIF`、`WEBP`、`HEIC`、`EPS`、`ICNS`、`IM`、`PCX`、`PPM`、`TIFF`、`XBM`、`HEIF`、`JP2`\n\n**支持的文件大小：**\n - `PDF` 最大500M\n - `DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
+          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`、`BMP`、`GIF`、`WEBP`、`HEIC`、`EPS`、`ICNS`、`IM`、`PCX`、`PPM`、`TIFF`、`XBM`、`HEIF`、`JP2`\n\n**支持的文件大小：**\n - `PDF` 最大300M\n - `DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -2055,7 +2055,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n**支持的文件类型**：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n**支持的文件大小**：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT 支持10M\n- 其他支持20M\n",
+          "document": "文件类型。\n**支持的文件类型**：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n**支持的文件大小**：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M\n",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -2155,7 +2155,7 @@
         },
         {
           "disabled": false,
-          "document": "文档解析结果URL。存储在腾讯云cos，可以通过http请求下载，URL十分钟内有效。",
+          "document": "文档解析结果的临时下载地址。\n文件类型为zip压缩包，下载链接有效期30分钟。\n压缩包内包含*.md、*.json以及images文件夹。\n",
           "example": "无",
           "member": "string",
           "name": "DocumentRecognizeResultUrl",

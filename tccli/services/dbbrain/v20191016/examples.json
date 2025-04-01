@@ -134,6 +134,14 @@
         "title": "获取邮件配置"
       }
     ],
+    "DescribeMySqlProcessList": [
+      {
+        "document": "查询实时线程列表。",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeMySqlProcessList\n&Product=mysql\n&InstanceId=cdb-test\n&User=root\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"24665720-8c93-11eb-bee6-e98cea0e6794\",\n        \"ProcessList\": [\n            {\n                \"Host\": \"127.0.0.1:42036\",\n                \"State\": \"\",\n                \"Command\": \"Sleep\",\n                \"Time\": \"1179\",\n                \"ID\": \"171588317\",\n                \"User\": \"root\",\n                \"Info\": \"\",\n                \"DB\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "查询实时线程列表。"
+      }
+    ],
     "DescribeSecurityAuditLogDownloadUrls": [
       {
         "document": "查询安全审计日志导出文件下载链接。",

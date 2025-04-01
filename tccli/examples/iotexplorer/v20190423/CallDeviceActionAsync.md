@@ -18,7 +18,7 @@ Output:
     "Response": {
         "ClientToken": "45016a4535374abcb05e25790b916dc3",
         "RequestId": "235fe48b-0c31-4a7c-aaf6-83ba3e9b4bcf",
-        "Status": "xx"
+        "Status": "suc"
     }
 }
 ```

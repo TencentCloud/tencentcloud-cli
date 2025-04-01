@@ -1,4 +1,4 @@
-**Example 1: ListEventHistory**
+**Example 1: ListEventHistory示例**
 
 用于查询设备上报的所有类型历史事件信息
 

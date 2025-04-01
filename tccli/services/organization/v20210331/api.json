@@ -2454,6 +2454,15 @@
           "name": "ZoneId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间（秒），最小1小时，最大99年。如果不传则默认一年过期",
+          "example": "3600",
+          "member": "uint64",
+          "name": "ExpireDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

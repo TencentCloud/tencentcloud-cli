@@ -384,6 +384,14 @@
         "title": "获取 Redis 实例 Proxy 实时会话详情列表"
       }
     ],
+    "DescribeRedisSlowLogTopSqls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRedisSlowLogTopSqls\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-k1gjspdk\",\n    \"StartTime\": \"2025-03-27 02:00:00\",\n    \"EndTime\": \"2025-03-27 02:20:00\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"65f3eaaf-935c-4084-8eb5-0c04fbbda952\",\n        \"Rows\": [\n            {\n                \"Cmd\": \"bgsave\",\n                \"Detail\": \"bgsave\",\n                \"ExecTimes\": 1,\n                \"QueryTime\": 0.01,\n                \"QueryTimeAvg\": 0.01,\n                \"QueryTimeMax\": 0.01,\n                \"QueryTimeMin\": 0.01,\n                \"QueryTimeRatio\": 100\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取redis慢SQL模板列表"
+      }
+    ],
     "DescribeRedisTopBigKeys": [
       {
         "document": "",
@@ -422,6 +430,14 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSecurityAuditLogExportTasks\n&SecAuditGroupId=sag-01z37k3f\n&Product=mysql\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"Status\": \"finished\",\n                \"LogStartTime\": \"2021-01-21 00:00:00\",\n                \"Progress\": 100,\n                \"AsyncRequestId\": 1,\n                \"DangerLevels\": [\n                    1,\n                    2,\n                    3\n                ],\n                \"EndTime\": \"2021-01-22 08:39:22\",\n                \"CreateTime\": \"2021-01-22 08:39:21\",\n                \"StartTime\": \"2021-01-22 08:39:22\",\n                \"LogEndTime\": \"2021-01-21 23:59:59\",\n                \"TotalSize\": 1\n            }\n        ],\n        \"RequestId\": \"5fdab910-5c9e-11eb-a610-8717ee1b1000\"\n    }\n}",
         "title": "查询安全审计日志导出任务列表"
+      }
+    ],
+    "DescribeSlowLogQueryTimeStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLogQueryTimeStats\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-k1gjspdk\",\n    \"StartTime\": \"2025-03-27 02:00:00\",\n    \"EndTime\": \"2025-03-27 02:20:00\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Count\": 0,\n                \"Ratio\": 0,\n                \"To\": 0.001\n            },\n            {\n                \"Count\": 0,\n                \"From\": 0.001,\n                \"Ratio\": 0,\n                \"To\": 0.01\n            },\n            {\n                \"Count\": 1,\n                \"From\": 0.01,\n                \"Ratio\": 100,\n                \"To\": 0.1\n            },\n            {\n                \"Count\": 0,\n                \"From\": 0.1,\n                \"Ratio\": 0,\n                \"To\": 0.5\n            },\n            {\n                \"Count\": 0,\n                \"From\": 0.5,\n                \"Ratio\": 0,\n                \"To\": 1\n            },\n            {\n                \"Count\": 0,\n                \"From\": 1,\n                \"Ratio\": 0,\n                \"To\": 5\n            },\n            {\n                \"Count\": 0,\n                \"From\": 5,\n                \"Ratio\": 0,\n                \"To\": 10\n            },\n            {\n                \"Count\": 0,\n                \"From\": 10,\n                \"Ratio\": 0,\n                \"To\": 15\n            },\n            {\n                \"Count\": 0,\n                \"From\": 15,\n                \"Ratio\": 0\n            }\n        ],\n        \"RequestId\": \"1ff0b4cf-f59a-440b-a47d-0f3e27eaa172\",\n        \"TotalCount\": 9\n    }\n}",
+        "title": "获取慢日志分段耗时统计"
       }
     ],
     "DescribeSlowLogTimeSeriesStats": [

@@ -1,4 +1,4 @@
-**Example 1: 获取未绑定的设备列表**
+**Example 1: 获取未绑定的设备列表示例**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DescribeUnbindedDevices --cli-unfold-argument  \
-    --ProductId 12345ABCDE \
+    --ProductId T58G9HFE \
     --Offset 0 \
     --Limit 10
 ```
@@ -19,7 +19,7 @@ Output:
         "Total": 1,
         "UnbindedDevices": [
             {
-                "ProductId": "12345ABCDE",
+                "ProductId": "T58G9HFE",
                 "DeviceName": "subdev4"
             }
         ]

@@ -63,7 +63,7 @@
         {
           "disabled": false,
           "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
-          "example": "123456789",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -191,7 +191,7 @@
         {
           "disabled": false,
           "document": "<b>点播专业版[应用](/document/product/266/14574) ID。</b>",
-          "example": "1234567890",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -292,7 +292,7 @@
         {
           "disabled": false,
           "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
-          "example": "123456789",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -337,7 +337,7 @@
         {
           "disabled": false,
           "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
-          "example": "123456789",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -420,7 +420,7 @@
         {
           "disabled": false,
           "document": "<b>点播专业版[应用](/document/product/266/14574) ID。</b>",
-          "example": "123456789",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -899,7 +899,7 @@
         {
           "disabled": false,
           "document": "<b>策略生效的点播专业版[应用](/document/product/266/14574) ID。</b>",
-          "example": "123456789",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "output_required": false,
@@ -928,13 +928,13 @@
         },
         {
           "disabled": false,
-          "document": "回源源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回源源站配置。",
           "example": "无",
           "member": "IncrementalMigrationHttpOriginConfig",
           "name": "HttpOriginConfig",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -945,7 +945,7 @@
         {
           "disabled": false,
           "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
-          "example": "123456789",
+          "example": "1020304056",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,

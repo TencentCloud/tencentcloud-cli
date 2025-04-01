@@ -1316,6 +1316,13 @@
       "output": "DescribeNatGatewayDirectConnectGatewayRouteResponse",
       "status": "online"
     },
+    "DescribeNatGatewayFlowMonitorDetail": {
+      "document": "本接口（DescribeNatGatewayFlowMonitorDetail）用于查询NAT网关流量监控明细。\n\n- 只支持单个网关实例查询。即入参 `NatGatewayId` 最多只支持传一个，且必须传一个。\n- 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。",
+      "input": "DescribeNatGatewayFlowMonitorDetailRequest",
+      "name": "查询nat网关流控明细",
+      "output": "DescribeNatGatewayFlowMonitorDetailResponse",
+      "status": "online"
+    },
     "DescribeNatGatewaySourceIpTranslationNatRules": {
       "document": "本接口（DescribeNatGatewaySourceIpTranslationNatRules）用于查询NAT网关SNAT转发规则对象数组。",
       "input": "DescribeNatGatewaySourceIpTranslationNatRulesRequest",
@@ -17066,6 +17073,98 @@
       ],
       "type": "object"
     },
+    "DescribeNatGatewayFlowMonitorDetailRequest": {
+      "document": "DescribeNatGatewayFlowMonitorDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间点。表示要查询的时刻。聚合粒度为60、300时，会查询最近一个整分钟开始的聚合周期；聚合粒度为3600时，会查询最近一个整点开始的聚合周期；聚合粒度为86400时，会查询最近一个整天开始的聚合周期。形如：`2019-03-24T10:51:23+08:00`。",
+          "example": "2019-03-24T10:51:23+08:00",
+          "member": "datetime_iso",
+          "name": "TimePoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "NAT网关的ID，形如：`nat-ig8xpno8`。",
+          "example": "nat-ig8xpno8",
+          "member": "string",
+          "name": "NatGatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "展示排序靠前的数据。默认值：10，表示默认展示排序前 10 的数据。最大值：100。",
+          "example": "10",
+          "member": "int64",
+          "name": "TopN",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。支持：入包量`InPkg`、出包量`OutPkg`、入流量`InTraffic`、出流量`OutTraffic`，标准型nat额外支持 并发连接数`ConcurrentConnectionCount` 、新建连接速率`NewConnectionRate`。默认值`OutTraffic`。",
+          "example": "InTraffic",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "聚合时间粒度。支持：60、300、3600、86400，即按照1分钟、5分钟、1小时、1天进行聚合查询。",
+          "example": "60",
+          "member": "int64",
+          "name": "AggregationTimeRange",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询全部指标。默认值：True，表示查询全部指标。",
+          "example": "True",
+          "member": "bool",
+          "name": "AllMetricMode",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatGatewayFlowMonitorDetailResponse": {
+      "document": "DescribeNatGatewayFlowMonitorDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的对象数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关流量监控明细。",
+          "example": "无",
+          "member": "NatGatewayFlowMonitorDetail",
+          "name": "NatGatewayFlowMonitorDetailSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNatGatewaySourceIpTranslationNatRulesRequest": {
       "document": "DescribeNatGatewaySourceIpTranslationNatRules请求参数结构体",
       "members": [
@@ -29765,6 +29864,82 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NatGatewayFlowMonitorDetail": {
+      "document": "nat网关流量监控明细。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源`IP`。",
+          "example": "192.168.1.21",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入包量。",
+          "example": "1400",
+          "member": "uint64",
+          "name": "InPkg",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出包量。",
+          "example": "1527",
+          "member": "uint64",
+          "name": "OutPkg",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入流量，单位：`Byte`。",
+          "example": "32876",
+          "member": "uint64",
+          "name": "InTraffic",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出流量，单位：`Byte`。",
+          "example": "65428",
+          "member": "uint64",
+          "name": "OutTraffic",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "并发连接数。仅标准型nat支持此参数。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "ConcurrentConnectionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新建连接速率。仅标准型nat支持此参数。",
+          "example": "100",
+          "member": "uint64",
+          "name": "NewConnectionRate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

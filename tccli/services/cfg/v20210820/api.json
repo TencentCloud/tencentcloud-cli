@@ -1611,7 +1611,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123",
+          "example": "5432",
           "member": "int64",
           "name": "TaskId",
           "required": true,
@@ -2045,9 +2045,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "test",
+          "example": "资源归属",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2055,9 +2056,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "mytest",
+          "example": "研发组",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

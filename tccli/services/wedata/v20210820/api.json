@@ -35428,7 +35428,7 @@
         {
           "disabled": false,
           "document": "用户角色对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "SystemRole",
           "name": "Roles",
           "output_required": true,
@@ -35533,6 +35533,16 @@
           "name": "AppId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否项目负责人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsProjectOwner",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

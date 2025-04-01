@@ -190,7 +190,7 @@
       "status": "online"
     },
     "DescribeImageConfig": {
-      "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 ",
+      "document": "DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。",
       "input": "DescribeImageConfigRequest",
       "name": "获取图片优化的配置",
       "output": "DescribeImageConfigResponse",
@@ -603,7 +603,7 @@
         {
           "disabled": false,
           "document": "返回状态码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "403",
           "member": "int64",
           "name": "ReturnCode",
           "output_required": true,
@@ -1309,7 +1309,7 @@
         {
           "disabled": false,
           "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。",
-          "example": "无",
+          "example": "SK-EXAMPLE",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
@@ -1320,7 +1320,7 @@
         {
           "disabled": false,
           "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "无",
+          "example": "h",
           "member": "string",
           "name": "SignParam",
           "output_required": true,
@@ -1331,7 +1331,7 @@
         {
           "disabled": false,
           "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "无",
+          "example": "e",
           "member": "string",
           "name": "TimeParam",
           "output_required": true,
@@ -1342,7 +1342,7 @@
         {
           "disabled": false,
           "document": "过期时间，单位秒。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ExpireTime",
           "output_required": true,
@@ -1353,7 +1353,7 @@
         {
           "disabled": false,
           "document": "是否必须提供过期时间参数。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ExpireTimeRequired",
           "output_required": true,
@@ -1364,7 +1364,7 @@
         {
           "disabled": false,
           "document": "URL 组成格式，如：${private_key}${schema}${host}${full_uri}。",
-          "example": "无",
+          "example": "${private_key}${schema}${host}${full_uri}",
           "member": "string",
           "name": "Format",
           "output_required": true,
@@ -1375,7 +1375,7 @@
         {
           "disabled": false,
           "document": "时间格式，dec，hex分别表示十进制，十六进制。",
-          "example": "无",
+          "example": "dec",
           "member": "string",
           "name": "TimeFormat",
           "output_required": true,
@@ -1386,7 +1386,7 @@
         {
           "disabled": false,
           "document": "鉴权失败时返回的状态码。",
-          "example": "无",
+          "example": "403",
           "member": "int64",
           "name": "FailCode",
           "output_required": true,
@@ -1397,7 +1397,7 @@
         {
           "disabled": false,
           "document": "链接过期时返回的状态码。",
-          "example": "无",
+          "example": "403",
           "member": "int64",
           "name": "ExpireCode",
           "output_required": true,
@@ -1408,7 +1408,7 @@
         {
           "disabled": false,
           "document": "需要鉴权的url路径列表。",
-          "example": "无",
+          "example": "/data",
           "member": "string",
           "name": "RulePaths",
           "output_required": true,
@@ -1419,7 +1419,7 @@
         {
           "disabled": false,
           "document": "保留字段。",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "Transformation",
           "output_required": true,
@@ -2072,14 +2072,15 @@
       "usage": "both"
     },
     "AuthenticationTypeA": {
-      "document": "时间戳防盗链模式 A 配置\n时间戳防盗链模式 A 的访问 URL 格式为：http://DomainName/Filename?sign=timestamp-rand-uid-md5hash\n其中 timestamp 为十进制 UNIX 时间戳；\nrand 为随机字符串，0 ~ 100 位大小写字母与数字组成；\nuid 为 0；\nmd5hash：MD5（文件路径-timestamp-rand-uid-自定义密钥）\n",
+      "document": "时间戳防盗链模式 A 配置\n时间戳防盗链模式 A 的访问 URL 格式为：http://DomainName/Filename?sign=timestamp-rand-uid-md5hash\n其中 timestamp 为十进制 UNIX 时间戳；\nrand 为随机字符串，0 ~ 100 位大小写字母与数字组成；\nuid 为 0；\nmd5hash：MD5（文件路径-timestamp-rand-uid-自定义密钥）",
       "members": [
         {
           "disabled": false,
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-secretkey",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2087,9 +2088,10 @@
         {
           "disabled": false,
           "document": "签名参数名设置\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头",
-          "example": "-",
+          "example": "s",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2097,9 +2099,10 @@
         {
           "disabled": false,
           "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
-          "example": "123",
+          "example": "7200",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2110,6 +2113,7 @@
           "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2120,6 +2124,7 @@
           "example": "whitelist",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2127,9 +2132,10 @@
         {
           "disabled": false,
           "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-backup-secretkey",
           "member": "string",
           "name": "BackupSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2143,9 +2149,10 @@
         {
           "disabled": false,
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-secretkey",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2153,9 +2160,10 @@
         {
           "disabled": false,
           "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
-          "example": "123",
+          "example": "7200",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2166,6 +2174,7 @@
           "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2176,6 +2185,7 @@
           "example": "whitelist",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2183,9 +2193,10 @@
         {
           "disabled": false,
           "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-backup-secretkey",
           "member": "string",
           "name": "BackupSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2199,9 +2210,10 @@
         {
           "disabled": false,
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-secretkey",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2209,9 +2221,10 @@
         {
           "disabled": false,
           "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
-          "example": "123",
+          "example": "7200",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2222,6 +2235,7 @@
           "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2232,6 +2246,7 @@
           "example": "whitelist",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2242,6 +2257,7 @@
           "example": "dec",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2249,9 +2265,10 @@
         {
           "disabled": false,
           "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-backp-secretkey",
           "member": "string",
           "name": "BackupSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2265,9 +2282,10 @@
         {
           "disabled": false,
           "document": "计算签名的密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-secretkey",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2275,9 +2293,10 @@
         {
           "disabled": false,
           "document": "签名过期时间设置\n单位为秒，最大可设置为 630720000",
-          "example": "123",
+          "example": "7200",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2288,6 +2307,7 @@
           "example": "[\"*\"]",
           "member": "string",
           "name": "FileExtensions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2298,6 +2318,7 @@
           "example": "whitelist",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2305,9 +2326,10 @@
         {
           "disabled": false,
           "document": "签名参数名设置\n仅允许大小写字母、数字或下划线，长度 1~100 位，不能以数字开头",
-          "example": "-",
+          "example": "e",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2318,6 +2340,7 @@
           "example": "tp",
           "member": "string",
           "name": "TimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2328,6 +2351,7 @@
           "example": "dec",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2335,9 +2359,10 @@
         {
           "disabled": false,
           "document": "计算签名的备用密钥\n仅允许大小写字母与数字，长度 6~32 位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "exmaple-backup-secretkey",
           "member": "string",
           "name": "BackupSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2443,6 +2468,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2453,6 +2479,7 @@
           "example": "1000000",
           "member": "int64",
           "name": "BpsThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2463,6 +2490,7 @@
           "example": "RETURN_404",
           "member": "string",
           "name": "CounterMeasure",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2470,9 +2498,10 @@
         {
           "disabled": false,
           "document": "境内区域上次触发用量封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-06-28 12:00:00",
           "member": "datetime",
           "name": "LastTriggerTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2483,6 +2512,7 @@
           "example": "off",
           "member": "string",
           "name": "AlertSwitch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2493,6 +2523,7 @@
           "example": "80",
           "member": "int64",
           "name": "AlertPercentage",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2500,9 +2531,10 @@
         {
           "disabled": false,
           "document": "海外区域上次触发用量封顶阈值的时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-06-28 12:00:00",
           "member": "datetime",
           "name": "LastTriggerTimeOverseas",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2513,6 +2545,7 @@
           "example": "bandwith",
           "member": "string",
           "name": "Metric",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2523,6 +2556,7 @@
           "example": "无",
           "member": "StatisticItem",
           "name": "StatisticItems",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -2683,7 +2717,7 @@
           "example": "intercept",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2693,7 +2727,7 @@
           "example": "1",
           "member": "int64",
           "name": "Nums",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2703,7 +2737,7 @@
           "example": "crawler_unregular",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2713,7 +2747,7 @@
           "example": "1",
           "member": "float",
           "name": "SessionDuration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2723,17 +2757,17 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "SrcIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异常特征",
-          "example": "[]",
+          "example": "bot_feature",
           "member": "string",
           "name": "BotFeature",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2743,7 +2777,7 @@
           "example": "2020-01-01 00:00:00",
           "member": "datetime",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2753,7 +2787,7 @@
           "example": "1",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2763,7 +2797,7 @@
           "example": "1",
           "member": "float",
           "name": "AvgSpeed",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2773,17 +2807,17 @@
           "example": "TCB",
           "member": "string",
           "name": "TcbDetail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "BOT记录唯一ID，用于查询访问详情",
-          "example": "123123",
+          "example": "100001",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2793,7 +2827,7 @@
           "example": "www.123.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3285,7 +3319,7 @@
         {
           "disabled": false,
           "document": "总是回源站校验\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "off",
           "member": "string",
           "name": "Revalidate",
           "output_required": true,
@@ -3425,7 +3459,7 @@
         {
           "disabled": false,
           "document": "自定义CacheTag的值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CacheTagValue",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -3949,6 +3983,7 @@
           "example": "true",
           "member": "bool",
           "name": "Compress",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -3959,6 +3994,7 @@
           "example": "256",
           "member": "int64",
           "name": "MinLength",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -3969,6 +4005,7 @@
           "example": "10000",
           "member": "int64",
           "name": "MaxLength",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -3979,6 +4016,7 @@
           "example": "gzIp",
           "member": "string",
           "name": "Algorithms",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -3989,6 +4027,7 @@
           "example": "jpg",
           "member": "string",
           "name": "FileExtensions",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3996,9 +4035,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\ncontentType：指定Content-Type头为特定值时生效\n当指定了此字段时，FileExtensions字段不生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "all",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4006,9 +4046,10 @@
         {
           "disabled": false,
           "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\ncontentType 时填充 text/html\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -4033,7 +4074,7 @@
         {
           "disabled": false,
           "document": "使用的cookie，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cookie value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -4091,13 +4132,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题ID",
           "example": "2feewq3-g327-0457-a12m-2e22e5df1111",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4522,33 +4563,33 @@
         },
         {
           "disabled": false,
-          "document": "文件验证 URL 指引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件验证 URL 指引",
           "example": "http://abc.com/verification.html",
           "member": "string",
           "name": "FileVerifyUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件校验域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件校验域名列表",
           "example": "abc.com",
           "member": "string",
           "name": "FileVerifyDomains",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件校验文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件校验文件名",
           "example": "verification.html",
           "member": "string",
           "name": "FileVerifyName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5475,23 +5516,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "已接入CDN的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已接入CDN的域名列表",
           "example": "\"\\u65e0\"",
           "member": "string",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已配置证书的CDN域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已配置证书的CDN域名列表",
           "example": "\"\\u65e0\"",
           "member": "string",
           "name": "CertifiedDomains",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5677,13 +5718,13 @@
         },
         {
           "disabled": false,
-          "document": "刷新检测信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "刷新检测信息",
           "example": "无",
           "member": "DiagnoseData",
           "name": "PurgeInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5786,13 +5827,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "地区运营商数据明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地区运营商数据明细",
           "example": "无",
           "member": "DistrictIspInfo",
           "name": "Data",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6231,43 +6272,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "WebpAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WebpAdapter配置",
           "example": "无",
           "member": "WebpAdapter",
           "name": "WebpAdapter",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TpgAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TpgAdapter配置",
           "example": "无",
           "member": "TpgAdapter",
           "name": "TpgAdapter",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GuetzliAdapter配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GuetzliAdapter配置",
           "example": "无",
           "member": "GuetzliAdapter",
           "name": "GuetzliAdapter",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AvifAdapter配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AvifAdapter配置项",
           "example": "无",
           "member": "AvifAdapter",
           "name": "AvifAdapter",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6848,23 +6889,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "详细刷新记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细刷新记录",
           "example": "无",
           "member": "PurgeTask",
           "name": "PurgeLogs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务总数，用于分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数，用于分页",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6985,23 +7026,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "预热历史记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预热历史记录",
           "example": "无",
           "member": "PushTask",
           "name": "PushLogs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务总数，用于分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数，用于分页",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8034,7 +8075,7 @@
         {
           "disabled": false,
           "document": "腾讯云账号ID",
-          "example": "123456789",
+          "example": "100000001",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -8634,7 +8675,7 @@
         {
           "disabled": false,
           "document": "主域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "qq.com",
           "member": "string",
           "name": "ParentHost",
           "output_required": true,
@@ -8918,23 +8959,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "提交结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提交结果",
           "example": "无",
           "member": "CacheOptResult",
           "name": "CacheOptResult",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "9597132570124",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9247,60 +9288,60 @@
         {
           "disabled": false,
           "document": "日志包起始时间",
-          "example": "无",
+          "example": "2025-03-25 12:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志包结束时间",
-          "example": "无",
+          "example": "2025-03-25 17:00:00",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志包下载链接",
-          "example": "无",
+          "example": "https://log-download.cdn.qcloud.com/20250325/19/2025032519-qq.com.gz",
           "member": "string",
           "name": "LogPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志包对应加速区域\nmainland：境内\noverseas：境外",
-          "example": "无",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志包文件名",
-          "example": "无",
+          "example": "2025032519-qq.com-mainland",
           "member": "string",
           "name": "LogName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件大小，单位: Byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "FileSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -9502,23 +9543,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结果列表",
           "example": "无",
           "member": "CacheOptResult",
           "name": "CacheOptResult",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "1632627566746100176",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9840,23 +9881,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "封禁历史记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "封禁历史记录",
           "example": "无",
           "member": "UrlRecord",
           "name": "UrlRecordList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务总数，用于分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数，用于分页",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9927,7 +9968,7 @@
         {
           "disabled": false,
           "document": "组成CacheKey的header数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "header value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -9983,7 +10024,7 @@
         {
           "disabled": false,
           "document": "MaxAge数值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "MaxAge",
           "output_required": true,
@@ -9994,7 +10035,7 @@
         {
           "disabled": false,
           "document": "是否包含子域名，on或off。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "IncludeSubDomains",
           "output_required": true,
@@ -10014,6 +10055,7 @@
           "example": "set",
           "member": "string",
           "name": "HeaderMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10024,6 +10066,7 @@
           "example": "name",
           "member": "string",
           "name": "HeaderName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10034,6 +10077,7 @@
           "example": "value",
           "member": "string",
           "name": "HeaderValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10041,9 +10085,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "all",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10051,9 +10096,10 @@
         {
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -10235,7 +10281,7 @@
         {
           "disabled": false,
           "document": "HTTPS请求包 Id",
-          "example": "123",
+          "example": "30000001",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -10245,7 +10291,7 @@
         {
           "disabled": false,
           "document": "HTTPS请求包类型",
-          "example": "无",
+          "example": "Https请求资源包",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -10588,7 +10634,7 @@
         {
           "disabled": false,
           "document": "IP 黑白名单类型\nwhitelist：白名单\nblacklist：黑名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "whitelist",
           "member": "string",
           "name": "FilterType",
           "output_required": true,
@@ -10599,7 +10645,7 @@
         {
           "disabled": false,
           "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 200 个白名单或 500 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Filters",
           "output_required": true,
@@ -10610,7 +10656,7 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
           "output_required": true,
@@ -10621,7 +10667,7 @@
         {
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
           "output_required": true,
@@ -10649,7 +10695,7 @@
         {
           "disabled": false,
           "document": "设置每秒请求数限制\n超出限制的请求会直接返回 514\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Qps",
           "output_required": true,
@@ -10666,60 +10712,60 @@
         {
           "disabled": false,
           "document": "节点 IP",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点所属区域",
-          "example": "无",
+          "example": "广东",
           "member": "string",
           "name": "District",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点所属运营商",
-          "example": "无",
+          "example": "电信",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点所在城市",
-          "example": "无",
+          "example": "深圳",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点状态\nonline：上线状态，正常调度服务中\noffline：下线状态",
-          "example": "无",
+          "example": "online",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点 IPV6\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "Ipv6",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10766,9 +10812,10 @@
         {
           "disabled": false,
           "document": "CacheType 对应类型下的匹配内容：\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -10779,6 +10826,7 @@
           "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10789,6 +10837,7 @@
           "example": "off",
           "member": "string",
           "name": "FullUrlCache",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10799,6 +10848,7 @@
           "example": "off",
           "member": "string",
           "name": "IgnoreCase",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10809,6 +10859,7 @@
           "example": "无",
           "member": "RuleQueryString",
           "name": "QueryString",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -10819,6 +10870,7 @@
           "example": "user",
           "member": "string",
           "name": "RuleTag",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10981,13 +11033,13 @@
         },
         {
           "disabled": false,
-          "document": "日志主题最近更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志主题最近更新时间",
           "example": "2020-09-22 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12256,7 +12308,7 @@
         {
           "disabled": false,
           "document": "域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "web",
           "member": "string",
           "name": "ServiceType",
           "output_required": true,
@@ -12731,7 +12783,7 @@
         {
           "disabled": false,
           "document": "回源路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "/data",
           "member": "string",
           "name": "BasePath",
           "output_required": true,
@@ -12742,7 +12794,7 @@
         {
           "disabled": false,
           "document": "回源路径重写规则配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "PathRule",
           "name": "PathRules",
           "output_required": true,
@@ -12753,7 +12805,7 @@
         {
           "disabled": false,
           "document": "分路径回源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "PathBasedOriginRule",
           "name": "PathBasedOrigin",
           "output_required": true,
@@ -13311,7 +13363,7 @@
         {
           "disabled": false,
           "document": "域名业务类型，web，download，media分别表示静态加速，下载加速和流媒体加速。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "web",
           "member": "string",
           "name": "ServiceType",
           "output_required": true,
@@ -13794,10 +13846,10 @@
         {
           "disabled": false,
           "document": "预热任务 ID",
-          "example": "1234",
+          "example": "1000000001",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13807,7 +13859,7 @@
           "example": "http://www.test.com/1.txt",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13817,7 +13869,7 @@
           "example": "done",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13827,7 +13879,7 @@
           "example": "100",
           "member": "int64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13837,7 +13889,7 @@
           "example": "2021-05-02 16:06:20",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13847,7 +13899,7 @@
           "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13857,7 +13909,7 @@
           "example": "2021-05-02 16:06:20",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14247,7 +14299,7 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效",
-          "example": "all",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
           "output_required": true,
@@ -14258,7 +14310,7 @@
         {
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html",
-          "example": "*",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
           "output_required": true,
@@ -14373,6 +14425,7 @@
           "example": "http://auth.com",
           "member": "string",
           "name": "Server",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14383,6 +14436,7 @@
           "example": "get",
           "member": "string",
           "name": "AuthMethod",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14390,9 +14444,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定目录生效\npath：指定文件绝对路径生效\n默认值:all",
-          "example": "all",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14400,9 +14455,10 @@
         {
           "disabled": false,
           "document": "对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n默认值:*",
-          "example": "*",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -14413,6 +14469,7 @@
           "example": "1",
           "member": "int64",
           "name": "AuthTimeout",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -14423,6 +14480,7 @@
           "example": "RETURN_200",
           "member": "string",
           "name": "AuthTimeoutAction",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14664,7 +14722,7 @@
         {
           "disabled": false,
           "document": "只在特定请求路径回源站校验\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/data",
           "member": "string",
           "name": "Path",
           "output_required": true,
@@ -14681,9 +14739,10 @@
         {
           "disabled": false,
           "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -14691,9 +14750,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "all",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -14704,6 +14764,7 @@
           "example": "{\"Cache\":{\"CacheTime\":86400,\"CompareMaxAge\":\"off\",\"IgnoreCacheCo",
           "member": "RuleCacheConfig",
           "name": "CacheConfig",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -14790,7 +14851,7 @@
         {
           "disabled": false,
           "document": "includeCustom 包含部分url参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "includeAll",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -14801,7 +14862,7 @@
         {
           "disabled": false,
           "document": "使用/排除的url参数数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -16014,10 +16075,10 @@
         {
           "disabled": false,
           "document": "scdn 安全配置开关，取值有：\non：开启\noff：关闭",
-          "example": "无",
+          "example": "on",
           "member": "string",
           "name": "Switch",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16794,10 +16855,10 @@
         {
           "disabled": false,
           "document": "主题ID",
-          "example": "xxxx",
+          "example": "def811bf-867e-405c-bbc2-521crr2a3aea",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16807,7 +16868,7 @@
           "example": "cdn-topic1",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16817,7 +16878,7 @@
           "example": "1",
           "member": "int64",
           "name": "Enabled",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16827,7 +16888,7 @@
           "example": "YYYY-MM-DD HH:mm:ss",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16837,7 +16898,7 @@
           "example": "cdn",
           "member": "string",
           "name": "Channel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16847,7 +16908,7 @@
           "example": "no",
           "member": "string",
           "name": "Deleted",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -16877,7 +16938,7 @@
         {
           "disabled": false,
           "document": "流量包 Id",
-          "example": "123",
+          "example": "20000001",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -16887,7 +16948,7 @@
         {
           "disabled": false,
           "document": "流量包类型",
-          "example": "无",
+          "example": "日常流量包",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -17995,7 +18056,7 @@
         {
           "disabled": false,
           "document": "ID",
-          "example": "无",
+          "example": "1000001",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -18005,7 +18066,7 @@
         {
           "disabled": false,
           "document": "违规资源原始访问 URL",
-          "example": "无",
+          "example": "http:\\/\\/www.test.com\\/a.jpeg",
           "member": "string",
           "name": "RealUrl",
           "output_required": true,
@@ -18015,7 +18076,7 @@
         {
           "disabled": false,
           "document": "快照路径，用于控制台展示违规内容快照",
-          "example": "无",
+          "example": "2019-11-18\\/2019-11-18-18-26-08-1794844604-29-21-a.jpeg",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,
@@ -18025,7 +18086,7 @@
         {
           "disabled": false,
           "document": "违规资源当前状态\nforbid：已封禁\nrelease：已解封\ndelay ： 延迟处理\nreject ：申诉驳回，状态仍为封禁状态\ncomplain：申诉进行中",
-          "example": "无",
+          "example": "forbid",
           "member": "string",
           "name": "UrlStatus",
           "output_required": true,
@@ -18035,7 +18096,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2019-11-17 18:25:47",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
@@ -18045,7 +18106,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2019-11-18 18:06:47",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,

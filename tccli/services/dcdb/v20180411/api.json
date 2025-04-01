@@ -811,6 +811,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所在可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1548,6 +1558,15 @@
           "name": "DcnSyncMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Cpu类型，如：英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2092,6 +2111,15 @@
           "name": "DcnSyncMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Cpu类型，如：英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5326,6 +5354,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD\t",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5691,6 +5729,15 @@
           "name": "AmountUnit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Cpu类型，如：英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5704,7 +5751,7 @@
           "example": "42240",
           "member": "int64",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5714,7 +5761,7 @@
           "example": "42240",
           "member": "int64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6634,7 +6681,17 @@
     },
     "DescribeShardSpecRequest": {
       "document": "DescribeShardSpec请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cpu类型，如：英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeShardSpecResponse": {
@@ -6646,7 +6703,7 @@
           "example": "无",
           "member": "SpecConfig",
           "name": "SpecConfig",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8325,6 +8382,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所在的可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8685,11 +8752,31 @@
         {
           "disabled": false,
           "document": "可选择的主可用区和从可用区",
-          "example": "[{ \"MasterZone\":{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, \"SlaveZones\":[{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, { \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }] }, { \"MasterZone\":{ \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }, \"SlaveZones\":[{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, { \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }] }]",
+          "example": "无",
           "member": "ShardZoneChooseInfo",
           "name": "AvailableChoice",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机类型，如：物理机：Machine，容器：Container。",
+          "example": "Machine",
+          "member": "string",
+          "name": "HostType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cpu类型，如：英特尔：Intel/AMD，海光：Hygon",
+          "example": "Intel/AMD",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9684,7 +9771,7 @@
         },
         {
           "disabled": false,
-          "document": "切换的目标区域，会自动选择该可用区中延迟最低的节点。",
+          "document": "指定可用区标识符，具体含义由zoneMode参数决定。 \n\n- 当zoneMode为target时表示目标可用区 \n\n- 当zoneMode为avoid时表示需避开的故障可用区",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -9699,6 +9786,15 @@
           "name": "ShardInstanceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区模式选择器，定义zone参数的语义类型。  - 默认值：target  - 可选值：target, avoid",
+          "example": "target, avoid",
+          "member": "string",
+          "name": "ZoneMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

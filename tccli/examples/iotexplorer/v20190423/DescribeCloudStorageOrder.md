@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DescribeCloudStorageOrder --cli-unfold-argument  \
-    --OrderId abc
+    --OrderId jdkslajffiejflasiejfklj
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
     "Response": {
         "StartTime": 1,
         "ExpireTime": 1,
-        "PackageId": "abc",
+        "PackageId": "ye1m3d",
         "Status": 1,
-        "RequestId": "abc",
+        "RequestId": "asiejalfiejowifkjeliwajff",
         "ChannelId": 1
     }
 }

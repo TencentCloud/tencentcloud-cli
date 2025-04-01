@@ -21,6 +21,7 @@ Output:
                 "Status": "Done",
                 "Percent": 100,
                 "CreateTime": "2018-07-30 18:10:53",
+                "UpdateTime": "2018-07-30 18:11:53",
                 "Area": "mainland"
             }
         ],

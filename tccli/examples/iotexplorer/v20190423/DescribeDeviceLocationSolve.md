@@ -1,4 +1,4 @@
-**Example 1: 获取实时位置解析**
+**Example 1: 获取实时位置解析示例**
 
 获取实时位置解析
 
@@ -7,8 +7,8 @@ Input:
 ```
 tccli iotexplorer DescribeDeviceLocationSolve --cli-unfold-argument  \
     --LocationType GNSSNavigation \
-    --DeviceName  \
-    --ProductId  \
+    --DeviceName dev \
+    --ProductId ZUBPP0Y2G9 \
     --GNSSNavigation {"captures":[{"payload":"82d3ef004114d419ecf7ef4ed40bbf4ab588f1a419b56a275264a6b8cd01"},{"payload":"82d3ef004114331ad480d459ab49d4787e67fdd2760bdb65e70c"}]}
 ```
 

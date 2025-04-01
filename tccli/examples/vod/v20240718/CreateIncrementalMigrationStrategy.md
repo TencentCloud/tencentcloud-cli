@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod CreateIncrementalMigrationStrategy --cli-unfold-argument  \
-    --SubAppId 123456789 \
+    --SubAppId 1020304056 \
     --BucketId bucketid1 \
     --StrategyName strategy_name \
     --OriginType HTTP \

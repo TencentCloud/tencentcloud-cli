@@ -1127,7 +1127,7 @@
     "RestartDBInstance": [
       {
         "document": "",
-        "input": "https://sqlserver.tencentcloudapi.com/?Action=RestartDBInstance\n&InstanceId=mssql-njj2mtpl\n&<公共请求参数>",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=RestartDBInstance\n&InstanceId=mssql-njj2mtpl\n&WaitSwitch=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"FlowId\": 30321\n    }\n}",
         "title": "重启数据库实例mssql-niycdqff"
       }
