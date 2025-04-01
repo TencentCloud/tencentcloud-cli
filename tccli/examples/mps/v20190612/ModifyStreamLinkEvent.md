@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli mps ModifyStreamLinkEvent --cli-unfold-argument  \
-    --EventId aaa \
-    --EventName aaa
+    --EventId 0193d38d0a4f09dc0f326fd4342c \
+    --EventName test_event
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "0194407416cf09dc0f321631343d"
     }
 }
 ```

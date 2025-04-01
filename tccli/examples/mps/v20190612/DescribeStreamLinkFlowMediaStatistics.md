@@ -23,27 +23,27 @@ Output:
             {
                 "Network": 1208588,
                 "Timestamp": 1607598000,
-                "SessionId": "xx",
+                "SessionId": "",
                 "Video": [
                     {
                         "Rate": 1038884,
                         "Pid": 256,
-                        "SessionId": "xx",
+                        "SessionId": "",
                         "Fps": 62
                     }
                 ],
-                "ClientIp": "xx",
+                "ClientIp": "",
                 "Audio": [
                     {
                         "Rate": 169704,
                         "Pid": 257,
-                        "SessionId": "xx",
+                        "SessionId": "",
                         "Fps": 45
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": ""
     }
 }
 ```

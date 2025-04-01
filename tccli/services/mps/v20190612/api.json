@@ -512,7 +512,7 @@
       "status": "online"
     },
     "DescribeStreamLinkFlowMediaStatistics": {
-      "document": "查询媒体传输流的媒体质量数据。\n",
+      "document": "查询媒体传输流的媒体质量数据。",
       "input": "DescribeStreamLinkFlowMediaStatisticsRequest",
       "name": "查询媒体质量数据",
       "output": "DescribeStreamLinkFlowMediaStatisticsResponse",
@@ -533,7 +533,7 @@
       "status": "online"
     },
     "DescribeStreamLinkFlowStatistics": {
-      "document": "查询媒体传输流的媒体质量数据。\n",
+      "document": "查询媒体传输流的媒体质量数据。",
       "input": "DescribeStreamLinkFlowStatisticsRequest",
       "name": "查询流的媒体质量数据",
       "output": "DescribeStreamLinkFlowStatisticsResponse",
@@ -7102,7 +7102,7 @@
         {
           "disabled": false,
           "document": "EventId。",
-          "example": "eventid",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "EventId",
           "required": true,
@@ -7111,7 +7111,7 @@
         {
           "disabled": false,
           "document": "Event关联的流Id数组，如果不传默认启动Event下面的所有媒体传输流。",
-          "example": "[\"aaa\"]",
+          "example": "[\"01937702c54509dc0f3269ca341f\"]",
           "member": "string",
           "name": "FlowIds",
           "required": false,
@@ -7138,7 +7138,7 @@
         {
           "disabled": false,
           "document": "EventId。",
-          "example": "eventid",
+          "example": "01937702ecc509dc0f3269ca3420",
           "member": "string",
           "name": "EventId",
           "required": true,
@@ -7147,7 +7147,7 @@
         {
           "disabled": false,
           "document": "流Id，如果不传默认停止Event下所有的媒体传输流。",
-          "example": "[\"aaa\"]",
+          "example": "[\"019202e96d9f09dc0f325e7f7a2a\"]",
           "member": "string",
           "name": "FlowIds",
           "required": false,
@@ -9047,7 +9047,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。",
+          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -9794,8 +9794,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "输出的IP。",
-          "example": "test",
+          "document": "输出的IP或域名。",
+          "example": "0.0.0.0",
           "member": "string",
           "name": "Ip",
           "required": true,
@@ -9804,7 +9804,7 @@
         {
           "disabled": false,
           "document": "输出的端口。",
-          "example": "test",
+          "example": "10",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -10348,7 +10348,7 @@
         {
           "disabled": false,
           "document": "事件名称。",
-          "example": "aaa",
+          "example": "event_test",
           "member": "string",
           "name": "EventName",
           "required": true,
@@ -10357,7 +10357,7 @@
         {
           "disabled": false,
           "document": "事件描述。",
-          "example": "test",
+          "example": "event for test live",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -10375,7 +10375,7 @@
           "example": "无",
           "member": "DescribeEvent",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10394,7 +10394,7 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "aaa",
+          "example": "pgm_flow",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -10421,7 +10421,7 @@
         {
           "disabled": false,
           "document": "该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。",
-          "example": "eventid",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "EventId",
           "required": false,
@@ -10439,6 +10439,7 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10457,7 +10458,7 @@
         {
           "disabled": false,
           "document": "媒体传输流ID。",
-          "example": "aaa",
+          "example": "018f09cc50671eb401a6024fcabc",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -10484,6 +10485,7 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10548,7 +10550,7 @@
         {
           "disabled": false,
           "document": "安全组名称，限制大小写、数字和下划线，Region下唯一。",
-          "example": "xxx",
+          "example": "live_test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -10557,7 +10559,7 @@
         {
           "disabled": false,
           "document": "白名单列表，数量限制[1, 10]。",
-          "example": "[\"1.1.1.1\\/1\\r\\n\"]",
+          "example": "[\"101.102.101.22/32\"]",
           "member": "string",
           "name": "Whitelist",
           "required": true,
@@ -10572,7 +10574,7 @@
         {
           "disabled": false,
           "document": "安全组 ID。",
-          "example": "1111",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -11455,7 +11457,7 @@
         {
           "disabled": false,
           "document": "媒体传输事件Id，删除前需要保证该Event关联的所有Flow都已经删除。",
-          "example": "aaa",
+          "example": "01937702ecc509dc0f3269ca3420",
           "member": "string",
           "name": "EventId",
           "required": true,
@@ -11482,7 +11484,7 @@
         {
           "disabled": false,
           "document": "传输流Id。",
-          "example": "aaa",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -11509,7 +11511,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "aaa",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -11518,7 +11520,7 @@
         {
           "disabled": false,
           "document": "输出Id。",
-          "example": "asd21dsa",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "OutputId",
           "required": true,
@@ -11545,7 +11547,7 @@
         {
           "disabled": false,
           "document": "安全组 ID。",
-          "example": "1111",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -12615,7 +12617,7 @@
         {
           "disabled": false,
           "document": "媒体传输安全组ID。",
-          "example": "无",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -14660,7 +14662,7 @@
           "example": "无",
           "member": "FlowLogInfo",
           "name": "Infos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14670,7 +14672,7 @@
           "example": "1",
           "member": "int64",
           "name": "PageNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14680,7 +14682,7 @@
           "example": "100",
           "member": "int64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14690,7 +14692,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14700,7 +14702,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14791,7 +14793,7 @@
           "example": "无",
           "member": "FlowMediaInfo",
           "name": "Infos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14846,7 +14848,7 @@
           "example": "1618543864",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14856,7 +14858,7 @@
           "example": "无",
           "member": "FlowRealtimeStatusItem",
           "name": "Datas",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15003,7 +15005,7 @@
         {
           "disabled": false,
           "document": "传输流ID。",
-          "example": "AB342ED131CE",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -15021,7 +15023,7 @@
         {
           "disabled": false,
           "document": "输入或输出Id。",
-          "example": "CD342ED131CE",
+          "example": "01937702ecc509dc0f3269ca3420",
           "member": "string",
           "name": "InputOutputId",
           "required": true,
@@ -15075,7 +15077,7 @@
           "example": "无",
           "member": "FlowStatisticsArray",
           "name": "Infos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15121,7 +15123,7 @@
           "example": "无",
           "member": "DescribeFlow",
           "name": "Infos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15131,7 +15133,7 @@
           "example": "1",
           "member": "int64",
           "name": "PageNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15141,7 +15143,7 @@
           "example": "10",
           "member": "int64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15151,7 +15153,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15161,7 +15163,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23033,7 +23035,7 @@
         {
           "disabled": false,
           "document": "需要修改的Output的Id。",
-          "example": "AB342ED131CE",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "OutputId",
           "required": true,
@@ -23059,7 +23061,7 @@
         },
         {
           "disabled": false,
-          "document": "输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。",
+          "document": "输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -23698,7 +23700,7 @@
         {
           "disabled": false,
           "document": "媒体传输事件Event Id。",
-          "example": "aaa",
+          "example": "0193d38d4e5d09dc0f326fd4342d",
           "member": "string",
           "name": "EventId",
           "required": true,
@@ -23707,7 +23709,7 @@
         {
           "disabled": false,
           "document": "需要修改的事件名称。",
-          "example": "aaa",
+          "example": "event_name",
           "member": "string",
           "name": "EventName",
           "required": true,
@@ -23743,7 +23745,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "aaa",
+          "example": "0194407416cf09dc0f321631343d",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -23752,7 +23754,7 @@
         {
           "disabled": false,
           "document": "需要修改的流名称。",
-          "example": "aaa",
+          "example": "flow_name",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -23852,7 +23854,7 @@
           "example": "无",
           "member": "DescribeOutput",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23871,7 +23873,7 @@
         {
           "disabled": false,
           "document": "安全组Id。",
-          "example": " 1111",
+          "example": " 01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -23880,7 +23882,7 @@
         {
           "disabled": false,
           "document": "安全组名称，限制大小写、数字和下划线，长度[1, 32]，Region下唯一。",
-          "example": "xxxx",
+          "example": "live_test",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -27013,7 +27015,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对端IP。",
+          "document": "对端IP或域名。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -29114,7 +29116,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "aaa",
+          "example": "01941bb7827509dc0f320a9d3426",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -29141,7 +29143,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "aaa",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "FlowId",
           "required": true,

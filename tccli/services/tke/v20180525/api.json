@@ -21112,7 +21112,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "test",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -21122,7 +21122,7 @@
         {
           "disabled": false,
           "document": " Pod 名称",
-          "example": "test-0",
+          "example": "nginx-7ddc9d6bf-9pkml",
           "member": "string",
           "name": "Name",
           "output_required": true,

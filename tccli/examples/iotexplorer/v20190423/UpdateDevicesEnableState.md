@@ -7,17 +7,17 @@ Input:
 ```
 tccli iotexplorer UpdateDevicesEnableState --cli-unfold-argument  \
     --Status 1 \
-    --DevicesItems.0.DeviceName xx \
-    --DevicesItems.0.ProductId xx
+    --DevicesItems.0.DeviceName d1 \
+    --DevicesItems.0.ProductId Rf56GH9
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ResultCode": "xx",
-        "ResultMessage": "xx",
-        "RequestId": "xx"
+        "ResultCode": "delete error",
+        "ResultMessage": "delete error",
+        "RequestId": "34edc-7ugf4rb-657uj"
     }
 }
 ```

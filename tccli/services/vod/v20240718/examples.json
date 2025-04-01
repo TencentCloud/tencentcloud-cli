@@ -1,5 +1,21 @@
 {
   "actions": {
+    "CreateIncrementalMigrationStrategy": [
+      {
+        "document": "创建增量迁移策略",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIncrementalMigrationStrategy\n<公共请求参数>\n\n{\n    \"SubAppId\": 123456789,\n    \"BucketId\": \"bucketid1\",\n    \"StrategyName\": \"strategy_name\",\n    \"OriginType\": \"HTTP\",\n    \"HttpOriginConfig\": {\n        \"OriginInfo\": {\n            \"EndpointInfo\": {\n                \"Endpoint\": \"example.com:8080\"\n            }\n        },\n        \"OriginParameter\": {\n            \"HttpHeaderInfo\": {\n                \"HeaderFollowMode\": \"FOLLOW_ALL\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83bb5dcc-reqid-demo-a891-9ceeed3bb173\",\n        \"StrategyId\": \"im-123-demoid\"\n    }\n}",
+        "title": "创建增量迁移策略"
+      }
+    ],
+    "CreateStorage": [
+      {
+        "document": "开通专业版应用重庆地域存储。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStorage\n<公共请求参数>\n\n{\n    \"SubAppId\": 1234567890,\n    \"StorageRegion\": \"ap-chongqing\",\n    \"StorageName\": \"my-storage\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BucketId\": \"bucketid123\",\n        \"RequestId\": \"f13e691e-8df1-demo-b734-ac63af4b9a64\"\n    }\n}",
+        "title": "开通专业版应用存储"
+      }
+    ],
     "CreateStorageCredentials": [
       {
         "document": "申请上传单个文件临时凭证",
@@ -24,6 +40,56 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStorageCredentials\n<公共请求参数>\n\n{\n    \"SubAppId\": 220209,\n    \"DurationSeconds\": 7200,\n    \"Policy\": \"%7B%22statement%22%3A%5B%7B%22action%22%3A%5B%22name%2Fvod%3AInitiateMultipartUpload%22%2C%22name%2Fvod%3AListMultipartUploads%22%2C%22name%2Fvod%3AListParts%22%2C%22name%2Fvod%3AUploadPart%22%2C%22name%2Fvod%3ACompleteMultipartUpload%22%5D%2C%22effect%22%3A%22allow%22%2C%22resource%22%3A%5B%22qcs%3A%3Avod%3Aauto%3Auid%2F251197738%3Aprefix%2F%2F220209%2Fauto%2F001.png%22%5D%7D%5D%2C%22version%22%3A%222.0%22%7D\"\n}",
         "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"SessionToken\": \"***********************************\",\n            \"AccessKeyId\": \"***********************************\",\n            \"SecretAccessKey\": \"***********************************\",\n            \"Expiration\": \"2024-08-20T13:55:53Z\"\n        },\n        \"RequestId\": \"59a5e07e-4147-4d2e-a808-dca76ac5b3fd\"\n    }\n}",
         "title": "申请自动就近上传文件的临时凭证"
+      }
+    ],
+    "DeleteIncrementalMigrationStrategy": [
+      {
+        "document": "删除增量迁移策略",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIncrementalMigrationStrategy\n<公共请求参数>\n\n{\n    \"SubAppId\": 123456789,\n    \"BucketId\": \"bucketid2\",\n    \"StrategyId\": \"im-123-demoid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"397d92f2-demo-reqid-bfbd-c2f7e3569c9d\"\n    }\n}",
+        "title": "删除增量迁移策略"
+      }
+    ],
+    "DescribeIncrementalMigrationStrategyInfos": [
+      {
+        "document": "查询当前应用下的增量迁移策略，输出按照更新时间升序排序。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIncrementalMigrationStrategyInfos\n<公共请求参数>\n\n{\n    \"SubAppId\": 123456789,\n    \"SortBy\": {\n        \"Field\": \"UpdateTime\",\n        \"Order\": \"Asc\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6376a73-reqid-demo-b097-de6bb60b3976\",\n        \"StrategyInfoSet\": [\n            {\n                \"BucketId\": \"bucketid1\",\n                \"HttpOriginConfig\": {\n                    \"Mode\": \"ASYNC\",\n                    \"OriginCondition\": {\n                        \"HttpStatusCode\": 404,\n                        \"Prefix\": \"test/\"\n                    },\n                    \"OriginInfo\": {\n                        \"EndpointInfo\": {\n                            \"Endpoint\": \"example.com\",\n                            \"StandbyEndpointSet\": [\n                                \"standby.com\",\n                                \"standby2.com\"\n                            ]\n                        },\n                        \"FileInfo\": {\n                            \"PrefixConfig\": {\n                                \"Prefix\": \"prefix\"\n                            },\n                            \"SuffixConfig\": {\n                                \"Suffix\": \"suffix\"\n                            }\n                        }\n                    },\n                    \"OriginParameter\": {\n                        \"HttpHeaderInfo\": {\n                            \"FollowHttpHeaderKeySet\": [\n                                \"Host\"\n                            ],\n                            \"HeaderFollowMode\": \"FOLLOW_ALL\",\n                            \"NewHttpHeaderSet\": [\n                                {\n                                    \"Key\": \"Host\",\n                                    \"Value\": \"demo.com\"\n                                }\n                            ]\n                        },\n                        \"HttpRedirectCode\": 302,\n                        \"OriginRedirectionFollowMode\": \"FOLLOW\",\n                        \"Protocol\": \"HTTP\",\n                        \"QueryStringFollowMode\": \"FOLLOW\"\n                    }\n                },\n                \"OriginType\": \"HTTP\",\n                \"StrategyId\": \"im-123-demoid\",\n                \"StrategyName\": \"demo1\",\n                \"SubAppId\": 123456789\n            },\n            {\n                \"BucketId\": \"bucketid2\",\n                \"HttpOriginConfig\": {\n                    \"Mode\": \"SYNC\",\n                    \"OriginCondition\": {\n                        \"HttpStatusCode\": 404\n                    },\n                    \"OriginInfo\": {\n                        \"EndpointInfo\": {\n                            \"Endpoint\": \"example.com\"\n                        }\n                    },\n                    \"OriginParameter\": {\n                        \"HttpHeaderInfo\": {\n                            \"HeaderFollowMode\": \"IGNORE_ALL\",\n                            \"NewHttpHeaderSet\": [\n                                {\n                                    \"Key\": \"host\",\n                                    \"Value\": \"demo.com\"\n                                }\n                            ]\n                        },\n                        \"HttpRedirectCode\": 301,\n                        \"OriginRedirectionFollowMode\": \"FOLLOW\",\n                        \"Protocol\": \"HTTPS\",\n                        \"QueryStringFollowMode\": \"FOLLOW\"\n                    }\n                },\n                \"OriginType\": \"HTTP\",\n                \"StrategyId\": \"im-123-demoid2\",\n                \"StrategyName\": \"demo2\",\n                \"SubAppId\": 123456789\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询应用下的策略信息"
+      },
+      {
+        "document": "查询应用指定存储桶的增量迁移策略",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIncrementalMigrationStrategyInfos\n<公共请求参数>\n\n{\n    \"SubAppId\": 123456789,\n    \"Filters\": [\n        {\n            \"Name\": \"BucketId\",\n            \"Values\": [\n                \"bucketid2\"\n            ]\n        }\n    ],\n    \"SortBy\": {\n        \"Field\": \"UpdateTime\",\n        \"Order\": \"Asc\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a70a4fb9-reqid-demo-aa39-3282aa745a26\",\n        \"StrategyInfoSet\": [\n            {\n                \"BucketId\": \"bucketid2\",\n                \"HttpOriginConfig\": {\n                    \"Mode\": \"SYNC\",\n                    \"OriginCondition\": {\n                        \"HttpStatusCode\": 404\n                    },\n                    \"OriginInfo\": {\n                        \"EndpointInfo\": {\n                            \"Endpoint\": \"example2.com\"\n                        }\n                    },\n                    \"OriginParameter\": {\n                        \"HttpHeaderInfo\": {\n                            \"HeaderFollowMode\": \"IGNORE_ALL\",\n                            \"NewHttpHeaderSet\": [\n                                {\n                                    \"Key\": \"host\",\n                                    \"Value\": \"demo.com\"\n                                }\n                            ]\n                        },\n                        \"HttpRedirectCode\": 301,\n                        \"OriginRedirectionFollowMode\": \"FOLLOW\",\n                        \"Protocol\": \"HTTPS\",\n                        \"QueryStringFollowMode\": \"FOLLOW\"\n                    }\n                },\n                \"OriginType\": \"HTTP\",\n                \"StrategyId\": \"im-123-demoid2\",\n                \"StrategyName\": \"demo2\",\n                \"SubAppId\": 123456789\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询应用指定存储桶的增量迁移策略"
+      }
+    ],
+    "DescribeStorage": [
+      {
+        "document": "按照创建时间倒序，分页查询专业版应用的存储信息。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorage\n<公共请求参数>\n\n{\n    \"SubAppId\": 1234567890,\n    \"SortBy\": {\n        \"Field\": \"CreateTime\",\n        \"Order\": \"Desc\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"StorageInfoSet\": [\n            {\n                \"BucketId\": \"bucketId123demo\",\n                \"CreateTime\": \"2024-07-18T00:00:00+00:00\",\n                \"InternetAccessDomain\": \"example123.vodpro.ap-guangzhou.eovod.com\",\n                \"InternetAccessDomainStatus\": \"DEPLOYING\",\n                \"StorageName\": \"my-storage\",\n                \"StorageRegion\": \"ap-guangzhou\"\n            },\n            {\n                \"BucketId\": \"bucketId456demo\",\n                \"CreateTime\": \"2024-07-17T00:00:00+00:00\",\n                \"InternetAccessDomain\": \"example456.vodpro.ap-guangzhou.eovod.com\",\n                \"InternetAccessDomainStatus\": \"ONLINE\",\n                \"StorageName\": \"my-storage2\",\n                \"StorageRegion\": \"ap-shanghai\"\n            }\n        ],\n        \"RequestId\": \"af4b9a1e-8df1-demo-reqid-ac6364f13e69\"\n    }\n}",
+        "title": "分页查询专业版应用存储信息"
+      },
+      {
+        "document": "添加查询过滤器 Filter，按照存储桶 ID 过滤查询存储桶信息。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStorage\n<公共请求参数>\n\n{\n    \"SubAppId\": 1234567890,\n    \"Filters\": [\n        {\n            \"Name\": \"BucketId\",\n            \"Values\": [\n                \"bucketId123demo\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"StorageInfoSet\": [\n            {\n                \"BucketId\": \"bucketId123demo\",\n                \"CreateTime\": \"2024-07-18T00:00:00+00:00\",\n                \"InternetAccessDomain\": \"example123.vodpro.ap-guangzhou.eovod.com\",\n                \"InternetAccessDomainStatus\": \"DEPLOYING\",\n                \"StorageName\": \"my-storage\",\n                \"StorageRegion\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"bf5c72d0-5b34-demo-reqid-4b5a2d7b4c68\"\n    }\n}",
+        "title": "按照存储桶 ID 查询专业版应用的存储信息"
+      }
+    ],
+    "ModifyIncrementalMigrationStrategy": [
+      {
+        "document": "修改增量迁移策略名称",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIncrementalMigrationStrategy\n<公共请求参数>\n\n{\n    \"SubAppId\": 123456789,\n    \"BucketId\": \"bucketid2\",\n    \"StrategyId\": \"im-123-demoid\",\n    \"StrategyName\": \"demo-modify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"94a26124-reqid-demo-ad0f-e8458e187f02\"\n    }\n}",
+        "title": "修改增量迁移策略名称"
+      },
+      {
+        "document": "修改增量迁移策略回源类型及 HTTP 回源配置信息",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIncrementalMigrationStrategy\n<公共请求参数>\n\n{\n    \"SubAppId\": 123456789,\n    \"BucketId\": \"bucketid2\",\n    \"StrategyId\": \"im-123-demoid\",\n    \"StrategyName\": \"\",\n    \"OriginType\": \"HTTP\",\n    \"HttpOriginConfig\": {\n        \"OriginInfo\": {\n            \"EndpointInfo\": {\n                \"Endpoint\": \"example2.com\"\n            }\n        },\n        \"OriginParameter\": {\n            \"HttpHeaderInfo\": {\n                \"HeaderFollowMode\": \"IGNORE_ALL\",\n                \"NewHttpHeaderSet\": [\n                    {\n                        \"Key\": \"host\",\n                        \"Value\": \"demo2.com\"\n                    }\n                ]\n            },\n            \"Protocol\": \"FOLLOW\",\n            \"QueryStringFollowMode\": \"FOLLOW\",\n            \"HttpRedirectCode\": 302,\n            \"OriginRedirectionFollowMode\": \"IGNORE\"\n        },\n        \"Mode\": \"SYNC\",\n        \"OriginCondition\": {\n            \"HttpStatusCode\": 404\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"300b29b9-demo-reqid-ade4-f84f176e60c3\"\n    }\n}",
+        "title": "修改增量迁移策略内容"
       }
     ]
   },

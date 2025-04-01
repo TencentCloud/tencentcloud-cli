@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "4rf-67f-768faf",
         "Total": 1,
         "MiniProgramList": [
             {

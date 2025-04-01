@@ -148,11 +148,11 @@
       "status": "online"
     },
     "DescribeCityWorkspaceList": {
-      "document": "通过城市id查询工作空间列表",
+      "document": "老微瓴后续不继续更新\n\n通过城市id查询工作空间列表",
       "input": "DescribeCityWorkspaceListRequest",
       "name": "通过城市id查询工作空间列表",
       "output": "DescribeCityWorkspaceListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDeviceGroupList": {
       "document": "设备分组列表",
@@ -538,7 +538,7 @@
         {
           "disabled": false,
           "document": "消息内容,有效值为x-json:后的字段",
-          "example": "无",
+          "example": "msgcontent",
           "member": "string",
           "name": "MsgContent",
           "output_required": false,
@@ -1491,7 +1491,7 @@
         {
           "disabled": false,
           "document": "请求体（base64编码）",
-          "example": "无",
+          "example": "body",
           "member": "string",
           "name": "Body",
           "output_required": false,
@@ -1501,7 +1501,7 @@
         {
           "disabled": false,
           "document": "响应体（base64编码）",
-          "example": "无",
+          "example": "responsebody",
           "member": "string",
           "name": "ResponseBody",
           "output_required": false,
@@ -3650,7 +3650,7 @@
         {
           "disabled": false,
           "document": "空间编码",
-          "example": "无",
+          "example": "spacecodes",
           "member": "string",
           "name": "SpaceCodes",
           "required": false,
@@ -4742,7 +4742,7 @@
         {
           "disabled": false,
           "document": "父级构件id",
-          "example": "无",
+          "example": "parentelementIds",
           "member": "string",
           "name": "ParentElementIds",
           "required": false,
@@ -8359,7 +8359,7 @@
         {
           "disabled": false,
           "document": "时间触发条件",
-          "example": "无",
+          "example": "condition",
           "member": "string",
           "name": "Condition",
           "output_required": false,
@@ -9694,7 +9694,7 @@
         {
           "disabled": false,
           "document": "扩展字段2，如：算法上报id，若为json格式，需传x-json:{}，有效字段为x-json:后的字段",
-          "example": "无",
+          "example": "extendtwo",
           "member": "string",
           "name": "ExtendTwo",
           "required": false,
@@ -9703,7 +9703,7 @@
         {
           "disabled": false,
           "document": "透传信息，若为json格式，需传x-json:{}，有效字段为x-json:后的字段",
-          "example": "无",
+          "example": "echo",
           "member": "string",
           "name": "Echo",
           "required": false,

@@ -7,11 +7,25 @@
       "output": "AssociateSecurityGroupsResponse",
       "status": "online"
     },
+    "CreateInstance": {
+      "document": "本接口（CreateInstance）用于创建向量数据库实例。",
+      "input": "CreateInstanceRequest",
+      "name": "创建实例",
+      "output": "CreateInstanceResponse",
+      "status": "online"
+    },
     "DescribeDBSecurityGroups": {
       "document": "本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。",
       "input": "DescribeDBSecurityGroupsRequest",
       "name": "查询实例安全组详情",
       "output": "DescribeDBSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeInstanceMaintenanceWindow": {
+      "document": "本接口（DescribeInstanceMaintenanceWindow）用于查看实例维护时间窗。",
+      "input": "DescribeInstanceMaintenanceWindowRequest",
+      "name": "查询维护时间窗",
+      "output": "DescribeInstanceMaintenanceWindowResponse",
       "status": "online"
     },
     "DescribeInstanceNodes": {
@@ -28,6 +42,13 @@
       "output": "DescribeInstancesResponse",
       "status": "online"
     },
+    "DestroyInstances": {
+      "document": "本接口（DestroyInstances）用于销毁实例。",
+      "input": "DestroyInstancesRequest",
+      "name": "销毁实例",
+      "output": "DestroyInstancesResponse",
+      "status": "online"
+    },
     "DisassociateSecurityGroups": {
       "document": "本接口(DisassociateSecurityGroups)用于安全组批量解绑实例。",
       "input": "DisassociateSecurityGroupsRequest",
@@ -35,11 +56,46 @@
       "output": "DisassociateSecurityGroupsResponse",
       "status": "online"
     },
+    "IsolateInstance": {
+      "document": "本接口（IsolateInstance）用于隔离实例于回收站，在回收站保护时长内可恢复实例。",
+      "input": "IsolateInstanceRequest",
+      "name": "隔离实例",
+      "output": "IsolateInstanceResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
       "name": "修改云数据库安全组",
       "output": "ModifyDBInstanceSecurityGroupsResponse",
+      "status": "online"
+    },
+    "ModifyInstanceMaintenanceWindow": {
+      "document": "本接口（ModifyInstanceMaintenanceWindow）用于修改实例维护时间窗范围。",
+      "input": "ModifyInstanceMaintenanceWindowRequest",
+      "name": "修改维护时间窗",
+      "output": "ModifyInstanceMaintenanceWindowResponse",
+      "status": "online"
+    },
+    "RecoverInstance": {
+      "document": "本接口（RecoverInstance）用于恢复在回收站隔离的实例。",
+      "input": "RecoverInstanceRequest",
+      "name": "恢复实例",
+      "output": "RecoverInstanceResponse",
+      "status": "online"
+    },
+    "ScaleOutInstance": {
+      "document": "本接口（ScaleOutInstance）用于水平扩容节点数量。",
+      "input": "ScaleOutInstanceRequest",
+      "name": "增加节点数（水平扩容）",
+      "output": "ScaleOutInstanceResponse",
+      "status": "online"
+    },
+    "ScaleUpInstance": {
+      "document": "本接口（ScaleUpInstance）用于升级节点配置规格。",
+      "input": "ScaleUpInstanceRequest",
+      "name": "升配节点规格（垂直扩容）",
+      "output": "ScaleUpInstanceResponse",
       "status": "online"
     }
   },
@@ -86,6 +142,363 @@
       ],
       "type": "object"
     },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络 ID。",
+          "example": "vpc-rdfkabjj",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络 VPC 的子网 ID。",
+          "example": "subnet-rdfkabj",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例计费方式。\n- 0：按量付费。\n- 1：包年包月。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置实例名称。仅支持长度不超过 60 的中文/英文/数字/-/_。",
+          "example": "vdb-yn67ikxud",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组 ID。",
+          "example": "[\"A\",\"B\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "若计费方式为包年包月，指定包年包月续费的时长。\n- 单位：月。\n- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "若为包年包月计费，需指定是否开启自动续费。\n- 0：不开启自动续费。\n- 1：开启自动续费。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例额外参数，通过json提交。",
+          "example": "'{\"key\":\"value\"}'",
+          "member": "string",
+          "name": "Params",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "以数组形式列出标签信息。",
+          "example": "[{\"TagKey\": \"key1\",\"TagValue\": \"value1\"}]",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "指定实例所属项目 ID。",
+          "example": "meta",
+          "member": "string",
+          "name": "Project",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型。\n- base：免费测试版。\n- single：单机版。\n- cluster：高可用版。",
+          "example": "cluster",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型为高可用版，需指定可用区选项。\n- two：两可用区。\n- three：三可用区。",
+          "example": "three",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "网络类型。\nVPC或TCS",
+          "example": "VPC",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "实例所应用的参数模板 ID。",
+          "example": "vdb-1",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "组件具体设置列表。",
+          "example": "{   \"Name\":\"master\",   \"Component\":\"master\",   \"Cpu\":4,   \"Memory\" :4,   \"StorageType\":\"CLOUD_PREMIUM\",   \"StorageSize\":20,  \"ReplicaNum\":3,   \"Params\":\"{'a':'b'}\" }",
+          "member": "CreateInstancesComponent",
+          "name": "Components",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "实例类型为高可用版，通过该参数指定主可用区。",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "实例类型为高可用版，通过该参数指定备可用区。",
+          "example": "[\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
+          "member": "string",
+          "name": "SlaveZones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": true,
+          "document": "是否长期有效",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNoExpired",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": true,
+          "document": "引擎名称，业务自定义。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "EngineName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "引擎版本，业务自定义。",
+          "example": "Cluster",
+          "member": "string",
+          "name": "EngineVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "实例描述。",
+          "example": "测试",
+          "member": "string",
+          "name": "Brief",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "负责人信息。",
+          "example": "张三",
+          "member": "string",
+          "name": "Chief",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "DBA人员信息",
+          "example": "张三",
+          "member": "string",
+          "name": "DBA",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "指定实例的节点类型。具体信息，请参见[选择节点类型](https://cloud.tencent.com/document/product/1709/113399)。\n- compute：计费型。\n- normal：标准型。\n- store：存储型。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的 CPU 核数。实例类型不同，支持的 CPU 核数存在差异。\n- 计算型： 1、2、4、8、16、24、32。\n- 标准型： 1、2、4、8、12、16。\n- 存储型： 1、2、4、6、8。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的内存大小。单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需的磁盘大小，单位：GB。选择具体规格，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定实例所需配置的节点数量。选择方法，请参见[配置规格（选型）](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WorkerNodeNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesComponent": {
+      "document": "组件设置列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "底层组件名，需要和产品模型中的保持一致",
+          "example": "master",
+          "member": "string",
+          "name": "Component",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件cpu大小",
+          "example": "4",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "组件内存大小",
+          "example": "4",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "业务节点数",
+          "example": "3",
+          "member": "uint64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义组件名",
+          "example": "master",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件磁盘大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "StorageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件额外参数，通过JSON提交",
+          "example": "'{\"key”:\"value\"}'",
+          "member": "string",
+          "name": "Params",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "DescribeDBSecurityGroupsRequest": {
       "document": "DescribeDBSecurityGroups请求参数结构体",
       "members": [
@@ -113,6 +526,73 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceMaintenanceWindowRequest": {
+      "document": "DescribeInstanceMaintenanceWindow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定查询维护时间窗的具体实例 ID。",
+          "example": "vdb-hfeu****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceMaintenanceWindowResponse": {
+      "document": "DescribeInstanceMaintenanceWindow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "vdb-fhuvheru",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护时间窗开始时间。",
+          "example": "03:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护时间窗结束时间。",
+          "example": "06:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维护时间窗时长。单位：小时。",
+          "example": "3",
+          "member": "float",
+          "name": "TimeSpan",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -361,6 +841,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstancesRequest": {
+      "document": "DestroyInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "以数组形式指定待销毁下线的实例 ID。",
+          "example": "[\"vdb-*******\", \"vdb-*******\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstancesResponse": {
+      "document": "DestroyInstances返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -788,6 +1295,33 @@
       ],
       "usage": "out"
     },
+    "IsolateInstanceRequest": {
+      "document": "IsolateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定需隔离的实例 ID。",
+          "example": "vdb-****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateInstanceResponse": {
+      "document": "IsolateInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSecurityGroupsRequest": {
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
@@ -814,6 +1348,51 @@
     },
     "ModifyDBInstanceSecurityGroupsResponse": {
       "document": "ModifyDBInstanceSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceMaintenanceWindowRequest": {
+      "document": "ModifyInstanceMaintenanceWindow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定需修改维护时间窗的实例 ID。",
+          "example": "vdb-dhewyr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维护时间窗开始时间。取值范围为\"00:00-23:00\"的任意整点，如01:00。",
+          "example": "03:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置维护时间窗的时长。根据指定的维护时间窗开始时间与时长可确定维护时间窗的范围。\n- 单位：小时。\n- 取值范围：3、6、8、10、12。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceMaintenanceWindowResponse": {
+      "document": "ModifyInstanceMaintenanceWindow返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1001,6 +1580,150 @@
         }
       ],
       "usage": "out"
+    },
+    "RecoverInstanceRequest": {
+      "document": "RecoverInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定待恢复的实例 ID。",
+          "example": "vdb-****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "若实例为包年包月计费，需通过该参数指定续费的时长。\n- 单位：月。\n- 取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayPeriod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverInstanceResponse": {
+      "document": "RecoverInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceRequest": {
+      "document": "ScaleOutInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定需扩容节点数量的实例 ID。",
+          "example": "vdb-jnaj****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定扩容后的节点数量。选项范围起始于当前实例已有的节点数，上限为30个节点。",
+          "example": "3",
+          "member": "uint64",
+          "name": "ReplicaNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定水平扩容增加节点数量的时间。\n- false：默认值，指在下一个维护时间段内执行增加节点数的任务。实例列表中“状态”列将显示“待执行配置变更”，等到维护时间窗内启动扩容任务。维护时间的更多信息，请参维护时间窗。\n- true：立即执行增加节点数的任务，请确保此时没有重大业务操作。",
+          "example": "false",
+          "member": "bool",
+          "name": "RunNow",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceResponse": {
+      "document": "ScaleOutInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceRequest": {
+      "document": "ScaleUpInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定需升级配置的实例 ID。",
+          "example": "vdb-iue******",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定升级配置后的 CPU 核数。\n- 节点规格可选项（CPU & 内存）必须 >= 当前配置。\n- 可选择的规格信息，请参见[选择节点规格与数量](https://cloud.tencent.com/document/product/1709/113399)。",
+          "example": "4",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "指定升级配置后的内存大小，单位为：GB。\n- 节点规格可选项（CPU & 内存）必须 >= 当前配置。\n- 不同实例类型对 CPU 与内存资源的配置比例有不同的要求。例如，计算型实例，CPU 与内存的分配比例要求为 1:2。CPU 被指定为 4 核，那么内存则应被指定为 8GB。节点规格的详细信息，请参见[选择节点规格与数量](https://cloud.tencent.com/document/product/1709/113399)。\n",
+          "example": "8",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "指定升级配置后的磁盘容量。\n- 单位：GB。\n- 取值范围为：[10,1000]。\n- 取值必须为10的倍数。",
+          "example": "200",
+          "member": "uint64",
+          "name": "StorageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定垂直扩容升级节点配置的时间。\n- false：默认值，指在下一个维护时间段内执行升配节点规格的任务。实例列表中“状态”列将显示“待执行配置变更”，等到维护时间窗内启动任务。维护时间的更多信息，请参见维护时间窗。\n- true：立即执行升级配置的任务，请确保此时没有重大业务操作。",
+          "example": "false",
+          "member": "bool",
+          "name": "RunNow",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceResponse": {
+      "document": "ScaleUpInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SecurityGroup": {
       "document": "安全组规则",

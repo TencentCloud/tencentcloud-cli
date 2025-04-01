@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer ListTopicPolicy --cli-unfold-argument  \
-    --ProductId ABCDE12345
+    --ProductId NS74VEP2HY
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Topics": [
             {
-                "TopicName": "abc",
+                "TopicName": "$thing/up/NS74VEP2HY/dev",
                 "Privilege": 1
             }
         ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DescribeStreamLinkEventAttachedFlows --cli-unfold-argument  \
-    --EventId test \
+    --EventId 019202e96d9f09dc0f325e7f7a2a \
     --PageNum 1 \
     --PageSize 10
 ```
@@ -17,70 +17,70 @@ Output:
     "Response": {
         "Infos": [
             {
-                "FlowId": "abc",
-                "FlowName": "abc",
-                "State": "abc",
+                "FlowId": "019202e96d9f09dc0f325e7f7a2a",
+                "FlowName": "flow_name",
+                "State": "IDLE",
                 "MaxBandwidth": 0,
                 "InputGroup": [
                     {
-                        "InputId": "abc",
-                        "InputName": "abc",
-                        "Description": "abc",
-                        "Protocol": "abc",
+                        "InputId": "019202e96d9f09dc0f325e7f7a2a",
+                        "InputName": "input_name",
+                        "Description": "description",
+                        "Protocol": "SRT",
                         "InputAddressList": [
                             {
-                                "Ip": "abc",
-                                "Port": 0
+                                "Ip": "102.102.2.3",
+                                "Port": 23600
                             }
                         ],
                         "AllowIpList": [
-                            "abc"
+                            "0.0.0.0"
                         ],
                         "SRTSettings": {
-                            "Mode": "abc",
-                            "StreamId": "abc",
+                            "Mode": "Listener",
+                            "StreamId": "",
                             "Latency": 0,
                             "RecvLatency": 0,
                             "PeerLatency": 0,
                             "PeerIdleTimeout": 0,
-                            "Passphrase": "abc",
+                            "Passphrase": "",
                             "PbKeyLen": 0,
                             "SourceAddresses": [
                                 {
-                                    "Ip": "abc",
-                                    "Port": 0
+                                    "Ip": "120.120.23.32",
+                                    "Port": 23600
                                 }
                             ]
                         },
                         "RTPSettings": {
-                            "FEC": "abc",
+                            "FEC": "off",
                             "IdleTimeout": 0
                         },
-                        "InputRegion": "abc",
+                        "InputRegion": "ap-shanghai",
                         "RTMPSettings": {
-                            "AppName": "abc",
-                            "StreamKey": "abc"
+                            "AppName": "live",
+                            "StreamKey": "live"
                         },
-                        "FailOver": "abc",
+                        "FailOver": "off",
                         "RTMPPullSettings": {
                             "SourceAddresses": [
                                 {
-                                    "TcUrl": "abc",
-                                    "StreamKey": "abc"
+                                    "TcUrl": "rtmp://example.com/live",
+                                    "StreamKey": "test_live"
                                 }
                             ]
                         },
                         "RTSPPullSettings": {
                             "SourceAddresses": [
                                 {
-                                    "Url": "abc"
+                                    "Url": "rtsp://example.com/live/test"
                                 }
                             ]
                         },
                         "HLSPullSettings": {
                             "SourceAddresses": [
                                 {
-                                    "Url": "abc"
+                                    "Url": "http://example.com/live/test.m3u8"
                                 }
                             ]
                         },
@@ -92,47 +92,47 @@ Output:
                 ],
                 "OutputGroup": [
                     {
-                        "OutputId": "abc",
-                        "OutputName": "abc",
-                        "OutputType": "abc",
-                        "Description": "abc",
-                        "Protocol": "abc",
+                        "OutputId": "01937702c54509dc0f3269ca341f",
+                        "OutputName": "output_name",
+                        "OutputType": "Internet",
+                        "Description": "description",
+                        "Protocol": "SRT",
                         "OutputAddressList": [
                             {
-                                "Ip": "abc"
+                                "Ip": "102.32.56.23"
                             }
                         ],
-                        "OutputRegion": "abc",
+                        "OutputRegion": "ap-shanghai",
                         "SRTSettings": {
                             "Destinations": [
                                 {
-                                    "Ip": "abc",
-                                    "Port": 0
+                                    "Ip": "102.32.56.23",
+                                    "Port": 22300
                                 }
                             ],
-                            "StreamId": "abc",
+                            "StreamId": "",
                             "Latency": 0,
                             "RecvLatency": 0,
                             "PeerLatency": 0,
                             "PeerIdleTimeout": 0,
-                            "Passphrase": "abc",
+                            "Passphrase": "",
                             "PbKeyLen": 0,
-                            "Mode": "abc",
+                            "Mode": "Caller",
                             "SourceAddresses": [
                                 {
-                                    "Ip": "abc",
-                                    "Port": 0
+                                    "Ip": "102.32.56.23",
+                                    "Port": 22300
                                 }
                             ]
                         },
                         "RTPSettings": {
                             "Destinations": [
                                 {
-                                    "Ip": "abc",
-                                    "Port": 0
+                                    "Ip": "102.32.56.23",
+                                    "Port": 22300
                                 }
                             ],
-                            "FEC": "abc",
+                            "FEC": "off",
                             "IdleTimeout": 0
                         },
                         "RTMPSettings": {
@@ -140,45 +140,45 @@ Output:
                             "ChunkSize": 0,
                             "Destinations": [
                                 {
-                                    "Url": "abc",
-                                    "StreamKey": "abc"
+                                    "Url": "rtmp://example.com/live",
+                                    "StreamKey": "live_test"
                                 }
                             ]
                         },
                         "RTMPPullSettings": {
                             "ServerUrls": [
                                 {
-                                    "TcUrl": "abc",
-                                    "StreamKey": "abc"
+                                    "TcUrl": "rtmp://example.com/live",
+                                    "StreamKey": "live_test"
                                 }
                             ]
                         },
                         "AllowIpList": [
-                            "abc"
+                            "0.0.0.0"
                         ],
                         "RTSPPullSettings": {
                             "ServerUrls": [
                                 {
-                                    "Url": "abc"
+                                    "Url": "rtsp://example.com/live/test"
                                 }
                             ]
                         },
                         "HLSPullSettings": {
                             "ServerUrls": [
                                 {
-                                    "Url": "abc"
+                                    "Url": "http://example.com/live/test.m3u8"
                                 }
                             ]
                         },
                         "MaxConcurrent": 1
                     }
                 ],
-                "EventId": "abc",
-                "Region": "abc"
+                "EventId": "01937702ecc509dc0f3269ca3420",
+                "Region": "ap-shanghai"
             }
         ],
         "TotalNum": 0,
-        "RequestId": "abc"
+        "RequestId": "01937702c54509dc0f3269ca341f"
     }
 }
 ```

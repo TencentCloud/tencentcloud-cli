@@ -14,9 +14,9 @@ Output:
 ```
 {
     "Response": {
-        "ResultCode": "xx",
-        "ResultMessage": "xx",
-        "RequestId": "xx"
+        "ResultCode": "fail",
+        "ResultMessage": "device has binded family",
+        "RequestId": "3edc-7ujm-89jfa"
     }
 }
 ```

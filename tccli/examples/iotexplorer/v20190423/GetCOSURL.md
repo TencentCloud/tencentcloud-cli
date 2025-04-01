@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer GetCOSURL --cli-unfold-argument  \
-    --ProductID ABCDE12345 \
+    --ProductID ' J2CRPPZ8J4' \
     --FirmwareVersion 2.0.0
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Url": "http://abc.com",
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "4rfg-6hh-gedy76"
     }
 }
 ```

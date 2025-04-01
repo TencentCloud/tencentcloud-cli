@@ -14,122 +14,173 @@ Output:
 ```
 {
     "Response": {
-        "TotalPage": 1,
-        "PageNum": 1,
-        "PageSize": 10,
-        "RequestId": "aaaaa",
         "Infos": [
             {
-                "FlowName": "sacdsad",
+                "FlowId": "019202e96d9f09dc0f325e7f7a2a",
+                "FlowName": "flow_name",
+                "State": "IDLE",
+                "MaxBandwidth": 0,
                 "InputGroup": [
                     {
-                        "AllowIpList": [
-                            "0.0.0.0/0"
-                        ],
+                        "InputId": "019202e96d9f09dc0f325e7f7a2a",
+                        "InputName": "input_name",
+                        "Description": "description",
                         "Protocol": "SRT",
-                        "Description": "asda",
-                        "RTPSettings": {
-                            "IdleTimeout": 1000,
-                            "FEC": "none"
-                        },
-                        "InputName": "123sadsasada2",
-                        "SRTSettings": {
-                            "Latency": 1000,
-                            "PeerLatency": 1000,
-                            "PbKeyLen": 1000,
-                            "RecvLatency": 1000,
-                            "Passphrase": "aaaa",
-                            "StreamId": "1111",
-                            "PeerIdleTimeout": 1000
-                        },
-                        "RTMPSettings": {
-                            "StreamKey": "streamid?a=b",
-                            "AppName": "live_appid"
-                        },
-                        "RTSPPullSettings": {},
-                        "FailOver": "xx",
-                        "RTMPPullSettings": {},
-                        "InputRegion": "ap-mumbai",
-                        "InputId": "1213",
                         "InputAddressList": [
                             {
-                                "Ip": "0.0.0.0",
-                                "Port": 0
-                            }
-                        ]
-                    }
-                ],
-                "FlowId": "123ds12",
-                "State": "IDLE",
-                "OutputGroup": [
-                    {
-                        "OutputName": "sad231edqsq",
-                        "OutputAddressList": [
-                            {
-                                "Ip": "2.2.2.2"
+                                "Ip": "102.102.2.3",
+                                "Port": 23600
                             }
                         ],
-                        "Protocol": "RTP",
-                        "Description": "aaaaasss",
-                        "RTPSettings": {
-                            "IdleTimeout": 1000,
-                            "FEC": "none",
-                            "Destinations": [
-                                {
-                                    "Ip": "3.3.3.3",
-                                    "Port": 0
-                                }
-                            ]
-                        },
-                        "OutputType": "Internet",
+                        "AllowIpList": [
+                            "0.0.0.0"
+                        ],
                         "SRTSettings": {
-                            "Latency": 10000,
-                            "PeerLatency": 20000,
-                            "PbKeyLen": 10000,
-                            "RecvLatency": 30000,
-                            "Passphrase": "aaaa",
-                            "StreamId": "aaaa",
-                            "PeerIdleTimeout": 40000,
-                            "Destinations": [
+                            "Mode": "Listener",
+                            "StreamId": "",
+                            "Latency": 0,
+                            "RecvLatency": 0,
+                            "PeerLatency": 0,
+                            "PeerIdleTimeout": 0,
+                            "Passphrase": "",
+                            "PbKeyLen": 0,
+                            "SourceAddresses": [
                                 {
-                                    "Ip": "4.4.4.4",
-                                    "Port": 0
+                                    "Ip": "120.120.23.32",
+                                    "Port": 23600
                                 }
                             ]
                         },
-                        "OutputId": "asd21dsa",
+                        "RTPSettings": {
+                            "FEC": "off",
+                            "IdleTimeout": 0
+                        },
+                        "InputRegion": "ap-shanghai",
                         "RTMPSettings": {
-                            "IdleTimeout": 1000,
-                            "ChunkSize": 4096,
-                            "Destinations": [
+                            "AppName": "live",
+                            "StreamKey": "live"
+                        },
+                        "FailOver": "off",
+                        "RTMPPullSettings": {
+                            "SourceAddresses": [
                                 {
-                                    "Url": "rtmp://domain/live",
-                                    "StreamKey": "streamid?a=b"
+                                    "TcUrl": "rtmp://example.com/live",
+                                    "StreamKey": "test_live"
                                 }
                             ]
                         },
                         "RTSPPullSettings": {
-                            "ServerUrls": [
+                            "SourceAddresses": [
                                 {
-                                    "Url": "test"
+                                    "Url": "rtsp://example.com/live/test"
+                                }
+                            ]
+                        },
+                        "HLSPullSettings": {
+                            "SourceAddresses": [
+                                {
+                                    "Url": "http://example.com/live/test.m3u8"
+                                }
+                            ]
+                        },
+                        "ResilientStream": {
+                            "Enable": true,
+                            "BufferTime": 1
+                        }
+                    }
+                ],
+                "OutputGroup": [
+                    {
+                        "OutputId": "01937702c54509dc0f3269ca341f",
+                        "OutputName": "output_name",
+                        "OutputType": "Internet",
+                        "Description": "description",
+                        "Protocol": "SRT",
+                        "OutputAddressList": [
+                            {
+                                "Ip": "102.32.56.23"
+                            }
+                        ],
+                        "OutputRegion": "ap-shanghai",
+                        "SRTSettings": {
+                            "Destinations": [
+                                {
+                                    "Ip": "102.32.56.23",
+                                    "Port": 22300
+                                }
+                            ],
+                            "StreamId": "",
+                            "Latency": 0,
+                            "RecvLatency": 0,
+                            "PeerLatency": 0,
+                            "PeerIdleTimeout": 0,
+                            "Passphrase": "",
+                            "PbKeyLen": 0,
+                            "Mode": "Caller",
+                            "SourceAddresses": [
+                                {
+                                    "Ip": "102.32.56.23",
+                                    "Port": 22300
+                                }
+                            ]
+                        },
+                        "RTPSettings": {
+                            "Destinations": [
+                                {
+                                    "Ip": "102.32.56.23",
+                                    "Port": 22300
+                                }
+                            ],
+                            "FEC": "off",
+                            "IdleTimeout": 0
+                        },
+                        "RTMPSettings": {
+                            "IdleTimeout": 0,
+                            "ChunkSize": 0,
+                            "Destinations": [
+                                {
+                                    "Url": "rtmp://example.com/live",
+                                    "StreamKey": "live_test"
                                 }
                             ]
                         },
                         "RTMPPullSettings": {
                             "ServerUrls": [
                                 {
-                                    "StreamKey": "test",
-                                    "TcUrl": "test"
+                                    "TcUrl": "rtmp://example.com/live",
+                                    "StreamKey": "live_test"
                                 }
                             ]
                         },
-                        "OutputRegion": "xx"
+                        "AllowIpList": [
+                            "0.0.0.0"
+                        ],
+                        "RTSPPullSettings": {
+                            "ServerUrls": [
+                                {
+                                    "Url": "rtsp://example.com/live/test"
+                                }
+                            ]
+                        },
+                        "HLSPullSettings": {
+                            "ServerUrls": [
+                                {
+                                    "Url": "http://example.com/live/test.m3u8"
+                                }
+                            ]
+                        },
+                        "MaxConcurrent": 1
                     }
                 ],
-                "MaxBandwidth": 10000000
+                "EventId": "01937702ecc509dc0f3269ca3420",
+                "Region": "ap-shanghai"
             }
         ],
-        "TotalNum": 1
+        "TotalNum": 1,
+        "PageNum": 1,
+        "TotalPage": 1,
+        "PageSize": 10,
+        "RequestId": "01937702c54509dc0f3269ca341f"
     }
 }
 ```

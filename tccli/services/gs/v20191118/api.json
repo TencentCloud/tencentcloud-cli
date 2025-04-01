@@ -361,6 +361,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户 Id",
+          "example": "userId",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1526,6 +1536,15 @@
           "example": "[\"xxx\"]",
           "member": "string",
           "name": "AndroidAppIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "[{\"Name\":\"UserId\",\"Values\":[\"user1\"]}]\t",
+          "member": "Filter",
+          "name": "Filters",
           "required": false,
           "type": "list"
         }

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotexplorer DirectBindDeviceInFamily --cli-unfold-argument  \
-    --IotAppID ABCDE12345 \
+    --IotAppID iot5tgb \
     --UserID dev_49 \
-    --FamilyId 0 \
-    --ProductId 1 \
-    --DeviceName tt \
-    --RoomId 1
+    --FamilyId ' f_cc67fefbcefd43d88a5c0157ee18c975' \
+    --ProductId NS74VEP2HY \
+    --DeviceName dev \
+    --RoomId 2
 ```
 
 Output: 

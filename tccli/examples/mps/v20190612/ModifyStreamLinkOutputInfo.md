@@ -6,31 +6,31 @@ Input:
 
 ```
 tccli mps ModifyStreamLinkOutputInfo --cli-unfold-argument  \
-    --FlowId xx \
-    --Output.OutputName xx \
-    --Output.Protocol xx \
-    --Output.Description xx \
+    --FlowId  \
+    --Output.OutputName  \
+    --Output.Protocol  \
+    --Output.Description  \
     --Output.RTPSettings.IdleTimeout 1000 \
-    --Output.RTPSettings.FEC xx \
-    --Output.RTPSettings.Destinations.0.Ip xx \
+    --Output.RTPSettings.FEC  \
+    --Output.RTPSettings.Destinations.0.Ip  \
     --Output.RTPSettings.Destinations.0.Port 0 \
     --Output.SRTSettings.Latency 1000 \
     --Output.SRTSettings.PeerLatency 1000 \
     --Output.SRTSettings.PbKeyLen 0 \
     --Output.SRTSettings.RecvLatency 1000 \
-    --Output.SRTSettings.Passphrase xx \
-    --Output.SRTSettings.StreamId xx \
+    --Output.SRTSettings.Passphrase  \
+    --Output.SRTSettings.StreamId  \
     --Output.SRTSettings.PeerIdleTimeout 1000 \
-    --Output.SRTSettings.Destinations.0.Ip xx \
+    --Output.SRTSettings.Destinations.0.Ip  \
     --Output.SRTSettings.Destinations.0.Port 10000 \
-    --Output.SRTSettings.Destinations.1.Ip xx \
+    --Output.SRTSettings.Destinations.1.Ip  \
     --Output.SRTSettings.Destinations.1.Port 10000 \
-    --Output.OutputId xx \
+    --Output.OutputId  \
     --Output.RTMPSettings.ChunkSize 4096 \
-    --Output.RTMPSettings.Destinations.0.Url xx \
-    --Output.RTMPSettings.Destinations.0.StreamKey xx \
-    --Output.RTMPSettings.Destinations.1.Url xx \
-    --Output.RTMPSettings.Destinations.1.StreamKey xx
+    --Output.RTMPSettings.Destinations.0.Url  \
+    --Output.RTMPSettings.Destinations.0.StreamKey  \
+    --Output.RTMPSettings.Destinations.1.Url  \
+    --Output.RTMPSettings.Destinations.1.StreamKey 
 ```
 
 Output: 
@@ -43,6 +43,7 @@ Output:
             "OutputType": "Internet",
             "Description": "description",
             "Protocol": "SRT",
+            "MaxConcurrent": 1,
             "OutputAddressList": [
                 {
                     "Ip": "1.1.1.1"
@@ -55,22 +56,29 @@ Output:
             "RTSPPullSettings": {
                 "ServerUrls": [
                     {
-                        "Url": "xx"
+                        "Url": ""
                     }
                 ]
             },
             "RTMPPullSettings": {
                 "ServerUrls": [
                     {
-                        "StreamKey": "xx",
-                        "TcUrl": "xx"
+                        "StreamKey": "",
+                        "TcUrl": ""
                     }
                 ]
             },
             "AllowIpList": [
-                "xx"
+                ""
             ],
             "SRTSettings": {
+                "Mode": "",
+                "SourceAddresses": [
+                    {
+                        "Ip": "",
+                        "Port": 1
+                    }
+                ],
                 "Destinations": [
                     {
                         "Ip": "1.1.1.1",
@@ -88,6 +96,9 @@ Output:
                 "PeerIdleTimeout": 1000,
                 "Passphrase": "",
                 "PbKeyLen": 0
+            },
+            "HLSPullSettings": {
+                "ServerUrls": []
             },
             "RTPSettings": {
                 "Destinations": [],

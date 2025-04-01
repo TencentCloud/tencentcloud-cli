@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer GetDeviceList --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId NS74VEP2HY \
     --ProjectId 12 \
     --Offset 0 \
     --Limit 10
@@ -18,24 +18,24 @@ Output:
     "Response": {
         "Devices": [
             {
-                "DeviceName": "test",
+                "DeviceName": "d1",
                 "Status": 0,
-                "DevicePsk": "",
+                "DevicePsk": "tgrgsg=",
                 "CreateTime": 0,
                 "FirstOnlineTime": 0,
                 "LoginTime": 0,
                 "LogLevel": 0,
-                "Version": "",
+                "Version": "v1",
                 "DeviceCert": "",
                 "DevEUI": "",
                 "AppKey": "",
                 "DevAddr": "",
                 "AppSKey": "",
                 "NwkSKey": "",
-                "CreatorNickName": "",
-                "CreateUserId": 0,
+                "CreatorNickName": "leo",
+                "CreateUserId": 635261,
                 "EnableState": 0,
-                "ProductId": "PR***TA",
+                "ProductId": "NS74VEP2HY",
                 "DeviceType": "设备",
                 "ProductName": "产品名称",
                 "IsLora": false

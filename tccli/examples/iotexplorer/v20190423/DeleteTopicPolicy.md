@@ -6,14 +6,16 @@ Input:
 
 ```
 tccli iotexplorer DeleteTopicPolicy --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --TopicName abc
+    --ProductId J2CRPPZ8J4 \
+    --TopicName $thing/up/J2CRPPZ8J4/d1
 ```
 
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "RequestId": "3ed-5tgrfb7-76jer"
+    }
 }
 ```
 

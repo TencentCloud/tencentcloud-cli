@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud BatchUpdateFirmware --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5123 \
     --FirmwareVersion 2.0.0 \
     --FirmwareOriVersion 1.0.0 \
     --Type 7

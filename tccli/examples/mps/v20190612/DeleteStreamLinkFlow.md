@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli mps DeleteStreamLinkFlow --cli-unfold-argument  \
-    --FlowId aaa
+    --FlowId 01937702c54509dc0f3269ca341f
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "aaaaa"
+        "RequestId": "019202e96d9f09dc0f325e7f7a2a"
     }
 }
 ```

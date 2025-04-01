@@ -7,8 +7,8 @@ Input:
 ```
 tccli iotexplorer UpdateDeviceTWeCallAuthorizeStatus --cli-unfold-argument  \
     --Status 1 \
-    --ProductId ProductId1 \
-    --DeviceName DeviceName1 \
+    --ProductId J2CRPPZ8J4 \
+    --DeviceName d1 \
     --WechatOpenId 111111
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "4rfv-6yhn-7uj"
     }
 }
 ```

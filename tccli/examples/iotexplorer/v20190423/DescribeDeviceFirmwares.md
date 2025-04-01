@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer DescribeDeviceFirmwares --cli-unfold-argument  \
-    --ProductId xx \
-    --DeviceName xx
+    --ProductId DMGFE2GWCG \
+    --DeviceName dev
 ```
 
 Output: 

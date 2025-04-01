@@ -15955,6 +15955,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始隔离时间",
+          "example": "1666257531143",
+          "member": "int64",
+          "name": "IsolatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为容器实例，默认 true",
+          "example": "true",
+          "member": "bool",
+          "name": "Container",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16896,6 +16916,16 @@
           "example": "0",
           "member": "uint64",
           "name": "InstanceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，毫秒为单位",
+          "example": "1666257531143",
+          "member": "uint64",
+          "name": "IsolatedTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

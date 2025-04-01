@@ -272,6 +272,14 @@
         "title": "创建并执行Spark SQL批任务"
       }
     ],
+    "CreateSparkSubmitTask": [
+      {
+        "document": "本接口用于提交SparkSubmit任务",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSparkSubmitTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"test\",\n    \"TaskType\": 1,\n    \"DataEngineName\": \"testEngine\",\n    \"PackagePath\": \"cosn://xxx.jar\",\n    \"MainClass\": \"Main\",\n    \"RoleArn\": 0,\n    \"IsInherit\": 1,\n    \"DriverSize\": \"small\",\n    \"ExecutorSize\": \"small\",\n    \"ExecutorNumbers\": 1,\n    \"ExecutorMaxNumbers\": 1,\n    \"CmdArgs\": [\n        {\n            \"Key\": \"MAINARGS\",\n            \"Value\": \"xejalljhhlJFJLd1gl\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchId\": \"2ade477a-9f72-44aa-9fd4-65cb739d6301\",\n        \"TaskId\": \"2ae0ds7a-9f72-44aa-9fd4-65cb739d6301\",\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "title": "提交SparkSubmit任务"
+      }
+    ],
     "CreateStoreLocation": [
       {
         "document": "",

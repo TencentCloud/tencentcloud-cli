@@ -2771,6 +2771,21 @@
       ],
       "type": "object"
     },
+    "ConfigAdvanced": {
+      "document": "支持模版的单个属性配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模版的单个属性配置",
+          "example": "only_hw",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ContentInfo": {
       "document": "卡证字段信息返回值",
       "members": [
@@ -16592,7 +16607,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nDispatchWeightNote -- 磅单发货单识别模板\nReceiptWeightNote -- 磅单收货单识别模板",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nDispatchWeightNote -- 磅单发货单识别模板\nReceiptWeightNote -- 磅单收货单识别模板\nArticalRecognize -- 手写作文模版",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -16616,6 +16631,15 @@
           "name": "OutputParentKey",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "模版的单个属性配置",
+          "example": "{\"Scene\": \"only_hw\"}",
+          "member": "ConfigAdvanced",
+          "name": "ConfigAdvanced",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -23169,7 +23193,7 @@
           "example": "1234567",
           "member": "string",
           "name": "DetectedText",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23179,7 +23203,53 @@
           "example": "[x1,y1,x2,y3,x3,y3,x4,y4]",
           "member": "Polygon",
           "name": "Coord",
-          "required": false,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述性信息",
+          "example": "{\"Parag\":{\"ParagNo\":2,\"ParagType\":0,\"DetectNo\":0}}",
+          "member": "string",
+          "name": "AdvancedInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单词的四点坐标",
+          "example": "[x1,y1,x2,y3,x3,y3,x4,y4]",
+          "member": "WordPolygon",
+          "name": "WordCoord",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WordPolygon": {
+      "document": "单词坐标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本块内容",
+          "example": "1234567",
+          "member": "string",
+          "name": "DetectedText",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "四点坐标",
+          "example": "[x1,y1,x2,y3,x3,y3,x4,y4]\t",
+          "member": "Polygon",
+          "name": "Coord",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }

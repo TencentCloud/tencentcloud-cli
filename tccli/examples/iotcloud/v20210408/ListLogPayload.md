@@ -33,14 +33,14 @@ Output:
             },
             {
                 "DateTime": "1606207844000",
-                "DeviceName": "test",
+                "DeviceName": "name1",
                 "Payload": "MTIz",
                 "PayloadFormatType": "json",
                 "ProductId": "EQPOKD5111",
                 "RequestId": "687643990923883336",
                 "SrcName": "EQPOKD5111/dev-001",
                 "SrcType": "api:DEFAULT_DEVICE",
-                "Topic": "EQPOKD5111/test/control",
+                "Topic": "EQPOKD5111/down/control",
                 "Uin": "10000123456"
             }
         ]

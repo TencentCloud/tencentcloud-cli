@@ -346,7 +346,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认值为\"mysql\"。",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，\"redis\" - 云数据库 Redis，默认值为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -401,7 +401,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -420,6 +420,7 @@
           "example": "https://dbbrain-sh-1256569818.cos.ap-guangzhou.myqcloud.com",
           "member": "string",
           "name": "ReportUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -429,6 +430,7 @@
           "example": "1618890295",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -828,7 +830,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB  for MySQL，\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -1055,7 +1057,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 定时生成；\"MANUAL\" - 手动触发。",
+          "document": "任务的触发来源，支持的取值包括：\"DAILY_INSPECTION\" - 实例巡检；\"SCHEDULED\" - 计划任务；\"MANUAL\" - 手动触发。",
           "example": "[\"DAILY_INSPECTION\"]",
           "member": "string",
           "name": "Sources",
@@ -1100,7 +1102,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL；\"redis\" - 云数据库 Redis，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -1119,15 +1121,17 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务列表。",
-          "example": "-",
+          "example": "无",
           "member": "HealthReportTask",
           "name": "Tasks",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2735,6 +2739,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康等级版本，默认为V1",
+          "example": "V2",
+          "member": "string",
+          "name": "HealthLevelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2800,6 +2814,96 @@
           "name": "EngineVersion",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU数量，对于Redis为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例部署模式。",
+          "example": "Standard",
+          "member": "string",
+          "name": "DeployMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例内存配置。",
+          "example": "无",
+          "member": "RedisInstanceConf",
+          "name": "InstanceConf",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DBbrain是否支持该实例。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例内存，单位MB。",
+          "example": "4096",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例子网统一ID，对于redis为空字符串。\t",
+          "example": "uniq_subnet_id",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例私有网络统一ID，对于redis为空字符串。",
+          "example": "uniq_vpc_id",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例磁盘容量，对于Redis为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Volume",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3482,6 +3586,42 @@
         }
       ],
       "usage": "both"
+    },
+    "RedisInstanceConf": {
+      "document": "Redis实例内存配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "副本数量",
+          "example": "1",
+          "member": "string",
+          "name": "ReplicasNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片数量",
+          "example": "1",
+          "member": "string",
+          "name": "ShardNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片内存大小，单位MB",
+          "example": "4096",
+          "member": "string",
+          "name": "ShardSize",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SchemaItem": {
       "document": "SchemaItem数组",

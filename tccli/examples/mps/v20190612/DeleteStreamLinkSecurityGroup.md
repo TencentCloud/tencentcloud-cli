@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli mps DeleteStreamLinkSecurityGroup --cli-unfold-argument  \
-    --Id abc
+    --Id 01937702c54509dc0f3269ca341f
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "019202e96d9f09dc0f325e7f7a2a"
     }
 }
 ```

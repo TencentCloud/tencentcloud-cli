@@ -1499,7 +1499,7 @@
           "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

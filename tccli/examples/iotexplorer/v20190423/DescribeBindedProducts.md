@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DescribeBindedProducts --cli-unfold-argument  \
-    --GatewayProductId ABCDE12345 \
+    --GatewayProductId J2CRPPZ8J4 \
     --ProductSource 0 \
     --Limit 10 \
     --Offset 0
@@ -22,11 +22,11 @@ Output:
                 "ProductName": "nhi7qhcp_StudioProduct101",
                 "ProjectId": "5SJYTRW8XYT",
                 "DataProtocol": 1,
-                "DevStatus": "xx",
-                "NetType": "xx",
+                "DevStatus": "1",
+                "NetType": "1",
                 "ProductType": 0,
                 "CategoryId": 0,
-                "ProductOwnerName": "test"
+                "ProductOwnerName": "leo"
             }
         ],
         "RequestId": "66245d34-a39b-41b5-85fa-8f8222c3e58e",

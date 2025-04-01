@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotexplorer DescribeGatewayBindDevices --cli-unfold-argument  \
-    --GatewayProductId 12345ABCDE \
-    --GatewayDeviceName test \
+    --GatewayProductId ' J2CRPPZ8J4' \
+    --GatewayDeviceName d1 \
     --Offset 0 \
     --Limit 10 \
-    --ProductId ABCDE12345
+    --ProductId ' RFVRPPZ5G'
 ```
 
 Output: 
@@ -20,12 +20,12 @@ Output:
         "Total": 1,
         "Devices": [
             {
-                "ProductId": "ABCDE12345",
-                "DeviceName": "test"
+                "ProductId": "J2CRPPZ8J4",
+                "DeviceName": "d1"
             }
         ],
-        "ProductName": "test",
-        "RequestId": "69f65618-600b-4ac4-b8e3-4528a6819078"
+        "ProductName": "产品名称",
+        "RequestId": "69f65618-600b-4ac4-b8e3-454r819078"
     }
 }
 ```

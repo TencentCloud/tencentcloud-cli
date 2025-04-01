@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotexplorer UnbindDevices --cli-unfold-argument  \
-    --GatewayProductId 12345ABCDE \
-    --GatewayDeviceName test \
-    --ProductId ABCDE12345 \
-    --DeviceNames test0
+    --GatewayProductId ' J2CRPPZ8J4' \
+    --GatewayDeviceName d1 \
+    --ProductId ' RFVZ8J4' \
+    --DeviceNames dev0
 ```
 
 Output: 

@@ -10396,7 +10396,7 @@
         {
           "disabled": false,
           "document": "指定安全 IP 组 ID。 <li>提供该参数时，仅查询指定 ID 的安全 IP 组配置；</li> <li>不传递参数时，返回站点下所有安全 IP 组信息。</li>",
-          "example": "123",
+          "example": "97",
           "member": "int64",
           "name": "GroupIds",
           "required": false,
@@ -10410,8 +10410,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全 IP 组的详细配置信息。包含每个安全 IP 组的 ID 、名称和 IP / 网段列表信息。",
-          "example": "{ \"GroupId\": 123, \"Name\": \"ExampleIpGroup\", \"Content\": [ \"2.2.2.2\", \"23.23.23.0/24\" ] }",
+          "document": "安全 IP 组的详细配置信息。包含每个安全 IP 组的 ID 、名称、 IP / 网段列表信息和过期时间信息。",
+          "example": "{     \"GroupId\": 123,     \"Name\": \"ExampleIpGroup\",     \"Content\": [         \"2.2.2.2\",         \"23.23.23.0/24\"     ],     \"ExpireInfo\": [         {             \"Time\": \"2026-03-24T16:03:00+08:00\",             \"IP\": \"2.2.2.2\"         }     ] }",
           "member": "IPGroup",
           "name": "IPGroups",
           "output_required": true,
@@ -13638,6 +13638,34 @@
       ],
       "usage": "both"
     },
+    "IPExpireInfo": {
+      "document": "存储定时过期时间和对应 IP。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时过期时间，遵循 ISO 8601 标准的日期和时间格式。例如 \"2022-01-01T00:00:00+08:00\"。",
+          "example": "\"2022-01-01T00:00:00+08:00\"",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 列表。仅支持 IP  及 IP 网段。",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "member": "string",
+          "name": "IPList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IPGroup": {
       "document": "IP 网段组",
       "members": [
@@ -13665,12 +13693,23 @@
         },
         {
           "disabled": false,
-          "document": "IP 组内容，仅支持 IP 及 IP 掩码。",
+          "document": "IP 组内容，仅支持 IP 及 IP 网段。",
           "example": "[\"1.1.1.1\", \"2.2.2.2\"]",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 定时过期信息。\n作为入参：用于为指定的 IP 地址或网段配置定时过期时间。\n作为出参，包含以下两类信息：\n<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>\n<li>一周内已到期的定时过期信息：已触发的过期配置。</li>",
+          "example": "[     {         \"Time\": \"2022-01-01T00:00:00+08:00\",         \"IP\": [             \"1.1.1.1\",             \"2.2.2.2\"         ]     },     {         \"Time\": \"2022-01-02T00:00:00+08:00\",         \"IP\": [             \"3.3.3.3\"         ]     } ]",
+          "member": "IPExpireInfo",
+          "name": "IPExpireInfo",
+          "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         }
@@ -17026,7 +17065,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，取值有：\n<li> append: 向 IPGroup 中追加 Content 参数中内容；</li>\n<li> remove: 从 IPGroup 中删除 Content 参数中内容；</li>\n<li> update: 全量替换 IPGroup 内容，并可修改 IPGroup 名称。 </li>",
+          "document": "操作类型，取值有：<li> append: 向 IPGroup 中添加新的 IP 地址或设置定时过期时间；</li><li>  remove: 从 IPGroup 中删除指定的 IP 地址或其定时过期时间；</li><li>  update: 完全替换 IPGroup 中 Content 或 ExpireInfo 的内容，并且可以修改 IPGroup 的名称。</li>    使用 append 操作时注意：   <li> 为 IP 或网段添加定时过期时间时，必须晚于当前时间。如果该 IP 或网段在组中不存在，必须同时在 Content 参数中添加该 IP 或网段。若该 IP 或网段已存在过期时间，则新时间将覆盖原有时间。</li>  使用 remove 操作时注意： <li> 删除 IP 或网段时，相关的未过期的定时过期时间也会被删除；</li> <li> 删除定时过期时间时，仅能删除当前未过期的时间。</li>  使用 update 操作时注意： <li> 替换 Content 内容时，不在 Content 中的 IP 或网段的未过期时间会被删除；</li> <li> 替换 IPExpireInfo 内容时，IPExpireInfo 中的 IP 或网段必须在 Content 中或在 IP 组中存在。</li>",
           "example": "\"update\"",
           "member": "string",
           "name": "Mode",
@@ -21689,9 +21728,10 @@
         {
           "disabled": false,
           "document": "标签键。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "business",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -21699,9 +21739,10 @@
         {
           "disabled": false,
           "document": "标签值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "video",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true

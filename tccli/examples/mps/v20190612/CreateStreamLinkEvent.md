@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps CreateStreamLinkEvent --cli-unfold-argument  \
-    --EventName aaa
+    --EventName event_test
 ```
 
 Output: 
@@ -14,19 +14,19 @@ Output:
 {
     "Response": {
         "Info": {
-            "EventId": "xx",
+            "EventId": "019202e96d9f09dc0f325e7f7a2a",
             "Status": 1,
-            "Description": "xx",
-            "EventName": "xx",
+            "Description": "event for test live",
+            "EventName": "event_test",
             "AttachedFlowGroup": [
                 {
-                    "FlowId": "xx",
-                    "Region": "xx"
+                    "FlowId": "01937702c54509dc0f3269ca341f",
+                    "Region": "ap-shanghai"
                 }
             ],
-            "CreateTime": "xx"
+            "CreateTime": "2024-10-12 12:12:12"
         },
-        "RequestId": "xx"
+        "RequestId": "019202e96d9f09dc0f325e7f7a2a"
     }
 }
 ```

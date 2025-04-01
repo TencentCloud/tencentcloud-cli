@@ -23,7 +23,7 @@ Output:
         "CreatedTime": 1741832627,
         "TpsLimit": 6000,
         "Remark": "",
-        "SkuCode": "pro_6k_1",
+        "SkuCode": "pro_10k_1",
         "MaxSubscriptionPerClient": 30,
         "MaxSubscription": 180000,
         "AuthorizationPolicyLimit": 20,

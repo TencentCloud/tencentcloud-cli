@@ -3,7 +3,7 @@
     "BatchUpdateFirmware": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=BatchUpdateFirmware\n&ProductId=ABCDE12345\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&Type=7\n&<公共请求参数>",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=BatchUpdateFirmware\n&ProductId=EQPOKD5123\n&FirmwareVersion=2.0.0\n&FirmwareOriVersion=1.0.0\n&Type=7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 11236,\n        \"RequestId\": \"0b77fcf9-d157-4b60-9a3d-541916b48c24\"\n    }\n}",
         "title": "批量更新固件示例"
       }
@@ -418,7 +418,7 @@
       {
         "document": "查询设备内容日志",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=ListLogPayload\n&Keywords=productid:EQPOKD5111\n&MaxTime=1606208039999\n&MinTime=1606207080000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Context\": \"ic0cxTVFidWRTTUZmcERXMVZR\",\n        \"Listover\": false,\n        \"RequestId\": \"afdc8492-1437-4237-bf53-8f96e5b3a828\",\n        \"Results\": [\n            {\n                \"DateTime\": \"1606207990000\",\n                \"DeviceName\": \"dev-001\",\n                \"Payload\": \"MTIz\",\n                \"PayloadFormatType\": \"json\",\n                \"ProductId\": \"EQPOKD5111\",\n                \"RequestId\": \"5540094755381968945\",\n                \"SrcName\": \"dev-001/001\",\n                \"SrcType\": \"device:DEFAULT_DEVICE\",\n                \"Topic\": \"EQPOKD5111/dev-001/event\",\n                \"Uin\": \"10000123456\"\n            },\n            {\n                \"DateTime\": \"1606207844000\",\n                \"DeviceName\": \"test\",\n                \"Payload\": \"MTIz\",\n                \"PayloadFormatType\": \"json\",\n                \"ProductId\": \"EQPOKD5111\",\n                \"RequestId\": \"687643990923883336\",\n                \"SrcName\": \"EQPOKD5111/dev-001\",\n                \"SrcType\": \"api:DEFAULT_DEVICE\",\n                \"Topic\": \"EQPOKD5111/test/control\",\n                \"Uin\": \"10000123456\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"ic0cxTVFidWRTTUZmcERXMVZR\",\n        \"Listover\": false,\n        \"RequestId\": \"afdc8492-1437-4237-bf53-8f96e5b3a828\",\n        \"Results\": [\n            {\n                \"DateTime\": \"1606207990000\",\n                \"DeviceName\": \"dev-001\",\n                \"Payload\": \"MTIz\",\n                \"PayloadFormatType\": \"json\",\n                \"ProductId\": \"EQPOKD5111\",\n                \"RequestId\": \"5540094755381968945\",\n                \"SrcName\": \"dev-001/001\",\n                \"SrcType\": \"device:DEFAULT_DEVICE\",\n                \"Topic\": \"EQPOKD5111/dev-001/event\",\n                \"Uin\": \"10000123456\"\n            },\n            {\n                \"DateTime\": \"1606207844000\",\n                \"DeviceName\": \"name1\",\n                \"Payload\": \"MTIz\",\n                \"PayloadFormatType\": \"json\",\n                \"ProductId\": \"EQPOKD5111\",\n                \"RequestId\": \"687643990923883336\",\n                \"SrcName\": \"EQPOKD5111/dev-001\",\n                \"SrcType\": \"api:DEFAULT_DEVICE\",\n                \"Topic\": \"EQPOKD5111/down/control\",\n                \"Uin\": \"10000123456\"\n            }\n        ]\n    }\n}",
         "title": "查询设备内容日志"
       }
     ],
@@ -465,7 +465,7 @@
     "ReplaceTopicRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceTopicRule\n<公共请求参数>\n\n{\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUIGZpZWxkMSwgZmllbGQyIEZST00gJ3NyY1Byb2R1Y3RJZC9zcmNEZXZpY2VOYW1lL2V2ZW50Jw==\",\n        \"Description\": \"xx\",\n        \"Actions\": \"xx\",\n        \"RuleDisabled\": true\n    },\n    \"RuleName\": \"testrulename\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotcloud.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"SELECT * FROM '#'\",\n        \"Actions\": \"[1]\",\n        \"Description\": \"mydescription\",\n        \"RuleDisabled\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "替换规则示例"
       }

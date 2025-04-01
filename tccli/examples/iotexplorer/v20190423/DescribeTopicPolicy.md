@@ -6,16 +6,18 @@ Input:
 
 ```
 tccli iotexplorer DescribeTopicPolicy --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --TopicName abc
+    --ProductId ' 4ON538D9AX' \
+    --TopicName $thing/up/raw/4ON538D9AX/dev
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TopicName": "abc",
-        "Privilege": 2
+        "ProductId": "4ON538D9AX",
+        "TopicName": "$thing/up/raw/4ON538D9AX/dev",
+        "Privilege": 2,
+        "RequestId": "4rt6-7yhn"
     }
 }
 ```

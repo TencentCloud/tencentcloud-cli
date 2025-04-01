@@ -1,10 +1,52 @@
 {
   "actions": {
+    "CreateIncrementalMigrationStrategy": {
+      "document": "创建增量迁移策略。",
+      "input": "CreateIncrementalMigrationStrategyRequest",
+      "name": "创建增量迁移策略",
+      "output": "CreateIncrementalMigrationStrategyResponse",
+      "status": "online"
+    },
+    "CreateStorage": {
+      "document": "该接口用于为专业版应用创建存储桶。\n\n注：\n- 本接口仅用于专业版应用；\n- 客户创建点播专业版应用时，系统默认为客户开通了部分地域的存储，用户如果需要开通其它地域的存储，可以通过该接口进行开通；\n- 通过 [DescribeStorageRegions](https://cloud.tencent.com/document/product/266/72480) 接口可以查询到所有存储地域及已经开通存储桶的地域。",
+      "input": "CreateStorageRequest",
+      "name": "创建专业版应用存储",
+      "output": "CreateStorageResponse",
+      "status": "online"
+    },
     "CreateStorageCredentials": {
       "document": "用于按指定策略，生成专业版应用的临时访问凭证，比如生成用于客户端上传的临时凭证。",
       "input": "CreateStorageCredentialsRequest",
       "name": "创建应用存储临时访问凭证",
       "output": "CreateStorageCredentialsResponse",
+      "status": "online"
+    },
+    "DeleteIncrementalMigrationStrategy": {
+      "document": "删除增量迁移策略。",
+      "input": "DeleteIncrementalMigrationStrategyRequest",
+      "name": "删除增量迁移策略",
+      "output": "DeleteIncrementalMigrationStrategyResponse",
+      "status": "online"
+    },
+    "DescribeIncrementalMigrationStrategyInfos": {
+      "document": "查询增量迁移策略信息。",
+      "input": "DescribeIncrementalMigrationStrategyInfosRequest",
+      "name": "查询增量迁移策略信息",
+      "output": "DescribeIncrementalMigrationStrategyInfosResponse",
+      "status": "online"
+    },
+    "DescribeStorage": {
+      "document": "该接口用于查询专业版应用中的存储桶信息，同时支持分页查询。\n\n注：\n- 本接口仅用于专业版应用。",
+      "input": "DescribeStorageRequest",
+      "name": "查询专业版应用存储",
+      "output": "DescribeStorageResponse",
+      "status": "online"
+    },
+    "ModifyIncrementalMigrationStrategy": {
+      "document": "创建增量迁移策略。",
+      "input": "ModifyIncrementalMigrationStrategyRequest",
+      "name": "修改增量迁移策略",
+      "output": "ModifyIncrementalMigrationStrategyResponse",
       "status": "online"
     }
   },
@@ -15,6 +57,79 @@
     "serviceShortName": "vod"
   },
   "objects": {
+    "CreateIncrementalMigrationStrategyRequest": {
+      "document": "CreateIncrementalMigrationStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略生效的存储桶 ID。",
+          "example": "bucketid123",
+          "member": "string",
+          "name": "BucketId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增量迁移策略名称，名称长度不超过100个字符，允许的字符为：`中文、英文、0-9、_、-`。",
+          "example": "strategy_name",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站类型。取值有：\n<li>HTTP：HTTP 源。</li>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "OriginType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增量迁移 HTTP 回源源站配置，当 OriginType 取值 `HTTP` 时必填。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpOriginConfig",
+          "name": "HttpOriginConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateIncrementalMigrationStrategyResponse": {
+      "document": "CreateIncrementalMigrationStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增量迁移策略 ID。",
+          "example": "im-demo123",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStorageCredentialsRequest": {
       "document": "CreateStorageCredentials请求参数结构体",
       "members": [
@@ -70,6 +185,61 @@
       ],
       "type": "object"
     },
+    "CreateStorageRequest": {
+      "document": "CreateStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播专业版[应用](/document/product/266/14574) ID。</b>",
+          "example": "1234567890",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储地域，必须是系统支持地域。\n通过 [DescribeStorageRegions](https://cloud.tencent.com/document/product/266/72480) 接口可以查询到所有存储地域及已经开通存储桶的地域。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储名称。\n<li>仅支持小写英文字母、数字、中划线 “-” 及其组合；</li>\n<li>存储命名不能以 “-” 开头或结尾；</li>\n<li>存储命名最大长度为 64 字符。</li>",
+          "example": "my-storage",
+          "member": "string",
+          "name": "StorageName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStorageResponse": {
+      "document": "CreateStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶 ID。",
+          "example": "bucketid123",
+          "member": "string",
+          "name": "BucketId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Credentials": {
       "document": "临时访问凭证。",
       "members": [
@@ -109,6 +279,821 @@
           "example": "1800",
           "member": "datetime_iso",
           "name": "Expiration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteIncrementalMigrationStrategyRequest": {
+      "document": "DeleteIncrementalMigrationStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略生效的存储桶 ID。",
+          "example": "bucketid123",
+          "member": "string",
+          "name": "BucketId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增量迁移策略 ID。",
+          "example": "im-demo123",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteIncrementalMigrationStrategyResponse": {
+      "document": "DeleteIncrementalMigrationStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementalMigrationStrategyInfosRequest": {
+      "document": "DescribeIncrementalMigrationStrategyInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 `20`；若 Filters 长度为 `0` 则查询时无过滤条件限制。 详细的过滤条件如下： <li>BucketId<br>   按照【<strong>存储桶 ID</strong>】进行过滤<br>   类型：String<br>   必选：否<br></li><li>StrategyId<br>   按照【<strong>策略 ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li> ",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回结果的排序。 SortBy.Field 取值有：<li>UpdateTime：创建时间。</li>若不填，SortBy.Field 默认值为 `UpdateTime`，SortBy.Order 默认值为 `Desc`。",
+          "example": "无",
+          "member": "SortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的起始偏移量，默认值为 `0`。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的记录条数，默认值为 `20`，最大值为 `100`。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementalMigrationStrategyInfosResponse": {
+      "document": "DescribeIncrementalMigrationStrategyInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略信息集合。",
+          "example": "无",
+          "member": "IncrementalMigrationStrategyInfo",
+          "name": "StrategyInfoSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageRequest": {
+      "document": "DescribeStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播专业版[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20；若 Filters 长度为 0 则分页查询子应用 SubAppId 下的存储信息。 详细的过滤条件如下：\n<li>BucketId<br>   按照【<strong>存储桶 ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>\n<li>StorageName<br>   按照【<strong>存储名称</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回结果的排序。 SortBy.Field 取值有：\n<li>CreateTime：创建时间。</li>若不填，SortBy.Field 默认值为 CreateTime，SortBy.Order 默认值为 Asc。",
+          "example": "无",
+          "member": "SortBy",
+          "name": "SortBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的起始偏移量，默认值为 0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回的记录条数，默认值为 20，最大值为 1000。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStorageResponse": {
+      "document": "DescribeStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的存储数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的存储信息列表。",
+          "example": "无",
+          "member": "StorageInfo",
+          "name": "StorageInfoSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "键值对过滤器，用于条件过滤查询。例如过滤 ID、名称或状态等。\n若存在多个 Filter 时，Filter 间的关系为逻辑与（AND）关系。\n若同一个 Filter 存在多个 Values，同一 Filter 下 Values 间的关系为逻辑或（OR）关系。\n\n过滤器筛选字段均为精确匹配。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。",
+          "example": "Status",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值。",
+          "example": "[\"NORMAL\", \"DISABLE\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "IncrementalMigrationHttpEndpointInfo": {
+      "document": "增量迁移源站地址信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地址信息，支持域名或 IP 地址。",
+          "example": "example.com",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份地址信息。",
+          "example": "[\"standby.com\",\"standby2.com\"]",
+          "member": "string",
+          "name": "StandbyEndpointSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationHttpHeader": {
+      "document": "增量迁移回源 HTTP Header。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Header 键。",
+          "example": "Host",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Header 值。",
+          "example": "example.com",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationHttpHeaderInfo": {
+      "document": "增量迁移回源 HTTP Header 信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Http Header 透传模式。取值有：\n<li>FOLLOW_ALL：透传所有头部信息；</li>\n<li>FOLLOW_PART：透传部分头部信息；</li>\n<li>IGNORE_PART：忽略部分头部信息。</li>参数必填。",
+          "example": "FOLLOW_ALL",
+          "member": "string",
+          "name": "HeaderFollowMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需透传 Header Key 集合，仅当 HeaderFollowMode 取值 `FOLLOW_PART` 时需要填充。",
+          "example": "[\"Host\"]",
+          "member": "string",
+          "name": "FollowHttpHeaderKeySet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新增 Header 键值对集合。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpHeader",
+          "name": "NewHttpHeaderSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationHttpOriginCondition": {
+      "document": "增量迁移回源条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发回源条件的 HTTP Code。若不填充，默认取值 `404`。",
+          "example": "404",
+          "member": "uint64",
+          "name": "HttpStatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发回源条件的对象键前缀。",
+          "example": "prefix_test",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationHttpOriginConfig": {
+      "document": "增量迁移回源源站配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源源站信息。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpOriginInfo",
+          "name": "OriginInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源参数。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpOriginParameter",
+          "name": "OriginParameter",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源模式。取值有：\n<li>SYNC：同步回源；</li>\n<li>ASYNC：异步回源。</li>若不填，默认取 `SYNC` 同步回源。",
+          "example": "SYNC",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源条件。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpOriginCondition",
+          "name": "OriginCondition",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationHttpOriginInfo": {
+      "document": "增量迁移源站信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增量迁移源站地址信息。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpEndpointInfo",
+          "name": "EndpointInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量迁移源站文件信息。",
+          "example": "无",
+          "member": "IncrementalMigrationOriginFileInfo",
+          "name": "FileInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationHttpOriginParameter": {
+      "document": "增量迁移回源参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 头部透传信息。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpHeaderInfo",
+          "name": "HttpHeaderInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源协议。取值有：\n<li>HTTP：强制 HTTP；</li>\n<li>HTTPS：强制 HTTPS；</li>\n<li>FOLLOW：跟随请求协议。</li>若不填，默认取值 `FOLLOW`。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求参数透传模式。取值有：\n<li>FOLLOW：全部透传；</li>\n<li>IGNORE：忽略，全部不透传。</li> 默认取值 `FOLLOW`。",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "QueryStringFollowMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向的 HTTP Code，目前仅支持 `301`，`302` 和 `307`。默认取值 `302`。",
+          "example": "302",
+          "member": "uint64",
+          "name": "HttpRedirectCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站重定向跟随模式。取值有：\n<li>FOLLOW：跟随源站重定向；</li>\n<li>IGNORE：忽略源站重定向。</li> 默认取值 `FOLLOW` 跟随源站重定向，即源站返回 `3xx` 时，会默认跟随至对应源站拉取数据。",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "OriginRedirectionFollowMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationOriginFileInfo": {
+      "document": "增量迁移源站文件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件前缀配置。",
+          "example": "无",
+          "member": "IncrementalMigrationOriginPrefixConfig",
+          "name": "PrefixConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件后缀配置。",
+          "example": "无",
+          "member": "IncrementalMigrationOriginSuffixConfig",
+          "name": "SuffixConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "固定文件配置。",
+          "example": "无",
+          "member": "IncrementalMigrationOriginFixedFileConfig",
+          "name": "FixedFileConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationOriginFixedFileConfig": {
+      "document": "增量迁移源站固定文件路径配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定文件路径；如填充 `example/test.png`，则回源地址为： `http(s)://<回源域名>/example/test.png`。",
+          "example": "example/test.png",
+          "member": "string",
+          "name": "FixedFilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationOriginPrefixConfig": {
+      "document": "增量迁移源站地址前缀配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站地址前缀，如填充 `test/`，则回源地址为 `http(s)://<回源域名>/test/<文件名>`。",
+          "example": "prefix",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationOriginSuffixConfig": {
+      "document": "增量迁移源站文件后缀配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件后缀；如填充 `.ts` ，则回源地址为：`http(s)://<回源域名>/<文件名>.ts`。",
+          "example": "suffix",
+          "member": "string",
+          "name": "Suffix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IncrementalMigrationStrategyInfo": {
+      "document": "增量迁移策略信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略 ID。",
+          "example": "im-demo123",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称。",
+          "example": "strategy_name",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<b>策略生效的点播专业版[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "SubAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略生效的存储桶 ID。",
+          "example": "bucketid-123",
+          "member": "string",
+          "name": "BucketId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站类型。取值有：<li>HTTP：HTTP 源。</li>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "OriginType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源源站配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpOriginConfig",
+          "name": "HttpOriginConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyIncrementalMigrationStrategyRequest": {
+      "document": "ModifyIncrementalMigrationStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<b>点播[专业版](/document/product/266/115396)[应用](/document/product/266/14574) ID。</b>",
+          "example": "123456789",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略生效的存储桶 ID。",
+          "example": "bucketid123",
+          "member": "string",
+          "name": "BucketId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "增量迁移策略 ID。",
+          "example": "im-demo123",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略名称。若不填充或填充空字符串，则不修改。",
+          "example": "StrategyName",
+          "member": "string",
+          "name": "StrategyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站类型。取值有：<li>HTTP：HTTP 源。</li>若不填或填充空字符串，则不修改。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "OriginType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 回源源站配置，若不填则默认不修改。",
+          "example": "无",
+          "member": "IncrementalMigrationHttpOriginConfig",
+          "name": "HttpOriginConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIncrementalMigrationStrategyResponse": {
+      "document": "ModifyIncrementalMigrationStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SortBy": {
+      "document": "排序依据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段。",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，可选值有：\n<li>Asc: 升序；</li>\n<li>Desc: 降序。</li>",
+          "example": "Asc",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "StorageInfo": {
+      "document": "专业版应用的存储信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶 ID。",
+          "example": "bucketId123demo",
+          "member": "string",
+          "name": "BucketId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储名称。",
+          "example": "my-storage",
+          "member": "string",
+          "name": "StorageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储所在区域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储公网源站访问域名的状态，取值有：\n<li>\bONLINE：已生效；</li>\n<li>\bDEPLOYING： 部署中。</li>",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "InternetAccessDomainStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储公网源站访问域名。",
+          "example": "example123.vodpro.ap-guangzhou.eovod.com",
+          "member": "string",
+          "name": "InternetAccessDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储的创建时间。",
+          "example": "2018-07-17T00:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
