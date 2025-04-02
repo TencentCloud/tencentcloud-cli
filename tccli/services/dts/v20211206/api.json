@@ -2635,6 +2635,17 @@
         },
         {
           "disabled": false,
+          "document": "是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted",
+          "example": "UnEncrypted",
+          "member": "string",
+          "name": "EncryptConn",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "tdsql的分片id。如节点类型为set必填。",
           "example": "set_1693279393_1",
           "member": "string",
@@ -5632,6 +5643,61 @@
           "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步到kafka链路的kafka配置",
+          "example": "无",
+          "member": "KafkaOption",
+          "name": "KafkaOption",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterBeginCommit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持",
+          "example": "false",
+          "member": "bool",
+          "name": "FilterCheckpoint",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)",
+          "example": "ReportErrorAfterCheck",
+          "member": "string",
+          "name": "DealOfExistSameTable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仅增量任务重新设置指定位点",
+          "example": "2025-03-10 11:11:11",
+          "member": "string",
+          "name": "StartPosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

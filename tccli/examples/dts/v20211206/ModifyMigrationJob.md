@@ -59,6 +59,7 @@ tccli dts ModifyMigrationJob --cli-unfold-argument  \
     --SrcInfo.Info.0.TmpSecretId  \
     --SrcInfo.Info.0.TmpSecretKey  \
     --SrcInfo.Info.0.TmpToken  \
+    --SrcInfo.Info.0.EncryptConn Encrypted \
     --SrcInfo.DatabaseNetEnv  \
     --DstInfo.Supplier  \
     --DstInfo.Region ap-qingyuan \
@@ -85,6 +86,7 @@ tccli dts ModifyMigrationJob --cli-unfold-argument  \
     --DstInfo.Info.0.TmpSecretId  \
     --DstInfo.Info.0.TmpSecretKey  \
     --DstInfo.Info.0.TmpToken  \
+    --DstInfo.Info.0.EncryptConn Encrypted \
     --DstInfo.DatabaseNetEnv  \
     --AutoRetryTimeRangeMinutes 0
 ```
