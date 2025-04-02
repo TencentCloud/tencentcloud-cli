@@ -7,6 +7,13 @@
       "output": "AddBrokerClusterResponse",
       "status": "online"
     },
+    "AddInternalResource": {
+      "document": "内部接口，用于添加4.x虚拟集群使用的物理集群信息",
+      "input": "AddInternalResourceRequest",
+      "name": "添加4.x物理集群信息",
+      "output": "AddInternalResourceResponse",
+      "status": "online"
+    },
     "AddUserPurchaseConfig": {
       "document": "用于开启专享版购买白名单",
       "input": "AddUserPurchaseConfigRequest",
@@ -238,6 +245,13 @@
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
+    "DescribeInternalResource": {
+      "document": "内部接口，用于查询4.x虚拟集群使用的物理集群信息",
+      "input": "DescribeInternalResourceRequest",
+      "name": "查询4.x物理集群信息",
+      "output": "DescribeInternalResourceResponse",
+      "status": "online"
+    },
     "DescribeMQTTClient": {
       "document": "查询 MQTT 客户端详情",
       "input": "DescribeMQTTClientRequest",
@@ -362,6 +376,13 @@
       "input": "DescribeRoleListRequest",
       "name": "查询角色列表",
       "output": "DescribeRoleListResponse",
+      "status": "online"
+    },
+    "DescribeRolesInternal": {
+      "document": "内部接口，查看角色信息",
+      "input": "DescribeRolesInternalRequest",
+      "name": "查看角色信息列表",
+      "output": "DescribeRolesInternalResponse",
       "status": "online"
     },
     "DescribeSharedClusterBinding": {
@@ -531,6 +552,27 @@
       "name": "重置消费位点",
       "output": "ResetConsumerGroupOffsetResponse",
       "status": "online"
+    },
+    "SyncConsumerGroupInternal": {
+      "document": "内部接口，用于同步用户实例下的消费组到另外一个broker集群中。",
+      "input": "SyncConsumerGroupInternalRequest",
+      "name": "复制消费组到另外一个集群",
+      "output": "SyncConsumerGroupInternalResponse",
+      "status": "online"
+    },
+    "SyncRoleInternal": {
+      "document": "内部接口，用于同步实例下的角色信息到另一个broker集群",
+      "input": "SyncRoleInternalRequest",
+      "name": "同步角色信息到另外一个集群",
+      "output": "SyncRoleInternalResponse",
+      "status": "online"
+    },
+    "SyncTopicInternal": {
+      "document": "内部接口，同步Topic到目标集群",
+      "input": "SyncTopicInternalRequest",
+      "name": "同步Topic到另一个集群",
+      "output": "SyncTopicInternalResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -647,6 +689,87 @@
     },
     "AddBrokerClusterResponse": {
       "document": "AddBrokerCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddInternalResourceRequest": {
+      "document": "AddInternalResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "broker集群ID",
+          "example": "rmqbroker-test-1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "broker集群nameserver的地址",
+          "example": "a.b.c.d:9876",
+          "member": "string",
+          "name": "AdminUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群的AK",
+          "example": "zd2ddsbadd",
+          "member": "string",
+          "name": "AdminToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网接入点",
+          "example": "a.com:9876",
+          "member": "string",
+          "name": "PublicEndpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC接入点",
+          "example": "b.com:8976",
+          "member": "string",
+          "name": "VpcEndpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP公网接入点",
+          "example": "http://a.com:3383",
+          "member": "string",
+          "name": "HttpPublicEndpoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP VPC接入点",
+          "example": "http://b.com:3345",
+          "member": "string",
+          "name": "HttpVpcEndpoint",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddInternalResourceResponse": {
+      "document": "AddInternalResource返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3521,6 +3644,53 @@
       ],
       "type": "object"
     },
+    "DescribeInternalResourceRequest": {
+      "document": "DescribeInternalResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "broker集群ID",
+          "example": "rmqbroker-test-1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternalResourceResponse": {
+      "document": "DescribeInternalResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "nameserver地址",
+          "example": "30.1.1.3:9876",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "broker的token",
+          "example": "akabddefadda",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMQTTClientRequest": {
       "document": "DescribeMQTTClient请求参数结构体",
       "members": [
@@ -5300,6 +5470,80 @@
       ],
       "type": "object"
     },
+    "DescribeRolesInternalRequest": {
+      "document": "DescribeRolesInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRolesInternalResponse": {
+      "document": "DescribeRolesInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色信息列表",
+          "example": "无",
+          "member": "InternalRole",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSharedClusterBindingRequest": {
       "document": "DescribeSharedClusterBinding请求参数结构体",
       "members": [],
@@ -6460,6 +6704,32 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalRole": {
+      "document": "内部接口，描述角色的数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "abc-role",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色的Accesskey",
+          "example": "aksabe233d",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9398,6 +9668,141 @@
         }
       ],
       "usage": "out"
+    },
+    "SyncConsumerGroupInternalRequest": {
+      "document": "SyncConsumerGroupInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncConsumerGroupInternalResponse": {
+      "document": "SyncConsumerGroupInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncRoleInternalRequest": {
+      "document": "SyncRoleInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "role-abc",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncRoleInternalResponse": {
+      "document": "SyncRoleInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncTopicInternalRequest": {
+      "document": "SyncTopicInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题分别在源集群和目标集群的读写权限  S_RW_D_NA：源集群允许读写，目标集群禁止读写  S_RW_D_RW：源集群允许读写，目标集群允许读写  S_R_D_RW：源集群只读，目标集群允许读写  S_NA_D_RW：源集群禁止读写，目前集群允许读写",
+          "example": "S_RW_D_R",
+          "member": "string",
+          "name": "Perm",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "ns_1",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncTopicInternalResponse": {
+      "document": "SyncTopicInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Tag": {
       "document": "标签数据",

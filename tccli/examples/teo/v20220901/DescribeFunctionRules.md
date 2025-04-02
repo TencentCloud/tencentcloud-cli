@@ -33,7 +33,7 @@ Output:
                     }
                 ],
                 "FunctionId": "ef-n1j14wfm",
-                "FunctionName": "test",
+                "FunctionName": "testfunction",
                 "Priority": 2,
                 "Remark": "my function rule",
                 "CreateTime": "2023-04-19T07:32:09Z",

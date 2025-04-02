@@ -16175,6 +16175,24 @@
           "name": "AclEnabled",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "SourceClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标集群ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "TargetClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

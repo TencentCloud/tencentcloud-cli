@@ -8,6 +8,14 @@
         "title": "添加共享集群信息"
       }
     ],
+    "AddInternalResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInternalResource\n<公共请求参数>\n\n{\n    \"ClusterName\": \"rmqbroker-bad\",\n    \"AdminUrl\": \"1.1.1.1:9876\",\n    \"AdminToken\": \"a123dfbaddf\",\n    \"PublicEndpoint\": \"a.com\",\n    \"VpcEndpoint\": \"b.com\",\n    \"HttpPublicEndpoint\": \"a.com\",\n    \"HttpVpcEndpoint\": \"b.com\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"10a425cc-c099-411e-a642-3862388a9d8e\"\n    }\n}",
+        "title": "添加4.x物理集群资源"
+      }
+    ],
     "AddUserPurchaseConfig": [
       {
         "document": "添加成功响应",
@@ -272,6 +280,14 @@
         "title": "查询集群列表"
       }
     ],
+    "DescribeInternalResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInternalResource\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-dev-02\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"1cd077ae-14ad-40a6-afc4-b7341413f6c0\",\n        \"Token\": \"ZlaxlrZ\",\n        \"Url\": \"1.141.103.22:9876\"\n    }\n}",
+        "title": "查询4.x物理集群资源"
+      }
+    ],
     "DescribeMQTTClient": [
       {
         "document": "样例",
@@ -420,6 +436,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"RoleName\": \"test_role_name\",\n                \"AccessKey\": \"ak4ae3zkj2zea6741a2a709\",\n                \"SecretKey\": \"skd68607c7dc2be6a4\",\n                \"PermRead\": true,\n                \"PermWrite\": true,\n                \"Remark\": \"\",\n                \"CreatedTime\": 1729153015000,\n                \"ModifiedTime\": 1729153015000\n            }\n        ]\n    }\n}",
         "title": "查询角色列表"
+      }
+    ],
+    "DescribeRolesInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRolesInternal\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-47x924vjavzz\",\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \"eyJrZXlJZCI6I\",\n                \"Name\": \"zdl30ddfdadadd\"\n            },\n            {\n                \"AccessKey\": \"eyJrZXlJZCI6InJvY2tldG1xL\",\n                \"Name\": \"a3324r23fsefsdsfdf\"\n            },\n            {\n                \"AccessKey\": \"eyJrZXlJZC\",\n                \"Name\": \"abcdefasda\"\n            }\n        ],\n        \"RequestId\": \"849d5961-41d3-457b-876c-1c709f16e374\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询角色信息"
       }
     ],
     "DescribeSharedClusterBinding": [
@@ -612,6 +636,30 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConsumerGroupOffset\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"Topic\": \"test_topic\",\n    \"ResetTimestamp\": -1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"707a78e5-019d-41f6-80fc-15743d99c81a\"\n    }\n}",
         "title": "重置消费位点"
+      }
+    ],
+    "SyncConsumerGroupInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncConsumerGroupInternal\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-47x924vjavzz\",\n    \"ConsumerGroup\": \"group-1\",\n    \"Namespace\": \"aega\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"46ef9a4b-a666-4b33-a8d1-3d378fa518aa\"\n    }\n}",
+        "title": "同步消费组"
+      }
+    ],
+    "SyncRoleInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncRoleInternal\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-47x924vjavzz\",\n    \"Role\": \"abcdefasda\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c07b786e-a632-4419-b931-38365c3e044e\"\n    }\n}",
+        "title": "同步角色"
+      }
+    ],
+    "SyncTopicInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncTopicInternal\n<公共请求参数>\n\n{\n    \"Topic\": \"topic-a\",\n    \"InstanceId\": \"rocketmq-47x924vjavzz\",\n    \"Perm\": \"S_RW_D_R\",\n    \"Namespace\": \"def\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"7e4465fd-fc94-4f37-bcd3-f4e858a18a85\"\n    }\n}",
+        "title": "同步topic"
       }
     ]
   },

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotexplorer RemoveUserByRoomIdFromTRTC --cli-unfold-argument  \
-    --TRTCUserIds test1 \
-    --RoomId test
+    --TRTCUserIds 12094567 \
+    --RoomId roomId1
 ```
 
 Output: 

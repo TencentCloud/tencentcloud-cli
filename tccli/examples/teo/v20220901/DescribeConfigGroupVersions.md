@@ -20,7 +20,7 @@ Output:
         "ConfigGroupVersionInfos": [
             {
                 "VersionId": "ver-2kuq2mhis9c0",
-                "Description": "test",
+                "Description": "testversion",
                 "VersionNumber": "1.0",
                 "GroupId": "cg-27fil26zq2s1",
                 "GroupType": "l7_acceleration",

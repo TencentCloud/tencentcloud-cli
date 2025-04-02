@@ -14874,7 +14874,7 @@
         },
         {
           "disabled": false,
-          "document": "生产限流，单位 MB/s",
+          "document": "生产限流，单位 MB/s；设置为-1，则生产不限流",
           "example": "30",
           "member": "int64",
           "name": "QuotaProducerByteRate",
@@ -14883,7 +14883,7 @@
         },
         {
           "disabled": false,
-          "document": "消费限流，单位 MB/s",
+          "document": "消费限流，单位 MB/s；设置为-1，则消费不限流",
           "example": "30",
           "member": "int64",
           "name": "QuotaConsumerByteRate",

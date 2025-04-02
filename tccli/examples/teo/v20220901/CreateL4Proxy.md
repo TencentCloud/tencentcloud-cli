@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli teo CreateL4Proxy --cli-unfold-argument  \
-    --ProxyName test \
+    --ProxyName proxy1 \
     --ZoneId zone-2jc2xy3hr7f7 \
     --Area mainland
 ```
@@ -30,7 +30,7 @@ Input:
 ```
 tccli teo CreateL4Proxy --cli-unfold-argument  \
     --ZoneId zone-2jc2xy3hr7f7 \
-    --ProxyName test \
+    --ProxyName proxy2 \
     --Area overseas \
     --DDosProtectionConfig.LevelOverseas ANYCAST_ALLIN
 ```

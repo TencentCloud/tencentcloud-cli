@@ -1,3 +1,118 @@
+# Release 3.0.1174.1
+
+## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+
+### 第 7 次发布
+
+发布时间：2025-04-03 01:08:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SessionResult)
+
+	* 新增成员：ReplayType
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 34 次发布
+
+发布时间：2025-04-03 01:15:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DBInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#DBInfo)
+
+	* 新增成员：EncryptConn
+
+* [DynamicOptions](http://document.tencentcloudapi.woa.com/document/product/571/78340#DynamicOptions)
+
+	* 新增成员：KafkaOption, FilterBeginCommit, FilterCheckpoint, DealOfExistSameTable, StartPosition
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 图片内容安全(ims) 版本：2020-12-29
+
+### 第 9 次发布
+
+发布时间：2025-04-03 01:18:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DetectImageReproduction](http://document.tencentcloudapi.woa.com/document/product/1125/85967)
+
+	* 新增入参：ImageUrl
+
+
+
+
+## 图片内容安全(ims) 版本：2020-07-13
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 145 次发布
+
+发布时间：2025-04-03 01:28:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInternalRocketMQInstance](http://document.tencentcloudapi.woa.com/document/product/1179/85493)
+
+	* 新增入参：SourceClusterId, TargetClusterId
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 37 次发布
+
+发布时间：2025-04-03 01:29:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86081)
+* [DescribeInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86080)
+* [DescribeRolesInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86079)
+* [SyncConsumerGroupInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86078)
+* [SyncRoleInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86077)
+* [SyncTopicInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86076)
+
+新增数据结构：
+
+* [InternalRole](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InternalRole)
+
+
+
 # Release 3.0.1173.1
 
 ## 批量计算(batch) 版本：2017-03-12

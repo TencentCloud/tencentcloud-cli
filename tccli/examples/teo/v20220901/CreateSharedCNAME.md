@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli teo CreateSharedCNAME --cli-unfold-argument  \
-    --SharedCNAMEPrefix test \
+    --SharedCNAMEPrefix example.com \
     --ZoneId zone-225qgrnvbi9w \
     --Description For Service A
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "SharedCNAME": "test.225qgrnvbi9w.share.dnse1.com",
+        "SharedCNAME": "example.com.225qgrnvbi9w.share.dnse1.com",
         "RequestId": "5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707"
     }
 }

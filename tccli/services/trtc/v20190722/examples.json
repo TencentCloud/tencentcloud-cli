@@ -406,8 +406,8 @@
     ],
     "RemoveUser": [
       {
-        "document": "将用户test1、test2从房间1234移出。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1234\n&UserIds.0=test1\n&UserIds.1=test2\n&<公共请求参数>",
+        "document": "将用户user_1、user_2从房间1001移出。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1001\n&UserIds.0=user_1\n&UserIds.1=user_2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "移出用户"
       }

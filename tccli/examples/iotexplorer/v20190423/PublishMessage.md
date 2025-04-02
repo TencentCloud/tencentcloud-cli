@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotexplorer PublishMessage --cli-unfold-argument  \
-    --Topic RL0BAZKZ6V/dev1/control \
+    --Topic J2CRPPZ8J4/dev1/control \
     --Payload AASDFASFSADFASDF \
-    --ProductId Nlasdf****ABCd \
+    --ProductId J2CRPPZ8J4 \
     --DeviceName dev1 \
     --Qos 1
 ```
@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "be69a7a3-7315-40a7-9532-3316e4a3e97e"
+        "RequestId": "be69a7a3-7315-40a7-9532-3316e4e97e"
     }
 }
 ```
@@ -30,9 +30,9 @@ Input:
 
 ```
 tccli iotexplorer PublishMessage --cli-unfold-argument  \
-    --ProductId ZR2CxxxxMHX \
+    --ProductId J2CRPPZ8J4 \
     --DeviceName test01 \
-    --Topic ZR2xxxxHX/texxx01/data \
+    --Topic J2CRPPZ8J4/test01/data \
     --Payload 5L2g5aW977yM5LiW55WM44CC \
     --PayloadEncoding base64
 ```

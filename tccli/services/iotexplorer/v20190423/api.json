@@ -1949,7 +1949,7 @@
         {
           "disabled": false,
           "document": "订单号",
-          "example": "100",
+          "example": "2024020213642",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -2384,25 +2384,25 @@
         },
         {
           "disabled": false,
-          "document": "事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败\t",
           "example": "Finished",
           "member": "string",
           "name": "UploadStatus",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件自定义数据\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件自定义数据\t",
           "example": "name",
           "member": "string",
           "name": "Data",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9011,40 +9011,40 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "",
+          "example": "dev",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "位置信息时间",
-          "example": "",
+          "example": "1702300100",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备经度信息",
-          "example": "",
+          "example": "20.30",
           "member": "float",
           "name": "Longitude",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备纬度信息",
-          "example": "",
+          "example": "60.30",
           "member": "float",
           "name": "Latitude",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -9057,20 +9057,20 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "",
+          "example": "dev",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备签名",
-          "example": "",
+          "example": "eagrv==",
           "member": "string",
           "name": "DeviceSignature",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9526,9 +9526,10 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "",
+          "example": "dev",
           "member": "string",
           "name": "DeviceName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9536,9 +9537,10 @@
         {
           "disabled": false,
           "document": "告警条件(In，进围栏报警；Out，出围栏报警；InOrOut，进围栏或者出围栏均报警)",
-          "example": "",
+          "example": "dev>1",
           "member": "string",
           "name": "AlertCondition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9546,9 +9548,10 @@
         {
           "disabled": false,
           "document": "是否使能围栏(true，使能；false，禁用)",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "FenceEnable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -9556,9 +9559,10 @@
         {
           "disabled": false,
           "document": "告警处理方法",
-          "example": "",
+          "example": "report",
           "member": "string",
           "name": "Method",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13368,7 +13372,7 @@
         {
           "disabled": false,
           "document": "是否打开二进制转Json功能, 取值为字符串 true/false",
-          "example": "\"\"",
+          "example": "\"false\"",
           "member": "string",
           "name": "EnableProductScript",
           "required": false,
@@ -13395,6 +13399,7 @@
           "example": "无",
           "member": "ProductEntry",
           "name": "Product",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13467,7 +13472,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "test_create",
+          "example": "rule-name",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -14602,7 +14607,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "",
+          "example": "J2CRPPZ8J4",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -14611,7 +14616,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "",
+          "example": "d1",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -14620,7 +14625,7 @@
         {
           "disabled": false,
           "document": "消息发往的主题",
-          "example": "",
+          "example": "$thing/down/J2CRPPZ8J4/d1",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -14629,7 +14634,7 @@
         {
           "disabled": false,
           "document": "云端下发到设备的控制报文",
-          "example": "",
+          "example": "aearaggtagag",
           "member": "string",
           "name": "Payload",
           "required": true,
@@ -14638,7 +14643,7 @@
         {
           "disabled": false,
           "document": "消息服务质量等级，取值为0或1",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Qos",
           "required": false,
@@ -14647,7 +14652,7 @@
         {
           "disabled": false,
           "document": "Payload的内容编码格式，取值为base64或空。base64表示云端将接收到的base64编码后的报文再转换成二进制报文下发至设备，为空表示不作转换，透传下发至设备",
-          "example": "",
+          "example": "afgagterg",
           "member": "string",
           "name": "PayloadEncoding",
           "required": false,

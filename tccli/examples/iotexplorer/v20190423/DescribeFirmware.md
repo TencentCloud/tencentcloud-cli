@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "Createtime": 1599626765,
-        "Description": "ttttt",
+        "Description": "固件测试",
         "Md5sum": "1a5c386576074d22a604b795e8917e1a",
-        "Name": "test",
+        "Name": "固件测试",
         "ProductId": "I6KTCZ170U",
         "ProductName": "8bvsn6go_测试OTA升级",
         "RequestId": "01365e8c-f025-40b9-97a4-fa583d6c569e",

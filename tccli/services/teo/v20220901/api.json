@@ -4308,7 +4308,7 @@
         {
           "disabled": false,
           "document": "站点 ID。",
-          "example": "zone-xxx",
+          "example": "zone-2fwet43nksza",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -4344,7 +4344,7 @@
         {
           "disabled": false,
           "document": "当 CertType 取值为 hosting 时需填入相应证书 ID。",
-          "example": "xxxx",
+          "example": "LIeDuaN2",
           "member": "string",
           "name": "CertId",
           "required": false,
@@ -4962,7 +4962,7 @@
         {
           "disabled": false,
           "document": "函数内容，当前仅支持 JavaScript 代码，最大支持 5MB 大小。",
-          "example": "无",
+          "example": "addEventListener('fetch', e => {   const response = new Response('Hello World!');   e.respondWith(response); });",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -5141,7 +5141,7 @@
         {
           "disabled": false,
           "document": "四层实例 ID。",
-          "example": "无",
+          "example": "sid-39562waf3raa",
           "member": "string",
           "name": "ProxyId",
           "output_required": true,
@@ -5558,7 +5558,7 @@
         {
           "disabled": false,
           "document": "站点 ID。\n若您希望快速提交不同站点下的 Targets Url，可以将其填写为 *，但前提是调用该 API 的账号必须具备主账号下全部站点资源的权限。",
-          "example": "8afj24jzg9",
+          "example": "zone-d37f2kvre2cd",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -6874,7 +6874,7 @@
         {
           "disabled": false,
           "document": "站点 ID。",
-          "example": "zone-xxx",
+          "example": "zone-321dsafuux5x",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -6883,7 +6883,7 @@
         {
           "disabled": false,
           "document": "待删除别称域名名称。如果为空，则不执行删除操作。",
-          "example": "无",
+          "example": "www.qq.com",
           "member": "string",
           "name": "AliasNames",
           "required": false,
@@ -15467,7 +15467,7 @@
         {
           "disabled": false,
           "document": "当 CertType 取值为 hosting 时填入相应证书 ID。",
-          "example": "xxx",
+          "example": "LIeDuaN2",
           "member": "string",
           "name": "CertId",
           "required": false,
@@ -15494,7 +15494,7 @@
         {
           "disabled": false,
           "document": "站点 ID。",
-          "example": "zone-xxx",
+          "example": "zone-321dsafuux5x",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -15512,7 +15512,7 @@
         {
           "disabled": false,
           "document": "待修改状态的别称域名名称。如果为空，则不执行修改状态操作。",
-          "example": "无",
+          "example": "www.qq.com",
           "member": "string",
           "name": "AliasNames",
           "required": false,
@@ -16061,7 +16061,7 @@
         {
           "disabled": false,
           "document": "函数内容，当前仅支持 JavaScript 代码，最大支持 5MB 大小，不填写保持原有配置。",
-          "example": "无",
+          "example": "addEventListener('fetch', e => {   const response = new Response('Hello World!');   e.respondWith(response); });",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -18417,7 +18417,7 @@
         {
           "disabled": false,
           "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>\n<li>COS：COS源。</li>\n<li>AWS_S3：AWS S3对象存储源站。</li>",
-          "example": "无",
+          "example": "IP_DOMAIN",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -18743,7 +18743,7 @@
         {
           "disabled": false,
           "document": "私有鉴权参数值。",
-          "example": "无",
+          "example": "AKID2tWaBEpKd1Y3sfDT1dLwHaBh42cmdj5G",
           "member": "string",
           "name": "Value",
           "output_required": true,

@@ -191,6 +191,15 @@
           "name": "ImageBase64",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos存储的链接",
+          "example": "\"https://xxx.jpg\"",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -5131,7 +5131,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "registry.jiguang.woa.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
+          "example": "xxx.jigxxng.xxx.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -8590,7 +8590,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "clife-devops-docker.pkg.coding.net/public-repository/prdsl/clife-estate-thirdparty-admin:4.0.0-2022090109****",
+          "example": "xxx.coding.net/public-xx/prdsl/xx-xxx-xx-admin:4.0.0-2022090109****",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -8610,7 +8610,7 @@
         {
           "disabled": false,
           "document": "镜像id",
-          "example": "clife-estate-thirdparty-admin-dm-59785fd6-4****",
+          "example": "xxx-xxx-thirdparty-admin-dm-59785fd6-4****",
           "member": "string",
           "name": "POD",
           "output_required": true,
@@ -8730,7 +8730,7 @@
         {
           "disabled": false,
           "document": "pod名称",
-          "example": "clife-estate-thirdparty-admin-dm-59785fd6-4****",
+          "example": "xxx-pod",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -14386,7 +14386,7 @@
         {
           "disabled": false,
           "document": "容器列表",
-          "example": "[{\"CPUUsage\": 0, \"ClusterID\": \"cls-q0qd****\", \"ClusterName\": \"\\u6df7\\u5408\\u96c6\\u7fa4\\uff08\\u5730\\u4ea7/\\u5bb6\\u7535/\\u9152\\u5e97/\\u6c34\\u751f\\u6001****\", \"Cmd\": \"\", \"ContainerID\": \"7b514e9af69cac801c4b2ba01891141e038cc8df80e2143b6e9b47fa1e93****\", \"ContainerName\": \"clife-estate-thirdparty-a****\", \"CreateTime\": \"2024-10-31 11:2****\", \"HostID\": \"a913dd58-9ebb-42d8-a6c0-c58a0aaf****\", \"HostIP\": \"10.10.8****\", \"HostName\": \"tke-np-eerl5pwq-wo****\", \"ImageID\": \"sha256:fcbbcc7466f136e4dd625a7e43c51af3e3b78087322db9328cf59219320b****\", \"ImageName\": \"clife-devops-docker.pkg.coding.net/public-repository/prdsl/clife-estate-thirdparty-admin:4.0.0-2022090109****\", \"IsolateSource\": \"\", \"IsolateTime\": \"1970-01-01 00:0****\", \"NetStatus\": \"NORMAL\", \"NetSubStatus\": \"NONE\", \"NodeID\": \"eks-ceyn****\", \"NodeType\": \"NORMAL\", \"NodeUniqueID\": \"13cd65cab1090206fbde65ee6dd6****\", \"POD\": \"clife-estate-thirdparty-admin-dm-59785fd6-4****\", \"PodCpu\": 100, \"PodIP\": \"10.10.8****\", \"PodMem\": 1073741824, \"PodName\": \"clife-estate-thirdparty-admin-dm-59785fd6-4****\", \"PodUid\": \"20461430-67c2-455b-932e-6a6c8981****\", \"PublicIp\": \"\", \"RamUsage\": 0, \"RunAs\": \"\", \"Status\": \"RUNNING\", \"UpdateTime\": \"2024-10-31 11:2****\"}]",
+          "example": "null",
           "member": "ContainerInfo",
           "name": "List",
           "output_required": true,
@@ -15996,7 +15996,7 @@
         {
           "disabled": false,
           "document": "镜像仓库列表",
-          "example": "[{\"ComponentCnt\": 183, \"ContainerCnt\": 0, \"CriticalLevelVulCnt\": 0, \"CveStatus\": \"SCAN_ERR\", \"HasNeedFixVul\": true, \"HighLevelVulCnt\": 23, \"Id\": 135074523, \"ImageCreateTime\": \"2024-05-20T16:21:08+0****\", \"ImageDigest\": \"sha256:1ea73e9f4ede8a3a691de60f7c22c4edb6a8deb2cd4dcfc81055cb1a298a****\", \"ImageId\": \"sha256:fee845a1bf018e225f03df1bd7c048fcb2f0c0d1145331fe92b88ca120b2****\", \"ImageName\": \"yancyw\", \"ImageRepoAddress\": \"088414796031.dkr.ecr.cn-north-1.amazonaws.com.cn/ya****\", \"ImageSize\": 83518086, \"ImageTag\": \"002\", \"InstanceId\": \"\", \"InstanceName\": \"aws_in****\", \"IsAuthorized\": 1, \"IsLatestImage\": true, \"IsRunning\": false, \"IsTrustImage\": false, \"LowLevelVulCnt\": 31, \"MediumLevelVulCnt\": 180, \"Namespace\": \"\", \"OsName\": \"Linux\", \"Progress\": 100, \"RecommendedFix\": true, \"RegistryRegion\": \"default\", \"RegistryType\": \"aws\", \"RiskCnt\": 3, \"RiskStatus\": \"SCAN_ERR\", \"ScanRemainTime\": 0, \"ScanRiskError\": \"MessageRegistry****\", \"ScanRiskProgress\": 100, \"ScanStatus\": \"SCAN_ERR\", \"ScanTime\": \"2024-10-31T21:14:34+0****\", \"ScanVirusError\": \"OperateFa****\", \"ScanVirusProgress\": 100, \"ScanVulError\": \"OperateFa****\", \"ScanVulProgress\": 100, \"SensitiveInfoCnt\": 3, \"SentiveInfoCnt\": 3, \"VirusCnt\": 0, \"VirusStatus\": \"SCAN_ERR\", \"VulCnt\": 234}]",
+          "example": "null",
           "member": "ImageRepoInfo",
           "name": "List",
           "output_required": true,
@@ -27986,7 +27986,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "蠕虫病毒Ramnit最早出现在2010年，至今已有8年之久，因传播力强而“闻名于世”。Ramnit蠕虫病毒通过被感染的EXE、DLL、HTML、HTM文件传播，在正常电脑打开这些染毒文件时会导致新的感染发生。同时，Ramnit蠕虫病毒还会通过浏览器访问网页、写入U盘移动硬盘，创建U盘自启动等方式进行蠕虫式传播。",
+          "example": "蠕虫病毒Ramnit最早出现在2010年，至今已有8年之久，因传播力强而“闻名于世”。Ramnit蠕虫病毒通过被感染的EXE、DLL、HTML、HTM文件传播，在正常电脑打开这些染毒文件时会导致新的感染发生。",
           "member": "string",
           "name": "HarmDescribe",
           "output_required": true,
@@ -32606,7 +32606,7 @@
         {
           "disabled": false,
           "document": "镜像仓库地址",
-          "example": "088414796031.dkr.ecr.cn-north-1.azc.com.cn/repo",
+          "example": "xxx.dkr-1.amazonaws.com.cn/ya****",
           "member": "string",
           "name": "ImageRepoAddress",
           "output_required": true,
@@ -32758,7 +32758,7 @@
         {
           "disabled": false,
           "document": "镜像仓库地址",
-          "example": "088414796031.dkr.ecr.cn-north-1.amazonaws.com.cn/ya****",
+          "example": "xxx.dkr-1.amazonaws.com.cn/ya****",
           "member": "string",
           "name": "ImageRepoAddress",
           "output_required": true,

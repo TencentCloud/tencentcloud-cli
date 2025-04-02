@@ -8665,6 +8665,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回放类型 默认0, 1-rfb 2-mp4 3-ssh",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReplayType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

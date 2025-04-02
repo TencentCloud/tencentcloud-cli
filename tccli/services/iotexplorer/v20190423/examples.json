@@ -63,8 +63,8 @@
     "CancelAssignTWeCallLicense": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelAssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgId\": \"2024020236215\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3edc0o-456yghy\"\n    }\n}",
         "title": "成功取消分配"
       }
     ],
@@ -281,8 +281,8 @@
     "CreateTRTCSignaturesWithRoomId": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTRTCSignaturesWithRoomId\n<公共请求参数>\n\n{\n    \"TRTCUserIds\": [\n        \"test1\"\n    ],\n    \"RoomId\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"keyixie_38bc26eb-89c5-4e7c-bdb3-9a4fe25e719f\",\n        \"TRTCParamList\": [\n            {\n                \"SdkAppId\": 111111,\n                \"UserId\": \"test1\",\n                \"UserSig\": \"eJwszcvOgjAQBe123213131321313QRN5AbRVR6U2dIK3*O4mwPY7Oed8oF7vEvcM1DkweaYR-wci6zzTkVwHBthFFjAG0V6bEMiCERpR1232132132133xio-CtUdsOqx*WlYb8-z95-BcsYtyVa2RYrcbjd6adadsadsadvmo-XAtE4TvLwAA--*MzTGH\",\n                \"StrRoomId\": \"gl-40badb65asdsadasdsad40b2192f948845\",\n                \"PrivateKey\": \"eJw0j19PszAUxr-LuX3fjFJahk12UaxUzVplwha4c2nHCtlC*KPbjN-dOObv8ndynjzPF2TLt5k9ta6zwKKQIPT-qpyxx8HtnO2AwWD7wYfp0JvmvW2dAeYThAgJg7vbS*8qYNALlMdbj*5THev546k4yvu5RkRG-0wbea-Pm2rs6mVdoABT3li5PpiRJLZFcb8F5loRwvOufD4RFfiz0GL2BWbldN17peHgqrLAyrleq*xwkrkROMUKfl0VllzLusGvYgK6XTxV*XjuhfPEHz-BAAA--9iV1Mr\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTRTCSignaturesWithRoomId\n<公共请求参数>\n\n{\n    \"TRTCUserIds\": [\n        \"102356800\"\n    ],\n    \"RoomId\": \"room-0099\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"keyixie_38bc26eb-89c5-4e7c-bdb3-9a4fe25e719f\",\n        \"TRTCParamList\": [\n            {\n                \"SdkAppId\": 111111,\n                \"UserId\": \"102356800\",\n                \"UserSig\": \"eJwszcvOgjAQBe123213131321313QRN5AbRVR6U2dIK3*O4mwPY7Oed8oF7vEvcM1DkweaYR-wci6zzTkVwHBthFFjAG0V6bEMiCERpR1232132132133xio-CtUdsOqx*WlYb8-z95-BcsYtyVa2RYrcbjd6adadsadsadvmo-XAtE4TvLwAA--*MzTGH\",\n                \"StrRoomId\": \"gl-40badb65asdsadasdsad40b2192f948845\",\n                \"PrivateKey\": \"eJw0j19PszAUxr-LuX3fjFJahk12UaxUzVplwha4c2nHCtlC*KPbjN-dOObv8ndynjzPF2TLt5k9ta6zwKKQIPT-qpyxx8HtnO2AwWD7wYfp0JvmvW2dAeYThAgJg7vbS*8qYNALlMdbj*5THev546k4yvu5RkRG-0wbea-Pm2rs6mVdoABT3li5PpiRJLZFcb8F5loRwvOufD4RFfiz0GL2BWbldN17peHgqrLAyrleq*xwkrkROMUKfl0VllzLusGvYgK6XTxV*XjuhfPEHz-BAAA--9iV1Mr\"\n            }\n        ]\n    }\n}",
         "title": "成功示例 "
       }
     ],
@@ -296,10 +296,10 @@
     ],
     "CreateTopicRule": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"test\",\n        \"RuleDisabled\": true\n    }\n}",
+        "document": "创建规则。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"温度达到30度\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"温度达到30度\",\n        \"RuleDisabled\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
-        "title": "创建规则"
+        "title": "创建规则示例"
       }
     ],
     "DeleteCloudStorageEvent": [
@@ -664,7 +664,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmware\n<公共请求参数>\n\n{\n    \"ProductID\": \"I6KTCZ170U\",\n    \"FirmwareVersion\": \"t.2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Createtime\": 1599626765,\n        \"Description\": \"ttttt\",\n        \"Md5sum\": \"1a5c386576074d22a604b795e8917e1a\",\n        \"Name\": \"test\",\n        \"ProductId\": \"I6KTCZ170U\",\n        \"ProductName\": \"8bvsn6go_测试OTA升级\",\n        \"RequestId\": \"01365e8c-f025-40b9-97a4-fa583d6c569e\",\n        \"Version\": \"t.2\",\n        \"FwType\": \"mcu\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Createtime\": 1599626765,\n        \"Description\": \"固件测试\",\n        \"Md5sum\": \"1a5c386576074d22a604b795e8917e1a\",\n        \"Name\": \"固件测试\",\n        \"ProductId\": \"I6KTCZ170U\",\n        \"ProductName\": \"8bvsn6go_测试OTA升级\",\n        \"RequestId\": \"01365e8c-f025-40b9-97a4-fa583d6c569e\",\n        \"Version\": \"t.2\",\n        \"FwType\": \"mcu\"\n    }\n}",
         "title": "查询固件信息"
       }
     ],
@@ -1090,7 +1090,7 @@
       {
         "document": "更新应用信息",
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=ModifyApplication\n&IotAppID=VJbAVRtnqQmX\n&AppName=IoT_App\n&Description=desc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Application\": {\n            \"IotAppID\": \"VJbAVRtnqQmX\",\n            \"AppName\": \"IoT_App\",\n            \"ProjectId\": \"prj-bm28br23\",\n            \"DevMode\": 0,\n            \"IOSAppKey\": \"iwBkGVJbAVRtnqQmX\",\n            \"IOSAppSecret\": \"tnehmHUfzUImcMvZgmko\",\n            \"AndroidAppKey\": \"apBhdVJbAVRtnqQmX\",\n            \"AndroidAppSecret\": \"JluDpMxWSTpqqEpTSMBz\",\n            \"MiniProgramAppKey\": \"\",\n            \"MiniProgramAppSecret\": \"\",\n            \"Products\": \"[]\",\n            \"Description\": \"desc.\",\n            \"PushSecretID\": \"\",\n            \"PushSecretKey\": \"\",\n            \"PushEnvironment\": \"dev\",\n            \"TPNSiOSAccessID\": \"\",\n            \"TPNSiOSSecretKey\": \"\",\n            \"TPNSiOSRegion\": \"\",\n            \"TPNSiOSPushEnvironment\": \"\",\n            \"TPNSAndroidAccessID\": \"\",\n            \"TPNSAndroidSecretKey\": \"\",\n            \"TPNSAndroidRegion\": \"\",\n            \"SelfSmsTemplateId\": 0,\n            \"SelfSmsAppKey\": \"sms\",\n            \"SelfSmsAppId\": \"appid\",\n            \"SelfSmsSign\": \"sign\",\n            \"CreateTime\": \"2019-03-18T03:44:33Z\"\n        },\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb61\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Application\": {\n            \"IotAppID\": \"VJbAVRtnqQmX\",\n            \"AppName\": \"IoT_App\",\n            \"ProjectId\": \"prj-bm28br23\",\n            \"DevMode\": 0,\n            \"IOSAppKey\": \"iwBkGVJbAVRtnqQmX\",\n            \"IOSAppSecret\": \"tnehmHUfzUImcMvZgmko\",\n            \"AndroidAppKey\": \"apBhdVJbAVRtnqQmX\",\n            \"AndroidAppSecret\": \"JluDpMxWSTpqqEpTSMBz\",\n            \"MiniProgramAppKey\": \"\",\n            \"MiniProgramAppSecret\": \"\",\n            \"Products\": \"[P12f5tG]\",\n            \"Description\": \"产品描述信息.\",\n            \"PushSecretID\": \"\",\n            \"PushSecretKey\": \"\",\n            \"PushEnvironment\": \"dev\",\n            \"TPNSiOSAccessID\": \"\",\n            \"TPNSiOSSecretKey\": \"\",\n            \"TPNSiOSRegion\": \"\",\n            \"TPNSiOSPushEnvironment\": \"\",\n            \"TPNSAndroidAccessID\": \"\",\n            \"TPNSAndroidSecretKey\": \"\",\n            \"TPNSAndroidRegion\": \"\",\n            \"SelfSmsTemplateId\": 0,\n            \"SelfSmsAppKey\": \"sms\",\n            \"SelfSmsAppId\": \"appid\",\n            \"SelfSmsSign\": \"sign\",\n            \"CreateTime\": \"2019-03-18T03:44:33Z\"\n        },\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb61\"\n    }\n}",
         "title": "更新应用"
       }
     ],
@@ -1193,7 +1193,7 @@
         "document": "修改产品名称和描述等信息",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStudioProduct\n<公共请求参数>\n\n{\n    \"BindStrategy\": \"1\",\n    \"ModuleId\": \"0\",\n    \"ProductName\": \"testProduct\",\n    \"ProductDesc\": \"Pdesc\",\n    \"ProductId\": \"4GDIU5HTEN\"\n}",
         "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"DevStatus\": \"dev\",\n            \"EncryptionType\": \"2\",\n            \"DataProtocol\": 1,\n            \"ProjectId\": \"prj-zunfat46\",\n            \"Region\": \"gz\",\n            \"ModuleId\": 0,\n            \"EnableProductScript\": \"true\",\n            \"UpdateTime\": 1,\n            \"ProductName\": \"testProduct\",\n            \"CreateUserId\": 0,\n            \"ProductDesc\": \"test\",\n            \"NetType\": \"else\",\n            \"ProductType\": 0,\n            \"CreatorNickName\": \"test\",\n            \"CreateTime\": 1,\n            \"CategoryId\": 3,\n            \"BindStrategy\": 0,\n            \"ProductId\": \"4GDIU5HTEN\"\n        },\n        \"RequestId\": \"1c469fbf-d80c-4299-9b54-31340898b839\"\n    }\n}",
-        "title": "修改产品"
+        "title": "修改产品示例"
       }
     ],
     "ModifyTopicPolicy": [
@@ -1207,7 +1207,7 @@
     "ModifyTopicRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"test\",\n        \"RuleDisabled\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"修改topic信息\",\n        \"RuleDisabled\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "修改规则"
       }
@@ -1239,13 +1239,13 @@
     "PublishMessage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"RL0BAZKZ6V/dev1/control\",\n    \"Payload\": \"AASDFASFSADFASDF\",\n    \"ProductId\": \"Nlasdf****ABCd\",\n    \"DeviceName\": \"dev1\",\n    \"Qos\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"Topic\": \"J2CRPPZ8J4/dev1/control\",\n    \"Payload\": \"AASDFASFSADFASDF\",\n    \"ProductId\": \"J2CRPPZ8J4\",\n    \"DeviceName\": \"dev1\",\n    \"Qos\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4e97e\"\n    }\n}",
         "title": "透传Payload至设备"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"ProductId\": \"ZR2CxxxxMHX\",\n    \"DeviceName\": \"test01\",\n    \"Topic\": \"ZR2xxxxHX/texxx01/data\",\n    \"Payload\": \"5L2g5aW977yM5LiW55WM44CC\",\n    \"PayloadEncoding\": \"base64\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishMessage\n<公共请求参数>\n\n{\n    \"ProductId\": \"J2CRPPZ8J4\",\n    \"DeviceName\": \"test01\",\n    \"Topic\": \"J2CRPPZ8J4/test01/data\",\n    \"Payload\": \"5L2g5aW977yM5LiW55WM44CC\",\n    \"PayloadEncoding\": \"base64\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"keyixie_b4f3cb87-2224-46b2-ac2c-e28feadb61c8\"\n    }\n}",
         "title": "将接收到的经过业务系统base64编码后的Payload进行二进制编码后下发至设备"
       }
@@ -1269,7 +1269,7 @@
     "RemoveUserByRoomIdFromTRTC": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TRTCRemoveUserByRoomId\n<公共请求参数>\n\n{\n    \"TRTCUserIds\": [\n        \"test1\"\n    ],\n    \"RoomId\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TRTCRemoveUserByRoomId\n<公共请求参数>\n\n{\n    \"TRTCUserIds\": [\n        \"12094567\"\n    ],\n    \"RoomId\": \"roomId1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"38bc26eb-89c5-4e7c-bdb3-9a4fe25e719f\"\n    }\n}",
         "title": "成功示例"
       }
