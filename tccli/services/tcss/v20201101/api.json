@@ -5131,7 +5131,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "xxx.jigxxng.xxx.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
+          "example": "code.jigxng.dhjs.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -6035,7 +6035,7 @@
         },
         {
           "disabled": false,
-          "document": "防护状态: 已防护: Defended 未防护: UnDefended",
+          "document": "防护状态: \n已防护: Defended \n未防护: UnDefended\n部分防护: PartDefened",
           "example": "UnDefended",
           "member": "string",
           "name": "DefenderStatus",
@@ -8590,7 +8590,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "xxx.coding.net/public-xx/prdsl/xx-xxx-xx-admin:4.0.0-2022090109****",
+          "example": "ww.coding.net/public-pp/prdsl/-admin:4.0.0-2022090109****",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -8610,7 +8610,7 @@
         {
           "disabled": false,
           "document": "镜像id",
-          "example": "xxx-xxx-thirdparty-admin-dm-59785fd6-4****",
+          "example": "pp-code-thirdparty-admin-dm-59785fd6-4****",
           "member": "string",
           "name": "POD",
           "output_required": true,
@@ -8730,7 +8730,7 @@
         {
           "disabled": false,
           "document": "pod名称",
-          "example": "xxx-pod",
+          "example": "bb-pod",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -24454,7 +24454,7 @@
         {
           "disabled": false,
           "document": "反弹shell数组",
-          "example": "[{\"ClusterID\":\"cls-dfw3e***\",\"ClusterName\":\"clsfoo***\",\"ContainerId\":\"b49a9fd917d30b736e76bff07a81e016bb1ced7bd9428b5d076628c80f8c62fd\",\"ContainerIsolateOperationSrc\":\"运行时安全/文件查杀\",\"ContainerName\":\"policy\",\"ContainerNetStatus\":\"NORMAL\",\"ContainerNetSubStatus\":\"NONE\",\"ContainerStatus\":\"RUNNING\",\"Description\":\"policy1\",\"DstAddress\":\"10.145.120.27:9000\",\"EventCount\":1,\"EventId\":\"5075001\",\"FoundTime\":\"2024-10-24 08:38:49\",\"HostID\":\"0c4f6c1d-8215-43e2-8dcf-a4fb1db12f41\",\"HostIP\":\"10.150.14.152\",\"ImageId\":\"sha256:8415e883970de94c3131ff24ffaf9943ea81b3eca0c3d8d747b98581730bcdb6\",\"ImageName\":\"registry-cn-shanghai-vpc.ack.aliyuncs.com/acs/terway:v1.8.13\",\"LatestFoundTime\":\"2020-10-24 08:38:49\",\"NodeID\":\"mix-GOmf****\",\"NodeName\":\"i-node***\",\"NodeType\":\"NORMAL\",\"NodeUniqueID\":\"d41d8cd98f00b204e9800998ecf8427e\",\"PProcessName\":\"socat\",\"PodIP\":\"10.0.1.92\",\"PodName\":\"agent-test-2zrp7\",\"ProcessName\":\"dash\",\"ProcessPath\":\"/usr/bin/dash\",\"PublicIP\":\"10.0.1.92\",\"Remark\":\"myremark***\",\"Solution\":\"清理容器内反弹shell进程，检查容器内服务是否存在漏洞、弱密码等风险\",\"Status\":\"EVENT_UNDEAL\"},{\"ClusterID\":\"cls-dfw3e***\",\"ClusterName\":\"clsfoo***\",\"ContainerId\":\"b15e610a7f62b5873902923dfeee2d3ab642f76bd7f1777b3f628158c5b39586\",\"ContainerIsolateOperationSrc\":\"运行时安全/文件查杀\",\"ContainerName\":\"policy\",\"ContainerNetStatus\":\"NORMAL\",\"ContainerNetSubStatus\":\"NONE\",\"ContainerStatus\":\"RUNNING\",\"Description\":\"policy1\",\"DstAddress\":\"100.127.196.56:10556\",\"EventCount\":1,\"EventId\":\"5067003\",\"FoundTime\":\"2020-10-24 08:03:10\",\"HostID\":\"fc472648-37ed-4946-a4c9-d72c75e162c4\",\"HostIP\":\"10.144.49.213\",\"ImageId\":\"sha256:41481aae5e2d135b2624fc09aa1875eb84c6472eaa0929f6d827699e67edd041\",\"ImageName\":\"registry\",\"LatestFoundTime\":\"2020-10-24 08:03:10\",\"NodeID\":\"mix-GOmf****\",\"NodeName\":\"i-node***\",\"NodeType\":\"NORMAL\",\"NodeUniqueID\":\"d41d8cd98f00b204e9800998ecf8427e\",\"PProcessName\":\"socat\",\"PodIP\":\"10.0.1.92\",\"PodName\":\"agent-test-2zrp7\",\"ProcessName\":\"dash\",\"ProcessPath\":\"/usr/bin/dash\",\"PublicIP\":\"10.0.1.92\",\"Remark\":\"myremark***\",\"Solution\":\"清理容器内反弹shell进程，检查容器内服务是否存在漏洞、弱密码等风险\",\"Status\":\"EVENT_UNDEAL\"}]",
+          "example": "无",
           "member": "ReverseShellEventInfo",
           "name": "EventSet",
           "output_required": true,
@@ -27278,7 +27278,7 @@
         {
           "disabled": false,
           "document": "集群的详细信息",
-          "example": "[{\"AccessedStatus\": \"AccessedDefe****\", \"AccessedSubStatus\": \"AccessedSub****\", \"ChargeCoresCnt\": 364000, \"CheckFailReason\": \"\", \"CheckStatus\": \"Uncheck\", \"ClusterAuditFailedInfo\": \"\", \"ClusterAuditStatus\": \"Closed\", \"ClusterAutoCheck\": false, \"ClusterCheckMode\": \"\", \"ClusterId\": \"2f0ff9facc53a579b4b4e44e8932****\", \"ClusterName\": \"umeng****\", \"ClusterNodeNum\": 12, \"ClusterOs\": \"\", \"ClusterStatus\": \"CSR_RUN****\", \"ClusterType\": \"USER_CREATE_CLU****\", \"ClusterVersion\": \"v1.19.16\", \"CoresCnt\": 364000, \"DefenderErrorReason\": \"\", \"DefenderStatus\": \"Defended\", \"HighRiskCount\": 0, \"HintRiskCount\": 0, \"MasterAddresses\": [\"10.188.251.101;10.188.251.102;10.188.251.****\"], \"MiddleRiskCount\": 0, \"NodeCount\": 12, \"OffLineNodeCount\": 0, \"Region\": null, \"SeriousRiskCount\": 0, \"TaskCreateTime\": \"\", \"UnInstallAgentNodeCount\": 0, \"UnreadyNodeNum\": 12}]",
+          "example": "无",
           "member": "ClusterInfoItem",
           "name": "ClusterInfoList",
           "output_required": true,
@@ -27756,7 +27756,7 @@
         {
           "disabled": false,
           "document": "镜像ID",
-          "example": "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211",
+          "example": "sha256:******5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4faaaa",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
@@ -27836,7 +27836,7 @@
         {
           "disabled": false,
           "document": "容器名称",
-          "example": "/pedantic_agnesi",
+          "example": "/container_name",
           "member": "string",
           "name": "ContainerName",
           "output_required": true,
@@ -27846,7 +27846,7 @@
         {
           "disabled": false,
           "document": "容器id",
-          "example": "d4c43f9268ecea2aa75b26632299df8aaf496af54e391f94ebcc62d7b2435105",
+          "example": "*****f9268ecea2aa75b26632299df8aaf496af54e391f94ebcc62d7b243aaaa",
           "member": "string",
           "name": "ContainerId",
           "output_required": true,
@@ -27856,7 +27856,7 @@
         {
           "disabled": false,
           "document": "主机名称",
-          "example": "test-instance",
+          "example": "instance-*",
           "member": "string",
           "name": "HostName",
           "output_required": true,
@@ -27866,7 +27866,7 @@
         {
           "disabled": false,
           "document": "主机id",
-          "example": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe",
+          "example": "****fda9-58c8-4c4f-9e8c-b7296836c1fe",
           "member": "string",
           "name": "HostId",
           "output_required": true,
@@ -27896,7 +27896,7 @@
         {
           "disabled": false,
           "document": "进程md5",
-          "example": "965c55c5-8ab1-4e32-8425-4c44acb5edec",
+          "example": "****55c5-8ab1-4e32-8425-4c44acb5edec",
           "member": "string",
           "name": "ProcessMd5",
           "output_required": true,
@@ -28006,7 +28006,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "just for test",
+          "example": "mark reason",
           "member": "string",
           "name": "Mark",
           "output_required": true,
@@ -28026,7 +28026,7 @@
         {
           "disabled": false,
           "document": "文件MD5",
-          "example": "81a7701a194c3a1179cfe4a7ac836626",
+          "example": "*****01a194c3a1179cfe4a7ac836626",
           "member": "string",
           "name": "FileMd5",
           "output_required": true,
@@ -28046,7 +28046,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "web-node1",
+          "example": "node1",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -28076,7 +28076,7 @@
         {
           "disabled": false,
           "document": "内网ip",
-          "example": "10.0.0.11",
+          "example": "10.0.*.1",
           "member": "string",
           "name": "HostIP",
           "output_required": true,
@@ -28086,7 +28086,7 @@
         {
           "disabled": false,
           "document": "外网ip",
-          "example": "11.0.1.11",
+          "example": "11.0.*.1",
           "member": "string",
           "name": "ClientIP",
           "output_required": true,
@@ -28266,7 +28266,7 @@
         {
           "disabled": false,
           "document": "节点子网网段",
-          "example": "10.0.200.0/24",
+          "example": "10.0.0.1/24",
           "member": "string",
           "name": "NodeSubNetCIDR",
           "output_required": true,
@@ -28306,7 +28306,7 @@
         {
           "disabled": false,
           "document": "节点唯一ID",
-          "example": "896e349d-2e7d-4151-a26f-4e9fdafe****",
+          "example": "******9d-2e7d-4151-a26f-4e9fdafe****",
           "member": "string",
           "name": "NodeUniqueID",
           "output_required": true,
@@ -28466,7 +28466,7 @@
         {
           "disabled": false,
           "document": "木马列表",
-          "example": "[{\"CheckPlatform\": [null], \"ClusterID\": \"\", \"ClusterName\": \"\", \"ContainerId\": \"eaa26da9a1e02f67caf0c909381d24586d8a7faf9ef32b7c7715d6a22222****\", \"ContainerIsolateOperationSrc\": \"\", \"ContainerName\": \"/jupyte****\", \"ContainerNetStatus\": \"NORMAL\", \"ContainerNetSubStatus\": \"NONE\", \"ContainerStatus\": \"STOPPED\", \"CreateTime\": \"2024-08-06T09:30****\", \"FileName\": \"frpc_linux_amd64_****\", \"FilePath\": \"/home/fangmanlin/.local/lib/python3.10/site-packages/gradio/frpc_linux_amd64_****\", \"HarmDescribe\": \"\\u53d1\\u73b0\\u5bb9\\u5668\\u4e0a\\u5b58\\u5728\\u6076\\u610f\\u6728\\u9a6c\\uff0c\\u60a8\\u7684\\u5bb9\\u5668\\u53ef\\u80fd\\u5df2\\u7ecf\\u5931\\u9677\\u3002\\n\\u6076\\u610f\\u6728\\u9a6c\\u901a\\u5e38\\u4f1a\\u6267\\u884c\\u6316\\u77ff\\u3001\\u6587\\u4ef6\\u5220\\u9664\\u3001\\u4fe1\\u606f\\u7a83\\u53d6\\u548c\\u7f51\\u7edc\\u653b\\u51fb\\u7b49\\u6076****\", \"HostID\": \"b18548db-ed21-4991-a6cb-db71362b****\", \"Id\": \"11512013\", \"ImageId\": \"sha256:21b4456c6e03247a923cfe6a426c10361e7265a49184bbb40b3c71d6564d****\", \"ImageName\": \"jupyterhub/jupyterhub:yanf****\", \"InnerIP\": \"10.72.20****\", \"MD5\": \"9b301045bffb934da5a439dceb9e****\", \"ModifyTime\": \"2024-08-06T09:30****\", \"NodeID\": \"\", \"NodeName\": \"suanfa_webui_10_72_200_24_****\", \"NodeType\": \"NORMAL\", \"NodeUniqueID\": \"b18548db-ed21-4991-a6cb-db71362b****\", \"PodIP\": \"10.0.1****\", \"PodName\": \"/\", \"PublicIP\": \"10.0.1****\", \"RiskLevel\": \"RISK_NO****\", \"Status\": \"DEAL_****\", \"SubStatus\": \"\", \"SuggestScheme\": \"1.\\u68c0\\u67e5\\u6076\\u610f\\u8fdb\\u7a0b\\u53ca\\u975e\\u6cd5\\u7aef\\u53e3\\uff0c\\u5220\\u9664\\u53ef\\u7591\\u7684\\u542f\\u52a8\\u9879\\u548c\\u5b9a\\u65f6\\u4efb\\u52a1\\uff1b\\n2.\\u9694\\u79bb\\u6216\\u8005\\u5220\\u9664\\u76f8\\u5173\\u7684\\u6728\\u9a6c\\u6587\\u4ef6\\uff1b\\n3.\\u5bf9\\u7cfb\\u7edf\\u8fdb\\u884c\\u98ce\\u9669\\u6392\\u67e5\\uff0c\\u5e76\\u8fdb\\u884c\\u5b89\\u5168\\u52a0\\u56fa\\uff0c\\u8be6\\u60c5\\u53ef\\u53c2\\u8003\\u5982\\u4e0b\\u94fe\\u63a5\\uff1a \\n\\u3010Linux\\u3011https://cloud.tencent.com/document/product/296/9604 \\n\\u3010Windows\\u3011https://cloud.tencent.com/document/product/296/****\", \"VirusName\": \"Suspicious.(aiScor****\"}]",
+          "example": "无",
           "member": "VirusInfo",
           "name": "List",
           "output_required": true,
@@ -32606,7 +32606,7 @@
         {
           "disabled": false,
           "document": "镜像仓库地址",
-          "example": "xxx.dkr-1.amazonaws.com.cn/ya****",
+          "example": "dfc.dkr-1.amazonaws.com.cn/ya****",
           "member": "string",
           "name": "ImageRepoAddress",
           "output_required": true,
@@ -32758,7 +32758,7 @@
         {
           "disabled": false,
           "document": "镜像仓库地址",
-          "example": "xxx.dkr-1.amazonaws.com.cn/ya****",
+          "example": "bdf.dkr-1.amazonaws.com.cn/ya****",
           "member": "string",
           "name": "ImageRepoAddress",
           "output_required": true,

@@ -39,7 +39,7 @@ Output:
                 "HighRiskCount": 6,
                 "HintRiskCount": 3,
                 "MasterAddresses": [
-                    "10.0.0.11;10.0.0.14;10.0.0.4;"
+                    "10.*.*.*;"
                 ],
                 "MiddleRiskCount": 7,
                 "NodeCount": 4,

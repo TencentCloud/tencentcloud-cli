@@ -1,3 +1,55 @@
+# Release 3.0.1175.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 69 次发布
+
+发布时间：2025-04-04 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/86082)
+
+新增数据结构：
+
+* [CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus)
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 12 次发布
+
+发布时间：2025-04-04 01:19:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAndroidInstanceTasksStatus](http://document.tencentcloudapi.woa.com/document/product/1162/86016)
+
+	* 新增入参：Filter, Offset, Limit
+
+	* <font color="#dd0000">**修改入参**：</font>TaskIds
+
+	* 新增出参：Total
+
+
+修改数据结构：
+
+* [AndroidInstanceTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceTaskStatus)
+
+	* 新增成员：TaskType, CreateTime, CompleteTime
+
+
+
+
 # Release 3.0.1174.1
 
 ## 运维安全中心（堡垒机）(bh) 版本：2023-04-18

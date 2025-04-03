@@ -1,98 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 7 次发布
+### 第 69 次发布
 
-发布时间：2025-04-03 01:08:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SessionResult)
-
-	* 新增成员：ReplayType
-
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 34 次发布
-
-发布时间：2025-04-03 01:15:33
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DBInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#DBInfo)
-
-	* 新增成员：EncryptConn
-
-* [DynamicOptions](http://document.tencentcloudapi.woa.com/document/product/571/78340#DynamicOptions)
-
-	* 新增成员：KafkaOption, FilterBeginCommit, FilterCheckpoint, DealOfExistSameTable, StartPosition
-
-
-
-
-## 数据传输服务(dts) 版本：2018-03-30
-
-
-
-## 图片内容安全(ims) 版本：2020-12-29
-
-### 第 9 次发布
-
-发布时间：2025-04-03 01:18:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DetectImageReproduction](http://document.tencentcloudapi.woa.com/document/product/1125/85967)
-
-	* 新增入参：ImageUrl
-
-
-
-
-## 图片内容安全(ims) 版本：2020-07-13
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 145 次发布
-
-发布时间：2025-04-03 01:28:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyInternalRocketMQInstance](http://document.tencentcloudapi.woa.com/document/product/1179/85493)
-
-	* 新增入参：SourceClusterId, TargetClusterId
-
-
-
-
-## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
-
-### 第 37 次发布
-
-发布时间：2025-04-03 01:29:52
+发布时间：2025-04-04 01:11:14
 
 本次发布包含了以下内容：
 
@@ -100,16 +12,41 @@
 
 新增接口：
 
-* [AddInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86081)
-* [DescribeInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86080)
-* [DescribeRolesInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86079)
-* [SyncConsumerGroupInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86078)
-* [SyncRoleInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86077)
-* [SyncTopicInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86076)
+* [DescribeCfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/86082)
 
 新增数据结构：
 
-* [InternalRole](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InternalRole)
+* [CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus)
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 12 次发布
+
+发布时间：2025-04-04 01:19:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAndroidInstanceTasksStatus](http://document.tencentcloudapi.woa.com/document/product/1162/86016)
+
+	* 新增入参：Filter, Offset, Limit
+
+	* <font color="#dd0000">**修改入参**：</font>TaskIds
+
+	* 新增出参：Total
+
+
+修改数据结构：
+
+* [AndroidInstanceTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceTaskStatus)
+
+	* 新增成员：TaskType, CreateTime, CompleteTime
+
 
 
 
@@ -23547,6 +23484,22 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 69 次发布
+
+发布时间：2025-04-04 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/86082)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus))
 
 ### 第 68 次发布
 
@@ -69528,6 +69481,32 @@
 
 
 ## 云游戏(gs) 版本：2019-11-18
+
+### 第 12 次发布
+
+发布时间：2025-04-04 01:19:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAndroidInstanceTasksStatus](http://document.tencentcloudapi.woa.com/document/product/1162/86016)
+
+	* 新增入参：Filter, Offset, Limit
+
+	* <font color="#dd0000">**修改入参**：</font>TaskIds
+
+	* 新增出参：Total
+
+
+修改数据结构：
+
+* [AndroidInstanceTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceTaskStatus)
+
+	* 新增成员：TaskType, CreateTime, CompleteTime
+
 
 ### 第 11 次发布
 
@@ -124614,16 +124593,16 @@
 
 新增接口：
 
-* [[AddInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86081)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86080)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRolesInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86079)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SyncConsumerGroupInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86078)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SyncRoleInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86077)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SyncTopicInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86076)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86081)
+* [DescribeInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86080)
+* [DescribeRolesInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86079)
+* [SyncConsumerGroupInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86078)
+* [SyncRoleInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86077)
+* [SyncTopicInternal](http://document.tencentcloudapi.woa.com/document/product/1739/86076)
 
 新增数据结构：
 
-* [[InternalRole](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InternalRole)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[InternalRole](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InternalRole))
+* [InternalRole](http://document.tencentcloudapi.woa.com/document/product/1739/81437#InternalRole)
 
 ### 第 36 次发布
 

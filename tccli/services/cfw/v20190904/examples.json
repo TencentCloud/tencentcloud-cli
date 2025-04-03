@@ -328,6 +328,14 @@
         "title": "查询防火墙弹性公网ip"
       }
     ],
+    "DescribeCfwInsStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfwInsStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CfwInsStatus\": [\n            {\n                \"CfwInsId\": \"cfwnat-xx\",\n                \"CfwInsName\": \"nat-out\",\n                \"Region\": \"ap-guangzhou\",\n                \"FwType\": \"ew\",\n                \"Status\": \"Running\",\n                \"EventTime\": \"2022-09-28 10:57:13\",\n                \"RecoverTime\": \"2022-10-12 16:58:27\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"jijijge\"\n    }\n}",
+        "title": "查询cfw引擎升级状态"
+      }
+    ],
     "DescribeDefenseSwitch": [
       {
         "document": "接口返回常见入侵防御开关接口",
