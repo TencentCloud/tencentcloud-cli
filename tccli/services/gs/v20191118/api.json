@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BackUpAndroidInstanceToStorage": {
+      "document": "备份云手机到指定存储",
+      "input": "BackUpAndroidInstanceToStorageRequest",
+      "name": "备份安卓实例到指定存储",
+      "output": "BackUpAndroidInstanceToStorageResponse",
+      "status": "online"
+    },
     "ConnectAndroidInstance": {
       "document": "连接安卓实例",
       "input": "ConnectAndroidInstanceRequest",
@@ -194,6 +201,13 @@
       "input": "RestartAndroidInstancesAppRequest",
       "name": "重启安卓实例应用",
       "output": "RestartAndroidInstancesAppResponse",
+      "status": "online"
+    },
+    "RestoreAndroidInstanceFromStorage": {
+      "document": "指定存储还原云手机",
+      "input": "RestoreAndroidInstanceFromStorageRequest",
+      "name": "指定存储还原安卓实例",
+      "output": "RestoreAndroidInstanceFromStorageResponse",
       "status": "online"
     },
     "SaveGameArchive": {
@@ -556,6 +570,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网 IP",
+          "example": "192.168.1.3",
+          "member": "string",
+          "name": "PrivateIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -814,6 +839,121 @@
         }
       ],
       "usage": "both"
+    },
+    "BackUpAndroidInstanceToStorageRequest": {
+      "document": "BackUpAndroidInstanceToStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例ID",
+          "example": "cai-abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储服务器类型，如 COS、S3。注意：使用 COS 和 S3 都将占用外网带宽。",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义对象Key",
+          "example": "dir/file",
+          "member": "string",
+          "name": "ObjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包含的路径，支持仅含一个通配符*，通配符不能出现在路径开始",
+          "example": "[\"/data/data/misc/*.prop\"]",
+          "member": "string",
+          "name": "Includes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要排除路径，支持仅含一个通配符*，通配符不能出现在路径开始",
+          "example": "[\"/data/media/*\"]",
+          "member": "string",
+          "name": "Excludes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "COS协议选项",
+          "example": "无",
+          "member": "COSOptions",
+          "name": "COSOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "S3存储协议选项",
+          "example": "无",
+          "member": "S3Options",
+          "name": "S3Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BackUpAndroidInstanceToStorageResponse": {
+      "document": "BackUpAndroidInstanceToStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务 ID",
+          "example": "abcd-1234",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "COSOptions": {
+      "document": "COS协议参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶",
+          "example": "bucket-123",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ConnectAndroidInstanceRequest": {
       "document": "ConnectAndroidInstance请求参数结构体",
@@ -2537,6 +2677,121 @@
         }
       ],
       "type": "object"
+    },
+    "RestoreAndroidInstanceFromStorageRequest": {
+      "document": "RestoreAndroidInstanceFromStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例ID",
+          "example": "cai-abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义备份对象Key",
+          "example": "testkey",
+          "member": "string",
+          "name": "ObjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储服务器类型，如 COS、S3。注意：使用 COS 和 S3 都将占用外网带宽。",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS协议选项",
+          "example": "无",
+          "member": "COSOptions",
+          "name": "COSOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "S3存储协议选项",
+          "example": "无",
+          "member": "S3Options",
+          "name": "S3Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreAndroidInstanceFromStorageResponse": {
+      "document": "RestoreAndroidInstanceFromStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务 ID",
+          "example": "taskid-abcd",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "S3Options": {
+      "document": "S3协议参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储节点",
+          "example": "https//123.com",
+          "member": "string",
+          "name": "EndPoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶",
+          "example": "bucket",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥 ID",
+          "example": "test-ak",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥 Key",
+          "example": "test-sk",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "SaveGameArchiveRequest": {
       "document": "SaveGameArchive请求参数结构体",

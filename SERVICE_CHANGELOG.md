@@ -1,30 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 日志服务(cls) 版本：2020-10-16
 
-### 第 69 次发布
+### 第 110 次发布
 
-发布时间：2025-04-04 01:11:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/86082)
-
-新增数据结构：
-
-* [CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus)
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 12 次发布
-
-发布时间：2025-04-04 01:19:24
+发布时间：2025-04-08 01:12:23
 
 本次发布包含了以下内容：
 
@@ -32,21 +12,90 @@
 
 修改接口：
 
-* [DescribeAndroidInstanceTasksStatus](http://document.tencentcloudapi.woa.com/document/product/1162/86016)
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
 
-	* 新增入参：Filter, Offset, Limit
-
-	* <font color="#dd0000">**修改入参**：</font>TaskIds
-
-	* 新增出参：Total
+	* 新增入参：HighLight
 
 
 修改数据结构：
 
-* [AndroidInstanceTaskStatus](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceTaskStatus)
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogInfo)
 
-	* 新增成员：TaskType, CreateTime, CompleteTime
+	* 新增成员：HighLights
 
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 13 次发布
+
+发布时间：2025-04-08 01:19:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BackUpAndroidInstanceToStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86085)
+* [RestoreAndroidInstanceFromStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86084)
+
+新增数据结构：
+
+* [COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions)
+* [S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options)
+
+修改数据结构：
+
+* [AndroidInstance](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstance)
+
+	* 新增成员：PrivateIP
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 24 次发布
+
+发布时间：2025-04-08 01:23:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetCharacterUsage](http://document.tencentcloudapi.woa.com/document/product/1764/86087)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 27 次发布
+
+发布时间：2025-04-08 01:23:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateQos
+* DeleteQos
+* DescribeQos
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Capacity
+* Context
+* DestAddressInfo
+* DeviceInfo
+* ExpectedThreshold
+* NetworkData
+* SrcAddressInfo
 
 
 
@@ -23495,11 +23544,11 @@
 
 新增接口：
 
-* [[DescribeCfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/86082)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/86082)
 
 新增数据结构：
 
-* [[CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus))
+* [CfwInsStatus](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CfwInsStatus)
 
 ### 第 68 次发布
 
@@ -30318,6 +30367,28 @@
 
 
 ## 日志服务(cls) 版本：2020-10-16
+
+### 第 110 次发布
+
+发布时间：2025-04-08 01:12:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+
+	* 新增入参：HighLight
+
+
+修改数据结构：
+
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogInfo)
+
+	* 新增成员：HighLights
+
 
 ### 第 109 次发布
 
@@ -69482,6 +69553,31 @@
 
 ## 云游戏(gs) 版本：2019-11-18
 
+### 第 13 次发布
+
+发布时间：2025-04-08 01:19:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[BackUpAndroidInstanceToStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86085)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[RestoreAndroidInstanceFromStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86084)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions)](http://document.tencentcloudapi.woa.com/document/product/1162/40743#[COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions))
+* [[S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options)](http://document.tencentcloudapi.woa.com/document/product/1162/40743#[S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options))
+
+修改数据结构：
+
+* [AndroidInstance](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstance)
+
+	* 新增成员：PrivateIP
+
+
 ### 第 12 次发布
 
 发布时间：2025-04-04 01:19:24
@@ -81187,6 +81283,18 @@
 
 ## 知识引擎原子能力(lkeap) 版本：2024-05-22
 
+### 第 24 次发布
+
+发布时间：2025-04-08 01:23:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetCharacterUsage](http://document.tencentcloudapi.woa.com/document/product/1764/86087)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 23 次发布
 
 发布时间：2025-03-28 02:01:47
@@ -83326,6 +83434,30 @@
 
 
 ## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 27 次发布
+
+发布时间：2025-04-08 01:23:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateQos
+* DeleteQos
+* DescribeQos
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Capacity
+* Context
+* DestAddressInfo
+* DeviceInfo
+* ExpectedThreshold
+* NetworkData
+* SrcAddressInfo
 
 ### 第 26 次发布
 

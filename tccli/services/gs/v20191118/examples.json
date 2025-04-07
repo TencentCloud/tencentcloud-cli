@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BackUpAndroidInstanceToStorage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BackUpAndroidInstanceToStorage\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99K3EZgPo\",\n    \"StorageType\": \"S3\",\n    \"ObjectKey\": \"testkey\",\n    \"S3Options\": {\n        \"EndPoint\": \"test-end-point\",\n        \"Bucket\": \"test-bucket\",\n        \"AccessKeyId\": \"test-key-id\",\n        \"SecretAccessKey\": \"test-key\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e900f8c4-f1c5-455f-aeb2-a9b052fd8b73\",\n        \"TaskId\": \"ddca8e2f-3b03-4c08-8f42-6e3533f09e7e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ConnectAndroidInstance": [
       {
         "document": "连接安卓实例",
@@ -221,6 +229,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJh1iNOc\"\n    ],\n    \"PackageName\": \"pkg.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b92629aa-96ed-4e01-83ec-cb837e683c78\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RestoreAndroidInstanceFromStorage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreAndroidInstanceFromStorage\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99K3EZgPo\",\n    \"ObjectKey\": \"test-object\",\n    \"StorageType\": \"S3\",\n    \"S3Options\": {\n        \"EndPoint\": \"test-end-point\",\n        \"Bucket\": \"test-bucket\",\n        \"AccessKeyId\": \"test-key-id\",\n        \"SecretAccessKey\": \"test-key\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2ed9fc0-a946-41aa-93be-86afb2cd1375\",\n        \"TaskId\": \"7a9dfd20-d6f3-4488-97b1-02fa76eec053\"\n    }\n}",
         "title": "示例"
       }
     ],

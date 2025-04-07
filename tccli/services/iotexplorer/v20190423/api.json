@@ -9576,9 +9576,10 @@
         {
           "disabled": false,
           "document": "围栏绑定的设备信息",
-          "example": "",
+          "example": "无",
           "member": "FenceBindDeviceItem",
           "name": "Devices",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9586,9 +9587,10 @@
         {
           "disabled": false,
           "document": "围栏绑定的产品Id",
-          "example": "",
+          "example": "E45CV67",
           "member": "string",
           "name": "ProductId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

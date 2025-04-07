@@ -11404,11 +11404,11 @@
       "usage": "both"
     },
     "HighLightItem": {
-      "document": "日志内容高亮描述信息",
+      "document": "符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索",
       "members": [
         {
           "disabled": false,
-          "document": "高亮的日志Key",
+          "document": "高亮的日志字段名称",
           "example": "Message",
           "member": "string",
           "name": "Key",
@@ -11418,7 +11418,7 @@
         },
         {
           "disabled": false,
-          "document": "高亮的语法",
+          "document": "高亮的关键词",
           "example": "[ \"<cls_highlight>finish</cls_highlight> request\"]",
           "member": "string",
           "name": "Values",
@@ -12208,6 +12208,16 @@
           "name": "PkgLogId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索\t",
+          "example": "无",
+          "member": "HighLightItem",
+          "name": "HighLights",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -17258,6 +17268,15 @@
           "example": "false",
           "member": "bool",
           "name": "UseNewAnalysis",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索",
+          "example": "false",
+          "member": "bool",
+          "name": "HighLight",
           "required": false,
           "type": "bool"
         }
