@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 日志服务(cls) 版本：2020-10-16
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 110 次发布
+### 第 132 次发布
 
-发布时间：2025-04-08 01:12:23
+发布时间：2025-04-09 01:17:44
 
 本次发布包含了以下内容：
 
@@ -12,70 +12,49 @@
 
 修改接口：
 
-* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/614/56447)
+* [CreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/82511)
 
-	* 新增入参：HighLight
+	* 新增入参：PresetApproverInfo
 
-
-修改数据结构：
-
-* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogInfo)
-
-	* 新增成员：HighLights
-
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 13 次发布
-
-发布时间：2025-04-08 01:19:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [BackUpAndroidInstanceToStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86085)
-* [RestoreAndroidInstanceFromStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86084)
 
 新增数据结构：
 
-* [COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions)
-* [S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options)
-
-修改数据结构：
-
-* [AndroidInstance](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstance)
-
-	* 新增成员：PrivateIP
+* [PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#PresetApproverInfo)
 
 
 
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
+### 第 184 次发布
 
-### 第 24 次发布
-
-发布时间：2025-04-08 01:23:03
+发布时间：2025-04-09 01:18:28
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [GetCharacterUsage](http://document.tencentcloudapi.woa.com/document/product/1764/86087)
+* [ChannelCreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82512)
+
+	* 新增入参：PresetApproverInfo
+
+
+新增数据结构：
+
+* [PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PresetApproverInfo)
 
 
 
-## 多网聚合加速(mna) 版本：2021-01-19
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-### 第 27 次发布
 
-发布时间：2025-04-08 01:23:50
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 16 次发布
+
+发布时间：2025-04-09 01:27:56
 
 本次发布包含了以下内容：
 
@@ -83,19 +62,70 @@
 
 <font color="#dd0000">**删除接口**：</font>
 
-* CreateQos
-* DeleteQos
-* DescribeQos
+* ManageDeviceRisk
 
 <font color="#dd0000">**删除数据结构**：</font>
 
-* Capacity
-* Context
-* DestAddressInfo
-* DeviceInfo
-* ExpectedThreshold
-* NetworkData
-* SrcAddressInfo
+* ManageDeviceRiskInput
+* ManageDeviceRiskOutput
+* ManageDeviceRiskValueOutput
+
+
+
+## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+
+### 第 6 次发布
+
+发布时间：2025-04-09 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)
+
+	* 新增入参：SqlToken
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 35 次发布
+
+发布时间：2025-04-09 01:29:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAssetImageDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78892)
+
+	* 新增出参：SuperNodeCnt
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：TrialCoresCnt
+
+
+修改数据结构：
+
+* [EscapeWhiteListInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#EscapeWhiteListInfo)
+
+	* 新增成员：SuperNodeCount
+
+* [ImagesInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImagesInfo)
+
+	* 新增成员：SuperNodeCnt
+
+* [VulAffectedImageInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulAffectedImageInfo)
+
+	* 新增成员：SuperNodeCount
+
 
 
 
@@ -59653,6 +59683,25 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 132 次发布
+
+发布时间：2025-04-09 01:17:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/82511)
+
+	* 新增入参：PresetApproverInfo
+
+
+新增数据结构：
+
+* [[PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#PresetApproverInfo)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#PresetApproverInfo))
+
 ### 第 131 次发布
 
 发布时间：2025-03-28 01:45:30
@@ -62395,6 +62444,25 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 184 次发布
+
+发布时间：2025-04-09 01:18:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82512)
+
+	* 新增入参：PresetApproverInfo
+
+
+新增数据结构：
+
+* [[PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PresetApproverInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PresetApproverInfo))
 
 ### 第 183 次发布
 
@@ -69563,13 +69631,13 @@
 
 新增接口：
 
-* [[BackUpAndroidInstanceToStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86085)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RestoreAndroidInstanceFromStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86084)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BackUpAndroidInstanceToStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86085)
+* [RestoreAndroidInstanceFromStorage](http://document.tencentcloudapi.woa.com/document/product/1162/86084)
 
 新增数据结构：
 
-* [[COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions)](http://document.tencentcloudapi.woa.com/document/product/1162/40743#[COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions))
-* [[S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options)](http://document.tencentcloudapi.woa.com/document/product/1162/40743#[S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options))
+* [COSOptions](http://document.tencentcloudapi.woa.com/document/product/1162/40743#COSOptions)
+* [S3Options](http://document.tencentcloudapi.woa.com/document/product/1162/40743#S3Options)
 
 修改数据结构：
 
@@ -81293,7 +81361,7 @@
 
 新增接口：
 
-* [[GetCharacterUsage](http://document.tencentcloudapi.woa.com/document/product/1764/86087)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetCharacterUsage](http://document.tencentcloudapi.woa.com/document/product/1764/86087)
 
 ### 第 23 次发布
 
@@ -106473,6 +106541,24 @@
 
 ## 流量反欺诈(taf) 版本：2020-02-10
 
+### 第 16 次发布
+
+发布时间：2025-04-09 01:27:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ManageDeviceRisk
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ManageDeviceRiskInput
+* ManageDeviceRiskOutput
+* ManageDeviceRiskValueOutput
+
 ### 第 15 次发布
 
 发布时间：2025-03-27 02:16:22
@@ -109339,6 +109425,21 @@
 
 ## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
 
+### 第 6 次发布
+
+发布时间：2025-04-09 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)
+
+	* 新增入参：SqlToken
+
+
 ### 第 5 次发布
 
 发布时间：2025-03-27 02:18:18
@@ -111045,6 +111146,40 @@
 
 
 ## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 35 次发布
+
+发布时间：2025-04-09 01:29:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAssetImageDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78892)
+
+	* 新增出参：SuperNodeCnt
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：TrialCoresCnt
+
+
+修改数据结构：
+
+* [EscapeWhiteListInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#EscapeWhiteListInfo)
+
+	* 新增成员：SuperNodeCount
+
+* [ImagesInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImagesInfo)
+
+	* 新增成员：SuperNodeCnt
+
+* [VulAffectedImageInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulAffectedImageInfo)
+
+	* 新增成员：SuperNodeCount
+
 
 ### 第 34 次发布
 

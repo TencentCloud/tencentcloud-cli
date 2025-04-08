@@ -42,7 +42,7 @@
         {
           "disabled": false,
           "document": "-",
-          "example": "-",
+          "example": "--",
           "member": "string",
           "name": "PathSource",
           "required": false,
@@ -54,6 +54,15 @@
           "example": "无",
           "member": "string",
           "name": "Creator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登陆后的token",
+          "example": "rtuy-5766-rrtt",
+          "member": "string",
+          "name": "SqlToken",
           "required": false,
           "type": "string"
         }

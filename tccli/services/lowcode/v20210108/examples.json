@@ -145,8 +145,8 @@
     "DescribeWxAppInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAppInfo\n<公共请求参数>\n\n{\n    \"ComponentAppId\": \"abc\",\n    \"WxAppId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"WxAppInfos\": [\n            {\n                \"ComponentAppId\": \"abc\",\n                \"WxAppId\": \"abc\",\n                \"AccessToken\": \"abc\",\n                \"NickName\": \"abc\",\n                \"ExpireTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAppInfo\n<公共请求参数>\n\n{\n    \"ComponentAppId\": \"wx1g16kjpw7d155d7a\",\n    \"WxAppId\": \"wx1g16kjpw7d155d7b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WxAppInfos\": [\n            {\n                \"ComponentAppId\": \"wx1g16kjpw7d155d7a\",\n                \"WxAppId\": \"wx1g16kjpw7d155d7a\",\n                \"AccessToken\": \"aa1g16kjpw7d155d7a\",\n                \"NickName\": \"test\",\n                \"ExpireTime\": \"2022-10-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"1g16kjpw7d155d7a\"\n    }\n}",
         "title": "查询微信小程序信息"
       }
     ],

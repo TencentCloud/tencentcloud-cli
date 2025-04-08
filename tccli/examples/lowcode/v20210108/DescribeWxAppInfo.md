@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli lowcode DescribeWxAppInfo --cli-unfold-argument  \
-    --ComponentAppId abc \
-    --WxAppId abc
+    --ComponentAppId wx1g16kjpw7d155d7a \
+    --WxAppId wx1g16kjpw7d155d7b
 ```
 
 Output: 
@@ -16,14 +16,14 @@ Output:
     "Response": {
         "WxAppInfos": [
             {
-                "ComponentAppId": "abc",
-                "WxAppId": "abc",
-                "AccessToken": "abc",
-                "NickName": "abc",
-                "ExpireTime": "abc"
+                "ComponentAppId": "wx1g16kjpw7d155d7a",
+                "WxAppId": "wx1g16kjpw7d155d7a",
+                "AccessToken": "aa1g16kjpw7d155d7a",
+                "NickName": "test",
+                "ExpireTime": "2022-10-22 00:00:00"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1g16kjpw7d155d7a"
     }
 }
 ```

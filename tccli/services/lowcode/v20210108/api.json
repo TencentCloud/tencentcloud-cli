@@ -2578,7 +2578,7 @@
         {
           "disabled": false,
           "document": "中间商小程序Id, 可以不填",
-          "example": "xx",
+          "example": "wx1g16kjpw7d155d7a",
           "member": "string",
           "name": "ComponentAppId",
           "required": false,
@@ -2587,7 +2587,7 @@
         {
           "disabled": false,
           "document": "微信小程序Id,可以不填",
-          "example": "xx",
+          "example": "wx1g16kjpw7d155d7b",
           "member": "string",
           "name": "WxAppId",
           "required": false,
@@ -2605,7 +2605,7 @@
           "example": "无",
           "member": "WxAppInfo",
           "name": "WxAppInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

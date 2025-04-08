@@ -15030,7 +15030,7 @@
         },
         {
           "disabled": false,
-          "document": "关联主机个数",
+          "document": "关联主机个数(包含普通节点数和超级节点数)",
           "example": "2",
           "member": "uint64",
           "name": "HostCnt",
@@ -15044,6 +15044,16 @@
           "example": "2",
           "member": "uint64",
           "name": "ContainerCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点数",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuperNodeCnt",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -15151,7 +15161,7 @@
         {
           "disabled": false,
           "document": "构建历史",
-          "example": "# create_time:2024-10-31 10:07:49 tags:commons-container-registry.tencentcloudcr.com/dcf/lbcloud-all:202410310958 comment:buildkit.dockerfile.v0\n\nENTRYPOINT [\"/bin/sh\" \"-c\" \"java -XX:+UnlockExperimentalVMOptions ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar app.jar\"]\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV SERVER_PORT=18888\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV JAVA_OPTS=-Xms2048m -Xmx2048m -XX:+PrintGCDetails -XX:+UseG1GC\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV LANG=C.UTF-8\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV TZ=Asia/Shanghai\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8 -Duser.language=zh -Duser.region=zh_CN -Duser.country=zh_CN -Duser.timezone=GMT+08 -Dfastjson.parser.safeMode=true\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nADD lbcloud-all/target/lbcloud-all.jar app.jar # buildkit\n\n# create_time:2024-09-10 11:04:24 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c echo 'Asia/Shanghai' >/etc/timezone # buildkit\n\n# create_time:2024-09-10 11:04:23 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # buildkit\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nENV PATH=/usr/local/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nENV JAVA_HOME=/usr/local/jdk\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c yum clean all # buildkit\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c yum -y install dejavu-sans-fonts fontconfig # buildkit\n\n# create_time:2024-08-06 09:06:53 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c mv /usr/local/jdk1.8.0_401 /usr/local/jdk # buildkit\n\n# create_time:2024-08-06 09:06:49 tags: comment:buildkit.dockerfile.v0\n\nADD jdk-8u401-linux-x64.tar.gz /usr/local # buildkit\n\n# create_time:2024-08-06 09:06:46 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c yum -y update # buildkit\n\n# create_time:2024-08-06 09:04:55 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c mv /etc/yum.repos.d/CentOS-Epel.repo /etc/yum.repos.d/CentOS-Epel.repo-bak # buildkit\n\n# create_time:2024-08-06 09:04:54 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.tencent.com/repo/centos7_base.repo # buildkit\n\n# create_time:2017-04-07 07:56:12 tags: comment:\n\n/bin/sh -c #(nop) COPY multi:8f9d6f26ae2b72ee28e92cf7c4f5bd11b03a83c8ce24dfe69092778567ed8a08 in /etc/yum.repos.d/ \n\n# create_time:2017-04-07 07:56:12 tags: comment:\n\n/bin/sh -c mkdir -p /etc/yum.repos.d/repo.bak     && mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/repo.bak/\n\n# create_time:2017-04-06 20:14:38 tags: comment:\n\n/bin/sh -c #(nop)  CMD [\"/bin/bash\"]\n\n# create_time:2017-04-06 20:14:37 tags: comment:\n\n/bin/sh -c #(nop)  LABEL name=CentOS Base Image vendor=CentOS license=GPLv2 build-date=20170406\n\n# create_time:2017-04-06 20:14:34 tags: comment:\n\n/bin/sh -c #(nop) ADD file:807143da05d70138e54c4a25c6c3ea64ad1096982333ef3b94a366580be40f52 i****",
+          "example": "# create_time:2024-10-31 10:07:49 ",
           "member": "string",
           "name": "BuildHistory",
           "output_required": true,
@@ -15381,7 +15391,7 @@
         {
           "disabled": false,
           "document": "镜像列表",
-          "example": "[{\"AgentError\": \"\", \"ComponentCnt\": 999, \"ContainerCnt\": 0, \"CreateTime\": \"2024-10-23T06:16****\", \"CriticalLevelVulCnt\": 0, \"HighLevelVulCnt\": 0, \"HostCnt\": 1, \"ImageID\": \"sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f****\", \"ImageName\": \"registry.j*.**.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****\", \"IsAuthorized\": 0, \"IsLatestImage\": true, \"IsSuggest\": 0, \"IsTrustImage\": false, \"LowLevelVulCnt\": 0, \"MediumLevelVulCnt\": 0, \"OsName\": \"\", \"RecommendedFix\": false, \"RiskCnt\": 0, \"ScanError\": \"\", \"ScanRiskError\": \"\", \"ScanStatus\": \"NOT_SCAN\", \"ScanTime\": \"\", \"ScanVirusError\": \"\", \"ScanVulError\": \"\", \"Size\": 3840885407, \"VirusCnt\": 0, \"VulCnt\": 0}]",
+          "example": "无",
           "member": "ImagesInfo",
           "name": "List",
           "output_required": true,
@@ -20825,7 +20835,7 @@
         {
           "disabled": false,
           "document": "逃逸白名单列表",
-          "example": "[{\"ContainerCount\": 0, \"EventType\": [\"MOUNT_SENSITIVE_****\"], \"HostCount\": 4, \"ID\": 7172, \"ImageID\": \"sha256:a24bb4013296f61e89ba57005a7b3e52274d8edd3ae2077d04395f806b63****\", \"ImageName\": \"alpine:3.****\", \"ImageSize\": 5574537, \"InsertTime\": \"2024-10-17 22:3****\", \"UpdateTime\": \"2024-10-31 15:2****\"}]",
+          "example": "无",
           "member": "EscapeWhiteListInfo",
           "name": "List",
           "output_required": true,
@@ -23994,6 +24004,16 @@
           "member": "uint64",
           "name": "DefendHostCoresCnt",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "试用的专业版核数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrialCoresCnt",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -29946,7 +29966,7 @@
         {
           "disabled": false,
           "document": "受影响的镜像列表",
-          "example": "[{\"ComponentList\": [{\"FixedVersion\": \"0:1.33.0-5.e****\", \"Name\": \"libngh****\", \"Path\": \"\", \"Version\": \"1.33.0-3.el8****\"}], \"ContainerCount\": 0, \"HostCount\": 1, \"ImageID\": \"sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53f****\", \"ImageName\": \"centos:la****\"}]",
+          "example": "无",
           "member": "VulAffectedImageInfo",
           "name": "List",
           "output_required": true,
@@ -31638,10 +31658,20 @@
         },
         {
           "disabled": false,
-          "document": "关联主机数量",
+          "document": "关联主机数量（包含普通节点和超级节点数量）",
           "example": "4",
           "member": "int64",
           "name": "HostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联超级节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "SuperNodeCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34309,10 +34339,20 @@
         },
         {
           "disabled": false,
-          "document": "主机个数",
+          "document": "主机个数(包含普通节点数和超级节点数)",
           "example": "14",
           "member": "uint64",
           "name": "HostCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点数",
+          "example": "11",
+          "member": "uint64",
+          "name": "SuperNodeCnt",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -44258,10 +44298,20 @@
         },
         {
           "disabled": false,
-          "document": "关联的主机数",
+          "document": "关联的主机数(包含普通节点数和超级节点数)",
           "example": "1",
           "member": "int64",
           "name": "HostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的超级节点数",
+          "example": "1",
+          "member": "int64",
+          "name": "SuperNodeCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tchousex CreateAndExecuteSparkJob --cli-unfold-argument  \
-    --PathSource abc
+    --PathSource xfs://cq-test/
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "uyuu13345-xxtunghjgjg-1244"
     }
 }
 ```

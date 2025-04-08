@@ -20,6 +20,7 @@ Output:
                 "EventType": [
                     "MOUNT_SENSITIVE_PTAH"
                 ],
+                "SuperNodeCount": 5,
                 "HostCount": 4,
                 "ID": 7172,
                 "ImageID": "sha256:a24bb4013296f61e89ba57005a7b3e52274d8edd3ae2077d04395f806b63d83e",

@@ -1,3 +1,134 @@
+# Release 3.0.1177.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 132 次发布
+
+发布时间：2025-04-09 01:17:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/82511)
+
+	* 新增入参：PresetApproverInfo
+
+
+新增数据结构：
+
+* [PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#PresetApproverInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 184 次发布
+
+发布时间：2025-04-09 01:18:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82512)
+
+	* 新增入参：PresetApproverInfo
+
+
+新增数据结构：
+
+* [PresetApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#PresetApproverInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 16 次发布
+
+发布时间：2025-04-09 01:27:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ManageDeviceRisk
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ManageDeviceRiskInput
+* ManageDeviceRiskOutput
+* ManageDeviceRiskValueOutput
+
+
+
+## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+
+### 第 6 次发布
+
+发布时间：2025-04-09 01:28:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAndExecuteSparkJob](http://document.tencentcloudapi.woa.com/document/product/1741/84752)
+
+	* 新增入参：SqlToken
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 35 次发布
+
+发布时间：2025-04-09 01:29:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAssetImageDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78892)
+
+	* 新增出参：SuperNodeCnt
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：TrialCoresCnt
+
+
+修改数据结构：
+
+* [EscapeWhiteListInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#EscapeWhiteListInfo)
+
+	* 新增成员：SuperNodeCount
+
+* [ImagesInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImagesInfo)
+
+	* 新增成员：SuperNodeCnt
+
+* [VulAffectedImageInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulAffectedImageInfo)
+
+	* 新增成员：SuperNodeCount
+
+
+
+
 # Release 3.0.1176.1
 
 ## 日志服务(cls) 版本：2020-10-16

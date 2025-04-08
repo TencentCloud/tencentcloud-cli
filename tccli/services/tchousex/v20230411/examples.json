@@ -3,8 +3,8 @@
     "CreateAndExecuteSparkJob": [
       {
         "document": "创建并运行spark任务",
-        "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndExecuteSparkJob\n<公共请求参数>\n\n{\n    \"PathSource\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndExecuteSparkJob\n<公共请求参数>\n\n{\n    \"PathSource\": \"xfs://cq-test/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"uyuu13345-xxtunghjgjg-1244\"\n    }\n}",
         "title": "CreateAndExecuteSparkJob"
       }
     ],
