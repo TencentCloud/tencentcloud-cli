@@ -522,14 +522,6 @@
         "title": "查询用户零预付模式"
       }
     ],
-    "DescribeSavingPlanCoverage": [
-      {
-        "document": "查询节省计划覆盖率数据",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanCoverage\n<公共请求参数>\n\n{\n    \"PeriodType\": 1,\n    \"StartDate\": \"2023-06-01\",\n    \"EndDate\": \"2023-07-01\",\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"DetailSet\": [\n            {\n                \"EndDate\": \"2023-06-13\",\n                \"ExpectedAmount\": 99.01,\n                \"ProductCode\": \"p_trade_t_s\",\n                \"RegionId\": 1,\n                \"ResourceId\": \"0140051917592\",\n                \"SpCoverage\": 0,\n                \"SpCoveredAmount\": 0,\n                \"SpUncoveredAmount\": 99.01,\n                \"StartDate\": \"2023-06-13\",\n                \"SubProductCode\": \"sp_trade_t_s\",\n                \"TotalRealAmount\": 99.01\n            },\n            {\n                \"EndDate\": \"2023-06-13\",\n                \"ExpectedAmount\": 99.01,\n                \"ProductCode\": \"p_trade_t_s\",\n                \"RegionId\": 1,\n                \"ResourceId\": \"0140053056082\",\n                \"SpCoverage\": 0,\n                \"SpCoveredAmount\": 0,\n                \"SpUncoveredAmount\": 99.01,\n                \"StartDate\": \"2023-06-13\",\n                \"SubProductCode\": \"sp_trade_t_s\",\n                \"TotalRealAmount\": 99.01\n            }\n        ],\n        \"RateSet\": [\n            {\n                \"DatePoint\": \"2023-06-07\",\n                \"Rate\": 0\n            },\n            {\n                \"DatePoint\": \"2023-06-13\",\n                \"Rate\": 0\n            },\n            {\n                \"DatePoint\": \"2023-06-14\",\n                \"Rate\": 0\n            }\n        ],\n        \"RequestId\": \"a0041c91-65c3-4552-8802-f073cfed0202\",\n        \"TotalCount\": 6\n    }\n}",
-        "title": "查询节省计划覆盖率数据"
-      }
-    ],
     "DescribeSavingPlanResourceInfo": [
       {
         "document": "查询名下可共享的sp资源详细",

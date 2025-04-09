@@ -4030,7 +4030,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "1400188366",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,

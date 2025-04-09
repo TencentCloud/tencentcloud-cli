@@ -2911,8 +2911,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤规则",
-          "example": "[]",
+          "document": "过滤规则\n    \n- Name\n    按照集群的名字进行模糊查询。例如：测试\n    类型： String\n    必选： 否\n    ",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2946,7 +2946,7 @@
         {
           "disabled": false,
           "document": "集群列表",
-          "example": "[]",
+          "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
           "output_required": true,

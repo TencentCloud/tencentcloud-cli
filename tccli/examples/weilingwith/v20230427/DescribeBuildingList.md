@@ -51,9 +51,9 @@ Output:
                     "SpaceCode": "000139"
                 },
                 {
-                    "Address": "河北省,秦皇岛市,山海关区testdsds",
+                    "Address": "河北省,秦皇岛市,山海关区test",
                     "BuildingId": "e89d3f4f-9f0e-4e34-9c94-18589870caa4",
-                    "BuildingName": "testdsds",
+                    "BuildingName": "test1",
                     "Latitude": 39.97888,
                     "Longitude": 119.775185,
                     "SpaceCode": "000102"

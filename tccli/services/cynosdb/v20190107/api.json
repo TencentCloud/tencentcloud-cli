@@ -1242,7 +1242,7 @@
   },
   "metadata": {
     "apiVersion": "2019-01-07",
-    "api_brief": "",
+    "api_brief": "介绍如何使用 API 对 TDSQL-C MySQL 版进行操作，包括购买新集群、查询集群列表、创建用户账号、续费集群等。",
     "serviceNameCN": "TDSQL-C MySQL 版",
     "serviceShortName": "cynosdb"
   },

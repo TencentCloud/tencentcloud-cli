@@ -1,11 +1,11 @@
 {
   "actions": {
     "SubmitTaskEvent": {
-      "document": "提交任务事件接口",
+      "document": "smop产品下线，接口也一起下线\n\n提交任务事件接口",
       "input": "SubmitTaskEventRequest",
       "name": "提交任务事件",
       "output": "SubmitTaskEventResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

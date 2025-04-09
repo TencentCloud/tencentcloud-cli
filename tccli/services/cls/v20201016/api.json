@@ -1413,6 +1413,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高优使用通知内容模板中的自定义回调参数。\ntrue: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。\nfalse:优先使用告警策略中单独配置的请求头及请求内容。",
+          "example": "true",
+          "member": "bool",
+          "name": "CallbackPrioritize",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3828,6 +3838,15 @@
           "name": "AlarmShieldStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高优使用通知内容模板中的自定义回调参数。\ntrue: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。\nfalse:优先使用告警策略中单独配置的请求头及请求内容。",
+          "example": "true",
+          "member": "bool",
+          "name": "CallbackPrioritize",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13171,6 +13190,15 @@
           "name": "AlarmShieldStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高优使用通知内容模板中的自定义回调参数。 true: 使用通知内容模板中的自定义回调参数覆盖告警策略中单独配置的请求头及请求内容。 false:优先使用告警策略中单独配置的请求头及请求内容。",
+          "example": "false",
+          "member": "bool",
+          "name": "CallbackPrioritize",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

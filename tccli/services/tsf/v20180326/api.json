@@ -1865,14 +1865,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "子任务单机并发数限制，默认值为2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子任务单机并发数限制，默认值为2",
           "example": "2",
           "member": "int64",
           "name": "SubTaskConcurrency",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2279,23 +2279,23 @@
         },
         {
           "disabled": false,
-          "document": "API  能否调试\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API  能否调试",
           "example": "true",
           "member": "bool",
           "name": "CanRun",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "API 状态 0:离线 1:在线，默认0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API 状态 0:离线 1:在线，默认0",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2946,23 +2946,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "java-provider",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2976,83 +2976,83 @@
         },
         {
           "disabled": false,
-          "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用类型",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "微服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "微服务类型",
           "example": "DEF",
           "member": "string",
           "name": "MicroserviceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "编程语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "编程语言",
           "example": "J",
           "member": "string",
           "name": "ProgLang",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2019-11-21 09:33:21",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2019-11-22 09:33:21",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用资源类型",
           "example": "C",
           "member": "string",
           "name": "ApplicationResourceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用runtime类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用runtime类型",
           "example": "konaJdk8",
           "member": "string",
           "name": "ApplicationRuntimeType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Apigateway的serviceId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Apigateway的serviceId",
           "example": "gw-ins-6a79x94v",
           "member": "string",
           "name": "ApigatewayServiceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3076,13 +3076,13 @@
         },
         {
           "disabled": false,
-          "document": "IgnoreCreateImageRepository\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IgnoreCreateImageRepository",
           "example": "true",
           "member": "bool",
           "name": "IgnoreCreateImageRepository",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3126,33 +3126,33 @@
         },
         {
           "disabled": false,
-          "document": "应用编程语言类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用编程语言类型",
           "example": "Java",
           "member": "string",
           "name": "ProgramLanguage",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开发框架类型[SpringCloud，Dubbo，Go-GRPC，Other]",
           "example": "Spring Cloud",
           "member": "string",
           "name": "FrameworkType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "注册配置治理信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册配置治理信息",
           "example": "无",
           "member": "ServiceGovernanceConfig",
           "name": "ServiceGovernanceConfig",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3166,13 +3166,13 @@
         },
         {
           "disabled": false,
-          "document": "是否同时创建镜像仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否同时创建镜像仓库",
           "example": "true",
           "member": "bool",
           "name": "CreateSameNameImageRepository",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3670,25 +3670,25 @@
         },
         {
           "disabled": false,
-          "document": "是否开启filebeat高级配置开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启filebeat高级配置开关",
           "example": "false",
           "member": "bool",
           "name": "FilebeatConfigEnable",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "close_timeout参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "close_timeout参数",
           "example": "10",
           "member": "int64",
           "name": "FilebeatCloseTimeout",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4863,36 +4863,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "key-mock",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "/config",
           "member": "string",
           "name": "Path",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "hostPath",
           "member": "string",
           "name": "Mode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6041,23 +6041,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组ID",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组名称",
           "example": "java-group",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6071,23 +6071,23 @@
         },
         {
           "disabled": false,
-          "document": "已启动实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已启动实例总数",
           "example": "2",
           "member": "int64",
           "name": "CurrentNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2020-11-21 09:33:23",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6121,83 +6121,83 @@
         },
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群名称",
           "example": "k8s-cls",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间ID",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间名称",
           "example": "default",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "负载均衡ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡ip",
           "example": "10.20.13.1",
           "member": "string",
           "name": "LbIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用类型",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Service ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Service ip",
           "example": "10.19.102.1",
           "member": "string",
           "name": "ClusterIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6241,13 +6241,13 @@
         },
         {
           "disabled": false,
-          "document": "更新方式：0:快速更新 1:滚动更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新方式：0:快速更新 1:滚动更新",
           "example": "1",
           "member": "int64",
           "name": "UpdateType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6261,33 +6261,33 @@
         },
         {
           "disabled": false,
-          "document": "端口数组对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口数组对象",
           "example": "无",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "环境变量数组对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境变量数组对象",
           "example": "无",
           "member": "Env",
           "name": "Envs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "java-service",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6301,23 +6301,23 @@
         },
         {
           "disabled": false,
-          "document": "部署组状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组状态",
           "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务类型",
           "example": "DEF",
           "member": "string",
           "name": "MicroserviceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6351,33 +6351,33 @@
         },
         {
           "disabled": false,
-          "document": "部署组资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组资源类型",
           "example": "C",
           "member": "string",
           "name": "GroupResourceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署组实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组实例个数",
           "example": "4",
           "member": "uint64",
           "name": "InstanceCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署组更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组更新时间戳",
           "example": "1762890382",
           "member": "int64",
           "name": "UpdatedTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6411,13 +6411,13 @@
         },
         {
           "disabled": false,
-          "document": "允许PlainYamlDeploy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "允许PlainYamlDeploy",
           "example": "true",
           "member": "bool",
           "name": "AllowPlainYamlDeploy",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6567,13 +6567,13 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息是否匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务配置信息是否匹配",
           "example": "false",
           "member": "bool",
           "name": "IsNotEqualServiceConfig",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6950,13 +6950,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "API分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API分组ID",
           "example": "grp-rzn41l1w",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7059,12 +7059,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建的规则 ID",
           "example": "{\"ApiId\":null,\"CreatedTime\":null,\"Description\":null,\"MaxQps\":null,\"RuleContent\":null,\"RuleId\":\"rule-jwo9eexw\",\"RuleName\":null,\"TsfRuleId\":null,\"UpdatedTime\":null,\"UsableStatus\":null}",
           "member": "ApiRateLimitRule",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7511,13 +7512,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：创建成功；false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7625,7 +7626,7 @@
         {
           "disabled": false,
           "document": "配置模板数据",
-          "example": "#请求处理超时时间ribbon.ReadTimeout: 5000#请求连接超时时间ribbon.ConnectTimeout: 2000#同一实例最大重试次数，不包括首次调用ribbon.MaxAutoRetries: 0#重试其他实例的最大重试次数，不包括首次所选的serverribbon.MaxAutoRetriesNextServer: 1#是否对所有操作请求都进行重试ribbon.OkToRetryOnAllOperations: false",
+          "example": "#请求处理超时时间ribbon.ReadTimeout: 5000#请求连接超时时间ribbon.ConnectTimeout: 2000#同一实例最大重试次数，不包括首次调用ribbon.MaxAutoRetries: 0",
           "member": "string",
           "name": "ConfigTemplateValue",
           "required": true,
@@ -7657,13 +7658,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建成功，返回 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建成功，返回 ID",
           "example": "{\"ConfigTemplateId\":\"dcfg_temp-ym1v\",\"ConfigTemplateName\":\"ct\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"time: 2000\"}",
           "member": "ConfigTemplate",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7757,12 +7758,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项",
           "example": "{   \"ConfigName\": \"abc\",   \"ConfigVersion\": \"abc\",   \"ConfigVersionDesc\": \"abc\",   \"ConfigValue\": \"abc\",   \"ApplicationId\": \"abc\",   \"ConfigType\": \"abc\",   \"EncodeWithBase64\": true,   \"ProgramIdList\": [     \"abc\"   ] }",
           "member": "Config",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8127,13 +8129,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：创建成功；false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8254,12 +8256,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件配置项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ApplicationId\":\"application-yx8m24ga\",\"ApplicationName\":null,\"ConfigFileCode\":\"UTF-8\",\"ConfigFileName\":\"config.txt\",\"ConfigFilePath\":\"/root/app\",\"ConfigFileValue\":\"config=enabled\",\"ConfigFileValueLength\":14,\"ConfigId\":\"dcfg-f-yq75blda\",\"ConfigName\":\"app_config\",\"ConfigPostCmd\":\"\",\"ConfigVersion\":\"v1.0\",\"ConfigVersionCount\":null,\"ConfigVersionDesc\":null,\"CreationTime\":null,\"DeleteFlag\":null,\"LastUpdateTime\":null}",
+          "document": "文件配置项",
+          "example": "{\"ApplicationId\":\"application-01\",\"ConfigFileCode\":\"UTF-8\",\"ConfigFileName\":\"cfg.txt\",\"ConfigFilePath\":\"/root\",\"ConfigFileValue\":\"config=1\",\"ConfigFileValueLength\":14,\"ConfigId\":\"dcfg-f-01\",\"ConfigName\":\"app\",\"ConfigPostCmd\":\"\",\"ConfigVersion\":\"v1\"}",
           "member": "FileConfig",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8472,13 +8475,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道ID",
           "example": "lane-vwdjqq29",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8554,13 +8557,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则Id",
           "example": "lane-r-yojkwwpr",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8846,12 +8849,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回路径重写规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回路径重写规则 ID",
           "example": "[\"rewrite-py5r7b6v\"]",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8991,13 +8995,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：创建成功；false：创建失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9082,12 +9086,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "公共配置项 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ApplicationId\":null,\"ApplicationName\":null,\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":\"public\",\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionCount\":null,\"ConfigVersionDesc\":\"This is desc\",\"CreationTime\":null,\"DeleteFlag\":null,\"EncodeWithBase64\":true,\"LastUpdateTime\":null}",
+          "document": "公共配置项 ID",
+          "example": "{\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":\"public\",\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionDesc\":\"This is desc\",\"EncodeWithBase64\":true}",
           "member": "Config",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9431,7 +9436,7 @@
         {
           "disabled": false,
           "document": "网关实体ID",
-          "example": "gw-ins-xxx",
+          "example": "gw-ins-01",
           "member": "string",
           "name": "GatewayInstanceId",
           "required": true,
@@ -9440,7 +9445,7 @@
         {
           "disabled": false,
           "document": "单元化命名空间对象列表",
-          "example": "namespace-xxx",
+          "example": "namespace-01",
           "member": "UnitNamespace",
           "name": "UnitNamespaceList",
           "required": false,
@@ -9454,13 +9459,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9518,12 +9523,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功，成功：true，失败：false。；",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9581,13 +9587,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "单元化规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"UpdatedTime\":null,\"CreatedTime\":null,\"Description\":null,\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"unit_provider\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"UpdatedTime\":null,\"CreatedTime\":null,\"Description\":\"this is desc\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"heihuli-global_default\",\"Id\":\"unit-item-ghpuh9rn\",\"ItemIndex\":1,\"Name\":\"Rule1\",\"Priority\":0,\"Relationship\":\"AND\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[{\"Id\":\"unit-tag-vmhijoic\",\"TagField\":\"user\",\"TagOperator\":\"IN\",\"TagType\":\"U\",\"TagValue\":\"1\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\"}]}]}",
+          "document": "单元化规则信息",
+          "example": "{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"unit_provider\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"Id\":\"unit-item-ghpuh9rn\",\"Name\":\"Rule1\",\"Priority\":0,\"Relationship\":\"AND\",\"UnitRuleId\":\"unit-rl-01\",\"UnitRuleTagList\":[]}]}",
           "member": "UnitRule",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9824,13 +9830,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除应用操作是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除应用操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10017,12 +10023,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除结果",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10228,7 +10235,7 @@
         {
           "disabled": false,
           "document": "泳道规则Id",
-          "example": "lane-r-fdjsgjkgfvd",
+          "example": "lane-r-f1dk0g1",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -10242,13 +10249,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作状态",
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10451,12 +10458,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：删除成功；false：删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：删除成功；false：删除失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10606,12 +10614,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10642,12 +10651,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11269,13 +11279,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署容器应用是否成功。\ntrue：成功。\nfalse：失败。",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11586,13 +11596,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "API分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"AclMode\":\"none\",\"ApiCount\":4,\"AuthType\":\"none\",\"BindedGatewayDeployGroups\":[],\"ClusterId\":null,\"ClusterName\":null,\"ClusterType\":null,\"CreatedTime\":\"2023-01-10 17:37:26\",\"Description\":\"\",\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"GatewayInstanceIdList\":null,\"GatewayInstanceType\":null,\"GroupContext\":\"/heihuli\",\"GroupId\":\"grp-ptrhio2l\",\"GroupName\":\"heihuli\",\"GroupType\":\"ms\",\"NamespaceNameKey\":null,\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKey\":null,\"ServiceNameKeyPosition\":\"path\",\"Status\":\"released\",\"UpdatedTime\":\"2023-01-10 22:09:34\"}",
+          "document": "API分组信息",
+          "example": "{\"ApiCount\":4,\"BindedGatewayDeployGroups\":[],\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"GroupContext\":\"/app\",\"GroupId\":\"grp-ptrhio2l\",\"GroupName\":\"app\",\"GroupType\":\"ms\",\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKeyPosition\":\"path\",\"Status\":\"released\"}",
           "member": "ApiGroupInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11695,13 +11705,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "翻页结构体\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"AclMode\":\"none\",\"ApiCount\":4,\"AuthType\":\"none\",\"BindedGatewayDeployGroups\":[{\"ApplicationId\":\"application-yq58wpey\",\"ApplicationName\":\"heihuli-gw\",\"ApplicationType\":\"V\",\"ClusterType\":\"V\",\"DeployGroupId\":\"group-ym9mqx2a\",\"DeployGroupName\":\"heihuli-zuul-unit\",\"GroupStatus\":null}],\"ClusterId\":null,\"ClusterName\":null,\"ClusterType\":null,\"CreatedTime\":\"2023-01-10 17:37:26\",\"Description\":\"\",\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"GatewayInstanceIdList\":null,\"GatewayInstanceType\":null,\"GroupContext\":\"/heihuli\",\"GroupId\":\"grp-ptrhio2l\",\"GroupName\":\"heihuli\",\"GroupType\":\"ms\",\"NamespaceNameKey\":null,\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKey\":null,\"ServiceNameKeyPosition\":\"path\",\"Status\":\"released\",\"UpdatedTime\":\"2023-01-10 22:09:34\"}],\"TotalCount\":1}",
+          "document": "翻页结构体",
+          "example": "{\"Content\":[{\"ApiCount\":4,\"BindedGatewayDeployGroups\":[],\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"GroupContext\":\"/app\",\"GroupId\":\"grp-ptrhio2l\",\"GroupName\":\"app\",\"GroupType\":\"ms\",\"Status\":\"released\"}],\"TotalCount\":1}",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12188,13 +12198,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务日志配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务日志配置列表",
           "example": "无",
           "member": "TsfPageBusinessLogConfig",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12452,12 +12462,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的配置项发布历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-yq75nn3a\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":null,\"LastConfigName\":null,\"LastConfigVersion\":null,\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-24 15:57:15\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":false},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-ydrjmmma\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-yo82mmra\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v3\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"删除配置项\",\"ReleaseStatus\":\"DS\",\"ReleaseTime\":\"2024-12-24 15:57:10\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":true},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-ap95jj5v\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-abo7mowy\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v2\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-24 15:56:35\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":true},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-abo7mowy\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-v628r2py\",\"ConfigVersion\":\"v2\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-vzk3lk8v\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v1\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseStatus\":\"RS\",\"ReleaseTime\":\"2024-12-23 17:24:24\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":false},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-vzk3lk8v\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-a2qj3qoa\",\"ConfigVersion\":\"v1\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-abo7mowy\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v2\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-23 17:23:46\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":true},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-abo7mowy\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-y44wg4qy\",\"ConfigVersion\":\"v2\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":null,\"LastConfigName\":null,\"LastConfigVersion\":null,\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-23 17:23:37\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":false}],\"TotalCount\":6}",
+          "document": "分页的配置项发布历史列表",
+          "example": "{\"Content\":[{\"ClusterId\":\"cluster-yne99jdy\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigReleaseLogId\":\"dcfgrl-yq75nn3a\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"NamespaceId\":\"namespace-vw8oox6v\",\"ReleaseStatus\":\"S\"}],\"TotalCount\":1}",
           "member": "TsfPageConfigReleaseLog",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12551,13 +12562,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的配置发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"ApplicationId\":\"application-a7rwwz4v\",\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseId\":\"dcfgr-yxd366ov\",\"ConfigVersion\":\"v3\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseTime\":\"2024-12-24 15:57:15\"}],\"TotalCount\":1}",
+          "document": "分页的配置发布信息",
+          "example": "{\"Content\":[{\"ApplicationId\":\"application-app1\",\"ClusterId\":\"cluster-cls1\",\"ConfigId\":\"dcfg-d1\",\"ConfigReleaseId\":\"dcfgr-dr1\",\"GroupId\":\"group-grp1\",\"NamespaceId\":\"namespace-ns1\",\"NamespaceName\":\"cluster-jolyonzheng_default\"}],\"TotalCount\":1}",
           "member": "TsfPageConfigRelease",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12589,9 +12600,10 @@
         {
           "disabled": false,
           "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"amp-consumer\",\"ConfigId\":\"dcfg-vzk36owv\",\"ConfigName\":\"config_app\",\"ConfigType\":null,\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionCount\":null,\"ConfigVersionDesc\":\"This is desc\",\"CreationTime\":\"2024-12-24 18:04:02\",\"DeleteFlag\":true,\"LastUpdateTime\":null}",
+          "example": "{\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"amp-consumer\",\"ConfigId\":\"dcfg-vzk36owv\",\"ConfigName\":\"config_app\",\"ConfigValue\":\"config: 1\",\"ConfigVersion\":\"v1\",\"ConfigVersionDesc\":\"This is desc\",\"DeleteFlag\":true}",
           "member": "Config",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12733,13 +12745,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ConfigTemplateDesc\":\"\",\"ConfigTemplateId\":\"dcfg_temp-vwkjqd6v\",\"ConfigTemplateName\":\"garden-test\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n#请求连接超时时间\\nribbon.ConnectTimeout: 2000\\n#同一实例最大重试次数，不包括首次调用\\nribbon.MaxAutoRetries: 0\\n#重试其他实例的最大重试次数，不包括首次所选的server\\nribbon.MaxAutoRetriesNextServer: 1\\n#是否对所有操作请求都进行重试\\nribbon.OkToRetryOnAllOperations: false\\n\",\"CreateTime\":\"2022-08-23 15:44:11\",\"UpdateTime\":null}",
+          "document": "导入结果",
+          "example": "{\"ConfigTemplateDesc\":\"\",\"ConfigTemplateId\":\"dcfg_temp-vwkjqd6v\",\"ConfigTemplateName\":\"garden-test\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n\",\"CreateTime\":\"2022-08-23 15:44:11\"}",
           "member": "ConfigTemplate",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12765,7 +12777,7 @@
         {
           "disabled": false,
           "document": "配置项ID，不传入时查询全量，高优先级",
-          "example": "dcfg-xxx",
+          "example": "dcfg-01",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -12824,13 +12836,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页后的配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页后的配置项列表",
           "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13438,12 +13450,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "单元化规则对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单元化规则对象",
           "example": "{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Name\":\"rule_app\",\"UnitRuleItemList\":[{\"Name\":\"rule_user\",\"UnitRuleTagList\":[]}]}",
           "member": "UnitRule",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13537,13 +13550,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"ApplicationId\":\"application-vw8ljmwv\",\"ClusterId\":\"cls-f6bk82xc\",\"ClusterName\":\"cluster-container-jolyonzheng\",\"ConfigId\":\"dcfg-f-v3qqrkdy\",\"ConfigName\":\"conf_app\",\"ConfigReleaseId\":\"dcfgr-f-vkjjw7ny\",\"ConfigVersion\":\"2\",\"GroupId\":\"group-vj3n6lzy\",\"GroupName\":\"group-provider\",\"NamespaceId\":\"namespace-ygo3djma\",\"NamespaceName\":\"cluster-container-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseTime\":\"2024-11-28 20:49:57\"}],\"TotalCount\":1}",
+          "document": "配置项发布信息列表",
+          "example": "{\"Content\":[{\"ApplicationId\":\"application-a1\",\"ClusterId\":\"cls-c1\",\"ConfigId\":\"dcfg-f-df1\",\"ConfigReleaseId\":\"dcfgr-f-drf1\",\"GroupId\":\"group-g1\",\"NamespaceId\":\"namespace-n1\",\"NamespaceName\":\"cluster-container-jolyonzheng_default\"}],\"TotalCount\":1}",
           "member": "TsfPageFileConfigRelease",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13560,7 +13573,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "dcfg-f-xxx",
+          "example": "dcfg-f-01",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -13578,7 +13591,7 @@
         {
           "disabled": false,
           "document": "配置项名称",
-          "example": "sadf",
+          "example": "cfg1",
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -13628,13 +13641,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件配置项列表",
           "example": "无",
           "member": "TsfPageFileConfig",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13967,13 +13980,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务日志配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务日志配置列表",
           "example": "无",
           "member": "TsfPageBusinessLogConfig",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14149,13 +14162,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组发布的相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ConfigReleaseList\":[{\"ApplicationId\":\"application-vzoebl8a\",\"ClusterId\":\"cls-i3v5y09e\",\"ClusterName\":\"cls-app\",\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-a7rl7w4v\",\"ConfigName\":\"conf-app\",\"ConfigReleaseId\":\"dcfgr-ymw5965v\",\"ConfigVersion\":\"v1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":\"group-v6q747py\",\"GroupName\":\"cloud-provider\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"ns_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:36:03\"}],\"FileConfigReleaseList\":[{\"ApplicationId\":\"application-vzoebl8a\",\"ClusterId\":\"cls-i3v5y09e\",\"ClusterName\":\"cls-app\",\"ConfigId\":\"dcfg-f-aeonjd6y\",\"ConfigName\":\"config_app\",\"ConfigReleaseId\":\"dcfgr-f-y84omela\",\"ConfigVersion\":\"v1\",\"GroupId\":\"group-v6q747py\",\"GroupName\":\"cloud-provider\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"ns_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:37:50\"}],\"PackageId\":null,\"PackageName\":null,\"PackageVersion\":null,\"PublicConfigReleaseList\":[{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"config_pub_app\",\"ConfigReleaseId\":\"dcfgr-yne579dy\",\"ConfigVersion\":\"v1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"ns_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:36:54\"}],\"RepoName\":\"tsf_100011910000/app-provider\",\"TagName\":\"20241212161801\"}",
+          "document": "部署组发布的相关信息",
+          "example": "{\"ConfigReleaseList\":[{\"ConfigId\":\"dcfg-a7rl7w4v\"}],\"FileConfigReleaseList\":[{\"ConfigId\":\"dcfg-f-aeonjd6y\"}],\"PublicConfigReleaseList\":[{\"ConfigId\":\"dcfg-p-vzk36rov\"}],\"RepoName\":\"tsf_100011910000/app-provider\",\"TagName\":\"20241212161801\"}",
           "member": "GroupRelease",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15349,13 +15362,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道规则列表",
           "example": "{\"Content\":[{\"CreateTime\":1725509095000,\"Enable\":true,\"LaneId\":\"lane-ynmlnwm4\",\"Priority\":1,\"Remark\":\"\",\"RuleId\":\"lane-r-v6ewp385\",\"RuleName\":\"rule_app\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_AND\",\"UpdateTime\":1727167548000}],\"TotalCount\":1}",
           "member": "LaneRules",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15422,13 +15435,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "泳道列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道列表",
           "example": "{\"Content\":[{\"CreateTime\":1726849955000,\"Entrance\":null,\"LaneGroupList\":null,\"LaneId\":\"lane-ynmlnwm4\",\"LaneName\":\"lane_name\",\"NamespaceIdList\":null,\"Remark\":\"\",\"UpdateTime\":1726849955000}],\"TotalCount\":1}",
           "member": "LaneInfos",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15495,13 +15508,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务详情实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"AppMicroServiceType\":\"G\",\"ApplicationId\":\"application-ydopqnxa\",\"ApplicationName\":\"app-gw\",\"ApplicationPackageVersion\":\"20241223011040\",\"ApplicationType\":\"V\",\"ClusterId\":\"cluster-2vz3nd3a\",\"ClusterName\":\"cls_app\",\"ClusterType\":\"V\",\"GroupId\":\"group-yx87px4a\",\"GroupName\":\"app-zuul-2\",\"HealthCheckUrl\":null,\"HiddenStatus\":\"unhidden\",\"InstanceAvailableStatus\":null,\"InstanceId\":\"ins-7wy598p8\",\"InstanceName\":\"app22\",\"InstanceStatus\":null,\"LanIp\":\"172.16.16.139\",\"LanIpv6\":null,\"LastHeartbeatTime\":1734943598,\"MetaJson\":\"H4sIAAAAAAAAAGXQUU+DMBQF4P/SZ7tAh2nxjUDHiFtpWmbiXki3EUaibdmGgsb/LpPOmPh8vntycj9BIRdlxPkqi6Miy1mZJeABKGtfmr26NEbD4WBsq3sF7n5sLOgEi2xNR+rjeUAIxgFxIBX5hk819cl0Fg49wbYPbgUZkwWLYjqRRp8hfh/uQ2JvBSxaU8l/hVav1dmqfQVbtcO7Nnz754pnfp2S0IWLuMjT8okKOQ4dA+ShwEdo7vm+F3jOCJpOqbKw7pSuP46mc5lMHv+c+zMUzpAHl6a/jA9ZNvWxOkFBVzSS1F1sc3adAL6+AZBHey5SAQAA\",\"NamespaceId\":null,\"NamespaceName\":null,\"Port\":\"8080\",\"RegistrationId\":\"ins-7wy598p8\",\"RegistrationTime\":1734887748,\"ServiceInstanceStatus\":\"Running\",\"ServiceStatus\":\"passing\",\"WanIp\":\"43.139.245.156\"}],\"TotalCount\":1}",
+          "document": "微服务详情实例列表",
+          "example": "{\"Content\":[{\"AppMicroServiceType\":\"G\",\"ApplicationId\":\"application-a1\",\"ApplicationType\":\"V\",\"ClusterId\":\"cluster-c1\",\"ClusterType\":\"V\",\"GroupId\":\"group-g1\",\"HiddenStatus\":\"unhidden\",\"InstanceId\":\"ins-i1\",\"RegistrationId\":\"ins-i1\"}],\"TotalCount\":1}",
           "member": "TsfPageMsInstance",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15650,13 +15663,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "微服务分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "微服务分页列表信息",
           "example": "{\"Content\":[{\"CreateTime\":null,\"CriticalInstanceCount\":0,\"MicroserviceDesc\":\"\",\"MicroserviceId\":\"ms-yqwbbpxl\",\"MicroserviceName\":\"consumer-demo\",\"NamespaceId\":\"namespace-v6b2exey\",\"RunInstanceCount\":1,\"UpdateTime\":null}],\"TotalCount\":1}",
           "member": "TsfPageMicroservice",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16268,12 +16281,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页后的公共配置项发布历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"ClusterId\":null,\"ClusterName\":null,\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"[配置项已被删除]\",\"ConfigReleaseLogId\":\"dcfgrl-yrm5jx9v\",\"ConfigVersion\":\"[配置项已被删除]\",\"GroupId\":null,\"GroupName\":null,\"LastConfigId\":\"dcfg-p-vzk36rov\",\"LastConfigName\":\"[配置项已被删除]\",\"LastConfigVersion\":\"[配置项已被删除]\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":\"删除配置项\",\"ReleaseStatus\":\"DS\",\"ReleaseTime\":\"2024-12-24 20:30:37\",\"RollbackFlag\":false},{\"ClusterId\":null,\"ClusterName\":null,\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"[配置项已被删除]\",\"ConfigReleaseLogId\":\"dcfgrl-vw83po6v\",\"ConfigVersion\":\"[配置项已被删除]\",\"GroupId\":null,\"GroupName\":null,\"LastConfigId\":null,\"LastConfigName\":null,\"LastConfigVersion\":null,\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-24 18:36:54\",\"RollbackFlag\":false}],\"TotalCount\":2}",
+          "document": "分页后的公共配置项发布历史列表",
+          "example": "{\"Content\":[{\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigReleaseLogId\":\"dcfgrl-yrm5jx9v\",\"LastConfigId\":\"dcfg-p-vzk36rov\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"test_default\",\"ReleaseStatus\":\"DS\",\"RollbackFlag\":false}],\"TotalCount\":1}",
           "member": "TsfPageConfigReleaseLog",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16340,12 +16354,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "公共配置发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-p-v6kxdlpy\",\"ConfigName\":\"skye-name\",\"ConfigReleaseId\":\"dcfgr-y446nlby\",\"ConfigVersion\":\"1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":\"namespace-yxoqm4ky\",\"NamespaceName\":\"skye-test_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-09-11 17:27:59\"}],\"TotalCount\":1}",
+          "document": "公共配置发布信息",
+          "example": "{\"Content\":[{\"ConfigId\":\"dcfg-p-v6kxdlpy\",\"ConfigName\":\"cfg-name\",\"ConfigReleaseId\":\"dcfgr-y446nlby\",\"ConfigVersion\":\"1\",\"NamespaceId\":\"namespace-yxoqm4ky\",\"NamespaceName\":\"ns_default\",\"ReleaseTime\":\"2024-09-11 17:27:59\"}],\"TotalCount\":1}",
           "member": "TsfPageConfigRelease",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16377,9 +16392,10 @@
         {
           "disabled": false,
           "document": "全局配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ApplicationId\":null,\"ApplicationName\":null,\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":null,\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionCount\":null,\"ConfigVersionDesc\":\"This is desc\",\"CreationTime\":\"2024-12-20 19:16:10\",\"DeleteFlag\":true,\"LastUpdateTime\":null}",
+          "example": "{\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionDesc\":\"This is desc\",\"DeleteFlag\":true}",
           "member": "Config",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16475,13 +16491,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页的全局配置统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"ApplicationId\":null,\"ApplicationName\":null,\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":null,\"ConfigValue\":null,\"ConfigVersion\":null,\"ConfigVersionCount\":1,\"ConfigVersionDesc\":null,\"CreationTime\":null,\"DeleteFlag\":null,\"LastUpdateTime\":\"2024-12-20 19:16:10\"}],\"TotalCount\":1}",
+          "document": "分页的全局配置统计信息列表",
+          "example": "{\"Content\":[{\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigVersionCount\":1,\"LastUpdateTime\":\"2024-12-20 19:16:10\"}],\"TotalCount\":1}",
           "member": "TsfPageConfig",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16498,7 +16514,7 @@
         {
           "disabled": false,
           "document": "配置项ID，不传入时查询全量，高优先级",
-          "example": "dcfg-p-xxx",
+          "example": "dcfg-p-id001",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -16525,7 +16541,7 @@
         {
           "disabled": false,
           "document": "配置项ID列表，不传入时查询全量，低优先级",
-          "example": "null",
+          "example": "[\"dcfg-p-id001\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -16557,13 +16573,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页后的全局配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页后的全局配置项列表",
           "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16594,12 +16610,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "已发布的配置内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已发布的配置内容",
           "example": "config: enabled",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17686,12 +17703,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "单元化命名空间对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"CreatedTime\":\"2023-01-10 17:27:55\",\"DestTsfId\":null,\"DestTsfName\":null,\"DestUnitId\":null,\"DestUnitName\":null,\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-ns-n7n178c3\",\"NamespaceId\":\"namespace-vk5blxnv\",\"NamespaceName\":\"global_default\",\"UpdatedTime\":\"2023-01-10 17:27:55\"}],\"TotalCount\":1}",
+          "document": "单元化命名空间对象列表",
+          "example": "{\"Content\":[{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-ns-n7n178c3\",\"NamespaceId\":\"namespace-vk5blxnv\",\"NamespaceName\":\"global_default\"}],\"TotalCount\":1}",
           "member": "TsfPageUnitNamespace",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17722,13 +17740,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "单元化规则对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Description\":null,\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"unit_provider\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Description\":\"this is desc\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"global_default\",\"Id\":\"unit-item-ghpuh9rn\",\"ItemIndex\":1,\"Name\":\"Rule1\",\"Priority\":0,\"Relationship\":\"AND\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Id\":\"unit-tag-vmhijoic\",\"ItemIndex\":1,\"TagField\":\"user\",\"TagOperator\":\"IN\",\"TagType\":\"U\",\"TagValue\":\"1\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"UpdatedTime\":\"2024-12-23 11:14:17\"}",
+          "document": "单元化规则对象",
+          "example": "{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"unit_provider\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"DestNamespaceId\":\"namespace-vk5blxnv\",\"Id\":\"unit-item-ghpuh9rn\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[]}]}",
           "member": "UnitRule",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17795,12 +17813,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Description\":null,\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"gwInsName\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Description\":\"this is desc\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"global_default\",\"Id\":\"unit-item-ghpuh9rn\",\"ItemIndex\":1,\"Name\":\"Rule1\",\"Priority\":0,\"Relationship\":\"AND\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Id\":\"unit-tag-vmhijoic\",\"ItemIndex\":1,\"TagField\":\"user\",\"TagOperator\":\"IN\",\"TagType\":\"U\",\"TagValue\":\"1\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"TotalCount\":1}",
+          "document": "分页列表信息",
+          "example": "{\"Content\":[{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"gwInsName\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"Id\":\"unit-item-ghpuh9rn\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[]}]}],\"TotalCount\":1}",
           "member": "TsfPageUnitRule",
           "name": "Result",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17867,12 +17886,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Description\":null,\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Name\":\"unit_provider\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Description\":\"this is desc\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"global_default\",\"Id\":\"unit-item-ghpuh9rn\",\"ItemIndex\":1,\"Name\":\"Rule1\",\"Priority\":0,\"Relationship\":\"AND\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[{\"CreatedTime\":\"2024-12-23 11:14:17\",\"Id\":\"unit-tag-vmhijoic\",\"ItemIndex\":1,\"TagField\":\"user\",\"TagOperator\":\"IN\",\"TagType\":\"U\",\"TagValue\":\"1\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"TotalCount\":1}",
+          "document": "分页列表信息",
+          "example": "{\"Content\":[{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-cgd3l6jo\",\"Status\":\"disabled\",\"UnitRuleItemList\":[{\"DestNamespaceId\":\"namespace-vk5blxnv\",\"Id\":\"unit-item-ghpuh9rn\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"UnitRuleTagList\":[]}]}],\"TotalCount\":1}",
           "member": "TsfPageUnitRuleV2",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18012,12 +18032,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "单元化命名空间对象列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\":[{\"CreatedTime\":null,\"DestTsfId\":null,\"DestTsfName\":null,\"DestUnitId\":null,\"DestUnitName\":null,\"GatewayInstanceId\":null,\"Id\":null,\"NamespaceId\":\"namespace-ygo3djma\",\"NamespaceName\":\"cluster-container-jolyonzheng_default\",\"UpdatedTime\":null}],\"TotalCount\":1}",
+          "document": "单元化命名空间对象列表",
+          "example": "{\"Content\":[{\"NamespaceId\":\"namespace-ygo3djma\",\"NamespaceName\":\"cluster-container-jolyonzheng_default\"}],\"TotalCount\":1}",
           "member": "TsfPageUnitNamespace",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18048,13 +18069,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作状态。成功：true，失败：false",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18159,12 +18180,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，成功失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果，成功失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18195,12 +18217,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18409,13 +18432,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作状态。成功：true，失败：false",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18520,12 +18543,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，成功失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果。成功：true，失败：false。",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18556,12 +18580,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功，成功：true，失败：false。",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19195,63 +19220,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组ID",
           "example": "grp-vcgimq3x",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组名称",
           "example": "testGroup1",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组下API个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组下API个数",
           "example": "22",
           "member": "uint64",
           "name": "GroupApiCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分组API列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组API列表",
           "example": "无",
           "member": "GatewayGroupApiVo",
           "name": "GroupApis",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关实例的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关实例的类型",
           "example": "unit",
           "member": "string",
           "name": "GatewayInstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关实例ID",
           "example": "gw-ins-4hkjbwxy",
           "member": "string",
           "name": "GatewayInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19566,43 +19591,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关部署组ID",
           "example": "gw-e42d597",
           "member": "string",
           "name": "GatewayDeployGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关部署组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关部署组名称",
           "example": "scg-container-test",
           "member": "string",
           "name": "GatewayDeployGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "API 分组个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API 分组个数",
           "example": "10",
           "member": "uint64",
           "name": "GroupNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "API 分组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "API 分组列表",
           "example": "无",
           "member": "GatewayApiGroupVo",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19612,33 +19637,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "总调用数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "总调用数",
+          "example": "[{\"Count\":\"31195155\",\"Name\":\"4xx\",\"Ratio\":\"0.9475155245827801\"},{\"Count\":\"1727952\",\"Name\":\"2xx\",\"Ratio\":\"0.052484475417219886\"}]",
           "member": "ApiUseStatisticsEntity",
           "name": "TopStatusCode",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "平均错误率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "平均错误率",
+          "example": "[{\"Count\":\"27774834\",\"Name\":\"0_100_ms\",\"Ratio\":\"0.8436273648170569\"},{\"Count\":\"2719351\",\"Name\":\"100_200_ms\",\"Ratio\":\"0.08259703435644758\"}]",
           "member": "ApiUseStatisticsEntity",
           "name": "TopTimeCost",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分位值对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "分位值对象",
+          "example": "{\"FifthPositionValue\":\"177.60000\",\"MaxValue\":\"260.92000\",\"MinValue\":\"3.92000\",\"NinthPositionValue\":\"251.99500\"}",
           "member": "QuantileEntity",
           "name": "Quantile",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22329,23 +22354,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "泳道信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "泳道信息列表",
           "example": "[{\"LaneId\":\"lane-v3jmz43n\",\"LaneName\":\"lane-1120-edc-sams-qa\",\"Remark\":\"lane-1120-edc-sams-qa\",\"CreateTime\":1731419303000,\"UpdateTime\":1734681365000,\"LaneGroupList\":null,\"Entrance\":null,\"NamespaceIdList\":null}]",
           "member": "LaneInfo",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23443,13 +23468,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作状态。成功：true，失败：false",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25797,12 +25822,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项发布 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":null,\"ConfigId\":null,\"ConfigName\":null,\"ConfigReleaseId\":\"dcfgr-yxd366ov\",\"ConfigVersion\":null,\"DualStatus\":null,\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":null,\"NamespaceName\":null,\"ReleaseDesc\":null,\"ReleaseTime\":null}",
+          "document": "配置项发布 ID",
+          "example": "{\"ConfigReleaseId\":\"dcfgr-yxd366ov\"}",
           "member": "ConfigRelease",
           "name": "Result",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25851,13 +25877,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "发布结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "发布结果，成功：true，失败：false。",
+          "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25906,12 +25932,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：发布成功；false：发布失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：发布成功；false：发布失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26399,12 +26426,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：撤销成功；false：撤销失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：撤销成功；false：撤销失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26435,12 +26463,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "撤回结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "撤回结果，成功：true，失败：false。",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -29287,23 +29316,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "17",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务日志配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务日志配置项列表",
           "example": "无",
           "member": "BusinessLogConfig",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29577,23 +29606,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ConfigReleaseId\":\"dcfgr-f-vkjjw7ny\",\"ConfigId\":\"dcfg-f-v3qqrkdy\",\"ConfigName\":\"config_app\",\"ConfigVersion\":\"2\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-11-28 20:49:57\",\"GroupId\":\"group-vj3n6lzy\",\"GroupName\":\"group-provider\",\"NamespaceId\":\"namespace-ygo3djma\",\"NamespaceName\":\"cluster-container_default\",\"ClusterId\":\"cls-f6bk82xc\",\"ClusterName\":\"cluster-container\",\"ApplicationId\":\"application-vw8ljmwv\"}]",
+          "document": "列表",
+          "example": "[{\"ConfigReleaseId\":\"dcfgr-f-vkjjw7ny\",\"ConfigId\":\"dcfg-f-v3qqrkdy\",\"ConfigVersion\":\"2\",\"GroupId\":\"group-vj3n6lzy\",\"NamespaceId\":\"namespace-ygo3djma\",\"ClusterId\":\"cls-f6bk82xc\",\"ApplicationId\":\"application-vw8ljmwv\"}]",
           "member": "FileConfigRelease",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29629,23 +29658,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录总数",
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录实体列表",
           "example": "[{\"Id\":\"pgn-iuyb0s7c\",\"Name\":\"asd\",\"Type\":\"OAuth\",\"Description\":\"This is desc\",\"CreatedTime\":\"2024-08-06 16:01:41\",\"UpdatedTime\":\"2024-08-06 16:01:41\",\"Status\":\"released\"}]",
           "member": "GatewayPlugin",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29919,23 +29948,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录总数",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Id\":\"unit-rl-cgdoi3wo\",\"GatewayInstanceId\":\"gw-ins-szils128\",\"Status\":\"disabled\",\"Name\":\"unit_provider\",\"Description\":\"this is desc\",\"UnitRuleItemList\":[{\"Id\":\"unit-item-dielh9rn\",\"UnitRuleId\":\"unit-rl-cdcil6jo\",\"Relationship\":\"AND\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"global_default\",\"Name\":\"Rule_user\",\"Priority\":0,\"Description\":\"this is desc\",\"ItemIndex\":1,\"UnitRuleTagList\":[{\"Id\":\"unit-tag-vmhijoic\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\",\"TagType\":\"U\",\"TagField\":\"user\",\"TagOperator\":\"IN\",\"TagValue\":\"1\",\"ItemIndex\":1,\"CreatedTime\":\"2024-12-23 11:14:17\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"CreatedTime\":\"2024-12-23 11:14:17\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}],\"CreatedTime\":\"2024-12-23 11:14:17\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}]",
+          "document": "记录实体列表",
+          "example": "[{\"Id\":\"unit-rl-cgdoi3wo\",\"GatewayInstanceId\":\"gw-ins-szils128\",\"UnitRuleItemList\":[{\"Id\":\"unit-item-dielh9rn\",\"UnitRuleId\":\"unit-rl-cdcil6jo\",\"UnitRuleTagList\":[{\"Id\":\"unit-tag-vmhijoic\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\"}]}]}]",
           "member": "UnitRule",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -30029,47 +30058,47 @@
         },
         {
           "disabled": false,
-          "document": "单元化命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单元化命名空间ID",
           "example": "unit-ns-5boraz9n",
           "member": "string",
           "name": "Id",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关实体ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关实体ID",
           "example": "gw-ins-1lvbnrcc",
           "member": "string",
           "name": "GatewayInstanceId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2023-10-24 19:24:25",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2023-10-24 19:24:25",
           "member": "string",
           "name": "UpdatedTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -30470,13 +30499,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，true: 成功, false: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回结果，true: 成功, false: 失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -30952,12 +30981,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否成功，成功：true，失败：false。",
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

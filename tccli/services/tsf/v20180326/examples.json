@@ -291,7 +291,7 @@
     "CreateUnitNamespaces": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateUnitNamespaces\n&GatewayInstanceId=gw-ins-afsfas\n&<公共请求参数>",
+        "input": "https://tsf.tencentcloudapi.com/?Action=CreateUnitNamespaces\n&GatewayInstanceId=gw-ins-01\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
         "title": "批量创建单元化命名空间"
       }
@@ -412,7 +412,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DeleteLaneRule\n&RuleId=lane-r-fdjsgjkgfvd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"33d1f2e3a7d3-9e05-0960-4c15-a9f7dd46\"\n    }\n}",
         "title": "删除泳道规则"
       }
     ],
@@ -604,7 +604,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeBusinessLogConfigs\n&Offset=0\n&Limit=50\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b9926c8-af66-4bdc-be70-612a9d1c1afc\",\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"Content\": [\n                {\n                    \"ConfigId\": \"apm-busi-log-cfg-qabp49vl\",\n                    \"ConfigName\": \"default-log-config\",\n                    \"ConfigPath\": \"PH_STARTUP_PATH/logs/*.log\",\n                    \"ConfigDesc\": null,\n                    \"ConfigTags\": null,\n                    \"ConfigPipeline\": \"tsf-business-1251001060-qabp49vl\",\n                    \"ConfigCreateTime\": null,\n                    \"ConfigUpdateTime\": null,\n                    \"ConfigSchema\": {\n                        \"SchemaType\": 0,\n                        \"SchemaContent\": null,\n                        \"SchemaDateFormat\": \"YYYY-MM-dd HH:mm:ss.SSS\",\n                        \"SchemaMultilinePattern\": \"^[0-9]{4}-[0-9]{2}-[0-9]{2}\",\n                        \"SchemaCreateTime\": \"2019-04-17 17:00:37\"\n                    },\n                    \"ConfigAssociatedGroups\": []\n                },\n                {\n                    \"ConfigId\": \"apm-busi-log-cfg-gyq883y5\",\n                    \"ConfigName\": \"tsf_gateway\",\n                    \"ConfigPath\": \"/logs/idreamsky-microservice-gateway/*.log\",\n                    \"ConfigDesc\": \"/logs/idreamsky-microservice-gateway/*.log\",\n                    \"ConfigTags\": null,\n                    \"ConfigPipeline\": \"tsf-business-1251001060-gyq883y5\",\n                    \"ConfigCreateTime\": \"2019-04-24 18:40:26\",\n                    \"ConfigUpdateTime\": \"2019-04-24 18:40:26\",\n                    \"ConfigSchema\": {\n                        \"SchemaType\": 0,\n                        \"SchemaContent\": null,\n                        \"SchemaDateFormat\": \"YYYY-MM-dd HH:mm:ss.SSS\",\n                        \"SchemaMultilinePattern\": \"^[0-9]{4}-[0-9]{2}-[0-9]{2}\",\n                        \"SchemaCreateTime\": \"2019-04-24 18:40:26\"\n                    },\n                    \"ConfigAssociatedGroups\": []\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b9926c8-af66-4bdc-be70-612a9d1c1afc\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"ConfigId\": \"apm-busi-log-cfg-qabp49vl\",\n                    \"ConfigName\": \"default-log-config\",\n                    \"ConfigPath\": \"PH_STARTUP_PATH/logs/*.log\",\n                    \"ConfigDesc\": null,\n                    \"ConfigTags\": null,\n                    \"ConfigPipeline\": \"tsf-business-1251001060-qabp49vl\",\n                    \"ConfigCreateTime\": null,\n                    \"ConfigUpdateTime\": null,\n                    \"ConfigSchema\": {\n                        \"SchemaType\": 0,\n                        \"SchemaContent\": null,\n                        \"SchemaDateFormat\": \"YYYY-MM-dd HH:mm:ss.SSS\",\n                        \"SchemaMultilinePattern\": \"^[0-9]{4}-[0-9]{2}-[0-9]{2}\",\n                        \"SchemaCreateTime\": \"2019-04-17 17:00:37\",\n                        \"SchemaPatternLayout\": \"/tsf\"\n                    },\n                    \"ConfigAssociatedGroups\": []\n                }\n            ]\n        }\n    }\n}",
         "title": "查询日志配置项列表"
       }
     ],
@@ -660,7 +660,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigTemplate\n<公共请求参数>\n\n{\n    \"ConfigTemplateId\": \"dcfg_temp-vwkjqd6v\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a358065-d0c6-401b-8bc5-a38ebccac39e\",\n        \"Result\": {\n            \"ConfigTemplateDesc\": \"\",\n            \"ConfigTemplateId\": \"dcfg_temp-vwkjqd6v\",\n            \"ConfigTemplateName\": \"garden-test\",\n            \"ConfigTemplateType\": \"Ribbon\",\n            \"ConfigTemplateValue\": \"#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n#请求连接超时时间\\nribbon.ConnectTimeout: 2000\\n#同一实例最大重试次数，不包括首次调用\\nribbon.MaxAutoRetries: 0\\n#重试其他实例的最大重试次数，不包括首次所选的server\\nribbon.MaxAutoRetriesNextServer: 1\\n#是否对所有操作请求都进行重试\\nribbon.OkToRetryOnAllOperations: false\\n\",\n            \"CreateTime\": \"2022-08-23 15:44:11\",\n            \"UpdateTime\": null\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a358065-d0c6-401b-8bc5-a38ebccac39e\",\n        \"Result\": {\n            \"ConfigTemplateDesc\": \"\",\n            \"ConfigTemplateId\": \"dcfg_temp-vwkjqd6v\",\n            \"ConfigTemplateName\": \"garden-test\",\n            \"ConfigTemplateType\": \"Ribbon\",\n            \"ConfigTemplateValue\": \"#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n#请求连接超时时间\\nribbon.ConnectTimeout: 2000\\n\",\n            \"CreateTime\": \"2022-08-23 15:44:11\",\n            \"UpdateTime\": null\n        }\n    }\n}",
         "title": "导入配置模板"
       }
     ],

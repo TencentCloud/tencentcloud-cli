@@ -350,8 +350,8 @@
     ],
     "DismissRoom": [
       {
-        "document": "解散房间1234。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1234\n&<公共请求参数>",
+        "document": "解散房间1001。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "解散房间"
       }

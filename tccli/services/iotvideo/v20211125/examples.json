@@ -392,6 +392,14 @@
         "title": "拉取云存用户列表"
       }
     ],
+    "DescribeCsReportCountDataInfo": [
+      {
+        "document": "获取云存上报统计信息请求",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCsReportCountDataInfo\n<公共请求参数>\n\n{\n    \"ProductId\": \"PTROMP3AOB\",\n    \"DeviceName\": \"dfsdfsd\",\n    \"StartTime\": 1743587952,\n    \"EndTime\": 1743587952\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"EventExceptionNum\": 0,\n            \"EventSuccessNum\": 0,\n            \"EventSuccessRate\": \"0.00%\",\n            \"VideoExceptionNum\": 0,\n            \"VideoSuccessNum\": 0,\n            \"VideoSuccessRate\": \"0.00%\"\n        },\n        \"RequestId\": \"cf56eccb-3662-4eb3-9f60-ce618e749144\"\n    }\n}",
+        "title": "获取云存上报统计信息请求"
+      }
+    ],
     "DescribeDataForwardList": [
       {
         "document": "",

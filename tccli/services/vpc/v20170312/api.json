@@ -4674,13 +4674,13 @@
         },
         {
           "disabled": false,
-          "document": "IP地址模板成员的返回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址模板成员的返回数量",
           "example": "1",
           "member": "int64",
           "name": "AddressTotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4760,13 +4760,13 @@
         },
         {
           "disabled": false,
-          "document": "IP地址模板组成员的返回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址模板组成员的返回数量",
           "example": "1",
           "member": "int64",
           "name": "AddressTemplateTotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7397,25 +7397,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "BGP AS号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "BGP AS号",
           "example": "100",
           "member": "uint64",
           "name": "BgpAsn",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "BGP 密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "BGP 密钥",
           "example": "bgpkey",
           "member": "string",
           "name": "BgpKey",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8868,212 +8868,212 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDC 集群唯一 Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC 集群唯一 Id。",
           "example": "cluster-d8htgb6k",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟连接唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟连接唯一 ID。",
           "example": "np-efe0238e",
           "member": "string",
           "name": "NetPlaneId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "连接类型， 支持的类型有VRRP，L3SUBIF。\nVRRP模式，掩码24-28，要求两个ConnIPInfo的IntMask一样。ConnIPInfo.LocalIp, ConnIPInfo.PeerIp, VRRP.Vip在同一个网段。\nL3SUBIF模式，掩码24-30，两个ConnIPInfo的IntMask可以不一样，但是要求两个ConnIPInfo的网段不重叠。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接类型， 支持的类型有VRRP，L3SUBIF。\nVRRP模式，掩码24-28，要求两个ConnIPInfo的IntMask一样。ConnIPInfo.LocalIp, ConnIPInfo.PeerIp, VRRP.Vip在同一个网段。\nL3SUBIF模式，掩码24-30，两个ConnIPInfo的IntMask可以不一样，但是要求两个ConnIPInfo的网段不重叠。",
           "example": "VRRP",
           "member": "string",
           "name": "ConnType",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vlanId，可以通过DescribeCdcUsedIdcVlan接口查询使用情况。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vlanId，可以通过DescribeCdcUsedIdcVlan接口查询使用情况。",
           "example": "3001",
           "member": "uint64",
           "name": "VlanId",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测模式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测模式。",
           "example": "{\"DetectMode\": \"BFD\", \"DetectMultiplier\": 20, \"DetectInterval\": 5000}",
           "member": "ModeDetect",
           "name": "ModeDetect",
           "output_required": false,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IDC 通道唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IDC 通道唯一 ID。",
           "example": "ldcx-bbe53def",
           "member": "string",
           "name": "LDCXId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称。",
           "example": "demo",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。",
           "example": "demo",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由类型，支持的类型有 STATIC，BGP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由类型，支持的类型有 STATIC，BGP。",
           "example": "BGP",
           "member": "string",
           "name": "RouteType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " 互联 IP 和掩码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 互联 IP 和掩码。",
           "example": "[{\"LocalIp\": \"1.1.1.1\", \"PeerIp\": \"1.1.1.10\", \"IntMask\": 25}, {\"LocalIp\": \"1.1.1.2\", \"PeerIp\": \"1.1.1.10\", \"IntMask\": 25}]",
           "member": "ConnIPInfo",
           "name": "ConnIpInfoSet",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " BGP 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " BGP 信息。",
           "example": "{\"BgpAsn\": 100, \"BgpKey\": \"bgpkey\"}",
           "member": "BgpInfo",
           "name": "BgpInfo",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交换机和IDC机房互通网段，路由类型为STATIC时 该字段必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交换机和IDC机房互通网段，路由类型为STATIC时 该字段必选。",
           "example": "[\"10.0.0.0/24\", \"172.16.0.0/24\"]",
           "member": "string",
           "name": "IdcCidrSet",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟路由器配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟路由器配置。",
           "example": "{\"Id\": 200, \"Vip\": \"1.1.1.3\"}",
           "member": "VRRP",
           "name": "VRRP",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2024-01-19T14:08:20.727174",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间。",
           "example": "2024-01-19T14:08:20.727187",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通道状态，支持类型：'READY', 'APPLYING', 'DEPLOYING', 'DEPLOY_FAILED', 'ALTERING', 'ALTER_FAILED', 'REMOVING', 'REMOVE_FAILED', 'DELETED', 'ALLOCATED', 'REJECTED'。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道状态，支持类型：'READY', 'APPLYING', 'DEPLOYING', 'DEPLOY_FAILED', 'ALTERING', 'ALTER_FAILED', 'REMOVING', 'REMOVE_FAILED', 'DELETED', 'ALLOCATED', 'REJECTED'。",
           "example": "READY",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "交换机和IDC机房互通IPv6网段，路由类型为STATIC且IpAddressType为 DualStack时，该字段必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交换机和IDC机房互通IPv6网段，路由类型为STATIC且IpAddressType为 DualStack时，该字段必选。",
           "example": "[\"240d:a000:1058:7d04::/64\"]",
           "member": "string",
           "name": "IdcIpv6CidrSet",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IPv6 互联 IP 和掩码，IpAddressType为 DualStack时，该字段必选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6 互联 IP 和掩码，IpAddressType为 DualStack时，该字段必选。",
           "example": "[\"240d:a000:1058:7d04:0:2d73:9ea3:70a4\"]",
           "member": "ConnIPInfo",
           "name": "ConnIpv6InfoSet",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通道协议类型，支持 Ipv4，DualStack，默认 Ipv4。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道协议类型，支持 Ipv4，DualStack，默认 Ipv4。",
           "example": "Ipv4",
           "member": "string",
           "name": "IpAddressType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9697,33 +9697,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "local cidr值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "local cidr值。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "Cidr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否发布到了云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否发布到了云联网。",
           "example": "True",
           "member": "bool",
           "name": "PublishedToVbc",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "local cidr类型：NORMAL/DOCKER。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "local cidr类型：NORMAL/DOCKER。",
           "example": "NORMAL",
           "member": "string",
           "name": "AssistantType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -36952,7 +36952,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-pq9vxykj",
           "member": "string",
           "name": "VpcId",
@@ -36982,7 +36982,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
+          "document": "流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -37002,7 +37002,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
+          "document": "流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。",
           "example": "ACCEPT",
           "member": "string",
           "name": "TrafficType",
@@ -37022,7 +37022,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志存储ID状态。",
+          "document": "流日志存储ID状态。SUCCESS（成功），DELETED（删除）。",
           "example": "SUCCESS",
           "member": "string",
           "name": "CloudLogState",
@@ -37053,7 +37053,7 @@
         {
           "disabled": false,
           "document": "标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[]",
+          "example": "[{'Key':'Tag1', 'Value': 'Value1'}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -37072,33 +37072,33 @@
         },
         {
           "disabled": false,
-          "document": "消费端类型：cls、ckafka。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费端类型：cls、ckafka。",
           "example": "cls",
           "member": "string",
           "name": "StorageType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消费端信息，当消费端类型为ckafka时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "消费端信息，当消费端类型为ckafka时返回。",
+          "example": "{\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}",
           "member": "FlowLogStorage",
           "name": "FlowLogStorage",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流日志存储ID对应的地域信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流日志存储ID对应的地域信息。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudLogRegion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -37122,19 +37122,21 @@
           "example": "ckafka-aso1kaoq",
           "member": "string",
           "name": "StorageId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题Id，当流日志存储类型为ckafka时，必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题Id，当流日志存储类型为ckafka时，必填。",
           "example": "topic-asow02oa",
           "member": "string",
           "name": "StorageTopic",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37708,36 +37710,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "HaVip绑定的子机或网卡唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HaVip绑定的子机或网卡唯一ID。",
           "example": "ins-3qx9elib",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HaVip实例唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HaVip实例唯一ID。",
           "example": "havip-7tqt5jn6",
           "member": "string",
           "name": "HaVipId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HaVip绑定的类型。取值:CVM, ENI。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HaVip绑定的类型。取值:CVM, ENI。",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37848,113 +37850,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "高优路由表唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表唯一 ID",
           "example": "hprtb-18mot1fm",
           "member": "string",
           "name": "HighPriorityRouteTableId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表条目唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表条目唯一 ID",
           "example": "hprti-p1ymd0ak",
           "member": "string",
           "name": "HighPriorityRouteId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标网段",
           "example": "172.20.0.0/16",
           "member": "string",
           "name": "DestinationCidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关类型",
           "example": "HAVIP",
           "member": "string",
           "name": "GatewayType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关唯一ID",
           "example": "havip-mt4yhdps",
           "member": "string",
           "name": "GatewayId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由条目描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由条目描述",
           "example": "test_high_priority_item",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。",
           "example": "ECMP_QUINTUPLE_HASH",
           "member": "string",
           "name": "SubnetRouteAlgorithm",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出参展示，是否为CDC属性高优路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参展示，是否为CDC属性高优路由",
           "example": "true",
           "member": "bool",
           "name": "IsCdc",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出参展示，CDC 唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参展示，CDC 唯一ID",
           "example": "cdc-hj3he929",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreatedTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37964,63 +37966,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "高优路由表唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表唯一 ID。",
           "example": "hprtb-18mot1fm",
           "member": "string",
           "name": "HighPriorityRouteTableId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC实例ID。",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表名称。",
           "example": "demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表关联的子网列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表关联的子网列表。",
           "example": "[\"subnet-ie8choou\"]",
           "member": "string",
           "name": "SubnetSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表条目信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "高优路由表条目信息",
+          "example": "[{\"HighPriorityRouteId\": \"hprti-p1ymd0ak\"}]",
           "member": "HighPriorityRoute",
           "name": "HighPriorityRouteSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreatedTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -38260,13 +38262,13 @@
         },
         {
           "disabled": false,
-          "document": "IPv6 Cidr 的类型，`GUA`, `OTHER`, `ULA`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6 Cidr 的类型，`GUA`, `OTHER`, `ULA`",
           "example": "GUA",
           "member": "string",
           "name": "AddressType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -39391,25 +39393,25 @@
         },
         {
           "disabled": false,
-          "document": "如果 IPv6地址是 ULA 类型，绑定的公网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果 IPv6地址是 ULA 类型，绑定的公网IP地址。",
           "example": "3402:4e00:20:1202::2",
           "member": "string",
           "name": "PublicIpAddress",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "`IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "`IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)",
           "example": "ULA",
           "member": "string",
           "name": "AddressType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -39625,13 +39627,13 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "标签键值对。\t",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -39881,36 +39883,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测模式，当前只支持：BFD\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测模式，当前只支持：BFD\n",
           "example": "BFD",
           "member": "string",
           "name": "DetectMode",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测次数",
           "example": "20",
           "member": "uint64",
           "name": "DetectMultiplier",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测间隔，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测间隔，单位毫秒",
           "example": "5000",
           "member": "uint64",
           "name": "DetectInterval",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -43269,6 +43271,15 @@
           "name": "HealthCheckConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "BGP隧道配置",
+          "example": "{ \"LocalBgpIp\": \"169.254.128.1\", \"RemoteBgpIp\": \"169.254.128.2\", \"TunnelCidr\": \"169.254.128.0/30\" }\t",
+          "member": "BgpConfig",
+          "name": "BgpConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -44798,36 +44809,36 @@
         },
         {
           "disabled": false,
-          "document": "IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。",
           "example": "acli43-0pngbwph",
           "member": "string",
           "name": "NetworkAclIpv4EntryId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。",
           "example": "acli46-0pngbwph",
           "member": "string",
           "name": "NetworkAclIpv6EntryId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "取值INGRESS或EGRESS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "取值INGRESS或EGRESS。",
           "example": "INGRESS",
           "member": "string",
           "name": "NetworkAclDirection",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -45733,47 +45744,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "入站IPv4总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入站IPv4总数",
           "example": "1",
           "member": "uint64",
           "name": "IngressIPv4TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "入站IPv6总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入站IPv6总数",
           "example": "1",
           "member": "uint64",
           "name": "IngressIPv6TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站IPv4总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出站IPv4总数",
           "example": "1",
           "member": "uint64",
           "name": "EgressIPv4TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站IPv6总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出站IPv6总数",
           "example": "1",
           "member": "uint64",
           "name": "EgressIPv6TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -46322,23 +46333,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性公网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性公网 IP",
           "example": "100.123.12.131",
           "member": "string",
           "name": "PublicIpAddress",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "弹性公网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性公网ID",
           "example": "eip-4t7fr3fi",
           "member": "string",
           "name": "AddressId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -46571,23 +46582,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源总数量。",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域。",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -48899,25 +48910,25 @@
       "members": [
         {
           "disabled": false,
-          "document": " 目标网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 目标网段",
           "example": " 10.0.0.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。",
           "example": "ECMP_SOURCE_DESTINATION_IP_HASH",
           "member": "string",
           "name": "SubnetRouteAlgorithm",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -48927,36 +48938,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "路由表唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由表唯一ID。",
           "example": "rtb-qk8eyn9g",
           "member": "string",
           "name": "RouteTableId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由接收策略唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由接收策略唯一ID。",
           "example": "rrp-r70ctaia",
           "member": "string",
           "name": "RoutePolicyId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "优先级。",
           "example": "100",
           "member": "uint64",
           "name": "Priority",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -49103,7 +49114,7 @@
         {
           "disabled": false,
           "document": "IPv4路由策略集合。",
-          "example": "[]",
+          "example": "[{\"RouteItemId\": \"rti-9bjer08h\", \"DestinationCidrBlock\": \"10.0.0.0/24\", \"GatewayType\": \"CCN\", \"GatewayId\": \"ccn-e187un9p\", \"RouteDescription\": \"demo\", \"RouteType\": \"CCN\"}]",
           "member": "Route",
           "name": "RouteSet",
           "output_required": true,
@@ -49142,13 +49153,13 @@
         },
         {
           "disabled": false,
-          "document": "local路由是否发布云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "local路由是否发布云联网。",
+          "example": "[{\"Cidr\": \"10.0.0.0/16\", \"PublishedToVbc\": true, \"AssistantType\": \"NORMAL\"}]",
           "member": "CidrForCcn",
           "name": "LocalCidrForCcn",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -49162,23 +49173,23 @@
         },
         {
           "disabled": false,
-          "document": "local路由。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "local路由。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "LocalCidrBlocks",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由接收策略绑定。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "路由接收策略绑定。",
+          "example": "[{\"RouteTableId\": \"rtb-qk8eyn9g\", \"RoutePolicyId\": \"rrp-r70ctaia\", \"Priority\": 100}]",
           "member": "RoutePolicyAssociation",
           "name": "RoutePolicyAssociationSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -49188,23 +49199,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网实例ID。",
           "example": "subnet-4t7fr3fi",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由表实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由表实例ID。",
           "example": "rtb-h0fk8lfc",
           "member": "string",
           "name": "RouteTableId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -49218,6 +49229,7 @@
           "example": "sg-05bb4upy",
           "member": "string",
           "name": "SecurityGroupId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -49228,6 +49240,7 @@
           "example": "TestGroup",
           "member": "string",
           "name": "SecurityGroupName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -49238,6 +49251,7 @@
           "example": "test-group-desc",
           "member": "string",
           "name": "SecurityGroupDesc",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -49248,6 +49262,7 @@
           "example": "0",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -49258,6 +49273,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -49268,6 +49284,7 @@
           "example": "2017-04-18 21:02:30",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -49278,19 +49295,21 @@
           "example": "[{\"Key\": \"Version\", \"Value\": \"TEST\"}]",
           "member": "Tag",
           "name": "TagSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组更新时间。",
           "example": "2017-04-18 21:02:30",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -49298,6 +49317,7 @@
           "example": "\"ap-guangtzhou\"",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -49482,124 +49502,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。",
           "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。",
           "example": "22",
           "member": "string",
           "name": "Port",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
           "example": "ppm-8g7k5qfq",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-ohuuioma。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组实例ID，例如：sg-ohuuioma。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP地址ID或者IP地址组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址ID或者IP地址组ID。",
           "example": "ipm-p5sf61yj",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ACCEPT 或 DROP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ACCEPT 或 DROP。",
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。",
           "example": "demo",
           "member": "string",
           "name": "PolicyDescription",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组最近修改时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "ModifyTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -49609,47 +49629,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。",
           "example": "10",
           "member": "string",
           "name": "Version",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "出站规则。",
+          "example": "[{\"PolicyIndex\": 0, \"Port\": \"443\", \"CidrBlock\": \"10.0.0.0/24\", \"Action\": \"ACCEPT\", \"ModifyTime\": \"2020-10-09 10:00:00\", \"PolicyDescription\": \"\", \"Protocol\": \"tcp\"}]",
           "member": "SecurityGroupPolicy",
           "name": "Egress",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "入站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{'PolicyIndex': 0, 'Port': '443', 'CidrBlock': '0.0.0.0/0', 'Ipv6CidrBlock': '', 'SecurityGroupId': '', 'Action': 'ACCEPT', 'ModifyTime': '2020-10-09 10:00:00', 'PolicyDescription': '', 'Protocol': 'tcp', 'ServiceTemplate': {'ServiceId': '', 'ServiceGroupId': ''}, 'AddressTemplate': {'AddressId': '', 'AddressGroupId': ''}, 'Diff': False}]",
+          "document": "入站规则。",
+          "example": "[{\"PolicyIndex\": 0, \"Port\": \"443\", \"CidrBlock\": \"0.0.0.0/0\", \"Action\": \"ACCEPT\", \"ModifyTime\": \"2020-10-09 10:00:00\", \"PolicyDescription\": \"\", \"Protocol\": \"tcp\"}]",
           "member": "SecurityGroupPolicy",
           "name": "Ingress",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组策略条目统计。只用于出参。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "安全组策略条目统计。只用于出参。",
+          "example": "{\"IngressIPv4TotalCount\": 1, \"IngressIPv6TotalCount\": 0, \"EgressIPv4TotalCount\": 1, \"EgressIPv6TotalCount\": 0}",
           "member": "PolicyStatistics",
           "name": "PolicyStatistics",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -50139,13 +50159,13 @@
         },
         {
           "disabled": false,
-          "document": "协议端口模板成员的返回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议端口模板成员的返回数量",
           "example": "1",
           "member": "int64",
           "name": "ServiceTotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -50225,13 +50245,13 @@
         },
         {
           "disabled": false,
-          "document": "协议端口模板组成员的返回数量\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议端口模板组成员的返回数量\t",
           "example": "1",
           "member": "int64",
           "name": "ServiceTemplateTotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -51646,33 +51666,33 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像的类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像的类型。",
           "example": "VPC",
           "member": "string",
           "name": "Type",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜像所属的子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像所属的子网ID。",
           "example": "subnet-6zwa44xm",
           "member": "string",
           "name": "SubnetId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。",
+          "example": "{\"TargetId\": \"eni-kiaim12s\", \"TargetName\": \"demo\"}",
           "member": "TrafficMirrorTargetResourceInfo",
           "name": "TargetInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -51747,6 +51767,7 @@
           "example": "[\"10.0.0.0\"]",
           "member": "string",
           "name": "TargetIps",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -51757,29 +51778,32 @@
           "example": "FIVE_TUPLE_FLOW",
           "member": "string",
           "name": "AlgHash",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜像的接收endpoint（公网IP）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像的接收endpoint（公网IP）",
           "example": "10.0.0.0",
           "member": "string",
           "name": "TargetEndPoints",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜像的接收类型，分别为：IP/ENI/CLB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像的接收类型，分别为：IP/ENI/CLB",
           "example": "IP",
           "member": "string",
           "name": "TargetType",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -53400,43 +53424,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDC 集群唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC 集群唯一 ID。",
           "example": "cdc-hj3he929",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IDC 的 VLAN 范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IDC 的 VLAN 范围。",
           "example": "2000-2100",
           "member": "string",
           "name": "IdcVlan",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IDC 的 VLAN 已使用的连续范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IDC 的 VLAN 已使用的连续范围。",
           "example": "2046-2048",
           "member": "string",
           "name": "UsedIdcVlan",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IDC 的 VLAN 已使用的单个值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IDC 的 VLAN 已使用的单个值。",
           "example": "[2046,2047,2048]",
           "member": "uint64",
           "name": "UsedIdcVlanList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -53446,36 +53470,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "虚拟路由器组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟路由器组id",
           "example": "200",
           "member": "uint64",
           "name": "Id",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟路由器组 本地VIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟路由器组 本地VIP",
           "example": "1.1.1.3",
           "member": "string",
           "name": "Vip",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟路由器组 本地IPv6 VIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟路由器组 本地IPv6 VIP",
           "example": "fdab:cdef:1234:5678::1",
           "member": "string",
           "name": "VipIpv6",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -68264,23 +68288,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID。",
           "example": "eni-olifj433",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态。",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

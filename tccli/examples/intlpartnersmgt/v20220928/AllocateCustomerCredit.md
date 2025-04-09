@@ -7,7 +7,8 @@ Input:
 ```
 tccli intlpartnersmgt AllocateCustomerCredit --cli-unfold-argument  \
     --ClientUin 1 \
-    --AddedCredit 10
+    --AddedCredit 10 \
+    --Remark 备注
 ```
 
 Output: 

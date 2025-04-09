@@ -1,3 +1,288 @@
+# Release 3.0.1178.1
+
+## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+
+### 第 8 次发布
+
+发布时间：2025-04-10 01:08:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAccessWhiteListRule](http://document.tencentcloudapi.woa.com/document/product/1780/86114)
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 86 次发布
+
+发布时间：2025-04-10 01:09:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeSavingPlanCoverage
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SavingPlanCoverageDetail
+* SavingPlanCoverageRate
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 111 次发布
+
+发布时间：2025-04-10 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56465)
+
+	* 新增入参：CallbackPrioritize
+
+* [ModifyAlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56458)
+
+	* 新增入参：CallbackPrioritize
+
+
+修改数据结构：
+
+* [AlarmNotice](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmNotice)
+
+	* 新增成员：CallbackPrioritize
+
+
+
+
+## 网关负载均衡(gwlb) 版本：2024-09-06
+
+### 第 3 次发布
+
+发布时间：2025-04-10 01:20:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTargetGroup](http://document.tencentcloudapi.woa.com/document/product/1776/85071)
+
+	* 新增入参：Tags
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 31 次发布
+
+发布时间：2025-04-10 01:21:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryT1IndirectCustomersDetail](http://document.tencentcloudapi.woa.com/document/product/1724/86115)
+
+修改接口：
+
+* [AllocateCustomerCredit](http://document.tencentcloudapi.woa.com/document/product/1724/80753)
+
+	* 新增入参：Remark
+
+
+新增数据结构：
+
+* [QueryT1IndirectCustomersDetailResponseData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryT1IndirectCustomersDetailResponseData)
+
+修改数据结构：
+
+* [QueryCreditAllocationHistoryData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryCreditAllocationHistoryData)
+
+	* 新增成员：Remark
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 70 次发布
+
+发布时间：2025-04-10 01:22:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCsReportCountDataInfo](http://document.tencentcloudapi.woa.com/document/product/1081/86116)
+
+新增数据结构：
+
+* [CountDataInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CountDataInfo)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 32 次发布
+
+发布时间：2025-04-10 01:23:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCsReportCountDataInfo](http://document.tencentcloudapi.woa.com/document/product/1131/86117)
+
+新增数据结构：
+
+* [CountDataInfo](http://document.tencentcloudapi.woa.com/document/product/1131/75389#CountDataInfo)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 84 次发布
+
+发布时间：2025-04-10 01:26:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AiAnalysisTaskHeadTailOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskHeadTailOutput)
+
+	* <font color="#dd0000">**修改成员**：</font>TailTimeOffset
+
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 27 次发布
+
+发布时间：2025-04-10 01:29:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Attachment](http://document.tencentcloudapi.woa.com/document/product/1288/51053#Attachment)
+
+	* 新增成员：FileURL
+
+	* <font color="#dd0000">**修改成员**：</font>Content
+
+
+
+
+## 腾讯安心用户运营平台(smop) 版本：2020-12-03
+
+### 第 3 次发布
+
+发布时间：2025-04-10 01:29:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* SubmitTaskEvent
+
+
+
+## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+
+### 第 7 次发布
+
+发布时间：2025-04-10 01:31:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1741/86119)
+* [DescribeSparkSqlTasks](http://document.tencentcloudapi.woa.com/document/product/1741/86118)
+
+新增数据结构：
+
+* [SparkTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1741/81616#SparkTaskInfo)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 86 次发布
+
+发布时间：2025-04-10 01:34:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificate)
+
+	* <font color="#dd0000">**修改成员**：</font>Cert
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 205 次发布
+
+发布时间：2025-04-10 01:41:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyVpnConnectionAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17508)
+
+	* 新增入参：BgpConfig
+
+
+
+
 # Release 3.0.1177.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

@@ -48,6 +48,14 @@
         "title": "修改资产绑定的堡垒机服务"
       }
     ],
+    "CreateAccessWhiteListRule": [
+      {
+        "document": "新建访问白名单规则",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessWhiteListRule\n<公共请求参数>\n\n{\n    \"Source\": \"10.10.10.1\",\n    \"Remark\": \"规则1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "新建访问白名单规则"
+      }
+    ],
     "CreateAcl": [
       {
         "document": "新建访问权限",
