@@ -548,8 +548,8 @@
     ],
     "StopMCUMixTranscodeByStrRoomId": [
       {
-        "document": "结束字符串房间号为Room_3560的云端混流。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscodeByStrRoomId\n&SdkAppId=1400188366\n&StrRoomId=Room_3560\n&<公共请求参数>",
+        "document": "结束字符串房间号为room_1001的云端混流。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscodeByStrRoomId\n&SdkAppId=1400000001\n&StrRoomId=room_1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "结束云端混流"
       }

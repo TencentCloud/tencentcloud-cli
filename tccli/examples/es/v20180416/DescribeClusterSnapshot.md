@@ -8,7 +8,7 @@ Input:
 tccli es DescribeClusterSnapshot --cli-unfold-argument  \
     --InstanceId es-f1m2enyd \
     --RepositoryName ES_AUTO_BACKUP \
-    --SnapshotName abc
+    --SnapshotName snapshot_test
 ```
 
 Output: 

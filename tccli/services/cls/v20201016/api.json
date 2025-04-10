@@ -280,6 +280,13 @@
       "output": "DeleteConsumerResponse",
       "status": "online"
     },
+    "DeleteCosRecharge": {
+      "document": "本接口用于删除cos导入任务",
+      "input": "DeleteCosRechargeRequest",
+      "name": "删除cos导入任务",
+      "output": "DeleteCosRechargeResponse",
+      "status": "online"
+    },
     "DeleteDashboard": {
       "document": "本接口用于删除仪表盘",
       "input": "DeleteDashboardRequest",
@@ -7431,6 +7438,42 @@
     },
     "DeleteConsumerResponse": {
       "document": "DeleteConsumer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCosRechargeRequest": {
+      "document": "DeleteCosRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "COS导入配置Id",
+          "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题Id",
+          "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCosRechargeResponse": {
+      "document": "DeleteCosRecharge返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

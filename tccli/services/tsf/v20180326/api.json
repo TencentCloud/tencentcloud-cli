@@ -792,11 +792,11 @@
       "status": "online"
     },
     "DescribeInovcationIndicators": {
-      "document": "废弃",
+      "document": "废弃接口\n\n废弃",
       "input": "DescribeInovcationIndicatorsRequest",
       "name": "查询调用监控指标",
       "output": "DescribeInovcationIndicatorsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeInstances": {
       "document": "无",
@@ -5529,83 +5529,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "第一次出现的时间，以 ms 为单位的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第一次出现的时间，以 ms 为单位的时间戳",
           "example": "1615463411385",
           "member": "int64",
           "name": "FirstTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后一次出现的时间，以 ms 为单位的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次出现的时间，以 ms 为单位的时间戳",
           "example": "1615463411385",
           "member": "int64",
           "name": "LastTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "级别",
           "example": "Warning",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "Pod",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "shop-demo-7ff965d54d-65rlw.1668ccf6e4263fde",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容",
           "example": "Pulled",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详细描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细描述",
           "example": "0/1 nodes are available: 1 Insufficient memory.",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出现次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出现次数",
           "example": "3",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9645,25 +9645,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "无",
           "member": "ForceSchedule",
           "name": "ForceSchedule",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "无",
           "member": "TrySchedule",
           "name": "TrySchedule",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12088,13 +12088,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "TSF基本资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TSF基本资源信息",
           "example": "无",
           "member": "OverviewBasicResourceUsage",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15748,7 +15748,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "命名空间ID， 此参数必填",
           "example": "namespace-xxx",
           "member": "string",
           "name": "NamespaceId",
@@ -15757,7 +15757,7 @@
         },
         {
           "disabled": false,
-          "document": "监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时",
+          "document": "监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时",
           "example": "SumReqAmount",
           "member": "string",
           "name": "Type",
@@ -15799,13 +15799,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控统计数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监控统计数据列表",
           "example": "无",
           "member": "MetricDataPoint",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18830,13 +18830,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "k8s 的 FieldPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "k8s 的 FieldPath",
           "example": "metadata.name",
           "member": "string",
           "name": "FieldPath",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19192,25 +19193,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "无",
           "member": "Affinity",
           "name": "AffinityList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "无",
           "member": "Affinity",
           "name": "AntiAffinityList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19286,14 +19287,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务名称",
           "example": "envoy-gateway",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21807,7 +21808,7 @@
           "example": "1616656231170",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21817,7 +21818,7 @@
           "example": "60",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21827,19 +21828,19 @@
           "example": "1616656231170",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "多值数据点集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "document": "多值数据点集合",
+          "example": "无",
           "member": "MultiValueDataPoints",
           "name": "DataPoints",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23143,7 +23144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组ID",
+          "document": "部署组ID 必填项",
           "example": "group-xxxxxxx",
           "member": "string",
           "name": "GroupId",
@@ -23212,13 +23213,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新部署组是否成功。\ntrue：成功。\nfalse：失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新部署组是否成功。\ntrue：成功。\nfalse：失败。",
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24384,13 +24385,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据点",
           "example": "[1,2,3]",
           "member": "float",
           "name": "Values",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24647,33 +24648,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "初始化按钮的控制信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "初始化按钮的控制信息",
+          "example": "无",
           "member": "OperationInfoDetail",
           "name": "Init",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "添加实例按钮的控制信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "添加实例按钮的控制信息",
+          "example": "无",
           "member": "OperationInfoDetail",
           "name": "AddInstance",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "销毁机器的控制信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "销毁机器的控制信息",
+          "example": "无",
           "member": "OperationInfoDetail",
           "name": "Destroy",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -26293,13 +26294,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "k8s 的 Resource\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "k8s 的 Resource",
           "example": "limits.cpu",
           "member": "string",
           "name": "Resource",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -28739,23 +28741,23 @@
         },
         {
           "disabled": false,
-          "document": "重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重试次数",
           "example": "2",
           "member": "int64",
           "name": "RetryCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "重试间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重试间隔",
           "example": "20",
           "member": "int64",
           "name": "RetryInterval",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -28789,93 +28791,93 @@
         },
         {
           "disabled": false,
-          "document": "判断任务成功的操作符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "判断任务成功的操作符",
           "example": "=",
           "member": "string",
           "name": "SuccessOperator",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "判断任务成功的阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "判断任务成功的阈值",
           "example": "100",
           "member": "int64",
           "name": "SuccessRatio",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片数量",
           "example": "32",
           "member": "int64",
           "name": "ShardCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级设置",
           "example": "无",
           "member": "AdvanceSettings",
           "name": "AdvanceSettings",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分片参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片参数",
           "example": "无",
           "member": "ShardArgument",
           "name": "ShardArguments",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属工作流ID",
           "example": "[\"flow-6a79x94v\"]",
           "member": "string",
           "name": "BelongFlowIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务历史ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务历史ID",
           "example": "tlog-6a79x94v",
           "member": "string",
           "name": "TaskLogId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "触发类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "触发类型",
           "example": "auto",
           "member": "string",
           "name": "TriggerType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务参数，长度限制10000个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务参数，长度限制10000个字符",
           "example": "1,2,3,4,5",
           "member": "string",
           "name": "TaskArgument",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -28915,19 +28917,21 @@
           "example": "Cron",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Cron类型规则，cron表达式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cron类型规则，cron表达式。",
           "example": "0 0/1 * * * ?",
           "member": "string",
           "name": "Expression",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -28935,6 +28939,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RepeatInterval",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -29091,25 +29096,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "无",
           "member": "Affinity",
           "name": "AffinityList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "-",
           "example": "无",
           "member": "Affinity",
           "name": "AntiAffinityList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -29280,33 +29285,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用总数目",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用信息列表",
           "example": "无",
           "member": "ApplicationForPage",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "获取部署组实例列表返回的原始批次个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "获取部署组实例列表返回的原始批次个数",
           "example": "12",
           "member": "int64",
           "name": "SpecTotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29382,13 +29387,13 @@
         },
         {
           "disabled": false,
-          "document": "查询es时，使用searchAfter返回的游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询es时，使用searchAfter返回的游标",
           "example": "[“1463538857”, \"654323\"]",
           "member": "string",
           "name": "SearchAfter",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29880,13 +29885,13 @@
         },
         {
           "disabled": false,
-          "document": "游标ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "游标ID",
+          "example": "scroll-6a79x94v",
           "member": "string",
           "name": "SearchAfter",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -30871,13 +30876,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
           "example": " ",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -31003,14 +31008,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "k8s env 的 FieldRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "k8s env 的 FieldRef",
           "example": "无",
           "member": "FieldRef",
           "name": "FieldRef",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -31025,25 +31030,25 @@
         },
         {
           "disabled": false,
-          "document": "k8s env的configMapKeyRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "k8s env的configMapKeyRef",
           "example": "无",
           "member": "CommonRef",
           "name": "ConfigMapKeyRef",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "k8s env 的 secretKeyRef\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "k8s env 的 secretKeyRef",
           "example": "无",
           "member": "CommonRef",
           "name": "SecretKeyRef",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -31443,63 +31448,63 @@
         },
         {
           "disabled": false,
-          "document": "是否开启cgroup控制内存cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启cgroup控制内存cpu",
           "example": "false",
           "member": "bool",
           "name": "FilebeatCgroupEnable",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "filebeat使用cpu上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "filebeat使用cpu上限",
           "example": "0.1",
           "member": "float",
           "name": "FilebeatMaxCpu",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "filebeat使用内存上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "filebeat使用内存上限",
           "example": "100",
           "member": "int64",
           "name": "FilebeatMaxMem",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库ID",
           "example": "application-xxxx",
           "member": "string",
           "name": "RepositoryId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库名称",
           "example": "仓库名",
           "member": "string",
           "name": "RepositoryName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库类型",
           "example": "企业",
           "member": "string",
           "name": "RepositoryType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

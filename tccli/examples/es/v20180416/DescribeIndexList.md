@@ -7,12 +7,12 @@ Input:
 ```
 tccli es DescribeIndexList --cli-unfold-argument  \
     --Username elastic \
-    --IndexName test \
+    --IndexName index_test \
     --IndexType auto \
     --InstanceId es-abcdefgh \
     --Limit 0 \
     --Offset 10 \
-    --Password 123456
+    --Password ascq23***********cjaw
 ```
 
 Output: 
@@ -21,53 +21,53 @@ Output:
     "Response": {
         "IndexMetaFields": [
             {
-                "IndexType": "abc",
-                "IndexName": "abc",
-                "IndexMetaJson": "abc",
-                "IndexStatus": "abc",
+                "IndexType": "auto",
+                "IndexName": "index_test",
+                "IndexMetaJson": "{\"f1\":52}",
+                "IndexStatus": "green",
                 "IndexStorage": 0,
-                "IndexCreateTime": "abc",
+                "IndexCreateTime": "2024-12-05 17:22:44",
                 "BackingIndices": [
                     {
-                        "IndexName": "abc",
-                        "IndexStatus": "abc",
+                        "IndexName": "index_test0",
+                        "IndexStatus": "green",
                         "IndexStorage": 0,
-                        "IndexPhrase": "abc",
-                        "IndexCreateTime": "abc"
+                        "IndexPhrase": "data_hot",
+                        "IndexCreateTime": "2024-12-05 17:22:44"
                     }
                 ],
-                "ClusterId": "abc",
-                "ClusterName": "abc",
-                "ClusterVersion": "abc",
+                "ClusterId": "es-hhio223",
+                "ClusterName": "test-cluster",
+                "ClusterVersion": "7.14.0",
                 "IndexPolicyField": {
-                    "WarmEnable": "abc",
-                    "WarmMinAge": "abc",
-                    "ColdEnable": "abc",
-                    "ColdMinAge": "abc",
-                    "FrozenEnable": "abc",
-                    "FrozenMinAge": "abc",
-                    "ColdAction": "abc"
+                    "WarmEnable": "true",
+                    "WarmMinAge": "16",
+                    "ColdEnable": "true",
+                    "ColdMinAge": "8",
+                    "FrozenEnable": "false",
+                    "FrozenMinAge": "0",
+                    "ColdAction": "migrate"
                 },
                 "IndexOptionsField": {
-                    "ExpireMaxAge": "abc",
-                    "ExpireMaxSize": "abc",
-                    "RolloverMaxAge": "abc",
-                    "RolloverDynamic": "abc",
-                    "ShardNumDynamic": "abc",
-                    "TimestampField": "abc",
-                    "WriteMode": "abc"
+                    "ExpireMaxAge": "1d",
+                    "ExpireMaxSize": "1024",
+                    "RolloverMaxAge": "1d",
+                    "RolloverDynamic": "true",
+                    "ShardNumDynamic": "true",
+                    "TimestampField": "TIMESTAMP",
+                    "WriteMode": "append_only"
                 },
                 "IndexSettingsField": {
-                    "NumberOfShards": "abc",
-                    "NumberOfReplicas": "abc",
-                    "RefreshInterval": "abc"
+                    "NumberOfShards": "2",
+                    "NumberOfReplicas": "1",
+                    "RefreshInterval": "30s"
                 },
                 "AppId": 1,
                 "IndexDocs": 1
             }
         ],
         "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "ah782-j*************c-ih89"
     }
 }
 ```

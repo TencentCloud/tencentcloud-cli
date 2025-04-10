@@ -12483,7 +12483,7 @@
         {
           "disabled": false,
           "document": "资源汇总列表",
-          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\",\"PayModeName\":\"按量计费\",\"ProjectName\":\"默认项目\",\"RegionName\":\"华东地区（上海）\",\"RegionId\":4,\"ZoneName\":\"上海一区\",\"ResourceId\":\"sta-19039\",\"ResourceName\":\"sta-3\",\"ActionTypeName\":\"按量计费日结\",\"OrderId\":\"12321-abdef-342132-aac23\",\"PayTime\":\"0000-00-00 00:00:00\",\"FeeBeginTime\":\"2024-11-01 00:00:00\",\"FeeEndTime\":\"2024-11-13 23:59:59\",\"BillMonth\":\"2024-11-01 00:00:00\",\"ConfigDesc\":\"COS 标准存储存储容量: 0.39 GB\",\"ExtendField1\":\"ef 1\",\"ExtendField2\":\"ef 2\",\"ExtendField3\":\"ef 3\",\"ExtendField4\":\"ef 4\",\"ExtendField5\":\"ef 5\",\"TotalCost\":\"0.00007068\",\"Discount\":\"0.232072\",\"ReduceType\":\"折扣\",\"RealTotalCost\":\"0.00124116\",\"VoucherPayAmount\":\"0.00000000\",\"CashPayAmount\":\"0.00000000\",\"IncentivePayAmount\":\"0.00114116\",\"TransferPayAmount\":\"0.00000000\",\"InstanceType\":\"it\",\"OriginalCostWithRI\":\"0.00000000\",\"SPDeduction\":\"0.00000000\",\"OriginalCostWithSP\":\"0.00000000\",\"Tags\":[]}]",
+          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\"}]",
           "member": "BillDistributionResourceSummary",
           "name": "ResourceSummarySet",
           "output_required": true,
@@ -13076,7 +13076,7 @@
         {
           "disabled": false,
           "document": "账单多维度汇总消费详情",
-          "example": "{\"GroupKey\":\"p_cvm\",\"GroupValue\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"RealTotalCost\":\"4.00000000\",\"CashPayAmount\":\"1.00000000\",\"IncentivePayAmount\":\"1.00000000\",\"VoucherPayAmount\":\"1.00000000\",\"TransferPayAmount\":\"1.00000000\",\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"RealTotalCost\":\"4.00000000\",\"CashPayAmount\":\"1.00000000\",\"IncentivePayAmount\":\"1.00000000\",\"VoucherPayAmount\":\"1.00000000\",\"TransferPayAmount\":\"1.00000000\"}]}",
+          "example": "{\"GroupKey\":\"p_cvm\",\"GroupValue\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\",\"TotalCost\":\"4.00000000\"}]}",
           "member": "SummaryDetail",
           "name": "SummaryDetail",
           "output_required": true,
@@ -13884,7 +13884,7 @@
         {
           "disabled": false,
           "document": "消耗按业务汇总详情",
-          "example": "[{\"ProjectId\":\"0\",\"ProjectName\":\"项目名称\",\"Trend\":{},\"Business\":[{\"BusinessCode\":\"p_clb\",\"BusinessCodeName\":\"负载均衡CLB\",\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\",\"RegionName\":\"其他\",\"Trend\":{\"Type\":\"upward\",\"Value\":\"1.72\"}}],\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\"}]",
+          "example": "空",
           "member": "ConsumptionProjectSummaryDataItem",
           "name": "Data",
           "output_required": true,

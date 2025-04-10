@@ -104,6 +104,20 @@
         "title": "新建资产组"
       }
     ],
+    "CreateOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOperationTask\n<公共请求参数>\n\n{\n    \"Name\": \"周期运维任务\",\n    \"Type\": 2,\n    \"Period\": 1,\n    \"FirstTime\": \"2025-03-25T08:00:01+08:00\",\n    \"Account\": \"root\",\n    \"Timeout\": 5,\n    \"Script\": \"ls\",\n    \"Encoding\": 1,\n    \"DeviceIdSet\": [\n        34,\n        56\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 10,\n        \"RequestId\": \"31js-hapqhxmaj-h12knsk2weq\"\n    }\n}",
+        "title": "创建周期性运维任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOperationTask\n<公共请求参数>\n\n{\n    \"Name\": \"运维任务\",\n    \"Type\": 1,\n    \"Account\": \"root\",\n    \"Timeout\": 5,\n    \"Script\": \"ls -al\",\n    \"Encoding\": 0,\n    \"DeviceIdSet\": [\n        44,\n        66\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 11,\n        \"RequestId\": \"31sfasw-ewffq-wesvfxvd\"\n    }\n}",
+        "title": "创建运维任务"
+      }
+    ],
     "CreateResource": [
       {
         "document": "",
@@ -182,6 +196,14 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDevices\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
         "title": "删除主机"
+      }
+    ],
+    "DeleteOperationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOperationTasks\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        10,\n        11\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31js23w-wreqrw-23wlss-21qde\"\n    }\n}",
+        "title": "删除运维任务示例"
       }
     ],
     "DeleteUserGroupMembers": [
@@ -324,6 +346,14 @@
         "title": "查询操作日志列表"
       }
     ],
+    "DescribeOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOperationTask\n<公共请求参数>\n\n{\n    \"Name\": \"周期运维任务\",\n    \"Type\": 2,\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wewaq-eqwwd-wesfd-332sfda\",\n        \"OperationTasks\": [\n            {\n                \"Id\": 10,\n                \"OperationId\": \"ops-xzfr5yeg\",\n                \"Name\": \"周期运维任务\",\n                \"UserName\": \"dfraw\",\n                \"RealName\": \"zdfrawhang\",\n                \"Type\": 2,\n                \"Period\": 1,\n                \"FirstTime\": \"2025-03-14T15:33:34+08:00\",\n                \"NextTime\": \"2025-03-15T15:33:34+08:00\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取运维任务列表示例"
+      }
+    ],
     "DescribeResources": [
       {
         "document": "查询用户购买的资源信息，包括资源ID，授权点数，vpc，过期时间等。",
@@ -418,6 +448,14 @@
         "title": "设置Okta认证配置"
       }
     ],
+    "ModifyOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOperationTask\n<公共请求参数>\n\n{\n    \"Id\": 10,\n    \"Name\": \"运维任务\",\n    \"Type\": 1,\n    \"Account\": \"ubuntu\",\n    \"Timeout\": 10,\n    \"Script\": \"ls\",\n    \"Encoding\": 1,\n    \"DeviceIdSet\": [\n        34,\n        56,\n        47\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31js-hapqhxmaj-h12knsk2weq\"\n    }\n}",
+        "title": "修改运维任务示例"
+      }
+    ],
     "ModifyResource": [
       {
         "document": "已购买资源变配",
@@ -472,6 +510,14 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunChangePwdTask\n<公共请求参数>\n\n{\n    \"OperationId\": \"ops-bzn6115\",\n    \"Details\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"55744391-c70d-49b2-9f41-6583080023d1\"\n    }\n}",
         "title": "执行改密任务"
+      }
+    ],
+    "RunOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunOperationTask\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eww-2ew-qedekmsv-1qew\"\n    }\n}",
+        "title": "执行运维任务示例"
       }
     ],
     "SearchAuditLog": [

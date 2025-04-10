@@ -672,6 +672,13 @@
       "output": "ModifyIntegrationRoleResponse",
       "status": "online"
     },
+    "OperateTemplate": {
+      "document": "此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href=\"https://qian.tencent.com/developers/company/callback_types_templates\" target=\"_blank\">模板操作相关回调</a>\n\n# 支持的操作\n## 1. 删除模板 (OperateType=DELETE)\n此操作会从模板将企业自有模板中彻底删除，若要保留模板而不删除，可将将模板停用。\n\n## 2. 启用模板 (OperateType=ENABLE)\n此操作是将停用的模板启用，操作幂等，若模板已经启用，接口不报错。\n\n## 3. 停用模板 (OperateType=DELETE)\n此操作是将启用态的模板停用，操作幂等，若模板已经停用，接口不报错，停用后，无法通过此模板发起合同，已经发起的合同不受影响。",
+      "input": "OperateTemplateRequest",
+      "name": "企业模板管理",
+      "output": "OperateTemplateResponse",
+      "status": "online"
+    },
     "RenewAutoSignLicense": {
       "document": "给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "RenewAutoSignLicenseRequest",
@@ -1130,7 +1137,7 @@
         {
           "disabled": false,
           "document": "签署人阅读合同限制参数\n <br/>取值：\n<ul>\n<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>\n<li> LimitReadTime，阅读合同仅限制阅读时长</li>\n<li> LimitBottom，阅读合同仅限制必须阅读到底</li>\n<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>\n</ul>",
-          "example": "3",
+          "example": "LimitReadTimeAndBottom",
           "member": "string",
           "name": "FlowReadLimit",
           "required": false,
@@ -3343,7 +3350,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型，支持以下类型\n<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>\n<li>CREATE_CONTRACT_DRAFT_COOPEDIT：生成创建起草合同的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>\n<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>\n\n注意：\n不同的嵌入类型，操作人需要的权限项不同（权限配置可参考[权限配置](https://qian.tencent.com/document/61355)）。\n<table>\n<tr><th>EmbedType</th><th>权限</th></tr>\n<tr><th>CREATE_SEAL</th><th>印章管理-添加印章</th></tr>\n<tr><th>CREATE_TEMPLATE</th><th>模板管理-创建模板</th></tr>\n<tr><th>MODIFY_TEMPLATE</th><th>模板管理-编辑模板</th></tr>\n<tr><th>CREATE_CONTRACT_DRAFT_COOPEDIT</th><th>合同管理-起草合同</th></tr>\n<tr><th>PREVIEW_TEMPLATE</th><th>拥有下面三种权限的一种就行</br>\n模板管理-查询模板（本企业全部模板）</br>\n模板管理-查询模板（本部门全部模板）</br>\n模板管理-查询模板（本人创建模板）</th></tr>\n<tr><th>PREVIEW_SEAL_LIST</th><th>印章管理</th></tr>\n<tr><th>PREVIEW_SEAL_DETAIL</th><th>印章管理</th></tr>\n<tr><th>EXTEND_SERVICE</th><th>无要求</th></tr>\n<tr><th>PREVIEW_FLOW</th><th>是否是当前合同的参与方，或者发起方企业的法人、超管、合同管理员</th></tr>\n<tr><th>PREVIEW_FLOW_DETAIL</th><th>是否是当前合同的参与方，或者发起方企业的法人、超管、合同管理员</th></tr>\n</table>",
+          "document": "WEB嵌入资源类型，支持以下类型\n<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>\n<li>CREATE_CONTRACT_DRAFT_COOPEDIT：生成创建起草合同的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>\n<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>\n\n注意：\n不同的嵌入类型，操作人需要的权限项不同（权限配置可参考[权限配置](https://qian.tencent.com/document/61355)）。\n<table  border=\"1\">\n<thead>\n<tr><th>EmbedType</th><th>权限</th></tr>\n</thead>     \n<tbody> \n<tr><th>CREATE_SEAL</th><th>印章管理-添加印章</th></tr>\n<tr><th>CREATE_TEMPLATE</th><th>模板管理-创建模板</th></tr>\n<tr><th>MODIFY_TEMPLATE</th><th>模板管理-编辑模板</th></tr>\n<tr><th>CREATE_CONTRACT_DRAFT_COOPEDIT</th><th>合同管理-起草合同</th></tr>\n<tr><th>PREVIEW_TEMPLATE</th><th>拥有下面三种权限的一种就行</br>\n模板管理-查询模板（本企业全部模板）</br>\n模板管理-查询模板（本部门全部模板）</br>\n模板管理-查询模板（本人创建模板）</th></tr>\n<tr><th>PREVIEW_SEAL_LIST</th><th>印章管理</th></tr>\n<tr><th>PREVIEW_SEAL_DETAIL</th><th>印章管理</th></tr>\n<tr><th>EXTEND_SERVICE</th><th>无要求</th></tr>\n<tr><th>PREVIEW_FLOW</th><th>是否是当前合同的参与方，或者发起方企业的法人、超管、合同管理员</th></tr>\n<tr><th>PREVIEW_FLOW_DETAIL</th><th>是否是当前合同的参与方，或者发起方企业的法人、超管、合同管理员</th></tr>\n</tbody> \n</table>",
           "example": "PREVIEW_FLOW",
           "member": "string",
           "name": "EmbedType",
@@ -13636,6 +13643,60 @@
         }
       ],
       "usage": "out"
+    },
+    "OperateTemplateRequest": {
+      "document": "OperateTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板ID，为32位字符串。",
+          "example": "yDSLZUUckpot5i01UydF1AEvOMQiKaBG",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，可取值如下:\n<ul>\n<li>DELETE:  删除</li>\n<li>ENABLE: 启用</li>\n<li>DISABLE: 停用</li>\n</ul>",
+          "example": "DELETE",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateTemplateResponse": {
+      "document": "OperateTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OrgBillSummary": {
       "document": "企业套餐余额情况",

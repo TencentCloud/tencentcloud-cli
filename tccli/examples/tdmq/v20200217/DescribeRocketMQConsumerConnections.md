@@ -42,6 +42,8 @@ Output:
             "ConsumerType": "PUSH",
             "GroupType": "TCP",
             "RetryMaxTimes": 16,
+            "InstanceId": "rocketmq-2p9vx3ax9jxg",
+            "Namespace": "test_namespace",
             "TPS": 10
         },
         "RequestId": "abc"

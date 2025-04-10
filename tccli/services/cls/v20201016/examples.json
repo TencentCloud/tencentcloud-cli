@@ -344,6 +344,14 @@
         "title": "删除投递配置"
       }
     ],
+    "DeleteCosRecharge": [
+      {
+        "document": "删除COS导入任务",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCosRecharge\n<公共请求参数>\n\n{\n    \"Id\": \"d0217dcd-2c2b-44a4-9949-372daeb01c7d\",\n    \"TopicId\": \"7b2777f2-2d2d-48e9-8066-be31e0cda862\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f2d7ff-003a-4142-8c55-6a09780667c0\"\n    }\n}",
+        "title": "删除COS导入任务"
+      }
+    ],
     "DeleteDashboard": [
       {
         "document": "删除仪表盘",

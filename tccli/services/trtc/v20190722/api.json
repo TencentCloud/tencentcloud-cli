@@ -8407,7 +8407,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -8416,7 +8416,7 @@
         {
           "disabled": false,
           "document": "字符串房间号。",
-          "example": "",
+          "example": "room_1001",
           "member": "string",
           "name": "StrRoomId",
           "required": true,

@@ -1333,7 +1333,7 @@
     "DescribeHostLoginList": {
       "document": "获取登录审计列表",
       "input": "DescribeHostLoginListRequest",
-      "name": "获取登录审计列表",
+      "name": "获取异常登录列表",
       "output": "DescribeHostLoginListResponse",
       "status": "online"
     },
@@ -24812,7 +24812,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
+          "document": "过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
           "example": "[{\"Name\": \"Status\", \"Values\": [null], \"ExactMatch\": false}]",
           "member": "Filter",
           "name": "Filters",
@@ -24856,7 +24856,7 @@
         {
           "disabled": false,
           "document": "登录审计列表",
-          "example": "[             {                 \"Id\": 202008000000022,                 \"Uuid\": \"5cc8e4d2-311f-11ea-922b-98be9421969a\",                 \"MachineIp\": \"10.104.194.49\",                 \"MachineName\": \"v_lwjlin_centos_林\",                 \"UserName\": \"root\",                 \"SrcIp\": \"120.229.227.225\",                 \"Status\": 2,                 \"Country\": 1,                 \"City\": 216,                 \"Province\": 19,                 \"LoginTime\": \"2020-02-20 14:51:35\",                 \"ModifyTime\": \"2020-02-20 14:51:35\",                 \"IsRiskUser\": 0,                 \"Port\": 22,                 \"Location\": \"中国:广东省:深圳市\",                 \"Desc\": \"\",                 \"IsRiskSrcIp\": 1,                 \"IsRiskArea\": 1,                 \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",                 \"RiskLevel\": 0,                 \"IsRiskTime\": 1,                 \"MachineExtraInfo\": {                     \"WanIP\": \"1.1.1.1\",                     \"InstanceID\": \"ins-12341234\",                     \"NetworkName\": \"vpc-d7f***\",                     \"PrivateIP\": \"1.1.1.1\",                     \"NetworkType\": 1,                     \"HostName\": \"机器名称\"                 }             }         ]",
+          "example": "无",
           "member": "HostLoginList",
           "name": "HostLoginList",
           "output_required": true,

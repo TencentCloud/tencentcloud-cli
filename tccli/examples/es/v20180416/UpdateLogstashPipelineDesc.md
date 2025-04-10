@@ -8,7 +8,7 @@ Input:
 tccli es UpdateLogstashPipelineDesc --cli-unfold-argument  \
     --InstanceId ls-xxxxxxxx \
     --PipelineId pipeId1 \
-    --PipelineDesc test
+    --PipelineDesc testpipe
 ```
 
 Output: 

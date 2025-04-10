@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateAuditLogFile": {
-      "document": "本接口(CreateAuditLogFile)用于创建云数据库实例的审计日志文件。",
+      "document": "本接口（CreateAuditLogFile）用于创建云数据库实例的审计日志文件。",
       "input": "CreateAuditLogFileRequest",
       "name": "创建审计日志文件",
       "output": "CreateAuditLogFileResponse",
@@ -5243,7 +5243,7 @@
         {
           "disabled": false,
           "document": "已废弃。",
-          "example": "无",
+          "example": "{\"SqlTypes\": [\"CREATE\"]}",
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
@@ -5252,9 +5252,18 @@
         {
           "disabled": false,
           "document": "过滤条件。可按设置的过滤条件过滤日志。",
-          "example": "无",
+          "example": "{\"SqlTypes\": [\"SELECT\"]}",
           "member": "InstanceAuditLogFilters",
           "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "下载筛选列",
+          "example": "{\"ColumnFilter\": [\"AffectRows\", \"TableName\",\"DBName\", \"Sql\"]}",
+          "member": "string",
+          "name": "ColumnFilter",
           "required": false,
           "type": "list"
         }
@@ -5267,7 +5276,7 @@
         {
           "disabled": false,
           "document": "审计日志文件名称。",
-          "example": "*****.csv",
+          "example": "shenji.csv",
           "member": "string",
           "name": "FileName",
           "output_required": true,

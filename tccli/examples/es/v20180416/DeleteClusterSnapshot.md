@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "InstanceId": "es-al4radfu",
-        "RequestId": "abc"
+        "RequestId": "xxx-xxxx"
     }
 }
 ```

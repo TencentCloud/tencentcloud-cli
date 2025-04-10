@@ -1346,6 +1346,14 @@
         "title": "增加部分可见的模板授权子企业列表"
       }
     ],
+    "OperateTemplate": [
+      {
+        "document": "删除子客企业org_dianziqian下的模板yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperatelTemplate\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"OperateType\": \"DELETE\",\n    \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7da39d89-2b6c-4fd9-9f32-735137d5a6e9\"\n    }\n}",
+        "title": "删除模板"
+      }
+    ],
     "PrepareFlows": [
       {
         "document": "创建待发起文件",

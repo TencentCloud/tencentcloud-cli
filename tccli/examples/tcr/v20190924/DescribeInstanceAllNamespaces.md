@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DescribeInstanceAllNamespaces --cli-unfold-argument  \
-    --Limit 20 \
+    --Limit 5 \
     --Offset 0
 ```
 
@@ -14,16 +14,25 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "d92365c7-3484-4d52-8add-93f682e127bd",
         "Items": [
             {
-                "ResourceId": "tcr-f7g1ir99/ta"
+                "ResourceId": "tcr-csexdur7/finofliu"
             },
             {
-                "ResourceId": "tcr-f7g1ir99/tb"
+                "ResourceId": "tcr-csexdur7/ns2"
+            },
+            {
+                "ResourceId": "tcr-csexdur7/chart"
+            },
+            {
+                "ResourceId": "tcr-csexdur7/uptime"
+            },
+            {
+                "ResourceId": "tcr-csexdur7/futu"
             }
         ],
-        "TotalCount": 2
+        "RequestId": "5df0c1f1-6981-4faa-852c-403bd8ef0ef8",
+        "TotalCount": 25
     }
 }
 ```
