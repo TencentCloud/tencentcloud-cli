@@ -609,7 +609,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"cdwch-xxxx\",\n    \"ConfigName\": \"fe\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 6331,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
-        "title": "test"
+        "title": "重启"
       }
     ],
     "ScaleOutInstance": [

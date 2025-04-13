@@ -164,6 +164,14 @@
         "title": "查询子客uin列表"
       }
     ],
+    "DescribeRebateDownloadUrl": [
+      {
+        "document": "经销商/代理商获取月返佣账单文件链接。文件已生成，请通过下载链接获取文件。",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRebateDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2024-12\",\n    \"FileType\": \"CommissionDetail\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://xxxx.cos.ap-singapore.myqcloud.com\",\n        \"Ready\": 1,\n        \"RequestId\": \"845ac46e-20a7-4cab-8930-d5e6d2104885\"\n    }\n}",
+        "title": "DescribeRebateDownloadUrl"
+      }
+    ],
     "ForceQN": [
       {
         "document": "",

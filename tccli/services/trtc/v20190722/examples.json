@@ -447,8 +447,8 @@
     "StartAITranscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAITranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"1234\",\n    \"RoomIdType\": 1,\n    \"TranscriptionParams\": {\n        \"UserId\": \"abc\",\n        \"UserSig\": \"abc\",\n        \"IMAdminUserId\": \"abc\",\n        \"IMAdminUserSig\": \"abc\",\n        \"MaxIdleTime\": 60,\n        \"TranscriptionMode\": 1,\n        \"TargetUserId\": \"abc\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAITranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"500123\",\n    \"RoomIdType\": 1,\n    \"TranscriptionParams\": {\n        \"UserId\": \"test_user\",\n        \"UserSig\": \"your-usersig\",\n        \"MaxIdleTime\": 60,\n        \"TranscriptionMode\": 1,\n        \"TargetUserId\": \"test_user\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"taskid\",\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "样例"
       }
     ],

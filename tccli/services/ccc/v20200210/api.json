@@ -196,6 +196,13 @@
       "output": "DescribeAICallExtractResultResponse",
       "status": "online"
     },
+    "DescribeAILatency": {
+      "document": "获取 AI 时延信息",
+      "input": "DescribeAILatencyRequest",
+      "name": "获取 AI 耗时",
+      "output": "DescribeAILatencyResponse",
+      "status": "online"
+    },
     "DescribeActiveCarrierPrivilegeNumber": {
       "document": "查询生效运营商白名单规则",
       "input": "DescribeActiveCarrierPrivilegeNumberRequest",
@@ -399,6 +406,13 @@
       "output": "DisableCCCPhoneNumberResponse",
       "status": "online"
     },
+    "ForceMemberOffline": {
+      "document": "强制客服下线",
+      "input": "ForceMemberOfflineRequest",
+      "name": "强制客服下线",
+      "output": "ForceMemberOfflineResponse",
+      "status": "online"
+    },
     "HangUpCall": {
       "document": "挂断电话",
       "input": "HangUpCallRequest",
@@ -460,6 +474,13 @@
       "input": "ResetExtensionPasswordRequest",
       "name": "重置话机注册密码",
       "output": "ResetExtensionPasswordResponse",
+      "status": "online"
+    },
+    "RestoreMemberOnline": {
+      "document": "恢复客服上线",
+      "input": "RestoreMemberOnlineRequest",
+      "name": "恢复客服上线",
+      "output": "RestoreMemberOnlineResponse",
       "status": "online"
     },
     "ResumePredictiveDialingCampaign": {
@@ -664,6 +685,144 @@
           "name": "Number",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AILatencyDetail": {
+      "document": "AI时延明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话ID",
+          "example": "0c489e76-41a7-4390-aaaf-4eb26a7c9987",
+          "member": "string",
+          "name": "RoundId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "asr时延（毫秒）",
+          "example": "100",
+          "member": "int64",
+          "name": "ASRLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tts时延（毫秒）",
+          "example": "100",
+          "member": "int64",
+          "name": "TTSLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "llm时延（毫秒）",
+          "example": "100",
+          "member": "int64",
+          "name": "LLMLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端到端时延（毫秒）",
+          "example": "100",
+          "member": "int64",
+          "name": "ETELatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AILatencyStatistics": {
+      "document": "AI时延统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "asr时延统计",
+          "example": "无",
+          "member": "AILatencyStatisticsInfo",
+          "name": "ASRLatency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tts时延统计",
+          "example": "无",
+          "member": "AILatencyStatisticsInfo",
+          "name": "TTSLatency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "llm时延统计",
+          "example": "无",
+          "member": "AILatencyStatisticsInfo",
+          "name": "LLMLatency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端到端时延统计",
+          "example": "无",
+          "member": "AILatencyStatisticsInfo",
+          "name": "ETELatency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AILatencyStatisticsInfo": {
+      "document": "AI时延统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小值",
+          "example": "100",
+          "member": "int64",
+          "name": "MinLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中位数",
+          "example": "100",
+          "member": "int64",
+          "name": "MiddleLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "p90",
+          "example": "100",
+          "member": "int64",
+          "name": "P90Latency",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3706,6 +3865,80 @@
       ],
       "type": "object"
     },
+    "DescribeAILatencyRequest": {
+      "document": "DescribeAILatency请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "6bb56a09-2787-40bc-80c5-dc6dab783eff",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查找起始时间\t",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1737350008",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAILatencyResponse": {
+      "document": "DescribeAILatency返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时延明细数据\n -1表示无对应数据",
+          "example": "无",
+          "member": "AILatencyDetail",
+          "name": "AILatencyDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时延统计数据\n -1表示无对应数据",
+          "example": "无",
+          "member": "AILatencyStatistics",
+          "name": "AILatencyStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeActiveCarrierPrivilegeNumberRequest": {
       "document": "DescribeActiveCarrierPrivilegeNumber请求参数结构体",
       "members": [
@@ -6482,6 +6715,42 @@
       ],
       "usage": "in"
     },
+    "ForceMemberOfflineRequest": {
+      "document": "ForceMemberOffline请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客服ID",
+          "example": "user@example.com",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ForceMemberOfflineResponse": {
+      "document": "ForceMemberOffline返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "HangUpCallRequest": {
       "document": "HangUpCall请求参数结构体",
       "members": [
@@ -7743,6 +8012,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreMemberOnlineRequest": {
+      "document": "RestoreMemberOnline请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客服ID",
+          "example": "user@example.com",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreMemberOnlineResponse": {
+      "document": "RestoreMemberOnline返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

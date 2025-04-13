@@ -1528,10 +1528,10 @@
     ],
     "DescribeHostLoginList": [
       {
-        "document": "登录审计列表",
+        "document": "异常登录列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostLoginList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"HostLoginList\": [\n            {\n                \"Id\": 202008000000022,\n                \"Uuid\": \"5cc8e4d2-311f-11ea-922b-98be9421969a\",\n                \"MachineIp\": \"10.104.194.49\",\n                \"MachineName\": \"v_lwjlin_centos_林\",\n                \"UserName\": \"root\",\n                \"SrcIp\": \"120.229.227.225\",\n                \"Status\": 2,\n                \"Country\": 1,\n                \"City\": 216,\n                \"Province\": 19,\n                \"LoginTime\": \"2020-02-20 14:51:35\",\n                \"ModifyTime\": \"2020-02-20 14:51:35\",\n                \"IsRiskUser\": 0,\n                \"Port\": 22,\n                \"Location\": \"中国:广东省:深圳市\",\n                \"Desc\": \"idesc\",\n                \"IsRiskSrcIp\": 1,\n                \"IsRiskArea\": 1,\n                \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"RiskLevel\": 0,\n                \"IsRiskTime\": 1,\n                \"MachineExtraInfo\": {\n                    \"WanIP\": \"1.1.1.1\",\n                    \"InstanceID\": \"ins-12341234\",\n                    \"NetworkName\": \"vpc-d7f***\",\n                    \"PrivateIP\": \"1.1.1.1\",\n                    \"NetworkType\": 1,\n                    \"HostName\": \"机器名称\"\n                }\n            }\n        ],\n        \"RequestId\": \"be6f6eec-0825-4e67-ab9a-c8568bbf736c\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "登录审计列表"
+        "title": "异常登录列表"
       }
     ],
     "DescribeHotVulTop": [

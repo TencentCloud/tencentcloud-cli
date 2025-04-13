@@ -7,23 +7,21 @@ Input:
 ```
 tccli trtc StartAITranscription --cli-unfold-argument  \
     --SdkAppId 1234 \
-    --RoomId 1234 \
+    --RoomId 500123 \
     --RoomIdType 1 \
-    --TranscriptionParams.UserId abc \
-    --TranscriptionParams.UserSig abc \
-    --TranscriptionParams.IMAdminUserId abc \
-    --TranscriptionParams.IMAdminUserSig abc \
+    --TranscriptionParams.UserId test_user \
+    --TranscriptionParams.UserSig your-usersig \
     --TranscriptionParams.MaxIdleTime 60 \
     --TranscriptionParams.TranscriptionMode 1 \
-    --TranscriptionParams.TargetUserId abc
+    --TranscriptionParams.TargetUserId test_user
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "abc",
-        "RequestId": "abc"
+        "TaskId": "taskid",
+        "RequestId": "requestid"
     }
 }
 ```

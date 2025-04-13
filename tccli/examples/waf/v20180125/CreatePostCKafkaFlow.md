@@ -9,7 +9,7 @@ tccli waf CreatePostCKafkaFlow --cli-unfold-argument  \
     --Compression snappy \
     --CKafkaID ckafka-2v4rkwpg \
     --KafkaVersion 1.1.1 \
-    --Topic test \
+    --Topic waf-topic \
     --LogType 1 \
     --CKafkaRegion ap-guangzho \
     --Brokers 11.179.226.202:6142 \

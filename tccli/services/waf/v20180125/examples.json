@@ -153,7 +153,7 @@
     "CreatePostCKafkaFlow": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostCKafkaFlow\n<公共请求参数>\n\n{\n    \"Compression\": \"snappy\",\n    \"CKafkaID\": \"ckafka-2v4rkwpg\",\n    \"KafkaVersion\": \"1.1.1\",\n    \"Topic\": \"test\",\n    \"LogType\": \"1\",\n    \"CKafkaRegion\": \"ap-guangzho\",\n    \"Brokers\": \"11.179.226.202:6142\",\n    \"VipType\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostCKafkaFlow\n<公共请求参数>\n\n{\n    \"Compression\": \"snappy\",\n    \"CKafkaID\": \"ckafka-2v4rkwpg\",\n    \"KafkaVersion\": \"1.1.1\",\n    \"Topic\": \"waf-topic\",\n    \"LogType\": \"1\",\n    \"CKafkaRegion\": \"ap-guangzho\",\n    \"Brokers\": \"11.179.226.202:6142\",\n    \"VipType\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c3a2707-619c-4943-ae91-2f855c0125a6\"\n    }\n}",
         "title": "创建CLS投递流任务"
       }

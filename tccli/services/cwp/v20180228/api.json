@@ -1331,7 +1331,7 @@
       "status": "online"
     },
     "DescribeHostLoginList": {
-      "document": "获取登录审计列表",
+      "document": "获取异常登录列表",
       "input": "DescribeHostLoginListRequest",
       "name": "获取异常登录列表",
       "output": "DescribeHostLoginListResponse",
@@ -24855,7 +24855,7 @@
         },
         {
           "disabled": false,
-          "document": "登录审计列表",
+          "document": "异常登录列表",
           "example": "无",
           "member": "HostLoginList",
           "name": "HostLoginList",

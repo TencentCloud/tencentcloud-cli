@@ -112,6 +112,13 @@
       "output": "DescribeCustomerUinResponse",
       "status": "online"
     },
+    "DescribeRebateDownloadUrl": {
+      "document": "描述说明：用于经销商/代理商下载返佣账单文件，返回文件url\n可调用角色：经销商/代理商",
+      "input": "DescribeRebateDownloadUrlRequest",
+      "name": "查询代理商返佣账单文件下载链接",
+      "output": "DescribeRebateDownloadUrlResponse",
+      "status": "online"
+    },
     "ForceQN": {
       "document": "描述信息：强制停服的设置和取消，经销商加白后才能使用API。\n可调用角色：经销商、一级经销商、二级经销商。",
       "input": "ForceQNRequest",
@@ -2215,6 +2222,62 @@
           "name": "Total",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebateDownloadUrlRequest": {
+      "document": "DescribeRebateDownloadUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返佣账单月份，格式为：YYYY-MM",
+          "example": "2025-02",
+          "member": "string",
+          "name": "Month",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单文件类型，有效值-CommissionDetail",
+          "example": "CommissionDetail",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRebateDownloadUrlResponse": {
+      "document": "DescribeRebateDownloadUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载地址， 文件有效期1小时",
+          "example": "https://xxxx.cos.ap-singapore.myqcloud",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件生成状态。0:生成中，1:已生成",
+          "example": "1",
+          "member": "int64",
+          "name": "Ready",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
