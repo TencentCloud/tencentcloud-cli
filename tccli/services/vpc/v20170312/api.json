@@ -890,7 +890,7 @@
       "status": "online"
     },
     "DeleteBandwidthPackage": {
-      "document": "接口支持删除共享带宽包，包括[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[IP带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)",
+      "document": "接口支持删除共享带宽包，包括[设备带宽包](https://cloud.tencent.com/document/product/684/15245#bwptype)和[IP带宽包](https://cloud.tencent.com/document/product/684/15245#bwptype)",
       "input": "DeleteBandwidthPackageRequest",
       "name": "删除共享带宽包",
       "output": "DeleteBandwidthPackageResponse",
@@ -2898,6 +2898,13 @@
       "output": "ManageDockerSubnetInternalResponse",
       "status": "online"
     },
+    "MigrateBandwidthPackageResources": {
+      "document": "本接口 (MigrateBandwidthPackageResources) 用于共享带宽包之间迁移资源",
+      "input": "MigrateBandwidthPackageResourcesRequest",
+      "name": "共享带宽包资源迁移接口",
+      "output": "MigrateBandwidthPackageResourcesResponse",
+      "status": "online"
+    },
     "MigrateNetworkInterface": {
       "document": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
       "input": "MigrateNetworkInterfaceRequest",
@@ -2962,7 +2969,7 @@
       "status": "online"
     },
     "ModifyBandwidthPackageAttribute": {
-      "document": "接口用于修改带宽包属性，包括带宽包名字等",
+      "document": "接口用于修改带宽包属性，包括带宽包名称和计费模式",
       "input": "ModifyBandwidthPackageAttributeRequest",
       "name": "修改带宽包属性",
       "output": "ModifyBandwidthPackageAttributeResponse",
@@ -4016,8 +4023,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'",
-          "example": "[\"eip-pez0oibs\\r\\n\"]",
+          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。",
+          "example": "[\"eip-pez0oibs\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -4025,7 +4032,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
+          "document": "带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-e40edw8y",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -4034,7 +4041,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。",
+          "document": "带宽包类型，可选值：\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>ANYCAST：公网加速带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -4043,7 +4050,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，包括'Address', 'LoadBalance'",
+          "document": "资源类型，可选值：\n<li>Address：弹性公网IP</li>\n<li>LoadBalance：负载均衡</li>",
           "example": "Address",
           "member": "string",
           "name": "ResourceType",
@@ -7098,7 +7105,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'",
+          "document": "带宽包类型，包括：\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>ANYCAST：公网加速带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -7108,7 +7115,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费类型，包括:<li>'TOP5_POSTPAID_BY_MONTH':按月后付费TOP5计费</li><li> 'PERCENT95_POSTPAID_BY_MONTH':按月后付费月95计费</li><li>'ENHANCED95_POSTPAID_BY_MONTH':按月后付费增强型95计费</li><li>'FIXED_PREPAID_BY_MONTH':包月预付费计费</li><li>‘PEAK_BANDWIDTH_POSTPAID_BY_DAY’: 后付费日结按带宽计费</li>\n",
+          "document": "带宽包计费类型, 包括:\n<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>\n<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>\n<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -7231,7 +7238,7 @@
         {
           "disabled": false,
           "document": "资源ID。",
-          "example": "eip-1234test",
+          "example": "bwp-1234test",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
@@ -7240,7 +7247,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽下限，单位：Mbps。",
+          "document": "带宽下限，单位：Mbps。计费类型以及对应的带宽下限：\n- TOP5_POSTPAID_BY_MONTH: 默认无下限\n- BANDWIDTH_POSTPAID_BY_DAY: 50\n- FIXED_PREPAID_BY_MONTH: 100\n- ENHANCED95_POSTPAID_BY_MONTH: 300\n- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50\n- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50",
           "example": "1",
           "member": "uint64",
           "name": "BandwidthLowerLimit",
@@ -7250,7 +7257,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽上限，单位：Mbps。",
+          "document": "带宽上限，单位：Mbps。计费类型以及对应的带宽上限：\n- TOP5_POSTPAID_BY_MONTH: 默认无上限\n- BANDWIDTH_POSTPAID_BY_DAY: 300\n- FIXED_PREPAID_BY_MONTH: 5000\n- ENHANCED95_POSTPAID_BY_MONTH: 5000\n- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300\n- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000",
           "example": "200",
           "member": "uint64",
           "name": "BandwidthUpperLimit",
@@ -10381,7 +10388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
+          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>\n注意：仅部分地域支持三网带宽包和精品BGP带宽包。",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -10390,8 +10397,8 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>\n<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>\n",
-          "example": "TOP5_POSTPAID_BY_MONTH",
+          "document": "带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:\n<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>\n<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>\n<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>\n",
+          "example": "ENHANCED95_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
           "required": false,
@@ -10399,7 +10406,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包名称。",
+          "document": "带宽包名称。名称长度小于60，只包含数字、字母和下划线。",
           "example": "demo",
           "member": "string",
           "name": "BandwidthPackageName",
@@ -10408,7 +10415,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。",
+          "document": "带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。",
           "example": "1",
           "member": "uint64",
           "name": "BandwidthPackageCount",
@@ -10417,7 +10424,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。",
+          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)",
           "example": "300",
           "member": "int64",
           "name": "InternetMaxBandwidth",
@@ -10427,7 +10434,7 @@
         {
           "disabled": false,
           "document": "需要关联的标签列表。",
-          "example": "无",
+          "example": "[{\"Key\": \"key\", \"Value\": \"value\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10444,7 +10451,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。",
+          "document": "预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。",
           "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
@@ -10453,7 +10460,7 @@
         },
         {
           "disabled": false,
-          "document": "网络出口，默认值：center_egress1",
+          "document": "网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。",
           "example": "center_egress1",
           "member": "string",
           "name": "Egress",
@@ -16189,7 +16196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待删除带宽包唯一ID",
+          "document": "待删除带宽包唯一ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-cs7j6pd0",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -19142,7 +19149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包资源ID列表，单次查询上限20。",
+          "document": "带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "['bwp-1234test', 'bwp-test1234']",
           "member": "string",
           "name": "BandwidthPackageIds",
@@ -19157,7 +19164,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包带宽上下限详细信息。",
+          "document": "带宽包带宽上下限详细信息。ResourceId：带宽包id、BandwidthLowerLimit：带宽下限、BandwidthUpperLimit：带宽上限。",
           "example": "无",
           "member": "BandwidthRange",
           "name": "BandwidthRangeSet",
@@ -19179,7 +19186,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费共享带宽包的唯一ID",
+          "document": "后付费共享带宽包的唯一ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口获取BandwidthPackageId。",
           "example": "bwp-pply3nak",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -19198,7 +19205,7 @@
           "example": "无",
           "member": "BandwidthPackageBillBandwidth",
           "name": "BandwidthPackageBillBandwidthSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19225,6 +19232,7 @@
           "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19251,7 +19259,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -19325,7 +19333,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package-id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。类型包括'HIGH_QUALITY_BGP','BGP','SINGLEISP'和'ANYCAST'。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型包括: <li>'TOP5_POSTPAID_BY_MONTH':按月后付费TOP5计费</li><li> 'PERCENT95_POSTPAID_BY_MONTH':按月后付费月95计费</li><li>'ENHANCED95_POSTPAID_BY_MONTH':按月后付费增强型95计费</li><li>'FIXED_PREPAID_BY_MONTH':包月预付费计费</li><li>‘PEAK_BANDWIDTH_POSTPAID_BY_DAY’: 后付费日结按带宽计费</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
+          "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package-id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。网络类型可参考[BandwidthPackage](https://cloud.tencent.com/document/api/215/15824#BandwidthPackage)。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型可参考[BandwidthPackage](https://cloud.tencent.com/document/api/215/15824#BandwidthPackage)。</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -39779,6 +39787,51 @@
       ],
       "usage": "in"
     },
+    "MigrateBandwidthPackageResourcesRequest": {
+      "document": "MigrateBandwidthPackageResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前资源所在的共享带宽包ID",
+          "example": "bwp-hxlqja90",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要迁移的目标共享带宽包的ID",
+          "example": "bwp-hxlqja90",
+          "member": "string",
+          "name": "TargetBandwidthPackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要迁移的资源的ID列表",
+          "example": "[\"eip-hxlqja90\\n\",\"eip-hxlqja91\\n\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "MigrateBandwidthPackageResourcesResponse": {
+      "document": "MigrateBandwidthPackageResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MigrateNetworkInterfaceRequest": {
       "document": "MigrateNetworkInterface请求参数结构体",
       "members": [
@@ -40311,7 +40364,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费模式，示例 ：\n'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）",
+          "document": "带宽包计费模式，可选值:\n<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>\n<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>\n<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -40347,7 +40400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包限速大小。单位：Mbps。",
+          "document": "带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) ",
           "example": "100",
           "member": "int64",
           "name": "InternetMaxBandwidth",
@@ -40356,7 +40409,7 @@
         },
         {
           "disabled": false,
-          "document": "共享带宽包ID",
+          "document": "共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-mwoqajk2",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -46359,7 +46412,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额名称，取值范围：\n- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；\n- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；\n- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；\n- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；\n- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；\n- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；",
+          "document": "配额名称，取值范围：\n- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；\n- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；\n- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；\n- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；\n- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；\n- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；\n- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；\n- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；\n- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；\n- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；\n- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；",
           "example": "TOTAL_EIP_QUOTA",
           "member": "string",
           "name": "QuotaId",
@@ -46790,7 +46843,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
+          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。",
+          "example": "[\"eip-alfxy9c8\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-pr0xbnvw",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -46799,21 +46861,12 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，包括‘Address’, ‘LoadBalance’",
+          "document": "资源类型，可选值：\n<li>Address：弹性公网IP</li>\n<li>LoadBalance：负载均衡</li>",
           "example": "Address",
           "member": "string",
           "name": "ResourceType",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'",
-          "example": "[\"eip-alfxy9c8\\r\\n\"]",
-          "member": "string",
-          "name": "ResourceIds",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"

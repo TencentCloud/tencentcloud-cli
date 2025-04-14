@@ -10082,8 +10082,7 @@
           "member": "uint64",
           "name": "WaterMarkId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -10092,8 +10091,7 @@
           "member": "uint64",
           "name": "WaterMarkWidth",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -10102,8 +10100,7 @@
           "member": "uint64",
           "name": "WaterMarkHeight",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -10112,8 +10109,7 @@
           "member": "uint64",
           "name": "LocationX",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -10122,18 +10118,16 @@
           "member": "uint64",
           "name": "LocationY",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过2MB。",
-          "example": "xxx",
+          "example": "https://**.png",
           "member": "string",
           "name": "WaterMarkUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -29,6 +29,7 @@ Output:
                 }
             ],
             "EndPointName": "终端节点名",
+            "Tags": [],
             "EndPointId": "eid-fc9iuxhg4",
             "RuleName": "转发规则名称",
             "UpdatedAt": "2022-09-09 10:45:44",

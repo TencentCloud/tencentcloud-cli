@@ -1165,7 +1165,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  false：子机销毁时，保留数据盘<br />\n  默认取值：true<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
+          "document": "数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。",
           "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
@@ -1187,7 +1187,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
+          "document": "数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -3352,7 +3352,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。",
+          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3432,7 +3432,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。",
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>",
           "example": "SELL",
           "member": "string",
           "name": "Status",
@@ -3552,7 +3552,7 @@
         },
         {
           "disabled": false,
-          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> \n<li>NormalStock：表示对应库存供应有保障</li>\n<li> UnderStock：表示对应库存即将售罄</li> \n<li>WithoutStock：表示对应库存已经售罄</li>",
+          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>",
           "example": "EnoughStock",
           "member": "string",
           "name": "StatusCategory",
@@ -4817,7 +4817,7 @@
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最小容量",
+          "document": "HDD本地存储的最小容量。单位：GiB。",
           "example": "100",
           "member": "int64",
           "name": "MinSize",
@@ -4828,7 +4828,7 @@
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最大容量",
+          "document": "HDD本地存储的最大容量。单位：GiB。",
           "example": "200",
           "member": "int64",
           "name": "MaxSize",

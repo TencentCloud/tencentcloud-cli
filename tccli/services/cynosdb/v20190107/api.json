@@ -3823,6 +3823,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "[\"libran-0\"]",
+          "member": "string",
+          "name": "NodeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4112,7 +4122,7 @@
         {
           "disabled": false,
           "document": "已废弃。",
-          "example": "无",
+          "example": "已废弃",
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
@@ -4121,9 +4131,18 @@
         {
           "disabled": false,
           "document": "审计日志过滤条件",
-          "example": "无",
+          "example": "[{\"Type\": \"host\",\"Compare\": \"INC\",\"Value\": \"100.0.\"}]",
           "member": "InstanceAuditLogFilter",
           "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志列",
+          "example": "[\"SqlType\",\"TableName\"]",
+          "member": "string",
+          "name": "ColumnFilter",
           "required": false,
           "type": "list"
         }
@@ -7111,6 +7130,26 @@
           "name": "InstanceStorageType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未知字段",
+          "example": "stable",
+          "member": "string",
+          "name": "CynosVersionTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libradb 节点信息",
+          "example": "[\"libradbn-1\"]",
+          "member": "string",
+          "name": "NodeList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -1930,7 +1930,7 @@
           "example": "无",
           "member": "ForwardRule",
           "name": "ForwardRule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2267,6 +2267,15 @@
           "name": "TimeRangeEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否导出：true导出，false不导出",
+          "example": "true",
+          "member": "bool",
+          "name": "Export",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2291,6 +2300,16 @@
           "member": "string",
           "name": "Interval",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出数据下载地址",
+          "example": "https://cos-xxx.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

@@ -4782,7 +4782,7 @@
         {
           "disabled": false,
           "document": "后付费云盘的计价单元，取值范围：<br><li>HOUR：表示后付费云盘的计价单元是按小时计算。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"h\"",
+          "example": "\"HOUR\"",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": true,
@@ -5421,7 +5421,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需退还的云盘ID列表。",
+          "document": "需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。",
           "example": "[\"disk-l7mxexxc\"]",
           "member": "string",
           "name": "DiskIds",

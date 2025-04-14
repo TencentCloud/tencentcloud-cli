@@ -559,7 +559,7 @@
     "OpenCoolDownPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"Operation successful\",\n        \"QueryDocument\": \"[{\\\"partition_name\\\": \\\"p1\\\", \\\"cool_down_status\\\": \\\"enabled\\\", \\\"cool_down_policy\\\": \\\"policy_7days\\\"}, {\\\"partition_name\\\": \\\"p2\\\", \\\"cool_down_status\\\": \\\"disabled\\\", \\\"cool_down_policy\\\": \\\"\\\"}]\",\n        \"RequestId\": \"req-987654321\"\n    }\n}",
         "title": "开通"
       }
@@ -607,7 +607,7 @@
     "RestartClusterForNode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"cdwch-xxxx\",\n    \"ConfigName\": \"fe\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-xxxx\",\n    \"ConfigName\": \"fe\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 6331,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
         "title": "重启"
       }
@@ -631,7 +631,7 @@
     "UpdateCoolDown": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"doris-123\",\n    \"Enable\": 1,\n    \"Bucket\": \"bucket6331\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"doris-123\",\n    \"Enable\": 1,\n    \"Bucket\": \"bucket6331\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
         "title": "示例"
       }
@@ -639,7 +639,7 @@
     "UpdateDatabase": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDatabase\n<公共请求参数>\n\n\n\n{\n\t\"InstanceId\": \"cdwdoris-7da9fumk\",\n\t\"DbName\": \"demo1\",\n\t\"Operation\": \"SET_QUOTA\",\n\t\"Quota\": \"10T\",\n\t\"CatalogName\": \"internal\"\n\n}\n",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDatabase\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-7da9fumk\",\n    \"DbName\": \"demo1\",\n    \"Operation\": \"SET_QUOTA\",\n    \"Quota\": \"10T\",\n    \"CatalogName\": \"internal\"\n}",
         "output": "{\n    \"Response\": {\n        \"Success\": true,\n        \"Message\": \"Database quota set successfully.\",\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
         "title": "更新"
       }
@@ -647,7 +647,7 @@
     "UpdateTableSchema": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTableSchema\n<公共请求参数>\n\n\n\n\n\n\n\n{\n   \"InstanceId\": \"cdwdoris-7da9fumk\",\n    \"DbName\": \"demo1\",\n    \"TableName\": \"my_table_partition\",\n    \"Columns\": [\n        {\n            \"Name\": \"id\",\n            \"Type\": \"BIGINT\",\n            \"IsDistribution\": true,\n            \"IsKey\": true,\n            \"IsNull\":true\n           \n        },\n        {\n            \"Name\": \"name\",\n            \"Type\": \"VARCHAR(50)\",\n             \"IsKey\": true,\n            \"IsNull\":true\n             \n        },\n          {\n            \"Name\": \"name446\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":false,\n             \"DefaultValue\": \"1\"\n\n             \n        },\n               {\n            \"Name\": \"name449\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":false,\n             \"DefaultValue\": \"33\"\n\n             \n        },\n  \n\n\n         {\n            \"Name\": \"name333\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":true,\n            \"DefaultValue\": \"1\"\n             \n        },\n             \n        {\n            \"Name\": \"age2\",\n            \"Type\": \"INT\",\n            \"IsNull\":true\n        },\n        {\n            \"Name\": \"salary\",\n            \"Type\": \"DECIMAL(10, 5)\",\n            \"IsNull\":true\n        },\n        {\n            \"Name\": \"join_date\",\n            \"Type\": \"DATE\",\n            \"IsPartition\":true,\n            \"IsNull\":true\n        }\n    ],\n     \"IndexInfos\": [\n        {\n            \"IdxType\": \"NGRAM_BF\",\n            \"ColumnName\": \"name333\",\n            \"IdxName\": \"idx_name\",\n            \"IdxComment\": \"Optional comment about the index\",\n            \"IdxProperties\": [{\n                \"PropertyKey\":\"gram_size\",\n                \"PropertyValue\":\"3\"\n\n            },\n\n{\n                \"PropertyKey\":\"bf_size\",\n                \"PropertyValue\":\"1024\"\n\n            }]\n            }\n\n   \n    ],\n    \"Distribution\": {\n        \"DistributionType\": \"HASH\",\n        \"Count\": 64\n    },\n    \"TableComment\": \"Optional comment about the table=3\",\n    \"Properties\": [\n        {\n            \"PropertyKey\": \"bloom_filter_columns\",\n            \"PropertyValue\": \"age2\"\n        }\n    \n    ]\n\n\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTableSchema\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-7da9fxx\",\n    \"DbName\": \"demo1\",\n    \"TableName\": \"tb1\",\n    \"Columns\": [\n        {\n            \"Name\": \"name\",\n            \"Type\": \"string\",\n            \"AggType\": \"MIN\",\n            \"IsNull\": false,\n            \"IsKey\": true,\n            \"DefaultValue\": \"bob\",\n            \"IsPartition\": true,\n            \"IsDistribution\": false,\n            \"AutoInc\": false,\n            \"Comment\": \"用户名称\"\n        }\n    ],\n    \"Distribution\": {\n        \"DistributionType\": \"Hash\",\n        \"Count\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xx-xx-xx-xx\",\n        \"Success\": true,\n        \"Message\": \"Table schema updated successfully.\"\n    }\n}",
         "title": "修改表"
       }

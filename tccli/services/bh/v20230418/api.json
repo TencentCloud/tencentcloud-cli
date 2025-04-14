@@ -119,6 +119,13 @@
       "output": "CreateUserGroupResponse",
       "status": "online"
     },
+    "DeleteAccessWhiteListRules": {
+      "document": "删除访问白名单规则",
+      "input": "DeleteAccessWhiteListRulesRequest",
+      "name": "删除访问白名单规则",
+      "output": "DeleteAccessWhiteListRulesResponse",
+      "status": "online"
+    },
     "DeleteAcls": {
       "document": "删除访问权限",
       "input": "DeleteAclsRequest",
@@ -201,6 +208,13 @@
       "input": "DeployResourceRequest",
       "name": "开通服务",
       "output": "DeployResourceResponse",
+      "status": "online"
+    },
+    "DescribeAccessWhiteListRules": {
+      "document": "查询访问白名单规则列表",
+      "input": "DescribeAccessWhiteListRulesRequest",
+      "name": "查询访问白名单规则列表",
+      "output": "DescribeAccessWhiteListRulesResponse",
       "status": "online"
     },
     "DescribeAcls": {
@@ -482,6 +496,13 @@
       "name": "命令检索",
       "output": "SearchSessionCommandResponse",
       "status": "online"
+    },
+    "SearchTaskResult": {
+      "document": "搜索运维任务执行结果",
+      "input": "SearchTaskResultRequest",
+      "name": "搜索运维任务执行结果",
+      "output": "SearchTaskResultResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -734,6 +755,52 @@
           "member": "string",
           "name": "AccessURL",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessWhiteListRule": {
+      "document": "访问白名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP或者网段",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "规则1",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2020-12-20T19:51:23+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2824,7 +2891,7 @@
         {
           "disabled": false,
           "document": "按照\"国家地区代码|手机号\"的格式输入，如: \"+86|xxxxxxxx\"。手机号和邮箱参数至少传一项",
-          "example": "133*****34",
+          "example": "86|133*****34",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -2909,6 +2976,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessWhiteListRulesRequest": {
+      "document": "DeleteAccessWhiteListRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除的ID集合",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccessWhiteListRulesResponse": {
+      "document": "DeleteAccessWhiteListRules返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3410,6 +3504,100 @@
     "DeployResourceResponse": {
       "document": "DeployResource返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessWhiteListRulesRequest": {
+      "document": "DescribeAccessWhiteListRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID集合，非必需，如果使用IdSet参数则忽略Name参数",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "来源IP或网段，模糊查询，最大长度64字符",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移位置，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条目数量，默认20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessWhiteListRulesResponse": {
+      "document": "DescribeAccessWhiteListRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问白名单规则列表",
+          "example": "[]",
+          "member": "AccessWhiteListRule",
+          "name": "AccessWhiteListRuleSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否放开全部来源IP，如果为true，TotalCount为0，AccessWhiteListRuleSet为空",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAny",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动添加来源IP, 如果为true, 在开启访问白名单的情况下将自动添加来源IP",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAuto",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8992,6 +9180,125 @@
       ],
       "type": "object"
     },
+    "SearchTaskResultRequest": {
+      "document": "SearchTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索区间的开始时间",
+          "example": "2020-01-02T01:01:01+08:0",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索区间的结束时间",
+          "example": "2020-01-02T01:01:01+08:0",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运维任务ID",
+          "example": "ops-awe1d23",
+          "member": "string",
+          "name": "OperationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运维任务名称",
+          "example": "\"运维任务1\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，长度不超过20",
+          "example": "nick",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "姓名，长度不超过20",
+          "example": "tom",
+          "member": "string",
+          "name": "RealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n1 手工运维任务\n2 定时任务\n3 账号推送任务",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的页内记录数，默认为20，最大200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchTaskResultResponse": {
+      "document": "SearchTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务执行结果",
+          "example": " [ { \"UserName\": \"nick\", \"Status\": 0, \"Name\": \"nic\", \"FromIp\": \"192.168.0.1\", \"StartTime\": \"2020-09-22T00:00:00+08:00\", \"EndTime\": \"2020-09-22T00:00:00+08:00\", \"Id\": \"1\", \"RealName\": \"tom\", \"OperationId\": \"ops-adexdea\" } ]",
+          "member": "TaskResult",
+          "name": "TaskResult",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SessionResult": {
       "document": "搜索字符或图形会话时返回的SessionResul结构体",
       "members": [
@@ -9231,6 +9538,102 @@
         }
       ],
       "usage": "in"
+    },
+    "TaskResult": {
+      "document": "运维父任务执行结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运维任务结果日志ID",
+          "example": "dfac9070-8b23-499e-83b2-a50e3ca0",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务ID",
+          "example": "ops-1a2b3c",
+          "member": "string",
+          "name": "OperationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务名称",
+          "example": "运维任务",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行任务来源IP",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "FromIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务所属用户",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务所属用户的姓名",
+          "example": "张三",
+          "member": "string",
+          "name": "RealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务执行状态 1 - 执行中，2 - 成功，3 - 失败，4 - 部分失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务开始时间",
+          "example": "2022-04-13T19:44:57+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运维任务结束时间",
+          "example": "2022-04-13T19:45:57+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "User": {
       "document": "用户信息",

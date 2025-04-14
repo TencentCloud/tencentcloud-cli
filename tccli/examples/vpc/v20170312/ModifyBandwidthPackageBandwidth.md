@@ -7,7 +7,6 @@ Input:
 ```
 tccli vpc ModifyBandwidthPackageBandwidth --cli-unfold-argument  \
     --InternetMaxBandwidth 100 \
-    --BandwidthPackageIds bwp-alfxy9c8 \
     --BandwidthPackageId bwp-mwoqajk2
 ```
 

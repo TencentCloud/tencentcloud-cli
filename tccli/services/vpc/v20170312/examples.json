@@ -1842,15 +1842,15 @@
       {
         "document": "查询带宽包配额。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandwidthPackageQuota\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaId\": \"TOTAL_BANDWIDTHPKG_QUOTA\",\n                \"QuotaCurrent\": 1,\n                \"QuotaLimit\": 20\n            }\n        ],\n        \"RequestId\": \"8882b478-0d3a-4fe2-bae3-ff93865a199c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaId\": \"TOTAL_BANDWIDTHPKG_QUOTA\",\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaCurrent\": 1,\n                \"QuotaLimit\": 20\n            }\n        ],\n        \"RequestId\": \"8882b478-0d3a-4fe2-bae3-ff93865a199c\"\n    }\n}",
         "title": "查询带宽包配额"
       }
     ],
     "DescribeBandwidthPackageResources": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeBandwidthPackageResources\n&BandwidthPackageId=bwp-7umnal1o\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ResourceSet\": [\n            {\n                \"ResourceType\": \"Address\",\n                \"ResourceId\": \"eip-60z7i46d\",\n                \"AddressIp\": \"139.199.XX.XX\"\n            },\n            {\n                \"ResourceType\": \"Address\",\n                \"ResourceId\": \"eip-d97psd1o\",\n                \"AddressIp\": \"139.198.XX.XX\"\n            }\n        ],\n        \"RequestId\": \"ecaa7a90-a2fd-4fa3-8bf8-7d0723c95a99\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandwidthPackageResources\n<公共请求参数>\n\n{\n    \"BandwidthPackageId\": \"bwp-9u4iag5l\",\n    \"Filters\": [\n        {\n            \"Name\": \"resource-type\",\n            \"Values\": [\n                \"Address\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3093d68-3daf-415c-af74-b5a6b3a383d0\",\n        \"ResourceSet\": [\n            {\n                \"AddressIp\": \"2402:4e00:c000:700:34ee:5b66:3676:d\",\n                \"ResourceId\": \"eipv6-qqc8i9s7\",\n                \"ResourceType\": \"Address\"\n            },\n            {\n                \"AddressIp\": \"2402:4e00:c000:700:34ee:5b66:3676:8\",\n                \"ResourceId\": \"eipv6-6ckprob3\",\n                \"ResourceType\": \"Address\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询共享带宽包内的资源列表"
       }
     ],
@@ -3714,6 +3714,14 @@
         "title": "Docker子网管理"
       }
     ],
+    "MigrateBandwidthPackageResources": [
+      {
+        "document": "资源在精品带宽包之间迁移。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=MigrateBandwidthPackageResources\n&BandwidthPackageId=bwp-hxlqja90\n&TargetBandwidthPackageId=bwp-hxlqja90\n&ResourceIds.0=eip-hxlqja90\n&ResourceIds.1=eip-hxlqja91\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42bc5893-70ff-4f13-bcc3-1308dedab8f6\"\n    }\n}",
+        "title": "资源在精品带宽包之间迁移"
+      }
+    ],
     "MigrateNetworkInterface": [
       {
         "document": "弹性网卡迁移",
@@ -3801,7 +3809,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBandwidthPackageAttribute\n<公共请求参数>\n\n{\n    \"BandwidthPackageName\": \"demo\",\n    \"BandwidthPackageId\": \"bwp-e40edw8y\",\n    \"ChargeType\": \"TOP5\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBandwidthPackageAttribute\n<公共请求参数>\n\n{\n    \"BandwidthPackageName\": \"demo\",\n    \"BandwidthPackageId\": \"bwp-e40edw8y\",\n    \"ChargeType\": \"TOP5_POSTPAID_BY_MONTH\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ece8f4a-c0f5-4b83-8054-a9b808a5c465\"\n    }\n}",
         "title": "修改带宽包计费模式"
       }
@@ -3809,7 +3817,7 @@
     "ModifyBandwidthPackageBandwidth": [
       {
         "document": "调整共享带宽包带宽。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyBandwidthPackageBandwidth\n&InternetMaxBandwidth=100\n&BandwidthPackageIds.0=bwp-alfxy9c8\n&BandwidthPackageId=bwp-mwoqajk2\n&<公共请求参数>",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyBandwidthPackageBandwidth\n&InternetMaxBandwidth=100\n&BandwidthPackageId=bwp-mwoqajk2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\n    }\n}",
         "title": "调整共享带宽包带宽"
       }
