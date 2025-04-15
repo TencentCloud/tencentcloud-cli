@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc SwitchDataEngine --cli-unfold-argument  \
-    --DataEngineName test \
+    --DataEngineName dlc \
     --StartStandbyCluster False
 ```
 

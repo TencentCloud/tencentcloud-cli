@@ -12,9 +12,9 @@ Output:
 {
     "Response": {
         "ForbiddenTableProperties": [
-            "abc"
+            "uin"
         ],
-        "RequestId": "abc"
+        "RequestId": "********-****-****-****-00419629123c"
     }
 }
 ```

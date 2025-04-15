@@ -39811,7 +39811,7 @@
         {
           "disabled": false,
           "document": "要迁移的资源的ID列表",
-          "example": "[\"eip-hxlqja90\\n\",\"eip-hxlqja91\\n\"]",
+          "example": "[\"eip-hxlqja90\",\"eip-hxlqja91\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,

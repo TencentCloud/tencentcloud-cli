@@ -21,6 +21,13 @@
       "output": "AddUserPurchaseConfigResponse",
       "status": "online"
     },
+    "ChangeMigratingTopicToNextStage": {
+      "document": "修改迁移中的Topic状态进入下一步",
+      "input": "ChangeMigratingTopicToNextStageRequest",
+      "name": "平滑迁移：修改迁移中的Topic状态进入下一步",
+      "output": "ChangeMigratingTopicToNextStageResponse",
+      "status": "online"
+    },
     "CreateClusterAdminInfo": {
       "document": "创建RocketMQClusterAdmin",
       "input": "CreateClusterAdminInfoRequest",
@@ -159,6 +166,13 @@
       "input": "DeleteSharedClusterBindingRequest",
       "name": "删除物理集群和用户绑定关系",
       "output": "DeleteSharedClusterBindingResponse",
+      "status": "online"
+    },
+    "DeleteSmoothMigrationTask": {
+      "document": "删除平滑迁移任务，只有被取消的任务才可删除",
+      "input": "DeleteSmoothMigrationTaskRequest",
+      "name": "删除平滑迁移任务",
+      "output": "DeleteSmoothMigrationTaskResponse",
       "status": "online"
     },
     "DeleteTopic": {
@@ -357,6 +371,20 @@
       "output": "DescribeMessageTraceResponse",
       "status": "online"
     },
+    "DescribeMigratingGroupStats": {
+      "document": "查看迁移消费组的实时信息",
+      "input": "DescribeMigratingGroupStatsRequest",
+      "name": "查看迁移消费组的实时数据",
+      "output": "DescribeMigratingGroupStatsResponse",
+      "status": "online"
+    },
+    "DescribeMigratingTopicStats": {
+      "document": "用于查询迁移主题的实时数据",
+      "input": "DescribeMigratingTopicStatsRequest",
+      "name": "查询迁移主题的实时数据",
+      "output": "DescribeMigratingTopicStatsResponse",
+      "status": "online"
+    },
     "DescribeNodeListOp": {
       "document": "运营端查询节点信息",
       "input": "DescribeNodeListOpRequest",
@@ -418,6 +446,13 @@
       "input": "DescribeUserPurchaseConfigsRequest",
       "name": "获取用户购买配置列表",
       "output": "DescribeUserPurchaseConfigsResponse",
+      "status": "online"
+    },
+    "DoHealthCheckOnMigratingTopic": {
+      "document": "检查迁移中的主题是否处于正常状态，只有处于正常状态的主题，才可以进入下一个迁移阶段",
+      "input": "DoHealthCheckOnMigratingTopicRequest",
+      "name": "迁移主题健康检查",
+      "output": "DoHealthCheckOnMigratingTopicResponse",
       "status": "online"
     },
     "ImportSourceClusterConsumerGroups": {
@@ -539,6 +574,13 @@
       "output": "ModifyUserPurchaseConfigResponse",
       "status": "online"
     },
+    "RemoveMigratingTopic": {
+      "document": "从迁移列表中移除主题，仅当主题处于初始状态时有效",
+      "input": "RemoveMigratingTopicRequest",
+      "name": "移除正在平滑迁移的主题",
+      "output": "RemoveMigratingTopicResponse",
+      "status": "online"
+    },
     "ResendDeadLetterMessage": {
       "document": "重新发送死信消息",
       "input": "ResendDeadLetterMessageRequest",
@@ -551,6 +593,13 @@
       "input": "ResetConsumerGroupOffsetRequest",
       "name": "重置消费位点",
       "output": "ResetConsumerGroupOffsetResponse",
+      "status": "online"
+    },
+    "RollbackMigratingTopicStage": {
+      "document": "回滚正在迁移的主题至前一个阶段",
+      "input": "RollbackMigratingTopicStageRequest",
+      "name": "回滚主题迁移进度至上一阶段",
+      "output": "RollbackMigratingTopicStageResponse",
       "status": "online"
     },
     "SyncConsumerGroupInternal": {
@@ -926,6 +975,61 @@
         }
       ],
       "usage": "out"
+    },
+    "ChangeMigratingTopicToNextStageRequest": {
+      "document": "ChangeMigratingTopicToNextStage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "TopicNameList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间列表，仅4.x集群有效，与TopicNameList一一对应",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeMigratingTopicToNextStageResponse": {
+      "document": "ChangeMigratingTopicToNextStage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移主题状态修改的结果列表",
+          "example": "无",
+          "member": "TopicStageChangeResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ClusterAdminInfo": {
       "document": "ClusterAdminInfo出参数",
@@ -2463,6 +2567,33 @@
     },
     "DeleteSharedClusterBindingResponse": {
       "document": "DeleteSharedClusterBinding返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSmoothMigrationTaskRequest": {
+      "document": "DeleteSmoothMigrationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSmoothMigrationTaskResponse": {
+      "document": "DeleteSmoothMigrationTask返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5125,6 +5256,176 @@
       ],
       "type": "object"
     },
+    "DescribeMigratingGroupStatsRequest": {
+      "document": "DescribeMigratingGroupStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigratingGroupStatsResponse": {
+      "document": "DescribeMigratingGroupStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源集群消费组堆积\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SourceConsumeLag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标集群消费组堆积\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetConsumeLag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群连接客户端列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerClient",
+          "name": "SourceConsumerClients",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标集群连接客户端列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerClient",
+          "name": "TargetConsumerClients",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigratingTopicStatsRequest": {
+      "document": "DescribeMigratingTopicStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅4.x集群有效",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigratingTopicStatsResponse": {
+      "document": "DescribeMigratingTopicStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源集群的消费者数量",
+          "example": "无",
+          "member": "int64",
+          "name": "SourceClusterConsumerCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标集群的消费者数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetClusterConsumerCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源集群消费组列表",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClusterConsumerGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标集群消费组列表",
+          "example": "无",
+          "member": "string",
+          "name": "TargetClusterConsumerGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNodeListOpRequest": {
       "document": "DescribeNodeListOp请求参数结构体",
       "members": [
@@ -6007,6 +6308,90 @@
         }
       ],
       "usage": "both"
+    },
+    "DoHealthCheckOnMigratingTopicRequest": {
+      "document": "DoHealthCheckOnMigratingTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略当前检查",
+          "example": "无",
+          "member": "bool",
+          "name": "IgnoreCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅4.x集群有效",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DoHealthCheckOnMigratingTopicResponse": {
+      "document": "DoHealthCheckOnMigratingTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否通过\t",
+          "example": "无",
+          "member": "bool",
+          "name": "Passed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康检查返回的错误信息\nNotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查返回的错误信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReasonList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Endpoint": {
       "document": "接入点信息",
@@ -8903,6 +9288,51 @@
       ],
       "usage": "both"
     },
+    "RemoveMigratingTopicRequest": {
+      "document": "RemoveMigratingTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅迁移至4.x集群有效",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMigratingTopicResponse": {
+      "document": "RemoveMigratingTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResendDeadLetterMessageRequest": {
       "document": "ResendDeadLetterMessage请求参数结构体",
       "members": [
@@ -9127,6 +9557,51 @@
         }
       ],
       "usage": "both"
+    },
+    "RollbackMigratingTopicStageRequest": {
+      "document": "RollbackMigratingTopicStage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅4.x集群有效",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackMigratingTopicStageResponse": {
+      "document": "RollbackMigratingTopicStage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SharedClusterBinding": {
       "document": "SharedClusterBinding结构",
@@ -10037,6 +10512,42 @@
         }
       ],
       "usage": "both"
+    },
+    "TopicStageChangeResult": {
+      "document": "迁移主题修改状态后的结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Success",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅4.x有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "UserPurchaseConfig": {
       "document": "用户购买配置信息",

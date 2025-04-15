@@ -766,7 +766,7 @@
         {
           "disabled": false,
           "document": "终端节点服务ID",
-          "example": "终端节点服务ID",
+          "example": "vpcsvc-gtd4gxa1",
           "member": "string",
           "name": "EndPointServiceId",
           "output_required": true,
@@ -994,7 +994,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-p0152fh2",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1171,8 +1171,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-xxxxxx",
-          "example": "41",
+          "document": "私有域ID, zone-12345678",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -1311,7 +1311,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1999",
+          "example": "zone-p0152fh2",
           "member": "string",
           "name": "ZoneId",
           "required": false,
@@ -2079,7 +2079,7 @@
         {
           "disabled": false,
           "document": "私有域ID: zone-xxxxxx",
-          "example": "1",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -2152,7 +2152,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名，格式必须是标准的TLD",
+          "document": "私有域id",
           "example": "zone-dm1igr1",
           "member": "string",
           "name": "ZoneId",
@@ -2348,7 +2348,7 @@
         {
           "disabled": false,
           "document": "终端节点服务ID",
-          "example": "终端节点服务ID",
+          "example": "vpcsvc-prvrnrlt",
           "member": "string",
           "name": "EndPointServiceId",
           "output_required": true,
@@ -2367,8 +2367,8 @@
         },
         {
           "disabled": false,
-          "document": "ap-guangzhou",
-          "example": "地域编码",
+          "document": "地域编码",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionCode",
           "output_required": false,
@@ -2892,7 +2892,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "zone-xxxxxx",
+          "example": "zone-ewqw2131",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -2991,7 +2991,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -3045,7 +3045,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-12345ds6",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -3077,8 +3077,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-xxxxxx",
-          "example": "1",
+          "document": "私有域ID, zone-12345ds6",
+          "example": "zone-12345ds6",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,

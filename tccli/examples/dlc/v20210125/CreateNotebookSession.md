@@ -6,31 +6,29 @@ Input:
 
 ```
 tccli dlc CreateNotebookSession --cli-unfold-argument  \
+    --Name notebook_session_1 \
     --Kind spark \
-    --Name session1 \
-    --ProxyUser root \
-    --ProgramDependentPython cosn://xxx \
-    --ProgramDependentFiles cosn://xxx \
+    --DataEngineName engine1 \
+    --DriverSize small \
     --ExecutorSize small \
     --ExecutorNumbers 1 \
-    --ExecutorMaxNumbers 1 \
-    --DataEngineName data_engine_1 \
-    --ProgramDependentJars cosn://xxx \
-    --Arguments.0.Value eni \
-    --Arguments.0.Key test_eni \
+    --ExecutorMaxNumbers 0 \
+    --Arguments.0.Key dlc.role.arn \
+    --Arguments.0.Value qcs::cam::uin/1**********1:roleName/role1 \
+    --ProxyUser user1 \
     --TimeoutInSecond 3600 \
-    --ProgramArchives cosn://xxx \
-    --DriverSize small
+    --SparkImage  \
+    --IsInherit 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SessionId": "abc",
-        "SparkAppId": "abc",
-        "State": "abc",
-        "RequestId": "abc"
+        "SessionId": "livy-session-*************",
+        "SparkAppId": "",
+        "State": "starting",
+        "RequestId": "********-****-****-****-834e16ecf001"
     }
 }
 ```

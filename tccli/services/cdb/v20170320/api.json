@@ -1177,9 +1177,9 @@
       "status": "online"
     },
     "StartCpuExpand": {
-      "document": "通过该API，可以开启CPU弹性扩容，包括一次性的手动扩容以及自动弹性扩容。",
+      "document": "通过该 API，可以开启 CPU 弹性扩容，包括一次性的手动扩容以及自动弹性扩容。",
       "input": "StartCpuExpandRequest",
-      "name": "开启CPU弹性扩容",
+      "name": "开启 CPU 弹性扩容",
       "output": "StartCpuExpandResponse",
       "status": "online"
     },
@@ -19329,6 +19329,34 @@
       ],
       "usage": "out"
     },
+    "PeriodStrategy": {
+      "document": "按周期扩容策略中的所选择的周期",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩容周期",
+          "example": "无",
+          "member": "TImeCycle",
+          "name": "TimeCycle",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间间隔",
+          "example": "无",
+          "member": "TimeInterval",
+          "name": "TimeInterval",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ProxyAddress": {
       "document": "数据库代理地址信息",
       "members": [
@@ -22525,7 +22553,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -22533,7 +22561,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容类型。可选值：auto：代表进行自动扩容\nmanual：代表进行手动扩容",
+          "document": "扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期",
           "example": "auto",
           "member": "string",
           "name": "Type",
@@ -22542,7 +22570,7 @@
         },
         {
           "disabled": false,
-          "document": "手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。",
+          "document": "手动扩容时，扩容的 CPU 核心数。\n说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。",
           "example": "4",
           "member": "int64",
           "name": "ExpandCpu",
@@ -22552,9 +22580,27 @@
         {
           "disabled": false,
           "document": "自动扩容策略。Type 为 auto 时必传。",
-          "example": "无",
+          "example": "[{\"ExpandThreshold\": \"70\",\"ShrinkThreshold\": \"\t10\",\"ExpandPeriod\": \"1\",\"ShrinkPeriod\": \"5\"}]",
           "member": "AutoStrategy",
           "name": "AutoStrategy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "按时间段扩容策略",
+          "example": "[{\"StartTime\": \"2024-10-17 10:00:00\",\"EndTime\": \"2024-10-17 12:00:00\"}]",
+          "member": "TimeIntervalStrategy",
+          "name": "TimeIntervalStrategy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "按周期扩容策略",
+          "example": "无",
+          "member": "PeriodStrategy",
+          "name": "PeriodStrategy",
           "required": false,
           "type": "object"
         }
@@ -22567,7 +22613,7 @@
         {
           "disabled": false,
           "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
-          "example": "xxxxxxx-xxxxxxxx",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,
@@ -23130,6 +23176,89 @@
       ],
       "type": "object"
     },
+    "TImeCycle": {
+      "document": "扩容的周期",
+      "members": [
+        {
+          "disabled": false,
+          "document": "周一的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Monday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周二的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Tuesday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周三的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Wednesday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周四的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Thursday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周五的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Friday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周六的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Saturday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周日的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Sunday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TableFieldInfo": {
       "document": "数据库表字段信息",
       "members": [
@@ -23516,6 +23645,62 @@
         }
       ],
       "usage": "out"
+    },
+    "TimeInterval": {
+      "document": "时间段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "02:00:37",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "03:00:37",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TimeIntervalStrategy": {
+      "document": "按时间段扩容策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始扩容时间",
+          "example": "2024-10-17 10:00:00",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束扩容时间",
+          "example": "2024-10-17 12:00:00",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UpgradeCDBProxyVersionRequest": {
       "document": "UpgradeCDBProxyVersion请求参数结构体",

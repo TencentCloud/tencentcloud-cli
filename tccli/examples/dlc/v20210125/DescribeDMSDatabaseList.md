@@ -24,7 +24,7 @@ Output:
                     "Name": "table1",
                     "Guid": "*******",
                     "Catalog": "catalog",
-                    "Description": "test",
+                    "Description": "default description",
                     "Owner": "*******",
                     "OwnerAccount": "********",
                     "PermValues": [

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc SuspendResumeDataEngine --cli-unfold-argument  \
-    --DataEngineName abc \
+    --DataEngineName testHouse \
     --Operate suspend
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "DataEngineName": "abc",
-        "RequestId": "abc"
+        "DataEngineName": "testHouse",
+        "RequestId": "41ebe3a0-6e01-4489-b65f-296caf5ea143"
     }
 }
 ```

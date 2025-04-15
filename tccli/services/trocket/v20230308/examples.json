@@ -24,6 +24,14 @@
         "title": "添加成功"
       }
     ],
+    "ChangeMigratingTopicToNextStage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeMigratingTopicToNextStage\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"TopicNameList\": [\n        \"TopicTest\"\n    ],\n    \"NamespaceList\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"TopicName\": \"TopicTest\",\n                \"Success\": true,\n                \"Namespace\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改迁移主题进入下一个迁移阶段"
+      }
+    ],
     "CreateClusterAdminInfo": [
       {
         "document": "标准请求",
@@ -182,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSharedClusterBinding\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rmq5-room-cd-1\",\n    \"BindingUin\": \"123\",\n    \"InstanceTypes\": [\n        \"EXPERIMENT\"\n    ]\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"2e229253-d9c4-4e2c-8cec-d2b327963a85\"\n    }\n}",
         "title": "删除成功"
+      }
+    ],
+    "DeleteSmoothMigrationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmoothMigrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"taskid-123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "title": "删除平滑迁移任务"
       }
     ],
     "DeleteTopic": [
@@ -414,6 +430,22 @@
         "title": "查询延迟消息的轨迹"
       }
     ],
+    "DescribeMigratingGroupStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingGroupStats\n<公共请求参数>\n\n{\n    \"TaskId\": \"taskId\",\n    \"GroupName\": \"group-a\",\n    \"Namespace\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SourceConsumeLag\": 0,\n        \"TargetConsumeLag\": 0,\n        \"SourceConsumerClients\": [\n            {\n                \"ClientId\": \"abc\",\n                \"ClientAddr\": \"1.1.1.1\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"5\",\n                \"ConsumerLag\": 0\n            }\n        ],\n        \"TargetConsumerClients\": [\n            {\n                \"ClientId\": \"abc\",\n                \"ClientAddr\": \"2.2.2.2\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"5.0\",\n                \"ConsumerLag\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看迁移消费组的实时信息"
+      }
+    ],
+    "DescribeMigratingTopicStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingTopicStats\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"TopicName\": \"TopicTest\",\n    \"Namespace\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SourceClusterConsumerCount\": 0,\n        \"TargetClusterConsumerCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询迁移主题实时数据"
+      }
+    ],
     "DescribeNodeListOp": [
       {
         "document": "1",
@@ -484,6 +516,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPurchaseConfigs\n<公共请求参数>\n\n{\n    \"CustomerAppId\": 0,\n    \"CustomerRegionId\": 16\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Configs\": [],\n        \"RequestId\": \"81a4ee19-6daa-419f-bce0-bc877b5ff808\",\n        \"TotalCount\": 0\n    }\n}",
         "title": "1"
+      }
+    ],
+    "DoHealthCheckOnMigratingTopic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DoHealthCheckOnMigratingTopic\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"TopicName\": \"Test\",\n    \"IgnoreCheck\": true,\n    \"Namespace\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Passed\": true,\n        \"Reason\": \"\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "迁移主题安全检查"
       }
     ],
     "ImportSourceClusterConsumerGroups": [
@@ -622,6 +662,14 @@
         "title": "修改成功"
       }
     ],
+    "RemoveMigratingTopic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveMigratingTopic\n<公共请求参数>\n\n{\n    \"TaskId\": \"taskid-aabddccd\",\n    \"Namespace\": \"\",\n    \"TopicName\": \"topic-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "将主题移出迁移任务"
+      }
+    ],
     "ResendDeadLetterMessage": [
       {
         "document": "",
@@ -636,6 +684,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConsumerGroupOffset\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"Topic\": \"test_topic\",\n    \"ResetTimestamp\": -1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"707a78e5-019d-41f6-80fc-15743d99c81a\"\n    }\n}",
         "title": "重置消费位点"
+      }
+    ],
+    "RollbackMigratingTopicStage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackMigratingTopicStage\n<公共请求参数>\n\n{\n    \"TaskId\": \"taskId\",\n    \"TopicName\": \"TopicTest\",\n    \"Namespace\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "回滚迁移主题的切流状态"
       }
     ],
     "SyncConsumerGroupInternal": [

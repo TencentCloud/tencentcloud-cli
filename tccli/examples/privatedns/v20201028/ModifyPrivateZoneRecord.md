@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns ModifyPrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-xxxxxx \
+    --ZoneId zone-ewqw2131 \
     --RecordId 289 \
     --RecordType A \
     --SubDomain @ \
