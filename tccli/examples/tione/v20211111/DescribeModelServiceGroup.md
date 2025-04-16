@@ -65,16 +65,11 @@ Output:
                                 "Region": "ap-guangzhou",
                                 "Paths": [
                                     "automl/public/分类-均衡-ml-gnvrfzmp-v1/ems/sdk/model_service.py"
-                                ],
-                                "Uin": "100023008439",
-                                "SubUin": "100023008439"
+                                ]
                             },
-                            "GpuType": "",
                             "AlgorithmFramework": "",
                             "ModelFormat": "",
-                            "IsPrivateModel": false,
-                            "CFSConfig": null,
-                            "EnvVars": []
+                            "IsPrivateModel": false
                         },
                         "InferCodeInfo": {
                             "CosPathInfo": {
@@ -82,9 +77,7 @@ Output:
                                 "Region": "ap-guangzhou",
                                 "Paths": [
                                     "automl/public/分类-均衡-ml-gnvrfzmp-v1/ems/sdk/model_service.py"
-                                ],
-                                "Uin": "100023008439",
-                                "SubUin": "100023008439"
+                                ]
                             }
                         },
                         "VolumeMount": null,
@@ -144,8 +137,6 @@ Output:
                             "EnableInstanceReqLimit": false,
                             "InstanceReqLimit": 1000000
                         },
-                        "BillingStatus": "",
-                        "BillingUnits": [],
                         "Command": "",
                         "ModelHotUpdateEnable": false,
                         "ModelTurboEnable": false,
@@ -174,8 +165,7 @@ Output:
                     "Version": "1",
                     "LatestVersion": "",
                     "ServiceLimit": null,
-                    "ScheduledAction": null,
-                    "BackendServiceId": 0
+                    "ScheduledAction": null
                 }
             ],
             "Status": "Stopped",

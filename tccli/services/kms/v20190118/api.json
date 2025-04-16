@@ -1779,6 +1779,32 @@
       ],
       "type": "object"
     },
+    "ExclusiveHSM": {
+      "document": "独享版集群",
+      "members": [
+        {
+          "disabled": false,
+          "document": "独享集群Id",
+          "example": "cls-hsm-3dflmo9g",
+          "member": "string",
+          "name": "HsmClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独享集群名称",
+          "example": "cls-hsm-3dflmo9g-name",
+          "member": "string",
+          "name": "HsmClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GenerateDataKeyRequest": {
       "document": "GenerateDataKey请求参数结构体",
       "members": [
@@ -2240,6 +2266,16 @@
           "name": "CmkLimit",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回独享集群组",
+          "example": "[{\"HsmClusterId\":\"cls-hsm-a1b2c3d4\",\"HsmClusterName\":\"cls-hsm-a1b2c3d4-name\"},{\"HsmClusterId\":\"cls-hsm-a1b2cd5\",\"HsmClusterName\":\"cls-hsm-a1b2c3d5-name\"}]",
+          "member": "ExclusiveHSM",
+          "name": "ExclusiveHSMList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

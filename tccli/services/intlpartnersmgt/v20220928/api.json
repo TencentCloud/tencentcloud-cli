@@ -2113,12 +2113,62 @@
         },
         {
           "disabled": false,
-          "document": "实名状态\n-1：文件未上传\n0：未提交审核\n1：审核中\n2：审核出错\n3：审核通过",
+          "document": "实名状态\n-999： 未查询到账号信息\n-1：文件未上传\n0：未提交审核\n1：审核中\n2：审核出错\n3：审核通过",
           "example": "1",
           "member": "string",
           "name": "AuthStatus",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实名类型\n-1：默认值。暂无该信息 0：个人类型 1：企业类型",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cid注册时间",
+          "example": "2025",
+          "member": "string",
+          "name": "CidRegisterTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin注册时间",
+          "example": "2025",
+          "member": "string",
+          "name": "UinRegisterTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实名认证通过时间",
+          "example": "2025",
+          "member": "string",
+          "name": "AuthPassTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有消耗\n0:无消耗，1:有消耗",
+          "example": "1",
+          "member": "int64",
+          "name": "HasExpense",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -26,15 +26,12 @@ Output:
             "VolumeSourceCFS": {
                 "Id": "cfs-9su5kqtv",
                 "Path": "/tione",
-                "VpcId": "vpc-4kq8vlym",
                 "Protocol": "NFS",
-                "MountType": "STORAGE",
-                "SubnetId": "subnet-58zkmdob"
+                "MountType": "STORAGE"
             },
             "VolumeSourceType": "CFS",
             "ImageInfo": {
                 "ImageType": "SYSTEM",
-                "ImageId": "35551e3c-b0e3-40dc-8e91-cc10a5613cd3",
                 "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0",
                 "ImageName": "tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu",
                 "RegistryId": "",
@@ -46,10 +43,6 @@ Output:
                     "MappingPath": "/home/tione/notebook",
                     "DataSourceType": "CFS",
                     "DataSourceUsage": "test",
-                    "WeDataHDFSSource": {
-                        "Id": 0,
-                        "Path": ""
-                    },
                     "HDFSSource": {
                         "Id": "hd-sds",
                         "Path": "/date"
@@ -69,9 +62,7 @@ Output:
                         "Region": "ap-shanghai",
                         "Paths": [
                             "/test"
-                        ],
-                        "Uin": "100032979603",
-                        "SubUin": "100032979603"
+                        ]
                     },
                     "GooseFSSource": {
                         "Id": "",

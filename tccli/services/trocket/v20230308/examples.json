@@ -438,6 +438,14 @@
         "title": "查看迁移消费组的实时信息"
       }
     ],
+    "DescribeMigratingTopicList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingTopicList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"TaskId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"MigrateTopics\": [\n            {\n                \"TopicName\": \"abc\",\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"HealthCheckPassed\": true,\n                \"HealthCheckError\": \"\",\n                \"Namespace\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询迁移主题列表"
+      }
+    ],
     "DescribeMigratingTopicStats": [
       {
         "document": "",
@@ -484,6 +492,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedClusterBinding\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SharedClusterBinding\": [\n            {\n                \"Uin\": \"abc\",\n                \"InstanceType\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Enabled\": true,\n                \"Remark\": \"abc\",\n                \"ClusterStatus\": \"abc\",\n                \"ClusterVersion\": \"abc\",\n                \"Room\": \"abc\",\n                \"DeployEnv\": \"abc\",\n                \"NameServer\": \"abc\",\n                \"AccessKey\": \"abc\",\n                \"SecretKey\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "标准示例"
+      }
+    ],
+    "DescribeSourceClusterGroupList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceClusterGroupList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"TaskId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Groups\": [\n            {\n                \"GroupName\": \"Test\",\n                \"Remark\": \"abc\",\n                \"Imported\": true,\n                \"Namespace\": \"\",\n                \"ImportStatus\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询源集群消费组列表"
       }
     ],
     "DescribeTopic": [

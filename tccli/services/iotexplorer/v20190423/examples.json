@@ -286,6 +286,14 @@
         "title": "成功示例 "
       }
     ],
+    "CreateTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"InputURL\": \"hhttps://example.com/video.mp4\",\n    \"CustomId\": \"event-1\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1744389074077,\n    \"EndTimeMs\": 1744389075077\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26083bec-a7bd-491f-b6df-45e7f143638c\",\n        \"TaskId\": \"019625b1-15d6-72d8-a5d6-388b45c92c67\"\n    }\n}",
+        "title": "创建 TWeSee 语义理解任务"
+      }
+    ],
     "CreateTopicPolicy": [
       {
         "document": "",
@@ -1068,6 +1076,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeExternalSourceAIServiceTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"TQBDY6RPI9\",\n    \"ServiceType\": \"Highlight\",\n    \"VideoURLs\": [\n        \"https://example.com/video.mp4\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b490930-d119-4ee2-963c-c58973a1ebe6\",\n        \"Completed\": false,\n        \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n        \"TaskInfo\": {\n            \"ChannelId\": 0,\n            \"CreateTime\": 1714240802,\n            \"DeviceName\": \"dev001\",\n            \"EndTime\": 1714233600,\n            \"Files\": [],\n            \"ProductId\": \"TSLFHRWDSD\",\n            \"Result\": \"\",\n            \"ServiceType\": \"Highlight\",\n            \"StartTime\": 1714147200,\n            \"Status\": 4,\n            \"TaskId\": \"c31aa4f2-08c9-4088-9603-186d7311fdd8\",\n            \"UpdateTime\": 1714240802\n        }\n    }\n}",
         "title": "创建外部视频 AI 分析任务（超时未完成，转异步）"
+      }
+    ],
+    "InvokeTWeSeeRecognitionTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev001\",\n    \"InputURL\": \"hhttps://example.com/video.mp4\",\n    \"CustomId\": \"event-1\",\n    \"EnableSearch\": true,\n    \"StartTimeMs\": 1744389074077,\n    \"EndTimeMs\": 1744389075077\n}",
+        "output": "{\n    \"Response\": {\n        \"Completed\": true,\n        \"RequestId\": \"26083bec-a7bd-491f-b6df-45e7f143638c\",\n        \"Result\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Status\": 3,\n            \"Summary\": \"一个人在雨中行走\"\n        },\n        \"TaskId\": \"019625b1-15d6-72d8-a5d6-388b45c92c67\"\n    }\n}",
+        "title": "同步执行 TWeSee 语义理解任务"
       }
     ],
     "ListEventHistory": [

@@ -36,7 +36,7 @@
       "status": "online"
     },
     "AttachDisks": {
-      "document": "本接口（AttachDisks）用于挂载一个或多个云硬盘。\n<li>只能挂载处于待挂载状态的云硬盘</li>",
+      "document": "本接口（AttachDisks）用于挂载一个或多个云硬盘。\n<li>只能挂载磁盘状态（DiskState）处于待挂载（UNATTACHED）状态的云硬盘，磁盘状态可通过接口查询云硬盘（DescribeDisks）获取</li>",
       "input": "AttachDisksRequest",
       "name": "挂载云硬盘",
       "output": "AttachDisksResponse",
@@ -589,7 +589,7 @@
       "status": "online"
     },
     "ModifyDisksAttribute": {
-      "document": "本接口(ModifyDisksAttribute)用于修改云硬盘属性。",
+      "document": "本接口(ModifyDisksAttribute)用于修改云硬盘属性。\n云硬盘必须处于以下状态:\n<li> ATTACHED（已挂载）</li>\n<li> UNATTACHED（待挂载）</li>",
       "input": "ModifyDisksAttributeRequest",
       "name": "修改云硬盘属性",
       "output": "ModifyDisksAttributeResponse",
@@ -1583,7 +1583,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像类型，如 APP_OS、PURE_OS、PRIVATE。",
+          "document": "镜像类型，如 APP_OS（应用镜像）, PURE_OS（系统镜像）, DOCKER（容器）, PRIVATE（私有镜像）, SHARED（共享镜像）, GAME_PORTAL（游戏专区镜像）。",
           "example": "APP_OS",
           "member": "string",
           "name": "BlueprintType",
@@ -1613,7 +1613,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像状态。",
+          "document": "镜像状态，镜镜像状态，NORMAL（正常）、SYNCING（同步中）、OFFLINE（下线）、ISOLATED（已隔离）、CREATEFAILED（创建失败）、SYNCING_FAILED（目的地域同步失败）、ISOLATING（隔离中）、ISOLATED（已隔离）、DELETING（删除中）、DESTROYING（销毁中）。",
           "example": "NORMAL",
           "member": "string",
           "name": "BlueprintState",
@@ -3680,7 +3680,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
+          "document": "过滤器列表。\n<li>blueprint-id</li>按照【镜像 ID】进行过滤。\n类型：String\n必选：否\n镜像 ID ，可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。\n<li>blueprint-type</li>按照【镜像类型】进行过滤。\n取值：APP_OS（应用镜像 ）；PURE_OS（系统镜像）；DOCKER（Docker容器镜像）；PRIVATE（自定义镜像）；SHARED（共享镜像）。\n类型：String\n必选：否\n<li>platform-type</li>按照【镜像平台类型】进行过滤。\n取值： LINUX_UNIX（Linux/Unix系统）；WINDOWS（Windows 系统）。\n类型：String\n必选：否\n<li>blueprint-name</li>按照【镜像名称】进行过滤。\n类型：String\n必选：否\n<li>blueprint-state</li>按照【镜像状态】进行过滤。\n类型：String\n必选：否\n镜像状态，可通过[数据结构Blueprint](https://cloud.tencent.com/document/api/1207/47576#Blueprint)中的BlueprintState来获取。\n<li>scene-id</li>按照【使用场景Id】进行过滤。\n类型：String\n必选：否\n场景Id，可通过[查看使用场景列表](https://cloud.tencent.com/document/product/1207/83512)接口获取。\n\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 BlueprintIds (可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取BlueprintId)和 Filters 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7470,8 +7470,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
-          "example": "lhft-xxxxxx",
+          "document": "模板ID。",
+          "example": "lhft-p1mlufa9",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -7490,8 +7490,8 @@
         },
         {
           "disabled": false,
-          "document": "模板类型。",
-          "example": "PUBLIC",
+          "document": "模板类型。取值: \"PRIVATE\"(个人模版)",
+          "example": "PRIVATE",
           "member": "string",
           "name": "TemplateType",
           "output_required": true,
@@ -7500,7 +7500,7 @@
         },
         {
           "disabled": false,
-          "document": "模板状态。",
+          "document": "模板状态。取值: \"NORMAL\"(正常)",
           "example": "NORMAL",
           "member": "string",
           "name": "TemplateState",
@@ -7622,7 +7622,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙模板应用状态。\n\n- SUCCESS：成功\n- FAILED：失败",
+          "document": "防火墙模板应用状态。\n\n- SUCCESS：成功\n- FAILED：失败\n- RUNNING：运行中",
           "example": "FAILED",
           "member": "string",
           "name": "ApplyState",

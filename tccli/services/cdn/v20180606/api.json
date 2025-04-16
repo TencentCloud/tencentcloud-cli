@@ -627,9 +627,10 @@
         {
           "disabled": false,
           "document": "requestHeader ：对请求头部进行访问控制\nurl ： 对访问url进行访问控制\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "requestHeader",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -637,9 +638,10 @@
         {
           "disabled": false,
           "document": "封禁内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "example",
           "member": "string",
           "name": "RuleContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -647,9 +649,10 @@
         {
           "disabled": false,
           "document": "on ：正则匹配\noff ：字面匹配\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "off",
           "member": "string",
           "name": "Regex",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -657,9 +660,10 @@
         {
           "disabled": false,
           "document": "RuleType为requestHeader时必填，否则不需要填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "X-rule",
           "member": "string",
           "name": "RuleHeader",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1105,9 +1109,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\ndefault：源站未返回 max-age 情况下的缓存规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "file",
           "member": "string",
           "name": "CacheType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1115,9 +1120,10 @@
         {
           "disabled": false,
           "document": "对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\ndefault 时填充 \"no max-age\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "jpg",
           "member": "string",
           "name": "CacheContents",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -1125,9 +1131,10 @@
         {
           "disabled": false,
           "document": "缓存过期时间\n单位为秒，最大可设置为 365 天\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "CacheTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1141,20 +1148,20 @@
         {
           "disabled": false,
           "document": "高级配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "edge",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否支持高级配置，\non：支持\noff：不支持\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1443,9 +1450,10 @@
         {
           "disabled": false,
           "document": "alpha键名。",
-          "example": "",
+          "example": "k3#ALP_2024",
           "member": "string",
           "name": "KeyAlpha",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1453,9 +1461,10 @@
         {
           "disabled": false,
           "document": "beta键名。",
-          "example": "",
+          "example": "BET@Sec_88x",
           "member": "string",
           "name": "KeyBeta",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1463,9 +1472,10 @@
         {
           "disabled": false,
           "document": "gamma键名。",
-          "example": "",
+          "example": "GAMMA_$afe!",
           "member": "string",
           "name": "KeyGamma",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1473,9 +1483,10 @@
         {
           "disabled": false,
           "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "",
+          "example": "sign",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1483,9 +1494,10 @@
         {
           "disabled": false,
           "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "",
+          "example": "t",
           "member": "string",
           "name": "TimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1493,9 +1505,10 @@
         {
           "disabled": false,
           "document": "过期时间，单位秒。",
-          "example": "",
+          "example": "3600",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1503,9 +1516,10 @@
         {
           "disabled": false,
           "document": "时间格式，dec，hex分别表示十进制，十六进制。",
-          "example": "",
+          "example": "dec",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1513,9 +1527,10 @@
         {
           "disabled": false,
           "document": "鉴权失败时返回的状态码。",
-          "example": "",
+          "example": "403",
           "member": "int64",
           "name": "FailCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1523,9 +1538,10 @@
         {
           "disabled": false,
           "document": "链接过期时返回的状态码。",
-          "example": "",
+          "example": "410",
           "member": "int64",
           "name": "ExpireCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1533,9 +1549,10 @@
         {
           "disabled": false,
           "document": "需要鉴权的url路径列表。",
-          "example": "",
+          "example": "/data",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1549,9 +1566,10 @@
         {
           "disabled": false,
           "document": "访问密钥。",
-          "example": "",
+          "example": "AKIDz8dbsf3pJ9a1XqN",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1559,9 +1577,10 @@
         {
           "disabled": false,
           "document": "鉴权密钥。",
-          "example": "",
+          "example": "S8fKj3#WpQ2mL9Zx!",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1575,9 +1594,10 @@
         {
           "disabled": false,
           "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。",
-          "example": "",
+          "example": "PrimeKey2024",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1585,9 +1605,10 @@
         {
           "disabled": false,
           "document": "备份密钥，当使用SecretKey鉴权失败时会使用该密钥重新鉴权。",
-          "example": "",
+          "example": "BakKey#5678",
           "member": "string",
           "name": "BackupSecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1595,9 +1616,10 @@
         {
           "disabled": false,
           "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "",
+          "example": "signature",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1605,9 +1627,10 @@
         {
           "disabled": false,
           "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "",
+          "example": "timestamp",
           "member": "string",
           "name": "TimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1615,9 +1638,10 @@
         {
           "disabled": false,
           "document": "过期时间，单位秒。",
-          "example": "",
+          "example": "1800",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1625,9 +1649,10 @@
         {
           "disabled": false,
           "document": "时间格式，dec，hex分别表示十进制，十六进制。",
-          "example": "",
+          "example": "hex",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1641,9 +1666,10 @@
         {
           "disabled": false,
           "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "E_Key9xYz3",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1651,9 +1677,10 @@
         {
           "disabled": false,
           "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "v_sign",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1661,9 +1688,10 @@
         {
           "disabled": false,
           "document": "uri串中Acl签名的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "acl_sign",
           "member": "string",
           "name": "AclSignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1671,9 +1699,10 @@
         {
           "disabled": false,
           "document": "uri串中开始时间字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "st",
           "member": "string",
           "name": "StartTimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1681,9 +1710,10 @@
         {
           "disabled": false,
           "document": "uri串中过期时间字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "et",
           "member": "string",
           "name": "ExpireTimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1691,9 +1721,10 @@
         {
           "disabled": false,
           "document": "时间格式，dec\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "dec",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1707,9 +1738,10 @@
         {
           "disabled": false,
           "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "fsign",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1717,9 +1749,10 @@
         {
           "disabled": false,
           "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ftime",
           "member": "string",
           "name": "TimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1727,9 +1760,10 @@
         {
           "disabled": false,
           "document": "uri串中Transaction字段名，字母，数字或下划线构成，同时必须以字母开头。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "txid",
           "member": "string",
           "name": "TransactionParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1737,9 +1771,10 @@
         {
           "disabled": false,
           "document": "用于计算签名的主密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "F_MainKey123",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1747,9 +1782,10 @@
         {
           "disabled": false,
           "document": "用于计算签名的备选密钥，主密钥校验失败后再次尝试备选密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "F_BakKey456",
           "member": "string",
           "name": "BackupSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2847,22 +2883,20 @@
         {
           "disabled": false,
           "document": "排序参数名称， 取值为：timestamp， nums， session_duration，score.total，stat.avg_speed分别表示按照：最新检测时间，会话总次数，会话持续时间，BOT得分，平均速率排序",
-          "example": "",
+          "example": "timestamp",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "asc/desc",
-          "example": "",
+          "example": "asc",
           "member": "string",
           "name": "Sequence",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3440,20 +3474,20 @@
         {
           "disabled": false,
           "document": "成功的url列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://qq.com/SuccessUrls",
           "member": "string",
           "name": "SuccessUrls",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败的url列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://qq.com/FailUrls",
           "member": "string",
           "name": "FailUrls",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3494,9 +3528,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效",
-          "example": "",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3504,9 +3539,10 @@
         {
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容： \nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html",
-          "example": "",
+          "example": "png",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3514,9 +3550,10 @@
         {
           "disabled": false,
           "document": "下行速度值设置，单位为 KB/s",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "KBpsThreshold",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3586,30 +3623,30 @@
         {
           "disabled": false,
           "document": "查询指定的指标名称：\nflux：流量，单位为 byte\nbandwidth：带宽，单位为 bps\nrequest：请求数，单位为 次\nfluxHitRate：流量命中率，单位为 %\nstatusCode：状态码，返回 2XX、3XX、4XX、5XX 汇总数据，单位为 个\n2XX：返回 2XX 状态码汇总及各 2 开头状态码数据，单位为 个\n3XX：返回 3XX 状态码汇总及各 3 开头状态码数据，单位为 个\n4XX：返回 4XX 状态码汇总及各 4 开头状态码数据，单位为 个\n5XX：返回 5XX 状态码汇总及各 5 开头状态码数据，单位为 个\n或指定查询的某一具体状态码",
-          "example": "",
+          "example": "flux",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "明细数据组合",
-          "example": "",
+          "example": "无",
           "member": "TimestampData",
           "name": "DetailData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "汇总数据组合",
-          "example": "",
+          "example": "无",
           "member": "SummarizedData",
           "name": "SummarizedData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -3622,60 +3659,60 @@
         {
           "disabled": false,
           "document": "指定查询的 IP",
-          "example": "",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "IP 归属：\nyes：节点归属于腾讯云 CDN\nno：节点不属于腾讯云 CDN",
-          "example": "",
+          "example": "yes",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点所处的省份/国家\nunknown 表示节点位置未知",
-          "example": "",
+          "example": "unknown",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点上下线历史记录",
-          "example": "",
+          "example": "无",
           "member": "CdnIpHistory",
           "name": "History",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点的所在区域\nmainland：中国境内加速节点\noverseas：中国境外加速节点\nunknown：服务地域无法获取",
-          "example": "",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点的所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "shanghai",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3688,20 +3725,20 @@
         {
           "disabled": false,
           "document": "操作类型\nonline：节点上线\noffline：节点下线",
-          "example": "",
+          "example": "online",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作类型对应的操作时间\n当该值为 null 时表示无历史状态变更记录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2023-06-28 16:13:27",
           "member": "datetime",
           "name": "Datetime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3714,9 +3751,10 @@
         {
           "disabled": false,
           "document": "客户端证书\nPEM 格式，需要进行 Base 64 编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "Certificate",
           "member": "string",
           "name": "Certificate",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3724,9 +3762,10 @@
         {
           "disabled": false,
           "document": "客户端证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "CertName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3734,9 +3773,10 @@
         {
           "disabled": false,
           "document": "证书过期时间\n作为入参时无需填充\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2025-06-28 11:38:2",
           "member": "datetime",
           "name": "ExpireTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3744,9 +3784,10 @@
         {
           "disabled": false,
           "document": "证书颁发时间\n作为入参时无需填充\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2023-06-28 11:38:20",
           "member": "datetime",
           "name": "DeployTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3760,40 +3801,40 @@
         {
           "disabled": false,
           "document": "省份。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "guangdong",
           "member": "string",
           "name": "ProvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "china",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "运营商。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "中国移动",
           "member": "string",
           "name": "IspName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "客户端IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3852,60 +3893,60 @@
         {
           "disabled": false,
           "document": "主题ID",
-          "example": "",
+          "example": "0c1bbb5a-2141-4db8-a1f8-2dsa93ec842d",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主题名字",
-          "example": "",
+          "example": "topic-name",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志时间",
-          "example": "",
+          "example": "1744353242526",
           "member": "string",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志内容",
-          "example": "",
+          "example": "content",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采集路径",
-          "example": "",
+          "example": "/data/log",
           "member": "string",
           "name": "Filename",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志来源设备",
-          "example": "",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3918,30 +3959,30 @@
         {
           "disabled": false,
           "document": "获取更多检索结果的游标",
-          "example": "",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "搜索结果是否已经全部返回",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "Listover",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志内容信息",
-          "example": "",
+          "example": "无",
           "member": "ClsLogObject",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -3971,10 +4012,10 @@
         {
           "disabled": false,
           "document": "兼容标志状态码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -8877,20 +8918,20 @@
         {
           "disabled": false,
           "document": "诊断报告内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DiagnoseUnit",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "当前诊断项是否正常。\n\"ok\"：正常\n\"error\"：异常\n\"warning\"：\"警告\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ok",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8903,70 +8944,70 @@
         {
           "disabled": false,
           "document": "待诊断的URL。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://qq.com/diagnose",
           "member": "string",
           "name": "DiagnoseUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "由系统生成的诊断链接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://qq.com/diagnose/result",
           "member": "string",
           "name": "DiagnoseLink",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "诊断创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2025-04-01 02:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "诊断链接过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2025-04-01 07:00:00",
           "member": "datetime",
           "name": "ExpireDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "诊断链接当前访问次数，一个诊断链接最多可访问10次。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "VisitCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "访问诊断链接的客户端简易信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DiagnoseList",
           "name": "ClientList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "域名加速区域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8979,50 +9020,50 @@
         {
           "disabled": false,
           "document": "诊断任务标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tag",
           "member": "string",
           "name": "DiagnoseTag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "报告ID，用于获取详细诊断报告。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "id-2353956120",
           "member": "string",
           "name": "ReportId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "客户端信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ClientInfo",
           "name": "ClientInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最终诊断结果。\n-1：已提交\n0  ：检测中\n1  ：检测正常\n2  ： 检测异常\n3  ： 诊断页面异常关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "FinalDiagnose",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "诊断任务创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2025-04-01 02:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9035,40 +9076,40 @@
         {
           "disabled": false,
           "document": "内容单元英文名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "unit-name",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "内容单元中文名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "单元名称",
           "member": "string",
           "name": "KeyText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "报告内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cotent",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "报告内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "content",
           "member": "string",
           "name": "ValueText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9173,120 +9214,120 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议类型",
-          "example": "",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "IP协议类型",
-          "example": "",
+          "example": "ipv4",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "起始时间",
-          "example": "",
+          "example": "2023-06-28 17:02:24",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "",
+          "example": "2023-06-28 18:02:24",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "时间间隔，单位为分钟",
-          "example": "",
+          "example": "5",
           "member": "uint64",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标名称",
-          "example": "",
+          "example": "flux",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地区ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "District",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标数据点",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "DataPoints",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地区名称",
-          "example": "",
+          "example": "广东",
           "member": "string",
           "name": "DistrictName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商名称",
-          "example": "",
+          "example": "电信",
           "member": "string",
           "name": "IspName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9299,9 +9340,10 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9309,9 +9351,10 @@
         {
           "disabled": false,
           "document": "地区列表，其中元素可为mainland/overseas",
-          "example": "",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9783,9 +9826,10 @@
         {
           "disabled": false,
           "document": "状态码\n支持 400、403、404、500",
-          "example": "",
+          "example": "404",
           "member": "int64",
           "name": "StatusCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9793,9 +9837,10 @@
         {
           "disabled": false,
           "document": "重定向状态码设置\n支持 301 或 302",
-          "example": "",
+          "example": "301",
           "member": "int64",
           "name": "RedirectCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9803,9 +9848,10 @@
         {
           "disabled": false,
           "document": "重定向 URL\n需要为完整跳转路径，如 https://www.test.com/error.html",
-          "example": "",
+          "example": "https://www.test.com/error.html",
           "member": "string",
           "name": "RedirectUrl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10249,9 +10295,10 @@
         {
           "disabled": false,
           "document": "http头部设置方式，支持add，set或del，分别表示新增，设置或删除头部。",
-          "example": "",
+          "example": "add",
           "member": "string",
           "name": "HeaderMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10259,9 +10306,10 @@
         {
           "disabled": false,
           "document": "http头部名称。",
-          "example": "",
+          "example": "X-Cdn-Header",
           "member": "string",
           "name": "HeaderName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10269,9 +10317,10 @@
         {
           "disabled": false,
           "document": "http头部值。",
-          "example": "",
+          "example": "header-value",
           "member": "string",
           "name": "HeaderValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12581,20 +12630,20 @@
         {
           "disabled": false,
           "document": "对象 Id",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对象名称",
-          "example": "",
+          "example": "海外",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12669,9 +12718,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex: 指定主页生效",
-          "example": "",
+          "example": "file",
           "member": "string",
           "name": "MaxAgeType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12679,9 +12729,10 @@
         {
           "disabled": false,
           "document": "MaxAgeType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /\n注意：all规则不可删除，默认遵循源站，可修改。",
-          "example": "",
+          "example": "jpg",
           "member": "string",
           "name": "MaxAgeContents",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -12689,9 +12740,10 @@
         {
           "disabled": false,
           "document": "MaxAge 时间设置，单位秒\n注意：时间为0，即不缓存。",
-          "example": "",
+          "example": "3600",
           "member": "int64",
           "name": "MaxAgeTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12699,9 +12751,10 @@
         {
           "disabled": false,
           "document": "是否遵循源站，on或off，开启时忽略时间设置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "FollowOrigin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13019,9 +13072,10 @@
         {
           "disabled": false,
           "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "AKIDz8dbsf3pJ9a1XqN",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13052,10 +13106,10 @@
         {
           "disabled": false,
           "document": "回源IP段/回源IP，默认返回IP段信息。",
-          "example": "",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -13120,9 +13174,10 @@
         {
           "disabled": false,
           "document": "是否开启HTTPS回源SNI。\n开启：on，\n关闭：off",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13130,9 +13185,10 @@
         {
           "disabled": false,
           "document": "回源域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "ServerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13649,9 +13705,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex: 指定主页生效",
-          "example": "",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13659,9 +13716,10 @@
         {
           "disabled": false,
           "document": "RuleType 对应类型下的匹配内容：\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test/\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /",
-          "example": "",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -13669,9 +13727,10 @@
         {
           "disabled": false,
           "document": "源站列表，支持域名或ipv4地址",
-          "example": "",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "Origin",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -13861,60 +13920,60 @@
         {
           "disabled": false,
           "document": "刷新任务 ID",
-          "example": "",
+          "example": "98547009889354471",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "刷新 URL",
-          "example": "",
+          "example": "https://qq.com/purge",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "刷新任务状态\nfail：刷新失败\ndone：刷新成功\nprocess：刷新中",
-          "example": "",
+          "example": "done",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "刷新类型\nurl：URL 刷新\npath：目录刷新",
-          "example": "",
+          "example": "url",
           "member": "string",
           "name": "PurgeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "刷新方式\nflush：刷新更新资源（仅目录刷新时有此类型）\ndelete：刷新全部资源",
-          "example": "",
+          "example": "flush",
           "member": "string",
           "name": "FlushType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "刷新任务提交时间",
-          "example": "",
+          "example": "2023-06-28 16:13:27",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14263,40 +14322,40 @@
         {
           "disabled": false,
           "document": "单次批量提交配额上限。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Batch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每日提交配额上限。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每日剩余的可提交配额。",
-          "example": "",
+          "example": "90",
           "member": "int64",
           "name": "Available",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额的区域。",
-          "example": "",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14496,20 +14555,20 @@
         {
           "disabled": false,
           "document": "区域ID。",
-          "example": "",
+          "example": "-20",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子区域ID列表",
-          "example": "",
+          "example": "-15,35",
           "member": "int64",
           "name": "SubRegionIdList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -14630,60 +14689,60 @@
         {
           "disabled": false,
           "document": "项目ID/域名ID。",
-          "example": "",
+          "example": "cdn-jiayoucrr",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目名称/域名。",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量总和/带宽最大值，单位分别为bytes，bps。",
-          "example": "",
+          "example": "4024621",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单个资源占总体百分比。",
-          "example": "",
+          "example": "75.50",
           "member": "float",
           "name": "Percentage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计费流量总和/计费带宽最大值，单位分别为bytes，bps。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "BillingValue",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计费数值占总体百分比。",
-          "example": "",
+          "example": "75.50",
           "member": "float",
           "name": "BillingPercentage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -14724,20 +14783,20 @@
         {
           "disabled": false,
           "document": "资源名称，根据查询条件不同分为以下几类：\n某一个具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n某一个项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度数据明细",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计费数据详情",
-          "example": "",
+          "example": "无",
           "member": "CdnData",
           "name": "BillingData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -14776,20 +14835,20 @@
         {
           "disabled": false,
           "document": "资源名称，根据查询条件不同分为以下几类：\n具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度明细数据",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "回源数据详情",
-          "example": "",
+          "example": "无",
           "member": "CdnData",
           "name": "OriginData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -15499,9 +15558,10 @@
         {
           "disabled": false,
           "document": "匹配关键字，ip, attack_location",
-          "example": "",
+          "example": "ip",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15509,9 +15569,10 @@
         {
           "disabled": false,
           "document": "逻辑操作符，取值 exclude, include",
-          "example": "",
+          "example": "exclude",
           "member": "string",
           "name": "Operator",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15519,9 +15580,10 @@
         {
           "disabled": false,
           "document": "匹配值，允许使用通配符(*)查询，匹配零个、单个、多个字符，例如 1.2.*",
-          "example": "",
+          "example": "10.0.1.*",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16432,9 +16494,10 @@
         {
           "disabled": false,
           "document": "缓存过期时间规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "SimpleCacheRule",
           "name": "CacheRules",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -16442,9 +16505,10 @@
         {
           "disabled": false,
           "document": "遵循源站 Cache-Control: max-age 配置\non：开启\noff：关闭\n开启后，未能匹配 CacheRules 规则的资源将根据源站返回的 max-age 值进行节点缓存；匹配了 CacheRules 规则的资源将按照 CacheRules 中设置的缓存过期时间在节点进行缓存\n与 CompareMaxAge 冲突，不能同时开启\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "FollowOrigin",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16452,9 +16516,10 @@
         {
           "disabled": false,
           "document": "强制缓存\non：开启\noff：关闭\n默认为关闭状态，开启后，源站返回的 no-store、no-cache 资源，也将按照 CacheRules 规则进行缓存\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "IgnoreCacheControl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16462,9 +16527,10 @@
         {
           "disabled": false,
           "document": "忽略源站的Set-Cookie头部\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "IgnoreSetCookie",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16472,9 +16538,10 @@
         {
           "disabled": false,
           "document": "高级缓存过期配置，开启时会对比源站返回的 max-age 值与 CacheRules 中设置的缓存过期时间，取最小值在节点进行缓存\non：开启\noff：关闭\n默认为关闭状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "on",
           "member": "string",
           "name": "CompareMaxAge",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16482,9 +16549,10 @@
         {
           "disabled": false,
           "document": "总是回源站校验\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Revalidate",
           "name": "Revalidate",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -16498,9 +16566,10 @@
         {
           "disabled": false,
           "document": "规则类型：\nall：所有文件生效\nfile：指定文件后缀生效\ndirectory：指定路径生效\npath：指定绝对路径生效\nindex：首页",
-          "example": "",
+          "example": "file",
           "member": "string",
           "name": "CacheType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16508,9 +16577,10 @@
         {
           "disabled": false,
           "document": "CacheType 对应类型下的匹配内容：\nall 时填充 *\nfile 时填充后缀名，如 jpg、txt\ndirectory 时填充路径，如 /xxx/test\npath 时填充绝对路径，如 /xxx/test.html\nindex 时填充 /",
-          "example": "",
+          "example": "jpg",
           "member": "string",
           "name": "CacheContents",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -16518,9 +16588,10 @@
         {
           "disabled": false,
           "document": "缓存过期时间设置\n单位为秒，最大可设置为 365 天",
-          "example": "",
+          "example": "3600",
           "member": "int64",
           "name": "CacheTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -16534,22 +16605,20 @@
         {
           "disabled": false,
           "document": "排序字段，当前支持：\ncreateTime，域名创建时间\ncertExpireTime，证书过期时间\n默认createTime。",
-          "example": "",
+          "example": "createTime",
           "member": "string",
           "name": "Key",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "asc/desc，默认desc。",
-          "example": "",
+          "example": "asc",
           "member": "string",
           "name": "Sequence",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -16891,9 +16960,10 @@
         {
           "disabled": false,
           "document": "http 状态码\n支持 403、404 状态码",
-          "example": "",
+          "example": "403",
           "member": "string",
           "name": "StatusCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16901,9 +16971,10 @@
         {
           "disabled": false,
           "document": "状态码缓存过期时间，单位秒",
-          "example": "",
+          "example": "3600",
           "member": "int64",
           "name": "CacheTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -16981,20 +17052,20 @@
         {
           "disabled": false,
           "document": "汇总方式，存在以下几种：\nsum：累加求和\nmax：最大值，带宽模式下，采用 5 分钟粒度汇总数据，计算峰值带宽\navg：平均值",
-          "example": "",
+          "example": "sum",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "汇总后的数据值",
-          "example": "",
+          "example": "1000",
           "member": "float",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -17059,20 +17130,20 @@
         {
           "disabled": false,
           "document": "资源名称，根据查询条件不同分为以下几类：\n具体域名：表示该域名明细数据\nmultiDomains：表示多域名汇总明细数据\n项目 ID：指定项目查询时，显示为项目 ID\nall：账号维度明细数据",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "排序结果详情",
-          "example": "",
+          "example": "无",
           "member": "TopDetailData",
           "name": "DetailData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -17111,20 +17182,20 @@
         {
           "disabled": false,
           "document": "数据类型的名称",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据值",
-          "example": "",
+          "example": "10",
           "member": "float",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -18119,40 +18190,40 @@
         {
           "disabled": false,
           "document": "状态(disable表示封禁，enable表示解封)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "disable",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "对应的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "https://qq.com/disable",
           "member": "string",
           "name": "RealUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2023-06-28 17:02:24",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2023-06-28 17:02:24",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -18275,9 +18346,10 @@
         {
           "disabled": false,
           "document": "访问路径生效类型\nall: 所有访问路径生效\nfile: 根据文件后缀类型生效\ndirectory: 根据目录生效\npath: 根据完整访问路径生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "file",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -18285,9 +18357,10 @@
         {
           "disabled": false,
           "document": "访问路径生效内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "jpg",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -18295,9 +18368,10 @@
         {
           "disabled": false,
           "document": "UserAgent列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "curl/7.68.0",
           "member": "string",
           "name": "UserAgents",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -18305,9 +18379,10 @@
         {
           "disabled": false,
           "document": "黑名单或白名单，blacklist或whitelist\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "whitelist",
           "member": "string",
           "name": "FilterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true

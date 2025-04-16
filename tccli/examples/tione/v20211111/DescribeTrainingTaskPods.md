@@ -22,7 +22,6 @@ Output:
                 "Name": "abc",
                 "IP": "abc",
                 "Status": "abc",
-                "Url": "abc",
                 "StartTime": "abc",
                 "EndTime": "abc",
                 "ResourceConfigInfo": {

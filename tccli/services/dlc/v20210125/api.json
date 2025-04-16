@@ -23344,43 +23344,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户Id",
           "example": "1208763821",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息",
           "example": "Group",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户类型：ADMIN：管理员 COMMON：一般用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户类型：ADMIN：管理员 COMMON：一般用户",
           "example": "ADMIN",
           "member": "string",
           "name": "UserType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户描述信息",
           "example": "testUser",
           "member": "string",
           "name": "UserDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -23414,13 +23414,13 @@
         },
         {
           "disabled": false,
-          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户别名",
           "example": "testname",
           "member": "string",
           "name": "UserAlias",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -23434,12 +23434,22 @@
         },
         {
           "disabled": false,
-          "document": "账号类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号类型",
           "example": "UserAccount",
           "member": "string",
           "name": "AccountType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "CatalogPolicyInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

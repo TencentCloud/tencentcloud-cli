@@ -55,11 +55,8 @@ Output:
                         "Region": "ap-guangzhou",
                         "Paths": [
                             "优化模型/m-549834620985377536/mv-v1-549853865408430848/"
-                        ],
-                        "Uin": "100005348929",
-                        "SubUin": "100023251204"
+                        ]
                     },
-                    "GpuType": "T4",
                     "AlgorithmFramework": ""
                 },
                 "VolumeMount": null,
@@ -125,13 +122,6 @@ Output:
                     "EnableInstanceRpsLimit": true,
                     "InstanceRpsLimit": 22
                 },
-                "BillingStatus": "BILLING",
-                "BillingUnits": [
-                    {
-                        "Spec": "TI.GN7.8XLARGE128.POST",
-                        "Count": 1
-                    }
-                ],
                 "ModelHotUpdateEnable": false
             },
             "ClusterId": "",

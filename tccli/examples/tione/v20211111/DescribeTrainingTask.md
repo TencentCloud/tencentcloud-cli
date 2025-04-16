@@ -51,9 +51,7 @@ Output:
                 "Region": "abc",
                 "Paths": [
                     "abc"
-                ],
-                "Uin": "abc",
-                "SubUin": "abc"
+                ]
             },
             "StartCmdInfo": {
                 "StartCmd": "abc",
@@ -73,33 +71,17 @@ Output:
                         "Region": "abc",
                         "Paths": [
                             "abc"
-                        ],
-                        "Uin": "abc",
-                        "SubUin": "abc"
+                        ]
                     },
                     "CFSSource": {
                         "Id": "abc",
                         "Path": "abc",
                         "MountType": "abc",
-                        "Ip": "abc",
-                        "VpcId": "abc",
-                        "SubnetId": "abc",
-                        "Protocol": "abc",
-                        "MountTargetId": "abc",
-                        "IsPlatform": "abc"
+                        "Protocol": "abc"
                     },
                     "HDFSSource": {
                         "Id": "abc",
                         "Path": "abc"
-                    },
-                    "WeDataHDFSSource": {
-                        "Id": 1,
-                        "Path": "abc"
-                    },
-                    "AIMarketAlgoPreModelSource": {
-                        "Id": "abc",
-                        "Path": "abc",
-                        "MaterialName": "abc"
                     },
                     "GooseFSSource": {
                         "Id": "abc"
@@ -107,11 +89,6 @@ Output:
                     "CFSTurboSource": {
                         "Id": "abc",
                         "Path": "abc"
-                    },
-                    "AIMarketAlgoDataSource": {
-                        "Id": "abc",
-                        "Path": "abc",
-                        "MaterialName": "abc"
                     }
                 }
             ],
@@ -121,9 +98,7 @@ Output:
                 "Region": "abc",
                 "Paths": [
                     "abc"
-                ],
-                "Uin": "abc",
-                "SubUin": "abc"
+                ]
             },
             "LogEnable": true,
             "LogConfig": {
@@ -154,11 +129,7 @@ Output:
             "ResourceGroupName": "abc",
             "Message": "abc",
             "Status": "abc",
-            "CallbackUrl": "abc",
-            "TAIJIInstanceId": "abc",
-            "TAIJIInstanceName": "abc",
-            "TAIJITemplateId": "abc",
-            "AIMarketTemplateId": "abc"
+            "CallbackUrl": "abc"
         },
         "RequestId": "abc"
     }

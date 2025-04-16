@@ -65,11 +65,8 @@ Output:
                                     "Region": "ap-guangzhou",
                                     "Paths": [
                                         "output/ai_market_algo_test_thu_tiacc_ft/train-793371624977165056/output/adgen-chatglm-6b-ft-1e-8/checkpoint-500/model_service.py"
-                                    ],
-                                    "Uin": "100005348929",
-                                    "SubUin": "100032054859"
+                                    ]
                                 },
-                                "GpuType": "",
                                 "AlgorithmFramework": "PYTORCH",
                                 "ModelFormat": "PYTORCH"
                             },
@@ -79,9 +76,7 @@ Output:
                                     "Region": "ap-guangzhou",
                                     "Paths": [
                                         "output/ai_market_algo_test_thu_tiacc_ft/train-793371624977165056/output/adgen-chatglm-6b-ft-1e-8/checkpoint-500/model_service.py"
-                                    ],
-                                    "Uin": "100005348929",
-                                    "SubUin": "100032054859"
+                                    ]
                                 }
                             },
                             "VolumeMount": {
@@ -90,12 +85,7 @@ Output:
                                     "Id": "cfs-mpjk7vit",
                                     "Path": "/",
                                     "MountType": "",
-                                    "VpcId": "vpc-3slyyrbf",
-                                    "SubnetId": "subnet-q9dg58fq",
-                                    "Ip": "9.77.33.127",
-                                    "Protocol": "",
-                                    "MountTargetId": "",
-                                    "IsPlatform": false
+                                    "Protocol": ""
                                 }
                             },
                             "LogEnable": false,
@@ -142,8 +132,6 @@ Output:
                             "HybridBillingPrepaidReplicas": 0,
                             "OldHybridBillingPrepaidReplicas": 0,
                             "ServiceLimit": null,
-                            "BillingStatus": "",
-                            "BillingUnits": [],
                             "ModelHotUpdateEnable": false,
                             "ModelTurboEnable": false
                         },

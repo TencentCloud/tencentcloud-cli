@@ -62,10 +62,8 @@ Output:
                 "VolumeSourceCFS": {
                     "Id": "cfs-9su5kqtv",
                     "Path": "/path",
-                    "VpcId": "vpc-4kq8vlym",
                     "Protocol": "NFS",
-                    "MountType": "STORAGE",
-                    "SubnetId": "subnet-58zkmdob"
+                    "MountType": "STORAGE"
                 },
                 "Message": "message1",
                 "UserTypes": [

@@ -95,8 +95,6 @@ Output:
                     "EnableInstanceReqLimit": false,
                     "InstanceReqLimit": 1000000
                 },
-                "BillingStatus": "",
-                "BillingUnits": [],
                 "Command": "",
                 "ModelHotUpdateEnable": false,
                 "ModelTurboEnable": false,
@@ -126,8 +124,7 @@ Output:
             "LatestVersion": "1",
             "ResourceGroupSWType": "",
             "ServiceLimit": null,
-            "ScheduledAction": null,
-            "BackendServiceId": 0
+            "ScheduledAction": null
         },
         "RequestId": "841f61f9-daed-49aa-88a3-b3f860be5be4"
     }

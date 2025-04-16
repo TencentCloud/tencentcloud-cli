@@ -1,90 +1,109 @@
-# Release 3.0.1182.1
+# Release 3.0.1183.1
 
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
 
-### 第 11 次发布
+### 第 60 次发布
 
-发布时间：2025-04-16 01:10:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SearchSubtaskResultById](http://document.tencentcloudapi.woa.com/document/product/1780/86156)
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 135 次发布
-
-发布时间：2025-04-16 01:15:07
+发布时间：2025-04-17 01:11:04
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [StartCpuExpand](http://document.tencentcloudapi.woa.com/document/product/236/81577)
+* [CacheOptResult](http://document.tencentcloudapi.woa.com/document/product/228/30987#CacheOptResult)
 
-	* 新增入参：TimeIntervalStrategy, PeriodStrategy
+	* <font color="#dd0000">**修改成员**：</font>SuccessUrls
 
 
-新增数据结构：
 
-* [PeriodStrategy](http://document.tencentcloudapi.woa.com/document/product/236/15878#PeriodStrategy)
-* [TImeCycle](http://document.tencentcloudapi.woa.com/document/product/236/15878#TImeCycle)
-* [TimeInterval](http://document.tencentcloudapi.woa.com/document/product/236/15878#TimeInterval)
-* [TimeIntervalStrategy](http://document.tencentcloudapi.woa.com/document/product/236/15878#TimeIntervalStrategy)
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 58 次发布
+
+发布时间：2025-04-17 01:11:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#RegionInfo)
+
+	* 新增成员：SSCCount, EnableSSC
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 124 次发布
+
+发布时间：2025-04-17 01:14:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ModifyInstanceData](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyInstanceData)
+
+	* 新增成员：LibraNodeCount, OldLibraNodeCount
+
+* [ModifyParamItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ModifyParamItem)
+
+	* 新增成员：Component
+
 
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 133 次发布
+### 第 134 次发布
 
-发布时间：2025-04-16 01:28:53
+发布时间：2025-04-17 01:16:14
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [DescribeAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82413)
+* [UserDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserDetailInfo)
 
-	* 新增出参：BucketType
+	* 新增成员：CatalogPolicyInfo
 
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 33 次发布
+
+发布时间：2025-04-17 01:20:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [NotebookSessionStatementBatchInformation](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionStatementBatchInformation)
+* [DescribeCustomerInfoData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#DescribeCustomerInfoData)
 
-	* <font color="#dd0000">**修改成员**：</font>NotebookSessionStatementBatch, IsAvailable, SessionId, BatchId
-
-* [SessionResourceTemplate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SessionResourceTemplate)
-
-	* 新增成员：RunningTimeParameters
-
-* [SparkSessionBatchLog](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLog)
-
-	* <font color="#dd0000">**修改成员**：</font>Step, Time, Message, Operate
-
-* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#UserInfo)
-
-	* 新增成员：AccountType
+	* 新增成员：AuthType, CidRegisterTime, UinRegisterTime, AuthPassTime, HasExpense
 
 
 
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
-### 第 86 次发布
+### 第 71 次发布
 
-发布时间：2025-04-16 01:36:41
+发布时间：2025-04-17 01:21:14
 
 本次发布包含了以下内容：
 
@@ -92,42 +111,43 @@
 
 新增接口：
 
-* [DescribeInspectionTaskResult](http://document.tencentcloudapi.woa.com/document/product/589/86157)
+* [CreateTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/86166)
+* [InvokeTWeSeeRecognitionTask](http://document.tencentcloudapi.woa.com/document/product/1081/86165)
 
-修改接口：
+新增数据结构：
 
-* [CreateSLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84849)
-
-	* 新增入参：ClientToken
-
-* [ModifySLInstance](http://document.tencentcloudapi.woa.com/document/product/589/84846)
-
-	* 新增入参：ClientToken
+* [VisionRecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VisionRecognitionResult)
 
 
 
+## 密钥管理系统(kms) 版本：2019-01-18
 
-## 碳引擎(tan) 版本：2022-04-20
+### 第 9 次发布
 
-### 第 2 次发布
-
-发布时间：2025-04-16 02:03:50
+发布时间：2025-04-17 01:23:01
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+修改接口：
 
-* CreateBlockNodeRecords
+* [GetServiceStatus](http://document.tencentcloudapi.woa.com/document/product/573/34417)
+
+	* 新增出参：ExclusiveHSMList
+
+
+新增数据结构：
+
+* [ExclusiveHSM](http://document.tencentcloudapi.woa.com/document/product/573/34431#ExclusiveHSM)
 
 
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
-### 第 38 次发布
+### 第 39 次发布
 
-发布时间：2025-04-16 02:11:39
+发布时间：2025-04-17 01:32:40
 
 本次发布包含了以下内容：
 
@@ -135,17 +155,12 @@
 
 新增接口：
 
-* [ChangeMigratingTopicToNextStage](http://document.tencentcloudapi.woa.com/document/product/1739/86164)
-* [DeleteSmoothMigrationTask](http://document.tencentcloudapi.woa.com/document/product/1739/86163)
-* [DescribeMigratingGroupStats](http://document.tencentcloudapi.woa.com/document/product/1739/86162)
-* [DescribeMigratingTopicStats](http://document.tencentcloudapi.woa.com/document/product/1739/86161)
-* [DoHealthCheckOnMigratingTopic](http://document.tencentcloudapi.woa.com/document/product/1739/86160)
-* [RemoveMigratingTopic](http://document.tencentcloudapi.woa.com/document/product/1739/86159)
-* [RollbackMigratingTopicStage](http://document.tencentcloudapi.woa.com/document/product/1739/86158)
+* [DescribeMigratingTopicList](http://document.tencentcloudapi.woa.com/document/product/1739/86168)
+* [DescribeSourceClusterGroupList](http://document.tencentcloudapi.woa.com/document/product/1739/86167)
 
 新增数据结构：
 
-* [TopicStageChangeResult](http://document.tencentcloudapi.woa.com/document/product/1739/81437#TopicStageChangeResult)
+* [MigratingTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MigratingTopic)
 
 
 

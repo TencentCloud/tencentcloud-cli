@@ -57,11 +57,7 @@ Output:
                         "TagKey": "tag-a",
                         "TagValue": "tag-b"
                     }
-                ],
-                "IsBareMetalResourceGroup": true,
-                "IsRdma": true,
-                "ResourceGroupSWType": "SW",
-                "ScheduleStrategy": "{}"
+                ]
             }
         ],
         "RequestId": "a8410ded-4a5f-6ad1-6537-6a3462568017"

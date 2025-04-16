@@ -9,7 +9,6 @@ tccli tione DescribeEvents --cli-unfold-argument  \
     --Service INFER \
     --Limit 10 \
     --Offset 0 \
-    --ResourceName ms-cp6rgw9r-1* \
     --Filters.0.Name ResourceKind \
     --Filters.0.Values Pod
 ```

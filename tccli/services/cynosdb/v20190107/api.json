@@ -16778,6 +16778,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra节点数量",
+          "example": "2",
+          "member": "int64",
+          "name": "LibraNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原libra节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "OldLibraNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17022,6 +17042,17 @@
           "member": "string",
           "name": "OldValue",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra组件类型",
+          "example": "libracdc",
+          "member": "string",
+          "name": "Component",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -58,9 +58,7 @@ Output:
                     "Region": "abc",
                     "Paths": [
                         "abc"
-                    ],
-                    "Uin": "abc",
-                    "SubUin": "abc"
+                    ]
                 },
                 "FailureReason": "abc",
                 "UpdateTime": "abc",
