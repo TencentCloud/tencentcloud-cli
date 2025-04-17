@@ -641,6 +641,34 @@
       ],
       "usage": "out"
     },
+    "CodeRepoConfig": {
+      "document": "代码仓库配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代码仓库Id",
+          "example": "cr-1000669213287070080",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码仓下载目标地址",
+          "example": "/opt/ml/code",
+          "member": "string",
+          "name": "TargetPath",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Container": {
       "document": "容器信息",
       "members": [
@@ -2156,6 +2184,15 @@
           "name": "EncodedStartCmdInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代码仓库配置",
+          "example": "[{\"Id\":\"cr-1000669213287070080\",\"TargetPath\":\"/opt/ml/code\"}]",
+          "member": "CodeRepoConfig",
+          "name": "CodeRepos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11953,6 +11990,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务关联的代码仓库配置",
+          "example": "[{\"Id\":\"cr-1000669213287070080\",\"TargetPath\":\"/opt/ml/code\"}]\t",
+          "member": "CodeRepoConfig",
+          "name": "CodeRepos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -9552,6 +9552,24 @@
         },
         {
           "disabled": false,
+          "document": "输出类型：Internet/TencentCSS",
+          "example": "TencentCSS",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出",
+          "example": "Pinpoint",
+          "member": "string",
+          "name": "OutputKind",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "输出的SRT的配置。",
           "example": "0",
           "member": "CreateOutputSRTSettings",
@@ -9612,15 +9630,6 @@
           "name": "Zones",
           "required": false,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "输出类型：Internet/TencentCSS",
-          "example": "TencentCSS",
-          "member": "string",
-          "name": "OutputType",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -13037,6 +13046,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入模块配置相关的URL信息，包含提供的推流地址，或者配置的第三方源流地址",
+          "example": "无",
+          "member": "StreamUrlDetail",
+          "name": "StreamUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13428,6 +13447,16 @@
         },
         {
           "disabled": false,
+          "document": "输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。",
+          "example": "Pinpoint",
+          "member": "string",
+          "name": "OutputKind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "输出描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Description",
           "member": "string",
@@ -13584,6 +13613,16 @@
           "name": "PidSelector",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出模块配置，相关的URL，包括提供的拉流地址，或者配置的输出到第三方的转推地址",
+          "example": "无",
+          "member": "StreamUrlDetail",
+          "name": "StreamUrls",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -23342,6 +23381,15 @@
         },
         {
           "disabled": false,
+          "document": "输出模块类型，包括Pinpoint（单点输出，最多支持四路并发输出）；MultiMesh（多路输出，支持大于四路的并发输出，目前可以达到200路）。默认类型为 Pinpoint 输出。对于单个 Flow 一个区域最多只能有一个 MultiMesh 输出。",
+          "example": "Pinpoint",
+          "member": "string",
+          "name": "OutputKind",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "转推SRT的配置。",
           "example": "无",
           "member": "CreateOutputSRTSettings",
@@ -29519,6 +29567,42 @@
           "name": "Regions",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "StreamUrlDetail": {
+      "document": "描述 URL 的完整信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会描述运营商信息等",
+          "example": "BGP",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "URL",
+          "example": "rtmp://example.com/live/live_channel",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Playback: 拉流播放地址； RelayDestination：转推目的地址；SourceCaptureUrl：回源拉流地址；IngestEndpoint：推流地址",
+          "example": "Playback",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

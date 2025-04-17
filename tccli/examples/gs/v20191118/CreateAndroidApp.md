@@ -7,7 +7,8 @@ Input:
 ```
 tccli gs CreateAndroidApp --cli-unfold-argument  \
     --Name 测试App1 \
-    --UserId user1
+    --UserId user1 \
+    --AppMode NORMAL
 ```
 
 Output: 

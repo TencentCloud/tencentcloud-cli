@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trocket DescribeMigratingTopicStats --cli-unfold-argument  \
-    --TaskId abc \
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a \
     --TopicName TopicTest \
     --Namespace 
 ```
@@ -17,7 +17,7 @@ Output:
     "Response": {
         "SourceClusterConsumerCount": 0,
         "TargetClusterConsumerCount": 0,
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

@@ -7,6 +7,13 @@
       "output": "CreateDedicatedClusterResponse",
       "status": "online"
     },
+    "CreateDedicatedClusterImageCache": {
+      "document": "创建云上镜像缓存到本地专用集群中",
+      "input": "CreateDedicatedClusterImageCacheRequest",
+      "name": "创建本地专有集群云上镜像缓存",
+      "output": "CreateDedicatedClusterImageCacheResponse",
+      "status": "online"
+    },
     "CreateDedicatedClusterOrder": {
       "document": "创建专用集群订单",
       "input": "CreateDedicatedClusterOrderRequest",
@@ -19,6 +26,13 @@
       "input": "CreateSiteRequest",
       "name": "创建站点",
       "output": "CreateSiteResponse",
+      "status": "online"
+    },
+    "DeleteDedicatedClusterImageCache": {
+      "document": "删除本地专用集群的云上镜像缓存",
+      "input": "DeleteDedicatedClusterImageCacheRequest",
+      "name": "删除本地专用集群镜像缓存",
+      "output": "DeleteDedicatedClusterImageCacheResponse",
       "status": "online"
     },
     "DeleteDedicatedClusters": {
@@ -146,6 +160,13 @@
       "name": "修改机房信息",
       "output": "ModifySiteInfoResponse",
       "status": "online"
+    },
+    "SyncDedicatedClusterImage": {
+      "document": "用于同Region跨cdc和跨账号镜像同步",
+      "input": "SyncDedicatedClusterImageRequest",
+      "name": "同步CDC镜像",
+      "output": "SyncDedicatedClusterImageResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -242,6 +263,52 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateDedicatedClusterImageCacheRequest": {
+      "document": "CreateDedicatedClusterImageCache请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "img-cxi9luq2",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDedicatedClusterImageCacheResponse": {
+      "document": "CreateDedicatedClusterImageCache返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "36182738",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDedicatedClusterOrderRequest": {
       "document": "CreateDedicatedClusterOrder请求参数结构体",
@@ -1479,6 +1546,42 @@
         }
       ],
       "usage": "in"
+    },
+    "DeleteDedicatedClusterImageCacheRequest": {
+      "document": "DeleteDedicatedClusterImageCache请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像id",
+          "example": "img-cxi9luq2",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDedicatedClusterImageCacheResponse": {
+      "document": "DeleteDedicatedClusterImageCache返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteDedicatedClustersRequest": {
       "document": "DeleteDedicatedClusters请求参数结构体",
@@ -3679,6 +3782,153 @@
         }
       ],
       "usage": "out"
+    },
+    "SyncDedicatedClusterImageRequest": {
+      "document": "SyncDedicatedClusterImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "img-cxi9luq2",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的Uin",
+          "example": "700000287016",
+          "member": "string",
+          "name": "DestinationUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目的集群ID",
+          "example": "cluster-d8htgb88",
+          "member": "string",
+          "name": "DestinationDedicatedClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称",
+          "example": "test-image",
+          "member": "string",
+          "name": "ImageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "镜像描述",
+          "example": "test-image",
+          "member": "string",
+          "name": "ImageDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "TagSpecification",
+          "name": "TagSpecification",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncDedicatedClusterImageResponse": {
+      "document": "SyncDedicatedClusterImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "2807",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagSpecification": {
+      "document": "创建资源实例时同时绑定的标签对说明",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”，镜像为“image”，密钥为“keypair”",
+          "example": "image",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签对列表",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tags": {
+      "document": "标签键值对，可以通过调用 DescribeTags 返回值中的 Tags 字段来获取。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "myKey",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "myValue",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VpngwBandwidthData": {
       "document": "VPN网关的流量监控数据。",

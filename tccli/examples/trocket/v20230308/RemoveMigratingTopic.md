@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli trocket RemoveMigratingTopic --cli-unfold-argument  \
-    --TaskId taskid-aabddccd \
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a \
     --Namespace  \
-    --TopicName topic-test
+    --TopicName topic-a
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

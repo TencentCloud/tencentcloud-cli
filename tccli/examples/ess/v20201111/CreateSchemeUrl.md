@@ -1,4 +1,29 @@
-**Example 1: 获取某个合同组的签署链接(短链)**
+**Example 1: 获取合同的签署链接**
+
+
+
+Input: 
+
+```
+tccli ess CreateSchemeUrl --cli-unfold-argument  \
+    --FlowId yDtw0UUllc7k0bUxN9VKyqcSdNb \
+    --Name 典子谦 \
+    --Mobile 13200000000 \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "4a9c1797-12b9-4c09-b622-78637aa9a1e4",
+        "SchemeQrcodeUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=pb74MRyFMOFd7",
+        "SchemeUrl": "https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?&shortKey=yDtBuUTvde"
+    }
+}
+```
+
+**Example 2: 获取某个合同组的签署链接(短链)**
 
 1. 获取合同组的签署链接(FlowGroupId设置成合同组的ID)
 2. 签署链接是短链(EndPoint设置成HTTP_SHORT_URL)
@@ -26,7 +51,7 @@ Output:
 }
 ```
 
-**Example 2: 获取动态签署人补充链接（短链）**
+**Example 3: 获取动态签署人补充链接（短链）**
 
 获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充
 注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
@@ -53,7 +78,7 @@ Output:
 }
 ```
 
-**Example 3: 获取某个流程合同的签署链接(主代子)**
+**Example 4: 获取某个流程合同的签署链接(主代子)**
 
 1. 主企业代子企业创建小程序签署链接(Agent参数中的ProxyOrganizationId设置成子企业ID)
 2. 签署链接是HTTP长链(EndPoint设置成HTTP，默认为此值)
@@ -82,7 +107,7 @@ Output:
 }
 ```
 
-**Example 4: 获取某个流程合同的小程序跳转签署链接**
+**Example 5: 获取某个流程合同的小程序跳转签署链接**
 
 1.链接是在 第三方APP或小程序中使用(EndPoint设置成APP)
 2.签署完成后自动跳回第三方APP或小程序 (AutoJumpBack设置成true)
@@ -112,7 +137,7 @@ Output:
 }
 ```
 
-**Example 5: 获取合同组动态签署人的领取链接以及二维码**
+**Example 6: 获取合同组动态签署人的领取链接以及二维码**
 
 获取动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充
 注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
@@ -142,7 +167,7 @@ Output:
 }
 ```
 
-**Example 6: 获取某个流程合同的小程序跳转签署链接(隐藏某些按钮)**
+**Example 7: 获取某个流程合同的小程序跳转签署链接(隐藏某些按钮)**
 
 1. 签署界面隐藏 更多操作按钮 和 查看详情按钮按钮 (Hides设置成[0,3])
 
@@ -171,7 +196,7 @@ Output:
 }
 ```
 
-**Example 7: 指定证件信息，给企业员工生成跳转到电子签小程序的签署链接**
+**Example 8: 指定证件信息，给企业员工生成跳转到电子签小程序的签署链接**
 
 1. 获取合同的签署链接(FlowId设置成合同的ID)
 2. 签署链接是短链(EndPoint设置成HTTP_SHORT_URL)
@@ -202,7 +227,7 @@ Output:
 }
 ```
 
-**Example 8: 错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情）**
+**Example 9: 错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情）**
 
 1. 获取小程序跳转签署链接(EndPoint设置成APP)
 2. 不指定跳转的页面类型(不传PathType或者传0值)
@@ -231,7 +256,7 @@ Output:
 }
 ```
 
-**Example 9: 获取动态签署人补充链接（短链）并预设企业名**
+**Example 10: 获取动态签署人补充链接（短链）并预设企业名**
 
 获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充，预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同
 注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
@@ -259,7 +284,7 @@ Output:
 }
 ```
 
-**Example 10: 获取合同组动态签署人补充链接（短链）并预设企业名**
+**Example 11: 获取合同组动态签署人补充链接（短链）并预设企业名**
 
 获取获取合同组动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充，预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同
 注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`

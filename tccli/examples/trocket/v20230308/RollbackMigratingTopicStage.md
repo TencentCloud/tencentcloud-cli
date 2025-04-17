@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trocket RollbackMigratingTopicStage --cli-unfold-argument  \
-    --TaskId taskId \
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a \
     --TopicName TopicTest \
     --Namespace 
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

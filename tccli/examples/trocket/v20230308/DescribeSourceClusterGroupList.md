@@ -8,7 +8,7 @@ Input:
 tccli trocket DescribeSourceClusterGroupList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
-    --TaskId abc
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a
 ```
 
 Output: 
@@ -19,13 +19,13 @@ Output:
         "Groups": [
             {
                 "GroupName": "Test",
-                "Remark": "abc",
+                "Remark": "remark",
                 "Imported": true,
                 "Namespace": "",
                 "ImportStatus": "Success"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

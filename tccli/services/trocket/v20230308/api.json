@@ -379,7 +379,7 @@
       "status": "online"
     },
     "DescribeMigratingTopicList": {
-      "document": "查询Topic迁移状态列表\n\n查询过滤器，支持TopicName、MigrationStatus查询",
+      "document": "查询Topic迁移状态列表\n\n查询过滤器，支持TopicName、MigrationStatus、Namespace查询",
       "input": "DescribeMigratingTopicListRequest",
       "name": "平滑迁移：查询Topic迁移状态列表",
       "output": "DescribeMigratingTopicListResponse",
@@ -428,7 +428,7 @@
       "status": "online"
     },
     "DescribeSourceClusterGroupList": {
-      "document": "平滑迁移过程获取源集群group列表接口\n\n查询过滤器，支持字段\nGroupName，消费组名称模糊搜索\nImported，是否已导入\nImportStatus，导入状态",
+      "document": "平滑迁移过程获取源集群group列表接口\n\n查询过滤器，支持字段\nGroupName，消费组名称模糊搜索\nImported，是否已导入\nImportStatus，导入状态\nNamespace，命名空间",
       "input": "DescribeSourceClusterGroupListRequest",
       "name": "平滑迁移：获取源集群的group列表",
       "output": "DescribeSourceClusterGroupListResponse",
@@ -996,7 +996,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1307,6 +1307,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费者客户端类型（grpc；remoting；http）",
+          "example": "remoting",
+          "member": "string",
+          "name": "ChannelProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2597,7 +2607,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5276,7 +5286,7 @@
         {
           "disabled": false,
           "document": "迁移任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5285,7 +5295,7 @@
         {
           "disabled": false,
           "document": "消费组名称",
-          "example": "无",
+          "example": "group-a",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -5294,7 +5304,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "无",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5308,43 +5318,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "源集群消费组堆积\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源集群消费组堆积",
+          "example": "1",
           "member": "int64",
           "name": "SourceConsumeLag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标集群消费组堆积\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目标集群消费组堆积",
+          "example": "1",
           "member": "int64",
           "name": "TargetConsumeLag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源集群连接客户端列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源集群连接客户端列表",
           "example": "无",
           "member": "ConsumerClient",
           "name": "SourceConsumerClients",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标集群连接客户端列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标集群连接客户端列表",
           "example": "无",
           "member": "ConsumerClient",
           "name": "TargetConsumerClients",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5360,26 +5370,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询起始位置",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询结果限制数量",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5393,6 +5385,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5402,13 +5412,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5435,7 +5445,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "700000-r5923c",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -5444,7 +5454,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "无",
+          "example": "topic-a",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -5453,7 +5463,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅4.x集群有效",
-          "example": "无",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5468,7 +5478,7 @@
         {
           "disabled": false,
           "document": "源集群的消费者数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "SourceClusterConsumerCount",
           "output_required": false,
@@ -5478,7 +5488,7 @@
         {
           "disabled": false,
           "document": "目标集群的消费者数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TargetClusterConsumerCount",
           "output_required": false,
@@ -5975,26 +5985,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询起始位置",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询结果限制数量",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6008,6 +6000,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6017,13 +6027,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6477,7 +6487,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -6486,7 +6496,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "无",
+          "example": "topic-a",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -6495,7 +6505,7 @@
         {
           "disabled": false,
           "document": "是否忽略当前检查",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IgnoreCheck",
           "required": false,
@@ -6504,7 +6514,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅4.x集群有效",
-          "example": "无",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -8060,53 +8070,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "主题名称",
+          "example": "topic-a",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写",
+          "example": "S_RW_D_NA",
           "member": "string",
           "name": "MigrationStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否完成健康检查\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否完成健康检查\t",
+          "example": "true",
           "member": "bool",
           "name": "HealthCheckPassed",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。 NotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,",
+          "example": "TopicNotExistsInSourceCluster ",
           "member": "string",
           "name": "HealthCheckError",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间，仅4.x集群有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "命名空间，仅4.x集群有效",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "4.x的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdmq-default",
+          "member": "string",
+          "name": "NamespaceV4",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-a",
+          "member": "string",
+          "name": "TopicNameV4",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "4.x的完整命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdmq-default",
+          "member": "string",
+          "name": "FullNamespaceV4",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次健康检查返回的错误列表",
+          "example": "无",
+          "member": "string",
+          "name": "HealthCheckErrorList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9512,7 +9562,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -9521,7 +9571,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "无",
+          "example": "topic-a",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -9530,7 +9580,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅迁移至4.x集群有效",
-          "example": "无",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -9782,7 +9832,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -9791,7 +9841,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "无",
+          "example": "topic-a",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -9800,7 +9850,7 @@
         {
           "disabled": false,
           "document": "命名空间，仅4.x集群有效",
-          "example": "无",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -10736,33 +10786,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "主题名称",
+          "example": "topic-a",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否成功",
+          "example": "true",
           "member": "bool",
           "name": "Success",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间，仅4.x有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "命名空间，仅4.x有效",
+          "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -94,7 +94,8 @@ Output:
                 "Enable": true,
                 "StorageType": "cls",
                 "FlowLogStorage": {
-                    "StorageId": "29a6c8c8-d57d-4e25-84b5-9114734ce6ca"
+                    "StorageId": "29a6c8c8-d57d-4e25-84b5-9114734ce6ca",
+                    "StorageTopic": "topic-siqmaox1"
                 },
                 "TagSet": []
             }

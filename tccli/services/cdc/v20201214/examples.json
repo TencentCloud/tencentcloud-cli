@@ -8,6 +8,14 @@
         "title": "创建专用集群"
       }
     ],
+    "CreateDedicatedClusterImageCache": [
+      {
+        "document": "创建云上镜像缓存",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDedicatedClusterImageCache\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-d8htgb6k\",\n    \"ImageId\": \"img-1n0le98u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 15249,\n        \"RequestId\": \"b621f9e4-ea1c-455c-98b4-7f85d857f222\"\n    }\n}",
+        "title": "创建云上镜像缓存"
+      }
+    ],
     "CreateDedicatedClusterOrder": [
       {
         "document": "创建专用集群订单",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSite\n<公共请求参数>\n\n{\n    \"Name\": \"my-site\",\n    \"Description\": \"firstsite\",\n    \"Note\": \"newsite\",\n    \"FiberType\": \"MM\",\n    \"OpticalStandard\": \"1000Base-SX\",\n    \"PowerConnectors\": \"380VAC3P\",\n    \"PowerFeedDrop\": \"UP\",\n    \"MaxWeight\": 500,\n    \"PowerDrawKva\": 3000,\n    \"UplinkSpeedGbps\": 10,\n    \"UplinkCount\": 2,\n    \"ConditionRequirement\": \"True\",\n    \"DimensionRequirement\": \"True\",\n    \"RedundantNetworking\": \"True\",\n    \"Country\": \"China\",\n    \"Province\": \"Guangdong\",\n    \"City\": \"Shenzhen\",\n    \"PostalCode\": \"51800\",\n    \"AddressLine\": \"nanshan\",\n    \"OptionalAddressLine\": \"tengda\",\n    \"BreakerRequirement\": \"True\",\n    \"RedundantPower\": \"True\",\n    \"NeedHelp\": \"True\"\n}",
         "output": "{\n    \"Response\": {\n        \"SiteId\": \"site-c738dj\",\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc16\"\n    }\n}",
         "title": "创建站点"
+      }
+    ],
+    "DeleteDedicatedClusterImageCache": [
+      {
+        "document": "删除本地专用集群的云上镜像缓存",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDedicatedClusterImage\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-d8htgb6k\",\n    \"ImageId\": \"img-1n0le98u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27d4ca38-284b-4ffb-ae1d-e9ff12c065b8\"\n    }\n}",
+        "title": "删除本地专用集群的云上镜像缓存"
       }
     ],
     "DeleteDedicatedClusters": [
@@ -166,6 +182,20 @@
         "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySiteInfo\n<公共请求参数>\n\n{\n    \"SiteId\": \"site-pjmtpk14\",\n    \"Name\": \"new_name\",\n    \"Description\": \"new_description\",\n    \"Note\": \"new_note\",\n    \"Country\": \"China\",\n    \"Province\": \"Guangdong\",\n    \"City\": \"Shenzhen\",\n    \"PostalCode\": \"510000\",\n    \"AddressLine\": \"腾讯滨海大厦\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ceeecd2-2f24-4b3f-81eb-346137682c3f\"\n    }\n}",
         "title": "修改机房信息"
+      }
+    ],
+    "SyncDedicatedClusterImage": [
+      {
+        "document": "cdc镜像同步",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDedicatedClusterImage\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-d8htgb6k\",\n    \"ImageId\": \"img-1n0le98u\",\n    \"DestinationUin\": \"700000287016\",\n    \"DestinationDedicatedClusterId\": \"cluster-d8htgb6k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2801,\n        \"RequestId\": \"27d4ca38-284b-4ffb-ae1d-e9ff12c065b8\"\n    }\n}",
+        "title": "cdc镜像同步"
+      },
+      {
+        "document": "cdc镜像上传到云上",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncDedicatedClusterImage\n<公共请求参数>\n\n{\n    \"DedicatedClusterId\": \"cluster-d8htgb6k\",\n    \"ImageId\": \"img-1n0le98u\",\n    \"ImageName\": \"test\",\n    \"ImageDescription\": \"test\",\n    \"TagSpecification\": [\n        {\n            \"ResourceType\": \"image\",\n            \"Tags\": [\n                {\n                    \"Key\": \"annexwu1\",\n                    \"Value\": \"annexwu1-value\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2801,\n        \"RequestId\": \"27d4ca38-284b-4ffb-ae1d-e9ff12c065b8\"\n    }\n}",
+        "title": "cdc镜像上传到云上"
       }
     ]
   },

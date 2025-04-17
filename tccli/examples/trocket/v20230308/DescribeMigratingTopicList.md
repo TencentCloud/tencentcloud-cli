@@ -8,7 +8,7 @@ Input:
 tccli trocket DescribeMigratingTopicList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
-    --TaskId abc
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a
 ```
 
 Output: 
@@ -18,14 +18,14 @@ Output:
         "TotalCount": 10,
         "MigrateTopics": [
             {
-                "TopicName": "abc",
+                "TopicName": "topic-a",
                 "MigrationStatus": "S_RW_D_NA",
                 "HealthCheckPassed": true,
                 "HealthCheckError": "",
                 "Namespace": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

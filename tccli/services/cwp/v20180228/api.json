@@ -27832,7 +27832,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>",
+          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>\n<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>\n<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>",
           "example": "[{\"Name\": \"Status\", \"Values\": [\"AGENT_OFF****\"], \"ExactMatch\": true}]",
           "member": "Filter",
           "name": "Filters",
@@ -27857,7 +27857,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "[             {                 \"BaselineNum\": 0,                 \"CloudFrom\": 0,                 \"CloudTags\": [                     {                         \"TagKey\": \"Department\",                         \"TagValue\": \"dev\"                     }                 ],                 \"CyberAttackNum\": 0,                 \"HasAssetScan\": 0,                 \"InstanceId\": \"ins-111\",                 \"InstanceState\": \"NORMAL\",                 \"InvasionNum\": 3,                 \"IpList\": \"1.1.1.1\",                 \"IsAddedOnTheFifteen\": 1,                 \"IsProVersion\": false,                 \"KernelVersion\": \"3.10.0-1160.88.1.el7.x86_64\",                 \"LicenseStatus\": 0,                 \"MachineExtraInfo\": {                     \"HostName\": \"demo-instance\",                     \"InstanceID\": \"ins-111\",                     \"NetworkName\": \"vpc-111\",                     \"NetworkType\": 1,                     \"PrivateIP\": \"1.1.1.1\",                     \"WanIP\": \"1.1.1.1\"                 },                 \"MachineIp\": \"1.1.1.1\",                 \"MachineName\": \"test\",                 \"MachineOs\": \"CentOS 7.6 64位\",                 \"MachineStatus\": \"ONLINE\",                 \"MachineType\": \"CVM\",                 \"MachineWanIp\": \"1.1.1.1\",                 \"MalwareNum\": 0,                 \"PayMode\": \"POSTPAY\",                 \"ProjectId\": 0,                 \"ProtectType\": \"BASIC_VERSION\",                 \"Quuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"RegionInfo\": {                     \"Region\": \"ap-nanjing\",                     \"RegionCode\": \"nj\",                     \"RegionId\": 33,                     \"RegionName\": \"华东地区（南京）\",                     \"RegionNameEn\": \"East China (Nanjing)\"                 },                 \"Remark\": \"do not remove\",                 \"SecurityStatus\": \"RISK\",                 \"Tag\": [                     {                         \"Rid\": 1001,                         \"Name\": \"cwp\",                         \"TagId\": 1022                     }                 ],                 \"Uuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"VpcId\": \"vpc-1dj4***\",                 \"VulNum\": 0             }         ]",
+          "example": "[             {\"Uuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"VpcId\": \"vpc-1dj4***\"}]",
           "member": "Machine",
           "name": "Machines",
           "output_required": true,
@@ -39075,13 +39075,22 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "需要导出的字段",
           "example": "filed_name",
           "member": "string",
           "name": "Fields",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要导出的字段",
+          "example": "[\"fieldA\",\"fieldB\"]\t",
+          "member": "string",
+          "name": "Where",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -43581,6 +43590,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<li> RUNNING 运行中</li>\n<li> STOPPED 已关机</li>\n<li> EXPIRED 待回收</li>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<li>ONLINE 已离线 </li>\n<li>OFFLINE 防护中</li>\n<li>UNINSTALLED 未安装客户端</li>",
+          "example": "UNINSTALLED",
+          "member": "string",
+          "name": "AgentState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -44304,11 +44333,31 @@
         },
         {
           "disabled": false,
-          "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>\n<li>UNINSTALLED: 未防护</li>",
+          "document": "主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>\t",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RUNNING 运行中; STOPED 已关机; EXPIRED 待回收\t",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -45770,6 +45819,26 @@
           "name": "References",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马文件是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "FileExists",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马进程是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "ProcessExists",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -53838,6 +53907,16 @@
           "name": "CmdLineQuote",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

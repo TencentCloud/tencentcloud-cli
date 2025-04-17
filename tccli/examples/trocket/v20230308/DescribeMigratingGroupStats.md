@@ -19,7 +19,7 @@ Output:
         "TargetConsumeLag": 0,
         "SourceConsumerClients": [
             {
-                "ClientId": "abc",
+                "ClientId": "client-a",
                 "ClientAddr": "1.1.1.1",
                 "Language": "JAVA",
                 "Version": "5",
@@ -28,14 +28,14 @@ Output:
         ],
         "TargetConsumerClients": [
             {
-                "ClientId": "abc",
+                "ClientId": "client-b",
                 "ClientAddr": "2.2.2.2",
                 "Language": "JAVA",
                 "Version": "5.0",
                 "ConsumerLag": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

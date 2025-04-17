@@ -10675,7 +10675,7 @@
         {
           "disabled": false,
           "document": "配置文件名称",
-          "example": "fe/be/broken",
+          "example": "FE/BE/BROKER",
           "member": "string",
           "name": "ConfigName",
           "required": true,

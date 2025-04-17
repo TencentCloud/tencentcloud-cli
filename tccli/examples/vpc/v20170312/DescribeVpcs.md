@@ -20,8 +20,14 @@ Output:
     "Response": {
         "VpcSet": [
             {
+                "Ipv6CidrBlockSet": [
+                    {
+                        "IPv6CidrBlock": "2402:4e00:1717:8200::/56",
+                        "ISPType": "BGP"
+                    }
+                ],
                 "VpcId": "vpc-p5sf61yj",
-                "VpcName": "测试dhcp",
+                "VpcName": "DHCP1",
                 "CidrBlock": "10.0.0.0/16",
                 "Ipv6CidrBlock": "3402:4e00:20:1200::/56",
                 "IsDefault": false,
@@ -65,6 +71,12 @@ Output:
     "Response": {
         "VpcSet": [
             {
+                "Ipv6CidrBlockSet": [
+                    {
+                        "IPv6CidrBlock": "2402:4e00:1717:8200::/56",
+                        "ISPType": "BGP"
+                    }
+                ],
                 "VpcId": "vpc-p5sf61yj",
                 "VpcName": "测试dhcp",
                 "CidrBlock": "10.0.0.0/16",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trocket ChangeMigratingTopicToNextStage --cli-unfold-argument  \
-    --TaskId abc \
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a \
     --TopicNameList TopicTest
 ```
 
@@ -21,7 +21,7 @@ Output:
                 "Namespace": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }
 ```

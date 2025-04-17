@@ -820,6 +820,14 @@
         "title": "获取产品详情"
       }
     ],
+    "DescribeTWeSeeConfig": [
+      {
+        "document": "查询 TWeSee 配置",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"MOU0U8SCZQ\",\n    \"DeviceName\": \"new_131296974_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Config\": \"{\\\"type\\\":\\\"data\\\"}\",\n        \"EnableSearch\": false,\n        \"EnableSummary\": false,\n        \"RequestId\": \"b96234ba-edc7-491d-a1c7-b12081a50a3c\"\n    }\n}",
+        "title": "查询 TWeSee 配置"
+      }
+    ],
     "DescribeTopicPolicy": [
       {
         "document": "",
@@ -1050,6 +1058,14 @@
         "title": "继承云存用户"
       }
     ],
+    "InvokeAISearchService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"Query\": \"What happened on April 1st\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Summary\": \"Nine videos captured various scenes on April 1st, showcasing pets eating and playing, a peaceful baby interaction, a resting child, and diligent workers like cleaners and delivery men, all without any safety concerns.\",\n        \"Targets\": [\n            {\n                \"ProductId\": \"MVTYMD8YCD\",\n                \"DeviceName\": \"dev001\",\n                \"StartTimeMs\": 1743456533000,\n                \"EndTimeMs\": 1743456543000,\n                \"EventId\": \"alarm\",\n                \"Summary\": \"Two cats and a dog eating\"\n            }\n        ]\n    }\n}",
+        "title": "视频语义搜索"
+      }
+    ],
     "InvokeCloudStorageAIServiceTask": [
       {
         "document": "",
@@ -1218,6 +1234,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStudioProduct\n<公共请求参数>\n\n{\n    \"BindStrategy\": \"1\",\n    \"ModuleId\": \"0\",\n    \"ProductName\": \"testProduct\",\n    \"ProductDesc\": \"Pdesc\",\n    \"ProductId\": \"4GDIU5HTEN\"\n}",
         "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"DevStatus\": \"dev\",\n            \"EncryptionType\": \"2\",\n            \"DataProtocol\": 1,\n            \"ProjectId\": \"prj-zunfat46\",\n            \"Region\": \"gz\",\n            \"ModuleId\": 0,\n            \"EnableProductScript\": \"true\",\n            \"UpdateTime\": 1,\n            \"ProductName\": \"testProduct\",\n            \"CreateUserId\": 0,\n            \"ProductDesc\": \"产品信息\",\n            \"NetType\": \"else\",\n            \"ProductType\": 0,\n            \"CreatorNickName\": \"leo\",\n            \"CreateTime\": 1,\n            \"CategoryId\": 3,\n            \"BindStrategy\": 0,\n            \"ProductId\": \"4GDIU5HTEN\"\n        },\n        \"RequestId\": \"1c469fbf-d80c-4299-9b54-31340898b839\"\n    }\n}",
         "title": "修改产品示例"
+      }
+    ],
+    "ModifyTWeSeeConfig": [
+      {
+        "document": "修改 TWeSee 配置",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeConfig\n<公共请求参数>\n\n{\n    \"ProductId\": \"MOU0U8SCZQ\",\n    \"DeviceName\": \"new_131296974_1\",\n    \"EnableSummary\": false,\n    \"EnableSearch\": false,\n    \"Config\": \"{\\\"type\\\":\\\"data\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbdcb8c-d8cb-4f9d-a491-ff0dd3bb53b6\"\n    }\n}",
+        "title": "修改 TWeSee 配置"
       }
     ],
     "ModifyTopicPolicy": [

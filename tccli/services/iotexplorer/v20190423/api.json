@@ -644,6 +644,13 @@
       "output": "DescribeStudioProductResponse",
       "status": "online"
     },
+    "DescribeTWeSeeConfig": {
+      "document": "拉取 TWeSee 配置",
+      "input": "DescribeTWeSeeConfigRequest",
+      "name": "查询 TWeSee 配置",
+      "output": "DescribeTWeSeeConfigResponse",
+      "status": "online"
+    },
     "DescribeTopicPolicy": {
       "document": "本接口（DescribeTopicPolicy）用于查看Topic详细信息",
       "input": "DescribeTopicPolicyRequest",
@@ -840,6 +847,13 @@
       "output": "InheritCloudStorageUserResponse",
       "status": "online"
     },
+    "InvokeAISearchService": {
+      "document": "视频语义搜索",
+      "input": "InvokeAISearchServiceRequest",
+      "name": "视频语义搜索",
+      "output": "InvokeAISearchServiceResponse",
+      "status": "online"
+    },
     "InvokeCloudStorageAIServiceTask": {
       "document": "同步执行设备云存 AI 分析任务",
       "input": "InvokeCloudStorageAIServiceTaskRequest",
@@ -971,6 +985,13 @@
       "input": "ModifyStudioProductRequest",
       "name": "修改产品",
       "output": "ModifyStudioProductResponse",
+      "status": "online"
+    },
+    "ModifyTWeSeeConfig": {
+      "document": "修改 TWeSee 配置",
+      "input": "ModifyTWeSeeConfigRequest",
+      "name": "修改 TWeSee 配置",
+      "output": "ModifyTWeSeeConfigResponse",
       "status": "online"
     },
     "ModifyTopicPolicy": {
@@ -8601,6 +8622,90 @@
       ],
       "type": "object"
     },
+    "DescribeTWeSeeConfigRequest": {
+      "document": "DescribeTWeSeeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "product",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "device",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "username",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeConfigResponse": {
+      "document": "DescribeTWeSeeConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启视频摘要",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSummary",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启视频搜索",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSearch",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置参数",
+          "example": "{\"type\":\"data\"}",
+          "member": "string",
+          "name": "Config",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicPolicyRequest": {
       "document": "DescribeTopicPolicy请求参数结构体",
       "members": [
@@ -11684,6 +11789,80 @@
       ],
       "usage": "out"
     },
+    "InvokeAISearchServiceRequest": {
+      "document": "InvokeAISearchService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "MVTYMD8YCD",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自然语言查询",
+          "example": "今天发生了什么?",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果总结的语言类型，支持的类型有：en-US、zh-CN、id-ID、th-TH",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "SummaryLang",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeAISearchServiceResponse": {
+      "document": "InvokeAISearchService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基于搜索结果的总结",
+          "example": "What happened on April 1st",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频结果集",
+          "example": "无",
+          "member": "TargetInfo",
+          "name": "Targets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InvokeCloudStorageAIServiceTaskRequest": {
       "document": "InvokeCloudStorageAIServiceTask请求参数结构体",
       "members": [
@@ -13848,6 +14027,87 @@
       ],
       "type": "object"
     },
+    "ModifyTWeSeeConfigRequest": {
+      "document": "ModifyTWeSeeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "TEKJFE",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "device",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "username",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启视频摘要，不传则不修改",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSummary",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启视频搜索，不传则不修改",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "配置参数，不传则不修改",
+          "example": "{\"type\":\"data\"}",
+          "member": "string",
+          "name": "Config",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTWeSeeConfigResponse": {
+      "document": "ModifyTWeSeeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicPolicyRequest": {
       "document": "ModifyTopicPolicy请求参数结构体",
       "members": [
@@ -15968,6 +16228,82 @@
         }
       ],
       "usage": "both"
+    },
+    "TargetInfo": {
+      "document": "视频语义搜索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频唯一ID",
+          "example": "unique",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "MVTYMD8YCD",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频起始时间（毫秒级Unix时间戳）",
+          "example": "1744258527",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频结束时间（毫秒级Unix时间戳）",
+          "example": "1744258537",
+          "member": "int64",
+          "name": "EndTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义事件ID，后续扩展使用",
+          "example": "alarm",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频内容摘要",
+          "example": "Two cats and a dog eating",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ThumbnailURLInfoList": {
       "document": "缩略图信息",
