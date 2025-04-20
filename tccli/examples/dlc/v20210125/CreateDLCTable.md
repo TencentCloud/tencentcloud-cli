@@ -33,7 +33,7 @@ tccli dlc CreateDLCTable --cli-unfold-argument  \
     --Partitions.0.Comment test partition \
     --Partitions.0.Transform identity \
     --Properties.0.Key testPro \
-    --Properties.0.Value test \
+    --Properties.0.Value testValue \
     --DataEngineName public-engine
 ```
 

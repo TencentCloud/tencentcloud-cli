@@ -20,14 +20,14 @@ Output:
             {
                 "Name": "Result",
                 "Type": "string",
-                "Comment": "",
+                "Comment": "success_task",
                 "Precision": 0,
                 "Scale": 0,
                 "Nullable": "NULLABLE",
                 "IsPartition": false,
                 "Position": 0,
-                "CreateTime": "",
-                "ModifiedTime": "",
+                "CreateTime": "2006-01-02 15:04:05",
+                "ModifiedTime": "2006-01-02 15:04:05",
                 "DataMaskStrategyInfo": null
             }
         ],

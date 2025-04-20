@@ -1005,7 +1005,7 @@
         {
           "disabled": false,
           "document": "主题名称列表",
-          "example": "无",
+          "example": "[\"Topic-A\"]",
           "member": "string",
           "name": "TopicNameList",
           "required": true,
@@ -1014,7 +1014,7 @@
         {
           "disabled": false,
           "document": "命名空间列表，仅4.x集群有效，与TopicNameList一一对应",
-          "example": "无",
+          "example": "[\"tdmq-default\"]",
           "member": "string",
           "name": "NamespaceList",
           "required": false,
@@ -5498,7 +5498,7 @@
         {
           "disabled": false,
           "document": "源集群消费组列表",
-          "example": "无",
+          "example": "[\"Group-A\"]",
           "member": "string",
           "name": "SourceClusterConsumerGroups",
           "output_required": false,
@@ -5508,7 +5508,7 @@
         {
           "disabled": false,
           "document": "目标集群消费组列表",
-          "example": "无",
+          "example": "[\"GROUP_B\"]",
           "member": "string",
           "name": "TargetClusterConsumerGroups",
           "output_required": false,
@@ -6529,7 +6529,7 @@
         {
           "disabled": false,
           "document": "是否通过\t",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Passed",
           "output_required": false,
@@ -6539,7 +6539,7 @@
         {
           "disabled": false,
           "document": "健康检查返回的错误信息\nNotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TopicNotExistsInTargetCluster",
           "member": "string",
           "name": "Reason",
           "output_required": false,
@@ -6549,7 +6549,7 @@
         {
           "disabled": false,
           "document": "健康检查返回的错误信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"Failed\"]",
           "member": "string",
           "name": "ReasonList",
           "output_required": false,
@@ -8151,7 +8151,7 @@
         {
           "disabled": false,
           "document": "上次健康检查返回的错误列表",
-          "example": "无",
+          "example": "[\"TopicNotExistsInSourceCluster\"]",
           "member": "string",
           "name": "HealthCheckErrorList",
           "output_required": false,

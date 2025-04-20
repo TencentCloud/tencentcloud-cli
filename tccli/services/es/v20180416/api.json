@@ -9636,7 +9636,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-04-09 14:53:41",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -9646,7 +9646,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-04-09 14:54:05",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -12958,7 +12958,7 @@
         {
           "disabled": false,
           "document": "备份失败的索引分片和失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{...}]",
           "member": "Failures",
           "name": "Failures",
           "output_required": false,
@@ -12969,7 +12969,7 @@
         {
           "disabled": false,
           "document": "是否用户备份\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "UserBackUp",
           "output_required": false,

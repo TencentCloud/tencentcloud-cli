@@ -8,7 +8,7 @@ Input:
 tccli dlc DescribeDLCTable --cli-unfold-argument  \
     --DbName api_test \
     --Catalog DataLakeCatalog \
-    --Name test \
+    --Name testName \
     --Pattern pattern \
     --Type  INTERNAL_TABLE
 ```

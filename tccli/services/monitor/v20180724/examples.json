@@ -824,6 +824,14 @@
         "title": "获取头两个基础策略告警组列表"
       }
     ],
+    "DescribePolicyObjectCount": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePolicyObjectCount\r\n&Module=monitor\r\n&GroupId=111\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IsMultiRegion\": true,\n        \"RegionList\": [\n            {\n                \"Count\": 0,\n                \"Region\": \"th\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"usw\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"in\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"ru\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"sh\"\n            },\n            {\n                \"Count\": 1,\n                \"Region\": \"gz\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"hzec\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"jp\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"kr\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"nj\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"shjr\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"szjr\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"tsn\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"ca\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"gzopen\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"jnec\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"de\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"hk\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"sg\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"use\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"bj\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"cd\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"cq\"\n            }\n        ],\n        \"RequestId\": \"853dafdc-22d4-4e9d-88a7-ebc43abf7cef\"\n    }\n}",
+        "title": "查询策略组在每个地域下面绑定的对象数统计"
+      }
+    ],
     "DescribeProductEventList": [
       {
         "document": "获取产品事件列表",

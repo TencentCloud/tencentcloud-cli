@@ -8,7 +8,7 @@ Input:
 tccli dlc DescribeDMSTable --cli-unfold-argument  \
     --DbName api_test \
     --SchemaName api_test \
-    --Name test \
+    --Name testName \
     --Catalog  \
     --Keyword  \
     --Type  EXTERNAL_TABLE \
@@ -141,7 +141,7 @@ Output:
         "DbName": "api_test",
         "LastAccessTime": "2020-09-22T00:00:00+00:00",
         "LifeTime": 0,
-        "Name": "test",
+        "Name": "testName",
         "PartitionKeys": [],
         "Partitions": null,
         "RecordCount": 0,

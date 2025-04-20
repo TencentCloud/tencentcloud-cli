@@ -810,6 +810,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cfs类型，默认为通用型CFS",
+          "example": "Noraml",
+          "member": "string",
+          "name": "CfsType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
