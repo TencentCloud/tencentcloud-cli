@@ -100,3 +100,45 @@ Output:
 }
 ```
 
+**Example 2: 配置一个直连下云的redis迁移任务**
+
+1.源端为腾讯云redis实例，目标端为AWS实例并以公网的方式连接目标节点信息填写所有分片上的IP/域名、端口、密码等连接信息；注意一定是所有分片节点连接信息都写。
+2.目标端以覆盖写的方式执行，如果要配置其他目标端写入模式，可以参考入参MigrateOption.ExtraAttr中的字段描述。
+
+Input: 
+
+```
+tccli dts ModifyMigrationJob --cli-unfold-argument  \
+    --JobId dts-n6uzsuxz \
+    --RunMode immediate \
+    --MigrateOption.DatabaseTable.ObjectMode all \
+    --MigrateOption.MigrateType fullAndIncrement \
+    --MigrateOption.ExtraAttr.0.Key DstWriteMode \
+    --MigrateOption.ExtraAttr.0.Value overwrite \
+    --SrcInfo.Region ap-chengdu \
+    --SrcInfo.AccessType cdb \
+    --SrcInfo.DatabaseType redis \
+    --SrcInfo.NodeType simple \
+    --SrcInfo.Info.0.Password admin12345 \
+    --SrcInfo.Info.0.InstanceId crs-lktt4ls3 \
+    --DstInfo.Region ap-chengdu \
+    --DstInfo.AccessType extranet \
+    --DstInfo.DatabaseType redis \
+    --DstInfo.NodeType cluster-cache \
+    --DstInfo.Info.0.Host 44.223.107.125 \
+    --DstInfo.Info.0.Port 6383 \
+    --DstInfo.Info.1.Host 44.223.107.125 \
+    --DstInfo.Info.1.Port 6384 \
+    --DstInfo.Info.2.Host 44.223.107.125 \
+    --DstInfo.Info.2.Port 6385
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "4d21a953-4a23-47f1-91a9-84df62f016f3"
+    }
+}
+```
+

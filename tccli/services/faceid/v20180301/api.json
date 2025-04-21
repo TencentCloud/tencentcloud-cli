@@ -2761,7 +2761,7 @@
         },
         {
           "disabled": false,
-          "document": "透传字段，在获取验证结果时返回。",
+          "document": "透传字段，在获取验证结果时返回。\n- 最长长度1024位。",
           "example": "Orderid=f904f4cf75db4f8fdc4f942c7f7a",
           "member": "string",
           "name": "Extra",

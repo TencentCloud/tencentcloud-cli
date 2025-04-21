@@ -1826,7 +1826,17 @@
     },
     "DescribeAIPlaygroundConfigRequest": {
       "document": "DescribeAIPlaygroundConfig请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "【可选】\n 获取指定 SdkAppId 的配置（国际站）； \n 不传则获取子账号粒度的配置（国内站）；",
+          "example": "140000001",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeAIPlaygroundConfigResponse": {
@@ -1835,7 +1845,7 @@
         {
           "disabled": false,
           "document": "基础配置(Json String)",
-          "example": "{\\\"Region\\\":\\\"ap-beijing\\\",\\\"WelcomeMessage\\\":\\\"hello\\\",\\\"InterruptMode\\\":0,\\\"InterruptSpeechDuration\\\":400}",
+          "example": "{\"Region\":\"ap-beijing\",\"WelcomeMessage\":\"hello\",\"InterruptMode\":0,\"InterruptSpeechDuration\":400}",
           "member": "string",
           "name": "Base",
           "output_required": false,
@@ -1845,7 +1855,7 @@
         {
           "disabled": false,
           "document": "ASR配置(Json String)",
-          "example": "{\\\"Language\\\":\\\"zh\\\",\\\"VadSilenceTime\\\":800}",
+          "example": "{\"Language\":\"zh\",\"VadSilenceTime\":800}",
           "member": "string",
           "name": "ASR",
           "output_required": false,
@@ -1855,7 +1865,7 @@
         {
           "disabled": false,
           "document": "LLM配置(Json String)",
-          "example": "{\\\"LLMType\\\":\\\"openai\\\",\\\"Model\\\":\\\"chat\\\",\\\"APIUrl\\\":\\\"https://api.test.com\\\",\\\"SystemPrompt\\\":\\\"助手\\\",\\\"APIKey\\\":\\\"hbG\\\"}",
+          "example": "{\"LLMType\":\"openai\",\"Model\":\"chat\",\"APIUrl\":\"https://api.test.com\",\"SystemPrompt\":\"助手\",\"APIKey\":\"hbG\"}",
           "member": "string",
           "name": "LLM",
           "output_required": false,
@@ -1865,7 +1875,7 @@
         {
           "disabled": false,
           "document": "TTS配置(Json String)",
-          "example": "{\\\"TTSType\\\":\\\"minimax\\\",\\\"Model\\\":\\\"speech\\\",\\\"ApiUrl\\\":\\\"https://api.test.com\\\",\\\"GroupId\\\":\\\"1\\\",\\\"ApiKey\\\":\\\"hbG\\\"}",
+          "example": "{\"TTSType\":\"minimax\",\"Model\":\"speech\",\"ApiUrl\":\"https://api.test.com\",\"GroupId\":\"1\",\"ApiKey\":\"hbG\"}",
           "member": "string",
           "name": "TTS",
           "output_required": false,

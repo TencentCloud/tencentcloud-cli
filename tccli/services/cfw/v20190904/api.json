@@ -1873,13 +1873,13 @@
         },
         {
           "disabled": false,
-          "document": "实例所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所属地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1893,43 +1893,43 @@
         },
         {
           "disabled": false,
-          "document": "事件时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件时间",
           "example": "2024-11-11 11:22:22",
           "member": "string",
           "name": "EventTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "恢复时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "恢复时间",
           "example": "2024-11-11 11:22:22",
           "member": "string",
           "name": "RecoverTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称",
           "example": "cfwname",
           "member": "string",
           "name": "CfwInsName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Normal: 正常模式\nOnlyRoute: 透明模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Normal: 正常模式\nOnlyRoute: 透明模式",
           "example": "Normal",
           "member": "string",
           "name": "TrafficMode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4758,6 +4758,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地区简称",
+          "example": "zd",
+          "member": "string",
+          "name": "CountryKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "省份、城市简称",
+          "example": "hn43",
+          "member": "string",
+          "name": "CityKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6402,7 +6422,7 @@
         {
           "disabled": false,
           "document": "ip 开关列表",
-          "example": "[{\"PublicIp\":\"2.2.2.2\",\"PublicIpType\":2,\"InstanceId\":\"ins-xxxxxxxx\",\"InstanceName\":\"cvm实例1\",\"IntranetIp\":\"172.16.1.1\",\"AssetType\":\"cvm\",\"Region\":\"ap-chongqing\",\"PortRiskCount\":10,\"LastScanTime\":\"2022-07-2716:00:00\",\"SwitchMode\":2,\"IsRegionEip\":1,\"VpcId\":\"vpc-abcdabcd\",\"IsSerialRegion\":1,\"IsPublicClb\":0,\"EndpointBindEipNum\":1,\"ScanMode\":\"medium\",\"ScanStatus\":0,\"EndpointId\":\"vpce-wxecrvtb\",\"EndpointIp\":\"10.10.10.10\",\"SwitchWeight\":100}]",
+          "example": "[     {         \"PublicIp\": \"2.2.2.2\"     } ]",
           "member": "EdgeIpInfo",
           "name": "Data",
           "output_required": false,
@@ -6437,6 +6457,16 @@
           "name": "InstanceTypeLst",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "串行模式开关个数",
+          "example": "1",
+          "member": "int64",
+          "name": "SerilCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9330,6 +9360,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名解析的IP统计",
+          "example": "{\"ValidCount\":10,\"InvalidCount\":10}",
+          "member": "SgDnsParseCount",
+          "name": "DnsParseCount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9568,7 +9608,7 @@
         {
           "disabled": false,
           "document": "防火墙开关ID",
-          "example": "cfws-wxecrvtb",
+          "example": "cfws-wecrvtb",
           "member": "string",
           "name": "SwitchId",
           "output_required": true,
@@ -9578,7 +9618,7 @@
         {
           "disabled": false,
           "document": "防火墙开关NAME",
-          "example": "vpc1-vpc2开关",
+          "example": "vpc开关",
           "member": "string",
           "name": "SwitchName",
           "output_required": true,
@@ -9618,7 +9658,7 @@
         {
           "disabled": false,
           "document": "连接名称",
-          "example": "云联网ccn防火墙开发--勿删",
+          "example": "ccn防火墙开发-",
           "member": "string",
           "name": "ConnectName",
           "output_required": true,
@@ -13771,7 +13811,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "规则描述 用于规则使用或者场景的描述，最多支持50个字符",
           "example": "andy创建的规则",
           "member": "string",
           "name": "Description",
@@ -14147,6 +14187,32 @@
         }
       ],
       "type": "object"
+    },
+    "SgDnsParseCount": {
+      "document": "企业安全组域名解析的IP统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效下发的IP个数，离散数据",
+          "example": "10",
+          "member": "int64",
+          "name": "ValidCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未下发的IP个数，离散数据",
+          "example": "10",
+          "member": "int64",
+          "name": "InvalidCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StaticInfo": {
       "document": "StaticInfo 告警柱形图统计信息",

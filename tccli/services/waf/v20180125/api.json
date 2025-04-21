@@ -24198,6 +24198,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "压缩算法，支持gzip 和 lz4",
+          "example": "lz4",
+          "member": "string",
+          "name": "Compression",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "content",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

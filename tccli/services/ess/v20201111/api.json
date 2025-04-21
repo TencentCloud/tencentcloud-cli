@@ -4162,6 +4162,15 @@
           "name": "ReportType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效",
+          "example": "false",
+          "member": "bool",
+          "name": "HybridEvidenceFlowFile",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

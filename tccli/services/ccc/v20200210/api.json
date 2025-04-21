@@ -161,6 +161,13 @@
       "output": "CreateUserSigResponse",
       "status": "online"
     },
+    "DeleteCCCSkillGroup": {
+      "document": "删除技能组",
+      "input": "DeleteCCCSkillGroupRequest",
+      "name": "删除客服技能组",
+      "output": "DeleteCCCSkillGroupResponse",
+      "status": "online"
+    },
     "DeleteExtension": {
       "document": "删除话机账号",
       "input": "DeleteExtensionRequest",
@@ -2103,7 +2110,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "提示词变量",
           "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
           "member": "Variable",
@@ -2113,7 +2120,7 @@
         },
         {
           "disabled": false,
-          "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
+          "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
           "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
           "member": "Variable",
           "name": "Variables",
@@ -2365,7 +2372,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "提示词变量",
           "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
           "member": "Variable",
@@ -2402,7 +2409,7 @@
         },
         {
           "disabled": false,
-          "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
+          "document": "通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> 欢迎语延迟播放(秒级)：welcome-message-delay</p>  <p> dify变量</p>  \n\n1. dify-inputs-xxx 为dify的inputs变量\n2.  dify-inputs-user 为dify的user值\n3.  dify-inputs-conversation_id 为dify的conversation_id值",
           "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
           "member": "Variable",
           "name": "Variables",
@@ -3647,6 +3654,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCCCSkillGroupRequest": {
+      "document": "DeleteCCCSkillGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "技能组ID",
+          "example": "58832",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCCCSkillGroupResponse": {
+      "document": "DeleteCCCSkillGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

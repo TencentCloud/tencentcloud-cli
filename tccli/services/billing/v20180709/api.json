@@ -21436,6 +21436,24 @@
           "name": "AutoRePurchaseFlag",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源包所属分组",
+          "example": "0",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用尽续购的余量阈值，低于RemainThreshold触发续购，值的单位对应包购买的原始单位；AutoRePurchaseFlag为1和2时生效",
+          "example": "0",
+          "member": "string",
+          "name": "RemainThreshold",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

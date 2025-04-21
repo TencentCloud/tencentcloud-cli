@@ -504,7 +504,7 @@
       {
         "document": "查询实例内所有的命名空间信息",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAllNamespaces\n<公共请求参数>\n\n{\n    \"Limit\": 5,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ResourceId\": \"tcr-csexdur7/finofliu\"\n            },\n            {\n                \"ResourceId\": \"tcr-csexdur7/ns2\"\n            },\n            {\n                \"ResourceId\": \"tcr-csexdur7/chart\"\n            },\n            {\n                \"ResourceId\": \"tcr-csexdur7/uptime\"\n            },\n            {\n                \"ResourceId\": \"tcr-csexdur7/futu\"\n            }\n        ],\n        \"RequestId\": \"5df0c1f1-6981-4faa-852c-403bd8ef0ef8\",\n        \"TotalCount\": 25\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ResourceId\": \"tcr-pi3dpok3/namespace1\"\n            },\n            {\n                \"ResourceId\": \"tcr-pi3dpok3/namespace2\"\n            },\n            {\n                \"ResourceId\": \"tcr-ouhxerg2/ns3\"\n            },\n            {\n                \"ResourceId\": \"tcr-ouhxerg2/ns4\"\n            },\n            {\n                \"ResourceId\": \"tcr-ouhxerg2/ns5\"\n            }\n        ],\n        \"RequestId\": \"63e82e94-0af7-4a8b-a0a3-1f6c59046b6e\",\n        \"TotalCount\": 85\n    }\n}",
         "title": "查询命名空间信息"
       }
     ],

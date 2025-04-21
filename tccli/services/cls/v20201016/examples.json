@@ -90,7 +90,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: DescribeInstances\n      <公共请求参数>\n      \n     {\n  \"InstanceId\": \"ins-r8hr2upy\",\n  \"AssumerName\": \"cls\",\n  \"LogType\": \"default\",\n  \"CloudProductRegion\": \"ap-guangzhou\",\n  \"ClsRegion\": \"ap-guangzhou\",\n  \"LogsetName\": \"test-logset\",\n  \"TopicName\": \"test-topic\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TopicId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"TopicName\": \"test-topic\",\n        \"LogsetId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"LogsetName\": \"test-logset\",\n        \"RequestId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"TopicName\": \"test-topic\",\n        \"LogsetId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"LogsetName\": \"test-logset\",\n        \"RequestId\": \"92cdd6d4-da98-4a6e-9494-175b44338680\",\n        \"Status\": 1\n    }\n}",
         "title": "创建云产品日志投递任务"
       }
     ],

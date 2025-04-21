@@ -1,0 +1,20 @@
+**Example 1: 示例1**
+
+
+
+Input: 
+
+```
+tccli ioa DescribeCustomConfigs --cli-unfold-argument  \
+    --Names xx
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "xx"
+    }
+}
+```
+

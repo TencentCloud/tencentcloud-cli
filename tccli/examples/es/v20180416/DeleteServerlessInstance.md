@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli es DeleteServerlessInstance --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId index-fwafefaef
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "40f4f780-9969-42f9-8bd9-ccf0d1f2591a"
     }
 }
 ```

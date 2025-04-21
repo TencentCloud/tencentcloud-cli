@@ -480,6 +480,9 @@ SERVICE_VERSIONS = {
     "intlpartnersmgt": [
         "2022-09-28"
     ],
+    "ioa": [
+        "2022-06-01"
+    ],
     "iot": [
         "2018-01-23"
     ],

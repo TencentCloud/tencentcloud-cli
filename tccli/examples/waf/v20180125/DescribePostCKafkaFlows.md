@@ -21,7 +21,9 @@ Output:
                 "CKafkaID": "ckafka-o9gjqonr",
                 "Brokers": "11.179.226.202:6016",
                 "Version": "2.4.1",
-                "Topic": "waf_post_access_log"
+                "Topic": "waf_post_access_log",
+                "Compression": "lz4",
+                "Content": "info"
             }
         ]
     }

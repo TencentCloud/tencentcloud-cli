@@ -522,6 +522,8 @@ tccli/services/ims/v20201229/api.json
 tccli/services/ims/v20201229/examples.json
 tccli/services/intlpartnersmgt/__init__.py
 tccli/services/intlpartnersmgt/intlpartnersmgt_client.py
+tccli/services/ioa/__init__.py
+tccli/services/ioa/ioa_client.py
 tccli/services/iot/__init__.py
 tccli/services/iot/iot_client.py
 tccli/services/iot/v20180123/api.json

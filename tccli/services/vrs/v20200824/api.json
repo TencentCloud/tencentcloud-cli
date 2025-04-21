@@ -221,10 +221,28 @@
         },
         {
           "disabled": false,
+          "document": "是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭\n语音增强仅适用于一句话复刻场景",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableVoiceEnhance",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "引擎类型。空为默认引擎",
           "example": "无",
           "member": "string",
           "name": "EngineType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权音频ID。（仅一句话声音复刻使用）",
+          "example": "无",
+          "member": "string",
+          "name": "ConsentAudioId",
           "required": false,
           "type": "string"
         }

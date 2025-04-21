@@ -1023,7 +1023,7 @@
         {
           "disabled": false,
           "document": "视频内容识别模板唯一标识。",
-          "example": "0",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
           "output_required": true,
@@ -1033,7 +1033,7 @@
         {
           "disabled": false,
           "document": "视频内容识别模板名称。",
-          "example": "“”",
+          "example": "智能识别模板",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1043,7 +1043,7 @@
         {
           "disabled": false,
           "document": "视频内容识别模板描述信息。",
-          "example": "“”",
+          "example": "智能识别模板描述",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -1113,7 +1113,7 @@
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "“”",
+          "example": "2017-01-01T00:00:00+08:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -1123,7 +1123,7 @@
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "“”",
+          "example": "2017-01-01T00:00:00+08:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -1133,7 +1133,7 @@
         {
           "disabled": false,
           "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -2343,7 +2343,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -2353,7 +2353,7 @@
         {
           "disabled": false,
           "document": "错误码，0：成功，其他值：失败。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -2363,7 +2363,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -2811,7 +2811,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数，其值为序列化的 json字符串。\n注意：此参数为定制需求参数，参考如下：\n智能檫除：https://cloud.tencent.com/document/product/862/101530\n智能拆条：https://cloud.tencent.com/document/product/862/112098\n高光集锦：https://cloud.tencent.com/document/product/862/107280\n智能横转竖：https://cloud.tencent.com/document/product/862/112112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展参数，其值为序列化的 json字符串。\n注意：此参数为定制需求参数，参考如下：\n[智能檫除](https://cloud.tencent.com/document/product/862/101530)\n[智能拆条](https://cloud.tencent.com/document/product/862/112098)\n[高光集锦](https://cloud.tencent.com/document/product/862/107280)\n[智能横转竖](https://cloud.tencent.com/document/product/862/112112)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"{\\\"htv\\\": {} }\"",
           "member": "string",
           "name": "ExtendedParameter",
@@ -4159,7 +4159,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -4169,7 +4169,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -4179,7 +4179,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -4189,7 +4189,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "NULL",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -4329,7 +4329,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "NULL",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -4339,7 +4339,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "NULL",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -4349,7 +4349,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。",
-          "example": "NULL",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": true,
@@ -4359,7 +4359,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "NULL",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -4702,17 +4702,17 @@
           "example": "0",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Asr 文字敏感结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
-          "example": "“”",
+          "example": "review",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4722,7 +4722,7 @@
           "example": "无",
           "member": "MediaContentReviewAsrTextSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4754,17 +4754,17 @@
           "example": "0",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Ocr 文字敏感结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
-          "example": "\"\"",
+          "example": "review",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4774,7 +4774,7 @@
           "example": "无",
           "member": "MediaContentReviewOcrTextSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4806,27 +4806,27 @@
           "example": "0",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "涉敏结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
-          "example": "\"\"",
+          "example": "review",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频涉敏结果标签。内容审核模板[画面涉敏任务控制参数](https://cloud.tencent.com/document/api/862/37615#AiReviewPoliticalTaskOutput)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\n其他（即 politician/entertainment/sport/entrepreneur/scholar/celebrity/military）：\n<li>politician：涉敏人物。</li>",
-          "example": "\"\"",
+          "example": "politician",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4836,7 +4836,7 @@
           "example": "无",
           "member": "MediaContentReviewPoliticalSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5120,7 +5120,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "\"\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -5130,7 +5130,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "\"\"",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -5150,7 +5150,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "\"\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -5186,7 +5186,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS，FAIL 三种。",
-          "example": "\"\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -5196,7 +5196,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "\"\"",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -5216,7 +5216,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "\"\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -5252,7 +5252,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "\"\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -5262,7 +5262,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "\"\"",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -5282,7 +5282,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "\"\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -6401,9 +6401,10 @@
         {
           "disabled": false,
           "document": "语音全文识别任务开关，可选值：\n<li>ON：开启智能语音全文识别任务；</li>\n<li>OFF：关闭智能语音全文识别任务。</li>",
-          "example": "无",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6411,9 +6412,10 @@
         {
           "disabled": false,
           "document": "生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件。</li>",
-          "example": "无",
+          "example": "vtt",
           "member": "string",
           "name": "SubtitleFormat",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6421,9 +6423,10 @@
         {
           "disabled": false,
           "document": "视频源语言。",
-          "example": "无",
+          "example": "zh",
           "member": "string",
           "name": "SourceLanguage",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7348,7 +7351,7 @@
         {
           "disabled": false,
           "document": "音频操作类型，取值有：\n<li>Volume：音量调节。</li>",
-          "example": "无",
+          "example": "Volume",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -7357,7 +7360,7 @@
         {
           "disabled": false,
           "document": " 当 Type = Volume 时有效。音量调节参数，取值范围: 0~5。 \n<li>0 表示静音。</li>\n<li>小于1 表示降低音量。</li>\n<li>1 表示不变。</li>\n<li>大于1表示升高音量。</li>",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "Volume",
           "required": false,
@@ -7372,7 +7375,7 @@
         {
           "disabled": false,
           "document": "音频流的编码方式，可选值：\n<li>AAC：AAC 编码（默认），用于容器为 mp4。</li>\n<li>MP3：mp3 编码，用于容器为 mp3。</li>",
-          "example": "无",
+          "example": "AAC",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -7381,7 +7384,7 @@
         {
           "disabled": false,
           "document": "音频流的采样率，单位：Hz，可选值：\n<li>16000（默认）</li>\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>",
-          "example": "无",
+          "example": "16000",
           "member": "int64",
           "name": "SampleRate",
           "required": false,
@@ -7390,7 +7393,7 @@
         {
           "disabled": false,
           "document": "声道数，可选值：\n<li>1：单声道 。</li>\n<li>2：双声道（默认）。</li>",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "AudioChannel",
           "required": false,
@@ -7399,7 +7402,7 @@
         {
           "disabled": false,
           "document": "参考码率，单位 kbps，范围：26~10000。\n如果设置，编码时会尽量按该码率进行编码。\n如果不设置，服务将根据音频参数自动采用合适的码率。",
-          "example": "无",
+          "example": "128",
           "member": "int64",
           "name": "Bitrate",
           "required": false,
@@ -7414,7 +7417,7 @@
         {
           "disabled": false,
           "document": "背景颜色对应的 RGB 参考值，取值格式： #RRGGBB，如 #F0F0F0 。 \n默认值：#000000（黑色）。",
-          "example": "无",
+          "example": "#000000",
           "member": "string",
           "name": "Color",
           "required": false,
@@ -7423,7 +7426,7 @@
         {
           "disabled": false,
           "document": "画布宽度，即输出视频的宽度，取值范围：0~ 3840，单位：px。  \n默认值：0，表示和第一个视频宽度一致。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Width",
           "required": false,
@@ -7432,7 +7435,7 @@
         {
           "disabled": false,
           "document": "画布高度，即输出视频的高度，取值范围：0~ 3840，单位：px。  \n默认值：0，表示和第一个视频高度一致。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Height",
           "required": false,
@@ -7447,7 +7450,7 @@
         {
           "disabled": false,
           "document": "元素时长，时间支持：\n<li>以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒。</li>",
-          "example": "无",
+          "example": "3.5s",
           "member": "string",
           "name": "Duration",
           "required": true,
@@ -7480,7 +7483,7 @@
         {
           "disabled": false,
           "document": "元素中心点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认：50%。",
-          "example": "无",
+          "example": "50%",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -7489,7 +7492,7 @@
         {
           "disabled": false,
           "document": "元素中心点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认：50%。",
-          "example": "无",
+          "example": "100px",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -7498,7 +7501,7 @@
         {
           "disabled": false,
           "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
-          "example": "无",
+          "example": "10%",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -7507,7 +7510,7 @@
         {
           "disabled": false,
           "document": "元素的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
-          "example": "无",
+          "example": "100px",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -7531,7 +7534,7 @@
         {
           "disabled": false,
           "document": "类型，取值有：\n<li>Rotate：图像旋转。</li>\n<li>Flip：图像翻转。</li>",
-          "example": "无",
+          "example": "Rotate",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -7540,7 +7543,7 @@
         {
           "disabled": false,
           "document": "当 Type = Rotate 时有效。图像以中心点为原点进行旋转的角度，取值范围0~360。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "RotateAngle",
           "required": false,
@@ -7549,7 +7552,7 @@
         {
           "disabled": false,
           "document": "当 Type = Flip 时有效。图像翻转动作，取值有： \n<li>Horizental：水平翻转，即左右镜像。</li>\n<li>Vertical：垂直翻转，即上下镜像。</li>",
-          "example": "无",
+          "example": "Horizental",
           "member": "string",
           "name": "FlipType",
           "required": false,
@@ -7606,7 +7609,7 @@
         {
           "disabled": false,
           "document": "元素类型。取值有：\n<li>Video：视频元素。</li>\n<li>Audio：音频元素。</li>\n<li>Image：图片元素。</li>\n<li>Transition：转场元素。</li>\n<li>Subtitle：字幕元素。</li>\n<li>Empty：空白元素。</li>",
-          "example": "无",
+          "example": "Video",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -7674,8 +7677,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "轨道类型，取值有：<ul><li>Video ：视频轨道。视频轨道可由以下元素组成：</li><ul><li>Video 元素</li><li>Image 元素</li><li>Transition 元素</li><li>Empty 元素</li></ul><li>Audio ：音频轨道。音频轨道可由以下元素组成：</li><ul><li>Audio 元素</li><li>Transition 元素</li><li>Empty 元素</li></ul><li>Title：文字轨道。文字轨道可由以下元素组成：</li><ul><li>Subtitle 元素</li></ul>",
-          "example": "无",
+          "document": "轨道类型，取值有：<ul><li>Video ：视频轨道。视频轨道可由以下元素组成：</li><ul><li>Video 元素</li><li>Image 元素</li><li>Transition 元素</li><li>Empty 元素</li></ul><li>Audio ：音频轨道。音频轨道可由以下元素组成：</li><ul><li>Audio 元素</li><li>Transition 元素</li><li>Empty 元素</li></ul><li>Title：文字轨道。文字轨道可由以下元素组成：</li><ul><li>Subtitle 元素</li></ul></ul>",
+          "example": "Video",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -7912,7 +7915,7 @@
         {
           "disabled": false,
           "document": "封装容器格式，可选值：\n<li>mp4：视频文件（默认）。</li>\n<li>mp3：纯音频文件。</li>",
-          "example": "无",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "required": false,
@@ -7921,7 +7924,7 @@
         {
           "disabled": false,
           "document": "是否去除视频数据，可选值：\n<li>0：保留（默认）。</li>\n<li>1：去除。</li>",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
           "required": false,
@@ -7930,7 +7933,7 @@
         {
           "disabled": false,
           "document": "是否去除音频数据，可选值：\n<li>0：保留（默认）。</li>\n<li>1：去除。</li>",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
           "required": false,
@@ -8044,7 +8047,7 @@
         {
           "disabled": false,
           "document": "元素中心点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认：50%。",
-          "example": "无",
+          "example": "10%",
           "member": "string",
           "name": "XPos",
           "required": false,
@@ -8053,7 +8056,7 @@
         {
           "disabled": false,
           "document": "元素中心点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认：50%。",
-          "example": "无",
+          "example": "100px",
           "member": "string",
           "name": "YPos",
           "required": false,
@@ -8062,7 +8065,7 @@
         {
           "disabled": false,
           "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
-          "example": "无",
+          "example": "10% ",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -8071,7 +8074,7 @@
         {
           "disabled": false,
           "document": "元素的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
-          "example": "无",
+          "example": "100px",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -8104,7 +8107,7 @@
         {
           "disabled": false,
           "document": "视频流的编码方式，可选值：\n<li>H.264：H.264 编码（默认）。</li>",
-          "example": "无",
+          "example": "H.264",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -8113,7 +8116,7 @@
         {
           "disabled": false,
           "document": "视频帧率，取值范围：[0, 60]，单位：Hz。  \n默认值：0，表示和第一个视频帧率一致。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Fps",
           "required": false,
@@ -8122,7 +8125,7 @@
         {
           "disabled": false,
           "document": "参考码率，单位 kbps，范围：50~35000。\n如果设置，编码时会尽量按该码率进行编码。\n如果不设置，服务将通过画面复杂度自动采用合适的码率。",
-          "example": "无",
+          "example": "128",
           "member": "int64",
           "name": "Bitrate",
           "required": false,
@@ -8196,27 +8199,27 @@
           "example": "0",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内容审核模板名称，长度限制：64 个字符。",
-          "example": "\"\"",
+          "example": "内容审核模板1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内容审核模板描述信息，长度限制：256 个字符。",
-          "example": "\"\"",
+          "example": "包含图片和文本审核",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8226,7 +8229,7 @@
           "example": "NULL",
           "member": "PornConfigureInfo",
           "name": "PornConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8236,7 +8239,7 @@
           "example": "NULL",
           "member": "TerrorismConfigureInfo",
           "name": "TerrorismConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8246,7 +8249,7 @@
           "example": "NULL",
           "member": "PoliticalConfigureInfo",
           "name": "PoliticalConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8256,7 +8259,7 @@
           "example": "NULL",
           "member": "ProhibitedConfigureInfo",
           "name": "ProhibitedConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8266,37 +8269,37 @@
           "example": "NULL",
           "member": "UserDefineConfigureInfo",
           "name": "UserDefineConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "\"\"",
+          "example": "2025-03-23T07:14:27+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "\"\"",
+          "example": "2025-03-23T07:14:27+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板类型，取值范围：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9226,7 +9229,7 @@
         {
           "disabled": false,
           "document": "绑定的输入安全组 ID。 ",
-          "example": "无",
+          "example": "[\"01937702ecc509dc0f3269ca3420\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -9235,7 +9238,7 @@
         {
           "disabled": false,
           "document": "可用区，非必填，如果开启容灾必须输入两个不同的可用区，否则最多只允许输入一个可用区。\t",
-          "example": "无",
+          "example": "[\"ap-shanghai-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -9392,8 +9395,8 @@
         },
         {
           "disabled": false,
-          "document": "延迟，默认0，单位ms，范围为[0, 3000]。",
-          "example": "0",
+          "document": "延迟，默认120，单位ms，范围为[0, 3000]。",
+          "example": "120",
           "member": "int64",
           "name": "Latency",
           "required": false,
@@ -9402,7 +9405,7 @@
         {
           "disabled": false,
           "document": "接收延迟，默认120，单位ms，范围为[0, 3000]。",
-          "example": "120",
+          "example": "0",
           "member": "int64",
           "name": "RecvLatency",
           "required": false,
@@ -9410,7 +9413,7 @@
         },
         {
           "disabled": false,
-          "document": "对端延迟，默认0，单位ms，范围为[0, 3000]。",
+          "document": "对端延迟，默认120，单位ms，范围为[0, 3000]。",
           "example": "0",
           "member": "int64",
           "name": "PeerLatency",
@@ -9429,7 +9432,7 @@
         {
           "disabled": false,
           "document": "解密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。",
-          "example": "无",
+          "example": "passphrase",
           "member": "string",
           "name": "Passphrase",
           "required": false,
@@ -9616,7 +9619,7 @@
         {
           "disabled": false,
           "document": "绑定的输入安全组 ID。 ",
-          "example": "无",
+          "example": "[\"01937702c54509dc0f3269ca341f\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -9625,7 +9628,7 @@
         {
           "disabled": false,
           "document": "可用区，output最多只支持输入一个可用区。\t",
-          "example": "无",
+          "example": "[\"ap-shanghai-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -9779,22 +9782,20 @@
         {
           "disabled": false,
           "document": "转推的URL，格式如：rtmp://domain/live。",
-          "example": "your url",
+          "example": "rtmp://example.com/live",
           "member": "string",
           "name": "Url",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "转推的StreamKey，格式如：stream?key=value。",
-          "example": "test",
+          "example": "stream_key",
           "member": "string",
           "name": "StreamKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -9822,8 +9823,8 @@
         },
         {
           "disabled": false,
-          "document": "转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认",
-          "example": "0",
+          "document": "转推SRT的延迟，默认120，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认",
+          "example": "120",
           "member": "int64",
           "name": "Latency",
           "required": false,
@@ -9832,7 +9833,7 @@
         {
           "disabled": false,
           "document": "转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度",
-          "example": "120",
+          "example": "0",
           "member": "int64",
           "name": "RecvLatency",
           "required": false,
@@ -9840,7 +9841,7 @@
         },
         {
           "disabled": false,
-          "document": "转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间",
+          "document": "转推SRT的对端延迟，默认120，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间",
           "example": "0",
           "member": "int64",
           "name": "PeerLatency",
@@ -9859,7 +9860,7 @@
         {
           "disabled": false,
           "document": "转推SRT的加密密钥，默认为空，表示不加密。只可填ascii码值，长度为[10, 79]。",
-          "example": "无",
+          "example": "passphrase",
           "member": "string",
           "name": "Passphrase",
           "required": false,
@@ -12602,7 +12603,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "无",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -12612,7 +12613,7 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "无",
+          "example": "example-flow",
           "member": "string",
           "name": "FlowName",
           "output_required": true,
@@ -12632,7 +12633,7 @@
         {
           "disabled": false,
           "document": "最大带宽值。",
-          "example": "无",
+          "example": "10000000",
           "member": "int64",
           "name": "MaxBandwidth",
           "output_required": true,
@@ -13020,7 +13021,7 @@
         {
           "disabled": false,
           "document": "绑定的输入安全组 ID。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ff96r1fd7ab41ekj06497cdecbb0\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": false,
@@ -13030,7 +13031,7 @@
         {
           "disabled": false,
           "document": "可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。\t",
-          "example": "无",
+          "example": "[\"ap-shanghai-1\"]",
           "member": "string",
           "name": "Zones",
           "output_required": false,
@@ -13262,7 +13263,7 @@
         {
           "disabled": false,
           "document": "解密密钥。",
-          "example": "无",
+          "example": "passphrase",
           "member": "string",
           "name": "Passphrase",
           "output_required": true,
@@ -13538,7 +13539,7 @@
         {
           "disabled": false,
           "document": "CIDR白名单列表。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"0.0.0.0\"]",
           "member": "string",
           "name": "AllowIpList",
           "output_required": true,
@@ -13578,7 +13579,7 @@
         {
           "disabled": false,
           "document": "绑定的安全组 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"019202e96d9f09dc0f325e7f7a2a\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": false,
@@ -13588,7 +13589,7 @@
         {
           "disabled": false,
           "document": "可用区，output目前最多只支持一个。\t",
-          "example": "无",
+          "example": "[\"ap-shanghai\"]",
           "member": "string",
           "name": "Zones",
           "output_required": false,
@@ -13793,7 +13794,7 @@
           "example": "无",
           "member": "RTPAddressDestination",
           "name": "Destinations",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13803,17 +13804,17 @@
           "example": "FEC",
           "member": "string",
           "name": "FEC",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "空闲超时时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3000",
           "member": "int64",
           "name": "IdleTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -16202,7 +16203,7 @@
         {
           "disabled": false,
           "document": "诊断出的异常描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Open url http://xxx.mp4 failed.",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -16378,7 +16379,7 @@
         {
           "disabled": false,
           "document": "【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "StartTimeOffset",
           "output_required": true,
@@ -16389,7 +16390,7 @@
         {
           "disabled": false,
           "document": "【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。",
-          "example": "无",
+          "example": "10",
           "member": "float",
           "name": "EndTimeOffset",
           "output_required": true,
@@ -16400,7 +16401,7 @@
         {
           "disabled": false,
           "document": "【合成】任务必选，用于轨道元素中媒体关联源素材 ID。\n\n注意：允许字母、数字、-、_ ，最长 32 字符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "id1",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -16417,7 +16418,7 @@
         {
           "disabled": false,
           "document": "封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "mp4",
           "member": "string",
           "name": "Container",
           "output_required": false,
@@ -16816,9 +16817,10 @@
         {
           "disabled": false,
           "document": "人脸识别任务开关，可选值：\n<li>ON：开启智能人脸识别任务；</li>\n<li>OFF：关闭智能人脸识别任务。</li>",
-          "example": "无",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16826,9 +16828,10 @@
         {
           "disabled": false,
           "document": "人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。默认 95 分。取值范围：0 - 100。",
-          "example": "无",
+          "example": "95",
           "member": "float",
           "name": "Score",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -16836,9 +16839,10 @@
         {
           "disabled": false,
           "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：敏感人物。</li>",
-          "example": "无",
+          "example": "[\"entertainment\"]",
           "member": "string",
           "name": "DefaultLibraryLabelSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -16846,9 +16850,10 @@
         {
           "disabled": false,
           "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 100 个，每个标签长度最多 16 个字符。",
-          "example": "无",
+          "example": "[\"张三\"]",
           "member": "string",
           "name": "UserDefineLibraryLabelSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -16856,9 +16861,10 @@
         {
           "disabled": false,
           "document": "人物库选择，可选值：\n<li>Default：使用默认人物库；</li>\n<li>UserDefine：使用用户自定义人物库。</li>\n<li>All：同时使用默认人物库和用户自定义人物库。</li>\n默认值：All，使用系统默认人物库及用户自定义人物库。",
-          "example": "无",
+          "example": "Default",
           "member": "string",
           "name": "FaceLibrary",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16872,52 +16878,47 @@
         {
           "disabled": false,
           "document": "人脸识别任务开关，可选值：\n<li>ON：开启智能人脸识别任务；</li>\n<li>OFF：关闭智能人脸识别任务。</li>",
-          "example": "无",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "人脸识别过滤分数，当识别结果达到该分数以上，返回识别结果。取值范围：0-100。",
-          "example": "无",
+          "example": "80",
           "member": "float",
           "name": "Score",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
         },
         {
           "disabled": false,
           "document": "默认人物过滤标签，指定需要返回的默认人物的标签。如果未填或者为空，则全部默认人物结果都返回。标签可选值：\n<li>entertainment：娱乐明星；</li>\n<li>sport：体育明星；</li>\n<li>politician：敏感人物。</li>",
-          "example": "无",
+          "example": "[\"entertainment\"]",
           "member": "string",
           "name": "DefaultLibraryLabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 100 个，每个标签长度最多 16 个字符。",
-          "example": "无",
+          "example": "[\"张三\"]",
           "member": "string",
           "name": "UserDefineLibraryLabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "人物库选择，可选值：\n<li>Default：使用默认人物库；</li>\n<li>UserDefine：使用用户自定义人物库。</li>\n<li>All：同时使用默认人物库和用户自定义人物库。</li>",
-          "example": "无",
+          "example": "Default",
           "member": "string",
           "name": "FaceLibrary",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -16992,7 +16993,7 @@
         {
           "disabled": false,
           "document": "流Id。",
-          "example": "无",
+          "example": "01937702c54509dc0f3269ca341f",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
@@ -17002,7 +17003,7 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "无",
+          "example": "019202e96d9f09dc0f325e7f7a2a",
           "member": "string",
           "name": "FlowName",
           "output_required": false,
@@ -17032,7 +17033,7 @@
         {
           "disabled": false,
           "document": "当返回是输出类型时非空，output所在Region。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "OutputRegion",
           "output_required": false,
@@ -17042,7 +17043,7 @@
         {
           "disabled": false,
           "document": "EventName。",
-          "example": "无",
+          "example": "example-event",
           "member": "string",
           "name": "EventName",
           "output_required": false,
@@ -17052,7 +17053,7 @@
         {
           "disabled": false,
           "document": "InOutType为Input有效。",
-          "example": "无",
+          "example": "studio-one",
           "member": "string",
           "name": "InputName",
           "output_required": false,
@@ -17062,7 +17063,7 @@
         {
           "disabled": false,
           "document": "InOutType为Output有效。",
-          "example": "无",
+          "example": "shanghai-ouput",
           "member": "string",
           "name": "OutputName",
           "output_required": false,
@@ -17072,7 +17073,7 @@
         {
           "disabled": false,
           "document": "Input或者Output的Id。",
-          "example": "无",
+          "example": "065422a22c771ebd470401elkijg",
           "member": "string",
           "name": "InOutId",
           "output_required": false,
@@ -17082,7 +17083,7 @@
         {
           "disabled": false,
           "document": "输入/输出类型，可选值：\nInput：输入\nOutpu：输出。",
-          "example": "无",
+          "example": "Input",
           "member": "string",
           "name": "InOutType",
           "output_required": false,
@@ -18264,27 +18265,27 @@
           "example": "0",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "“”",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "雪碧图模板名称。",
-          "example": "“”",
+          "example": "ImageSprite",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18294,7 +18295,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18304,27 +18305,27 @@
           "example": "0",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
-          "example": "“”",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采样类型。",
-          "example": "“”",
+          "example": "Time",
           "member": "string",
           "name": "SampleType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18334,7 +18335,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SampleInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18344,7 +18345,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RowCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18354,57 +18355,57 @@
           "example": "0",
           "member": "uint64",
           "name": "ColumnCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "“”",
+          "example": "2025-03-23T07:14:27+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "“”",
+          "example": "2025-03-23T07:14:37+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n默认值：black 。",
-          "example": "“”",
+          "example": "black",
           "member": "string",
           "name": "FillType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板描述信息。",
-          "example": "“”",
+          "example": "雪碧图模板",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片格式。",
-          "example": "“”",
+          "example": "png",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18673,7 +18674,7 @@
         {
           "disabled": false,
           "document": "直播录制文件地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "http://xxx.m3u8",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -18683,7 +18684,7 @@
         {
           "disabled": false,
           "document": "直播录制文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "Size",
           "output_required": false,
@@ -18693,7 +18694,7 @@
         {
           "disabled": false,
           "document": "直播录制文件时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Duration",
           "output_required": false,
@@ -18703,7 +18704,7 @@
         {
           "disabled": false,
           "document": "直播录制文件开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-23T07:14:27+08:00",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -18713,7 +18714,7 @@
         {
           "disabled": false,
           "document": "直播录制文件结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-23T07:16:17+08:00",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -18777,7 +18778,7 @@
         {
           "disabled": false,
           "document": "直播录制后文件的输出路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "/xxx-LiveScheduleTask-xxx",
           "member": "string",
           "name": "OutputObjectPath",
           "output_required": false,
@@ -18880,7 +18881,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "InvalidInput",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": false,
@@ -18890,7 +18891,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ErrCode",
           "output_required": false,
@@ -18900,7 +18901,7 @@
         {
           "disabled": false,
           "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "record failed.",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -18930,7 +18931,7 @@
         {
           "disabled": false,
           "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-22T23:14:20+08:00",
           "member": "string",
           "name": "BeginProcessTime",
           "output_required": false,
@@ -18940,7 +18941,7 @@
         {
           "disabled": false,
           "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-22T23:22:44+08:00",
           "member": "string",
           "name": "FinishTime",
           "output_required": false,
@@ -19222,90 +19223,90 @@
         {
           "disabled": false,
           "document": "嫌疑片段起始的 PTS 时间，单位：秒。",
-          "example": "0",
+          "example": "26.5",
           "member": "float",
           "name": "StartPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段结束的 PTS 时间，单位：秒。",
-          "example": "0",
+          "example": "29.5",
           "member": "float",
           "name": "EndPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段敏感分数。",
-          "example": "0",
+          "example": "90",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段鉴黄结果建议，取值范围：\n<li>pass</li>\n<li>review</li>\n<li>block</li>",
-          "example": "\"\"",
+          "example": "block",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频敏感结果标签，取值范围：\n<li>politician：敏感人物。</li>\n<li>violation_photo：违规图标。</li>",
-          "example": "\"\"",
+          "example": "politician",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感人物、违规图标名字。",
-          "example": "\"\"",
+          "example": "人物1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "敏感人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
-          "example": "0",
+          "example": "[101, 85, 111, 95]",
           "member": "int64",
           "name": "AreaCoordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\nPicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "\"\"",
+          "example": "http://252525.xx.myqcloud.com/1a168d62xxx0/bcf0c036xxxxxxxc/30xxx.jpg",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "\"\"",
+          "example": "20xx-10-01T18:00:00+08:00",
           "member": "string",
           "name": "PicUrlExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19394,70 +19395,70 @@
         {
           "disabled": false,
           "document": "嫌疑片段起始的 PTS 时间，单位：秒。",
-          "example": "0",
+          "example": "26.5",
           "member": "float",
           "name": "StartPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段结束的 PTS 时间，单位：秒。",
-          "example": "0",
+          "example": "29.5",
           "member": "float",
           "name": "EndPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段涉敏分数。",
-          "example": "0",
+          "example": "85",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段涉敏结果建议，取值范围：\n<li>pass</li>\n<li>review</li>\n<li>block</li>",
-          "example": "\"\"",
+          "example": "block",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频涉敏结果标签，取值范围：\n<li>guns：武器枪支。</li>\n<li>crowd：人群聚集。</li>\n<li>police：警察部队。</li>\n<li>bloody：血腥画面。</li>\n<li>banners：涉敏旗帜。</li>\n<li>militant：武装分子。</li>\n<li>explosion：爆炸火灾。</li>\n<li>terrorists：涉敏人物。</li>",
-          "example": "\"\"",
+          "example": "guns",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\nPicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "\"\"",
+          "example": "http://252525.xx.myqcloud.com/a168d6/xxxxxx.jpg",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "\"\"",
+          "example": "20xx-10-01T18:00:00+08:00",
           "member": "string",
           "name": "PicUrlExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19601,7 +19602,7 @@
           "example": "你好",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19611,7 +19612,7 @@
           "example": "123.301",
           "member": "float",
           "name": "StartPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -19621,7 +19622,7 @@
           "example": "125.301",
           "member": "float",
           "name": "EndPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -19631,37 +19632,37 @@
           "example": "99",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别开始UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-21T10:11:13Z",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "识别结束UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-21T10:13:13Z",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "稳态标记。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "SteadyState",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -19796,7 +19797,7 @@
         {
           "disabled": false,
           "document": "识别的物体名称。",
-          "example": "无",
+          "example": "足球",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -19806,7 +19807,7 @@
         {
           "disabled": false,
           "document": "识别片段起始的 PTS 时间，单位：秒。",
-          "example": "无",
+          "example": "61.08",
           "member": "float",
           "name": "StartPtsOffset",
           "output_required": true,
@@ -19816,7 +19817,7 @@
         {
           "disabled": false,
           "document": "识别片段终止的 PTS 时间，单位：秒。",
-          "example": "无",
+          "example": "65.54",
           "member": "float",
           "name": "EndPtsOffset",
           "output_required": true,
@@ -19826,7 +19827,7 @@
         {
           "disabled": false,
           "document": "识别片段置信度。取值：0~100。",
-          "example": "无",
+          "example": "90",
           "member": "float",
           "name": "Confidence",
           "output_required": true,
@@ -19836,7 +19837,7 @@
         {
           "disabled": false,
           "document": "识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。",
-          "example": "无",
+          "example": "[1590,84,1867,129]",
           "member": "int64",
           "name": "AreaCoordSet",
           "output_required": true,
@@ -19846,7 +19847,7 @@
         {
           "disabled": false,
           "document": "截图链接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://252525.xx.myqcloud.com/a168d6/xxxxxx.jpg",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -20172,7 +20173,7 @@
         {
           "disabled": false,
           "document": "当模型为 Queue 时有效，表示接收事件通知的 CMQ 的队列名。",
-          "example": "test",
+          "example": "mpstest-queue",
           "member": "string",
           "name": "QueueName",
           "output_required": true,
@@ -20183,7 +20184,7 @@
         {
           "disabled": false,
           "document": "当模型为 Topic 时有效，表示接收事件通知的 CMQ 的主题名。",
-          "example": "test",
+          "example": "mpstest-topic",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -20205,7 +20206,7 @@
         {
           "disabled": false,
           "document": "用于生成回调签名的 Key。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "d6xAABBCCxxx+123456XABCXXXSS",
           "member": "string",
           "name": "NotifyKey",
           "output_required": false,
@@ -20225,27 +20226,27 @@
           "example": "Hello",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "翻译片段起始的 PTS 时间，单位：秒。",
-          "example": "0.0",
+          "example": "8.764",
           "member": "float",
           "name": "StartPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "翻译片段终止的 PTS 时间，单位：秒。",
-          "example": "1.0",
+          "example": "15.977",
           "member": "float",
           "name": "EndPtsTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -20255,7 +20256,7 @@
           "example": "99",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -20265,37 +20266,37 @@
           "example": "你好",
           "member": "string",
           "name": "Trans",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "翻译开始UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-21T10:11:52Z",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "翻译结束UTC时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-21T10:12:52Z",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "稳态标记。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "SteadyState",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -20433,7 +20434,7 @@
         {
           "disabled": false,
           "document": "智能描述。",
-          "example": "无",
+          "example": "本段主要讲述了xxxxx内容",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -20443,7 +20444,7 @@
         {
           "disabled": false,
           "document": "智能描述的可信度，取值范围是 0 到 100。",
-          "example": "无",
+          "example": "90",
           "member": "float",
           "name": "Confidence",
           "output_required": true,
@@ -20453,7 +20454,7 @@
         {
           "disabled": false,
           "document": "智能描述标题",
-          "example": "标题",
+          "example": "标题1",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -20759,7 +20760,7 @@
         {
           "disabled": false,
           "document": "音频流的码率，单位：bps。",
-          "example": "8000",
+          "example": "122748",
           "member": "int64",
           "name": "Bitrate",
           "output_required": true,
@@ -20769,7 +20770,7 @@
         {
           "disabled": false,
           "document": "音频流的采样率，单位：hz。",
-          "example": "8000",
+          "example": "44100",
           "member": "int64",
           "name": "SamplingRate",
           "output_required": true,
@@ -20809,7 +20810,7 @@
         {
           "disabled": false,
           "document": "音频响度。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "-17.01",
           "member": "float",
           "name": "Loudness",
           "output_required": true,
@@ -20819,7 +20820,7 @@
         {
           "disabled": false,
           "document": "音频时长。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "116.936",
           "member": "float",
           "name": "Duration",
           "output_required": false,
@@ -20977,90 +20978,90 @@
         {
           "disabled": false,
           "document": "嫌疑片段起始的偏移时间，单位：秒。",
-          "example": "0",
+          "example": "0.04",
           "member": "float",
           "name": "StartTimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段结束的偏移时间，单位：秒。",
-          "example": "0",
+          "example": "6.04",
           "member": "float",
           "name": "EndTimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段涉敏分数。",
-          "example": "0",
+          "example": "98",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段涉敏结果建议，取值范围：\n<li>pass。</li>\n<li>review。</li>\n<li>block。</li>",
-          "example": "\"\"",
+          "example": "block",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "涉敏人物、违规图标名字。",
-          "example": "\"\"",
+          "example": "测试人物1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑片段涉敏结果标签。内容审核模板[画面涉敏任务控制参数](https://cloud.tencent.com/document/api/862/37615#PoliticalImgReviewTemplateInfo)里 LabelSet 参数与此参数取值范围的对应关系：\nviolation_photo：\n<li>violation_photo：违规图标。</li>\npolitician：\n<li>nation_politician：国家领导人；</li>\n<li>province_politician: 省部级领导人；</li>\n<li>bureau_politician：厅局级领导人；</li>\n<li>county_politician：县处级领导人；</li>\n<li>rural_politician：乡科级领导人；</li>\n<li>sensitive_politician：涉敏人物；</li>\n<li>foreign_politician：国外领导人。</li>\nentertainment：\n<li>sensitive_entertainment：敏感娱乐人物。</li>\nsport：\n<li>sensitive_sport：敏感体育人物。</li>\nentrepreneur：\n<li>sensitive_entrepreneur：敏感商业人物。</li>\nscholar：\n<li>sensitive_scholar：敏感教育学者。</li>\ncelebrity：\n<li>sensitive_celebrity：敏感知名人物；</li>\n<li>historical_celebrity：历史知名人物。</li>\nmilitary：\n<li>sensitive_military：敏感军事人物。</li>",
-          "example": "\"\"",
+          "example": "sensitive_entertainment",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "\"\"",
+          "example": "http://252325.test2.myqcloud.com/1a168dtest/test01_01.jpg",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "涉敏人物、违规图标出现的区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。",
-          "example": "0",
+          "example": "[801, 952, 808, 996]",
           "member": "int64",
           "name": "AreaCoordSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "嫌疑图片 URL 失效时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "\"\"",
+          "example": "2023-xx-xxT10:11:32.392Z",
           "member": "string",
           "name": "PicUrlExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -21381,7 +21382,7 @@
         {
           "disabled": false,
           "document": "文件Md5。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "811234456772testac123testc4",
           "member": "string",
           "name": "Md5",
           "output_required": false,
@@ -22177,30 +22178,30 @@
         {
           "disabled": false,
           "document": "该张截图对应视频文件中的时间偏移，单位为秒。",
-          "example": "0",
+          "example": "3.5",
           "member": "float",
           "name": "TimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该张截图的路径。",
-          "example": "\"\"",
+          "example": "/output/689a7xxxxxa/test_snapshotByOffset_23123x_0.jpg",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "截图如果被打上了水印，被打水印的模板 ID 列表。",
-          "example": "NULL",
+          "example": "[1011]",
           "member": "int64",
           "name": "WaterMarkDefinition",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -22449,7 +22450,7 @@
         {
           "disabled": false,
           "document": "视频时长。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "52.214",
           "member": "float",
           "name": "Duration",
           "output_required": false,
@@ -23195,7 +23196,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。\t-",
+          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。\t-",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -23250,7 +23251,7 @@
         {
           "disabled": false,
           "document": "绑定的输入安全组 ID。 仅支持关联一组安全组。",
-          "example": "无",
+          "example": "[\"019631fd7ab41ea506497cdedffg\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -23259,7 +23260,7 @@
         {
           "disabled": false,
           "document": "可用区，非必填，最多支持输入两个可用区，对于需改接口，只要第二个可用区会参与到资源分配。如果input开启容灾或者涉及RTSP_PULL协议切换时有效(会重新分配地址)。\t",
-          "example": "无",
+          "example": "[\"ap-shanghai-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -23418,7 +23419,7 @@
         {
           "disabled": false,
           "document": "IP白名单列表，格式为CIDR，如0.0.0.0/0。\n当Protocol为RTMP_PULL有效，为空代表不限制客户端IP。",
-          "example": "无",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "AllowIpList",
           "required": false,
@@ -23436,7 +23437,7 @@
         {
           "disabled": false,
           "document": "绑定的安全组 ID。 仅支持关联一组安全组。\t",
-          "example": "无",
+          "example": "[\"035hk1fd7ab41ea506497cdecbb9\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -23445,7 +23446,7 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "无",
+          "example": "[\"ap-shanghai-1\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -24676,9 +24677,10 @@
         {
           "disabled": false,
           "document": "文本全文识别任务开关，可选值：\n<li>ON：开启智能文本全文识别任务；</li>\n<li>OFF：关闭智能文本全文识别任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24692,12 +24694,11 @@
         {
           "disabled": false,
           "document": "文本全文识别任务开关，可选值：\n<li>ON：开启智能文本全文识别任务；</li>\n<li>OFF：关闭智能文本全文识别任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -24708,9 +24709,10 @@
         {
           "disabled": false,
           "document": "文本关键词识别任务开关，可选值：\n<li>ON：开启文本关键词识别任务；</li>\n<li>OFF：关闭文本关键词识别任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -24718,9 +24720,10 @@
         {
           "disabled": false,
           "document": "关键词过滤标签，指定需要返回的关键词的标签。如果未填或者为空，则全部结果都返回。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
-          "example": "",
+          "example": "[\"腾讯云\"]",
           "member": "string",
           "name": "LabelSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -24734,22 +24737,20 @@
         {
           "disabled": false,
           "document": "文本关键词识别任务开关，可选值：\n<li>ON：开启文本关键词识别任务；</li>\n<li>OFF：关闭文本关键词识别任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "关键词过滤标签，指定需要返回的关键词的标签。如果未填或者为空，则全部结果都返回。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
-          "example": "",
+          "example": "[\"腾讯云\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -25264,32 +25265,29 @@
         {
           "disabled": false,
           "document": "语音涉敏任务开关，可选值：\n<li>ON：开启语音涉敏任务；</li>\n<li>OFF：关闭语音涉敏任务。</li>",
-          "example": "\"\"",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
-          "example": "0",
+          "example": "85",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
-          "example": "0",
+          "example": "75",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -25536,9 +25534,10 @@
         {
           "disabled": false,
           "document": "语音鉴黄任务开关，可选值：\n<li>ON：开启语音鉴黄任务；</li>\n<li>OFF：关闭语音鉴黄任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25546,9 +25545,10 @@
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25556,9 +25556,10 @@
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25572,32 +25573,29 @@
         {
           "disabled": false,
           "document": "语音鉴黄任务开关，可选值：\n<li>ON：开启语音鉴黄任务；</li>\n<li>OFF：关闭语音鉴黄任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -25680,9 +25678,10 @@
         {
           "disabled": false,
           "document": "画面鉴黄任务开关，可选值：\n<li>ON：开启画面鉴黄任务；</li>\n<li>OFF：关闭画面鉴黄任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25690,9 +25689,10 @@
         {
           "disabled": false,
           "document": "画面鉴黄过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>porn：色情；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为；</li>\n<li>sexy：性感。</li>",
-          "example": "",
+          "example": "[\"porn\",\"sexy\"]",
           "member": "string",
           "name": "LabelSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -25700,9 +25700,10 @@
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 90 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25710,9 +25711,10 @@
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 0 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25726,42 +25728,38 @@
         {
           "disabled": false,
           "document": "画面鉴黄任务开关，可选值：\n<li>ON：开启画面鉴黄任务；</li>\n<li>OFF：关闭画面鉴黄任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "画面鉴黄过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：\n<li>porn：色情；</li>\n<li>vulgar：低俗；</li>\n<li>intimacy：亲密行为；</li>\n<li>sexy：性感。</li>",
-          "example": "",
+          "example": "[\"porn\",\"sexy\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -25772,9 +25770,10 @@
         {
           "disabled": false,
           "document": "文本鉴黄任务开关，可选值：\n<li>ON：开启文本鉴黄任务；</li>\n<li>OFF：关闭文本鉴黄任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25782,9 +25781,10 @@
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25792,9 +25792,10 @@
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25808,32 +25809,29 @@
         {
           "disabled": false,
           "document": "文本鉴黄任务开关，可选值：\n<li>ON：开启文本鉴黄任务；</li>\n<li>OFF：关闭文本鉴黄任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -26225,9 +26223,10 @@
         {
           "disabled": false,
           "document": "语音违禁任务开关，可选值：\n<li>ON：开启语音违禁任务；</li>\n<li>OFF：关闭语音违禁任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -26235,9 +26234,10 @@
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -26245,9 +26245,10 @@
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -26261,32 +26262,29 @@
         {
           "disabled": false,
           "document": "语音违禁任务开关，可选值：\n<li>ON：开启语音违禁任务；</li>\n<li>OFF：关闭语音违禁任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -26349,9 +26347,10 @@
         {
           "disabled": false,
           "document": "文本违禁任务开关，可选值：\n<li>ON：开启文本违禁任务；</li>\n<li>OFF：关闭文本违禁任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -26359,9 +26358,10 @@
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -26369,9 +26369,10 @@
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -26385,32 +26386,29 @@
         {
           "disabled": false,
           "document": "文本违禁任务开关，可选值：\n<li>ON：开启文本违禁任务；</li>\n<li>OFF：关闭文本违禁任务。</li>",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当智能审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当智能审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -27489,7 +27487,7 @@
         {
           "disabled": false,
           "document": "采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。\n",
-          "example": "无",
+          "example": "/{inputName}_snapshotByTimeOffsetTest_{definition}_{number}.{format}",
           "member": "string",
           "name": "OutputObjectPath",
           "output_required": true,
@@ -27517,130 +27515,130 @@
         {
           "disabled": false,
           "document": "采样截图模板唯一标识。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板类型，取值范围：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采样截图模板名称。",
-          "example": "",
+          "example": "采样截图模板test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板描述信息。",
-          "example": "",
+          "example": "采样截图模板test",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "截图宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
-          "example": "",
+          "example": "400",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "截图高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
-          "example": "",
+          "example": "400",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
-          "example": "",
+          "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片格式。",
-          "example": "",
+          "example": "jpg",
           "member": "string",
           "name": "Format",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采样截图类型。",
-          "example": "",
+          "example": "Time",
           "member": "string",
           "name": "SampleType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采样间隔。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "SampleInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "",
+          "example": "2024-08-13T04:32:21Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "",
+          "example": "2024-08-13T04:32:21Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "填充方式，当视频流配置宽高参数与原始视频的宽高比不一致时，对转码的处理方式，即为“填充”。可选填充方式：\n<li> stretch：拉伸，对每一帧进行拉伸，填满整个画面，可能导致转码后的视频被“压扁“或者“拉长“；</li>\n<li>black：留黑，保持视频宽高比不变，边缘剩余部分使用黑色填充。</li>\n<li>white：留白，保持视频宽高比不变，边缘剩余部分使用白色填充。</li>\n<li>gauss：高斯模糊，保持视频宽高比不变，边缘剩余部分使用高斯模糊。</li>\n默认值：black 。",
-          "example": "",
+          "example": "black",
           "member": "string",
           "name": "FillType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -27891,7 +27889,7 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "PROCESSING",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -27901,7 +27899,7 @@
         {
           "disabled": false,
           "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
-          "example": "\"\"",
+          "example": " ",
           "member": "string",
           "name": "ErrCodeExt",
           "output_required": true,
@@ -27921,7 +27919,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "\"xx\"",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -28293,7 +28291,7 @@
         {
           "disabled": false,
           "document": "视频在本次检索中的得分，得分越高和检索值越相似，取值范围[0,1]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.60",
           "member": "float",
           "name": "Score",
           "output_required": false,
@@ -28303,7 +28301,7 @@
         {
           "disabled": false,
           "document": "检索获得的视频ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "caf2c4be****abc",
           "member": "string",
           "name": "VideoId",
           "output_required": false,
@@ -28330,7 +28328,7 @@
         {
           "disabled": false,
           "document": "当SearchValueType为Text时有效且必填，用于检索视频的文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试文本",
           "member": "string",
           "name": "TextInput",
           "output_required": false,
@@ -28377,7 +28375,7 @@
         {
           "disabled": false,
           "document": "绑定的输入流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"034561fd7ab41ea506497cdecbbc\"]",
           "member": "string",
           "name": "OccupiedInputs",
           "output_required": true,
@@ -28397,7 +28395,7 @@
         {
           "disabled": false,
           "document": "绑定的输出流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"094561fd7ab41ea506497cdfffc\"]",
           "member": "string",
           "name": "OccupiedOutputs",
           "output_required": false,
@@ -29248,7 +29246,7 @@
         {
           "disabled": false,
           "document": "指定时间点截图模板 ID。",
-          "example": "无",
+          "example": "11028",
           "member": "uint64",
           "name": "Definition",
           "output_required": true,
@@ -29259,7 +29257,7 @@
         {
           "disabled": false,
           "document": "截图时间点列表，时间点支持 s、% 两种格式：\n<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n<li>当字符串以 % 结尾，表示时间点为视频时长的百分比大小，如10%表示时间点为视频前第10%的时间。</li>",
-          "example": "无",
+          "example": "[\"3.5s\", \"50%\"]",
           "member": "string",
           "name": "ExtTimeOffsetSet",
           "output_required": true,
@@ -29270,7 +29268,7 @@
         {
           "disabled": false,
           "document": "截图时间点列表，单位为<font color=red>秒</font>。此参数已不再建议使用，建议您使用 ExtTimeOffsetSet 参数。",
-          "example": "无",
+          "example": "[7.5, 10]",
           "member": "float",
           "name": "TimeOffsetSet",
           "output_required": true,
@@ -29303,7 +29301,7 @@
         {
           "disabled": false,
           "document": "时间点截图后图片文件的输出路径，可以为相对路径或者绝对路径。\n若需定义输出路径，路径需以`.{format}`结尾。变量名请参考 [文件名变量说明](https://cloud.tencent.com/document/product/862/37039)。\n相对路径示例：\n<li>文件名_{变量名}.{format}</li>\n<li>文件名.{format}</li>\n绝对路径示例：\n<li>/自定义路径/文件名_{变量名}.{format}</li>\n如果不填，则默认为相对路径：`{inputName}_snapshotByTimeOffset_{definition}_{number}.{format}`。",
-          "example": "无",
+          "example": "/mps/output/{inputName}_test_{definition}.{format}",
           "member": "string",
           "name": "OutputObjectPath",
           "output_required": true,
@@ -29722,7 +29720,7 @@
         {
           "disabled": false,
           "document": "水印的宽度，支持 px，%，W%，H%，S%，L% 六种格式：\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素；当填 0px 且\n Height 不为 0px 时，表示水印的宽度按原始 SVG 图像等比缩放；当 Width、Height 都填 0px 时，表示水印的宽度取原始 SVG 图像的宽度；</li>\n<li>当字符串以 W% 结尾，表示水印 Width 为视频宽度的百分比大小，如 10W% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 H% 结尾，表示水印 Width 为视频高度的百分比大小，如 10H% 表示 Width 为视频高度的 10%；</li>\n<li>当字符串以 S% 结尾，表示水印 Width 为视频短边的百分比大小，如 10S% 表示 Width 为视频短边的 10%；</li>\n<li>当字符串以 L% 结尾，表示水印 Width 为视频长边的百分比大小，如 10L% 表示 Width 为视频长边的 10%；</li>\n<li>当字符串以 % 结尾时，含义同 W%。</li>\n默认值为 10W%。",
-          "example": "",
+          "example": "10%",
           "member": "string",
           "name": "Width",
           "required": false,
@@ -29732,7 +29730,7 @@
         {
           "disabled": false,
           "document": "水印的高度，支持 px，W%，H%，S%，L% 六种格式：\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；当填 0px 且\n Width 不为 0px 时，表示水印的高度按原始 SVG 图像等比缩放；当 Width、Height 都填 0px 时，表示水印的高度取原始 SVG 图像的高度；</li>\n<li>当字符串以 W% 结尾，表示水印 Height 为视频宽度的百分比大小，如 10W% 表示 Height 为视频宽度的 10%；</li>\n<li>当字符串以 H% 结尾，表示水印 Height 为视频高度的百分比大小，如 10H% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 S% 结尾，表示水印 Height 为视频短边的百分比大小，如 10S% 表示 Height 为视频短边的 10%；</li>\n<li>当字符串以 L% 结尾，表示水印 Height 为视频长边的百分比大小，如 10L% 表示 Height 为视频长边的 10%；</li>\n<li>当字符串以 % 结尾时，含义同 H%。</li>\n默认值为 0px。",
-          "example": "",
+          "example": "0px",
           "member": "string",
           "name": "Height",
           "required": false,
@@ -30834,7 +30832,7 @@
         {
           "disabled": false,
           "document": "该安全组关联的FlowId。",
-          "example": "无",
+          "example": "01963d5435de1eaa814800077080",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
@@ -30845,7 +30843,7 @@
         {
           "disabled": false,
           "document": "要解绑的输入/输出ID。",
-          "example": "无",
+          "example": "019527caa7b209dc0f3253a63420",
           "member": "string",
           "name": "InOutId",
           "output_required": false,
@@ -30856,7 +30854,7 @@
         {
           "disabled": false,
           "document": "输入/输出类型，可选值：\nInput：输入\nOutput：输出。",
-          "example": "无",
+          "example": "input",
           "member": "string",
           "name": "InOutType",
           "output_required": false,
@@ -30867,7 +30865,7 @@
         {
           "disabled": false,
           "document": "Flow所在的Region，和input共用。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "FlowRegion",
           "output_required": false,
@@ -32125,120 +32123,120 @@
         {
           "disabled": false,
           "document": "水印模板唯一标识。",
-          "example": "",
+          "example": "222400",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印类型，取值：\n<li>image：图片水印；</li>\n<li>text：文字水印。</li>",
-          "example": "",
+          "example": "image",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印模板名称。",
-          "example": "",
+          "example": "水印模板",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板描述信息。",
-          "example": "",
+          "example": "水印模板",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印图片原点距离视频图像原点的水平位置。\n<li>当字符串以 % 结尾，表示水印 Left 为视频宽度指定百分比的位置，如 10% 表示 Left 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Left 为视频宽度指定像素的位置，如 100px 表示 Left 为 100 像素。</li>",
-          "example": "",
+          "example": "5%",
           "member": "string",
           "name": "XPos",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印图片原点距离视频图像原点的垂直位置。\n<li>当字符串以 % 结尾，表示水印 Top 为视频高度指定百分比的位置，如 10% 表示 Top 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Top 为视频高度指定像素的位置，如 100px 表示 Top 为 100 像素。</li>",
-          "example": "",
+          "example": "5%",
           "member": "string",
           "name": "YPos",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片水印模板，仅当 Type 为 image，该字段有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ImageWatermarkTemplate",
           "name": "ImageTemplate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文字水印模板，仅当 Type 为 text，该字段有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TextWatermarkTemplateInput",
           "name": "TextTemplate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "SVG 水印模板，当 Type 为 svg，该字段有效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "SvgWatermarkInput",
           "name": "SvgTemplate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "",
+          "example": "2024-04-30T16:40:14+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "",
+          "example": "2024-04-30T16:40:14+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原点位置，可选值：\n<li>topLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>topRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>bottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>bottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下。；</li>",
-          "example": "",
+          "example": "TopLeft",
           "member": "string",
           "name": "CoordinateOrigin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -32614,9 +32612,10 @@
         {
           "disabled": false,
           "document": "触发器的类型，可选值：\n<li>CosFileUpload：COS触发</li>\n<li>AwsS3FileUpload：AWS触发，目前只支持转码任务。只有编排支持，工作流不支持。  </li>\n\n",
-          "example": "无",
+          "example": "CosFileUpload",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -32627,6 +32626,7 @@
           "example": "无",
           "member": "CosFileUploadTrigger",
           "name": "CosFileUploadTrigger",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -32637,6 +32637,7 @@
           "example": "无",
           "member": "AwsS3FileUploadTrigger",
           "name": "AwsS3FileUploadTrigger",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

@@ -922,7 +922,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF` 最大500M\n - `DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
+          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF` 最大300M\n - `DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
           "example": "PDF",
           "member": "string",
           "name": "FileType",

@@ -616,7 +616,7 @@
         {
           "disabled": false,
           "document": "索引 id",
-          "example": "1",
+          "example": "index-faefaefg",
           "member": "string",
           "name": "ServerlessId",
           "required": true,
@@ -625,7 +625,7 @@
         {
           "disabled": false,
           "document": "快照名",
-          "example": "1",
+          "example": "snapshot",
           "member": "string",
           "name": "Snapshot",
           "required": true,
@@ -634,7 +634,7 @@
         {
           "disabled": false,
           "document": "Cos桶名",
-          "example": "1",
+          "example": "user-cos-name",
           "member": "string",
           "name": "CosBucket",
           "required": false,
@@ -643,7 +643,7 @@
         {
           "disabled": false,
           "document": "BasePath路径",
-          "example": "1",
+          "example": "dir/",
           "member": "string",
           "name": "BasePath",
           "required": false,
@@ -652,7 +652,7 @@
         {
           "disabled": false,
           "document": "云上集群名",
-          "example": "1",
+          "example": "es-fwajfwii",
           "member": "string",
           "name": "ClusterInstanceId",
           "required": false,
@@ -661,7 +661,7 @@
         {
           "disabled": false,
           "document": "普通索引名列表",
-          "example": "1",
+          "example": "[\"index1\", \"index2\"]",
           "member": "string",
           "name": "CommonIndexArr",
           "required": false,
@@ -670,7 +670,7 @@
         {
           "disabled": false,
           "document": "自治索引名列表",
-          "example": "1",
+          "example": "[\"index1\", \"index2\"]",
           "member": "string",
           "name": "DataStreamArr",
           "required": false,
@@ -685,7 +685,7 @@
         {
           "disabled": false,
           "document": "不存在于目标索引时间字段相同的字段",
-          "example": "1",
+          "example": "[\"\"]",
           "member": "string",
           "name": "MappingTimeFieldCheckFailedIndexArr",
           "output_required": false,
@@ -695,7 +695,7 @@
         {
           "disabled": false,
           "document": "@timestamp不为date类型，与目标索引时间字段冲突",
-          "example": "1",
+          "example": "[\"\"]",
           "member": "string",
           "name": "MappingTimeTypeCheckFailedIndexArr",
           "output_required": false,
@@ -705,7 +705,7 @@
         {
           "disabled": false,
           "document": "索引的创建时间不在 serverless的存储周期内",
-          "example": "1",
+          "example": "[\"\"]",
           "member": "string",
           "name": "SettingCheckFailedIndexArr",
           "output_required": false,
@@ -786,6 +786,16 @@
           "name": "Message",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点磁盘信息",
+          "example": "[{\"DiskType\":\"CLOUD_DISK\",\"NodeId\":17341724100}]",
+          "member": "DiskUsageInfo",
+          "name": "DiskUsageInfoList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1617,7 +1627,7 @@
         {
           "disabled": false,
           "document": "快照名",
-          "example": "1",
+          "example": "test_snapshot",
           "member": "string",
           "name": "Snapshot",
           "required": true,
@@ -1626,7 +1636,7 @@
         {
           "disabled": false,
           "document": "索引 id",
-          "example": "1",
+          "example": "index-fwafafaf",
           "member": "string",
           "name": "ServerlessId",
           "required": true,
@@ -1635,7 +1645,7 @@
         {
           "disabled": false,
           "document": "cos 桶名",
-          "example": "1",
+          "example": "user-cos",
           "member": "string",
           "name": "CosBucket",
           "required": false,
@@ -1644,7 +1654,7 @@
         {
           "disabled": false,
           "document": "BasePath 路径",
-          "example": "1",
+          "example": "dir/",
           "member": "string",
           "name": "BasePath",
           "required": false,
@@ -1653,7 +1663,7 @@
         {
           "disabled": false,
           "document": "云上集群 id",
-          "example": "1",
+          "example": "es-feafaefef",
           "member": "string",
           "name": "ClusterInstanceId",
           "required": false,
@@ -1662,7 +1672,7 @@
         {
           "disabled": false,
           "document": "待迁移普通索引名列表",
-          "example": "1",
+          "example": "[\"test1\"]",
           "member": "string",
           "name": "CommonIndexArr",
           "required": false,
@@ -1671,7 +1681,7 @@
         {
           "disabled": false,
           "document": "待迁移自治索引名列表",
-          "example": "1",
+          "example": "[\"test1\"]",
           "member": "string",
           "name": "DataStreamArr",
           "required": false,
@@ -2513,7 +2523,7 @@
         {
           "disabled": false,
           "document": "创建的索引元数据JSON，如mappings、settings",
-          "example": "{}",
+          "example": "\"{\\\"mappings\\\":{\\\"properties\\\":{}},\\\"options\\\":{\\\"expire.max_age\\\":\\\"3d\\\",\\\"timestamp_field\\\":\\\"@timestamp\\\"},\\\"settings\\\":{}}\"",
           "member": "string",
           "name": "IndexMetaJson",
           "required": false,
@@ -2531,7 +2541,7 @@
         {
           "disabled": false,
           "document": "创建索引的用户名",
-          "example": "test",
+          "example": "sam",
           "member": "string",
           "name": "Username",
           "required": false,
@@ -2540,7 +2550,7 @@
         {
           "disabled": false,
           "document": "创建索引的密码",
-          "example": "test",
+          "example": "fhauefFJNB",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2576,7 +2586,7 @@
         {
           "disabled": false,
           "document": "kibana公网白名单",
-          "example": "无",
+          "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "KibanaWhiteIpList",
           "required": false,
@@ -2610,7 +2620,7 @@
         {
           "disabled": false,
           "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "20250320235004448150491",
           "member": "string",
           "name": "DealName",
           "output_required": true,
@@ -2732,7 +2742,7 @@
         {
           "disabled": false,
           "document": "索引空间名",
-          "example": "test",
+          "example": "space-feafnij",
           "member": "string",
           "name": "SpaceName",
           "required": false,
@@ -2750,7 +2760,7 @@
         {
           "disabled": false,
           "document": "空间名称",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -2759,7 +2769,7 @@
         {
           "disabled": false,
           "document": "白名单列表",
-          "example": "无",
+          "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "KibanaWhiteIpList",
           "required": false,
@@ -2768,7 +2778,7 @@
         {
           "disabled": false,
           "document": "空间id",
-          "example": "无",
+          "example": "100001",
           "member": "uint64",
           "name": "ZoneId",
           "required": false,
@@ -3131,7 +3141,7 @@
         {
           "disabled": false,
           "document": "创建索引的用户名",
-          "example": "test",
+          "example": "admin",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -4998,7 +5008,7 @@
         {
           "disabled": false,
           "document": "游标",
-          "example": "test",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5007,7 +5017,7 @@
         {
           "disabled": false,
           "document": "页条数",
-          "example": "test",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5016,7 +5026,7 @@
         {
           "disabled": false,
           "document": "用户名列表过滤",
-          "example": "无",
+          "example": "admin",
           "member": "string",
           "name": "UserNames",
           "required": false,
@@ -5025,7 +5035,7 @@
         {
           "disabled": false,
           "document": "用户类型",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "UserTypes",
           "required": false,
@@ -5034,7 +5044,7 @@
         {
           "disabled": false,
           "document": "权限类型",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PrivilegeTypes",
           "required": false,
@@ -5068,7 +5078,7 @@
         {
           "disabled": false,
           "document": "用户总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -5224,7 +5234,7 @@
         {
           "disabled": false,
           "document": "该token用于登录内嵌kibana",
-          "example": "无",
+          "example": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.",
           "member": "string",
           "name": "KibanaToken",
           "output_required": true,
@@ -5234,7 +5244,7 @@
         {
           "disabled": false,
           "document": "token的过期时间",
-          "example": "无",
+          "example": "1742806292",
           "member": "int64",
           "name": "ExpireTime",
           "output_required": true,
@@ -5256,7 +5266,7 @@
         {
           "disabled": false,
           "document": "cos桶名",
-          "example": "1",
+          "example": "user-cos",
           "member": "string",
           "name": "CosBucket",
           "required": false,
@@ -5265,7 +5275,7 @@
         {
           "disabled": false,
           "document": "bucket 桶下的备份路径",
-          "example": "1",
+          "example": "dir/",
           "member": "string",
           "name": "BasePath",
           "required": false,
@@ -5274,7 +5284,7 @@
         {
           "disabled": false,
           "document": "云上集群迁移集群名",
-          "example": "1",
+          "example": "es-feaifhie",
           "member": "string",
           "name": "ClusterInstanceId",
           "required": false,
@@ -5289,7 +5299,7 @@
         {
           "disabled": false,
           "document": "cos 快照信息列表",
-          "example": "1",
+          "example": "[{\"CosBucket\":\"es-ap-beijing\"}]",
           "member": "CosSnapShotInfo",
           "name": "CosSnapshotInfoList",
           "output_required": false,
@@ -6617,6 +6627,34 @@
         }
       ],
       "usage": "out"
+    },
+    "DiskUsageInfo": {
+      "document": "节点磁盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "磁盘类型：云盘CLOUD_DISK、本地盘LOCAL_DISK",
+          "example": "CLOUD_DISK",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "171234124",
+          "member": "uint64",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "EnableScheduleOperationDuration": {
       "document": "置放群组异步任务维护的时间段",
@@ -11019,7 +11057,7 @@
           "example": "G7j#kL9p$2w",
           "member": "string",
           "name": "Password",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -14349,7 +14387,7 @@
         {
           "disabled": false,
           "document": "更新的索引元数据JSON，如mappings、settings",
-          "example": "{}",
+          "example": "\"{\\\"mappings\\\":{\\\"properties\\\":{}},\\\"options\\\":{\\\"expire.max_age\\\":\\\"7d\\\"},\\\"settings\\\":{}}\"",
           "member": "string",
           "name": "UpdateMetaJson",
           "required": false,
@@ -14358,7 +14396,7 @@
         {
           "disabled": false,
           "document": "实例访问密码",
-          "example": "123456",
+          "example": "fwjaifAFJEIfj",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -14421,7 +14459,7 @@
         {
           "disabled": false,
           "document": "Serveless索引空间名",
-          "example": "{}",
+          "example": "spaceName",
           "member": "string",
           "name": "SpaceName",
           "required": false,
@@ -14430,7 +14468,7 @@
         {
           "disabled": false,
           "document": "kibana内网开关",
-          "example": "无",
+          "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
           "required": false,
@@ -14439,7 +14477,7 @@
         {
           "disabled": false,
           "document": "kibana公网开关",
-          "example": "无",
+          "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
           "required": false,
