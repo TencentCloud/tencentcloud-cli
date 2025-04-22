@@ -28,7 +28,9 @@ Output:
                 "OutputBytesSum": 14638477,
                 "ShuffleReadBytesSum": 0,
                 "ShuffleReadRecordsSum": 0,
-                "AnalysisStatus": "[\"SPARK-OutputSmallFile\"]"
+                "AnalysisStatus": "[\"SPARK-OutputSmallFile\"]",
+                "OutputFilesNum": 0,
+                "OutputSmallFilesNum": 0
             }
         ],
         "TotalCount": 1

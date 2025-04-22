@@ -21,8 +21,8 @@ Output:
                 "Type": "CVM",
                 "InstanceId": "ins-197234qt",
                 "InstanceName": "未命名",
-                "Port": 3333,
-                "Weight": 43,
+                "Port": 6081,
+                "Weight": 16,
                 "PublicIpAddresses": [],
                 "PrivateIpAddresses": [
                     "172.16.0.32"
@@ -36,8 +36,8 @@ Output:
                 "Type": "CVM",
                 "InstanceId": "ins-197234qt",
                 "InstanceName": "未命名",
-                "Port": 2222,
-                "Weight": 55,
+                "Port": 6081,
+                "Weight": 16,
                 "PublicIpAddresses": [],
                 "PrivateIpAddresses": [
                     "172.16.0.32"

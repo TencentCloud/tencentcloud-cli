@@ -288,7 +288,7 @@
       "status": "online"
     },
     "StartAITranscription": {
-      "document": "启动转录机器人，后台会通过机器人拉流进行实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端通过TRTC的自定义消息实时下发字幕以及转录消息，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。其他客户端比如安卓、Web等同样可在该链接处找到。",
+      "document": "启动转录机器人，后台会通过机器人拉流进行实时进行语音识别并下发字幕和转录消息。\n转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：\n- 拉取全房间的流。\n- 拉取特定用户的流。\n\n服务端通过TRTC的自定义消息实时下发字幕以及转录消息，CmdId固定是1。客户端只需监听自定义消息的回调即可，比如[c++回调](https://cloud.tencent.com/document/product/647/79637#4cd82f4edb24992a15a25187089e1565)。其他客户端比如安卓、Web等同样可在该链接处找到。\n\n\n**注意：**\nTranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。",
       "input": "StartAITranscriptionRequest",
       "name": "开始AI转录任务",
       "output": "StartAITranscriptionResponse",
@@ -3359,7 +3359,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "1400188366",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5664,7 +5664,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "1400000001",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -6310,7 +6310,7 @@
         },
         {
           "disabled": false,
-          "document": "调用方传入的唯一Id，服务端用来去重。\n注意：\n如果传入该参数，服务端优先使用该参数来去重。\n如果不传该参数，服务端的去重策略如下：\n- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务\n- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务",
+          "document": "调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。\n注意：\nTranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。",
           "example": "无",
           "member": "string",
           "name": "SessionId",
@@ -6972,7 +6972,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -6981,7 +6981,7 @@
         {
           "disabled": false,
           "document": "字符串房间号。",
-          "example": "",
+          "example": "room_1001",
           "member": "string",
           "name": "StrRoomId",
           "required": true,
@@ -8292,8 +8292,7 @@
           "member": "uint64",
           "name": "WaterMarkId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8302,8 +8301,7 @@
           "member": "uint64",
           "name": "WaterMarkWidth",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8312,8 +8310,7 @@
           "member": "uint64",
           "name": "WaterMarkHeight",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8322,8 +8319,7 @@
           "member": "uint64",
           "name": "LocationX",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -8332,18 +8328,16 @@
           "member": "uint64",
           "name": "LocationY",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "混流-水印图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。WaterMarkUrl和WaterMarkId参数都填时，以WaterMarkUrl为准。图片大小限制不超过2MB。",
-          "example": "xxx",
+          "example": "https://**.png",
           "member": "string",
           "name": "WaterMarkUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -1623,7 +1623,7 @@
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1633,7 +1633,7 @@
           "example": "OK",
           "member": "string",
           "name": "Message",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1643,7 +1643,7 @@
           "example": "无",
           "member": "OuntputDescribeDataListInfo",
           "name": "Value",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         }

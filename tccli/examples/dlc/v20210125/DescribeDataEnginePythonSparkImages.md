@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc DescribeDataEnginePythonSparkImages --cli-unfold-argument  \
-    --ChildImageVersionId abc
+    --ChildImageVersionId d3ksjed4-9a7e-4f64-a3f4-f38507c69742
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "PythonSparkImages": [
             {
                 "UpdateTime": "2020-01-01:00:00:00",
-                "Description": "测试",
+                "Description": "测试镜像",
                 "ChildImageVersionId": "d3ksjed4-9a7e-4f64-a3f4-f38507c69742",
                 "SparkImageId": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
                 "SparkImageVersion": "测试镜像",

@@ -10,7 +10,7 @@ tccli es RestoreClusterSnapshot --cli-unfold-argument  \
     --Password pass \
     --RepositoryName ES_AUTO_BACKUP \
     --SnapshotName test1 \
-    --Indices test \
+    --Indices testnew \
     --Partial true \
     --TargetInstanceId es-qpzizjym
 ```

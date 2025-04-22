@@ -5096,7 +5096,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "registry.jiguang.woa.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
+          "example": "code.jigxng.dhjs.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -6000,7 +6000,7 @@
         },
         {
           "disabled": false,
-          "document": "防护状态: 已防护: Defended 未防护: UnDefended",
+          "document": "防护状态: \n已防护: Defended \n未防护: UnDefended\n部分防护: PartDefened",
           "example": "UnDefended",
           "member": "string",
           "name": "DefenderStatus",
@@ -8555,7 +8555,7 @@
         {
           "disabled": false,
           "document": "镜像名称",
-          "example": "clife-devops-docker.pkg.coding.net/public-repository/prdsl/clife-estate-thirdparty-admin:4.0.0-2022090109****",
+          "example": "ww.coding.net/public-pp/prdsl/-admin:4.0.0-2022090109****",
           "member": "string",
           "name": "ImageName",
           "output_required": true,
@@ -8575,7 +8575,7 @@
         {
           "disabled": false,
           "document": "镜像id",
-          "example": "clife-estate-thirdparty-admin-dm-59785fd6-4****",
+          "example": "pp-code-thirdparty-admin-dm-59785fd6-4****",
           "member": "string",
           "name": "POD",
           "output_required": true,
@@ -8695,7 +8695,7 @@
         {
           "disabled": false,
           "document": "pod名称",
-          "example": "clife-estate-thirdparty-admin-dm-59785fd6-4****",
+          "example": "bb-pod",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -14351,7 +14351,7 @@
         {
           "disabled": false,
           "document": "容器列表",
-          "example": "[{\"CPUUsage\": 0, \"ClusterID\": \"cls-q0qd****\", \"ClusterName\": \"\\u6df7\\u5408\\u96c6\\u7fa4\\uff08\\u5730\\u4ea7/\\u5bb6\\u7535/\\u9152\\u5e97/\\u6c34\\u751f\\u6001****\", \"Cmd\": \"\", \"ContainerID\": \"7b514e9af69cac801c4b2ba01891141e038cc8df80e2143b6e9b47fa1e93****\", \"ContainerName\": \"clife-estate-thirdparty-a****\", \"CreateTime\": \"2024-10-31 11:2****\", \"HostID\": \"a913dd58-9ebb-42d8-a6c0-c58a0aaf****\", \"HostIP\": \"10.10.8****\", \"HostName\": \"tke-np-eerl5pwq-wo****\", \"ImageID\": \"sha256:fcbbcc7466f136e4dd625a7e43c51af3e3b78087322db9328cf59219320b****\", \"ImageName\": \"clife-devops-docker.pkg.coding.net/public-repository/prdsl/clife-estate-thirdparty-admin:4.0.0-2022090109****\", \"IsolateSource\": \"\", \"IsolateTime\": \"1970-01-01 00:0****\", \"NetStatus\": \"NORMAL\", \"NetSubStatus\": \"NONE\", \"NodeID\": \"eks-ceyn****\", \"NodeType\": \"NORMAL\", \"NodeUniqueID\": \"13cd65cab1090206fbde65ee6dd6****\", \"POD\": \"clife-estate-thirdparty-admin-dm-59785fd6-4****\", \"PodCpu\": 100, \"PodIP\": \"10.10.8****\", \"PodMem\": 1073741824, \"PodName\": \"clife-estate-thirdparty-admin-dm-59785fd6-4****\", \"PodUid\": \"20461430-67c2-455b-932e-6a6c8981****\", \"PublicIp\": \"\", \"RamUsage\": 0, \"RunAs\": \"\", \"Status\": \"RUNNING\", \"UpdateTime\": \"2024-10-31 11:2****\"}]",
+          "example": "null",
           "member": "ContainerInfo",
           "name": "List",
           "output_required": true,
@@ -14995,7 +14995,7 @@
         },
         {
           "disabled": false,
-          "document": "关联主机个数",
+          "document": "关联主机个数(包含普通节点数和超级节点数)",
           "example": "2",
           "member": "uint64",
           "name": "HostCnt",
@@ -15009,6 +15009,16 @@
           "example": "2",
           "member": "uint64",
           "name": "ContainerCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点数",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuperNodeCnt",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -15116,7 +15126,7 @@
         {
           "disabled": false,
           "document": "构建历史",
-          "example": "# create_time:2024-10-31 10:07:49 tags:commons-container-registry.tencentcloudcr.com/dcf/lbcloud-all:202410310958 comment:buildkit.dockerfile.v0\n\nENTRYPOINT [\"/bin/sh\" \"-c\" \"java -XX:+UnlockExperimentalVMOptions ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar app.jar\"]\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV SERVER_PORT=18888\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV JAVA_OPTS=-Xms2048m -Xmx2048m -XX:+PrintGCDetails -XX:+UseG1GC\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV LANG=C.UTF-8\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV TZ=Asia/Shanghai\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nENV JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8 -Duser.language=zh -Duser.region=zh_CN -Duser.country=zh_CN -Duser.timezone=GMT+08 -Dfastjson.parser.safeMode=true\n\n# create_time:2024-10-31 10:07:49 tags: comment:buildkit.dockerfile.v0\n\nADD lbcloud-all/target/lbcloud-all.jar app.jar # buildkit\n\n# create_time:2024-09-10 11:04:24 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c echo 'Asia/Shanghai' >/etc/timezone # buildkit\n\n# create_time:2024-09-10 11:04:23 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # buildkit\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nENV PATH=/usr/local/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nENV JAVA_HOME=/usr/local/jdk\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c yum clean all # buildkit\n\n# create_time:2024-08-06 09:06:59 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c yum -y install dejavu-sans-fonts fontconfig # buildkit\n\n# create_time:2024-08-06 09:06:53 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c mv /usr/local/jdk1.8.0_401 /usr/local/jdk # buildkit\n\n# create_time:2024-08-06 09:06:49 tags: comment:buildkit.dockerfile.v0\n\nADD jdk-8u401-linux-x64.tar.gz /usr/local # buildkit\n\n# create_time:2024-08-06 09:06:46 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c yum -y update # buildkit\n\n# create_time:2024-08-06 09:04:55 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c mv /etc/yum.repos.d/CentOS-Epel.repo /etc/yum.repos.d/CentOS-Epel.repo-bak # buildkit\n\n# create_time:2024-08-06 09:04:54 tags: comment:buildkit.dockerfile.v0\n\nRUN /bin/sh -c curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.tencent.com/repo/centos7_base.repo # buildkit\n\n# create_time:2017-04-07 07:56:12 tags: comment:\n\n/bin/sh -c #(nop) COPY multi:8f9d6f26ae2b72ee28e92cf7c4f5bd11b03a83c8ce24dfe69092778567ed8a08 in /etc/yum.repos.d/ \n\n# create_time:2017-04-07 07:56:12 tags: comment:\n\n/bin/sh -c mkdir -p /etc/yum.repos.d/repo.bak     && mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/repo.bak/\n\n# create_time:2017-04-06 20:14:38 tags: comment:\n\n/bin/sh -c #(nop)  CMD [\"/bin/bash\"]\n\n# create_time:2017-04-06 20:14:37 tags: comment:\n\n/bin/sh -c #(nop)  LABEL name=CentOS Base Image vendor=CentOS license=GPLv2 build-date=20170406\n\n# create_time:2017-04-06 20:14:34 tags: comment:\n\n/bin/sh -c #(nop) ADD file:807143da05d70138e54c4a25c6c3ea64ad1096982333ef3b94a366580be40f52 i****",
+          "example": "# create_time:2024-10-31 10:07:49 ",
           "member": "string",
           "name": "BuildHistory",
           "output_required": true,
@@ -15346,7 +15356,7 @@
         {
           "disabled": false,
           "document": "镜像列表",
-          "example": "[{\"AgentError\": \"\", \"ComponentCnt\": 999, \"ContainerCnt\": 0, \"CreateTime\": \"2024-10-23T06:16****\", \"CriticalLevelVulCnt\": 0, \"HighLevelVulCnt\": 0, \"HostCnt\": 1, \"ImageID\": \"sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f****\", \"ImageName\": \"registry.j*.**.com/tcloud-yunjing-cwp-detection/tcloud-yunjing-cwp-detection:0.0.1-20241023-141138-920a71a.rhel.a****\", \"IsAuthorized\": 0, \"IsLatestImage\": true, \"IsSuggest\": 0, \"IsTrustImage\": false, \"LowLevelVulCnt\": 0, \"MediumLevelVulCnt\": 0, \"OsName\": \"\", \"RecommendedFix\": false, \"RiskCnt\": 0, \"ScanError\": \"\", \"ScanRiskError\": \"\", \"ScanStatus\": \"NOT_SCAN\", \"ScanTime\": \"\", \"ScanVirusError\": \"\", \"ScanVulError\": \"\", \"Size\": 3840885407, \"VirusCnt\": 0, \"VulCnt\": 0}]",
+          "example": "无",
           "member": "ImagesInfo",
           "name": "List",
           "output_required": true,
@@ -15961,7 +15971,7 @@
         {
           "disabled": false,
           "document": "镜像仓库列表",
-          "example": "[{\"ComponentCnt\": 183, \"ContainerCnt\": 0, \"CriticalLevelVulCnt\": 0, \"CveStatus\": \"SCAN_ERR\", \"HasNeedFixVul\": true, \"HighLevelVulCnt\": 23, \"Id\": 135074523, \"ImageCreateTime\": \"2024-05-20T16:21:08+0****\", \"ImageDigest\": \"sha256:1ea73e9f4ede8a3a691de60f7c22c4edb6a8deb2cd4dcfc81055cb1a298a****\", \"ImageId\": \"sha256:fee845a1bf018e225f03df1bd7c048fcb2f0c0d1145331fe92b88ca120b2****\", \"ImageName\": \"yancyw\", \"ImageRepoAddress\": \"088414796031.dkr.ecr.cn-north-1.amazonaws.com.cn/ya****\", \"ImageSize\": 83518086, \"ImageTag\": \"002\", \"InstanceId\": \"\", \"InstanceName\": \"aws_in****\", \"IsAuthorized\": 1, \"IsLatestImage\": true, \"IsRunning\": false, \"IsTrustImage\": false, \"LowLevelVulCnt\": 31, \"MediumLevelVulCnt\": 180, \"Namespace\": \"\", \"OsName\": \"Linux\", \"Progress\": 100, \"RecommendedFix\": true, \"RegistryRegion\": \"default\", \"RegistryType\": \"aws\", \"RiskCnt\": 3, \"RiskStatus\": \"SCAN_ERR\", \"ScanRemainTime\": 0, \"ScanRiskError\": \"MessageRegistry****\", \"ScanRiskProgress\": 100, \"ScanStatus\": \"SCAN_ERR\", \"ScanTime\": \"2024-10-31T21:14:34+0****\", \"ScanVirusError\": \"OperateFa****\", \"ScanVirusProgress\": 100, \"ScanVulError\": \"OperateFa****\", \"ScanVulProgress\": 100, \"SensitiveInfoCnt\": 3, \"SentiveInfoCnt\": 3, \"VirusCnt\": 0, \"VirusStatus\": \"SCAN_ERR\", \"VulCnt\": 234}]",
+          "example": "null",
           "member": "ImageRepoInfo",
           "name": "List",
           "output_required": true,
@@ -20656,7 +20666,7 @@
         {
           "disabled": false,
           "document": "逃逸白名单列表",
-          "example": "[{\"ContainerCount\": 0, \"EventType\": [\"MOUNT_SENSITIVE_****\"], \"HostCount\": 4, \"ID\": 7172, \"ImageID\": \"sha256:a24bb4013296f61e89ba57005a7b3e52274d8edd3ae2077d04395f806b63****\", \"ImageName\": \"alpine:3.****\", \"ImageSize\": 5574537, \"InsertTime\": \"2024-10-17 22:3****\", \"UpdateTime\": \"2024-10-31 15:2****\"}]",
+          "example": "无",
           "member": "EscapeWhiteListInfo",
           "name": "List",
           "output_required": true,
@@ -23782,6 +23792,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "试用的专业版核数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrialCoresCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -24238,7 +24258,7 @@
         {
           "disabled": false,
           "document": "反弹shell数组",
-          "example": "[{\"ClusterID\":\"cls-dfw3e***\",\"ClusterName\":\"clsfoo***\",\"ContainerId\":\"b49a9fd917d30b736e76bff07a81e016bb1ced7bd9428b5d076628c80f8c62fd\",\"ContainerIsolateOperationSrc\":\"运行时安全/文件查杀\",\"ContainerName\":\"policy\",\"ContainerNetStatus\":\"NORMAL\",\"ContainerNetSubStatus\":\"NONE\",\"ContainerStatus\":\"RUNNING\",\"Description\":\"policy1\",\"DstAddress\":\"10.145.120.27:9000\",\"EventCount\":1,\"EventId\":\"5075001\",\"FoundTime\":\"2024-10-24 08:38:49\",\"HostID\":\"0c4f6c1d-8215-43e2-8dcf-a4fb1db12f41\",\"HostIP\":\"10.150.14.152\",\"ImageId\":\"sha256:8415e883970de94c3131ff24ffaf9943ea81b3eca0c3d8d747b98581730bcdb6\",\"ImageName\":\"registry-cn-shanghai-vpc.ack.aliyuncs.com/acs/terway:v1.8.13\",\"LatestFoundTime\":\"2020-10-24 08:38:49\",\"NodeID\":\"mix-GOmf****\",\"NodeName\":\"i-node***\",\"NodeType\":\"NORMAL\",\"NodeUniqueID\":\"d41d8cd98f00b204e9800998ecf8427e\",\"PProcessName\":\"socat\",\"PodIP\":\"10.0.1.92\",\"PodName\":\"agent-test-2zrp7\",\"ProcessName\":\"dash\",\"ProcessPath\":\"/usr/bin/dash\",\"PublicIP\":\"10.0.1.92\",\"Remark\":\"myremark***\",\"Solution\":\"清理容器内反弹shell进程，检查容器内服务是否存在漏洞、弱密码等风险\",\"Status\":\"EVENT_UNDEAL\"},{\"ClusterID\":\"cls-dfw3e***\",\"ClusterName\":\"clsfoo***\",\"ContainerId\":\"b15e610a7f62b5873902923dfeee2d3ab642f76bd7f1777b3f628158c5b39586\",\"ContainerIsolateOperationSrc\":\"运行时安全/文件查杀\",\"ContainerName\":\"policy\",\"ContainerNetStatus\":\"NORMAL\",\"ContainerNetSubStatus\":\"NONE\",\"ContainerStatus\":\"RUNNING\",\"Description\":\"policy1\",\"DstAddress\":\"100.127.196.56:10556\",\"EventCount\":1,\"EventId\":\"5067003\",\"FoundTime\":\"2020-10-24 08:03:10\",\"HostID\":\"fc472648-37ed-4946-a4c9-d72c75e162c4\",\"HostIP\":\"10.144.49.213\",\"ImageId\":\"sha256:41481aae5e2d135b2624fc09aa1875eb84c6472eaa0929f6d827699e67edd041\",\"ImageName\":\"registry\",\"LatestFoundTime\":\"2020-10-24 08:03:10\",\"NodeID\":\"mix-GOmf****\",\"NodeName\":\"i-node***\",\"NodeType\":\"NORMAL\",\"NodeUniqueID\":\"d41d8cd98f00b204e9800998ecf8427e\",\"PProcessName\":\"socat\",\"PodIP\":\"10.0.1.92\",\"PodName\":\"agent-test-2zrp7\",\"ProcessName\":\"dash\",\"ProcessPath\":\"/usr/bin/dash\",\"PublicIP\":\"10.0.1.92\",\"Remark\":\"myremark***\",\"Solution\":\"清理容器内反弹shell进程，检查容器内服务是否存在漏洞、弱密码等风险\",\"Status\":\"EVENT_UNDEAL\"}]",
+          "example": "无",
           "member": "ReverseShellEventInfo",
           "name": "EventSet",
           "output_required": true,
@@ -27062,7 +27082,7 @@
         {
           "disabled": false,
           "document": "集群的详细信息",
-          "example": "[{\"AccessedStatus\": \"AccessedDefe****\", \"AccessedSubStatus\": \"AccessedSub****\", \"ChargeCoresCnt\": 364000, \"CheckFailReason\": \"\", \"CheckStatus\": \"Uncheck\", \"ClusterAuditFailedInfo\": \"\", \"ClusterAuditStatus\": \"Closed\", \"ClusterAutoCheck\": false, \"ClusterCheckMode\": \"\", \"ClusterId\": \"2f0ff9facc53a579b4b4e44e8932****\", \"ClusterName\": \"umeng****\", \"ClusterNodeNum\": 12, \"ClusterOs\": \"\", \"ClusterStatus\": \"CSR_RUN****\", \"ClusterType\": \"USER_CREATE_CLU****\", \"ClusterVersion\": \"v1.19.16\", \"CoresCnt\": 364000, \"DefenderErrorReason\": \"\", \"DefenderStatus\": \"Defended\", \"HighRiskCount\": 0, \"HintRiskCount\": 0, \"MasterAddresses\": [\"10.188.251.101;10.188.251.102;10.188.251.****\"], \"MiddleRiskCount\": 0, \"NodeCount\": 12, \"OffLineNodeCount\": 0, \"Region\": null, \"SeriousRiskCount\": 0, \"TaskCreateTime\": \"\", \"UnInstallAgentNodeCount\": 0, \"UnreadyNodeNum\": 12}]",
+          "example": "无",
           "member": "ClusterInfoItem",
           "name": "ClusterInfoList",
           "output_required": true,
@@ -27540,7 +27560,7 @@
         {
           "disabled": false,
           "document": "镜像ID",
-          "example": "sha256:80beff5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4f9211",
+          "example": "sha256:******5ff34259ceb7fbe9cd10b2d94912618f5b5595f234349c5bb0cd4faaaa",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
@@ -27620,7 +27640,7 @@
         {
           "disabled": false,
           "document": "容器名称",
-          "example": "/pedantic_agnesi",
+          "example": "/container_name",
           "member": "string",
           "name": "ContainerName",
           "output_required": true,
@@ -27630,7 +27650,7 @@
         {
           "disabled": false,
           "document": "容器id",
-          "example": "d4c43f9268ecea2aa75b26632299df8aaf496af54e391f94ebcc62d7b2435105",
+          "example": "*****f9268ecea2aa75b26632299df8aaf496af54e391f94ebcc62d7b243aaaa",
           "member": "string",
           "name": "ContainerId",
           "output_required": true,
@@ -27640,7 +27660,7 @@
         {
           "disabled": false,
           "document": "主机名称",
-          "example": "test-instance",
+          "example": "instance-*",
           "member": "string",
           "name": "HostName",
           "output_required": true,
@@ -27650,7 +27670,7 @@
         {
           "disabled": false,
           "document": "主机id",
-          "example": "dc56fda9-58c8-4c4f-9e8c-b7296836c1fe",
+          "example": "****fda9-58c8-4c4f-9e8c-b7296836c1fe",
           "member": "string",
           "name": "HostId",
           "output_required": true,
@@ -27680,7 +27700,7 @@
         {
           "disabled": false,
           "document": "进程md5",
-          "example": "965c55c5-8ab1-4e32-8425-4c44acb5edec",
+          "example": "****55c5-8ab1-4e32-8425-4c44acb5edec",
           "member": "string",
           "name": "ProcessMd5",
           "output_required": true,
@@ -27770,7 +27790,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "蠕虫病毒Ramnit最早出现在2010年，至今已有8年之久，因传播力强而“闻名于世”。Ramnit蠕虫病毒通过被感染的EXE、DLL、HTML、HTM文件传播，在正常电脑打开这些染毒文件时会导致新的感染发生。同时，Ramnit蠕虫病毒还会通过浏览器访问网页、写入U盘移动硬盘，创建U盘自启动等方式进行蠕虫式传播。",
+          "example": "蠕虫病毒Ramnit最早出现在2010年，至今已有8年之久，因传播力强而“闻名于世”。Ramnit蠕虫病毒通过被感染的EXE、DLL、HTML、HTM文件传播，在正常电脑打开这些染毒文件时会导致新的感染发生。",
           "member": "string",
           "name": "HarmDescribe",
           "output_required": true,
@@ -27790,7 +27810,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "just for test",
+          "example": "mark reason",
           "member": "string",
           "name": "Mark",
           "output_required": true,
@@ -27810,7 +27830,7 @@
         {
           "disabled": false,
           "document": "文件MD5",
-          "example": "81a7701a194c3a1179cfe4a7ac836626",
+          "example": "*****01a194c3a1179cfe4a7ac836626",
           "member": "string",
           "name": "FileMd5",
           "output_required": true,
@@ -27830,7 +27850,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "web-node1",
+          "example": "node1",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -27860,7 +27880,7 @@
         {
           "disabled": false,
           "document": "内网ip",
-          "example": "10.0.0.11",
+          "example": "10.0.*.1",
           "member": "string",
           "name": "HostIP",
           "output_required": true,
@@ -27870,7 +27890,7 @@
         {
           "disabled": false,
           "document": "外网ip",
-          "example": "11.0.1.11",
+          "example": "11.0.*.1",
           "member": "string",
           "name": "ClientIP",
           "output_required": true,
@@ -28050,7 +28070,7 @@
         {
           "disabled": false,
           "document": "节点子网网段",
-          "example": "10.0.200.0/24",
+          "example": "10.0.0.1/24",
           "member": "string",
           "name": "NodeSubNetCIDR",
           "output_required": true,
@@ -28090,7 +28110,7 @@
         {
           "disabled": false,
           "document": "节点唯一ID",
-          "example": "896e349d-2e7d-4151-a26f-4e9fdafe****",
+          "example": "******9d-2e7d-4151-a26f-4e9fdafe****",
           "member": "string",
           "name": "NodeUniqueID",
           "output_required": true,
@@ -28250,7 +28270,7 @@
         {
           "disabled": false,
           "document": "木马列表",
-          "example": "[{\"CheckPlatform\": [null], \"ClusterID\": \"\", \"ClusterName\": \"\", \"ContainerId\": \"eaa26da9a1e02f67caf0c909381d24586d8a7faf9ef32b7c7715d6a22222****\", \"ContainerIsolateOperationSrc\": \"\", \"ContainerName\": \"/jupyte****\", \"ContainerNetStatus\": \"NORMAL\", \"ContainerNetSubStatus\": \"NONE\", \"ContainerStatus\": \"STOPPED\", \"CreateTime\": \"2024-08-06T09:30****\", \"FileName\": \"frpc_linux_amd64_****\", \"FilePath\": \"/home/fangmanlin/.local/lib/python3.10/site-packages/gradio/frpc_linux_amd64_****\", \"HarmDescribe\": \"\\u53d1\\u73b0\\u5bb9\\u5668\\u4e0a\\u5b58\\u5728\\u6076\\u610f\\u6728\\u9a6c\\uff0c\\u60a8\\u7684\\u5bb9\\u5668\\u53ef\\u80fd\\u5df2\\u7ecf\\u5931\\u9677\\u3002\\n\\u6076\\u610f\\u6728\\u9a6c\\u901a\\u5e38\\u4f1a\\u6267\\u884c\\u6316\\u77ff\\u3001\\u6587\\u4ef6\\u5220\\u9664\\u3001\\u4fe1\\u606f\\u7a83\\u53d6\\u548c\\u7f51\\u7edc\\u653b\\u51fb\\u7b49\\u6076****\", \"HostID\": \"b18548db-ed21-4991-a6cb-db71362b****\", \"Id\": \"11512013\", \"ImageId\": \"sha256:21b4456c6e03247a923cfe6a426c10361e7265a49184bbb40b3c71d6564d****\", \"ImageName\": \"jupyterhub/jupyterhub:yanf****\", \"InnerIP\": \"10.72.20****\", \"MD5\": \"9b301045bffb934da5a439dceb9e****\", \"ModifyTime\": \"2024-08-06T09:30****\", \"NodeID\": \"\", \"NodeName\": \"suanfa_webui_10_72_200_24_****\", \"NodeType\": \"NORMAL\", \"NodeUniqueID\": \"b18548db-ed21-4991-a6cb-db71362b****\", \"PodIP\": \"10.0.1****\", \"PodName\": \"/\", \"PublicIP\": \"10.0.1****\", \"RiskLevel\": \"RISK_NO****\", \"Status\": \"DEAL_****\", \"SubStatus\": \"\", \"SuggestScheme\": \"1.\\u68c0\\u67e5\\u6076\\u610f\\u8fdb\\u7a0b\\u53ca\\u975e\\u6cd5\\u7aef\\u53e3\\uff0c\\u5220\\u9664\\u53ef\\u7591\\u7684\\u542f\\u52a8\\u9879\\u548c\\u5b9a\\u65f6\\u4efb\\u52a1\\uff1b\\n2.\\u9694\\u79bb\\u6216\\u8005\\u5220\\u9664\\u76f8\\u5173\\u7684\\u6728\\u9a6c\\u6587\\u4ef6\\uff1b\\n3.\\u5bf9\\u7cfb\\u7edf\\u8fdb\\u884c\\u98ce\\u9669\\u6392\\u67e5\\uff0c\\u5e76\\u8fdb\\u884c\\u5b89\\u5168\\u52a0\\u56fa\\uff0c\\u8be6\\u60c5\\u53ef\\u53c2\\u8003\\u5982\\u4e0b\\u94fe\\u63a5\\uff1a \\n\\u3010Linux\\u3011https://cloud.tencent.com/document/product/296/9604 \\n\\u3010Windows\\u3011https://cloud.tencent.com/document/product/296/****\", \"VirusName\": \"Suspicious.(aiScor****\"}]",
+          "example": "无",
           "member": "VirusInfo",
           "name": "List",
           "output_required": true,
@@ -29730,7 +29750,7 @@
         {
           "disabled": false,
           "document": "受影响的镜像列表",
-          "example": "[{\"ComponentList\": [{\"FixedVersion\": \"0:1.33.0-5.e****\", \"Name\": \"libngh****\", \"Path\": \"\", \"Version\": \"1.33.0-3.el8****\"}], \"ContainerCount\": 0, \"HostCount\": 1, \"ImageID\": \"sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53f****\", \"ImageName\": \"centos:la****\"}]",
+          "example": "无",
           "member": "VulAffectedImageInfo",
           "name": "List",
           "output_required": true,
@@ -31422,10 +31442,20 @@
         },
         {
           "disabled": false,
-          "document": "关联主机数量",
+          "document": "关联主机数量（包含普通节点和超级节点数量）",
           "example": "4",
           "member": "int64",
           "name": "HostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联超级节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "SuperNodeCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -32390,7 +32420,7 @@
         {
           "disabled": false,
           "document": "镜像仓库地址",
-          "example": "088414796031.dkr.ecr.cn-north-1.azc.com.cn/repo",
+          "example": "dfc.dkr-1.amazonaws.com.cn/ya****",
           "member": "string",
           "name": "ImageRepoAddress",
           "output_required": true,
@@ -32542,7 +32572,7 @@
         {
           "disabled": false,
           "document": "镜像仓库地址",
-          "example": "088414796031.dkr.ecr.cn-north-1.amazonaws.com.cn/ya****",
+          "example": "bdf.dkr-1.amazonaws.com.cn/ya****",
           "member": "string",
           "name": "ImageRepoAddress",
           "output_required": true,
@@ -34093,10 +34123,20 @@
         },
         {
           "disabled": false,
-          "document": "主机个数",
+          "document": "主机个数(包含普通节点数和超级节点数)",
           "example": "14",
           "member": "uint64",
           "name": "HostCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点数",
+          "example": "11",
+          "member": "uint64",
+          "name": "SuperNodeCnt",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -43943,10 +43983,20 @@
         },
         {
           "disabled": false,
-          "document": "关联的主机数",
+          "document": "关联的主机数(包含普通节点数和超级节点数)",
           "example": "1",
           "member": "int64",
           "name": "HostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的超级节点数",
+          "example": "1",
+          "member": "int64",
+          "name": "SuperNodeCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

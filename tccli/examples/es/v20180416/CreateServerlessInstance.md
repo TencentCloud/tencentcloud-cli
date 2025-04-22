@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli es CreateServerlessInstance --cli-unfold-argument  \
-    --Zone abc \
-    --VpcId abc \
-    --SubnetId abc \
-    --IndexName abc \
-    --IndexMetaJson {} \
-    --SpaceId abc \
-    --Username abc \
-    --Password abc
+    --Zone ap-nanjing-1 \
+    --VpcId vpc-dafafefe \
+    --SubnetId subnet-faefeffe \
+    --IndexName index_search \
+    --IndexMetaJson {"mappings":{"properties":{}},"options":{"expire.max_age":"3d","timestamp_field":"@timestamp"},"settings":{}} \
+    --SpaceId space-dadaefef \
+    --Username user \
+    --Password affwaiUINbc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "abc",
-        "DealName": "abc",
-        "RequestId": "abc"
+        "InstanceId": "index-faefaf",
+        "DealName": "20250320244403348150491",
+        "RequestId": "6b044118-0566-11f0-b68a-5254001dee24 "
     }
 }
 ```

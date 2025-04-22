@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli teo CreateContentIdentifier --cli-unfold-argument  \
-    --Tags.0.TagKey test \
-    --Tags.0.TagValue abc \
+    --Tags.0.TagKey testkey \
+    --Tags.0.TagValue testvalue \
     --PlanId edgeone-37q0w7qali10 \
     --Description content-test
 ```

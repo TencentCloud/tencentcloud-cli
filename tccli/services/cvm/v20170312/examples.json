@@ -218,7 +218,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageFromFamily\n<公共请求参数>\n\n{\n    \"ImageFamily\": \"business-daily-update\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Image\": {\n            \"ImageId\": \"img-xxx\",\n            \"OsName\": \"Xserver\",\n            \"ImageType\": \"PRIVATE_IMAGE\",\n            \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n            \"ImageName\": \"myImg\",\n            \"ImageDescription\": \"\",\n            \"ImageSize\": 0,\n            \"Architecture\": \"x86_64\",\n            \"ImageState\": \"NORMAL\",\n            \"Platform\": \"Windows\",\n            \"ImageCreator\": \"tencent\",\n            \"ImageSource\": \"CREATE_IMAGE\",\n            \"SyncPercent\": 0,\n            \"IsSupportCloudinit\": true,\n            \"SnapshotSet\": [\n                {\n                    \"SnapshotId\": \"snap-nbxxx56\",\n                    \"DiskUsage\": \"SYSTEM_DISK\",\n                    \"DiskSize\": 0\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"Key\": \"myKey\",\n                    \"Value\": \"myValue\"\n                }\n            ],\n            \"LicenseType\": \"TencentCloud\",\n            \"ImageFamily\": \"business-daily-update\",\n            \"ImageDeprecated\": false\n        },\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": {\n            \"ImageId\": \"img-1a2b3c4d\",\n            \"OsName\": \"Ubuntu Server 20.04 LTS 64bit\",\n            \"ImageType\": \"PRIVATE_IMAGE\",\n            \"CreatedTime\": \"2025-03-24T06:35:06Z\",\n            \"ImageName\": \"myImg\",\n            \"ImageDescription\": \"myImg\",\n            \"ImageSize\": 50,\n            \"Architecture\": \"x86_64\",\n            \"ImageState\": \"NORMAL\",\n            \"Platform\": \"Ubuntu\",\n            \"ImageCreator\": \"tencent\",\n            \"ImageSource\": \"CREATE_IMAGE\",\n            \"SyncPercent\": 0,\n            \"IsSupportCloudinit\": true,\n            \"SnapshotSet\": [\n                {\n                    \"SnapshotId\": \"snap-1a2b3c4d\",\n                    \"DiskUsage\": \"SYSTEM_DISK\",\n                    \"DiskSize\": 50\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"Key\": \"myKey\",\n                    \"Value\": \"myValue\"\n                }\n            ],\n            \"LicenseType\": \"TencentCloud\",\n            \"ImageFamily\": \"business-daily-update\",\n            \"ImageDeprecated\": false\n        },\n        \"RequestId\": \"5908394c-5b3f-42e0-a537-8410553890a5\"\n    }\n}",
         "title": "查看镜像族列表"
       }
     ],
@@ -332,7 +332,7 @@
       {
         "document": "查询指定实例支持调整的机型配置",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesModification\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"SELL\"\n            ],\n            \"Name\": \"status\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"ins-bzps2kwdg\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigStatusSet\": [\n            {\n                \"Status\": \"SELL\",\n                \"InstanceTypeConfig\": {\n                    \"GPU\": 0,\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"FPGA\": 0,\n                    \"InstanceFamily\": \"SA2\",\n                    \"InstanceType\": \"SA2.MEDIUM4\",\n                    \"Memory\": 4,\n                    \"GpuCount\": 0,\n                    \"CPU\": 2\n                },\n                \"Message\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigStatusSet\": [\n            {\n                \"Status\": \"SELL\",\n                \"InstanceTypeConfig\": {\n                    \"GPU\": 0,\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"FPGA\": 0,\n                    \"InstanceFamily\": \"SA2\",\n                    \"InstanceType\": \"SA2.MEDIUM4\",\n                    \"Memory\": 4,\n                    \"GpuCount\": 0,\n                    \"CPU\": 2\n                },\n                \"Message\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
         "title": "查询指定实例支持调整的机型配置"
       }
     ],
@@ -465,7 +465,7 @@
     "ExitRescueMode": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ExitRescueMode\n&InstanceId=instance_Id\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ExitRescueMode\n&InstanceId=ins-axzc12s\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5920380e-277a-420a-a221-0caac3eb7159\"\n    }\n}",
         "title": "退出救援模式"
       }
@@ -513,7 +513,7 @@
     "InquiryPriceModifyInstancesChargeType": [
       {
         "document": "本示例用于切换一个实例的计费模式询价。",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyInstancesChargeType\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"Period\": \"1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyInstancesChargeType\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 720,\n                \"DiscountPrice\": 720\n            }\n        },\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
         "title": "切换实例的计费模式询价"
       }
@@ -561,7 +561,7 @@
     "InquiryPriceResizeInstanceDisks": [
       {
         "document": "按量付费实例扩容磁盘询价",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResizeInstanceDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd8spnmq\",\n    \"DataDisks\": [\n        {\n            \"DiskSize\": \"100\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResizeInstanceDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd8spnmq\",\n    \"DataDisks\": [\n        {\n            \"DiskSize\": 100\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"DiscountPrice\": 0.0,\n                \"OriginalPriceThreeYear\": 0.0,\n                \"DiscountOneYear\": 0.0,\n                \"UnitPrice\": 0.46,\n                \"UnitPriceThirdStep\": 0.0,\n                \"OriginalPriceFiveYear\": 0.0,\n                \"Discount\": 0.0,\n                \"DiscountFiveYear\": 0.0,\n                \"UnitPriceDiscountThirdStep\": 0.0,\n                \"UnitPriceSecondStep\": 0.0,\n                \"OriginalPrice\": 0.0,\n                \"DiscountThreeYear\": 0.0,\n                \"UnitPriceDiscountSecondStep\": 0.0,\n                \"UnitPriceDiscount\": 0.0,\n                \"DiscountPriceFiveYear\": 0.0,\n                \"OriginalPriceOneYear\": 0.0,\n                \"ChargeUnit\": \"HOUR\",\n                \"DiscountPriceThreeYear\": 0.0,\n                \"DiscountPriceOneYear\": 0.0\n            },\n            \"BandwidthPrice\": {\n                \"DiscountPrice\": 0.0,\n                \"OriginalPriceThreeYear\": 0.0,\n                \"DiscountOneYear\": 0.0,\n                \"UnitPrice\": 0.0,\n                \"UnitPriceThirdStep\": 0.0,\n                \"OriginalPriceFiveYear\": 0.0,\n                \"Discount\": 0.0,\n                \"DiscountFiveYear\": 0.0,\n                \"UnitPriceDiscountThirdStep\": 0.0,\n                \"UnitPriceSecondStep\": 0.0,\n                \"OriginalPrice\": 0.0,\n                \"DiscountThreeYear\": 0.0,\n                \"UnitPriceDiscountSecondStep\": 0.0,\n                \"UnitPriceDiscount\": 0.0,\n                \"DiscountPriceFiveYear\": 0.0,\n                \"OriginalPriceOneYear\": 0.0,\n                \"ChargeUnit\": \"HOUR\",\n                \"DiscountPriceThreeYear\": 0.0,\n                \"DiscountPriceOneYear\": 0.0\n            }\n        },\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "按量付费实例扩容磁盘询价"
       }
@@ -777,7 +777,7 @@
     "RenewInstances": [
       {
         "document": "本示例用于续费一个实例，指定续费实例Id是ins-r8hr2upy，续费一个月，到期时通知过期但不自动续费。",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "续费实例"
       }

@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateEmbedWebUrl": {
-      "document": "本接口（CreateEmbedWebUrl）用于创建可嵌入web页面的URL（此web页面可以通过iframe方式嵌入到贵方系统的网页中），支持以下类型的Web链接创建：\n1. 创建印章\n2. 创建模板\n3. 修改模板\n4. 预览模板\n5. 预览合同流程\n\n预览模板的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/57bdda4a884e3f5b2de12d5a282a3651.png)\n\n预览合同流程的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/dc7af994e2f6da56bdad5975e927de34.png)",
+      "document": "本接口（CreateEmbedWebUrl）用于创建可嵌入web页面的URL（此web页面可以通过iframe方式嵌入到贵方系统的网页中），支持以下类型的Web链接创建：\n1. 创建印章\n2. 创建模板\n3. 修改模板\n4. 创建起草合同\n5. 预览模板\n6. 预览合同流程\n \n\n预览模板的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/57bdda4a884e3f5b2de12d5a282a3651.png)\n\n预览合同流程的嵌入页面长相如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/dc7af994e2f6da56bdad5975e927de34.png)",
       "input": "CreateEmbedWebUrlRequest",
       "name": "获取其他可嵌入web页面",
       "output": "CreateEmbedWebUrlResponse",
@@ -665,6 +665,13 @@
       "output": "ModifyIntegrationRoleResponse",
       "status": "online"
     },
+    "OperateTemplate": {
+      "document": "此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href=\"https://qian.tencent.com/developers/company/callback_types_templates\" target=\"_blank\">模板操作相关回调</a>\n\n\n# 支持的操作\n## 1. 删除模板 (OperateType=DELETE)\n此操作会将模板从企业自有模板中彻底删除，若要保留模板而不删除，可将模板停用。\n\n## 2. 启用模板 (OperateType=ENABLE)\n此操作是将已停用的模板启用，操作幂等，若模板已启用，接口不报错。\n\n## 3. 停用模板 (OperateType=DISABLE)\n此操作是将已启用的模板停用，操作幂等，若模板已停用，接口不报错，停用后，无法通过此模板发起合同，已发起的合同不受影响。",
+      "input": "OperateTemplateRequest",
+      "name": "企业模板管理",
+      "output": "OperateTemplateResponse",
+      "status": "online"
+    },
     "RenewAutoSignLicense": {
       "document": "给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "RenewAutoSignLicenseRequest",
@@ -855,7 +862,7 @@
         },
         {
           "disabled": false,
-          "document": "合同中的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体\n<ul><li> 个人签名/印章</li>\n<li> 企业印章</li>\n<li> 骑缝章等签署控件</li></ul>",
+          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体\n<ul><li> 个人签名/印章</li>\n<li> 企业印章</li>\n<li> 骑缝章等签署控件</li></ul>",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -909,7 +916,7 @@
         },
         {
           "disabled": false,
-          "document": "签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置",
+          "document": "<font coloe=\"red\">【已废弃】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannel",
@@ -963,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段可传多个校验方式</li></ul>",
+          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段可传多个校验方式</li></ul>\n\n",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
@@ -972,7 +979,7 @@
         },
         {
           "disabled": false,
-          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n\n默认为：\n1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注：\n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
+          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n\n默认为：\n1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注：\n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -990,7 +997,7 @@
         },
         {
           "disabled": false,
-          "document": "[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。\n\n注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`",
+          "document": "【在用文件发起合同场景下才有效】在调用[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)创建合同时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID或者印章类型）或签名方式。\n\n注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`",
           "example": "无",
           "member": "ComponentLimit",
           "name": "AddSignComponentsLimits",
@@ -1017,7 +1024,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n</ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`",
+          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n</ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -1114,7 +1121,7 @@
         {
           "disabled": false,
           "document": "签署人阅读合同限制参数\n <br/>取值：\n<ul>\n<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>\n<li> LimitReadTime，阅读合同仅限制阅读时长</li>\n<li> LimitBottom，阅读合同仅限制必须阅读到底</li>\n<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>\n</ul>",
-          "example": "3",
+          "example": "LimitReadTimeAndBottom",
           "member": "string",
           "name": "FlowReadLimit",
           "required": false,
@@ -2800,6 +2807,15 @@
           "name": "CanBatchReject",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "\t 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。",
+          "example": "无",
+          "member": "PresetApproverInfo",
+          "name": "PresetApproverInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2840,7 +2856,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：`请确保和合同中填入的一致`, `除动态签署人场景外，此参数必填`",
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：\n<ul>\n<li>请确保和合同中填入的一致。</li>\n<li>在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。</li>\n</ul>",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -2849,7 +2865,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。\n\n注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人场景外，此参数必填`",
+          "document": "手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。\n\n注：\n<ul>\n<li>请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息。</li><li>在生成动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。 </li>\n</ul>",
           "example": "18888888888",
           "member": "string",
           "name": "Mobile",
@@ -2867,7 +2883,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n注：\n1. `请确保和合同中填入的一致`。\n2. `在生成动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -2876,7 +2892,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：\n1. `请确保和合同中填入的一致`。\n2. `在生成动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "37000019890303000X",
           "member": "string",
           "name": "IdCardNumber",
@@ -3308,7 +3324,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型，支持以下类型\n<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>\n<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>",
+          "document": "WEB嵌入资源类型，支持以下类型\n<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>\n<li>CREATE_CONTRACT_DRAFT_COOPEDIT：生成创建起草合同的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同的嵌入页面（支持移动端）</li>\n<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面（仅支持PC端）</li></ul>\n\n注意：\n不同的嵌入类型，操作人需要的权限项不同（权限配置可参考[权限配置](https://qian.tencent.com/document/61355)）。\n<table  border=\"1\">\n<thead>\n<tr><th>EmbedType</th><th>权限</th></tr>\n</thead>     \n<tbody> \n<tr><th>CREATE_SEAL</th><th>印章管理-添加印章</th></tr>\n<tr><th>CREATE_TEMPLATE</th><th>模板管理-创建模板</th></tr>\n<tr><th>MODIFY_TEMPLATE</th><th>模板管理-编辑模板</th></tr>\n<tr><th>CREATE_CONTRACT_DRAFT_COOPEDIT</th><th>合同管理-起草合同</th></tr>\n<tr><th>PREVIEW_TEMPLATE</th><th>拥有下面三种权限的一种就行</br>\n模板管理-查询模板（本企业全部模板）</br>\n模板管理-查询模板（本部门全部模板）</br>\n模板管理-查询模板（本人创建模板）</th></tr>\n<tr><th>PREVIEW_SEAL_LIST</th><th>印章管理</th></tr>\n<tr><th>PREVIEW_SEAL_DETAIL</th><th>印章管理</th></tr>\n<tr><th>EXTEND_SERVICE</th><th>无要求</th></tr>\n<tr><th>PREVIEW_FLOW</th><th>是否是当前合同的参与方，或者发起方企业的法人、超管、合同管理员</th></tr>\n<tr><th>PREVIEW_FLOW_DETAIL</th><th>是否是当前合同的参与方，或者发起方企业的法人、超管、合同管理员</th></tr>\n</tbody> \n</table>",
           "example": "PREVIEW_FLOW",
           "member": "string",
           "name": "EmbedType",
@@ -3317,7 +3333,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID\n\n当EmbedType取值\n<ul>\n<li>为PREVIEW_SEAL_DETAIL，必填，取值为印章id。</li>\n<li>为CREATE_TEMPLATE，非必填，取值为资源id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li>\n<li>为MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id。</li>\n<li>为PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id。</li>\n</ul>\n\n注意：\n 1. CREATE_TEMPLATE中的BusinessId仅支持PDF文件类型， 如果您的文件不是PDF， 请使用接口[创建文件转换任务\n](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi) 和[查询转换任务状态](https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi) 来进行转换成PDF资源。",
+          "document": "WEB嵌入的业务资源ID\n\n当EmbedType取值\n<ul>\n<li>为PREVIEW_SEAL_DETAIL，必填，取值为印章id。</li>\n<li>为CREATE_TEMPLATE，非必填，取值为资源id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li>\n<li>为MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id。</li>\n<li>为CREATE_CONTRACT_DRAFT_COOPEDIT，非必填，取值为资源 id。*资源Id获取可使用接口[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)*</li>\n<li>为PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id。</li>\n</ul>\n\n注意：\n 1. CREATE_TEMPLATE中的BusinessId仅支持PDF文件类型， 如果您的文件不是PDF， 请使用接口[创建文件转换任务\n](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi) 和[查询转换任务状态](https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi) 来进行转换成PDF资源。\n 2. CREATE_CONTRACT_DRAFT_COOPEDIT中的BusinessId仅支持DOC 和 DOCX 的文件，并且大小不能超过 10M。",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "BusinessId",
@@ -3368,7 +3384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "嵌入的web链接，有效期：5分钟\n<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接",
+          "document": "嵌入的web链接，有效期：5分钟\n链接仅能使用一次\n建议：每次都用接口生成链接，保证链接的有效性\n<br/>EmbedType=PREVIEW_CC_FLOW，该url为h5链接",
           "example": "https://embed.beta.qian.tencent.cn/code=yDtwRUUckp7fyqz6UuQZAp18BNrB74xu",
           "member": "string",
           "name": "WebUrl",
@@ -4120,6 +4136,15 @@
           "name": "ReportType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "混合云模式获取合同文件合并出证，默认：不同意。注：此参数需要联系腾讯电子签运营进行开通后生效",
+          "example": "false",
+          "member": "bool",
+          "name": "HybridEvidenceFlowFile",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6952,7 +6977,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程里边签署方经办人的姓名。\n",
+          "document": "合同流程里边签署方经办人的姓名。\n\n`注：在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`\n",
           "example": "典子谦",
           "member": "string",
           "name": "Name",
@@ -6961,7 +6986,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。",
+          "document": "合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n\n`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "13200000000",
           "member": "string",
           "name": "Mobile",
@@ -6970,7 +6995,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -6979,7 +7004,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -10743,7 +10768,7 @@
         },
         {
           "disabled": false,
-          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，",
+          "document": "跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)\n- false: 展示上传文件页\n- true: 不展示上传文件页\n \n\n注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，",
           "example": "true",
           "member": "bool",
           "name": "SkipUploadFile",
@@ -12334,7 +12359,7 @@
       "usage": "in"
     },
     "FormField": {
-      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType=‘SIGN_SEAL'时，FormField.ComponentValue填入印章id。\n\n* 可用于指定自动签模板未设置自动签印章时，可由接口传入自动签印章\n* 若指定的控件上已设置ComponentValue，那以已经设置的ComponentValue为准\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"sealId（印章id）\"\n}\n```\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue支持填入附件图片或者文件的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n支持的文件类型包括doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt、pdf\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n```\n\n输入示例3（表格设置字体加粗颜色）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"CENTER\"}\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"LEFT\"}\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\",\n                \"style\": {\"color\": \"#b500bf\", \"fontSize\": 12,\"bold\": false,\"align\": \"RIGHT\"}\n            }\n        ]\n    }\n}\n\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n| cells.N.style         | String  | 单元格字体风格配置 ，风格配置的json字符串  如： {\"font\":\"黑体\",\"fontSize\":12,\"color\":\"#FFFFFF\",\"bold\":true,\"align\":\"CENTER\"}      |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\n\ncontent String 表头单元格内容，字数不超过100\n\n\nstyle String 为字体风格设置 风格支持： font : 目前支持 黑体、宋体; fontSize： 6-72; color：000000-FFFFFF  字符串形如：  \"#FFFFFF\" 或者 \"0xFFFFFF\"; bold ： 是否加粗， true ： 加粗 false： 不加粗; align: 对其方式， 支持 LEFT / RIGHT / CENTER",
+      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType=‘SIGN_SEAL'时，FormField.ComponentValue填入印章id。\n\n* 可用于指定自动签模板未设置自动签印章时，可由接口传入自动签印章\n* 若指定的控件上已设置ComponentValue，那以已经设置的ComponentValue为准\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"sealId（印章id）\"\n}\n```\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue支持填入附件图片或者文件的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n支持的文件类型包括doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt、pdf\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n```\n\n输入示例3（表格设置字体加粗颜色）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"CENTER\"}\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"LEFT\"}\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\",\n                \"style\": {\"color\": \"#b500bf\", \"fontSize\": 12,\"bold\": false,\"align\": \"RIGHT\"}\n            }\n        ]\n    }\n}\n\n```\n\n输入示例4（表格设置表头不合成到文件）：\n\n```\n{\n    \"headers\": [\n        {\n            \"content\": \"序号\"\n        },\n        {\n            \"content\": \"品牌\"\n        },\n        {\n            \"content\": \"商品名称\"\n        },\n        {\n            \"content\": \"粒径\"\n        },\n        {\n            \"content\": \"规格\"\n        },\n        {\n            \"content\": \"数量(包)\"\n        },\n        {\n            \"content\": \"重量(吨)\"\n        }\n    ],\n    \"rowCount\": 5,\n    \"body\": {\n        \"cells\": [\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"1\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称1\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称1\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"7#\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"50\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"1.000\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"2\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称2\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称2\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"5#\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"0.400\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"3\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称3\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称3\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"2#\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"5\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"0.100\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"4\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称4\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称4\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"3#\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"10\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"0.200\"\n            },\n            {\n                \"rowStart\": 5,\n                \"rowEnd\": 5,\n                \"columnStart\": 1,\n                \"columnEnd\": 5,\n                \"content\": \"合计\"\n            },\n            {\n                \"rowStart\": 5,\n                \"rowEnd\": 5,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"85\"\n            },\n            {\n                \"rowStart\": 5,\n                \"rowEnd\": 5,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"1.700\"\n            }\n        ]\n    },\n    \"settings\": {\n        \"headerRowDisplay\": false\n    }\n}\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n| cells.N.style         | String  | 单元格字体风格配置 ，风格配置的json字符串  如： {\"font\":\"黑体\",\"fontSize\":12,\"color\":\"#FFFFFF\",\"bold\":true,\"align\":\"CENTER\"}      |\n| settings            | Object  | 表格全局设定。目前支持设置表头不显示，示例：{\"headerRowDisplay\":false}                                                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\n\ncontent String 表头单元格内容，字数不超过100\n\n\nstyle String 为字体风格设置 风格支持： font : 目前支持 黑体、宋体; fontSize： 6-72; color：000000-FFFFFF  字符串形如：  \"#FFFFFF\" 或者 \"0xFFFFFF\"; bold ： 是否加粗， true ： 加粗 false： 不加粗; align: 对其方式， 支持 LEFT / RIGHT / CENTER",
       "members": [
         {
           "disabled": false,
@@ -13524,6 +13549,60 @@
       ],
       "usage": "out"
     },
+    "OperateTemplateRequest": {
+      "document": "OperateTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板ID，为32位字符串。",
+          "example": "yDSLZUUckpot5i01UydF1AEvOMQiKaBG",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，可取值如下:\n<ul>\n<li>DELETE:  删除</li>\n<li>ENABLE: 启用</li>\n<li>DISABLE: 停用</li>\n</ul>",
+          "example": "DELETE",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateTemplateResponse": {
+      "document": "OperateTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OrgBillSummary": {
       "document": "企业套餐余额情况",
       "members": [
@@ -14123,6 +14202,48 @@
         }
       ],
       "usage": "both"
+    },
+    "PresetApproverInfo": {
+      "document": "预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预设参与方姓名。",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预设参与方手机号。",
+          "example": "18888888888",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预设参与方证件号，需要和IdCardType同时传入。\n\n证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>",
+          "example": "430000000000000000",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预设参与方的证件类型，需要与IdCardNumber同时传入。\n\n证件类型，支持以下类型\n<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Recipient": {
       "document": "流程中参与方的信息结构",

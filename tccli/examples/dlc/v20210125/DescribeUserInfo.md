@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli dlc DescribeUserInfo --cli-unfold-argument  \
-    --UserId abc \
-    --Type abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --SortBy abc \
-    --Sorting abc \
-    --Limit 0 \
+    --UserId 1**********7 \
+    --Type DataAuth \
+    --Filters.0.Name policy-type \
+    --Filters.0.Values TABLE \
+    --SortBy create-time \
+    --Sorting desc \
+    --Limit 10 \
     --Offset 0
 ```
 
@@ -20,98 +20,52 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "********-****-****-****-1507fd716595",
         "UserInfo": {
-            "UserId": "abc",
-            "Type": "abc",
-            "UserType": "abc",
-            "UserDescription": "abc",
+            "AccountType": "UserAccount",
+            "CatalogPolicyInfo": null,
             "DataPolicyInfo": {
                 "PolicySet": [
                     {
-                        "Database": "abc",
-                        "Catalog": "abc",
-                        "Table": "abc",
-                        "Operation": "abc",
-                        "PolicyType": "abc",
-                        "Function": "abc",
-                        "View": "abc",
-                        "Column": "abc",
-                        "DataEngine": "abc",
+                        "Catalog": "DataLakeCatalog",
+                        "Database": "database1",
+                        "Id": 398710,
+                        "Mode": "SENIOR",
+                        "Operation": "ALL",
+                        "Operator": "Owner",
+                        "PolicyType": "TABLE",
                         "ReAuth": true,
-                        "Source": "abc",
-                        "Mode": "abc",
-                        "Operator": "abc",
-                        "CreateTime": "abc",
-                        "SourceId": 0,
-                        "SourceName": "abc",
-                        "Id": 0
+                        "Source": "USER",
+                        "Table": "table1",
+                        "Column": null,
+                        "Function": null,
+                        "CreateTime": null,
+                        "SourceId": null,
+                        "SourceName": null,
+                        "View": null,
+                        "DataEngine": null
                     }
                 ],
-                "TotalCount": 0
+                "TotalCount": 1
             },
             "EnginePolicyInfo": {
-                "PolicySet": [
-                    {
-                        "Database": "abc",
-                        "Catalog": "abc",
-                        "Table": "abc",
-                        "Operation": "abc",
-                        "PolicyType": "abc",
-                        "Function": "abc",
-                        "View": "abc",
-                        "Column": "abc",
-                        "DataEngine": "abc",
-                        "ReAuth": true,
-                        "Source": "abc",
-                        "Mode": "abc",
-                        "Operator": "abc",
-                        "CreateTime": "abc",
-                        "SourceId": 0,
-                        "SourceName": "abc",
-                        "Id": 0
-                    }
-                ],
+                "PolicySet": null,
                 "TotalCount": 0
             },
-            "WorkGroupInfo": {
-                "WorkGroupSet": [
-                    {
-                        "WorkGroupId": 0,
-                        "WorkGroupName": "abc",
-                        "WorkGroupDescription": "abc",
-                        "Creator": "abc",
-                        "CreateTime": "abc"
-                    }
-                ],
-                "TotalCount": 0
-            },
-            "UserAlias": "abc",
             "RowFilterInfo": {
-                "PolicySet": [
-                    {
-                        "Database": "abc",
-                        "Catalog": "abc",
-                        "Table": "abc",
-                        "Operation": "abc",
-                        "PolicyType": "abc",
-                        "Function": "abc",
-                        "View": "abc",
-                        "Column": "abc",
-                        "DataEngine": "abc",
-                        "ReAuth": true,
-                        "Source": "abc",
-                        "Mode": "abc",
-                        "Operator": "abc",
-                        "CreateTime": "abc",
-                        "SourceId": 0,
-                        "SourceName": "abc",
-                        "Id": 0
-                    }
-                ],
+                "PolicySet": null,
                 "TotalCount": 0
+            },
+            "Type": "DataAuth",
+            "UserAlias": "1**********7",
+            "UserDescription": "Owner",
+            "UserId": "1**********7",
+            "UserType": "ADMIN",
+            "WorkGroupInfo": {
+                "TotalCount": 0,
+                "WorkGroupSet": null
             }
-        },
-        "RequestId": "abc"
+        }
     }
 }
 ```

@@ -802,6 +802,14 @@
         "title": "获取头两个基础策略告警组列表"
       }
     ],
+    "DescribePolicyObjectCount": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePolicyObjectCount\r\n&Module=monitor\r\n&GroupId=111\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"IsMultiRegion\": true,\n        \"RegionList\": [\n            {\n                \"Count\": 0,\n                \"Region\": \"th\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"usw\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"in\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"ru\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"sh\"\n            },\n            {\n                \"Count\": 1,\n                \"Region\": \"gz\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"hzec\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"jp\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"kr\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"nj\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"shjr\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"szjr\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"tsn\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"ca\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"gzopen\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"jnec\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"de\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"hk\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"sg\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"use\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"bj\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"cd\"\n            },\n            {\n                \"Count\": 0,\n                \"Region\": \"cq\"\n            }\n        ],\n        \"RequestId\": \"853dafdc-22d4-4e9d-88a7-ebc43abf7cef\"\n    }\n}",
+        "title": "查询策略组在每个地域下面绑定的对象数统计"
+      }
+    ],
     "DescribeProductEventList": [
       {
         "document": "获取产品事件列表",
@@ -1062,6 +1070,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableSSOCamCheck\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"EnableSSOCamCheck\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"qmunlpf51noe13qp5vyvg7mq5t4t4w6u\"\n    }\n}",
         "title": "EnableSSOCamCheck"
+      }
+    ],
+    "ExportPrometheusReadOnlyDynamicAPI": [
+      {
+        "document": "```\nPath: api/v1/query\nMethod: GET POST\nQuery参数: \n   1. query = <string> prometheus查询表达式\n   2. time = <rfc3339 | unix_timestamp> 查询数据的时间\n   3. timeout = <duration> 超时时间 (1m / 5s / ...)\n响应体:\n{\n\t\"status\": \"success\" | \"error\",\n\t\"data\": {\n\t\t\"resultType\": \"matrix\" | \"vector\" | \"scalar\" | \"string\",\n\t\t\"result\": <value>\n\t},\n\t\n\t// 错误时返回\n\t\"errorType\": \"<string>\",\n\t\"error\": \"<string>\",\n\n\t// warning 信息\n\t\"warnings\": [\"<string>\"]\n}\n```\n查询结果result字段参考[prometheus点查询结果编码](https://prometheus.io/docs/prometheus/latest/querying/api/#expression-query-result-formats)",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportPrometheusReadOnlyDynamicAPI\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8-ztbsc3gc2-rw6lzn4gfg5kuz6khrxg\"\n    }\n}",
+        "title": "点查询(Instant query)"
       }
     ],
     "GetMonitorData": [

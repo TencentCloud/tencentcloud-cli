@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChatCompletions": {
-      "document": "### 接口功能\n\n调用接口，发起一次对话请求。单账号限制接口并发上限为5。\n如需使用OpenAI兼容接口， 请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)\n\n#### 在线体验\n如您希望在网页内直接体验 DeepSeek 模型对话，推荐您前往[腾讯云大模型知识引擎](https://cloud.tencent.com/product/lke)，使用[ DeepSeek 联网助手](https://lke.cloud.tencent.com/webim_exp/#/chat/wQrAwR)。\n\n#### 已支持的模型\n- DeepSeek-V3-0324（model 参数值为**deepseek-v3-0324**）\n    - DeepSeek-V3-0324为671B参数MoE模型，在编程与技术能力、上下文理解与长文本处理等方面优势突出。\n    - 支持64K上下文长度，最大输入56k，最大输出8k（不含思维链）。\n    - 注意：相比于DeepSeek-V3，DeepSeek-V3-0324仅更新了模型权重，未增加参数量。总模型大小为685B，其中包括671B的主模型权重和 14B 的多令牌预测（MTP）模块权重，后续均描述主模型参数量。\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大输入56k，最大输出8k（不含思维链）。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    -  支持64K上下文长度，最大输入56k，最大输出8k（不含思维链）。\n\n### 计费说明\n\n- 标准计费（2025年2月26日起生效），计费模式为后付费小时结，为保证您账户资源的正常使用，请提前[开通后付费](https://lke.cloud.tencent.com/lke#/app/system/charge/postpaid)并及时[充值](https://console.cloud.tencent.com/expense/recharge)。\n\n    -   DeepSeek-R1 模型   | 输入：0.004元/千token | 输出（含思维链）：0.016元/千token\n\n    - DeepSeek-V3 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n    - DeepSeek-V3-0324 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n\n### Openai兼容协议接口\n知识引擎原子能力大模型对话 API 兼容了 OpenAI 的接口规范，这意味着您可以直接使用 OpenAI 官方提供的 SDK 来调用大模型对话接口。您仅需要将 base_url 和 [api_key](https://cloud.tencent.com/document/product/1772/115970) 替换成相关配置，不需要对应用做额外修改，即可无缝将您的应用切换到相应的大模型。请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)。\n> base_url：  https://api.lkeap.cloud.tencent.com/v1\n\n> api_key的获取请参考[API KEY管理](https://cloud.tencent.com/document/product/1772/115970)\n\n\n### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
+      "document": "### 接口功能\n\n调用接口，发起一次对话请求。单账号限制接口并发上限为100。\n如需使用OpenAI兼容接口， 请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)\n\n#### 在线体验\n如您希望在网页内直接体验 DeepSeek 模型对话，推荐您前往[腾讯云大模型知识引擎](https://cloud.tencent.com/product/lke)，使用[ DeepSeek 联网助手](https://lke.cloud.tencent.com/webim_exp/#/chat/wQrAwR)。\n\n#### 已支持的模型\n- DeepSeek-V3-0324（model 参数值为**deepseek-v3-0324**）\n    - DeepSeek-V3-0324为671B参数MoE模型，在编程与技术能力、上下文理解与长文本处理等方面优势突出。\n    - 支持64K上下文长度，最大输入56k，最大输出16k（不含思维链）。\n    - 注意：相比于DeepSeek-V3，DeepSeek-V3-0324仅更新了模型权重，未增加参数量。总模型大小为685B，其中包括671B的主模型权重和 14B 的多令牌预测（MTP）模块权重，后续均描述主模型参数量。\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大输入56k，最大输出16k。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    -  支持64K上下文长度，最大输入56k，最大输出16k。\n\n### 计费说明\n\n- 标准计费（2025年2月26日起生效），计费模式为后付费小时结，为保证您账户资源的正常使用，请提前[开通后付费](https://lke.cloud.tencent.com/lke#/app/system/charge/postpaid)并及时[充值](https://console.cloud.tencent.com/expense/recharge)。\n\n    -   DeepSeek-R1 模型   | 输入：0.004元/千token | 输出（含思维链）：0.016元/千token\n\n    - DeepSeek-V3 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n    - DeepSeek-V3-0324 模型 | 输入：0.002元/千token | 输出：0.008元/千token\n\n\n### Openai兼容协议接口\n知识引擎原子能力大模型对话 API 兼容了 OpenAI 的接口规范，这意味着您可以直接使用 OpenAI 官方提供的 SDK 来调用大模型对话接口。您仅需要将 base_url 和 [api_key](https://cloud.tencent.com/document/product/1772/115970) 替换成相关配置，不需要对应用做额外修改，即可无缝将您的应用切换到相应的大模型。请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)。\n> base_url：  https://api.lkeap.cloud.tencent.com/v1\n\n> api_key的获取请参考[API KEY管理](https://cloud.tencent.com/document/product/1772/115970)\n\n\n### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
       "input": "ChatCompletionsRequest",
       "name": "DeepSeek API 接口",
       "output": "ChatCompletionsResponse",
@@ -75,6 +75,13 @@
       "input": "DescribeDocRequest",
       "name": "查询文档详情",
       "output": "DescribeDocResponse",
+      "status": "online"
+    },
+    "GetCharacterUsage": {
+      "document": "获取字符使用量统计",
+      "input": "GetCharacterUsageRequest",
+      "name": "获取账号下字符使用量与容量",
+      "output": "GetCharacterUsageResponse",
       "status": "online"
     },
     "GetEmbedding": {
@@ -337,8 +344,8 @@
         },
         {
           "disabled": false,
-          "document": "最大生成的token数量",
-          "example": "100",
+          "document": "最大生成的token数量，默认为4096，最大可设置为16384",
+          "example": "8192",
           "member": "int64",
           "name": "MaxTokens",
           "required": false,
@@ -789,7 +796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF` 最大500M\n - `DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
+          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF` 最大300M\n - `DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -1245,6 +1252,43 @@
         }
       ],
       "usage": "both"
+    },
+    "GetCharacterUsageRequest": {
+      "document": "GetCharacterUsage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetCharacterUsageResponse": {
+      "document": "GetCharacterUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已用字符数",
+          "example": "1000000",
+          "member": "uint64",
+          "name": "Used",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用字符数",
+          "example": "3000000",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetEmbeddingRequest": {
       "document": "GetEmbedding请求参数结构体",

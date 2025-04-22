@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dlc DescribeUserDataEngineConfig --cli-unfold-argument  \
-    --Sorting abc \
-    --Limit 0 \
+    --Sorting asc \
+    --Limit 10 \
     --Offset 0 \
-    --SortBy abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc
+    --SortBy create-time \
+    --Filters.0.Name engine-id \
+    --Filters.0.Values DataEngine-engineid
 ```
 
 Output: 
@@ -20,23 +20,27 @@ Output:
     "Response": {
         "DataEngineConfigInstanceInfos": [
             {
-                "DataEngineId": "abc",
                 "DataEngineConfigPairs": [
                     {
-                        "ConfigItem": "abc",
-                        "ConfigValue": "abc"
+                        "ConfigItem": "spark.dlc.extensions.scope",
+                        "ConfigValue": "functions"
+                    },
+                    {
+                        "ConfigItem": "spark.sql.extensions",
+                        "ConfigValue": "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions, org.apache.kyuubi.plugin.spark.authz.ranger.RangerSparkExtension,org.apache.spark.dlc.extensions.DLCSparkSessionExtensions"
                     }
                 ],
+                "DataEngineId": "DataEngine-engineid",
                 "SessionResourceTemplate": {
-                    "DriverSize": "abc",
-                    "ExecutorSize": "abc",
-                    "ExecutorNums": 1,
-                    "ExecutorMaxNumbers": 1
+                    "DriverSize": "large",
+                    "ExecutorMaxNumbers": 3,
+                    "ExecutorNums": 3,
+                    "ExecutorSize": "large"
                 }
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "3735e957-b4c3-49f3-abce-7a2f21e80e9d",
+        "TotalCount": 1
     }
 }
 ```

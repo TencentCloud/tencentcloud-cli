@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es UpdateServerlessInstance --cli-unfold-argument  \
-    --UpdateMetaJson {} \
+    --UpdateMetaJson {"mappings":{"properties":{}},"options":{"expire.max_age":"7d"},"settings":{}} \
     --InstanceId index-asdasd
 ```
 

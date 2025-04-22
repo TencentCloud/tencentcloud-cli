@@ -6,91 +6,77 @@ Input:
 
 ```
 tccli dlc DescribeTasks --cli-unfold-argument  \
-    --Limit 0 \
+    --Limit 1 \
     --Offset 0 \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --SortBy abc \
-    --Sorting abc \
-    --StartTime abc \
-    --EndTime abc \
-    --DataEngineName abc
+    --Filters.0.Name task-type \
+    --Filters.0.Values GovernSparkSQLTask GovernSparkBatchTask StandardGovernSparkSQLTask \
+    --SortBy create-time  \
+    --Sorting desc  \
+    --StartTime 2024-01-15 00:00:00 \
+    --EndTime 2025-01-16 23:59:59 \
+    --DataEngineName  \
+    --ResourceGroupName 
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "3a392e14-0f96-4069-8426-8ee75c4fcb1a",
         "TaskList": [
             {
-                "DatabaseName": "abc",
+                "Id": "Autotask-xxxx",
+                "DatabaseName": "dlc-db",
+                "SQLType": "OTHER",
+                "SQL": "{\n \"Catalog\": \"DataLakeCatalog\",\n \"Database\": \"dlc-db\",\n \"Table\": \"term\",\n \"Arguments\": [\n {\n \"Key\": \"age\",\n \"Value\": \"18\"\n },\n {\n \"Key\": \"max\",\n \"Value\": \"30\"\n }\n ]\n}",
                 "DataAmount": 0,
-                "Id": "abc",
                 "UsedTime": 0,
-                "OutputPath": "abc",
-                "CreateTime": "abc",
-                "State": 0,
-                "SQLType": "abc",
-                "SQL": "abc",
-                "ResultExpired": true,
-                "RowAffectInfo": "abc",
-                "DataSet": "abc",
-                "Error": "abc",
-                "Percentage": 0,
-                "OutputMessage": "abc",
-                "TaskType": "abc",
-                "ProgressDetail": "abc",
-                "UpdateTime": "abc",
-                "DataEngineId": "abc",
-                "OperateUin": "abc",
-                "DataEngineName": "abc",
-                "InputType": "abc",
-                "InputConf": "abc",
-                "DataNumber": 0,
-                "CanDownload": true,
-                "UserAlias": "abc",
-                "SparkJobName": "abc",
-                "SparkJobId": "abc",
-                "SparkJobFile": "abc",
-                "UiUrl": "abc",
                 "TotalTime": 0,
-                "CmdArgs": "abc",
-                "ImageVersion": "abc",
-                "DriverSize": "abc",
-                "ExecutorSize": "abc",
-                "ExecutorNums": 1,
-                "ExecutorMaxNumbers": 1,
-                "CommonMetrics": {
-                    "CreateTaskTime": 0,
-                    "ProcessTime": 0,
-                    "QueueTime": 0,
-                    "ExecutionTime": 0,
-                    "IsResultCacheHit": true,
-                    "MatchedMVBytes": 0,
-                    "MatchedMVs": "abc",
-                    "AffectedBytes": "abc",
-                    "AffectedRows": 0,
-                    "ProcessedBytes": 0,
-                    "ProcessedRows": 0
-                },
-                "SparkMonitorMetrics": {
-                    "ShuffleWriteBytesCos": 0,
-                    "ShuffleWriteBytesTotal": 0
-                },
-                "PrestoMonitorMetrics": {
-                    "LocalCacheHitRate": 0,
-                    "FragmentCacheHitRate": 0
-                }
+                "OutputPath": "",
+                "RowAffectInfo": "",
+                "ResultExpired": false,
+                "State": 0,
+                "CreateTime": "1736997039696",
+                "UpdateTime": "1736997039696",
+                "DataSet": "",
+                "Error": "",
+                "OutputMessage": "",
+                "Percentage": 0,
+                "TaskType": "GovernSparkBatchTask",
+                "ProgressDetail": "",
+                "OperateUin": "100015157500",
+                "DataEngineId": "DataEngine-6****9",
+                "DataEngineName": "dlc-db",
+                "ResourceGroupName": "",
+                "ImageVersion": "Spark 3.2",
+                "InputType": "",
+                "InputConf": "",
+                "DataNumber": 0,
+                "CanDownload": false,
+                "UserAlias": "xiaoming",
+                "SparkJobName": "",
+                "SparkJobId": "",
+                "SparkJobFile": "",
+                "UiUrl": "",
+                "CmdArgs": "",
+                "CommonMetrics": null,
+                "SparkMonitorMetrics": null,
+                "PrestoMonitorMetrics": null,
+                "DriverSize": "",
+                "ExecutorSize": "",
+                "ExecutorNums": 0,
+                "ExecutorMaxNumbers": 0,
+                "ResultFormat": "",
+                "EngineTypeDetail": "SparkBatch"
             }
         ],
-        "TotalCount": 1,
         "TasksOverview": {
             "TaskQueuedCount": 0,
             "TaskInitCount": 0,
             "TaskRunningCount": 0,
             "TotalTaskCount": 0
         },
-        "RequestId": "abc"
+        "TotalCount": 118429
     }
 }
 ```

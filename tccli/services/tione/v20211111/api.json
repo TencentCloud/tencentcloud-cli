@@ -154,6 +154,13 @@
       "output": "DescribeInferTemplatesResponse",
       "status": "deprecated"
     },
+    "DescribeLogs": {
+      "document": "获取任务式建模训练任务，Notebook，在线服务和批量预测任务的日志API",
+      "input": "DescribeLogsRequest",
+      "name": "获取日志",
+      "output": "DescribeLogsResponse",
+      "status": "online"
+    },
     "DescribeModelAccelerateTask": {
       "document": "查询模型优化任务详情",
       "input": "DescribeModelAccelerateTaskRequest",
@@ -540,6 +547,34 @@
         }
       ],
       "usage": "out"
+    },
+    "CodeRepoConfig": {
+      "document": "代码仓库配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代码仓库Id",
+          "example": "cr-1000669213287070080",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代码仓下载目标地址",
+          "example": "/opt/ml/code",
+          "member": "string",
+          "name": "TargetPath",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Container": {
       "document": "容器信息",
@@ -1965,6 +2000,15 @@
           "name": "EncodedStartCmdInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代码仓库配置",
+          "example": "[{\"Id\":\"cr-1000669213287070080\",\"TargetPath\":\"/opt/ml/code\"}]",
+          "member": "CodeRepoConfig",
+          "name": "CodeRepos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2208,6 +2252,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机路径信息",
+          "example": "无",
+          "member": "HostPath",
+          "name": "HostPathSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3768,6 +3823,134 @@
       ],
       "type": "object"
     },
+    "DescribeLogsRequest": {
+      "document": "DescribeLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测\n枚举值：\n- TRAIN\n- NOTEBOOK\n- INFER\n- BATCH",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志查询结束时间（RFC3339格式的时间字符串），默认值为当前时间",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志查询条数，默认值100，最大值100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList\n注：支持结尾通配符*",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "PodName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向（可选值为ASC, DESC ），默认为DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按哪个字段排序（可选值为Timestamp），默认值为Timestamp",
+          "example": "Timestamp",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志查询上下文，查询下一页的时候需要回传这个字段，该字段来自本接口的返回",
+          "example": "aaa-bbb-ccc",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件\n注意: \n1. Filter.Name：目前只支持Key（也就是按关键字过滤日志）\n2. Filter.Values：表示过滤日志的关键字；Values为多个的时候表示同时满足\n3. Filter. Negative和Filter. Fuzzy没有使用",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogsResponse": {
+      "document": "DescribeLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的游标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa-bbb-ccc",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogIdentity",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeModelAccelerateTaskRequest": {
       "document": "DescribeModelAccelerateTask请求参数结构体",
       "members": [
@@ -4973,6 +5156,23 @@
       ],
       "usage": "both"
     },
+    "HostPath": {
+      "document": "主机路径挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要挂载的主机路径",
+          "example": "/mnt",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HyperParameter": {
       "document": "模型专业参数",
       "members": [
@@ -5668,6 +5868,52 @@
         }
       ],
       "usage": "both"
+    },
+    "LogIdentity": {
+      "document": "单条日志数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单条日志的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa-ccc-ddd",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单条日志的内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This is a log",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "这条日志对应的Pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "train-xxx-1",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志的时间戳（RFC3339格式的时间字符串）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "Timestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Message": {
       "document": "对话输入内容",
@@ -10821,6 +11067,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务关联的代码仓库配置",
+          "example": "[{\"Id\":\"cr-1000669213287070080\",\"TargetPath\":\"/opt/ml/code\"}]\t",
+          "member": "CodeRepoConfig",
+          "name": "CodeRepos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

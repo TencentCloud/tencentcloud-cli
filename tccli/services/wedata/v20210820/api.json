@@ -1344,6 +1344,13 @@
       "output": "GetFileInfoResponse",
       "status": "online"
     },
+    "GetInstanceLog": {
+      "document": "获取实例列表",
+      "input": "GetInstanceLogRequest",
+      "name": "查询调度实例日志内容",
+      "output": "GetInstanceLogResponse",
+      "status": "online"
+    },
     "GetIntegrationNodeColumnSchema": {
       "document": "提取数据集成节点字段Schema",
       "input": "GetIntegrationNodeColumnSchemaRequest",
@@ -1365,6 +1372,13 @@
       "output": "GetOfflineInstanceListResponse",
       "status": "online"
     },
+    "GetTaskInstance": {
+      "document": "获取实例列表",
+      "input": "GetTaskInstanceRequest",
+      "name": "获取调度实例详情",
+      "output": "GetTaskInstanceResponse",
+      "status": "online"
+    },
     "JudgeResourceFile": {
       "document": "资源管理-判断资源文件是否存在",
       "input": "JudgeResourceFileRequest",
@@ -1384,6 +1398,13 @@
       "input": "KillScheduleInstancesRequest",
       "name": "实例运维-批量终止l实例",
       "output": "KillScheduleInstancesResponse",
+      "status": "online"
+    },
+    "ListInstances": {
+      "document": "获取实例列表",
+      "input": "ListInstancesRequest",
+      "name": "获取调度实例列表",
+      "output": "ListInstancesResponse",
       "status": "online"
     },
     "LockIntegrationTask": {
@@ -3193,6 +3214,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段",
+          "example": "123",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12838,7 +12869,7 @@
         {
           "disabled": false,
           "document": "待审批列表详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " {             \"PageNumber\": 1,             \"PageSize\": 10,             \"Rows\": [                 {                     \"ApplicantId\": \"1000297561131\",                     \"ApplicantName\": \"test_0\",                     \"ApplyName\": \"test_db1520729990156341\",                     \"ApproveClassification\": \"db\",                     \"ApproveClassificationName\": \"库表申请\",                     \"ApproveId\": \"23133\",                     \"ApproveProjectName\": \"project_test\",                     \"ApproveTime\": \"2022-04-11T07:06:16+08:00\",                     \"ApproveType\": \"db_db\",                     \"ApproveTypeName\": \"库申请\",                     \"ApproverId\": \"100408890356\",                     \"ApproverName\": \"EST\",                     \"CreateTime\": \"2022-04-12T06:15:16+08:00\",                     \"ErrorMessage\": null,                     \"Reason\": \"use test\",                     \"Remark\": \"test\",                     \"Status\": \"reject\"                 }             ],             \"TotalCount\": 331,             \"TotalPageNumber\": 33         }",
+          "example": "无",
           "member": "DescribeApply",
           "name": "Data",
           "output_required": true,
@@ -16288,6 +16319,15 @@
           "example": "1",
           "member": "int64",
           "name": "CurrentLifeRound",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大生命周期数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxLifeRound",
           "required": false,
           "type": "int"
         },
@@ -26498,6 +26538,124 @@
       ],
       "type": "object"
     },
+    "GetInstanceLogRequest": {
+      "document": "GetInstanceLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "**项目ID**",
+          "example": "1531612696090365952",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例唯一标识**",
+          "example": "20240627201611119_2025-03-20 00:00:00",
+          "member": "string",
+          "name": "InstanceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期编号",
+          "example": "1",
+          "member": "uint64",
+          "name": "LifeRoundNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "**时区**\ntimeZone, 默认UTC+8",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**日志所在执行机Ip**",
+          "example": "111***_vpc-4t9abvbv_1.0.1.1",
+          "member": "string",
+          "name": "BrokerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**日志文件**\n实例详情中 executionJobId 为空时，但 originFileName 不为空时，入参中必须包含 originFileName 与 brokerIp\n如果 executionJobId 与 originFileName 都为空，则说明实例未下发执行或没有产生日志。例如分支节点 或 归并节点",
+          "example": "2024120517***3_2025-03-20 00:00:00_2025-03-20 00:02:49",
+          "member": "string",
+          "name": "OriginFileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**执行ID**\n\n实例详情中 executionJobId 不为空时，入参中需包含executionJobId 。originFileName 与 brokerIp为非必要参数",
+          "example": "153161333***",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**日志级别**\n默认All\n\n- Info\n- Debug\n- Warn\n- Error\n- All",
+          "example": "All",
+          "member": "string",
+          "name": "LogLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**获取日志的开始行 行号**\n默认 1",
+          "example": "1",
+          "member": "uint64",
+          "name": "StartLineNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "**获取日志的结束行 行号**\n默认 10000",
+          "example": "10000",
+          "member": "uint64",
+          "name": "EndLineCount",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInstanceLogResponse": {
+      "document": "GetInstanceLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调度实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLogVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetIntegrationNodeColumnSchemaRequest": {
       "document": "GetIntegrationNodeColumnSchema请求参数结构体",
       "members": [
@@ -26682,6 +26840,61 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskInstanceRequest": {
+      "document": "GetTaskInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "**项目ID**",
+          "example": "1531612696090365952",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例唯一标识**",
+          "example": "20240627201611119_2025-03-20 00:00:00",
+          "member": "string",
+          "name": "InstanceKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**时区**\ntimeZone, 默认UTC+8",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTaskInstanceResponse": {
+      "document": "GetTaskInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调度实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceDetailVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -27095,6 +27308,302 @@
       ],
       "usage": "in"
     },
+    "InstanceDetailVO": {
+      "document": "调度实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240627201611119_2025-03-20 00:00:00",
+          "member": "string",
+          "name": "InstanceKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1531612696090365952",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f7418cc8-84f8****",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件夹名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testFolder",
+          "member": "string",
+          "name": "FolderName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ba48d170-3239***",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cron_test_wf",
+          "member": "string",
+          "name": "WorkflowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负责人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[gshengshi]",
+          "member": "string",
+          "name": "InChargeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240627201611119",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cron_test",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**任务周期类型**\n支持过滤多个，条件间为 或 的过滤关系\n* O: ONEOFF_CYCLE\n* Y: YEAR_CYCLE\n* M: MONTH_CYCLE\n* W: WEEK_CYCLE\n* D: DAY_CYCLE\n* H: HOUR_CYCLE\n* I: MINUTE_CYCLE\n* C: CRONTAB_CYCLE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "H",
+          "member": "string",
+          "name": "TaskCycleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskTypeOpsDto",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240821154428723333",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试资源组",
+          "member": "string",
+          "name": "ExecutorGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "CurRunDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下一个实例数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 01:00:00",
+          "member": "string",
+          "name": "NextCurDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次运行失败，下发重试次数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "TryLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前运行已下发运行次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Tries",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "累计运行次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalRunNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LifeRoundNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例类型**\n\n- 0 表示补录类型\n- 1 表示周期实例\n- 2 表示非周期实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例状态**\n\n- [0] 表示 等待事件\n- [12] 表示 等待上游\n- [6, 7, 9, 10, 18] 表示 等待运行\n- [1, 19, 22] 表示 运行中\n- [21] 表示 跳过运行\n- [3] 表示 失败重试\n- [8, 4, 5, 13] 表示 失败\n- [2] 表示 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计划调度时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "SchedulerTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:01",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:11",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "耗费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:00:11.000",
+          "member": "string",
+          "name": "CostTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例运行触发类型**\n\n- RERUN 表示重跑\n- ADDITION 表示补录\n- PERIODIC 表示周期\n- APERIODIC 表示非周期\n- RERUN_SKIP_RUN 表示重跑 - 空跑\n- ADDITION_SKIP_RUN 表示补录 - 空跑\n- PERIODIC_SKIP_RUN 表示周期 - 空跑\n- APERIODIC_SKIP_RUN 表示非周期 - 空跑\n- MANUAL_TRIGGER 表示手动触发\n- RERUN_MANUAL_TRIGGER 表示手动触发 - 重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PERIODIC",
+          "member": "string",
+          "name": "InstanceRunType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**下发执行ID**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1531612696034334445952",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例生命周期列表**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLifeCycleVO",
+          "name": "InstanceLifeCycleList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例最近一次的执行日志**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLogVO",
+          "name": "LatestLog",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceDownloadLogInfo": {
       "document": "下载日志详情",
       "members": [
@@ -27314,13 +27823,139 @@
       ],
       "usage": "both"
     },
+    "InstanceLifeCycleVO": {
+      "document": "调度实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240627201611119_2025-03-20 00:00:00",
+          "member": "string",
+          "name": "InstanceKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例状态**\n\n- [0] 表示 等待事件\n- [12] 表示 等待上游\n- [6, 7, 9, 10, 18] 表示 等待运行\n- [1, 19, 22] 表示 运行中\n- [21] 表示 跳过运行\n- [3] 表示 失败重试\n- [8, 4, 5, 13] 表示 失败\n- [2] 表示 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LifeRoundNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例运行触发类型**\n\n- RERUN 表示重跑\n- ADDITION 表示补录\n- PERIODIC 表示周期\n- APERIODIC 表示非周期\n- RERUN_SKIP_RUN 表示重跑 - 空跑\n- ADDITION_SKIP_RUN 表示补录 - 空跑\n- PERIODIC_SKIP_RUN 表示周期 - 空跑\n- APERIODIC_SKIP_RUN 表示非周期 - 空跑\n- MANUAL_TRIGGER 表示手动触发\n- RERUN_MANUAL_TRIGGER 表示手动触发 - 重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PERIODIC",
+          "member": "string",
+          "name": "RunType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Tries",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例生命周期列表**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceLifeDetailDto",
+          "name": "LifeCycleDetailList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例代码文件**\n该文件内容为当次执行实例运行使用的代码，仅部分任务支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "code_file",
+          "member": "string",
+          "name": "CodeFileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**下发执行ID**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1531612696034334445952",
+          "member": "string",
+          "name": "ExecutionJobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志所在执行节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111***_vpc-4t9abvbv_1.0.1.1",
+          "member": "string",
+          "name": "BrokerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024120517***3_2025-03-20 00:00:00_2025-03-20 00:02:49",
+          "member": "string",
+          "name": "OriginFileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例日志类型**\n\n- run: 运行; \n- kill: 终止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "run",
+          "member": "string",
+          "name": "LogType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "耗费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:00:11.000",
+          "member": "string",
+          "name": "CostTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceLifeDetailDto": {
       "document": "实例生命周期detail",
       "members": [
         {
           "disabled": false,
-          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "**实例状态**\n- [0] 表示 等待事件\n- [12] 表示 等待上游\n- [6, 7, 9, 10, 18] 表示 等待运行\n- [1, 19, 22] 表示 运行中\n- [21] 表示 跳过运行\n- [3] 表示 失败重试\n- [8, 4, 5, 13] 表示 失败\n- [2] 表示 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "string",
           "name": "State",
           "output_required": false,
@@ -27331,7 +27966,7 @@
         {
           "disabled": false,
           "document": "该状态开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-28 00:00:00",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -27341,8 +27976,8 @@
         },
         {
           "disabled": false,
-          "document": "实例生命周期阶段状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "**实例生命周期阶段状态**\n\n- WAIT_UPSTREAM 表示 等待事件/上游状态\n- WAIT_RUN 表示 等待运行状态\n- RUNNING 表示 运行中状态\n- COMPLETE 表示 终态-完成\n- FAILED 表示 终态-失败重试\n- EXPIRED 表示 终态-失败\n- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支\n- HISTORY 表示 兼容历史实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
           "member": "string",
           "name": "DetailState",
           "output_required": false,
@@ -27353,7 +27988,7 @@
         {
           "disabled": false,
           "document": "该状态结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-03-28 00:00:05",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -27888,6 +28523,152 @@
           "name": "CostTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceLogVO": {
+      "document": "实例日志内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240627201611119_2025-03-20 00:00:00",
+          "member": "string",
+          "name": "InstanceKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1531612696090365952",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例状态**\n\n- [0] 表示 等待事件\n- [12] 表示 等待上游\n- [6, 7, 9, 10, 18] 表示 等待运行\n- [1, 19, 22] 表示 运行中\n- [21] 表示 跳过运行\n- [3] 表示 失败重试\n- [8, 4, 5, 13] 表示 失败\n- [2] 表示 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例运行触发类型**\n\n- RERUN 表示重跑\n- ADDITION 表示补录\n- PERIODIC 表示周期\n- APERIODIC 表示非周期\n- RERUN_SKIP_RUN 表示重跑 - 空跑\n- ADDITION_SKIP_RUN 表示补录 - 空跑\n- PERIODIC_SKIP_RUN 表示周期 - 空跑\n- APERIODIC_SKIP_RUN 表示非周期 - 空跑\n- MANUAL_TRIGGER 表示手动触发\n- RERUN_MANUAL_TRIGGER 表示手动触发 - 重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PERIODIC",
+          "member": "string",
+          "name": "RunType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始运行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 20:00:05",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 20:00:10",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**运行代码内容**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "echo 1",
+          "member": "string",
+          "name": "CodeInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**运行代码文件大小**\n单位KB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CodeFileSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志所在节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111***_vpc-4t9abvbv_1.0.1.1",
+          "member": "string",
+          "name": "BrokerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**日志内容**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LogInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**日志文件大小**\n单位KB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LogFileSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**本次查询返回的日志行数**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LineCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行平台日志分页查询参数, 每次请求透明传入。第一页查询时值为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "115715",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志分页查询，是否最后一页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnd",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -28665,6 +29446,72 @@
       ],
       "usage": "out"
     },
+    "InstancePageVO": {
+      "document": "实例列表分页实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "**总条数**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**总分页数**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每页条目数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总分页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceVO",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceSearchCondition": {
       "document": "实例检索条件",
       "members": [
@@ -28822,6 +29669,242 @@
           "name": "Count",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceVO": {
+      "document": "调度运行实例实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "**实例唯一标识**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240627201611119_2025-03-20 00:00:00",
+          "member": "string",
+          "name": "InstanceKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1531612696090365952",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f7418cc8-84f8****",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件夹名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testFolder",
+          "member": "string",
+          "name": "FolderName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ba48d170-3239***",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cron_test_wf",
+          "member": "string",
+          "name": "WorkflowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负责人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[gshengshi]",
+          "member": "string",
+          "name": "InChargeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240627201611119",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cron_test",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskTypeOpsDto",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**任务周期类型**\n支持过滤多个，条件间为 或 的过滤关系\n* O: ONEOFF_CYCLE\n* Y: YEAR_CYCLE\n* M: MONTH_CYCLE\n* W: WEEK_CYCLE\n* D: DAY_CYCLE\n* H: HOUR_CYCLE\n* I: MINUTE_CYCLE\n* C: CRONTAB_CYCLE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "H",
+          "member": "string",
+          "name": "TaskCycleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "CurRunDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每次运行失败，下发重试次数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "TryLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**失败重试次数**\n再次使用 手动重跑 或 补录实例等方式触发运行时，会被重置为 0 后重新计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Tries",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "累计运行次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalRunNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例类型**\n\n- 0 表示补录类型\n- 1 表示周期实例\n- 2 表示非周期实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**实例状态**\n\n- [0] 表示 等待事件\n- [12] 表示 等待上游\n- [6, 7, 9, 10, 18] 表示 等待运行\n- [1, 19, 22] 表示 运行中\n- [21] 表示 跳过运行\n- [3] 表示 失败重试\n- [8, 4, 5, 13] 表示 失败\n- [2] 表示 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:01",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:11",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "耗费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:00:11.000",
+          "member": "string",
+          "name": "CostTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计划调度时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "SchedulerTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20240821154428723333",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试资源组",
+          "member": "string",
+          "name": "ExecutorGroupName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -30453,6 +31536,205 @@
         }
       ],
       "usage": "both"
+    },
+    "ListInstancesRequest": {
+      "document": "ListInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "**项目ID**",
+          "example": "1531612696090365952",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例计划调度时间**\n过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-03-19 00:00:00",
+          "member": "string",
+          "name": "ScheduleTimeFrom",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例计划调度时间**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "ScheduleTimeTo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**页码，整型**\n配合pageSize使用且不能小于1， 默认值1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "**每页数目，整型**\n配合pageNumber使用且不能大于200, 默认值 10",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "**查询结果排序字段**\n\n- SCHEDULE_DATE 表示 计划调度时间\n- START_TIME 表示 实例开始执行时间\n- END_TIME 表示 实例结束执行时间\n- COST_TIME 表示 实例执行时长",
+          "example": "SCHEDULE_DATE",
+          "member": "string",
+          "name": "SortColumn",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例排序方式**\n\n- ASC \n- DESC",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**实例类型**\n\n- 0 表示补录类型\n- 1 表示周期实例\n- 2 表示非周期实例",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "**实例执行状态**\n支持过滤多个，条件间为 或 的过滤关系\n\n- [0] 表示 等待事件\n- [12] 表示 等待上游\n- [6, 7, 9, 10, 18] 表示 等待运行\n- [1, 19, 22] 表示 运行中\n- [21] 表示 跳过运行\n- [3] 表示 失败重试\n- [8, 4, 5, 13] 表示 失败\n- [2] 表示 成功",
+          "example": " [6, 7, 9, 10, 18]",
+          "member": "uint64",
+          "name": "InstanceStateList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**任务类型Id**\n\n- 支持过滤多个，条件间为 或 的过滤关系\n- 可以通过接口 DescribeAllTaskType 获取项目支持的全部任务类型",
+          "example": " [35]",
+          "member": "uint64",
+          "name": "TaskTypeIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**任务周期类型**\n支持过滤多个，条件间为 或 的过滤关系\n* O: ONEOFF_CYCLE\n* Y: YEAR_CYCLE\n* M: MONTH_CYCLE\n* W: WEEK_CYCLE\n* D: DAY_CYCLE\n* H: HOUR_CYCLE\n* I: MINUTE_CYCLE\n* C: CRONTAB_CYCLE",
+          "example": "[H,I]",
+          "member": "string",
+          "name": "TaskCycleList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**任务名称 或 任务ID**\n支持模糊搜索过滤, 多个用 英文逗号, 分割",
+          "example": "cron_test",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**任务负责人**\n支持过滤多个，条件间为 或 的过滤关系",
+          "example": "[gshengshi]",
+          "member": "string",
+          "name": "InChargeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**任务所属文件件**\n支持过滤多个，条件间为 或 的过滤关系\n可以通过接口 FindAllFolder 获取项目下的所有文件夹列表",
+          "example": "[bfefea67-37af***]",
+          "member": "string",
+          "name": "TaskFolderIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**任务所属工作流**\n支持过滤多个，条件间为 或 的过滤关系\n可以通过接口 DescribeOpsWorkflows 获取项目下的所有工作流列表",
+          "example": "[ba48d170-3239***]",
+          "member": "string",
+          "name": "WorkflowIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**执行资源组Id**\n支持过滤多个，条件间为 或 的过滤关系\n可以通过接口 DescribeNormalSchedulerExecutorGroups 获取项目下的所有调度资源组列表\n可以通过接口 DescribeNormalIntegrationExecutorGroups 获取项目下的所有集成资源组列表",
+          "example": "[2024082115***]",
+          "member": "string",
+          "name": "ExecutorGroupIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "**开始时间**\n过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-03-19 00:00:00",
+          "member": "string",
+          "name": "StartTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**开始时间**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-03-20 00:00:00",
+          "member": "string",
+          "name": "StartTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "**时区**\ntimeZone, 默认UTC+8",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListInstancesResponse": {
+      "document": "ListInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例结果集",
+          "example": "无",
+          "member": "InstancePageVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "LockIntegrationTaskRequest": {
       "document": "LockIntegrationTask请求参数结构体",
@@ -36879,7 +38161,7 @@
         {
           "disabled": false,
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "4563452",
           "member": "uint64",
           "name": "RuleId",
           "output_required": true,
@@ -36890,7 +38172,7 @@
         {
           "disabled": false,
           "document": "规则组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "234656",
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
@@ -36901,7 +38183,7 @@
         {
           "disabled": false,
           "document": "数据表Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "745667",
           "member": "string",
           "name": "TableId",
           "output_required": true,
@@ -36934,7 +38216,7 @@
         {
           "disabled": false,
           "document": "规则模板Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "345234",
           "member": "uint64",
           "name": "RuleTemplateId",
           "output_required": true,
@@ -37088,7 +38370,7 @@
         {
           "disabled": false,
           "document": "目标库Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "876923",
           "member": "string",
           "name": "TargetDatabaseId",
           "output_required": true,
@@ -37099,7 +38381,7 @@
         {
           "disabled": false,
           "document": "目标库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "234878",
           "member": "string",
           "name": "TargetDatabaseName",
           "output_required": true,
@@ -37110,7 +38392,7 @@
         {
           "disabled": false,
           "document": "目标表Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "2348782",
           "member": "string",
           "name": "TargetTableId",
           "output_required": true,
@@ -37121,7 +38403,7 @@
         {
           "disabled": false,
           "document": "目标表名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "23894756",
           "member": "string",
           "name": "TargetTableName",
           "output_required": true,
@@ -37421,6 +38703,17 @@
           "example": "projectName",
           "member": "string",
           "name": "ProjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-20 12:22:22",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -38574,7 +39867,7 @@
         {
           "disabled": false,
           "document": "规则组执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "4576345",
           "member": "uint64",
           "name": "RuleGroupExecId",
           "output_required": true,
@@ -38585,7 +39878,7 @@
         {
           "disabled": false,
           "document": "规则组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "23456345",
           "member": "uint64",
           "name": "RuleGroupId",
           "output_required": true,
@@ -38673,7 +39966,7 @@
         {
           "disabled": false,
           "document": "表id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "34523",
           "member": "string",
           "name": "TableId",
           "output_required": true,
@@ -38684,7 +39977,7 @@
         {
           "disabled": false,
           "document": "数据库id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "5674",
           "member": "string",
           "name": "DatabaseId",
           "output_required": true,
@@ -38695,7 +39988,7 @@
         {
           "disabled": false,
           "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "3456",
           "member": "string",
           "name": "DatasourceId",
           "output_required": true,
@@ -38837,25 +40130,47 @@
         },
         {
           "disabled": false,
-          "document": "实例运行的开始时间",
+          "document": "实例运行的开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yyyy-MM-dd HH:mm:ss",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例运行的结束时间",
+          "document": "实例运行的结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yyyy-MM-dd HH:mm:ss",
           "member": "string",
           "name": "FinishTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "监控1",
+          "member": "string",
+          "name": "RuleGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "判断是否屏蔽监控 0.屏蔽 1.不屏蔽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RuleGroupExist",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -44625,6 +45940,46 @@
           "name": "IfSupportCreateAndDDL",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产来源 历史默认值都是CRAWLER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataFromType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎侧责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EngineOwner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据分层UUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataLayerUuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据分层名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataLayerName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {

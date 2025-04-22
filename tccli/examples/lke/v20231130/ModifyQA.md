@@ -9,7 +9,7 @@ tccli lke ModifyQA --cli-unfold-argument  \
     --BotBizId 1727231073371148288 \
     --QaBizId 1728997020814671872 \
     --Question q1 \
-    --Answer a \
+    --Answer 答案 \
     --AttrRange 1
 ```
 

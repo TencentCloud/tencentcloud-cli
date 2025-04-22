@@ -67,7 +67,7 @@ Output:
         "AudienceType": 1,
         "TeacherId": "sdfgsdefg",
         "Assistants": [
-            "test"
+            "sdfgsdefg"
         ],
         "EndTime": 1,
         "Resolution": 1,

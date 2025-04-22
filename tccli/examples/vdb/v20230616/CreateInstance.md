@@ -18,6 +18,9 @@ Output:
 ```
 {
     "Response": {
+        "InstanceIds": [
+            "vdb-j8mv****"
+        ],
         "RequestId": "0d7fa142-011a-4416-be8c-320e44c9c3a9"
     }
 }

@@ -332,7 +332,7 @@
       {
         "document": "获取课堂房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"sdsdsdf\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"sdfgsdfg\",\n        \"StartTime\": 1,\n        \"AudienceType\": 1,\n        \"TeacherId\": \"sdfgsdefg\",\n        \"Assistants\": [\n            \"test\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"EnableDirectControl\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"sdsdsdf\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"sdfgsdfg\",\n        \"StartTime\": 1,\n        \"AudienceType\": 1,\n        \"TeacherId\": \"sdfgsdefg\",\n        \"Assistants\": [\n            \"sdfgsdefg\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"EnableDirectControl\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
         "title": "房间信息"
       }
     ],

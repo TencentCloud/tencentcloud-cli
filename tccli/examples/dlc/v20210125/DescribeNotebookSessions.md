@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli dlc DescribeNotebookSessions --cli-unfold-argument  \
-    --DataEngineName abc \
-    --State abc \
-    --SortFields abc \
+    --DataEngineName engine1 \
+    --State not_started \
     --Asc True \
-    --Limit 1 \
-    --Offset 1
+    --Limit 0 \
+    --Offset 10
 ```
 
 Output: 

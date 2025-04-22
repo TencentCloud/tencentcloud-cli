@@ -16,7 +16,7 @@ tccli teo CreateL4ProxyRules --cli-unfold-argument  \
     --L4ProxyRules.0.ClientIPPassThroughMode TOA \
     --L4ProxyRules.0.SessionPersist on \
     --L4ProxyRules.0.SessionPersistTime 3600 \
-    --L4ProxyRules.0.RuleTag test
+    --L4ProxyRules.0.RuleTag testrule
 ```
 
 Output: 

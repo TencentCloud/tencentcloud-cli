@@ -1,6 +1,6 @@
 **Example 1: 查询高级设置**
 
-
+查询高级设置
 
 Input: 
 
@@ -11,11 +11,12 @@ Output:
 ```
 {
     "Response": {
-        "StoreLocation": "xx",
-        "HasLakeFs": false,
-        "Enable": 1,
-        "LakeFsStatus": "xx",
-        "RequestId": "xx"
+        "BucketType": "cos",
+        "Enable": 0,
+        "HasLakeFs": true,
+        "LakeFsStatus": "bind",
+        "RequestId": "********-****-****-****-93d48f4f687c",
+        "StoreLocation": "cosn://xx/xx/xx"
     }
 }
 ```

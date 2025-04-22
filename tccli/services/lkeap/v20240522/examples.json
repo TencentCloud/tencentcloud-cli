@@ -100,6 +100,14 @@
         "title": "查询文档详情"
       }
     ],
+    "GetCharacterUsage": [
+      {
+        "document": "获取使用的字符数与字符容量",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCharacterUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec5608e7-e8f9-4a15-b536-b1651d954c82\",\n        \"Total\": 300000000,\n        \"Used\": 124331524\n    }\n}",
+        "title": "获取使用的字符数与字符容量"
+      }
+    ],
     "GetEmbedding": [
       {
         "document": "",

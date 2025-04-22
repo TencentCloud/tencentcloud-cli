@@ -6,17 +6,16 @@ Input:
 
 ```
 tccli dlc CreateResultDownload --cli-unfold-argument  \
-    --Force True \
-    --TaskId abc \
-    --Format abc
+    --TaskId 20aadca2d4b511ef9ffa525400ba9019 \
+    --Format CSV
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DownloadId": "abc",
-        "RequestId": "abc"
+        "DownloadId": "********-****-****-****-e2b74f9da97c",
+        "RequestId": "********-****-****-****-c1db8a695890"
     }
 }
 ```

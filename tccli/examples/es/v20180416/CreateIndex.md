@@ -7,11 +7,11 @@ Input:
 ```
 tccli es CreateIndex --cli-unfold-argument  \
     --Username elastic \
-    --IndexName test \
+    --IndexName index_name \
     --IndexType normal \
     --InstanceId es-abcdefgh \
-    --IndexMetaJson {} \
-    --Password 123456
+    --IndexMetaJson  \
+    --Password G7j#kL9p$2w
 ```
 
 Output: 

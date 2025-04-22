@@ -7373,7 +7373,35 @@
     },
     "DescribeCloudBaseRunVersionRsByConditionRequest": {
       "document": "DescribeCloudBaseRunVersionRsByCondition请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID；EnvId和ClusterId不能同时为空",
+          "example": "tcb_jsxjtcx",
+          "member": "string",
+          "name": "EnvId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID；EnvId和ClusterId不能同时为空",
+          "example": "cls-sfdxerf",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤网关服务开关",
+          "example": "true",
+          "member": "bool",
+          "name": "FilterGwSwitch",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeCloudBaseRunVersionRsByConditionResponse": {

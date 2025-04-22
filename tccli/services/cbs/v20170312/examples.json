@@ -369,7 +369,7 @@
     "RenewDisk": [
       {
         "document": "给云硬盘续费一个月，并设置自动续费标识",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDisk\n<公共请求参数>\n\n{\n    \"DiskChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": 1\n    },\n    \"DiskId\": \"disk-jwk0zvrg\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e2e5089-244a-4102-d347-5a1f8058b1db\"\n    }\n}",
         "title": "给云硬盘续费一个月，并设置自动续费标识"
       },
@@ -383,7 +383,7 @@
     "ResizeDisk": [
       {
         "document": "将云硬盘扩容到200G",
-        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisk\n<公共请求参数>\n\n{\n    \"DiskSize\": \"200\",\n    \"DiskId\": \"disk-lzrg2pwi\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisk\n<公共请求参数>\n\n{\n    \"DiskSize\": 200,\n    \"DiskId\": \"disk-lzrg2pwi\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"adefc06d-2cf1-29f6-24a6-5a1f81b5c0ac\"\n    }\n}",
         "title": "将云硬盘扩容到200G"
       }

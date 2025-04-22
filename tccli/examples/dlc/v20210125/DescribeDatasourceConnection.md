@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli dlc DescribeDatasourceConnection --cli-unfold-argument  \
-    --DatasourceConnectionIds abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --DatasourceConnectionIds f329n1 \
+    --Filters.0.Name filter \
+    --Filters.0.Values normal \
     --Offset 0 \
     --Limit 0 \
-    --SortBy abc \
-    --Sorting abc \
-    --StartTime abc \
-    --EndTime abc \
-    --DatasourceConnectionNames abc \
-    --DatasourceConnectionTypes abc \
-    --HiveVersion abc
+    --SortBy time \
+    --Sorting desc \
+    --StartTime 2006-01-02 15:04:05 \
+    --EndTime 2006-01-02 15:04:05 \
+    --DatasourceConnectionNames connection_1 \
+    --DatasourceConnectionTypes connection_1 \
+    --HiveVersion 2.1.1
 ```
 
 Output: 
@@ -28,155 +28,168 @@ Output:
         "ConnectionSet": [
             {
                 "Id": 0,
-                "DatasourceConnectionId": "abc",
-                "DatasourceConnectionName": "abc",
-                "DatasourceConnectionDesc": "abc",
-                "DatasourceConnectionType": "abc",
+                "DatasourceConnectionId": "datasourceId",
+                "DatasourceConnectionName": "datasourceName",
+                "DatasourceConnectionDesc": "desc",
+                "DatasourceConnectionType": "noraml",
                 "DatasourceConnectionConfig": {
                     "Mysql": {
-                        "JdbcUrl": "abc",
-                        "User": "abc",
-                        "Password": "abc",
+                        "JdbcUrl": "jdbc://xxxx:3306",
+                        "User": "userName",
+                        "Password": "sMKind1",
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "g5i12",
+                            "VpcCidrBlock": "jk09",
+                            "SubnetId": "netJ098",
+                            "SubnetCidrBlock": "subnet109"
                         },
-                        "DbName": "abc",
-                        "InstanceId": "abc",
-                        "InstanceName": "abc"
+                        "DbName": "dev",
+                        "InstanceId": "instance2",
+                        "InstanceName": "instanceName"
                     },
                     "Hive": {
-                        "MetaStoreUrl": "abc",
-                        "Type": "abc",
-                        "User": "abc",
+                        "MetaStoreUrl": "jdbc://xxxmetasotre:3306",
+                        "Type": "normal",
+                        "User": "admin",
                         "HighAvailability": true,
-                        "BucketUrl": "abc",
-                        "HdfsProperties": "abc",
+                        "BucketUrl": "ins-1vogaxgk",
+                        "HdfsProperties": "hdfs",
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "JO21Ijk",
+                            "VpcCidrBlock": "vpc908",
+                            "SubnetId": "sub1",
+                            "SubnetCidrBlock": "subblock1"
                         },
                         "Mysql": {
-                            "JdbcUrl": "abc",
-                            "User": "abc",
-                            "Password": "abc",
+                            "JdbcUrl": "ins-1vogaxgk",
+                            "Password": "admin",
                             "Location": {
-                                "VpcId": "abc",
-                                "VpcCidrBlock": "abc",
-                                "SubnetId": "abc",
-                                "SubnetCidrBlock": "abc"
+                                "VpcId": "877d6fb03",
+                                "VpcCidrBlock": "77d6fb03",
+                                "SubnetId": "3c140219",
+                                "SubnetCidrBlock": "b241-90"
                             },
-                            "DbName": "abc",
-                            "InstanceId": "abc",
-                            "InstanceName": "abc"
+                            "DbName": "db1",
+                            "InstanceId": "3c103",
+                            "InstanceName": "417d6fb03"
                         },
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "HiveVersion": "abc",
+                        "InstanceId": "77d6fb03",
+                        "InstanceName": "7d6fb03",
+                        "HiveVersion": "2.1.1",
                         "KerberosInfo": {
-                            "Krb5Conf": "abc",
-                            "KeyTab": "abc",
-                            "ServicePrincipal": "abc"
+                            "Krb5Conf": "config",
+                            "KeyTab": "_t",
+                            "ServicePrincipal": "3c1403"
                         },
                         "KerberosEnable": true
                     },
                     "Kafka": {
-                        "InstanceId": "abc"
+                        "InstanceId": "3c140219"
                     },
                     "OtherDatasourceConnection": {
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "3c14b03",
+                            "VpcCidrBlock": "d6fb03",
+                            "SubnetId": "d8981h",
+                            "SubnetCidrBlock": "s8u1d"
                         }
                     },
                     "PostgreSql": {
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "JdbcUrl": "abc",
-                        "User": "abc",
-                        "Password": "abc",
-                        "DbName": "abc",
+                        "InstanceId": "3c103",
+                        "InstanceName": "0000154cb-10",
+                        "JdbcUrl": "xxx.tencentcloudapi.com",
+                        "User": "admin",
+                        "Password": "user",
+                        "DbName": "db1",
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "vpc_h98f1",
+                            "VpcCidrBlock": "vpc_851",
+                            "SubnetId": "subnet_9hv48h7",
+                            "SubnetCidrBlock": "block_129fu2"
                         }
                     },
                     "SqlServer": {
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "JdbcUrl": "abc",
-                        "User": "abc",
-                        "Password": "abc",
-                        "DbName": "abc"
+                        "InstanceId": "instance_v984r",
+                        "InstanceName": "instance_v49n",
+                        "JdbcUrl": "xxx.tencentcloudapi.com",
+                        "User": "admin",
+                        "Password": "password",
+                        "DbName": "db1"
                     },
                     "ClickHouse": {
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "JdbcUrl": "abc",
-                        "User": "abc",
-                        "Password": "abc",
-                        "DbName": "abc",
+                        "InstanceId": "instance_vn491",
+                        "InstanceName": "instacen_v49r",
+                        "JdbcUrl": "xxx.tencentcloudapi.com",
+                        "User": "user",
+                        "Password": "password",
+                        "DbName": "db1",
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "vpc_v498n",
+                            "VpcCidrBlock": "block_vj489",
+                            "SubnetId": "subnet_c948",
+                            "SubnetCidrBlock": "cidr_c39n"
                         }
                     },
                     "Elasticsearch": {
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "User": "abc",
-                        "Password": "abc",
-                        "DbName": "abc",
+                        "InstanceId": "instance_c49n",
+                        "InstanceName": "instance_m4c9",
+                        "User": "user",
+                        "Password": "password",
+                        "DbName": "db1",
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "vpc_12em0",
+                            "VpcCidrBlock": "block_49n",
+                            "SubnetId": "subnet_c4n9n",
+                            "SubnetCidrBlock": "block_c49un"
                         },
                         "ServiceInfo": [
                             {
-                                "Ip": "abc",
+                                "Ip": "127.0.0.1",
                                 "Port": 0
                             }
                         ]
                     },
-                    "TDSQLPostgreSql": {
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "JdbcUrl": "abc",
-                        "User": "abc",
-                        "Password": "abc",
-                        "DbName": "abc",
+                    "TCHouseD": {
+                        "InstanceId": "instance_n59",
+                        "InstanceName": "instance_v49",
+                        "JdbcUrl": "xxx.tencentcloudapi.com",
+                        "User": "admin",
+                        "Password": "password",
+                        "DbName": "db1",
                         "Location": {
-                            "VpcId": "abc",
-                            "VpcCidrBlock": "abc",
-                            "SubnetId": "abc",
-                            "SubnetCidrBlock": "abc"
+                            "VpcId": "vpc_d92n",
+                            "VpcCidrBlock": "cird_vm390",
+                            "SubnetId": "subnet_1d09",
+                            "SubnetCidrBlock": "block_v49j"
+                        }
+                    },
+                    "TDSQLPostgreSql": {
+                        "InstanceId": "instance_n59",
+                        "InstanceName": "instance_v49",
+                        "JdbcUrl": "xxx.tencentcloudapi.com",
+                        "User": "admin",
+                        "Password": "password",
+                        "DbName": "db1",
+                        "Location": {
+                            "VpcId": "vpc_d92n",
+                            "VpcCidrBlock": "cird_vm390",
+                            "SubnetId": "subnet_1d09",
+                            "SubnetCidrBlock": "block_v49j"
                         }
                     }
                 },
                 "State": 0,
-                "Region": "abc",
-                "AppId": "abc",
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "Message": "abc",
+                "Region": "shanghai",
+                "AppId": "3jc9839n94n",
+                "CreateTime": "2006-01-02 15:04:05",
+                "UpdateTime": "2006-01-02 15:04:05",
+                "Message": "success",
                 "DataEngines": [
                     {
-                        "DataEngineName": "abc",
-                        "QuotaId": "abc",
-                        "EngineType": "abc",
-                        "ClusterType": "abc",
+                        "DataEngineName": "engine_nuf1n9",
+                        "QuotaId": "quota_1j918",
+                        "EngineType": "normal",
+                        "ClusterType": "cluster_1",
                         "State": 0,
                         "CreateTime": 0,
                         "UpdateTime": 0,
@@ -186,61 +199,61 @@ Output:
                         "MaxClusters": 0,
                         "AutoResume": true,
                         "SpendAfter": 0,
-                        "CidrBlock": "abc",
+                        "CidrBlock": "cidr_dm1oi",
                         "DefaultDataEngine": true,
-                        "Message": "abc",
-                        "DataEngineId": "abc",
-                        "SubAccountUin": "abc",
-                        "ExpireTime": "abc",
-                        "IsolatedTime": "abc",
-                        "ReversalTime": "abc",
-                        "UserAlias": "abc",
+                        "Message": "success",
+                        "DataEngineId": "engine_1md1",
+                        "SubAccountUin": "cj082j90n",
+                        "ExpireTime": "2006-01-02 15:04:05",
+                        "IsolatedTime": "2006-01-02 15:04:05",
+                        "ReversalTime": "2006-01-02 15:04:05",
+                        "UserAlias": "alis",
                         "TagList": [
                             {
-                                "TagKey": "abc",
-                                "TagValue": "abc"
+                                "TagKey": "mfoi1ji",
+                                "TagValue": "f1i00f"
                             }
                         ],
                         "Permissions": [
-                            "abc"
+                            "suceess"
                         ],
                         "AutoSuspend": true,
                         "CrontabResumeSuspend": 0,
                         "CrontabResumeSuspendStrategy": {
-                            "ResumeTime": "abc",
-                            "SuspendTime": "abc",
+                            "ResumeTime": "2006-01-02 15:04:05",
+                            "SuspendTime": "2006-01-02 15:04:05",
                             "SuspendStrategy": 0
                         },
-                        "EngineExecType": "abc",
+                        "EngineExecType": "tpye1",
                         "RenewFlag": 0,
                         "AutoSuspendTime": 0,
                         "NetworkConnectionSet": [
                             {
                                 "Id": 0,
-                                "AssociateId": "abc",
-                                "HouseId": "abc",
-                                "DatasourceConnectionId": "abc",
+                                "AssociateId": "f01j",
+                                "HouseId": "mv01n",
+                                "DatasourceConnectionId": "connect_vn94n",
                                 "State": 0,
                                 "CreateTime": 0,
                                 "UpdateTime": 0,
                                 "Appid": 0,
-                                "HouseName": "abc",
-                                "DatasourceConnectionName": "abc",
+                                "HouseName": "house_j9c82n",
+                                "DatasourceConnectionName": "connection_1m9dn1",
                                 "NetworkConnectionType": 0,
-                                "Uin": "abc",
-                                "SubAccountUin": "abc",
-                                "NetworkConnectionDesc": "abc",
-                                "DatasourceConnectionVpcId": "abc",
-                                "DatasourceConnectionSubnetId": "abc",
-                                "DatasourceConnectionCidrBlock": "abc",
-                                "DatasourceConnectionSubnetCidrBlock": "abc"
+                                "Uin": "x9982jz",
+                                "SubAccountUin": "m0cm9nxun20",
+                                "NetworkConnectionDesc": "noraml",
+                                "DatasourceConnectionVpcId": "vpc_19d8n1",
+                                "DatasourceConnectionSubnetId": "subnet_c19n",
+                                "DatasourceConnectionCidrBlock": "block_21j0",
+                                "DatasourceConnectionSubnetCidrBlock": "cidr_1m2in"
                             }
                         ],
-                        "UiURL": "abc",
-                        "ResourceType": "abc",
-                        "ImageVersionId": "abc",
-                        "ChildImageVersionId": "abc",
-                        "ImageVersionName": "abc",
+                        "UiURL": "xxx.tencentcloudapi.com",
+                        "ResourceType": "normal",
+                        "ImageVersionId": "2.1.1",
+                        "ChildImageVersionId": "2.1.1",
+                        "ImageVersionName": "2.1.1",
                         "StartStandbyCluster": true,
                         "ElasticSwitch": true,
                         "ElasticLimit": 0,
@@ -248,44 +261,44 @@ Output:
                         "MaxConcurrency": 0,
                         "TolerableQueueTime": 0,
                         "UserAppId": 0,
-                        "UserUin": "abc",
+                        "UserUin": "vm0i2m",
                         "SessionResourceTemplate": {
-                            "DriverSize": "abc",
-                            "ExecutorSize": "abc",
+                            "DriverSize": "200",
+                            "ExecutorSize": "6",
                             "ExecutorNums": 1,
                             "ExecutorMaxNumbers": 1
                         },
                         "AutoAuthorization": true
                     }
                 ],
-                "UserAlias": "abc",
+                "UserAlias": "admin",
                 "NetworkConnectionSet": [
                     {
                         "Id": 0,
-                        "AssociateId": "abc",
-                        "HouseId": "abc",
-                        "DatasourceConnectionId": "abc",
+                        "AssociateId": "4d7a-4f21",
+                        "HouseId": "cfb78a9",
+                        "DatasourceConnectionId": "7dbb774578a9",
                         "State": 0,
                         "CreateTime": 0,
                         "UpdateTime": 0,
                         "Appid": 0,
-                        "HouseName": "abc",
-                        "DatasourceConnectionName": "abc",
+                        "HouseName": "7cfb78a9",
+                        "DatasourceConnectionName": "connnction",
                         "NetworkConnectionType": 0,
-                        "Uin": "abc",
-                        "SubAccountUin": "abc",
-                        "NetworkConnectionDesc": "abc",
-                        "DatasourceConnectionVpcId": "abc",
-                        "DatasourceConnectionSubnetId": "abc",
-                        "DatasourceConnectionCidrBlock": "abc",
-                        "DatasourceConnectionSubnetCidrBlock": "abc"
+                        "Uin": "ecfb78a9",
+                        "SubAccountUin": "78a9",
+                        "NetworkConnectionDesc": "normal",
+                        "DatasourceConnectionVpcId": "vpc_1md9",
+                        "DatasourceConnectionSubnetId": "subnet_101n1",
+                        "DatasourceConnectionCidrBlock": "block_vj9381",
+                        "DatasourceConnectionSubnetCidrBlock": "cird_bn29n"
                     }
                 ],
                 "ConnectivityState": 1,
-                "ConnectivityTips": "abc"
+                "ConnectivityTips": "admin"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "7dbb7745-4d7a-4f21-b863-4971ecfb78a9"
     }
 }
 ```

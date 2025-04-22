@@ -252,6 +252,13 @@
       "output": "DeleteConsumerResponse",
       "status": "online"
     },
+    "DeleteCosRecharge": {
+      "document": "本接口用于删除cos导入任务",
+      "input": "DeleteCosRechargeRequest",
+      "name": "删除cos导入任务",
+      "output": "DeleteCosRechargeResponse",
+      "status": "online"
+    },
     "DeleteDashboardSubscribe": {
       "document": "此接口用于删除仪表盘订阅",
       "input": "DeleteDashboardSubscribeRequest",
@@ -1087,6 +1094,16 @@
           "example": "[\"$1.conut\"]",
           "member": "string",
           "name": "GroupTriggerCondition",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警策略绑定的标签信息。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6672,6 +6689,42 @@
       ],
       "type": "object"
     },
+    "DeleteCosRechargeRequest": {
+      "document": "DeleteCosRecharge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "COS导入配置Id",
+          "example": "ca092608-98e8-4ad9-83c5-a6b3bbexxxxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题Id",
+          "example": "ae13f7db-00b5-41ac-916e-407802axxxxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCosRechargeResponse": {
+      "document": "DeleteCosRecharge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDashboardSubscribeRequest": {
       "document": "DeleteDashboardSubscribe请求参数结构体",
       "members": [
@@ -10097,11 +10150,11 @@
       "usage": "both"
     },
     "HighLightItem": {
-      "document": "日志内容高亮描述信息",
+      "document": "符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索",
       "members": [
         {
           "disabled": false,
-          "document": "高亮的日志Key",
+          "document": "高亮的日志字段名称",
           "example": "Message",
           "member": "string",
           "name": "Key",
@@ -10111,7 +10164,7 @@
         },
         {
           "disabled": false,
-          "document": "高亮的语法",
+          "document": "高亮的关键词",
           "example": "[ \"<cls_highlight>finish</cls_highlight> request\"]",
           "member": "string",
           "name": "Values",
@@ -10726,6 +10779,16 @@
           "name": "PkgLogId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索\t",
+          "example": "无",
+          "member": "HighLightItem",
+          "name": "HighLights",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15184,6 +15247,15 @@
           "name": "UseNewAnalysis",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索",
+          "example": "false",
+          "member": "bool",
+          "name": "HighLight",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16077,6 +16149,17 @@
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段别名",
+          "example": "alias_name",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

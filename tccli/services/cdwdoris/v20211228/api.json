@@ -7640,6 +7640,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存算分离集群数",
+          "example": "12",
+          "member": "int64",
+          "name": "SSCCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开通存算分离",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSSC",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7905,7 +7925,7 @@
         {
           "disabled": false,
           "document": "配置文件名称",
-          "example": "fe/be/broken",
+          "example": "FE/BE/BROKER",
           "member": "string",
           "name": "ConfigName",
           "required": true,

@@ -544,7 +544,7 @@
         {
           "disabled": false,
           "document": "自学习模型名称，需在1-20字符之间",
-          "example": "无",
+          "example": "出行模型",
           "member": "string",
           "name": "ModelName",
           "required": true,
@@ -553,7 +553,7 @@
         {
           "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
-          "example": "无",
+          "example": "https://xxx.xx.com/text",
           "member": "string",
           "name": "TextUrl",
           "required": true,
@@ -562,7 +562,7 @@
         {
           "disabled": false,
           "document": "自学习模型类型，填写8k或者16k",
-          "example": "无",
+          "example": "8k",
           "member": "string",
           "name": "ModelType",
           "required": true,
@@ -586,7 +586,7 @@
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "无",
+          "example": "769762ae-xxxxxxxxxx-ec3cda3142e",
           "member": "string",
           "name": "ModelId",
           "output_required": true,
@@ -644,7 +644,7 @@
         {
           "disabled": false,
           "document": "音频数据base64编码\n**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**\n\n注意：音频数据要小于5MB（含）",
-          "example": "无",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE",
           "member": "string",
           "name": "Data",
           "required": false,
@@ -653,7 +653,7 @@
         {
           "disabled": false,
           "document": "数据长度（此数据长度为数据未进行base64编码时的长度）",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "DataLen",
           "required": false,
@@ -671,7 +671,7 @@
         {
           "disabled": false,
           "document": "回调 URL\n用户自行搭建的用于接收识别结果的服务URL\n回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)\n\n注意：\n\n- 如果用户使用轮询方式获取识别结果，则无需提交该参数\n- 建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑",
-          "example": "无",
+          "example": "https://xxxx.xxx.xxx/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -698,7 +698,7 @@
         {
           "disabled": false,
           "document": "热词表id\n如不设置该参数，将自动生效默认热词表；\n如设置该参数，将生效对应id的热词表；\n点击这里查看[热词表配置方法](https://cloud.tencent.com/document/product/1093/40996)",
-          "example": "无",
+          "example": "769762aexxxxxxxxxxec3cda3142e",
           "member": "string",
           "name": "HotwordId",
           "required": false,
@@ -716,7 +716,7 @@
         {
           "disabled": false,
           "document": "自学习定制模型 id\n如设置了该参数，将生效对应id的自学习定制模型；\n点击这里查看[自学习定制模型配置方法](https://cloud.tencent.com/document/product/1093/38416)",
-          "example": "无",
+          "example": "769762aexxxxxxxxxxec3cda3142e",
           "member": "string",
           "name": "CustomizationId",
           "required": false,
@@ -797,7 +797,7 @@
         {
           "disabled": false,
           "document": "临时热词表：该参数用于提升识别准确率。\n\n- 单个热词限制：\"热词|权重\"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或“ASR|11”；\n\n- 临时热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；\n\n- 参数 hotword_id（热词表） 与 hotword_list（临时热词表） 区别：\n\n    - hotword_id：热词表。需要先在控制台或接口创建热词表，获得对应hotword_id传入参数来使用热词功能；\n\n    - hotword_list：临时热词表。每次请求时直接传入临时热词表来使用热词功能，云端不保留临时热词表。适用于有极大量热词需求的用户；\n\n注意：\n\n- 如果同时传入了 hotword_id 和 hotword_list，只有hotword_list 生效；\n\n- 热词权重设置为11时，当前热词将升级为超级热词，建议仅将重要且必须生效的热词设置到11，设置过多权重为11的热词将影响整体字准率。\n\n- 热词权重设置为100时，当前热词开启热词增强同音替换功能（仅支持8k_zh,16k_zh），举例：热词配置“蜜制|100”时，与“蜜制”同拼音（mizhi）的“秘制”的识别结果会被强制替换成“蜜制”。因此建议客户根据自己的实际情况开启该功能。建议仅将重要且必须生效的热词设置到100，设置过多权重为100的热词将影响整体字准率。",
-          "example": "无",
+          "example": "腾讯云|10,语音识别|5,ASR|11",
           "member": "string",
           "name": "HotwordList",
           "required": false,
@@ -806,7 +806,7 @@
         {
           "disabled": false,
           "document": "关键词识别ID列表，默认空为不进行识别，最多10个\n",
-          "example": "无",
+          "example": "[\"sdsdasdasf\",\"asdfasdasd\"]",
           "member": "string",
           "name": "KeyWordLibIdList",
           "required": false,
@@ -1307,7 +1307,7 @@
         {
           "disabled": false,
           "document": "分页大小，默认1000",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1316,7 +1316,7 @@
         {
           "disabled": false,
           "document": "分页offset，默认0",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1341,7 +1341,7 @@
         {
           "disabled": false,
           "document": "自学习模型总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -2780,7 +2780,7 @@
         {
           "disabled": false,
           "document": "对比源音频数据, 音频要求：base64 编码,16k采样率， 16bit位深，pcm或者wav格式， 单声道，音频时长不超过30秒的音频，base64编码数据大小不超过2M",
-          "example": "无",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE",
           "member": "string",
           "name": "SrcAudioData",
           "required": true,
@@ -2789,7 +2789,7 @@
         {
           "disabled": false,
           "document": "对比目标音频数据, 音频要求：base64 编码,16k采样率， 16bit位深，pcm或者wav格式， 单声道，音频时长不超过30秒的音频，base64编码数据大小不超过2M",
-          "example": "无",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE",
           "member": "string",
           "name": "DestAudioData",
           "required": true,
@@ -3044,7 +3044,7 @@
         {
           "disabled": false,
           "document": "音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M",
-          "example": "无",
+          "example": "UklGRka1CQBXQVZFZm10zOjQzAABJU0ZUDgAAAE*",
           "member": "string",
           "name": "Data",
           "required": true,
@@ -3053,7 +3053,7 @@
         {
           "disabled": false,
           "document": "分组id, 支持数字，字母，下划线，长度不超过128",
-          "example": "test_group",
+          "example": "home_group",
           "member": "string",
           "name": "GroupId",
           "required": true,

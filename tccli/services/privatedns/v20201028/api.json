@@ -517,7 +517,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-p0152fh2",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -694,8 +694,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-xxxxxx",
-          "example": "41",
+          "document": "私有域ID, zone-12345678",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -780,7 +780,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1999",
+          "example": "zone-p0152fh2",
           "member": "string",
           "name": "ZoneId",
           "required": false,
@@ -1289,7 +1289,7 @@
         {
           "disabled": false,
           "document": "私有域ID: zone-xxxxxx",
-          "example": "1",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1362,7 +1362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名，格式必须是标准的TLD",
+          "document": "私有域id",
           "example": "zone-dm1igr1",
           "member": "string",
           "name": "ZoneId",
@@ -1477,6 +1477,15 @@
           "name": "TimeRangeEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否导出：true导出，false不导出",
+          "example": "true",
+          "member": "bool",
+          "name": "Export",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1501,6 +1510,16 @@
           "member": "string",
           "name": "Interval",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出数据下载地址",
+          "example": "https://cos-xxx.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1625,7 +1644,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "zone-xxxxxx",
+          "example": "zone-ewqw2131",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1724,7 +1743,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-12345678",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1778,7 +1797,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-12345ds6",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -1810,8 +1829,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有域ID, zone-xxxxxx",
-          "example": "1",
+          "document": "私有域ID, zone-12345ds6",
+          "example": "zone-12345ds6",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,

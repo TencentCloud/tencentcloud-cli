@@ -104,6 +104,14 @@
         "title": "创建新服务器型号"
       }
     ],
+    "CreateSpeciallyQuitWorkOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: chc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSpeciallyQuitWorkOrder\n<公共请求参数>\n\n{\n    \"IdcId\": 159,\n    \"DeviceType\": \"otherDevice\",\n    \"HandoverMethod\": \"2\",\n    \"CustomerReceipt\": {\n        \"PickUpStuff\": \"张三\",\n        \"PickUpStuffContact\": \"16611111111\",\n        \"PickUpStuffIDCard\": \"632525198112198139\",\n        \"PickUpTime\": \"2025-12-11 12:00:00\"\n    },\n    \"Remark\": \"测试xzh111\",\n    \"OtherDeviceList\": [\n        {\n            \"DeviceSn\": \"20250403chc1222\",\n            \"TypeName\": \"移动硬盘\",\n            \"Manufacturer\": \"华为\",\n            \"HardwareMemo\": \"xx设备第二个硬盘\"\n        },\n        {\n            \"DeviceSn\": \"20240101chc0008\",\n            \"TypeName\": \"其他\",\n            \"HardwareMemo\": \"xxx设备第3个xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8fedcd3-198f-4ac5-be69-1b54ae62601d\",\n        \"WorkOrderSet\": [\n            {\n                \"OrderType\": \"quit\",\n                \"ServiceType\": \"quit\",\n                \"WorkOrderId\": \"ord-25041015202483289\"\n            },\n            {\n                \"OrderType\": \"personnelVisit\",\n                \"ServiceType\": \"quit\",\n                \"WorkOrderId\": \"ord-25041015202481186\"\n            }\n        ]\n    }\n}",
+        "title": "创建临时设备退出工单"
+      }
+    ],
     "DescribeAvailableModelList": [
       {
         "document": "",

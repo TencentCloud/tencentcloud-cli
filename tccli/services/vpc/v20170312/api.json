@@ -343,6 +343,13 @@
       "output": "CreateFlowLogResponse",
       "status": "online"
     },
+    "CreateGlobalRoutes": {
+      "document": "本接口（CreateGlobalRoutes）用于创建全局路由。",
+      "input": "CreateGlobalRoutesRequest",
+      "name": "创建全局路由",
+      "output": "CreateGlobalRoutesResponse",
+      "status": "online"
+    },
     "CreateHaVip": {
       "document": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）。",
       "input": "CreateHaVipRequest",
@@ -645,7 +652,7 @@
       "status": "online"
     },
     "DeleteBandwidthPackage": {
-      "document": "接口支持删除共享带宽包，包括[设备带宽包](https://cloud.tencent.com/document/product/684/15246#.E8.AE.BE.E5.A4.87.E5.B8.A6.E5.AE.BD.E5.8C.85)和[IP带宽包](https://cloud.tencent.com/document/product/684/15246#ip-.E5.B8.A6.E5.AE.BD.E5.8C.85)",
+      "document": "接口支持删除共享带宽包，包括[设备带宽包](https://cloud.tencent.com/document/product/684/15245#bwptype)和[IP带宽包](https://cloud.tencent.com/document/product/684/15245#bwptype)",
       "input": "DeleteBandwidthPackageRequest",
       "name": "删除共享带宽包",
       "output": "DeleteBandwidthPackageResponse",
@@ -712,6 +719,13 @@
       "input": "DeleteFlowLogRequest",
       "name": "删除流日志",
       "output": "DeleteFlowLogResponse",
+      "status": "online"
+    },
+    "DeleteGlobalRoutes": {
+      "document": "删除全局路由。",
+      "input": "DeleteGlobalRoutesRequest",
+      "name": "删除全局路由。",
+      "output": "DeleteGlobalRoutesResponse",
       "status": "online"
     },
     "DeleteHaVip": {
@@ -799,7 +813,7 @@
       "status": "online"
     },
     "DeleteNetworkInterface": {
-      "document": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（DeleteNetworkInterface）用于删除弹性网卡。\n* 弹性网卡上绑定了云服务器时，不能被删除。\n* 删除指定弹性网卡，弹性网卡必须先和子机解绑才能删除。删除之后弹性网卡上所有内网IP都将被退还。\n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) \n接口。",
       "input": "DeleteNetworkInterfaceRequest",
       "name": "删除弹性网卡",
       "output": "DeleteNetworkInterfaceResponse",
@@ -1205,9 +1219,9 @@
       "status": "online"
     },
     "DescribeFlowLog": {
-      "document": "本接口（DescribeFlowLog）用于查询流日志实例信息。",
+      "document": "本接口（DescribeFlowLog）用于查询VPC流日志实例信息。\n该接口只支持VPC流日志（即将下线）。云联网以及VPC流日志，通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。",
       "input": "DescribeFlowLogRequest",
-      "name": "查询流日志实例信息",
+      "name": "查询VPC流日志实例信息",
       "output": "DescribeFlowLogResponse",
       "status": "online"
     },
@@ -1230,6 +1244,13 @@
       "input": "DescribeGatewayFlowQosRequest",
       "name": "查询网关来访IP流控带宽",
       "output": "DescribeGatewayFlowQosResponse",
+      "status": "online"
+    },
+    "DescribeGlobalRoutes": {
+      "document": "查询全局路由列表。",
+      "input": "DescribeGlobalRoutesRequest",
+      "name": "查询全局路由列表。",
+      "output": "DescribeGlobalRoutesResponse",
       "status": "online"
     },
     "DescribeHaVips": {
@@ -1258,6 +1279,13 @@
       "input": "DescribeIPv6AddressesRequest",
       "name": "查询弹性公网IPv6列表",
       "output": "DescribeIPv6AddressesResponse",
+      "status": "online"
+    },
+    "DescribeInstanceJumbo": {
+      "document": "本接口用于检查云服务器是否支持巨帧。\n使用限制：\n1. 需要CAM策略授权该接口的操作权限，并且授权对应实例的读取权限(该接口会访问CVM实例，所以会校验是否有实例的CAM权限)。例如：CAM action放通vpc:DescribeInstanceJumbo；resourc放通qcs::cvm:ap-guangzhou:uin/2126195383:instance/*。\n2. 实例迁移前后，可能会出现该接口返回的巨帧状态前后不一致（需要检查迁移前后实例所在的宿主机是否都支持巨帧，一种可能的原因为实例迁移到了不支持巨帧的宿主机）。",
+      "input": "DescribeInstanceJumboRequest",
+      "name": "查询指定云服务器是否支持巨帧",
+      "output": "DescribeInstanceJumboResponse",
       "status": "online"
     },
     "DescribeIp6Addresses": {
@@ -2030,15 +2058,22 @@
       "output": "LockCcnsResponse",
       "status": "online"
     },
+    "MigrateBandwidthPackageResources": {
+      "document": "本接口 (MigrateBandwidthPackageResources) 用于共享带宽包之间迁移资源",
+      "input": "MigrateBandwidthPackageResourcesRequest",
+      "name": "共享带宽包资源迁移接口",
+      "output": "MigrateBandwidthPackageResourcesResponse",
+      "status": "online"
+    },
     "MigrateNetworkInterface": {
-      "document": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（MigrateNetworkInterface）用于弹性网卡迁移。\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) `接口。",
       "input": "MigrateNetworkInterfaceRequest",
       "name": "弹性网卡迁移",
       "output": "MigrateNetworkInterfaceResponse",
       "status": "online"
     },
     "MigratePrivateIpAddress": {
-      "document": "本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询`DescribeVpcTaskResult`接口。",
+      "document": "本接口（MigratePrivateIpAddress）用于弹性网卡内网IP迁移。\n* 该接口用于将一个内网IP从一个弹性网卡上迁移到另外一个弹性网卡，主IP地址不支持迁移。\n* 迁移前后的弹性网卡必须在同一个子网内。  \n\n本接口是异步完成，如需查询异步任务执行结果，请使用本接口返回的`RequestId`轮询[DescribeVpcTaskResult](https://cloud.tencent.com/document/api/215/59037) 接口。",
       "input": "MigratePrivateIpAddressRequest",
       "name": "弹性网卡内网IP迁移",
       "output": "MigratePrivateIpAddressResponse",
@@ -2094,7 +2129,7 @@
       "status": "online"
     },
     "ModifyBandwidthPackageAttribute": {
-      "document": "接口用于修改带宽包属性，包括带宽包名字等",
+      "document": "接口用于修改带宽包属性，包括带宽包名称和计费模式",
       "input": "ModifyBandwidthPackageAttributeRequest",
       "name": "修改带宽包属性",
       "output": "ModifyBandwidthPackageAttributeResponse",
@@ -2182,6 +2217,20 @@
       "input": "ModifyGatewayFlowQosRequest",
       "name": "调整网关流控带宽",
       "output": "ModifyGatewayFlowQosResponse",
+      "status": "online"
+    },
+    "ModifyGlobalRouteECMPAlgorithm": {
+      "document": "修改全局路由表ECMP算法 HASH 策略。",
+      "input": "ModifyGlobalRouteECMPAlgorithmRequest",
+      "name": "修改全局路由ECMP的HASH算法",
+      "output": "ModifyGlobalRouteECMPAlgorithmResponse",
+      "status": "online"
+    },
+    "ModifyGlobalRoutes": {
+      "document": "修改全局路由。",
+      "input": "ModifyGlobalRoutesRequest",
+      "name": "修改全局路由。",
+      "output": "ModifyGlobalRoutesResponse",
       "status": "online"
     },
     "ModifyHaVipAttribute": {
@@ -2996,8 +3045,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'",
-          "example": "[\"eip-pez0oibs\\r\\n\"]",
+          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。",
+          "example": "[\"eip-pez0oibs\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -3005,7 +3054,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
+          "document": "带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-e40edw8y",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -3014,7 +3063,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。",
+          "document": "带宽包类型，可选值：\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>ANYCAST：公网加速带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -3023,7 +3072,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，包括'Address', 'LoadBalance'",
+          "document": "资源类型，可选值：\n<li>Address：弹性公网IP</li>\n<li>LoadBalance：负载均衡</li>",
           "example": "Address",
           "member": "string",
           "name": "ResourceType",
@@ -4273,6 +4322,15 @@
           "name": "VpcId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。",
+          "example": "GUA",
+          "member": "string",
+          "name": "AddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4287,6 +4345,16 @@
           "member": "string",
           "name": "Ipv6CidrBlock",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请IPv6 Cidr 的类型，`GUA`,  `ULA`",
+          "example": "GUA",
+          "member": "string",
+          "name": "AddressType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4463,7 +4531,7 @@
         {
           "disabled": false,
           "document": "辅助CIDR拆分的子网。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"VpcId\": \"vpc-7zqx75u3\", \"SubnetId\": \"subnet-9b1gk064\", \"CidrBlock\": \"11.0.0.0/16\", \"Zone\": \"ap-guangzhou-2\", \"SubnetName\": \"demo\"}]",
           "member": "Subnet",
           "name": "SubnetSet",
           "output_required": true,
@@ -5136,7 +5204,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'",
+          "document": "带宽包类型，包括：\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>ANYCAST：公网加速带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -5146,7 +5214,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费类型，包括:<li>'TOP5_POSTPAID_BY_MONTH':按月后付费TOP5计费</li><li> 'PERCENT95_POSTPAID_BY_MONTH':按月后付费月95计费</li><li>'ENHANCED95_POSTPAID_BY_MONTH':按月后付费增强型95计费</li><li>'FIXED_PREPAID_BY_MONTH':包月预付费计费</li><li>‘PEAK_BANDWIDTH_POSTPAID_BY_DAY’: 后付费日结按带宽计费</li>\n",
+          "document": "带宽包计费类型, 包括:\n<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>\n<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>\n<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -5249,7 +5317,7 @@
         {
           "disabled": false,
           "document": "资源ID。",
-          "example": "eip-1234test",
+          "example": "bwp-1234test",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
@@ -5258,7 +5326,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽下限，单位：Mbps。",
+          "document": "带宽下限，单位：Mbps。计费类型以及对应的带宽下限：\n- TOP5_POSTPAID_BY_MONTH: 默认无下限\n- BANDWIDTH_POSTPAID_BY_DAY: 50\n- FIXED_PREPAID_BY_MONTH: 100\n- ENHANCED95_POSTPAID_BY_MONTH: 300\n- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50\n- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50",
           "example": "1",
           "member": "uint64",
           "name": "BandwidthLowerLimit",
@@ -5268,7 +5336,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽上限，单位：Mbps。",
+          "document": "带宽上限，单位：Mbps。计费类型以及对应的带宽上限：\n- TOP5_POSTPAID_BY_MONTH: 默认无上限\n- BANDWIDTH_POSTPAID_BY_DAY: 300\n- FIXED_PREPAID_BY_MONTH: 5000\n- ENHANCED95_POSTPAID_BY_MONTH: 5000\n- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300\n- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000",
           "example": "200",
           "member": "uint64",
           "name": "BandwidthUpperLimit",
@@ -7138,23 +7206,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "local cidr值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "local cidr值。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "Cidr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否发布到了云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否发布到了云联网。",
           "example": "True",
           "member": "bool",
           "name": "PublishedToVbc",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7499,7 +7567,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡名称，最大长度不能超过60个字节。",
+          "document": "弹性网卡名称，最大长度不能超过60个字符。",
           "example": "eni-ed3452de",
           "member": "string",
           "name": "NetworkInterfaceName",
@@ -7681,7 +7749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
+          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>\n注意：仅部分地域支持三网带宽包和精品BGP带宽包。",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -7690,8 +7758,8 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>\n<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>\n",
-          "example": "TOP5_POSTPAID_BY_MONTH",
+          "document": "带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:\n<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>\n<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>\n<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>\n",
+          "example": "ENHANCED95_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
           "required": false,
@@ -7699,7 +7767,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包名称。",
+          "document": "带宽包名称。名称长度小于60，只包含数字、字母和下划线。",
           "example": "demo",
           "member": "string",
           "name": "BandwidthPackageName",
@@ -7708,7 +7776,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。",
+          "document": "带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。",
           "example": "1",
           "member": "uint64",
           "name": "BandwidthPackageCount",
@@ -7717,7 +7785,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。",
+          "document": "带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)",
           "example": "300",
           "member": "int64",
           "name": "InternetMaxBandwidth",
@@ -7727,7 +7795,7 @@
         {
           "disabled": false,
           "document": "需要关联的标签列表。",
-          "example": "无",
+          "example": "[{\"Key\": \"key\", \"Value\": \"value\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -7744,7 +7812,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。",
+          "document": "预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。",
           "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
@@ -7753,7 +7821,7 @@
         },
         {
           "disabled": false,
-          "document": "网络出口，默认值：center_egress1",
+          "document": "网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。",
           "example": "center_egress1",
           "member": "string",
           "name": "Egress",
@@ -8318,7 +8386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流日志实例名字。",
+          "document": "流日志实例名字。长度为不超过60个字节。",
           "example": "check-flowlog",
           "member": "string",
           "name": "FlowLogName",
@@ -8327,7 +8395,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
+          "document": "流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -8345,7 +8413,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
+          "document": "流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。",
           "example": "ACCEPT",
           "member": "string",
           "name": "TrafficType",
@@ -8354,7 +8422,7 @@
         },
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID，当ResourceType为CCN时不填，其他类型必填。",
+          "document": "私用网络唯一ID。当ResourceType为CCN时不填，其他类型必填。",
           "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
@@ -8372,7 +8440,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志存储ID。",
+          "document": "流日志存储ID（cls的日志主题ID，\n可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。\n）。当StorageType为cls时，CloudLogId为必选。",
           "example": "99991111-2222-4444-9999-222266663333",
           "member": "string",
           "name": "CloudLogId",
@@ -8390,7 +8458,7 @@
         },
         {
           "disabled": false,
-          "document": "消费端类型：cls、ckafka。默认值cls。",
+          "document": "消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。",
           "example": "cls",
           "member": "string",
           "name": "StorageType",
@@ -8400,7 +8468,7 @@
         {
           "disabled": false,
           "document": "流日志消费端信息，当消费端类型为ckafka时，必填。",
-          "example": "{\"StorageTopic\": \"\", \"StorageId\": \"\"}",
+          "example": "{\"StorageTopic\": \"topic-asow02oa\", \"StorageId\": \"ckafka-aso1kaoq\"}",
           "member": "FlowLogStorage",
           "name": "FlowLogStorage",
           "required": false,
@@ -8427,6 +8495,52 @@
           "example": "[{\"VpcId\" : \"vpc-pq9vxykj\", \"FlowLogId\" : \"fl-f42uhpkj\", \"ResourceType\" : \"NETWORKINTERFACE\", \"ResourceId\" : \"eni-78ysaex1\"}]",
           "member": "FlowLog",
           "name": "FlowLog",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalRoutesRequest": {
+      "document": "CreateGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由对象。创建时必填参数： 'GatewayType'，'GatewayId'，'DestinationCidrBlock'。\n",
+          "example": "[     {       \"DestinationCidrBlock\": \"192.168.0.0/16\",       \"GatewayType\": \"NORMAL_CVM\",       \"GatewayId\": \"10.0.16.4\",       \"Description\": \"ivan_gr\"     }   ]",
+          "member": "GlobalRoute",
+          "name": "GlobalRoutes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalRoutesResponse": {
+      "document": "CreateGlobalRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局路由对象。",
+          "example": "无",
+          "member": "GlobalRoute",
+          "name": "GlobalRouteSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -12243,7 +12357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待删除带宽包唯一ID",
+          "document": "待删除带宽包唯一ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-cs7j6pd0",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -12484,8 +12598,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "流日志唯一ID。",
-          "example": "fl-xxxxxx",
+          "document": "流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。",
+          "example": "fl-ng9pgduh",
           "member": "string",
           "name": "FlowLogId",
           "required": true,
@@ -12493,8 +12607,8 @@
         },
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID，删除云联网流日志时，可不填，其他流日志类型必填。",
-          "example": "vpc-xxxxxx",
+          "document": "私用网络唯一ID。删除云联网流日志时，可不填，其他流日志类型必填。可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取流日志对应的私有网络唯一ID。也可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取当前账户的私有网络唯一ID。\n",
+          "example": "vpc-ec37wwkm",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -12505,6 +12619,42 @@
     },
     "DeleteFlowLogResponse": {
       "document": "DeleteFlowLog返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalRoutesRequest": {
+      "document": "DeleteGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由实例唯一Id列表。",
+          "example": "[\"gr-bmenrwu2\"]",
+          "member": "string",
+          "name": "GlobalRouteIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalRoutesResponse": {
+      "document": "DeleteGlobalRoutes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12917,7 +13067,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -14304,7 +14454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包资源ID列表，单次查询上限20。",
+          "document": "带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "['bwp-1234test', 'bwp-test1234']",
           "member": "string",
           "name": "BandwidthPackageIds",
@@ -14319,7 +14469,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包带宽上下限详细信息。",
+          "document": "带宽包带宽上下限详细信息。ResourceId：带宽包id、BandwidthLowerLimit：带宽下限、BandwidthUpperLimit：带宽上限。",
           "example": "无",
           "member": "BandwidthRange",
           "name": "BandwidthRangeSet",
@@ -14341,7 +14491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费共享带宽包的唯一ID",
+          "document": "后付费共享带宽包的唯一ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/api/215/19209)接口获取BandwidthPackageId。",
           "example": "bwp-pply3nak",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -14360,7 +14510,7 @@
           "example": "无",
           "member": "BandwidthPackageBillBandwidth",
           "name": "BandwidthPackageBillBandwidthSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14387,6 +14537,7 @@
           "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14413,7 +14564,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。详细的过滤条件如下：\n<li> resource-id - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 的唯一 ID 过滤。共享带宽包内资源 唯一 ID 形如：eip-11112222。</li>\n<li> resource-type - String - 是否必填：否 - （过滤条件）按照 共享带宽包内资源 类型过滤，目前仅支持 弹性IP 和 负载均衡 两种类型，可选值为 Address 和 LoadBalance。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -14487,7 +14638,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package-id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。类型包括'HIGH_QUALITY_BGP','BGP','SINGLEISP'和'ANYCAST'。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型包括: <li>'TOP5_POSTPAID_BY_MONTH':按月后付费TOP5计费</li><li> 'PERCENT95_POSTPAID_BY_MONTH':按月后付费月95计费</li><li>'ENHANCED95_POSTPAID_BY_MONTH':按月后付费增强型95计费</li><li>'FIXED_PREPAID_BY_MONTH':包月预付费计费</li><li>‘PEAK_BANDWIDTH_POSTPAID_BY_DAY’: 后付费日结按带宽计费</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
+          "document": "每次请求的`Filters`的上限为10。参数不支持同时指定`BandwidthPackageIds`和`Filters`。详细的过滤条件如下：\n<li> bandwidth-package-id - String - 是否必填：否 - （过滤条件）按照带宽包的唯一标识ID过滤。</li>\n<li> bandwidth-package-name - String - 是否必填：否 - （过滤条件）按照 带宽包名称过滤。不支持模糊过滤。</li>\n<li> network-type - String - 是否必填：否 - （过滤条件）按照带宽包的类型过滤。网络类型可参考[BandwidthPackage](https://cloud.tencent.com/document/api/215/15824#BandwidthPackage)。</li>\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照带宽包的计费类型过滤。计费类型可参考[BandwidthPackage](https://cloud.tencent.com/document/api/215/15824#BandwidthPackage)。</li>\n<li> resource.resource-type - String - 是否必填：否 - （过滤条件）按照带宽包资源类型过滤。资源类型包括'Address'和'LoadBalance'</li>\n<li> resource.resource-id - String - 是否必填：否 - （过滤条件）按照带宽包资源Id过滤。资源Id形如'eip-xxxx','lb-xxxx'</li>\n<li> resource.address-ip - String - 是否必填：否 - （过滤条件）按照带宽包资源Ip过滤。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -15855,7 +16006,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。该接口不支持拉取CCN类型的流日志，所以该字段为必选。",
           "example": "vpc-hj3he929",
           "member": "string",
           "name": "VpcId",
@@ -15864,7 +16015,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志唯一ID。",
+          "document": "流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取；",
           "example": "fl-nswq8wkq",
           "member": "string",
           "name": "FlowLogId",
@@ -15880,7 +16031,7 @@
         {
           "disabled": false,
           "document": "流日志信息。",
-          "example": "[{\"FlowLogName\": \"demo\", \"CloudLogId\": \"407e2d94-e285-4778-8e53-c32028467332\", \"VpcId\": \"vpc-hj3he929\", \"FlowLogDescription\": \"demo\", \"ResourceType\": \"NETWORKINTERFACE\", \"ResourceId\": \"eni-h0fk8lfc\", \"Region\": \"ap-guangzhou\", \"CloudLogState\": \"SUCCESS\", \"TrafficType\": \"ACCEPT\", \"StorageType\": \"cls\", \"Enable\": True, \"FlowLogId\": \"fl-nswq8wkq\", \"TagSet\": [{\"Value\": \"tag-key\", \"Key\": \"tag-value\"}], \"CloudLogRegion\": \"ap-guangzhou\", \"CreatedTime\": \"2020-11-19 15:15:23\", \"FlowLogStorage\": {\"StorageId\": \"407e2d94-e285-4778-8e53-c32028467332\"}}]",
+          "example": "[{\"VpcId\": \"vpc-hj3he929\", \"ResourceType\": \"NETWORKINTERFACE\", \"ResourceId\": \"eni-h0fk8lfc\", \"Region\": \"ap-guangzhou\", \"CloudLogState\": \"SUCCESS\", \"TrafficType\": \"ACCEPT\", \"FlowLogStorage\": {\"StorageId\": \"407e2d94-e285-4778-8e53-c32028467332\"}}]",
           "member": "FlowLog",
           "name": "FlowLog",
           "output_required": true,
@@ -15901,7 +16052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-7zayowkt",
           "member": "string",
           "name": "VpcId",
@@ -15910,7 +16061,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志唯一ID。",
+          "document": "流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建。",
           "example": "fl-hdtpam45",
           "member": "string",
           "name": "FlowLogId",
@@ -15928,7 +16079,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。",
+          "document": "流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。\n",
           "example": "VPC",
           "member": "string",
           "name": "ResourceType",
@@ -15946,7 +16097,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
+          "document": "流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。",
           "example": "ACCEPT",
           "member": "string",
           "name": "TrafficType",
@@ -15964,7 +16115,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志存储ID状态。",
+          "document": "流日志存储ID状态。SUCCESS（成功），DELETED（删除）",
           "example": "SUCCESS",
           "member": "string",
           "name": "CloudLogState",
@@ -15973,8 +16124,8 @@
         },
         {
           "disabled": false,
-          "document": "按某个字段排序,支持字段：flowLogName,createTime，默认按CreatedTime。",
-          "example": "CreatedTime",
+          "document": "按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。",
+          "example": "createTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -16000,7 +16151,7 @@
         },
         {
           "disabled": false,
-          "document": "每页行数，默认为10。",
+          "document": "每页行数，默认为10。范围1-100。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -16034,7 +16185,7 @@
         {
           "disabled": false,
           "document": "流日志实例集合。",
-          "example": "[{\"FlowLogName\": \"demo\", \"ResourceId\": \"eni-78ysaex1\", \"CloudLogId\": \"dfb8f1a2-8522-47c1-8571-67905167ab3f\", \"VpcId\": \"vpc-pq9vxykj\", \"FlowLogDescription\": \"\", \"ResourceType\": \"NETWORKINTERFACE\", \"CloudLogRegion\": \"ap-guangzhou\", \"TrafficType\": \"ACCEPT\", \"StorageType\": \"cls\", \"Enable\": True, \"FlowLogId\": \"fl-2edhcclz\", \"TagSet\": [], \"CloudLogState\": \"SUCCESS\", \"CreatedTime\": \"2019-05-07 18:00:26\", \"FlowLogStorage\": {\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}}]",
+          "example": "[{\"ResourceId\": \"eni-78ysaex1\", \"VpcId\": \"vpc-pq9vxykj\", \"ResourceType\": \"NETWORKINTERFACE\", \"TrafficType\": \"ACCEPT\", \"StorageType\": \"kafka\", \"FlowLogId\": \"fl-2edhcclz\", \"FlowLogStorage\": {\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}}]",
           "member": "FlowLog",
           "name": "FlowLog",
           "output_required": true,
@@ -16250,6 +16401,80 @@
           "member": "uint64",
           "name": "TotalCount",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalRoutesRequest": {
+      "document": "DescribeGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>global-route-id - String - （过滤条件）如全局路由唯一 Id，形如：gr-bmenrwu2。</li>\n<li>vpc-id - String - （过滤条件）VPC唯一Id， 形如： vpc-mcqaoy0f。</li>\n<li>gateway-id - String - （过滤条件）下一跳对象。</li>\n<li>gateway-type - String -  是否必填：否 - （过滤条件）按下一跳类型进行过滤。支持 NORMAL_CVM\n</li>\n<li>cdc-id - String - （过滤条件）CDC实例ID，形如：cluster-gbo27yc4。</li>\n<li>description - String - （过滤条件）描述。</li>\n<li>dest-cidr - String - （过滤条件）Ipv4目标网段。</li>\n<li>subnet-route-algorithm - String - （过滤条件）支持的 ECMP算法有：\n\n   - ECMP_QUINTUPLE_HASH：五元组hash\n   - ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash\n   - ECMP_DESTINATION_IP_HASH：目的IP hash\n   - ECMP_SOURCE_IP_HASH：源IP hash\n</li>\n",
+          "example": "[{     \"Name\": \"vpc-id\",     \"Values\": [\"vpc-mcqaoy0f\"]} ]}",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由唯一Id列表。",
+          "example": "[\"gr-bmenrwu2\"]",
+          "member": "string",
+          "name": "GlobalRouteIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalRoutesResponse": {
+      "document": "DescribeGlobalRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局路由对象。",
+          "example": "无",
+          "member": "GlobalRoute",
+          "name": "GlobalRouteSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16576,6 +16801,43 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceJumboRequest": {
+      "document": "DescribeInstanceJumbo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CVM实例ID列表。限制每次i最多查询10个实例。",
+          "example": "[\"ins-4uhk90pu\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceJumboResponse": {
+      "document": "DescribeInstanceJumbo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云服务器巨帧状态",
+          "example": "[ {\"InstanceId\": \"ins-4uhk90pu\",\"JumboState\": false}]",
+          "member": "InstanceJumbo",
+          "name": "InstanceJumboSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIp6AddressesRequest": {
       "document": "DescribeIp6Addresses请求参数结构体",
       "members": [
@@ -16867,7 +17129,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件：\nvpc-id：按照VPCID过滤，local-gateway-name：按照本地网关名称过滤，名称支持模糊搜索，local-gateway-id：按照本地网关实例ID过滤，cdc-id：按照cdc实例ID过滤查询。",
+          "document": "支持的过滤条件如下:\\n<li>vpc-id:按照VPCID过滤。</li>\\n<li>local-gateway-name:本地网关名称,支持模糊查询。</li>\\n<li>local-gateway-id:本地网关实例ID。</li>\\n<li>cdc-id:cdc实例ID。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -16904,6 +17166,7 @@
           "example": "无",
           "member": "LocalGateway",
           "name": "LocalGatewaySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16913,6 +17176,7 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17754,7 +18018,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。\n</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。\n</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>",
+          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。\n</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。\n</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
           "example": "[{'Name': 'vpc-id', 'Values': ['vpc-q26u781x']}]",
           "member": "Filter",
           "name": "Filters",
@@ -19739,7 +20003,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li>\n<li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>",
+          "document": "过滤条件，参数不支持同时指定SubnetIds和Filters。\n<li>subnet-id - String - （过滤条件）Subnet实例名称。</li>\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>cidr-block - String - （过滤条件）子网网段，形如: 192.168.1.0 。</li>\n<li>is-default - Boolean - （过滤条件）是否是默认子网。</li>\n<li>is-remote-vpc-snat - Boolean - （过滤条件）是否为VPC SNAT地址池子网。</li>\n<li>subnet-name - String - （过滤条件）子网名称。</li>\n<li>zone - String - （过滤条件）可用区。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>cdc-id - String - 是否必填：否 - （过滤条件）按照cdc信息进行过滤。过滤出来制定cdc下的子网。</li>\n<li>is-cdc-subnet - String - 是否必填：否 - （过滤条件）按照是否是cdc子网进行过滤。取值：“0”-非cdc子网，“1”--cdc子网</li>\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
           "example": "vpc-pxir56ns",
           "member": "Filter",
           "name": "Filters",
@@ -19776,6 +20040,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19785,6 +20050,7 @@
           "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20906,7 +21172,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称，支持模糊查询。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>",
+          "document": "过滤条件，不支持同时指定VpcIds和Filters参数。\n支持的过滤条件如下：\n<li>vpc-name：VPC实例名称，支持模糊查询。</li>\n<li>is-default ：是否默认VPC。</li>\n<li>vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。</li>\n<li>cidr-block：VPC的CIDR。</li>\n<li>tag-key ：按照标签键进行过滤，非必填参数。</li>\n<li>tag:tag-key：按照标签键值对进行过滤，非必填参数。 其中 tag-key 请使用具体的标签键进行替换，可参考示例2。</li>\n  **说明：**若同一个过滤条件（Filter）存在多个Values，则同一Filter下Values间的关系为逻辑或（OR）关系；若存在多个过滤条件（Filter），Filter之间的关系为逻辑与（AND）关系。\n<li>ipv6-cidr-block - String - （过滤条件）IPv6子网网段，形如: 2402:4e00:1717:8700::/64 。</li>\n<li>isp-type  - String - （过滤条件）运营商类型，形如: BGP 取值范围：'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联通。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
           "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-azd4dt1c\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -20950,7 +21216,7 @@
         {
           "disabled": false,
           "document": "VPC对象。",
-          "example": "[{\"DomainName\": \"aa.bb.cc\", \"Ipv6CidrBlock\": \"3402:4e00:20:1200::/56\", \"VpcName\": \"demo\", \"CreatedTime\": \"2018-04-25 10:26:26\", \"IsDefault\": false, \"VpcId\": \"vpc-p5sf61yj\", \"EnableMulticast\": false, \"EnableDhcp\": true, \"EnableRouteVpcPublish\": false, \"AssistantCidrSet\": [], \"TagSet\": [], \"DhcpOptionsId\": \"dopt-8g7k5qfq\", \"DnsServerSet\": [\"10.0.0.1\", \"183.60.82.98\"], \"CidrBlock\": \"10.0.0.0/16\"}]",
+          "example": "[{\"DomainName\": \"aa.bb.cc\", \"Ipv6CidrBlock\": \"3402:4e00:20:1200::/56\", \"VpcName\": \"demo\", \"CreatedTime\": \"2018-04-25 10:26:26\", \"IsDefault\": false, \"VpcId\": \"vpc-p5sf61yj\", \"EnableMulticast\": false, \"EnableDhcp\": true, \"EnableRouteVpcPublish\": false}]",
           "member": "Vpc",
           "name": "VpcSet",
           "output_required": true,
@@ -22249,7 +22515,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流日志Id。",
+          "document": "流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。",
           "example": "[\"fl-7rymh5cn\"]",
           "member": "string",
           "name": "FlowLogIds",
@@ -22647,7 +22913,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。",
+          "document": "弹性网卡实例ID。形如：eni-pxir56ns。每次请求的实例的上限为100。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "[\"eni-12345678\"]",
           "member": "string",
           "name": "NetworkInterfaceIds",
@@ -22656,7 +22922,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。每次请求的实例的上限为100。",
+          "document": "安全组实例ID，例如：sg-33ocnj9n，可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。每次请求的实例的上限为100。",
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -22903,7 +23169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流日志Id。",
+          "document": "流日志Id。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。",
           "example": "[\"fl-7rymh5cn\"]",
           "member": "string",
           "name": "FlowLogIds",
@@ -23491,7 +23757,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-pq9vxykj",
           "member": "string",
           "name": "VpcId",
@@ -23521,7 +23787,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。",
+          "document": "流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -23541,7 +23807,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志采集类型，ACCEPT|REJECT|ALL。",
+          "document": "流日志采集类型，ACCEPT（允许），REJECT（拒绝），ALL（全部）。",
           "example": "ACCEPT",
           "member": "string",
           "name": "TrafficType",
@@ -23561,7 +23827,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志存储ID状态。",
+          "document": "流日志存储ID状态。SUCCESS（成功），DELETED（删除）。",
           "example": "SUCCESS",
           "member": "string",
           "name": "CloudLogState",
@@ -23592,7 +23858,7 @@
         {
           "disabled": false,
           "document": "标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[]",
+          "example": "[{'Key':'Tag1', 'Value': 'Value1'}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -23611,33 +23877,33 @@
         },
         {
           "disabled": false,
-          "document": "消费端类型：cls、ckafka。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费端类型：cls、ckafka。",
           "example": "cls",
           "member": "string",
           "name": "StorageType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消费端信息，当消费端类型为ckafka时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "消费端信息，当消费端类型为ckafka时返回。",
+          "example": "{\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}",
           "member": "FlowLogStorage",
           "name": "FlowLogStorage",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流日志存储ID对应的地域信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流日志存储ID对应的地域信息。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CloudLogRegion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23651,19 +23917,21 @@
           "example": "ckafka-aso1kaoq",
           "member": "string",
           "name": "StorageId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题Id，当流日志存储类型为ckafka时，必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题Id，当流日志存储类型为ckafka时，必填。",
           "example": "topic-asow02oa",
           "member": "string",
           "name": "StorageTopic",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -23927,6 +24195,100 @@
       ],
       "type": "object"
     },
+    "GlobalRoute": {
+      "document": "全局路由对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作为出参展示，表示VPC唯一Id，。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局路由唯一Id。",
+          "example": "gr-bmenrwu2",
+          "member": "string",
+          "name": "GlobalRouteId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4目标网段。",
+          "example": "192.168.0.0/20",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳类型，支持 NORMAL_CVM。",
+          "example": "NORMAL_CVM",
+          "member": "string",
+          "name": "GatewayType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳对象，如果GatewayType类型是NORMAL_CVM填写子机IP。",
+          "example": "192.168.0.3",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注。",
+          "example": "gr_item",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2010-11-21",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的 ECMP算法有：\n\n- ECMP_QUINTUPLE_HASH：五元组hash\n- ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash\n- ECMP_DESTINATION_IP_HASH：目的IP hash\n- ECMP_SOURCE_IP_HASH：源IP hash。",
+          "example": "ECMP_QUINTUPLE_HASH",
+          "member": "string",
+          "name": "SubnetRouteAlgorithm",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HaVip": {
       "document": "描述 HAVIP 信息",
       "members": [
@@ -24042,53 +24404,53 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`的飘移范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "`HAVIP`的飘移范围。",
           "example": "[{\"HaVipId\": \"havip-nswq8wkq\", \"InstanceId\": \"ins-kngiybxl\", \"InstanceType\": \"CVM\"}]",
           "member": "HaVipAssociation",
           "name": "HaVipAssociationSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启`HAVIP`的飘移范围校验。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启`HAVIP`的飘移范围校验。",
           "example": "True",
           "member": "bool",
           "name": "CheckAssociate",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC实例ID。",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00",
           "example": "2024-06-06 22:24:45",
           "member": "string",
           "name": "FlushedTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对。\t",
           "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24134,36 +24496,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "HaVip绑定的子机或网卡唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HaVip绑定的子机或网卡唯一ID。",
           "example": "ins-3qx9elib",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HaVip实例唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HaVip实例唯一ID。",
           "example": "havip-7tqt5jn6",
           "member": "string",
           "name": "HaVipId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HaVip绑定的类型。取值:CVM, ENI。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HaVip绑定的类型。取值:CVM, ENI。",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24274,113 +24636,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "高优路由表唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表唯一 ID",
           "example": "hprtb-18mot1fm",
           "member": "string",
           "name": "HighPriorityRouteTableId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表条目唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表条目唯一 ID",
           "example": "hprti-p1ymd0ak",
           "member": "string",
           "name": "HighPriorityRouteId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标网段",
           "example": "172.20.0.0/16",
           "member": "string",
           "name": "DestinationCidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关类型",
           "example": "HAVIP",
           "member": "string",
           "name": "GatewayType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关唯一ID",
           "example": "havip-mt4yhdps",
           "member": "string",
           "name": "GatewayId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由条目描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由条目描述",
           "example": "test_high_priority_item",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。",
           "example": "ECMP_QUINTUPLE_HASH",
           "member": "string",
           "name": "SubnetRouteAlgorithm",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出参展示，是否为CDC属性高优路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参展示，是否为CDC属性高优路由",
           "example": "true",
           "member": "bool",
           "name": "IsCdc",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出参展示，CDC 唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出参展示，CDC 唯一ID",
           "example": "cdc-hj3he929",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreatedTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24390,63 +24752,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "高优路由表唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表唯一 ID。",
           "example": "hprtb-18mot1fm",
           "member": "string",
           "name": "HighPriorityRouteTableId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC实例ID。",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表名称。",
           "example": "demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表关联的子网列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高优路由表关联的子网列表。",
           "example": "[\"subnet-ie8choou\"]",
           "member": "string",
           "name": "SubnetSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高优路由表条目信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "高优路由表条目信息",
+          "example": "[{\"HighPriorityRouteId\": \"hprti-p1ymd0ak\"}]",
           "member": "HighPriorityRoute",
           "name": "HighPriorityRouteSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreatedTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24578,7 +24940,7 @@
         {
           "disabled": false,
           "document": "IKE版本",
-          "example": "1",
+          "example": "IKEV1",
           "member": "string",
           "name": "IKEVersion",
           "output_required": false,
@@ -24660,6 +25022,22 @@
         }
       ],
       "usage": "both"
+    },
+    "ISPIPv6CidrBlock": {
+      "document": "返回多运营商IPv6 Cidr Block",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)",
+          "example": "GUA",
+          "member": "string",
+          "name": "AddressType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InquirePriceCreateDirectConnectGatewayRequest": {
       "document": "InquirePriceCreateDirectConnectGateway请求参数结构体",
@@ -25140,6 +25518,32 @@
         }
       ],
       "usage": "both"
+    },
+    "InstanceJumbo": {
+      "document": "云服务器巨帧状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "ins-4uhk90pu",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例是否支持巨帧。",
+          "example": "True",
+          "member": "bool",
+          "name": "JumboState",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InstanceStatistic": {
       "document": "用于描述实例的统计信息",
@@ -25754,25 +26158,25 @@
         },
         {
           "disabled": false,
-          "document": "如果 IPv6地址是 ULA 类型，绑定的公网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "如果 IPv6地址是 ULA 类型，绑定的公网IP地址。",
           "example": "3402:4e00:20:1202::2",
           "member": "string",
           "name": "PublicIpAddress",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "`IPv6`地址的类型: `GUA`(全球单播地址), `OTHER`(非GUA/ULA地址), `ULA`(唯一本地地址)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "`IPv6`地址的类型: `GUA`(全球单播地址), `ULA`(唯一本地地址)",
           "example": "ULA",
           "member": "string",
           "name": "AddressType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -25988,13 +26392,13 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "标签键值对。\t",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -26077,6 +26481,51 @@
       ],
       "usage": "in"
     },
+    "MigrateBandwidthPackageResourcesRequest": {
+      "document": "MigrateBandwidthPackageResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前资源所在的共享带宽包ID",
+          "example": "bwp-hxlqja90",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要迁移的目标共享带宽包的ID",
+          "example": "bwp-hxlqja90",
+          "member": "string",
+          "name": "TargetBandwidthPackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要迁移的资源的ID列表",
+          "example": "[\"eip-hxlqja90\",\"eip-hxlqja91\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "MigrateBandwidthPackageResourcesResponse": {
+      "document": "MigrateBandwidthPackageResources返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MigrateNetworkInterfaceRequest": {
       "document": "MigrateNetworkInterface请求参数结构体",
       "members": [
@@ -26136,7 +26585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。",
+          "document": "当内网IP绑定的弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-m6dyj722",
           "member": "string",
           "name": "SourceNetworkInterfaceId",
@@ -26145,7 +26594,7 @@
         },
         {
           "disabled": false,
-          "document": "待迁移的目的弹性网卡实例ID。",
+          "document": "待迁移的目的弹性网卡实例ID。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
           "example": "eni-m6dyj72l",
           "member": "string",
           "name": "DestinationNetworkInterfaceId",
@@ -26552,7 +27001,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费模式，示例 ：\n'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）",
+          "document": "带宽包计费模式，可选值:\n<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>\n<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>\n<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>\n<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -26579,7 +27028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包限速大小。单位：Mbps。",
+          "document": "带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) ",
           "example": "100",
           "member": "int64",
           "name": "InternetMaxBandwidth",
@@ -26588,7 +27037,7 @@
         },
         {
           "disabled": false,
-          "document": "共享带宽包ID",
+          "document": "共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-mwoqajk2",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -26946,7 +27395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流日志唯一ID。",
+          "document": "流日志唯一ID。可通过[CreateFlowLog](https://cloud.tencent.com/document/product/215/35015)接口创建；可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取。",
           "example": "fl-nswq8wkq",
           "member": "string",
           "name": "FlowLogId",
@@ -26955,7 +27404,7 @@
         },
         {
           "disabled": false,
-          "document": "私用网络ID或者统一ID，建议使用统一ID，修改云联网流日志属性时可不填，其他流日志类型必填。",
+          "document": "私用网络唯一ID。修改云联网流日志属性时可不填，其他流日志类型必填。",
           "example": "vpc-pnpcflil",
           "member": "string",
           "name": "VpcId",
@@ -26964,8 +27413,8 @@
         },
         {
           "disabled": false,
-          "document": "流日志实例名字。",
-          "example": "demo",
+          "document": "流日志实例名字。长度为不超过60字节。",
+          "example": "FlowLogName1",
           "member": "string",
           "name": "FlowLogName",
           "required": false,
@@ -26973,8 +27422,8 @@
         },
         {
           "disabled": false,
-          "document": "流日志实例描述。",
-          "example": "demo",
+          "document": "流日志实例描述。长度为不超过512字节。",
+          "example": "FlowLogDescription1",
           "member": "string",
           "name": "FlowLogDescription",
           "required": false,
@@ -27030,6 +27479,96 @@
     },
     "ModifyGatewayFlowQosResponse": {
       "document": "ModifyGatewayFlowQos返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRouteECMPAlgorithmRequest": {
+      "document": "ModifyGlobalRouteECMPAlgorithm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4目标网段。",
+          "example": "192.168.0.0/20",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。",
+          "example": "ECMP_QUINTUPLE_HASH",
+          "member": "string",
+          "name": "SubnetRouteAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CDC 集群唯一 ID。",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRouteECMPAlgorithmResponse": {
+      "document": "ModifyGlobalRouteECMPAlgorithm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRoutesRequest": {
+      "document": "ModifyGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由对象。仅支持修改：'Description'，其他字段暂不支持。",
+          "example": "[{\"Description\": \"ivan_gr\"}]",
+          "member": "GlobalRoute",
+          "name": "GlobalRoutes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRoutesResponse": {
+      "document": "ModifyGlobalRoutes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -29119,6 +29658,15 @@
           "name": "HealthCheckConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "BGP隧道配置",
+          "example": "{ \"LocalBgpIp\": \"169.254.128.1\", \"RemoteBgpIp\": \"169.254.128.2\", \"TunnelCidr\": \"169.254.128.0/30\" }\t",
+          "member": "BgpConfig",
+          "name": "BgpConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -30356,25 +30904,25 @@
         },
         {
           "disabled": false,
-          "document": "IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。",
           "example": "acli43-0pngbwph",
           "member": "string",
           "name": "NetworkAclIpv4EntryId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。",
           "example": "acli46-0pngbwph",
           "member": "string",
           "name": "NetworkAclIpv6EntryId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -31093,47 +31641,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "入站IPv4总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入站IPv4总数",
           "example": "1",
           "member": "uint64",
           "name": "IngressIPv4TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "入站IPv6总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "入站IPv6总数",
           "example": "1",
           "member": "uint64",
           "name": "IngressIPv6TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站IPv4总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出站IPv4总数",
           "example": "1",
           "member": "uint64",
           "name": "EgressIPv4TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站IPv6总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出站IPv6总数",
           "example": "1",
           "member": "uint64",
           "name": "EgressIPv6TotalCount",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -31611,7 +32159,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额名称，取值范围：\n- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；\n- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；\n- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；\n- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；\n- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；\n- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；",
+          "document": "配额名称，取值范围：\n- `TOTAL_EIP_QUOTA`：用户当前地域下EIP的配额数；\n- `DAILY_EIP_APPLY`：用户当前地域下今日申购次数；\n- `DAILY_PUBLIC_IP_ASSIGN`：用户当前地域下，重新分配公网 IP次数；\n- `TOTAL_EIP6_QUOTA`：用户当前地域下，传统弹性公网IPv6的配额数；\n- `BGP_EIPv6_QUOTA`：用户当前地域下，可申请的 BGP 弹性公网IPv6 的配额数；\n- `SINGLEISP_EIPv6_QUOTA`：用户当前地域下，可申请的静态单线弹性公网IPv6 的配额数；\n- `TOTAL_BANDWIDTHPKG_QUOTA`：用户当前地域下，可申请的带宽包总配额；\n- `PRIMARY_TRAFFIC_SINGLE_BWP_QUOTA`：用户当前地域下，可申请的静态单线主流量带宽包配额数；\n- `PRIMARY_TRAFFIC_BGP_BWP_QUOTA`：用户当前地域下，可申请的BGP主流量带宽包配额数；\n- `BandwidthGuaranteedRatio`：用户当前地域下，保底带宽包默认保底比例；\n- `TezBandwidthGuaranteedRatio`：用户当前地域下，边缘可用区保底带宽包默认保底比例；",
           "example": "TOTAL_EIP_QUOTA",
           "member": "string",
           "name": "QuotaId",
@@ -31911,7 +32459,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包唯一标识ID，形如'bwp-xxxx'",
+          "document": "资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。",
+          "example": "[\"eip-alfxy9c8\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。",
           "example": "bwp-pr0xbnvw",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -31920,21 +32477,12 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，包括‘Address’, ‘LoadBalance’",
+          "document": "资源类型，可选值：\n<li>Address：弹性公网IP</li>\n<li>LoadBalance：负载均衡</li>",
           "example": "Address",
           "member": "string",
           "name": "ResourceType",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'",
-          "example": "[\"eip-alfxy9c8\\r\\n\"]",
-          "member": "string",
-          "name": "ResourceIds",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -33759,25 +34307,25 @@
       "members": [
         {
           "disabled": false,
-          "document": " 目标网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 目标网段",
           "example": " 10.0.0.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。",
           "example": "ECMP_SOURCE_DESTINATION_IP_HASH",
           "member": "string",
           "name": "SubnetRouteAlgorithm",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -33924,7 +34472,7 @@
         {
           "disabled": false,
           "document": "IPv4路由策略集合。",
-          "example": "[]",
+          "example": "[{\"RouteItemId\": \"rti-9bjer08h\", \"DestinationCidrBlock\": \"10.0.0.0/24\", \"GatewayType\": \"CCN\", \"GatewayId\": \"ccn-e187un9p\", \"RouteDescription\": \"demo\", \"RouteType\": \"CCN\"}]",
           "member": "Route",
           "name": "RouteSet",
           "output_required": true,
@@ -33963,13 +34511,13 @@
         },
         {
           "disabled": false,
-          "document": "local路由是否发布云联网。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "local路由是否发布云联网。",
+          "example": "[{\"Cidr\": \"10.0.0.0/16\", \"PublishedToVbc\": true, \"AssistantType\": \"NORMAL\"}]",
           "member": "CidrForCcn",
           "name": "LocalCidrForCcn",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -33979,23 +34527,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网实例ID。",
           "example": "subnet-4t7fr3fi",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由表实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由表实例ID。",
           "example": "rtb-h0fk8lfc",
           "member": "string",
           "name": "RouteTableId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -34009,6 +34557,7 @@
           "example": "sg-05bb4upy",
           "member": "string",
           "name": "SecurityGroupId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34019,6 +34568,7 @@
           "example": "TestGroup",
           "member": "string",
           "name": "SecurityGroupName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34029,6 +34579,7 @@
           "example": "test-group-desc",
           "member": "string",
           "name": "SecurityGroupDesc",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34039,6 +34590,7 @@
           "example": "0",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34049,6 +34601,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -34059,6 +34612,7 @@
           "example": "2017-04-18 21:02:30",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34069,19 +34623,21 @@
           "example": "[{\"Key\": \"Version\", \"Value\": \"TEST\"}]",
           "member": "Tag",
           "name": "TagSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组更新时间。",
           "example": "2017-04-18 21:02:30",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -34263,124 +34819,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。",
           "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。",
           "example": "22",
           "member": "string",
           "name": "Port",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
           "example": "ppm-8g7k5qfq",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-ohuuioma。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组实例ID，例如：sg-ohuuioma。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP地址ID或者IP地址组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址ID或者IP地址组ID。",
           "example": "ipm-p5sf61yj",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ACCEPT 或 DROP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ACCEPT 或 DROP。",
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。",
           "example": "demo",
           "member": "string",
           "name": "PolicyDescription",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组最近修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组最近修改时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "ModifyTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -34390,47 +34946,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组规则当前版本。用户每次更新安全规则版本会自动加1，防止更新的路由规则已过期，不填不考虑冲突。",
           "example": "10",
           "member": "string",
           "name": "Version",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "出站规则。",
+          "example": "[{\"PolicyIndex\": 0, \"Port\": \"443\", \"CidrBlock\": \"10.0.0.0/24\", \"Action\": \"ACCEPT\", \"ModifyTime\": \"2020-10-09 10:00:00\", \"PolicyDescription\": \"\", \"Protocol\": \"tcp\"}]",
           "member": "SecurityGroupPolicy",
           "name": "Egress",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "入站规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{'PolicyIndex': 0, 'Port': '443', 'CidrBlock': '0.0.0.0/0', 'Ipv6CidrBlock': '', 'SecurityGroupId': '', 'Action': 'ACCEPT', 'ModifyTime': '2020-10-09 10:00:00', 'PolicyDescription': '', 'Protocol': 'tcp', 'ServiceTemplate': {'ServiceId': '', 'ServiceGroupId': ''}, 'AddressTemplate': {'AddressId': '', 'AddressGroupId': ''}, 'Diff': False}]",
+          "document": "入站规则。",
+          "example": "[{\"PolicyIndex\": 0, \"Port\": \"443\", \"CidrBlock\": \"0.0.0.0/0\", \"Action\": \"ACCEPT\", \"ModifyTime\": \"2020-10-09 10:00:00\", \"PolicyDescription\": \"\", \"Protocol\": \"tcp\"}]",
           "member": "SecurityGroupPolicy",
           "name": "Ingress",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全组策略条目统计。只用于出参。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "安全组策略条目统计。只用于出参。",
+          "example": "{\"IngressIPv4TotalCount\": 1, \"IngressIPv6TotalCount\": 0, \"EgressIPv4TotalCount\": 1, \"EgressIPv6TotalCount\": 0}",
           "member": "PolicyStatistics",
           "name": "PolicyStatistics",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -35622,7 +36178,7 @@
         {
           "disabled": false,
           "document": "子网的 `IPv6` `CIDR`。",
-          "example": " ",
+          "example": "fd76:3600:1300:c00::/64",
           "member": "string",
           "name": "Ipv6CidrBlock",
           "output_required": false,
@@ -35662,7 +36218,7 @@
         {
           "disabled": false,
           "document": "标签键值对。",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
@@ -35671,23 +36227,23 @@
         },
         {
           "disabled": false,
-          "document": "CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC实例ID。",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是CDC所属子网。0:否 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是CDC所属子网。0:否 1:是",
           "example": "0",
           "member": "int64",
           "name": "IsCdcSubnet",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -35985,33 +36541,33 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像的类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像的类型。",
           "example": "VPC",
           "member": "string",
           "name": "Type",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜像所属的子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像所属的子网ID。",
           "example": "subnet-6zwa44xm",
           "member": "string",
           "name": "SubnetId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。",
+          "example": "{\"TargetId\": \"eni-kiaim12s\", \"TargetName\": \"demo\"}",
           "member": "TrafficMirrorTargetResourceInfo",
           "name": "TargetInfo",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -36086,6 +36642,7 @@
           "example": "[\"10.0.0.0\"]",
           "member": "string",
           "name": "TargetIps",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -36096,29 +36653,32 @@
           "example": "FIVE_TUPLE_FLOW",
           "member": "string",
           "name": "AlgHash",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜像的接收endpoint（公网IP）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像的接收endpoint（公网IP）",
           "example": "10.0.0.0",
           "member": "string",
           "name": "TargetEndPoints",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量镜像的接收类型，分别为：IP/ENI/CLB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量镜像的接收类型，分别为：IP/ENI/CLB",
           "example": "IP",
           "member": "string",
           "name": "TargetType",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37077,7 +37637,7 @@
         {
           "disabled": false,
           "document": "`VPC`名称。",
-          "example": "demo",
+          "example": "VPC-1",
           "member": "string",
           "name": "VpcName",
           "output_required": true,
@@ -37107,7 +37667,7 @@
         {
           "disabled": false,
           "document": "是否默认`VPC`。",
-          "example": " true",
+          "example": "true",
           "member": "bool",
           "name": "IsDefault",
           "output_required": true,
@@ -37147,7 +37707,7 @@
         {
           "disabled": false,
           "document": "`DHCP`域名选项值。",
-          "example": " demo",
+          "example": "DomainName1",
           "member": "string",
           "name": "DomainName",
           "output_required": true,
@@ -37167,7 +37727,7 @@
         {
           "disabled": false,
           "document": "是否开启`DHCP`。",
-          "example": " false",
+          "example": "false",
           "member": "bool",
           "name": "EnableDhcp",
           "output_required": true,
@@ -37187,7 +37747,7 @@
         {
           "disabled": false,
           "document": "标签键值对",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -37197,9 +37757,19 @@
         {
           "disabled": false,
           "document": "辅助CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "{\"VpcId\":\"vpc-5k6fot41\", \"CidrBlock\":\"172.16.1.0/24\", \"AssistantType\":0, \"SubnetSet\":[{\"VpcId\": \"vpc-7zqx75u3\", \"SubnetId\": \"subnet-9b1gk064\", \"CidrBlock\": \"11.0.0.0/16\", \"Zone\": \"ap-guangzhou-2\", \"SubnetName\": \"demo\"}], \"Region\":\"ap-guangzhou\"}",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回多运营商IPv6 Cidr Block\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"IPv6CidrBlock\": \"2402:4e00:1717:8200::/56\", \"ISPType\": \"BGP\", \"AddressType\": \"GUA\"}]",
+          "member": "ISPIPv6CidrBlock",
+          "name": "Ipv6CidrBlockSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
@@ -37386,23 +37956,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID。",
           "example": "eni-olifj433",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态。",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

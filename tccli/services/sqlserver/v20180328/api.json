@@ -1039,7 +1039,7 @@
   },
   "metadata": {
     "apiVersion": "2018-03-28",
-    "api_brief": "介绍如何使用API对云数据库SQL Server进行操作，包括实例管理、备份与恢复等。",
+    "api_brief": "介绍如何使用 API 对云数据库 SQL Server 进行操作，包括实例管理、备份与恢复等。",
     "serviceNameCN": "云数据库 SQL Server",
     "serviceShortName": "sqlserver"
   },

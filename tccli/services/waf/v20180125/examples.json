@@ -118,6 +118,14 @@
         "title": "新增IP黑白名单"
       }
     ],
+    "CreatePostCKafkaFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostCKafkaFlow\n<公共请求参数>\n\n{\n    \"WriteConfig\": {\n        \"EnableHeaders\": \"1\",\n        \"EnableBody\": \"1\"\n    },\n    \"Compression\": \"snappy\",\n    \"CKafkaID\": \"ckafka-2v4rkwpg\",\n    \"KafkaVersion\": \"1.1.1\",\n    \"Topic\": \"waf-topic\",\n    \"LogType\": \"1\",\n    \"CKafkaRegion\": \"ap-guangzho\",\n    \"SASLUser\": \"ckafka-2v4rkwpg#\",\n    \"Brokers\": \"11.179.226.202:6142\",\n    \"SASLPassword\": \"\",\n    \"SASLEnable\": \"0\",\n    \"VipType\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c3a2707-619c-4943-ae91-2f855c0125a6\"\n    }\n}",
+        "title": "创建CLS投递流任务"
+      }
+    ],
     "CreatePostCLSFlow": [
       {
         "document": "",
@@ -164,6 +172,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"Ids\": [\n        1,\n        2\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailIds\": [\n            1\n        ],\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
         "title": "查询示例"
+      }
+    ],
+    "DeleteBotSceneUCBRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBotSceneUCBRule\n<公共请求参数>\n\n{\n    \"SceneId\": \"global\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"RuleId\": \"3000004896\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"452b5c78-d94b-40f8-8058-1b45c95805bc\",\n        \"Data\": \"ok\"\n    }\n}",
+        "title": "删除全局自定义规则"
       }
     ],
     "DeleteCCRule": [
@@ -370,6 +386,30 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchIpAccessControl\n<公共请求参数>\n\n{\n    \"Sort\": \"ts_version:-1\",\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"Domain\"\n            ],\n            \"Name\": \"www.q.com\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"OffSet\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"ActionType\": 42,\n                    \"Ip\": \"1.1.1.1\",\n                    \"Note\": \"remark\",\n                    \"Source\": \"custom\",\n                    \"TsVersion\": 1579074751421,\n                    \"ValidTs\": 1579017599,\n                    \"Hosts\": [\n                        \"www.q.com\",\n                        \"www.b.com\"\n                    ]\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"c937ce96-cf53-4df8-b288-07c6e092072d\"\n    }\n}",
         "title": "Waf 多域名ip黑白名单查询"
+      }
+    ],
+    "DescribeBotSceneList": [
+      {
+        "document": "仅查看默认场景",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBotSceneList\n<公共请求参数>\n\n{\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"Limit\": \"10\",\n    \"BusinessType\": [\n        \"all\"\n    ],\n    \"IsDefault\": \"true\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d399557f-0050-4402-adb6-d0af24671738\",\n        \"BotSceneList\": [\n            {\n                \"SceneId\": \"3000004602\",\n                \"Type\": \"default\",\n                \"SceneName\": \"默认场景\",\n                \"UpdateTime\": 1666262225512,\n                \"BusinessType\": [],\n                \"ClientType\": [\n                    \"browser\"\n                ],\n                \"Priority\": 100,\n                \"MatchCondition\": [],\n                \"MatchType\": \"\",\n                \"ActionMatchType\": \"and\",\n                \"SceneStatus\": true,\n                \"JsInjectStatus\": false,\n                \"AIStatus\": true,\n                \"TIStatus\": true,\n                \"StatisticStatus\": false,\n                \"ActionRuleCount\": 1,\n                \"UCBCount\": 0,\n                \"UAStatus\": true\n            }\n        ],\n        \"TotalCount\": 1,\n        \"SimpleFlag\": true\n    }\n}",
+        "title": "仅查看默认场景"
+      }
+    ],
+    "DescribeBotSceneOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBotSceneOverview\n<公共请求参数>\n\n{\n    \"Domain\": \"fgsta.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dec2eb2e-cd26-4437-b3f7-899043c472d8\",\n        \"Status\": true,\n        \"SceneCount\": 5,\n        \"ValidSceneCount\": 4,\n        \"CurrentGlobalScene\": {\n            \"SceneId\": \"3000004882\",\n            \"SceneName\": \"登录防护场景2\",\n            \"Priority\": 1,\n            \"UpdateTime\": 1667198325353\n        },\n        \"CustomRuleNums\": 41\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeBotSceneUCBRule": [
+      {
+        "document": "全局UCB列表",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBotSceneUCBRule\n<公共请求参数>\n\n{\n    \"Sort\": \"timestamp:-1\",\n    \"Skip\": \"0\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"Limit\": \"2\",\n    \"SceneId\": \"global\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"Domain\": \"admin.com\",\n                    \"Name\": \"custom-1\",\n                    \"Rule\": [\n                        {\n                            \"Key\": \"url\",\n                            \"Op\": \"eq\",\n                            \"Value\": {\n                                \"BasicValue\": \"/login\",\n                                \"LogicValue\": true,\n                                \"BelongValue\": [\n                                    \"/login\"\n                                ],\n                                \"ValidKey\": \"url\",\n                                \"MultiValue\": [\n                                    \"/login\"\n                                ]\n                            },\n                            \"OpOp\": \"rematch\",\n                            \"OpArg\": [\n                                \"name\"\n                            ],\n                            \"OpValue\": 0,\n                            \"Name\": \"age\"\n                        }\n                    ],\n                    \"Action\": \"monitor\",\n                    \"OnOff\": \"on\",\n                    \"RuleType\": 0,\n                    \"Prior\": 0,\n                    \"Timestamp\": 0,\n                    \"Label\": \"human\",\n                    \"Id\": \"3021313\",\n                    \"SceneId\": \"3021312412\",\n                    \"ValidTime\": 0,\n                    \"Appid\": 1,\n                    \"AdditionArg\": \"none\",\n                    \"Desc\": \"none\",\n                    \"RuleId\": \"320032232\",\n                    \"PreDefine\": true,\n                    \"JobType\": \"hour\",\n                    \"JobDateTime\": {\n                        \"Timed\": [\n                            {\n                                \"StartDateTime\": 1,\n                                \"EndDateTime\": 1\n                            }\n                        ],\n                        \"Cron\": [\n                            {\n                                \"Days\": [\n                                    1\n                                ],\n                                \"WDays\": [\n                                    1\n                                ],\n                                \"StartTime\": \"1231312414\",\n                                \"EndTime\": \"12313124111\"\n                            }\n                        ],\n                        \"TimeTZone\": \"utc+8\"\n                    },\n                    \"ExpireTime\": 1\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"req-id-13123\"\n    }\n}",
+        "title": "全局UCB列表"
       }
     ],
     "DescribeCCAutoStatus": [
@@ -616,6 +656,14 @@
         "title": "获取防护端口列表"
       }
     ],
+    "DescribePostCKafkaFlows": [
+      {
+        "document": "获取CKafka投递流任务列表",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostCKafkaFlows\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\",\n        \"PostCKafkaFlows\": [\n            {\n                \"FlowId\": 100000,\n                \"LogType\": 1,\n                \"Status\": 1,\n                \"CKafkaRegion\": \"ap-guangzhou\",\n                \"CKafkaID\": \"ckafka-o9gjqonr\",\n                \"Brokers\": \"11.179.226.202:6016\",\n                \"Version\": \"2.4.1\",\n                \"Topic\": \"waf_post_access_log\",\n                \"Compression\": \"lz4\",\n                \"SASLEnable\": 0,\n                \"SASLUser\": \"sa\",\n                \"SASLPassword\": \"sa***\",\n                \"Content\": \"info\"\n            }\n        ]\n    }\n}",
+        "title": "获取CKafka投递流任务列表"
+      }
+    ],
     "DescribePostCLSFlows": [
       {
         "document": "获取CLS投递流任务列表",
@@ -776,6 +824,14 @@
         "title": "获取域名webshell 状态"
       }
     ],
+    "DestroyPostCKafkaFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPostCKafkaFlow\n<公共请求参数>\n\n{\n    \"FlowId\": 100001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\"\n    }\n}",
+        "title": "销毁CKafka投递流任务"
+      }
+    ],
     "DestroyPostCLSFlow": [
       {
         "document": "",
@@ -918,6 +974,40 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Rules\": [\n        {\n            \"MatchField\": \"URL\",\n            \"MatchContent\": \"/url\",\n            \"MatchMethod\": \"EXACT\"\n        }\n    ],\n    \"Domain\": \"www.testwaf.com\",\n    \"SignatureIds\": [\n        \"90501998\",\n        \"90501999\"\n    ],\n    \"RuleId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RuleId\": 1,\n        \"RequestId\": \"76a16020-6e13-4028-823b-b20fb33ecf44\"\n    }\n}",
         "title": "修改示例"
+      }
+    ],
+    "ModifyBotSceneStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotSceneStatus\n<公共请求参数>\n\n{\n    \"Status\": \"false\",\n    \"SceneId\": \"3000004869\",\n    \"Domain\": \"fgsta.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a76b75a1-26d0-4968-a4c3-64cd06444fa4\"\n    }\n}",
+        "title": "test"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotSceneStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"SceneId\": \"30xxxxxxx\",\n    \"Status\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0b4e55b-5307-4378-856d-efc22475c77d\"\n    }\n}",
+        "title": "BOT全局总开关"
+      }
+    ],
+    "ModifyBotSceneUCBRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotSceneUCBRule\n<公共请求参数>\n\n{\n    \"SceneId\": \"global\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"Rule\": {\n        \"RuleType\": \"10\",\n        \"Name\": \"云图API全局白名单测试改名1\",\n        \"RuleId\": \"3000004932\",\n        \"ValidTime\": \"0\",\n        \"Timestamp\": \"1666164720592\",\n        \"AdditionArg\": \"none\",\n        \"Domain\": \"fgsta.qcloudwaf.com\",\n        \"Rule\": [\n            {\n                \"Key\": \"robots_exist\",\n                \"Value\": {\n                    \"LogicValue\": \"false\"\n                },\n                \"Op\": \"logic\"\n            }\n        ],\n        \"Label\": \"友好BOT\",\n        \"Prior\": \"100\",\n        \"Appid\": \"251197210\",\n        \"Action\": \"permit\",\n        \"Desc\": \"云图API测试场景UCB\",\n        \"OnOff\": \"on\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f141b49-a21f-4a72-aa62-7fa7999e18ec\",\n        \"Data\": \"ok\"\n    }\n}",
+        "title": "修改全局自定义规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotSceneUCBRule\n<公共请求参数>\n\n{\n    \"SceneId\": \"global\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"Rule\": {\n        \"RuleType\": \"10\",\n        \"Name\": \"云图API全局白名单测试1\",\n        \"ValidTime\": \"0\",\n        \"Timestamp\": \"1666164720592\",\n        \"AdditionArg\": \"none\",\n        \"Domain\": \"fgsta.qcloudwaf.com\",\n        \"Rule\": [\n            {\n                \"Key\": \"robots_exist\",\n                \"Value\": {\n                    \"LogicValue\": \"true\"\n                },\n                \"Op\": \"logic\"\n            }\n        ],\n        \"Label\": \"友好BOT\",\n        \"Prior\": \"100\",\n        \"Appid\": \"251197210\",\n        \"Action\": \"permit\",\n        \"Desc\": \"云图API测试场景UCB\",\n        \"OnOff\": \"on\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbec197a-d04f-4240-bad3-2eb8474554d4\",\n        \"Data\": \"ok\"\n    }\n}",
+        "title": "插入全局自定义规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBotSceneUCBRule\n<公共请求参数>\n\n{\n    \"SceneId\": \"3000004909\",\n    \"Domain\": \"fgsta.qcloudwaf.com\",\n    \"Rule\": {\n        \"RuleType\": \"0\",\n        \"Name\": \"云图API测试1\",\n        \"ValidTime\": \"0\",\n        \"Timestamp\": \"1666164720592\",\n        \"AdditionArg\": \"none\",\n        \"Domain\": \"fgsta.qcloudwaf.com\",\n        \"Rule\": [\n            {\n                \"Key\": \"robots_exist\",\n                \"Value\": {\n                    \"LogicValue\": \"true\"\n                },\n                \"Op\": \"logic\"\n            }\n        ],\n        \"Label\": \"疑似BOT\",\n        \"Prior\": \"100\",\n        \"Appid\": \"251197210\",\n        \"Action\": \"monitor\",\n        \"Desc\": \"云图API测试场景UCB\",\n        \"Id\": \"字符串\",\n        \"OnOff\": \"on\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4789cbed-1d47-44b4-adfb-f908a52f2a75\",\n        \"Data\": \"ok\"\n    }\n}",
+        "title": "插入场景自定义规则"
       }
     ],
     "ModifyBotStatus": [

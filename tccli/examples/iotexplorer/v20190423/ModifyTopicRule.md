@@ -9,7 +9,7 @@ tccli iotexplorer ModifyTopicRule --cli-unfold-argument  \
     --RuleName test_create \
     --TopicRulePayload.Sql U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw== \
     --TopicRulePayload.Actions [{"forward":{"api":"http://127.0.0.1:1080/sub.php"}}] \
-    --TopicRulePayload.Description test \
+    --TopicRulePayload.Description 修改topic信息 \
     --TopicRulePayload.RuleDisabled True
 ```
 

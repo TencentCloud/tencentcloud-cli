@@ -92,7 +92,7 @@
       {
         "document": "新增配置文件",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigFile\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"ConfigFile\": {\n        \"Name\": \"config-file-test-1\",\n        \"Namespace\": \"Polaris\",\n        \"Group\": \"group-test-jayhjxu\",\n        \"Content\": \"test for CreateConfigFile\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"asdf\"\n    }\n}",
         "title": "新增配置文件"
       }
     ],
@@ -890,7 +890,7 @@
       {
         "document": "发布配置文件",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishConfigFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-fd191a86\",\n    \"ConfigFileReleases\": {\n        \"Name\": \"ConfigFileReleases test\",\n        \"Namespace\": \"Polaris\",\n        \"Group\": \"group-test-jayhjxu\",\n        \"FileName\": \"config-file-test\",\n        \"Content\": \"I want you to act as a linux terminal. I will type commands and you will reply with what the terminal should show. I want you to only reply with the terminal output inside one unique code block, and nothing else. do not write explanations. do not type commands unless I instruct you to do so. \",\n        \"Comment\": \"test for 1\",\n        \"Version\": 12\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"asdf\"\n    }\n}",
         "title": "发布配置文件"
       }
     ],

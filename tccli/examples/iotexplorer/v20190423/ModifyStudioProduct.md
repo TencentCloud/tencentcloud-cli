@@ -1,4 +1,4 @@
-**Example 1: 修改产品**
+**Example 1: 修改产品示例**
 
 修改产品名称和描述等信息
 
@@ -28,10 +28,10 @@ Output:
             "UpdateTime": 1,
             "ProductName": "testProduct",
             "CreateUserId": 0,
-            "ProductDesc": "test",
+            "ProductDesc": "产品信息",
             "NetType": "else",
             "ProductType": 0,
-            "CreatorNickName": "test",
+            "CreatorNickName": "leo",
             "CreateTime": 1,
             "CategoryId": 3,
             "BindStrategy": 0,

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BackUpAndroidInstanceToStorage": {
+      "document": "备份云手机到指定存储",
+      "input": "BackUpAndroidInstanceToStorageRequest",
+      "name": "备份安卓实例到指定存储",
+      "output": "BackUpAndroidInstanceToStorageResponse",
+      "status": "online"
+    },
     "ConnectAndroidInstance": {
       "document": "连接安卓实例",
       "input": "ConnectAndroidInstanceRequest",
@@ -12,6 +19,20 @@
       "input": "CopyAndroidInstanceRequest",
       "name": "复制安卓实例",
       "output": "CopyAndroidInstanceResponse",
+      "status": "online"
+    },
+    "CreateAndroidApp": {
+      "document": "创建安卓应用",
+      "input": "CreateAndroidAppRequest",
+      "name": "创建安卓应用",
+      "output": "CreateAndroidAppResponse",
+      "status": "online"
+    },
+    "CreateAndroidAppVersion": {
+      "document": "创建安卓应用版本",
+      "input": "CreateAndroidAppVersionRequest",
+      "name": "创建安卓应用版本",
+      "output": "CreateAndroidAppVersionResponse",
       "status": "online"
     },
     "CreateAndroidInstanceImage": {
@@ -56,11 +77,32 @@
       "output": "CreateAndroidInstancesScreenshotResponse",
       "status": "online"
     },
+    "CreateCosCredential": {
+      "document": "用于创建 Cos 临时密钥",
+      "input": "CreateCosCredentialRequest",
+      "name": "创建 Cos 临时密钥",
+      "output": "CreateCosCredentialResponse",
+      "status": "online"
+    },
     "CreateSession": {
       "document": "创建会话",
       "input": "CreateSessionRequest",
       "name": "创建会话",
       "output": "CreateSessionResponse",
+      "status": "online"
+    },
+    "DeleteAndroidApp": {
+      "document": "删除安卓应用",
+      "input": "DeleteAndroidAppRequest",
+      "name": "删除安卓应用",
+      "output": "DeleteAndroidAppResponse",
+      "status": "online"
+    },
+    "DeleteAndroidAppVersion": {
+      "document": "删除安卓应用版本",
+      "input": "DeleteAndroidAppVersionRequest",
+      "name": "删除安卓应用版本",
+      "output": "DeleteAndroidAppVersionResponse",
       "status": "online"
     },
     "DeleteAndroidInstanceImages": {
@@ -147,6 +189,20 @@
       "output": "InstallAndroidInstancesAppResponse",
       "status": "online"
     },
+    "ModifyAndroidApp": {
+      "document": "修改安卓应用信息",
+      "input": "ModifyAndroidAppRequest",
+      "name": "修改安卓应用",
+      "output": "ModifyAndroidAppResponse",
+      "status": "online"
+    },
+    "ModifyAndroidAppVersion": {
+      "document": "修改安卓应用版本",
+      "input": "ModifyAndroidAppVersionRequest",
+      "name": "修改安卓应用版本",
+      "output": "ModifyAndroidAppVersionResponse",
+      "status": "online"
+    },
     "ModifyAndroidInstanceInformation": {
       "document": "修改安卓实例的信息",
       "input": "ModifyAndroidInstanceInformationRequest",
@@ -166,6 +222,13 @@
       "input": "ModifyAndroidInstancesLabelsRequest",
       "name": "批量修改安卓实例的标签",
       "output": "ModifyAndroidInstancesLabelsResponse",
+      "status": "online"
+    },
+    "ModifyAndroidInstancesResolution": {
+      "document": "修改安卓实例分辨率。需要注意的是该接口需要重启才能生效。",
+      "input": "ModifyAndroidInstancesResolutionRequest",
+      "name": "批量修改安卓实例分辨率",
+      "output": "ModifyAndroidInstancesResolutionResponse",
       "status": "online"
     },
     "ModifyAndroidInstancesUserId": {
@@ -194,6 +257,13 @@
       "input": "RestartAndroidInstancesAppRequest",
       "name": "重启安卓实例应用",
       "output": "RestartAndroidInstancesAppResponse",
+      "status": "online"
+    },
+    "RestoreAndroidInstanceFromStorage": {
+      "document": "指定存储还原云手机",
+      "input": "RestoreAndroidInstanceFromStorageRequest",
+      "name": "指定存储还原安卓实例",
+      "output": "RestoreAndroidInstanceFromStorageResponse",
       "status": "online"
     },
     "SaveGameArchive": {
@@ -371,9 +441,43 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用模式（NORMAL : 普通模式；ADVANCED : 高级模式）",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "AppMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "AndroidAppCosInfo": {
+      "document": "安卓应用Cos数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓应用ID",
+          "example": "apk-xxxxx",
+          "member": "string",
+          "name": "AndroidAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称（支持 apk 和 tgz 两种格式文件，当应用 AppMode 为 NORMAL 时，只支持上传 apk 类型文件，当应用 AppMode 为 ADVANCED 高级模式时，只支持上传  tgz 类型文件）",
+          "example": "test.tgz",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "AndroidAppVersionInfo": {
       "document": "安卓应用版本信息",
@@ -404,6 +508,16 @@
           "example": "\"2022-02-15T01:51:55.786Z\"",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "example": "\"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\"",
+          "member": "string",
+          "name": "Command",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -552,6 +666,17 @@
           "example": "user123",
           "member": "string",
           "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网 IP",
+          "example": "192.168.1.3",
+          "member": "string",
+          "name": "PrivateIP",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -778,9 +903,157 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "EXEC_COMMAND",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "2022-02-15T01:51:55.786Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务完成时间",
+          "example": "2022-02-15T01:51:55.786Z",
+          "member": "string",
+          "name": "CompleteTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "BackUpAndroidInstanceToStorageRequest": {
+      "document": "BackUpAndroidInstanceToStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例ID",
+          "example": "cai-abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储服务器类型，如 COS、S3。注意：使用 COS 和 S3 都将占用外网带宽。",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义对象Key",
+          "example": "dir/file",
+          "member": "string",
+          "name": "ObjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包含的路径，支持仅含一个通配符*，通配符不能出现在路径开始",
+          "example": "[\"/data/data/misc/*.prop\"]",
+          "member": "string",
+          "name": "Includes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要排除路径，支持仅含一个通配符*，通配符不能出现在路径开始",
+          "example": "[\"/data/media/*\"]",
+          "member": "string",
+          "name": "Excludes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "COS协议选项",
+          "example": "无",
+          "member": "COSOptions",
+          "name": "COSOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "S3存储协议选项",
+          "example": "无",
+          "member": "S3Options",
+          "name": "S3Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BackUpAndroidInstanceToStorageResponse": {
+      "document": "BackUpAndroidInstanceToStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务 ID",
+          "example": "abcd-1234",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "COSOptions": {
+      "document": "COS协议参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶",
+          "example": "bucket-123",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ConnectAndroidInstanceRequest": {
       "document": "ConnectAndroidInstance请求参数结构体",
@@ -888,6 +1161,116 @@
           "example": "6a440fe6-1261-4036-b18f-5f861820640a",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidAppRequest": {
+      "document": "CreateAndroidApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓应用名字",
+          "example": "测试App",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 Id",
+          "example": "user1",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用模式（NORMAL : 普通模式、只支持 apk 文件上传，为默认值；ADVANCED : 高级模式、只支持上传 tgz 文件 和 自定义 shell 命令执行）",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "AppMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidAppResponse": {
+      "document": "CreateAndroidApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "apk-xxxx",
+          "member": "string",
+          "name": "AndroidAppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidAppVersionRequest": {
+      "document": "CreateAndroidAppVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "apk-xxxxx",
+          "member": "string",
+          "name": "AndroidAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用包下载地址",
+          "example": "https://xxxxx",
+          "member": "string",
+          "name": "DownloadUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "example": "tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidAppVersionResponse": {
+      "document": "CreateAndroidAppVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用版本",
+          "example": "1704858710752307569",
+          "member": "string",
+          "name": "AndroidAppVersion",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1236,6 +1619,122 @@
       ],
       "type": "object"
     },
+    "CreateCosCredentialRequest": {
+      "document": "CreateCosCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cos 密钥类型， Mobile 移动端, PC 桌面, AndroidApp 安卓应用",
+          "example": "\"PC|Mobile|AndroidApp\"",
+          "member": "string",
+          "name": "CosType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云手机 Cos 数据",
+          "example": "无",
+          "member": "AndroidAppCosInfo",
+          "name": "AndroidAppCosInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCosCredentialResponse": {
+      "document": "CreateCosCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cos SecretID",
+          "example": "\"secretid\"",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos SecretKey",
+          "example": "\"secretkey\"",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos Session",
+          "example": "\"token\"",
+          "member": "string",
+          "name": "SessionToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos Bucket",
+          "example": "\"cos-bucket\"",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos Region",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos 操作路径",
+          "example": "\"file/test\"",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos 密钥的起始时间",
+          "example": "15000000",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos 密钥的失效时间",
+          "example": "15000000",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSessionRequest": {
       "document": "CreateSession请求参数结构体",
       "members": [
@@ -1437,6 +1936,69 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAndroidAppRequest": {
+      "document": "DeleteAndroidApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "apk-xxxx",
+          "member": "string",
+          "name": "AndroidAppId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAndroidAppResponse": {
+      "document": "DeleteAndroidApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAndroidAppVersionRequest": {
+      "document": "DeleteAndroidAppVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓应用 Id",
+          "example": "\"apk-a1b2c3\"",
+          "member": "string",
+          "name": "AndroidAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用版本",
+          "example": "\"ver-a1b2c3\"",
+          "member": "string",
+          "name": "AndroidAppVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAndroidAppVersionResponse": {
+      "document": "DeleteAndroidAppVersion返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1764,12 +2326,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID列表",
+          "document": "任务 ID 列表",
           "example": "[ \"615cf0a4-075e-4cf5-b26f-d786363daccd\" ]",
           "member": "string",
           "name": "TaskIds",
-          "required": true,
+          "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "条件过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制量，默认为20，最大值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1785,6 +2374,16 @@
           "name": "TaskStatusSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务总数量",
+          "example": "30",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2169,6 +2768,105 @@
       ],
       "usage": "both"
     },
+    "ModifyAndroidAppRequest": {
+      "document": "ModifyAndroidApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓应用 Id",
+          "example": "\"apk-a1b2c3\"",
+          "member": "string",
+          "name": "AndroidAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用名称",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 Id",
+          "example": "\"user1\"",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidAppResponse": {
+      "document": "ModifyAndroidApp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidAppVersionRequest": {
+      "document": "ModifyAndroidAppVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓应用 Id",
+          "example": "\"apk-a1b2c3\"",
+          "member": "string",
+          "name": "AndroidAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用版本 Id",
+          "example": "\"ver-a1b2c3\"",
+          "member": "string",
+          "name": "AndroidAppVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用版本名称",
+          "example": "\"a1b2c3\"",
+          "member": "string",
+          "name": "AndroidAppVersionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "example": "\"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\"",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidAppVersionResponse": {
+      "document": "ModifyAndroidAppVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAndroidInstanceInformationRequest": {
       "document": "ModifyAndroidInstanceInformation请求参数结构体",
       "members": [
@@ -2219,8 +2917,8 @@
         },
         {
           "disabled": false,
-          "document": "分辨率宽度。建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）、双开（A2）、三开（ A3）：建议设置为 1080\n实例类型为 四开（A4） 及以上：建议设置为 720",
-          "example": "1080",
+          "document": "分辨率宽度。建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）：建议设置为 1080\n实例类型为双开（A2） 及以上：建议设置为 720",
+          "example": "720",
           "member": "uint64",
           "name": "Width",
           "required": true,
@@ -2228,8 +2926,8 @@
         },
         {
           "disabled": false,
-          "document": "分辨率高度。建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）、双开（A2）、三开（ A3）：建议设置为 1920\n实例类型为 四开（A4） 及以上：建议设置为 1280",
-          "example": "1920",
+          "document": "分辨率高度。建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）：建议设置为 1920\n实例类型为双开（A2） 及以上：建议设置为 1280",
+          "example": "1280",
           "member": "uint64",
           "name": "Height",
           "required": true,
@@ -2243,6 +2941,24 @@
           "name": "DPI",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题： 实例类型为单开（A1）：建议设置为 60 实例类型为双开（A2） 及以上：建议设置为 30",
+          "example": "30",
+          "member": "uint64",
+          "name": "FPS",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改分辨率类型。修改物理分辨率，需要重启才能生效。\nOVERRIDE：默认值，修改覆盖（显示）分辨率\nPHYSICAL：修改物理分辨率",
+          "example": "PHYSICAL",
+          "member": "string",
+          "name": "ResolutionType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2294,6 +3010,78 @@
     },
     "ModifyAndroidInstancesLabelsResponse": {
       "document": "ModifyAndroidInstancesLabels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidInstancesResolutionRequest": {
+      "document": "ModifyAndroidInstancesResolution请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表",
+          "example": "[ \"cai-abcd1234\" ]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分辨率宽度。建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）：建议设置为 1080\n实例类型为双开（A2） 及以上：建议设置为 720",
+          "example": "720",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分辨率高度。建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）：建议设置为 1920\n实例类型为双开（A2） 及以上：建议设置为 1280",
+          "example": "1280",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每英寸像素点。\n分辨率为 720x1280：建议配置为 320\n分辨率为  1080x1920：建议配置为 480",
+          "example": "320",
+          "member": "uint64",
+          "name": "DPI",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "帧率。ResolutionType 为 PHYSICAL 时才会修改帧率。另外建议按照以下数值设置，避免出现性能不足问题：\n实例类型为单开（A1）：建议设置为 60\n实例类型为双开（A2） 及以上：建议设置为 30",
+          "example": "30",
+          "member": "uint64",
+          "name": "FPS",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改分辨率类型。修改物理分辨率，需要重启才能生效。\nOVERRIDE：默认值，修改覆盖（显示）分辨率\nPHYSICAL：修改物理分辨率",
+          "example": "PHYSICAL",
+          "member": "string",
+          "name": "ResolutionType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidInstancesResolutionResponse": {
+      "document": "ModifyAndroidInstancesResolution返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2467,6 +3255,121 @@
         }
       ],
       "type": "object"
+    },
+    "RestoreAndroidInstanceFromStorageRequest": {
+      "document": "RestoreAndroidInstanceFromStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例ID",
+          "example": "cai-abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义备份对象Key",
+          "example": "testkey",
+          "member": "string",
+          "name": "ObjectKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储服务器类型，如 COS、S3。注意：使用 COS 和 S3 都将占用外网带宽。",
+          "example": "COS",
+          "member": "string",
+          "name": "StorageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "COS协议选项",
+          "example": "无",
+          "member": "COSOptions",
+          "name": "COSOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "S3存储协议选项",
+          "example": "无",
+          "member": "S3Options",
+          "name": "S3Options",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RestoreAndroidInstanceFromStorageResponse": {
+      "document": "RestoreAndroidInstanceFromStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务 ID",
+          "example": "taskid-abcd",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "S3Options": {
+      "document": "S3协议参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储节点",
+          "example": "https//123.com",
+          "member": "string",
+          "name": "EndPoint",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶",
+          "example": "bucket",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥 ID",
+          "example": "test-ak",
+          "member": "string",
+          "name": "AccessKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密钥 Key",
+          "example": "test-sk",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "SaveGameArchiveRequest": {
       "document": "SaveGameArchive请求参数结构体",

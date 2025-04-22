@@ -7,7 +7,7 @@ Input:
 ```
 tccli lke DescribeSegments --cli-unfold-argument  \
     --BotBizId 1771107658358063104 \
-    --SegBizId 1111 2222
+    --SegBizId 17711076583580631041 17711076583580631042
 ```
 
 Output: 

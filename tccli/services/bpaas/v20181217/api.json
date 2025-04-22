@@ -234,13 +234,13 @@
         },
         {
           "disabled": false,
-          "document": "申请人昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请人昵称",
           "example": "jack",
           "member": "string",
           "name": "ApplyUinNick",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -264,73 +264,73 @@
         },
         {
           "disabled": false,
-          "document": "申请参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请参数",
           "example": "[{\"Key\":\"name\",\"Value\":[\"jack\"],\"Name\":\"子用户\"}]",
           "member": "ApplyParam",
           "name": "ApplicationParams",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请原因",
           "example": "需求上线",
           "member": "string",
           "name": "Reason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请时间",
           "example": "2021-12-12 10:12:10",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请单状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "申请单状态",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"NodeId\":\"1\",\"NodeName\":\"管理员审批\",\"NodeType\":1,\"NextNode\":\"2\",\"Opinion\":{\"Type\":1,\"Content\":[\"1\"]},\"ScfName\":\"get-names\",\"SubStatus\":1,\"ApprovedUin\":[1],\"CreateTime\":\"2024-11-27 19:30:29\",\"Msg\":\"同意\",\"Users\":{\"Uin\":1,\"Type\":1,\"Desc\":\"开发用\",\"Nick\":\"jack\",\"Scf\":{\"ScfName\":\"get-approvers\",\"ScfRegion\":\"ap-guangdong\",\"ScfRegionName\":\"广东\",\"Params\":[{\"Key\":\"total\",\"Name\":\"总数\",\"Type\":1,\"Values\":[\"1\"]}]},\"ApproveStatus\":1,\"ApproveMsg\":\"同意\",\"ApproveTime\":\"2024-11-27 19:30:29\",\"ApproveGroup\":\"1\"},\"IsApprove\":true,\"ApproveId\":\"1\",\"ApproveMethod\":1,\"ApproveType\":1,\"CallMethod\":1,\"DataHubId\":\"data94\",\"TaskName\":\"data\",\"CKafkaRegion\":\"ap-guangzhou\",\"ExternalUrl\":\"\",\"ParallelNodes\":\"3-2\",\"RejectedCloudFunctionMsg\":\"\",\"PrevNode\":\"\"}]",
+          "document": "节点信息",
+          "example": "无",
           "member": "StatusNode",
           "name": "Nodes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "正在审批的节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正在审批的节点id",
           "example": "1",
           "member": "string",
           "name": "ApprovingNodeId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间，时间格式：2021-12-12 10:12:10\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间，时间格式：2021-12-12 10:12:10\t",
           "example": "2021-12-12 10:12:10",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -531,193 +531,193 @@
         },
         {
           "disabled": false,
-          "document": "审批意见模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批意见模型",
           "example": "{\"Type\":1,\"Content\":[\"1\"]}",
           "member": "ApproveOpinion",
           "name": "Opinion",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "scf函数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "scf函数名称",
           "example": "get-user",
           "member": "string",
           "name": "ScfName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中",
           "example": "0",
           "member": "uint64",
           "name": "SubStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批节点审批人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批节点审批人",
           "example": "[1]",
           "member": "uint64",
           "name": "ApprovedUin",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批时间",
           "example": "2021-09-06 10:11:11",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批意见信息 审批节点:审批人意见  执行节点:scf函数执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批意见信息 审批节点:审批人意见  执行节点:scf函数执行日志",
           "example": "success",
           "member": "string",
           "name": "Msg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "有权限审批该节点的uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Uin\":1,\"Type\":1,\"Desc\":\"普通用户\",\"Nick\":\"jack\",\"Scf\":{\"ScfName\":\"get-approvers\",\"ScfRegion\":\"ap-guangdong\",\"ScfRegionName\":\"广东\",\"Params\":[{\"Key\":\"total\",\"Name\":\"总数\",\"Type\":1,\"Values\":[\"1\"]}]},\"ApproveStatus\":1,\"ApproveMsg\":\"同意\",\"ApproveTime\":\"2024-11-27 19:30:29\",\"ApproveGroup\":\"1\"}",
+          "document": "有权限审批该节点的uin",
+          "example": "无",
           "member": "ApproveUser",
           "name": "Users",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否有权限审批该节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否有权限审批该节点",
           "example": "false",
           "member": "bool",
           "name": "IsApprove",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批id",
           "example": "101",
           "member": "string",
           "name": "ApproveId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批方式 0或签 1会签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批方式 0或签 1会签",
           "example": "1",
           "member": "uint64",
           "name": "ApproveMethod",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审批节点审批类型，1人工审批 2自动通过 3自动决绝 4外部审批scf\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审批节点审批类型，1人工审批 2自动通过 3自动决绝 4外部审批scf",
           "example": "1",
           "member": "uint64",
           "name": "ApproveType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外部审批类型 scf:0或null ; CKafka:1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部审批类型 scf:0或null ; CKafka:1",
           "example": "0",
           "member": "uint64",
           "name": "CallMethod",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CKafka - 接入资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CKafka - 接入资源ID",
           "example": "datahub-y9xxx",
           "member": "string",
           "name": "DataHubId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CKafka - 任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CKafka - 任务名称",
           "example": "TOPIC",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CKafka - 地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CKafka - 地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CKafkaRegion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外部审批Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外部审批Url",
           "example": "https://www.baidu.com/",
           "member": "string",
           "name": "ExternalUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "并行节点 3-4\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "并行节点 3-4",
           "example": "3-4",
           "member": "string",
           "name": "ParallelNodes",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "scf拒绝时返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "scf拒绝时返回信息",
           "example": "信息有误，重新申请",
           "member": "string",
           "name": "RejectedCloudFunctionMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上一个节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一个节点",
           "example": "0",
           "member": "string",
           "name": "PrevNode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

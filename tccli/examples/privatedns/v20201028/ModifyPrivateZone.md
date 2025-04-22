@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns ModifyPrivateZone --cli-unfold-argument  \
-    --ZoneId 1 \
+    --ZoneId zone-h91hca6u \
     --Remark 测试域名 \
     --DnsForwardStatus ENABLED \
     --CnameSpeedupStatus ENABLED

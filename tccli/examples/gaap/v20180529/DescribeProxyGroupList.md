@@ -7,48 +7,40 @@ Input:
 ```
 tccli gaap DescribeProxyGroupList --cli-unfold-argument  \
     --ProjectId 0 \
-    --Offset 0 \
-    --Limit 20
+    --Limit 20 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 2,
-        "RequestId": "8b6bb93c-0dce-4513-a274-1410f276307c",
+        "TotalCount": 0,
         "ProxyGroupList": [
             {
-                "Status": 0,
+                "GroupId": "lg-nq8hpbvb",
+                "Http3Supported": 1,
+                "FeatureBitmap": 7,
                 "Domain": null,
+                "GroupName": "勿删-通道组",
                 "ProjectId": 0,
-                "GroupName": "t4",
-                "TagSet": [],
                 "RealServerRegionInfo": {
-                    "RegionId": "EastChina",
-                    "RegionName": "EastChina",
+                    "RegionId": "Shanghai",
+                    "RegionName": "上海（原中国大陆-华东大区）",
                     "RegionArea": "EastChina",
                     "RegionAreaName": "EastChina",
-                    "IDCType": "ec"
+                    "IDCType": "dc",
+                    "FeatureBitmap": 207,
+                    "SupportFeature": null
                 },
-                "GroupId": "lg-mh4k07v5"
-            },
-            {
-                "Status": 0,
-                "Domain": null,
-                "ProjectId": 0,
-                "GroupName": "sandytest2",
+                "Status": "RUNNING",
                 "TagSet": [],
-                "RealServerRegionInfo": {
-                    "RegionId": "EastChina",
-                    "RegionName": "EastChina",
-                    "RegionArea": "EastChina",
-                    "RegionAreaName": "EastChina",
-                    "IDCType": "ec"
-                },
-                "GroupId": "lg-d5y6ei3b"
+                "Version": "3.0",
+                "CreateTime": 1742284135,
+                "ProxyType": 0
             }
-        ]
+        ],
+        "RequestId": "c027bc0f-f904-43e7-8c3f-b1a3cfea0325"
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli es DeleteLogstashPipelines --cli-unfold-argument  \
     --InstanceId ls-xxxxxxxx \
-    --PipelineIds test
+    --PipelineIds pip-xxx
 ```
 
 Output: 

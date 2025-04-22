@@ -21,6 +21,9 @@ Output:
             "VpcId": "vpc-2ln96dly",
             "DomainName": "TEST",
             "Ipv6CidrBlock": "2001::85b:3c51:f5ff:ffdb",
+            "Ipv6CidrBlockSet": [
+                {}
+            ],
             "EnableDhcp": true,
             "DnsServerSet": [
                 "183.60.82.98",

@@ -1774,7 +1774,7 @@
         },
         {
           "disabled": false,
-          "document": "主类入参",
+          "document": "主类入参，需要区分下Sql作业配置，Jar作业配置，Python作业配置，具体参考下面的示例值",
           "example": "--conf Key=Value",
           "member": "string",
           "name": "ProgramArgs",
@@ -1793,7 +1793,7 @@
         {
           "disabled": false,
           "document": "资源引用数组",
-          "example": "[]",
+          "example": "[         {             \"ResourceId\": \"resource-lbi8h92t\",             \"Type\": 1,             \"Version\": 1         }     ]",
           "member": "ResourceRef",
           "name": "ResourceRefs",
           "required": false,
@@ -1811,7 +1811,7 @@
         {
           "disabled": false,
           "document": "系统参数",
-          "example": "[]",
+          "example": "[         {             \"Key\": \"pipeline.max-parallelism\",             \"Value\": \"2048\"         }     ]",
           "member": "Property",
           "name": "Properties",
           "required": false,
@@ -1865,7 +1865,7 @@
         {
           "disabled": false,
           "document": "CLS日志集ID",
-          "example": "xx",
+          "example": "544002e3-299b-41d2-b18f-19194fb0660b",
           "member": "string",
           "name": "ClsLogsetId",
           "required": false,
@@ -1874,7 +1874,7 @@
         {
           "disabled": false,
           "document": "CLS日志主题ID",
-          "example": "xxx",
+          "example": "544002e3-299b-41d2-b18f-19194fb0660b",
           "member": "string",
           "name": "ClsTopicId",
           "required": false,
@@ -1928,7 +1928,7 @@
         {
           "disabled": false,
           "document": "类日志级别",
-          "example": "[]",
+          "example": "[    ]",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
           "required": false,
@@ -1946,7 +1946,7 @@
         {
           "disabled": false,
           "document": "专家模式的配置",
-          "example": "{}",
+          "example": "{    }",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
           "required": false,
@@ -1964,7 +1964,7 @@
         {
           "disabled": false,
           "document": "trace链路配置",
-          "example": "{}",
+          "example": "{    }",
           "member": "TraceModeConfiguration",
           "name": "TraceModeConfiguration",
           "required": false,
@@ -1982,7 +1982,7 @@
         {
           "disabled": false,
           "document": "算子拓扑图",
-          "example": "{}",
+          "example": "{         \"Nodes\": [          ],         \"Edges\": [          ]     }",
           "member": "JobGraph",
           "name": "JobGraph",
           "required": false,
@@ -2780,8 +2780,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤规则",
-          "example": "[]",
+          "document": "过滤规则\n    \n- Name\n    按照集群的名字进行模糊查询。例如：测试\n    类型： String\n    必选： 否\n    ",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2815,7 +2815,7 @@
         {
           "disabled": false,
           "document": "集群列表",
-          "example": "[]",
+          "example": "无",
           "member": "Cluster",
           "name": "ClusterSet",
           "output_required": true,

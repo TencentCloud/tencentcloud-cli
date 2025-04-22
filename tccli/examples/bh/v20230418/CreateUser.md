@@ -10,7 +10,7 @@ tccli bh CreateUser --cli-unfold-argument  \
     --ValidateTo 2020-09-22T00:00:00+00:00 \
     --RealName 张三 \
     --GroupIdSet 1 1 1 \
-    --Phone 138***** \
+    --Phone 86|138***** \
     --ValidateFrom 2020-09-22T00:00:00+00:00 \
     --Email 167****@qq.com \
     --AuthType 1

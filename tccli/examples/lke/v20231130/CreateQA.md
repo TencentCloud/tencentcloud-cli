@@ -8,7 +8,7 @@ Input:
 tccli lke CreateQA --cli-unfold-argument  \
     --BotBizId 1727231073371148288 \
     --Question q \
-    --Answer a \
+    --Answer 答案 \
     --AttrRange 1
 ```
 

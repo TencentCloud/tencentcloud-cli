@@ -1930,7 +1930,7 @@
         },
         {
           "disabled": false,
-          "document": "仓库名称",
+          "document": "仓库名称，需满足以下规则：\n1. 长度需 ​大于2且小于245个字符 \n2. 仅允许小写字母、数字及符号 . _ -",
           "example": "nginx",
           "member": "string",
           "name": "RepositoryName",
@@ -4315,7 +4315,7 @@
         {
           "disabled": false,
           "document": "每页个数",
-          "example": "20",
+          "example": "5",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5584,7 +5584,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Page",
+          "document": "页数，第几页，用于分页",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -5593,8 +5593,8 @@
         },
         {
           "disabled": false,
-          "document": "分页PageSize",
-          "example": "1",
+          "document": "每页个数，用于分页，最大值为100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,

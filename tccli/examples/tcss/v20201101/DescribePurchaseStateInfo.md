@@ -31,7 +31,8 @@ Output:
         "RequestId": "e40cad09-f295-42a8-914d-ea84767fb6f1",
         "State": 3,
         "SubState": "NORMAL",
-        "UndefendCoresCnt": 86
+        "UndefendCoresCnt": 86,
+        "TrialCoresCnt": 0
     }
 }
 ```

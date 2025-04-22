@@ -7,7 +7,7 @@ Input:
 ```
 tccli gwlb CreateTargetGroup --cli-unfold-argument  \
     --VpcId vpc-i1cnjuhx \
-    --Port 80 \
+    --Port 6081 \
     --TargetGroupName czhtest
 ```
 

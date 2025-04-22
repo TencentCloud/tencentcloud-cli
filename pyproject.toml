@@ -7,7 +7,7 @@ exclude = ["tccli/examples"]
 
 [project]
 name = "tccli"
-version = "3.0.1300.1"
+version = "3.0.1301.1"
 authors = [
   { name="tencentcloudapi", email="tencentcloudapi@tencent.com" },
 ]
@@ -24,7 +24,7 @@ classifiers = [
 dependencies = [
     "jmespath==0.10.0",
     "six==1.16.0",
-    "tencentcloud-sdk-python>=3.0.1300",
+    "tencentcloud-sdk-python>=3.0.1301",
 ]
 
 [project.urls]

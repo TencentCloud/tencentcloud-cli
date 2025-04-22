@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dlc UpdateUserDataEngineConfig --cli-unfold-argument  \
-    --DataEngineId abc \
-    --DataEngineConfigPairs.0.ConfigItem abc \
-    --DataEngineConfigPairs.0.ConfigValue abc \
-    --SessionResourceTemplate.DriverSize abc \
-    --SessionResourceTemplate.ExecutorSize abc \
+    --DataEngineId DataEngine-xxxx \
+    --DataEngineConfigPairs.0.ConfigItem eos.sql.processType \
+    --DataEngineConfigPairs.0.ConfigValue DIRECT \
+    --SessionResourceTemplate.DriverSize small \
+    --SessionResourceTemplate.ExecutorSize small \
     --SessionResourceTemplate.ExecutorNums 1 \
     --SessionResourceTemplate.ExecutorMaxNumbers 1
 ```
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "asdfwdsf"
+        "RequestId": "32157dff-hhd6-4d9e-ba9e"
     }
 }
 ```

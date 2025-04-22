@@ -1,28 +1,28 @@
 {
   "actions": {
     "AssociateTargetGroups": {
-      "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "AssociateTargetGroupsRequest",
       "name": "负载均衡关联目标组",
       "output": "AssociateTargetGroupsResponse",
       "status": "online"
     },
     "CreateGatewayLoadBalancer": {
-      "document": "本接口(CreateGatewayLoadBalancer)用来创建网关负载均衡实例。为了使用网关负载均衡服务，您必须购买一个或多个网关负载均衡实例。成功调用该接口后，会返回网关负载均衡实例的唯一 ID。\n注意：单个账号在每个地域的默认购买配额为：10个。\n本接口为异步接口，接口成功返回后，可使用 DescribeGatewayLoadBalancers 接口查询负载均衡实例的状态（如创建中、正常），以确定是否创建成功。",
+      "document": "本接口(CreateGatewayLoadBalancer)用来创建网关负载均衡实例。为了使用网关负载均衡服务，您必须购买一个或多个网关负载均衡实例。成功调用该接口后，会返回网关负载均衡实例的唯一 ID。\n注意：单个账号在每个地域的默认购买配额为：10个。\n本接口为异步接口，接口成功返回后，可使用 [DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700) 接口查询负载均衡实例的状态。",
       "input": "CreateGatewayLoadBalancerRequest",
       "name": "购买网关负载均衡实例",
       "output": "CreateGatewayLoadBalancerResponse",
       "status": "online"
     },
     "CreateTargetGroup": {
-      "document": "创建目标组。该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。",
+      "document": "创建目标组。",
       "input": "CreateTargetGroupRequest",
       "name": "创建目标组",
       "output": "CreateTargetGroupResponse",
       "status": "online"
     },
     "DeleteGatewayLoadBalancer": {
-      "document": "DeleteGatewayLoadBalancer 接口用以删除指定的一个或多个网关负载均衡实例。成功删除后，会把网关负载均衡实例与后端服务解绑。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "DeleteGatewayLoadBalancer 接口用以删除指定的一个或多个网关负载均衡实例。成功删除后，会把网关负载均衡实例与后端服务解绑。\n本接口为异步接口，接口返回成功后，需以返回的 RequestId 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700) 接口查询本次任务是否成功。",
       "input": "DeleteGatewayLoadBalancerRequest",
       "name": "删除网关负载均衡实例",
       "output": "DeleteGatewayLoadBalancerResponse",
@@ -36,7 +36,7 @@
       "status": "online"
     },
     "DeregisterTargetGroupInstances": {
-      "document": "从目标组中解绑服务器。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "从目标组中解绑服务器。",
       "input": "DeregisterTargetGroupInstancesRequest",
       "name": "解绑目标组中的实例",
       "output": "DeregisterTargetGroupInstancesResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DisassociateTargetGroups": {
-      "document": "解除负载均衡和目标组的关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "解除负载均衡和目标组的关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "DisassociateTargetGroupsRequest",
       "name": "解除负载均衡和目标组的关联关系",
       "output": "DisassociateTargetGroupsResponse",
@@ -113,14 +113,14 @@
       "status": "online"
     },
     "ModifyTargetGroupInstancesWeight": {
-      "document": "修改目标组的服务器权重。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "修改目标组的服务器权重。",
       "input": "ModifyTargetGroupInstancesWeightRequest",
       "name": "修改目标组的服务器权重",
       "output": "ModifyTargetGroupInstancesWeightResponse",
       "status": "online"
     },
     "RegisterTargetGroupInstances": {
-      "document": "注册服务器到目标组。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "注册服务器到目标组。",
       "input": "RegisterTargetGroupInstancesRequest",
       "name": "目标组中添加实例",
       "output": "RegisterTargetGroupInstancesResponse",
@@ -201,7 +201,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡后端目标设备所属的私有网络的子网ID。",
+          "document": "网关负载均衡后端目标设备所属的私有网络的子网ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。",
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
@@ -237,7 +237,7 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡实例计费类型，当前只支持传POSTPAID_BY_HOUR，默认是POSTPAID_BY_HOUR。",
+          "document": "网关负载均衡实例计费类型，当前只支持传POSTPAID_BY_HOUR（按量计费），默认是POSTPAID_BY_HOUR。",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "LBChargeType",
@@ -252,7 +252,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过DescribeTaskStatus接口查询创建的资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过[DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700)接口查询创建的资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"gwlb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -293,7 +293,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组的vpcid属性，不填则使用默认vpc",
+          "document": "网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。",
           "example": "vpc-i1******",
           "member": "string",
           "name": "VpcId",
@@ -353,6 +353,15 @@
           "name": "AllDeadToAlive",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标签。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -384,8 +393,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要删除的网关负载均衡实例 ID数组，数组大小最大支持20。",
-          "example": "[\"gwlb-hs******\\r\\n\"]",
+          "document": "要删除的网关负载均衡实例 ID数组，数组大小最大支持20。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683)  接口获取。",
+          "example": "[\"gwlb-hs******\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -411,7 +420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID列表。",
+          "document": "目标组ID列表。 可以通过接口[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。",
           "example": "[\"lbtg-f1phe5j6\"]",
           "member": "string",
           "name": "TargetGroupIds",
@@ -438,7 +447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID。",
+          "document": "目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。",
           "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
@@ -557,8 +566,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组唯一id",
-          "example": "lbtg-xxx",
+          "document": "目标组唯一id。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。",
+          "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
@@ -603,7 +612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。\n\n- TargetGroupId - String - 是否必填：否 - （过滤条件）目标组ID，如“lbtg-5xunivs0”。\n- BindIP - String - 是否必填：否 - （过滤条件）目标组绑定实例的内网IP地址，如“10.1.1.1”\n- InstanceId - String - 是否必填：否 - （过滤条件）目标组绑定实例的名称，如“ins-mxzlf9ke”",
+          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。\n\n- TargetGroupId - String - 是否必填：否 - （过滤条件）目标组ID，如“lbtg-5xunivs0”。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。\n- BindIP - String - 是否必填：否 - （过滤条件）目标组绑定实例的内网IP地址，如“10.1.1.1”。\n- InstanceId - String - 是否必填：否 - （过滤条件）目标组绑定实例的名称，如“ins-mxzlf9ke”。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728) 接口获取。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -612,7 +621,7 @@
         },
         {
           "disabled": false,
-          "document": "显示数量限制，默认20。",
+          "document": "显示数量限制，默认20，最大1000。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -687,7 +696,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件数组。\n\n- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。\n- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”",
+          "document": "过滤条件数组。\n\n- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。\n- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -696,7 +705,7 @@
         },
         {
           "disabled": false,
-          "document": "显示的偏移起始量。",
+          "document": "显示的偏移起始量，默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -705,7 +714,7 @@
         },
         {
           "disabled": false,
-          "document": "显示条数限制，默认为20。",
+          "document": "显示条数限制，默认为20，最大值为1000。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -752,7 +761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID，与Filters互斥。",
+          "document": "目标组ID。",
           "example": "[\"lbtg-5xunivs0\\r\\n\"]",
           "member": "string",
           "name": "TargetGroupIds",
@@ -761,7 +770,7 @@
         },
         {
           "disabled": false,
-          "document": "显示条数限制，默认为20。",
+          "document": "显示条数限制，默认为20，最大值为1000。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -770,7 +779,7 @@
         },
         {
           "disabled": false,
-          "document": "显示的偏移起始量。",
+          "document": "显示的偏移起始量，默认为0。",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -779,7 +788,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件数组。\n\n- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，如“vpc-bhqk****”。\n- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”",
+          "document": "过滤条件数组。\n- TargetGroupVpcId - String - 是否必填：否 - （过滤条件）按照目标组所属的私有网络过滤，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)获取，如“vpc-bhqk****”。\n- TargetGroupName - String - 是否必填：否 - （过滤条件）按照目标组的名称过滤，如“tg_name”",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1183,7 +1192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关负载均衡的唯一ID。",
+          "document": "网关负载均衡的唯一ID。可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/api/1782/111683) 接口获取。",
           "example": "gwlb-xxx",
           "member": "string",
           "name": "LoadBalancerId",
@@ -1228,7 +1237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组的ID。",
+          "document": "目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。",
           "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
@@ -1282,7 +1291,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID。",
+          "document": "目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。",
           "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
@@ -1344,7 +1353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标组ID",
+          "document": "目标组ID。可通过[DescribeTargetGroupList](https://cloud.tencent.com/document/api/1782/111692)接口获取。",
           "example": "lbtg-815iz538",
           "member": "string",
           "name": "TargetGroupId",
@@ -1408,7 +1417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关负载均衡实例ID。",
+          "document": "网关负载均衡实例ID，可以通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)获取网关负载均衡ID。",
           "example": "gwlb-20dhh498",
           "member": "string",
           "name": "LoadBalancerId",
@@ -1417,7 +1426,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组ID。",
+          "document": "目标组ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取目标组ID。",
           "example": "lbtg-0nzo3czo",
           "member": "string",
           "name": "TargetGroupId",
@@ -1463,7 +1472,7 @@
         {
           "disabled": false,
           "document": "后端服务的监听端口",
-          "example": "80",
+          "example": "6081",
           "member": "uint64",
           "name": "Port",
           "output_required": true,
@@ -1553,7 +1562,7 @@
           "member": "bool",
           "name": "HealthSwitch",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1603,7 +1612,7 @@
         },
         {
           "disabled": false,
-          "document": "检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。",
+          "document": "检测健康阈值。 默认为3次。 可配置范围：2 - 10次。",
           "example": "3",
           "member": "int64",
           "name": "HealthNum",
@@ -1614,7 +1623,7 @@
         },
         {
           "disabled": false,
-          "document": "检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。",
+          "document": "检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。",
           "example": "3",
           "member": "int64",
           "name": "UnHealthNum",
@@ -1758,6 +1767,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组的标签。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tag",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateAuditLogFile": {
-      "document": "本接口(CreateAuditLogFile)用于创建云数据库实例的审计日志文件。",
+      "document": "本接口（CreateAuditLogFile）用于创建云数据库实例的审计日志文件。",
       "input": "CreateAuditLogFileRequest",
       "name": "创建审计日志文件",
       "output": "CreateAuditLogFileResponse",
@@ -1107,9 +1107,9 @@
       "status": "online"
     },
     "StartCpuExpand": {
-      "document": "通过该API，可以开启CPU弹性扩容，包括一次性的手动扩容以及自动弹性扩容。",
+      "document": "通过该 API，可以开启 CPU 弹性扩容，包括一次性的手动扩容以及自动弹性扩容。",
       "input": "StartCpuExpandRequest",
-      "name": "开启CPU弹性扩容",
+      "name": "开启 CPU 弹性扩容",
       "output": "StartCpuExpandResponse",
       "status": "online"
     },
@@ -4810,7 +4810,7 @@
         {
           "disabled": false,
           "document": "已废弃。",
-          "example": "无",
+          "example": "{\"SqlTypes\": [\"CREATE\"]}",
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
@@ -4819,9 +4819,18 @@
         {
           "disabled": false,
           "document": "过滤条件。可按设置的过滤条件过滤日志。",
-          "example": "无",
+          "example": "{\"SqlTypes\": [\"SELECT\"]}",
           "member": "InstanceAuditLogFilters",
           "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "下载筛选列",
+          "example": "{\"ColumnFilter\": [\"AffectRows\", \"TableName\",\"DBName\", \"Sql\"]}",
+          "member": "string",
+          "name": "ColumnFilter",
           "required": false,
           "type": "list"
         }
@@ -4834,7 +4843,7 @@
         {
           "disabled": false,
           "document": "审计日志文件名称。",
-          "example": "*****.csv",
+          "example": "shenji.csv",
           "member": "string",
           "name": "FileName",
           "output_required": true,
@@ -16830,8 +16839,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例短 ID 列表。",
-          "example": "[\"cdb-93hvfe1d\"   ]",
+          "document": "要修改密码复杂度的实例 ID。\n说明：支持输入多个实例 ID 进行修改。",
+          "example": "[\"cdb-93hvfe1d\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -16839,7 +16848,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的参数列表。每一个元素是Name和CurrentValue的组合。Name是参数名，CurrentValue是要修改成的值。8.0版本Name支持范围：[\"validate_password.policy\",\"validate_password.length\",\"validate_password.mixed_case_count\",\"validate_password.number_count\",\"validate_password.special_char_count\"],5.6和5.7版本支持范围：[\"validate_password_policy\",\"validate_password_length\",\"validate_password_mixed_case_count\",\"validate_password_number_count\",\"validate_password_special_char_count\"]",
+          "document": "要修改的密码复杂度的选项。每一个选项是以组合形式写入的，一个组合包括 Name 和 CurrentValue，其中 Name 表示对应选项的参数名，CurrentValue 表示参数值。例如：[{\"Name\": \"validate_password.length\", \"CurrentValue\": \"10\"}]，表示将密码的最小字符数修改为10。\n说明：不同数据库版本的实例，支持修改的密码复杂度的选项如下。\n1. MySQL 8.0：\n选项 validate_password.policy，表示密码复杂度的开关，值为 LOW 时表示关闭；值为 MEDIUM 时表示开启。温馨提示：如需修改具体的密码策略，此选项的值需为 MEDIUM。\n选项 validate_password.length，表示密码总长度的最小字符数。\n选项 validate_password.mixed_case_count，表示小写和大写字母的最小字符数。\n选项 validate_password.number_count，表示数字的最小字符数。\n选项 validate_password.special_char_count，表示特殊字符的最小字符数。\n2. MySQL 5.6、MySQL 5.7：\n选项 validate_password_policy，表示密码复杂度的开关，值为 LOW 时表示关闭；值为 MEDIUM 时表示开启。温馨提示：如需修改具体的密码策略，此选项的值需为 MEDIUM。\n选项 validate_password_length，表示密码总长度的最小字符数。\n选项 validate_password_mixed_case_count，表示小写和大写字母的最小字符数。\n选项 validate_password_number_count，表示数字的最小字符数。\n选项 validate_password_special_char_count，表示特殊字符的最小字符数。",
           "example": "[{\"Name\": \"validate_password.length\",\"CurrentValue\": \"10\"}]",
           "member": "Parameter",
           "name": "ParamList",
@@ -20443,7 +20452,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -20451,7 +20460,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容类型。可选值：auto：代表进行自动扩容\nmanual：代表进行手动扩容",
+          "document": "扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期",
           "example": "auto",
           "member": "string",
           "name": "Type",
@@ -20460,7 +20469,7 @@
         },
         {
           "disabled": false,
-          "document": "手动扩容时，扩容的CPU核心数。Type 为 manual 时必传。",
+          "document": "手动扩容时，扩容的 CPU 核心数。\n说明：1. Type 为 manual 时必传。2. 扩容的 CPU 核心数上限为当前实例 CPU 核心数，比如8核16G最大可手动扩容的 CPU 核心数为8，即范围为1 - 8。",
           "example": "4",
           "member": "int64",
           "name": "ExpandCpu",
@@ -20470,7 +20479,7 @@
         {
           "disabled": false,
           "document": "自动扩容策略。Type 为 auto 时必传。",
-          "example": "无",
+          "example": "[{\"ExpandThreshold\": \"70\",\"ShrinkThreshold\": \"\t10\",\"ExpandPeriod\": \"1\",\"ShrinkPeriod\": \"5\"}]",
           "member": "AutoStrategy",
           "name": "AutoStrategy",
           "required": false,
@@ -20485,7 +20494,7 @@
         {
           "disabled": false,
           "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
-          "example": "xxxxxxx-xxxxxxxx",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,

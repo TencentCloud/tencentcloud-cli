@@ -274,8 +274,8 @@
     ],
     "DismissRoom": [
       {
-        "document": "解散房间1234。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1234\n&<公共请求参数>",
+        "document": "解散房间1001。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoom\n&SdkAppId=1400000001\n&RoomId=1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "解散房间"
       }
@@ -306,8 +306,8 @@
     ],
     "RemoveUser": [
       {
-        "document": "将用户test1、test2从房间1234移出。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1234\n&UserIds.0=test1\n&UserIds.1=test2\n&<公共请求参数>",
+        "document": "将用户user_1、user_2从房间1001移出。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=RemoveUser\n&SdkAppId=1400000001\n&RoomId=1001\n&UserIds.0=user_1\n&UserIds.1=user_2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "移出用户"
       }
@@ -331,8 +331,8 @@
     "StartAITranscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAITranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"1234\",\n    \"RoomIdType\": 1,\n    \"TranscriptionParams\": {\n        \"UserId\": \"abc\",\n        \"UserSig\": \"abc\",\n        \"IMAdminUserId\": \"abc\",\n        \"IMAdminUserSig\": \"abc\",\n        \"MaxIdleTime\": 60,\n        \"TranscriptionMode\": 1,\n        \"TargetUserId\": \"abc\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAITranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234,\n    \"RoomId\": \"500123\",\n    \"RoomIdType\": 1,\n    \"TranscriptionParams\": {\n        \"UserId\": \"test_user\",\n        \"UserSig\": \"your-usersig\",\n        \"MaxIdleTime\": 60,\n        \"TranscriptionMode\": 1,\n        \"TargetUserId\": \"test_user\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"taskid\",\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "样例"
       }
     ],
@@ -432,8 +432,8 @@
     ],
     "StopMCUMixTranscodeByStrRoomId": [
       {
-        "document": "结束字符串房间号为Room_3560的云端混流。",
-        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscodeByStrRoomId\n&SdkAppId=1400188366\n&StrRoomId=Room_3560\n&<公共请求参数>",
+        "document": "结束字符串房间号为room_1001的云端混流。",
+        "input": "https://trtc.tencentcloudapi.com/?Action=StopMCUMixTranscodeByStrRoomId\n&SdkAppId=1400000001\n&StrRoomId=room_1001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "结束云端混流"
       }

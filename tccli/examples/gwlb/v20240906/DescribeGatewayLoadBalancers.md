@@ -38,3 +38,50 @@ Output:
 }
 ```
 
+**Example 2: 指定标签查询网关负载均衡**
+
+指定标签查询网关负载均衡
+
+Input: 
+
+```
+tccli gwlb DescribeGatewayLoadBalancers --cli-unfold-argument  \
+    --Filters.0.Name tag:标签键 \
+    --Filters.0.Values tag-value
+```
+
+Output: 
+```
+{
+    "Response": {
+        "LoadBalancerSet": [
+            {
+                "ChargeType": "POSTPAID_BY_HOUR",
+                "CreateTime": "2025-03-15 18:17:37",
+                "DeleteProtect": false,
+                "IsolatedTime": "",
+                "Isolation": 0,
+                "LoadBalancerId": "gwlb-jucncd66",
+                "LoadBalancerName": "gwlb-jucncd66",
+                "OperateProtect": true,
+                "Status": 1,
+                "SubnetId": "subnet-8yvowms4",
+                "Tags": [
+                    {
+                        "TagKey": "标签键",
+                        "TagValue": "tag-value"
+                    }
+                ],
+                "TargetGroupId": "",
+                "Vips": [
+                    "192.168.192.3"
+                ],
+                "VpcId": "vpc-ga4sg745"
+            }
+        ],
+        "RequestId": "cfb0e685-2eb7-40c6-9871-91a5a05e946e",
+        "TotalCount": 1
+    }
+}
+```
+

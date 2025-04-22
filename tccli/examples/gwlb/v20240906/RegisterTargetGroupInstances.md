@@ -8,8 +8,8 @@ Input:
 tccli gwlb RegisterTargetGroupInstances --cli-unfold-argument  \
     --TargetGroupId lbtg-815iz538 \
     --TargetGroupInstances.0.BindIP 172.16.0.34 \
-    --TargetGroupInstances.0.Port 443 \
-    --TargetGroupInstances.0.Weight 10
+    --TargetGroupInstances.0.Port 6081 \
+    --TargetGroupInstances.0.Weight 16
 ```
 
 Output: 

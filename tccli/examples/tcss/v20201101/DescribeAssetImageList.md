@@ -18,6 +18,7 @@ Output:
                 "CreateTime": "2021-01-29T04:03:18Z",
                 "Size": 16159906,
                 "HostCnt": 12,
+                "SuperNodeCnt": 1,
                 "ContainerCnt": 0,
                 "ScanTime": "2021-01-29T06:10:12.021Z",
                 "VulCnt": 5,

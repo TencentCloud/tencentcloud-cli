@@ -343,6 +343,13 @@
       "output": "DescribeCloudStorageUsersResponse",
       "status": "online"
     },
+    "DescribeCsReportCountDataInfo": {
+      "document": "获取云存上报统计信息",
+      "input": "DescribeCsReportCountDataInfoRequest",
+      "name": "获取云存上报统计信息",
+      "output": "DescribeCsReportCountDataInfoResponse",
+      "status": "online"
+    },
     "DescribeDataForwardList": {
       "document": "获取数据转发列表",
       "input": "DescribeDataForwardListRequest",
@@ -2050,6 +2057,72 @@
         }
       ],
       "type": "object"
+    },
+    "CountDataInfo": {
+      "document": "云存上报统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频上报异常次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "VideoExceptionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频上报成功次数",
+          "example": "99",
+          "member": "uint64",
+          "name": "VideoSuccessNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频上报成功率\n",
+          "example": "99.00%",
+          "member": "string",
+          "name": "VideoSuccessRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件上报异常次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "EventExceptionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件上报成功次数",
+          "example": "99",
+          "member": "uint64",
+          "name": "EventSuccessNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件上报成功率",
+          "example": "99.00%",
+          "member": "string",
+          "name": "EventSuccessRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAIDetectionRequest": {
       "document": "CreateAIDetection请求参数结构体",
@@ -4888,6 +4961,79 @@
           "name": "Users",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCsReportCountDataInfoRequest": {
+      "document": "DescribeCsReportCountDataInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品id",
+          "example": "PTROMP3AOB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名",
+          "example": "dfsdfsd",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计开始时间戳",
+          "example": "1743587952",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统计结束时间戳",
+          "example": "1743587952",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备通道",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCsReportCountDataInfoResponse": {
+      "document": "DescribeCsReportCountDataInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存上报统计信息",
+          "example": "无",
+          "member": "CountDataInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

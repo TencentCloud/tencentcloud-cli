@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli dlc DescribeEngineUsageInfo --cli-unfold-argument  \
-    --DataEngineId abc
+    --DataEngineId DataEngine-r0xxxkls
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 0,
-        "Used": 0,
-        "Available": 0,
-        "RequestId": "abc"
+        "Available": 64,
+        "RequestId": "6068a77d-5538-4e1d-a93f-cf5800c98e1b",
+        "Total": 64,
+        "Used": 0
     }
 }
 ```

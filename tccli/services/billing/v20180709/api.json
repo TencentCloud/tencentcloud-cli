@@ -259,13 +259,6 @@
       "output": "DescribeGatherResourceResponse",
       "status": "online"
     },
-    "DescribeSavingPlanCoverage": {
-      "document": "当前接口已迁移至svp产品\n\n查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。",
-      "input": "DescribeSavingPlanCoverageRequest",
-      "name": "查询节省计划覆盖率数据",
-      "output": "DescribeSavingPlanCoverageResponse",
-      "status": "deprecated"
-    },
     "DescribeSavingPlanResourceInfo": {
       "document": "查询节省计划详情",
       "input": "DescribeSavingPlanResourceInfoRequest",
@@ -10554,7 +10547,7 @@
         {
           "disabled": false,
           "document": "资源汇总列表",
-          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\",\"PayModeName\":\"按量计费\",\"ProjectName\":\"默认项目\",\"RegionName\":\"华东地区（上海）\",\"RegionId\":4,\"ZoneName\":\"上海一区\",\"ResourceId\":\"sta-19039\",\"ResourceName\":\"sta-3\",\"ActionTypeName\":\"按量计费日结\",\"OrderId\":\"12321-abdef-342132-aac23\",\"PayTime\":\"0000-00-00 00:00:00\",\"FeeBeginTime\":\"2024-11-01 00:00:00\",\"FeeEndTime\":\"2024-11-13 23:59:59\",\"BillMonth\":\"2024-11-01 00:00:00\",\"ConfigDesc\":\"COS 标准存储存储容量: 0.39 GB\",\"ExtendField1\":\"ef 1\",\"ExtendField2\":\"ef 2\",\"ExtendField3\":\"ef 3\",\"ExtendField4\":\"ef 4\",\"ExtendField5\":\"ef 5\",\"TotalCost\":\"0.00007068\",\"Discount\":\"0.232072\",\"ReduceType\":\"折扣\",\"RealTotalCost\":\"0.00124116\",\"VoucherPayAmount\":\"0.00000000\",\"CashPayAmount\":\"0.00000000\",\"IncentivePayAmount\":\"0.00114116\",\"TransferPayAmount\":\"0.00000000\",\"InstanceType\":\"it\",\"OriginalCostWithRI\":\"0.00000000\",\"SPDeduction\":\"0.00000000\",\"OriginalCostWithSP\":\"0.00000000\",\"Tags\":[]}]",
+          "example": "[{\"PayerUin\":\"909619400\",\"OwnerUin\":\"909619400\",\"OperateUin\":\"909619400\",\"BusinessCodeName\":\"COS 对象存储\",\"ProductCodeName\":\"COS 标准存储\",\"BusinessCode\":\"p_cos\",\"ProductCode\":\"sp_cos_std\"}]",
           "member": "BillDistributionResourceSummary",
           "name": "ResourceSummarySet",
           "output_required": true,
@@ -11147,7 +11140,7 @@
         {
           "disabled": false,
           "document": "账单多维度汇总消费详情",
-          "example": "{\"GroupKey\":\"p_cvm\",\"GroupValue\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"RealTotalCost\":\"4.00000000\",\"CashPayAmount\":\"1.00000000\",\"IncentivePayAmount\":\"1.00000000\",\"VoucherPayAmount\":\"1.00000000\",\"TransferPayAmount\":\"1.00000000\",\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"RealTotalCost\":\"4.00000000\",\"CashPayAmount\":\"1.00000000\",\"IncentivePayAmount\":\"1.00000000\",\"VoucherPayAmount\":\"1.00000000\",\"TransferPayAmount\":\"1.00000000\"}]}",
+          "example": "{\"GroupKey\":\"p_cvm\",\"GroupValue\":\"云服务器\",\"TotalCost\":\"4.00000000\",\"Business\":[{\"BusinessCode\":\"p_cvm\",\"BusinessCodeName\":\"云服务器\",\"TotalCost\":\"4.00000000\"}]}",
           "member": "SummaryDetail",
           "name": "SummaryDetail",
           "output_required": true,
@@ -11712,7 +11705,7 @@
         {
           "disabled": false,
           "document": "消耗按业务汇总详情",
-          "example": "[{\"ProjectId\":\"0\",\"ProjectName\":\"项目名称\",\"Trend\":{},\"Business\":[{\"BusinessCode\":\"p_clb\",\"BusinessCodeName\":\"负载均衡CLB\",\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\",\"RegionName\":\"其他\",\"Trend\":{\"Type\":\"upward\",\"Value\":\"1.72\"}}],\"RealTotalCost\":\"4.20000000\",\"CashPayAmount\":\"4.20000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"AmountBeforeTax\":\"0.00000000\",\"Tax\":\"0.00\"}]",
+          "example": "空",
           "member": "ConsumptionProjectSummaryDataItem",
           "name": "Data",
           "output_required": true,
@@ -12764,99 +12757,6 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSavingPlanCoverageRequest": {
-      "document": "DescribeSavingPlanCoverage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "费用起始日期，格式yyyy-MM-dd",
-          "example": "2023-06-01",
-          "member": "string",
-          "name": "StartDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "费用结束日期，格式yyyy-MM-dd",
-          "example": "2023-06-30",
-          "member": "string",
-          "name": "EndDate",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "数量，最大值为200",
-          "example": "200",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "取值包括1（缺省值）和2，1表示按天统计覆盖率，2表示按月统计覆盖率，此参数仅影响返回的RateSet聚合粒度，不影响返回的DetailSet",
-          "example": "1",
-          "member": "uint64",
-          "name": "PeriodType",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeSavingPlanCoverageResponse": {
-      "document": "DescribeSavingPlanCoverage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "节省计划覆盖率明细数据",
-          "example": "无",
-          "member": "SavingPlanCoverageDetail",
-          "name": "DetailSet",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "节省计划覆盖率聚合数据",
-          "example": "无",
-          "member": "SavingPlanCoverageRate",
-          "name": "RateSet",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "查询命中的节省计划覆盖率明细数据总条数",
-          "example": "1000",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14594,208 +14494,6 @@
           "name": "TotalCost",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SavingPlanCoverageDetail": {
-      "document": "节省计划覆盖率数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID",
-          "example": "disk-3t7fhog0",
-          "member": "string",
-          "name": "ResourceId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "uint64",
-          "name": "RegionId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "p_cynosdb",
-          "member": "string",
-          "name": "ProductCode",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sp_cynosdb_mysql",
-          "member": "string",
-          "name": "SubProductCode",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "费用起始日期，格式yyyy-MM-dd",
-          "example": "2023-06-01",
-          "member": "string",
-          "name": "StartDate",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "费用结束日期，格式yyyy-MM-dd，目前与StartDate相等",
-          "example": "2023-06-01",
-          "member": "string",
-          "name": "EndDate",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "节省计划覆盖金额（即节省计划支付金额）",
-          "example": "1.0",
-          "member": "float",
-          "name": "SpCoveredAmount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "节省计划未覆盖金额（即优惠后总价）",
-          "example": "2.0",
-          "member": "float",
-          "name": "SpUncoveredAmount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）",
-          "example": "3.0",
-          "member": "float",
-          "name": "TotalRealAmount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "按量计费预期金额（即折前价 * 折扣）",
-          "example": "3.0",
-          "member": "float",
-          "name": "ExpectedAmount",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "覆盖率结果，取值[0, 100]",
-          "example": "30.0",
-          "member": "float",
-          "name": "SpCoverage",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "支付者昵称",
-          "example": "腾讯",
-          "member": "string",
-          "name": "PayerUinName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "使用者昵称",
-          "example": "腾讯",
-          "member": "string",
-          "name": "OwnerUinName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "支付者uin",
-          "example": "9091",
-          "member": "string",
-          "name": "PayerUin",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "计费项名称",
-          "example": "存储",
-          "member": "string",
-          "name": "SubBillingItemName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "计费细项名称",
-          "example": "cynosdb_存储_mysql\t",
-          "member": "string",
-          "name": "BillingItemName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "子产品名称",
-          "example": "TDSQL-C MySQL版",
-          "member": "string",
-          "name": "SubProductName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
-    "SavingPlanCoverageRate": {
-      "document": "节省计划覆盖率聚合数据",
-      "members": [
-        {
-          "disabled": false,
-          "document": "聚合时间维度，按天聚合格式为yyyy-MM-dd，按月聚合格式为yyyy-MM",
-          "example": "2023-06-01",
-          "member": "string",
-          "name": "DatePoint",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "覆盖率结果，取值[0, 100]",
-          "example": "10.0",
-          "member": "float",
-          "name": "Rate",
-          "output_required": false,
-          "type": "float",
           "value_allowed_null": false
         }
       ],

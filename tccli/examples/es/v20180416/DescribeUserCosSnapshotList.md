@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli es DescribeUserCosSnapshotList --cli-unfold-argument  \
-    --CosBucket xxx \
-    --BasePath xxx \
-    --ClusterInstanceId xxx
+    --CosBucket user-cos \
+    --BasePath dir/ \
+    --ClusterInstanceId es-feaffea
 ```
 
 Output: 
@@ -17,27 +17,27 @@ Output:
     "Response": {
         "CosSnapshotInfoList": [
             {
-                "CosBucket": "xxx",
-                "BasePath": "xxx",
-                "SnapshotName": "xxx",
-                "State": "xxx",
-                "Version": "xxx",
+                "CosBucket": "user-cos",
+                "BasePath": "dir/",
+                "SnapshotName": "testSnapshot",
+                "State": "SUCCESS",
+                "Version": "7.14.2",
                 "CommonIndexArr": [
                     {
-                        "IndexName": "abc",
+                        "IndexName": "testindex",
                         "IsShardComplete": 0
                     }
                 ],
                 "DataStreamArr": [
                     {
-                        "DataStreamName": "xxx",
+                        "DataStreamName": "index",
                         "IsShardComplete": 0
                     }
                 ]
             }
         ],
         "TotalCount": 10,
-        "RequestId": "xxx"
+        "RequestId": "iuhifaeui-feaihfhfa-feaijni-fieai"
     }
 }
 ```

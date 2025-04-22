@@ -28,7 +28,7 @@ Output:
                     "GpuCount": 0,
                     "CPU": 2
                 },
-                "Message": null
+                "Message": ""
             }
         ],
         "TotalCount": 1,

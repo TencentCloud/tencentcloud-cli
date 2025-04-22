@@ -595,6 +595,13 @@
       "output": "OperateChannelTemplateResponse",
       "status": "online"
     },
+    "OperateTemplate": {
+      "document": "此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href=\"https://qian.tencent.com/developers/partner/callback_types_templates\" target=\"_blank\">模板操作相关回调</a>\n\n# 支持的操作\n## 1. 删除模板 (OperateType=DELETE)\n此操作会将模板从企业自有模板中彻底删除，若要保留模板而不删除，可将模板停用。\n\n## 2. 启用模板 (OperateType=ENABLE)\n此操作是将已停用的模板启用，操作幂等，若模板已启用，接口不报错。\n\n## 3. 停用模板 (OperateType=DISABLE)\n此操作是将已启用的模板停用，操作幂等，若模板已停用，接口不报错，停用后，无法通过此模板发起合同，已发起的合同不受影响。",
+      "input": "OperateTemplateRequest",
+      "name": "企业模板管理",
+      "output": "OperateTemplateResponse",
+      "status": "online"
+    },
     "PrepareFlows": {
       "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，<font color='red'> **不建议使用，将会废弃**</font>。",
       "input": "PrepareFlowsRequest",
@@ -1871,6 +1878,15 @@
           "name": "CanBatchReject",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。",
+          "example": "无",
+          "member": "PresetApproverInfo",
+          "name": "PresetApproverInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1911,7 +1927,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：`请确保和合同中填入的一致`，`除动态签署人或子客员工经办人场景外，此参数必填`",
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：\n<ul>\n<li>请确保和合同中填入的一致。</li>\n<li>在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。</li>\n</ul>",
           "example": "真实姓名",
           "member": "string",
           "name": "Name",
@@ -1920,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。\n\n注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人或子客员工经办人场景外，此参数必填`",
+          "document": "手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。\n\n注：\n<ul>\n<li>请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息。</li><li>在生成动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。 </li>\n</ul>\n",
           "example": "187****9829",
           "member": "string",
           "name": "Mobile",
@@ -1938,7 +1954,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>**ID_CARD** : 中国大陆居民身份证 (默认值)</li>\n<li>**HONGKONG_AND_MACAO** : 中国港澳居民来往内地通行证</li>\n<li>**HONGKONG_MACAO_AND_TAIWAN** : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件类型，支持以下类型\n<ul><li>**ID_CARD** : 中国大陆居民身份证 (默认值)</li>\n<li>**HONGKONG_AND_MACAO** : 中国港澳居民来往内地通行证</li>\n<li>**HONGKONG_MACAO_AND_TAIWAN** : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n注：\n1. `请确保和合同中填入的一致`。\n2. `在生成动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -1947,7 +1963,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：\n1. `请确保和合同中填入的一致`。\n2. `在生成动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "421049****8749",
           "member": "string",
           "name": "IdCardNumber",
@@ -8171,7 +8187,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程里边参与方的姓名。\n注: `GenerateType为\"PERSON\"(即个人签署方)时必填`",
+          "document": "合同流程里边参与方的姓名。\n注: \n1. `GenerateType为\"PERSON\"(即个人签署方)时必填`。\n2. `在动态签署人补充链接场景中，可以通过传入这个值，对补充的个人参与方信息进行限制。仅匹配传入姓名的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "典子谦",
           "member": "string",
           "name": "Name",
@@ -8180,7 +8196,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n注:  `GenerateType为\"PERSON\"或\"FOLLOWER\"时必填`",
+          "document": "合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n注:  \n1. `GenerateType为\"PERSON\"或\"FOLLOWER\"时必填。`\n2. `在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入手机号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "13200000000",
           "member": "string",
           "name": "Mobile",
@@ -8189,7 +8205,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件类型的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方，且需要和证件号参数一同传递，不能单独进行限制。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -8198,7 +8214,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n`注：在动态签署人补充链接场景中，可以通过传入此值，对补充的个人参与方信息进行限制。仅匹配传入证件号的参与方才能补充合同。此参数预设信息功能暂时仅支持个人动态参与方。`",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -10957,7 +10973,7 @@
       "usage": "out"
     },
     "FormField": {
-      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue填入附件图片的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n\n输入示例3（表格设置字体加粗颜色）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"CENTER\"}\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"LEFT\"}\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\",\n                \"style\": {\"color\": \"#b500bf\", \"fontSize\": 12,\"bold\": false,\"align\": \"RIGHT\"}\n            }\n        ]\n    }\n}\n\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n| cells.N.style         | String  | 单元格字体风格配置 ，风格配置的json字符串  如： {\"font\":\"黑体\",\"fontSize\":12,\"color\":\"#FFFFFF\",\"bold\":true,\"align\":\"CENTER\"}      |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\n\ncontent String 表头单元格内容，字数不超过100\n\nstyle String 为字体风格设置 风格支持： font : 目前支持 黑体、宋体; fontSize： 6-72; color：000000-FFFFFF  字符串形如：  \"#FFFFFF\" 或者 \"0xFFFFFF\"; bold ： 是否加粗， true ： 加粗 false： 不加粗; align: 对其方式， 支持 LEFT / RIGHT / CENTER",
+      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue填入附件图片的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n```\n\n输入示例3（表格设置字体加粗颜色）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"CENTER\"}\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"LEFT\"}\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\",\n                \"style\": {\"color\": \"#b500bf\", \"fontSize\": 12,\"bold\": false,\"align\": \"RIGHT\"}\n            }\n        ]\n    }\n}\n```\n\n输入示例4（表格设置表头不合成到文件）：\n\n```\n{\n    \"headers\": [\n        {\n            \"content\": \"序号\"\n        },\n        {\n            \"content\": \"品牌\"\n        },\n        {\n            \"content\": \"商品名称\"\n        },\n        {\n            \"content\": \"粒径\"\n        },\n        {\n            \"content\": \"规格\"\n        },\n        {\n            \"content\": \"数量(包)\"\n        },\n        {\n            \"content\": \"重量(吨)\"\n        }\n    ],\n    \"rowCount\": 5,\n    \"body\": {\n        \"cells\": [\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"1\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称1\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称1\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"7#\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"50\"\n            },\n            {\n                \"rowStart\": 1,\n                \"rowEnd\": 1,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"1.000\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"2\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称2\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称2\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"5#\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 2,\n                \"rowEnd\": 2,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"0.400\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"3\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称3\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称3\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"2#\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"5\"\n            },\n            {\n                \"rowStart\": 3,\n                \"rowEnd\": 3,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"0.100\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 1,\n                \"columnEnd\": 1,\n                \"content\": \"4\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 2,\n                \"columnEnd\": 2,\n                \"content\": \"品牌名称4\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 3,\n                \"columnEnd\": 3,\n                \"content\": \"商品名称4\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 4,\n                \"columnEnd\": 4,\n                \"content\": \"3#\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 5,\n                \"columnEnd\": 5,\n                \"content\": \"20\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"10\"\n            },\n            {\n                \"rowStart\": 4,\n                \"rowEnd\": 4,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"0.200\"\n            },\n            {\n                \"rowStart\": 5,\n                \"rowEnd\": 5,\n                \"columnStart\": 1,\n                \"columnEnd\": 5,\n                \"content\": \"合计\"\n            },\n            {\n                \"rowStart\": 5,\n                \"rowEnd\": 5,\n                \"columnStart\": 6,\n                \"columnEnd\": 6,\n                \"content\": \"85\"\n            },\n            {\n                \"rowStart\": 5,\n                \"rowEnd\": 5,\n                \"columnStart\": 7,\n                \"columnEnd\": 7,\n                \"content\": \"1.700\"\n            }\n        ]\n    },\n    \"settings\": {\n        \"headerRowDisplay\": false\n    }\n}\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                                                                                                         |\n| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100                                                                            |\n| rowCount            | Integer | 表格内容最大行数                                                                                                             |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                                                                                                      |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                                                                                                      |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                                                                                                      |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                                                                                                      |\n| cells.N.content     | String  | 单元格内容，字数不超过100                                                                                                    |\n| cells.N.style       | String  | 单元格字体风格配置 ，风格配置的json字符串  如： {\"font\":\"黑体\",\"fontSize\":12,\"color\":\"#FFFFFF\",\"bold\":true,\"align\":\"CENTER\"} |\n| settings            | Object  | 表格全局设定。目前支持设置表头不显示，示例：{\"headerRowDisplay\":false}                                                         |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\n\ncontent String 表头单元格内容，字数不超过100\n\nstyle String 为字体风格设置 风格支持： font : 目前支持 黑体、宋体; fontSize： 6-72; color：000000-FFFFFF  字符串形如：  \"#FFFFFF\" 或者 \"0xFFFFFF\"; bold ： 是否加粗， true ： 加粗 false： 不加粗; align: 对其方式， 支持 LEFT / RIGHT / CENTER",
       "members": [
         {
           "disabled": false,
@@ -11714,6 +11730,51 @@
       ],
       "type": "object"
     },
+    "OperateTemplateRequest": {
+      "document": "OperateTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId（模板的归属企业）</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId （操作人）</li>\n</ul>",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板ID，为32位字符串。",
+          "example": "yDSLZUUckpot5i01UydF1AEvOMQiKaBG",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，可取值如下:\n<ul>\n<li>DELETE:  删除</li>\n<li>ENABLE: 启用</li>\n<li>DISABLE: 停用</li>\n</ul>",
+          "example": "DELETE",
+          "member": "string",
+          "name": "OperateType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateTemplateResponse": {
+      "document": "OperateTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OrganizationAuthUrl": {
       "document": "企业批量注册链接信息",
       "members": [
@@ -12364,6 +12425,48 @@
         }
       ],
       "type": "object"
+    },
+    "PresetApproverInfo": {
+      "document": "预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预设参与方姓名。",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预设参与方手机号。",
+          "example": "18888888888",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预设参与方证件号，需要和IdCardType同时传入。\n\n证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li></ul>",
+          "example": "430000000000000000",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预设参与方的证件类型，需要与IdCardNumber同时传入。\n\n证件类型，支持以下类型\n<ul><li><b>ID_CARD</b>: 居民身份证</li></ul>",
+          "example": "ID_CARD",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ProxyOrganizationOperator": {
       "document": "同步的员工的信息",

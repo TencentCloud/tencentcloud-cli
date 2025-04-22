@@ -14,25 +14,25 @@ Output:
 {
     "Response": {
         "Image": {
-            "ImageId": "img-xxx",
-            "OsName": "Xserver",
+            "ImageId": "img-1a2b3c4d",
+            "OsName": "Ubuntu Server 20.04 LTS 64bit",
             "ImageType": "PRIVATE_IMAGE",
-            "CreatedTime": "2020-09-22T00:00:00+00:00",
+            "CreatedTime": "2025-03-24T06:35:06Z",
             "ImageName": "myImg",
-            "ImageDescription": "",
-            "ImageSize": 0,
+            "ImageDescription": "myImg",
+            "ImageSize": 50,
             "Architecture": "x86_64",
             "ImageState": "NORMAL",
-            "Platform": "Windows",
+            "Platform": "Ubuntu",
             "ImageCreator": "tencent",
             "ImageSource": "CREATE_IMAGE",
             "SyncPercent": 0,
             "IsSupportCloudinit": true,
             "SnapshotSet": [
                 {
-                    "SnapshotId": "snap-nbxxx56",
+                    "SnapshotId": "snap-1a2b3c4d",
                     "DiskUsage": "SYSTEM_DISK",
-                    "DiskSize": 0
+                    "DiskSize": 50
                 }
             ],
             "Tags": [

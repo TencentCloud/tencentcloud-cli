@@ -1,15 +1,15 @@
-**Example 1: 创建规则**
+**Example 1: 创建规则示例**
 
-
+创建规则。
 
 Input: 
 
 ```
 tccli iotexplorer CreateTopicRule --cli-unfold-argument  \
-    --RuleName test_create \
+    --RuleName 温度达到30度 \
     --TopicRulePayload.Sql U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw== \
     --TopicRulePayload.Actions [{"forward":{"api":"http://127.0.0.1:1080/sub.php"}}] \
-    --TopicRulePayload.Description test \
+    --TopicRulePayload.Description 温度达到30度 \
     --TopicRulePayload.RuleDisabled True
 ```
 

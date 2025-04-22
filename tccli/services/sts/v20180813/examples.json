@@ -52,6 +52,14 @@
         "title": "获取临时访问凭证"
       }
     ],
+    "GetSessionToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSessionToken\n<公共请求参数>\n\n{\n    \"SerialNumber\": \"qcs::cam:uin/10001::mfa/softToken\",\n    \"TokenCode\": \"102342\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"da1e***\",\n            \"TmpSecretId\": \"AKID***\",\n            \"TmpSecretKey\": \"q95K***\"\n        },\n        \"ExpiredTime\": 1744271441,\n        \"Expiration\": \"2025-04-10T07:50:41Z\",\n        \"RequestId\": \"4rkgc443-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
+        "title": "获取MFA临时证书"
+      }
+    ],
     "QueryApiKey": [
       {
         "document": "",

@@ -160,6 +160,14 @@
         "title": "生成用户数据签名"
       }
     ],
+    "DeleteCCCSkillGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCCCSkillGroup\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SkillGroupId\": 58832\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9812bd\"\n    }\n}",
+        "title": "删除技能组"
+      }
+    ],
     "DeleteExtension": [
       {
         "document": "",
@@ -190,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"ResultList\": [\n            {\n                \"InfoType\": \"Boolean\",\n                \"InfoName\": \"兴趣\",\n                \"InfoContent\": \"用户是否对产品感兴趣\",\n                \"Result\": {\n                    \"Text\": \"\",\n                    \"Chosen\": [],\n                    \"Boolean\": true,\n                    \"Number\": 0\n                }\n            }\n        ]\n    }\n}",
         "title": "查询 AI 通话内容提取结果示例"
+      }
+    ],
+    "DescribeAILatency": [
+      {
+        "document": "获取 AI 呼叫时延信息",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAILatency\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
+        "output": "{\n    \"Response\": {\n        \"AILatencyStatistics\": {\n            \"ASRLatency\": {\n                \"MiddleLatency\": 308,\n                \"MinLatency\": 267,\n                \"P90Latency\": 338\n            },\n            \"ETELatency\": {\n                \"MiddleLatency\": 1327,\n                \"MinLatency\": 1209,\n                \"P90Latency\": 1540\n            },\n            \"LLMLatency\": {\n                \"MiddleLatency\": 754,\n                \"MinLatency\": 642,\n                \"P90Latency\": 912\n            },\n            \"TTSLatency\": {\n                \"MiddleLatency\": 267,\n                \"MinLatency\": 146,\n                \"P90Latency\": 366\n            }\n        },\n        \"RequestId\": \"ca9c3062-202b-4401-a930-3728d1ef7886\"\n    }\n}",
+        "title": "获取 AI 呼叫时延信息"
       }
     ],
     "DescribeActiveCarrierPrivilegeNumber": [
@@ -416,6 +432,14 @@
         "title": "停用号码示例"
       }
     ],
+    "ForceMemberOffline": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ForceMemberOffline\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"UserId\": \"user@example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896bd\"\n    }\n}",
+        "title": "强制客服下线"
+      }
+    ],
     "HangUpCall": [
       {
         "document": "",
@@ -478,6 +502,14 @@
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetExtensionPassword\n<公共请求参数>\n\n{\n    \"SdkAppId\": 140000000,\n    \"ExtensionId\": \"1001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a17f0e-bcb3-46bf-ac66-8f165fe52127\",\n        \"Password\": \"xxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "重置话机注册密码"
+      }
+    ],
+    "RestoreMemberOnline": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreMemberOnline\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"UserId\": \"user@example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ac74e13-ef15-41a6-9639-f1bc8c9896cd\"\n    }\n}",
+        "title": "恢复客服上线"
       }
     ],
     "ResumePredictiveDialingCampaign": [

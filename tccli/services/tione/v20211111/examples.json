@@ -176,6 +176,14 @@
         "title": "查询推理镜像模板"
       }
     ],
+    "DescribeLogs": [
+      {
+        "document": "获取TI平台各种服务（训练，Notebook，推理等）的日志",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogs\n<公共请求参数>\n\n{\n    \"Service\": \"INFER\",\n    \"StartTime\": \"2022-01-10T12:15:03+08:00\",\n    \"Limit\": 100,\n    \"PodName\": \"ms-cp6rgw9r-1*\",\n    \"EndTime\": \"2022-01-11T12:15:03+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"77b5d420-73bc-47f2-96ab-3a2b32262ffe\",\n                \"Message\": \"This is a log\",\n                \"PodName\": \"ms-cp6rgw9r-1-864587bdb4-p5cv6\",\n                \"Timestamp\": \"2022-01-11T04:14:36.348499491Z\"\n            }\n        ],\n        \"RequestId\": \"305ce475-e534-4cad-a4ab-a472a27ca3fd\",\n        \"Context\": \"Y29udGV4dC0wYTdiNTRkMi0xOGI0LTQwNzEtYjIzYy1kZDE4NmM2NDFjNTIxNjQxODc0NTA2MTE5\"\n    }\n}",
+        "title": "获取日志"
+      }
+    ],
     "DescribeModelAccelerateTask": [
       {
         "document": "",

@@ -553,6 +553,13 @@
       "output": "DescribeRollbackTimeRangeResponse",
       "status": "online"
     },
+    "DescribeSSLStatus": {
+      "document": "查询实例SSL状态",
+      "input": "DescribeSSLStatusRequest",
+      "name": "查询实例SSL状态",
+      "output": "DescribeSSLStatusResponse",
+      "status": "online"
+    },
     "DescribeServerlessInstanceSpecs": {
       "document": "查询Serverless实例可选规格",
       "input": "DescribeServerlessInstanceSpecsRequest",
@@ -565,6 +572,13 @@
       "input": "DescribeServerlessStrategyRequest",
       "name": "查询serverless策略",
       "output": "DescribeServerlessStrategyResponse",
+      "status": "online"
+    },
+    "DescribeSlaveZones": {
+      "document": "查询从可用区",
+      "input": "DescribeSlaveZonesRequest",
+      "name": "查询从可用区",
+      "output": "DescribeSlaveZonesResponse",
       "status": "online"
     },
     "DescribeSupportProxyVersion": {
@@ -910,6 +924,13 @@
       "output": "OpenReadOnlyInstanceExclusiveAccessResponse",
       "status": "online"
     },
+    "OpenSSL": {
+      "document": "开启SSL加密",
+      "input": "OpenSSLRequest",
+      "name": "开启SSL加密",
+      "output": "OpenSSLResponse",
+      "status": "online"
+    },
     "OpenWan": {
       "document": "本接口（OpenWan）用于开通外网。",
       "input": "OpenWanRequest",
@@ -1088,7 +1109,7 @@
   },
   "metadata": {
     "apiVersion": "2019-01-07",
-    "api_brief": "",
+    "api_brief": "介绍如何使用 API 对 TDSQL-C MySQL 版进行操作，包括购买新集群、查询集群列表、创建用户账号、续费集群等。",
     "serviceNameCN": "TDSQL-C MySQL 版",
     "serviceShortName": "cynosdb"
   },
@@ -3529,6 +3550,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "[\"libran-0\"]",
+          "member": "string",
+          "name": "NodeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3818,7 +3849,7 @@
         {
           "disabled": false,
           "document": "已废弃。",
-          "example": "无",
+          "example": "已废弃",
           "member": "AuditLogFilter",
           "name": "Filter",
           "required": false,
@@ -3827,9 +3858,18 @@
         {
           "disabled": false,
           "document": "审计日志过滤条件",
-          "example": "无",
+          "example": "[{\"Type\": \"host\",\"Compare\": \"INC\",\"Value\": \"100.0.\"}]",
           "member": "InstanceAuditLogFilter",
           "name": "LogFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "审计日志列",
+          "example": "[\"SqlType\",\"TableName\"]",
+          "member": "string",
+          "name": "ColumnFilter",
           "required": false,
           "type": "list"
         }
@@ -6799,6 +6839,26 @@
           "name": "InstanceStorageType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "未知字段",
+          "example": "stable",
+          "member": "string",
+          "name": "CynosVersionTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libradb 节点信息",
+          "example": "[\"libradbn-1\"]",
+          "member": "string",
+          "name": "NodeList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -11973,6 +12033,62 @@
       ],
       "type": "object"
     },
+    "DescribeSSLStatusRequest": {
+      "document": "DescribeSSLStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-bzxxrmtq",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSSLStatusResponse": {
+      "document": "DescribeSSLStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "yes-开启，no-关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "IsOpenSSL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServerlessInstanceSpecsRequest": {
       "document": "DescribeServerlessInstanceSpecs请求参数结构体",
       "members": [
@@ -12086,6 +12202,52 @@
           "name": "AutoScaleDown",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlaveZonesRequest": {
+      "document": "DescribeSlaveZones请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云架集群ID",
+          "example": "1",
+          "member": "int64",
+          "name": "OssClusterId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlaveZonesResponse": {
+      "document": "DescribeSlaveZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "从可用区",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "SlaveZones",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15366,6 +15528,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra节点数量",
+          "example": "2",
+          "member": "int64",
+          "name": "LibraNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原libra节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "OldLibraNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15610,6 +15792,17 @@
           "member": "string",
           "name": "OldValue",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "libra组件类型",
+          "example": "libracdc",
+          "member": "string",
+          "name": "Component",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17007,6 +17200,62 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenSSLRequest": {
+      "document": "OpenSSL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-bzxxrmtq",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cynosdbmysql-ins-bzxxrmtq",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenSSLResponse": {
+      "document": "OpenSSL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

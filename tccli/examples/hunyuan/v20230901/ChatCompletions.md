@@ -446,11 +446,11 @@ tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --Model hunyuan-vision \
     --Messages.0.Role user \
     --Messages.0.Contents.0.Type text \
-    --Messages.0.Contents.0.Text 下面图片中是哪个公司的 Logo？ \
+    --Messages.0.Contents.0.Text 图片上有什么内容？ \
     --Messages.0.Contents.1.Type image_url \
     --Messages.0.Contents.1.ImageUrl.Url https://cloudcache.tencent-cloud.com/qcloud/ui/portal-set/build/About/images/bg-product-series_87d.png \
     --Messages.0.Contents.2.Type image_url \
-    --Messages.0.Contents.2.ImageUrl.Url https://cloudcache.tencent-cloud.com/qcloud/ui/portal-set/build/About/images/bg-product-series_87d.png \
+    --Messages.0.Contents.2.ImageUrl.Url https://qcloudimg.tencent-cloud.cn/raw/42c198dbc0b57ae490e57f89aa01ec23.png \
     --Stream False
 ```
 

@@ -29,7 +29,7 @@ Input:
 tccli vpc ModifyBandwidthPackageAttribute --cli-unfold-argument  \
     --BandwidthPackageName demo \
     --BandwidthPackageId bwp-e40edw8y \
-    --ChargeType TOP5
+    --ChargeType TOP5_POSTPAID_BY_MONTH
 ```
 
 Output: 

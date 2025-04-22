@@ -8,7 +8,7 @@
       "status": "online"
     },
     "AssociateInstancesKeyPairs": {
-      "document": "本接口 (AssociateInstancesKeyPairs) 用于将密钥绑定到实例上。\n\n* 将密钥的公钥写入到实例的`SSH`配置当中，用户就可以通过该密钥的私钥来登录实例。\n* 如果实例原来绑定过密钥，那么原来的密钥将失效。\n* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
+      "document": "本接口 (AssociateInstancesKeyPairs) 用于将密钥绑定到实例上。\n\n* 仅支持对 `Linux` 操作系统实例进行绑定操作。\n* 非强制关机场景下，仅支持对 [STOPPED](https://cloud.tencent.com/document/product/213/15753#InstanceStatus) 状态实例进行绑定操作。\n* 强制关机场景下，先执行强制关机，再绑定密钥；如实例原状态为 [RUNNING](https://cloud.tencent.com/document/product/213/15753#InstanceStatus)，绑定完成后实例会自动开机。\n* 将密钥的公钥写入到实例的`SSH`配置当中，用户就可以通过该密钥的私钥来登录实例。\n* 如果实例原来绑定过密钥，那么原来的密钥将失效。\n* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "AssociateInstancesKeyPairsRequest",
       "name": "绑定密钥对",
       "output": "AssociateInstancesKeyPairsResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DescribeInstanceVncUrl": {
-      "document": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。\n\n* 处于 `STOPPED` 状态的机器无法使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。\n\n  - 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n\n    最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```\n",
+      "document": "本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。\n\n* 处于 `STOPPED` 状态的机器无法使用此功能。\n* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。\n* 管理终端地址一旦被访问，将自动失效，您需要重新查询。\n* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。\n获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。\n\n  - 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。\n\n    最后组成的 URL 格式如下：\n\n```\nhttps://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9\n```",
       "input": "DescribeInstanceVncUrlRequest",
       "name": "查询实例管理终端地址",
       "output": "DescribeInstanceVncUrlResponse",
@@ -358,7 +358,7 @@
       "status": "online"
     },
     "DisassociateInstancesKeyPairs": {
-      "document": "本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。\n\n* 只支持[`STOPPED`](https://cloud.tencent.com/document/product/213/15753#InstanceStatus)状态的`Linux`操作系统的实例。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
+      "document": "本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。\n\n* 仅支持对 Linux 操作系统实例进行解绑操作。\n* 非强制关机场景下，仅支持对 [STOPPED](https://cloud.tencent.com/document/product/213/15753#InstanceStatus) 状态实例进行解绑操作。\n* 强制关机场景下，先执行强制关机，再解绑密钥；如实例原状态为 [RUNNING](https://cloud.tencent.com/document/product/213/15753#InstanceStatus)，解绑完成后实例会自动开机。\n* 解绑密钥后，实例可以通过原来设置的密码登录。\n* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) 接口来设置登录密码。\n* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。",
       "input": "DisassociateInstancesKeyPairsRequest",
       "name": "解绑密钥对",
       "output": "DisassociateInstancesKeyPairsResponse",
@@ -379,7 +379,7 @@
       "status": "online"
     },
     "ExitRescueMode": {
-      "document": "退出救援模式",
+      "document": "本接口（ExitRescueMode）用于退出救援模式。",
       "input": "ExitRescueModeRequest",
       "name": "退出救援模式",
       "output": "ExitRescueModeResponse",
@@ -400,7 +400,7 @@
       "status": "online"
     },
     "ImportInstancesActionTimer": {
-      "document": "导入定时任务",
+      "document": "本接口（ImportInstancesActionTimer）用于导入定时任务",
       "input": "ImportInstancesActionTimerRequest",
       "name": "导入定时任务",
       "output": "ImportInstancesActionTimerResponse",
@@ -463,7 +463,7 @@
       "status": "online"
     },
     "InquiryPriceResizeInstanceDisks": {
-      "document": "本接口 (InquiryPriceResizeInstanceDisks) 用于扩容实例的数据盘询价。\n\n* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）询价。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘询价。* 仅支持包年包月实例随机器购买的数据盘。* 目前只支持扩容一块数据盘询价。",
+      "document": "本接口 (InquiryPriceResizeInstanceDisks) 用于扩容实例的数据盘询价。\n\n* 目前只支持扩容非弹性数据盘（[DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）询价。\n* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘询价。\n* 目前只支持扩容一块数据盘询价。",
       "input": "InquiryPriceResizeInstanceDisksRequest",
       "name": "扩容实例磁盘询价",
       "output": "InquiryPriceResizeInstanceDisksResponse",
@@ -526,14 +526,14 @@
       "status": "online"
     },
     "ModifyInstanceDiskType": {
-      "document": "本接口 (ModifyInstanceDiskType) 用于修改实例硬盘介质类型。\n\n* 只支持实例的本地系统盘、本地数据盘转化成指定云硬盘介质。\n* 只支持实例在关机状态下转换成指定云硬盘介质。\n* 不支持竞价实例类型。\n* 若实例同时存在本地系统盘和本地数据盘，需同时调整系统盘和数据盘的介质类型，不支持单独针对本地系统盘或本地数据盘修改介质类型。\n* 修改前请确保账户余额充足。可通过[DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。",
+      "document": "本接口 (ModifyInstanceDiskType) 用于修改实例硬盘介质类型。\n\n* 只支持实例的本地系统盘、本地数据盘转化成指定云硬盘介质。\n* 只支持实例在关机状态下转换成指定云硬盘介质。\n* 不支持竞价实例类型。\n* 若实例同时存在本地系统盘和本地数据盘，需同时调整系统盘和数据盘的介质类型，不支持单独针对本地系统盘或本地数据盘修改介质类型。\n* 修改前请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。",
       "input": "ModifyInstanceDiskTypeRequest",
       "name": "修改实例的硬盘介质",
       "output": "ModifyInstanceDiskTypeResponse",
       "status": "online"
     },
     "ModifyInstancesAttribute": {
-      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 修改主机名后实例会立即重启，重启后新的主机名生效。",
+      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 修改主机名后实例会立即重启，重启后新的主机名生效。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse",
@@ -673,7 +673,7 @@
       "status": "online"
     },
     "ResizeInstanceDisks": {
-      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的磁盘。\n\n* 目前只支持扩容非弹性盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 默认扩容方式为关机后扩容。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。",
+      "document": "本接口 (ResizeInstanceDisks) 用于扩容实例的磁盘。\n\n* 目前只支持扩容非弹性盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。\n* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 目前只支持扩容一块数据盘。\n* 默认扩容方式为关机后扩容。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 如果是系统盘，目前只支持扩容，不支持缩容。\n*  如果是运行中的实例，必须指定ForceStop或ResizeOnline任意一个参数为true，否则操作失败。",
       "input": "ResizeInstanceDisksRequest",
       "name": "扩容实例磁盘",
       "output": "ResizeInstanceDisksResponse",
@@ -701,7 +701,7 @@
       "status": "online"
     },
     "SyncImages": {
-      "document": "本接口（SyncImages）用于将自定义镜像同步到其它地区。\n\n* 该接口每次调用只支持同步一个镜像。\n* 该接口支持多个同步地域。\n* 单个账号在每个地域最多支持存在500个自定义镜像。",
+      "document": "本接口（SyncImages）用于将自定义镜像同步到其它地区。\n\n* 该接口每次调用只支持同步一个镜像。\n* 该接口支持自定义镜像向多个地域同步。\n* 共享镜像仅支持同步为源地域（单个）的自定义镜像。\n* 自定义镜像仅支持同步为源地域（单个）的加密自定义镜像。\n* 单个账号在每个地域最多支持存在500个自定义镜像。",
       "input": "SyncImagesRequest",
       "name": "同步镜像",
       "output": "SyncImagesResponse",
@@ -728,7 +728,7 @@
         {
           "disabled": false,
           "document": "后付费配额列表",
-          "example": "[     {         \"TotalQuota\": 300,         \"UsedQuota\": 5,         \"RemainingQuota\": 295,         \"Zone\": \"ap-shanghai-5\"     } ]",
+          "example": "无",
           "member": "PostPaidQuota",
           "name": "PostPaidQuotaSet",
           "output_required": true,
@@ -738,7 +738,7 @@
         {
           "disabled": false,
           "document": "预付费配额列表",
-          "example": "[     {         \"TotalQuota\": 300,         \"UsedQuota\": 5,         \"RemainingQuota\": 295,         \"OnceQuota\": 500,         \"Zone\": \"ap-shanghai-5\"     } ]",
+          "example": "无",
           "member": "PrePaidQuota",
           "name": "PrePaidQuotaSet",
           "output_required": true,
@@ -748,7 +748,7 @@
         {
           "disabled": false,
           "document": "spot配额列表",
-          "example": " [     {         \"TotalQuota\": 300,         \"UsedQuota\": 5,         \"RemainingQuota\": 295,         \"Zone\": \"ap-shanghai-5\"     } ]",
+          "example": "无",
           "member": "SpotPaidQuota",
           "name": "SpotPaidQuotaSet",
           "output_required": true,
@@ -758,7 +758,7 @@
         {
           "disabled": false,
           "document": "镜像配额列表",
-          "example": " [     {         \"TotalQuota\": 300,         \"UsedQuota\": 5     } ]",
+          "example": "无",
           "member": "ImageQuota",
           "name": "ImageQuotaSet",
           "output_required": true,
@@ -768,7 +768,7 @@
         {
           "disabled": false,
           "document": "置放群组配额列表",
-          "example": " [     {         \"GroupQuota\": 50,         \"CvmInHostGroupQuota\": 5,         \"CvmInSwitchGroupQuota\": 5,         \"CvmInRackGroupQuota\": \"5\",         \"CurrentNum\": \"3\"     } ]",
+          "example": "无",
           "member": "DisasterRecoverGroupQuota",
           "name": "DisasterRecoverGroupQuotaSet",
           "output_required": true,
@@ -794,7 +794,7 @@
         {
           "disabled": false,
           "document": "配额数据",
-          "example": "{     \"PrePaidQuotaSet\": [         {             \"TotalQuota\": 300,             \"UsedQuota\": 5,             \"RemainingQuota\": 295,             \"OnceQuota\": 500,             \"Zone\": \"ap-shanghai-5\"         }     ],     \"PostPaidQuotaSet\": [         {             \"TotalQuota\": 300,             \"UsedQuota\": 5,             \"RemainingQuota\": 295,             \"Zone\": \"ap-shanghai-5\"         }     ] }",
+          "example": "无",
           "member": "AccountQuota",
           "name": "AccountQuota",
           "output_required": true,
@@ -831,7 +831,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展数据",
+          "document": "扩展数据。仅做出参使用。",
           "example": "无",
           "member": "Externals",
           "name": "Externals",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "定时器ID。",
+          "document": "定时器ID。仅做出参使用。",
           "example": "57z0f8ef-8112-460f-8203-fab753580f68",
           "member": "string",
           "name": "ActionTimerId",
@@ -853,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "定时器状态，取值范围：\n\nUNDO：未触发\nDOING：触发中\nDONE：已经触发\n",
+          "document": "定时器状态，仅做出参使用。取值范围：<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>",
           "example": "UNDO",
           "member": "string",
           "name": "Status",
@@ -864,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "定时器对应的实例ID。",
+          "document": "定时器对应的实例ID。仅做出参使用。",
           "example": "ins-dpa3e3at",
           "member": "string",
           "name": "InstanceId",
@@ -972,7 +972,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的`InstanceId`获取实例ID。</li>",
+          "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的`InstanceId`获取实例ID。</li>",
           "example": "[\"ins-1e4r6y8i\",\"ins-3e56fg78\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -981,7 +981,7 @@
         },
         {
           "disabled": false,
-          "document": "一个或多个待操作的密钥对ID，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-3glfot13`。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的`KeyId`获取密钥对ID。</li>",
+          "document": "一个或多个待操作的密钥对ID，每次请求批量密钥对的上限为100。可以通过以下方式获取可用的密钥ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>\n<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的`KeyId`获取密钥对ID。</li>",
           "example": "[\"skey-4e5ty7i8\"]",
           "member": "string",
           "name": "KeyIds",
@@ -990,8 +990,8 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再绑定密钥。取值范围：<br><li>true：表示在正常关机失败后进行强制关机。</li><li>false：表示在正常关机失败后不进行强制关机。</li>默认取值：false。",
-          "example": "true",
+          "document": "是否强制关机，默认值为 false。常规场景下，建议手动关机后绑定密钥。取值范围：\n<li>true：先执行强制关机，再绑定密钥。</li>\n<li>false：不执行强制关机，仅支持对已关机状态实例进行绑定操作。</li>",
+          "example": "false",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -1017,7 +1017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。",
+          "document": "要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。可通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口返回值中的`SecurityGroupId`获取。",
           "example": "[\"sg-9id3l839\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -1026,7 +1026,7 @@
         },
         {
           "disabled": false,
-          "document": "被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。",
+          "document": "被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "[\"ins-2zvpghhc\",\"ins-915zrb0p\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -1682,8 +1682,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行操作系统转换的实例 ID",
-          "example": "[\"ins-xxxxxxxx\"]",
+          "document": "执行操作系统转换的实例 ID。\n可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。\n仅支持操作系统为 CentOS 7、CentOS 8 的实例执行转换。",
+          "example": "[\"ins-duqhvpt6\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -1691,8 +1691,8 @@
         },
         {
           "disabled": false,
-          "document": "是否最小规模转换",
-          "example": "true",
+          "document": "是否最小规模转换。\n默认值：false",
+          "example": "false",
           "member": "bool",
           "name": "MinimalConversion",
           "required": false,
@@ -1700,8 +1700,8 @@
         },
         {
           "disabled": false,
-          "document": "是否只预检",
-          "example": "true",
+          "document": "是否只预检。\n默认值：false",
+          "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -1709,7 +1709,7 @@
         },
         {
           "disabled": false,
-          "document": "转换的目标操作系统类型。仅支持 TencentOS。",
+          "document": "转换的目标操作系统类型。仅支持 TencentOS。\n默认值：TencentOS",
           "example": "TencentOS",
           "member": "string",
           "name": "TargetOSType",
@@ -1985,7 +1985,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像名称",
+          "document": "镜像名称。\n最多支持60个字符。",
           "example": "MyImageName",
           "member": "string",
           "name": "ImageName",
@@ -1994,7 +1994,7 @@
         },
         {
           "disabled": false,
-          "document": "需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。",
+          "document": "需要制作镜像的实例ID。基于实例创建镜像时，为必填参数。\nInstanceId 和 SnapshotIds 为二选一必填参数。\n可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "ins-2v3sqe2t",
           "member": "string",
           "name": "InstanceId",
@@ -2003,7 +2003,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像描述",
+          "document": "镜像描述。\n最多支持 256 个字符。",
           "example": "MyImageDescription",
           "member": "string",
           "name": "ImageDescription",
@@ -2030,7 +2030,7 @@
         },
         {
           "disabled": false,
-          "document": "基于实例创建整机镜像时，指定包含在镜像里的数据盘ID",
+          "document": "基于实例创建整机镜像时，指定包含在镜像里的数据盘ID。\nDataDiskIds 只能在指定 InstanceId 实例所包含的数据盘范围内指定。\n可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的 `DataDisks` 获取。",
           "example": "[\"disk-6gabakqz\"]",
           "member": "string",
           "name": "DataDiskIds",
@@ -2039,7 +2039,7 @@
         },
         {
           "disabled": false,
-          "document": "基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。",
+          "document": "基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与 InstanceId 同时传入。\nInstanceId 和 SnapshotIds 为二选一必填参数。\n可通过 [DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647) 接口返回值中的`SnapshotId`获取。",
           "example": "[\"snap-kso6f712\", \"snap-l3rrf322\"]",
           "member": "string",
           "name": "SnapshotIds",
@@ -2057,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。\n可通过 [DescribeTags](https://cloud.tencent.com/document/api/651/35316) 接口返回值中的 `TagKey` 和 `TagValue` 获取。",
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
@@ -2112,7 +2112,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对创建后所属的项目ID。\n可以通过以下方式获取项目ID：\n<li>通过项目列表查询项目ID。</li>\n<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>",
+          "document": "密钥对创建后所属的项目ID，ProjectId为0表示默认项目。\n可以通过以下方式获取项目ID：\n<li>通过项目列表查询项目ID。</li>\n<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -2137,7 +2137,7 @@
         {
           "disabled": false,
           "document": "密钥对信息。",
-          "example": "{     \"KeyId\": \"skey-mv9yzyjj\",     \"KeyName\": \"Tencent\",     \"ProjectId\": 0,     \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDP0***4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZKAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/XUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCw== skey_112168\",     \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIICXgIBAAKBgQ***w2T4itUKOJQIK69c1Asy1UO88cxEbujR5Jbr0e/Ey1v4ZK\\nAUzDnsBnFlf4hKPA1YvMB8RBYj4GcLtM7PrKnBNNram8rgl73X/klOO8oqKv+J/X\\nUA7KHH1Y6wcn1RTRTMdDHbGhW1q/UpfeylNTbf+wEIWhEfaL5FKQm4hqCwIDAQAB\\nAoGBAJEvSu5SaCD02hs0F2C4Aln2E2/qjMoDEa7spcEVfUhdaNX8ZLvk5pUvnikm\\nwfSb7a71QUIcFu66zKxBK4kVcirBRCR8nTAQbQ6AhXQYP+y6ihZ9Z/g6BBEeqCpV\\nuGPmKnhdxdJ8Al2huEZKJFUQhKM8XdP7dqn6yFDm0L2sTK6RAkEA9IbhP4/2CVSC\\n6d8j5nj3ejPx25R3wc4G+st1tZn1O/TRqUknbVEvsxZC63bRjHiw086QIWr61L8f\\nqQBLZ58DMwJBANmRv3aHVxv5sMlV0F3hD5ZgWEDIIjxD7oiBzU1rqvF6OpTQc1cF\\nrnwxAXDtYYJ75B8qQEL1ph/zIE5YW0hlfckCQQCyVTwpUyCopU3kqqxQBaDXKtMU\\nxS6h1VQZzBDIpMPJOj8+Ku/qNe+HuJCNkVY6EDtF/bv340GTrt+0LVbQ95MpAkEA\\nxcvwUdTXB9LnuxKuHTsoDaFHepW4MivcJvRC7njM7z4dFf+wbFP4/mUbF0xoUtVJ\\nXl/uDjH/tpo1K6S+UEIcqQJAfLQywCQdZ/qOJn0PwxiOhwniikSnZuZPNSw8T+kg\\n/oxijESOLAJBnt3S/g+D530Enjitvfc9mEB7mh0VmwWvPg==\\n-----END RSA PRIVATE KEY-----\\n\" }",
+          "example": "无",
           "member": "KeyPair",
           "name": "KeyPair",
           "output_required": true,
@@ -2718,7 +2718,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
+          "document": "数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -2751,7 +2751,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  false：子机销毁时，保留数据盘<br />\n  默认取值：true<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
+          "document": "数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。",
           "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
@@ -2773,7 +2773,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
+          "document": "数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -2795,7 +2795,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MB/s",
+          "document": "云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
           "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
@@ -2828,7 +2828,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
+          "document": "磁盘名称，长度不超过128 个字符。",
           "example": "MyDiskName",
           "member": "string",
           "name": "DiskName",
@@ -2899,7 +2899,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "准备删除的镜像Id列表",
+          "document": "删除的镜像 ID 列表。\n可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。",
           "example": "[\"img-34vaef8fe\"]",
           "member": "string",
           "name": "ImageIds",
@@ -2908,7 +2908,7 @@
         },
         {
           "disabled": false,
-          "document": "是否删除镜像关联的快照",
+          "document": "是否删除镜像关联的快照。\n默认值：false",
           "example": "false",
           "member": "bool",
           "name": "DeleteBindedSnap",
@@ -2917,7 +2917,7 @@
         },
         {
           "disabled": false,
-          "document": "检测是否支持删除镜像",
+          "document": "检测是否支持删除镜像。\n默认值：false",
           "example": "true",
           "member": "bool",
           "name": "DryRun",
@@ -2944,8 +2944,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "定时任务ID列表，可以通过DescribeInstancesActionTimer接口查询。只能删除未执行的定时任务。",
-          "example": "[\"865d042d-0219-46c3-9821-6028c96cfb7c\\r\\n\"]",
+          "document": "定时任务ID列表，可以通过[ DescribeInstancesActionTimer ](https://cloud.tencent.com/document/product/213/103950)接口查询。只能删除未执行的定时任务。",
+          "example": "[\"865d042d-0219-46c3-9821-6028c96cfb7c\"]",
           "member": "string",
           "name": "ActionTimerIds",
           "required": true,
@@ -2998,7 +2998,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "启动模板ID。",
+          "document": "启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。",
           "example": "lt-rf6ogz49",
           "member": "string",
           "name": "LaunchTemplateId",
@@ -3025,7 +3025,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "启动模板ID。",
+          "document": "启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。",
           "example": "lt-irmer45l",
           "member": "string",
           "name": "LaunchTemplateId",
@@ -3034,7 +3034,7 @@
         },
         {
           "disabled": false,
-          "document": "实例启动模板版本列表。",
+          "document": "实例启动模板版本列表。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "LaunchTemplateVersions",
@@ -3061,7 +3061,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>quota-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配额类型</strong>】进行过滤。配额类型形如：PostPaidQuotaSet。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：PostPaidQuotaSet,DisasterRecoverGroupQuotaSet,PrePaidQuotaSet,SpotPaidQuotaSet</p>",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>quota-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配额类型</strong>】进行过滤。配额类型形如：PostPaidQuotaSet。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PostPaidQuotaSet: 后付费配额</p><p style=\"padding-left: 30px;\">PrePaidQuotaSet: 预付费配额</p><p style=\"padding-left: 30px;\">SpotPaidQuotaSet: 竞价配额</p><p style=\"padding-left: 30px;\">ImageQuotaSet: 镜像配额</p><p style=\"padding-left: 30px;\">DisasterRecoverGroupQuotaSet: 置放群组配额</p>",
           "example": "[     {         \"Name\": \"quota-type\",         \"Values\": [             \"PrePaidQuotaSet\"         ]     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -3087,7 +3087,7 @@
         {
           "disabled": false,
           "document": "配额数据",
-          "example": "{     \"PrePaidQuotaSet\": [         {             \"TotalQuota\": 300,             \"UsedQuota\": 5,             \"RemainingQuota\": 295,             \"OnceQuota\": 500,             \"Zone\": \"ap-shanghai-5\"         }     ],     \"PostPaidQuotaSet\": [         {             \"TotalQuota\": 300,             \"UsedQuota\": 5,             \"RemainingQuota\": 295,             \"Zone\": \"ap-shanghai-5\"         }     ] }",
+          "example": "无",
           "member": "AccountQuotaOverview",
           "name": "AccountQuotaOverview",
           "output_required": true,
@@ -3884,7 +3884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。",
+          "document": "一个操作的实例ID。可通过[ DescribeInstances ](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "ins-r9hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -3903,7 +3903,7 @@
           "example": "wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fv",
           "member": "string",
           "name": "InstanceVncUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3930,7 +3930,7 @@
         },
         {
           "disabled": false,
-          "document": "按照一个或者多个实例ID查询。",
+          "document": "按照一个或者多个实例ID查询。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "[\"ins-37qv3ucj\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3948,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。",
+          "document": "定时任务执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。",
           "example": "2024-11-06T08:00:32Z",
           "member": "string",
           "name": "EndActionTime",
@@ -3957,7 +3957,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。",
+          "document": "定时任务执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。",
           "example": "2024-11-06T08:00:32Z",
           "member": "string",
           "name": "StartActionTime",
@@ -3966,7 +3966,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>",
+          "document": "定时任务状态列表。<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>",
           "example": "UNDO",
           "member": "string",
           "name": "StatusList",
@@ -4012,7 +4012,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID列表",
+          "document": "实例ID列表。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "[\"ins-lyxxskp2\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4058,7 +4058,7 @@
         },
         {
           "disabled": false,
-          "document": "<li><strong>status</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配置规格状态</strong>】进行过滤。配置规格状态形如：SELL、UNAVAILABLE。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为2。",
+          "document": "<li><strong>status</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配置规格状态</strong>】进行过滤。配置规格状态形如：SELL(表示实例可售卖)、UNAVAILABLE(表示实例不可用)。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为2。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4114,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "实例操作。\n<li> INSTANCE_DEGRADE：实例降配操作</li>",
+          "document": "实例操作。\n<li> INSTANCE_DEGRADE：实例降配操作</li><li> INTERNET_CHARGE_TYPE_CHANGE：实例调整带宽付费模式操作</li>",
           "example": "INSTANCE_DEGRADE",
           "member": "string",
           "name": "Operation",
@@ -4130,7 +4130,7 @@
         {
           "disabled": false,
           "document": "该参数表示调整配置操作（降配）限制次数查询。",
-          "example": "[     {         \"Operation\": \"INSTANCE_DEGRADE\",         \"InstanceId\": \"ins-r8hr2upy\",         \"CurrentCount\": 0,         \"LimitCount\": 5     } ]",
+          "example": "无",
           "member": "OperationCountLimit",
           "name": "InstanceOperationLimitSet",
           "output_required": true,
@@ -4877,7 +4877,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认查询筛选条件下所有机型。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 )</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认查询筛选条件下所有机型。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费  | CDHPAID：表示独享子机 | SPOTPAID：表示竞价付费 | CDCPAID：表示专用集群付费)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4951,7 +4951,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br><br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。",
+          "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-w34e5rl9\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -4960,7 +4960,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-11112222`。<br><br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。",
+          "document": "密钥对ID列表，列表长度上限为100。可以通过以下方式获取可用的密钥ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li>\n<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>",
           "example": "[\"skey-e3r6y7ji\"]",
           "member": "string",
           "name": "KeyIds",
@@ -4969,8 +4969,8 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：<br><li>true：表示在正常关机失败后进行强制关机。<br><li>false：表示在正常关机失败后不进行强制关机。<br><br>默认取值：false。",
-          "example": "true",
+          "document": "是否强制关机，默认值为 false。常规场景下，建议手动关机后解绑密钥。取值范围：\n<li>true：先执行强制关机，再解绑密钥。</li>\n<li>false：不执行强制关机，仅支持对已关机状态实例进行解绑操作。</li>",
+          "example": "false",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -4996,7 +4996,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。",
+          "document": "要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`SecurityGroupIds`获取实例绑定的安全组。",
           "example": "[\"sg-9id3l839\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -5005,7 +5005,7 @@
         },
         {
           "disabled": false,
-          "document": "被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。",
+          "document": "被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "[\"ins-2zvpghhc\", \"ins-915zrb0p\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -5092,7 +5092,7 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组创建时间。",
+          "document": "分散置放群组创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
           "example": "\"2021-04-27T08:49:34Z\"",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -5286,8 +5286,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "退出救援模式的实例id",
-          "example": "instance_Id",
+          "document": "退出救援模式的实例id。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
+          "example": "ins-axzc12s",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5313,7 +5313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS存储桶名称",
+          "document": "COS存储桶名称。\n可通过 [List Buckets](https://cloud.tencent.com/document/product/436/8291) 接口查询请求者名下的所有存储桶列表或特定地域下的存储桶列表。",
           "example": "mybucketname",
           "member": "string",
           "name": "BucketName",
@@ -5322,7 +5322,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。",
+          "document": "镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。\n可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。",
           "example": "img-72n9mi0y",
           "member": "string",
           "name": "ImageIds",
@@ -5340,7 +5340,7 @@
         },
         {
           "disabled": false,
-          "document": "导出文件的名称前缀列表",
+          "document": "导出文件的名称前缀列表。\n默认导出文件无名称前缀。",
           "example": "[\"testfilename\"]",
           "member": "string",
           "name": "FileNamePrefixList",
@@ -5349,7 +5349,7 @@
         },
         {
           "disabled": false,
-          "document": "是否只导出系统盘",
+          "document": "是否只导出系统盘。\n默认值：false",
           "example": "true",
           "member": "bool",
           "name": "OnlyExportRootDisk",
@@ -5358,7 +5358,7 @@
         },
         {
           "disabled": false,
-          "document": "检测镜像是否支持导出",
+          "document": "检测镜像是否支持导出。\n默认值：false",
           "example": "true",
           "member": "bool",
           "name": "DryRun",
@@ -5392,8 +5392,8 @@
         },
         {
           "disabled": false,
-          "document": "导出镜像的COS文件名列表",
-          "example": "/img-9a0eg8mt.tar",
+          "document": "导出镜像的COS文件名列表。其中，文件名格式如下。\n* 系统盘：前缀名_镜像ID_system_快照ID.镜像格式\n* 数据盘：前缀名_镜像ID_data_快照ID.镜像格式",
+          "example": "/img-dz6w75t0_system_snap-hedv100v.raw",
           "member": "string",
           "name": "CosPaths",
           "output_required": true,
@@ -6130,20 +6130,20 @@
         {
           "disabled": false,
           "document": "已使用配额",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "UsedQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总配额",
-          "example": "0",
+          "example": "20",
           "member": "uint64",
           "name": "TotalQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6315,8 +6315,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id列表，可以通过DescribeInstances接口查询到。",
-          "example": "[\"ins-37qv3ucj\\r\\n\"]",
+          "document": "实例id列表，可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
+          "example": "[\"ins-37qv3ucj\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -6343,7 +6343,7 @@
           "example": "[\"865d042d-0219-46c3-9821-6028c96cfb7c\"]",
           "member": "string",
           "name": "ActionTimerIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6864,7 +6864,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
+          "document": "待操作的实例ID。可通过[ DescribeInstances ](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
           "example": "ins-fd8spnmq",
           "member": "string",
           "name": "InstanceId",
@@ -6873,7 +6873,7 @@
         },
         {
           "disabled": false,
-          "document": "待扩容的数据盘配置信息。只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。数据盘容量单位：GB。最小扩容步长：10G。关于数据盘类型的选择请参考硬盘产品简介。可选数据盘类型受到实例类型`InstanceType`限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。\n<dx-alert infotype=\"explain\" title=\"\">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>",
+          "document": "待扩容的数据盘配置信息。只支持扩容非弹性数据盘[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。数据盘容量单位：GB。最小扩容步长：10G。关于数据盘类型的选择请参考硬盘产品简介。可选数据盘类型受到实例类型`InstanceType`限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。\n<dx-alert infotype=\"explain\" title=\"\">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -6882,7 +6882,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>true：表示在正常关机失败后进行强制关机</li><br><li>false：表示在正常关机失败后不进行强制关机</li><br><br>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
+          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>true：表示在正常关机失败后进行强制关机</li><br><li>false：表示在正常关机失败后不进行强制关机</li><br>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
           "example": "true",
           "member": "bool",
           "name": "ForceStop",
@@ -6955,7 +6955,7 @@
         },
         {
           "disabled": false,
-          "document": "实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认机型为S1.SMALL1。",
+          "document": "实例机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID_BY_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则系统将根据当前地域的资源售卖情况动态指定默认机型。</li><br><li>对于付费模式为CDHPAID的实例创建，该参数以\"CDH_\"为前缀，根据CPU和内存配置生成，具体形式为：CDH_XCXG，例如对于创建CPU为1核，内存为1G大小的专用宿主机的实例，该参数应该为CDH_1C1G。</li>",
           "example": "S5.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
@@ -7027,7 +7027,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则默认不绑定安全组。",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。",
           "example": "[\"sg-efil73jd\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -7243,7 +7243,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月</li><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费</li><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。</li><li>`SPOTPAID`：表示竞价实例付费。</li>",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。取值范围：<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）</li><br><li>SPOTPAID：竞价付费</li><br><li>CDCPAID：专用集群付费</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7383,7 +7383,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>",
+          "document": "实例状态。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
@@ -7809,7 +7809,7 @@
         },
         {
           "disabled": false,
-          "document": "内存容量，单位：`GB`。",
+          "document": "内存容量，单位：`GiB`。",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -7901,7 +7901,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。",
+          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -7981,7 +7981,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。",
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>",
           "example": "SELL",
           "member": "string",
           "name": "Status",
@@ -8101,7 +8101,7 @@
         },
         {
           "disabled": false,
-          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> \n<li>NormalStock：表示对应库存供应有保障</li>\n<li> UnderStock：表示对应库存即将售罄</li> \n<li>WithoutStock：表示对应库存已经售罄</li>",
+          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>",
           "example": "EnoughStock",
           "member": "string",
           "name": "StatusCategory",
@@ -8150,7 +8150,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包ID。可通过[`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。该参数仅在RunInstances接口中作为入参使用。",
+          "document": "带宽包ID。可通过[ DescribeBandwidthPackages ](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。该参数仅在RunInstances接口中作为入参使用。",
           "example": "bwp-h1ro",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -8203,7 +8203,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费模式。",
+          "document": "网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算</li><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li><li>BANDWIDTH_PACKAGE：带宽包用户</li>默认取值：非带宽包用户默认与子机付费类型保持一致，比如子机付费类型为预付费，网络计费类型默认为预付费；子机付费类型为后付费，网络计费类型默认为后付费。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -8447,7 +8447,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对所属的项目`ID`。",
+          "document": "密钥对所属的项目 `ID`，ProjectId 为 0 时表示默认项目。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -8468,7 +8468,7 @@
         {
           "disabled": false,
           "document": "密钥对的纯文本公钥。",
-          "example": "q29u65hu",
+          "example": "ssh-rsa AAAAB3N......59LPzXah+r+d skey-0mjpcb19",
           "member": "string",
           "name": "PublicKey",
           "output_required": false,
@@ -8478,7 +8478,7 @@
         {
           "disabled": false,
           "document": "密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。",
-          "example": "q29u65hu",
+          "example": "-----BEGIN RSA PRIVATE KEY-----\\nMIIEpAIBAAKCAQEAzDC......WCvOBGeKHg==\\n-----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "PrivateKey",
           "output_required": false,
@@ -8488,7 +8488,7 @@
         {
           "disabled": false,
           "document": "密钥关联的实例`ID`列表。",
-          "example": "[\"ins-xxxxx\"]",
+          "example": "[\"ins-syht65r4\"]",
           "member": "string",
           "name": "AssociatedInstanceIds",
           "output_required": false,
@@ -8931,7 +8931,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者。",
+          "document": "创建者的AppId。",
           "example": "251001234",
           "member": "string",
           "name": "CreatedBy",
@@ -9357,7 +9357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) 接口返回值中的`InstanceId`获取。",
+          "document": "待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -9411,7 +9411,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后实例名称。可任意命名，但不得超过60个字符。\n<dx-alert infotype=\"explain\" title=\"\">必须指定InstanceName与SecurityGroups的其中一个，但不能同时设置</dx-alert>",
+          "document": "修改后实例名称。可任意命名，但不得超过60个字符。",
           "example": "MyInsName",
           "member": "string",
           "name": "InstanceName",
@@ -9429,7 +9429,7 @@
         },
         {
           "disabled": false,
-          "document": "指定实例的修改后的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。<dx-alert infotype=\"explain\" title=\"\">必须指定SecurityGroups与InstanceName的其中一个，但不能同时设置</dx-alert>",
+          "document": "指定实例的修改后的安全组Id列表，子机将重新关联指定列表的安全组，原本关联的安全组会被解绑。",
           "example": "[\"sg-rf6ogz49\"]",
           "member": "string",
           "name": "SecurityGroups",
@@ -9510,7 +9510,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
+          "document": "修改后实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<li> PREPAID：预付费，即包年包月。</li><li> POSTPAID_BY_HOUR：后付费，即按量付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -9528,7 +9528,7 @@
         },
         {
           "disabled": false,
-          "document": "是否同时切换弹性数据云盘计费模式。取值范围：<br><li>true：表示切换弹性数据云盘计费模式<br><li>false：表示不切换弹性数据云盘计费模式<br><br>默认取值：false。",
+          "document": "是否同时切换弹性数据云盘计费模式。取值范围：<li> true：表示切换弹性数据云盘计费模式</li><li> false：表示不切换弹性数据云盘计费模式</li>默认取值：false。",
           "example": "false",
           "member": "bool",
           "name": "ModifyPortableDataDisk",
@@ -9609,7 +9609,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。项目可以使用[AddProject](https://cloud.tencent.com/document/api/651/81952)接口创建。可通过[`DescribeProject`](https://cloud.tencent.com/document/api/651/78725) API返回值中的`projectId`获取。后续使用[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口查询实例时，项目ID可用于过滤结果。",
+          "document": "项目ID。项目可以使用[ AddProject ](https://cloud.tencent.com/document/api/651/81952)接口创建。可通过[ DescribeProject ](https://cloud.tencent.com/document/api/651/78725) 接口返回值中的`projectId`获取。后续使用[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口查询实例时，项目ID可用于过滤结果。",
           "example": "1045",
           "member": "int64",
           "name": "ProjectId",
@@ -9726,7 +9726,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对ID，密钥对ID形如：`skey-xxxxxxxx`。<br><br>可以通过以下方式获取可用的密钥 ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。",
+          "document": "密钥对ID。可以通过以下方式获取可用的密钥 ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥 ID。</li>\n<li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/9403) ，取返回信息中的 `KeyId` 获取密钥对 ID。</li>",
           "example": "skey-mv9yzyjj",
           "member": "string",
           "name": "KeyId",
@@ -9771,7 +9771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "启动模板ID。",
+          "document": "启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId `获取。",
           "example": "lt-irmer45l",
           "member": "string",
           "name": "LaunchTemplateId",
@@ -9780,7 +9780,7 @@
         },
         {
           "disabled": false,
-          "document": "待设置的默认版本号。",
+          "document": "待设置的默认版本号。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。",
           "example": "2",
           "member": "int64",
           "name": "DefaultVersion",
@@ -9940,7 +9940,7 @@
         {
           "disabled": false,
           "document": "累计已使用配额",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "UsedQuota",
           "output_required": true,
@@ -9950,7 +9950,7 @@
         {
           "disabled": false,
           "document": "剩余配额",
-          "example": "0",
+          "example": "90",
           "member": "uint64",
           "name": "RemainingQuota",
           "output_required": true,
@@ -9986,7 +9986,7 @@
         {
           "disabled": false,
           "document": "当月已使用配额",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "UsedQuota",
           "output_required": true,
@@ -10006,7 +10006,7 @@
         {
           "disabled": false,
           "document": "剩余配额",
-          "example": "0",
+          "example": "90",
           "member": "uint64",
           "name": "RemainingQuota",
           "output_required": true,
@@ -10016,7 +10016,7 @@
         {
           "disabled": false,
           "document": "总配额",
-          "example": "1000",
+          "example": "100",
           "member": "uint64",
           "name": "TotalQuota",
           "output_required": true,
@@ -10067,7 +10067,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的ID信息。",
+          "document": "实例的ID信息。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
           "example": "ins-kdjnfkda",
           "member": "string",
           "name": "InstanceId",
@@ -11368,7 +11368,7 @@
         },
         {
           "disabled": false,
-          "document": "重置后的实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\nLinux 实例密码必须8-30位，推荐使用12位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/\nWindows 实例密码必须12\\~30位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `Linux` 实例又包含 `Windows` 实例，则密码复杂度限制按照 `Windows` 实例的限制。",
+          "document": "重置后的实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：Linux 实例密码必须8-30位，推荐使用12位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]</li><li>大写字母：[A-Z]</li><li>数字：0-9</li><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/Windows 实例密码必须12\\~30位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符</li><li>小写字母：[a-z]</li><li>大写字母：[A-Z]</li><li>数字： 0-9</li><li>特殊字符：()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/</li><li>如果实例即包含 `Linux` 实例又包含 `Windows` 实例，则密码复杂度限制按照 `Windows` 实例的限制。</li>",
           "example": "abc123ABC!@#",
           "member": "string",
           "name": "Password",
@@ -11386,7 +11386,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>true：表示在正常关机失败后进行强制关机<br><li>false：表示在正常关机失败后不进行强制关机<br><br>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
+          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>true：表示在正常关机失败后进行强制关机</li><li>false：表示在正常关机失败后不进行强制关机</li>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
           "example": "true",
           "member": "bool",
           "name": "ForceStop",
@@ -11422,7 +11422,7 @@
         },
         {
           "disabled": false,
-          "document": "调整后的实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口[`DescribeInstanceTypeConfigs`](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "document": "调整后的实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口[ DescribeInstanceTypeConfigs ](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。",
           "example": "S5.16XLARGE256",
           "member": "string",
           "name": "InstanceType",
@@ -11458,7 +11458,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
+          "document": "待操作的实例ID。可通过[ DescribeInstances ](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
           "example": "ins-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
@@ -11467,7 +11467,7 @@
         },
         {
           "disabled": false,
-          "document": "待扩容的数据盘配置信息。只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。数据盘容量单位：GB。最小扩容步长：10G。关于数据盘类型的选择请参考[硬盘产品简介](https://cloud.tencent.com/document/product/362/2353)。可选数据盘类型受到实例类型`InstanceType`限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。\n<dx-alert infotype=\"explain\" title=\"\">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>",
+          "document": "待扩容的数据盘配置信息，仅支持指定待扩容盘的目的容量。只支持扩容非弹性数据盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。数据盘容量单位：GiB。最小扩容步长：10GiB。关于数据盘类型的选择请参考[硬盘产品简介](https://cloud.tencent.com/document/product/362/2353)。可选数据盘类型受到实例类型`InstanceType`限制。另外允许扩容的最大容量也因数据盘类型的不同而有所差异。\n<dx-alert infotype=\"explain\" title=\"\">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -11476,7 +11476,7 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>true：表示在正常关机失败后进行强制关机</li><br><li>false：表示在正常关机失败后不进行强制关机</li><br><br>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
+          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再扩容实例磁盘。取值范围：<br><li>true：表示在正常关机失败后进行强制关机</li><br><li>false：表示在正常关机失败后不进行强制关机</li><br><br>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
           "example": "true",
           "member": "bool",
           "name": "ForceStop",
@@ -11485,7 +11485,7 @@
         },
         {
           "disabled": false,
-          "document": "待扩容的系统盘配置信息。只支持扩容云盘。\n<dx-alert infotype=\"explain\" title=\"\">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>",
+          "document": "待扩容的系统盘配置信息，仅支持指定待扩容盘的目的容量。只支持扩容云盘。\n<dx-alert infotype=\"explain\" title=\"\">您必须指定参数DataDisks与SystemDisk的其中一个，但不能同时指定。</dx-alert>",
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
@@ -11646,7 +11646,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的 sgId 字段来获取。若不指定该参数，则绑定指定项目下的默认安全组，如默认安全组不存在则将自动创建。\n",
           "example": "[\"sg-ajhn9qtq\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -11952,7 +11952,7 @@
         {
           "disabled": false,
           "document": "已使用配额，单位：vCPU核心数",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "UsedQuota",
           "output_required": true,
@@ -11962,7 +11962,7 @@
         {
           "disabled": false,
           "document": "剩余配额，单位：vCPU核心数",
-          "example": "100",
+          "example": "90",
           "member": "uint64",
           "name": "RemainingQuota",
           "output_required": true,
@@ -11972,7 +11972,7 @@
         {
           "disabled": false,
           "document": "总配额，单位：vCPU核心数",
-          "example": "1000",
+          "example": "100",
           "member": "uint64",
           "name": "TotalQuota",
           "output_required": true,
@@ -12033,7 +12033,7 @@
         },
         {
           "disabled": false,
-          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>true：表示在正常关闭失败后进行强制关闭<br><li>false：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：false。",
+          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>true：表示在正常关闭失败后进行强制关闭</li><li>false：表示在正常关闭失败后不进行强制关闭</li><br>默认取值：false。",
           "example": "false",
           "member": "bool",
           "name": "ForceStop",
@@ -12042,7 +12042,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。",
+          "document": "实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><li>HARD：直接强制关闭</li><li>SOFT：仅软关机</li>默认取值：SOFT。",
           "example": "SOFT",
           "member": "string",
           "name": "StopType",
@@ -12051,7 +12051,7 @@
         },
         {
           "disabled": false,
-          "document": "按量计费实例关机收费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。\n该参数只针对部分按量计费云硬盘实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)",
+          "document": "按量计费实例关机收费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费</li><li>STOP_CHARGING：关机停止收费</li><br>默认取值：KEEP_CHARGING。\n该参数只针对部分按量计费实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)",
           "example": "KEEP_CHARGING",
           "member": "string",
           "name": "StoppedMode",
@@ -12089,7 +12089,7 @@
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最小容量",
+          "document": "HDD本地存储的最小容量。单位：GiB。",
           "example": "100",
           "member": "int64",
           "name": "MinSize",
@@ -12100,7 +12100,7 @@
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最大容量",
+          "document": "HDD本地存储的最大容量。单位：GiB。",
           "example": "200",
           "member": "int64",
           "name": "MaxSize",
@@ -12143,7 +12143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：</li><li>镜像ID对应的镜像状态必须为`NORMAL`。</li>镜像状态请参考[镜像数据表](https://cloud.tencent.com/document/product/213/15753#Image)。",
+          "document": "镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取，镜像ID对应的镜像状态必须为`NORMAL`。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>",
           "example": "[\"img-o3ycss2p\"]",
           "member": "string",
           "name": "ImageIds",
@@ -12152,7 +12152,7 @@
         },
         {
           "disabled": false,
-          "document": "目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。</li><li>如果是自定义镜像，则目标同步地域不能为源地域。</li><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。</li><li>暂不支持部分地域同步，请参考[复制镜像](https://cloud.tencent.com/document/product/213/4943#.E5.A4.8D.E5.88.B6.E8.AF.B4.E6.98.8E)。</li>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。",
+          "document": "目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。</li><li>如果是自定义镜像，则目标同步地域不能为源地域。</li><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。</li><li>如果是自定义镜像复制为加密自定义镜像，则目的同步地域仅支持源地域，表示将自定义镜像复制为源地域的加密自定义镜像。</li><li>暂不支持部分地域同步，请参考[复制镜像](https://cloud.tencent.com/document/product/213/4943#.E5.A4.8D.E5.88.B6.E8.AF.B4.E6.98.8E)。</li>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "DestinationRegions",
@@ -12170,7 +12170,7 @@
         },
         {
           "disabled": false,
-          "document": "目标镜像名称。默认使用源镜像名称。",
+          "document": "目标镜像名称。默认使用源镜像名称。\n最多支持 60 个字符。",
           "example": "“test_image”",
           "member": "string",
           "name": "ImageName",
@@ -12188,7 +12188,7 @@
         },
         {
           "disabled": false,
-          "document": "是否复制为加密自定义镜像。\n默认值为 false。\n复制加密自定义镜像仅支持同地域。",
+          "document": "是否复制为加密自定义镜像。\n默认值为 false。\n复制加密自定义镜像仅支持同地域， 即 DestinationRegions 仅支持填写指定镜像所在地域。",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -12197,7 +12197,7 @@
         },
         {
           "disabled": false,
-          "document": "加密自定义镜像使用的 KMS 密钥 ID。\n仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；\n不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。",
+          "document": "加密自定义镜像使用的 KMS 密钥 ID。\n仅当复制加密镜像时，即 Encrypt 为 true 时，此参数有效；\n不指定 KmsKeyId，默认使用 CBS 云产品 KMS 密钥。\nKMS 密钥 ID 通过[KMS 控制台](https://console.cloud.tencent.com/kms2)获取。",
           "example": "2bb53791-c2e9-4c42-8772-ecf135a1d92x",
           "member": "string",
           "name": "KmsKeyId",
@@ -12256,7 +12256,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GB。默认值为 50",
+          "document": "系统盘大小，单位：GiB。默认值为 50",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -12278,7 +12278,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
+          "document": "磁盘名称，长度不超过128 个字符。",
           "example": "name",
           "member": "string",
           "name": "DiskName",
@@ -12424,7 +12424,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
+          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的`SubnetId `字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "subnet-2ks",
           "member": "string",
           "name": "SubnetId",

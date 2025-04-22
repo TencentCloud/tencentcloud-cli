@@ -656,6 +656,14 @@
         "title": "查询回档时间范围"
       }
     ],
+    "DescribeSSLStatus": [
+      {
+        "document": "查询实例SSL状态",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSSLStatus\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-jd510000\",\n    \"InstanceId\": \"cynosdbmysql-ins-906n0000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"download_url\",\n        \"IsOpenSSL\": \"yes\",\n        \"RequestId\": \"baa4f39e-47c0-4400-bff2-1d6062b70748\"\n    }\n}",
+        "title": "查询实例SSL状态"
+      }
+    ],
     "DescribeServerlessInstanceSpecs": [
       {
         "document": "",
@@ -670,6 +678,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessStrategy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"AutoPauseDelay\": 300,\n        \"AutoScaleDownDelay\": 60,\n        \"AutoPause\": \"yes\",\n        \"RequestId\": \"8727691c-3536-11eb-81e7-525400b7dd5a\",\n        \"AutoScaleUpDelay\": 30\n    }\n}",
         "title": "查询serverless策略"
+      }
+    ],
+    "DescribeSlaveZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlaveZones\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SlaveZones\": [\n            \"ap-guangzhou-5\"\n        ],\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "DescribeSlaveZones"
       }
     ],
     "DescribeSupportProxyVersion": [
@@ -1068,6 +1084,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenReadOnlyInstanceExclusiveAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwertyui\",\n    \"InstanceId\": \"cynosdbmysql-ins-asdfghjk\",\n    \"VpcId\": \"vpc-asdfghjk\",\n    \"SubnetId\": \"subnet-qwertyui\",\n    \"Port\": 3306,\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 12345,\n        \"RequestId\": \"123123123123123\"\n    }\n}",
         "title": "ex:"
+      }
+    ],
+    "OpenSSL": [
+      {
+        "document": "开启SSL加密",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSSL\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-jd510000\",\n    \"InstanceId\": \"cynosdbmysql-ins-906n0000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"42d79173-6d36-4239-b7ad-5b993559a5c6\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "开启SSL加密"
       }
     ],
     "OpenWan": [

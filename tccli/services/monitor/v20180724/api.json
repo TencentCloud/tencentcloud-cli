@@ -560,6 +560,13 @@
       "output": "DescribePolicyGroupListResponse",
       "status": "online"
     },
+    "DescribePolicyObjectCount": {
+      "document": "查询策略组在每个地域下面绑定的对象数统计",
+      "input": "DescribePolicyObjectCountRequest",
+      "name": "查询策略组在每个地域下面绑定的对象数统计",
+      "output": "DescribePolicyObjectCountResponse",
+      "status": "online"
+    },
     "DescribeProductEventList": {
       "document": "分页获取产品事件的列表",
       "input": "DescribeProductEventListRequest",
@@ -784,8 +791,15 @@
       "output": "EnableSSOCamCheckResponse",
       "status": "online"
     },
+    "ExportPrometheusReadOnlyDynamicAPI": {
+      "document": "Prometheus 内部动态 api 代理，仅内部使用",
+      "input": "ExportPrometheusReadOnlyDynamicAPIRequest",
+      "name": "Prometheus 内部只读 api 代理",
+      "output": "ExportPrometheusReadOnlyDynamicAPIResponse",
+      "status": "online"
+    },
     "GetMonitorData": {
-      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n参数SpecifyStatistics目前可支持返回三种统计方式（avg，max，min），分别为二进制1，2，4。\n例子：3:avg+max，5:avg+min，6:max+min，7:avg+max+min\n拉取数据的粒度和统计方式的对应关系尽量在接入平台进行配置，如果没有配置，因为更小粒度数据存储时间有限，拉取时间范围也是有限。\n\n>?\n>- 2022年9月1日起，腾讯云可观测平台开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n参数SpecifyStatistics目前可支持返回三种统计方式（avg，max，min），分别为二进制1，2，4。\n例子：3:avg+max，5:avg+min，6:max+min，7:avg+max+min\n拉取数据的粒度和统计方式的对应关系尽量在接入平台进行配置，如果没有配置对应统计方式，请提工单反馈。\n\n>?\n>- 2022年9月1日起，腾讯云可观测平台开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse",
@@ -5389,7 +5403,7 @@
         {
           "disabled": false,
           "document": "实例对象维度组合",
-          "example": "无",
+          "example": "[           {             \"Name\": \"InstanceId\",             \"Value\": \"ins-j0hk02zo\"           }         ]",
           "member": "Dimension",
           "name": "Dimensions",
           "output_required": true,
@@ -5399,7 +5413,7 @@
         {
           "disabled": false,
           "document": "时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了",
-          "example": "无",
+          "example": "[           1535079000,           1535079300,           1535079600,           1535079900,           1535080200,           1535080500         ]",
           "member": "float",
           "name": "Timestamps",
           "output_required": true,
@@ -5409,7 +5423,7 @@
         {
           "disabled": false,
           "document": "监控值数组，该数组和Timestamps一一对应",
-          "example": "无",
+          "example": "[           2.566,           2.283,           6.316,           2.816,           2.7,           2.35         ]",
           "member": "float",
           "name": "Values",
           "output_required": true,
@@ -5419,7 +5433,7 @@
         {
           "disabled": false,
           "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           2.566,           2.283,           6.316,           2.816,           2.7,           2.35         ]",
           "member": "float",
           "name": "MaxValues",
           "output_required": false,
@@ -5429,7 +5443,7 @@
         {
           "disabled": false,
           "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           2.566,           2.283,           6.316,           2.816,           2.7,           2.35         ]",
           "member": "float",
           "name": "MinValues",
           "output_required": false,
@@ -5439,7 +5453,7 @@
         {
           "disabled": false,
           "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           2.566,           2.283,           6.316,           2.816,           2.7,           2.35         ]",
           "member": "float",
           "name": "AvgValues",
           "output_required": false,
@@ -11013,6 +11027,60 @@
       ],
       "type": "object"
     },
+    "DescribePolicyObjectCountRequest": {
+      "document": "DescribePolicyObjectCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "固定值，为\"monitor\"",
+          "example": "",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略组Id",
+          "example": "",
+          "member": "int64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyObjectCountResponse": {
+      "document": "DescribePolicyObjectCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否为多地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "bool",
+          "name": "IsMultiRegion",
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域统计列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "RegionPolicyObjectCount",
+          "name": "RegionList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductEventListDimensions": {
       "document": "DescribeProductEventList的入参Dimensions",
       "members": [
@@ -13570,7 +13638,7 @@
         {
           "disabled": false,
           "document": "实例维度名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "InstanceId",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -13581,7 +13649,7 @@
         {
           "disabled": false,
           "document": "实例维度值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-j0hk02zo",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -13908,6 +13976,23 @@
       ],
       "usage": "out"
     },
+    "ExportPrometheusReadOnlyDynamicAPIRequest": {
+      "document": "ExportPrometheusReadOnlyDynamicAPI请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ExportPrometheusReadOnlyDynamicAPIResponse": {
+      "document": "ExportPrometheusReadOnlyDynamicAPI返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询过滤参数",
       "members": [
@@ -13983,7 +14068,7 @@
         {
           "disabled": false,
           "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取10个实例的监控数据。",
-          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"d651829d-32c6-48fc-8902-e691e9c2046a\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"4d48043f-5d5f-4a1e-b4e6-195491231c36\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"120df06f-7890-4a1a-84e5-3a7515083efc\"}]}]",
+          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]}]",
           "member": "Instance",
           "name": "Instances",
           "required": true,
@@ -14018,7 +14103,7 @@
         },
         {
           "disabled": false,
-          "document": "返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合",
+          "document": "返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合。注意: 仅支持对API配置文档中展示的统计方式返回对应的统计数据。如所需的统计方式不满足您的查询需求，请提工单反馈。",
           "example": "1",
           "member": "int64",
           "name": "SpecifyStatistics",
@@ -14054,7 +14139,7 @@
         {
           "disabled": false,
           "document": "数据点数组",
-          "example": "无",
+          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}],\"Timestamps\":[1535079000],\"Values\":[2.5]}]",
           "member": "DataPoint",
           "name": "DataPoints",
           "output_required": true,
@@ -14084,7 +14169,7 @@
         {
           "disabled": false,
           "document": "返回信息",
-          "example": "无",
+          "example": "请求缺少必传参数 `Instances` 。",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -20173,6 +20258,32 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RegionPolicyObjectCount": {
+      "document": "DescribePolicyObjectCount接口返回的地域统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的实例数量",
+          "example": "",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

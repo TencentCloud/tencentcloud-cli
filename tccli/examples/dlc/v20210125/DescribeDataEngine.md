@@ -1,12 +1,12 @@
-**Example 1: test**
+**Example 1: 获取数据引擎详细信息**
 
-
+获取数据引擎详细信息
 
 Input: 
 
 ```
 tccli dlc DescribeDataEngine --cli-unfold-argument  \
-    --DataEngineName public-engine
+    --DataEngineName dlc-spark
 ```
 
 Output: 
@@ -14,105 +14,82 @@ Output:
 {
     "Response": {
         "DataEngine": {
-            "DataEngineName": "abc",
-            "EngineType": "abc",
-            "ClusterType": "abc",
-            "QuotaId": "abc",
-            "State": 0,
-            "CreateTime": 0,
-            "UpdateTime": 0,
-            "Size": 0,
-            "Mode": 0,
-            "MinClusters": 0,
-            "MaxClusters": 0,
-            "AutoResume": true,
-            "SpendAfter": 0,
-            "CidrBlock": "abc",
-            "DefaultDataEngine": true,
-            "Message": "abc",
-            "DataEngineId": "abc",
-            "SubAccountUin": "abc",
-            "ExpireTime": "abc",
-            "IsolatedTime": "abc",
-            "ReversalTime": "abc",
-            "UserAlias": "abc",
-            "TagList": [
-                {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
-                }
-            ],
-            "Permissions": [
-                "abc"
-            ],
-            "AutoSuspend": true,
+            "AccessInfos": null,
+            "AutoAuthorization": true,
+            "AutoResume": false,
+            "AutoSuspend": false,
+            "AutoSuspendTime": 10,
+            "ChildImageVersionId": "681fab43-a79c-42ec-9c7b-42917af33611",
+            "CidrBlock": "10.0.0.0/16",
+            "ClusterType": "spark_cu",
+            "CreateTime": 1735872007,
             "CrontabResumeSuspend": 0,
             "CrontabResumeSuspendStrategy": {
-                "ResumeTime": "abc",
-                "SuspendTime": "abc",
-                "SuspendStrategy": 0
+                "ResumeTime": "",
+                "SuspendStrategy": 0,
+                "SuspendTime": ""
             },
-            "EngineExecType": "abc",
-            "RenewFlag": 0,
-            "AutoSuspendTime": 0,
-            "NetworkConnectionSet": [
-                {
-                    "Id": 0,
-                    "AssociateId": "abc",
-                    "HouseId": "abc",
-                    "DatasourceConnectionId": "abc",
-                    "State": 0,
-                    "CreateTime": 0,
-                    "UpdateTime": 0,
-                    "Appid": 0,
-                    "HouseName": "abc",
-                    "DatasourceConnectionName": "abc",
-                    "NetworkConnectionType": 0,
-                    "Uin": "abc",
-                    "SubAccountUin": "abc",
-                    "NetworkConnectionDesc": "abc",
-                    "DatasourceConnectionVpcId": "abc",
-                    "DatasourceConnectionSubnetId": "abc",
-                    "DatasourceConnectionCidrBlock": "abc",
-                    "DatasourceConnectionSubnetCidrBlock": "abc"
-                }
-            ],
-            "UiURL": "abc",
-            "ResourceType": "abc",
-            "ImageVersionId": "abc",
-            "ChildImageVersionId": "abc",
-            "ImageVersionName": "abc",
-            "StartStandbyCluster": true,
-            "ElasticSwitch": true,
+            "DataEngineId": "DataEngine-houseid",
+            "DataEngineName": "dlc-spark",
+            "DefaultDataEngine": false,
+            "DefaultHouse": false,
             "ElasticLimit": 0,
-            "DefaultHouse": true,
-            "MaxConcurrency": 0,
-            "TolerableQueueTime": 0,
-            "UserAppId": 0,
-            "UserUin": "abc",
-            "SessionResourceTemplate": {
-                "DriverSize": "abc",
-                "ExecutorSize": "abc",
-                "ExecutorNums": 1,
-                "ExecutorMaxNumbers": 1
-            },
-            "AutoAuthorization": true,
-            "EngineGeneration": "abc",
-            "EngineTypeDetail": "abc",
-            "EngineNetworkId": "abc",
+            "ElasticSwitch": false,
+            "EngineExecType": "BATCH",
+            "EngineGeneration": "Native",
+            "EngineNetworkId": "DataEngine-Networkid",
+            "EngineNetworkName": "",
             "EngineResourceGroupCount": 0,
             "EngineResourceUsedCU": 0,
-            "AccessInfos": [
-                {
-                    "AccessType": "abc",
-                    "AccessConnectionInfos": [
-                        "abc"
-                    ]
-                }
+            "EngineType": "spark",
+            "EngineTypeDetail": "StandardSpark",
+            "ExpireTime": "0",
+            "GatewayId": "DataEngine-gatewayid",
+            "GatewayState": 2,
+            "ImageVersionId": "c3a40d9a-f5fe-40ac-9c17-16fed3fd2644",
+            "ImageVersionName": "Standard-S 1.1",
+            "IsAIEngine": 1,
+            "IsAIGateway": true,
+            "IsPoolMode": null,
+            "IsSupportAI": false,
+            "IsolatedTime": "0",
+            "MaxClusters": 1,
+            "MaxConcurrency": 5,
+            "Message": "",
+            "MinClusters": 1,
+            "Mode": 1,
+            "NetworkConnectionSet": [],
+            "Permissions": [
+                "USE",
+                "MODIFY",
+                "OPERATE",
+                "MONITOR",
+                "DELETE"
             ],
-            "EngineNetworkName": "abc"
+            "QuotaId": "",
+            "RenewFlag": 0,
+            "ResourceType": "Standard_CU",
+            "ReversalTime": "0",
+            "SessionResourceTemplate": {
+                "DriverSize": "large",
+                "ExecutorMaxNumbers": 3,
+                "ExecutorNums": 3,
+                "ExecutorSize": "large"
+            },
+            "Size": 16,
+            "SpendAfter": 0,
+            "StartStandbyCluster": false,
+            "State": 2,
+            "SubAccountUin": "1000****2040",
+            "TagList": [],
+            "TolerableQueueTime": 0,
+            "UiURL": "-1",
+            "UpdateTime": 1735872007,
+            "UserAlias": "1000****2040",
+            "UserAppId": "1301234123",
+            "UserUin": "1000****7117"
         },
-        "RequestId": "abc"
+        "RequestId": "b040e00f-9f7f-46c1-a7aa-5e3382225d62"
     }
 }
 ```

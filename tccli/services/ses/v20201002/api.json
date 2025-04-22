@@ -243,7 +243,16 @@
           "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "附件URL。未开放功能，请勿使用。",
+          "example": "https://www.test.com/1.png",
+          "member": "string",
+          "name": "FileURL",
+          "required": false,
           "type": "string"
         }
       ],

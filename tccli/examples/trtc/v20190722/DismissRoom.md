@@ -1,13 +1,13 @@
 **Example 1: 解散房间**
 
-解散房间1234。
+解散房间1001。
 
 Input: 
 
 ```
 tccli trtc DismissRoom --cli-unfold-argument  \
     --SdkAppId 1400000001 \
-    --RoomId 1234
+    --RoomId 1001
 ```
 
 Output: 

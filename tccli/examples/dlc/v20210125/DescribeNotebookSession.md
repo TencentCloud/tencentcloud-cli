@@ -13,47 +13,39 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "********-****-****-****-7d00a55746d9",
         "Session": {
-            "Name": "abc",
-            "Kind": "abc",
-            "DataEngineName": "abc",
+            "AppInfo": [],
             "Arguments": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
-                }
-            ],
-            "ProgramDependentFiles": [
-                "abc"
-            ],
-            "ProgramDependentJars": [
-                "abc"
-            ],
-            "ProgramDependentPython": [
-                "abc"
-            ],
-            "ProgramArchives": [
-                "abc"
-            ],
-            "DriverSize": "abc",
-            "ExecutorSize": "abc",
-            "ExecutorNumbers": 1,
-            "ProxyUser": "abc",
-            "TimeoutInSecond": 0,
-            "SparkAppId": "abc",
-            "SessionId": "abc",
-            "State": "abc",
-            "CreateTime": "abc",
-            "AppInfo": [
+                    "Key": "dlc.eni",
+                    "Value": ""
+                },
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "dlc.role.arn",
+                    "Value": "00.1737099520.29eb837f.-.0.SPARK.00058.MTFiNWZmMDSPRH8hPPbkFHj1FdFTQTmwDnW7BR5i1THufNXmuXjyoQ=="
                 }
             ],
-            "SparkUiUrl": "abc",
-            "ExecutorMaxNumbers": 1
-        },
-        "RequestId": "abc"
+            "CreateTime": "1737099521000",
+            "DataEngineName": "cls-*******",
+            "DriverSize": "small",
+            "ExecutorMaxNumbers": 1,
+            "ExecutorNumbers": 1,
+            "ExecutorSize": "small",
+            "Kind": "sql",
+            "Name": "session1",
+            "ProxyUser": "root",
+            "ProgramArchives": null,
+            "ProgramDependentFiles": null,
+            "ProgramDependentJars": null,
+            "ProgramDependentPython": null,
+            "SessionId": "livy-session-***********",
+            "SessionType": "",
+            "SparkAppId": "spark-**********",
+            "SparkUiUrl": "https://*******/jobs/",
+            "State": "dead",
+            "TimeoutInSecond": 90
+        }
     }
 }
 ```

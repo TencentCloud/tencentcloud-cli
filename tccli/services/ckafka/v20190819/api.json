@@ -301,6 +301,13 @@
       "output": "DescribeConsumerGroupResponse",
       "status": "online"
     },
+    "DescribeCvmInfo": {
+      "document": "本接口用于获取实例对应后端CVM信息，包括cvmId和ip等。用于专业版，标准版返回数据为空",
+      "input": "DescribeCvmInfoRequest",
+      "name": "获取实例的CVM信息",
+      "output": "DescribeCvmInfoResponse",
+      "status": "online"
+    },
     "DescribeDatahubGroupOffsets": {
       "document": "获取Datahub消费分组offset",
       "input": "DescribeDatahubGroupOffsetsRequest",
@@ -453,6 +460,13 @@
       "input": "DescribeTopicSyncReplicaRequest",
       "name": "获取Topic 同步副本信息",
       "output": "DescribeTopicSyncReplicaResponse",
+      "status": "online"
+    },
+    "DescribeTypeInstances": {
+      "document": "本接口（DescribeTypeInstances）用于在用户账户下获取指定类型消息队列 CKafka 实例列表",
+      "input": "DescribeTypeInstancesRequest",
+      "name": "获取实例列表",
+      "output": "DescribeTypeInstancesResponse",
       "status": "online"
     },
     "DescribeUser": {
@@ -4980,6 +4994,42 @@
       ],
       "usage": "both"
     },
+    "CvmAndIpInfo": {
+      "document": "CVM和IP信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "CkafkaInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例ID",
+          "example": "ins-test",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.30",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DatahubResource": {
       "document": "Datahub资源配置",
       "members": [
@@ -7034,6 +7084,43 @@
       ],
       "type": "object"
     },
+    "DescribeCvmInfoRequest": {
+      "document": "DescribeCvmInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCvmInfoResponse": {
+      "document": "DescribeCvmInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "{\"CvmList\":[{\"CkafkaInstanceId\":\"ckafka-test\",\"InstanceId\":\"ins-test\",\"Ip\":\"10.0.0.30\"}],\"TotalCount\":1}",
+          "member": "ListCvmAndIpInfoRsp",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDatahubGroupOffsetsRequest": {
       "document": "DescribeDatahubGroupOffsets请求参数结构体",
       "members": [
@@ -8786,6 +8873,88 @@
           "document": "返回topic 副本详情",
           "example": "{\"TopicInSyncReplicaList\":[{\"BeginOffset\":0,\"EndOffset\":1,\"InSyncReplica\":\"1\",\"Leader\":1,\"MessageCount\":0,\"OutOfSyncReplica\":\"2\",\"Partition\":\"0\",\"Replica\":\"2,1\"}],\"TotalCount\":1}",
           "member": "TopicInSyncReplicaResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTypeInstancesRequest": {
+      "document": "DescribeTypeInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "（过滤条件）按照实例ID过滤",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（过滤条件）按照实例名称过滤，支持模糊查询",
+          "example": "search-test",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "（过滤条件）实例的状态。0：创建中，1：运行中，2：删除中，不填默认返回全部",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，不填默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，不填则默认10，最大值100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配标签key值。",
+          "example": "tagkey-test",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTypeInstancesResponse": {
+      "document": "DescribeTypeInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的结果",
+          "example": "{\"InstanceList\":[{\"IfCommunity\":true,\"InstanceId\":\"ckafka-test\",\"InstanceName\":\"ckafka测试\",\"Status\":1}],\"TotalCount\":1}",
+          "member": "InstanceResponse",
           "name": "Result",
           "output_required": true,
           "type": "object",
@@ -12787,6 +12956,32 @@
       ],
       "usage": "both"
     },
+    "ListCvmAndIpInfoRsp": {
+      "document": "CVM和IP 信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvm和IP 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"CkafkaInstanceId\":\"ckafka-test\",\"InstanceId\":\"ins-test\",\"Ip\":\"10.0.0.30\"}]",
+          "member": "CvmAndIpInfo",
+          "name": "CvmList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例数据量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LowercaseParam": {
       "document": "小写字符解析",
       "members": [],
@@ -14096,7 +14291,7 @@
         },
         {
           "disabled": false,
-          "document": "生产限流，单位 MB/s",
+          "document": "生产限流，单位 MB/s；设置为-1，则生产不限流",
           "example": "30",
           "member": "int64",
           "name": "QuotaProducerByteRate",
@@ -14105,7 +14300,7 @@
         },
         {
           "disabled": false,
-          "document": "消费限流，单位 MB/s",
+          "document": "消费限流，单位 MB/s；设置为-1，则消费不限流",
           "example": "30",
           "member": "int64",
           "name": "QuotaConsumerByteRate",

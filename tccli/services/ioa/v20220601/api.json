@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateDLPFileDetectionTask": {
+      "document": "提交送检任务",
+      "input": "CreateDLPFileDetectionTaskRequest",
+      "name": "提交送检任务",
+      "output": "CreateDLPFileDetectionTaskResponse",
+      "status": "online"
+    },
     "CreateDeviceVirtualGroup": {
       "document": "创建终端自定义分组，私有化调用path为：/capi/Assets/Device/CreateDeviceVirtualGroup",
       "input": "CreateDeviceVirtualGroupRequest",
@@ -7,11 +14,25 @@
       "output": "CreateDeviceVirtualGroupResponse",
       "status": "online"
     },
+    "CreatePrivilegeCode": {
+      "document": "生成特权码，私有化调用path为：capi/Assets/Device/CreatePrivilegeCode，生成的特权码、卸载码，仅对该设备当天有效",
+      "input": "CreatePrivilegeCodeRequest",
+      "name": "创建特权码、卸载码",
+      "output": "CreatePrivilegeCodeResponse",
+      "status": "online"
+    },
     "DescribeAccountGroups": {
       "document": "以分页的方式查询账号分组列表，私有化调用path为：/capi/Assets/DescribeAccountGroups",
       "input": "DescribeAccountGroupsRequest",
       "name": "查询账号分组列表",
       "output": "DescribeAccountGroupsResponse",
+      "status": "online"
+    },
+    "DescribeDLPFileDetectResult": {
+      "document": "webservice查询文件检测结果",
+      "input": "DescribeDLPFileDetectResultRequest",
+      "name": "查询文件检测结果",
+      "output": "DescribeDLPFileDetectResultResponse",
       "status": "online"
     },
     "DescribeDevices": {
@@ -33,6 +54,13 @@
       "input": "DescribeRootAccountGroupRequest",
       "name": "查询账号根分组",
       "output": "DescribeRootAccountGroupResponse",
+      "status": "online"
+    },
+    "DescribeSoftCensusListByDevice": {
+      "document": "查看终端树下的软件列表,私有化调用path为：capi/Software/DescribeSoftCensusListByDevice",
+      "input": "DescribeSoftCensusListByDeviceRequest",
+      "name": "按终端查看软件统计信息",
+      "output": "DescribeSoftCensusListByDeviceResponse",
       "status": "online"
     }
   },
@@ -132,6 +160,95 @@
       ],
       "usage": "both"
     },
+    "CreateDLPFileDetectionTaskData": {
+      "document": "提交送检任务相应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提交任务生成的id，也即requestID。用于后续查询",
+          "example": "1",
+          "member": "string",
+          "name": "DLPFileDetectionTaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDLPFileDetectionTaskRequest": {
+      "document": "CreateDLPFileDetectionTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载链接，要求公网可访问，GET方式访问后为文件",
+          "example": "https://www.example.net/test.txt",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名，带后缀",
+          "example": "test.txt",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 文件md5，传入相同md5会直接使用之前缓存的结果。\n\n> 请注意：不同文件使用相同md5送检，会命中缓存得到旧的检测结果",
+          "example": "aabba408088b6aea1601fe6823cef111",
+          "member": "string",
+          "name": "FileMd5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调地址，暂时未使用",
+          "example": "https://www.aaa.com/ID=123",
+          "member": "string",
+          "name": "CallBackUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDLPFileDetectionTaskResponse": {
+      "document": "CreateDLPFileDetectionTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建送检任务响应数据",
+          "example": "无",
+          "member": "CreateDLPFileDetectionTaskData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDeviceVirtualGroupRequest": {
       "document": "CreateDeviceVirtualGroup请求参数结构体",
       "members": [
@@ -227,6 +344,69 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreatePrivilegeCodeRequest": {
+      "document": "CreatePrivilegeCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "必填；设备唯一标识符;",
+          "example": "489C698CAECC13B1B7C44E59443F5CBB676B7F33",
+          "member": "string",
+          "name": "Mid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivilegeCodeResponse": {
+      "document": "CreatePrivilegeCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreatePrivilegeCodeRspData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivilegeCodeRspData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特权码数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "586267",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -524,6 +704,98 @@
           "document": "账号分组详情响应数据",
           "example": "无，参考接口示例部分",
           "member": "DescribeAccountGroupsPageResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPFileDetectResultData": {
+      "document": "查询文件检测结果响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提交任务时的文件md5",
+          "example": "e9e7cad967c0c7e22e44789110205111",
+          "member": "string",
+          "name": "FileMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提交任务时的文件名",
+          "example": "test.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态：等待检测->正在检测->检测失败/检测成功。或任务不存在",
+          "example": "检测成功",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件检测结果，json字符串。",
+          "example": "\"{\\\"Type\\\": \\\".pdf\\\",\\\"Size\\\": 802831,\\\"State\\\": 2,\\\"Result\\\": {\\\"FileName\\\": \\\"YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"FileContent\\\": {\\\"FileAbstract\\\": \\\"YOGA BOOK with Windows®\\\\n在使用本用户指南及其支持的产品之\\\\\\\"}}}\"",
+          "member": "string",
+          "name": "DetectResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDLPFileDetectResultRequest": {
+      "document": "DescribeDLPFileDetectResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询ID，即提交送检任务接口（CreateDLPFileDetectionTask）返回的任务ID（DLPFileDetectionTaskID）",
+          "example": "053a8fe1-150f-434c-b8e9-f1d7804ded1f",
+          "member": "string",
+          "name": "QueryID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDLPFileDetectResultResponse": {
+      "document": "DescribeDLPFileDetectResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询任务结果",
+          "example": "无",
+          "member": "DescribeDLPFileDetectResultData",
           "name": "Data",
           "output_required": false,
           "type": "object",
@@ -1027,6 +1299,213 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSoftCensusListByDeviceData": {
+      "document": "软件统计响应对象集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal_win-PC7",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "B0:DC:EF:E7:37:EA",
+          "member": "string",
+          "name": "MacAddr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端计算机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal_win",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端组路径名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全网终端.分组1",
+          "member": "string",
+          "name": "GroupNamePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "119.147.10.192",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识Mid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8314BF3FD3FD738410C4FBB0DDDA48786800AB00",
+          "member": "string",
+          "name": "Mid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业账户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "liming",
+          "member": "string",
+          "name": "IoaUserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端分组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "288661",
+          "member": "int64",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端组名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分组1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "终端列表Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11668634",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "软件数量(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SoftNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盗版风险（1=风险;2=未知）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PiracyRisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSoftCensusListByDevicePageData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件统计响应对象集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "DescribeSoftCensusListByDeviceData",
+          "name": "Items",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页公共对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "Paging",
+          "name": "Page",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSoftCensusListByDeviceRequest": {
+      "document": "DescribeSoftCensusListByDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "必填，终端分组ID",
+          "example": "11668614",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件、分页参数   <li>Name - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端名。</li> \t<li>UserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端用户名。</li> \t<li>IoaUserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，最近登录账号。</li> \t<li>Ip - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，IP地址。</li> \t<li>MacAddr - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，MAC地址。</li>",
+          "example": "{\"PageNum\":1,\"PageSize\":20,\"Filters\":[{\"Field\":\"Name\",\"Values\":[\"lucal\"],\"Operator\":\"ilike\"}]}",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSoftCensusListByDeviceResponse": {
+      "document": "DescribeSoftCensusListByDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeSoftCensusListByDevicePageData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

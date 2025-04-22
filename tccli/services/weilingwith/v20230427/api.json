@@ -3830,7 +3830,7 @@
         {
           "disabled": false,
           "document": "获取视频扩展信息结果",
-          "example": "{\"SaveType\":\"cosmtav\",\"SaveDay\":60,\"LiveResulotion\":0,\"HistoryResolution\":0}",
+          "example": "{\"SaveType\":\"cosmtav\",\"SaveDay\":60,\"LiveResolution\":0,\"HistoryResolution\":0}",
           "member": "CameraExtendInfoRes",
           "name": "Result",
           "output_required": false,

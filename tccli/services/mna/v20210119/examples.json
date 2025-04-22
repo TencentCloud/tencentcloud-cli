@@ -48,14 +48,6 @@
         "title": "设置预置密钥"
       }
     ],
-    "CreateQos": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQos\n<公共请求参数>\n\n{\n    \"QosMenu\": \"T100K\",\n    \"Duration\": 30,\n    \"SrcAddressInfo\": {\n        \"SrcIpv4\": \"10.168.2.11\",\n        \"SrcPublicIpv4\": \"119.29.29.29\"\n    },\n    \"DestAddressInfo\": {\n        \"DestIp\": [\n            \"114.114.114.114\"\n        ]\n    },\n    \"TemplateId\": \"app-1abacedf\",\n    \"DeviceInfo\": {\n        \"OS\": 1,\n        \"Vendor\": 2,\n        \"DeviceId\": \"357315094232545\",\n        \"Wireless\": 1,\n        \"PhoneNum\": \"12847584945\"\n    },\n    \"Capacity\": {\n        \"CTCCToken\": \"177cc9c4ab0-7b93546\",\n        \"Province\": \"广东省\"\n    },\n    \"Protocol\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Duration\": 1790\n    }\n}",
-        "title": "移动网络发起加速"
-      }
-    ],
     "DeleteDevice": [
       {
         "document": "",
@@ -78,22 +70,6 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnIdList\": [\n        \"lcn-test1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd89e515-20b4-445b-a88d-7355e76f8d22\"\n    }\n}",
         "title": "示例1"
-      }
-    ],
-    "DeleteQos": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQos\n<公共请求参数>\n\n{\n    \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\",\n        \"Duration\": 300,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "移动网络停止加速"
-      }
-    ],
-    "DescribeQos": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQos\n<公共请求参数>\n\n{\n    \"SessionId\": \"abcdefg\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"SrcPublicIpv4\": \"114.114.114.114\",\n        \"DestIpv4\": [\n            \"8.8.8.8\",\n            \"8.8.8.9\"\n        ],\n        \"Duration\": 1790,\n        \"QosMenu\": \"T100K\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取Qos加速状态"
       }
     ],
     "DownloadActiveDeviceCount": [

@@ -20,7 +20,8 @@ Output:
                 "Vip": "172.16.32.29",
                 "IdleReason": "NO_RULES",
                 "Status": 1,
-                "Forward": 1
+                "Forward": 1,
+                "Domain": "lb-xxxxx.tencentclb.com"
             }
         ],
         "RequestId": "afa28690-f148-483f-9727-58c2f1da3794"

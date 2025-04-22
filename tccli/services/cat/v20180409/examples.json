@@ -38,6 +38,26 @@
         "title": "获取历史即时拨测任务"
       }
     ],
+    "DescribeNodeGroups": [
+      {
+        "document": "获取拨测点组\n",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"RegionID\": 1,\n    \"NetServiceID\": 99\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fyy3-g7ujmxbouxshy3plmkmhlnmdbfh\"\n    }\n}",
+        "title": "获取拨测点组"
+      },
+      {
+        "document": "获取定时任务中网络质量任务类型，PC类任务的可用性拨测点组",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"NodeGroupType\": 1,\n    \"IPType\": 0,\n    \"NodeType\": [\n        1\n    ],\n    \"TaskType\": 5,\n    \"ProbeType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ea82ed9-5901-4c69-b5e2-c4c84c9538e5\"\n    }\n}",
+        "title": "获取定时任务拨测点组"
+      },
+      {
+        "document": "获取即时拨测任务中网络质量任务类型，PC类任务的精选拨测点组",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"NodeGroupType\": 0,\n    \"TaskCategory\": 1,\n    \"IPType\": 0,\n    \"NodeType\": [\n        1,\n        2\n    ],\n    \"TaskType\": 5,\n    \"ProbeType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"248cfe54-6cb6-46c7-b73d-9c78108add00\"\n    }\n}",
+        "title": "获取即时拨测拨测点组"
+      }
+    ],
     "DescribeNodes": [
       {
         "document": "获取拨测节点",

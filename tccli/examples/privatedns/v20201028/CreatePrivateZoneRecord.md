@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-123456 \
+    --ZoneId zone-p0152fh2 \
     --RecordType A \
     --SubDomain b \
     --RecordValue 3.3.3.3 \
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-123456 \
+    --ZoneId zone-p0152fh2 \
     --RecordType MX \
     --SubDomain b \
     --RecordValue 3.3.3.3 \
@@ -58,7 +58,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateZoneRecord --cli-unfold-argument  \
-    --ZoneId zone-123456 \
+    --ZoneId zone-p0152fh2 \
     --RecordType PTR \
     --SubDomain 1.1.1 \
     --RecordValue qq.com

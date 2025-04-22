@@ -1,13 +1,5 @@
 {
   "actions": {
-    "ManageDeviceRisk": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageDeviceRisk\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"OsType\": 1,\n        \"DeviceType\": 6,\n        \"DeviceId\": \"6c31deb89af12f3bc1aa1e694f919820\",\n        \"ClientIp\": \"81.177.207.88\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"Score\": 100\n            }\n        },\n        \"RequestId\": \"a56981e9-00b2-4bd1-889e-e3733fd4be35\"\n    }\n}",
-        "title": "查询oaid_md5评分"
-      }
-    ],
     "ManagePortraitRisk": [
       {
         "document": "",

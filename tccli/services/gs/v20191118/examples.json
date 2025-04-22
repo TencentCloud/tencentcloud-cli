@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BackUpAndroidInstanceToStorage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BackUpAndroidInstanceToStorage\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99K3EZgPo\",\n    \"StorageType\": \"S3\",\n    \"ObjectKey\": \"testkey\",\n    \"S3Options\": {\n        \"EndPoint\": \"test-end-point\",\n        \"Bucket\": \"test-bucket\",\n        \"AccessKeyId\": \"test-key-id\",\n        \"SecretAccessKey\": \"test-key\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e900f8c4-f1c5-455f-aeb2-a9b052fd8b73\",\n        \"TaskId\": \"ddca8e2f-3b03-4c08-8f42-6e3533f09e7e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ConnectAndroidInstance": [
       {
         "document": "连接安卓实例",
@@ -14,6 +22,28 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyAndroidInstance\n<公共请求参数>\n\n{\n    \"SourceAndroidInstanceId\": \"cai-1300055477-ea99GVmmMxh\",\n    \"TargetAndroidInstanceId\": \"cai-1300055477-ea999ohpfry\",\n    \"Excludes\": [\n        \"/data/media/0/Android/data/com.zlongame.cn.ro\",\n        \"/data/app/com.zlongame.cn.ro*\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"69054011-bd78-4ac3-b091-e32d025de527\",\n        \"TaskId\": \"b2979beb-2ac1-4e9a-bd77-68039dfeeb80\"\n    }\n}",
         "title": "CopyAndroidInstance 示例"
+      }
+    ],
+    "CreateAndroidApp": [
+      {
+        "document": "创建安卓应用",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidApp\n<公共请求参数>\n\n{\n    \"Name\": \"测试App1\",\n    \"UserId\": \"user1\",\n    \"AppMode\": \"NORMAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AndroidAppId\": \"apk-f5nqwdvg\",\n        \"RequestId\": \"3b675310-8ec8-46c0-ae50-dc2944667c6f\"\n    }\n}",
+        "title": "创建安卓应用"
+      }
+    ],
+    "CreateAndroidAppVersion": [
+      {
+        "document": "创建安卓应用版本",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"Command\": \"tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh\",\n    \"DownloadUrl\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AndroidAppVersion\": \"1705458203832573301\",\n        \"RequestId\": \"143c46a1-70f4-4371-8cc8-c30efef53c4e\"\n    }\n}",
+        "title": "创建安卓应用版本"
+      },
+      {
+        "document": "使用应用包下载链接创建安卓应用版本",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"DownloadUrl\": \"https://static.maoercdn.com/app/202312/29/MissEvan.apk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AndroidAppVersion\": \"1705458203832573301\",\n        \"RequestId\": \"143c46a1-70f4-4371-8cc8-c30efef53c4e\"\n    }\n}",
+        "title": "使用应用包下载链接创建安卓应用版本"
       }
     ],
     "CreateAndroidInstanceImage": [
@@ -64,12 +94,36 @@
         "title": "安卓实例截图"
       }
     ],
+    "CreateCosCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosCredential\n<公共请求参数>\n\n{\n    \"CosType\": \"Mobile\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretID\": \"xx\",\n        \"SecretKey\": \"xx\",\n        \"SessionToken\": \"xx\",\n        \"CosBucket\": \"xx\",\n        \"CosRegion\": \"xx\",\n        \"Path\": \"xx\",\n        \"StartTime\": 1500000,\n        \"ExpiredTime\": 1500000,\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "示例1添加创建 Cos 临时密钥请求"
+      }
+    ],
     "CreateSession": [
       {
         "document": "锁定实例后，创建会话，以连接实例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"GameRegion\": \"字符串型\",\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\",\n    \"ClientSession\": \"字符串型\"\n}",
         "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"1\",\n        \"ServerSession\": \"e30=\",\n        \"Role\": \"Player\",\n        \"RequestId\": \"req123\"\n    }\n}",
         "title": "CreateSession示例"
+      }
+    ],
+    "DeleteAndroidApp": [
+      {
+        "document": "删除安卓应用",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidApp\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-lbri5e6m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62f3a0e9-0071-42f3-bfa9-b84165964295\"\n    }\n}",
+        "title": "删除安卓应用"
+      }
+    ],
+    "DeleteAndroidAppVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-a1b2c3\",\n    \"AndroidAppVersion\": \"ver-a1b2c3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b675310-8ec8-46c0-ae50-dc2944667c6f\"\n    }\n}",
+        "title": "删除安卓应用版本示例"
       }
     ],
     "DeleteAndroidInstanceImages": [
@@ -92,7 +146,7 @@
       {
         "document": "查询安卓应用信息",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidApps\n<公共请求参数>\n\n{\n    \"Offset\": 2,\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-ne70ubtu\",\n                \"AndroidAppVersionInfo\": [\n                    {\n                        \"AndroidAppVersion\": \"1705404913631168348\",\n                        \"CreateTime\": \"2024-01-16T11:36:20Z\",\n                        \"State\": \"CREATE_SUCCESS\"\n                    },\n                    {\n                        \"AndroidAppVersion\": \"1705406075397560877\",\n                        \"CreateTime\": \"2024-01-16T11:54:35Z\",\n                        \"State\": \"CREATE_FAIL\"\n                    }\n                ],\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user1\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            },\n            {\n                \"AndroidAppId\": \"apk-d6fyydrc\",\n                \"AndroidAppVersionInfo\": null,\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user2\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            }\n        ],\n        \"RequestId\": \"5eae7edb-7e12-451e-a4c1-7cf0b777c6e7\",\n        \"TotalCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-ne70ubtu\",\n                \"AndroidAppVersionInfo\": [\n                    {\n                        \"AndroidAppVersion\": \"1705404913631168348\",\n                        \"CreateTime\": \"2024-01-16T11:36:20Z\",\n                        \"Command\": \"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\",\n                        \"State\": \"CREATE_SUCCESS\"\n                    },\n                    {\n                        \"AndroidAppVersion\": \"1705406075397560877\",\n                        \"CreateTime\": \"2024-01-16T11:54:35Z\",\n                        \"Command\": \"tar -zxvf test-2.0.X.tgz && cd test-2.0.X && ./install.sh\",\n                        \"State\": \"CREATE_FAIL\"\n                    }\n                ],\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user1\",\n                \"AppMode\": \"ADVANCED\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            },\n            {\n                \"AndroidAppId\": \"apk-d6fyydrc\",\n                \"AndroidAppVersionInfo\": null,\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user2\",\n                \"AppMode\": \"NORMAL\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            }\n        ],\n        \"RequestId\": \"5eae7edb-7e12-451e-a4c1-7cf0b777c6e7\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询安卓应用信息"
       }
     ],
@@ -168,6 +222,22 @@
         "title": "安装安卓实例应用"
       }
     ],
+    "ModifyAndroidApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidApp\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"Name\": \"a1b2c3\",\n    \"UserId\": \"user1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"143c46a1-70f4-4371-8cc8-c30efef53c4e\"\n    }\n}",
+        "title": "修改安卓应用信息示例"
+      }
+    ],
+    "ModifyAndroidAppVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"AndroidAppVersion\": \"ver-a1b2c3\",\n    \"AndroidAppVersionName\": \"a1b2c3\",\n    \"Command\": \"tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"143c46a1-70f4-4371-8cc8-c30efef53c4e\"\n    }\n}",
+        "title": "修改安卓应用版本示例"
+      }
+    ],
     "ModifyAndroidInstanceInformation": [
       {
         "document": "示例",
@@ -189,6 +259,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesLabels\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99cM7rbg6\",\n        \"cai-251006279-ea993NPwvHN\"\n    ],\n    \"AndroidInstanceLabels\": [\n        {\n            \"Key\": \"key1\",\n            \"Value\": \"value1\"\n        },\n        {\n            \"Key\": \"key2\",\n            \"Value\": \"value2\"\n        },\n        {\n            \"Key\": \"key3\",\n            \"Value\": \"value3\"\n        }\n    ],\n    \"Operation\": \"ADD\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe0851d4-fda2-4d73-9efc-9952971b611c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyAndroidInstancesResolution": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesPhysicalResolution\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99cM7rbg6\"\n    ],\n    \"Width\": 720,\n    \"Height\": 1280,\n    \"DPI\": 320,\n    \"FPS\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b81161fe-82ba-4233-8a2b-03d0dddd52be\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -221,6 +299,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJh1iNOc\"\n    ],\n    \"PackageName\": \"pkg.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b92629aa-96ed-4e01-83ec-cb837e683c78\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RestoreAndroidInstanceFromStorage": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreAndroidInstanceFromStorage\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99K3EZgPo\",\n    \"ObjectKey\": \"test-object\",\n    \"StorageType\": \"S3\",\n    \"S3Options\": {\n        \"EndPoint\": \"test-end-point\",\n        \"Bucket\": \"test-bucket\",\n        \"AccessKeyId\": \"test-key-id\",\n        \"SecretAccessKey\": \"test-key\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2ed9fc0-a946-41aa-93be-86afb2cd1375\",\n        \"TaskId\": \"7a9dfd20-d6f3-4488-97b1-02fa76eec053\"\n    }\n}",
         "title": "示例"
       }
     ],

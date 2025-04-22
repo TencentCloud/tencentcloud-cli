@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc CreateSparkSubmitTask --cli-unfold-argument  \
-    --TaskName test \
+    --TaskName testName \
     --TaskType 1 \
     --DataEngineName testEngine \
     --PackagePath cosn://xxx.jar \

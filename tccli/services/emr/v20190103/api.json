@@ -189,6 +189,13 @@
       "output": "DescribeInsightListResponse",
       "status": "online"
     },
+    "DescribeInspectionTaskResult": {
+      "document": "获取巡检任务结果列表",
+      "input": "DescribeInspectionTaskResultRequest",
+      "name": "获取巡检任务结果列表",
+      "output": "DescribeInspectionTaskResultResponse",
+      "status": "online"
+    },
     "DescribeInstanceRenewNodes": {
       "document": "查询待续费节点信息",
       "input": "DescribeInstanceRenewNodesRequest",
@@ -3693,6 +3700,15 @@
           "name": "PrePaySetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808\t",
+          "example": "sdcdwxxxws",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5584,6 +5600,108 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInspectionTaskResultRequest": {
+      "document": "DescribeInspectionTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "emr-mwyixwxp",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "RealTime",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1742110677",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1744702682",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInspectionTaskResultResponse": {
+      "document": "DescribeInspectionTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "巡检任务记录，base64编码",
+          "example": "W3siSWQiOiI5MDciLCJUaW1lIjoiMjAyNS0wNC0xNSAx",
+          "member": "string",
+          "name": "InspectionResultInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别信息，base64编码，{\"FixedTime\": \"定时\", \"RealTime\": \"及时\"}",
+          "example": "eyJGaXhlZFRpbWUiOiLlrprml7YiLCJSZWFsVGltZSI6IuWNs+aXtiJ9",
+          "member": "string",
+          "name": "TypeInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12062,6 +12180,15 @@
           "name": "NodeNum",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808\t",
+          "example": "sdcdwxxxws",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

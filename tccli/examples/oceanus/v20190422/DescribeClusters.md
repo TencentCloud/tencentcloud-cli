@@ -36,7 +36,7 @@ Output:
                     {
                         "AppId": 1234567890,
                         "ClusterGroupSerialId": "cluster-abcd1234",
-                        "CreateTime": "2023-11-14 18:07:53",
+                        "CreateTime": "2023-11-14 18:07:52",
                         "CreatorUin": "100012345678",
                         "CuNum": 3,
                         "FlinkVersion": "Flink-1.13",
@@ -81,7 +81,7 @@ Output:
                 "FreeCu": 9,
                 "FreeCuNum": 9,
                 "IsNeedManageNode": 1,
-                "IsolatedTime": "-",
+                "IsolatedTime": "2023-11-04 01:57:54",
                 "Name": "sample",
                 "NetEnvironmentType": 1,
                 "Orders": [
@@ -112,7 +112,7 @@ Output:
                         "TagValue": "value2"
                     }
                 ],
-                "UpdateTime": "-",
+                "UpdateTime": "2023-11-04 01:57:54",
                 "Version": {
                     "Flink": "Flink-1.13",
                     "SupportedFlink": [

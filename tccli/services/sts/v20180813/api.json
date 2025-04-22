@@ -35,6 +35,13 @@
       "output": "GetFederationTokenResponse",
       "status": "online"
     },
+    "GetSessionToken": {
+      "document": "获取MFA临时证书",
+      "input": "GetSessionTokenRequest",
+      "name": "获取MFA临时证书",
+      "output": "GetSessionTokenResponse",
+      "status": "online"
+    },
     "QueryApiKey": {
       "document": "拉取API密钥列表",
       "input": "QueryApiKeyRequest",
@@ -92,7 +99,7 @@
         {
           "disabled": false,
           "document": "角色的资源描述，可在[访问管理](https://console.cloud.tencent.com/cam/role)，点击角色名获取。\n普通角色：\nqcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName\n服务角色：\nqcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName",
-          "example": "qcs::cam::uin/100015158414:roleName/readOnlyRole",
+          "example": "qcs::cam::uin/10001:roleName/readOnlyRole",
           "member": "string",
           "name": "RoleArn",
           "required": true,
@@ -149,6 +156,24 @@
           "example": "1000001",
           "member": "string",
           "name": "SourceIdentity",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）",
+          "example": "qcs::cam:uin/10001::mfa/softToken",
+          "member": "string",
+          "name": "SerialNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mfa身份验证码。",
+          "example": "482724",
+          "member": "string",
+          "name": "TokenCode",
           "required": false,
           "type": "string"
         }
@@ -546,6 +571,81 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSessionTokenRequest": {
+      "document": "GetSessionToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）",
+          "example": "qcs::cam:uin/10001::mfa/softToken",
+          "member": "string",
+          "name": "SerialNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mfa身份验证码。",
+          "example": "482724",
+          "member": "string",
+          "name": "TokenCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定临时证书的有效期，单位：秒，默认1800秒，主账号最长可设定有效期为7200秒，子账号最长可设定有效期为129600秒。",
+          "example": "1800",
+          "member": "int64",
+          "name": "DurationSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSessionTokenResponse": {
+      "document": "GetSessionToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时访问凭证",
+          "example": "{\"Token\":\"da1e***\",\"TmpSecretId\":\"AKID***\",\"TmpSecretKey\":\"q95K***\"}",
+          "member": "Credentials",
+          "name": "Credentials",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书无效的时间，返回 Unix 时间戳，精确到秒",
+          "example": "1686664553",
+          "member": "uint64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时访问凭证的过期时间，以 iso8601 格式的 UTC 时间表示",
+          "example": "2018-12-04T09:06:16Z",
+          "member": "string",
+          "name": "Expiration",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

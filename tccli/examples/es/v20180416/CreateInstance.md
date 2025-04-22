@@ -19,7 +19,7 @@ tccli es CreateInstance --cli-unfold-argument  \
     --Zone ap-guangzhou-3 \
     --ChargeType POSTPAID_BY_HOUR \
     --SubnetId subnet-xxxxxx \
-    --Password xxxxxx \
+    --Password ascq23***********cjaw \
     --InstanceName es_test
 ```
 
@@ -27,7 +27,7 @@ Output:
 ```
 {
     "Response": {
-        "InstanceId": "ab",
+        "InstanceId": "es-abc234",
         "RequestId": "ab",
         "DealName": "ab"
     }

@@ -7267,6 +7267,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "整型错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "IntErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7973,7 +7983,7 @@
         },
         {
           "disabled": false,
-          "document": "识别出的图片在混贴票据图片中的旋转角度。",
+          "document": "识别出切图后各图片的旋转角度。",
           "example": "0",
           "member": "float",
           "name": "Angle",
@@ -16303,7 +16313,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义结构化功能需返回的字段名称，例：若客户只想返回姓名、性别两个字段的识别结果，则输入ItemNames=[\"姓名\",\"性别\"]",
+          "document": "自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=[\"姓名\",\"性别\"]",
           "example": "[\"姓名\",\"性别\"]",
           "member": "string",
           "name": "ItemNames",
@@ -20908,7 +20918,7 @@
         {
           "disabled": false,
           "document": "销售方名称",
-          "example": "*7-0<84019---5+68315-99->/51,>814<1/7922/<-23/908+>7474+3,78312-072<3<729-+4<6*315-094,->/5>18493/1-60*6-43/90<--78",
+          "example": "深圳市腾讯科技有限公司",
           "member": "string",
           "name": "Seller",
           "output_required": true,

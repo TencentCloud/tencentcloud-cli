@@ -1077,7 +1077,7 @@
         {
           "disabled": false,
           "document": "密钥属性信息",
-          "example": "{       \"Alias\": \"test11-lzc\",       \"CreateTime\": 1730357927,       \"CreatorUin\": 700001224419,       \"DeletionDate\": 0,       \"Description\": \"倒入外部密钥\",       \"HsmClusterId\": \"\",       \"KeyId\": \"93866e69-9755-11ef-8e65-52540089bc41\",       \"KeyRotationEnabled\": false,       \"KeyState\": \"Enabled\",       \"KeyUsage\": \"ENCRYPT_DECRYPT\",       \"LastRotateTime\": 1730357927,       \"NextRotateTime\": 1761893927,       \"Origin\": \"EXTERNAL\",       \"Owner\": \"user\",       \"ResourceId\": \"creatorUin/700001224419/93866e69-9755-11ef-8e65-52540089bc41\",       \"RotateDays\": 365,       \"Type\": 4,       \"ValidTo\": 0     }",
+          "example": "{\"Alias\":\"test11lzc\",\"CreateTime\":1730357927,\"CreatorUin\":700001224419,\"DeletionDate\":0,\"Description\":\"倒入外部密钥\",\"HsmClusterId\":\"\",\"KeyId\":\"93866e69-9755-11ef-8e65-52540089bc41\",\"KeyRotationEnabled\":false}",
           "member": "KeyMetadata",
           "name": "KeyMetadata",
           "output_required": true,
@@ -1114,7 +1114,7 @@
         {
           "disabled": false,
           "document": "返回的属性信息列表",
-          "example": "[       {         \"Alias\": \"test8-lzc\",         \"CreateTime\": 1730347170,         \"CreatorUin\": 700001224419,         \"DeletionDate\": 0,         \"Description\": \"test描述\",         \"HsmClusterId\": \"\",         \"KeyId\": \"87ff856e-973c-11ef-947b-525400d834e5\",         \"KeyRotationEnabled\": false,         \"KeyState\": \"Enabled\",         \"KeyUsage\": \"ENCRYPT_DECRYPT\",         \"LastRotateTime\": 1730347170,         \"NextRotateTime\": 1761883170,         \"Origin\": \"TENCENT_KMS\",         \"Owner\": \"user\",         \"ResourceId\": \"creatorUin/700001224419/87ff856e-973c-11ef-947b-525400d834e5\",         \"RotateDays\": 365,         \"Type\": 4,         \"ValidTo\": 0       }     ]",
+          "example": "{\"Alias\":\"test11lzc\",\"CreateTime\":1730357927,\"CreatorUin\":700001224419,\"DeletionDate\":0,\"Description\":\"倒入外部密钥\",\"HsmClusterId\":\"\",\"KeyId\":\"93866e69-9755-11ef-8e65-52540089bc41\",\"KeyRotationEnabled\":false}",
           "member": "KeyMetadata",
           "name": "KeyMetadatas",
           "output_required": true,
@@ -1779,6 +1779,32 @@
       ],
       "type": "object"
     },
+    "ExclusiveHSM": {
+      "document": "独享版集群",
+      "members": [
+        {
+          "disabled": false,
+          "document": "独享集群Id",
+          "example": "cls-hsm-3dflmo9g",
+          "member": "string",
+          "name": "HsmClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "独享集群名称",
+          "example": "cls-hsm-3dflmo9g-name",
+          "member": "string",
+          "name": "HsmClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GenerateDataKeyRequest": {
       "document": "GenerateDataKey请求参数结构体",
       "members": [
@@ -2240,6 +2266,16 @@
           "name": "CmkLimit",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回独享集群组",
+          "example": "[{\"HsmClusterId\":\"cls-hsm-a1b2c3d4\",\"HsmClusterName\":\"cls-hsm-a1b2c3d4-name\"},{\"HsmClusterId\":\"cls-hsm-a1b2cd5\",\"HsmClusterName\":\"cls-hsm-a1b2c3d5-name\"}]",
+          "member": "ExclusiveHSM",
+          "name": "ExclusiveHSMList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -390,14 +390,6 @@
         "title": "查询通用资源配额信息"
       }
     ],
-    "DescribeInstanceLoginKeyPairAttribute": [
-      {
-        "document": "",
-        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstanceLoginKeyPairAttribute\n&InstanceId=lhins-j4liwha8\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PermitLogin\": \"NO\",\n        \"RequestId\": \"17a8c37b-0901-402a-b7b2-357998b2bcd8\"\n    }\n}",
-        "title": "查询实例默认登录密钥属性"
-      }
-    ],
     "DescribeInstanceVncUrl": [
       {
         "document": "本示例用于查询实例管理终端地址。",
@@ -684,14 +676,6 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesBundle\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-1a2b3c\"\n    ],\n    \"BundleId\": \"bundle_gen_lin_01\",\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3964a892-5399-4eb7-a35b-8bddfe683ab4\"\n    }\n}",
         "title": "变更实例套餐"
-      }
-    ],
-    "ModifyInstancesLoginKeyPairAttribute": [
-      {
-        "document": "",
-        "input": "https://lighthouse.tencentcloudapi.com/?Action=ModifyInstancesLoginKeyPairAttribute\n&InstanceIds.0=lhins-ruy9d2tw\n&PermitLogin=NO\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fb3c565c-1ce9-43de-9b4e-58855716b16d\"\n    }\n}",
-        "title": "禁止使用默认密钥对登录实例"
       }
     ],
     "ModifyInstancesRenewFlag": [

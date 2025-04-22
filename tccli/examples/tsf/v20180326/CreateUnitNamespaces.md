@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf CreateUnitNamespaces --cli-unfold-argument  \
-    --GatewayInstanceId gw-ins-afsfas
+    --GatewayInstanceId gw-ins-01
 ```
 
 Output: 

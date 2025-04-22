@@ -25,6 +25,7 @@ Output:
                 ],
                 "ContainerCount": 0,
                 "HostCount": 1,
+                "SuperNodeCount": 1,
                 "ImageID": "sha256:5e1476716a780a0bf6d4776d02840254257a6c0711fe0e17a7d693aba0dff8fb",
                 "ImageName": "image"
             }

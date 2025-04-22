@@ -1713,6 +1713,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网访问开关 close | open",
+          "example": "close",
+          "member": "string",
+          "name": "InternalAccess",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网域名",
+          "example": "https://sdfsdf",
+          "member": "string",
+          "name": "InternalDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1796,6 +1818,16 @@
           "example": "function",
           "member": "string",
           "name": "ServerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量类型，目前只有 FLOW",
+          "example": "FLOW",
+          "member": "string",
+          "name": "TrafficType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

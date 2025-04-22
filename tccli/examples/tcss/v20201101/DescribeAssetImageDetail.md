@@ -20,6 +20,7 @@ Output:
         "ContainerCnt": 51,
         "CreateTime": "2021-09-16 02:20:05",
         "HostCnt": 24,
+        "SuperNodeCnt": 1,
         "ImageDigest": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
         "ImageID": "sha256:707540fd8a54ab3ebc086ecc96d2d6143fd92c1cac4d0b23353e1b7078b5937b",
         "ImageName": "docker.io/centos:latest",

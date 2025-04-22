@@ -530,7 +530,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "test",
+          "example": "test_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -539,7 +539,7 @@
         {
           "disabled": false,
           "document": "base64加密后的密码",
-          "example": "password",
+          "example": "cGFzc3dvcmsK",
           "member": "string",
           "name": "PassWord",
           "required": true,
@@ -548,7 +548,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "测试账号",
           "member": "string",
           "name": "Describe",
           "required": false,
@@ -846,7 +846,7 @@
         {
           "disabled": false,
           "document": "计费方式",
-          "example": "无",
+          "example": "{\"ChargeType\":\"PREPAID\", \"RenewFlag\":1, \"TimeSpan\":1}",
           "member": "Charge",
           "name": "ChargeProperties",
           "required": true,
@@ -864,7 +864,7 @@
         {
           "disabled": false,
           "document": "数据节点\nSpecName从DescribeSpec接口中返回的DataSpec.Name获取",
-          "example": "无",
+          "example": "{\"SpecName\":\"SCH1\", \"Count\":1, \"DiskSize\":200}",
           "member": "NodeSpec",
           "name": "DataSpec",
           "required": true,
@@ -873,7 +873,7 @@
         {
           "disabled": true,
           "document": "标签列表（废弃）",
-          "example": "无",
+          "example": "{\"TagKey\":\"test_key\",\"TagValue\":\"test_value\"}",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -882,7 +882,7 @@
         {
           "disabled": false,
           "document": "日志主题ID",
-          "example": "无",
+          "example": "\"cls-xdeaged\"",
           "member": "string",
           "name": "ClsLogSetId",
           "required": false,
@@ -918,7 +918,7 @@
         {
           "disabled": false,
           "document": "ZK节点\nSpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取",
-          "example": "无",
+          "example": "{\"SpecName\":\"SCH1\", \"Count\":1, \"DiskSize\":200}",
           "member": "NodeSpec",
           "name": "CommonSpec",
           "required": false,
@@ -970,13 +970,13 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Not enough memory",
+          "document": "错误信息",
+          "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1240,33 +1240,33 @@
         },
         {
           "disabled": false,
-          "document": "元数据备份策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "元数据备份策略",
           "example": "无",
           "member": "ScheduleStrategy",
           "name": "MetaStrategy",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "表数据备份策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "表数据备份策略",
           "example": "无",
           "member": "ScheduleStrategy",
           "name": "DataStrategy",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份表列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份表列表",
           "example": "无",
           "member": "BackupTableContent",
           "name": "BackUpContents",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1280,13 +1280,13 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1550,13 +1550,13 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -98,6 +98,13 @@
       "output": "CreateIpAccessControlResponse",
       "status": "online"
     },
+    "CreatePostCKafkaFlow": {
+      "document": "创建CKafka投递流任务",
+      "input": "CreatePostCKafkaFlowRequest",
+      "name": "创建CKafka投递流任务",
+      "output": "CreatePostCKafkaFlowResponse",
+      "status": "online"
+    },
     "CreatePostCLSFlow": {
       "document": "创建CLS投递流任务",
       "input": "CreatePostCLSFlowRequest",
@@ -138,6 +145,13 @@
       "input": "DeleteAttackWhiteRuleRequest",
       "name": "删除规则引擎白名单",
       "output": "DeleteAttackWhiteRuleResponse",
+      "status": "online"
+    },
+    "DeleteBotSceneUCBRule": {
+      "document": "场景化后删除Bot的UCB自定义规则",
+      "input": "DeleteBotSceneUCBRuleRequest",
+      "name": "场景化后删除Bot的UCB自定义规则",
+      "output": "DeleteBotSceneUCBRuleResponse",
       "status": "online"
     },
     "DeleteCCRule": {
@@ -313,6 +327,27 @@
       "input": "DescribeBatchIpAccessControlRequest",
       "name": "批量防护IP黑白名单查询",
       "output": "DescribeBatchIpAccessControlResponse",
+      "status": "online"
+    },
+    "DescribeBotSceneList": {
+      "document": "获取BOT场景列表与概览",
+      "input": "DescribeBotSceneListRequest",
+      "name": "获取BOT场景列表与概览",
+      "output": "DescribeBotSceneListResponse",
+      "status": "online"
+    },
+    "DescribeBotSceneOverview": {
+      "document": "获取Bot场景全局概览",
+      "input": "DescribeBotSceneOverviewRequest",
+      "name": "获取Bot场景全局概览",
+      "output": "DescribeBotSceneOverviewResponse",
+      "status": "online"
+    },
+    "DescribeBotSceneUCBRule": {
+      "document": "场景化后Bot获取UCB自定义规则策略",
+      "input": "DescribeBotSceneUCBRuleRequest",
+      "name": "场景化后Bot获取UCB自定义规则策略",
+      "output": "DescribeBotSceneUCBRuleResponse",
       "status": "online"
     },
     "DescribeCCAutoStatus": {
@@ -518,6 +553,13 @@
       "output": "DescribePortsResponse",
       "status": "online"
     },
+    "DescribePostCKafkaFlows": {
+      "document": "获取CKafka投递流任务列表",
+      "input": "DescribePostCKafkaFlowsRequest",
+      "name": "获取CKafka投递流任务列表",
+      "output": "DescribePostCKafkaFlowsResponse",
+      "status": "online"
+    },
     "DescribePostCLSFlows": {
       "document": "获取CLS投递流任务列表",
       "input": "DescribePostCLSFlowsRequest",
@@ -658,6 +700,13 @@
       "output": "DescribeWebshellStatusResponse",
       "status": "online"
     },
+    "DestroyPostCKafkaFlow": {
+      "document": "销毁CKafka投递流任务",
+      "input": "DestroyPostCKafkaFlowRequest",
+      "name": "销毁CKafka投递流任务",
+      "output": "DestroyPostCKafkaFlowResponse",
+      "status": "online"
+    },
     "DestroyPostCLSFlow": {
       "document": "销毁CLS投递流任务",
       "input": "DestroyPostCLSFlowRequest",
@@ -782,6 +831,20 @@
       "input": "ModifyAttackWhiteRuleRequest",
       "name": "修改规则引擎白名单",
       "output": "ModifyAttackWhiteRuleResponse",
+      "status": "online"
+    },
+    "ModifyBotSceneStatus": {
+      "document": "bot子场景开关",
+      "input": "ModifyBotSceneStatusRequest",
+      "name": "bot子场景开关",
+      "output": "ModifyBotSceneStatusResponse",
+      "status": "online"
+    },
+    "ModifyBotSceneUCBRule": {
+      "document": "【接口复用】场景化后更新Bot的UCB自定义规则，两个调用位置：1.BOT全局白名单 2.BOT场景配置",
+      "input": "ModifyBotSceneUCBRuleRequest",
+      "name": "场景化后更新Bot的UCB自定义规则",
+      "output": "ModifyBotSceneUCBRuleResponse",
       "status": "online"
     },
     "ModifyBotStatus": {
@@ -3600,6 +3663,67 @@
       ],
       "type": "object"
     },
+    "BotActionScopeRuleEntry": {
+      "document": "动作策略的匹配规则实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数",
+          "example": "url",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配符",
+          "example": "eq",
+          "member": "string",
+          "name": "Op",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "/login",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对于头部字段匹配value的时候指定的头部名",
+          "example": "post",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "470后使用此字段存储多值",
+          "example": "[\"/login\"]",
+          "member": "string",
+          "name": "ValueArray",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotPkg": {
       "document": "Bot资源信息",
       "members": [
@@ -3810,6 +3934,570 @@
       ],
       "usage": "both"
     },
+    "BotSceneActionRule": {
+      "document": "获取场景动作策略列表时的动作策略实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作策略ID",
+          "example": "310003242",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作策略名称",
+          "example": "动作策略1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略生效状态",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分数范围",
+          "example": "[{\"upper\":100,\"lower\":0,\"action\":\"intercept\"}]",
+          "member": "BotScoreRuleEntry",
+          "name": "Score",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "100-宽松、200-中等、300-严格、0-自定义",
+          "example": "0",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效范围，为空表示全部范围",
+          "example": "[{\"key\":\"url\",\"op\":\"eq\",\"value\":\"/luffy\"}]",
+          "member": "BotActionScopeRuleEntry",
+          "name": "Scope",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "default：默认创建 custom：自定义创建",
+          "example": "Default",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配范围类型：全局匹配 or 自定义匹配范围",
+          "example": "global",
+          "member": "string",
+          "name": "ScopeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件间的与或关系",
+          "example": "or",
+          "member": "string",
+          "name": "ActionMatchType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotSceneInfo": {
+      "document": "场景的详细配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "3012321412",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景类型，default:默认场景,custom:非默认场景",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景名",
+          "example": "default-scene",
+          "member": "string",
+          "name": "SceneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1231435345",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景模板类型，登录: login  秒杀:seckill  爬内容：crawl 自定义: custom",
+          "example": "login",
+          "member": "string",
+          "name": "BusinessType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端类型，浏览器/H5 : browser  小程序: miniApp  App:",
+          "example": "browser",
+          "member": "string",
+          "name": "ClientType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配范围",
+          "example": "[{\"key\":\"url\",\"op\":\"eq\",\"value\":\"/luffy\"}]",
+          "member": "BotSceneMatchCondition",
+          "name": "MatchCondition",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景开关",
+          "example": "false",
+          "member": "bool",
+          "name": "SceneStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前端对抗开关",
+          "example": "false",
+          "member": "bool",
+          "name": "JsInjectStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI开关",
+          "example": "false",
+          "member": "bool",
+          "name": "AIStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TI开关",
+          "example": "false",
+          "member": "bool",
+          "name": "TIStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能统计开关",
+          "example": "false",
+          "member": "bool",
+          "name": "StatisticStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作策略数量",
+          "example": "97",
+          "member": "int64",
+          "name": "ActionRuleCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则数量",
+          "example": "78",
+          "member": "int64",
+          "name": "UCBCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景的匹配范围，global-全部匹配 custom-自定义匹配范围",
+          "example": "custom",
+          "member": "string",
+          "name": "MatchType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件间的与或关系",
+          "example": "and",
+          "member": "string",
+          "name": "ActionMatchType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "UA模块开关",
+          "example": "false",
+          "member": "bool",
+          "name": "UAStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：前端对抗对应mysql的记录id",
+          "example": "23",
+          "member": "int64",
+          "name": "JsInjectRuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：前端对抗配置动作",
+          "example": "monitor",
+          "member": "int64",
+          "name": "JsInjectAction",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：前端对抗重定向路径",
+          "example": "/luffy",
+          "member": "string",
+          "name": "JsInjectRedirect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：动作策略信息  PS:简易模式只有一个动作策略",
+          "example": "[{\"RuleId\":\"302131414\"}]",
+          "member": "BotSceneActionRule",
+          "name": "ActionRuleList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：monitor-观察 intercept-拦截 custom-自定义",
+          "example": "monitor",
+          "member": "string",
+          "name": "BotIdPattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：bot_id规则总数",
+          "example": "141",
+          "member": "int64",
+          "name": "BotIdCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：观察动作的规则总数",
+          "example": "23",
+          "member": "int64",
+          "name": "BotIdMonitorCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：拦截动作的规则总数",
+          "example": "34",
+          "member": "int64",
+          "name": "BotIdInterceptCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建场景时选择的规则集",
+          "example": "[\"ddos\"]",
+          "member": "string",
+          "name": "RuleSetSelection",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "改场景的bot token列表",
+          "example": "[{\"Name\":\"name-token\"}]",
+          "member": "BotToken",
+          "name": "TokenList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：重定向动作的规则总数",
+          "example": "23",
+          "member": "int64",
+          "name": "BotIdRedirectCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：人机识别动作的规则总数",
+          "example": "46",
+          "member": "int64",
+          "name": "BotIdCaptchaCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：防护等级",
+          "example": "100",
+          "member": "string",
+          "name": "BotIdProtectLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：全局重定向路径",
+          "example": "/luffy",
+          "member": "string",
+          "name": "BotIdGlobalRedirect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简易模式场景：JS校验动作的规则总数",
+          "example": "18",
+          "member": "int64",
+          "name": "BotIdJsChallengeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotSceneMatchCondition": {
+      "document": "场景匹配条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配参数",
+          "example": "url",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配符",
+          "example": "eq",
+          "member": "string",
+          "name": "Op",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配值",
+          "example": "/luffy",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对于头部字段匹配value的时候指定的头部名",
+          "example": "none",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "470后使用此入参存在多值",
+          "example": "[\"/luffy\"]",
+          "member": "string",
+          "name": "ValueArray",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotScoreRuleEntry": {
+      "document": "动作策略的一条分数段实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分数区间上限",
+          "example": "50",
+          "member": "string",
+          "name": "Upper",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分数区间下限",
+          "example": "0",
+          "member": "string",
+          "name": "Lower",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置动作",
+          "example": "permit",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量标签",
+          "example": "正常流量",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向",
+          "example": "/redirect_url",
+          "member": "string",
+          "name": "Redirect",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BotStatPointItem": {
       "document": "bot的趋势图对象",
       "members": [
@@ -3851,6 +4539,112 @@
           "name": "Label",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BotToken": {
+      "document": "bot-token配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话名称",
+          "example": "waf",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话描述",
+          "example": "waf_aa",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话id",
+          "example": "342322",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略的开关状态",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话位置",
+          "example": "get",
+          "member": "string",
+          "name": "Location",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话key",
+          "example": "waf",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话匹配方式，前缀匹配、后缀匹配等",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话更新的时间戳",
+          "example": "1730609155",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景列表，内容为空表示全部场景应用",
+          "example": "login",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "88",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5419,6 +6213,132 @@
       ],
       "type": "object"
     },
+    "CreatePostCKafkaFlowRequest": {
+      "document": "CreatePostCKafkaFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递的CKafka所在区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CKafkaRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户的CKafka 实例ID",
+          "example": "ckafka-****vk3",
+          "member": "string",
+          "name": "CKafkaID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支撑环境是IP:PORT，外网环境是domain:PORT",
+          "example": "11.179.226.202:9019",
+          "member": "string",
+          "name": "Brokers",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为none，支持snappy、gzip和lz4压缩，推荐snappy",
+          "example": "snappy",
+          "member": "string",
+          "name": "Compression",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1-外网TGW，2-支撑环境，默认为支撑环境",
+          "example": "1",
+          "member": "int64",
+          "name": "VipType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称，默认不传或者传空字符串，默认值为waf_post_access_log",
+          "example": "waf_post_access_log",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kafka集群的版本号",
+          "example": "\"2.4.1\"",
+          "member": "string",
+          "name": "KafkaVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SASL校验，默认不开启，0-关闭，1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "SASLEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "SASL用户名",
+          "example": "\"waf_root\"",
+          "member": "string",
+          "name": "SASLUser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SASL密码",
+          "example": "AKIDszE***************DC2lHe",
+          "member": "string",
+          "name": "SASLPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启访问日志某些字段是否投递",
+          "example": "{\"EnableBody\": 1,\"EnableHeaders\":1}",
+          "member": "FieldWriteConfig",
+          "name": "WriteConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePostCKafkaFlowResponse": {
+      "document": "CreatePostCKafkaFlow返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePostCLSFlowRequest": {
       "document": "CreatePostCLSFlow请求参数结构体",
       "members": [
@@ -5720,6 +6640,61 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBotSceneUCBRuleRequest": {
+      "document": "DeleteBotSceneUCBRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则ID",
+          "example": "30xxxxxxx10",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1.BOT全局白名单处调用时，传\"global\";2.BOT场景配置时，传具体的场景ID",
+          "example": "30xxxxxxx29",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBotSceneUCBRuleResponse": {
+      "document": "DeleteBotSceneUCBRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常情况下为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7890,6 +8865,338 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeBotSceneListRequest": {
+      "document": "DescribeBotSceneList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景模板类型，通过此下拉字段进行场景筛选。全部: all 登录: login  秒杀:seckill  爬内容：crawl 自定义: custom",
+          "example": "[\"all\"]",
+          "member": "string",
+          "name": "BusinessType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通过场景名称模糊搜索",
+          "example": "登录场景",
+          "member": "string",
+          "name": "SceneName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只显示默认场景",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅显示生效场景",
+          "example": "false",
+          "member": "bool",
+          "name": "IsValid",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotSceneListResponse": {
+      "document": "DescribeBotSceneList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合筛选条件的场景数目",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当TotalCount为0时，返回空",
+          "example": "[       {         \"SceneId\": \"3000004602\",         \"Type\": \"default\",         \"SceneName\": \"默认场景\",         \"UpdateTime\": 1666262225512,         \"BusinessType\": [],         \"ClientType\": [           \"browser\"         ],         \"Priority\": 100,         \"MatchCondition\": [],         \"MatchType\": \"\",         \"ActionMatchType\": \"and\",         \"SceneStatus\": true,         \"JsInjectStatus\": false,         \"AIStatus\": true,         \"TIStatus\": true,         \"StatisticStatus\": false,         \"ActionRuleCount\": 1,         \"UCBCount\": 0, \"UAStatus\":true       }     ]",
+          "member": "BotSceneInfo",
+          "name": "BotSceneList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true-简易模式",
+          "example": "false",
+          "member": "bool",
+          "name": "SimpleFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotSceneOverviewRequest": {
+      "document": "DescribeBotSceneOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotSceneOverviewResponse": {
+      "document": "DescribeBotSceneOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "BOT总开关",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景总数",
+          "example": "10",
+          "member": "int64",
+          "name": "SceneCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效场景数",
+          "example": "6",
+          "member": "int64",
+          "name": "ValidSceneCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前开启的、匹配范围为全局、优先级最高的场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{             \"SceneId\": \"3000004882\",             \"SceneName\": \"登录防护场景2\",             \"Priority\": 1,             \"UpdateTime\": 1667198325353         }",
+          "member": "GlobalSceneInfo",
+          "name": "CurrentGlobalScene",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则总数，不包括BOT白名单",
+          "example": "4",
+          "member": "int64",
+          "name": "CustomRuleNums",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotSceneUCBRuleRequest": {
+      "document": "DescribeBotSceneUCBRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻页组件的起始页",
+          "example": "0",
+          "member": "uint64",
+          "name": "Skip",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页组件的页数据条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "desc",
+          "member": "string",
+          "name": "Sort",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1.BOT全局白名单处调用时，传\"global\";2.BOT场景配置处调用时，传具体的场景ID",
+          "example": "30xxxxx",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的动作",
+          "example": "monitor",
+          "member": "string",
+          "name": "Operate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的规则名称",
+          "example": "custom-1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "兼容老数据和新旧版前端",
+          "example": "480",
+          "member": "string",
+          "name": "VersionFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效方式：0-全部 1-永久生效 2-定时生效 3-周粒度生效 4-月粒度生效",
+          "example": "0",
+          "member": "uint64",
+          "name": "TimerType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0-全部 1-生效中 2-已过期",
+          "example": "1",
+          "member": "uint64",
+          "name": "ValidStatus",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotSceneUCBRuleResponse": {
+      "document": "DescribeBotSceneUCBRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{       \"Res\": [         {           \"Domain\": \"admin.com\",           \"Name\": \"custom-1\",           \"Rule\": [             {               \"Key\": \"url\",               \"Op\": \"eq\",               \"Value\": {                 \"BasicValue\": \"/login\",                 \"LogicValue\": true,                 \"BelongValue\": [                   \"/login\"                 ],                 \"ValidKey\": \"url\",                 \"MultiValue\": [                   \"/login\"                 ]               },               \"OpOp\": \"rematch\",               \"OpArg\": [                 \"name\"               ],               \"OpValue\": 0,               \"Name\": \"age\"             }           ],           \"Action\": \"monitor\",           \"OnOff\": \"on\",           \"RuleType\": 0,           \"Prior\": 0,           \"Timestamp\": 0,           \"Label\": \"human\",           \"Id\": \"3021313\",           \"SceneId\": \"3021312412\",           \"ValidTime\": 0,           \"Appid\": 1,           \"AdditionArg\": \"none\",           \"Desc\": \"none\",           \"RuleId\": \"320032232\",           \"PreDefine\": true,           \"JobType\": \"hour\",           \"JobDateTime\": {             \"Timed\": [               {                 \"StartDateTime\": 1,                 \"EndDateTime\": 1               }             ],             \"Cron\": [               {                 \"Days\": [                   1                 ],                 \"WDays\": [                   1                 ],                 \"StartTime\": \"1231312414\",                 \"EndTime\": \"12313124111\"               }             ],             \"TimeTZone\": \"utc+8\"           },           \"ExpireTime\": 1         }       ],       \"TotalCount\": 0     }",
+          "member": "DescribeBotUCBRuleRsp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBotUCBRuleRsp": {
+      "document": "获取自定义规则列表时的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "[{\"Name\":\"ucb-rule\"}]",
+          "member": "InOutputBotUCBRule",
+          "name": "Res",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "98",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeCCAutoStatusRequest": {
       "document": "DescribeCCAutoStatus请求参数结构体",
@@ -10421,6 +11728,43 @@
       ],
       "type": "object"
     },
+    "DescribePostCKafkaFlowsRequest": {
+      "document": "DescribePostCKafkaFlows请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostCKafkaFlowsResponse": {
+      "document": "DescribePostCKafkaFlows返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户的投递流列表",
+          "example": "[{\"FlowId\":1001}]",
+          "member": "PostCKafkaFlowInfo",
+          "name": "PostCKafkaFlows",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePostCLSFlowsRequest": {
       "document": "DescribePostCLSFlows请求参数结构体",
       "members": [
@@ -11742,6 +13086,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPostCKafkaFlowRequest": {
+      "document": "DestroyPostCKafkaFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递流的流ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPostCKafkaFlowResponse": {
+      "document": "DestroyPostCKafkaFlow返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13095,6 +14475,45 @@
       ],
       "usage": "out"
     },
+    "FieldWriteConfig": {
+      "document": "设置哪些字段是否存储或转发",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1:开启 0:不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableHeaders",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:开启 0:不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableBody",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:开启 0:不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableBot",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FiltersItemNew": {
       "document": "过滤数组",
       "members": [
@@ -13647,6 +15066,52 @@
         }
       ],
       "type": "object"
+    },
+    "GlobalSceneInfo": {
+      "document": "当前开启的、匹配范围为全局、优先级最高的场景信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "3034762512",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景名称",
+          "example": "登录场景",
+          "member": "string",
+          "name": "SceneName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景优先级",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景更新时间",
+          "example": "1233254252",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GoodNews": {
       "document": "计费下单接口出入参Goods",
@@ -14564,6 +16029,370 @@
         }
       ],
       "type": "object"
+    },
+    "InOutputBotUCBRule": {
+      "document": "修改/新增自定义规则的入参，查询自定义规则列表时的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "admin.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "ucb-rule",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "UCB的具体规则项",
+          "example": "[{\"key\":\"url\",\"op\":\"eq\",\"value\":\"/luffy\"}]",
+          "member": "InOutputUCBRuleEntry",
+          "name": "Rule",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置动作",
+          "example": "intercept",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关",
+          "example": "on",
+          "member": "string",
+          "name": "OnOff",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "10",
+          "member": "int64",
+          "name": "RuleType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级",
+          "example": "1",
+          "member": "int64",
+          "name": "Prior",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间戳",
+          "example": "123243253",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "bad bot",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入参ID",
+          "example": "3012314124",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "3012314124",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效时间",
+          "example": "1000",
+          "member": "int64",
+          "name": "ValidTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的appid",
+          "example": "123252257",
+          "member": "uint64",
+          "name": "Appid",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外参数",
+          "example": "none",
+          "member": "string",
+          "name": "AdditionArg",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "nemo",
+          "member": "string",
+          "name": "Desc",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "30123124",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true-系统预设规则 false-自定义规则",
+          "example": "true",
+          "member": "bool",
+          "name": "PreDefine",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务类型",
+          "example": "cronjob",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{\"TimeTZone\":\"utc+8\"}",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效截止时间",
+          "example": "12334463",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效-1,失效-0",
+          "example": "234352324",
+          "member": "int64",
+          "name": "ValidStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义拦截页面ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "BlockPageId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当Action=intercept时，此字段必填",
+          "example": "[{\"Action\":\"monitor\",\"Proportion\":0.5}]",
+          "member": "UCBActionProportion",
+          "name": "ActionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "InOutputUCBRuleEntry": {
+      "document": "自定义规则UCB的Rule生效条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "avg_speed",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": ">",
+          "member": "string",
+          "name": "Op",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "{\"basicvalue\":\"10\"}",
+          "member": "UCBEntryValue",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选的补充操作符",
+          "example": "none",
+          "member": "string",
+          "name": "OpOp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选的补充参数",
+          "example": "none",
+          "member": "string",
+          "name": "OpArg",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可选的补充值",
+          "example": "none",
+          "member": "float",
+          "name": "OpValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Header参数值时使用",
+          "example": "post",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域选择",
+          "example": "[{\"Country\":\"china\"}]",
+          "member": "Area",
+          "name": "Areas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言环境",
+          "example": "cn",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InstanceInfo": {
       "document": "一个实例的详细信息",
@@ -16654,6 +18483,115 @@
           "name": "RuleId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotSceneStatusRequest": {
+      "document": "ModifyBotSceneStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "场景ID",
+          "example": "3024324123",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "true-开启 false-关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotSceneStatusResponse": {
+      "document": "ModifyBotSceneStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotSceneUCBRuleRequest": {
+      "document": "ModifyBotSceneUCBRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1.BOT全局白名单处调用时，传\"global\";2.BOT场景配置时，传具体的场景ID",
+          "example": "30xxxxx",
+          "member": "string",
+          "name": "SceneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则内容, 增加编码SceneId信息,1.BOT全局白名单处调用时，SceneId为\"global\", RuleType传10, Action为\"permit\";2.BOT场景配置时，SceneId为场景ID",
+          "example": "{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\",         \"Rule\":[             {                 \"Key\":\"robots_exist\",                 \"Value\":{                     \"LogicValue\":\"false\"                 },                 \"Op\":\"logic\"             }         ],         \"Label\":\"友好BOT\",         \"Prior\":\"100\",         \"Appid\":\"251197210\",         \"Action\":\"permit\",         \"Desc\":\"云图API测试场景UCB\",         \"OnOff\":\"on\"     }",
+          "member": "InOutputBotUCBRule",
+          "name": "Rule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "530改批量操作",
+          "example": "[{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\",         \"Rule\":[             {                 \"Key\":\"robots_exist\",                 \"Value\":{                     \"LogicValue\":\"false\"                 },                 \"Op\":\"logic\"             }         ],         \"Label\":\"友好BOT\",         \"Prior\":\"100\",         \"Appid\":\"251197210\",         \"Action\":\"permit\",         \"Desc\":\"云图API测试场景UCB\",         \"OnOff\":\"on\"     }]",
+          "member": "InOutputBotUCBRule",
+          "name": "BatchRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotSceneUCBRuleResponse": {
+      "document": "ModifyBotSceneUCBRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常情况下为null",
+          "example": "ok",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -19501,6 +21439,162 @@
       ],
       "type": "object"
     },
+    "PostCKafkaFlowInfo": {
+      "document": "CKafka投递流",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递流唯一ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-访问日志 2-攻击日志",
+          "example": "1",
+          "member": "int64",
+          "name": "LogType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 0-为关闭 1-为启用",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CKafka所在区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CKafkaRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CKafka实例ID",
+          "example": "ckafka-o9gjqonr",
+          "member": "string",
+          "name": "CKafkaID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ckafka地址信息",
+          "example": "11.179.226.202:6016",
+          "member": "string",
+          "name": "Brokers",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ckafka版本号",
+          "example": "2.4.1",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "waf_post_access_log",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "压缩算法，支持gzip 和 lz4",
+          "example": "lz4",
+          "member": "string",
+          "name": "Compression",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持SASL,0-关闭，1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "SASLEnable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SASL用户名",
+          "example": "waf_user",
+          "member": "string",
+          "name": "SASLUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SALS密码",
+          "example": "waf123456",
+          "member": "string",
+          "name": "SASLPassword",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "content",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-外网TGW，2-支撑环境，默认为支撑环境",
+          "example": "2",
+          "member": "int64",
+          "name": "VipType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置状态",
+          "example": "{\"EnableHeaders\":1}",
+          "member": "FieldWriteConfig",
+          "name": "WriteConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PostCLSFlowInfo": {
       "document": "CKafka投递流",
       "members": [
@@ -20976,6 +23070,95 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UCBActionProportion": {
+      "document": "bot自定义规则动作灰度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作",
+          "example": "monitor",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "比例",
+          "example": "0.3",
+          "member": "float",
+          "name": "Proportion",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UCBEntryValue": {
+      "document": "云图API改版后, 不支持将复杂json类型编码成string,因此通过此复杂类型识别传入的不同类型参数值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "string类型值",
+          "example": "luffy",
+          "member": "string",
+          "name": "BasicValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "布尔类型值",
+          "example": "false",
+          "member": "bool",
+          "name": "LogicValue",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "string数组类型值",
+          "example": "[\"luffy\"]",
+          "member": "string",
+          "name": "BelongValue",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指示有效的字段",
+          "example": "BasicValue",
+          "member": "string",
+          "name": "ValidKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "string数组类型值",
+          "example": "[\"luffy\"]",
+          "member": "string",
+          "name": "MultiValue",
+          "output_required": true,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

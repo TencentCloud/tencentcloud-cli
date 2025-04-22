@@ -435,7 +435,7 @@
     "OpenCoolDownPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"Operation successful\",\n        \"QueryDocument\": \"[{\\\"partition_name\\\": \\\"p1\\\", \\\"cool_down_status\\\": \\\"enabled\\\", \\\"cool_down_policy\\\": \\\"policy_7days\\\"}, {\\\"partition_name\\\": \\\"p2\\\", \\\"cool_down_status\\\": \\\"disabled\\\", \\\"cool_down_policy\\\": \\\"\\\"}]\",\n        \"RequestId\": \"req-987654321\"\n    }\n}",
         "title": "开通"
       }
@@ -475,9 +475,9 @@
     "RestartClusterForNode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"cdwch-xxxx\",\n    \"ConfigName\": \"fe\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-xxxx\",\n    \"ConfigName\": \"fe\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 6331,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
-        "title": "test"
+        "title": "重启"
       }
     ],
     "ScaleOutInstance": [
@@ -499,7 +499,7 @@
     "UpdateCoolDown": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"doris-123\",\n    \"Enable\": 1,\n    \"Bucket\": \"bucket6331\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"doris-123\",\n    \"Enable\": 1,\n    \"Bucket\": \"bucket6331\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
         "title": "示例"
       }

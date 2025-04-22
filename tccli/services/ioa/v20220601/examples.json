@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateDLPFileDetectionTask": [
+      {
+        "document": "提交文件送检，之后可用查询文件检测结果接口DescribeDLPFileDetectResult，或在控制台日志上查询结果",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDLPFileDetectionTask\n<公共请求参数>\n\n{\n    \"Url\": \"https://raw.githubusercontent.com/ZhangYang5158/testDLP/refs/heads/testDLP_new/DLP%E6%B5%8B%E8%AF%95%E6%A0%B7%E6%9C%AC.zip\",\n    \"FileName\": \"DLP测试样本.zip\",\n    \"FileMd5\": \"e9e7cad967c0c7e22e44789110205111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DLPFileDetectionTaskID\": \"053a8fe1-150f-434c-b8e9-f1d7804ded1f\"\n        },\n        \"RequestId\": \"053a8fe1-150f-434c-b8e9-f1d7804ded1f\"\n    }\n}",
+        "title": "送检任务示例"
+      }
+    ],
     "CreateDeviceVirtualGroup": [
       {
         "document": "创建自定义分组接口",
@@ -14,12 +22,40 @@
         "title": "示例2"
       }
     ],
+    "CreatePrivilegeCode": [
+      {
+        "document": "获取终端设备特权码或者卸载码",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivilegeCode\n<公共请求参数>\n\n{\n    \"Mid\": \"BC5184BEC838B96B29CE8105EC071B88663283537\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": \"981066\"\n        },\n        \"RequestId\": \"1658388067.5420978\"\n    }\n}",
+        "title": "获取终端设备特权码或者卸载码"
+      },
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivilegeCode\n<公共请求参数>\n\n{\n    \"Mid\": \"75129D715480905B6A9C4569893C7634663C2D68\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": \"417484\"\n        },\n        \"RequestId\": \"4f84848e-26e7-4d01-80d9-2d3b6d14d697\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "DescribeAccountGroups": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountGroups\n<公共请求参数>\n\n{\n    \"Deepin\": 1,\n    \"Condition\": {\n        \"Filters\": [\n            {\n                \"Field\": \"Name\",\n                \"Operator\": \"like\",\n                \"Values\": [\n                    \"研发\"\n                ]\n            }\n        ]\n    },\n    \"ParentId\": 82119\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Description\": \"这是一个研发部门\",\n                    \"ExtraInfo\": \"{\\\"salt\\\": \\\"5b52ea107e85a7b46d2c1b15a5faf722\\\"}\",\n                    \"Id\": 510945,\n                    \"IdPath\": \"14632.82119.510943.510945\",\n                    \"IdPathArr\": [\n                        14632,\n                        82119,\n                        510943,\n                        510945\n                    ],\n                    \"ImportType\": \"zijian\",\n                    \"IsLeaf\": false,\n                    \"Itime\": \"2024-10-21 14:34:01\",\n                    \"LatestSyncResult\": \"Success\",\n                    \"LatestSyncTime\": \"2024-10-20 09:00:01\",\n                    \"MiniIamId\": \"13178683927JH5h7jtvXdCqPLKnC46gC\",\n                    \"Name\": \"研发部\",\n                    \"NamePath\": \"全网账户.pf自建.集团.研发部\",\n                    \"OrgId\": \"510945\",\n                    \"ParentId\": 510943,\n                    \"ParentOrgId\": \"510943\",\n                    \"ReadOnly\": false,\n                    \"Source\": 0,\n                    \"UserTotal\": 1,\n                    \"Utime\": \"2024-10-21 14:34:16\"\n                },\n                {\n                    \"Description\": \"这是一个研发组\",\n                    \"ExtraInfo\": \"{\\\"salt\\\": \\\"5b52ea107e85a7b46d2c1b15a5faf722\\\"}\",\n                    \"Id\": 510947,\n                    \"IdPath\": \"14632.82119.510943.510945.510947\",\n                    \"IdPathArr\": [\n                        14632,\n                        82119,\n                        510943,\n                        510945,\n                        510947\n                    ],\n                    \"ImportType\": \"zijian\",\n                    \"IsLeaf\": true,\n                    \"Itime\": \"2024-10-21 14:34:37\",\n                    \"LatestSyncResult\": \"Success\",\n                    \"LatestSyncTime\": \"2024-10-20 09:00:01\",\n                    \"MiniIamId\": \"13178683927JH5h7jtvXdCqPLKnC46gC\",\n                    \"Name\": \"研发一组\",\n                    \"NamePath\": \"全网账户.pf自建.集团.研发部.研发一组\",\n                    \"OrgId\": \"510947\",\n                    \"ParentId\": 510945,\n                    \"ParentOrgId\": \"510945\",\n                    \"ReadOnly\": false,\n                    \"Source\": 0,\n                    \"UserTotal\": 0,\n                    \"Utime\": \"2024-10-21 14:34:37\"\n                },\n                {\n                    \"Description\": \"这是另一个研发组\",\n                    \"ExtraInfo\": \"{\\\"salt\\\": \\\"5b52ea107e85a7b46d2c1b15a5faf722\\\"}\",\n                    \"Id\": 510948,\n                    \"IdPath\": \"14632.82119.510943.510945.510948\",\n                    \"IdPathArr\": [\n                        14632,\n                        82119,\n                        510943,\n                        510945,\n                        510948\n                    ],\n                    \"ImportType\": \"zijian\",\n                    \"IsLeaf\": true,\n                    \"Itime\": \"2024-10-21 14:34:52\",\n                    \"LatestSyncResult\": \"Success\",\n                    \"LatestSyncTime\": \"2024-10-20 09:00:01\",\n                    \"MiniIamId\": \"13178683927JH5h7jtvXdCqPLKnC46gC\",\n                    \"Name\": \"研发二组\",\n                    \"NamePath\": \"全网账户.pf自建.集团.研发部.研发二组\",\n                    \"OrgId\": \"510948\",\n                    \"ParentId\": 510945,\n                    \"ParentOrgId\": \"510945\",\n                    \"ReadOnly\": false,\n                    \"Source\": 0,\n                    \"UserTotal\": 1,\n                    \"Utime\": \"2024-10-21 14:34:52\"\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 0,\n                \"PageSize\": 10,\n                \"Total\": 3\n            }\n        },\n        \"RequestId\": \"365d01ca-41d2-45b8-97d5-b8e5ce2c5148\"\n    }\n}",
         "title": "查询账号分组列表"
+      }
+    ],
+    "DescribeDLPFileDetectResult": [
+      {
+        "document": "查询检测结果，结果失败",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDLPFileDetectResult\n<公共请求参数>\n\n{\n    \"QueryID\": \"207d7f0d-fe43-4483-a6bb-470321e60bbc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FileMd5\": \"aabba408088b6aea1601fe6823cef111\",\n            \"FileName\": \"商务合同.docx\",\n            \"Status\": \"检测失败:detect failed: open /data/services/pcmgr_enterprise/data/tmp/dlp_file/aabba408088b6aea1601fe6823cef111/%E5%95%86%E5%8A%A1%E5%90%88%E5%90%8C.docx: no such file or directory\"\n        },\n        \"RequestId\": \"778917dd-0258-4072-814a-10f62bb5d55b\"\n    }\n}",
+        "title": "检测失败示例"
+      },
+      {
+        "document": "查询检测结果，结果成功",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDLPFileDetectResult\n<公共请求参数>\n\n{\n    \"QueryID\": \"81f73e3b-f42e-4c15-8ef5-2ca670e9446b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DetectResult\": \"{\\\"Path\\\":\\\"/data/services/pcmgr_enterprise/data/tmp/dlp_file/e8bcc9bb7ef5765cb7ce79831ede2039/YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"Type\\\":\\\".pdf\\\",\\\"Size\\\":802831,\\\"State\\\":2,\\\"Md5\\\":\\\"e8bcc9bb7ef5765cb7ce79831ede2039\\\",\\\"Result\\\":{\\\"FileName\\\":\\\"YOGA%20BOOK%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97.pdf\\\",\\\"FileContent\\\":\\\"{\\\\\\\"FileAbstract\\\\\\\":\\\\\\\"YOGA BOOK with Windows®\\\\\\\\n用户指南\\\\\\\\nLenovo YB1-X91F\\\\\\\\nLenovo YB1-X91L\\\\\\\\nLenovo YB1-X91X\\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n \\\\\\\\n入门指南\\\\\\\\n在使用本用户指南及其支持的产品之\\\\\\\"}\\\",\\\"HitRuleId\\\":[\\\"364313\\\"],\\\"HitRuleCategoryId\\\":[\\\"29198\\\"],\\\"HitLevel\\\":[\\\"S2\\\"],\\\"HitRuleDesc\\\":\\\"364313(通讯信息)\\\",\\\"HitContent\\\":\\\"[{\\\\\\\"RuleId\\\\\\\":\\\\\\\"364313\\\\\\\",\\\\\\\"Hits\\\\\\\":[{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5148\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"电话\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\" Internet  \\\\\\\\u003e  移动电话。\\\\\\\\n2. 点按移动网络的名称。\\\\\\\\n\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5347\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"邮箱\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\"有电子邮件帐户，可直接登录到电子邮箱。如果没有，您需要创建一个电子邮\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"5305\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Content\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\"地址\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\"名称，输入连接名称、服务器名称或地址、用户名和密码，然后点按保存以连\\\\\\\"},{\\\\\\\"LibraryId\\\\\\\":\\\\\\\"45\\\\\\\",\\\\\\\"Attribute\\\\\\\":\\\\\\\"doc.Type\\\\\\\",\\\\\\\"String\\\\\\\":\\\\\\\".pdf\\\\\\\",\\\\\\\"Content\\\\\\\":\\\\\\\".pdf\\\\\\\"}]}]\\\"},\\\"EngineConfigVersion\\\":\\\"1744627119\\\"}\",\n            \"FileMd5\": \"e8bcc9bb7ef5765cb7ce79831ede2039\",\n            \"FileName\": \"YOGA BOOK用户指南.pdf\",\n            \"Status\": \"检测成功\"\n        },\n        \"RequestId\": \"5bc117a2-410a-42f9-98ea-e54b4f275f8c\"\n    }\n}",
+        "title": "检测成功示例"
       }
     ],
     "DescribeDevices": [
@@ -44,6 +80,14 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRootAccountGroup\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Description\": \"这里是该分组的描述\",\n            \"ExtraInfo\": \"{\\\"salt\\\": \\\"xf681fafy\\\"}\",\n            \"Id\": 14632,\n            \"IdPath\": \"14632\",\n            \"IdPathArr\": [\n                14632\n            ],\n            \"Import\": \"0\",\n            \"ImportEnable\": false,\n            \"ImportType\": \"zijian\",\n            \"Itime\": \"2023-04-18 23:01:11\",\n            \"MiniIamId\": \"1256733004o8vX5K5hVcGCeQKddLZNmf\",\n            \"Name\": \"全网账户\",\n            \"NamePath\": \"全网账户\",\n            \"OrgId\": \"0\",\n            \"ParentId\": 0,\n            \"ParentOrgId\": \"0\",\n            \"Source\": 0,\n            \"Utime\": \"2023-04-18 23:01:11\"\n        },\n        \"RequestId\": \"91b9b2f8-25cb-461c-9f48-2c5495c57f00\"\n    }\n}",
         "title": "查询全网根账号组信息"
+      }
+    ],
+    "DescribeSoftCensusListByDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSoftCensusListByDevice\n<公共请求参数>\n\n{\n    \"OsType\": 0,\n    \"GroupId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"GroupId\": 11668634,\n                    \"SoftNum\": 0,\n                    \"IoaUserName\": \"\",\n                    \"MacAddr\": \"\",\n                    \"PiracyRisk\": 2,\n                    \"Mid\": \"1EBWA5184BEC838B96B29CE8105EC66167F8CFBD\",\n                    \"GroupName\": \"dddd\",\n                    \"Name\": \"lucal_win-PC\",\n                    \"Ip\": \"119.147.10.202\",\n                    \"Id\": 288661,\n                    \"GroupNamePath\": \"全网终端.dddd\",\n                    \"UserName\": \"lucal_win\"\n                },\n                {\n                    \"GroupId\": 11668615,\n                    \"SoftNum\": 161,\n                    \"IoaUserName\": \"\",\n                    \"MacAddr\": \"B0:DC:EF:E7:37:EA\",\n                    \"PiracyRisk\": 2,\n                    \"Mid\": \"8314BF3FD3FD738410C4FBB0DDDA48786800AB00\",\n                    \"GroupName\": \"未分组终端\",\n                    \"Name\": \"STEVENSSHE-NBIR\",\n                    \"Ip\": \"119.147.10.192\",\n                    \"Id\": 288663,\n                    \"GroupNamePath\": \"全网终端.未分组终端\",\n                    \"UserName\": \"Administrator\"\n                },\n                {\n                    \"GroupId\": 11668615,\n                    \"SoftNum\": 0,\n                    \"IoaUserName\": \"\",\n                    \"MacAddr\": \"B0:DC:EF:E7:37:EE\",\n                    \"PiracyRisk\": 2,\n                    \"Mid\": \"489C698CAECC13B1B7C44E59443F5CBB676B7F33\",\n                    \"GroupName\": \"未分组终端\",\n                    \"Name\": \"cs-207addad83ae\",\n                    \"Ip\": \"113.108.77.70\",\n                    \"Id\": 288664,\n                    \"GroupNamePath\": \"全网终端.未分组终端\",\n                    \"UserName\": \"Administrator\"\n                }\n            ],\n            \"Page\": {\n                \"PageSize\": 10,\n                \"PageNum\": 1,\n                \"PageCount\": 1,\n                \"Total\": 3\n            }\n        },\n        \"RequestId\": \"8104e997-1a80-4697-afeb-cb2154bb0235\"\n    }\n}",
+        "title": "按终端查看软件统计"
       }
     ]
   },

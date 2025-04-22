@@ -9,7 +9,7 @@ tccli wedata DescribeApproveList --cli-unfold-argument  \
     --OrderFields.0.Direction DESC \
     --OrderFields.0.Name CreateTime \
     --ApproveClassification db \
-    --PageNumber 0 \
+    --PageNumber 1 \
     --PageSize 10
 ```
 

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli iotexplorer CancelAssignTWeCallLicense --cli-unfold-argument  \
-    --PkgId abc
+    --PkgId 2024020236215
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "3edc0o-456yghy"
     }
 }
 ```

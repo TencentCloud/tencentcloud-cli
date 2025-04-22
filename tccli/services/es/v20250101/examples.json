@@ -1,0 +1,85 @@
+{
+  "actions": {
+    "ChatCompletions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatCompletions\n<公共请求参数>\n\n{\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"什么是大模型？\"\n        }\n    ],\n    \"ModelName\": \"deepseek-r1\",\n    \"Stream\": false,\n    \"OnlineSearch\": true,\n    \"OnlineSearchOptions\": {\n        \"Engine\": \"bing\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"59afbba4-8b5f-47fa-972d-4bc5d77004ee\",\n        \"Usage\": {\n            \"PromptTokens\": 9224,\n            \"CompletionTokens\": 203,\n            \"TotalTokens\": 9427\n        },\n        \"Choices\": [\n            {\n                \"Message\": {\n                    \"Role\": \"assistant\",\n                    \"Content\": \"\\n\\n大模型是参数量庞大、基于深度学习的AI模型，擅长处理复杂任务如自然语言处理。\",\n                    \"ReasoningContent\": \"\\n嗯，用户让我简单描述什么是大模型，我需要先理解大模型的核心定义。根据搜索结果，大模型通常指参数规模庞大、基于深度学习的AI模型，比如GPT系列。多个网页提到参数数量达到数十亿甚至万亿，处理复杂任务能力强。例如，腾讯云和今日头条的文章都强调大模型的参数和数据处理能力。\\n\"\n                }\n            }\n        ],\n        \"RequestId\": \"6b5a7f7a-3e3d-4974-8480-8e21edaec5e7\",\n        \"OnlineSearchContent\": [\n            {\n                \"Query\": \"大模型 解释\",\n                \"Title\": \"快速了解什么是大模型 - 今日头条\",\n                \"Url\": \"https://m.toutiao.com/video/7340170115901932086/?upstream_biz=toutiao_pc\",\n                \"Time\": \"2024-02-27\",\n                \"Content\": \"大模型(Large Model)是AI人工智能领域中的一种重要模型,通常指的是参数量非常大、数据量也非常大的深度学习模型.大模型通常由数百万到数十亿的参数组成,需要大量的数据和计算资源进行训练和推理.\",\n                \"ChunkIndex\": \"ChunkIndex\",\n                \"Score\": \"Score\"\n            }\n        ]\n    }\n}",
+        "title": "AI 聊天问答"
+      }
+    ],
+    "ChunkDocument": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChunkDocument\n<公共请求参数>\n\n{\n    \"Document\": {\n        \"FileType\": \"TXT\",\n        \"FileContent\": \"基于分隔符、文本长度进行切片，适用规则性较强的文本\"\n    },\n    \"ModelName\": \"doc-chunk\",\n    \"Config\": {\n        \"MaxChunkSize\": 100\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Chunks\": [\n            {\n                \"Content\": \"基于分隔符、文本长度进行切片，适用规则性较强的文本\",\n                \"Index\": 0\n            }\n        ],\n        \"RequestId\": \"eeb0d39a-8a4a-431b-a577-2595202afaa1\"\n    }\n}",
+        "title": "实时文档切片"
+      }
+    ],
+    "ChunkDocumentAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChunkDocumentAsync\n<公共请求参数>\n\n{\n    \"Document\": {\n        \"FileType\": \"TXT\",\n        \"FileUrl\": \"\",\n        \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\",\n        \"FileName\": \"test.txt\"\n    },\n    \"Config\": {\n        \"MaxChunkSize\": 10000\n    },\n    \"ModelName\": \"doc-tree-chunk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3a1a515-e53c-473f-9114-6d05a19d1c0c\",\n        \"TaskId\": \"acf20b7e-47b2-4cfd-8aba-d170dee34cfc\"\n    }\n}",
+        "title": "文档切片异步"
+      }
+    ],
+    "GetDocumentChunkResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDocumentChunkResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"3041d1dc-1072-4025-a3c2-f8baea25801b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentChunkResultUrl\": \"https://aisearch-xxx.cos.ap-guangzhou.myqcloud.com/%2F1257780094/2032/0eef71d5c6b94f4c9f77bf96a990dd93.zip?x-cos-security-token=dOBUL5WAbHvrSLvR7Gw6r8quYTekAtja3bbc5bdae040e3fb733c657573859b48kjO-Uu0jMRpnX4JBXiMCmDLWHD-hkBEcwXSrKEkAfuV5Gb8r2Gx4yUlNGzpEgZpn13dTyMMyYUGmaeteIWndTZrLijqaUwuh-PiPfNFi7s2a3Cc_L-pAmY0LMpvMun98jP5Z26nrJ2XDgg9mN1oXTWz-BRohOXFe6Yo1sBzLdjIBMti4hfycleXOOmP2eVl5qbtd_dKog0NFfkPOot3kCRSVA5SIws5gS57oyhukNQTepOjvvf31qj0jxSPd0N2ipJWROLC3xcf31PSK8oBeefi4a0byIIMpauiuzqL81TFQ82mzut8lROA23aIEyrcHfAH33La3IK4i24edP-f58UTwyrBwsmsX1TIxvhQzgKA&q-sign-algorithm=sha1&q-ak=AKIDKI_3jDhy9q_C7NWV-fcXj0Ra0-ii9R1_cn7MHDdtqwIizIrVqVNUQDSsnYbirlgA&q-sign-time=1744101492%3B1744187892&q-key-time=1744101492%3B1744187892&q-header-list=host&q-url-param-list=x-cos-security-token&q-signature=3edbadc81bcdbe994ba75e9d578a3b2ffaf551ca\",\n        \"RequestId\": \"0b2bf3af-5671-45e8-a5db-b6792a928aa6\",\n        \"Status\": 1,\n        \"Usage\": {\n            \"PageNumber\": 1,\n            \"TotalTokens\": 118\n        }\n    }\n}",
+        "title": "获取文档切片结果"
+      }
+    ],
+    "GetDocumentParseResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDocumentParseResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"3cce395a-fe9e-460f-9b19-8920d15867e3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentParseResultUrl\": \"https://aisearch-xxxx.cos.ap-guangzhou.myqcloud.com/%2F1257780094/2025/87a8419e7e7d4bd9ad17267c47d12168.zip?x-cos-security-token=6VP365zlkuYclNSS8Uo2nO0HnR8EnMpa3af95a3e21d25bc893099fa2755135125OWpJjDZaOCMgmOglpve2Riw_eQhuqLM0X-s-TelbIipYTGRWgodzr4MspocQuTqi-qxIWjgLlCyv52JP2uA-ebvnGjaqsfxDZiaQf8SLEvv_OpdZ_DWdf2GVFJlxcMkyRb3swd900raxsnGuq1HOq2apiWxIqdyKD2XNeicqJiKvXBIwNozOhUt9bj9BBYLOiQOjHw5dLFDJM6xa53b9X2Z1LJKK53FlNJ5buCZ9Up18vKJn1YtFMAxvMYY-N1peQpzBo6OC-nj5ObvGYYSz-OOy3edOkaHzHksKuxBz181sk2EXrWf4NyF4pbuKM0YkFYek_d06s9n3MBsqXBIv79U3vmSfpjsTM7I26idRZg&q-sign-algorithm=sha1&q-ak=AKIDlCtP1SmwsERqUnRAwLlOZ21NbUGlevaln-DCwJZcft9vsiPNHgEMiwusHrhFpCa0&q-sign-time=1744014678%3B1744101078&q-key-time=1744014678%3B1744101078&q-header-list=host&q-url-param-list=x-cos-security-token&q-signature=ef15228dff60abfe0f7a4e51df7d81cf1fcff767\",\n        \"FailedPages\": null,\n        \"RequestId\": \"7da936b2-8d10-42bd-b65f-8d10ae99927a\",\n        \"Status\": 1\n    }\n}",
+        "title": "获取文档解析任务结果"
+      }
+    ],
+    "GetTextEmbedding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTextEmbedding\n<公共请求参数>\n\n{\n    \"ModelName\": \"bge-large-zh-v1.5\",\n    \"Texts\": [\n        \"你好\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    -0.007741480600088835,\n                    -0.017921222373843193,\n                    -0.04486401379108429,\n                    -0.0073757413774728775,\n                    0.014934351667761803,\n                    -0.025723660364747047,\n                    0.03559861704707146,\n                    -0.034379489719867706,\n                    0.027674268931150436,\n                    0.04876523092389107,\n                    -0.04266957566142082\n                ],\n                \"Index\": 0\n            }\n        ],\n        \"RequestId\": \"8750abd0-feab-4249-ba96-2df9a14c7202\",\n        \"Usage\": {\n            \"TotalTokens\": 2\n        }\n    }\n}",
+        "title": "获取特征向量"
+      }
+    ],
+    "ParseDocument": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseDocument\n<公共请求参数>\n\n{\n    \"Document\": {\n        \"FileType\": \"TXT\",\n        \"FileUrl\": \"\",\n        \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\"\n    },\n    \"ModelName\": \"doc-llm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab3fd45-61e7-4e5e-8194-b1997f67fc18\",\n        \"Progress\": \"0\",\n        \"DocumentParseResultUrl\": \"\",\n        \"FailedPages\": []\n    }\n}",
+        "title": "文档解析示例"
+      }
+    ],
+    "ParseDocumentAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseDocumentAsync\n<公共请求参数>\n\n{\n    \"Document\": {\n        \"FileType\": \"TXT\",\n        \"FileUrl\": \"\",\n        \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\",\n        \"FileName\": \"test.txt\"\n    },\n    \"ModelName\": \"doc-llm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3a1a515-e53c-473f-9114-6d05a19d1c0c\",\n        \"TaskId\": \"acf20b7e-47b2-4cfd-8aba-d170dee34cfc\"\n    }\n}",
+        "title": "文件解析异步任务"
+      }
+    ],
+    "RunRerank": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunRerank\n<公共请求参数>\n\n{\n    \"ModelName\": \"bge-rerank-large\",\n    \"Query\": \"你好\",\n    \"Documents\": [\n        \"你好？\",\n        \"你好。\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Document\": \"\",\n                \"Index\": 1,\n                \"RelevanceScore\": 0.9998511075973511\n            },\n            {\n                \"Document\": \"\",\n                \"Index\": 0,\n                \"RelevanceScore\": 0.9996849298477173\n            }\n        ],\n        \"RequestId\": \"cf9c5598-9625-436d-bc81-8dd3900e63c0\",\n        \"Usage\": {\n            \"TotalTokens\": 10\n        }\n    }\n}",
+        "title": "重排序"
+      }
+    ],
+    "WebSearch": [
+      {
+        "document": "用户需要搜索 2025 年货币政策相关的网页内容，并指定来源为政府网站。",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WebSearch\n<公共请求参数>\n\n{\n    \"Query\": \"2025年货币政策有哪些变化？\",\n    \"Count\": 20,\n    \"Site\": \"gov.cn\",\n    \"FetchContent\": false,\n    \"StartTime\": 1704038400,\n    \"EndTime\": 1712592000,\n    \"SearchEngine\": \"sogou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21739985-c9bf-4add-998b-7c5b055b3289\",\n        \"Query\": \"2025年货币政策有哪些变化？\",\n        \"Status\": \"completed\",\n        \"SearchEngine\": \"sogou\",\n        \"Results\": [\n            {\n                \"Title\": \"2025年政府财政改革报告\",\n                \"Url\": \"www.example.gov.cn\",\n                \"Summary\": \"2025年财政改革措施为...\",\n                \"Time\": \"2025年4月9日\"\n            }\n        ]\n    }\n}",
+        "title": "联网搜索"
+      }
+    ]
+  },
+  "version": "1.0"
+}

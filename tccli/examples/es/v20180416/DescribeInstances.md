@@ -101,7 +101,7 @@ Output:
                 "EsPublicUrl": "",
                 "EsPrivateUrl": "https://es-7sy7efoi-esinternal.kibana.myelasticsearch.com:9200",
                 "EsVersion": "7.14.2",
-                "EsConfig": "{}",
+                "EsConfig": "{\"http.cors.allow-methods\":\"OPTIONS,HEAD,GET,POST,PUT,DELETE\"}",
                 "EsConfigSets": [],
                 "KibanaConfig": "",
                 "EsAcl": {
@@ -150,12 +150,12 @@ Output:
                 "OptionalWebServiceInfos": [
                     {
                         "Status": 0,
-                        "PrivateAccess": "abc",
-                        "PublicAccess": "abc",
-                        "PrivateUrl": "abc",
-                        "Version": "abc",
-                        "Type": "abc",
-                        "PublicUrl": "abc"
+                        "PrivateAccess": "CLOSE",
+                        "PublicAccess": "CLOSE",
+                        "PrivateUrl": "http://es-xxxxxxxx.internal.cerebro.tencentelasticsearch.com:9000",
+                        "Version": "0.9.4",
+                        "Type": "cerebro",
+                        "PublicUrl": "https://es-xxxxxxxx.cerebro.tencentelasticsearch.com:9000"
                     }
                 ],
                 "ProcessPercent": 0.5,
@@ -164,7 +164,7 @@ Output:
                 "SubProductCode": "sp_es_platium"
             }
         ],
-        "RequestId": "xxxx"
+        "RequestId": "c1689946-7206-447c-9ee7-33b1cc0360a1"
     }
 }
 ```

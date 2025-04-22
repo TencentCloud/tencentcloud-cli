@@ -1132,7 +1132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
+          "document": "数据盘大小，单位：GiB。最小调整步长为10GiB，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -1165,7 +1165,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  false：子机销毁时，保留数据盘<br />\n  默认取值：true<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
+          "document": "数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。",
           "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
@@ -1187,7 +1187,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
+          "document": "数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -1209,7 +1209,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MB/s",
+          "document": "云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
           "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
@@ -1242,7 +1242,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
+          "document": "磁盘名称，长度不超过128 个字符。",
           "example": "MyDiskName",
           "member": "string",
           "name": "DiskName",
@@ -3341,7 +3341,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li>`SPOTPAID`：表示竞价实例付费。",
+          "document": "实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br></li><li>POSTPAID_BY_HOUR：表示后付费，即按量计费</li><li>CDHPAID：表示[专用宿主机](https://cloud.tencent.com/document/product/416)付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br></li><li>SPOTPAID：表示竞价实例付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -3421,7 +3421,7 @@
         },
         {
           "disabled": false,
-          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li>SOLD_OUT：表示实例已售罄。",
+          "document": "实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br></li><li>SOLD_OUT：表示实例已售罄。</li>",
           "example": "SELL",
           "member": "string",
           "name": "Status",
@@ -3541,7 +3541,7 @@
         },
         {
           "disabled": false,
-          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> \n<li>NormalStock：表示对应库存供应有保障</li>\n<li> UnderStock：表示对应库存即将售罄</li> \n<li>WithoutStock：表示对应库存已经售罄</li>",
+          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> <li>NormalStock：表示对应库存供应有保障</li><li> UnderStock：表示对应库存即将售罄</li> <li>WithoutStock：表示对应库存已经售罄</li>",
           "example": "EnoughStock",
           "member": "string",
           "name": "StatusCategory",
@@ -3590,7 +3590,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包ID。可通过[`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。该参数仅在RunInstances接口中作为入参使用。",
+          "document": "带宽包ID。可通过[ DescribeBandwidthPackages ](https://cloud.tencent.com/document/api/215/19209)接口返回值中的`BandwidthPackageId`获取。该参数仅在RunInstances接口中作为入参使用。",
           "example": "bwp-h1ro",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -4775,7 +4775,7 @@
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最小容量",
+          "document": "HDD本地存储的最小容量。单位：GiB。",
           "example": "100",
           "member": "int64",
           "name": "MinSize",
@@ -4786,7 +4786,7 @@
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最大容量",
+          "document": "HDD本地存储的最大容量。单位：GiB。",
           "example": "200",
           "member": "int64",
           "name": "MaxSize",
@@ -4880,7 +4880,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GB。默认值为 50",
+          "document": "系统盘大小，单位：GiB。默认值为 50",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
@@ -4902,7 +4902,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
+          "document": "磁盘名称，长度不超过128 个字符。",
           "example": "name",
           "member": "string",
           "name": "DiskName",
@@ -5782,7 +5782,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
+          "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](https://cloud.tencent.com/document/product/215/15784) ，从接口返回中的`SubnetId `字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。",
           "example": "subnet-2ks",
           "member": "string",
           "name": "SubnetId",

@@ -7312,7 +7312,7 @@
           "example": "terminate",
           "member": "string",
           "name": "InstanceDeleteMode",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {

@@ -14,6 +14,7 @@ Output:
         "QuotaSet": [
             {
                 "QuotaId": "TOTAL_BANDWIDTHPKG_QUOTA",
+                "QuotaGroup": "ap-guangzhou",
                 "QuotaCurrent": 1,
                 "QuotaLimit": 20
             }

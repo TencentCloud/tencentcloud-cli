@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli es InstallInstanceModel --cli-unfold-argument  \
-    --InstanceId abc \
-    --UsrCosModelUrlList abc \
-    --ModelNames abc \
+    --InstanceId es-xxxxxxxx \
+    --UsrCosModelUrlList https://modeltestxxxx-sh-12560502xx.cos.ap-shanghai.myqcloud.com/bge-base-zh-v1.5.zip \
+    --ModelNames wit-test \
     --TaskTypes text_embedding
 ```
 

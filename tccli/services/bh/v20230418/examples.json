@@ -48,6 +48,14 @@
         "title": "修改资产绑定的堡垒机服务"
       }
     ],
+    "CreateAccessWhiteListRule": [
+      {
+        "document": "新建访问白名单规则",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessWhiteListRule\n<公共请求参数>\n\n{\n    \"Source\": \"10.10.10.1\",\n    \"Remark\": \"规则1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "新建访问白名单规则"
+      }
+    ],
     "CreateAcl": [
       {
         "document": "新建访问权限",
@@ -96,6 +104,20 @@
         "title": "新建资产组"
       }
     ],
+    "CreateOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOperationTask\n<公共请求参数>\n\n{\n    \"Name\": \"周期运维任务\",\n    \"Type\": 2,\n    \"Period\": 1,\n    \"FirstTime\": \"2025-03-25T08:00:01+08:00\",\n    \"Account\": \"root\",\n    \"Timeout\": 5,\n    \"Script\": \"ls\",\n    \"Encoding\": 1,\n    \"DeviceIdSet\": [\n        34,\n        56\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 10,\n        \"RequestId\": \"31js-hapqhxmaj-h12knsk2weq\"\n    }\n}",
+        "title": "创建周期性运维任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOperationTask\n<公共请求参数>\n\n{\n    \"Name\": \"运维任务\",\n    \"Type\": 1,\n    \"Account\": \"root\",\n    \"Timeout\": 5,\n    \"Script\": \"ls -al\",\n    \"Encoding\": 0,\n    \"DeviceIdSet\": [\n        44,\n        66\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 11,\n        \"RequestId\": \"31sfasw-ewffq-wesvfxvd\"\n    }\n}",
+        "title": "创建运维任务"
+      }
+    ],
     "CreateResource": [
       {
         "document": "",
@@ -107,7 +129,7 @@
     "CreateUser": [
       {
         "document": "新建用户",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"zhangsan\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"张三\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"138*****\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"167****@qq.com\",\n    \"AuthType\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUser\n<公共请求参数>\n\n{\n    \"UserName\": \"zhangsan\",\n    \"ValidateTo\": \"2020-09-22T00:00:00+00:00\",\n    \"RealName\": \"张三\",\n    \"GroupIdSet\": [\n        1,\n        1,\n        1\n    ],\n    \"Phone\": \"86|138*****\",\n    \"ValidateFrom\": \"2020-09-22T00:00:00+00:00\",\n    \"Email\": \"167****@qq.com\",\n    \"AuthType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"dfac9070-8b23-499e-83b2-a50e3ca059af\"\n    }\n}",
         "title": "新建用户"
       }
@@ -118,6 +140,14 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserGroup\n<公共请求参数>\n\n{\n    \"Name\": \"研发一部\"\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
         "title": "新建用户组"
+      }
+    ],
+    "DeleteAccessWhiteListRules": [
+      {
+        "document": "删除访问白名单规则",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessWhiteListRules\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "删除访问白名单规则"
       }
     ],
     "DeleteAcls": [
@@ -176,6 +206,14 @@
         "title": "删除主机"
       }
     ],
+    "DeleteOperationTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOperationTasks\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        10,\n        11\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31js23w-wreqrw-23wlss-21qde\"\n    }\n}",
+        "title": "删除运维任务示例"
+      }
+    ],
     "DeleteUserGroupMembers": [
       {
         "document": "删除用户组成员",
@@ -206,6 +244,20 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-bhtest\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"ResourceId\": \"bh-saas-bhtest\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"SubnetId\": \"subnet-bhtest\",\n    \"CidrBlock\": \"10.10.10.0/32\",\n    \"VpcName\": \"vpc1\",\n    \"VpcCidrBlock\": \"10.10.0.0/16\",\n    \"SubnetName\": \"subnet1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
         "title": "开通服务"
+      }
+    ],
+    "DescribeAccessWhiteListRules": [
+      {
+        "document": "查询用户组列表，放开全部来源IP",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AccessWhiteListRuleSet\": [],\n        \"RequestId\": \"b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1\",\n        \"AllowAny\": true,\n        \"AllowAuto\": false\n    }\n}",
+        "title": "查询用户组列表，放开全部来源IP"
+      },
+      {
+        "document": "查询用户组列表，未放开全部来源IP且开启自动添加IP",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccessWhiteListRuleSet\": [\n            {\n                \"Source\": \"127.0.0.1\",\n                \"Remark\": \"\",\n                \"Id\": 1,\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1\",\n        \"AllowAny\": false,\n        \"AllowAuto\": true\n    }\n}",
+        "title": "查询用户组列表，未放开全部来源IP"
       }
     ],
     "DescribeAcls": [
@@ -316,6 +368,14 @@
         "title": "查询操作日志列表"
       }
     ],
+    "DescribeOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOperationTask\n<公共请求参数>\n\n{\n    \"Name\": \"周期运维任务\",\n    \"Type\": 2,\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wewaq-eqwwd-wesfd-332sfda\",\n        \"OperationTasks\": [\n            {\n                \"Id\": 10,\n                \"OperationId\": \"ops-xzfr5yeg\",\n                \"Name\": \"周期运维任务\",\n                \"UserName\": \"dfraw\",\n                \"RealName\": \"zdfrawhang\",\n                \"Type\": 2,\n                \"Period\": 1,\n                \"FirstTime\": \"2025-03-14T15:33:34+08:00\",\n                \"NextTime\": \"2025-03-15T15:33:34+08:00\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取运维任务列表示例"
+      }
+    ],
     "DescribeResources": [
       {
         "document": "查询用户购买的资源信息，包括资源ID，授权点数，vpc，过期时间等。",
@@ -410,6 +470,14 @@
         "title": "设置Okta认证配置"
       }
     ],
+    "ModifyOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOperationTask\n<公共请求参数>\n\n{\n    \"Id\": 10,\n    \"Name\": \"运维任务\",\n    \"Type\": 1,\n    \"Account\": \"ubuntu\",\n    \"Timeout\": 10,\n    \"Script\": \"ls\",\n    \"Encoding\": 1,\n    \"DeviceIdSet\": [\n        34,\n        56,\n        47\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31js-hapqhxmaj-h12knsk2weq\"\n    }\n}",
+        "title": "修改运维任务示例"
+      }
+    ],
     "ModifyResource": [
       {
         "document": "已购买资源变配",
@@ -466,6 +534,14 @@
         "title": "执行改密任务"
       }
     ],
+    "RunOperationTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunOperationTask\n<公共请求参数>\n\n{\n    \"Id\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eww-2ew-qedekmsv-1qew\"\n    }\n}",
+        "title": "执行运维任务示例"
+      }
+    ],
     "SearchAuditLog": [
       {
         "document": "搜索审计日志",
@@ -520,6 +596,22 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSessionCommand\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Cmd\": \"pwd\",\n    \"StartTime\": \"2020-01-01T01:01:01+08:00\",\n    \"EndTime\": \"2020-01-01T01:01:01+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"27d70f6b-3732-4698-a00f-ee91d3a1fb31\"\n    }\n}",
         "title": "命令检索"
+      }
+    ],
+    "SearchSubtaskResultById": [
+      {
+        "document": "查询运维子任务执行结果",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchSubtaskResultById\n<公共请求参数>\n\n{\n    \"Status\": [\n        1\n    ],\n    \"Name\": \"运维任务\",\n    \"Limit\": 1,\n    \"Id\": \"west\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "查询运维子任务执行结果"
+      }
+    ],
+    "SearchTaskResult": [
+      {
+        "document": "搜索运维任务执行结果",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTaskResult\n<公共请求参数>\n\n{\n    \"UserName\": \"nick\",\n    \"Name\": \"nic\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+08:00\",\n    \"OperationId\": \"ops-aeqwcaw\",\n    \"TaskType\": [\n        1,\n        2\n    ],\n    \"RealName\": \"tom\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c241022e-c50d-47b2-9748-691a09c143c4\",\n        \"TaskResult\": [\n            {\n                \"UserName\": \"nick\",\n                \"Status\": 0,\n                \"Name\": \"nic\",\n                \"FromIp\": \"192.168.0.1\",\n                \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n                \"EndTime\": \"2020-09-22T00:00:00+08:00\",\n                \"Id\": \"1\",\n                \"RealName\": \"tom\",\n                \"OperationId\": \"ops-adexdea\"\n            }\n        ]\n    }\n}",
+        "title": "搜索运维任务执行结果"
       }
     ]
   },

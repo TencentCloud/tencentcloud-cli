@@ -218,6 +218,15 @@
           "name": "VPRAudioId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启语音增强，0 - 关闭，1 - 开启 。默认关闭\n语音增强仅适用于一句话复刻场景",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableVoiceEnhance",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

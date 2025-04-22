@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm ExitRescueMode --cli-unfold-argument  \
-    --InstanceId instance_Id
+    --InstanceId ins-axzc12s
 ```
 
 Output: 

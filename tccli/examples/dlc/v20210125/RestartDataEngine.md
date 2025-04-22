@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc RestartDataEngine --cli-unfold-argument  \
-    --DataEngineId abc \
+    --DataEngineId DataEngine-xxx \
     --ForcedOperation True
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dd72225c-016e-1b3e-8b10-b69220500176"
     }
 }
 ```

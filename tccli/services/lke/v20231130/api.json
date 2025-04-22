@@ -337,7 +337,7 @@
       "status": "online"
     },
     "GetEmbedding": {
-      "document": "本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。\n本接口（GetEmbedding）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "document": "本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。\n开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。\n本接口（GetEmbedding）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "GetEmbeddingRequest",
       "name": "获取特征向量",
       "output": "GetEmbeddingResponse",
@@ -351,9 +351,9 @@
       "status": "online"
     },
     "GetMsgRecord": {
-      "document": "获取聊天历史请求",
+      "document": "获取聊天历史\n根据会话session id获取聊天历史（仅保留180天内的历史对话数据）",
       "input": "GetMsgRecordRequest",
-      "name": "获取聊天历史请求",
+      "name": "获取聊天历史",
       "output": "GetMsgRecordResponse",
       "status": "online"
     },
@@ -603,7 +603,7 @@
       "status": "online"
     },
     "QueryRewrite": {
-      "document": "多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。\n本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "document": "多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。\n开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
       "input": "QueryRewriteRequest",
       "name": "多轮改写",
       "output": "QueryRewriteResponse",
@@ -661,7 +661,7 @@
     "SaveDoc": {
       "document": "知识库文档问答保存。\n将文件存储到应用的知识库内需要三步：\n1.获取临时密钥，参考[接口文档](https://cloud.tencent.com/document/product/1759/105050)。获取临时密钥不同参数组合权限不一样，可参考 [知识引擎操作 cos 指南](https://cloud.tencent.com/document/product/1759/116238)\n2.调用腾讯云提供的 cos 存储接口，将文件存储到知识引擎 cos 中：具体可参考[ COS SDK 概览](https://cloud.tencent.com/document/product/436/6474), 注意使用的是临时密钥的方式操作 COS \n3.调用本接口，将文件的基础信息存储到知识引擎中。\n以上步骤可参考[文档](https://cloud.tencent.com/document/product/1759/108903)，文档最后有[代码demo](https://cloud.tencent.com/document/product/1759/108903#demo)，可作为参考。",
       "input": "SaveDocRequest",
-      "name": "知识库文档问答保存",
+      "name": "知识库文档录入",
       "output": "SaveDocResponse",
       "status": "online"
     },
@@ -694,6 +694,34 @@
     "serviceShortName": "lke"
   },
   "objects": {
+    "AgentDebugInfo": {
+      "document": "Agent调试信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工具、大模型的输入信息，json\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工具、大模型的输出信息，json\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AgentProcedure": {
       "document": "思考事件过程信息",
       "members": [
@@ -2976,7 +3004,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -5688,6 +5716,30 @@
       ],
       "type": "object"
     },
+    "DocFilterFlag": {
+      "document": "文档列表筛选标识位",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识位",
+          "example": "is_created_qa",
+          "member": "string",
+          "name": "Flag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标识值",
+          "example": "true",
+          "member": "bool",
+          "name": "Value",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "DocSegment": {
       "document": "文档片段",
       "members": [
@@ -6153,6 +6205,23 @@
         }
       ],
       "type": "object"
+    },
+    "ExtraInfo": {
+      "document": "扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ECharts信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EChartsInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "FileInfo": {
       "document": "实时上传的文件信息",
@@ -6670,6 +6739,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "文件md结果cos临时地址",
+          "example": "无",
+          "member": "string",
+          "name": "ParseResultCosUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6891,7 +6970,7 @@
         {
           "disabled": false,
           "document": "类型",
-          "example": "1: 坐席 2: 访客 5: API访客",
+          "example": "5: API访客",
           "member": "uint64",
           "name": "Type",
           "required": true,
@@ -6941,6 +7020,15 @@
           "name": "Scene",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "传该值，代表拉取该记录id的前后总共count条消息记录",
+          "example": "无",
+          "member": "string",
+          "name": "MidRecordId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7560,6 +7648,34 @@
       ],
       "type": "object"
     },
+    "IntentAchievement": {
+      "document": "意图达成方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "意图达成方式，qa:问答回复、doc：文档回复、workflow：工作流回复，llm：大模型回复",
+          "example": "qa",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "意图达成方式描述",
+          "example": "问答回复",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InvokeAPI": {
       "document": "请求的API信息",
       "members": [
@@ -7802,7 +7918,7 @@
         },
         {
           "disabled": false,
-          "document": "角色描述，300字符以内\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。\n\n#角色名称：\n#风格特点：\n#输出要求：\n#能力限制：\n\n能够达成以下用户意图\n##意图名称：\n##意图描述：\n##意图示例：\n##意图实现：\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RoleDescription",
@@ -7919,6 +8035,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意图达成方式优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentAchievement",
+          "name": "IntentAchievements",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启图文检索\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ImageTextRetrieval",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -9001,6 +9139,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档所属分类ID",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9070,6 +9218,24 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型分类筛选",
+          "example": "[\"txt\",\"jpg\"]",
+          "member": "string",
+          "name": "FileTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文档列表筛选标识位",
+          "example": "无",
+          "member": "DocFilterFlag",
+          "name": "FilterFlag",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9817,7 +9983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -11808,6 +11974,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11985,6 +12161,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -12172,6 +12359,17 @@
           "example": "无",
           "member": "WorkFlowSummary",
           "name": "WorkFlow",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent调试信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentDebugInfo",
+          "name": "Agent",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -12435,7 +12633,7 @@
         },
         {
           "disabled": false,
-          "document": "需要改写的多轮历史会话",
+          "document": "需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。",
           "example": "[{\"Role\":\"user\",\"Content\":\"你家在哪里\"},{\"Role\":\"assistant\",\"Content\":“我家在国内”}]",
           "member": "Message",
           "name": "Messages",

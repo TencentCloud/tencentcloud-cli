@@ -9862,6 +9862,24 @@
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回的记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "从第几条记录开始返回",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

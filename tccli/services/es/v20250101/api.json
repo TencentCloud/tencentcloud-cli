@@ -1,0 +1,1391 @@
+{
+  "actions": {
+    "ChatCompletions": {
+      "document": "本服务支持一系列高性能的大语言模型，包括DeepSeek以及腾讯自主研发的混元大模型，结合混合搜索等先进搜索技术，快速高效实现RAG，有效解决幻觉和知识更新问题。\n本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "input": "ChatCompletionsRequest",
+      "name": "大模型生成",
+      "output": "ChatCompletionsResponse",
+      "status": "online"
+    },
+    "ChunkDocument": {
+      "document": "实时文档切片",
+      "input": "ChunkDocumentRequest",
+      "name": "文档切片",
+      "output": "ChunkDocumentResponse",
+      "status": "online"
+    },
+    "ChunkDocumentAsync": {
+      "document": "文本切片是将长文本分割为短片段的技术，用于适配模型输入、提升处理效率或信息检索，平衡片段长度与语义连贯性，适用于NLP、数据分析等场景。\n本接口为异步接口，有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "input": "ChunkDocumentAsyncRequest",
+      "name": "文档切片异步",
+      "output": "ChunkDocumentAsyncResponse",
+      "status": "online"
+    },
+    "GetDocumentChunkResult": {
+      "document": "获取文档切片结果",
+      "input": "GetDocumentChunkResultRequest",
+      "name": "获取文档切片结果",
+      "output": "GetDocumentChunkResultResponse",
+      "status": "online"
+    },
+    "GetDocumentParseResult": {
+      "document": "本接口用于获取文档解析异步处理结果。",
+      "input": "GetDocumentParseResultRequest",
+      "name": "获取文档解析结果",
+      "output": "GetDocumentParseResultResponse",
+      "status": "online"
+    },
+    "GetTextEmbedding": {
+      "document": "Embedding是一种将高维数据映射到低维空间的技术，通常用于将非结构化数据，如文本、图像或音频转化为向量表示，使其更容易输入机器模型进行处理，并且向量之间的距离可以反映对象之间的相似性。\n本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "input": "GetTextEmbeddingRequest",
+      "name": "获取特征向量",
+      "output": "GetTextEmbeddingResponse",
+      "status": "online"
+    },
+    "ParseDocument": {
+      "document": "本服务可将各类格式文档精准转换为标准格式，满足企业知识库建设、技术文档迁移、内容平台结构化存储等需求。\n本接口有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)。",
+      "input": "ParseDocumentRequest",
+      "name": "文档解析",
+      "output": "ParseDocumentResponse",
+      "status": "online"
+    },
+    "ParseDocumentAsync": {
+      "document": "本服务可将各类格式文档精准转换为标准格式，满足企业知识库建设、技术文档迁移、内容平台结构化存储等需求。\n本接口为异步接口，有单账号调用上限控制，如您有提高并发限制的需求请[联系我们](https://cloud.tencent.com/act/event/Online_service)  。",
+      "input": "ParseDocumentAsyncRequest",
+      "name": "文档解析异步",
+      "output": "ParseDocumentAsyncResponse",
+      "status": "online"
+    },
+    "RunRerank": {
+      "document": "重排序",
+      "input": "RunRerankRequest",
+      "name": "重排序",
+      "output": "RunRerankResponse",
+      "status": "online"
+    },
+    "WebSearch": {
+      "document": "WebSearch API 是一个网页搜索服务，支持多种搜索引擎，可以获取网页的标题、URL、摘要和正文内容。",
+      "input": "WebSearchRequest",
+      "name": "网页搜索",
+      "output": "WebSearchResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-01-01",
+    "api_brief": "介绍如何使用API对Elasticsearch Service进行操作，包括ES集群实例管理等。",
+    "serviceNameCN": "Elasticsearch Service",
+    "serviceShortName": "es"
+  },
+  "objects": {
+    "ChatCompletionsRequest": {
+      "document": "ChatCompletions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制",
+          "example": "[{}]",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "hunyuan",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否以流式接口的形式返回数据，默认true",
+          "example": "是否以流式接口的形式返回数据，默认false",
+          "member": "bool",
+          "name": "Stream",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "取值区间为[0.0, 1.0], 非必要不建议使用, 不合理的取值会影响效果 ",
+          "example": "0.1",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "取值区间为[0.0, 2.0], 非必要不建议使用, 不合理的取值会影响效果 ",
+          "example": "1.1",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启联网搜索。默认为 false。",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlineSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "当 OnlineSearch 为 true 时，指定的搜索引擎，默认为 bing。",
+          "example": "{\"Engine\": \"bing\"}",
+          "member": "OnlineSearchOptions",
+          "name": "OnlineSearchOptions",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatCompletionsResponse": {
+      "document": "ChatCompletions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "此次请求的id",
+          "example": "8f71dbaf64194da7ac3b61b145aa3534",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回复内容",
+          "example": "无",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token使用量",
+          "example": "{\"PromptTokens\":324,\"CompletionTokens\":309,\"TotalTokens\":633}",
+          "member": "TokenUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "联网搜索结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{}]",
+          "member": "WebContent",
+          "name": "OnlineSearchContent",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Choice": {
+      "document": "返回的回复, 支持多个。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的回复。",
+          "example": "无",
+          "member": "OutputMessage",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Chunk": {
+      "document": "切片对象信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "chunk索引。切片顺序 id。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "chunk内容。",
+          "example": "今天天气很好",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChunkConfig": {
+      "document": "文档分片配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大分片长度",
+          "example": "4800",
+          "member": "uint64",
+          "name": "MaxChunkSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分隔符列表",
+          "example": "[\"\\n\\n\", \"\\n\", \"。\", \"！\", \"？\", \"，\", \"\"]",
+          "member": "string",
+          "name": "Delimiters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChunkConfigAsync": {
+      "document": "文档切片异步任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大分片长度",
+          "example": "4800",
+          "member": "int64",
+          "name": "MaxChunkSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChunkDocument": {
+      "document": "切片文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件类型",
+          "example": "MD",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的 base64值",
+          "example": "53847824487347829",
+          "member": "string",
+          "name": "FileContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChunkDocumentAsyncRequest": {
+      "document": "ChunkDocumentAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件信息",
+          "example": "{\"FileType\":\"TXT\"}",
+          "member": "Document",
+          "name": "Document",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "doc-tree-chunk",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件切片配置",
+          "example": "{\"MaxChunkSize\":\"20\"}",
+          "member": "ChunkConfigAsync",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChunkDocumentAsyncResponse": {
+      "document": "ChunkDocumentAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "acf20b7e-47b2-4cfd-8aba-d170dee34cfc",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChunkDocumentRequest": {
+      "document": "ChunkDocument请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件切片文件信息",
+          "example": "Document",
+          "member": "ChunkDocument",
+          "name": "Document",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "doc-chunk",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件切片配置",
+          "example": "Config",
+          "member": "ChunkConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChunkDocumentResponse": {
+      "document": "ChunkDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "Chunk",
+          "name": "Chunks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Document": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件类型。\n支持的文件类型：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n支持的文件大小：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M",
+          "example": "md",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，使用腾讯云COS 文件地址。",
+          "example": "https://example.com/example.pdf",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的 base64 值，携带 MineType前缀信息。编码后的后的文件不超过 10M。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过3秒。\n支持的图片像素：单边介于20-10000px之间。",
+          "example": "data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==",
+          "member": "string",
+          "name": "FileContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名称，当使用 base64上传的时候使用。",
+          "example": "example.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DocumentChunkUsage": {
+      "document": "文档切片用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 解析页面数量",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗 token数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EmbeddingData": {
+      "document": "向量内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "embedding 内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[3.234,13.4556]",
+          "member": "float",
+          "name": "Embedding",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetDocumentChunkResultRequest": {
+      "document": "GetDocumentChunkResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 任务 ID",
+          "example": "3041d1dc-1072-4025-a3c2-f8baea25801b",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDocumentChunkResultResponse": {
+      "document": "GetDocumentChunkResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片结果",
+          "example": "http://cos",
+          "member": "string",
+          "name": "DocumentChunkResultUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量",
+          "example": "{\"TotalTokens\":12}",
+          "member": "DocumentChunkUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDocumentParseResultRequest": {
+      "document": "GetDocumentParseResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 Id",
+          "example": "10343124",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDocumentParseResultResponse": {
+      "document": "GetDocumentParseResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果文件",
+          "example": "url",
+          "member": "string",
+          "name": "DocumentParseResultUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败的页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1,2",
+          "member": "int64",
+          "name": "FailedPages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTextEmbeddingRequest": {
+      "document": "GetTextEmbedding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "bge-base-zh-v1.5",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需进行向量化的文本集",
+          "example": "[\"今天天气怎样\"]",
+          "member": "string",
+          "name": "Texts",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTextEmbeddingResponse": {
+      "document": "GetTextEmbedding返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果集",
+          "example": "无",
+          "member": "EmbeddingData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗token数量",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Message": {
+      "document": "会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色, ‘system', ‘user'，'assistant'或者'tool', 在message中, 除了system，其他必须是user与assistant交替(一问一答) ",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体文本内容",
+          "example": "请问如何访问腾讯云官网？",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OnlineSearchOptions": {
+      "document": "联网搜索选项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索引擎。支持 bing 和 sogou。",
+          "example": "bing",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OutputMessage": {
+      "document": "会话内容，按对话时间从旧到新在数组中排列，长度受模型窗口大小限制。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本内容\t",
+          "example": "深圳今天的天气是晴转多云。\t",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推理内容\t",
+          "example": "用户询问天气，需要联网搜索结果。\t",
+          "member": "string",
+          "name": "ReasoningContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ParseDocument": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件类型。\n支持的文件类型：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n支持的文件大小：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M",
+          "example": "md",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，使用腾讯云COS 文件地址。",
+          "example": "https://example.com/example.pdf",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的 base64 值，携带 MineType前缀信息。编码后的后的文件不超过 10M。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过3秒。\n支持的图片像素：单边介于20-10000px之间。",
+          "example": "data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==",
+          "member": "string",
+          "name": "FileContent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ParseDocumentAsyncRequest": {
+      "document": "ParseDocumentAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件信息",
+          "example": "{     \"FileType\": \"TXT\",     \"FileUrl\": \"\",     \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\",     \"FileName\": \"test.txt\"   }",
+          "member": "Document",
+          "name": "Document",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "doc-llm",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseDocumentAsyncResponse": {
+      "document": "ParseDocumentAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 id",
+          "example": "6538a10a-18c5-4cba-a870-b02e78b46f71",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseDocumentRequest": {
+      "document": "ParseDocument请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件信息",
+          "example": "{     \"FileType\": \"TXT\",     \"FileUrl\": \"\",     \"FileContent\": \"data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==\",     \"FileName\": \"test.txt\"   }",
+          "member": "ParseDocument",
+          "name": "Document",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "doc-llm",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ParseDocumentResponse": {
+      "document": "ParseDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "进度",
+          "example": "100",
+          "member": "string",
+          "name": "Progress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 解析文件结果",
+          "example": "https://ai-search-doc-bj-xxxxx.cos.ap-beijing.myqcloud.com/&2 F1257780094/2013/81e11a5472dd4288a0b998c032b4df26.zip",
+          "member": "string",
+          "name": "DocumentParseResultUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败页码",
+          "example": "[1]",
+          "member": "int64",
+          "name": "FailedPages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RerankResult": {
+      "document": "输出结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应的doc在输入候选doc数组中的位置索引值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相似度分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "43.2",
+          "member": "float",
+          "name": "RelevanceScore",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "doc原文内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "今天天气怎样",
+          "member": "string",
+          "name": "Document",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RunRerankRequest": {
+      "document": "RunRerank请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "bge-rerank-large",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询文本",
+          "example": "今天天气怎样",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待排序的候选doc列表",
+          "example": "[\"今天是晴天\"]",
+          "member": "string",
+          "name": "Documents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序返回的top文档数量, 如果没有指定则返回全部候选doc，如果指定的top_n值大于输入的候选doc数量，返回全部doc",
+          "example": "5",
+          "member": "int64",
+          "name": "TopN",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回的排序结果列表里面是否返回每一条document原文，默认值False",
+          "example": "true",
+          "member": "bool",
+          "name": "ReturnDocuments",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunRerankResponse": {
+      "document": "RunRerank返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出结果集",
+          "example": "无",
+          "member": "RerankResult",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗token数量",
+          "example": "224",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TokenUsage": {
+      "document": "token使用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示prompt的tokens数，多次返回中保持不变",
+          "example": "324",
+          "member": "uint64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回答的token总数，在流式返回中，表示到目前为止所有completion的tokens总数，多次返回中持续累加        ",
+          "example": "309",
+          "member": "uint64",
+          "name": "CompletionTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示prompt_tokens和completion_tokens之和 ",
+          "example": "633",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Usage": {
+      "document": "token消耗总数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tokens总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WebContent": {
+      "document": "搜索结果网页信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜素问题\t",
+          "example": "今天 深圳 天气 2025\t",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "标题",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接",
+          "example": "https://example.com\t",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "16小时前\t",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网页内容\t",
+          "example": "深圳龙岗，今日小雨。\t",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片索引",
+          "example": "0",
+          "member": "string",
+          "name": "ChunkIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分数",
+          "example": "0",
+          "member": "string",
+          "name": "Score",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WebPage": {
+      "document": "网页搜索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "2025年政府财政改革报告",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "url",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网页摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025年财政改革措施为...",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网页收录时间。可能为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025年4月9日",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Markdown 格式的网页正文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025年财政改革措施为...",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WebSearchRequest": {
+      "document": "WebSearch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询",
+          "example": "2025年货币政策有哪些变化？",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索的网页数量，默认20",
+          "example": "20",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定域名，gov.cn 可匹配 *.gov.cn的域名。",
+          "example": "gov.cn",
+          "member": "string",
+          "name": "Site",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取返回网页全文，默认 false。",
+          "example": "false",
+          "member": "bool",
+          "name": "FetchContent",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "域名白名单，在不指定 Site 时，只保存匹配白名单域名的网页。",
+          "example": "[\"zhihu.com\"]",
+          "member": "string",
+          "name": "WhiteSites",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "域名黑名单，在不指定 Site 和白名单时，过滤黑名单中的域名。",
+          "example": "[\"baidu.com\"]",
+          "member": "string",
+          "name": "BlackSites",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "秒级时间戳，搜索网页的开始时间，默认不限制开始时间。",
+          "example": "1704038400",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "秒级时间戳，搜索网页的结束时间，默认为现在。",
+          "example": "1712592000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定搜索引擎，可选混合搜索 mixed，或 bing, baidu, sogou, 默认为 sogou",
+          "example": "sogou",
+          "member": "string",
+          "name": "SearchEngine",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "WebSearchResponse": {
+      "document": "WebSearch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询",
+          "example": "2025年货币政策有哪些变化？",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应状态",
+          "example": "completed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行搜索的引擎",
+          "example": "sogou",
+          "member": "string",
+          "name": "SearchEngine",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果",
+          "example": "无",
+          "member": "WebPage",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

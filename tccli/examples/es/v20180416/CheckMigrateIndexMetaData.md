@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli es CheckMigrateIndexMetaData --cli-unfold-argument  \
-    --CosBucket xxx \
-    --BasePath xxx \
-    --ServerlessId xxx \
-    --Snapshot xxx \
-    --ClusterInstanceId xxx \
-    --CommonIndexArr xxx \
-    --DataStreamArr xxx
+    --CosBucket user-cos \
+    --BasePath dir/ \
+    --ServerlessId index-feafagg \
+    --Snapshot snapshot \
+    --ClusterInstanceId es-feafegg \
+    --CommonIndexArr index \
+    --DataStreamArr index
 ```
 
 Output: 
@@ -20,15 +20,15 @@ Output:
 {
     "Response": {
         "MappingTimeFieldCheckFailedIndexArr": [
-            "xxx"
+            "index"
         ],
         "MappingTimeTypeCheckFailedIndexArr": [
-            "xxx"
+            "index"
         ],
         "SettingCheckFailedIndexArr": [
-            "xxx"
+            "index"
         ],
-        "RequestId": "xxx"
+        "RequestId": "40f4f780-9969-42f9-8bd9-ccf0d1f2591a"
     }
 }
 ```

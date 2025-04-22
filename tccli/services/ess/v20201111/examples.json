@@ -1082,6 +1082,12 @@
     ],
     "CreateSchemeUrl": [
       {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDtw0UUllc7k0bUxN9VKyqcSdNb\",\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a9c1797-12b9-4c09-b622-78637aa9a1e4\",\n        \"SchemeQrcodeUrl\": \"https://file.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=pb74MRyFMOFd7\",\n        \"SchemeUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?&shortKey=yDtBuUTvde\"\n    }\n}",
+        "title": "获取合同的签署链接"
+      },
+      {
         "document": "1. 获取合同组的签署链接(FlowGroupId设置成合同组的ID)\n2. 签署链接是短链(EndPoint设置成HTTP_SHORT_URL)",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowGroupId\": \"yDwq7UUckpknjh4hUu1vFD6uHSIyKQPf\",\n    \"PathType\": 1,\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\",\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693796254269814638\",\n        \"SchemeQrcodeUrl\": \"\",\n        \"SchemeUrl\": \"https://essurl.cn/i3am**5Y9W\"\n    }\n}",
@@ -1838,6 +1844,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84\",\n    \"Name\": \"业务员角色\",\n    \"Description\": \"这是角色描述信息\",\n    \"Operator\": {\n        \"UserId\": \"y******************5\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84\",\n        \"RequestId\": \"4558af3c-b35b-41f2-85e4-31854a39a512\"\n    }\n}",
         "title": "示例-普通企业更新角色（不带权限树参数）"
+      }
+    ],
+    "OperateTemplate": [
+      {
+        "document": "删除企业下的模板yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateTemplate\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"OperateType\": \"DELETE\",\n    \"TemplateId\": \"yDwivUUckpo2g6ugUu4sxH2i15SY0OZY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7da39d89-2b6c-4fd9-9f32-735137d5a6e9\"\n    }\n}",
+        "title": "删除模板"
       }
     ],
     "RenewAutoSignLicense": [
