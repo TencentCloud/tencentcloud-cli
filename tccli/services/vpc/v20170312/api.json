@@ -441,6 +441,13 @@
       "output": "CreateGlobalRouteInternalResponse",
       "status": "online"
     },
+    "CreateGlobalRoutes": {
+      "document": "本接口（CreateGlobalRoutes）用于创建全局路由。",
+      "input": "CreateGlobalRoutesRequest",
+      "name": "创建全局路由",
+      "output": "CreateGlobalRoutesResponse",
+      "status": "online"
+    },
     "CreateHaVip": {
       "document": "本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）。",
       "input": "CreateHaVipRequest",
@@ -978,6 +985,13 @@
       "input": "DeleteGlobalRouteInternalRequest",
       "name": "删除全局路由",
       "output": "DeleteGlobalRouteInternalResponse",
+      "status": "online"
+    },
+    "DeleteGlobalRoutes": {
+      "document": "删除全局路由。",
+      "input": "DeleteGlobalRoutesRequest",
+      "name": "删除全局路由。",
+      "output": "DeleteGlobalRoutesResponse",
       "status": "online"
     },
     "DeleteHaVip": {
@@ -1755,6 +1769,13 @@
       "input": "DescribeGlobalRouteInternalRequest",
       "name": "查询全局路由",
       "output": "DescribeGlobalRouteInternalResponse",
+      "status": "online"
+    },
+    "DescribeGlobalRoutes": {
+      "document": "查询全局路由列表。",
+      "input": "DescribeGlobalRoutesRequest",
+      "name": "查询全局路由列表。",
+      "output": "DescribeGlobalRoutesResponse",
       "status": "online"
     },
     "DescribeHaVips": {
@@ -3064,6 +3085,20 @@
       "input": "ModifyGatewayFlowQosRequest",
       "name": "调整网关流控带宽",
       "output": "ModifyGatewayFlowQosResponse",
+      "status": "online"
+    },
+    "ModifyGlobalRouteECMPAlgorithm": {
+      "document": "修改全局路由表ECMP算法 HASH 策略。",
+      "input": "ModifyGlobalRouteECMPAlgorithmRequest",
+      "name": "修改全局路由ECMP的HASH算法",
+      "output": "ModifyGlobalRouteECMPAlgorithmResponse",
+      "status": "online"
+    },
+    "ModifyGlobalRoutes": {
+      "document": "修改全局路由。",
+      "input": "ModifyGlobalRoutesRequest",
+      "name": "修改全局路由。",
+      "output": "ModifyGlobalRoutesResponse",
       "status": "online"
     },
     "ModifyHaVipAttribute": {
@@ -11423,6 +11458,79 @@
       ],
       "type": "object"
     },
+    "CreateGlobalRoutesRequest": {
+      "document": "CreateGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由对象。创建时必填参数： 'GatewayType'，'GatewayId'，'DestinationCidrBlock'。\n",
+          "example": "[     {       \"DestinationCidrBlock\": \"192.168.0.0/16\",       \"GatewayType\": \"NORMAL_CVM\",       \"GatewayId\": \"10.0.16.4\",       \"Description\": \"ivan_gr\"     }   ]",
+          "member": "GlobalRoute",
+          "name": "GlobalRoutes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否支持 ECMP，默认true支持的。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableECMP",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "true (默认): 表示目标网段必须在VPC 辅助CIDR内\nfalse: 目标网段不用必须在VPC 辅助CIDR内",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableCidrInVpc",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGlobalRoutesResponse": {
+      "document": "CreateGlobalRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局路由对象。",
+          "example": "无",
+          "member": "GlobalRoute",
+          "name": "GlobalRouteSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateHaVipRequest": {
       "document": "CreateHaVip请求参数结构体",
       "members": [
@@ -16622,6 +16730,51 @@
     },
     "DeleteGlobalRouteInternalResponse": {
       "document": "DeleteGlobalRouteInternal返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalRoutesRequest": {
+      "document": "DeleteGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由实例唯一Id列表。",
+          "example": "[\"gr-bmenrwu2\"]",
+          "member": "string",
+          "name": "GlobalRouteIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGlobalRoutesResponse": {
+      "document": "DeleteGlobalRoutes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22957,6 +23110,98 @@
           "name": "GlobalRouteSet",
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalRoutesRequest": {
+      "document": "DescribeGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>global-route-id - String - （过滤条件）如全局路由唯一 Id，形如：gr-bmenrwu2。</li>\n<li>vpc-id - String - （过滤条件）VPC唯一Id， 形如： vpc-mcqaoy0f。</li>\n<li>gateway-id - String - （过滤条件）下一跳对象。</li>\n<li>gateway-type - String -  是否必填：否 - （过滤条件）按下一跳类型进行过滤。支持 NORMAL_CVM\n</li>\n<li>cdc-id - String - （过滤条件）CDC实例ID，形如：cluster-gbo27yc4。</li>\n<li>description - String - （过滤条件）描述。</li>\n<li>dest-cidr - String - （过滤条件）Ipv4目标网段。</li>\n<li>subnet-route-algorithm - String - （过滤条件）支持的 ECMP算法有：\n\n   - ECMP_QUINTUPLE_HASH：五元组hash\n   - ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash\n   - ECMP_DESTINATION_IP_HASH：目的IP hash\n   - ECMP_SOURCE_IP_HASH：源IP hash\n</li>\n",
+          "example": "[{     \"Name\": \"vpc-id\",     \"Values\": [\"vpc-mcqaoy0f\"]} ]}",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求对象个数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由唯一Id列表。",
+          "example": "[\"gr-bmenrwu2\"]",
+          "member": "string",
+          "name": "GlobalRouteIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGlobalRoutesResponse": {
+      "document": "DescribeGlobalRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局路由对象。",
+          "example": "无",
+          "member": "GlobalRoute",
+          "name": "GlobalRouteSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -37576,6 +37821,144 @@
       ],
       "type": "object"
     },
+    "GlobalRoute": {
+      "document": "全局路由对象。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作为出参展示，表示VPC唯一Id，。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局路由唯一Id。",
+          "example": "gr-bmenrwu2",
+          "member": "string",
+          "name": "GlobalRouteId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4目标网段。",
+          "example": "192.168.0.0/20",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6目标网段。",
+          "example": " 2402:4e00:c000:7600::/56",
+          "member": "string",
+          "name": "DestinationIpv6CidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳类型，支持 NORMAL_CVM。",
+          "example": "NORMAL_CVM",
+          "member": "string",
+          "name": "GatewayType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一跳对象，如果GatewayType类型是NORMAL_CVM填写子机IP。",
+          "example": "192.168.0.3",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注。",
+          "example": "gr_item",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2010-11-21",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的 ECMP算法有：\n\n- ECMP_QUINTUPLE_HASH：五元组hash\n- ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash\n- ECMP_DESTINATION_IP_HASH：目的IP hash\n- ECMP_SOURCE_IP_HASH：源IP hash。",
+          "example": "ECMP_QUINTUPLE_HASH",
+          "member": "string",
+          "name": "SubnetRouteAlgorithm",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为CDC属性全局路由。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCdc",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CDC 集群唯一 ID。",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "CdcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作为出参展示，表示全局路由类型，可以是Ipv4或者Ipv6。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HaVip": {
       "document": "描述 HAVIP 信息",
       "members": [
@@ -38247,7 +38630,7 @@
         {
           "disabled": false,
           "document": "IKE版本",
-          "example": "1",
+          "example": "IKEV1",
           "member": "string",
           "name": "IKEVersion",
           "output_required": false,
@@ -41065,6 +41448,123 @@
     },
     "ModifyGatewayFlowQosResponse": {
       "document": "ModifyGatewayFlowQos返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRouteECMPAlgorithmRequest": {
+      "document": "ModifyGlobalRouteECMPAlgorithm请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4目标网段。",
+          "example": "192.168.0.0/20",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6目标网段。",
+          "example": " 2402:4e00:c000:7600::/56",
+          "member": "string",
+          "name": "DestinationIpv6CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支持的 ECMP算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。",
+          "example": "ECMP_QUINTUPLE_HASH",
+          "member": "string",
+          "name": "SubnetRouteAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CDC 集群唯一 ID。",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRouteECMPAlgorithmResponse": {
+      "document": "ModifyGlobalRouteECMPAlgorithm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRoutesRequest": {
+      "document": "ModifyGlobalRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC唯一Id。",
+          "example": "vpc-mcqaoy0f",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局路由对象。仅支持修改：'Description'，其他字段暂不支持。",
+          "example": "[{\"Description\": \"ivan_gr\"}]",
+          "member": "GlobalRoute",
+          "name": "GlobalRoutes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持 Ipv4，Ipv6，默认 Ipv4。",
+          "example": "Ipv4",
+          "member": "string",
+          "name": "IpAddressType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGlobalRoutesResponse": {
+      "document": "ModifyGlobalRoutes返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

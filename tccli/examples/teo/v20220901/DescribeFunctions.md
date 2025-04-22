@@ -8,7 +8,7 @@ Input:
 tccli teo DescribeFunctions --cli-unfold-argument  \
     --ZoneId zone-293e7s5jne1i \
     --Filters.0.Name name \
-    --Filters.0.Values test \
+    --Filters.0.Values test-function \
     --Offset 0 \
     --Limit 2
 ```
@@ -34,7 +34,7 @@ Output:
                 "Content": "addEventListener('fetch', e => {\r\n  const response = new Response('Hello World test!');\r\n  e.respondWith(response);\r\n});",
                 "Name": "test-function2",
                 "Remark": "my function 2",
-                "Domain": "test-function-zone-293e7s5jne1i-123456789.eo-edgefunctions1.com",
+                "Domain": "test-function2-zone-293e7s5jne1i-123456789.eo-edgefunctions1.com",
                 "CreateTime": "2022-09-20T15:23:25+08:00",
                 "UpdateTime": "2022-09-20T15:27:13+08:00"
             }

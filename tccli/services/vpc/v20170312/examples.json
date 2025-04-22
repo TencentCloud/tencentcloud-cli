@@ -588,6 +588,14 @@
         "title": "添加全局路由"
       }
     ],
+    "CreateGlobalRoutes": [
+      {
+        "document": "创建IPv4全局路由",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalRoutes\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"GlobalRoutes\": [\n        {\n            \"DestinationCidrBlock\": \"192.168.0.0/16\",\n            \"GatewayType\": \"NORMAL_CVM\",\n            \"GatewayId\": \"10.0.16.4\",\n            \"Description\": \"ivan_gr\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalRouteSet\": [\n            {\n                \"CdcId\": \"\",\n                \"CreatedTime\": \"2025-02-21 16:32:36\",\n                \"Description\": \"ivan_gr\",\n                \"DestinationCidrBlock\": \"192.168.0.0/16\",\n                \"GatewayId\": \"10.0.16.4\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GlobalRouteId\": \"gr-remsfl8e\",\n                \"IsCdc\": false,\n                \"SubnetRouteAlgorithm\": \"ECMP_QUINTUPLE_HASH\",\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            }\n        ],\n        \"RequestId\": \"cabe9ed4-554f-4b3a-8611-fe5c4e63ccc1\"\n    }\n}",
+        "title": "创建IPv4全局路由"
+      }
+    ],
     "CreateHaVip": [
       {
         "document": "创建HAVIP",
@@ -1238,6 +1246,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteGlobalRouteInternal\n&GlobalRouteRequestSet.0.VpcId=1\n&GlobalRouteRequestSet.0.Subnet=10.0.0.0\n&GlobalRouteRequestSet.0.IntMask=16\n&GlobalRouteRequestSet.0.Remote=172.16.0.18\n&GlobalRouteRequestSet.0.Type=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "删除全局路由"
+      }
+    ],
+    "DeleteGlobalRoutes": [
+      {
+        "document": "删除IPv4全局路由",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGlobalRoutes\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"GlobalRouteIds\": [\n        \"gr-lqej29xy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ee2beae-0ba3-46ac-b67c-b7ff8c252bc0\"\n    }\n}",
+        "title": "删除IPv4全局路由"
       }
     ],
     "DeleteHaVip": [
@@ -2240,6 +2256,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeGlobalRouteInternal\n&VpcId=1\n&Remote=172.16.0.2\n&UniqueVpcId=vpc-jmaywf6r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GlobalRouteSet\": [\n            {\n                \"VpcId\": 22,\n                \"Subnet\": \"100.64.0.0\",\n                \"IntMask\": 24,\n                \"Remote\": \"172.16.0.2\",\n                \"Master\": \"16.5.3.6\"\n            }\n        ],\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "查询全局路由"
+      }
+    ],
+    "DescribeGlobalRoutes": [
+      {
+        "document": "查询Ipv4全局路由",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGlobalRoutes\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"GlobalRouteIds\": [\n        \"gr-remsfl8e\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GlobalRouteSet\": [\n            {\n                \"CdcId\": \"\",\n                \"CreatedTime\": \"2025-02-21 16:32:36\",\n                \"Description\": \"ivan_gr\",\n                \"DestinationCidrBlock\": \"192.168.0.0/16\",\n                \"GatewayId\": \"10.0.16.4\",\n                \"GatewayType\": \"NORMAL_CVM\",\n                \"GlobalRouteId\": \"gr-remsfl8e\",\n                \"IsCdc\": false,\n                \"SubnetRouteAlgorithm\": \"ECMP_QUINTUPLE_HASH\",\n                \"VpcId\": \"vpc-mcqaoy0f\"\n            }\n        ],\n        \"RequestId\": \"1c76c527-aa4e-45cc-9b0b-25dbe81072e4\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询Ipv4全局路由"
       }
     ],
     "DescribeHaVips": [
@@ -3916,6 +3940,22 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=ModifyGatewayFlowQos\n&GatewayId=vpngw-gree226l\n&Bandwidth=10\n&IpAddresses.0=10.0.0.12\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"627c2362-890f-4f9e-9158-5e457b80d48b\"\n    }\n}",
         "title": "示例1 调整VPN网关流控带宽"
+      }
+    ],
+    "ModifyGlobalRouteECMPAlgorithm": [
+      {
+        "document": "修改IPv4全局路由ECMP的HASH算法",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalRouteECMPAlgorithm\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"DestinationCidrBlock\": \"192.168.0.0/20\",\n    \"SubnetRouteAlgorithm\": \"ECMP_DESTINATION_IP_HASH\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78adae2b-1200-4f78-9cc6-f88f452510d3\"\n    }\n}",
+        "title": "修改IPv4全局路由ECMP的HASH算法"
+      }
+    ],
+    "ModifyGlobalRoutes": [
+      {
+        "document": "修改IPv4全局路由",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalRoutes\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-mcqaoy0f\",\n    \"GlobalRoutes\": [\n        {\n            \"GlobalRouteId\": \"gr-remsfl8e\",\n            \"Description\": \"ivan_modify\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4e03f129-1a69-4be9-9e52-408cc0f0e61b\"\n    }\n}",
+        "title": "修改IPv4全局路由"
       }
     ],
     "ModifyHaVipAttribute": [

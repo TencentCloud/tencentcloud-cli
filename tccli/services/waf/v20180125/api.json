@@ -7089,6 +7089,42 @@
           "name": "KafkaVersion",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SASL校验，默认不开启，0-关闭，1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "SASLEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "SASL用户名",
+          "example": "\"waf_root\"",
+          "member": "string",
+          "name": "SASLUser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SASL密码",
+          "example": "AKIDszE***************DC2lHe",
+          "member": "string",
+          "name": "SASLPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启访问日志某些字段是否投递",
+          "example": "{\"EnableBody\": 1,\"EnableHeaders\":1}",
+          "member": "FieldWriteConfig",
+          "name": "WriteConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -16585,6 +16621,45 @@
       ],
       "usage": "out"
     },
+    "FieldWriteConfig": {
+      "document": "设置哪些字段是否存储或转发",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1:开启 0:不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableHeaders",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:开启 0:不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableBody",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:开启 0:不开启",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableBot",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FilterCls": {
       "document": "过滤器",
       "members": [],
@@ -24211,12 +24286,62 @@
         },
         {
           "disabled": false,
+          "document": "是否支持SASL,0-关闭，1-开启",
+          "example": "0",
+          "member": "int64",
+          "name": "SASLEnable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SASL用户名",
+          "example": "waf_user",
+          "member": "string",
+          "name": "SASLUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SALS密码",
+          "example": "waf123456",
+          "member": "string",
+          "name": "SASLPassword",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "描述信息",
           "example": "content",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-外网TGW，2-支撑环境，默认为支撑环境",
+          "example": "2",
+          "member": "int64",
+          "name": "VipType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置状态",
+          "example": "{\"EnableHeaders\":1}",
+          "member": "FieldWriteConfig",
+          "name": "WriteConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

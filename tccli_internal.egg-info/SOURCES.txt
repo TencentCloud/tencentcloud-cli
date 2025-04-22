@@ -874,6 +874,8 @@ tccli/services/tem/v20201221/api.json
 tccli/services/tem/v20201221/examples.json
 tccli/services/tem/v20210701/api.json
 tccli/services/tem/v20210701/examples.json
+tccli/services/tencentcloudintl/__init__.py
+tccli/services/tencentcloudintl/tencentcloudintl_client.py
 tccli/services/teo/__init__.py
 tccli/services/teo/teo_client.py
 tccli/services/thpc/__init__.py

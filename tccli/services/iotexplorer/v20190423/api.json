@@ -484,11 +484,11 @@
       "status": "online"
     },
     "DescribeDeviceLocationSolve": {
-      "document": "获取实时位置解析",
+      "document": "获取实时位置解析依赖于teg位置服务，近30天调用只有2个个人账号调用，产品推下线\n\n获取实时位置解析",
       "input": "DescribeDeviceLocationSolveRequest",
       "name": "获取实时位置解析",
       "output": "DescribeDeviceLocationSolveResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDevicePackages": {
       "document": "根据设备信息拉取有效套餐列表",

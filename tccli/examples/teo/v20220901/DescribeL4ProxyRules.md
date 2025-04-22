@@ -32,7 +32,7 @@ Output:
                 "ClientIPPassThroughMode": "TOA",
                 "SessionPersist": "on",
                 "SessionPersistTime": 3600,
-                "RuleTag": "test",
+                "RuleTag": "origin",
                 "Status": "online"
             }
         ],

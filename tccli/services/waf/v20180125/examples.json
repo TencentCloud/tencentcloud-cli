@@ -153,7 +153,7 @@
     "CreatePostCKafkaFlow": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostCKafkaFlow\n<公共请求参数>\n\n{\n    \"Compression\": \"snappy\",\n    \"CKafkaID\": \"ckafka-2v4rkwpg\",\n    \"KafkaVersion\": \"1.1.1\",\n    \"Topic\": \"waf-topic\",\n    \"LogType\": \"1\",\n    \"CKafkaRegion\": \"ap-guangzho\",\n    \"Brokers\": \"11.179.226.202:6142\",\n    \"VipType\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePostCKafkaFlow\n<公共请求参数>\n\n{\n    \"WriteConfig\": {\n        \"EnableHeaders\": \"1\",\n        \"EnableBody\": \"1\"\n    },\n    \"Compression\": \"snappy\",\n    \"CKafkaID\": \"ckafka-2v4rkwpg\",\n    \"KafkaVersion\": \"1.1.1\",\n    \"Topic\": \"waf-topic\",\n    \"LogType\": \"1\",\n    \"CKafkaRegion\": \"ap-guangzho\",\n    \"SASLUser\": \"ckafka-2v4rkwpg#\",\n    \"Brokers\": \"11.179.226.202:6142\",\n    \"SASLPassword\": \"\",\n    \"SASLEnable\": \"0\",\n    \"VipType\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c3a2707-619c-4943-ae91-2f855c0125a6\"\n    }\n}",
         "title": "创建CLS投递流任务"
       }
@@ -804,7 +804,7 @@
       {
         "document": "获取CKafka投递流任务列表",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostCKafkaFlows\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\",\n        \"PostCKafkaFlows\": [\n            {\n                \"FlowId\": 100000,\n                \"LogType\": 1,\n                \"Status\": 1,\n                \"CKafkaRegion\": \"ap-guangzhou\",\n                \"CKafkaID\": \"ckafka-o9gjqonr\",\n                \"Brokers\": \"11.179.226.202:6016\",\n                \"Version\": \"2.4.1\",\n                \"Topic\": \"waf_post_access_log\",\n                \"Compression\": \"lz4\",\n                \"Content\": \"info\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\",\n        \"PostCKafkaFlows\": [\n            {\n                \"FlowId\": 100000,\n                \"LogType\": 1,\n                \"Status\": 1,\n                \"CKafkaRegion\": \"ap-guangzhou\",\n                \"CKafkaID\": \"ckafka-o9gjqonr\",\n                \"Brokers\": \"11.179.226.202:6016\",\n                \"Version\": \"2.4.1\",\n                \"Topic\": \"waf_post_access_log\",\n                \"Compression\": \"lz4\",\n                \"SASLEnable\": 0,\n                \"SASLUser\": \"sa\",\n                \"SASLPassword\": \"sa***\",\n                \"Content\": \"info\"\n            }\n        ]\n    }\n}",
         "title": "获取CKafka投递流任务列表"
       }
     ],

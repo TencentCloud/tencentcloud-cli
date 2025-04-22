@@ -23,6 +23,9 @@ Output:
                 "Version": "2.4.1",
                 "Topic": "waf_post_access_log",
                 "Compression": "lz4",
+                "SASLEnable": 0,
+                "SASLUser": "sa",
+                "SASLPassword": "sa***",
                 "Content": "info"
             }
         ]

@@ -6024,7 +6024,7 @@
         {
           "disabled": false,
           "document": "EMR集群VPC\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxx",
+          "example": "vpc-faijfiajf",
           "member": "string",
           "name": "VpcId",
           "output_required": false,
@@ -6191,7 +6191,7 @@
         {
           "disabled": false,
           "document": "tke日志内容过滤",
-          "example": "无",
+          "example": "无使用",
           "member": "string",
           "name": "LogFilters",
           "required": false,
@@ -11893,7 +11893,7 @@
         {
           "disabled": false,
           "document": "索引名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "log-test",
           "member": "string",
           "name": "IndexName",
           "output_required": true,

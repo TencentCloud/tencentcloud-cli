@@ -330,9 +330,9 @@
       "status": "online"
     },
     "CreatePrivilegeCode": {
-      "document": "生成特权码，私有化调用path为：capi/Assets/Device/CreatePrivilegeCode",
+      "document": "生成特权码，私有化调用path为：capi/Assets/Device/CreatePrivilegeCode，生成的特权码、卸载码，仅对该设备当天有效",
       "input": "CreatePrivilegeCodeRequest",
-      "name": "创建特权码",
+      "name": "创建特权码、卸载码",
       "output": "CreatePrivilegeCodeResponse",
       "status": "online"
     },
@@ -7799,8 +7799,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备唯一标识符;",
-          "example": "无",
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "必填；设备唯一标识符;",
+          "example": "489C698CAECC13B1B7C44E59443F5CBB676B7F33",
           "member": "string",
           "name": "Mid",
           "required": false,
@@ -7837,7 +7846,7 @@
         {
           "disabled": false,
           "document": "特权码数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "586267",
           "member": "string",
           "name": "Code",
           "output_required": true,
@@ -24966,8 +24975,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "终端用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lucal_win-PC7",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -24977,7 +24986,7 @@
         {
           "disabled": false,
           "document": "mac地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "B0:DC:EF:E7:37:EA",
           "member": "string",
           "name": "MacAddr",
           "output_required": true,
@@ -24987,7 +24996,7 @@
         {
           "disabled": false,
           "document": "终端计算机名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "lucal_win",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -24997,7 +25006,7 @@
         {
           "disabled": false,
           "document": "终端组路径名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "全网终端.分组1",
           "member": "string",
           "name": "GroupNamePath",
           "output_required": true,
@@ -25007,7 +25016,7 @@
         {
           "disabled": false,
           "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "119.147.10.192",
           "member": "string",
           "name": "Ip",
           "output_required": true,
@@ -25017,7 +25026,7 @@
         {
           "disabled": false,
           "document": "唯一标识Mid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "8314BF3FD3FD738410C4FBB0DDDA48786800AB00",
           "member": "string",
           "name": "Mid",
           "output_required": true,
@@ -25027,7 +25036,7 @@
         {
           "disabled": false,
           "document": "企业账户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "liming",
           "member": "string",
           "name": "IoaUserName",
           "output_required": true,
@@ -25037,7 +25046,7 @@
         {
           "disabled": false,
           "document": "终端分组Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "288661",
           "member": "int64",
           "name": "GroupId",
           "output_required": true,
@@ -25047,7 +25056,7 @@
         {
           "disabled": false,
           "document": "终端组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "分组1",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -25057,7 +25066,7 @@
         {
           "disabled": false,
           "document": "终端列表Id(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "11668634",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -25067,7 +25076,7 @@
         {
           "disabled": false,
           "document": "软件数量(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "10",
           "member": "int64",
           "name": "SoftNum",
           "output_required": true,
@@ -25076,8 +25085,8 @@
         },
         {
           "disabled": false,
-          "document": "盗版风险\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0=无风险;1=有风险;2=未开启检查",
+          "document": "盗版风险（1=风险;2=未知）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "PiracyRisk",
           "output_required": true,
@@ -25118,8 +25127,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统类型(只支持32位)",
-          "example": "无",
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）",
+          "example": "0",
           "member": "int64",
           "name": "OsType",
           "required": false,
@@ -25127,8 +25136,8 @@
         },
         {
           "disabled": false,
-          "document": "终端分组ID(只支持32位)",
-          "example": "无",
+          "document": "必填，终端分组ID",
+          "example": "11668614",
           "member": "int64",
           "name": "GroupId",
           "required": false,
@@ -25136,8 +25145,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
-          "example": "无",
+          "document": "过滤条件、分页参数   <li>Name - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端名。</li> \t<li>UserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，终端用户名。</li> \t<li>IoaUserName - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，最近登录账号。</li> \t<li>Ip - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，IP地址。</li> \t<li>MacAddr - String - 是否必填：否 - 操作符: eq,like,ilike  - 排序支持：否 - 备注：字段含义，MAC地址。</li>",
+          "example": "{\"PageNum\":1,\"PageSize\":20,\"Filters\":[{\"Field\":\"Name\",\"Values\":[\"lucal\"],\"Operator\":\"ilike\"}]}",
           "member": "Condition",
           "name": "Condition",
           "required": false,

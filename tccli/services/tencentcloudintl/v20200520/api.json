@@ -1,0 +1,1347 @@
+{
+  "actions": {
+    "DescribeCatalogue": {
+      "document": "获取类目数据",
+      "input": "DescribeCatalogueRequest",
+      "name": "获取分类信息",
+      "output": "DescribeCatalogueResponse",
+      "status": "online"
+    },
+    "DescribeCategoryGroupByLang": {
+      "document": "获取指定语言的分组列表数据",
+      "input": "DescribeCategoryGroupByLangRequest",
+      "name": "获取类目分组数据",
+      "output": "DescribeCategoryGroupByLangResponse",
+      "status": "online"
+    },
+    "DescribeCategoryListByLang": {
+      "document": "获取对应语言的类目列表",
+      "input": "DescribeCategoryListByLangRequest",
+      "name": "获取类目列表数据",
+      "output": "DescribeCategoryListByLangResponse",
+      "status": "online"
+    },
+    "GetDictTree": {
+      "document": "获取官网产品字典树接口",
+      "input": "GetDictTreeRequest",
+      "name": "获取产品字典树",
+      "output": "GetDictTreeResponse",
+      "status": "online"
+    },
+    "GetDocPageDetail": {
+      "document": "获取文档详情",
+      "input": "GetDocPageDetailRequest",
+      "name": "获取文档页面详情",
+      "output": "GetDocPageDetailResponse",
+      "status": "online"
+    },
+    "GetIntlInfo": {
+      "document": "查询cIntlinfo表信息，供crm调用",
+      "input": "GetIntlInfoRequest",
+      "name": "获取cIntlInfo表信息",
+      "output": "GetIntlInfoResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-05-20",
+    "api_brief": null,
+    "serviceNameCN": "腾讯云国际站",
+    "serviceShortName": "tencentcloudintl"
+  },
+  "objects": {
+    "CateInfo": {
+      "document": "类目详情数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "213",
+          "member": "int64",
+          "name": "CategoryId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "page",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extension",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "493",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自增ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2179",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "en",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Billing Overview",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pdf下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://main.qcloudimg.com/raw/document/intl/product/pdf/213_493_en.pdf",
+          "member": "string",
+          "name": "PdfUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "DocType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首次发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-02-18 00:00:00",
+          "member": "string",
+          "name": "FirstReleaseTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2016-02-18 00:00:00",
+          "member": "string",
+          "name": "RecentReleaseTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此数据结构的数组",
+          "example": "无",
+          "member": "CateInfo",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeCatalogueRequest": {
+      "document": "DescribeCatalogue请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类目ID",
+          "example": "213",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语言",
+          "example": "en",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否编辑模式",
+          "example": "false",
+          "member": "bool",
+          "name": "EditMode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否预览",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPreview",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogueResponse": {
+      "document": "DescribeCatalogue返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类目信息",
+          "example": "无",
+          "member": "GetCatalogueRspData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCategory": {
+      "document": "类目数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类别ID",
+          "example": "1051",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "211",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "20",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "icon地址",
+          "example": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/international/doc/css/img/icon/icon-compute.svg",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地址",
+          "example": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/international/doc/css/img/icon/icon-compute.svg",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "短名称",
+          "example": "compute",
+          "member": "string",
+          "name": "Slug",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言",
+          "example": "en",
+          "member": "string",
+          "name": "Lang",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关",
+          "example": "1",
+          "member": "int64",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "Compute",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品是否开启",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductSwitch",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别分组ID",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背景URL",
+          "example": "https://main.qcloudimg.com/raw/e497194e982667f67523d0d2099cc487.png",
+          "member": "string",
+          "name": "BackgroundUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子节点数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeCategory",
+          "name": "Children",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeCategoryGroupByLang": {
+      "document": "获取类目分组数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组ID",
+          "example": "123",
+          "member": "int64",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重",
+          "example": "12",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "计算中心",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标地址",
+          "example": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/international/doc/css/img/icon/icon-compute.svg",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "悬浮图标地址",
+          "example": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/international/doc/css/img/icon/icon-compute.svg",
+          "member": "string",
+          "name": "IconHoverUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子元素",
+          "example": "无",
+          "member": "DescribeCategory",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeCategoryGroupByLangRequest": {
+      "document": "DescribeCategoryGroupByLang请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取指定语言的类目分组",
+          "example": "en",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCategoryGroupByLangResponse": {
+      "document": "DescribeCategoryGroupByLang返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组列表数据",
+          "example": "无",
+          "member": "DescribeCategoryGroupByLang",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCategoryListByLangRequest": {
+      "document": "DescribeCategoryListByLang请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应语言的类目",
+          "example": "en",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCategoryListByLangResponse": {
+      "document": "DescribeCategoryListByLang返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类目列表",
+          "example": "无",
+          "member": "DescribeCategory",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DictIconInfo": {
+      "document": "产品字典图标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "icon类型\ngray:灰色图标\nblug：蓝色图标",
+          "example": "blue",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标地址",
+          "example": "https://main.qcloudimg.com/image/product/2000/16_16/blue.svg",
+          "member": "string",
+          "name": "Icon16",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标地址",
+          "example": "https://main.qcloudimg.com/image/product/2000/32_32/blue.svg",
+          "member": "string",
+          "name": "Icon32",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标地址",
+          "example": "https://main.qcloudimg.com/image/product/2362/48_48/blue.svg",
+          "member": "string",
+          "name": "Icon48",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标地址",
+          "example": "https://main.qcloudimg.com/image/product/2000/48_48/blue.svg",
+          "member": "string",
+          "name": "Icon96",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DictInfo": {
+      "document": "字典信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字典id",
+          "example": "2320",
+          "member": "string",
+          "name": "DictId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文短标识",
+          "example": "cvm",
+          "member": "string",
+          "name": "EnglishCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "菜单层级\nL1/L2/L3/L4",
+          "example": "L1",
+          "member": "string",
+          "name": "Grade",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标信息",
+          "example": "无",
+          "member": "DictIconInfo",
+          "name": "IconInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多语言信息",
+          "example": "无",
+          "member": "DictLangInfo",
+          "name": "LangInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字典名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父节点id",
+          "example": "100734",
+          "member": "string",
+          "name": "Pid",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磐石产品码",
+          "example": "CD004051",
+          "member": "string",
+          "name": "SpaCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入子系统情况",
+          "example": "无",
+          "member": "DictSubSys",
+          "name": "SubSys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字典类型：\nproduct:产品\nmenu：菜单",
+          "example": "product",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序权重",
+          "example": "0",
+          "member": "string",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子节点",
+          "example": "无",
+          "member": "DictInfo",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档类别id",
+          "example": "213",
+          "member": "string",
+          "name": "DocumentCategoryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品方组织id",
+          "example": "100",
+          "member": "string",
+          "name": "FTId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品负责人",
+          "example": "[\\\"candyxiao\\\",\\\"chuangyuliu\\\",\\\"gracecui\\\",\\\"jasminewen\\\",\\\"jennazhuang\\\",\\\"lenxyliu\\\",\\\"myameng\\\",\\\"petzhou\\\",\\\"pixzheng\\\",\\\"qitinghuang\\\"]",
+          "member": "string",
+          "name": "ProductOwner",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开发负责人",
+          "example": "[\\\"abelsu\\\",\\\"aidanpeng\\\"]",
+          "member": "string",
+          "name": "Developer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DictLangInfo": {
+      "document": "产品字典语言信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对应语言的描述",
+          "example": "拥有高速计算与图形处理能力的云服务器",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应语言的详情",
+          "example": "GPU 云服务器（GPU Cloud Computing，GPU）是基于 GPU 应用的计算服务，具有实时高速的并行计算和浮点计算能力，适应用于 3D 图形应用程序、视频编解码、深度学习、科学计算等应用场景。",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应语言的介绍",
+          "example": "高密度计算服务器",
+          "member": "string",
+          "name": "Introduction",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言。\nzh：中文\nen：英文\njp：日文\nko：韩文\nind：印尼文\npt：葡萄牙语",
+          "example": "zh",
+          "member": "string",
+          "name": "Lang",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "GPU 云服务器",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DictSubSys": {
+      "document": "产品字典子系统接入情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字典ID",
+          "example": "2001",
+          "member": "uint64",
+          "name": "DictId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子系统接入状态\n1：未接入\n2：已接入",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子系统标识：\nintroPage：介绍页",
+          "example": "introPage",
+          "member": "string",
+          "name": "Subsystem",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetCatalogueRspData": {
+      "document": "类目返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "Microservice and Serverless Microservice and Serverless",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言",
+          "example": "en",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的类目列表数据",
+          "example": "无",
+          "member": "CateInfo",
+          "name": "List",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetDictTreeRequest": {
+      "document": "GetDictTree请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0获取全部产品字典  非0表示获取指定字典id的详情",
+          "example": "0",
+          "member": "uint64",
+          "name": "DictId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDictTreeResponse": {
+      "document": "GetDictTree返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字典信息",
+          "example": "无",
+          "member": "DictInfo",
+          "name": "Products",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDocPageDetailRequest": {
+      "document": "GetDocPageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档id",
+          "example": "无",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "语言：zh:中文 en:英文 pt:葡萄牙语 ko:韩语 jp:日语 ind:印尼语",
+          "example": "无",
+          "member": "string",
+          "name": "Lang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档类别id",
+          "example": "无",
+          "member": "uint64",
+          "name": "CategoryId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDocPageDetailResponse": {
+      "document": "GetDocPageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档详情",
+          "example": "无",
+          "member": "PageDetail",
+          "name": "PageDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetIntlInfoRequest": {
+      "document": "GetIntlInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账号的uin",
+          "example": "无",
+          "member": "string",
+          "name": "AccountUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetIntlInfoResponse": {
+      "document": "GetIntlInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "详细联系地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公司名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HK",
+          "member": "string",
+          "name": "FullName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "州或者省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "白名单注册专用TmpIdCard\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TmpIdCard",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PageDetail": {
+      "document": "文档详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "锚点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Toc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "keyword\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extension",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档html内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Html",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否展示锚点 0：不展示 1：展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ShowToc",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否在菜单中展示 0：不展示 1：展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InMenu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重定向链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RedirectUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否删除  0：未删除 1：已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Disable",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecentReleaseTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源文档类型 twrite:腾讯写写 git：markdown  空字符串：markdown\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腾讯写写sdk版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SlateSdkVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腾讯写写源码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Slate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

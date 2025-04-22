@@ -7527,7 +7527,7 @@
       "usage": "out"
     },
     "KafkaOption": {
-      "document": "目标端为kakfa时添加的同步选项字段",
+      "document": "目标端为kafka时添加的同步选项字段",
       "members": [
         {
           "disabled": false,

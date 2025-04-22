@@ -1247,6 +1247,16 @@
         },
         {
           "disabled": false,
+          "document": "告警策略绑定的标签信息。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 ",
           "example": "0",
           "member": "uint64",
@@ -18289,6 +18299,17 @@
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段别名",
+          "example": "alias_name",
+          "member": "string",
+          "name": "Alias",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -4661,6 +4661,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态的原因",
+          "example": "this is a reson",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

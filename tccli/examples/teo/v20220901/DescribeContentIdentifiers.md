@@ -25,7 +25,7 @@ Output:
                 "ReferenceCount": 10,
                 "Tags": [
                     {
-                        "TagKey": "test",
+                        "TagKey": "testkey",
                         "TagValue": "ct"
                     }
                 ],
