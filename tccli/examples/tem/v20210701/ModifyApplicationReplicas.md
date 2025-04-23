@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "abc-xxx-xxx-xxx"
     }
 }
 ```

@@ -11,7 +11,7 @@
     "BindTccVpcEndPointServiceWhiteList": [
       {
         "document": "绑定终端节点服务白名单用户",
-        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"EndPointServiceId\": \"vpcsvc-6jsieksl3\",\n    \"UserUin\": \"123456789\",\n    \"Description\": \"测试用户\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"EndPointServiceId\": \"vpcsvc-6jsieksl3\",\n    \"UserUin\": \"1256890122\",\n    \"Description\": \"测试用户\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "绑定终端节点服务白名单用户"
       }

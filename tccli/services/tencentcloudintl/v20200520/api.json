@@ -99,7 +99,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "493",
           "member": "int64",
           "name": "Pid",
@@ -279,7 +279,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID",
+          "document": "父ID",
           "example": "211",
           "member": "int64",
           "name": "Pid",
