@@ -430,6 +430,14 @@
         "title": "查询高级设置"
       }
     ],
+    "DescribeClusterMonitorInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterMonitorInfos\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"dataengine-9omoklhv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Info\": \"{\\\"cluster_cpu_usage_average\\\":[8.65515625]}\",\n        \"RequestId\": \"87bb46a9-1ff4-455e-92b5-fc4dd86bf0c2\"\n    }\n}",
+        "title": "获取cpu平均 使用率"
+      }
+    ],
     "DescribeDLCCatalogAccess": [
       {
         "document": "查询DLC Catalog授权列表",

@@ -276,7 +276,7 @@
       {
         "document": "启用应用弹性策略组合",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableApplicationAutoscaler\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-xxxxxx\",\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"en-xxx\",\n    \"AutoscalerId\": \"scaler-xxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc-xxx-xxx-xxx\"\n    }\n}",
         "title": "启用应用弹性策略组合"
       }
     ],
@@ -308,7 +308,7 @@
       {
         "document": "修改版本规格",
         "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationReplicas\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-xxxxxx\",\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"en-xxxxxx\",\n    \"Replicas\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc-xxx-xxx-xxx\"\n    }\n}",
         "title": "修改版本规格"
       }
     ],

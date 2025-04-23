@@ -8793,7 +8793,7 @@
         {
           "disabled": false,
           "document": "热词库文件的 base64 的内容，Type 为 1 必选\n\n",
-          "example": "无",
+          "example": "data:text/plain;base64,5a123test4566=",
           "member": "string",
           "name": "FileContent",
           "required": false,
@@ -8802,7 +8802,7 @@
         {
           "disabled": false,
           "document": "上传的文件名",
-          "example": "无",
+          "example": "example.txt",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -9391,11 +9391,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "HLS 配置参数",
+          "document": "HLS配置参数，和MP4Configure需要二选一必填。",
           "example": "无",
           "member": "HLSConfigureInfo",
           "name": "HLSConfigure",
-          "required": true,
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "MP4配置参数，和HLSConfigure需要二选一必填。",
+          "example": "无",
+          "member": "MP4ConfigureInfo",
+          "name": "MP4Configure",
+          "required": false,
           "type": "object"
         },
         {
@@ -9410,7 +9419,7 @@
         {
           "disabled": false,
           "document": "模板描述信息，长度限制：256 个字符。",
-          "example": "无",
+          "example": "录制模板",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -12178,7 +12187,7 @@
         {
           "disabled": false,
           "document": "热词库名称，\n**注意：HotwordsId 与 Name 必须选择填写一个，如果同时填写，HotwordsId 优先级高于 Name**",
-          "example": "无",
+          "example": "热词1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -12187,7 +12196,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，默认值：0。\n",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -12196,7 +12205,7 @@
         {
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：100。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -12205,7 +12214,7 @@
         {
           "disabled": false,
           "document": "热词排序字段，目前可选值为\n\n- Default：默认文件中的顺序\n- Weight：权重排序\n- Lexical：热词文本排序",
-          "example": "Weight",
+          "example": "Default",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -12214,7 +12223,7 @@
         {
           "disabled": false,
           "document": "热词排序顺序 0：升序（默认） 1：降序",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "OrderType",
           "required": false,
@@ -12269,7 +12278,7 @@
         {
           "disabled": false,
           "document": "热词文件上传时的文件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "example.txt",
           "member": "string",
           "name": "FileName",
           "output_required": false,
@@ -12319,7 +12328,7 @@
         {
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：100。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "output_required": true,
@@ -18640,14 +18649,24 @@
           "example": "hls",
           "member": "HLSConfigureInfo",
           "name": "HLSConfigure",
-          "output_required": true,
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MP4配置参数",
+          "example": "{\"interval\":600}",
+          "member": "MP4ConfigureInfo",
+          "name": "MP4Configure",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "录制模板名称。",
-          "example": "“”",
+          "example": "录制模板",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -18657,7 +18676,7 @@
         {
           "disabled": false,
           "document": "模板描述信息。",
-          "example": "“”",
+          "example": "默认录制模板",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -18667,7 +18686,7 @@
         {
           "disabled": false,
           "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "“”",
+          "example": "Preset或Custom",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -18677,7 +18696,7 @@
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "“”",
+          "example": "2023-10-23T22:30:00+08:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -18687,7 +18706,7 @@
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "“”",
+          "example": "2023-10-23T22:30:00+08:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -20148,6 +20167,23 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MP4ConfigureInfo": {
+      "document": "MP4配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制周期，单位：秒，取值范围 10 分钟到720分钟。默认值：60分钟（3600秒）。",
+          "example": "3600",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22615,7 +22651,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "热词库 id",
+          "document": "热词库 id \n如果热词库是文本热词：Name 和 Content 至少填一个 \n如果热词库是：Name、FileContent 和 FileName 至少填一个 \n",
           "example": "hwd-aexxxxxxxxxxxxxx1481",
           "member": "string",
           "name": "HotwordsId",
@@ -22625,7 +22661,7 @@
         {
           "disabled": false,
           "document": "热词库名称",
-          "example": "无",
+          "example": "Hotwords_Template",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -22643,7 +22679,7 @@
         {
           "disabled": false,
           "document": "热词库文件的 base64 的内容，Type 为 1 必选\n\n\n",
-          "example": "无",
+          "example": "5aqS5L*****6IW+6K6v5aSn5Y6mfDU=",
           "member": "string",
           "name": "FileContent",
           "required": false,
@@ -22652,7 +22688,7 @@
         {
           "disabled": false,
           "document": "热词文件上传时的文件名",
-          "example": "无",
+          "example": "example.txt",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -23053,7 +23089,7 @@
         },
         {
           "disabled": false,
-          "document": "HLS 配置参数",
+          "document": "HLS配置参数，和MP4Configure需要二选一必填。",
           "example": "无",
           "member": "HLSConfigureInfo",
           "name": "HLSConfigure",
@@ -23062,8 +23098,17 @@
         },
         {
           "disabled": false,
-          "document": "录制模板名称，长度限制：64 个字符。",
+          "document": "MP4配置参数，和HLSConfigure需要二选一必填。",
           "example": "无",
+          "member": "MP4ConfigureInfo",
+          "name": "MP4Configure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板名称，长度限制：64 个字符。",
+          "example": "直播录制模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -23072,7 +23117,7 @@
         {
           "disabled": false,
           "document": "模板描述信息，长度限制：256 个字符。",
-          "example": "无",
+          "example": "直播录制模板",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -26131,12 +26176,22 @@
         },
         {
           "disabled": false,
-          "document": "视频无参考质量打分，百分制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频无参考质量评分，百分制。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "95",
           "member": "int64",
           "name": "QualityEvaluationScore",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频无参考质量评分，MOS分数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4.75",
+          "member": "float",
+          "name": "QualityEvaluationMeanOpinionScore",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": true
         },
         {
@@ -26178,7 +26233,7 @@
         {
           "disabled": false,
           "document": "出现的起始时间戳，秒。",
-          "example": "12.3",
+          "example": "12.31",
           "member": "float",
           "name": "StartTimeOffset",
           "output_required": true,
@@ -26188,7 +26243,7 @@
         {
           "disabled": false,
           "document": "出现的结束时间戳，秒。",
-          "example": "15.7",
+          "example": "15.72",
           "member": "float",
           "name": "EndTimeOffset",
           "output_required": true,
@@ -26198,7 +26253,7 @@
         {
           "disabled": false,
           "document": "区域坐标(px)，即左上角坐标、右下角坐标。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[1324,140,1412,233]",
           "member": "int64",
           "name": "AreaCoordSet",
           "output_required": false,
@@ -32000,6 +32055,16 @@
           "name": "End",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻译文本",
+          "example": "Tencent Cloud",
+          "member": "string",
+          "name": "Trans",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

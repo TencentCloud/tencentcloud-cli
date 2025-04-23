@@ -1351,7 +1351,7 @@
         "document": "",
         "input": "https://monitor.tencentcloudapi.com/?Action=UpdateAlertRule\n&InstanceId=my-prom-gg\n&RuleId=arule-omq28fcm\n&RuleState=2\n&RuleName=exampleName\n&Expr=job:request_latency_seconds:mean5m{job=\\\"myjob\\\"}>0.5\n&Duration=1m\n&Receivers.0=33432\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"qyh38g1ium4-41o5k994o7hcxuq96zab\",\n        \"RuleId\": \"arule-omq28fcm\"\n    }\n}",
-        "title": "更新报警规则"
+        "title": "更新告警规则"
       }
     ],
     "UpdateAlertRuleState": [

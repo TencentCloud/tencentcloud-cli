@@ -8,7 +8,7 @@ Input:
 tccli es SaveAndDeployLogstashPipeline --cli-unfold-argument  \
     --InstanceId ls-xxxxxxxx \
     --Pipeline.PipelineId ' pipe_xxx' \
-    --Pipeline.PipelineDesc 描述 \
+    --Pipeline.PipelineDesc 管道描述 \
     --Pipeline.Config "aW5wdXR7CiAgICAjxxx" \
     --Pipeline.QueueCheckPointWrites 1000 \
     --Pipeline.QueueType "persisted" \

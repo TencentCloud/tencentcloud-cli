@@ -989,7 +989,7 @@
     "ModifyLiveRecordTemplate": [
       {
         "document": "修改直播录制模板",
-        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveRecordTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001,\n    \"Name\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveRecordTemplate\n<公共请求参数>\n\n{\n    \"Definition\": 20001,\n    \"Name\": \"直播录制模板1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8cxc-dce3-4151-9cyt-5594145287e1\"\n    }\n}",
         "title": "修改直播录制模板"
       }

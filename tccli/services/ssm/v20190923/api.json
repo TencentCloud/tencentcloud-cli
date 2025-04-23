@@ -286,6 +286,15 @@
           "name": "RotationFrequency",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。",
+          "example": "cls-hsm-wiwmm3np",
+          "member": "string",
+          "name": "KmsHsmClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -396,6 +405,15 @@
           "example": "test2_key",
           "member": "string",
           "name": "SSHKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。",
+          "example": "cls-hsm-wiwmm3np",
+          "member": "string",
+          "name": "KmsHsmClusterId",
           "required": false,
           "type": "string"
         }
@@ -547,6 +565,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "KMS的独享集群的ID。当KmsKeyId为空,并且用户的KMS存在有效的HsmClusterId时有效。",
+          "example": "cls-hsm-wiwmm3np",
+          "member": "string",
+          "name": "KmsHsmClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

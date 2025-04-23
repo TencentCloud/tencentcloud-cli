@@ -16869,6 +16869,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重保增强包",
+          "example": "详情见数据结构",
+          "member": "MajorEventsProPkg",
+          "name": "MajorEventsProPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -17657,6 +17668,111 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MajorEventsProPkg": {
+      "document": "重保防护资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "sada",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请数量",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用数量",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "续费标志",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_wsm_waf_scene_major_events_basic",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

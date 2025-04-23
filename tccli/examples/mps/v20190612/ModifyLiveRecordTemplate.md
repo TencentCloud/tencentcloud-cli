@@ -7,7 +7,7 @@ Input:
 ```
 tccli mps ModifyLiveRecordTemplate --cli-unfold-argument  \
     --Definition 20001 \
-    --Name test
+    --Name 直播录制模板1
 ```
 
 Output: 

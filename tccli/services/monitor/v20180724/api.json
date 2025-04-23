@@ -1016,7 +1016,7 @@
       "status": "online"
     },
     "UpdateAlertRule": {
-      "document": "更新 Prometheus 的告警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
+      "document": "更新 Prometheus 的告警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "UpdateAlertRuleRequest",
       "name": "更新告警规则",
       "output": "UpdateAlertRuleResponse",
@@ -21372,7 +21372,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 高警规则 ID",
+          "document": "Prometheus 告警规则 ID",
           "example": "arule-omq28fcm",
           "member": "string",
           "name": "RuleId",
@@ -21435,7 +21435,7 @@
         },
         {
           "disabled": false,
-          "document": "报警规则标签列表",
+          "document": "告警规则标签列表",
           "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
           "member": "PrometheusRuleKV",
           "name": "Labels",
@@ -21444,7 +21444,7 @@
         },
         {
           "disabled": false,
-          "document": "报警规则注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
+          "document": "告警规则注释列表。\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。",
           "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
           "member": "PrometheusRuleKV",
           "name": "Annotations",
@@ -21453,7 +21453,7 @@
         },
         {
           "disabled": false,
-          "document": "报警策略模板分类(自定义，可不填)",
+          "document": "告警策略模板分类(自定义，可不填)",
           "example": "TargetDown",
           "member": "string",
           "name": "Type",

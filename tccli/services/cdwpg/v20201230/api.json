@@ -1652,7 +1652,7 @@
         {
           "disabled": false,
           "document": "升级记录具体数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"TaskName\":\"test\",\"SourceVersion\":\"3.16.4.7\",\"TargetVersion\":\"3.16.4.8\",\"CreateTime\":\"2025-01-06 12:12:12\",\"EndTime\":\"2025-01-06 12:18:12\",\"Status\":\"2\",\"OperateUin\":\"102213435355\"}",
+          "example": "{\"TaskName\":\"UpgradeTo3.15.2.0_2023-02-16 00:12:44\",\"SourceVersion\":\"3.16.4.7\",\"TargetVersion\":\"3.16.4.8\",\"CreateTime\":\"2025-01-06 12:12:12\",\"EndTime\":\"2025-01-06 12:18:12\",\"Status\":\"2\",\"OperateUin\":\"102213435355\"}",
           "member": "UpgradeItem",
           "name": "UpgradeItems",
           "output_required": true,

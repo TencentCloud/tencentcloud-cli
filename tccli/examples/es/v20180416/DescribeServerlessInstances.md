@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli es DescribeServerlessInstances --cli-unfold-argument  \
-    --IndexNames test \
+    --IndexNames indexName \
     --InstanceIds index-abcdefgh \
     --Limit 0 \
     --Offset 10

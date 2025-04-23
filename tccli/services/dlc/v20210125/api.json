@@ -371,6 +371,13 @@
       "output": "DescribeAdvancedStoreLocationResponse",
       "status": "online"
     },
+    "DescribeClusterMonitorInfos": {
+      "document": "查询任务监控指标信息",
+      "input": "DescribeClusterMonitorInfosRequest",
+      "name": "查询集群监控信息",
+      "output": "DescribeClusterMonitorInfosResponse",
+      "status": "online"
+    },
     "DescribeDLCCatalogAccess": {
       "document": "查询DLC Catalog授权列表",
       "input": "DescribeDLCCatalogAccessRequest",
@@ -8149,6 +8156,70 @@
           "member": "string",
           "name": "BucketType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMonitorInfosRequest": {
+      "document": "DescribeClusterMonitorInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎Id",
+          "example": "DataEngine-b7pgx1ci",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间的起始时间",
+          "example": "20250301",
+          "member": "string",
+          "name": "TimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间的结束时间",
+          "example": "20250302",
+          "member": "string",
+          "name": "TimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "cluster_cpu_usage_average",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterMonitorInfosResponse": {
+      "document": "DescribeClusterMonitorInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群监控信息列表",
+          "example": "{\"max\":[8.65515625]}",
+          "member": "string",
+          "name": "Info",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

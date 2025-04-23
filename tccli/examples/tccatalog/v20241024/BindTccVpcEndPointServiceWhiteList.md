@@ -7,7 +7,7 @@ Input:
 ```
 tccli tccatalog BindTccVpcEndPointServiceWhiteList --cli-unfold-argument  \
     --EndPointServiceId vpcsvc-6jsieksl3 \
-    --UserUin 123456789 \
+    --UserUin 1256890122 \
     --Description 测试用户
 ```
 

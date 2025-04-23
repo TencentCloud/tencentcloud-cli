@@ -96,7 +96,7 @@
         {
           "disabled": false,
           "document": "需要开白的用户Uin",
-          "example": "123456789",
+          "example": "1256890122",
           "member": "string",
           "name": "UserUin",
           "required": false,

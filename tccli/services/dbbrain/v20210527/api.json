@@ -217,6 +217,13 @@
       "output": "DescribeDBDiagHistoryResponse",
       "status": "online"
     },
+    "DescribeDBDiagReportContent": {
+      "document": "健康报告内容。",
+      "input": "DescribeDBDiagReportContentRequest",
+      "name": "查询健康诊断报告内容",
+      "output": "DescribeDBDiagReportContentResponse",
+      "status": "online"
+    },
     "DescribeDBDiagReportTasks": {
       "document": "查询健康报告生成任务列表。",
       "input": "DescribeDBDiagReportTasksRequest",
@@ -3719,6 +3726,61 @@
           "name": "Events",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagReportContentRequest": {
+      "document": "DescribeDBDiagReportContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "59",
+          "member": "uint64",
+          "name": "AsyncRequestId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB，默认为\"mysql\"。",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBDiagReportContentResponse": {
+      "document": "DescribeDBDiagReportContent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报告内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Report",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
