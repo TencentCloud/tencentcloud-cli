@@ -8429,13 +8429,23 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用户角色id列表",
           "example": "[1]",
           "member": "uint64",
           "name": "RoleIdList",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色id列表",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "RoleList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

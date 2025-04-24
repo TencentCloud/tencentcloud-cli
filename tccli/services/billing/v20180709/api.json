@@ -10982,7 +10982,7 @@
         {
           "disabled": false,
           "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ProjectId\":\"0\",\"RealTotalCost\":\"2924616.19000000\",\"TotalCost\":\"6622736.21547221\",\"CashPayAmount\":\"2924616.19000000\",\"IncentivePayAmount\":\"0.00000000\",\"VoucherPayAmount\":\"0.00000000\",\"TransferPayAmount\":\"0.00000000\",\"BillMonth\":\"2024-01\",\"RealTotalCostRatio\":\"100.00\",\"ProjectName\":\"默认项目\"}]",
+          "example": "无",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": true,
@@ -11205,7 +11205,7 @@
         {
           "disabled": false,
           "document": "账单多维度汇总消费详情",
-          "example": "[{\"tagValue\":\"运维服务-temp\",\"business\":[{\"businessCode\":\"p_cvm\",\"businessCodeName\":\"云服务器CVM\",\"totalCost\":\"385.50\",\"realTotalCost\":\"212.03\",\"cashPayAmount\":\"212.03\",\"incentivePayAmount\":\"0.00\",\"voucherPayAmount\":\"0.00\",\"transferPayAmount\":\"0.00\",\"trend\":{\"type\":\"type_a\",\"value\":\"0.00\",\"preMonthRealTotalCost\":\"212.03\"}}],\"totalCost\":\"385.50\",\"realTotalCost\":\"212.03\",\"cashPayAmount\":\"212.03\",\"incentivePayAmount\":\"0.00\",\"voucherPayAmount\":\"0.00\",\"transferPayAmount\":\"0.00\",\"trend\":{\"type\":\"type_a\",\"value\":\"47.59\",\"preMonthRealTotalCost\":\"404.53\"}}]",
+          "example": "无",
           "member": "SummaryDetail",
           "name": "SummaryDetail",
           "output_required": true,

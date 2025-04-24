@@ -316,6 +316,123 @@
     "serviceShortName": "tione"
   },
   "objects": {
+    "AuthToken": {
+      "document": "在线服务的 AuthToken 数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AuthToken 基础信息",
+          "example": "无",
+          "member": "AuthTokenBase",
+          "name": "Base",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AuthToken 限流数组",
+          "example": "无",
+          "member": "AuthTokenLimit",
+          "name": "Limits",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthTokenBase": {
+      "document": "AuthToken 的基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "token 值",
+          "example": "8PyrHoGd6uZ52hQ",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token 别名",
+          "example": "这是 token 别名",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token 描述",
+          "example": "这是 token 描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token 创建时间",
+          "example": "2021-01-02",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token状态",
+          "example": "Enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AuthTokenLimit": {
+      "document": "AuthToken 限流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限频策略：PerMinute 每分钟限频；PerDay 每日限频",
+          "example": "PerMinute",
+          "member": "string",
+          "name": "Strategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上限值",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Max",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CBSConfig": {
       "document": "CBS存储配置",
       "members": [
@@ -1212,6 +1329,24 @@
           "name": "PreStopCommand",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用 grpc 端口",
+          "example": "false",
+          "member": "bool",
+          "name": "GrpcEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "健康探针",
+          "example": "无",
+          "member": "HealthProbe",
+          "name": "HealthProbe",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5117,6 +5252,62 @@
       ],
       "usage": "both"
     },
+    "HTTPGetAction": {
+      "document": "http get 行为",
+      "members": [
+        {
+          "disabled": false,
+          "document": "http 路径",
+          "example": "/health/live",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HealthProbe": {
+      "document": "健康探针",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存活探针",
+          "example": "无",
+          "member": "Probe",
+          "name": "LivenessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "就绪探针",
+          "example": "无",
+          "member": "Probe",
+          "name": "ReadinessProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动探针",
+          "example": "无",
+          "member": "Probe",
+          "name": "StartupProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HorizontalPodAutoscaler": {
       "document": "hpa的描述",
       "members": [
@@ -7046,6 +7237,24 @@
           "name": "PreStopCommand",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否启动grpc端口",
+          "example": "flase",
+          "member": "bool",
+          "name": "GrpcEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "健康探针",
+          "example": "无",
+          "member": "HealthProbe",
+          "name": "HealthProbe",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8118,6 +8327,106 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "grpc内网调用地址",
+          "example": "grpc://127.0.0.1:8090",
+          "member": "string",
+          "name": "InnerGrpcAddr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Probe": {
+      "document": "探针结构信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "探针行为",
+          "example": "无",
+          "member": "ProbeAction",
+          "name": "ProbeAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "等待服务启动的延迟",
+          "example": "0",
+          "member": "int64",
+          "name": "InitialDelaySeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "轮询检查时间间隔",
+          "example": "10",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查超时时长",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测失败认定次数",
+          "example": "1",
+          "member": "int64",
+          "name": "FailureThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测成功认定次数，就绪默认 3，存活/启动默认 1",
+          "example": "3",
+          "member": "int64",
+          "name": "SuccessThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProbeAction": {
+      "document": "探针行为",
+      "members": [
+        {
+          "disabled": false,
+          "document": "http get 行为",
+          "example": "无",
+          "member": "HTTPGetAction",
+          "name": "HTTPGet",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8694,7 +9003,7 @@
         {
           "disabled": false,
           "document": "服务的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ServiceInfo",
           "name": "ServiceInfo",
           "output_required": true,
@@ -8764,7 +9073,7 @@
         {
           "disabled": false,
           "document": "服务的标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -8854,7 +9163,7 @@
         {
           "disabled": true,
           "document": "已废弃,以ServiceInfo中的对应为准\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
           "output_required": true,
@@ -8864,7 +9173,7 @@
         {
           "disabled": true,
           "document": "已废弃,以ServiceInfo中的对应为准\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
           "output_required": true,
@@ -9112,6 +9421,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "LLM token 列表",
+          "example": "无",
+          "member": "AuthToken",
+          "name": "AuthTokens",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启限流",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableLimit",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问grpc时需携带的虚拟Host",
+          "example": "ms-fdds4fsr-10000000-swgrpc.gw.ap-shanghai.ti.tencentcs.com",
+          "member": "string",
+          "name": "GrpcHost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9395,6 +9734,26 @@
           "name": "AppId",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启鉴权",
+          "example": "true",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流鉴权 token 列表",
+          "example": "无",
+          "member": "AuthToken",
+          "name": "AuthTokens",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -9775,6 +10134,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用grpc端口",
+          "example": "false",
+          "member": "bool",
+          "name": "GrpcEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康探针",
+          "example": "无",
+          "member": "HealthProbe",
+          "name": "HealthProbe",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -1,14 +1,14 @@
 **Example 1: 修改RabbitMQ权限**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq ModifyRabbitMQPermission --cli-unfold-argument  \
-    --InstanceId amqp-44w9928j \
+    --InstanceId amqp-2ppxx4rq \
     --User admin \
-    --VirtualHost tdmq_data \
+    --VirtualHost testVhost \
     --ConfigRegexp .* \
     --WriteRegexp .* \
     --ReadRegexp .*

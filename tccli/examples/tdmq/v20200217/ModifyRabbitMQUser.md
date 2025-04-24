@@ -1,14 +1,14 @@
 **Example 1: 修改RabbitMQ用户**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq ModifyRabbitMQUser --cli-unfold-argument  \
-    --InstanceId amqp-jero744g \
+    --InstanceId amqp-2ppxx4rq \
     --User admin \
-    --Password Tencent123
+    --Password abc123._
 ```
 
 Output: 

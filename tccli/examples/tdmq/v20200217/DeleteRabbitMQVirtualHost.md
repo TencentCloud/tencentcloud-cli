@@ -1,12 +1,12 @@
 **Example 1: 删除RabbitMQ的vhost**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq DeleteRabbitMQVirtualHost --cli-unfold-argument  \
-    --InstanceId amqp-test \
+    --InstanceId amqp-2ppxx4rq \
     --VirtualHost testVhost
 ```
 

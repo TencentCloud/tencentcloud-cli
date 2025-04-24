@@ -2706,7 +2706,7 @@
         {
           "disabled": false,
           "document": "配置文件类型",
-          "example": "无",
+          "example": "client_sdk",
           "member": "int64",
           "name": "ConfigFileSupportedClient",
           "output_required": false,
@@ -2723,6 +2723,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启加密算法",
+          "example": "true",
+          "member": "bool",
+          "name": "Encrypted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密算法",
+          "example": "AES",
+          "member": "string",
+          "name": "EncryptAlgo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2966,7 +2988,7 @@
         {
           "disabled": false,
           "document": "文件编码",
-          "example": "无",
+          "example": "UTF-8",
           "member": "string",
           "name": "Encoding",
           "output_required": false,
@@ -2977,7 +2999,7 @@
         {
           "disabled": false,
           "document": "文件下发路径",
-          "example": "无",
+          "example": "/path/var",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -2988,7 +3010,7 @@
         {
           "disabled": false,
           "document": "文件后置命令",
-          "example": "无",
+          "example": "echo aaa;\\n echo ccc",
           "member": "string",
           "name": "PostCmd",
           "output_required": false,
@@ -3288,7 +3310,7 @@
         {
           "disabled": false,
           "document": "配置文件类型",
-          "example": "无",
+          "example": "client_sdk",
           "member": "int64",
           "name": "ConfigFileSupportedClient",
           "output_required": false,
@@ -3557,7 +3579,7 @@
         {
           "disabled": false,
           "document": "配置文件类型\n",
-          "example": "无",
+          "example": "client_sdk",
           "member": "int64",
           "name": "ConfigFileSupportedClient",
           "output_required": false,
@@ -16581,6 +16603,17 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子用户密码",
+          "example": "无",
+          "member": "string",
+          "name": "SubPassword",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

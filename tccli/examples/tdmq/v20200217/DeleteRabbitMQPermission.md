@@ -1,14 +1,14 @@
 **Example 1: 删除RabbitMQ权限**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq DeleteRabbitMQPermission --cli-unfold-argument  \
-    --InstanceId amqp-jero744g \
+    --InstanceId amqp-2ppxx4rq \
     --User admin \
-    --VirtualHost tdmq_data
+    --VirtualHost testVhost
 ```
 
 Output: 

@@ -640,6 +640,36 @@
       "document": "DescribeNodeGroups返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "树状节点列表，总共两级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeTree",
+          "name": "NodeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "省份或国家列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistinctOrNetServiceInfo",
+          "name": "DistrictList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运营商列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistinctOrNetServiceInfo",
+          "name": "NetServiceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1076,6 +1106,32 @@
       ],
       "usage": "out"
     },
+    "DistinctOrNetServiceInfo": {
+      "document": "省份(国际)或运营商基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "省份(国际)或运营商ID",
+          "example": "100",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "广东",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Field": {
       "document": "储存float类型字段",
       "members": [
@@ -1382,6 +1438,104 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeInfoBase": {
+      "document": "Node节点基本信息，用于新建任务页面重构节点选择",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点code",
+          "example": "10000",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "北京-北京市-中国电信[IDC]",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeLeaf": {
+      "document": "子节点。用于新建任务重构页面的节点选择",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子节点ID",
+          "example": "1100201",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子节点名称",
+          "example": "广东",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "无",
+          "member": "NodeInfoBase",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NodeTree": {
+      "document": "拨测节点数（新建任务页面重构）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "1100201",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "子节点名称",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子节点",
+          "example": "无",
+          "member": "NodeLeaf",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

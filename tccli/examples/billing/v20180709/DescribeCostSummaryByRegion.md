@@ -33,7 +33,7 @@ Output:
                 "TransferPayAmount": "0.00000000",
                 "Trend": {
                     "Type": "none",
-                    "Value": null
+                    "Value": "0"
                 },
                 "Business": [
                     {
@@ -47,7 +47,7 @@ Output:
                         "TransferPayAmount": "0.00000000",
                         "Trend": {
                             "Type": "none",
-                            "Value": null
+                            "Value": "0"
                         }
                     }
                 ]

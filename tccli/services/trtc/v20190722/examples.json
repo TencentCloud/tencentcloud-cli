@@ -60,15 +60,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbV0.\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StartTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2025-04-24 16:15:48.076648\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"109ede3f-2389-45e5-88a7-3a99dddc6e2f\"\n    }\n}",
         "title": "查询对话任务状态"
       }
     ],
     "DescribeAITranscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StartTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"v2_20250424_n3cHsk5kBFa09E5SEa7I_fKIxuKqZjiUsmteLPc2uXoTxpgc6F4TsigwJ1dH9SakK24SdUhLW86jhofgDHERZUHhCa0FJvu4Qgod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2025-04-24 16:17:56.931660\",\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"287d3c69-246a-4e6d-bb12-bba573177512\"\n    }\n}",
         "title": "样例"
       }
     ],
@@ -417,8 +417,8 @@
     "StopAITranscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAITranscription\n<公共请求参数>\n\n{\n    \"TaskId\": \"v2_20250424_n6cHsk5kBFa09E5SEp7I_fKIxuKqZjiUsmteLPc3uXoTxpgc6F4TsigwJ1dH9SakK14SdUhLW86jhofgDHERZUHhCa0FJvu3Qgod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"287d3c39-246a-4e6d-bb12-bba573177513\"\n    }\n}",
         "title": "样例"
       }
     ],

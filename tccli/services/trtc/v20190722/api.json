@@ -495,7 +495,7 @@
         {
           "disabled": false,
           "document": "机器人的UserId，用于进房发起任务。【注意】这个UserId不能与当前房间内的主播观众[UserId](https://cloud.tencent.com/document/product/647/46351#userid)重复。如果一个房间发起多个任务时，机器人的UserId也不能相互重复，否则会中断前一个任务。需要保证机器人UserId在房间内唯一。",
-          "example": "无",
+          "example": "user_123",
           "member": "string",
           "name": "UserId",
           "output_required": false,
@@ -506,7 +506,7 @@
         {
           "disabled": false,
           "document": "机器人UserId对应的校验签名，即UserId和UserSig相当于机器人进房的登录密码，具体计算方法请参考TRTC计算[UserSig](https://cloud.tencent.com/document/product/647/45910#UserSig)的方案。",
-          "example": "无",
+          "example": "ehbciOiJS",
           "member": "string",
           "name": "UserSig",
           "output_required": false,
@@ -517,7 +517,7 @@
         {
           "disabled": false,
           "document": "机器人拉流的UserId, 填写后，机器人会拉取该UserId的流进行实时处理",
-          "example": "无",
+          "example": "user_123",
           "member": "string",
           "name": "TargetUserId",
           "output_required": false,
@@ -528,7 +528,7 @@
         {
           "disabled": false,
           "document": "房间内超过MaxIdleTime 没有推流，后台自动关闭任务，默认值是60s。",
-          "example": "无",
+          "example": "60",
           "member": "uint64",
           "name": "MaxIdleTime",
           "output_required": false,
@@ -539,7 +539,7 @@
         {
           "disabled": false,
           "document": "机器人的欢迎语",
-          "example": "无",
+          "example": "你好呀",
           "member": "string",
           "name": "WelcomeMessage",
           "output_required": false,
@@ -550,7 +550,7 @@
         {
           "disabled": false,
           "document": "智能打断模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "InterruptMode",
           "output_required": false,
@@ -561,7 +561,7 @@
         {
           "disabled": false,
           "document": "InterruptMode为0时使用，单位为毫秒，默认为500ms。表示服务端检测到持续InterruptSpeechDuration毫秒的人声则进行打断。",
-          "example": "无",
+          "example": "500",
           "member": "uint64",
           "name": "InterruptSpeechDuration",
           "output_required": false,
@@ -572,7 +572,7 @@
         {
           "disabled": false,
           "document": "控制新一轮对话的触发方式，默认为0。\n- 0表示当服务端语音识别检测出的完整一句话后，自动触发一轮新的对话。\n- 1表示客户端在收到字幕消息后，自行决定是否手动发送聊天信令触发一轮新的对话。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "TurnDetectionMode",
           "output_required": false,
@@ -4576,7 +4576,7 @@
         {
           "disabled": false,
           "document": "图片水印参数。WaterMarkType为0指定。",
-          "example": "WaterMarkImage",
+          "example": "{\"WaterMarkUrl\": \"http://your_picture.png\",\"WaterMarkWidth\": 150,\"WaterMarkHeight\": 90,\"LocationX\": 0,\"LocationY\": 0,\"ZOrder\": 20}",
           "member": "McuWaterMarkImage",
           "name": "WaterMarkImage",
           "required": false,
@@ -4585,7 +4585,7 @@
         {
           "disabled": false,
           "document": "文字水印参数。WaterMarkType为1指定。",
-          "example": "WaterMarkText",
+          "example": "{\"Text\": \"主持人\",\"WaterMarkWidth\": 54,\"WaterMarkHeight\": 18,\"LocationX\": 80,\"LocationY\": 80,\"FontSize\": 18,\"DynamicPosType\": 0}",
           "member": "McuWaterMarkText",
           "name": "WaterMarkText",
           "required": false,
@@ -4600,7 +4600,7 @@
         {
           "disabled": false,
           "document": "文字水印内容。",
-          "example": "\"XXX\"",
+          "example": "\"主持人\"",
           "member": "string",
           "name": "Text",
           "required": true,
@@ -6228,7 +6228,7 @@
         },
         {
           "disabled": false,
-          "document": "TTS配置，为JSON字符串，腾讯云TTS示例如下：\n <pre>{ <br> &emsp; \"AppId\": 您的应用ID, // Integer 必填<br> &emsp; \"TTSType\": \"TTS类型\", // String TTS类型, 固定为\"tencent\"<br> &emsp; \"SecretId\": \"您的密钥ID\", // String 必填<br> &emsp; \"SecretKey\":  \"您的密钥Key\", // String 必填<br> &emsp; \"VoiceType\": 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见<a href=\"https://cloud.tencent.com/document/product/1073/34112\">语音合成计费概述</a>。完整的音色 ID 列表请参见<a href=\"https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823\">语音合成音色列表</a>。<br> &emsp; \"Speed\": 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 <a href=\"https://sdk-1300466766.cos.ap-shanghai.myqcloud.com/sample/speed_sample.tar.gz\">语速转换</a><br> &emsp; \"Volume\": 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。<br> &emsp;}</pre>",
+          "document": "TTS配置，为JSON字符串，腾讯云TTS示例如下： <pre>{ <br> &emsp; \"AppId\": 您的应用ID, // Integer 必填<br> &emsp; \"TTSType\": \"TTS类型\", // String TTS类型, 固定为\"tencent\"<br> &emsp; \"SecretId\": \"您的密钥ID\", // String 必填<br> &emsp; \"SecretKey\":  \"您的密钥Key\", // String 必填<br> &emsp; \"VoiceType\": 101001, // Integer  必填，音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见<a href=\"https://cloud.tencent.com/document/product/1073/34112\">语音合成计费概述</a>。完整的音色 ID 列表请参见<a href=\"https://cloud.tencent.com/document/product/1073/92668#55924b56-1a73-4663-a7a1-a8dd82d6e823\">语音合成音色列表</a>。<br> &emsp; \"Speed\": 1.25, // Integer 非必填，语速，范围：[-2，6]，分别对应不同语速： -2: 代表0.6倍 -1: 代表0.8倍 0: 代表1.0倍（默认） 1: 代表1.2倍 2: 代表1.5倍  6: 代表2.5倍  如果需要更细化的语速，可以保留小数点后 2 位，例如0.5/1.25/2.81等。 参数值与实际语速转换，可参考 <a href=\"https://sdk-1300466766.cos.ap-shanghai.myqcloud.com/sample/speed_sample.tar.gz\">语速转换</a><br> &emsp; \"Volume\": 5, // Integer 非必填，音量大小，范围：[0，10]，分别对应11个等级的音量，默认值为0，代表正常音量。<br> &emsp; \"EmotionCategory\":  \"angry\", // String 非必填 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、sajiao(撒娇)、disgusted(厌恶)、amaze(震惊)、peaceful(平静)、exciting(兴奋)、aojiao(傲娇)、jieshuo(解说)。<br> &emsp; \"EmotionIntensity\":  150 // Integer 非必填 控制合成音频情感程度，取值范围为 [50,200]，默认为 100；只有 EmotionCategory 不为空时生效。<br> &emsp; }</pre>",
           "example": "{\\\"TTSType\\\": \\\"tencent\\\", \\\"AppId\\\": 136666666, \\\"SecretId\\\": \\\"xxxxxxx\\\", \\\"SecretKey\\\": \\\"xxxxxxx\\\", \\\"VoiceType\\\": 1008, \\\"Speed\\\": 1}",
           "member": "string",
           "name": "TTSConfig",
