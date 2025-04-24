@@ -1,12 +1,12 @@
-**Example 1: 删除RabbitMQ实例**
+**Example 1: 删除 RabbitMQ 托管版实例**
 
-删除RabbitMQ实例
+
 
 Input: 
 
 ```
 tccli tdmq DeleteRabbitMQVipInstance --cli-unfold-argument  \
-    --InstanceId amqp-test
+    --InstanceId amqp-2ppxx4rq
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "TranId": "20230110002025620411234",
-        "InstanceId": "amqp-test",
+        "InstanceId": "amqp-2ppxx4rq",
         "RequestId": "a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0"
     }
 }

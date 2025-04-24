@@ -1,15 +1,15 @@
-**Example 1: RabbitMQ专享版查询节点列表**
+**Example 1: 查询 RabbitMQ 托管版节点列表**
 
-RabbitMQ专享版查询节点列表 在查询节点的时候使用。
+查询 RabbitMQ 托管版节点列表
 
 Input: 
 
 ```
 tccli tdmq DescribeRabbitMQNodeList --cli-unfold-argument  \
-    --InstanceId amqp-test \
+    --InstanceId amqp-2ppxx4rq \
     --Offset 0 \
     --Limit 3 \
-    --NodeName rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local \
+    --NodeName rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-2ppxx4rq.svc.cluster.local \
     --Filters.0.Name nodeStatus \
     --Filters.0.Values running \
     --SortElement cpuUsage \
@@ -25,7 +25,7 @@ Output:
                 "CPUUsage": "0.000%",
                 "DiskUsage": "3.000%",
                 "Memory": 171,
-                "NodeName": "rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local",
+                "NodeName": "rabbit@rabbitmq-broker-0.rabbitmq-broker-internal.amqp-2ppxx4rq.svc.cluster.local",
                 "NodeStatus": "running",
                 "ProcessNumber": 459
             }

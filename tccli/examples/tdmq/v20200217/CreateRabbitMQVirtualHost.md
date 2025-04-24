@@ -1,6 +1,6 @@
 **Example 1: 创建RabbitMQ的vhost**
 
--
+
 
 Input: 
 

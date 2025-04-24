@@ -182,6 +182,13 @@
       "output": "ExecuteCommandOnAndroidInstancesResponse",
       "status": "online"
     },
+    "FetchAndroidInstancesLogs": {
+      "document": "批量获取安卓实例日志",
+      "input": "FetchAndroidInstancesLogsRequest",
+      "name": "批量获取安卓实例日志",
+      "output": "FetchAndroidInstancesLogsResponse",
+      "status": "online"
+    },
     "InstallAndroidInstancesApp": {
       "document": "安装安卓实例应用",
       "input": "InstallAndroidInstancesAppRequest",
@@ -215,6 +222,13 @@
       "input": "ModifyAndroidInstanceResolutionRequest",
       "name": "修改安卓实例分辨率",
       "output": "ModifyAndroidInstanceResolutionResponse",
+      "status": "online"
+    },
+    "ModifyAndroidInstancesInformation": {
+      "document": "批量修改安卓实例信息",
+      "input": "ModifyAndroidInstancesInformationRequest",
+      "name": "批量修改安卓实例信息",
+      "output": "ModifyAndroidInstancesInformationResponse",
       "status": "online"
     },
     "ModifyAndroidInstancesLabels": {
@@ -802,6 +816,30 @@
         }
       ],
       "usage": "out"
+    },
+    "AndroidInstanceInformation": {
+      "document": "安卓实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID",
+          "example": "cai-abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "AndroidInstanceLabel": {
       "document": "安卓实例标签",
@@ -2650,6 +2688,69 @@
       ],
       "type": "object"
     },
+    "FetchAndroidInstancesLogsRequest": {
+      "document": "FetchAndroidInstancesLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表",
+          "example": "[\"cai_xxx\"]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "cos 桶名称",
+          "example": "test-appid",
+          "member": "string",
+          "name": "BucketName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos 桶区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos 桶目录，默认为 /log/",
+          "example": "/log/",
+          "member": "string",
+          "name": "BucketDirectory",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载最近几天的日志，默认值为 1",
+          "example": "1",
+          "member": "uint64",
+          "name": "RecentDays",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FetchAndroidInstancesLogsResponse": {
+      "document": "FetchAndroidInstancesLogs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "过滤",
       "members": [
@@ -2965,6 +3066,33 @@
     },
     "ModifyAndroidInstanceResolutionResponse": {
       "document": "ModifyAndroidInstanceResolution返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidInstancesInformationRequest": {
+      "document": "ModifyAndroidInstancesInformation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例信息数据",
+          "example": "无",
+          "member": "AndroidInstanceInformation",
+          "name": "AndroidInstanceInformations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidInstancesInformationResponse": {
+      "document": "ModifyAndroidInstancesInformation返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

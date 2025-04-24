@@ -1,14 +1,14 @@
 **Example 1: 创建RabbitMQ用户**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq CreateRabbitMQUser --cli-unfold-argument  \
-    --InstanceId amqp-test \
+    --InstanceId amqp-2ppxx4rq \
     --User test_user \
-    --Password abc123
+    --Password abc123._
 ```
 
 Output: 

@@ -132,6 +132,7 @@ Output:
                             "HybridBillingPrepaidReplicas": 0,
                             "OldHybridBillingPrepaidReplicas": 0,
                             "ServiceLimit": null,
+                            "BillingUnits": [],
                             "ModelHotUpdateEnable": false,
                             "ModelTurboEnable": false
                         },

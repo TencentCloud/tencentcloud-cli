@@ -214,6 +214,14 @@
         "title": "ExecuteCommandOnAndroidInstances 示例"
       }
     ],
+    "FetchAndroidInstancesLogs": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchAndroidInstancesLogs\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99UI657kj\"\n    ],\n    \"BucketName\": \"cai-251006279\",\n    \"BucketRegion\": \"ap-guangzhou\",\n    \"RecentDays\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62469d42-afe4-4461-baae-f32929c9ffd5\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "InstallAndroidInstancesApp": [
       {
         "document": "安装安卓实例应用",
@@ -252,6 +260,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstanceResolution\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-abcd1234\",\n    \"Width\": 1080,\n    \"Height\": 1920\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "ModifyAndroidInstanceResolution 示例"
+      }
+    ],
+    "ModifyAndroidInstancesInformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesInformation\n<公共请求参数>\n\n{\n    \"AndroidInstanceInformations\": [\n        {\n            \"AndroidInstanceId\": \"cai-251006279-ea99cM7rbg6\",\n            \"Name\": \"test_name\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9207f7b7-06a0-44fc-932a-6a95baf7164e\"\n    }\n}",
+        "title": "批量修改安卓实例信息"
       }
     ],
     "ModifyAndroidInstancesLabels": [

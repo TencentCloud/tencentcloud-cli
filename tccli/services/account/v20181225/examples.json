@@ -190,6 +190,14 @@
         "title": "queryUpperLimit respons"
       }
     ],
+    "GooglePreLoginForSaaS": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: account.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GooglePreLoginForSaaS\n<公共请求参数>\n\n{\n    \"ClientUA\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36\",\n    \"Platform\": \"intlSaaSXXX\",\n    \"Mail\": \"XXX@163.com\",\n    \"UserIP\": \"127.0.0.1\",\n    \"IdToken\": \"eyJhbGciOi******Zdet_hLgLJBLuSbNWFAIQAemfdfLt7fMIDyRzmaXysZFzw\",\n    \"ClientType\": \"pcweb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": \"1745672752\",\n        \"Key\": \"f63bd2d1358e3847db65daebffb1671d\",\n        \"RequestId\": \"dfd8ca51-c947-4e31-ab1f-5b9bddbd2050\",\n        \"Sid\": \"SaaSSid56852cc4-bcc8-7538-ff9d-299aaa6aa68a\",\n        \"Uin\": 450200011315\n    }\n}",
+        "title": "预登录成功示例"
+      }
+    ],
     "LoginViaTCB": [
       {
         "document": "",

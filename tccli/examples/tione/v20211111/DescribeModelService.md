@@ -95,6 +95,7 @@ Output:
                     "EnableInstanceReqLimit": false,
                     "InstanceReqLimit": 1000000
                 },
+                "BillingUnits": [],
                 "Command": "",
                 "ModelHotUpdateEnable": false,
                 "ModelTurboEnable": false,

@@ -1,10 +1,52 @@
-# Release 3.0.1188.1
+# Release 3.0.1189.1
 
-## 内容分发网络 CDN(cdn) 版本：2018-06-06
+## 账号中心(account) 版本：2018-12-25
 
-### 第 61 次发布
+### 第 18 次发布
 
-发布时间：2025-04-24 01:16:06
+发布时间：2025-04-25 01:07:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GooglePreLoginForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/86699)
+
+
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 23 次发布
+
+发布时间：2025-04-25 01:13:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNodeGroups](http://document.tencentcloudapi.woa.com/document/product/280/86688)
+
+	* 新增出参：NodeList, DistrictList, NetServiceList
+
+
+新增数据结构：
+
+* [DistinctOrNetServiceInfo](http://document.tencentcloudapi.woa.com/document/product/280/40931#DistinctOrNetServiceInfo)
+* [NodeInfoBase](http://document.tencentcloudapi.woa.com/document/product/280/40931#NodeInfoBase)
+* [NodeLeaf](http://document.tencentcloudapi.woa.com/document/product/280/40931#NodeLeaf)
+* [NodeTree](http://document.tencentcloudapi.woa.com/document/product/280/40931#NodeTree)
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 83 次发布
+
+发布时间：2025-04-25 01:14:13
 
 本次发布包含了以下内容：
 
@@ -12,54 +54,165 @@
 
 修改数据结构：
 
-* [IpFilterPathRule](http://document.tencentcloudapi.woa.com/document/product/228/30987#IpFilterPathRule)
+* [StaffInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#StaffInfo)
 
-	* 新增成员：Remark
-
-
+	* 新增成员：RoleList
 
 
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 16 次发布
+
+发布时间：2025-04-25 01:48:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [FetchAndroidInstancesLogs](http://document.tencentcloudapi.woa.com/document/product/1162/86700)
+* [ModifyAndroidInstancesInformation](http://document.tencentcloudapi.woa.com/document/product/1162/86701)
+
+新增数据结构：
+
+* [AndroidInstanceInformation](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceInformation)
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 54 次发布
+
+发布时间：2025-04-25 02:00:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeShareUnits](http://document.tencentcloudapi.woa.com/document/product/850/82960)
+
+	* 新增入参：ResourceType
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 53 次发布
+
+发布时间：2025-04-25 02:05:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceCreateInstance](http://document.tencentcloudapi.woa.com/document/product/239/41159)
+
+	* 新增出参：HighPrecisionPrice, Currency, AmountUnit
+
+* [InquiryPriceRenewInstance](http://document.tencentcloudapi.woa.com/document/product/239/41158)
+
+	* 新增出参：HighPrecisionPrice, Currency, AmountUnit
+
+* [InquiryPriceUpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/239/41157)
+
+	* 新增出参：HighPrecisionPrice, Currency, AmountUnit
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 147 次发布
+
+发布时间：2025-04-25 02:19:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RabbitMQPrivateNode](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQPrivateNode)
+
+	* <font color="#dd0000">**修改成员**：</font>NodeStatus, CPUUsage, Memory, DiskUsage, ProcessNumber
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 74 次发布
+
+发布时间：2025-04-25 02:23:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：GrpcEnable, HealthProbe
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：GrpcEnable, HealthProbe
+
+
+新增数据结构：
+
+* [AuthToken](http://document.tencentcloudapi.woa.com/document/product/851/74915#AuthToken)
+* [AuthTokenBase](http://document.tencentcloudapi.woa.com/document/product/851/74915#AuthTokenBase)
+* [AuthTokenLimit](http://document.tencentcloudapi.woa.com/document/product/851/74915#AuthTokenLimit)
+* [BillingUint](http://document.tencentcloudapi.woa.com/document/product/851/74915#BillingUint)
+* [HTTPGetAction](http://document.tencentcloudapi.woa.com/document/product/851/74915#HTTPGetAction)
+* [HealthProbe](http://document.tencentcloudapi.woa.com/document/product/851/74915#HealthProbe)
+* [Probe](http://document.tencentcloudapi.woa.com/document/product/851/74915#Probe)
+* [ProbeAction](http://document.tencentcloudapi.woa.com/document/product/851/74915#ProbeAction)
+
+修改数据结构：
+
+* [PrivateLinkInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#PrivateLinkInfo)
+
+	* 新增成员：InnerGrpcAddr
+
+* [ServiceCallInfoV2](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceCallInfoV2)
+
+	* 新增成员：AuthTokens, EnableLimit, GrpcHost
+
+* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceGroup)
+
+	* 新增成员：AuthorizationEnable, AuthTokens
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：BillingUnits, GrpcEnable, HealthProbe
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
 ### 第 41 次发布
 
-发布时间：2025-04-24 01:27:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeDBDiagReportContent](http://document.tencentcloudapi.woa.com/document/product/1130/86695)
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 135 次发布
-
-发布时间：2025-04-24 01:28:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeClusterMonitorInfos](http://document.tencentcloudapi.woa.com/document/product/1342/86696)
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 87 次发布
-
-发布时间：2025-04-24 01:51:42
+发布时间：2025-04-25 02:24:52
 
 本次发布包含了以下内容：
 
@@ -67,43 +220,18 @@
 
 修改接口：
 
-* [CreateLiveRecordTemplate](http://document.tencentcloudapi.woa.com/document/product/862/85577)
+* [DescribeInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86080)
 
-	* 新增入参：MP4Configure
-
-	* <font color="#dd0000">**修改入参**：</font>HLSConfigure
-
-* [ModifyLiveRecordTemplate](http://document.tencentcloudapi.woa.com/document/product/862/85574)
-
-	* 新增入参：MP4Configure
-
-
-新增数据结构：
-
-* [MP4ConfigureInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#MP4ConfigureInfo)
-
-修改数据结构：
-
-* [LiveRecordTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveRecordTemplate)
-
-	* 新增成员：MP4Configure
-
-* [QualityControlData](http://document.tencentcloudapi.woa.com/document/product/862/37615#QualityControlData)
-
-	* 新增成员：QualityEvaluationMeanOpinionScore
-
-* [WordResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#WordResult)
-
-	* 新增成员：Trans
+	* 新增出参：PublicEndpoint, VpcEndpoint
 
 
 
 
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 37 次发布
+### 第 89 次发布
 
-发布时间：2025-04-24 01:56:02
+发布时间：2025-04-25 02:25:56
 
 本次发布包含了以下内容：
 
@@ -111,68 +239,18 @@
 
 修改接口：
 
-* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/409/56107)
+* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
 
-	* 新增入参：KMSClusterId
-
-
-修改数据结构：
-
-* [EncryptionKey](http://document.tencentcloudapi.woa.com/document/product/409/16778#EncryptionKey)
-
-	* 新增成员：KMSClusterId
+	* 新增入参：SubSdkAppId
 
 
 
 
-## 凭据管理系统(ssm) 版本：2019-09-23
+## 微服务引擎(tse) 版本：2020-12-07
 
-### 第 13 次发布
+### 第 88 次发布
 
-发布时间：2025-04-24 02:01:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateProductSecret](http://document.tencentcloudapi.woa.com/document/product/1140/58266)
-
-	* 新增入参：KmsHsmClusterId
-
-* [CreateSSHKeyPairSecret](http://document.tencentcloudapi.woa.com/document/product/1140/60331)
-
-	* 新增入参：KmsHsmClusterId
-
-* [CreateSecret](http://document.tencentcloudapi.woa.com/document/product/1140/40529)
-
-	* 新增入参：KmsHsmClusterId
-
-
-
-
-## 设备安全(tds) 版本：2022-08-01
-
-### 第 4 次发布
-
-发布时间：2025-04-24 02:07:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeFinanceFraudUltimate](http://document.tencentcloudapi.woa.com/document/product/1719/86697)
-
-
-
-## 弹性微服务(tem) 版本：2021-07-01
-
-### 第 39 次发布
-
-发布时间：2025-04-24 02:08:09
+发布时间：2025-04-25 02:26:36
 
 本次发布包含了以下内容：
 
@@ -180,40 +258,13 @@
 
 修改数据结构：
 
-* [ServiceVersionBrief](http://document.tencentcloudapi.woa.com/document/product/1371/60171#ServiceVersionBrief)
+* [ConfigFile](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ConfigFile)
 
-	* <font color="#dd0000">**修改成员**：</font>VersionName, Status, EnableEs, CurrentInstances, VersionId, LogOutputConf, ExpectedInstances, DeployMode, BuildTaskId, EnvironmentId, EnvironmentName, ApplicationId, ApplicationName, UnderDeploying, BatchDeployStatus, Zones, NodeInfos, PodList, WorkloadInfo, CreateDate
+	* 新增成员：Encrypted, EncryptAlgo
 
-* [TemService](http://document.tencentcloudapi.woa.com/document/product/1371/60171#TemService)
+* [ServiceGovernanceInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ServiceGovernanceInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>ApplicationId, ApplicationName, Description, EnvironmentId, CreateDate, ModifyDate, Modifier, Creator, RepoType, InstanceId, RepoName, CodingLanguage, DeployMode, EnvironmentName, ActiveVersions, EnableTracing, Tags, HasAuthority
-
-
-
-
-## 弹性微服务(tem) 版本：2020-12-21
-
-
-
-## Web 应用防火墙(waf) 版本：2018-01-25
-
-### 第 84 次发布
-
-发布时间：2025-04-24 02:28:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [MajorEventsProPkg](http://document.tencentcloudapi.woa.com/document/product/627/53609#MajorEventsProPkg)
-
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
-
-	* 新增成员：MajorEventsProPkg
+	* 新增成员：SubPassword
 
 
 

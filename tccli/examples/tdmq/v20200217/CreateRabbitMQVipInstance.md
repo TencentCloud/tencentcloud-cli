@@ -1,6 +1,6 @@
-**Example 1: 创建RabbitMQ专享版实例**
+**Example 1: 创建 RabbitMQ 托管版实例**
 
-创建RabbitMQ专享版实例
+创建 RabbitMQ 托管版实例
 
 Input: 
 

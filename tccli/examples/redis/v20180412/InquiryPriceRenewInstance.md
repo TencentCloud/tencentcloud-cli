@@ -15,6 +15,9 @@ Output:
 {
     "Response": {
         "Price": 100800,
+        "HighPrecisionPrice": 100800.98,
+        "Currency": "CNY",
+        "AmountUnit": "pent",
         "RequestId": "4bd77cc7-ece7-4660-bbdd-6892d96f35a1"
     }
 }

@@ -5222,6 +5222,15 @@
           "name": "SearchKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型。",
+          "example": "subnet",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

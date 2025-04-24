@@ -122,6 +122,12 @@ Output:
                     "EnableInstanceRpsLimit": true,
                     "InstanceRpsLimit": 22
                 },
+                "BillingUnits": [
+                    {
+                        "Spec": "TI.GN7.8XLARGE128.POST",
+                        "Count": 1
+                    }
+                ],
                 "ModelHotUpdateEnable": false
             },
             "ClusterId": "",
