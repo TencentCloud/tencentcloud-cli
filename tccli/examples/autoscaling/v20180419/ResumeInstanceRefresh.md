@@ -7,7 +7,7 @@ Input:
 ```
 tccli as ResumeInstanceRefresh --cli-unfold-argument  \
     --AutoScalingGroupId asg-h7tgd87d \
-    --RefreshActivityId img-juhf6ytr \
+    --RefreshActivityId asr-juhf6ytr \
     --ResumeMode RETRY
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain CreatePhoneEmail --cli-unfold-argument  \
-    --Code 15643257896 \
+    --Code 156****896 \
     --Type 1 \
     --VerifyCode 754933
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxx"
+        "RequestId": "acsd-weqwe-fweq-wewe"
     }
 }
 ```

@@ -22,6 +22,7 @@ Output:
         "Domain": "sasdfzcccc2216.com",
         "ExpireTime": "2023-09-28 09:53:48",
         "RegTime": "2022-09-28 09:53:48",
+        "BiddingBondRefund": "no",
         "RequestId": "e0d60073-3fbb-4216-ba20-7ccad80d030a",
         "Status": 7
     }

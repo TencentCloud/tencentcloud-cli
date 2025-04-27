@@ -70,7 +70,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "fe36c79-1c71-41d1-b541-04075fb3b9aa",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -123,7 +123,7 @@
         {
           "disabled": false,
           "document": "唯一请求 ID",
-          "example": "无",
+          "example": "63f8xxx1897281d556df60b0",
           "member": "string",
           "name": "SessionId",
           "required": true,
@@ -132,7 +132,7 @@
         {
           "disabled": false,
           "document": "音色名称",
-          "example": "无",
+          "example": "小娥",
           "member": "string",
           "name": "VoiceName",
           "required": true,
@@ -141,7 +141,7 @@
         {
           "disabled": false,
           "document": "音色性别:\n\n1-male\n\n2-female",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VoiceGender",
           "required": true,
@@ -150,7 +150,7 @@
         {
           "disabled": false,
           "document": "语言类型：\n\n1-中文",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VoiceLanguage",
           "required": true,
@@ -159,7 +159,7 @@
         {
           "disabled": false,
           "document": "音频ID集合。（一句话声音复刻仅需填写一个音质检测接口返回的AudioId）",
-          "example": "无",
+          "example": "[\"63f89bb\"]",
           "member": "string",
           "name": "AudioIdList",
           "required": true,
@@ -168,7 +168,7 @@
         {
           "disabled": false,
           "document": "音频采样率：\n\n16000：16k",
-          "example": "无",
+          "example": "16000",
           "member": "int64",
           "name": "SampleRate",
           "required": false,
@@ -177,7 +177,7 @@
         {
           "disabled": false,
           "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
-          "example": "无",
+          "example": "wav",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -186,7 +186,7 @@
         {
           "disabled": false,
           "document": "回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。（注意：回调方式目前仅支持轻量版声音复刻）\n回调采用POST请求方式，Content-Type为application/json，回调数据格式如下:{\"TaskId\":\"xxxxxxxxxxxxxx\",\"Status\":2,\"StatusStr\":\"success\",\"VoiceType\":xxxxx,\"ErrorMsg\":\"\"}",
-          "example": "无",
+          "example": "http://example.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -195,7 +195,7 @@
         {
           "disabled": false,
           "document": "模型类型 1:在线 2:离线  默认为1",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ModelType",
           "required": false,
@@ -204,7 +204,7 @@
         {
           "disabled": false,
           "document": "复刻类型。\n0 - 轻量版声音复刻（默认）；\n5 - 一句话声音复刻。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TaskType",
           "required": false,
@@ -213,7 +213,7 @@
         {
           "disabled": false,
           "document": "校验音频ID。（仅基础版声音复刻使用）",
-          "example": "无",
+          "example": "63f89bb",
           "member": "string",
           "name": "VPRAudioId",
           "required": false,
@@ -231,7 +231,7 @@
         {
           "disabled": false,
           "document": "引擎类型。空为默认引擎",
-          "example": "无",
+          "example": "YTLX",
           "member": "string",
           "name": "EngineType",
           "required": false,
@@ -240,7 +240,7 @@
         {
           "disabled": false,
           "document": "授权音频ID。（仅一句话声音复刻使用）",
-          "example": "无",
+          "example": "63f89bb",
           "member": "string",
           "name": "ConsentAudioId",
           "required": false,
@@ -271,7 +271,7 @@
         {
           "disabled": false,
           "document": "创建任务结果",
-          "example": "无",
+          "example": "ce68122c-0ca8-4fa6-99b1-90a28670626b",
           "member": "CreateVRSTaskRespData",
           "name": "Data",
           "output_required": true,
@@ -293,7 +293,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "ed461a019355c5cd1ce31ab4dfb8cb12",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -308,7 +308,7 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ed461a019355c5cd1ce31ab4dfb8cb12",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -318,7 +318,7 @@
         {
           "disabled": false,
           "document": "任务状态码，0：任务等待，1：任务执行中，2：任务成功，3：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -328,7 +328,7 @@
         {
           "disabled": false,
           "document": "任务状态，waiting：任务等待，doing：任务执行中，success：任务成功，failed：任务失败。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "waiting in queue",
           "member": "string",
           "name": "StatusStr",
           "output_required": true,
@@ -338,7 +338,7 @@
         {
           "disabled": false,
           "document": "音色id。（若为一句话复刻时，该值为固定值“200000000”）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100000",
           "member": "int64",
           "name": "VoiceType",
           "output_required": true,
@@ -348,7 +348,7 @@
         {
           "disabled": false,
           "document": "失败原因说明。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ERROR",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -358,7 +358,7 @@
         {
           "disabled": false,
           "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-07-27T00:00:00+08:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -368,7 +368,7 @@
         {
           "disabled": false,
           "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "WCHN-353xxxx0f3eace0c1",
           "member": "string",
           "name": "FastVoiceType",
           "output_required": false,
@@ -406,7 +406,7 @@
         {
           "disabled": false,
           "document": "标注文本信息 ID",
-          "example": "无",
+          "example": "00020",
           "member": "string",
           "name": "TextId",
           "required": true,
@@ -415,7 +415,7 @@
         {
           "disabled": false,
           "document": "语音数据 要使用base64编码(采用python语言时注意读取文件时需要转成base64字符串编码，例如：str(base64.b64encode(open(\"input.aac\", mode=\"rb\").read()), encoding='utf-8') )。",
-          "example": "无",
+          "example": "UklGRgAAAABXQVZF...",
           "member": "string",
           "name": "AudioData",
           "required": true,
@@ -424,7 +424,7 @@
         {
           "disabled": false,
           "document": "1:环境检测 2:音质检测",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "TypeId",
           "required": true,
@@ -433,7 +433,7 @@
         {
           "disabled": false,
           "document": "音频格式，音频类型(wav,mp3,aac,m4a)",
-          "example": "无",
+          "example": "wav",
           "member": "string",
           "name": "Codec",
           "required": false,
@@ -442,7 +442,7 @@
         {
           "disabled": false,
           "document": "音频采样率。\n16000：16k（默认）；\n24000：24k（仅一句话声音复刻支持）；\n48000：48k（仅一句话声音复刻支持）。",
-          "example": "无",
+          "example": "16000",
           "member": "int64",
           "name": "SampleRate",
           "required": false,
@@ -451,7 +451,7 @@
         {
           "disabled": false,
           "document": "是否试听",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Audition",
           "required": false,
@@ -460,7 +460,7 @@
         {
           "disabled": false,
           "document": "复刻类型。\n0 - 轻量版声音复刻（默认）;\n5 - 一句话声音复刻。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TaskType",
           "required": false,
@@ -469,7 +469,7 @@
         {
           "disabled": false,
           "document": "语言类型。1 - 中文",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VoiceLanguage",
           "required": false,
@@ -509,7 +509,7 @@
           "example": "vrs8270f89c-51f8-41c9-8bee-19fb5b8b9708",
           "member": "string",
           "name": "AudioId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -519,7 +519,7 @@
           "example": "0",
           "member": "int64",
           "name": "DetectionCode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -529,7 +529,7 @@
           "example": "Success",
           "member": "string",
           "name": "DetectionMsg",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -539,7 +539,7 @@
           "example": "无",
           "member": "Words",
           "name": "DetectionTip",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -552,7 +552,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "efe36c79-1c71-41d1-b541-04075fb3b9aa",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -589,7 +589,7 @@
         {
           "disabled": false,
           "document": "模型cos地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://xxx-xxx-xxxx.cos.ap-guangzhou.myqcloud.com/xxxx.zip",
           "member": "string",
           "name": "Model",
           "output_required": true,
@@ -599,7 +599,7 @@
         {
           "disabled": false,
           "document": "音色名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "testName",
           "member": "string",
           "name": "VoiceName",
           "output_required": true,
@@ -609,7 +609,7 @@
         {
           "disabled": false,
           "document": "音色性别:\n1-male\n2-female\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VoiceGender",
           "output_required": true,
@@ -619,7 +619,7 @@
         {
           "disabled": false,
           "document": "语言类型：\n1-中文\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VoiceLanguage",
           "output_required": true,
@@ -629,7 +629,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "efe36c79-1c71-41d1-b541-04075fb3b9aa",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -811,7 +811,7 @@
         {
           "disabled": false,
           "document": "文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "在很久很久以前 鸟群中有一只小鸟",
           "member": "string",
           "name": "Text",
           "output_required": true,
@@ -843,7 +843,7 @@
         {
           "disabled": false,
           "document": "音色id。（若为一句话复刻时，该值为固定值“200000000”）",
-          "example": "无",
+          "example": "111111",
           "member": "int64",
           "name": "VoiceType",
           "output_required": true,
@@ -853,7 +853,7 @@
         {
           "disabled": false,
           "document": "音色名称",
-          "example": "无",
+          "example": "小红",
           "member": "string",
           "name": "VoiceName",
           "output_required": true,
@@ -863,7 +863,7 @@
         {
           "disabled": false,
           "document": "音色性别: 1-male 2-female",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "VoiceGender",
           "output_required": true,
@@ -873,7 +873,7 @@
         {
           "disabled": false,
           "document": "复刻类型: 0-轻量版复刻 1-基础版复刻",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TaskType",
           "output_required": true,
@@ -883,7 +883,7 @@
         {
           "disabled": false,
           "document": "复刻任务 ID",
-          "example": "无",
+          "example": "1234d751-fb5f-4805-889c-2fce9e8babcd",
           "member": "string",
           "name": "TaskID",
           "output_required": true,
@@ -893,7 +893,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-10-23T10:25:54+08:00",
           "member": "string",
           "name": "DateCreated",
           "output_required": true,
@@ -903,7 +903,7 @@
         {
           "disabled": false,
           "document": "部署状态。若已部署，则可通过语音合成接口调用该音色",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDeployed",
           "output_required": true,
@@ -913,7 +913,7 @@
         {
           "disabled": false,
           "document": "任务过期时间。（当复刻类型为一句话复刻时展示）\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-10-24T10:25:54+08:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -923,7 +923,7 @@
         {
           "disabled": false,
           "document": "快速复刻音色ID。（当复刻类型为一句话复刻时展示）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "WCHN-353a3xxxx3eace0c1",
           "member": "string",
           "name": "FastVoiceType",
           "output_required": false,
@@ -955,7 +955,7 @@
         {
           "disabled": false,
           "document": "准确度 (小于75则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "93.95004272460938",
           "member": "float",
           "name": "PronAccuracy",
           "output_required": true,
@@ -965,7 +965,7 @@
         {
           "disabled": false,
           "document": "流畅度 (小于0.95则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.9746154546737671",
           "member": "float",
           "name": "PronFluency",
           "output_required": true,
@@ -975,7 +975,7 @@
         {
           "disabled": false,
           "document": "tag: \n0: match  匹配\n1: insert   多读\n2: delete  少读\n3: replace 错读\n4: oov  待评估字不在发音评估的词库\n5: unknown 未知错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Tag",
           "output_required": true,
@@ -985,7 +985,7 @@
         {
           "disabled": false,
           "document": "字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "我",
           "member": "string",
           "name": "Word",
           "output_required": true,

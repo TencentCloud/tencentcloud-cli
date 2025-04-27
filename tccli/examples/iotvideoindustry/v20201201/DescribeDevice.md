@@ -14,17 +14,19 @@ Output:
 {
     "Response": {
         "Device": {
-            "NickName": "真的双通道",
-            "DeviceId": "99576636581320000278_99576636581320000278",
-            "Status": 1,
-            "ExtraInformation": "{\"Manufacturer\":\"Hikvision\",\"Model\":\"IP Camera\"}",
-            "IsRecord": 0,
+            "NickName": "keting",
+            "DeviceId": "99576636581320000270_99576636581320000270",
             "DeviceType": 2,
-            "DeviceCode": "99576636581320000278",
+            "Status": 3,
+            "ExtraInformation": "",
+            "DeviceCode": "99576636581320000270",
+            "Protocol": "GB28181",
+            "GroupId": "group_root",
+            "GroupName": "全部",
             "GroupPath": "",
-            "CreateTime": 1621581437,
-            "Recordable": 0,
-            "Protocol": "GB28181"
+            "Recordable": 1,
+            "IsRecord": 0,
+            "CreateTime": 345233456
         },
         "RequestId": "75c3af48-676f-49e2-8cdd-f66e6dcdec48"
     }

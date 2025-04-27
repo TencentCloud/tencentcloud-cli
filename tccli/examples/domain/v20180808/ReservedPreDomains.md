@@ -23,7 +23,13 @@ Output:
                 "FailReason": "域名下架"
             }
         ],
-        "RequestId": "xxxx-xxx-xxx-xxxx"
+        "SucDomains": [
+            {
+                "Domain": "aksdwe1.cn",
+                "BusinessId": "P00117****"
+            }
+        ],
+        "RequestId": "sdwewx-sdowe-***"
     }
 }
 ```

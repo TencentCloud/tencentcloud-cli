@@ -7,7 +7,7 @@ Input:
 ```
 tccli domain SetDomainAutoRenew --cli-unfold-argument  \
     --AutoRenew 1 \
-    --DomainId 域名ID
+    --DomainId domain-dwerewwq
 ```
 
 Output: 

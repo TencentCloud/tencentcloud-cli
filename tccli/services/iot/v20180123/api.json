@@ -1,312 +1,312 @@
 {
   "actions": {
     "ActivateRule": {
-      "document": "启用规则",
+      "document": "业务下线了\n\n启用规则",
       "input": "ActivateRuleRequest",
       "name": "启用规则",
       "output": "ActivateRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddDevice": {
-      "document": "提供在指定的产品Id下创建一个设备的能力，生成设备名称与设备秘钥。",
+      "document": "业务下线了\n\n提供在指定的产品Id下创建一个设备的能力，生成设备名称与设备秘钥。",
       "input": "AddDeviceRequest",
       "name": "新增设备",
       "output": "AddDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddProduct": {
-      "document": "本接口(AddProduct)用于创建、定义某款硬件产品。",
+      "document": "业务下线了\n\n本接口(AddProduct)用于创建、定义某款硬件产品。",
       "input": "AddProductRequest",
       "name": "新增产品",
       "output": "AddProductResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddRule": {
-      "document": "新增规则",
+      "document": "业务下线了\n\n新增规则",
       "input": "AddRuleRequest",
       "name": "新增规则",
       "output": "AddRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AddTopic": {
-      "document": "新增Topic，用于设备或应用发布消息至该Topic或订阅该Topic的消息。",
+      "document": "业务下线了\n\n新增Topic，用于设备或应用发布消息至该Topic或订阅该Topic的消息。",
       "input": "AddTopicRequest",
       "name": "新增Topic",
       "output": "AddTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppAddUser": {
-      "document": "为APP提供用户注册功能",
+      "document": "业务下线了\n\n为APP提供用户注册功能",
       "input": "AppAddUserRequest",
       "name": "用户注册",
       "output": "AppAddUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppDeleteDevice": {
-      "document": "用户解除与设备的关联关系，解除后APP用户无法控制设备，获取设备数据",
+      "document": "业务下线了\n\n用户解除与设备的关联关系，解除后APP用户无法控制设备，获取设备数据",
       "input": "AppDeleteDeviceRequest",
       "name": "用户解绑设备",
       "output": "AppDeleteDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppGetDevice": {
-      "document": "获取绑定设备的基本信息与数据模板定义",
+      "document": "业务下线了\n\n获取绑定设备的基本信息与数据模板定义",
       "input": "AppGetDeviceRequest",
       "name": "获取绑定设备信息",
       "output": "AppGetDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppGetDeviceData": {
-      "document": "获取绑定设备数据，用于实时展示设备的最新数据",
+      "document": "业务下线了\n\n获取绑定设备数据，用于实时展示设备的最新数据",
       "input": "AppGetDeviceDataRequest",
       "name": "获取绑定设备数据",
       "output": "AppGetDeviceDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppGetDeviceStatuses": {
-      "document": "获取绑定设备的上下线状态",
+      "document": "业务下线了\n\n获取绑定设备的上下线状态",
       "input": "AppGetDeviceStatusesRequest",
       "name": "获取绑定设备状态",
       "output": "AppGetDeviceStatusesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppGetDevices": {
-      "document": "获取用户的绑定设备列表",
+      "document": "业务下线了\n\n获取用户的绑定设备列表",
       "input": "AppGetDevicesRequest",
       "name": "获取绑定设备列表",
       "output": "AppGetDevicesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppGetToken": {
-      "document": "获取用户token",
+      "document": "业务下线了\n\n获取用户token",
       "input": "AppGetTokenRequest",
       "name": "获取用户token",
       "output": "AppGetTokenResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppGetUser": {
-      "document": "获取用户信息",
+      "document": "业务下线了\n\n获取用户信息",
       "input": "AppGetUserRequest",
       "name": "获取用户信息",
       "output": "AppGetUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppIssueDeviceControl": {
-      "document": "用户通过APP控制设备",
+      "document": "业务下线了\n\n用户通过APP控制设备",
       "input": "AppIssueDeviceControlRequest",
       "name": "用户控制设备",
       "output": "AppIssueDeviceControlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppResetPassword": {
-      "document": "重置APP用户密码",
+      "document": "业务下线了\n\n重置APP用户密码",
       "input": "AppResetPasswordRequest",
       "name": "重置用户密码",
       "output": "AppResetPasswordResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppSecureAddDevice": {
-      "document": "用户绑定设备，绑定后可以在APP端进行控制。绑定设备前需调用“获取设备绑定签名”接口",
+      "document": "业务下线了\n\n用户绑定设备，绑定后可以在APP端进行控制。绑定设备前需调用“获取设备绑定签名”接口",
       "input": "AppSecureAddDeviceRequest",
       "name": "用户绑定设备",
       "output": "AppSecureAddDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppUpdateDevice": {
-      "document": "修改设备别名，便于用户个性化定义设备的名称",
+      "document": "业务下线了\n\n修改设备别名，便于用户个性化定义设备的名称",
       "input": "AppUpdateDeviceRequest",
       "name": "修改设备别名",
       "output": "AppUpdateDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AppUpdateUser": {
-      "document": "修改用户信息",
+      "document": "业务下线了\n\n修改用户信息",
       "input": "AppUpdateUserRequest",
       "name": "用户信息修改",
       "output": "AppUpdateUserResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "AssociateSubDeviceToGatewayProduct": {
-      "document": "关联子设备产品和网关产品",
+      "document": "业务下线了\n\n关联子设备产品和网关产品",
       "input": "AssociateSubDeviceToGatewayProductRequest",
       "name": "关联子设备产品和网关产品",
       "output": "AssociateSubDeviceToGatewayProductResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeactivateRule": {
-      "document": "禁用规则",
+      "document": "业务下线了\n\n禁用规则",
       "input": "DeactivateRuleRequest",
       "name": "禁用规则",
       "output": "DeactivateRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteDevice": {
-      "document": "提供在指定的产品Id下删除一个设备的能力。",
+      "document": "业务下线了\n\n提供在指定的产品Id下删除一个设备的能力。",
       "input": "DeleteDeviceRequest",
       "name": "删除设备",
       "output": "DeleteDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteProduct": {
-      "document": "删除用户指定的产品Id对应的信息。",
+      "document": "业务下线了\n\n删除用户指定的产品Id对应的信息。",
       "input": "DeleteProductRequest",
       "name": "删除产品",
       "output": "DeleteProductResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteRule": {
-      "document": "删除规则",
+      "document": "业务下线了\n\n删除规则",
       "input": "DeleteRuleRequest",
       "name": "删除规则",
       "output": "DeleteRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteTopic": {
-      "document": "删除Topic",
+      "document": "业务下线了\n\n删除Topic",
       "input": "DeleteTopicRequest",
       "name": "删除Topic",
       "output": "DeleteTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDataHistory": {
-      "document": "批量获取设备某一段时间范围的设备上报数据。该接口适用于使用高级版类型的产品",
+      "document": "业务下线了\n\n批量获取设备某一段时间范围的设备上报数据。该接口适用于使用高级版类型的产品",
       "input": "GetDataHistoryRequest",
       "name": "获取设备历史数据",
       "output": "GetDataHistoryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDebugLog": {
-      "document": "获取设备的调试日志，用于定位问题",
+      "document": "业务下线了\n\n获取设备的调试日志，用于定位问题",
       "input": "GetDebugLogRequest",
       "name": "获取调试日志",
       "output": "GetDebugLogResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDevice": {
-      "document": "提供查询某个设备详细信息的能力。",
+      "document": "业务下线了\n\n提供查询某个设备详细信息的能力。",
       "input": "GetDeviceRequest",
       "name": "获取设备信息",
       "output": "GetDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeviceData": {
-      "document": "获取某个设备当前上报到云端的数据，该接口适用于使用数据模板协议的产品。",
+      "document": "业务下线了\n\n获取某个设备当前上报到云端的数据，该接口适用于使用数据模板协议的产品。",
       "input": "GetDeviceDataRequest",
       "name": "获取设备数据",
       "output": "GetDeviceDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeviceLog": {
-      "document": "批量获取设备与云端的详细通信日志，该接口适用于使用高级版类型的产品。",
+      "document": "业务下线了\n\n批量获取设备与云端的详细通信日志，该接口适用于使用高级版类型的产品。",
       "input": "GetDeviceLogRequest",
       "name": "获取设备日志",
       "output": "GetDeviceLogResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeviceSignatures": {
-      "document": "获取设备绑定签名，用于用户绑定某个设备的应用场景",
+      "document": "业务下线了\n\n获取设备绑定签名，用于用户绑定某个设备的应用场景",
       "input": "GetDeviceSignaturesRequest",
       "name": "获取设备绑定签名",
       "output": "GetDeviceSignaturesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeviceStatistics": {
-      "document": "查询某段时间范围内产品的在线、激活设备数",
+      "document": "业务下线了\n\n查询某段时间范围内产品的在线、激活设备数",
       "input": "GetDeviceStatisticsRequest",
       "name": "获取设备统计指标",
       "output": "GetDeviceStatisticsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDeviceStatuses": {
-      "document": "批量获取设备的当前状态，状态包括在线、离线或未激活状态。",
+      "document": "业务下线了\n\n批量获取设备的当前状态，状态包括在线、离线或未激活状态。",
       "input": "GetDeviceStatusesRequest",
       "name": "批量获取设备状态",
       "output": "GetDeviceStatusesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDevices": {
-      "document": "提供分页查询某个产品Id下设备信息的能力。",
+      "document": "业务下线了\n\n提供分页查询某个产品Id下设备信息的能力。",
       "input": "GetDevicesRequest",
       "name": "获取设备列表",
       "output": "GetDevicesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetProduct": {
-      "document": "获取产品定义的详细信息，包括产品名称、产品描述，鉴权模式等信息。",
+      "document": "业务下线了\n\n获取产品定义的详细信息，包括产品名称、产品描述，鉴权模式等信息。",
       "input": "GetProductRequest",
       "name": "获取产品信息",
       "output": "GetProductResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetProducts": {
-      "document": "获取用户在物联网套件所创建的所有产品信息。",
+      "document": "业务下线了\n\n获取用户在物联网套件所创建的所有产品信息。",
       "input": "GetProductsRequest",
       "name": "获取产品列表",
       "output": "GetProductsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetRule": {
-      "document": "获取转发规则信息",
+      "document": "业务下线了\n\n获取转发规则信息",
       "input": "GetRuleRequest",
       "name": "获取转发规则信息",
       "output": "GetRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetRules": {
-      "document": "获取转发规则列表",
+      "document": "业务下线了\n\n获取转发规则列表",
       "input": "GetRulesRequest",
       "name": "获取转发规则列表",
       "output": "GetRulesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetTopic": {
-      "document": "获取Topic信息",
+      "document": "业务下线了\n\n获取Topic信息",
       "input": "GetTopicRequest",
       "name": "获取Topic信息",
       "output": "GetTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetTopics": {
-      "document": "获取Topic列表",
+      "document": "业务下线了\n\n获取Topic列表",
       "input": "GetTopicsRequest",
       "name": "获取Topic列表",
       "output": "GetTopicsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "IssueDeviceControl": {
-      "document": "提供下发控制指令到指定设备的能力，该接口适用于使用高级版类型的产品。",
+      "document": "业务下线了\n\n提供下发控制指令到指定设备的能力，该接口适用于使用高级版类型的产品。",
       "input": "IssueDeviceControlRequest",
       "name": "下发设备控制指令",
       "output": "IssueDeviceControlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "PublishMsg": {
-      "document": "提供向指定的Topic发布消息的能力，常用于向设备下发控制指令。该接口只适用于产品版本为“基础版”类型的产品，使用高级版的产品需使用“下发设备控制指令”接口",
+      "document": "业务下线了\n\n提供向指定的Topic发布消息的能力，常用于向设备下发控制指令。该接口只适用于产品版本为“基础版”类型的产品，使用高级版的产品需使用“下发设备控制指令”接口",
       "input": "PublishMsgRequest",
       "name": "向Topic发布消息",
       "output": "PublishMsgResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ResetDevice": {
-      "document": "重置设备操作，将会为设备生成新的证书及清空最新数据，需谨慎操作。",
+      "document": "业务下线了\n\n重置设备操作，将会为设备生成新的证书及清空最新数据，需谨慎操作。",
       "input": "ResetDeviceRequest",
       "name": "重置设备",
       "output": "ResetDeviceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateProduct": {
-      "document": "提供修改产品信息及数据模板的能力。",
+      "document": "业务下线了\n\n提供修改产品信息及数据模板的能力。",
       "input": "UpdateProductRequest",
       "name": "更新产品信息",
       "output": "UpdateProductResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateRule": {
-      "document": "更新规则",
+      "document": "业务下线了\n\n更新规则",
       "input": "UpdateRuleRequest",
       "name": "更新规则",
       "output": "UpdateRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

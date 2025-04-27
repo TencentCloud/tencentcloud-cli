@@ -13,7 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "226618be-27ec-46f4-a19e-bdb980baec92"
+        "RequestId": "226618be-27ec-46f4-a19e-bdb980baec92",
+        "Cnt": 0
     }
 }
 ```

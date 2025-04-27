@@ -308,6 +308,18 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceGroup\n<公共请求参数>\n\n{\n    \"Name\": \"测试测试\",\n    \"ParentId\": 92,\n    \"OsType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"642c98ae-2e11-4326-b099-6cd4ec4577f8\"\n    }\n}",
         "title": "测试"
+      },
+      {
+        "document": "配置了分组规则的请求",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"1\",\n    \"Name\": \"测试\",\n    \"Description\": \"测试\",\n    \"ParentId\": 101014,\n    \"OsType\": 0,\n    \"DivideRules\": {\n        \"SimpleRules\": [\n            {\n                \"Expressions\": [\n                    {\n                        \"Items\": [\n                            {\n                                \"Key\": \"name\",\n                                \"Operate\": \"等于\",\n                                \"Values\": [\n                                    \"111111111111\",\n                                    \"222222222\"\n                                ]\n                            }\n                        ],\n                        \"Relation\": \"或者\"\n                    }\n                ],\n                \"Relation\": \"或者\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81543e06-ea80-4084-9c4a-7e89a4216fc7\"\n    }\n}",
+        "title": "配置了分组规则的请求"
+      },
+      {
+        "document": "有分组规则的示例",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"1\",\n    \"Name\": \"测试名称\",\n    \"Description\": \"测试\",\n    \"ParentId\": 101020,\n    \"Locked\": 0,\n    \"OsType\": 2,\n    \"DivideRules\": {\n        \"SimpleRules\": [\n            {\n                \"Expressions\": [\n                    {\n                        \"Items\": [\n                            {\n                                \"Key\": \"name\",\n                                \"Operate\": \"等于\",\n                                \"Values\": [\n                                    \"111111111111\",\n                                    \"222222222mac\"\n                                ]\n                            }\n                        ],\n                        \"Relation\": \"或者\"\n                    }\n                ],\n                \"Relation\": \"或者\"\n            }\n        ]\n    },\n    \"Priority\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c71dea82-5bcb-4dc3-b3dd-0bbed364c469\"\n    }\n}",
+        "title": "有分组规则的示例"
       }
     ],
     "CreateDeviceTag": [
@@ -3318,6 +3330,18 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"Id\": 101495,\n    \"Name\": \"ttt\",\n    \"ParentId\": 92,\n    \"OsType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e2bd884-4432-4504-979c-6fa03c56ab1c\"\n    }\n}",
         "title": "测试"
+      },
+      {
+        "document": "修改为配置规则的终端分组",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"1\",\n    \"Id\": 104888,\n    \"Name\": \"test2\",\n    \"Description\": \"测试描述\",\n    \"ParentId\": 101014,\n    \"OsType\": 0,\n    \"DivideRules\": {\n        \"SimpleRules\": [\n            {\n                \"Expressions\": [\n                    {\n                        \"Items\": [\n                            {\n                                \"Key\": \"name\",\n                                \"Operate\": \"等于\",\n                                \"Value\": \"\",\n                                \"Values\": [\n                                    \"44444\",\n                                    \"55555\"\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b1769551-ef56-4a4d-b765-71f236016e9e\"\n    }\n}",
+        "title": "修改为配置规则的终端分组"
+      },
+      {
+        "document": "有分组规则的示例",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceGroup\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"1\",\n    \"Id\": 299589,\n    \"Name\": \"测试名称-修改\",\n    \"Description\": \"1\",\n    \"ParentId\": 101020,\n    \"Locked\": 0,\n    \"OsType\": 2,\n    \"DivideRules\": {\n        \"SimpleRules\": [\n            {\n                \"Expressions\": [\n                    {\n                        \"Items\": [\n                            {\n                                \"Key\": \"name\",\n                                \"Operate\": \"等于\",\n                                \"Values\": [\n                                    \"111111111111\",\n                                    \"222222222mac\"\n                                ]\n                            }\n                        ],\n                        \"Relation\": \"或者\"\n                    }\n                ],\n                \"Relation\": \"或者\"\n            }\n        ]\n    },\n    \"Priority\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02240971-4244-4750-acec-2250360aade8\"\n    }\n}",
+        "title": "有分组规则的示例"
       }
     ],
     "ModifyDeviceVirtualGroup": [

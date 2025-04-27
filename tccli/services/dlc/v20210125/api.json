@@ -120,9 +120,9 @@
       "status": "online"
     },
     "CheckGrantedPermission": {
-      "document": "检查权限状态",
+      "document": "检查权限状态（已废弃）",
       "input": "CheckGrantedPermissionRequest",
-      "name": "检查授予权限",
+      "name": "检查授予权限（已废弃）",
       "output": "CheckGrantedPermissionResponse",
       "status": "online"
     },

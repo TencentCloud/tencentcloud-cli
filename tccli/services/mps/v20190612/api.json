@@ -14356,8 +14356,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能字幕模板唯一标识过滤条件，数组长度限制：10。",
-          "example": "[\"30\\r\\n\"]",
+          "document": "智能字幕模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[30]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -14393,7 +14393,7 @@
         {
           "disabled": false,
           "document": "智能字幕模板标识过滤条件，长度限制：64 个字符。",
-          "example": "无",
+          "example": "智能字幕模板",
           "member": "string",
           "name": "Name",
           "required": false,

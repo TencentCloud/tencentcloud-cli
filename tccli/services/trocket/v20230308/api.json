@@ -3858,6 +3858,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "HTTP协议公网接入点",
+          "example": "public.mq.com:9000",
+          "member": "string",
+          "name": "HttpPublicEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP协议VPC接入点",
+          "example": "vpc.mq.com:10000",
+          "member": "string",
+          "name": "HttpVpcEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

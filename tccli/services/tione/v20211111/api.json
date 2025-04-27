@@ -11001,6 +11001,17 @@
         },
         {
           "disabled": false,
+          "document": "计费状态，判断当前服务是否处于计费状态中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Billing",
+          "member": "string",
+          "name": "BillingStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",

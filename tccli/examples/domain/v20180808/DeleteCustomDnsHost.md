@@ -1,6 +1,6 @@
 **Example 1: 创建删除自定义DNS Host任务**
 
-
+创建删除自定义DNS Host任务
 
 Input: 
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "LogId": 510708,
+        "LogId": 6543,
         "RequestId": "d4fc5332-23a2-49bd-8cab-48cfe5963651"
     }
 }

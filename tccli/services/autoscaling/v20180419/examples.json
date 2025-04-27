@@ -163,13 +163,13 @@
     "CreateScheduledAction": [
       {
         "document": "创建定时任务，在指定时间（北京时间2018年8月28日23点）调整伸缩组的最大实例数、最小实例数和期望实例数至 10、4、6。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"DesiredCapacity\": \"6\",\n    \"AutoScalingGroupId\": \"asg-2nr9xh8h\",\n    \"MinSize\": \"4\",\n    \"MaxSize\": \"10\",\n    \"ScheduledActionName\": \"scheduled-action-0\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"DesiredCapacity\": 6,\n    \"AutoScalingGroupId\": \"asg-2nr9xh8h\",\n    \"MinSize\": 4,\n    \"MaxSize\": 10,\n    \"ScheduledActionName\": \"scheduled-action-0\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ScheduledActionId\": \"asst-chwbkq4c\",\n        \"RequestId\": \"193a710f-8dbf-46aa-8b4a-195532244df8\"\n    }\n}",
         "title": "创建单次执行的定时任务"
       },
       {
         "document": "创建定时任务，从北京时间2018年8月28日开始，每天 23:00 调整伸缩组的最大实例数、最小实例数和期望实例数至 7、2、3，在北京时间2019年1月1日 00:00 后结束。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"Recurrence\": \"0 23 */1 * *\",\n    \"DesiredCapacity\": \"3\",\n    \"AutoScalingGroupId\": \"asg-2nr9xh8h\",\n    \"MinSize\": \"2\",\n    \"MaxSize\": \"7\",\n    \"ScheduledActionName\": \"scheduled-action-1\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\",\n    \"EndTime\": \"2019-01-01T00:00:00+08:00\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledAction\n<公共请求参数>\n\n{\n    \"Recurrence\": \"0 23 * * *\",\n    \"DesiredCapacity\": 3,\n    \"AutoScalingGroupId\": \"asg-2nr9xh8h\",\n    \"MinSize\": 2,\n    \"MaxSize\": 7,\n    \"ScheduledActionName\": \"scheduled-action-1\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\",\n    \"EndTime\": \"2019-01-01T00:00:00+08:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"ScheduledActionId\": \"asst-le3us530\",\n        \"RequestId\": \"502fd6fa-44ff-4c79-b77e-ee20f72bddc0\"\n    }\n}",
         "title": "创建重复执行的定时任务"
       }
@@ -507,7 +507,7 @@
     "ModifyScheduledAction": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledAction\n<公共请求参数>\n\n{\n    \"DesiredCapacity\": \"3\",\n    \"MinSize\": \"0\",\n    \"MaxSize\": \"5\",\n    \"ScheduledActionName\": \"scheduled-action-0\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\",\n    \"ScheduledActionId\": \"asst-chwbkq4c\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledAction\n<公共请求参数>\n\n{\n    \"DesiredCapacity\": 3,\n    \"MinSize\": 0,\n    \"MaxSize\": 5,\n    \"ScheduledActionName\": \"scheduled-action-0\",\n    \"StartTime\": \"2018-08-28T23:00:00+08:00\",\n    \"ScheduledActionId\": \"asst-chwbkq4c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f6f0f95-216f-4745-a2e6-617897e9cedb\"\n    }\n}",
         "title": "修改定时任务"
       }
@@ -523,7 +523,7 @@
     "ResumeInstanceRefresh": [
       {
         "document": "恢复伸缩组 asg-h7tgd87d 的实例刷新活动 asr-juhf6ytr，使其重试当前批次中刷新失败的实例。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"img-juhf6ytr\",\n    \"ResumeMode\": \"RETRY\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"asr-juhf6ytr\",\n    \"ResumeMode\": \"RETRY\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
         "title": "恢复实例刷新活动"
       }
@@ -531,7 +531,7 @@
     "RollbackInstanceRefresh": [
       {
         "document": "对伸缩组 asg-9dn1a5y6 的实例刷新活动 asr-i8u7tytd 进行回滚。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"RefreshMode\": \"ROLLING_UPDATE\",\n    \"OriginRefreshActivityId\": \"asr-i8u7tytd\",\n    \"RefreshSettings\": {\n        \"RollingUpdateSettings\": {\n            \"BatchNumber\": 3,\n            \"BatchPause\": \"BATCH_INTERVAL_PAUSE\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"RefreshMode\": \"ROLLING_UPDATE_RESET\",\n    \"OriginRefreshActivityId\": \"asr-i8u7tytd\",\n    \"RefreshSettings\": {\n        \"RollingUpdateSettings\": {\n            \"BatchNumber\": 3,\n            \"BatchPause\": \"BATCH_INTERVAL_PAUSE\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RefreshActivityId\": \"asr-y67t5r4e\",\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
         "title": "滚动更新方式回滚实例刷新活动"
       }
@@ -587,7 +587,7 @@
     "StopInstanceRefresh": [
       {
         "document": "暂停伸缩组 asg-h7tgd87d 的实例刷新活动 asr-juhf6ytr",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"img-juhf6ytr\"\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"asr-juhf6ytr\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
         "title": "暂停实例刷新活动"
       }

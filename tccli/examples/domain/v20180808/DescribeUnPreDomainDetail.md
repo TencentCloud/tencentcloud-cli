@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeUnPreDomainDetail --cli-unfold-argument  \
-    --Domain **m.com
+    --Domain test.com
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "cd4379ce-0fb7-1234-bc2f-5a68df5bcd20",
-        "Domain": "**m.com",
+        "Domain": "test.com",
         "PreCount": 8,
         "RegTime": "2005-11-23 02:26:00",
         "DeleteTime": "2025-01-23 02:26:00",
@@ -23,7 +23,7 @@ Output:
         "CurrentPrice": 198,
         "AppointBondPrice": 90,
         "IsAppoint": false,
-        "BusinessId": "***046",
+        "BusinessId": "P0011702977661022561",
         "IsDomainUser": false
     }
 }

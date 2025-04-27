@@ -358,11 +358,11 @@
       "status": "online"
     },
     "DescribeMeasureWhiteUinList": {
-      "document": "查询uin是否在白名单并跑或者灰度白名单中",
+      "document": "此接口无鉴权，存在越权风险，现在并无调用方，需做下线处理。\n\n查询uin是否在白名单并跑或者灰度白名单中",
       "input": "DescribeMeasureWhiteUinListRequest",
       "name": "查询uin是否在白名单列表",
       "output": "DescribeMeasureWhiteUinListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribePrivilege": {
       "document": "查询特权信息",

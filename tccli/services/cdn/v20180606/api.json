@@ -36,25 +36,25 @@
       "status": "online"
     },
     "CreateScdnDomain": {
-      "document": "CreateScdnDomain 用于创建 SCDN 加速域名",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nCreateScdnDomain 用于创建 SCDN 加速域名",
       "input": "CreateScdnDomainRequest",
       "name": "创建SCDN域名",
       "output": "CreateScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateScdnFailedLogTask": {
-      "document": "CreateScdnFailedLogTask 用于重试创建失败的事件日志任务",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nCreateScdnFailedLogTask 用于重试创建失败的事件日志任务",
       "input": "CreateScdnFailedLogTaskRequest",
       "name": "重试创建事件日志任务",
       "output": "CreateScdnFailedLogTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateScdnLogTask": {
-      "document": "CreateScdnLogTask 用于创建事件日志任务",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nCreateScdnLogTask 用于创建事件日志任务",
       "input": "CreateScdnLogTaskRequest",
       "name": "创建事件日志任务",
       "output": "CreateScdnLogTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateVerifyRecord": {
       "document": "CreateVerifyRecord 用于生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。\n生成的解析记录可通过 [VerifyDomainRecord](https://cloud.tencent.com/document/product/228/48117) 完成归属权校验。\n注意：生成的解析记录有效期为24小时，超过24小时后，需重新生成。\n具体流程可参考：[使用API接口进行域名归属校验](https://cloud.tencent.com/document/product/228/61702#.E6.96.B9.E6.B3.95.E4.B8.89.EF.BC.9Aapi-.E6.8E.A5.E5.8F.A3.E6.93.8D.E4.BD.9C)",
@@ -78,11 +78,11 @@
       "status": "online"
     },
     "DeleteScdnDomain": {
-      "document": "删除SCDN域名",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n删除SCDN域名",
       "input": "DeleteScdnDomainRequest",
       "name": "删除SCDN域名",
       "output": "DeleteScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBillingData": {
       "document": "DescribeBillingData 用于查询实际计费数据明细。",
@@ -267,39 +267,39 @@
       "status": "online"
     },
     "DescribeScdnBotData": {
-      "document": "获取BOT统计数据列表",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n获取BOT统计数据列表",
       "input": "DescribeScdnBotDataRequest",
       "name": "获取BOT统计数据列表",
       "output": "DescribeScdnBotDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnBotRecords": {
-      "document": "查询BOT会话记录列表",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n查询BOT会话记录列表",
       "input": "DescribeScdnBotRecordsRequest",
       "name": "查询BOT会话记录列表",
       "output": "DescribeScdnBotRecordsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnConfig": {
-      "document": "DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nDescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置",
       "input": "DescribeScdnConfigRequest",
       "name": "SCDN域名配置",
       "output": "DescribeScdnConfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnIpStrategy": {
-      "document": "查询在SCDN IP安全策略",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n查询在SCDN IP安全策略",
       "input": "DescribeScdnIpStrategyRequest",
       "name": "查询SCDN安全防护IP白名单",
       "output": "DescribeScdnIpStrategyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnTopData": {
-      "document": "获取SCDN的Top数据",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n获取SCDN的Top数据",
       "input": "DescribeScdnTopDataRequest",
       "name": "获取SCDN的Top数据",
       "output": "DescribeScdnTopDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSourceMd5VerifyTasks": {
       "document": "查询回源md5校验任务列表",
@@ -400,25 +400,25 @@
       "status": "online"
     },
     "ListScdnDomains": {
-      "document": "ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息",
       "input": "ListScdnDomainsRequest",
       "name": "查询SCDN域名列表",
       "output": "ListScdnDomainsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListScdnLogTasks": {
-      "document": "ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息",
       "input": "ListScdnLogTasksRequest",
       "name": "查询SCDN日志下载任务列表",
       "output": "ListScdnLogTasksResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListScdnTopBotData": {
-      "document": "获取Bot攻击的Top数据列表",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n获取Bot攻击的Top数据列表",
       "input": "ListScdnTopBotDataRequest",
       "name": "获取Bot攻击的Top数据列表",
       "output": "ListScdnTopBotDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopBotData": {
       "document": "获取Bot攻击的Top信息",
@@ -519,11 +519,11 @@
       "status": "online"
     },
     "StartScdnDomain": {
-      "document": "StartScdnDomain 用于开启域名的安全防护配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nStartScdnDomain 用于开启域名的安全防护配置",
       "input": "StartScdnDomainRequest",
       "name": "启动SCDN域名安全防护",
       "output": "StartScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "StopCdnDomain": {
       "document": "StopCdnDomain 用于停止域名的加速服务。\n注意：停止加速服务后，访问至加速节点的请求将会直接返回 404。为避免对您的业务造成影响，请在停止加速服务前将解析切走。",
@@ -533,11 +533,11 @@
       "status": "online"
     },
     "StopScdnDomain": {
-      "document": "StopScdnDomain 用于关闭域名的安全防护配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nStopScdnDomain 用于关闭域名的安全防护配置",
       "input": "StopScdnDomainRequest",
       "name": "停止SCDN域名安全防护",
       "output": "StopScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateDomainConfig": {
       "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。\n操作审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到操作审计。",
@@ -561,11 +561,11 @@
       "status": "online"
     },
     "UpdateScdnDomain": {
-      "document": "UpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nUpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置",
       "input": "UpdateScdnDomainRequest",
       "name": "更新SCDN域名配置",
       "output": "UpdateScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "VerifyDomainRecord": {
       "document": "VerifyDomainRecord 用于验证域名解析值。\n验证域名解析记录值前，您需要通过 [CreateVerifyRecord](https://cloud.tencent.com/document/product/228/48118) 生成校验解析值，验证通过后，24小时有效。\n具体流程可参考：[使用API接口进行域名归属校验](https://cloud.tencent.com/document/product/228/61702#.E6.96.B9.E6.B3.95.E4.B8.89.EF.BC.9Aapi-.E6.8E.A5.E5.8F.A3.E6.93.8D.E4.BD.9C)",

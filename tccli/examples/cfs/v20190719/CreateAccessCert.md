@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs CreateAccessCert --cli-unfold-argument  \
-    --CertDesc test
+    --CertDesc CertForCFS
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "fjo8aejo-fjei-32eu-2je9-fhue83nd81",
-        "CertId": "cfscert-1234abcd"
+        "CertId": "cfscert-8bajq3bj"
     }
 }
 ```

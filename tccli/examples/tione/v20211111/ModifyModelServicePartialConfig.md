@@ -122,6 +122,7 @@ Output:
                     "EnableInstanceRpsLimit": true,
                     "InstanceRpsLimit": 22
                 },
+                "BillingStatus": "BILLING",
                 "BillingUnits": [
                     {
                         "Spec": "TI.GN7.8XLARGE128.POST",

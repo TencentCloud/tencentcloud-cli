@@ -8,14 +8,14 @@ Input:
 tccli domain DescribeCustomDnsHostSet --cli-unfold-argument  \
     --DomainId domain-esysdasdgq \
     --Offset 0 \
-    --Limit 3
+    --Limit 20
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "RequestId": "bd4fc5332-23a2-49bd-8cab-48cfe5963651",
         "DnsHostSet": [
             {
@@ -23,13 +23,6 @@ Output:
                     "2.2.2.2"
                 ],
                 "DnsName": "a1.dns.dns"
-            },
-            {
-                "IpSet": [
-                    "8.8.9.9",
-                    "3.3.3.3"
-                ],
-                "DnsName": "a2.dns.dns"
             }
         ]
     }

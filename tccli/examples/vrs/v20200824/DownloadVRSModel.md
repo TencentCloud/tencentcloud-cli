@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Data": {
             "Model": "https://xxx-xxx-xxxx.cos.ap-guangzhou.myqcloud.com/xxxx.zip",
-            "VoiceName": "a",
+            "VoiceName": "testName",
             "VoiceGender": 1,
             "VoiceLanguage": 1,
             "TaskId": "efe36c79-1c71-41d1-b541-04075fb3b9aa"

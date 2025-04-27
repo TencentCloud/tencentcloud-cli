@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain UploadImage --cli-unfold-argument  \
-    --ImageFile 资质照片
+    --ImageFile 54Wn54mH55qEYmFzZTY057yW56CB
 ```
 
 Output: 

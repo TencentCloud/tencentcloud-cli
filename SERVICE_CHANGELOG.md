@@ -1,52 +1,45 @@
-# Release 3.0.1189.1
+# Release 3.0.1190.1
 
-## 账号中心(account) 版本：2018-12-25
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 18 次发布
+### 第 88 次发布
 
-发布时间：2025-04-25 01:07:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [GooglePreLoginForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/86699)
-
-
-
-## 云拨测(cat) 版本：2018-04-09
-
-### 第 23 次发布
-
-发布时间：2025-04-25 01:13:45
+发布时间：2025-04-28 01:10:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [DescribeNodeGroups](http://document.tencentcloudapi.woa.com/document/product/280/86688)
-
-	* 新增出参：NodeList, DistrictList, NetServiceList
+* DescribeMeasureWhiteUinList
 
 
-新增数据结构：
 
-* [DistinctOrNetServiceInfo](http://document.tencentcloudapi.woa.com/document/product/280/40931#DistinctOrNetServiceInfo)
-* [NodeInfoBase](http://document.tencentcloudapi.woa.com/document/product/280/40931#NodeInfoBase)
-* [NodeLeaf](http://document.tencentcloudapi.woa.com/document/product/280/40931#NodeLeaf)
-* [NodeTree](http://document.tencentcloudapi.woa.com/document/product/280/40931#NodeTree)
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 47 次发布
+
+发布时间：2025-04-28 01:11:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：KmsKeyId
+
 
 
 
 ## 云联络中心(ccc) 版本：2020-02-10
 
-### 第 83 次发布
+### 第 84 次发布
 
-发布时间：2025-04-25 01:14:13
+发布时间：2025-04-28 01:12:14
 
 本次发布包含了以下内容：
 
@@ -54,18 +47,67 @@
 
 修改数据结构：
 
-* [StaffInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#StaffInfo)
+* [AILatencyDetail](http://document.tencentcloudapi.woa.com/document/product/679/47715#AILatencyDetail)
 
-	* 新增成员：RoleList
-
-
+	* 新增成员：LLMFirstTokenLatency
 
 
-## 云游戏(gs) 版本：2019-11-18
 
-### 第 16 次发布
 
-发布时间：2025-04-25 01:48:24
+## 内容分发网络 CDN(cdn) 版本：2018-06-06
+
+### 第 62 次发布
+
+发布时间：2025-04-28 01:13:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateScdnDomain
+* CreateScdnFailedLogTask
+* CreateScdnLogTask
+* DeleteScdnDomain
+* DescribeScdnBotData
+* DescribeScdnBotRecords
+* DescribeScdnConfig
+* DescribeScdnIpStrategy
+* DescribeScdnTopData
+* ListScdnDomains
+* ListScdnLogTasks
+* ListScdnTopBotData
+* StartScdnDomain
+* StopScdnDomain
+* UpdateScdnDomain
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 27 次发布
+
+发布时间：2025-04-28 01:14:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SetUserQuota](http://document.tencentcloudapi.woa.com/document/product/582/76554)
+
+	* 新增出参：UserId
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 34 次发布
+
+发布时间：2025-04-28 01:25:49
 
 本次发布包含了以下内容：
 
@@ -73,70 +115,186 @@
 
 新增接口：
 
-* [FetchAndroidInstancesLogs](http://document.tencentcloudapi.woa.com/document/product/1162/86700)
-* [ModifyAndroidInstancesInformation](http://document.tencentcloudapi.woa.com/document/product/1162/86701)
+* [QuerySubAgentsDetailV2](http://document.tencentcloudapi.woa.com/document/product/1724/86702)
 
 新增数据结构：
 
-* [AndroidInstanceInformation](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceInformation)
+* [QuerySubAgentsDetailV2ResponseData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QuerySubAgentsDetailV2ResponseData)
 
 
 
-## 集团账号管理(organization) 版本：2021-03-31
+## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
+
+### 第 3 次发布
+
+发布时间：2025-04-28 01:26:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1794/86367)
+
+	* 新增入参：DomainInstanceId, DivideRules, Priority
+
+* [DescribeAdminMenu](http://document.tencentcloudapi.woa.com/document/product/1794/86315)
+
+	* 新增入参：DomainInstanceId
+
+* [DescribeSystemConfig](http://document.tencentcloudapi.woa.com/document/product/1794/86220)
+
+	* <font color="#dd0000">**修改出参**：</font>Data
+
+* [ModifyDeviceGroup](http://document.tencentcloudapi.woa.com/document/product/1794/86332)
+
+	* 新增入参：DomainInstanceId, DivideRules, Priority
+
+
+修改数据结构：
+
+* [DeviceDetail](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DeviceDetail)
+
+	* 新增成员：RemarkName
+
+
+
+
+## 加速物联网套件(iot) 版本：2018-01-23
+
+### 第 4 次发布
+
+发布时间：2025-04-28 01:27:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ActivateRule
+* AddDevice
+* AddProduct
+* AddRule
+* AddTopic
+* AppAddUser
+* AppDeleteDevice
+* AppGetDevice
+* AppGetDeviceData
+* AppGetDeviceStatuses
+* AppGetDevices
+* AppGetToken
+* AppGetUser
+* AppIssueDeviceControl
+* AppResetPassword
+* AppSecureAddDevice
+* AppUpdateDevice
+* AppUpdateUser
+* AssociateSubDeviceToGatewayProduct
+* DeactivateRule
+* DeleteDevice
+* DeleteProduct
+* DeleteRule
+* DeleteTopic
+* GetDataHistory
+* GetDebugLog
+* GetDevice
+* GetDeviceData
+* GetDeviceLog
+* GetDeviceSignatures
+* GetDeviceStatistics
+* GetDeviceStatuses
+* GetDevices
+* GetProduct
+* GetProducts
+* GetRule
+* GetRules
+* GetTopic
+* GetTopics
+* IssueDeviceControl
+* PublishMsg
+* ResetDevice
+* UpdateProduct
+* UpdateRule
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 74 次发布
+
+发布时间：2025-04-28 01:30:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InvokeAISearchService](http://document.tencentcloudapi.woa.com/document/product/1081/86175)
+
+	* 新增入参：ChannelId
+
+	* 新增出参：VideoURL
+
+
+修改数据结构：
+
+* [CloudStorageAIServiceTask](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageAIServiceTask)
+
+	* 新增成员：StartTimeMs, EndTimeMs
+
+* [TargetInfo](http://document.tencentcloudapi.woa.com/document/product/1081/34988#TargetInfo)
+
+	* 新增成员：ChannelId, Thumbnail
+
+
+
+
+## 物联网智能视频服务（行业版）(iotvideoindustry) 版本：2020-12-01
+
+### 第 11 次发布
+
+发布时间：2025-04-28 01:31:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteWarning](http://document.tencentcloudapi.woa.com/document/product/1361/67401)
+
+	* 新增出参：Cnt
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 36 次发布
+
+发布时间：2025-04-28 01:38:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVulScanTask](http://document.tencentcloudapi.woa.com/document/product/1662/78948)
+
+	* 新增入参：LocalImageContainerRunning, RegistryImageContainerRunning, IsLatest
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
 
 ### 第 54 次发布
 
-发布时间：2025-04-25 02:00:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeShareUnits](http://document.tencentcloudapi.woa.com/document/product/850/82960)
-
-	* 新增入参：ResourceType
-
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## 云数据库Redis(redis) 版本：2018-04-12
-
-### 第 53 次发布
-
-发布时间：2025-04-25 02:05:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [InquiryPriceCreateInstance](http://document.tencentcloudapi.woa.com/document/product/239/41159)
-
-	* 新增出参：HighPrecisionPrice, Currency, AmountUnit
-
-* [InquiryPriceRenewInstance](http://document.tencentcloudapi.woa.com/document/product/239/41158)
-
-	* 新增出参：HighPrecisionPrice, Currency, AmountUnit
-
-* [InquiryPriceUpgradeInstance](http://document.tencentcloudapi.woa.com/document/product/239/41157)
-
-	* 新增出参：HighPrecisionPrice, Currency, AmountUnit
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 147 次发布
-
-发布时间：2025-04-25 02:19:30
+发布时间：2025-04-28 01:40:15
 
 本次发布包含了以下内容：
 
@@ -144,62 +302,32 @@
 
 修改数据结构：
 
-* [RabbitMQPrivateNode](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQPrivateNode)
+* [UpstreamURLRewriteParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamURLRewriteParameters)
 
-	* <font color="#dd0000">**修改成员**：</font>NodeStatus, CPUUsage, Memory, DiskUsage, ProcessNumber
+	* 新增成员：Regex
 
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 74 次发布
+### 第 75 次发布
 
-发布时间：2025-04-25 02:23:30
+发布时间：2025-04-28 01:41:02
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
-
-* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
-
-	* 新增入参：GrpcEnable, HealthProbe
-
-* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
-
-	* 新增入参：GrpcEnable, HealthProbe
-
-
-新增数据结构：
-
-* [AuthToken](http://document.tencentcloudapi.woa.com/document/product/851/74915#AuthToken)
-* [AuthTokenBase](http://document.tencentcloudapi.woa.com/document/product/851/74915#AuthTokenBase)
-* [AuthTokenLimit](http://document.tencentcloudapi.woa.com/document/product/851/74915#AuthTokenLimit)
-* [BillingUint](http://document.tencentcloudapi.woa.com/document/product/851/74915#BillingUint)
-* [HTTPGetAction](http://document.tencentcloudapi.woa.com/document/product/851/74915#HTTPGetAction)
-* [HealthProbe](http://document.tencentcloudapi.woa.com/document/product/851/74915#HealthProbe)
-* [Probe](http://document.tencentcloudapi.woa.com/document/product/851/74915#Probe)
-* [ProbeAction](http://document.tencentcloudapi.woa.com/document/product/851/74915#ProbeAction)
-
 修改数据结构：
-
-* [PrivateLinkInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#PrivateLinkInfo)
-
-	* 新增成员：InnerGrpcAddr
-
-* [ServiceCallInfoV2](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceCallInfoV2)
-
-	* 新增成员：AuthTokens, EnableLimit, GrpcHost
-
-* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceGroup)
-
-	* 新增成员：AuthorizationEnable, AuthTokens
 
 * [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
 
-	* 新增成员：BillingUnits, GrpcEnable, HealthProbe
+	* 新增成员：BillingStatus
 
 
 
@@ -210,9 +338,9 @@
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
-### 第 41 次发布
+### 第 42 次发布
 
-发布时间：2025-04-25 02:24:52
+发布时间：2025-04-28 01:42:02
 
 本次发布包含了以下内容：
 
@@ -222,35 +350,16 @@
 
 * [DescribeInternalResource](http://document.tencentcloudapi.woa.com/document/product/1739/86080)
 
-	* 新增出参：PublicEndpoint, VpcEndpoint
+	* 新增出参：HttpPublicEndpoint, HttpVpcEndpoint
 
 
 
 
-## 实时音视频(trtc) 版本：2019-07-22
+## 私有网络(vpc) 版本：2017-03-12
 
-### 第 89 次发布
+### 第 209 次发布
 
-发布时间：2025-04-25 02:25:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
-
-	* 新增入参：SubSdkAppId
-
-
-
-
-## 微服务引擎(tse) 版本：2020-12-07
-
-### 第 88 次发布
-
-发布时间：2025-04-25 02:26:36
+发布时间：2025-04-28 01:43:43
 
 本次发布包含了以下内容：
 
@@ -258,13 +367,28 @@
 
 修改数据结构：
 
-* [ConfigFile](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ConfigFile)
+* [PrivateNatCrossDomainInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#PrivateNatCrossDomainInfo)
 
-	* 新增成员：Encrypted, EncryptAlgo
+	* <font color="#dd0000">**修改成员**：</font>CcnId, LocalVpcId, PeerVpcId
 
-* [ServiceGovernanceInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ServiceGovernanceInfo)
 
-	* 新增成员：SubPassword
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 14 次发布
+
+发布时间：2025-04-28 01:45:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetectionEnvAndSoundQualityRespData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#DetectionEnvAndSoundQualityRespData)
+
+	* <font color="#dd0000">**修改成员**：</font>AudioId, DetectionCode, DetectionMsg, DetectionTip
 
 
 

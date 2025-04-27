@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateDomainRedemption": {
-      "document": "创建赎回订单。",
+      "document": "创建赎回订单。需要域名状态为：RedemptionPending：赎回期",
       "input": "CreateDomainRedemptionRequest",
       "name": "创建赎回订单",
       "output": "CreateDomainRedemptionResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DescribeCustomDnsHostSet": {
-      "document": "查询自定义DNS Host",
+      "document": "查询自定义DNS Host\n当前域名在任意状态下均可获取(根据域名当前状态，不一定能获取到具体数据)",
       "input": "DescribeCustomDnsHostSetRequest",
       "name": "查询自定义DNS Host",
       "output": "DescribeCustomDnsHostSetResponse",
@@ -498,7 +498,7 @@
       "status": "online"
     },
     "SetDomainAutoRenew": {
-      "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。",
+      "document": "本接口 ( SetDomainAutoRenew ) 用于设置域名自动续费。\n当前操作暂不受域名状态限制",
       "input": "SetDomainAutoRenewRequest",
       "name": "域名自动续费",
       "output": "SetDomainAutoRenewResponse",
@@ -512,7 +512,7 @@
       "status": "online"
     },
     "SyncCustomDnsHost": {
-      "document": "同步自定义DNS Host",
+      "document": "同步自定义DNS Host，将域名已经设置的host配置数据从注册局同步下来",
       "input": "SyncCustomDnsHostRequest",
       "name": "同步自定义DNS Host",
       "output": "SyncCustomDnsHostResponse",
@@ -749,7 +749,7 @@
         },
         {
           "disabled": false,
-          "document": "竞拍价格",
+          "document": "竞拍价格 单位元",
           "example": "100.00",
           "member": "float",
           "name": "AuctionPrice",
@@ -1006,7 +1006,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID(可从模板列表接口获取)",
+          "document": "模板ID\n可从DescribeTemplates接口获取",
           "example": "tmpl-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -1163,7 +1163,7 @@
         {
           "disabled": false,
           "document": "批量任务id",
-          "example": "1001",
+          "example": "100102",
           "member": "uint64",
           "name": "LogId",
           "output_required": true,
@@ -1182,7 +1182,7 @@
         },
         {
           "disabled": false,
-          "document": "批量任务类型",
+          "document": "批量任务类型\nnew：注册域名\nrenew：续费域名\nbatch_transfer_prohibition_on：开启禁止转移锁\nbatch_transfer_prohibition_off：关闭禁止转移锁\nbatch_update_prohibition_on：开启禁止更新锁\nbatch_update_prohibition_off：关闭禁止更新锁\nbatch_modify_owner：域名转移\nbatch_modify_domain_info：域名信息修改\nbatch_transfer_in：域名转入\nbatch_cancel_transfer_out：域名取消转出",
           "example": "batch_modify_owner",
           "member": "string",
           "name": "BatchAction",
@@ -1198,7 +1198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID",
+          "document": "预约ID\n可通过DescribeBiddingList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -1223,7 +1223,7 @@
         },
         {
           "disabled": false,
-          "document": "当前域名价格",
+          "document": "当前域名价格 单位元",
           "example": "120.00",
           "member": "float",
           "name": "CurrentPrice",
@@ -1233,7 +1233,7 @@
         },
         {
           "disabled": false,
-          "document": "用户上次出价",
+          "document": "用户上次出价 单位元",
           "example": "100.00",
           "member": "float",
           "name": "BidPrice",
@@ -1243,7 +1243,7 @@
         },
         {
           "disabled": false,
-          "document": "当前加价幅度",
+          "document": "当前加价幅度 单位元",
           "example": "50.00",
           "member": "float",
           "name": "CurrentPriceScope",
@@ -1254,7 +1254,7 @@
         {
           "disabled": false,
           "document": "加价幅度区间配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"PriceScopeConf\"]",
+          "example": "无",
           "member": "PriceScopeConf",
           "name": "PriceScope",
           "output_required": false,
@@ -1263,7 +1263,7 @@
         },
         {
           "disabled": false,
-          "document": "用户当前已经支付了的保证金",
+          "document": "用户当前已经支付了的保证金 单位元",
           "example": "50.00",
           "member": "float",
           "name": "DepositPrice",
@@ -1321,7 +1321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id",
+          "document": "预约ID",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -1341,7 +1341,7 @@
         },
         {
           "disabled": false,
-          "document": "预定价格",
+          "document": "预定价格 单位元",
           "example": "127",
           "member": "uint64",
           "name": "AppointPrice",
@@ -1351,7 +1351,7 @@
         },
         {
           "disabled": false,
-          "document": "预约保证金",
+          "document": "预约保证金 单位元",
           "example": "85",
           "member": "uint64",
           "name": "AppointBondPrice",
@@ -1397,7 +1397,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID",
+          "document": "业务ID\n可通过DescribeBiddingList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -1406,7 +1406,7 @@
         },
         {
           "disabled": false,
-          "document": "价格",
+          "document": "价格 单位元",
           "example": "100.00",
           "member": "float",
           "name": "Price",
@@ -1431,8 +1431,8 @@
         },
         {
           "disabled": false,
-          "document": "计费请求参数，以Json字符串的形式进行返回。",
-          "example": ">{\\\"uin\\\":\\\"100*****091\\\",\\\"ownerUin\\\":\\\"100*****091\\\",\\\"appId\\\":10000,\\\"goods\\\":[{\\\"goodsCategoryId\\\":100,\\\"regionId\\\":47,\\\"zoneId\\\":470004,\\\"goodsNum\\\":1,\\\"projectId\\\":0,\\\"payMode\\\":1,\\\"goodsDetail\\\":{\\\"pid\\\":1000,\\\"productCode\\\":\\\"p_d\\\",\\\"subProductCode\\\":\\\"sp_d_*\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"预释放竞价保证金订单\\\",\\\"value\\\":\\\"竞价域名：att.com\\\"}],\\\"domain\\\":\\\"att.com\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"p\\\",\\\"autoRenewFlag\\\":0,\\\"createType\\\":\\\"bid_deposit\\\",\\\"price\\\":10000,\\\"bondPrice\\\":0,\\\"biddingBondPrice\\\":100,\\\"sv_d\\\":1,\\\"businessId\\\":\\\"P0********945\\\",\\\"isAutoPay\\\":0,\\\"templateId\\\":\\\"\\\"}}]}",
+          "document": "计费请求参数，以类Json字符串的形式进行返回。用于计费下单",
+          "example": "无",
           "member": "string",
           "name": "BillingParam",
           "output_required": false,
@@ -1453,7 +1453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id",
+          "document": "预约ID",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -1473,7 +1473,7 @@
         },
         {
           "disabled": false,
-          "document": "当前价格",
+          "document": "当前价格 单位元",
           "example": "100",
           "member": "uint64",
           "name": "CurrentPrice",
@@ -1493,7 +1493,7 @@
         },
         {
           "disabled": false,
-          "document": "我的出价",
+          "document": "我的出价 单位元",
           "example": "50",
           "member": "uint64",
           "name": "BiddingPrice",
@@ -1503,7 +1503,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价保证金",
+          "document": "竞价保证金 单位元",
           "example": "50",
           "member": "uint64",
           "name": "BiddingBondPrice",
@@ -1544,7 +1544,7 @@
         {
           "disabled": false,
           "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -1807,7 +1807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作日志 ID数组，最多 200 个",
+          "document": "操作日志 ID数组，最多 200 个\n可通过任意批量操作接口获取，例如：\nBatchModifyDomainInfo\nModifyDomainDNSBatch\nModifyDomainOwnerBatch\nUpdateProhibitionBatch\nTransferProhibitionBatch\nTransferInDomainBatch\nTransferInDomainBatchBuy\nCancelTransferOutInBatch",
           "example": "[1]",
           "member": "uint64",
           "name": "LogIds",
@@ -1823,7 +1823,7 @@
         {
           "disabled": false,
           "document": "批量任务状态集",
-          "example": "[]",
+          "example": "无",
           "member": "BatchStatus",
           "name": "StatusSet",
           "output_required": true,
@@ -2355,8 +2355,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID",
-          "example": "domain-7312mrgq",
+          "document": "域名实例ID\n可通过DescribeDomainLIst接口获取",
+          "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -2364,7 +2364,7 @@
         },
         {
           "disabled": false,
-          "document": "Dns名称",
+          "document": "Dns名称\n例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式",
           "example": "ns1",
           "member": "string",
           "name": "DnsName",
@@ -2373,7 +2373,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址列表",
+          "document": "IP地址列表\n可选择：正常IP地址范围",
           "example": "1.2.4.8",
           "member": "string",
           "name": "IpSet",
@@ -2392,7 +2392,7 @@
           "example": "6543",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2537,7 +2537,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名 ID",
+          "document": "域名ID\n可通过DescribeDomainList接口获取",
           "example": "domain-ewqdskla",
           "member": "string",
           "name": "DomainId",
@@ -2926,7 +2926,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码(通过SendPhoneEmailCode发送到手机或邮箱的验证码)",
+          "document": "验证码\n通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666",
           "example": "234567",
           "member": "string",
           "name": "VerifyCode",
@@ -3043,7 +3043,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id",
+          "document": "预约ID\n可通过DescribeBiddingList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -3070,8 +3070,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID",
-          "example": "domain-7312mrgq",
+          "document": "域名实例ID\n可通过DescribeDomainList接口获取",
+          "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -3079,7 +3079,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS名称",
+          "document": "DNS名称\n例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式",
           "example": "ns1",
           "member": "string",
           "name": "DnsName",
@@ -3098,7 +3098,7 @@
           "example": "6543",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3251,7 +3251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID(可通过模板信息列表获取)",
+          "document": "模板ID\n可通过DescribeTemplates接口获取",
           "example": "tmpl-itxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -3287,8 +3287,8 @@
         },
         {
           "disabled": false,
-          "document": "条数，默认10条",
-          "example": "1",
+          "document": "条数，默认10，最大100",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3296,8 +3296,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
-          "example": "20",
+          "document": "偏移量 默认0",
+          "example": "0",
           "member": "int64",
           "name": "OffSet",
           "required": false,
@@ -3312,7 +3312,7 @@
         {
           "disabled": false,
           "document": "竞拍详情列表",
-          "example": "list[\"AuctionInfo\"]",
+          "example": "无",
           "member": "AuctionInfo",
           "name": "AuctionList",
           "output_required": false,
@@ -3464,7 +3464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id",
+          "document": "预约ID\n可通过DescribeBiddingList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -3500,7 +3500,7 @@
         {
           "disabled": false,
           "document": "预约开始时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "AppointStartTime",
           "output_required": false,
@@ -3510,7 +3510,7 @@
         {
           "disabled": false,
           "document": "预约结束时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-10 12:34:25",
           "member": "string",
           "name": "AppointEndTime",
           "output_required": false,
@@ -3520,7 +3520,7 @@
         {
           "disabled": false,
           "document": " 注册时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2016-01-02 13:23:35",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -3530,7 +3530,7 @@
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-02 13:23:35",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -3540,7 +3540,7 @@
         {
           "disabled": false,
           "document": "删除时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-03-02 13:23:35",
           "member": "string",
           "name": "DeleteTime",
           "output_required": false,
@@ -3549,7 +3549,7 @@
         },
         {
           "disabled": false,
-          "document": "当前价格",
+          "document": "当前价格 单位元",
           "example": "85",
           "member": "uint64",
           "name": "AppointPrice",
@@ -3559,7 +3559,7 @@
         },
         {
           "disabled": false,
-          "document": "预约保证金",
+          "document": "预约保证金 单位元",
           "example": "127",
           "member": "uint64",
           "name": "AppointBondPrice",
@@ -3628,7 +3628,7 @@
         },
         {
           "disabled": false,
-          "document": "状态： 1 已预约 9 预约持有者索回",
+          "document": "状态：\n1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -3672,7 +3672,7 @@
         {
           "disabled": false,
           "document": "预约列表",
-          "example": "List[\"BiddingAppointResult\"]",
+          "example": "[\"BiddingAppointResult\"]",
           "member": "BiddingAppointResult",
           "name": "AppointList",
           "output_required": true,
@@ -3693,7 +3693,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id",
+          "document": "预约ID\n可通过DescribeBiddingList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -3709,7 +3709,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "tencent.com",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -3729,7 +3729,7 @@
         {
           "disabled": false,
           "document": "竞价开始时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-02-02 15:04:05",
           "member": "string",
           "name": "BiddingStartTime",
           "output_required": false,
@@ -3739,7 +3739,7 @@
         {
           "disabled": false,
           "document": "竞价结束时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-02-12 13:24:05",
           "member": "string",
           "name": "BiddingEndTime",
           "output_required": false,
@@ -3749,7 +3749,7 @@
         {
           "disabled": false,
           "document": " 注册时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2016-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -3759,7 +3759,7 @@
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -3769,7 +3769,7 @@
         {
           "disabled": false,
           "document": "删除时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-03-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
           "output_required": false,
@@ -3778,7 +3778,7 @@
         },
         {
           "disabled": false,
-          "document": "当前价格",
+          "document": "当前价格 单位元",
           "example": "100",
           "member": "uint64",
           "name": "CurrentPrice",
@@ -3798,7 +3798,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价保证金",
+          "document": "竞价保证金 单位元",
           "example": "50",
           "member": "uint64",
           "name": "BiddingBondPrice",
@@ -3809,7 +3809,7 @@
         {
           "disabled": false,
           "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回",
-          "example": "1",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -3838,7 +3838,7 @@
         },
         {
           "disabled": false,
-          "document": "我的出价",
+          "document": "我的出价 单位元",
           "example": "100",
           "member": "uint64",
           "name": "BiddingPrice",
@@ -3931,7 +3931,7 @@
         {
           "disabled": false,
           "document": "竞价列表",
-          "example": "list[\"BiddingResult\"]",
+          "example": "[\"BiddingResult\"]",
           "member": "BiddingResult",
           "name": "BiddingList",
           "output_required": true,
@@ -3952,7 +3952,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id",
+          "document": "预约ID\n可通过DescribeBiddingSuccessfulList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -3987,7 +3987,7 @@
         },
         {
           "disabled": false,
-          "document": "得标价格",
+          "document": "得标价格 单位元",
           "example": "100.00",
           "member": "float",
           "name": "SuccessfulPrice",
@@ -3998,7 +3998,7 @@
         {
           "disabled": false,
           "document": " 注册时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2016-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
@@ -4008,7 +4008,7 @@
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2026-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -4018,7 +4018,7 @@
         {
           "disabled": false,
           "document": "删除时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2026-03-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
           "output_required": false,
@@ -4028,7 +4028,7 @@
         {
           "disabled": false,
           "document": "付款结束时间",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "PayEndTime",
           "output_required": false,
@@ -4047,7 +4047,7 @@
         },
         {
           "disabled": false,
-          "document": "保证金",
+          "document": "保证金 单位元",
           "example": "50.00",
           "member": "float",
           "name": "BiddingBondPrice",
@@ -4058,7 +4058,7 @@
         {
           "disabled": false,
           "document": "状态：5 等待支付 6 等待转移， 7 转移中，8 交易成功，11 尾款阶段持有者索回，12 已违约",
-          "example": "1",
+          "example": "5",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -4150,7 +4150,7 @@
         {
           "disabled": false,
           "document": "得标列表",
-          "example": "list[\"BiddingSuccessfulResult\"]",
+          "example": "[\"BiddingSuccessfulResult\"]",
           "member": "BiddingSuccessfulResult",
           "name": "SuccessfulList",
           "output_required": true,
@@ -4171,7 +4171,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID(域名基本信息或我的域名列表接口可获取)",
+          "document": "域名实例ID\n可通过DescribeDomainList接口获取",
           "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
@@ -4215,7 +4215,7 @@
         {
           "disabled": false,
           "document": "自定义DNS Host总数",
-          "example": "15",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -4237,7 +4237,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "域名",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5062,7 +5062,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID",
+          "document": "业务ID\n可通过DescribeBiddingList接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -5087,7 +5087,7 @@
         },
         {
           "disabled": false,
-          "document": "域名类型",
+          "document": "域名类型\npay：等待支持\nsub：已经预订\nwait：等待出价\nfinish：完成出价",
           "example": "pay",
           "member": "string",
           "name": "Status",
@@ -5117,7 +5117,7 @@
         },
         {
           "disabled": false,
-          "document": "域名成交价格",
+          "document": "域名成交价格 单位元",
           "example": "200.00",
           "member": "float",
           "name": "Price",
@@ -5127,7 +5127,7 @@
         },
         {
           "disabled": false,
-          "document": "待退还保证金",
+          "document": "待退还保证金 单位元",
           "example": "50.00",
           "member": "float",
           "name": "RetDeposit",
@@ -5223,7 +5223,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码 默认1",
           "example": "1",
           "member": "int64",
           "name": "PageNumber",
@@ -5232,7 +5232,7 @@
         },
         {
           "disabled": false,
-          "document": "条数",
+          "document": "条数 默认20 最大100",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -5257,13 +5257,13 @@
         },
         {
           "disabled": false,
-          "document": "预释放竞价列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "list[\"PreAuctionInfo\"]",
+          "document": "预释放竞价列表",
+          "example": "无",
           "member": "PreAuctionInfo",
           "name": "PreAuctionList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5859,7 +5859,7 @@
         {
           "disabled": false,
           "document": "模板详细信息列表。",
-          "example": "[{}]",
+          "example": "无",
           "member": "TemplateInfo",
           "name": "TemplateSet",
           "output_required": true,
@@ -6009,7 +6009,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态",
+          "document": "域名状态\n bid：出价\nnoAction：无法操作",
           "example": "bid",
           "member": "string",
           "name": "Status",
@@ -6019,7 +6019,7 @@
         },
         {
           "disabled": false,
-          "document": "域名价格",
+          "document": "域名价格 单位元",
           "example": "100.00",
           "member": "float",
           "name": "CurrentPrice",
@@ -6029,7 +6029,7 @@
         },
         {
           "disabled": false,
-          "document": "域名保证金",
+          "document": "域名保证金 单位元",
           "example": "85.00",
           "member": "float",
           "name": "AppointBondPrice",
@@ -6237,7 +6237,7 @@
         },
         {
           "disabled": false,
-          "document": "类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新",
+          "document": "类型  \nnew：注册域名\nrenew：续费域名\nbatch_transfer_prohibition_on：开启禁止转移锁\nbatch_transfer_prohibition_off：关闭禁止转移锁\nbatch_update_prohibition_on：开启禁止更新锁\nbatch_update_prohibition_off：关闭禁止更新锁\nbatch_modify_owner：域名转移\nbatch_modify_domain_info：域名信息修改\nbatch_transfer_in：域名转入\nbatch_cancel_transfer_out：域名取消转出",
           "example": "batch_modify_domain_info",
           "member": "string",
           "name": "Action",
@@ -6267,7 +6267,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因",
+          "document": "失败原因，如果状态成功(Status:success),则该字段为空",
           "example": "域名正在转出中，不可编辑",
           "member": "string",
           "name": "Reason",
@@ -6410,7 +6410,7 @@
         {
           "disabled": false,
           "document": "是否是溢价域名：\nture 是    \nfalse 不是",
-          "example": "1",
+          "example": "false",
           "member": "bool",
           "name": "IsPremium",
           "output_required": true,
@@ -6420,7 +6420,7 @@
         {
           "disabled": false,
           "document": "域名资源ID。",
-          "example": "'domain-acnsd121q'",
+          "example": "domain-acnsd121q",
           "member": "string",
           "name": "DomainId",
           "output_required": true,
@@ -6430,7 +6430,7 @@
         {
           "disabled": false,
           "document": "域名名称。",
-          "example": "xxxx.com",
+          "example": "test.com",
           "member": "string",
           "name": "DomainName",
           "output_required": true,
@@ -7366,7 +7366,7 @@
         {
           "disabled": false,
           "document": "域名实例ID",
-          "example": "domain-7312mrgq",
+          "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -7402,7 +7402,7 @@
           "example": "6543",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7466,7 +7466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要过户的域名。",
+          "document": "要过户的域名。\n一次提交不大于4000个",
           "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
@@ -7475,7 +7475,7 @@
         },
         {
           "disabled": false,
-          "document": "转入账户的uin。",
+          "document": "转入账户的主uin。",
           "example": "1000**238",
           "member": "string",
           "name": "NewOwnerUin",
@@ -7798,7 +7798,7 @@
         },
         {
           "disabled": false,
-          "document": "出价次数",
+          "document": "出价次数 单位元",
           "example": "20",
           "member": "int64",
           "name": "BidCount",
@@ -7808,7 +7808,7 @@
         },
         {
           "disabled": false,
-          "document": "当前价格",
+          "document": "当前价格 单位元",
           "example": "1200.00",
           "member": "float",
           "name": "Price",
@@ -7818,7 +7818,7 @@
         },
         {
           "disabled": false,
-          "document": "用户操作 bid：出价 \"noAction\"：无法操作",
+          "document": "用户操作 \nbid：出价 \nnoAction：无法操作",
           "example": "bid",
           "member": "string",
           "name": "Op",
@@ -8072,7 +8072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "最高价格",
+          "document": "最高价格 单位元",
           "example": "1000.00",
           "member": "float",
           "name": "MaxPrice",
@@ -8082,7 +8082,7 @@
         },
         {
           "disabled": false,
-          "document": "最低价格",
+          "document": "最低价格 单位元",
           "example": "100.00",
           "member": "float",
           "name": "MinPrice",
@@ -8092,7 +8092,7 @@
         },
         {
           "disabled": false,
-          "document": "价格幅度",
+          "document": "价格幅度 单位元",
           "example": "10.00",
           "member": "float",
           "name": "Price",
@@ -8102,7 +8102,7 @@
         },
         {
           "disabled": false,
-          "document": "保证金",
+          "document": "保证金 单位元",
           "example": "50.00",
           "member": "float",
           "name": "DepositPrice",
@@ -8267,7 +8267,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名续费的年限。",
+          "document": "域名续费的年限。取值范围[1,9]",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -8276,7 +8276,7 @@
         },
         {
           "disabled": false,
-          "document": "批量续费的域名。",
+          "document": "批量续费的域名。\n一次提交不大于4000个",
           "example": "[\"h101.dlgslb.cn\",\"h103.dlgslb.cn\"]",
           "member": "string",
           "name": "Domains",
@@ -8638,7 +8638,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "模板ID 可通过DescribeTemplates接口获取",
           "example": "tmpl-qdpjnfe8",
           "member": "string",
           "name": "TemplateId",
@@ -8647,7 +8647,7 @@
         },
         {
           "disabled": false,
-          "document": "结束后是否自动支付尾款，默认开启 传入1关闭",
+          "document": "结束后是否自动支付尾款，默认1 开启 传入0关闭",
           "example": "0",
           "member": "int64",
           "name": "IsAutoPay",
@@ -8656,7 +8656,7 @@
         },
         {
           "disabled": false,
-          "document": "结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭",
+          "document": "结束后是否自动进行梯度保证金扣除，默认1开启 传入0关闭",
           "example": "0",
           "member": "int64",
           "name": "IsBidAutoPay",
@@ -8785,7 +8785,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID 例如：domain-123abc",
+          "document": "域名ID 例如：domain-dwerewwq可通过DescribreDomainList接口获取",
           "example": "domain-dwerewwq",
           "member": "string",
           "name": "DomainId",
@@ -8883,8 +8883,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID",
-          "example": "domain-7312mrgqs\t",
+          "document": "域名实例ID，可以通过DescribeDomainList接口获取",
+          "example": "domain-dwwwwwwq\t",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -8902,7 +8902,7 @@
           "example": "6543",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9070,7 +9070,7 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "template-01234",
+          "example": "temp-dworifuw",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -9079,7 +9079,7 @@
         },
         {
           "disabled": false,
-          "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
+          "document": "认证状态:\nNotUpload: 未实名认证\nInAudit: 实名审核中\nApproved: 已实名认证\nReject: 实名审核失败\nNotVerified: 实名信息待修改",
           "example": "InAudit",
           "member": "string",
           "name": "AuditStatus",
@@ -9110,7 +9110,7 @@
         {
           "disabled": false,
           "document": "用户UIN",
-          "example": "111111",
+          "example": "1000329324",
           "member": "string",
           "name": "UserUin",
           "output_required": true,
@@ -9205,7 +9205,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转入的域名名称数组。",
+          "document": "转入的域名名称数组。\n一次提交不大于4000个",
           "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
@@ -9223,7 +9223,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID。",
+          "document": "模板ID。\n可通过DescribeTemplates接口获取",
           "example": "tmpl-xxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -9432,7 +9432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量操作的域名。",
+          "document": "批量操作的域名。\n一次提交不大于4000个",
           "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
@@ -9441,8 +9441,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启禁止域名转移。\nTrue: 开启禁止域名转移状态。\nFalse：关闭禁止域名转移状态。",
-          "example": "1",
+          "document": "是否开启禁止域名转移。\ntrue: 开启禁止域名转移状态。\nfalse：关闭禁止域名转移状态。",
+          "example": "true",
           "member": "bool",
           "name": "Status",
           "required": true,
@@ -9524,7 +9524,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量操作的域名。",
+          "document": "批量操作的域名。\n一次提交不大于4000个",
           "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
@@ -9533,8 +9533,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启禁止域名更新。\nTrue:开启禁止域名更新状态。\nFalse：关闭禁止域名更新状态。",
-          "example": "1",
+          "document": "是否开启禁止域名更新。\ntrue:开启禁止域名更新状态。\nfalse：关闭禁止域名更新状态。",
+          "example": "true",
           "member": "bool",
           "name": "Status",
           "required": true,

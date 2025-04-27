@@ -300,6 +300,14 @@
         "title": "输入子客uin查询经销商uin"
       }
     ],
+    "QuerySubAgentsDetailV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuerySubAgentsDetailV2\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"SubAgentUin\": 100001,\n                \"Name\": \"fdfd\",\n                \"Remark\": \"dd\",\n                \"CountOfCustomers\": 0,\n                \"BindTime\": \"\",\n                \"Credit\": 0,\n                \"RemainingCredit\": 0,\n                \"Voucher\": 0,\n                \"RemainingVoucher\": 0,\n                \"Email\": \"a@qq.com\",\n                \"Mobile\": \"151xxx\"\n            }\n        ],\n        \"RequestId\": \"abchs-****-****3n2m4m5b\"\n    }\n}",
+        "title": "查询二级经销商信息"
+      }
+    ],
     "QueryT1IndirectCustomersDetail": [
       {
         "document": "",

@@ -6621,6 +6621,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "终端分组名称",
           "example": "无",
           "member": "string",
@@ -6672,6 +6681,24 @@
           "name": "IpList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设置的规则",
+          "example": "无",
+          "member": "ComplexRule",
+          "name": "DivideRules",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "规则权重（优先级）",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11573,6 +11600,15 @@
     "DescribeAdminMenuRequest": {
       "document": "DescribeAdminMenu请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "操作系统平台。0：windows，1：linux，2：Mac，3：windows_server，4：Android，5：iOS",
@@ -25660,7 +25696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "条件过滤",
+          "document": "条件查询和分页参数\n\n<br/>过滤条件\n<li>ConfigName - string - 是否必填：否 - 操作符: eq、like  - 排序支持：是 - 获取系统配置数据。</li>",
           "example": "无",
           "member": "Condition",
           "name": "Condition",
@@ -25679,7 +25715,7 @@
           "example": "无",
           "member": "DescribeSystemConfigPageResp",
           "name": "Data",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -29094,7 +29130,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的账号",
+          "document": "最近登录账户的账号(账号系统用户账号)",
           "example": "LuckyLI",
           "member": "string",
           "name": "IOAUserName",
@@ -29193,7 +29229,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的姓名",
+          "document": "最近登录账户的姓名(账号系统用户姓名)",
           "example": "LuckyLI",
           "member": "string",
           "name": "AccountName",
@@ -29211,6 +29247,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端备注名",
+          "example": "张三的终端",
+          "member": "string",
+          "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -35342,7 +35389,7 @@
         },
         {
           "disabled": false,
-          "document": "操作的目标ipauto、ldapauto、priority",
+          "document": "操作的目标ipauto、ldapauto、priority、SetGroupRule（按照规则）",
           "example": "ipauto",
           "member": "string",
           "name": "Target",
@@ -35395,6 +35442,15 @@
     "ModifyDeviceGroupRequest": {
       "document": "ModifyDeviceGroup请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "终端分组id",
@@ -35457,6 +35513,24 @@
           "name": "IpList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设置的规则",
+          "example": "无",
+          "member": "ComplexRule",
+          "name": "DivideRules",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "规则权重（优先级）",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

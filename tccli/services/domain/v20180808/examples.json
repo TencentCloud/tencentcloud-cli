@@ -74,9 +74,9 @@
     ],
     "CreateCustomDnsHost": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esfdhgfgdhigq\",\n    \"DnsName\": \"ccc\",\n    \"IpSet\": [\n        \"8.8.9.9\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"LogId\": 510694,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
+        "document": "创建自定义DNS Host任务",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esfdhgfgdhigq\",\n    \"DnsName\": \"ns1\",\n    \"IpSet\": [\n        \"1.2.4.8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 6543,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
         "title": "创建自定义DNS Host任务"
       }
     ],
@@ -91,9 +91,15 @@
     "CreateDomainRedemption": [
       {
         "document": "赎回请求",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainRedemption\n<公共请求参数>\n\n{\n    \"DomainId\": \" domain-dsaklnkl\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainRedemption\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-dsaklnkl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dwdw-dwewe-*****\"\n    }\n}",
         "title": "赎回请求"
+      },
+      {
+        "document": "当前账号未有权限创建赎回订单，需要联系产品",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainRedemption\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-dwesqweq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.PermissionDenied.\",\n            \"Message\": \"权限不足\"\n        },\n        \"RequestId\": \"dwdw-dwewe-*****\"\n    }\n}",
+        "title": "权限不足"
       }
     ],
     "CreateInternalComplaint": [
@@ -131,8 +137,8 @@
     "CreatePhoneEmail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePhoneEmail\n<公共请求参数>\n\n{\n    \"Code\": \"15643257896\",\n    \"Type\": 1,\n    \"VerifyCode\": \"754933\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePhoneEmail\n<公共请求参数>\n\n{\n    \"Code\": \"156****896\",\n    \"Type\": 1,\n    \"VerifyCode\": \"754933\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"acsd-weqwe-fweq-wewe\"\n    }\n}",
         "title": "验证手机邮箱"
       }
     ],
@@ -154,9 +160,9 @@
     ],
     "DeleteCustomDnsHost": [
       {
-        "document": "",
+        "document": "创建删除自定义DNS Host任务",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esydsfsdq\",\n    \"DnsName\": \"ccc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LogId\": 510708,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 6543,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
         "title": "创建删除自定义DNS Host任务"
       }
     ],
@@ -195,7 +201,7 @@
     "DeleteTemplate": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=DeleteTemplate\n&TemplateId=模板ID\n&<公共请求参数>",
+        "input": "https://domain.tencentcloudapi.com/?Action=DeleteTemplate\n&TemplateId=tmpl-itxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
         "title": "删除信息模板"
       }
@@ -219,8 +225,8 @@
     "DescribeBatchOperationLogs": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=DescribeBatchOperationLogs\n&Offset=1\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"DomainBatchLogSet\": [\n            {\n                \"LogId\": 10001,\n                \"Number\": 1,\n                \"Status\": \"doing\",\n                \"CreatedOn\": \"2023-01-01 20:30:00\",\n                \"Success\": 0,\n                \"Doing\": 0,\n                \"Failed\": 0\n            }\n        ],\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\"\n    }\n}",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeBatchOperationLogs\n&Offset=0\n&Limit=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DomainBatchLogSet\": [\n            {\n                \"LogId\": 10001,\n                \"Number\": 1,\n                \"Status\": \"doing\",\n                \"CreatedOn\": \"2023-01-01 20:30:00\",\n                \"Success\": 0,\n                \"Doing\": 0,\n                \"Failed\": 0\n            }\n        ],\n        \"RequestId\": \"f376d0e6-f064-1234-b27f-a8ae3b054dfa\"\n    }\n}",
         "title": "批量操作日志"
       }
     ],
@@ -228,7 +234,7 @@
       {
         "document": "我预定的域名-预约详情",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"***561\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppointBondPrice\": 70,\n        \"AppointEndTime\": \"2023-10-28 09:53:48\",\n        \"AppointNum\": 1,\n        \"AppointPrice\": 105,\n        \"AppointStartTime\": \"2023-10-18 09:53:48\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"e0d60073-3fbb-4216-ba20-7ccad80d030a\",\n        \"Status\": 7\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppointBondPrice\": 70,\n        \"AppointEndTime\": \"2023-10-28 09:53:48\",\n        \"AppointNum\": 1,\n        \"AppointPrice\": 105,\n        \"AppointStartTime\": \"2023-10-18 09:53:48\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"BiddingBondRefund\": \"no\",\n        \"RequestId\": \"e0d60073-3fbb-4216-ba20-7ccad80d030a\",\n        \"Status\": 7\n    }\n}",
         "title": "我预定的域名-预约详情"
       }
     ],
@@ -275,8 +281,8 @@
     "DescribeCustomDnsHostSet": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomDnsHostSet\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esysdasdgq\",\n    \"Offset\": 0,\n    \"Limit\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"bd4fc5332-23a2-49bd-8cab-48cfe5963651\",\n        \"DnsHostSet\": [\n            {\n                \"IpSet\": [\n                    \"2.2.2.2\"\n                ],\n                \"DnsName\": \"a1.dns.dns\"\n            },\n            {\n                \"IpSet\": [\n                    \"8.8.9.9\",\n                    \"3.3.3.3\"\n                ],\n                \"DnsName\": \"a2.dns.dns\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomDnsHostSet\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esysdasdgq\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"bd4fc5332-23a2-49bd-8cab-48cfe5963651\",\n        \"DnsHostSet\": [\n            {\n                \"IpSet\": [\n                    \"2.2.2.2\"\n                ],\n                \"DnsName\": \"a1.dns.dns\"\n            }\n        ]\n    }\n}",
         "title": "查询自定义DNS Host列表"
       }
     ],
@@ -407,8 +413,8 @@
     "DescribePayWaitDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePayWaitDetail\n<公共请求参数>\n\n{\n    \"BusinessId\": \"***561\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45559f25-13b9-42fd-b2ae-698842d91fd7\",\n        \"Domain\": \"*1.top\",\n        \"Status\": \"pay\",\n        \"EndTime\": \"2024-12-19 07:24:25\",\n        \"RegTime\": \"2023-11-11 07:24:25\",\n        \"Price\": 98,\n        \"RetDeposit\": 32\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePayWaitDetail\n<公共请求参数>\n\n{\n    \"BusinessId\": \"PEDWSDW561\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45559f25-13b9-42fd-b2ae-698842d91fd7\",\n        \"Domain\": \"test.top\",\n        \"Status\": \"pay\",\n        \"EndTime\": \"2024-12-19 07:24:25\",\n        \"RegTime\": \"2023-11-11 07:24:25\",\n        \"Price\": 98,\n        \"RetDeposit\": 32\n    }\n}",
         "title": "等待支付详情接口"
       }
     ],
@@ -416,7 +422,7 @@
       {
         "document": "默认",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePhoneEmailList\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"137***3434\",\n                \"Type\": 1,\n                \"CreatedOn\": \"2023-03-10 10:00:00\",\n                \"CheckStatus\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PhoneEmailList\": [\n            {\n                \"Code\": \"137***3434\",\n                \"Type\": 1,\n                \"CreatedOn\": \"2023-03-10 10:00:00\",\n                \"CheckStatus\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f376d0e6-f064-1234-b27f-a8ae3b054dfa\"\n    }\n}",
         "title": "获取已验证的手机邮箱列表"
       }
     ],
@@ -493,14 +499,14 @@
     "DescribeUnPreDomainDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnPreDomainDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"**m.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd4379ce-0fb7-1234-bc2f-5a68df5bcd20\",\n        \"Domain\": \"**m.com\",\n        \"PreCount\": 8,\n        \"RegTime\": \"2005-11-23 02:26:00\",\n        \"DeleteTime\": \"2025-01-23 02:26:00\",\n        \"ExpireTime\": \"2024-12-23 02:26:00\",\n        \"Status\": \"ing\",\n        \"CurrentPrice\": 198,\n        \"AppointBondPrice\": 90,\n        \"IsAppoint\": false,\n        \"BusinessId\": \"***046\",\n        \"IsDomainUser\": false\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnPreDomainDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd4379ce-0fb7-1234-bc2f-5a68df5bcd20\",\n        \"Domain\": \"test.com\",\n        \"PreCount\": 8,\n        \"RegTime\": \"2005-11-23 02:26:00\",\n        \"DeleteTime\": \"2025-01-23 02:26:00\",\n        \"ExpireTime\": \"2024-12-23 02:26:00\",\n        \"Status\": \"ing\",\n        \"CurrentPrice\": 198,\n        \"AppointBondPrice\": 90,\n        \"IsAppoint\": false,\n        \"BusinessId\": \"P0011702977661022561\",\n        \"IsDomainUser\": false\n    }\n}",
         "title": "查询预释放未预约域名详情接口"
       }
     ],
     "ModifyCustomDnsHost": [
       {
-        "document": "",
+        "document": "创建修改自定义DNS Host任务",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esyfsdfgq\",\n    \"DnsName\": \"ccc\",\n    \"IpSet\": [\n        \"2.2.2.2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 510702,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
         "title": "创建修改自定义DNS Host任务"
@@ -572,7 +578,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReservedPreDomains\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"aksdwe1.cn\",\n        \"aksdwe2.cn\"\n    ],\n    \"TemplateId\": \"tmpl-abxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SucDomainList\": [\n            \"aksdwe1.cn\"\n        ],\n        \"FailDomainList\": [\n            {\n                \"Domain\": \"aksdwe2.cn\",\n                \"FailReason\": \"域名下架\"\n            }\n        ],\n        \"RequestId\": \"xxxx-xxx-xxx-xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SucDomainList\": [\n            \"aksdwe1.cn\"\n        ],\n        \"FailDomainList\": [\n            {\n                \"Domain\": \"aksdwe2.cn\",\n                \"FailReason\": \"域名下架\"\n            }\n        ],\n        \"SucDomains\": [\n            {\n                \"Domain\": \"aksdwe1.cn\",\n                \"BusinessId\": \"P00117****\"\n            }\n        ],\n        \"RequestId\": \"sdwewx-sdowe-***\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -588,14 +594,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendPhoneEmailCode\n<公共请求参数>\n\n{\n    \"Code\": \"12365437890\",\n    \"Type\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9308288-****-baf0a9ea0a6f\"\n    }\n}",
         "title": "发送手机邮箱验证码"
       }
     ],
     "SetDomainAutoRenew": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetDomainAutoRenew\n<公共请求参数>\n\n{\n    \"AutoRenew\": \"1\",\n    \"DomainId\": \"域名ID\"\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetDomainAutoRenew\n<公共请求参数>\n\n{\n    \"AutoRenew\": 1,\n    \"DomainId\": \"domain-dwerewwq\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
         "title": "设置域名自动续费"
       }
@@ -667,7 +673,7 @@
     "UploadImage": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=UploadImage\n&ImageFile=资质照片\n&<公共请求参数>",
+        "input": "https://domain.tencentcloudapi.com/?Action=UploadImage\n&ImageFile=54Wn54mH55qEYmFzZTY057yW56CB\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AccessUrl\": \"http://cos.url/image.jpg\",\n        \"SignedUrl\": \"http://cos.url/image.jpg?sign=xxxx\",\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
         "title": "证件图片上传"
       }

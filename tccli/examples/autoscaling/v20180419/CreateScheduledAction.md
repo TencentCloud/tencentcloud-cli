@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli as CreateScheduledAction --cli-unfold-argument  \
-    --Recurrence 0 23 */1 * * \
+    --Recurrence 0 23 * * * \
     --DesiredCapacity 3 \
     --AutoScalingGroupId asg-2nr9xh8h \
     --MinSize 2 \

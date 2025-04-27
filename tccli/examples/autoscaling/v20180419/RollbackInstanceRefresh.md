@@ -7,7 +7,7 @@ Input:
 ```
 tccli as RollbackInstanceRefresh --cli-unfold-argument  \
     --AutoScalingGroupId asg-9dn1a5y6 \
-    --RefreshMode ROLLING_UPDATE \
+    --RefreshMode ROLLING_UPDATE_RESET \
     --OriginRefreshActivityId asr-i8u7tytd \
     --RefreshSettings.RollingUpdateSettings.BatchNumber 3 \
     --RefreshSettings.RollingUpdateSettings.BatchPause BATCH_INTERVAL_PAUSE
