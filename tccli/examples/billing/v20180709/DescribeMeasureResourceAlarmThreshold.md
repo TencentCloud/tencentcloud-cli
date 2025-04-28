@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli billing DescribeMeasureResourceAlarmThreshold --cli-unfold-argument  \
-    --ProductCode p_cdn \
+    --ProductCode p_trade_t_s \
     --ThresholdType 4 \
-    --GroupId cdn_flux_aa
+    --GroupId fkkTestGroup
 ```
 
 Output: 
@@ -16,19 +16,19 @@ Output:
 {
     "Response": {
         "Data": {
+            "GroupId": "fkkTestGroup",
+            "ProductCode": "p_trade_t_s",
+            "ResourceId": "",
+            "ThresholdType": 4,
             "ThresholdValueType": 0,
             "Thresholds": [
-                5,
-                20,
-                30
+                50
             ],
-            "ProductCode": "p_cdn",
-            "ResourceId": "",
-            "Uin": "700000860361",
-            "GroupId": "cdn_flux_aa",
-            "ThresholdType": 4
+            "Uin": "100007908562",
+            "UserLevelConfig": true,
+            "Valid": 1
         },
-        "RequestId": "abc"
+        "RequestId": "gabriecheng-test-20250410-1"
     }
 }
 ```

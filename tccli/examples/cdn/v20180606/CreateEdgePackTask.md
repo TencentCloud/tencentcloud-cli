@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdn CreateEdgePackTask --cli-unfold-argument  \
-    --CosBucket ‘edgepack-bucket1’ \
+    --CosBucket edgepack-bucket1 \
     --BlockID 0 \
-    --CosUriTo ‘/out/app_out.apk’ \
-    --CosUriFrom ‘/apk/app.apk’
+    --CosUriTo /out/app_out.apk \
+    --CosUriFrom /apk/app.apk
 ```
 
 Output: 

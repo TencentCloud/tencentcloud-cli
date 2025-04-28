@@ -15,9 +15,9 @@ Output:
     "Response": {
         "Error": {
             "Code": "UnauthorizedOperation.CdnTxtRecordValueNotMatch",
-            "Message": "cdn txt record value not match(txt record value not match)"
+            "Message": "TXT解析记录验证不匹配"
         },
-        "RequestId": "2424"
+        "RequestId": "26cbf416-0155-411f-93df-7256930245a4"
     }
 }
 ```

@@ -1520,6 +1520,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拆分消耗的token数",
+          "example": "1024",
+          "member": "int64",
+          "name": "SplitTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mllm消耗的token数",
+          "example": "1024",
+          "member": "int64",
+          "name": "MllmTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2120,6 +2140,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果",
+          "example": "无",
+          "member": "SearchResult",
+          "name": "SearchResults",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3226,6 +3257,89 @@
         }
       ],
       "usage": "in"
+    },
+    "SearchResult": {
+      "document": "搜索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接地址",
+          "example": "https://www.qq.com/",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "筑牢压舱石、澎湃新动能 一季度经济大省稳增长再提速_腾讯新闻",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "摘要",
+          "example": "经济大省是国家经济发展的顶梁柱。 ",
+          "member": "string",
+          "name": "Snippet",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标",
+          "example": "https://mat1.gtimg.com/qqcdn/qqindex2021/favicon.ico",
+          "member": "string",
+          "name": "Icon",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点",
+          "example": "腾讯网",
+          "member": "string",
+          "name": "Site",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1740412800",
+          "example": "发布时间",
+          "member": "int64",
+          "name": "PublishedTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SearchResultItem": {
       "document": "检索结果",

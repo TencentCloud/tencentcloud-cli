@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli domain ModifyTemplate --cli-unfold-argument  \
-    --TemplateId 字符串 \
-    --CertificateInfo.CertificateCode 字符串 \
-    --CertificateInfo.CertificateType 字符串 \
-    --CertificateInfo.ImgUrl 字符串 \
-    --ContactInfo.OrganizationNameCN 字符串 \
-    --ContactInfo.OrganizationName 字符串 \
-    --ContactInfo.RegistrantNameCN 字符串 \
-    --ContactInfo.RegistrantName 字符串 \
-    --ContactInfo.ProvinceCN 字符串 \
-    --ContactInfo.Province 字符串 \
-    --ContactInfo.CityCN 字符串 \
-    --ContactInfo.City 字符串 \
-    --ContactInfo.StreetCN 字符串 \
-    --ContactInfo.Street 字符串 \
-    --ContactInfo.CountryCN 字符串 \
-    --ContactInfo.Country 字符串 \
-    --ContactInfo.Telephone 字符串 \
-    --ContactInfo.Email 字符串 \
-    --ContactInfo.ZipCode 字符串 \
-    --ContactInfo.RegistrantType 字符串
+    --TemplateId tmpl-3mm9fxug \
+    --CertificateInfo.CertificateCode 4****075 \
+    --CertificateInfo.CertificateType YYZZ \
+    --CertificateInfo.ImgUrl image.jpg \
+    --ContactInfo.OrganizationNameCN 企业名 \
+    --ContactInfo.OrganizationName qiyeming \
+    --ContactInfo.RegistrantNameCN 张三 \
+    --ContactInfo.RegistrantName zhangsan \
+    --ContactInfo.ProvinceCN *市 \
+    --ContactInfo.Province 'shen zhen shi' \
+    --ContactInfo.CityCN *区 \
+    --ContactInfo.City 'nan shan qu' \
+    --ContactInfo.StreetCN *大厦 \
+    --ContactInfo.Street *sha \
+    --ContactInfo.CountryCN 中国 \
+    --ContactInfo.Country CN \
+    --ContactInfo.Telephone 字13****2 \
+    --ContactInfo.Email 121****@qq.com \
+    --ContactInfo.ZipCode 100011 \
+    --ContactInfo.RegistrantType E
 ```
 
 Output: 
@@ -58,11 +58,11 @@ Output:
                 "OrganizationName": "qiyeming",
                 "OrganizationNameCN": "企业名",
                 "Country": "CN",
-                "RegistrantName": "qiyeming",
+                "RegistrantName": "zhangsan",
                 "ZipCode": "100011",
                 "Email": "121****@qq.com",
                 "City": "nan shan qu",
-                "RegistrantNameCN": "企业名",
+                "RegistrantNameCN": "张三",
                 "StreetCN": "*大厦",
                 "Street": "*sha",
                 "ProvinceCN": "*市",

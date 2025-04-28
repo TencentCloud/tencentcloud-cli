@@ -13,23 +13,23 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "RequestId": "5c3410ca-abcd-467f-8014-0bfb6538ad73",
         "SnapshotByTimeOffsetTemplateSet": [
             {
-                "Definition": 1,
-                "Type": "abc",
-                "Name": "abc",
-                "Comment": "abc",
-                "Width": 1,
-                "Height": 1,
-                "ResolutionAdaptive": "abc",
-                "Format": "abc",
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "FillType": "abc"
+                "Comment": "时间点截图模板test1",
+                "CreateTime": "2017-10-26T10:36:51Z",
+                "Definition": 10,
+                "FillType": "stretch",
+                "Format": "jpg",
+                "Height": 0,
+                "Name": "10时间点截图模版",
+                "ResolutionAdaptive": "open",
+                "Type": "Preset",
+                "UpdateTime": "2019-07-25T22:22:55Z",
+                "Width": 0
             }
         ],
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```

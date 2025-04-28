@@ -4075,25 +4075,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "移动设备类型，\n0: 手机\n1: 平板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "移动设备类型，\n0: 手机\n1: 平板",
           "example": "0",
           "member": "uint64",
           "name": "MobileDeviceType",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "屏幕方向，\n0: 竖屏，\n1: 横屏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "屏幕方向，\n0: 竖屏，\n1: 横屏",
           "example": "0",
           "member": "uint64",
           "name": "ScreenOrientation",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -49,6 +49,7 @@ Output:
                 "TencentAddress": "192.168.1.2/24",
                 "CustomerAddress": "192.168.1.1/24",
                 "ChargeType": "NON_RECURRING_CHARGE",
+                "IsThreeArch": false,
                 "TagSet": []
             }
         ],
@@ -109,6 +110,7 @@ Output:
                 "TencentAddress": "192.168.1.2/24",
                 "CustomerAddress": "192.168.1.1/24",
                 "ChargeType": "NON_RECURRING_CHARGE",
+                "IsThreeArch": false,
                 "TagSet": []
             }
         ],

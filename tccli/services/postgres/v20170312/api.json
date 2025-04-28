@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CloseServerlessDBExtranetAccess": {
-      "document": "【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址",
       "input": "CloseServerlessDBExtranetAccessRequest",
       "name": "【废弃】关闭serverlessDB实例公网地址",
       "output": "CloseServerlessDBExtranetAccessResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAccount": {
       "document": "此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。",
@@ -106,11 +106,11 @@
       "status": "online"
     },
     "CreateServerlessDBInstance": {
-      "document": "【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
       "input": "CreateServerlessDBInstanceRequest",
       "name": "【废弃】创建ServerlessDB实例",
       "output": "CreateServerlessDBInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAccount": {
       "document": "此接口用于删除数据库账号，需要同时输入Oid与UserName，避免误删。",
@@ -169,11 +169,11 @@
       "status": "online"
     },
     "DeleteServerlessDBInstance": {
-      "document": "【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
       "input": "DeleteServerlessDBInstanceRequest",
       "name": "【废弃】删除ServerlessDB实例",
       "output": "DeleteServerlessDBInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAccountPrivileges": {
       "document": "查询数据库账号对某数据库对象拥有的权限列表。",
@@ -428,11 +428,11 @@
       "status": "online"
     },
     "DescribeServerlessDBInstances": {
-      "document": "【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息",
       "input": "DescribeServerlessDBInstancesRequest",
       "name": "【废弃】查询ServerlessDB实例列表",
       "output": "DescribeServerlessDBInstancesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSlowQueryAnalysis": {
       "document": "此接口（DescribeSlowQueryAnalysis）用于统计指定时间范围内的所有慢查询，根据SQL语句抽象参数后，进行聚合分析，并返回同类SQL列表。",
@@ -673,11 +673,11 @@
       "status": "online"
     },
     "OpenServerlessDBExtranetAccess": {
-      "document": "【接口下线中，请勿使用】本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。",
       "input": "OpenServerlessDBExtranetAccessRequest",
       "name": "【废弃】开通serverlessDB实例公网地址",
       "output": "OpenServerlessDBExtranetAccessResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RebalanceReadOnlyGroup": {
       "document": "本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。",

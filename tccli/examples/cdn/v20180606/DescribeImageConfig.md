@@ -14,16 +14,16 @@ Output:
 {
     "Response": {
         "WebpAdapter": {
-            "Switch": "on/off"
+            "Switch": "on"
         },
         "TpgAdapter": {
-            "Switch": "on/off"
+            "Switch": "on"
         },
         "GuetzliAdapter": {
-            "Switch": "on/off"
+            "Switch": "on"
         },
         "AvifAdapter": {
-            "Switch": "on/off"
+            "Switch": "on"
         },
         "RequestId": "29699aac-9898-4baf-b645-7cc31d972674"
     }

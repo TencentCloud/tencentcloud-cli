@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DescribeTranscodeTemplates --cli-unfold-argument  \
-    --Definitions 10
+    --Definitions 100010
 ```
 
 Output: 
@@ -16,111 +16,52 @@ Output:
         "TotalCount": 1,
         "TranscodeTemplateSet": [
             {
-                "Definition": "abc",
-                "Container": "abc",
-                "Name": "abc",
-                "Comment": "abc",
-                "Type": "abc",
+                "Definition": "100010",
+                "Container": "mp4",
+                "Name": "MP4-FLU",
+                "Comment": "",
+                "Type": "Preset",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,
                 "VideoTemplate": {
-                    "Codec": "abc",
-                    "Fps": 0,
-                    "Bitrate": 0,
-                    "ResolutionAdaptive": "abc",
-                    "Width": 1,
-                    "Height": 1,
-                    "Gop": 1,
-                    "FillType": "abc",
-                    "Vcrf": 1,
-                    "HlsTime": 1,
-                    "SegmentType": 0
+                    "Codec": "libx264",
+                    "Fps": 25,
+                    "Bitrate": 400,
+                    "ResolutionAdaptive": "open",
+                    "Width": 0,
+                    "Height": 360,
+                    "FillType": "stretch",
+                    "Gop": 0,
+                    "VideoProfile": "",
+                    "VideoLevel": "",
+                    "SegmentType": 0,
+                    "FpsDenominator": 1,
+                    "Stereo3dType": "",
+                    "HlsTime": 0,
+                    "Mode": "ABR",
+                    "Sar": "",
+                    "NoScenecut": 0,
+                    "BitDepth": 8,
+                    "RawPts": 0,
+                    "ScenarioBased": 0,
+                    "SceneType": "",
+                    "CompressType": ""
                 },
                 "AudioTemplate": {
-                    "Codec": "abc",
-                    "Bitrate": 0,
-                    "SampleRate": 1,
-                    "AudioChannel": 0
+                    "Codec": "libfdk_aac",
+                    "Bitrate": 64,
+                    "SampleRate": 44100,
+                    "AudioChannel": 2
                 },
-                "TEHDConfig": {
-                    "Type": "abc",
-                    "MaxVideoBitrate": 0
-                },
-                "ContainerType": "abc",
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "EnhanceConfig": {
-                    "VideoEnhance": {
-                        "FrameRate": {
-                            "Switch": "abc",
-                            "Fps": 1
-                        },
-                        "SuperResolution": {
-                            "Switch": "abc",
-                            "Type": "abc",
-                            "Size": 0
-                        },
-                        "Hdr": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        },
-                        "Denoise": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        },
-                        "ImageQualityEnhance": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        },
-                        "ColorEnhance": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        },
-                        "SharpEnhance": {
-                            "Switch": "abc",
-                            "Intensity": 0
-                        },
-                        "FaceEnhance": {
-                            "Switch": "abc",
-                            "Intensity": 0
-                        },
-                        "LowLightEnhance": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        },
-                        "ScratchRepair": {
-                            "Switch": "abc",
-                            "Intensity": 0
-                        },
-                        "ArtifactRepair": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        }
-                    },
-                    "AudioEnhance": {
-                        "Denoise": {
-                            "Switch": "abc"
-                        },
-                        "Separate": {
-                            "Switch": "abc",
-                            "Type": "abc",
-                            "Track": "abc"
-                        },
-                        "VolumeBalance": {
-                            "Switch": "abc",
-                            "Type": "abc"
-                        },
-                        "Beautify": {
-                            "Switch": "abc",
-                            "Types": [
-                                "abc"
-                            ]
-                        }
-                    }
-                }
+                "ContainerType": "Video",
+                "CreateTime": "2020-03-04T07:39:36+08:00",
+                "UpdateTime": "2024-09-27T17:33:53+08:00",
+                "TEHDConfig": null,
+                "EnhanceConfig": null,
+                "AliasName": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "817e02a2-abcd-efgh-a2c8-d32169733eaa"
     }
 }
 ```

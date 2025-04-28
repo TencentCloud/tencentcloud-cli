@@ -1,18 +1,18 @@
 {
   "actions": {
     "DescribeSms": {
-      "document": "查询短信列表",
+      "document": "产品下线\n\n查询短信列表",
       "input": "DescribeSmsRequest",
       "name": "查询短信列表",
       "output": "DescribeSmsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SendMultiSms": {
-      "document": "群发短信",
+      "document": "产品下线\n\n群发短信",
       "input": "SendMultiSmsRequest",
       "name": "群发短信接口",
       "output": "SendMultiSmsResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

@@ -92,11 +92,11 @@
       "status": "online"
     },
     "DescribeCcData": {
-      "document": "CC统计数据查询",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nCC统计数据查询",
       "input": "DescribeCcDataRequest",
       "name": "CC统计数据查询",
       "output": "DescribeCcDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCdnData": {
       "document": "DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 命中请求数（单位为 次）\n+ 请求命中率（单位为 %）\n+ 命中流量（单位为 byte）\n+ 流量命中率（单位为 %）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
@@ -134,11 +134,11 @@
       "status": "online"
     },
     "DescribeDDoSData": {
-      "document": "DDoS统计数据查询",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nDDoS统计数据查询",
       "input": "DescribeDDoSDataRequest",
       "name": "DDoS统计数据查询",
       "output": "DescribeDDoSDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDiagnoseReport": {
       "document": "### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
@@ -176,11 +176,11 @@
       "status": "online"
     },
     "DescribeEventLogData": {
-      "document": "DescribeEventLogData 用于查询事件日志统计曲线",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nDescribeEventLogData 用于查询事件日志统计曲线",
       "input": "DescribeEventLogDataRequest",
       "name": "查询事件日志统计曲线",
       "output": "DescribeEventLogDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeHttpsPackages": {
       "document": "DescribeHttpsPackages 用于查询 CDN HTTPS请求包详情。",
@@ -323,18 +323,18 @@
       "status": "online"
     },
     "DescribeUrlViolations": {
-      "document": "DescribeUrlViolations 用于查询被 CDN 系统扫描到的域名违规 URL 列表及当前状态。\n对应内容分发网络控制台【图片鉴黄】页面。",
+      "document": "DescribeUrlViolations 用于查询被 CDN 系统扫描到的域名违规 URL 列表及当前状态。\n对应内容分发网络控制台【内容合规】页面。",
       "input": "DescribeUrlViolationsRequest",
       "name": "违规历史查询",
       "output": "DescribeUrlViolationsResponse",
       "status": "online"
     },
     "DescribeWafData": {
-      "document": "Waf统计数据查询",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nWaf统计数据查询",
       "input": "DescribeWafDataRequest",
       "name": "Waf统计数据查询",
       "output": "DescribeWafDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DisableCaches": {
       "document": "### <font color=red>**该接口已废弃** </font><br>\nDisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。",
@@ -421,18 +421,18 @@
       "status": "deprecated"
     },
     "ListTopBotData": {
-      "document": "获取Bot攻击的Top信息",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取Bot攻击的Top信息",
       "input": "ListTopBotDataRequest",
       "name": "获取Bot攻击的Top信息",
       "output": "ListTopBotDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopCcData": {
-      "document": "获取CC攻击Top数据",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取CC攻击Top数据",
       "input": "ListTopCcDataRequest",
       "name": "获取CC攻击Top数据",
       "output": "ListTopCcDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopClsLogData": {
       "document": "通过CLS日志计算Top信息。支持近7天的日志数据。",
@@ -442,11 +442,11 @@
       "status": "online"
     },
     "ListTopDDoSData": {
-      "document": "获取DDoS攻击Top数据",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取DDoS攻击Top数据",
       "input": "ListTopDDoSDataRequest",
       "name": "获取DDoS攻击Top数据",
       "output": "ListTopDDoSDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopData": {
       "document": "ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 URL 排序，从大至小返回 TOP 1000 URL\n+ 依据总流量、总请求数对客户端省份排序，从大至小返回省份列表\n+ 依据总流量、总请求数对客户端运营商排序，从大至小返回运营商列表\n+ 依据总流量、峰值带宽、总请求数、平均命中率、2XX/3XX/4XX/5XX 状态码对域名排序，从大至小返回域名列表\n+ 依据总回源流量、回源峰值带宽、总回源请求数、平均回源失败率、2XX/3XX/4XX/5XX 回源状态码对域名排序，从大至小返回域名列表\n\n注意：仅支持 90 天内数据查询",
@@ -456,11 +456,11 @@
       "status": "online"
     },
     "ListTopWafData": {
-      "document": "获取Waf攻击Top数据",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取Waf攻击Top数据",
       "input": "ListTopWafDataRequest",
       "name": "获取Waf攻击Top数据",
       "output": "ListTopWafDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ManageClsTopicDomains": {
       "document": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。",
@@ -5577,7 +5577,7 @@
         },
         {
           "disabled": false,
-          "document": "托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。",
+          "document": "托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。",
           "example": "证书ID",
           "member": "string",
           "name": "CertId",
@@ -11751,7 +11751,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的Top条数，最大值为100，默认为10",
+          "document": "要查询的Top条数，建议最大值100，默认为10",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -14128,7 +14128,7 @@
         {
           "disabled": false,
           "document": "URL 列表，需要包含协议头部 http:// 或 https://",
-          "example": "无",
+          "example": "https://qq.com/data",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -14206,7 +14206,7 @@
         {
           "disabled": false,
           "document": "此批提交的任务 ID",
-          "example": "12345",
+          "example": "559846958382362894",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -15068,7 +15068,7 @@
         {
           "disabled": false,
           "document": "使用/排除的url参数数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "example-value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -18434,6 +18434,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

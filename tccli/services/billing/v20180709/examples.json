@@ -471,8 +471,8 @@
     "DescribeMeasureResourceAlarmThreshold": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureResourceAlarmThreshold\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_cdn\",\n    \"ThresholdType\": \"4\",\n    \"GroupId\": \"cdn_flux_aa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ThresholdValueType\": 0,\n            \"Thresholds\": [\n                5,\n                20,\n                30\n            ],\n            \"ProductCode\": \"p_cdn\",\n            \"ResourceId\": \"\",\n            \"Uin\": \"700000860361\",\n            \"GroupId\": \"cdn_flux_aa\",\n            \"ThresholdType\": 4\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureResourceAlarmThreshold\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_trade_t_s\",\n    \"ThresholdType\": 4,\n    \"GroupId\": \"fkkTestGroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"GroupId\": \"fkkTestGroup\",\n            \"ProductCode\": \"p_trade_t_s\",\n            \"ResourceId\": \"\",\n            \"ThresholdType\": 4,\n            \"ThresholdValueType\": 0,\n            \"Thresholds\": [\n                50\n            ],\n            \"Uin\": \"100007908562\",\n            \"UserLevelConfig\": true,\n            \"Valid\": 1\n        },\n        \"RequestId\": \"gabriecheng-test-20250410-1\"\n    }\n}",
         "title": "包分类余量预警"
       }
     ],

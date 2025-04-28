@@ -16572,6 +16572,15 @@
           "name": "GroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要已下线数据，默认为不需要",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedOfflineData",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -19960,6 +19969,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有效，1为有效，0为无效",
+          "example": "1",
+          "member": "uint64",
+          "name": "Valid",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为用户级别配置，true为用户级别，false为产品级别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "UserLevelConfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

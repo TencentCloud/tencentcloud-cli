@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateApplication": [
+      {
+        "document": "对创建成功的HAI实例进行自定义应用制作。",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-3nagq120\",\n    \"ApplicationName\": \"My Application\",\n    \"ApplicationDescription\": \"This is my first pytorch HAI application.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationId\": \"app-az05wwqa\",\n        \"RequestId\": \"83697e89-90d2-4fff-bbb1-1bc3d53c4dfadfdad\"\n    }\n}",
+        "title": "hai实例制作自定义应用"
+      }
+    ],
     "CreateMuskPrompt": [
       {
         "document": "创建prompt任务",
