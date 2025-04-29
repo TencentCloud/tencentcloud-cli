@@ -9,7 +9,8 @@ tccli bi DescribeUserProjectList --cli-unfold-argument  \
     --ProjectId 1982493789748932 \
     --AllPage False \
     --PageNo 1982493789748932 \
-    --PageSize 1982493789748932
+    --PageSize 1982493789748932 \
+    --Keyword zhangsan
 ```
 
 Output: 

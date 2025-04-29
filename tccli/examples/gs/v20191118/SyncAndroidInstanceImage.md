@@ -16,8 +16,8 @@ Output:
     "Response": {
         "SyncAndroidInstanceImages": [
             {
-                "AndroidInstanceImageId": "abc",
-                "AndroidInstanceImageZone": "abc"
+                "AndroidInstanceImageId": "image-49va6apu",
+                "AndroidInstanceImageZone": "ap-guangzhou-3"
             }
         ],
         "RequestId": "requestid"

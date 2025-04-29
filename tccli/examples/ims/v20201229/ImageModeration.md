@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ims ImageModeration --cli-unfold-argument  \
-    --BizType 182600012300002017 \
+    --BizType TencentCloudDefault \
     --DataId a61237dd-c2a0-43e7-a3da-d27022d39ba7 \
     --FileUrl https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg
 ```
@@ -18,7 +18,7 @@ Output:
         "RequestId": "d636333a-0d14-4962-8287-e6e8af0a10f2",
         "FileMD5": "4c7bbbc76bf4b317222e25067e8e9739",
         "DataId": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
-        "BizType": "182600012300002017",
+        "BizType": "TencentCloudDefault",
         "Suggestion": "Review",
         "Label": "Terror",
         "SubLabel": "Knife",

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli gs StopAndroidInstancesApp --cli-unfold-argument  \
-    --AndroidInstanceIds xxx \
-    --PackageName xxx
+    --AndroidInstanceIds cai-251006279-ea99UI657kj \
+    --PackageName com.tencent.module
 ```
 
 Output: 

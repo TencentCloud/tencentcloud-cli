@@ -1986,7 +1986,7 @@
         {
           "disabled": false,
           "document": "搜索的集群name",
-          "example": "-",
+          "example": "test-cdwch",
           "member": "string",
           "name": "SearchInstanceName",
           "required": false,
@@ -2038,7 +2038,7 @@
         {
           "disabled": false,
           "document": "实例数组",
-          "example": "-",
+          "example": "[{\"test\"}]",
           "member": "InstanceInfo",
           "name": "InstancesList",
           "output_required": true,

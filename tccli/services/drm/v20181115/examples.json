@@ -68,7 +68,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: drm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateTDRMKey\n<公共请求参数>\n\n{\n    \"DrmType\": \"NORMALAES\",\n    \"Tracks\": [\n        \"SD\"\n    ],\n    \"ContentId\": \"jackehan1122\",\n    \"ContentType\": \"LiveVideo\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ContentId\": \"streamName\",\n        \"RequestId\": \"ddbdcd59-7a54-4849-bf9f-ad2de811f7d7\",\n        \"TXEncryptionToken\": \"xxxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ContentId\": \"streamName\",\n        \"RequestId\": \"ddbdcd59-7a54-4849-bf9f-ad2de811f7d7\",\n        \"TXEncryptionToken\": \"LCJkcm1fdHlwZXMiOlsiV0lERVZJTkUiXSwiY2FsbGVyI\"\n    }\n}",
         "title": "示例1"
       }
     ],

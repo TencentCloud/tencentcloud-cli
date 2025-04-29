@@ -528,10 +528,20 @@
         },
         {
           "disabled": false,
-          "document": "shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "document": "shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
           "example": "\"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\"",
           "member": "string",
           "name": "Command",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "example": "\"tar -zxvf test-1\"cd test-1.0.X && ./uninstall.sh\"",
+          "member": "string",
+          "name": "UninstallCommand",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1290,10 +1300,19 @@
         },
         {
           "disabled": false,
-          "document": "shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "document": "应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
           "example": "tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh",
           "member": "string",
           "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "example": "cd test-1.0.X && ./uninstall.sh",
+          "member": "string",
+          "name": "UninstallCommand",
           "required": false,
           "type": "string"
         }
@@ -2946,10 +2965,19 @@
         },
         {
           "disabled": false,
-          "document": "shell 命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "document": "应用 shell 安装命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
           "example": "\"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\"",
           "member": "string",
           "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用 shell 卸载命令（支持多条命令执行，通过 && 组合；只在应用 AppMode 为 ADVANCED 高级模式下 才会生效）",
+          "example": "\"cd test-1.0.X && ./uninstall.sh\"",
+          "member": "string",
+          "name": "UninstallCommand",
           "required": false,
           "type": "string"
         }

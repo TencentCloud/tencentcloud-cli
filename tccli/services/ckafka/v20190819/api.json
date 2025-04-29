@@ -5235,13 +5235,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ckafka集群实例Id",
           "example": "ckafka-test",
           "member": "string",
           "name": "CkafkaInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5255,13 +5255,13 @@
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址",
           "example": "10.0.0.30",
           "member": "string",
           "name": "Ip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13741,23 +13741,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "cvm和IP 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cvm和IP 列表",
           "example": "[{\"CkafkaInstanceId\":\"ckafka-test\",\"InstanceId\":\"ins-test\",\"Ip\":\"10.0.0.30\"}]",
           "member": "CvmAndIpInfo",
           "name": "CvmList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例数据量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例数据量",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

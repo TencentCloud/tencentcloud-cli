@@ -9,7 +9,8 @@ tccli gs ModifyAndroidAppVersion --cli-unfold-argument  \
     --AndroidAppId apk-ne70ubtu \
     --AndroidAppVersion ver-a1b2c3 \
     --AndroidAppVersionName a1b2c3 \
-    --Command tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh
+    --Command tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh \
+    --UninstallCommand cd test-1.0.X && ./uninstall.sh
 ```
 
 Output: 
