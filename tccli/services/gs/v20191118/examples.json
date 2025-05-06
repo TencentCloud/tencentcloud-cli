@@ -294,6 +294,14 @@
         "title": "示例"
       }
     ],
+    "RebootAndroidInstanceHosts": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootAndroidInstanceHosts\n<公共请求参数>\n\n{\n    \"HostSerialNumbers\": [\n        \"RK8S50P1402309019\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c99eb1a-a4e3-4d32-af51-aa282175f0b0\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"RK8S50P1402309019\",\n                \"TaskId\": \"798e9440-6b81-4018-a411-0ab057e35882\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "RebootAndroidInstances": [
       {
         "document": "重启安卓实例",

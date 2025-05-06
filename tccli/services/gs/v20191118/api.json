@@ -252,6 +252,13 @@
       "output": "ModifyAndroidInstancesUserIdResponse",
       "status": "online"
     },
+    "RebootAndroidInstanceHosts": {
+      "document": "重启安卓实例宿主机。请注意：\n\n- 当前每 15 分钟只能重启一次\n- 一个宿主机可能有多个云手机实例，重启宿主机会影响运行在上面的所有实例，请确保该宿主机上的所有云手机实例未投入业务使用",
+      "input": "RebootAndroidInstanceHostsRequest",
+      "name": "批量重启安卓实例宿主机",
+      "output": "RebootAndroidInstanceHostsResponse",
+      "status": "online"
+    },
     "RebootAndroidInstances": {
       "document": "重启安卓实例",
       "input": "RebootAndroidInstancesRequest",
@@ -3275,6 +3282,43 @@
     "ModifyAndroidInstancesUserIdResponse": {
       "document": "ModifyAndroidInstancesUserId返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootAndroidInstanceHostsRequest": {
+      "document": "RebootAndroidInstanceHosts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "宿主机序列号集合",
+          "example": "[\"RK5838P1262201165\"]",
+          "member": "string",
+          "name": "HostSerialNumbers",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootAndroidInstanceHostsResponse": {
+      "document": "RebootAndroidInstanceHosts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID 集合，以供任务状态查询，其中 InstanceId 为宿主机序列号",
+          "example": "无",
+          "member": "AndroidInstanceTask",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

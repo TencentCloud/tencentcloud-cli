@@ -17089,9 +17089,10 @@
         {
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "产品",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -17099,9 +17100,10 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cdn",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -17115,20 +17117,20 @@
         {
           "disabled": false,
           "document": "数据统计时间点，采用向前汇总模式\n以 5 分钟粒度为例，13:35:00 时间点代表的统计数据区间为 13:35:00 至 13:39:59",
-          "example": "",
+          "example": "13:35:00",
           "member": "datetime",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据值",
-          "example": "",
+          "example": "100.00",
           "member": "float",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
