@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc RenewAddresses --cli-unfold-argument  \
     --AddressIds eip-12345678 \
-    --AddressChargePrepaid.Period 0 \
+    --AddressChargePrepaid.Period 12 \
     --AddressChargePrepaid.AutoRenewFlag 0
 ```
 

@@ -1541,9 +1541,9 @@
       "status": "online"
     },
     "ModifyWorkflowSchedule": {
-      "document": "更新工作流调度",
+      "document": "更新工作流调度。本接口已废弃，请使用接口RenewWorkflowSchedulerInfoDs。",
       "input": "ModifyWorkflowScheduleRequest",
-      "name": "更新工作流调度",
+      "name": "更新工作流调度（废弃）",
       "output": "ModifyWorkflowScheduleResponse",
       "status": "online"
     },
@@ -1660,9 +1660,9 @@
       "status": "online"
     },
     "SubmitTask": {
-      "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n提交任务",
+      "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n提交任务。本接口已废弃，请使用接口CreateTaskVersionDs。",
       "input": "SubmitTaskRequest",
-      "name": "提交任务",
+      "name": "提交任务（废弃）",
       "output": "SubmitTaskResponse",
       "status": "online"
     },
@@ -1674,9 +1674,9 @@
       "status": "online"
     },
     "SubmitWorkflow": {
-      "document": "提交工作流",
+      "document": "提交工作流。本接口已废弃，请使用接口BatchCreateTaskVersionAsync。",
       "input": "SubmitWorkflowRequest",
-      "name": "提交工作流",
+      "name": "提交工作流（废弃）",
       "output": "SubmitWorkflowResponse",
       "status": "online"
     },
@@ -1702,9 +1702,9 @@
       "status": "online"
     },
     "TriggerEvent": {
-      "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n触发事件",
+      "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n触发事件。本接口已废弃，请使用接口TriggerDsEvent。",
       "input": "TriggerEventRequest",
-      "name": "触发事件生成事件实例",
+      "name": "触发事件生成事件实例（废弃）",
       "output": "TriggerEventResponse",
       "status": "online"
     },
@@ -26432,6 +26432,24 @@
           "example": "append",
           "member": "string",
           "name": "WriteMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型 201（实时）， 202（离线） ",
+          "example": "201",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标端table名称",
+          "example": "table",
+          "member": "string",
+          "name": "SinkTableName",
           "required": false,
           "type": "string"
         }

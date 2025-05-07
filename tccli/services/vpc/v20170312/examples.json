@@ -1302,7 +1302,7 @@
       {
         "document": "查询弹性公网IP配额。",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeAddressQuota\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaId\": \"TOTAL_EIP_QUOTA\",\n                \"QuotaCurrent\": 0,\n                \"QuotaLimit\": 20\n            },\n            {\n                \"QuotaId\": \"DAILY_EIP_APPLY\",\n                \"QuotaCurrent\": 0,\n                \"QuotaLimit\": 40\n            },\n            {\n                \"QuotaId\": \"DAILY_EIP_ASSIGN\",\n                \"QuotaCurrent\": 0,\n                \"QuotaLimit\": 40\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaSet\": [\n            {\n                \"QuotaCurrent\": 0,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"MONTHLY_RECOVER_QUOTA\",\n                \"QuotaLimit\": 3\n            },\n            {\n                \"QuotaCurrent\": 2,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"TOTAL_EIP_QUOTA\",\n                \"QuotaLimit\": 20\n            },\n            {\n                \"QuotaCurrent\": 2,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"DAILY_EIP_APPLY\",\n                \"QuotaLimit\": 40\n            },\n            {\n                \"QuotaCurrent\": 0,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"DAILY_PUBLIC_IP_ASSIGN\",\n                \"QuotaLimit\": 10\n            },\n            {\n                \"QuotaCurrent\": 0,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"LOCALBGP_EIP_QUOTA\",\n                \"QuotaLimit\": 10\n            },\n            {\n                \"QuotaCurrent\": 0,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"SINGLEISP_EIP_QUOTA\",\n                \"QuotaLimit\": 6\n            },\n            {\n                \"QuotaCurrent\": 0,\n                \"QuotaGroup\": \"ap-guangzhou\",\n                \"QuotaId\": \"DAILY_SINGLEISP_APPLY\",\n                \"QuotaLimit\": 12\n            }\n        ],\n        \"RequestId\": \"0907dc22-477f-44c9-afa8-1d31830dedd2\"\n    }\n}",
         "title": "查询弹性公网IP配额"
       }
     ],
@@ -3417,7 +3417,7 @@
     "RenewAddresses": [
       {
         "document": "续费包月带宽弹性公网IP。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAddresses\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-12345678\"\n    ],\n    \"AddressChargePrepaid\": {\n        \"Period\": 0,\n        \"AutoRenewFlag\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAddresses\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-12345678\"\n    ],\n    \"AddressChargePrepaid\": {\n        \"Period\": 12,\n        \"AutoRenewFlag\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"076ca3ee-0fed-4576-b5b8-44fa1f3d4424\"\n    }\n}",
         "title": "续费包月带宽弹性公网IP"
       }

@@ -504,7 +504,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupRoutes\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"SecurityGroupRoutes\": [\n                {\n                    \"InstanceRoute\": {\n                        \"InstanceId\": \"ckafka-testxxxx\",\n                        \"RouteId\": 1234\n                    },\n                    \"SecurityGroupIds\": [],\n                    \"InstanceName\": \"test\",\n                    \"VpcId\": \"vpc-xxx\",\n                    \"Vip\": \"10.0.0.5\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"test-reqId-1134\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"SecurityGroupRoutes\": [\n                {\n                    \"InstanceRoute\": {\n                        \"InstanceId\": \"ckafka-test\",\n                        \"RouteId\": 1234\n                    },\n                    \"SecurityGroupIds\": [],\n                    \"InstanceName\": \"ckafka测试\",\n                    \"VpcId\": \"vpc-test\",\n                    \"Vip\": \"10.0.0.5\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"test-reqId-1134\"\n    }\n}",
         "title": "获取安全组路由信息列表"
       }
     ],

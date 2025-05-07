@@ -2247,17 +2247,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "cuDNN的版本",
-          "example": "7.5.0",
-          "member": "string",
-          "name": "Version",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "cuDNN的名字",
           "example": "libcudnn7_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
@@ -2269,12 +2258,12 @@
         },
         {
           "disabled": false,
-          "document": "cuDNN的Doc名字",
-          "example": "libcudnn7-doc_7.5.0.56-1+cuda10.1_amd64.deb",
+          "document": "cuDNN的版本",
+          "example": "7.5.0",
           "member": "string",
-          "name": "DocName",
+          "name": "Version",
           "output_required": false,
-          "required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2284,6 +2273,17 @@
           "example": "libcudnn7-dev_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "DevName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cuDNN的Doc名字",
+          "example": "libcudnn7-doc_7.5.0.56-1+cuda10.1_amd64.deb",
+          "member": "string",
+          "name": "DocName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -14707,10 +14707,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "GPU驱动或者CUDA的版本",
-          "example": "418.126.02",
+          "document": "GPU驱动或者CUDA的名字",
+          "example": "NVIDIA-Linux-x86_64-418.126.02.run",
           "member": "string",
-          "name": "Version",
+          "name": "Name",
           "output_required": false,
           "required": true,
           "type": "string",
@@ -14718,10 +14718,10 @@
         },
         {
           "disabled": false,
-          "document": "GPU驱动或者CUDA的名字",
-          "example": "NVIDIA-Linux-x86_64-418.126.02.run",
+          "document": "GPU驱动或者CUDA的版本",
+          "example": "418.126.02",
           "member": "string",
-          "name": "Name",
+          "name": "Version",
           "output_required": false,
           "required": true,
           "type": "string",
@@ -16697,28 +16697,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否启用MIG特性",
-          "example": "false",
-          "member": "bool",
-          "name": "MIGEnable",
-          "output_required": true,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "GPU驱动版本信息",
-          "example": "无",
-          "member": "DriverVersion",
-          "name": "Driver",
-          "output_required": true,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "CUDA版本信息",
           "example": "无",
           "member": "DriverVersion",
@@ -16748,6 +16726,28 @@
           "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU驱动版本信息",
+          "example": "无",
+          "member": "DriverVersion",
+          "name": "Driver",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用MIG特性",
+          "example": "false",
+          "member": "bool",
+          "name": "MIGEnable",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

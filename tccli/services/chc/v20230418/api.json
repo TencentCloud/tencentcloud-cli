@@ -1330,7 +1330,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器收货列表",
+          "document": "服务器收货列表。最大值：200",
           "example": "无",
           "member": "ServerReceivingInfo",
           "name": "ServerDeviceList",
@@ -1363,6 +1363,51 @@
           "name": "OtherDeviceList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "收货后自动上架。此参数为true时，后台会自动提设备上架单",
+          "example": "true",
+          "member": "bool",
+          "name": "WithRackOn",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "设备上架信息。当WithRackOn为true此参数必传，且sn需要和收货的列表一致",
+          "example": "无",
+          "member": "DeviceRackOn",
+          "name": "DeviceRackOnList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "上架人员 1.自行解决 2.由腾讯IDC负责",
+          "example": "2",
+          "member": "string",
+          "name": "StuffOption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自行解决信息。当StuffOption为1时，此参数必填",
+          "example": "无",
+          "member": "SelfOperation",
+          "name": "SelfOperationInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "上架后自动开电。此参数为true时，后台会自动提设备开电单",
+          "example": "true",
+          "member": "bool",
+          "name": "WithPowerOn",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

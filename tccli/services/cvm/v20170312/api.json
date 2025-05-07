@@ -2103,7 +2103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。",
+          "document": "密钥对名称，可由数字、字母和下划线组成，长度不超过25个字符。密钥对名称不能和已经存在的密钥对名称重复。",
           "example": "Tencent",
           "member": "string",
           "name": "KeyName",
@@ -2420,7 +2420,7 @@
         {
           "disabled": false,
           "document": "只允许传递 Update 和 Replace 参数，在模板使用自定义 Metadata 且在 RunInstances 也传递 Metadata 时生效。默认采用 Replace。\n\n- Update：设模板 t含本参数值为Update、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k1:v1, k2:v3] \n- Replace：模板 t含本参数值为Replace、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k2:v3] \n**注：内测中**。",
-          "example": "无",
+          "example": "Update",
           "member": "string",
           "name": "TemplateDataModifyAction",
           "required": false,
@@ -2718,7 +2718,7 @@
         {
           "disabled": false,
           "document": "只允许传递 Update 和 Replace 参数，在模板使用自定义 Metadata 且在 RunInstances 也传递 Metadata 时生效。默认采用 Replace。\n\n- Update：设模板 t含本参数值为Update、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k1:v1, k2:v3] \n- Replace：模板 t含本参数值为Replace、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k2:v3] \n**注：内测中**。",
-          "example": "无",
+          "example": "Update",
           "member": "string",
           "name": "TemplateDataModifyAction",
           "required": false,

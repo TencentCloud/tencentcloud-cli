@@ -7,7 +7,7 @@ Input:
 ```
 tccli domain DeleteCustomDnsHost --cli-unfold-argument  \
     --DomainId domain-esydsfsdq \
-    --DnsName ccc
+    --DnsName ns1
 ```
 
 Output: 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli wedata SubmitWorkflow --cli-unfold-argument  \
-    --StartScheduling true \
+    --StartScheduling True \
     --WorkflowId 9e993c1d-0cd9-11ed-8e105ba60 \
-    --VersionRemark aa \
+    --VersionRemark v1 \
     --ProjectId 1
 ```
 

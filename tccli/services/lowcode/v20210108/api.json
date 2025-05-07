@@ -2172,7 +2172,7 @@
         },
         {
           "disabled": false,
-          "document": "\t文件元信息，为jsonstring",
+          "document": "文件元信息，为jsonstring",
           "example": "{\"url\":\"\",\"title\":\"标题\"}",
           "member": "string",
           "name": "FileMetaData",
@@ -2185,6 +2185,15 @@
           "example": "id",
           "member": "string",
           "name": "DocumentSetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用 regex 分割文档",
+          "example": "\\n{2,}",
+          "member": "string",
+          "name": "Delimiter",
           "required": false,
           "type": "string"
         }

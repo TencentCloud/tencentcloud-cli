@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CreateCustomDnsHost": {
-      "document": "创建自定义DNS Host",
+      "document": "创建自定义DNS Host\n域名在“正常状态”下可创建，域名如果“未实名”则无法创建，账户如果未实名则无法创建。\n默认每个域名 自定义DNS Host 数量不超过10个",
       "input": "CreateCustomDnsHostRequest",
       "name": "创建自定义DNS Host",
       "output": "CreateCustomDnsHostResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DeleteCustomDnsHost": {
-      "document": "删除自定义DNS Host",
+      "document": "删除自定义DNS Host\n仅能删除域名在“正常状态”下，已经创建过的自定义Host，域名如果“未实名”或账户未实名，则无法操作",
       "input": "DeleteCustomDnsHostRequest",
       "name": "删除自定义DNS Host",
       "output": "DeleteCustomDnsHostResponse",
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "ModifyCustomDnsHost": {
-      "document": "修改自定义DNS Host",
+      "document": "修改自定义DNS Host\n域名在“正常状态”下可修改已经存在的自定义DNS Host，域名如果“未实名”则无法修改，账户如果未实名则无法修改。 默认每个域名 自定义DNS Host 数量不超过10个",
       "input": "ModifyCustomDnsHostRequest",
       "name": "修改自定义DNS Host",
       "output": "ModifyCustomDnsHostResponse",
@@ -535,7 +535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预约ID\n可通过DescribeBiddingList接口获取",
+          "document": "预约ID\n可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -734,7 +734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID\n可通过DescribeBiddingList接口获取",
+          "document": "业务ID(竞价域名的预约ID) \n可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -896,7 +896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支付结束时间",
+          "document": "支付结束时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "PayEndTime",
@@ -995,7 +995,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作日志 ID数组，最多 200 个\n可通过任意批量操作接口获取，例如：\nBatchModifyDomainInfo\nModifyDomainDNSBatch\nModifyDomainOwnerBatch\nUpdateProhibitionBatch\nTransferProhibitionBatch\nTransferInDomainBatch\nTransferInDomainBatchBuy\nCancelTransferOutInBatch",
+          "document": "操作日志 ID数组，最多 200 个\n可通过任意批量操作接口获取，例如：\n[BatchModifyDomainInfo](https://cloud.tencent.com/document/product/242/49197)\n[ModifyDomainDNSBatch](https://cloud.tencent.com/document/product/242/49211)\n[ModifyDomainOwnerBatch](https://cloud.tencent.com/document/product/242/49196)\n[UpdateProhibitionBatch](https://cloud.tencent.com/document/api/242/49193)\n[TransferProhibitionBatch](https://cloud.tencent.com/document/api/242/49194)\n[TransferInDomainBatch](https://cloud.tencent.com/document/api/242/49195)",
           "example": "[1]",
           "member": "uint64",
           "name": "LogIds",
@@ -1367,7 +1367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainLIst接口获取",
+          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
           "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
@@ -1693,7 +1693,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预约ID\n可通过DescribeBiddingList接口获取",
+          "document": "预约ID\n可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -1720,7 +1720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainList接口获取",
+          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
           "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
@@ -1856,7 +1856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID，通过接口DescribeBiddingList返回结果中获取",
+          "document": "业务ID \n通过接口[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)返回结果中获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -2042,7 +2042,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预约ID\n可通过DescribeBiddingList接口获取",
+          "document": "预约ID\n可通过[DescribeBiddingAppointList](https://cloud.tencent.com/document/api/242/106600)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -2077,7 +2077,7 @@
         },
         {
           "disabled": false,
-          "document": "预约开始时间",
+          "document": "预约开始时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "AppointStartTime",
@@ -2087,7 +2087,7 @@
         },
         {
           "disabled": false,
-          "document": "预约结束时间",
+          "document": "预约结束时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-01-10 12:34:25",
           "member": "string",
           "name": "AppointEndTime",
@@ -2097,7 +2097,7 @@
         },
         {
           "disabled": false,
-          "document": " 注册时间",
+          "document": " 注册时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2016-01-02 13:23:35",
           "member": "string",
           "name": "RegTime",
@@ -2107,7 +2107,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-01-02 13:23:35",
           "member": "string",
           "name": "ExpireTime",
@@ -2117,7 +2117,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时间",
+          "document": "删除时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-03-02 13:23:35",
           "member": "string",
           "name": "DeleteTime",
@@ -2179,8 +2179,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
-          "example": "0",
+          "document": "页码\n默认值1",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -2188,8 +2188,8 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
-          "example": "1",
+          "document": "每页数量\n默认：20 取值范围【1，200】",
+          "example": "20",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -2215,7 +2215,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段：AppointEndTime 预约结束时间",
+          "document": "排序字段：\n默认<空>，不排序\n可选值：\nAppointEndTime 预约结束时间\nBiddingPrice 竞价保证金\nBiddingEndTime 竞价结束时间",
           "example": "AppointEndTime",
           "member": "string",
           "name": "SortField",
@@ -2250,7 +2250,7 @@
         {
           "disabled": false,
           "document": "预约列表",
-          "example": "[\"BiddingAppointResult\"]",
+          "example": "无",
           "member": "BiddingAppointResult",
           "name": "AppointList",
           "output_required": true,
@@ -2271,7 +2271,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预约ID\n可通过DescribeBiddingList接口获取",
+          "document": "预约ID\n可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -2306,7 +2306,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价开始时间",
+          "document": "竞价开始时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-02-02 15:04:05",
           "member": "string",
           "name": "BiddingStartTime",
@@ -2316,7 +2316,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价结束时间",
+          "document": "竞价结束时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-02-12 13:24:05",
           "member": "string",
           "name": "BiddingEndTime",
@@ -2326,7 +2326,7 @@
         },
         {
           "disabled": false,
-          "document": " 注册时间",
+          "document": " 注册时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2016-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
@@ -2336,7 +2336,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
@@ -2346,7 +2346,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时间",
+          "document": "删除时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-03-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
@@ -2509,7 +2509,7 @@
         {
           "disabled": false,
           "document": "竞价列表",
-          "example": "[\"BiddingResult\"]",
+          "example": "无",
           "member": "BiddingResult",
           "name": "BiddingList",
           "output_required": true,
@@ -2530,7 +2530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预约ID\n可通过DescribeBiddingSuccessfulList接口获取",
+          "document": "预约ID \n可通过[DescribeBiddingSuccessfulList](https://cloud.tencent.com/document/api/242/106596)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -2555,7 +2555,7 @@
         },
         {
           "disabled": false,
-          "document": "得标时间",
+          "document": "得标时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "SuccessfulTime",
@@ -2575,7 +2575,7 @@
         },
         {
           "disabled": false,
-          "document": " 注册时间",
+          "document": " 注册时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2016-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
@@ -2585,7 +2585,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "过期时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2026-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
@@ -2595,7 +2595,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时间",
+          "document": "删除时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2026-03-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
@@ -2605,7 +2605,7 @@
         },
         {
           "disabled": false,
-          "document": "付款结束时间",
+          "document": "付款结束时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "PayEndTime",
@@ -2657,7 +2657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页码",
+          "document": "页码\n默认：1",
           "example": "1",
           "member": "uint64",
           "name": "PageNumber",
@@ -2666,7 +2666,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "每页数量\n默认：20 取值范围【1，200】",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -2693,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段：SuccessfulTime 预约结束时间",
+          "document": "排序字段：\n默认<空>，不排序\nSuccessfulTime 预约结束时间",
           "example": "SuccessfulTime",
           "member": "string",
           "name": "SortField",
@@ -2718,7 +2718,7 @@
         {
           "disabled": false,
           "document": "搜索结果条数",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -2728,7 +2728,7 @@
         {
           "disabled": false,
           "document": "得标列表",
-          "example": "[\"BiddingSuccessfulResult\"]",
+          "example": "无",
           "member": "BiddingSuccessfulResult",
           "name": "SuccessfulList",
           "output_required": true,
@@ -2749,8 +2749,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainList接口获取",
-          "example": "domain-dwwwwwwq",
+          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "example": "domain-esysdasdgq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -2814,7 +2814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "域名\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -2896,7 +2896,7 @@
         {
           "disabled": false,
           "document": "域名总数量",
-          "example": "2",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -3019,7 +3019,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务ID\n可通过DescribeBiddingList接口获取",
+          "document": "业务ID(竞价域名的预约ID) \n可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
@@ -3054,7 +3054,7 @@
         },
         {
           "disabled": false,
-          "document": "支付结束时间",
+          "document": "支付结束时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "EndTime",
@@ -3064,7 +3064,7 @@
         },
         {
           "disabled": false,
-          "document": "域名注册时间",
+          "document": "域名注册时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
@@ -3918,7 +3918,7 @@
         },
         {
           "disabled": false,
-          "document": "域名注册时间",
+          "document": "域名注册时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
@@ -3928,7 +3928,7 @@
         },
         {
           "disabled": false,
-          "document": "域名删除时间",
+          "document": "域名删除时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DeleteTime",
@@ -3938,7 +3938,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间",
+          "document": "到期时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
@@ -4050,7 +4050,7 @@
         },
         {
           "disabled": false,
-          "document": "域名实名认证不通过原因。",
+          "document": "域名实名认证不通过原因。<具体内容以实名审核机构返回为准>",
           "example": "证件照片不清晰",
           "member": "string",
           "name": "RealNameAuditUnpassReason",
@@ -4070,7 +4070,7 @@
         },
         {
           "disabled": false,
-          "document": "域名命名审核不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名命名审核不通过原因。<具体内容以实名审核机构返回为准>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "域名包含非法字符",
           "member": "string",
           "name": "DomainNameAuditUnpassReason",
@@ -4080,7 +4080,7 @@
         },
         {
           "disabled": false,
-          "document": "注册时间。",
+          "document": "注册时间。\n格式:YYYY-MM-DD",
           "example": "2020-01-01",
           "member": "string",
           "name": "CreationDate",
@@ -4090,7 +4090,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间",
+          "document": "到期时间\n格式:YYYY-MM-DD",
           "example": "2020-01-01",
           "member": "string",
           "name": "ExpirationDate",
@@ -4150,7 +4150,7 @@
         },
         {
           "disabled": false,
-          "document": "锁定结束时间",
+          "document": "锁定结束时间\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2021-08-31 18:17:32",
           "member": "string",
           "name": "LockEndTime",
@@ -4388,7 +4388,7 @@
         },
         {
           "disabled": false,
-          "document": "注册时间。",
+          "document": "注册时间。\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2022-10-01 12:00:00",
           "member": "string",
           "name": "CreationDate",
@@ -4398,7 +4398,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。",
+          "document": "到期时间。\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2025-10-01 12:00:00",
           "member": "string",
           "name": "ExpirationDate",
@@ -4408,7 +4408,7 @@
         },
         {
           "disabled": false,
-          "document": "域名后缀",
+          "document": "域名后缀，根据具体域名确定\n例如:\n123.com 后缀则为.com\n123.com.cn 后缀则为.com.cn\n123.中国 后缀则为.中国\n",
           "example": ".com",
           "member": "string",
           "name": "Tld",
@@ -4418,7 +4418,7 @@
         },
         {
           "disabled": false,
-          "document": "编码后的后缀（中文会进行编码）",
+          "document": "编码后的后缀（中文会进行Punycode编码）根据具体域名确定\n例如:\n123.com 后缀则为.com\n123.com.cn 后缀则为.com.cn\n123.中国 后缀则为.xn--fiqs8s",
           "example": ".com",
           "member": "string",
           "name": "CodeTld",
@@ -4668,8 +4668,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID",
-          "example": "domain-dwwwwwwq",
+          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "example": "domain-esyfsdfgq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -4677,7 +4677,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS名称",
+          "document": "Dns名称 例如：<>.test.com;其中<>就是Dns名称，可以是任意域名允许的格式",
           "example": "ns1",
           "member": "string",
           "name": "DnsName",
@@ -4686,7 +4686,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址列表",
+          "document": "IP地址列表 可选择：正常IP地址范围",
           "example": "1.2.4.8,2.2.2.2",
           "member": "string",
           "name": "IpSet",
@@ -4723,7 +4723,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量操作的域名。",
+          "document": "批量操作的域名。\n一次提交不超过4000个",
           "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
@@ -4732,7 +4732,7 @@
         },
         {
           "disabled": false,
-          "document": "域名DNS 数组。",
+          "document": "域名DNS 数组。\n不少于2个，一般建议2-6个",
           "example": "[\"f1g1ns2.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
           "member": "string",
           "name": "Dns",
@@ -4999,7 +4999,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价倒计时",
+          "document": "竞价倒计时\n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingTime",
@@ -5009,7 +5009,7 @@
         },
         {
           "disabled": false,
-          "document": "出价次数 单位元",
+          "document": "出价次数",
           "example": "20",
           "member": "int64",
           "name": "BidCount",
@@ -5570,7 +5570,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID 可通过DescribeTemplates接口获取",
+          "document": "模板ID \n可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取",
           "example": "tmpl-qdpjnfe8",
           "member": "string",
           "name": "TemplateId",
@@ -5681,7 +5681,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID 例如：domain-dwerewwq可通过DescribreDomainList接口获取",
+          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
           "example": "domain-dwerewwq",
           "member": "string",
           "name": "DomainId",
@@ -5743,8 +5743,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID，可以通过DescribeDomainList接口获取",
-          "example": "domain-dwwwwwwq\t",
+          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "example": "domain-eszczxcigq",
           "member": "string",
           "name": "DomainId",
           "required": true,

@@ -18,12 +18,12 @@ Output:
             "SecurityGroupRoutes": [
                 {
                     "InstanceRoute": {
-                        "InstanceId": "ckafka-testxxxx",
+                        "InstanceId": "ckafka-test",
                         "RouteId": 1234
                     },
                     "SecurityGroupIds": [],
-                    "InstanceName": "test",
-                    "VpcId": "vpc-xxx",
+                    "InstanceName": "ckafka测试",
+                    "VpcId": "vpc-test",
                     "Vip": "10.0.0.5"
                 }
             ],

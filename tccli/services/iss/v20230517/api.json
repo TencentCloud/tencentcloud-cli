@@ -8299,23 +8299,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务列表",
           "example": "无",
           "member": "VideoDownloadTask",
           "name": "List",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11372,173 +11372,173 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载任务 ID",
           "example": "uuid",
           "member": "string",
           "name": "DownloadTaskId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通道 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道 ID",
           "example": "uuid",
           "member": "string",
           "name": "ChannelId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道名称",
           "example": "通道1",
           "member": "string",
           "name": "ChannelName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "通道编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通道编码",
           "example": "通道编码1",
           "member": "string",
           "name": "ChannelCode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备名称",
           "example": "设备名称1",
           "member": "string",
           "name": "DeviceName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备编码",
           "example": "设备编码1",
           "member": "string",
           "name": "DeviceCode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态（0：未执行；1：执行中；2 任务完成；\n3：任务失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态（0：未执行；1：执行中；2 任务完成；\n3：任务失败）",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下载录像时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载录像时间段",
           "example": "2024-09-08 14:30:00-2024-09-08 15:30:00",
           "member": "string",
           "name": "VideoTimeSection",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "倍速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "倍速",
           "example": "1",
           "member": "int64",
           "name": "Scale",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下载时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载时长",
           "example": "7200",
           "member": "int64",
           "name": "DownloadTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录像大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录像大小",
           "example": "182918912",
           "member": "int64",
           "name": "VideoSize",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务开始时间",
           "example": "2024-09-08 14:30:00",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务结束时间",
           "example": "2024-09-08 15:30:00",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件下载地址",
           "example": "https://domain/vds/******.mp4",
           "member": "string",
           "name": "FileDownloadUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "下载失败",
           "member": "string",
           "name": "FailedReason",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "生命周期规则，热存天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生命周期规则，热存天数",
           "example": "7",
           "member": "int64",
           "name": "Expire",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mp4预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mp4预览地址",
           "example": "https://{userdomain}/ddd",
           "member": "string",
           "name": "PreviewUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11548,13 +11548,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载任务ID",
           "example": "uuid",
           "member": "string",
           "name": "DownloadTaskId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

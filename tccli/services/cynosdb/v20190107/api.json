@@ -4293,6 +4293,15 @@
         },
         {
           "disabled": false,
+          "document": "实例数量，数量范围为(0,16]，默认值为2（即一个rw实例+一个ro实例），传递的n表示1个rw实例+n-1个ro实例（规格相同），如需要更精确的集群组成搭配，请使用InstanceInitInfos",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "该参数无实际意义，已废弃。\n存储大小，单位GB。",
           "example": "100",
           "member": "int64",
@@ -4396,15 +4405,6 @@
           "example": "100",
           "member": "int64",
           "name": "StorageLimit",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "实例数量，数量范围为(0,16]",
-          "example": "1",
-          "member": "int64",
-          "name": "InstanceCount",
           "required": false,
           "type": "int"
         },

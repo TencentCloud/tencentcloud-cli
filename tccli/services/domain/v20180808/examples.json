@@ -105,7 +105,7 @@
     "DeleteCustomDnsHost": [
       {
         "document": "创建删除自定义DNS Host任务",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esydsfsdq\",\n    \"DnsName\": \"ccc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esydsfsdq\",\n    \"DnsName\": \"ns1\"\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 6543,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
         "title": "创建删除自定义DNS Host任务"
       }
@@ -217,8 +217,8 @@
     "DescribeDomainBaseInfo": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainBaseInfo\n&Domain=域名\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"DomainId\": \"domain-xxxxx\",\n            \"DomainName\": \"tencent.com\",\n            \"NameServer\": [\n                \"f1g1ns1.dnspod.net\",\n                \"f1g1ns2.dnspod.net\"\n            ],\n            \"RegistrarType\": \"epp\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"ExpirationDate\": \"2020-11-14\",\n            \"CreationDate\": \"2019-11-14\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": true,\n            \"LockEndTime\": \"2021-12-28 18:00:00\"\n        },\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\",\n        \"Uin\": \"100**328\"\n    }\n}",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainBaseInfo\n&Domain=test.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"DomainId\": \"domain-xxxxx\",\n            \"DomainName\": \"test.com\",\n            \"NameServer\": [\n                \"f1g1ns1.dnspod.net\",\n                \"f1g1ns2.dnspod.net\"\n            ],\n            \"RegistrarType\": \"epp\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"ExpirationDate\": \"2020-11-14\",\n            \"CreationDate\": \"2019-11-14\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": true,\n            \"LockEndTime\": \"2021-12-28 18:00:00\"\n        },\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\",\n        \"Uin\": \"100**328\"\n    }\n}",
         "title": "获取域名基础信息"
       }
     ],
@@ -343,7 +343,7 @@
     "ModifyCustomDnsHost": [
       {
         "document": "创建修改自定义DNS Host任务",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esyfsdfgq\",\n    \"DnsName\": \"ccc\",\n    \"IpSet\": [\n        \"2.2.2.2\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esyfsdfgq\",\n    \"DnsName\": \"ns1\",\n    \"IpSet\": [\n        \"2.2.2.2\",\n        \"1.2.4.8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 510702,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
         "title": "创建修改自定义DNS Host任务"
       }
