@@ -1873,7 +1873,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的账号",
+          "document": "最近登录账户的账号(账号系统用户账号)",
           "example": "LuckyLI",
           "member": "string",
           "name": "IOAUserName",
@@ -1972,7 +1972,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录账户的姓名",
+          "document": "最近登录账户的姓名(账号系统用户姓名)",
           "example": "LuckyLI",
           "member": "string",
           "name": "AccountName",
@@ -1990,6 +1990,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端备注名",
+          "example": "张三的终端",
+          "member": "string",
+          "name": "RemarkName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

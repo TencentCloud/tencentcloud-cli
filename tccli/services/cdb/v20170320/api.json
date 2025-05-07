@@ -43,9 +43,9 @@
       "status": "online"
     },
     "CheckMigrateCluster": {
-      "document": "本接口（CheckMigrateCluster）用于高可用实例一键迁移到集群版校验。",
+      "document": "本接口（CheckMigrateCluster）用于高可用实例一键迁移到云盘版校验。",
       "input": "CheckMigrateClusterRequest",
-      "name": "迁移集群版校验",
+      "name": "迁移云盘版校验",
       "output": "CheckMigrateClusterResponse",
       "status": "online"
     },
@@ -449,9 +449,9 @@
       "status": "online"
     },
     "DescribeClusterInfo": {
-      "document": "本接口（DescribeClusterInfo）用于查询集群版实例信息。",
+      "document": "本接口（DescribeClusterInfo）用于查询云盘版实例信息。",
       "input": "DescribeClusterInfoRequest",
-      "name": "查询集群版实例信息",
+      "name": "查询云盘版实例信息",
       "output": "DescribeClusterInfoResponse",
       "status": "online"
     },
@@ -4004,7 +4004,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版节点拓扑配置。",
+          "document": "云盘版节点拓扑配置。",
           "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
@@ -4013,7 +4013,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移实例类型。支持值包括： \"CLOUD_NATIVE_CLUSTER\" - 标准型集群版实例， \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 加强型集群版实例。",
+          "document": "迁移实例类型。支持值包括： \"CLOUD_NATIVE_CLUSTER\" - 标准型云盘版实例， \"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 加强型云盘版实例。",
           "example": "CLOUD_NATIVE_CLUSTER",
           "member": "string",
           "name": "DeviceType",
@@ -9466,7 +9466,7 @@
         },
         {
           "disabled": false,
-          "document": "集群读写地址信息。",
+          "document": "云盘版实例的读写地址信息。",
           "example": "10.1.*.1:3306",
           "member": "AddressInfo",
           "name": "ReadWriteAddress",
@@ -9476,7 +9476,7 @@
         },
         {
           "disabled": false,
-          "document": "集群只读地址信息。",
+          "document": "云盘版实例的只读地址信息。",
           "example": "10.1.*.2:3306",
           "member": "AddressInfo",
           "name": "ReadOnlyAddress",
@@ -9486,7 +9486,7 @@
         },
         {
           "disabled": false,
-          "document": "集群节点列表信息。",
+          "document": "云盘版实例的节点列表信息。",
           "example": "[{\"NodeId\": \"dbn-qqeo1111\",\"Role\": \"master\",\"Zone\": \"ap-guangzhou-1\",\"Weight\": 1,\"Status\": \"online\"},{\"NodeId\": \"dbn-qqeo2222\",\"Role\": \"slave\",\"Zone\": \"ap-guangzhou-2\",\"Weight\": 1,\"Status\": \"online\"}]",
           "member": "ClusterNodeInfo",
           "name": "NodeList",

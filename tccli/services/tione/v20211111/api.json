@@ -266,6 +266,13 @@
       "output": "ModifyModelServiceResponse",
       "status": "online"
     },
+    "ModifyNotebookTags": {
+      "document": "修改Notebook标签",
+      "input": "ModifyNotebookTagsRequest",
+      "name": "修改Notebook标签",
+      "output": "ModifyNotebookTagsResponse",
+      "status": "online"
+    },
     "PushTrainingMetrics": {
       "document": "上报训练自定义指标",
       "input": "PushTrainingMetricsRequest",
@@ -813,6 +820,7 @@
           "example": "encent-cloud-product-release-66666",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -823,6 +831,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -833,6 +842,7 @@
           "example": "[\"path/\"]",
           "member": "string",
           "name": "Paths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -7281,6 +7291,42 @@
       ],
       "type": "object"
     },
+    "ModifyNotebookTagsRequest": {
+      "document": "ModifyNotebookTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Notebook Id",
+          "example": "nb-12345",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Notebook修改标签集合",
+          "example": "[]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotebookTagsResponse": {
+      "document": "ModifyNotebookTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MultiModalContent": {
       "document": "多模态对话内容,支持图片与文字信息",
       "members": [
@@ -8940,6 +8986,7 @@
           "example": "f_1",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8950,12 +8997,13 @@
           "example": "string",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Service": {
       "document": "描述在线服务",

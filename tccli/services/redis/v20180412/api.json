@@ -6816,12 +6816,42 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分",
+          "document": "价格",
           "example": "30400",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度价格",
+          "example": "30400.123",
+          "member": "float",
+          "name": "HighPrecisionPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6862,12 +6892,42 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分。",
-          "example": "100800",
+          "document": "价格",
+          "example": "30400",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度价格",
+          "example": "30400.123",
+          "member": "float",
+          "name": "HighPrecisionPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6926,12 +6986,42 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分",
+          "document": "价格",
           "example": "30400",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高精度价格",
+          "example": "30400.123",
+          "member": "float",
+          "name": "HighPrecisionPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "币种",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价格金额单位\n\n- pent: 分\n- microPent: 微分",
+          "example": "pent",
+          "member": "string",
+          "name": "AmountUnit",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

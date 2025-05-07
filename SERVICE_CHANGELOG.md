@@ -1,55 +1,10 @@
-# Release 3.0.1304.1
+# Release 3.0.1306.1
 
-## 云拨测(cat) 版本：2018-04-09
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 21 次发布
+### 第 80 次发布
 
-发布时间：2025-04-25 01:11:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeNodeGroups](https://cloud.tencent.com/document/api/280/118225)
-
-	* 新增出参：NodeList, DistrictList, NetServiceList
-
-
-新增数据结构：
-
-* [DistinctOrNetServiceInfo](https://cloud.tencent.com/document/api/280/40931#DistinctOrNetServiceInfo)
-* [NodeInfoBase](https://cloud.tencent.com/document/api/280/40931#NodeInfoBase)
-* [NodeLeaf](https://cloud.tencent.com/document/api/280/40931#NodeLeaf)
-* [NodeTree](https://cloud.tencent.com/document/api/280/40931#NodeTree)
-
-
-
-## 云联络中心(ccc) 版本：2020-02-10
-
-### 第 95 次发布
-
-发布时间：2025-04-25 01:12:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [StaffInfo](https://cloud.tencent.com/document/api/679/47715#StaffInfo)
-
-	* 新增成员：RoleList
-
-
-
-
-## 云游戏(gs) 版本：2019-11-18
-
-### 第 30 次发布
-
-发布时间：2025-04-25 01:34:34
+发布时间：2025-05-07 01:17:01
 
 本次发布包含了以下内容：
 
@@ -57,110 +12,57 @@
 
 新增接口：
 
-* [FetchAndroidInstancesLogs](https://cloud.tencent.com/document/api/1162/118262)
-* [ModifyAndroidInstancesInformation](https://cloud.tencent.com/document/api/1162/118263)
+* [SearchLog](https://cloud.tencent.com/document/api/1132/118363)
 
 新增数据结构：
 
-* [AndroidInstanceInformation](https://cloud.tencent.com/document/api/1162/40743#AndroidInstanceInformation)
+* [Column](https://cloud.tencent.com/document/api/1132/49071#Column)
+* [LogInfo](https://cloud.tencent.com/document/api/1132/49071#LogInfo)
+* [LogItem](https://cloud.tencent.com/document/api/1132/49071#LogItem)
+* [LogItems](https://cloud.tencent.com/document/api/1132/49071#LogItems)
+* [MultiTopicSearchInformation](https://cloud.tencent.com/document/api/1132/49071#MultiTopicSearchInformation)
+* [SearchLogErrors](https://cloud.tencent.com/document/api/1132/49071#SearchLogErrors)
+* [SearchLogInfos](https://cloud.tencent.com/document/api/1132/49071#SearchLogInfos)
+* [SearchLogTopics](https://cloud.tencent.com/document/api/1132/49071#SearchLogTopics)
 
 
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
 
-### 第 147 次发布
+### 第 121 次发布
 
-发布时间：2025-04-25 01:59:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [RabbitMQPrivateNode](https://cloud.tencent.com/document/api/1179/46089#RabbitMQPrivateNode)
-
-	* <font color="#dd0000">**修改成员**：</font>NodeStatus, CPUUsage, Memory, DiskUsage, ProcessNumber
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 77 次发布
-
-发布时间：2025-04-25 02:01:45
+发布时间：2025-05-07 01:18:17
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateModelService](https://cloud.tencent.com/document/api/851/82291)
-
-	* 新增入参：GrpcEnable, HealthProbe
-
-* [ModifyModelService](https://cloud.tencent.com/document/api/851/83228)
-
-	* 新增入参：GrpcEnable, HealthProbe
-
+* [DescribeSecurityGroupRoutes](https://cloud.tencent.com/document/api/597/118364)
 
 新增数据结构：
 
-* [AuthToken](https://cloud.tencent.com/document/api/851/75051#AuthToken)
-* [AuthTokenBase](https://cloud.tencent.com/document/api/851/75051#AuthTokenBase)
-* [AuthTokenLimit](https://cloud.tencent.com/document/api/851/75051#AuthTokenLimit)
-* [HTTPGetAction](https://cloud.tencent.com/document/api/851/75051#HTTPGetAction)
-* [HealthProbe](https://cloud.tencent.com/document/api/851/75051#HealthProbe)
-* [Probe](https://cloud.tencent.com/document/api/851/75051#Probe)
-* [ProbeAction](https://cloud.tencent.com/document/api/851/75051#ProbeAction)
-
-修改数据结构：
-
-* [PrivateLinkInfo](https://cloud.tencent.com/document/api/851/75051#PrivateLinkInfo)
-
-	* 新增成员：InnerGrpcAddr
-
-* [ServiceCallInfoV2](https://cloud.tencent.com/document/api/851/75051#ServiceCallInfoV2)
-
-	* 新增成员：AuthTokens, EnableLimit, GrpcHost
-
-* [ServiceGroup](https://cloud.tencent.com/document/api/851/75051#ServiceGroup)
-
-	* 新增成员：AuthorizationEnable, AuthTokens
-
-* [ServiceInfo](https://cloud.tencent.com/document/api/851/75051#ServiceInfo)
-
-	* 新增成员：GrpcEnable, HealthProbe
+* [InstanceRoute](https://cloud.tencent.com/document/api/597/40861#InstanceRoute)
+* [RouteFilter](https://cloud.tencent.com/document/api/597/40861#RouteFilter)
+* [SecurityGroupRoute](https://cloud.tencent.com/document/api/597/40861#SecurityGroupRoute)
+* [SecurityGroupRouteResp](https://cloud.tencent.com/document/api/597/40861#SecurityGroupRouteResp)
 
 
 
+## 云游戏(gs) 版本：2019-11-18
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+### 第 32 次发布
 
-
-
-## 微服务引擎(tse) 版本：2020-12-07
-
-### 第 93 次发布
-
-发布时间：2025-04-25 02:05:31
+发布时间：2025-05-07 01:36:13
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [ConfigFile](https://cloud.tencent.com/document/api/1364/54942#ConfigFile)
-
-	* 新增成员：Encrypted, EncryptAlgo
-
-* [ServiceGovernanceInfo](https://cloud.tencent.com/document/api/1364/54942#ServiceGovernanceInfo)
-
-	* 新增成员：SubPassword
-
+* [RebootAndroidInstanceHosts](https://cloud.tencent.com/document/api/1162/118366)
 
 
 

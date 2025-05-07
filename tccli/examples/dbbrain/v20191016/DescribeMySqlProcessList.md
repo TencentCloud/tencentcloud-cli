@@ -25,7 +25,7 @@ Output:
                 "ID": "171588317",
                 "User": "root",
                 "Info": "",
-                "DB": "test"
+                "DB": "demo_db"
             }
         ]
     }

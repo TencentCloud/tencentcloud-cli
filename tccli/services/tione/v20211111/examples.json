@@ -304,6 +304,14 @@
         "title": "更新模型服务"
       }
     ],
+    "ModifyNotebookTags": [
+      {
+        "document": "修改Notebook标签",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotebookTags\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改Notebook标签"
+      }
+    ],
     "PushTrainingMetrics": [
       {
         "document": "",

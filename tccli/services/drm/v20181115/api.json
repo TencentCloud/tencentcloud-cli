@@ -36,7 +36,7 @@
       "status": "online"
     },
     "DescribeDRMLicense": {
-      "document": "开发者需要指定使用的DRM类型取值 NORMALAES、和需要加密的Track类型取值 SD,ContentType取值 LiveVideo\n",
+      "document": "开发者需要指定使用的DRM类型取值 NORMALAES、和需要加密的Track类型取值 SD,ContentType取值 LiveVideo",
       "input": "DescribeDRMLicenseRequest",
       "name": "获取 FLV 加密的密钥字段。",
       "output": "DescribeDRMLicenseResponse",
@@ -453,7 +453,7 @@
         {
           "disabled": false,
           "document": "一个加密内容的唯一标识。",
-          "example": "test",
+          "example": "AesContent",
           "member": "string",
           "name": "ContentId",
           "required": true,
@@ -477,20 +477,20 @@
         {
           "disabled": false,
           "document": "内容ID。",
-          "example": "test",
+          "example": "AesContent",
           "member": "string",
           "name": "ContentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加密密钥。",
-          "example": "无",
+          "example": "eyJjb250ZW50X2lkIjoiYW1GamEyVm9ZVzUwWlhOME1EQXoiLCJwb2",
           "member": "string",
           "name": "TXEncryptionToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -653,32 +653,29 @@
         {
           "disabled": false,
           "document": "输出的桶名称。",
-          "example": "",
+          "example": "bucket",
           "member": "string",
           "name": "BucketName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "输出的对象名称。",
-          "example": "",
+          "example": "object",
           "member": "string",
           "name": "ObjectName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "输出对象参数。",
-          "example": "",
+          "example": "无",
           "member": "DrmOutputPara",
           "name": "Para",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -689,22 +686,20 @@
         {
           "disabled": false,
           "document": "内容类型。例:video，audio，mpd，m3u8",
-          "example": "",
+          "example": "video",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "语言,例: en, zh-cn",
-          "example": "",
+          "example": "en",
           "member": "string",
           "name": "Language",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -715,22 +710,20 @@
         {
           "disabled": false,
           "document": "输入的桶名称。",
-          "example": "",
+          "example": "bucket",
           "member": "string",
           "name": "BucketName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "输入对象名称。",
-          "example": "",
+          "example": "object",
           "member": "string",
           "name": "ObjectName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -741,50 +734,50 @@
         {
           "disabled": false,
           "document": "fairplay 私钥pem id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "12",
           "member": "uint64",
           "name": "FairPlayPemId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "私钥的优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "私钥的md5 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "pem",
           "member": "string",
           "name": "Md5Pem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "ASK的md5信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ask",
           "member": "string",
           "name": "Md5Ask",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "私钥解密密钥的md5值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "Md5PemDecryptKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -871,50 +864,50 @@
         {
           "disabled": false,
           "document": "加密track类型。Widevine支持SD、HD、UHD1、UHD2、AUDIO。Fairplay只支持HD。",
-          "example": "",
+          "example": "SD",
           "member": "string",
           "name": "Track",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密钥ID。",
-          "example": "",
+          "example": "648550ec2269489ab",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原始Key使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。",
-          "example": "",
+          "example": "0RgXm96gXD5CS9hs4Fp5RW7o0c9RtkCxCs",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原始IV使用AES-128 ECB模式和SessionKey加密的后的二进制数据，Base64编码的字符串。",
-          "example": "",
+          "example": "ZjIhNEJ5pAk4Fp5RW7o0c9RtkC",
           "member": "string",
           "name": "Iv",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该key生成时的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "4564112",
           "member": "uint64",
           "name": "InsertTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -927,42 +920,38 @@
         {
           "disabled": false,
           "document": "加密track类型。取值范围：\nSD、HD、UHD1、UHD2、AUDIO",
-          "example": "",
+          "example": "SD",
           "member": "string",
           "name": "Track",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。",
-          "example": "",
+          "example": "p6nKS76Cw7DjeSjNg0nT5Dhuigw0RgXm96gXD5CS9hs4Fp5RW7o0",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "密钥ID。",
-          "example": "",
+          "example": "1170ed7adf7c4c648550ec2269",
           "member": "string",
           "name": "KeyId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "请使用腾讯云DRM 提供的公钥，使用rsa加密算法，PKCS1填充方式对解密密钥进行加密，并对加密结果进行base64编码。",
-          "example": "",
+          "example": "TM663CRcZhCZzzMI10Cz5",
           "member": "string",
           "name": "Iv",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1063,22 +1052,20 @@
         {
           "disabled": false,
           "document": "播放许可证的有效期",
-          "example": "",
+          "example": "4561412421",
           "member": "uint64",
           "name": "LicenseDurationSeconds",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "开始播放后，允许最长播放时间",
-          "example": "",
+          "example": "8411412421",
           "member": "uint64",
           "name": "PlaybackDurationSeconds",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

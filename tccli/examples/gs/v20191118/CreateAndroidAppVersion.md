@@ -8,6 +8,7 @@ Input:
 tccli gs CreateAndroidAppVersion --cli-unfold-argument  \
     --AndroidAppId apk-ne70ubtu \
     --Command tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh \
+    --UninstallCommand cd test-1.0.X && ./uninstall.sh \
     --DownloadUrl 
 ```
 

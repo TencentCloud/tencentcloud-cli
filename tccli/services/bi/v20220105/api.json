@@ -2636,6 +2636,15 @@
           "name": "IsFilterCurrentUser",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

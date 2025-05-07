@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ims ImageModeration --cli-unfold-argument  \
-    --BizType 182600012300002017 \
+    --BizType TencentCloudDefault \
     --DataId a61237dd-c2a0-43e7-a3da-d27022d39ba7 \
     --FileUrl https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg
 ```
@@ -15,58 +15,117 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
+        "RequestId": "d636333a-0d14-4962-8287-e6e8af0a10f2",
+        "FileMD5": "4c7bbbc76bf4b317222e25067e8e9739",
         "DataId": "a61237dd-c2a0-43e7-a3da-d27022d39ba7",
-        "BizType": "182600012300002017",
-        "Suggestion": "Block",
-        "FileMD5": "",
-        "Label": "Porn",
-        "SubLabel": "SexyBehavior",
-        "Score": 90,
+        "BizType": "TencentCloudDefault",
+        "Suggestion": "Review",
+        "Label": "Terror",
+        "SubLabel": "Knife",
+        "Score": 93,
         "LabelResults": [
             {
+                "Scene": "Terror",
+                "Suggestion": "Review",
+                "Label": "Terror",
+                "SubLabel": "Knife",
+                "Score": 93,
+                "Details": [
+                    {
+                        "Id": 0,
+                        "Name": "Knife",
+                        "Score": 93
+                    }
+                ]
+            },
+            {
+                "Scene": "Illegal",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+            },
+            {
+                "Scene": "Teenager",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+            },
+            {
                 "Scene": "Porn",
-                "Suggestion": "Block",
-                "Label": "Porn",
-                "SubLabel": "SexyBehavior",
-                "Score": 90,
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 1,
+                "Details": []
+            },
+            {
+                "Scene": "Sexy",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
                 "Details": []
             }
         ],
         "ObjectResults": [
             {
-                "Scene": "QrCode",
-                "Suggestion": "Block",
-                "Label": "Ad",
+                "Scene": "PolityFace",
+                "Suggestion": "Pass",
+                "Label": "Normal",
                 "SubLabel": "",
-                "Score": 100,
-                "Names": [
-                    "QRCODE"
-                ],
-                "Details": [
-                    {
-                        "Id": 0,
-                        "Name": "QRCODE",
-                        "Value": "https://test.com/test",
-                        "ObjectId": "",
-                        "SubLabel": "QRCODE",
-                        "Score": 100,
-                        "Location": {
-                            "X": 155.01746,
-                            "Y": 396.01746,
-                            "Width": 769.9824,
-                            "Height": 769.98254,
-                            "Rotate": 0
-                        }
-                    }
-                ]
+                "Score": 0,
+                "Names": [],
+                "Details": []
+            },
+            {
+                "Scene": "AppLogo",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
+            },
+            {
+                "Scene": "MapRecognition",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Names": [],
+                "Details": []
             }
         ],
-        "OcrResults": [],
-        "LibResults": [],
+        "OcrResults": [
+            {
+                "Scene": "OCR",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Text": "",
+                "Details": []
+            }
+        ],
+        "LibResults": [
+            {
+                "Scene": "Similar",
+                "Suggestion": "Pass",
+                "Label": "Normal",
+                "SubLabel": "",
+                "Score": 0,
+                "Details": []
+            }
+        ],
         "RecognitionResults": [],
-        "Extra": ""
-    }
+        "Extra": "{\"TerrorInfo\":[{\"Label\":\"Terror\"}}"
+    },
+    "retcode": 0,
+    "retmsg": "ok"
 }
 ```
 

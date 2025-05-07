@@ -4512,7 +4512,7 @@
         {
           "disabled": false,
           "document": "板书截图链接",
-          "example": "无",
+          "example": "[   \"https://DEFAULT1.png\",   \"https://DEFAULT2.png\" ]",
           "member": "string",
           "name": "Result",
           "output_required": false,

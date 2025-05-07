@@ -108,6 +108,14 @@
         "title": "success"
       }
     ],
+    "BatchDeleteVideoDownloadTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteVideoDownloadTask\n<公共请求参数>\n\n{\n    \"DownloadTaskIds\": [\n        \"*******\",\n        \"********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd92416f-bc75-4d17-91f3-93d7c94d1cf5\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "BatchOperateDevice": [
       {
         "document": " ",
@@ -176,6 +184,14 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlRecordTimeline\n<公共请求参数>\n\n{\n    \"ChannelId\": \"12345678-abcd-efgh-ijkl-1234567890ab\",\n    \"Start\": 1685611685,\n    \"End\": 1685611785\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"57c7a6c6-8334-450b-9a57-4c2c2a6e26d2\"\n    }\n}",
         "title": "无本地录像结果"
+      }
+    ],
+    "CreateVideoDownloadTask": [
+      {
+        "document": " ",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoDownloadTask\n<公共请求参数>\n\n{\n    \"ChannelId\": \"***********\",\n    \"BeginTime\": 1729288800,\n    \"EndTime\": 1729292400,\n    \"Scale\": 1,\n    \"Expire\": 7,\n    \"FileType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DownloadTaskId\": \"**********\"\n        },\n        \"RequestId\": \"cd92416f-bc75-4d17-91f3-93d7c94d1cf5\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "DeleteAITask": [
@@ -259,6 +275,14 @@
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecordTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"48676e89a8c**********baa36220fa4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"4d3535ba-3d81-4154-85ac-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -355,6 +379,20 @@
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainRegion\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Label\": \"上海二区\",\n                \"Value\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n            },\n            {\n                \"Label\": \"广州一\",\n                \"Value\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n            }\n        ],\n        \"RequestId\": \"fb44ff35-1053-48f4-b78b-812083f3a2dc\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeGBDeviceAddr": [
+      {
+        "document": "包含无效的DeviceId",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGBDeviceAddr\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"null\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ContainInvalidDeviceId\",\n            \"Message\": \"包含无效的DeviceId\"\n        },\n        \"RequestId\": \"1cb1df16-8c29-****-****-e3283cea4958\"\n    }\n}",
+        "title": "错误"
+      },
+      {
+        "document": "success",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGBDeviceAddr\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"3db****e3-****-****-b7be-****4be705d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemoteAddrs\": [\n                {\n                    \"Addr\": \"127.0.0.1\",\n                    \"DeviceId\": \"3db****e3-****-****-b7be-****4be705d\"\n                }\n            ]\n        },\n        \"RequestId\": \"887e50f0-****-****-a37d-c88b****19e3\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -737,6 +775,14 @@
         "document": "无",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTasks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 5,\n    \"Operation\": \"BatchEnableDevice\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"Action\": \"BatchEnableDevice\",\n                    \"ActionZhDesc\": \"批量启用设备\",\n                    \"CreatedAt\": \"2023-07-19 16:12:50\",\n                    \"FailCount\": 1,\n                    \"FailReason\": \"\",\n                    \"Progress\": 1,\n                    \"ResourceId\": \"\",\n                    \"RunningCount\": 0,\n                    \"Runtime\": 1000,\n                    \"StartedAt\": \"2023-07-19 16:12:50\",\n                    \"Status\": 3,\n                    \"SuccessCount\": 3,\n                    \"TaskId\": \"28bdf2f7-****-****-****-35f073f7ecf5\",\n                    \"TaskType\": 2,\n                    \"Total\": 4,\n                    \"UpdatedAt\": \"2023-07-19 16:12:51\"\n                },\n                {\n                    \"Action\": \"BatchEnableDevice\",\n                    \"ActionZhDesc\": \"批量启用设备\",\n                    \"CreatedAt\": \"2023-07-19 15:47:41\",\n                    \"FailCount\": 1,\n                    \"FailReason\": \"\",\n                    \"Progress\": 1,\n                    \"ResourceId\": \"\",\n                    \"RunningCount\": 0,\n                    \"Runtime\": 1000,\n                    \"StartedAt\": \"2023-07-19 15:47:41\",\n                    \"Status\": 3,\n                    \"SuccessCount\": 3,\n                    \"TaskId\": \"6a7c470b-****-****-****-d564918ad9d9\",\n                    \"TaskType\": 2,\n                    \"Total\": 4,\n                    \"UpdatedAt\": \"2023-07-19 15:47:42\"\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"f37b7e5a-78c6-4931-81b0-095a9b318e03\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "ListVideoDownloadTask": [
+      {
+        "document": "   ",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVideoDownloadTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ChannelCode\": \"310****00001320000001\",\n                    \"ChannelId\": \"21098feb-57a4-4fbc-9435-************\",\n                    \"ChannelName\": \"11\",\n                    \"DeviceCode\": \"610*****01180000159\",\n                    \"DeviceName\": \"NVR\",\n                    \"DownloadTaskId\": \"e6651293-b5fa-4dbb-bfe0-************\",\n                    \"DownloadTime\": 7200,\n                    \"EndTime\": \"2024-10-22 12:29:02\",\n                    \"Expire\": 7,\n                    \"FailedReason\": \"\",\n                    \"FileDownloadUrl\": \"https://*********.demo.cn/vds/lr/video.mp4?source=localrecord%2F7%2F21098feb-57a4-4fbc-9435-************%2F20241021%2Fe6651293-b5fa-4dbb-bfe0-************.mp4%3Bivc-test-new-251228313-ap-shanghai-1258344699%3Bap-shanghai%3B21098feb-57a4-4fbc-9435-*********%3B251228313%3B7000003*****9&intranet=0&expires=3600&signtime=1729675136&sign=1f9f2d21eb5e18b088f70f81*********\",\n                    \"Scale\": 2,\n                    \"StartTime\": \"2024-10-22 11:28:36\",\n                    \"Status\": 2,\n                    \"VideoSize\": 967309246,\n                    \"VideoTimeSection\": \"2024-10-21 08:00:00-2024-10-21 10:00:00\"\n                }\n            ],\n            \"TotalCount\": 15\n        },\n        \"RequestId\": \"f5447c9b-a7a6-42d5-b831-9e666bfbe261\"\n    }\n}",
         "title": "成功"
       }
     ],

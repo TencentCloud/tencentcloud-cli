@@ -1520,7 +1520,7 @@
         {
           "disabled": false,
           "document": "线程的操作数据库，用于筛选线程列表。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "DB",
           "required": false,
@@ -1592,6 +1592,7 @@
           "example": "无",
           "member": "MySqlProcess",
           "name": "ProcessList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3701,7 +3702,7 @@
           "example": "12",
           "member": "string",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3711,7 +3712,7 @@
           "example": "root",
           "member": "string",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3721,17 +3722,17 @@
           "example": "127.0.0.1:41528",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "线程的操作数据库。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "DB",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3741,7 +3742,7 @@
           "example": "updating",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3751,7 +3752,7 @@
           "example": "Execute",
           "member": "string",
           "name": "Command",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3761,7 +3762,7 @@
           "example": "1225",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3771,7 +3772,7 @@
           "example": "DELETE FROM `test` WHERE time<=1",
           "member": "string",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

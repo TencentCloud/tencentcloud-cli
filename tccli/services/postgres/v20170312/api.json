@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CloseServerlessDBExtranetAccess": {
-      "document": "【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址",
       "input": "CloseServerlessDBExtranetAccessRequest",
       "name": "【废弃】关闭serverlessDB实例公网地址",
       "output": "CloseServerlessDBExtranetAccessResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAccount": {
       "document": "此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。",
@@ -106,11 +106,11 @@
       "status": "online"
     },
     "CreateServerlessDBInstance": {
-      "document": "【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口 (CreateServerlessDBInstance) 用于创建一个ServerlessDB实例，创建成功返回实例ID。",
       "input": "CreateServerlessDBInstanceRequest",
       "name": "【废弃】创建ServerlessDB实例",
       "output": "CreateServerlessDBInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAccount": {
       "document": "此接口用于删除数据库账号，需要同时输入Oid与UserName，避免误删。",
@@ -169,11 +169,11 @@
       "status": "online"
     },
     "DeleteServerlessDBInstance": {
-      "document": "【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
       "input": "DeleteServerlessDBInstanceRequest",
       "name": "【废弃】删除ServerlessDB实例",
       "output": "DeleteServerlessDBInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAccountPrivileges": {
       "document": "查询数据库账号对某数据库对象拥有的权限列表。",
@@ -428,11 +428,11 @@
       "status": "online"
     },
     "DescribeServerlessDBInstances": {
-      "document": "【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】用于查询一个或多个serverlessDB实例的详细信息",
       "input": "DescribeServerlessDBInstancesRequest",
       "name": "【废弃】查询ServerlessDB实例列表",
       "output": "DescribeServerlessDBInstancesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSlowQueryAnalysis": {
       "document": "此接口（DescribeSlowQueryAnalysis）用于统计指定时间范围内的所有慢查询，根据SQL语句抽象参数后，进行聚合分析，并返回同类SQL列表。",
@@ -673,11 +673,11 @@
       "status": "online"
     },
     "OpenServerlessDBExtranetAccess": {
-      "document": "【接口下线中，请勿使用】本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。",
+      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口（OpenServerlessDBExtranetAccess）用于开通serverlessDB实例公网地址。",
       "input": "OpenServerlessDBExtranetAccessRequest",
       "name": "【废弃】开通serverlessDB实例公网地址",
       "output": "OpenServerlessDBExtranetAccessResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RebalanceReadOnlyGroup": {
       "document": "本接口(RebalanceReadOnlyGroup)用于重新均衡 RO 组内实例的负载。注意，RO 组内 RO 实例会有一次数据库连接瞬断，请确保应用程序能重连数据库，谨慎操作。",
@@ -2568,6 +2568,15 @@
         },
         {
           "disabled": false,
+          "document": "指定KMS服务的集群，KMSClusterId为空使用默认集群的KMS，若选择指定KMS集群，则需要传入KMSClusterId。 KMSClusterId相关介绍参考开启透明数据加密",
+          "example": "cls-hsm-xxxxxxx",
+          "member": "string",
+          "name": "KMSClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "数据库引擎，支持：\n<li>postgresql：云数据库PostgreSQL</li>\n<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL</li>\n默认值：postgresql",
           "example": "postgresql",
           "member": "string",
@@ -3499,13 +3508,13 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "PostgreSQL大版本号，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取，目前支持10，11，12，13，14，15这几个大版本。",
           "example": "12",
           "member": "string",
           "name": "DBMajorVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3519,13 +3528,13 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "PostgreSQL内核版本号，如v12.7_r1.8，版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。",
           "example": "v12.4_r1.0",
           "member": "string",
           "name": "DBKernelVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3620,7 +3629,7 @@
         {
           "disabled": false,
           "document": "实例网络连接信息。",
-          "example": "[     {         \"Address\": \"\",         \"Ip\": \"10.10.10.220\",         \"Port\": 5432,         \"Status\": \"opened\",         \"NetType\": \"private\",         \"VpcId\": \"vpc-xxxxxxxx\",         \"SubnetId\": \"subnet-xxxxxxxx\"     },     {         \"Address\": \"\",         \"Ip\": \"\",         \"Port\": 0,         \"Status\": \"\",         \"NetType\": \"public\",         \"VpcId\": \"\",         \"SubnetId\": \"\"     } ]",
+          "example": "无",
           "member": "DBInstanceNetInfo",
           "name": "DBInstanceNetInfo",
           "output_required": true,
@@ -3669,53 +3678,53 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例绑定的标签信息。",
           "example": "[     {         \"TagKey\": \"tag1\",         \"TagValue\": \"v1\"     } ]",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主实例信息，仅在实例为只读实例时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主实例信息，仅在实例为只读实例时返回。",
           "example": "postgres-7lzldndx",
           "member": "string",
           "name": "MasterDBInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "只读实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读实例数量。",
           "example": "6",
           "member": "int64",
           "name": "ReadOnlyInstanceNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "只读实例在只读组中的状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读实例在只读组中的状态。",
           "example": "ok",
           "member": "string",
           "name": "StatusInReadonlyGroup",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下线时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下线时间。",
           "example": "2014-08-03 12:00",
           "member": "string",
           "name": "OfflineTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3729,38 +3738,38 @@
         },
         {
           "disabled": false,
-          "document": "实例是否支持TDE数据加密：\n<li>0：不支持</li>\n<li>1：支持</li>\n默认值：0\nTDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例是否支持TDE数据加密：\n<li>0：不支持</li>\n<li>1：支持</li>\n默认值：0\nTDE数据加密可参考[数据透明加密概述](https://cloud.tencent.com/document/product/409/71748)",
           "example": "1",
           "member": "int64",
           "name": "IsSupportTDE",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据库引擎，支持：\n<li>postgresql：云数据库PostgreSQL</li>\n<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL</li>\n默认值：postgresql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库引擎，支持：\n<li>postgresql：云数据库PostgreSQL</li>\n<li>mssql_compatible：MSSQL兼容-云数据库PostgreSQL</li>\n默认值：postgresql",
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据库引擎的配置信息，配置格式如下：\n{\"$key1\":\"$value1\", \"$key2\":\"$value2\"}\n各引擎支持如下：\nmssql_compatible引擎：\n<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。</li>\n<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：\n\"af_ZA\", \"sq_AL\", \"ar_DZ\", \"ar_BH\", \"ar_EG\", \"ar_IQ\", \"ar_JO\", \"ar_KW\", \"ar_LB\", \"ar_LY\", \"ar_MA\", \"ar_OM\", \"ar_QA\", \"ar_SA\", \"ar_SY\", \"ar_TN\", \"ar_AE\", \"ar_YE\", \"hy_AM\", \"az_Cyrl_AZ\", \"az_Latn_AZ\", \"eu_ES\", \"be_BY\", \"bg_BG\", \"ca_ES\", \"zh_HK\", \"zh_MO\", \"zh_CN\", \"zh_SG\", \"zh_TW\", \"hr_HR\", \"cs_CZ\", \"da_DK\", \"nl_BE\", \"nl_NL\", \"en_AU\", \"en_BZ\", \"en_CA\", \"en_IE\", \"en_JM\", \"en_NZ\", \"en_PH\", \"en_ZA\", \"en_TT\", \"en_GB\", \"en_US\", \"en_ZW\", \"et_EE\", \"fo_FO\", \"fa_IR\", \"fi_FI\", \"fr_BE\", \"fr_CA\", \"fr_FR\", \"fr_LU\", \"fr_MC\", \"fr_CH\", \"mk_MK\", \"ka_GE\", \"de_AT\", \"de_DE\", \"de_LI\", \"de_LU\", \"de_CH\", \"el_GR\", \"gu_IN\", \"he_IL\", \"hi_IN\", \"hu_HU\", \"is_IS\", \"id_ID\", \"it_IT\", \"it_CH\", \"ja_JP\", \"kn_IN\", \"kok_IN\", \"ko_KR\", \"ky_KG\", \"lv_LV\", \"lt_LT\", \"ms_BN\", \"ms_MY\", \"mr_IN\", \"mn_MN\", \"nb_NO\", \"nn_NO\", \"pl_PL\", \"pt_BR\", \"pt_PT\", \"pa_IN\", \"ro_RO\", \"ru_RU\", \"sa_IN\", \"sr_Cyrl_RS\", \"sr_Latn_RS\", \"sk_SK\", \"sl_SI\", \"es_AR\", \"es_BO\", \"es_CL\", \"es_CO\", \"es_CR\", \"es_DO\", \"es_EC\", \"es_SV\", \"es_GT\", \"es_HN\", \"es_MX\", \"es_NI\", \"es_PA\", \"es_PY\",\"es_PE\", \"es_PR\", \"es_ES\", \"es_TRADITIONAL\", \"es_UY\", \"es_VE\", \"sw_KE\", \"sv_FI\", \"sv_SE\", \"tt_RU\", \"te_IN\", \"th_TH\", \"tr_TR\", \"uk_UA\", \"ur_IN\", \"ur_PK\", \"uz_Cyrl_UZ\", \"uz_Latn_UZ\", \"vi_VN\"。</li>\n<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下：\"bbf_unicode_general_ci_as\", \"bbf_unicode_cp1_ci_as\", \"bbf_unicode_CP1250_ci_as\", \"bbf_unicode_CP1251_ci_as\", \"bbf_unicode_cp1253_ci_as\", \"bbf_unicode_cp1254_ci_as\", \"bbf_unicode_cp1255_ci_as\", \"bbf_unicode_cp1256_ci_as\", \"bbf_unicode_cp1257_ci_as\", \"bbf_unicode_cp1258_ci_as\", \"bbf_unicode_cp874_ci_as\", \"sql_latin1_general_cp1250_ci_as\", \"sql_latin1_general_cp1251_ci_as\", \"sql_latin1_general_cp1_ci_as\", \"sql_latin1_general_cp1253_ci_as\", \"sql_latin1_general_cp1254_ci_as\", \"sql_latin1_general_cp1255_ci_as\",\"sql_latin1_general_cp1256_ci_as\", \"sql_latin1_general_cp1257_ci_as\", \"sql_latin1_general_cp1258_ci_as\", \"chinese_prc_ci_as\", \"cyrillic_general_ci_as\", \"finnish_swedish_ci_as\", \"french_ci_as\", \"japanese_ci_as\", \"korean_wansung_ci_as\", \"latin1_general_ci_as\", \"modern_spanish_ci_as\", \"polish_ci_as\", \"thai_ci_as\", \"traditional_spanish_ci_as\", \"turkish_ci_as\", \"ukrainian_ci_as\", \"vietnamese_ci_as\"。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库引擎的配置信息，配置格式如下：\n{\"$key1\":\"$value1\", \"$key2\":\"$value2\"}\n各引擎支持如下：\nmssql_compatible引擎：\n<li>migrationMode：数据库模式，可选参数，可取值：single-db（单数据库模式），multi-db（多数据库模式）。默认为single-db。</li>\n<li>defaultLocale：排序区域规则，可选参数，在初始化后不可修改，默认为en_US，可选值如下：\n\"af_ZA\", \"sq_AL\", \"ar_DZ\", \"ar_BH\", \"ar_EG\", \"ar_IQ\", \"ar_JO\", \"ar_KW\", \"ar_LB\", \"ar_LY\", \"ar_MA\", \"ar_OM\", \"ar_QA\", \"ar_SA\", \"ar_SY\", \"ar_TN\", \"ar_AE\", \"ar_YE\", \"hy_AM\", \"az_Cyrl_AZ\", \"az_Latn_AZ\", \"eu_ES\", \"be_BY\", \"bg_BG\", \"ca_ES\", \"zh_HK\", \"zh_MO\", \"zh_CN\", \"zh_SG\", \"zh_TW\", \"hr_HR\", \"cs_CZ\", \"da_DK\", \"nl_BE\", \"nl_NL\", \"en_AU\", \"en_BZ\", \"en_CA\", \"en_IE\", \"en_JM\", \"en_NZ\", \"en_PH\", \"en_ZA\", \"en_TT\", \"en_GB\", \"en_US\", \"en_ZW\", \"et_EE\", \"fo_FO\", \"fa_IR\", \"fi_FI\", \"fr_BE\", \"fr_CA\", \"fr_FR\", \"fr_LU\", \"fr_MC\", \"fr_CH\", \"mk_MK\", \"ka_GE\", \"de_AT\", \"de_DE\", \"de_LI\", \"de_LU\", \"de_CH\", \"el_GR\", \"gu_IN\", \"he_IL\", \"hi_IN\", \"hu_HU\", \"is_IS\", \"id_ID\", \"it_IT\", \"it_CH\", \"ja_JP\", \"kn_IN\", \"kok_IN\", \"ko_KR\", \"ky_KG\", \"lv_LV\", \"lt_LT\", \"ms_BN\", \"ms_MY\", \"mr_IN\", \"mn_MN\", \"nb_NO\", \"nn_NO\", \"pl_PL\", \"pt_BR\", \"pt_PT\", \"pa_IN\", \"ro_RO\", \"ru_RU\", \"sa_IN\", \"sr_Cyrl_RS\", \"sr_Latn_RS\", \"sk_SK\", \"sl_SI\", \"es_AR\", \"es_BO\", \"es_CL\", \"es_CO\", \"es_CR\", \"es_DO\", \"es_EC\", \"es_SV\", \"es_GT\", \"es_HN\", \"es_MX\", \"es_NI\", \"es_PA\", \"es_PY\",\"es_PE\", \"es_PR\", \"es_ES\", \"es_TRADITIONAL\", \"es_UY\", \"es_VE\", \"sw_KE\", \"sv_FI\", \"sv_SE\", \"tt_RU\", \"te_IN\", \"th_TH\", \"tr_TR\", \"uk_UA\", \"ur_IN\", \"ur_PK\", \"uz_Cyrl_UZ\", \"uz_Latn_UZ\", \"vi_VN\"。</li>\n<li>serverCollationName：排序规则名称，可选参数，在初始化后不可修改，默认为sql_latin1_general_cp1_ci_as，可选值如下：\"bbf_unicode_general_ci_as\", \"bbf_unicode_cp1_ci_as\", \"bbf_unicode_CP1250_ci_as\", \"bbf_unicode_CP1251_ci_as\", \"bbf_unicode_cp1253_ci_as\", \"bbf_unicode_cp1254_ci_as\", \"bbf_unicode_cp1255_ci_as\", \"bbf_unicode_cp1256_ci_as\", \"bbf_unicode_cp1257_ci_as\", \"bbf_unicode_cp1258_ci_as\", \"bbf_unicode_cp874_ci_as\", \"sql_latin1_general_cp1250_ci_as\", \"sql_latin1_general_cp1251_ci_as\", \"sql_latin1_general_cp1_ci_as\", \"sql_latin1_general_cp1253_ci_as\", \"sql_latin1_general_cp1254_ci_as\", \"sql_latin1_general_cp1255_ci_as\",\"sql_latin1_general_cp1256_ci_as\", \"sql_latin1_general_cp1257_ci_as\", \"sql_latin1_general_cp1258_ci_as\", \"chinese_prc_ci_as\", \"cyrillic_general_ci_as\", \"finnish_swedish_ci_as\", \"french_ci_as\", \"japanese_ci_as\", \"korean_wansung_ci_as\", \"latin1_general_ci_as\", \"modern_spanish_ci_as\", \"polish_ci_as\", \"thai_ci_as\", \"traditional_spanish_ci_as\", \"turkish_ci_as\", \"ukrainian_ci_as\", \"vietnamese_ci_as\"。</li>",
           "example": "{     \"migrationMode\": \"single-db\",     \"defaultLocale\": \"zh_CN\",     \"serverCollationName\": \"sql_latin1_general_cp1250_ci_as\" }",
           "member": "string",
           "name": "DBEngineConfig",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例网络信息列表（此字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "NetworkAccess",
           "name": "NetworkAccessList",
           "output_required": true,
@@ -6205,13 +6214,13 @@
         },
         {
           "disabled": false,
-          "document": "查询对象总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询对象总数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6671,28 +6680,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板ID",
           "example": "423984bb-97fe-5693-a74f-63cc8dfb6c5d",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数模板包含的参数个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板包含的参数个数",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数模板包含的参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"Advanced\": false,         \"ClassificationCN\": \"WAL\",         \"ClassificationEN\": \"Write-Ahead Log\",         \"CurrentValue\": \"logical\",         \"DefaultValue\": \"replica\",         \"EnumValue\": [             \"replica\",             \"logical\"         ],         \"ID\": 854,         \"LastModifyTime\": \"\",         \"Max\": 0,         \"Min\": 0,         \"Name\": \"wal_level\",         \"NeedReboot\": true,         \"ParamDescriptionCH\": \"此参数决定记录到日志的信息，不允许设置为minimal\",         \"ParamDescriptionEN\": \"Set the level of information written to the WAL.\",         \"ParamValueType\": \"enum\",         \"SpecRelated\": false,         \"StandbyRelated\": 0,         \"Unit\": \"\"     } ]",
+          "example": "无",
           "member": "ParamInfo",
           "name": "ParamInfoSet",
           "output_required": true,
@@ -6701,43 +6710,43 @@
         },
         {
           "disabled": false,
-          "document": "参数模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板名称",
           "example": "my_test_template",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数模板适用的数据库版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板适用的数据库版本",
           "example": "13",
           "member": "string",
           "name": "DBMajorVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数模板适用的数据库引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板适用的数据库引擎",
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板描述",
           "example": "this template use to test environment",
           "member": "string",
           "name": "TemplateDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7699,6 +7708,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥所在的KMS服务集群Id，为空表示密钥在默认的KMS集群中，不为空表示在指定的KMS服务集群中",
+          "example": "cls-hsm-tyoxxxx",
+          "member": "string",
+          "name": "KMSClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8526,7 +8545,7 @@
         },
         {
           "disabled": false,
-          "document": "允许或拒绝下载备份文件的vpcId列表。",
+          "document": "允许或拒绝下载备份文件的vpcId列表。\n**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[     \"vpc-15ld6dhr\" ]",
           "member": "string",
           "name": "VpcIdSet",
@@ -8544,7 +8563,7 @@
         },
         {
           "disabled": false,
-          "document": "允许或拒绝下载备份文件的ip列表。",
+          "document": "允许或拒绝下载备份文件的ip列表。\n**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[     \"10.*.*.*\" ]",
           "member": "string",
           "name": "IpSet",
@@ -9096,7 +9115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例或只读组要绑定的安全组列表。\n安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。\n",
+          "document": "实例或只读组要绑定的安全组列表。\n安全组信息可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来查询。\n**注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[\"sg-91jbmkp1\"]",
           "member": "string",
           "name": "SecurityGroupIdSet",
@@ -10036,73 +10055,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数ID",
           "example": "0",
           "member": "int64",
           "name": "ID",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数名",
           "example": "wal_level",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数值类型：integer（整型）、real（浮点型）、bool（布尔型）、enum（枚举类型）、mutil_enum（枚举类型、支持多选）。\n当参数类型为integer（整型）、real（浮点型）时，参数的取值范围根据返回值的Max、Min确定； \n当参数类型为bool（布尔型）时，参数设置值取值范围是true | false； \n当参数类型为enum（枚举类型）、mutil_enum（多枚举类型）时，参数的取值范围由返回值中的EnumValue确定。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数值类型：integer（整型）、real（浮点型）、bool（布尔型）、enum（枚举类型）、mutil_enum（枚举类型、支持多选）。\n当参数类型为integer（整型）、real（浮点型）时，参数的取值范围根据返回值的Max、Min确定； \n当参数类型为bool（布尔型）时，参数设置值取值范围是true | false； \n当参数类型为enum（枚举类型）、mutil_enum（多枚举类型）时，参数的取值范围由返回值中的EnumValue确定。",
           "example": "integer",
           "member": "string",
           "name": "ParamValueType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数值 单位。参数没有单位时，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数值 单位。参数没有单位时，该字段返回空",
           "example": "ms",
           "member": "string",
           "name": "Unit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数默认值。以字符串形式返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数默认值。以字符串形式返回",
           "example": "replica",
           "member": "string",
           "name": "DefaultValue",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数当前运行值。以字符串形式返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数当前运行值。以字符串形式返回",
           "example": "replica",
           "member": "string",
           "name": "CurrentValue",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数值类型（integer、real）参数，取值下界",
           "example": "0",
           "member": "float",
           "name": "Max",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10116,103 +10135,103 @@
         },
         {
           "disabled": false,
-          "document": "数值类型（integer、real）参数，取值上界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数值类型（integer、real）参数，取值上界",
           "example": "1000",
           "member": "float",
           "name": "Min",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数中文描述",
           "example": "此参数决定记录到日志的信息，不允许设置为minimal",
           "member": "string",
           "name": "ParamDescriptionCH",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数英文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数英文描述",
           "example": "Set the level of information written to the WAL.",
           "member": "string",
           "name": "ParamDescriptionEN",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数修改，是否重启生效。（true为需要，false为不需要）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数修改，是否重启生效。（true为需要，false为不需要）",
           "example": "false",
           "member": "bool",
           "name": "NeedReboot",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数中文分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数中文分类",
           "example": "WAL",
           "member": "string",
           "name": "ClassificationCN",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数英文分类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数英文分类",
           "example": "Write-Ahead Log",
           "member": "string",
           "name": "ClassificationEN",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否和规格相关。（true为相关，false为不想关）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否和规格相关。（true为相关，false为不想关）",
           "example": "false",
           "member": "bool",
           "name": "SpecRelated",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为重点参数。（true为重点参数，修改是需要重点关注，可能会影响实例性能）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为重点参数。（true为重点参数，修改是需要重点关注，可能会影响实例性能）",
           "example": "false",
           "member": "bool",
           "name": "Advanced",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数最后一次修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数最后一次修改时间",
           "example": "2021-08-01 02:03:04",
           "member": "string",
           "name": "LastModifyTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大",
           "example": "0",
           "member": "int64",
           "name": "StandbyRelated",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10242,63 +10261,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数名称",
           "example": "wal_level",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数信息所属规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数信息所属规格",
           "example": "2G",
           "member": "string",
           "name": "Memory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数在该规格下的默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数在该规格下的默认值",
           "example": "1",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数值单位。参数没有单位时，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数值单位。参数没有单位时，该字段返回空",
           "example": "s",
           "member": "string",
           "name": "Unit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数值类型（integer、real）参数，取值上界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数值类型（integer、real）参数，取值上界",
           "example": "20000",
           "member": "float",
           "name": "Max",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数值类型（integer、real）参数，取值下界",
           "example": "0",
           "member": "float",
           "name": "Min",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10318,63 +10337,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数名称",
           "example": "wal_level",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数信息所属内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数信息所属内核版本",
           "example": "v14.1_r1.2",
           "member": "string",
           "name": "DBKernelVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数在该版本该规格下的默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数在该版本该规格下的默认值",
           "example": "1",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数值单位。参数没有单位时，该字段返回空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数值单位。参数没有单位时，该字段返回空",
           "example": "s",
           "member": "string",
           "name": "Unit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数值类型（integer、real）参数，取值上界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数值类型（integer、real）参数，取值上界",
           "example": "20000",
           "member": "float",
           "name": "Max",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数值类型（integer、real）参数，取值下界\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数值类型（integer、real）参数，取值下界",
           "example": "0",
           "member": "float",
           "name": "Min",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10638,53 +10657,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "只读组标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读组标识",
           "example": "pgrogrp-q66su76e",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "只读组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读组名字",
           "example": "Autotestgroup",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目id",
           "example": "1465",
           "member": "uint64",
           "name": "ProjectId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主实例id",
           "example": "postgres-dsu8985n",
           "member": "string",
           "name": "MasterDBInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最小保留实例数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小保留实例数",
           "example": "0",
           "member": "int64",
           "name": "MinDelayEliminateReserve",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10738,13 +10757,13 @@
         },
         {
           "disabled": false,
-          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网id",
           "example": "subnet-jd9cvu0o",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10779,7 +10798,7 @@
         {
           "disabled": false,
           "document": "实例详细信息",
-          "example": "[     {         \"AppId\": 2512000007,         \"AutoRenew\": 0,         \"CreateTime\": \"2024-12-05 12:04:14\",         \"DBCharset\": \"UTF8\",         \"DBEngine\": \"postgresql\",         \"DBEngineConfig\": \"\",         \"DBInstanceClass\": \"pg.it.small2\",         \"DBInstanceClassName\": \"1 core 2 GiB\",         \"DBInstanceCpu\": 1,         \"DBInstanceId\": \"pgro-kdkdkx68\",         \"DBInstanceMemory\": 2,         \"DBInstanceName\": \"Unnamed\",         \"DBInstanceNetInfo\": [             {                 \"Address\": \"\",                 \"Ip\": \"172.*.*.*\",                 \"NetType\": \"private\",                 \"Port\": 5432,                 \"ProtocolType\": \"postgresql\",                 \"Status\": \"opened\",                 \"SubnetId\": \"subnet-jd9cvu0o\",                 \"VpcId\": \"vpc-e3t30r8t\"             }         ],         \"DBInstanceStatus\": \"running\",         \"DBInstanceStorage\": 40,         \"DBInstanceType\": \"readonly\",         \"DBInstanceVersion\": \"standard\",         \"DBKernelVersion\": \"v17.0_r1.0\",         \"DBMajorVersion\": \"17\",         \"DBNodeSet\": null,         \"DBVersion\": \"17.0\",         \"ExpireTime\": \"0000-00-00 00:00:00\",         \"IsSupportTDE\": 0,         \"IsolatedTime\": \"0000-00-00 00:00:00\",         \"MasterDBInstanceId\": \"postgres-dsu8985n\",         \"NetworkAccessList\": null,         \"OfflineTime\": \"0001-01-04 00:00:00\",         \"PayType\": \"postpaid\",         \"ProjectId\": 0,         \"ReadOnlyInstanceNum\": 0,         \"Region\": \"ap-guangzhou\",         \"StatusInReadonlyGroup\": \"running\",         \"SubnetId\": \"subnet-jd9cvu0o\",         \"SupportIpv6\": 0,         \"SwitchEndTime\": \"\",         \"SwitchStartTime\": \"\",         \"TagList\": [],         \"Type\": \"\",         \"Uid\": 1289,         \"UpdateTime\": \"2024-12-05 12:06:17\",         \"VpcId\": \"vpc-e3t30r8t\",         \"Zone\": \"ap-guangzhou-3\"     } ]",
+          "example": "无",
           "member": "DBInstance",
           "name": "ReadOnlyDBInstanceList",
           "output_required": true,

@@ -252,23 +252,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过[DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700)接口查询创建的资源ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "由网关负载均衡实例唯一 ID 组成的数组。\n存在某些场景，如创建出现延迟时，此字段可能返回为空；此时可以根据接口返回的RequestId或DealName参数，通过[DescribeTaskStatus](https://cloud.tencent.com/document/api/1782/111700)接口查询创建的资源ID。",
           "example": "[\"gwlb-6efswuxa\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号。",
           "example": "2022XXXX",
           "member": "string",
           "name": "DealName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1126,23 +1126,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "后付费单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费单价，单位：元。",
           "example": "10",
           "member": "float",
           "name": "UnitPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）。",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1166,23 +1166,23 @@
         },
         {
           "disabled": false,
-          "document": "后付费的折扣单价，单位:元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费的折扣单价，单位:元。",
           "example": "10",
           "member": "float",
           "name": "UnitPriceDiscount",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣，如20.0代表2折。",
           "example": "100",
           "member": "float",
           "name": "Discount",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1327,23 +1327,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述了实例价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述了实例价格。",
           "example": "无",
           "member": "ItemPrice",
           "name": "InstancePrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述了GLCU的价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述了GLCU的价格。",
           "example": "无",
           "member": "ItemPrice",
           "name": "LcuPrice",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1491,63 +1491,63 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的外网 IP",
           "example": "[1.1.1.1]",
           "member": "string",
           "name": "PublicIpAddresses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的内网 IP",
           "example": "[2.2.2.2]",
           "member": "string",
           "name": "PrivateIpAddresses",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的实例名称",
           "example": "testName",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后端服务被绑定的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务被绑定的时间",
           "example": "2021-03-16T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "RegisteredTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "弹性网卡唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性网卡唯一ID",
           "example": "eni-jf7u****",
           "member": "string",
           "name": "EniId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后端服务的可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后端服务的可用区ID",
           "example": "400001",
           "member": "uint64",
           "name": "ZoneId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

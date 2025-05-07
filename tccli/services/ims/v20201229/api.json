@@ -222,8 +222,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。<br>备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
-          "example": "182600012300002017",
+          "document": "该字段表示使用的策略的具体编号，该字段需要先在[内容安全控制台](#https://console.cloud.tencent.com/cms/clouds/manage)中配置。\n备注：不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype。",
+          "example": "TencentCloudDefault",
           "member": "string",
           "name": "BizType",
           "required": false,
@@ -291,6 +291,15 @@
           "name": "Device",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示输入的图片审核类型，取值含：IMAGE（内容安全）、IMAGE_AIGC（AI生成识别）两种，默认值为IMAGE。",
+          "example": "IMAGE_AIGC",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -340,7 +349,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回分类模型命中的恶意标签的详细识别结果，包括涉黄、广告等令人反感、不安全或不适宜的内容类型识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回检测结果(LabelResults)中所对应的优先级最高的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。\n\n返回值标签示例：Normal:正常，Porn:色情，Abuse:谩骂，Ad:广告（说明：文档仅示例了部分风险类型，更多返回类型请以实际值为准或咨询客服）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelResult",
           "name": "LabelResults",
@@ -401,7 +410,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回根据您的需求配置的额外附加信息（Extra），如未配置则默认返回值为空。<br>备注：不同客户或Biztype下返回信息不同，如需配置该字段请提交工单咨询或联系售后专员处理。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"{\\\"QRcodeInfo\\\":[{\\\"HitInfo\\\":\\\"QRCODE\\\",\\\"Label\\\":\\\"Ad\\\"}]}\"",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -411,7 +420,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测对象对应的MD5校验值，以方便校验文件完整性。",
-          "example": "无",
+          "example": "4c7bbbc76bf4b317222e25067e8e9739",
           "member": "string",
           "name": "FileMD5",
           "output_required": true,

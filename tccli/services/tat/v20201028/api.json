@@ -735,7 +735,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行器名称。",
+          "document": "执行器名称。长度不超过 120 字符。",
           "example": "invoker-test",
           "member": "string",
           "name": "Name",
@@ -744,7 +744,7 @@
         },
         {
           "disabled": false,
-          "document": "执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。",
+          "document": "执行器类型。\n\n可选取值（当前仅支持一种）：\n\n- `SCHEDULE`：周期类型执行器。",
           "example": "SCHEDULE",
           "member": "string",
           "name": "Type",
@@ -771,7 +771,7 @@
         },
         {
           "disabled": false,
-          "document": "命令执行用户。",
+          "document": "命令执行用户。长度不超过 256 字符。",
           "example": "root",
           "member": "string",
           "name": "Username",
@@ -780,7 +780,7 @@
         },
         {
           "disabled": false,
-          "document": "命令自定义参数。\n\n仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。",
+          "document": "命令自定义参数。字段类型为 JSON encode string。\n\n仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。",
           "example": "{\"var\": \"A\"}",
           "member": "string",
           "name": "Parameters",
@@ -789,7 +789,7 @@
         },
         {
           "disabled": false,
-          "document": "周期执行器设置。当创建周期执行器时，必须指定此参数。",
+          "document": "周期执行器设置。\n\n当执行器类型为 `SCHEDULE` 时，必须指定此参数。",
           "example": "{\"Policy\":\"ONCE\",\"InvokeTime\":\"2021-09-01T00:00:00+08:00\"}",
           "member": "ScheduleSettings",
           "name": "ScheduleSettings",
@@ -1083,7 +1083,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待查询的实例ID列表。\n\n可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。\n\n参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。",
+          "document": "待查询的实例ID列表。\n\n可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。\n\n每次请求的上限为 100。\n\n参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。",
           "example": "[\"lhins-ar5wyn4x\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -1092,7 +1092,7 @@
         },
         {
           "disabled": false,
-          "document": "- agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 \n- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。\n- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。\n\n参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。",
+          "document": "- agent-status - String - 是否必填：否 -（过滤条件）按照agent状态过滤，取值：Online 在线，Offline 离线。 \n- environment - String - 是否必填：否 -（过滤条件）按照agent运行环境查询，取值：Linux, Windows。\n- instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：CVM、Lighthouse、TAT 托管实例。\n\n每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InstanceIds ` 和 `Filters ` 。",
           "example": "[ { \"Name\": \"instance-id\", \"Values\": [\"ins-zcewfho0\"] }]",
           "member": "Filter",
           "name": "Filters",
@@ -1453,7 +1453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行器ID列表。\n\n参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。\n",
+          "document": "执行器 ID 列表。\n\n每次请求的上限为 100。\n\n参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。\n",
           "example": "[\"ivk-b7s3qa5l\"]",
           "member": "string",
           "name": "InvokerIds",
@@ -1462,7 +1462,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件：\n\n- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。\n- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。\n- type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。\n\n参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。",
+          "document": "过滤条件：\n\n- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。\n- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。\n- invoker-type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。\n\n每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InvokerIds` 和 `Filters` 。",
           "example": "[ { \"Name\": \"command-id\", \"Values\": [\"cmd-nrncl292\"] } ]",
           "member": "Filter",
           "name": "Filters",
@@ -1601,7 +1601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "注册码ID。",
+          "document": "注册码ID。\n\n每次请求的上限为 100。\n\n参数不支持同时指定 `RegisterCodeIds ` 和 `Filters ` 。",
           "example": "[\"d0b7xxxx-a6xx-40x9-898x-44c9f508axxx\"]",
           "member": "string",
           "name": "RegisterCodeIds",
@@ -1666,7 +1666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "托管实例 id。\n\n参数不支持同时指定 `InstanceIds` 和 `Filters` 。\n",
+          "document": "托管实例 id。\n\n每次请求的上限为 100。\n\n参数不支持同时指定 `InstanceIds` 和 `Filters` 。\n",
           "example": "[\"rins-8d88xxxx\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -1675,7 +1675,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。\n\n\n- instance-name\n\n按照【托管实例名称】进行过滤。\n类型：String\n必选：否\n\n- instance-id\n\n按照【托管实例ID】进行过滤。\n类型：String\n必选：否\n\n- register-code-id\n\n按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。\n类型：String\n必选：否\n\n- sys-name\n\n按照【操作系统类型】进行过滤，取值：Linux | Windows。\n类型：String\n必选：否\n\n- tag-key\n\n按照【标签键】进行过滤。\n类型：String\n必选：否\n\n- tag-value\n\n按照【标签值】进行过滤。\n类型：String\n必选：否\n\n- tag:tag-key\n\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n类型：String\n必选：否\n\n例如 Filter 为 {\"Name\": \"tag:key1\", \"Values\": [\"v1\", \"v2\"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。\n\n",
+          "document": "过滤器列表。每次请求的 `Filters` 的上限为 10，`Filter.Values` 的上限为 5。参数不支持同时指定 `InstanceIds` 和 `Filters` 。\n\n\n- instance-name\n\n按照【托管实例名称】进行过滤。\n类型：String\n必选：否\n\n- instance-id\n\n按照【托管实例ID】进行过滤。\n类型：String\n必选：否\n\n- register-code-id\n\n按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。\n类型：String\n必选：否\n\n- sys-name\n\n按照【操作系统类型】进行过滤，取值：Linux | Windows。\n类型：String\n必选：否\n\n- tag-key\n\n按照【标签键】进行过滤。\n类型：String\n必选：否\n\n- tag-value\n\n按照【标签值】进行过滤。\n类型：String\n必选：否\n\n- tag:tag-key\n\n按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。\n类型：String\n必选：否\n\n例如 Filter 为 {\"Name\": \"tag:key1\", \"Values\": [\"v1\", \"v2\"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。\n\n",
           "example": "[{\"name\":\"register-code-id\",\"value\":\"67c6df82-fa3e-48fb-9c17-07e3e1e9c2c3\"}]",
           "member": "Filter",
           "name": "Filters",
@@ -1740,7 +1740,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景 ID 数组。\n\n参数不支持同时指定 `SceneIds ` 和 `Filters ` 。\n",
+          "document": "场景 ID 数组。\n\n每次请求的上限为 100。\n\n参数不支持同时指定 `SceneIds ` 和 `Filters ` 。\n",
           "example": "[\"sc-12345678\"]",
           "member": "string",
           "name": "SceneIds",
@@ -2743,7 +2743,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改的执行器名称。",
+          "document": "待修改的执行器名称。长度不超过 120 字符。",
           "example": "invoker-test",
           "member": "string",
           "name": "Name",
@@ -2752,7 +2752,7 @@
         },
         {
           "disabled": false,
-          "document": "执行器类型，当前仅支持周期类型执行器，取值：`SCHEDULE` 。",
+          "document": "待修改的执行器类型。\n\n可选取值（当前仅支持一种）：\n\n- `SCHEDULE`：周期类型执行器。",
           "example": "SCHEDULE",
           "member": "string",
           "name": "Type",
@@ -2770,7 +2770,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改的用户名。",
+          "document": "待修改的用户名。长度不超过 256 字符。",
           "example": "root",
           "member": "string",
           "name": "Username",
@@ -2779,7 +2779,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改的自定义参数。\n\n仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。",
+          "document": "待修改的自定义参数。字段类型为 JSON encode string。\n\n仅在 CommandId 所指命令的 EnableParameter 为 true 时，才允许设置此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。",
           "example": "{\"var\": \"A\"}",
           "member": "string",
           "name": "Parameters",
@@ -2797,7 +2797,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改的周期执行器设置。",
+          "document": "待修改的周期执行器设置。\n\n要将执行器类型修改为 `SCHEDULE` 时，必须指定此参数。",
           "example": "{          \"Policy\":\"ONCE\",     \"InvokeTime\":\"2021-09-01T00:00:00+08:00\" }",
           "member": "ScheduleSettings",
           "name": "ScheduleSettings",
@@ -3426,7 +3426,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行策略：\n- ONCE：单次执行\n- RECURRENCE：周期执行\n\n只有在 CreateInvoker 时才必填，ModifyInvoker 时为非必填",
+          "document": "执行策略：\n\n- ONCE：单次执行\n- RECURRENCE：周期执行",
           "example": "ONCE",
           "member": "string",
           "name": "Policy",

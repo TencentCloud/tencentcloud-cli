@@ -8647,7 +8647,7 @@
         {
           "disabled": false,
           "document": "集成配置列表",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationConfiguration",
           "name": "IntegrationSet",
           "output_required": true,

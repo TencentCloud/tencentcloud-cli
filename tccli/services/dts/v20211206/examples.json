@@ -329,7 +329,7 @@
     "ModifyConsumerGroupPassword": [
       {
         "document": "修改消费组密码",
-        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroupPassword\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"AccountName\": \"account-subs-9jyki7hniw-group-1\",\n    \"ConsumerGroupName\": \"consumer-grp-subs-9jyki7hniw-jason\",\n    \"OldPassword\": \"qJ3e1Wd~\",\n    \"NewPassword\": \"asdiouy09\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroupPassword\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"AccountName\": \"account-subs-9jyki7hniw-group-1\",\n    \"ConsumerGroupName\": \"consumer-grp-subs-9jyki7hniw-jason\",\n    \"NewPassword\": \"asdiouy09\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bef6a6f0-f3b1-11ed-b987-7301347aa36f\"\n    }\n}",
         "title": "修改消费组密码"
       }

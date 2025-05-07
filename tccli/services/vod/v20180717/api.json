@@ -14836,7 +14836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接收事件通知的方式。\"PUSH\" 为 [HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83)，\"PULL\" 为 [基于消息队列的可靠通知](https://cloud.tencent.com/document/product/266/7829#.E5.9F.BA.E4.BA.8E.E6.B6.88.E6.81.AF.E9.98.9F.E5.88.97.E7.9A.84.E5.8F.AF.E9.9D.A0.E9.80.9A.E7.9F.A5)。",
+          "document": "接收事件通知的方式。\"PUSH\" 为 [普通回调](https://cloud.tencent.com/document/product/266/33779#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83)，\"PULL\" 为 [可靠回调](https://cloud.tencent.com/document/product/266/33779#.E5.8F.AF.E9.9D.A0.E5.9B.9E.E8.B0.83)。",
           "example": "PUSH",
           "member": "string",
           "name": "Mode",
@@ -14846,7 +14846,7 @@
         },
         {
           "disabled": false,
-          "document": "采用 [HTTP 回调通知](https://cloud.tencent.com/document/product/266/7829#http.E5.9B.9E.E8.B0.83) 接收方式时，用于接收 V3 版本事件通知的地址。",
+          "document": "采用 [普通回调](https://cloud.tencent.com/document/product/266/33779#.E6.99.AE.E9.80.9A.E5.9B.9E.E8.B0.83) 模式时，用于接收 V3 版本事件通知的地址。",
           "example": "http://mydemo.com/receiveevent",
           "member": "string",
           "name": "NotificationUrl",
@@ -15756,7 +15756,7 @@
         },
         {
           "disabled": false,
-          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>",
+          "document": "查询视频处理任务类型，目前支持的任务类型包括：\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去除水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li> VideoHighlight: 视频智能集锦</li>\n<li> VideoTag: 视频智能标签</li>\n<li> VideoClassification:  视频智能分类</li>\n<li> VideoCover: 视频智能封面</li>\n<li> VideoSegment: 视频智能拆条</li>\n<li> VideoProduce: 视频制作</li>\n<li> MediaCast: 媒体转推</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>\n<li>VideoSnapshot: 视频截图</li>",
           "example": "Transcoding-TESHD",
           "member": "string",
           "name": "Type",
@@ -36055,7 +36055,7 @@
         },
         {
           "disabled": false,
-          "document": "[任务流模板](/document/product/266/11700#.E4.BB.BB.E5.8A.A1.E6.B5.81.E6.A8.A1.E6.9D.BF)名字，如果要对生成的新视频执行任务流时填写。",
+          "document": "[任务流](https://cloud.tencent.com/document/product/266/33475#.E4.BB.BB.E5.8A.A1.E6.B5.81)名称，如果要对生成的新视频执行任务流时填写。",
           "example": "procedure-test",
           "member": "string",
           "name": "ProcedureName",
@@ -36783,7 +36783,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>",
+          "document": "任务类型。\n<li> Transcoding: 普通转码</li>\n<li> Transcoding-TESHD: 极速高清转码</li>\n<li> Editing: 视频编辑</li>\n<li> Editing-TESHD: 极速高清视频编辑</li>\n<li> AdaptiveBitrateStreaming: 自适应码流</li>\n<li> ContentAudit: 内容审核</li>\n<li> ContentRecognition: 内容识别</li>\n<li> RemoveWatermark: 去水印</li>\n<li> ExtractTraceWatermark: 提取水印</li>\n<li> AddTraceWatermark: 添加水印</li>\n<li> RebuildMedia: 音画质重生</li>\n<li> QualityInspect: 音画质检测</li>\n<li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>\n<li>VoiceTranslation: 语音翻译</li>\n<li>JITTranscoding: 即时转码</li>\n<li>VideoSnapshot: 视频截图</li>",
           "example": "Transcoding",
           "member": "string",
           "name": "TaskType",
@@ -36803,7 +36803,7 @@
         },
         {
           "disabled": false,
-          "document": "不同规格任务统计数据详情。\n转码规格：\n<li>Remuxing: 转封装</li>\n<li>Audio: 音频转码</li>\n<li>Standard.H264.SD: H.264编码方式标清转码</li>\n<li>Standard.H264.HD: H.264编码方式高清转码</li>\n<li>Standard.H264.FHD: H.264编码方式全高清转码</li>\n<li>Standard.H264.2K: H.264编码方式2K转码</li>\n<li>Standard.H264.4K: H.264编码方式4K转码</li>\n<li>Standard.H265.SD: H.265编码方式标清转码</li>\n<li>Standard.H265.HD: H.265编码方式高清转码</li>\n<li>Standard.H265.FHD: H.265编码方式全高清转码</li>\n<li>Standard.H265.2K: H.265编码方式2K转码</li>\n<li>Standard.H265.4K: H.265编码方式4K转码</li>\n<li>TESHD-10.H264.SD: H.264编码方式标清极速高清转码</li>\n<li>TESHD-10.H264.HD: H.264编码方式高清极速高清转码</li>\n<li>TESHD-10.H264.FHD: H.264编码方式全高清极速高清转码</li>\n<li>TESHD-10.H264.2K: H.264编码方式2K极速高清转码</li>\n<li>TESHD-10.H264.4K: H.264编码方式4K极速高清转码</li>\n<li>TESHD-10.H265.SD: H.265编码方式标清极速高清转码</li>\n<li>TESHD-10.H265.HD: H.265编码方式高清极速高清转码</li>\n<li>TESHD-10.H265.FHD: H.265编码方式全高清极速高清转码</li>\n<li>TESHD-10.H265.2K: H.265编码方式2K极速高清转码</li>\n<li>TESHD-10.H265.4K: H.265编码方式4K极速高清转码</li>\n<li>Edit.Audio: 音频编辑</li>\n<li>Edit.H264.SD: H.264编码方式标清视频编辑</li>\n<li>Edit.H264.HD: H.264编码方式高清视频编辑</li>\n<li>Edit.H264.FHD: H.264编码方式全高清视频编辑</li>\n<li>Edit.H264.2K: H.264编码方式2K视频编辑</li>\n<li>Edit.H264.4K: H.264编码方式4K视频编辑</li>\n<li>Edit.H265.SD: H.265编码方式标清视频编辑</li>\n<li>Edit.H265.HD: H.265编码方式高清视频编辑</li>\n<li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>\n<li>Edit.H265.2K: H.265编码方式2K视频编辑</li>\n<li>Edit.H265.4K: H.265编码方式4K视频编辑</li>\n<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>\n去水印、音画质重生规格：\n<li>480P: 短边 ≤ 480px</li>\n<li>720P: 短边 ≤ 720px</li>\n<li>1080P: 短边 ≤ 1080px</li>\n<li>2K: 短边 ≤ 1440px</li>\n<li>4K: 短边 ≤ 2160px</li>\n<li>8K: 短边 ≤ 4320px</li>\n<li>Audio: 音频</li>\n即时转码规格：\n<li>JITTranscoding.H264.SD: H.264编码方式标清即时转码</li>\n<li>JITTranscoding.H264.HD: H.264编码方式高清即时转码</li>\n<li>JITTranscoding.H264.FHD: H.264编码方式全高清即时转码</li>\n<li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>\n<li>JITTranscoding.Audio: 音频即时转码</li>\n<li>JITTranscoding.Copy: 转封装即时转码</li>",
+          "document": "不同规格任务统计数据详情。\n转码规格：\n<li>Remuxing: 转封装</li>\n<li>Audio: 音频转码</li>\n<li>Standard.H264.SD: H.264编码方式标清转码</li>\n<li>Standard.H264.HD: H.264编码方式高清转码</li>\n<li>Standard.H264.FHD: H.264编码方式全高清转码</li>\n<li>Standard.H264.2K: H.264编码方式2K转码</li>\n<li>Standard.H264.4K: H.264编码方式4K转码</li>\n<li>Standard.H265.SD: H.265编码方式标清转码</li>\n<li>Standard.H265.HD: H.265编码方式高清转码</li>\n<li>Standard.H265.FHD: H.265编码方式全高清转码</li>\n<li>Standard.H265.2K: H.265编码方式2K转码</li>\n<li>Standard.H265.4K: H.265编码方式4K转码</li>\n<li>TESHD-10.H264.SD: H.264编码方式标清极速高清转码</li>\n<li>TESHD-10.H264.HD: H.264编码方式高清极速高清转码</li>\n<li>TESHD-10.H264.FHD: H.264编码方式全高清极速高清转码</li>\n<li>TESHD-10.H264.2K: H.264编码方式2K极速高清转码</li>\n<li>TESHD-10.H264.4K: H.264编码方式4K极速高清转码</li>\n<li>TESHD-10.H265.SD: H.265编码方式标清极速高清转码</li>\n<li>TESHD-10.H265.HD: H.265编码方式高清极速高清转码</li>\n<li>TESHD-10.H265.FHD: H.265编码方式全高清极速高清转码</li>\n<li>TESHD-10.H265.2K: H.265编码方式2K极速高清转码</li>\n<li>TESHD-10.H265.4K: H.265编码方式4K极速高清转码</li>\n<li>Edit.Audio: 音频编辑</li>\n<li>Edit.H264.SD: H.264编码方式标清视频编辑</li>\n<li>Edit.H264.HD: H.264编码方式高清视频编辑</li>\n<li>Edit.H264.FHD: H.264编码方式全高清视频编辑</li>\n<li>Edit.H264.2K: H.264编码方式2K视频编辑</li>\n<li>Edit.H264.4K: H.264编码方式4K视频编辑</li>\n<li>Edit.H265.SD: H.265编码方式标清视频编辑</li>\n<li>Edit.H265.HD: H.265编码方式高清视频编辑</li>\n<li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>\n<li>Edit.H265.2K: H.265编码方式2K视频编辑</li>\n<li>Edit.H265.4K: H.265编码方式4K视频编辑</li>\n<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>\n<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>\n去水印、音画质重生规格：\n<li>480P: 短边 ≤ 480px</li>\n<li>720P: 短边 ≤ 720px</li>\n<li>1080P: 短边 ≤ 1080px</li>\n<li>2K: 短边 ≤ 1440px</li>\n<li>4K: 短边 ≤ 2160px</li>\n<li>8K: 短边 ≤ 4320px</li>\n<li>Audio: 音频</li>\n即时转码规格：\n<li>JITTranscoding.H264.SD: H.264编码方式标清即时转码</li>\n<li>JITTranscoding.H264.HD: H.264编码方式高清即时转码</li>\n<li>JITTranscoding.H264.FHD: H.264编码方式全高清即时转码</li>\n<li>JITTranscoding.H264.2K: H.264编码方式2K即时转码</li>\n<li>JITTranscoding.Audio: 音频即时转码</li>\n<li>JITTranscoding.Copy: 转封装即时转码</li>\n视频截图规格：\n<li>SnapshotByTimeOffset: 时间点截图</li>\n<li>SampleSnapshot: 采样截图</li>\n<li>ImageSprite: 雪碧图</li>",
           "example": "无",
           "member": "SpecificationDataItem",
           "name": "Details",

@@ -22,7 +22,10 @@ Output:
             "DomainName": "TEST",
             "Ipv6CidrBlock": "2001::85b:3c51:f5ff:ffdb",
             "Ipv6CidrBlockSet": [
-                {}
+                {
+                    "IPv6CidrBlock": "2001::85b:3c51:f5ff:ffd3",
+                    "ISPType": "BGP"
+                }
             ],
             "EnableDhcp": true,
             "DnsServerSet": [

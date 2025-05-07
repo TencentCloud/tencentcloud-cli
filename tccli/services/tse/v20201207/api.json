@@ -1801,6 +1801,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为新 ipv6 CLB",
+          "example": "false",
+          "member": "bool",
+          "name": "IPV6FullChain",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15379,6 +15389,26 @@
           "name": "ElasticNumber",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持TOA",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportTOA",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持IPV6",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportIPV6",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -700,6 +700,16 @@
         },
         {
           "disabled": false,
+          "document": "llm首token时延(毫秒)",
+          "example": "100",
+          "member": "int64",
+          "name": "LLMFirstTokenLatency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "端到端时延（毫秒）",
           "example": "100",
           "member": "int64",

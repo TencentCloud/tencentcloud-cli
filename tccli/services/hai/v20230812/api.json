@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateApplication": {
+      "document": "本接口（CreateApplicaiton）用于对HAI实例制作自定义应用。",
+      "input": "CreateApplicationRequest",
+      "name": "创建自定义应用",
+      "output": "CreateApplicationResponse",
+      "status": "online"
+    },
     "CreateMuskPrompt": {
       "document": "创建musk prompt 任务",
       "input": "CreateMuskPromptRequest",
@@ -194,6 +201,61 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateApplicationRequest": {
+      "document": "CreateApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要制作自定义应用的HAI实例ID",
+          "example": "hai-0asd1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义应用的应用名称",
+          "example": " 我的HAI应用",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义应用的描述",
+          "example": "这是我的pytorch HAI自定义应用",
+          "member": "string",
+          "name": "ApplicationDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationResponse": {
+      "document": "CreateApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HAI自定义应用ID",
+          "example": "app-lfflw9lw",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateMuskPromptRequest": {
       "document": "CreateMuskPrompt请求参数结构体",

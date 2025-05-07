@@ -2420,6 +2420,15 @@
           "name": "SmtpHeaders",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "smtp头中的from字段，建议域名与FromEmailAddress保持一致",
+          "example": "noreply@mail.qcloud.com",
+          "member": "string",
+          "name": "HeaderFrom",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

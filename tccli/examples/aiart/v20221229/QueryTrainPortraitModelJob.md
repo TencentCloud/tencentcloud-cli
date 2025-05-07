@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli aiart QueryTrainPortraitModelJob --cli-unfold-argument  \
-    --ModelId test
+    --ModelId model_01
 ```
 
 Output: 

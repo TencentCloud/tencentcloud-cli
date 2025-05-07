@@ -35,7 +35,7 @@
     "CreateEdgePackTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgePackTask\n<公共请求参数>\n\n{\n    \"CosBucket\": \"‘edgepack-bucket1’\",\n    \"BlockID\": \"0\",\n    \"CosUriTo\": \"‘/out/app_out.apk’\",\n    \"CosUriFrom\": \"‘/apk/app.apk’\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgePackTask\n<公共请求参数>\n\n{\n    \"CosBucket\": \"edgepack-bucket1\",\n    \"BlockID\": \"0\",\n    \"CosUriTo\": \"/out/app_out.apk\",\n    \"CosUriFrom\": \"/apk/app.apk\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19d1096d-a4e8-4607-bfca-840a3f515378\"\n    }\n}",
         "title": "动态打包任务提交"
       }
@@ -195,7 +195,7 @@
     "DescribeEdgePackTaskStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePackTaskStatus\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-22T00:00:00+00:00\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePackTaskStatus\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-23T00:00:00+00:00\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EdgePackTaskStatusSet\": [\n            {\n                \"Apk\": \"test.apk\",\n                \"UploadTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SrcDir\": [\n                    \"/src/\"\n                ],\n                \"DstDir\": \"/ext/\",\n                \"StatusDesc\": \"\",\n                \"Status\": \"done\"\n            }\n        ],\n        \"RequestId\": \"9b231c10-72a3-4a92-8498-ffxxxxxxx\"\n    }\n}",
         "title": "查询动态打包任务状态列"
       }
@@ -211,7 +211,7 @@
     "DescribeHttpsPackages": [
       {
         "document": "HTTPS请求包查询",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttpsPackages\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttpsPackages\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"521e16c1a2c389fa34ff23aafa0db726\",\n        \"HttpsPackages\": [\n            {\n                \"Id\": 5720,\n                \"Type\": \"日常HTTPS请求包\",\n                \"ConfigId\": 672,\n                \"Size\": 10000000,\n                \"SizeUsed\": 0,\n                \"Status\": \"frozen\",\n                \"CreateTime\": \"2023-07-05 15:41:26\",\n                \"EnableTime\": \"2023-07-05 15:00:00\",\n                \"ExpireTime\": \"2024-07-05 15:00:00\",\n                \"LifeTimeMonth\": 12,\n                \"RefundAvailable\": false,\n                \"Channel\": \"ACTIVE_PURCHASE\",\n                \"TrueEnableTime\": \"2023-07-05 15:00:00\",\n                \"TrueExpireTime\": \"2024-07-05 15:59:59\",\n                \"Area\": \"global\",\n                \"ContractExtension\": false,\n                \"AutoExtension\": false,\n                \"ExtensionMode\": 0,\n                \"ExtensionAvailable\": false\n            }\n        ],\n        \"TotalCount\": 1,\n        \"ExpiringCount\": 0,\n        \"EnabledCount\": 0,\n        \"PaidCount\": 1\n    }\n}",
         "title": "HTTPS请求包查询"
       }
@@ -220,7 +220,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"test.tencent.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"WebpAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"TpgAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"GuetzliAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"AvifAdapter\": {\n            \"Switch\": \"on/off\"\n        },\n        \"RequestId\": \"29699aac-9898-4baf-b645-7cc31d972674\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"WebpAdapter\": {\n            \"Switch\": \"on\"\n        },\n        \"TpgAdapter\": {\n            \"Switch\": \"on\"\n        },\n        \"GuetzliAdapter\": {\n            \"Switch\": \"on\"\n        },\n        \"AvifAdapter\": {\n            \"Switch\": \"on\"\n        },\n        \"RequestId\": \"29699aac-9898-4baf-b645-7cc31d972674\"\n    }\n}",
         "title": "获取图片优化的配置"
       }
     ],
@@ -236,7 +236,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeIpVisit\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Domains.0=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"multiDomains\",\n                \"CdnData\": [\n                    {\n                        \"Metric\": \"ipVisit\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26cbf416-0155-411f-93df-7256930245a4\",\n        \"Data\": [\n            {\n                \"Resource\": \"multiDomains\",\n                \"CdnData\": [\n                    {\n                        \"Metric\": \"ipVisit\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "查询活跃IP详情"
       }
     ],
@@ -300,7 +300,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeReportData\n&StartTime=2020-02-01\n&EndTime=2020-02-29\n&ReportType=monthly\n&Area=mainland\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aa8eb8d-d704-45a9-ae81-9606243193cb\",\n        \"DomainReport\": [\n            {\n                \"Resource\": \"www.test1.com\",\n                \"ResourceId\": \"cdn-8km12345\",\n                \"Value\": 100,\n                \"Percentage\": 50,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 50\n            },\n            {\n                \"Resource\": \"www.test2.com\",\n                \"ResourceId\": \"cdn-rl523456\",\n                \"Value\": 100,\n                \"Percentage\": 50,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 50\n            }\n        ],\n        \"ProjectReport\": [\n            {\n                \"Resource\": \"p1\",\n                \"ResourceId\": \"123\",\n                \"Value\": 100,\n                \"Percentage\": 10,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 10\n            },\n            {\n                \"Resource\": \"默认项目\",\n                \"ResourceId\": \"cdn-8km12345\",\n                \"Value\": 900,\n                \"Percentage\": 90,\n                \"BillingValue\": 900,\n                \"BillingPercentage\": 90\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8aa8eb8d-d704-45a9-ae81-9606243193cb\",\n        \"DomainReport\": [\n            {\n                \"Resource\": \"www.test1.com\",\n                \"ResourceId\": \"cdn-8km32892\",\n                \"Value\": 100,\n                \"Percentage\": 50,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 50\n            },\n            {\n                \"Resource\": \"www.test2.com\",\n                \"ResourceId\": \"cdn-rl523456\",\n                \"Value\": 100,\n                \"Percentage\": 50,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 50\n            }\n        ],\n        \"ProjectReport\": [\n            {\n                \"Resource\": \"p1\",\n                \"ResourceId\": \"cdn-rl523456\",\n                \"Value\": 100,\n                \"Percentage\": 10,\n                \"BillingValue\": 100,\n                \"BillingPercentage\": 10\n            },\n            {\n                \"Resource\": \"默认项目\",\n                \"ResourceId\": \"cdn-8km12498\",\n                \"Value\": 900,\n                \"Percentage\": 90,\n                \"BillingValue\": 900,\n                \"BillingPercentage\": 90\n            }\n        ]\n    }\n}",
         "title": "查询报表数据"
       }
     ],
@@ -582,7 +582,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PushUrlsCache\n<公共请求参数>\n\n{\n    \"Urls\": [\n        \"http://www.test.com/1.jpg\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"TaskId\": \"15475444535871929928456\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26cbf416-0155-411f-93df-7256930245a4\",\n        \"TaskId\": \"15475444535871929928456\"\n    }\n}",
         "title": "预热 URL"
       }
     ],
@@ -662,7 +662,7 @@
       {
         "document": "异常返回",
         "input": "https://cdn.tencentcloudapi.com/?Action=VerifyDomainRecord\n&Domain=www.qq.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation.CdnTxtRecordValueNotMatch\",\n            \"Message\": \"cdn txt record value not match(txt record value not match)\"\n        },\n        \"RequestId\": \"2424\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation.CdnTxtRecordValueNotMatch\",\n            \"Message\": \"TXT解析记录验证不匹配\"\n        },\n        \"RequestId\": \"26cbf416-0155-411f-93df-7256930245a4\"\n    }\n}",
         "title": "验证解析记录"
       },
       {

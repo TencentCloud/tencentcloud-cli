@@ -372,7 +372,7 @@
       "status": "online"
     },
     "EnterRescueMode": {
-      "document": "进入救援模式",
+      "document": "本接口（EnterRescueMode）用于进入救援模式。",
       "input": "EnterRescueModeRequest",
       "name": "进入救援模式",
       "output": "EnterRescueModeResponse",
@@ -2407,6 +2407,24 @@
           "name": "LaunchTemplateTagSpecification",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata，支持创建 CVM 时添加自定义元数据键值对。\n**注：内测中**。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "只允许传递 Update 和 Replace 参数，在模板使用自定义 Metadata 且在 RunInstances 也传递 Metadata 时生效。默认采用 Replace。\n\n- Update：设模板 t含本参数值为Update、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k1:v1, k2:v3] \n- Replace：模板 t含本参数值为Replace、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k2:v3] \n**注：内测中**。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateDataModifyAction",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2687,6 +2705,24 @@
           "name": "DisableApiTermination",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata，支持创建 CVM 时添加自定义元数据键值对。\n**注：内测中**。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "只允许传递 Update 和 Replace 参数，在模板使用自定义 Metadata 且在 RunInstances 也传递 Metadata 时生效。默认采用 Replace。\n\n- Update：设模板 t含本参数值为Update、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k1:v1, k2:v3] \n- Replace：模板 t含本参数值为Replace、 metadata=[k1:v1, k2:v2] ，则RunInstances（给metadata=[k2:v3]）+ t 创建的 cvm 使用metadata=[k2:v3] \n**注：内测中**。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateDataModifyAction",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3627,7 +3663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要共享的镜像Id",
+          "document": "需要共享的镜像 ID，可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回的`ImageId`获取。",
           "example": "img-6pb6lrmy",
           "member": "string",
           "name": "ImageId",
@@ -3673,7 +3709,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n\n<li><strong>image-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>image-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PRIVATE_IMAGE: 私有镜像 (本账户创建的镜像)</p><p style=\"padding-left: 30px;\">PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)</p><p style=\"padding-left: 30px;\">SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像)</p>\n<li><strong>image-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>platform</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像平台</strong>】进行过滤，如CentOS。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-value</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
+          "document": "过滤条件，每次请求的`Filters`的上限为10，`Filters.Values`的上限为5。参数不可以同时指定`ImageIds`和`Filters`。详细的过滤条件如下：\n\n<li><strong>image-id</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像ID</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>image-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像类型</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PRIVATE_IMAGE: 自定义镜像 (本账户创建的镜像)</p><p style=\"padding-left: 30px;\">PUBLIC_IMAGE: 公共镜像 (腾讯云官方镜像)</p><p style=\"padding-left: 30px;\">SHARED_IMAGE: 共享镜像(其他账户共享给本账户的镜像)</p>\n<li><strong>image-name</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像名称</strong>】进行过滤。支持模糊查询。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>platform</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>镜像平台</strong>】进行过滤，如 CentOS，支持模糊匹配。可通过 <a href=\"https://cloud.tencent.com/document/api/213/15715\" target=\"_blank\">DescribeImages</a> 接口返回的<code> Platform </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagKey </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-value</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagValue </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。可通过 <a href=\"https://cloud.tencent.com/document/product/651/72275\" target=\"_blank\"> GetTags </a> 接口返回的<code> TagKey 和 TagValue </code>获取。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3700,7 +3736,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，如 `S1.SMALL1`",
+          "document": "实例类型，如 `S1.SMALL1`。可通过 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 接口返回的 `InstanceType` 获取。",
           "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
@@ -5223,8 +5259,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要进入救援模式的实例id",
-          "example": "'ins-abcdefg'",
+          "document": "需要进入救援模式的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。\n",
+          "example": "ins-abcdefg",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5232,8 +5268,8 @@
         },
         {
           "disabled": false,
-          "document": "救援模式下系统密码",
-          "example": "'hello123456789'",
+          "document": "救援模式下系统密码。不同操作系统类型密码复杂度限制不一样，具体如下：<li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。</li>",
+          "example": "hello123456789",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -5242,7 +5278,7 @@
         {
           "disabled": false,
           "document": "救援模式下系统用户名",
-          "example": "'root'",
+          "example": "root",
           "member": "string",
           "name": "Username",
           "required": false,
@@ -5251,7 +5287,7 @@
         {
           "disabled": true,
           "document": "是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -5927,7 +5963,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像类型",
+          "document": "镜像类型。镜像类型返回值包括：\n* `PUBLIC_IMAGE` 公共镜像\n* `PRIVATE_IMAGE` 自定义镜像\n* `SHARED_IMAGE` 共享镜像",
           "example": "PRIVATE_IMAGE",
           "member": "string",
           "name": "ImageType",
@@ -5937,7 +5973,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像创建时间",
+          "document": "镜像创建时间。\n按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2022-03-21T08:41:45Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -5967,7 +6003,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像大小",
+          "document": "镜像大小，单位 GiB。",
           "example": "50",
           "member": "int64",
           "name": "ImageSize",
@@ -5977,7 +6013,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像架构",
+          "document": "镜像架构。镜像架构返回值包括：\n* `x86_64`\n* `arm`\n* `i386`",
           "example": "x86_64",
           "member": "string",
           "name": "Architecture",
@@ -6017,7 +6053,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像来源",
+          "document": "镜像来源。镜像来源返回值包括：\n* `OFFICIAL` 官方镜像\n* `CREATE_IMAGE` 用户自建镜像\n* `EXTERNAL_IMPORT` 用户外部导入镜像",
           "example": "CREATE_IMAGE",
           "member": "string",
           "name": "ImageSource",
@@ -6067,7 +6103,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像许可类型",
+          "document": "镜像许可类型。镜像许可类型返回值包括：\n* `TencentCloud` 腾讯云官方许可\n* `BYOL` 用户自带许可",
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
@@ -6093,6 +6129,16 @@
           "name": "ImageDeprecated",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CDC镜像缓存状态",
+          "example": "CACHED",
+          "member": "string",
+          "name": "CdcCacheStatus",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7094,6 +7140,15 @@
           "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata，支持创建 CVM 时添加自定义元数据键值对。\n\n**注：内测中**。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
           "required": false,
           "type": "object"
         },
@@ -9055,6 +9110,51 @@
       ],
       "usage": "both"
     },
+    "Metadata": {
+      "document": "自定义metadata",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义metadata键值对列表。",
+          "example": "[{\"Key\": \"key\", \"Value\": \"value\"}]",
+          "member": "MetadataItem",
+          "name": "Items",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetadataItem": {
+      "document": "自定义metadata key和value",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义metadata键，需符合正则 ^[a-zA-Z0-9_-]+$，长度 ≤128 字节（大小写敏感）；\n",
+          "example": "\"key\"",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata值，支持任意数据（含二进制），大小 ≤256 KB（大小写敏感）；",
+          "example": "\"value\"",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyChcAttributeRequest": {
       "document": "ModifyChcAttribute请求参数结构体",
       "members": [
@@ -10221,7 +10321,7 @@
         },
         {
           "disabled": false,
-          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启<br><li>false：表示在正常重启失败后不进行强制重启<br><br>默认取值：false。",
+          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启</li><li>false：表示在正常重启失败后不进行强制重启</li><br>默认取值：false。",
           "example": "false",
           "member": "bool",
           "name": "ForceReboot",
@@ -10230,7 +10330,7 @@
         },
         {
           "disabled": false,
-          "document": "关机类型。取值范围：<br><li>SOFT：表示软关机<br><li>HARD：表示硬关机<br><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机<br><br>默认取值：SOFT。",
+          "document": "关机类型。取值范围：<br><li>SOFT：表示软关机</li><li>HARD：表示硬关机</li><li>SOFT_FIRST：表示优先软关机，失败再执行硬关机</li><br>默认取值：SOFT。",
           "example": "SOFT",
           "member": "string",
           "name": "StopType",
@@ -11745,6 +11845,15 @@
         },
         {
           "disabled": false,
+          "document": "自定义metadata，支持创建 CVM 时添加自定义元数据键值对。\n**注：内测中**。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
           "example": "false",
           "member": "bool",
@@ -11879,7 +11988,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像分享时间",
+          "document": "镜像分享时间。\n按照 ISO8601 标准表示，并且使用 UTC 时间，格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2023-10-05T14:30:00Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -11925,7 +12034,7 @@
         },
         {
           "disabled": false,
-          "document": "创建此快照的云硬盘大小，单位GB。",
+          "document": "创建此快照的云硬盘大小，单位 GiB。",
           "example": "50",
           "member": "int64",
           "name": "DiskSize",

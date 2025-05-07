@@ -1225,6 +1225,13 @@
       "output": "DescribeTemplateDimCountResponse",
       "status": "online"
     },
+    "DescribeTenantProjects": {
+      "document": "租户全局范围的项目列表，与用户查看范围无关.",
+      "input": "DescribeTenantProjectsRequest",
+      "name": "获取租户全局范围的项目列表",
+      "output": "DescribeTenantProjectsResponse",
+      "status": "online"
+    },
     "DescribeThirdTaskRunLog": {
       "document": "获取第三方运行日志",
       "input": "DescribeThirdTaskRunLogRequest",
@@ -22795,6 +22802,115 @@
       ],
       "type": "object"
     },
+    "DescribeTenantProjectsRequest": {
+      "document": "DescribeTenantProjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一页几条",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示关联执行组的信息。正常应该不是从项目列表里获取",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeExecutors",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示项目管理员信息，减少默认返回的请求内容",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeAdminUsers",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "统计项目人员数量。数据地图需求",
+          "example": "true",
+          "member": "bool",
+          "name": "DescribeMemberCount",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义条件查询",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认不提供创建者信息，该参数与CAM交互比较耗时",
+          "example": "fasle",
+          "member": "bool",
+          "name": "DescribeCreator",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否展示关联资源池信息",
+          "example": "false",
+          "member": "bool",
+          "name": "DescribeResourcePools",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantProjectsResponse": {
+      "document": "DescribeTenantProjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目列表",
+          "example": "无",
+          "member": "ProjectPage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeThirdTaskRunLogRequest": {
       "document": "DescribeThirdTaskRunLog请求参数结构体",
       "members": [
@@ -26561,7 +26677,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期编号",
+          "document": "**实例生命周期编号，标识实例的某一次执行**\n\n例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1",
           "example": "1",
           "member": "uint64",
           "name": "LifeRoundNum",
@@ -26630,6 +26746,15 @@
           "name": "EndLineCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "**分页查询日志时使用，无具体业务含义**\n\n第一次查询时值为null \n第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可",
+          "example": "115715",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27493,7 +27618,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**实例生命周期编号，标识实例的某一次执行**\n\n例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次的执行的编号为1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "LifeRoundNum",
@@ -27848,7 +27973,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**实例生命周期编号，标识实例的某一次执行**\n\n例如：周期实例第一次运行的编号为0，用户后期又重跑了该实例，第二次执行的编号为1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "LifeRoundNum",
@@ -27898,7 +28023,7 @@
         },
         {
           "disabled": false,
-          "document": "**下发执行ID**\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**下发执行ID**\n统一执行平台下发执行到新版执行机标识某次执行的唯一ID，存量老执行机下发执行没有此ID。\n如果不知道执行机版本是否支持此ID，可以联系腾讯云运维同学\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1531612696034334445952",
           "member": "string",
           "name": "ExecutionJobId",
@@ -27976,7 +28101,7 @@
         },
         {
           "disabled": false,
-          "document": "**实例生命周期阶段状态**\n\n- WAIT_UPSTREAM 表示 等待事件/上游状态\n- WAIT_RUN 表示 等待运行状态\n- RUNNING 表示 运行中状态\n- COMPLETE 表示 终态-完成\n- FAILED 表示 终态-失败重试\n- EXPIRED 表示 终态-失败\n- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支\n- HISTORY 表示 兼容历史实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**实例生命周期阶段状态**\n\n- WAIT_UPSTREAM 表示 等待事件/上游状态\n- WAIT_RUN 表示 等待运行状态\n- RUNNING 表示 运行中状态\n- COMPLETE 表示 终态-完成\n- FAILED 表示 终态-失败重试\n- EXPIRED 表示 终态-失败\n- SKIP_RUNNING 表示 终态-被上游分支节点跳过的分支\n- HISTORY 表示 兼容2024-03-30之前的历史实例，之后实例无需关注次枚举类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RUNNING",
           "member": "string",
           "name": "DetailState",
@@ -28653,7 +28778,7 @@
         },
         {
           "disabled": false,
-          "document": "执行平台日志分页查询参数, 每次请求透明传入。第一页查询时值为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**分页查询日志时使用，无具体业务含义**\n\n第一次查询时值为null \n第二次及以后查询时使用上一次查询返回信息中的ExtInfo字段值即可\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "115715",
           "member": "string",
           "name": "ExtInfo",
@@ -31551,7 +31676,7 @@
         },
         {
           "disabled": false,
-          "document": "**实例计划调度时间**\n过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "document": "**实例计划调度时间过滤条件**\n过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss",
           "example": "2025-03-19 00:00:00",
           "member": "string",
           "name": "ScheduleTimeFrom",
@@ -31560,7 +31685,7 @@
         },
         {
           "disabled": false,
-          "document": "**实例计划调度时间**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "document": "**实例计划调度时间过滤条件**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
           "example": "2025-03-20 00:00:00",
           "member": "string",
           "name": "ScheduleTimeTo",
@@ -31587,7 +31712,7 @@
         },
         {
           "disabled": false,
-          "document": "**查询结果排序字段**\n\n- SCHEDULE_DATE 表示 计划调度时间\n- START_TIME 表示 实例开始执行时间\n- END_TIME 表示 实例结束执行时间\n- COST_TIME 表示 实例执行时长",
+          "document": "**查询结果排序字段**\n\n- SCHEDULE_DATE 表示 根据计划调度时间排序\n- START_TIME 表示 根据实例开始执行时间排序\n- END_TIME 表示 根据实例结束执行时间排序\n- COST_TIME 表示 根据实例执行时长排序",
           "example": "SCHEDULE_DATE",
           "member": "string",
           "name": "SortColumn",
@@ -31686,7 +31811,7 @@
         },
         {
           "disabled": false,
-          "document": "**开始时间**\n过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "document": "**实例执行开始时间过滤条件**\n过滤起始时间，时间格式为 yyyy-MM-dd HH:mm:ss",
           "example": "2025-03-19 00:00:00",
           "member": "string",
           "name": "StartTimeFrom",
@@ -31695,7 +31820,7 @@
         },
         {
           "disabled": false,
-          "document": "**开始时间**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
+          "document": "**实例执行开始时间过滤条件**\n过滤截止时间，时间格式为 yyyy-MM-dd HH:mm:ss",
           "example": "2025-03-20 00:00:00",
           "member": "string",
           "name": "StartTimeTo",
@@ -36703,6 +36828,62 @@
         }
       ],
       "usage": "in"
+    },
+    "ProjectPage": {
+      "document": "查询数据源分页列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Project",
+          "name": "Rows",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总分页页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalPageNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ProjectUserRole": {
       "document": "项目的用户对象",

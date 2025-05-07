@@ -13596,7 +13596,7 @@
         {
           "disabled": false,
           "document": "断流信息",
-          "example": "无",
+          "example": "[\"stream 1 is broken\", \"stream 2 is broken\"\"]",
           "member": "string",
           "name": "StreamBrokenResults",
           "output_required": true,
@@ -13606,7 +13606,7 @@
         {
           "disabled": false,
           "document": "低帧率信息",
-          "example": "无",
+          "example": "[\"stream 1 framerate is less than 10 fps\", \"stream 2  framerate is less than 10 fps\"]",
           "member": "string",
           "name": "LowFrameRateResults",
           "output_required": true,
@@ -13616,7 +13616,7 @@
         {
           "disabled": false,
           "document": "流格式诊断信息",
-          "example": "无",
+          "example": "[\"stream 1 is jitter\", \"stream 2 is jitter\"]",
           "member": "string",
           "name": "StreamFormatResults",
           "output_required": true,
@@ -14179,10 +14179,10 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "test",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14192,7 +14192,7 @@
           "example": "2020-01-01 12:12:12",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14202,27 +14202,27 @@
           "example": "2020-01-01 12:12:12",
           "member": "string",
           "name": "ExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "live",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "5000.livepush.com",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14271,7 +14271,7 @@
         {
           "disabled": false,
           "document": "HLS续流超时时间。\n取值范围[0，1800]。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "FlowContinueDuration",
           "output_required": false,
@@ -15161,7 +15161,7 @@
         {
           "disabled": false,
           "document": "智能语音识别结果。",
-          "example": "无",
+          "example": "[\"stream 1: 你好\"， “stream 2: 最近怎么样”]",
           "member": "string",
           "name": "AiAsrResults",
           "output_required": true,
@@ -15171,7 +15171,7 @@
         {
           "disabled": false,
           "document": "智能文字识别结果。",
-          "example": "无",
+          "example": "[\"stream 1: cctv\"， “stream 2: cctv2”]",
           "member": "string",
           "name": "AiOcrResults",
           "output_required": true,
@@ -15181,7 +15181,7 @@
         {
           "disabled": false,
           "document": "内容质检结果。",
-          "example": "无",
+          "example": "[\"stream1: Moasic\", \"stream 2: Blur\"]",
           "member": "string",
           "name": "StreamQuaCtrlResults",
           "output_required": true,
@@ -18852,7 +18852,7 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "test-1",
+          "example": "name",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -18862,7 +18862,7 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "test",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -20584,7 +20584,7 @@
         {
           "disabled": false,
           "document": "时移自适应码率子流转码模板ID。",
-          "example": "无",
+          "example": "332341",
           "member": "uint64",
           "name": "TransCodeId",
           "output_required": true,

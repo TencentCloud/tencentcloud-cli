@@ -3776,7 +3776,7 @@
         {
           "disabled": false,
           "document": "报告内容。",
-          "example": "无",
+          "example": "{\\\"ReportBasicInfo\\\":{\\\"UserName\\\":\\\"数据库智能管家DBbrain\\\",\\\"EndTime\\\":\\\"2025-04-24 23:59:00\\\",\\\"StartTime\\\":\\\"2025-04-23 23:59:00\\\"},\\\"TopSpaceTables\\\":{\\\"Names\\\":[\\\"TableSchema\\\"],\\\"Data\\\":[{\\\"TableName\\\":\\\"stk_order_36\\\"}]}}",
           "member": "string",
           "name": "Report",
           "output_required": true,

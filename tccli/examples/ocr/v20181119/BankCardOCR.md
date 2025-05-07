@@ -15,12 +15,13 @@ Output:
     "Response": {
         "BankInfo": "招商银行(03080000)",
         "BorderCutImage": null,
+        "CardCategory": "标准实体银行卡",
         "CardName": "招商银行信用卡",
         "CardNo": "6225768888888888",
         "CardNoImage": null,
         "CardType": "贷记卡",
         "QualityValue": null,
-        "RequestId": "4a4438c5-09ff-4031-945c-17000ba4542d",
+        "RequestId": "4eeb7002-ef18-46b1-92dc-21e836f27d7f",
         "ValidDate": "07/2023",
         "WarningCode": null
     }

@@ -63,6 +63,13 @@
       "output": "AddUserDeviceResponse",
       "status": "online"
     },
+    "BatchDeleteVideoDownloadTask": {
+      "document": "用于批量删除本地录像下载失败的任务",
+      "input": "BatchDeleteVideoDownloadTaskRequest",
+      "name": "批量删除本地录像下载任务",
+      "output": "BatchDeleteVideoDownloadTaskResponse",
+      "status": "online"
+    },
     "BatchOperateDevice": {
       "document": "用于批量操作（启用，禁用，删除）设备",
       "input": "BatchOperateDeviceRequest",
@@ -117,6 +124,13 @@
       "input": "ControlRecordTimelineRequest",
       "name": "查询本地录像时间轴",
       "output": "ControlRecordTimelineResponse",
+      "status": "online"
+    },
+    "CreateVideoDownloadTask": {
+      "document": "创建本地录像下载任务",
+      "input": "CreateVideoDownloadTaskRequest",
+      "name": "创建本地录像下载任务",
+      "output": "CreateVideoDownloadTaskResponse",
       "status": "online"
     },
     "DeleteAITask": {
@@ -182,6 +196,13 @@
       "output": "DeleteRecordTemplateResponse",
       "status": "online"
     },
+    "DeleteTask": {
+      "document": "用于删除执行完成的任务",
+      "input": "DeleteTaskRequest",
+      "name": "删除任务",
+      "output": "DeleteTaskResponse",
+      "status": "online"
+    },
     "DeleteUserDevice": {
       "document": "用于删除已添加的设备。",
       "input": "DeleteUserDeviceRequest",
@@ -243,6 +264,13 @@
       "input": "DescribeDomainRegionRequest",
       "name": "查询域名可绑定服务节点",
       "output": "DescribeDomainRegionResponse",
+      "status": "online"
+    },
+    "DescribeGBDeviceAddr": {
+      "document": "用于获取国标设备的公网地址",
+      "input": "DescribeGBDeviceAddrRequest",
+      "name": "查询国标设备公网地址",
+      "output": "DescribeGBDeviceAddrResponse",
       "status": "online"
     },
     "DescribeGateway": {
@@ -488,6 +516,13 @@
       "input": "ListTasksRequest",
       "name": "查询任务列表",
       "output": "ListTasksResponse",
+      "status": "online"
+    },
+    "ListVideoDownloadTask": {
+      "document": "查询本店里录像下载任务列表",
+      "input": "ListVideoDownloadTaskRequest",
+      "name": "查询本地录像下载任务列表",
+      "output": "ListVideoDownloadTaskResponse",
       "status": "online"
     },
     "PlayRecord": {
@@ -2351,6 +2386,33 @@
       ],
       "usage": "out"
     },
+    "BatchDeleteVideoDownloadTaskRequest": {
+      "document": "BatchDeleteVideoDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本地录像下载任务 ID 列表",
+          "example": "[\"uuid\",\"uuid\"]",
+          "member": "string",
+          "name": "DownloadTaskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDeleteVideoDownloadTaskResponse": {
+      "document": "BatchDeleteVideoDownloadTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchOperateDeviceData": {
       "document": "批量操作设备返回结果",
       "members": [
@@ -3120,6 +3182,97 @@
       ],
       "type": "object"
     },
+    "CreateVideoDownloadTaskRequest": {
+      "document": "CreateVideoDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "uuid",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1728124673",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1728124773",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认1倍速，支持（1,2,4,8）倍速",
+          "example": "1",
+          "member": "int64",
+          "name": "Scale",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "转码后的mp4文件过期时间（支持7,15,30,60,90,180,365）",
+          "example": "7",
+          "member": "int64",
+          "name": "Expire",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下载文件格式，当前仅支持（1：mp4）",
+          "example": "1",
+          "member": "int64",
+          "name": "FileType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "完成策略（0：拉流失败但是录像不完整则认为任务失败，不生成 MP4；1：拉流失败但是录像不完整则认为任务成功，生成 mp4）",
+          "example": "1",
+          "member": "int64",
+          "name": "CompletionPolicy",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoDownloadTaskResponse": {
+      "document": "CreateVideoDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载任务返回结果",
+          "example": "无",
+          "member": "VideoDownloadTaskData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAITaskRequest": {
       "document": "DeleteAITask请求参数结构体",
       "members": [
@@ -3363,6 +3516,33 @@
       ],
       "type": "object"
     },
+    "DeleteTaskRequest": {
+      "document": "DeleteTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "4d3535ba-3d81-4154-85ac-************",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteTaskResponse": {
+      "document": "DeleteTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteUserDeviceRequest": {
       "document": "DeleteUserDevice请求参数结构体",
       "members": [
@@ -3582,6 +3762,22 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeDeviceAddrList": {
+      "document": "查询国标设备地址列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备地址列表",
+          "example": "[{\"DeviceId\":\"ffefbe2f-****-4659-****-7596****139\", \"Addr\":\"127.0.0.1\"}]",
+          "member": "RemoteAddrInfo",
+          "name": "RemoteAddrs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeDeviceChannelData": {
       "document": "查询设备通道信息返回结果",
@@ -4343,6 +4539,43 @@
           "name": "Data",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGBDeviceAddrRequest": {
+      "document": "DescribeGBDeviceAddr请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID列表",
+          "example": "[\"ffefbe2f-****-****-****-7596a0e13900\",\"ffd25236-****-****-****-91b1aee8cbc0\"]",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGBDeviceAddrResponse": {
+      "document": "DescribeGBDeviceAddr返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "DescribeDeviceAddrList",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -8061,6 +8294,141 @@
       ],
       "type": "object"
     },
+    "ListVideoDownloadTaskData": {
+      "document": "本地录像下载任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoDownloadTask",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListVideoDownloadTaskRequest": {
+      "document": "ListVideoDownloadTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备名称，用于模糊搜索",
+          "example": "设备 1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道名称，用于模糊搜索",
+          "example": "通道 1",
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态（0：准备中，1：执行中，2：已完成，3：失败）",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）",
+          "example": "StartTime,-EndTIme",
+          "member": "string",
+          "name": "SortRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "响应是否携带预览地址(0:不携带；1:携带)",
+          "example": "1",
+          "member": "int64",
+          "name": "WithPreviewUrl",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下载任务 ID",
+          "example": "ec72e1e1-fd18-407d-b537-************",
+          "member": "string",
+          "name": "DownloadTaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下载地址过期时间，单位秒，最大为 1 天， 86400秒",
+          "example": "3600",
+          "member": "int64",
+          "name": "UrlExpires",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVideoDownloadTaskResponse": {
+      "document": "ListVideoDownloadTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本地录像下载任务列表",
+          "example": "无",
+          "member": "ListVideoDownloadTaskData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Location": {
       "document": "AI识别结果在画面中坐标",
       "members": [
@@ -9041,6 +9409,32 @@
         }
       ],
       "type": "object"
+    },
+    "RemoteAddrInfo": {
+      "document": "设备地址返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备Id",
+          "example": "\"ffefbe2f-****-4659-****-7596****13900\"",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "\"127.0.0.1\"",
+          "member": "string",
+          "name": "Addr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SetForbidPlayChannelsRequest": {
       "document": "SetForbidPlayChannels请求参数结构体",
@@ -10972,6 +11366,198 @@
         }
       ],
       "type": "object"
+    },
+    "VideoDownloadTask": {
+      "document": "本地录像下载任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uuid",
+          "member": "string",
+          "name": "DownloadTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uuid",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通道1",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通道编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通道编码1",
+          "member": "string",
+          "name": "ChannelCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "设备名称1",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "设备编码1",
+          "member": "string",
+          "name": "DeviceCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态（0：未执行；1：执行中；2 任务完成；\n3：任务失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载录像时间段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-09-08 14:30:00-2024-09-08 15:30:00",
+          "member": "string",
+          "name": "VideoTimeSection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "倍速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Scale",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7200",
+          "member": "int64",
+          "name": "DownloadTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录像大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "182918912",
+          "member": "int64",
+          "name": "VideoSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-09-08 14:30:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-09-08 15:30:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://domain/vds/******.mp4",
+          "member": "string",
+          "name": "FileDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "下载失败",
+          "member": "string",
+          "name": "FailedReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期规则，热存天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "Expire",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mp4预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://{userdomain}/ddd",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoDownloadTaskData": {
+      "document": "录像下载任务数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uuid",
+          "member": "string",
+          "name": "DownloadTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -406,6 +406,13 @@
       "output": "DescribeRouteResponse",
       "status": "online"
     },
+    "DescribeSecurityGroupRoutes": {
+      "document": "获取安全组路由信息列表",
+      "input": "DescribeSecurityGroupRoutesRequest",
+      "name": "查询安全组路由信息列表",
+      "output": "DescribeSecurityGroupRoutesResponse",
+      "status": "online"
+    },
     "DescribeTaskStatus": {
       "document": "查询任务状态",
       "input": "DescribeTaskStatusRequest",
@@ -4999,13 +5006,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "ckafka集群实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ckafka集群实例Id",
           "example": "ckafka-test",
           "member": "string",
           "name": "CkafkaInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5019,13 +5026,13 @@
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址",
           "example": "10.0.0.30",
           "member": "string",
           "name": "Ip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8363,6 +8370,79 @@
           "member": "RouteResponse",
           "name": "Result",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupRoutesRequest": {
+      "document": "DescribeSecurityGroupRoutes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由信息",
+          "example": "{\"instanceId\":\"ckafka-test\", \"routeId\":301}",
+          "member": "InstanceRoute",
+          "name": "InstanceRoute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "[{\"Name\":\"filtername-test\",\"TagValue\":[\"filtervalue-test\"]}]",
+          "member": "RouteFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页Offset,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit,默认20",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键词,可根据实例id/实例名称/vip模糊搜索",
+          "example": "group-test",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupRoutesResponse": {
+      "document": "DescribeSecurityGroupRoutes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的安全组路由信息结果对象",
+          "example": "{\"securityGroupRoutes\":[{\"instanceRoute\":{\"instanceId\":\"ckafka-test\", \"routeId\":301},\"securityGroupIds\":[\"sg-test\"], \"InstanceName\":\"ckafka测试\",\"vpcId\":\"vpc-test\",\"vip\":\"10.0.0.5\"}], \"returnMessage\":\"success\"}",
+          "member": "SecurityGroupRouteResp",
+          "name": "Result",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12506,6 +12586,34 @@
       ],
       "usage": "out"
     },
+    "InstanceRoute": {
+      "document": "实例路由",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka集群实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-test",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "301",
+          "member": "int64",
+          "name": "RouteId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceScalingDownRequest": {
       "document": "InstanceScalingDown请求参数结构体",
       "members": [
@@ -12961,23 +13069,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "cvm和IP 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cvm和IP 列表",
           "example": "[{\"CkafkaInstanceId\":\"ckafka-test\",\"InstanceId\":\"ins-test\",\"Ip\":\"10.0.0.30\"}]",
           "member": "CvmAndIpInfo",
           "name": "CvmList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例数据量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例数据量",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16458,6 +16566,45 @@
       ],
       "usage": "out"
     },
+    "RouteFilter": {
+      "document": "路由列表过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤名称,目前支持security-group-id,按安全组关联过滤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "security-group-id",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤值,当过滤名称为security-group-id时仅支持传单个value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-test\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤关系,支持IN和NOT_IN,默认为IN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IN",
+          "member": "string",
+          "name": "Relation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RouteResponse": {
       "document": "路由信息返回对象",
       "members": [
@@ -16950,6 +17097,93 @@
         }
       ],
       "usage": "both"
+    },
+    "SecurityGroupRoute": {
+      "document": "安全组路由信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"InstanceId\":\"ckafka-test\",\"RouteId\":301}",
+          "member": "InstanceRoute",
+          "name": "InstanceRoute",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-test\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ckafka集群实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka测试",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-test",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.5",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SecurityGroupRouteResp": {
+      "document": "安全组路由信息返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的安全组路由信息总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的安全组路由信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"InstanceRoute\":{\"InstanceId\":\"ckafka-test\",\"RouteId\":301},\"SecurityGroupIds\":[\"sg-test\"],\"InstanceName\":\"ckafka测试\",\"VpcId\":\"vpc-test\",\"Vip\":\"10.0.0.5\"}]",
+          "member": "SecurityGroupRoute",
+          "name": "SecurityGroupRoutes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SendMessageRequest": {
       "document": "SendMessage请求参数结构体",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribePayWaitDetail --cli-unfold-argument  \
-    --BusinessId ***561
+    --BusinessId PEDWSDW561
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "RequestId": "45559f25-13b9-42fd-b2ae-698842d91fd7",
-        "Domain": "*1.top",
+        "Domain": "test.top",
         "Status": "pay",
         "EndTime": "2024-12-19 07:24:25",
         "RegTime": "2023-11-11 07:24:25",

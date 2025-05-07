@@ -18,7 +18,7 @@ Output:
     "Response": {
         "ContentId": "streamName",
         "RequestId": "ddbdcd59-7a54-4849-bf9f-ad2de811f7d7",
-        "TXEncryptionToken": "xxxxx"
+        "TXEncryptionToken": "LCJkcm1fdHlwZXMiOlsiV0lERVZJTkUiXSwiY2FsbGVyI"
     }
 }
 ```

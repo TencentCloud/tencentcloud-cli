@@ -43,8 +43,8 @@
     "QueryDrawPortraitJob": [
       {
         "document": "成功请求",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDrawPortraitJob\n<公共请求参数>\n\n{\n    \"JobId\": \"eascexasdfasese\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"DONE\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"9202070d-02bd-4848-bf54-568a2597e400\",\n        \"ResultDetails\": [\n            \"SUCCESS\"\n        ],\n        \"ResultUrls\": [\n            \"https://xxx.com/a.jpg\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDrawPortraitJob\n<公共请求参数>\n\n{\n    \"JobId\": \"d33c2c966ae1476a5fae5e76\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"DONE\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"9202070d-02bd-4848-bf54-568a2597e400\",\n        \"ResultDetails\": [\n            \"SUCCESS\"\n        ],\n        \"ResultUrls\": [\n            \"https://aiart-portrait-xxx.cos.ap-guangzhou.myqcloud.com/xxx?q-sign-algorithm=sha1&q-ak=xxx&q-sign-time=1731996860;1732000460&q-key-time=1731996860;1732000460&q-header-list=host&q-url-param-list=&q-signature=2a86d7f0c5482e10d6867ddea14d9e3973201e95\"\n        ]\n    }\n}",
         "title": "成功"
       }
     ],
@@ -67,15 +67,15 @@
     "QueryTextToImageProJob": [
       {
         "document": "成功调用",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTextToImageProJob\n<公共请求参数>\n\n{\n    \"JobId\": \"testJobId\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"fae816f9-7fd1-4e39-bf1c-3d43677603de\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://test.jpg\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTextToImageProJob\n<公共请求参数>\n\n{\n    \"JobId\": \"251197749-1732000967-13b82f68-a647-11ef-be80-525400047e59-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"fae816f9-7fd1-4e39-bf1c-3d43677603de\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\"\n        ],\n        \"RevisedPrompt\": [\n            \"动漫风格，画面主要描述一个雨天的场景，一位亚洲男孩在雨中独自行走，他的身姿显得有些落寞，背景是一个阴雨连绵的城市，镜头是中景\"\n        ]\n    }\n}",
         "title": "成功调用"
       }
     ],
     "QueryTrainPortraitModelJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"model_01\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"DONE\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"d643c325-5fe6-4d90-880c-40516ad27f8e\"\n    }\n}",
         "title": "查询成功"
       }
@@ -107,8 +107,8 @@
     "SubmitDrawPortraitJob": [
       {
         "document": "调用成功",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitDrawPortraitJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\",\n    \"StyleId\": \"zhengjian_female\",\n    \"ImageNum\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"abcdefg\",\n        \"RequestId\": \"94b5192b-b40b-4f0c-b4f8-edfa7092f8b9\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitDrawPortraitJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"model_01\",\n    \"StyleId\": \"zhengjian_female\",\n    \"ImageNum\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"d33c2c966ae1476a5fae5e76\",\n        \"RequestId\": \"94b5192b-b40b-4f0c-b4f8-edfa7092f8b9\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -132,14 +132,14 @@
       {
         "document": "成功调用",
         "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTextToImageProJob\n<公共请求参数>\n\n{\n    \"Prompt\": \"雨天\",\n    \"Style\": \"dongman\"\n}",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"testJobId\",\n        \"RequestId\": \"aeb78554-0772-4c64-8a84-fa21095cbbd7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1732000967-13b82f68-a647-11ef-be80-525400047e59-0\",\n        \"RequestId\": \"aeb78554-0772-4c64-8a84-fa21095cbbd7\"\n    }\n}",
         "title": "成功调用"
       }
     ],
     "SubmitTrainPortraitModelJob": [
       {
         "document": "提交训练任务成功",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTrainPortraitModelJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"model_01\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ed6909b-9b97-4924-a3f3-3b7a9b02d1-ce\"\n    }\n}",
         "title": "成功提交训练任务"
       }
@@ -155,8 +155,8 @@
     "UploadTrainPortraitImages": [
       {
         "document": "成功调用上传",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadTrainPortraitImages\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\",\n    \"BaseUrl\": \"https://xxx.com/xxx.jpg\",\n    \"Urls\": [\n        \"https://xxx.com/yyy.jpg\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"948182a1-e669-42f8-a00e-fa9f5b7d287a\",\n        \"ResultDetails\": [\n            \"SUCCESS\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadTrainPortraitImages\n<公共请求参数>\n\n{\n    \"ModelId\": \"model_01\",\n    \"BaseUrl\": \"https://xxx.com/image.jpg\",\n    \"TrainMode\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"948182a1-e669-42f8-a00e-fa9f5b7d287a\",\n        \"ResultDetails\": []\n    }\n}",
         "title": "成功"
       }
     ]

@@ -234,7 +234,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWarning\n<公共请求参数>\n\n{\n    \"Id\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"226618be-27ec-46f4-a19e-bdb980baec92\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"226618be-27ec-46f4-a19e-bdb980baec92\",\n        \"Cnt\": 0\n    }\n}",
         "title": "设备告警-删除告警"
       }
     ],
@@ -322,7 +322,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99576636581320000278_99576636581320000278\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Device\": {\n            \"NickName\": \"真的双通道\",\n            \"DeviceId\": \"99576636581320000278_99576636581320000278\",\n            \"Status\": 1,\n            \"ExtraInformation\": \"{\\\"Manufacturer\\\":\\\"Hikvision\\\",\\\"Model\\\":\\\"IP Camera\\\"}\",\n            \"IsRecord\": 0,\n            \"DeviceType\": 2,\n            \"DeviceCode\": \"99576636581320000278\",\n            \"GroupPath\": \"\",\n            \"CreateTime\": 1621581437,\n            \"Recordable\": 0,\n            \"Protocol\": \"GB28181\"\n        },\n        \"RequestId\": \"75c3af48-676f-49e2-8cdd-f66e6dcdec48\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Device\": {\n            \"NickName\": \"keting\",\n            \"DeviceId\": \"99576636581320000270_99576636581320000270\",\n            \"DeviceType\": 2,\n            \"Status\": 3,\n            \"ExtraInformation\": \"\",\n            \"DeviceCode\": \"99576636581320000270\",\n            \"Protocol\": \"GB28181\",\n            \"GroupId\": \"group_root\",\n            \"GroupName\": \"全部\",\n            \"GroupPath\": \"\",\n            \"Recordable\": 1,\n            \"IsRecord\": 0,\n            \"CreateTime\": 345233456\n        },\n        \"RequestId\": \"75c3af48-676f-49e2-8cdd-f66e6dcdec48\"\n    }\n}",
         "title": "描述单个设备的详细信息"
       }
     ],

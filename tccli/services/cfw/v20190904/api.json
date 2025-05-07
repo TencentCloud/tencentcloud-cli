@@ -763,6 +763,13 @@
       "output": "RemoveVpcAcRuleResponse",
       "status": "online"
     },
+    "SearchLog": {
+      "document": "本接口用于检索分析日志，使用该接口时请注意如下事项：\n1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。\n2. 检索语法建议使用日志服务专用检索语法CQL，请使用SyntaxRule参数，将值设置为1，控制台默认也使用该语法规则。\n3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
+      "input": "SearchLogRequest",
+      "name": "检索分析日志",
+      "output": "SearchLogResponse",
+      "status": "online"
+    },
     "SetNatFwDnatRule": {
       "document": "配置防火墙Dnat规则",
       "input": "SetNatFwDnatRuleRequest",
@@ -1958,6 +1965,32 @@
         }
       ],
       "usage": "in"
+    },
+    "Column": {
+      "document": "日志分析的列属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列的名字",
+          "example": "_col0",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列的属性",
+          "example": "json",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CommonFilter": {
       "document": "通用的列表检索过滤选项",
@@ -9648,6 +9681,164 @@
       ],
       "usage": "out"
     },
+    "LogInfo": {
+      "document": "日志结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志时间，单位ms",
+          "example": "1619162953000",
+          "member": "int64",
+          "name": "Time",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称",
+          "example": "业务A日志主题",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志来源IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志文件名称",
+          "example": "/test/access.log",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志上报请求包的ID",
+          "example": "0",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求包内日志的ID",
+          "example": "0",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
+          "member": "string",
+          "name": "LogJson",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostName-1",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始日志(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
+          "member": "string",
+          "name": "RawLog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志创建索引异常原因(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IndexAllFail:fields like 'a' and 'a.b' can not appear in the same topic",
+          "member": "string",
+          "name": "IndexStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItem": {
+      "document": "日志中的KV对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志Key",
+          "example": "http_code",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志Value",
+          "example": "200",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItems": {
+      "document": "LogItem的数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析结果返回的KV数据对",
+          "example": "无",
+          "member": "LogItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAcRuleRequest": {
       "document": "ModifyAcRule请求参数结构体",
       "members": [
@@ -11452,6 +11643,30 @@
       ],
       "type": "object"
     },
+    "MultiTopicSearchInformation": {
+      "document": "多日志主题检索相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要检索分析的日志主题ID",
+          "example": "682d0718-07bb-4ec0-xxxx-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "NatFwEipsInfo": {
       "document": "Nat防火墙弹性公网ip列表",
       "members": [
@@ -12527,6 +12742,330 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchLogErrors": {
+      "document": "多日志主题检索错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "682d0718-07bb-4ec0-xxxx-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SyntaxError [field: xxx, can not search on this field, since it is not indexed] ",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FailedOperation.QueryError",
+          "member": "string",
+          "name": "ErrorCodeStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchLogInfos": {
+      "document": "多日志主题检索topic信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "682d0718-07bb-xxxx-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志存储生命周期",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchLogRequest": {
+      "document": "SearchLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
+          "example": "1608794854000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要检索分析的日志的结束时间，Unix时间戳（毫秒）",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句\n使用*或空字符串可查询所有日志",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索语法规则，默认值为0，推荐使用1 。\n\n- 0：Lucene语法\n- 1：CQL语法（日志服务专用检索语法，控制台默认也使用该语法规则）。\n\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "- 要检索分析的日志主题列表，最大支持50个日志主题。\n- 检索单个日志主题时请使用TopicId。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
+          "example": "无",
+          "member": "MultiTopicSearchInformation",
+          "name": "Topics",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示单次查询返回的原始日志条数，默认为100，最大值为1000。\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>\n\n可通过两种方式获取后续更多日志：\n* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志\n* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 \n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* 不能与Context参数同时使用\n* 仅适用于单日志主题检索",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context\n* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。\n0：自动采样;\n0～1：按指定采样率采样，例如0.02;\n1：不采样，即精确分析\n默认值为1",
+          "example": "0.1",
+          "member": "float",
+          "name": "SamplingRate",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效\n为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效\n两种返回方式在编码格式上有少量区别，建议使用true",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewAnalysis",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogResponse": {
+      "document": "SearchLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。\n注意：\n* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志\n注意：仅当检索分析语句(Query)不包含SQL时有效",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的是否为统计分析（即SQL）结果",
+          "example": "false",
+          "member": "bool",
+          "name": "Analysis",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配检索条件的原始日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogInfo",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\\\"action\\\"]",
+          "member": "string",
+          "name": "ColNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogItems",
+          "name": "AnalysisResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxx\",\"yy\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果的列属性\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本次统计分析使用的采样率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "SamplingRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用多日志主题检索时，各个日志主题的基本信息，例如报错信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogTopics",
+          "name": "Topics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogTopics": {
+      "document": "多主题检索返回信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多日志主题检索对应的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogErrors",
+          "name": "Errors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多日志主题检索各日志主题信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogInfos",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

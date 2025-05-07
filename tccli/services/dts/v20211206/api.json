@@ -7286,15 +7286,6 @@
           "name": "NewPassword",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "旧密码，非必选",
-          "example": "qJ3e1Wd~",
-          "member": "string",
-          "name": "OldPassword",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"

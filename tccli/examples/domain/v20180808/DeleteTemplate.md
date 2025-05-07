@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DeleteTemplate --cli-unfold-argument  \
-    --TemplateId 模板ID
+    --TemplateId tmpl-itxxxxxx
 ```
 
 Output: 

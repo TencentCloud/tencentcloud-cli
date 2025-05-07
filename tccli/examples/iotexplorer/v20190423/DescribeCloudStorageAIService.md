@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Enabled": true,
-        "ROI": "{}",
+        "ROI": "{\"param1\":\"value1\"}",
         "Config": "{\"param1\":\"value1\"}",
         "Type": 1,
         "Status": 1,

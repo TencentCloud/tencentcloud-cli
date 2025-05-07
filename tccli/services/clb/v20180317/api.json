@@ -5489,7 +5489,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725) 接口获取，不传默认所有项目。",
+          "document": "负载均衡实例所属的项目 ID，可以通过[DescribeProject](https://cloud.tencent.com/document/api/651/78725)接口获取，不传默认所有项目。",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -5507,7 +5507,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，\n查找基础网络类型的负载均衡可传入'0'。",
+          "document": "负载均衡实例所属私有网络唯一ID，如 vpc-bhqkbhdx，可以通过[DescribeVpcs](https://cloud.tencent.com/document/api/215/15778)接口获取。\n查找基础网络类型的负载均衡可传入'0'。",
           "example": "vpc-bhqk****",
           "member": "string",
           "name": "VpcId",
@@ -5516,7 +5516,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID，如 sg-m1cc****。",
+          "document": "安全组ID，如 sg-m1cc****，可以通过接口[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)获取。",
           "example": "sg-m1cc****",
           "member": "string",
           "name": "SecurityGroup",
@@ -5534,7 +5534,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：\n- charge-type\n按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。\n类型：String\n必选：否\n可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)\n- internet-charge-type\n按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。\n类型：String\n必选：否\n可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)\n- master-zone-id\n按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。\n类型：String\n必选：否\n获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)\n- tag-key\n按照【CLB 标签的键】进行过滤，例如：tag-key。\n类型：String\n必选：否\n- tag:tag-key\n按照【CLB标签键值】进行过滤，例如：tag-test。\n类型：String\n必选：否\n- function-name\n按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。\n类型：String\n必选：否\n获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)\n- vip-isp\n按照【CLB VIP的运营商类型】进行过滤，例如：BGP。\n类型：String\n必选：否\n公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)\n内网类型可选项：INTERNAL(内网)\n- sla-type\n按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。\n类型：String\n必选：否\n可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)\n具体规格参数参考：\n- exclusive\n按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。\n类型：String\n必选：否\n可选项：0、1",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：\n- charge-type\n按照【实例计费模式】进行过滤。实例计费模式例如：PREPAID。\n类型：String\n必选：否\n可选项：PREPAID(预付费)、POSTPAID_BY_HOUR(后付费)\n- internet-charge-type\n按照【网络计费模式】进行过滤。网络计费模式例如：BANDWIDTH_PREPAID。\n类型：String\n必选：否\n可选项：BANDWIDTH_PREPAID(预付费按带宽结算)、 TRAFFIC_POSTPAID_BY_HOUR(流量按小时后付费)、BANDWIDTH_POSTPAID_BY_HOUR(带宽按小时后付费)、BANDWIDTH_PACKAGE(带宽包用户)\n- master-zone-id\n按照【CLB主可用区ID】进行过滤。例如：100001（对应的是广州一区）。\n类型：String\n必选：否\n获取方式：[DescribeZones](https://cloud.tencent.com/document/product/213/15707)\n- tag-key\n按照【CLB 标签的键】进行过滤，例如：tag-key。\n类型：String\n必选：否\n获取方式：[DescribeTags](https://cloud.tencent.com/document/api/651/35316)\n- tag:tag-key\n按照【CLB标签键值】进行过滤，例如：tag-test。\n类型：String\n必选：否\n获取方式：[DescribeTagKeys](https://cloud.tencent.com/document/api/651/35318)\n- function-name\n按照【后端绑定SCF云函数的函数名称】进行过滤，例如：helloworld-1744958255。\n类型：String\n必选：否\n获取方式：[ListFunctions](https://cloud.tencent.com/document/api/583/18582)\n- vip-isp\n按照【CLB VIP的运营商类型】进行过滤，例如：BGP。\n类型：String\n必选：否\n公网类型可选项：BGP(多线)、CMCC(中国移动)、CTCC(中国电信)、CUCC(中国联通)\n内网类型可选项：INTERNAL(内网)\n- sla-type\n按照【CLB 的性能容量型规格】进行过滤，例如：clb.c4.xlarge。\n类型：String\n必选：否\n可选项：clb.c2.medium(标准型)、clb.c3.small(高阶型1)、clb.c3.medium(高阶型2)、clb.c4.small(超强型1)、clb.c4.medium(超强型2)、clb.c4.large(超强型3)、clb.c4.xlarge(超强型4)\n具体规格参数参考：\n- exclusive\n按照【独占实例】进行过滤。例如：1，代表筛选独占型实例。\n类型：String\n必选：否\n可选项：0、1",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6383,7 +6383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启健康检查：1（开启）、0（关闭）。",
+          "document": "是否开启健康检查：1（开启）、0（关闭）。\n默认为开启。",
           "example": "0",
           "member": "int64",
           "name": "HealthSwitch",
@@ -6460,7 +6460,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查域名（仅适用于HTTP/HTTPS监听器和TCP监听器的HTTP健康检查方式。针对TCP监听器，当使用HTTP健康检查方式时，该参数为必填项）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查域名，将在HTTP协议 Host 头字段中携带。（仅适用于HTTP/HTTPS监听器和TCP监听器的HTTP健康检查方式。针对TCP监听器，当使用HTTP健康检查方式时，该参数为必填项）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.xxxx.com",
           "member": "string",
           "name": "HttpCheckDomain",
@@ -6919,7 +6919,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包的类型，如SINGLEISP（单线）、BGP（多线）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽包的类型，如 BGP（多线）。\n类型如下：\nSINGLEISP: 单线\nBGP: 多线\nHIGH_QUALITY_BGP: 精品BGP共享带宽包\nSINGLEISP_CMCC: 中国移动共享带宽包\nSINGLEISP_CTCC: 中国电信共享带宽包\nSINGLEISP_CUCC: 中国联通共享带宽包\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SINGLEISP",
           "member": "string",
           "name": "BandwidthpkgSubType",
@@ -7831,7 +7831,7 @@
         },
         {
           "disabled": false,
-          "document": "数值形式的私有网络 ID。",
+          "document": "数值形式的私有网络 ID，可以通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。",
           "example": "77599",
           "member": "uint64",
           "name": "NumericalVpcId",

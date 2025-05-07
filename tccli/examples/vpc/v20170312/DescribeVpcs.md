@@ -21,7 +21,10 @@ Output:
         "VpcSet": [
             {
                 "Ipv6CidrBlockSet": [
-                    {}
+                    {
+                        "IPv6CidrBlock": "2402:4e00:1717:8200::/56",
+                        "ISPType": "BGP"
+                    }
                 ],
                 "VpcId": "vpc-p5sf61yj",
                 "VpcName": "DHCP1",
@@ -68,7 +71,10 @@ Output:
         "VpcSet": [
             {
                 "Ipv6CidrBlockSet": [
-                    {}
+                    {
+                        "IPv6CidrBlock": "2402:4e00:1717:8200::/56",
+                        "ISPType": "BGP"
+                    }
                 ],
                 "VpcId": "vpc-p5sf61yj",
                 "VpcName": "测试dhcp",

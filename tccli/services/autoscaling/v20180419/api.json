@@ -1,7 +1,7 @@
 {
   "actions": {
     "AttachInstances": {
-      "document": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n* 仅支持添加处于`RUNNING`（运行中）或`STOPPED`（已关机）状态的 CVM 实例\n* 添加的 CVM 实例需要和伸缩组 VPC 网络一致\n",
+      "document": "本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。\n* 仅支持添加处于`RUNNING`（运行中）或`STOPPED`（已关机）状态的 CVM 实例\n* 添加的 CVM 实例需要和伸缩组 VPC 网络一致",
       "input": "AttachInstancesRequest",
       "name": "添加 CVM 实例到伸缩组",
       "output": "AttachInstancesResponse",
@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CancelInstanceRefresh": {
-      "document": "取消伸缩组的实例刷新活动。\n* 已刷新/正在刷新的批次不受影响，待刷新批次被取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作\n* 因 maxSurge 参数而临时扩容的实例在取消后会自动销毁\n* 进行缩容时，所有实例都已经更新完成，此时无法取消",
+      "document": "取消伸缩组的实例刷新活动。\n* 已刷新的批次不受影响，待刷新批次被取消\n* 如存在正在刷新的批次，不允许取消；可先暂停活动，等待当前批次结束后再取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作\n* 因 maxSurge 参数而临时扩容的实例在取消后会自动销毁\n* 进行缩容时，所有实例都已经更新完成，此时无法取消",
       "input": "CancelInstanceRefreshRequest",
       "name": "取消实例刷新",
       "output": "CancelInstanceRefreshResponse",
@@ -657,7 +657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -666,7 +666,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID列表",
+          "document": "CVM实例ID列表。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -685,7 +685,7 @@
           "example": "asa-q59zikez",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1222,7 +1222,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID。",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-u7dy6t5r",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -1231,7 +1231,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动ID。",
+          "document": "刷新活动ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 RefreshActivityId 获取实例刷新活动ID。",
           "example": "asr-dhwt6r54",
           "member": "string",
           "name": "RefreshActivityId",
@@ -1258,8 +1258,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "启动配置ID。",
-          "example": "asc-aaaabbbb",
+          "document": "启动配置ID。可通过如下方式获取：\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/config) 查询启动配置ID。</li>\n<li>通过调用接口 [DescribeLaunchConfigurations](https://cloud.tencent.com/document/api/377/20445) ，取返回信息中的 LaunchConfigurationId 获取启动配置ID。</li>",
+          "example": "asc-w37yt5r4",
           "member": "string",
           "name": "LaunchConfigurationId",
           "required": true,
@@ -2335,7 +2335,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-2nr9xh8h",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -2398,7 +2398,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务的重复方式。为标准 Cron 格式<br><br>此参数与`EndTime`需要同时指定。",
+          "document": "定时任务的重复方式。为标准 Cron 格式。定时任务中的 [Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119) 为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。",
           "example": "0 14 */1 * *",
           "member": "string",
           "name": "Recurrence",
@@ -2653,7 +2653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待删除的定时任务ID。",
+          "document": "待删除的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。",
           "example": "asst-chwbkq4c",
           "member": "string",
           "name": "ScheduledActionId",
@@ -3421,7 +3421,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。",
+          "document": "按照一个或者多个定时任务ID查询。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。",
           "example": "[\"asst-caa5ha40\"]",
           "member": "string",
           "name": "ScheduledActionIds",
@@ -3430,7 +3430,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>",
+          "document": "过滤条件。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 获取定时任务 ID，定时任务名称，伸缩组 ID。\n<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>\n<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>\n<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>",
           "example": "[{\"Name\": \"auto-scaling-group-name\", \"Values\": [\"production-as\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -3474,7 +3474,7 @@
         {
           "disabled": false,
           "document": "定时任务详细信息列表。",
-          "example": "[{\"Recurrence\": \"* * * * *\", \"ScheduledActionId\": \"asst-9ns4dsr0\", \"AutoScalingGroupId\": \"asg-2q2sim6z\", \"ScheduledType\": \"ONCE\", \"MinSize\": 0, \"MaxSize\": 8, \"ScheduledActionName\": \"scale-out\", \"StartTime\": \"2023-01-03 09:45:00\", \"CreatedTime\": \"2022-01-26T02:46:12Z\", \"EndTime\": \"0000-00-00 00:00:00\", \"DesiredCapacity\": 0}]",
+          "example": "无",
           "member": "ScheduledAction",
           "name": "ScheduledActionSet",
           "output_required": true,
@@ -3495,7 +3495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -3504,7 +3504,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID列表",
+          "document": "CVM实例ID列表。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3523,7 +3523,7 @@
           "example": "asa-bcfxhy55",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3772,7 +3772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组 ID。",
+          "document": "伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -3781,7 +3781,7 @@
         },
         {
           "disabled": false,
-          "document": "运行中状态实例列表，不支持传入非运行中状态实例。",
+          "document": "运行中状态实例列表，不支持传入非运行中状态实例。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -3873,7 +3873,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组 ID。",
+          "document": "伸缩组 ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -3882,7 +3882,7 @@
         },
         {
           "disabled": false,
-          "document": "备用中状态 CVM 实例列表。",
+          "document": "备用中状态 CVM 实例列表。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -5802,7 +5802,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期挂钩ID。",
+          "document": "生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。",
           "example": "ash-je1esoo9",
           "member": "string",
           "name": "LifecycleHookId",
@@ -5811,7 +5811,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期挂钩名称。",
+          "document": "生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128。",
           "example": "hook-test",
           "member": "string",
           "name": "LifecycleHookName",
@@ -5820,7 +5820,7 @@
         },
         {
           "disabled": false,
-          "document": "进入生命周期挂钩场景，取值包括：\n<li> INSTANCE_LAUNCHING：实例启动后</li>\n<li> INSTANCE_TERMINATING：实例销毁前</li>",
+          "document": "进入生命周期挂钩场景，取值范围如下:\n* INSTANCE_LAUNCHING: 扩容生命周期挂钩\n* INSTANCE_TERMINATING: 缩容生命周期挂钩",
           "example": "INSTANCE_LAUNCHING",
           "member": "string",
           "name": "LifecycleTransition",
@@ -5829,7 +5829,7 @@
         },
         {
           "disabled": false,
-          "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值包括：\n<li> CONTINUE： 超时后继续伸缩活动</li> \n<li> ABANDON：超时后终止伸缩活动</li> ",
+          "document": "定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：\n* CONTINUE: 默认值，表示继续执行扩缩容活动\n* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。",
           "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
@@ -5847,7 +5847,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性伸缩向通知目标发送的附加信息。",
+          "document": "弹性伸缩向通知目标发送的附加信息。NotificationMetadata 与 LifecycleCommand互斥，二者不可同时指定。",
           "example": "addtional-info",
           "member": "string",
           "name": "NotificationMetadata",
@@ -5865,7 +5865,7 @@
         },
         {
           "disabled": false,
-          "document": "通知目标信息。",
+          "document": "通知目标信息。NotificationTarget 与 LifecycleCommand互斥，二者不可同时指定。",
           "example": "{\"QueueName\": \"as-pool\", \"TargetType\": \"TDMQ_CMQ_QUEUE\"}",
           "member": "NotificationTarget",
           "name": "NotificationTarget",
@@ -5874,7 +5874,7 @@
         },
         {
           "disabled": false,
-          "document": "远程命令执行对象。",
+          "document": "远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand互斥，不可同时指定。",
           "example": "{\"CommandId\": \"cmd-am4e3hd8\", \"Parameters\": \"{123: 222}\"}",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
@@ -6191,7 +6191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待修改的定时任务ID",
+          "document": "待修改的定时任务ID。可以通过调用接口 [DescribeScheduledActions](https://cloud.tencent.com/document/api/377/20450) ，取返回信息中的 ScheduledActionId 获取定时任务ID。",
           "example": "asst-chwbkq4c",
           "member": "string",
           "name": "ScheduledActionId",
@@ -6254,7 +6254,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务的重复方式。为标准 Cron 格式<br>此参数与`EndTime`需要同时指定。",
+          "document": "定时任务的重复方式。为标准 Cron 格式，[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。此参数与`EndTime`需要同时指定。",
           "example": "0 18 * * 1,2,3,4,5",
           "member": "string",
           "name": "Recurrence",
@@ -6599,7 +6599,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -6608,7 +6608,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID列表",
+          "document": "CVM实例ID列表。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -6627,7 +6627,7 @@
           "example": "asa-dne04cxp",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6645,7 +6645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID。",
+          "document": "伸缩组ID。可通过如下方式获取：\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-u7dy6t5r",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -6654,7 +6654,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动ID。",
+          "document": "刷新活动ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 RefreshActivityId 获取实例刷新活动ID。",
           "example": "asr-dhwt6r54",
           "member": "string",
           "name": "RefreshActivityId",
@@ -6690,7 +6690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID。",
+          "document": "伸缩组ID。可以通过以下方式获取可用的伸缩组ID： \n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-12yqet78",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -6708,7 +6708,7 @@
         },
         {
           "disabled": false,
-          "document": "原始刷新活动 ID。",
+          "document": "原始刷新活动 ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 OriginRefreshActivityId 获取原始刷新活动ID。",
           "example": "asr-fdsf8u6b",
           "member": "string",
           "name": "OriginRefreshActivityId",
@@ -7131,7 +7131,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务的重复方式。",
+          "document": "定时任务的重复方式。定时任务中的[Recurrence参数限制](https://cloud.tencent.com/document/product/377/88119)为5个字段，由空格分开，结构为：分，小时，日期，月份，星期。",
           "example": "0 23 */1 * *",
           "member": "string",
           "name": "Recurrence",
@@ -7181,7 +7181,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
+          "document": "定时任务的创建时间。取值为标准`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。",
           "example": "2022-02-21T02:19:52Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -7279,7 +7279,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID。",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-2umy3jbd",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -7288,7 +7288,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-b2d33ywt\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -7398,7 +7398,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -7407,7 +7407,7 @@
         },
         {
           "disabled": false,
-          "document": "待开启的CVM实例ID列表",
+          "document": "待开启的CVM实例ID列表。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -7426,7 +7426,7 @@
           "example": "asa-a023dwdj",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7499,7 +7499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-boz1qhnk",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -7508,7 +7508,7 @@
         },
         {
           "disabled": false,
-          "document": "待关闭的CVM实例ID列表",
+          "document": "待关闭的CVM实例ID列表。可以通过以下方式获取可用的实例ID：\n<li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。</li>\n<li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。</li>",
           "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -7536,7 +7536,7 @@
           "example": "asa-m1ebiskl",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7554,7 +7554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID。",
+          "document": "伸缩组ID。可以通过以下方式获取可用的伸缩组ID：\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-u7dy6t5r",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -7563,7 +7563,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动ID。",
+          "document": "刷新活动ID。可以通过调用接口 [DescribeRefreshActivities](https://cloud.tencent.com/document/api/377/99175) ，取返回信息中的 RefreshActivityId 获取实例刷新活动ID。",
           "example": "asr-dhwt6r54",
           "member": "string",
           "name": "RefreshActivityId",
@@ -7901,7 +7901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期挂钩ID",
+          "document": "生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。",
           "example": "ash-8azjzxj9",
           "member": "string",
           "name": "LifecycleHookId",
@@ -7910,7 +7910,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期挂钩名称",
+          "document": "生命周期挂钩名称。名称仅支持中文、英文、数字、下划线（_）、短横线（-）、小数点（.），最大长度不能超128个字符。",
           "example": "hook-updated",
           "member": "string",
           "name": "LifecycleHookName",
@@ -7919,7 +7919,7 @@
         },
         {
           "disabled": false,
-          "document": "进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”",
+          "document": "进行生命周期挂钩的场景，取值范围如下:\n* INSTANCE_LAUNCHING: 扩容生命周期挂钩\n* INSTANCE_TERMINATING: 缩容生命周期挂钩",
           "example": "INSTANCE_LAUNCHING",
           "member": "string",
           "name": "LifecycleTransition",
@@ -7928,7 +7928,7 @@
         },
         {
           "disabled": false,
-          "document": "定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”",
+          "document": "定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围是如下：\n* CONTINUE: 默认值，表示继续执行扩缩容活动\n* ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动。",
           "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
@@ -7946,7 +7946,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串\"\"",
+          "document": "弹性伸缩向通知目标发送的附加信息，配置通知时使用，默认值为空字符串。NotificationMetadata 和 LifecycleCommand参数互斥，二者不可同时指定。",
           "example": "as-meta-0",
           "member": "string",
           "name": "NotificationMetadata",
@@ -7973,8 +7973,8 @@
         },
         {
           "disabled": false,
-          "document": "远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。",
-          "example": "cmd-ju7dt54r",
+          "document": "远程命令执行对象。通知参数 NotificationMetadata、NotificationTarget 与 LifecycleCommand 互斥，不可同时指定。",
+          "example": "{\"CommandId\": \"cmd-am4e3hd8\", \"Parameters\": \"{123: 222}\"}",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
           "required": false,

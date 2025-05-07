@@ -3394,25 +3394,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "移动设备类型，\n0: 手机\n1: 平板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "移动设备类型，\n0: 手机\n1: 平板",
           "example": "0",
           "member": "uint64",
           "name": "MobileDeviceType",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "屏幕方向，\n0: 竖屏，\n1: 横屏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "屏幕方向，\n0: 竖屏，\n1: 横屏",
           "example": "0",
           "member": "uint64",
           "name": "ScreenOrientation",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6219,7 +6219,7 @@
         },
         {
           "disabled": false,
-          "document": "LLM配置。需符合openai规范，为JSON字符串，示例如下：\n<pre> { <br> &emsp;  \"LLMType\": “大模型类型\"，  // String 必填，如：\"openai\" <br> &emsp;  \"Model\": \"您的模型名称\", // String 必填，指定使用的模型<br>    \"APIKey\": \"您的LLM API密钥\", // String 必填 <br> &emsp;  \"APIUrl\": \"https://api.xxx.com/chat/completions\", // String 必填，LLM API访问的URL<br> &emsp;  \"Streaming\": true // Boolean 非必填，指定是否使用流式传输<br> &emsp;} </pre>\n",
+          "document": "LLM配置。需符合openai规范，为JSON字符串，示例如下：\n<pre> { <br> &emsp;  \"LLMType\": \"大模型类型\",  // String 必填，如：\"openai\" <br> &emsp;  \"Model\": \"您的模型名称\", // String 必填，指定使用的模型<br>    \"APIKey\": \"您的LLM API密钥\", // String 必填 <br> &emsp;  \"APIUrl\": \"https://api.xxx.com/chat/completions\", // String 必填，LLM API访问的URL<br> &emsp;  \"Streaming\": true // Boolean 非必填，指定是否使用流式传输<br> &emsp;} </pre>\n",
           "example": "{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-xxx\", \\\"APIKey\\\": \\\"xxxxxxxx\\\", \\\"APIUrl\\\": \\\"https://api.xxx.com/v1\\\", \\\"Streaming\\\": true}",
           "member": "string",
           "name": "LLMConfig",

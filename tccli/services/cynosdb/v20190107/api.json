@@ -12062,18 +12062,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "yes-开启，no-关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "yes-开启，no-关闭",
           "example": "no",
           "member": "string",
           "name": "IsOpenSSL",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书下载地址",
-          "example": "无",
+          "example": "https://tencentdb-user-crt-54163.cos.ap-nanjing.myqclouda.com/cluster.zip",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": false,
@@ -17239,23 +17239,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "任务流ID",
+          "example": "147285",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务id",
+          "example": "148726",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

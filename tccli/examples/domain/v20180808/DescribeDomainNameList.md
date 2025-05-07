@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
+        "TotalCount": 1,
         "DomainSet": [
             {
                 "AutoRenew": 0,

@@ -17476,13 +17476,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "NAT网关SNAT规则对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关SNAT规则对象数组。",
           "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -17490,7 +17490,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -25029,6 +25029,26 @@
       "members": [
         {
           "disabled": false,
+          "document": "IPv6 CIdr Block",
+          "example": "2402:4e00:1717:8200::/56",
+          "member": "string",
+          "name": "IPv6CidrBlock",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调",
+          "example": "BGP",
+          "member": "string",
+          "name": "ISPType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)",
           "example": "GUA",
           "member": "string",
@@ -26215,43 +26235,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "按量计费后付费单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按量计费后付费单价，单位：元。",
           "example": "1.0",
           "member": "float",
           "name": "UnitPrice",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "按量计费后付费计价单元，可取值范围： HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）： GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费商品的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费商品的原价，单位：元。",
           "example": "1.0",
           "member": "float",
           "name": "OriginalPrice",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费商品的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费商品的折扣价，单位：元。",
           "example": "0.5",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -30164,23 +30184,23 @@
         },
         {
           "disabled": false,
-          "document": "绑定的专线网关ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定的专线网关ID。",
           "example": "[\"dcg-12345678\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属子网ID。",
           "example": "\"subnet-12345678\"",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -30194,83 +30214,83 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关绑定的安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关绑定的安全组列表",
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NAT网关的SNAT转发规则。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关的SNAT转发规则。",
           "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRuleSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否独享型NAT。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否独享型NAT。",
           "example": "true",
           "member": "bool",
           "name": "IsExclusive",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "独享型NAT所在的网关集群的带宽(单位:Mbps)，当IsExclusive为false时无此字段。",
           "example": "50000",
           "member": "uint64",
           "name": "ExclusiveGatewayBandwidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。",
           "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关类型，1表示传统型NAT网关，2表示标准型NAT网关",
           "example": "1",
           "member": "uint64",
           "name": "NatProductVersion",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否启用根据目的网段选择SNAT使用的EIP功能\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用根据目的网段选择SNAT使用的EIP功能\t",
           "example": "false",
           "member": "bool",
           "name": "SmartScheduleMode",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NAT实例归属的专属集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT实例归属的专属集群id",
           "example": "cluster-bxdip3ah",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -30386,33 +30406,33 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关的ID。",
           "example": "nat-3isn9hr0",
           "member": "string",
           "name": "NatGatewayId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私有网络VPC的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络VPC的ID。",
           "example": "vpc-abcdefgh\t",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NAT网关转发规则创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关转发规则创建时间。",
           "example": "\"2021-05-24 19:28:31\"",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -31812,33 +31832,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "跨域私网NAT关联的云联网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨域私网NAT关联的云联网ID",
           "example": "ccn-4as5s8ga",
           "member": "string",
           "name": "CcnId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跨域私网NAT本端Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨域私网NAT本端Vpc",
           "example": "vpc-noam856a",
           "member": "string",
           "name": "LocalVpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跨域私网NAT对端Vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨域私网NAT对端Vpc",
           "example": "vpc-noam856a",
           "member": "string",
           "name": "PeerVpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -31962,13 +31982,13 @@
         },
         {
           "disabled": false,
-          "document": "私网网关关联`VPC`实例`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私网网关关联`VPC`实例`ID`。",
           "example": "vpc-noanwmed",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -32002,63 +32022,63 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对。",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专线网关唯一`ID`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专线网关唯一`ID`",
           "example": "[\"dcg-asdf891z\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私网网关类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私网网关类型",
           "example": "DCG",
           "member": "string",
           "name": "NatType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私网NAT跨域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私网NAT跨域信息",
           "example": "无",
           "member": "PrivateNatCrossDomainInfo",
           "name": "CrossDomainInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否VPC型私网网关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否VPC型私网网关",
           "example": "True",
           "member": "bool",
           "name": "VpcType",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跨域私网NAT关联的云联网ID\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跨域私网NAT关联的云联网ID\t",
           "example": "ccn-asj6o7cd",
           "member": "string",
           "name": "CcnId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -35582,14 +35602,14 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型，目前包含SUBNET、NETWORKINTERFACE、USERDEFINED",
           "example": "SUBNET",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -35637,36 +35657,36 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关的ID。",
           "example": "nat-3nptcfvp",
           "member": "string",
           "name": "NatGatewayId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "私有网络VPC的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有网络VPC的ID。",
           "example": "vpc-oty76xyl",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "NAT网关SNAT规则创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NAT网关SNAT规则创建时间。",
           "example": "2021-03-14 13:59:00",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -36296,23 +36316,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "tag-key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "tag-value",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -36322,25 +36344,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "tag-key",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "tag-value",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37065,25 +37087,25 @@
         },
         {
           "disabled": false,
-          "document": "转换规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转换规则描述。",
           "example": "my service",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源`IP`,当转换规则类型为三层时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源`IP`,当转换规则类型为三层时有效。",
           "example": "\"10.0.13.20\"",
           "member": "string",
           "name": "OriginalIp",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

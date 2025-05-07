@@ -19,6 +19,7 @@ Output:
                 "Area": "其它",
                 "RegionId": "ap-singapore",
                 "Location": "新加坡Dodid泰戈尔AC",
+                "Address": "71 Tagore Ln,Singapore 787496",
                 "Coordinate": {
                     "Lat": 1.3885116,
                     "Lng": 103.8277551
@@ -117,6 +118,7 @@ Output:
                 "Area": "西南",
                 "RegionId": "ap-chongqing",
                 "Location": "重庆腾讯泰和DC",
+                "Address": "重庆市北碚区水土镇高新技术产业园泰和路777号",
                 "Coordinate": {
                     "Lat": 29.790833,
                     "Lng": 106.523072

@@ -1984,7 +1984,7 @@
         {
           "disabled": false,
           "document": "对话的 ID，用于唯一标识一轮对话\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1248907282106990592",
           "member": "string",
           "name": "ChatId",
           "output_required": false,
@@ -1995,7 +1995,7 @@
         {
           "disabled": false,
           "document": "原始输入的 Prompt 文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "请画一个苹果在桌子上",
           "member": "string",
           "name": "Prompt",
           "output_required": false,
@@ -2006,7 +2006,7 @@
         {
           "disabled": false,
           "document": "扩写后的 Prompt 文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "风格为摄影风格，桌子上摆放着一个红润的苹果，镜头为近景镜头",
           "member": "string",
           "name": "RevisedPrompt",
           "output_required": false,
@@ -2017,7 +2017,7 @@
         {
           "disabled": false,
           "document": "生成图的随机种子\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1549130027",
           "member": "int64",
           "name": "Seed",
           "output_required": false,

@@ -13229,6 +13229,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新挂磁盘时可支持配置的服务名称列表",
+          "example": "[\"HDFS\",\"YARN\"]",
+          "member": "string",
+          "name": "ConfigurableServices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

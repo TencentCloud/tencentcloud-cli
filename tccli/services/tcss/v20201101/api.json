@@ -11727,6 +11727,33 @@
           "name": "RegistryTaskID",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "本地镜像容器运行中",
+          "example": "true",
+          "member": "bool",
+          "name": "LocalImageContainerRunning",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "仓库镜像容器运行中",
+          "example": "true",
+          "member": "bool",
+          "name": "RegistryImageContainerRunning",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "仓库镜像是否是最新",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLatest",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

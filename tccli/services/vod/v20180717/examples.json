@@ -771,7 +771,7 @@
         "document": "",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeDailyPlayStatFileList\n&StartTime=2020-12-01T00:00:00+08:00\n&EndTime=2020-12-02T00:00:00+08:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"PlayStatFileSet\": [\n            {\n                \"Date\": \"2020-12-01T00:00:00+08:00\",\n                \"Url\": \"http://xxx.test.com/playstat/2021201.csv.gz?sign=abc\"\n            },\n            {\n                \"Date\": \"2020-12-02T00:00:00+08:00\",\n                \"Url\": \"http://xxx.test.com/playstat/20201202.csv.gz?sign=abc\"\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
-        "title": "查询2020-12-0-1到2020-12-02的播放统计文件列表"
+        "title": "查询2020-12-01到2020-12-02的播放统计文件列表"
       }
     ],
     "DescribeDefaultDistributionConfig": [

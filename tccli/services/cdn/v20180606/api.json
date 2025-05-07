@@ -36,25 +36,25 @@
       "status": "online"
     },
     "CreateScdnDomain": {
-      "document": "CreateScdnDomain 用于创建 SCDN 加速域名",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nCreateScdnDomain 用于创建 SCDN 加速域名",
       "input": "CreateScdnDomainRequest",
       "name": "创建SCDN域名",
       "output": "CreateScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateScdnFailedLogTask": {
-      "document": "CreateScdnFailedLogTask 用于重试创建失败的事件日志任务",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nCreateScdnFailedLogTask 用于重试创建失败的事件日志任务",
       "input": "CreateScdnFailedLogTaskRequest",
       "name": "重试创建事件日志任务",
       "output": "CreateScdnFailedLogTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateScdnLogTask": {
-      "document": "CreateScdnLogTask 用于创建事件日志任务",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nCreateScdnLogTask 用于创建事件日志任务",
       "input": "CreateScdnLogTaskRequest",
       "name": "创建事件日志任务",
       "output": "CreateScdnLogTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateVerifyRecord": {
       "document": "CreateVerifyRecord 用于生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。\n生成的解析记录可通过 [VerifyDomainRecord](https://cloud.tencent.com/document/product/228/48117) 完成归属权校验。\n注意：生成的解析记录有效期为24小时，超过24小时后，需重新生成。\n具体流程可参考：[使用API接口进行域名归属校验](https://cloud.tencent.com/document/product/228/61702#.E6.96.B9.E6.B3.95.E4.B8.89.EF.BC.9Aapi-.E6.8E.A5.E5.8F.A3.E6.93.8D.E4.BD.9C)",
@@ -78,11 +78,11 @@
       "status": "online"
     },
     "DeleteScdnDomain": {
-      "document": "删除SCDN域名",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n删除SCDN域名",
       "input": "DeleteScdnDomainRequest",
       "name": "删除SCDN域名",
       "output": "DeleteScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBillingData": {
       "document": "DescribeBillingData 用于查询实际计费数据明细。",
@@ -92,11 +92,11 @@
       "status": "online"
     },
     "DescribeCcData": {
-      "document": "CC统计数据查询",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nCC统计数据查询",
       "input": "DescribeCcDataRequest",
       "name": "CC统计数据查询",
       "output": "DescribeCcDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCdnData": {
       "document": "DescribeCdnData 用于查询 CDN 实时访问监控数据，支持以下指标查询：\n\n+ 流量（单位为 byte）\n+ 带宽（单位为 bps）\n+ 请求数（单位为 次）\n+ 命中请求数（单位为 次）\n+ 请求命中率（单位为 %）\n+ 命中流量（单位为 byte）\n+ 流量命中率（单位为 %）\n+ 状态码 2xx 汇总及各 2 开头状态码明细（单位为 个）\n+ 状态码 3xx 汇总及各 3 开头状态码明细（单位为 个）\n+ 状态码 4xx 汇总及各 4 开头状态码明细（单位为 个）\n+ 状态码 5xx 汇总及各 5 开头状态码明细（单位为 个）",
@@ -134,11 +134,11 @@
       "status": "online"
     },
     "DescribeDDoSData": {
-      "document": "DDoS统计数据查询",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nDDoS统计数据查询",
       "input": "DescribeDDoSDataRequest",
       "name": "DDoS统计数据查询",
       "output": "DescribeDDoSDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDiagnoseReport": {
       "document": "### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
@@ -176,11 +176,11 @@
       "status": "online"
     },
     "DescribeEventLogData": {
-      "document": "DescribeEventLogData 用于查询事件日志统计曲线",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nDescribeEventLogData 用于查询事件日志统计曲线",
       "input": "DescribeEventLogDataRequest",
       "name": "查询事件日志统计曲线",
       "output": "DescribeEventLogDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeHttpsPackages": {
       "document": "DescribeHttpsPackages 用于查询 CDN HTTPS请求包详情。",
@@ -267,39 +267,39 @@
       "status": "online"
     },
     "DescribeScdnBotData": {
-      "document": "获取BOT统计数据列表",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n获取BOT统计数据列表",
       "input": "DescribeScdnBotDataRequest",
       "name": "获取BOT统计数据列表",
       "output": "DescribeScdnBotDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnBotRecords": {
-      "document": "查询BOT会话记录列表",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n查询BOT会话记录列表",
       "input": "DescribeScdnBotRecordsRequest",
       "name": "查询BOT会话记录列表",
       "output": "DescribeScdnBotRecordsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnConfig": {
-      "document": "DescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nDescribeScdnConfig 用于查询指定 SCDN 加速域名的安全相关配置",
       "input": "DescribeScdnConfigRequest",
       "name": "SCDN域名配置",
       "output": "DescribeScdnConfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnIpStrategy": {
-      "document": "查询在SCDN IP安全策略",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n查询在SCDN IP安全策略",
       "input": "DescribeScdnIpStrategyRequest",
       "name": "查询SCDN安全防护IP白名单",
       "output": "DescribeScdnIpStrategyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeScdnTopData": {
-      "document": "获取SCDN的Top数据",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n获取SCDN的Top数据",
       "input": "DescribeScdnTopDataRequest",
       "name": "获取SCDN的Top数据",
       "output": "DescribeScdnTopDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTopData": {
       "document": "DescribeTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 IP 排序，从大至小返回 TOP 100 IP\n+ 依据总流量、总请求数对访问 Refer 排序，从大至小返回 TOP 100 Refer\n+ 依据总流量、总请求数对访问 设备 排序，从大至小返回 设备类型\n+ 依据总流量、总请求数对访问 操作系统 排序，从大至小返回 操作系统\n+ 依据总流量、总请求数对访问 浏览器 排序，从大至小返回 浏览器\n\n注意：\n+ 仅支持 90 天内数据查询，且从2021年09月20日开始有数据",
@@ -316,18 +316,18 @@
       "status": "online"
     },
     "DescribeUrlViolations": {
-      "document": "DescribeUrlViolations 用于查询被 CDN 系统扫描到的域名违规 URL 列表及当前状态。\n对应内容分发网络控制台【图片鉴黄】页面。",
+      "document": "DescribeUrlViolations 用于查询被 CDN 系统扫描到的域名违规 URL 列表及当前状态。\n对应内容分发网络控制台【内容合规】页面。",
       "input": "DescribeUrlViolationsRequest",
       "name": "违规历史查询",
       "output": "DescribeUrlViolationsResponse",
       "status": "online"
     },
     "DescribeWafData": {
-      "document": "Waf统计数据查询",
+      "document": "SCDN平台下线，接口开始预下线处理\n\nWaf统计数据查询",
       "input": "DescribeWafDataRequest",
       "name": "Waf统计数据查询",
       "output": "DescribeWafDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DisableCaches": {
       "document": "### <font color=red>**该接口已废弃** </font><br>\nDisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。",
@@ -393,39 +393,39 @@
       "status": "online"
     },
     "ListScdnDomains": {
-      "document": "ListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nListScdnDomains 用于查询 SCDN 安全加速域名列表，及域名基本配置信息",
       "input": "ListScdnDomainsRequest",
       "name": "查询SCDN域名列表",
       "output": "ListScdnDomainsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListScdnLogTasks": {
-      "document": "ListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nListScdnLogTasks 用于查询SCDN日志下载任务列表,以及展示下载任务基本信息",
       "input": "ListScdnLogTasksRequest",
       "name": "查询SCDN日志下载任务列表",
       "output": "ListScdnLogTasksResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListScdnTopBotData": {
-      "document": "获取Bot攻击的Top数据列表",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\n获取Bot攻击的Top数据列表",
       "input": "ListScdnTopBotDataRequest",
       "name": "获取Bot攻击的Top数据列表",
       "output": "ListScdnTopBotDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopBotData": {
-      "document": "获取Bot攻击的Top信息",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取Bot攻击的Top信息",
       "input": "ListTopBotDataRequest",
       "name": "获取Bot攻击的Top信息",
       "output": "ListTopBotDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopCcData": {
-      "document": "获取CC攻击Top数据",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取CC攻击Top数据",
       "input": "ListTopCcDataRequest",
       "name": "获取CC攻击Top数据",
       "output": "ListTopCcDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopClsLogData": {
       "document": "通过CLS日志计算Top信息。支持近7天的日志数据。",
@@ -435,11 +435,11 @@
       "status": "online"
     },
     "ListTopDDoSData": {
-      "document": "获取DDoS攻击Top数据",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取DDoS攻击Top数据",
       "input": "ListTopDDoSDataRequest",
       "name": "获取DDoS攻击Top数据",
       "output": "ListTopDDoSDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListTopData": {
       "document": "ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排序数据：\n\n+ 依据总流量、总请求数对访问 URL 排序，从大至小返回 TOP 1000 URL\n+ 依据总流量、总请求数对客户端省份排序，从大至小返回省份列表\n+ 依据总流量、总请求数对客户端运营商排序，从大至小返回运营商列表\n+ 依据总流量、峰值带宽、总请求数、平均命中率、2XX/3XX/4XX/5XX 状态码对域名排序，从大至小返回域名列表\n+ 依据总回源流量、回源峰值带宽、总回源请求数、平均回源失败率、2XX/3XX/4XX/5XX 回源状态码对域名排序，从大至小返回域名列表\n\n注意：仅支持 90 天内数据查询",
@@ -449,11 +449,11 @@
       "status": "online"
     },
     "ListTopWafData": {
-      "document": "获取Waf攻击Top数据",
+      "document": "SCDN平台下线，接口开始预下线处理\n\n获取Waf攻击Top数据",
       "input": "ListTopWafDataRequest",
       "name": "获取Waf攻击Top数据",
       "output": "ListTopWafDataResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ManageClsTopicDomains": {
       "document": "ManageClsTopicDomains 用于管理某日志主题下绑定的域名列表。",
@@ -512,11 +512,11 @@
       "status": "online"
     },
     "StartScdnDomain": {
-      "document": "StartScdnDomain 用于开启域名的安全防护配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nStartScdnDomain 用于开启域名的安全防护配置",
       "input": "StartScdnDomainRequest",
       "name": "启动SCDN域名安全防护",
       "output": "StartScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "StopCdnDomain": {
       "document": "StopCdnDomain 用于停止域名的加速服务。\n注意：停止加速服务后，访问至加速节点的请求将会直接返回 404。为避免对您的业务造成影响，请在停止加速服务前将解析切走。",
@@ -526,11 +526,11 @@
       "status": "online"
     },
     "StopScdnDomain": {
-      "document": "StopScdnDomain 用于关闭域名的安全防护配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nStopScdnDomain 用于关闭域名的安全防护配置",
       "input": "StopScdnDomainRequest",
       "name": "停止SCDN域名安全防护",
       "output": "StopScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpdateDomainConfig": {
       "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。\n操作审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到操作审计。",
@@ -554,11 +554,11 @@
       "status": "online"
     },
     "UpdateScdnDomain": {
-      "document": "UpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置",
+      "document": "SCDN平台已经正式下线，接口开始预下线处理\n\nUpdateScdnDomain 用于修改 SCDN 加速域名安全相关配置",
       "input": "UpdateScdnDomainRequest",
       "name": "更新SCDN域名配置",
       "output": "UpdateScdnDomainResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "VerifyDomainRecord": {
       "document": "VerifyDomainRecord 用于验证域名解析值。\n验证域名解析记录值前，您需要通过 [CreateVerifyRecord](https://cloud.tencent.com/document/product/228/48118) 生成校验解析值，验证通过后，24小时有效。\n具体流程可参考：[使用API接口进行域名归属校验](https://cloud.tencent.com/document/product/228/61702#.E6.96.B9.E6.B3.95.E4.B8.89.EF.BC.9Aapi-.E6.8E.A5.E5.8F.A3.E6.93.8D.E4.BD.9C)",
@@ -5533,7 +5533,7 @@
         },
         {
           "disabled": false,
-          "document": "托管证书ID，Cert和CertId不能均未空，都填写时以CerId为准。",
+          "document": "托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。",
           "example": "证书ID",
           "member": "string",
           "name": "CertId",
@@ -11615,7 +11615,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的Top条数，最大值为100，默认为10",
+          "document": "要查询的Top条数，建议最大值100，默认为10",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -13992,7 +13992,7 @@
         {
           "disabled": false,
           "document": "URL 列表，需要包含协议头部 http:// 或 https://",
-          "example": "无",
+          "example": "https://qq.com/data",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -14070,7 +14070,7 @@
         {
           "disabled": false,
           "document": "此批提交的任务 ID",
-          "example": "12345",
+          "example": "559846958382362894",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -14932,7 +14932,7 @@
         {
           "disabled": false,
           "document": "使用/排除的url参数数组，';' 分割\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "example-value",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -16771,9 +16771,10 @@
         {
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "产品",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16781,9 +16782,10 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cdn",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -16797,20 +16799,20 @@
         {
           "disabled": false,
           "document": "数据统计时间点，采用向前汇总模式\n以 5 分钟粒度为例，13:35:00 时间点代表的统计数据区间为 13:35:00 至 13:39:59",
-          "example": "",
+          "example": "13:35:00",
           "member": "datetime",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据值",
-          "example": "",
+          "example": "100.00",
           "member": "float",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -18107,6 +18109,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

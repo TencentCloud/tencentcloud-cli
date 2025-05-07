@@ -11,8 +11,8 @@
     "CreateVideoModerationTask": [
       {
         "document": "创建视频审核任务",
-        "input": "POST / HTTP/1.1\nHost: vm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoModerationTask\n<公共请求参数>\n\n{\n    \"BizType\": \"1001\",\n    \"Tasks\": [\n        {\n            \"DataId\": \"test_data_1\",\n            \"Input\": {\n                \"Url\": \"https://v.com/test.mp4\",\n                \"Type\": \"URL\"\n            }\n        }\n    ],\n    \"Type\": \"VIDEO\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n                \"TaskId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\",\n                \"Code\": \"OK\",\n                \"Message\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoModerationTask\n<公共请求参数>\n\n{\n    \"BizType\": \"default\",\n    \"Type\": \"VIDEO\",\n    \"Tasks\": [\n        {\n            \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n            \"Input\": {\n                \"Type\": \"URL\",\n                \"Url\": \"https://test.myqcloud.com/test.mp4\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"DataId\": \"0a782332-c9db-4cf5-a66e-20d60b4ea469\",\n                \"TaskId\": \"w-video-aqwfdNiA4vq3Zysfa1\",\n                \"Code\": \"OK\",\n                \"Message\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"c933aca1-90d2-4ab8-b045-f1b08069d76f\"\n    }\n}",
         "title": "创建视频审核任务"
       }
     ],

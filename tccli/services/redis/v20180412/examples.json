@@ -578,7 +578,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceCreateInstance\n&ZoneId=100002\n&TypeId=6\n&MemSize=4096\n&GoodsNum=1\n&Period=1\n&BillingMode=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": 30400,\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c0b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": 30400,\n        \"HighPrecisionPrice\": 30400.123,\n        \"Currency\": \"CNY\",\n        \"AmountUnit\": \"pent\",\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c0b\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -586,7 +586,7 @@
       {
         "document": "查询续费价格",
         "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceRenewInstance\n&Period=1\n&InstanceId=crs-qkdj****\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": 100800,\n        \"RequestId\": \"4bd77cc7-ece7-4660-bbdd-6892d96f35a1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": 100800,\n        \"HighPrecisionPrice\": 100800.98,\n        \"Currency\": \"CNY\",\n        \"AmountUnit\": \"pent\",\n        \"RequestId\": \"4bd77cc7-ece7-4660-bbdd-6892d96f35a1\"\n    }\n}",
         "title": "查询示例"
       }
     ],
@@ -594,7 +594,7 @@
       {
         "document": "",
         "input": "https://redis.tencentcloudapi.com/?Action=InquiryPriceUpgradeInstance\n&InstanceId=crs-xjhsdjcxjd\n&MemSize=4096\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": 30400,\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c01\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": 30400,\n        \"HighPrecisionPrice\": 30400.123,\n        \"Currency\": \"CNY\",\n        \"AmountUnit\": \"pent\",\n        \"RequestId\": \"0115d979-2c38-4ad2-b282-bec09d5b4c01\"\n    }\n}",
         "title": "示例"
       }
     ],

@@ -20,7 +20,7 @@ Output:
         "DomainReport": [
             {
                 "Resource": "www.test1.com",
-                "ResourceId": "cdn-8km12345",
+                "ResourceId": "cdn-8km32892",
                 "Value": 100,
                 "Percentage": 50,
                 "BillingValue": 100,
@@ -38,7 +38,7 @@ Output:
         "ProjectReport": [
             {
                 "Resource": "p1",
-                "ResourceId": "123",
+                "ResourceId": "cdn-rl523456",
                 "Value": 100,
                 "Percentage": 10,
                 "BillingValue": 100,
@@ -46,7 +46,7 @@ Output:
             },
             {
                 "Resource": "默认项目",
-                "ResourceId": "cdn-8km12345",
+                "ResourceId": "cdn-8km12498",
                 "Value": 900,
                 "Percentage": 90,
                 "BillingValue": 900,

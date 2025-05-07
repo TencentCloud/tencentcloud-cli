@@ -7,10 +7,10 @@ Input:
 ```
 tccli soe TransmitOralProcess --cli-unfold-argument  \
     --VoiceEncodeType 1 \
-    --UserVoiceData VWtsR1JxeUpBd0JYUVZaRlptMTBJQkFBQUFBQkFBRUFnRDRBQUFCOUFBQUNBQkFBVEVsVFZCb0FBQUJKVGtaUFNWTkdWQTRBQUFCTVlYWm1OVFl1TVRrdU1UQXdBR1JoZEdGbWlRTUF5 \
+    --UserVoiceData UklGRvh3AABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAA...(total length:40980)AAAAAAAAAA \
     --IsEnd 0 \
     --VoiceFileType 1 \
-    --SessionId stress_test_956938 \
+    --SessionId test-6ef67f85-830e-4075-87a2-0ffda1843607 \
     --SeqId 1
 ```
 
@@ -110,7 +110,7 @@ Output:
                 ]
             }
         ],
-        "SessionId": "E6B94BA9-6***-B***-8***-9C4B****5176",
+        "SessionId": "test-6ef67f85-830e-4075-87a2-0ffda1843607",
         "AudioUrl": "",
         "SentenceInfoSet": [
             {

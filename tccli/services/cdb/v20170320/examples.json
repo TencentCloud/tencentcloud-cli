@@ -59,7 +59,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckMigrateCluster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\"\n}",
         "output": "{\n    \"Response\": {\n        \"CheckResult\": \"pass\",\n        \"Items\": [\n            {\n                \"Name\": \"SubVersion\",\n                \"Status\": \"pass\"\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
-        "title": "高可用实例一键迁移到集群版校验"
+        "title": "高可用实例一键迁移到云盘版校验"
       }
     ],
     "CloseAuditService": [
@@ -553,7 +553,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-dctw4edd\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterName\": \"dbname\",\n        \"ReadWriteAddress\": {\n            \"ResourceId\": \"cdb-dctw4edd\",\n            \"UniqVpcId\": \"vpc-hendkj\",\n            \"UniqSubnetId\": \"subnet-eushjw\",\n            \"Vip\": \"192.168.3.4\",\n            \"VPort\": 3306,\n            \"WanDomain\": \"gz-cdb-*******.sql.tencentcdb.com\",\n            \"WanPort\": 23356\n        },\n        \"ReadOnlyAddress\": [\n            {\n                \"ResourceId\": \"cdbro-3a1eccdd\",\n                \"UniqVpcId\": \"vpc-ehndjs\",\n                \"UniqSubnetId\": \"subnet-euwhsn\",\n                \"Vip\": \"192.168.3.5\",\n                \"VPort\": 3306,\n                \"WanDomain\": \"gz-cdb-*******.sql.tencentcdb.com\",\n                \"WanPort\": 23356\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"NodeId\": \"dbn-qqeo1111\",\n                \"Role\": \"master\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            },\n            {\n                \"NodeId\": \"dbn-qqeo2222\",\n                \"Role\": \"slave\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"Weight\": 1,\n                \"Status\": \"online\"\n            }\n        ],\n        \"ReadonlyLimit\": 10,\n        \"NodeCount\": 2,\n        \"RequestId\": \"mnksadas-cb0d-4943-9b17-c3306ed3d\"\n    }\n}",
-        "title": "查询集群版实例信息"
+        "title": "查询云盘版实例信息"
       }
     ],
     "DescribeCpuExpandStrategy": [
