@@ -3973,7 +3973,7 @@
         {
           "disabled": false,
           "document": "二级经销商uin",
-          "example": "20000000",
+          "example": "200000000000",
           "member": "int64",
           "name": "SubAgentUin",
           "required": true,
@@ -4016,7 +4016,7 @@
         {
           "disabled": false,
           "document": "二级经销商uin",
-          "example": "2000000000",
+          "example": "200000000000",
           "member": "int64",
           "name": "SubAgentUin",
           "output_required": false,

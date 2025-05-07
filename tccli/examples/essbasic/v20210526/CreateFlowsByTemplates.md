@@ -335,3 +335,67 @@ Output:
 }
 ```
 
+**Example 5: 创建合同，使用本方企业自动签署模板发起本方自动签署流程。**
+
+使用本方自动签署模板创建签署流程。
+模板中本方企业设置了自动签署，发起合同后将会自动完成盖章。
+
+Input: 
+
+```
+tccli essbasic CreateFlowsByTemplates --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.AppId yDwfwUUgygormhg1UuS2eARxjMT0mxAw \
+    --FlowInfos.0.FlowName 测试签署流程二 \
+    --FlowInfos.0.TemplateId yDRS4UUgygqdcj56UuO4zjExBQcOiB68 \
+    --FlowInfos.0.FlowDescription 测试签署流程二的描述信息 \
+    --FlowInfos.0.Deadline 1989688460 \
+    --FlowInfos.0.FlowApprovers.0.Name 张三 \
+    --FlowInfos.0.FlowApprovers.0.ApproverType ORGANIZATION \
+    --FlowInfos.0.FlowApprovers.0.OrganizationOpenId ess_open_organization_1 \
+    --FlowInfos.0.FlowApprovers.0.OrganizationName org_zhangsan \
+    --FlowInfos.0.FlowApprovers.0.Mobile 18888888888 \
+    --FlowInfos.0.FlowApprovers.0.OpenId n02468 \
+    --FlowInfos.0.FlowApprovers.0.RecipientId yDwJ0UUckpk2077lUxgm9jJ9eZgZChJe
+```
+
+Output: 
+```
+{
+    "Response": {
+        "CustomerData": [
+            ""
+        ],
+        "ErrorMessages": [
+            ""
+        ],
+        "FlowApprovers": [
+            {
+                "Approvers": [
+                    {
+                        "ApproverRoleName": "张三示例企业",
+                        "RecipientId": "yDwJ0UUckpk2077lUxgm9jJ9eZgZChJe",
+                        "SignId": "yDCNsUUckpvsadtzUEEw4IgycXgrG82a"
+                    }
+                ],
+                "FlowId": "yDCNsUUckpvsadtiUEEw4Ig1G1ybk1QY"
+            }
+        ],
+        "FlowIds": [
+            "yDCNsUUckpvsadtiUEEw4Ig1G1yak1QY"
+        ],
+        "PreviewUrls": [
+            ""
+        ],
+        "RequestId": "s1706111849162794392",
+        "TaskInfos": [
+            {
+                "TaskId": "",
+                "TaskStatus": ""
+            }
+        ]
+    }
+}
+```
+

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeDomainBaseInfo --cli-unfold-argument  \
-    --Domain 域名
+    --Domain test.com
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "DomainInfo": {
             "DomainId": "domain-xxxxx",
-            "DomainName": "tencent.com",
+            "DomainName": "test.com",
             "NameServer": [
                 "f1g1ns1.dnspod.net",
                 "f1g1ns2.dnspod.net"

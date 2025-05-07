@@ -3400,8 +3400,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果，成功失败",
-          "example": "1",
+          "document": "返回结果，成功：true，失败：false。",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,

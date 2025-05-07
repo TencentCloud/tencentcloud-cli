@@ -7,8 +7,8 @@ Input:
 ```
 tccli domain ModifyCustomDnsHost --cli-unfold-argument  \
     --DomainId domain-esyfsdfgq \
-    --DnsName ccc \
-    --IpSet 2.2.2.2
+    --DnsName ns1 \
+    --IpSet 2.2.2.2 1.2.4.8
 ```
 
 Output: 

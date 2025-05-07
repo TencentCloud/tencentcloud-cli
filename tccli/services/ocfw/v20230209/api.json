@@ -1039,7 +1039,17 @@
     },
     "DescribeOverviewFlowStatRequest": {
       "document": "DescribeOverviewFlowStat请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "SERIAL 串行、GWLBVPC vpcid墙集群模式",
+          "example": "SERIAL",
+          "member": "string",
+          "name": "FwType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeOverviewFlowStatResponse": {
@@ -1432,12 +1442,202 @@
     },
     "DescribeVpcRuleStatusRequest": {
       "document": "DescribeVpcRuleStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "预操作增加规则列表个数",
+          "example": "0",
+          "member": "int64",
+          "name": "AddCnt",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeVpcRuleStatusResponse": {
       "document": "DescribeVpcRuleStatus返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "内网间规则配额",
+          "example": "100",
+          "member": "uint64",
+          "name": "Quota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局范围的内网规则数量",
+          "example": "70",
+          "member": "uint64",
+          "name": "GlobalRuleNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定边的内网规则数量",
+          "example": "70",
+          "member": "uint64",
+          "name": "EdgeRuleNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局范围启用的内网规则数量",
+          "example": "70",
+          "member": "uint64",
+          "name": "GlobalEnableRuleNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定边启用的内网规则数量",
+          "example": "70",
+          "member": "uint64",
+          "name": "EdgeEnableRuleNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近一次规则备份的时间",
+          "example": "2022-06-08 11:08:44",
+          "member": "string",
+          "name": "LastBackupTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用规格数",
+          "example": "10",
+          "member": "uint64",
+          "name": "UsedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余通用规则扩展数",
+          "example": "100",
+          "member": "int64",
+          "name": "RemainExtensionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余配额数",
+          "example": "100",
+          "member": "int64",
+          "name": "RemainQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预操作是否超过配额，1：超过，0：未超过",
+          "example": "0",
+          "member": "int64",
+          "name": "IsOverLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预操作需要额外配额数",
+          "example": "0",
+          "member": "int64",
+          "name": "NeedQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4规则当前最大序列号",
+          "example": "100",
+          "member": "int64",
+          "name": "V4RuleMaxSeq",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6规则当前最大序列号",
+          "example": "100",
+          "member": "int64",
+          "name": "V6RuleMaxSeq",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4规则总数",
+          "example": "100",
+          "member": "int64",
+          "name": "V4RuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4开启规则总数",
+          "example": "100",
+          "member": "int64",
+          "name": "V4EnableRuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6规则总数",
+          "example": "100",
+          "member": "int64",
+          "name": "V6RuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv6开启规则总数",
+          "example": "100",
+          "member": "int64",
+          "name": "V6EnableRuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启防火墙 ，0: 未开启  1：开启",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSwitchEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

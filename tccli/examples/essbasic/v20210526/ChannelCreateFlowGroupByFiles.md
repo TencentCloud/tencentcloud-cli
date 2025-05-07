@@ -143,7 +143,7 @@ tccli essbasic ChannelCreateFlowGroupByFiles --cli-unfold-argument  \
     --FlowFileInfos.0.Deadline 0 \
     --FlowFileInfos.0.FlowDescription 2023年番茄的采购50吨合同 \
     --FlowFileInfos.0.FlowType 采购合同 \
-    --FlowFileInfos.0.FlowApprovers.0.ApproverType ENTERPRISESERVER \
+    --FlowFileInfos.0.FlowApprovers.0.ApproverType ORGANIZATION \
     --FlowFileInfos.0.FlowApprovers.0.ApproverOption.FillType 1 \
     --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.ComponentWidth 100 \
     --FlowFileInfos.0.FlowApprovers.0.SignComponents.0.FileIndex 0 \
@@ -173,7 +173,7 @@ tccli essbasic ChannelCreateFlowGroupByFiles --cli-unfold-argument  \
     --FlowFileInfos.1.Deadline 0 \
     --FlowFileInfos.1.FlowDescription 2023年黄瓜的采购50吨合同 \
     --FlowFileInfos.1.FlowType 采购合同 \
-    --FlowFileInfos.1.FlowApprovers.0.ApproverType ENTERPRISESERVER \
+    --FlowFileInfos.1.FlowApprovers.0.ApproverType ORGANIZATION \
     --FlowFileInfos.1.FlowApprovers.0.ApproverOption.FillType 1 \
     --FlowFileInfos.1.FlowApprovers.0.SignComponents.0.ComponentWidth 100 \
     --FlowFileInfos.1.FlowApprovers.0.SignComponents.0.FileIndex 0 \
@@ -203,7 +203,7 @@ tccli essbasic ChannelCreateFlowGroupByFiles --cli-unfold-argument  \
     --FlowFileInfos.2.Deadline 0 \
     --FlowFileInfos.2.FlowDescription 2023年马铃薯的采购50吨合同 \
     --FlowFileInfos.2.FlowType 采购合同 \
-    --FlowFileInfos.2.FlowApprovers.0.ApproverType ENTERPRISESERVER \
+    --FlowFileInfos.2.FlowApprovers.0.ApproverType ORGANIZATION \
     --FlowFileInfos.2.FlowApprovers.0.ApproverOption.FillType 1 \
     --FlowFileInfos.2.FlowApprovers.0.SignComponents.0.ComponentWidth 100 \
     --FlowFileInfos.2.FlowApprovers.0.SignComponents.0.FileIndex 0 \

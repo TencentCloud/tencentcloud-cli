@@ -1,68 +1,84 @@
-# Release 3.0.1194.1
+# Release 3.0.1195.1
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 71 次发布
+### 第 48 次发布
 
-发布时间：2025-05-07 01:12:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/1132/86713)
-
-新增数据结构：
-
-* [Column](http://document.tencentcloudapi.woa.com/document/product/1132/49071#Column)
-* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#LogInfo)
-* [LogItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#LogItem)
-* [LogItems](http://document.tencentcloudapi.woa.com/document/product/1132/49071#LogItems)
-* [MultiTopicSearchInformation](http://document.tencentcloudapi.woa.com/document/product/1132/49071#MultiTopicSearchInformation)
-* [SearchLogErrors](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SearchLogErrors)
-* [SearchLogInfos](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SearchLogInfos)
-* [SearchLogTopics](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SearchLogTopics)
-
-
-
-## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
-
-### 第 103 次发布
-
-发布时间：2025-05-07 01:13:07
+发布时间：2025-05-08 01:09:29
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [DescribeSecurityGroupRoutes](http://document.tencentcloudapi.woa.com/document/product/597/86714)
+* [SnapshotGroup](http://document.tencentcloudapi.woa.com/document/product/362/15669#SnapshotGroup)
 
-新增数据结构：
-
-* [InstanceRoute](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceRoute)
-* [RouteFilter](http://document.tencentcloudapi.woa.com/document/product/597/40861#RouteFilter)
-* [SecurityGroupRoute](http://document.tencentcloudapi.woa.com/document/product/597/40861#SecurityGroupRoute)
-* [SecurityGroupRouteResp](http://document.tencentcloudapi.woa.com/document/product/597/40861#SecurityGroupRouteResp)
+	* 新增成员：AutoSnapshotPolicyId
 
 
 
-## 云游戏(gs) 版本：2019-11-18
 
-### 第 18 次发布
+## 云开发低码(lowcode) 版本：2021-01-08
 
-发布时间：2025-05-07 01:19:28
+### 第 23 次发布
+
+发布时间：2025-05-08 01:23:25
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [RebootAndroidInstanceHosts](http://document.tencentcloudapi.woa.com/document/product/1162/86716)
+* [UploadKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85859)
+
+	* 新增入参：Delimiter
+
+
+
+
+## T-Sec 云防火墙(ocfw) 版本：2023-02-09
+
+### 第 6 次发布
+
+发布时间：2025-05-08 01:25:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeOverviewFlowStat](http://document.tencentcloudapi.woa.com/document/product/1746/82491)
+
+	* 新增入参：FwType
+
+* [DescribeVpcRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82532)
+
+	* 新增入参：AddCnt
+
+	* 新增出参：Quota, GlobalRuleNum, EdgeRuleNum, GlobalEnableRuleNum, EdgeEnableRuleNum, LastBackupTime, UsedNum, RemainExtensionNum, RemainQuota, IsOverLimit, NeedQuota, V4RuleMaxSeq, V6RuleMaxSeq, V4RuleTotal, V4EnableRuleTotal, V6RuleTotal, V6EnableRuleTotal, IsSwitchEnable
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 210 次发布
+
+发布时间：2025-05-08 01:32:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddressTemplateSpecification](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateSpecification)
+
+	* <font color="#dd0000">**修改成员**：</font>AddressId, AddressGroupId
+
 
 
 

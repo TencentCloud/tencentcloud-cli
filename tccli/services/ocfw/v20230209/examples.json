@@ -164,7 +164,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOverviewFlowStat\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1d37d6e-7311-4c4f-aba9-29bd65be1744\"\n    }\n}",
         "title": "test"
       }
     ],
@@ -228,7 +228,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcRuleStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Quota\": 1,\n        \"GlobalRuleNum\": 1,\n        \"EdgeRuleNum\": 1,\n        \"GlobalEnableRuleNum\": 1,\n        \"EdgeEnableRuleNum\": 1,\n        \"LastBackupTime\": \"2025-04-01\",\n        \"RequestId\": \"c1d37d6e-7311-4c4f-aba9-29bd65be1744\"\n    }\n}",
         "title": "test"
       }
     ],
