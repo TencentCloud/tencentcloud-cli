@@ -21,6 +21,13 @@
       "output": "ApproveClientApplyResponse",
       "status": "online"
     },
+    "ApproveSubAgentApply": {
+      "document": "审批二级经销商申请。\n可调用角色：一级经销商",
+      "input": "ApproveSubAgentApplyRequest",
+      "name": "审批二级经销商申请",
+      "output": "ApproveSubAgentApplyResponse",
+      "status": "online"
+    },
     "CreateAccount": {
       "document": "当前接口用作一级经销商/二级经销商创建腾讯云子客账号，账号创建完成后将自动与合作伙伴账号绑定。\n注意事项：\n1、创建腾讯云账号，输入的邮箱、手机号，需要合作伙伴做有效性验证。\n2、客户首次登录需要补充个人信息\n3、该接口需要申请白名单使用，请联系渠道经理发起申请流程。\n\n可调用角色：一级经销商、二级经销商、经销商",
       "input": "CreateAccountRequest",
@@ -215,6 +222,13 @@
       "input": "QueryPendingClientsV2Request",
       "name": "查询申请中子客",
       "output": "QueryPendingClientsV2Response",
+      "status": "online"
+    },
+    "QueryPendingSubAgentsV2": {
+      "document": "查询申请中二级经销商信息。\n可调用角色：一级经销商",
+      "input": "QueryPendingSubAgentsV2Request",
+      "name": "查询申请中的二级经销商",
+      "output": "QueryPendingSubAgentsV2Response",
       "status": "online"
     },
     "QueryPolicyProductListByCode": {
@@ -493,6 +507,51 @@
     },
     "ApproveClientApplyResponse": {
       "document": "ApproveClientApply返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApproveSubAgentApplyRequest": {
+      "document": "ApproveSubAgentApply请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级经销商uin",
+          "example": "1000000000",
+          "member": "int64",
+          "name": "SubAgentUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审批类型。仅支持pass和reject",
+          "example": "pass",
+          "member": "string",
+          "name": "ApproveType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拒绝原因。仅在ApproveType为reject场景下填写",
+          "example": "miss accout info",
+          "member": "string",
+          "name": "RejectReason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApproveSubAgentApplyResponse": {
+      "document": "ApproveSubAgentApply返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1134,6 +1193,24 @@
           "member": "string",
           "name": "Email",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邀请角色。\n注：如果没有传值，则默认为子客\nClient：子客\nSubAgent：二级经销商",
+          "example": "Client",
+          "member": "string",
+          "name": "InvitationRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请材料。\n注：该字段仅在邀请二级经销商场景下生效",
+          "example": "abc.xxx.cos.com",
+          "member": "string",
+          "name": "MaterialUrl",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3645,6 +3722,148 @@
           "name": "Type",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryPendingSubAgentsV2Request": {
+      "document": "QueryPendingSubAgentsV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码。从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量。最大支持100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryPendingSubAgentsV2Response": {
+      "document": "QueryPendingSubAgentsV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请中二级经销商信息",
+          "example": "无",
+          "member": "QueryPendingSubAgentsV2ResponseData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请中二级经销商数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryPendingSubAgentsV2ResponseData": {
+      "document": "申请中的二级经销商信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级经销商uin",
+          "example": "2000000000",
+          "member": "int64",
+          "name": "SubAgentUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "张三",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "188****8888",
+          "member": "string",
+          "name": "Mobile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱",
+          "example": "abc@gmail.com",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请时间",
+          "example": "2023-03-01 11:12:32",
+          "member": "string",
+          "name": "ApplyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审核状态\nReviewing：待审核",
+          "example": "Reviewing",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请材料",
+          "example": "abc.xxx.cos.com",
+          "member": "string",
+          "name": "MaterialUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实名状态 -1：文件未上传 0：未提交审核， 1：审核中；2：审核出错；3：审核通过",
+          "example": "3",
+          "member": "int64",
+          "name": "AuthState",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

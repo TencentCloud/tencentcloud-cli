@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli asr GetModelInfo --cli-unfold-argument  \
-    --ModelId 5a15aa3ae4c611eda0d56c92bf48cdf2
+    --ModelId 5a15aa3ae******da0d56c92bf48cdf2
 ```
 
 Output: 
@@ -14,16 +14,16 @@ Output:
 {
     "Response": {
         "Data": {
-            "ModelName": "test",
+            "ModelName": "通用模型",
             "DictName": "c6824a6d-05ec-431c-95c9",
-            "ModelId": "5a15aa3ae4c611eda0d56c92bf48cdf2",
+            "ModelId": "5a15aa3ae******da0d56c92bf48cdf2",
             "ModelType": "8k",
             "ServiceType": "",
             "ModelState": 1,
             "AtUpdated": "2023-04-27 14:40:09",
             "TagInfos": null
         },
-        "RequestId": "abc"
+        "RequestId": "dsafsswdadas******dssadas"
     }
 }
 ```

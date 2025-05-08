@@ -52,7 +52,8 @@ Output:
                     "Region": "abc",
                     "Paths": [
                         "abc"
-                    ]
+                    ],
+                    "Uin": "abc"
                 },
                 "CreateTime": "abc",
                 "ModelFormat": "abc",
@@ -65,7 +66,8 @@ Output:
                     "Region": "abc",
                     "Paths": [
                         "abc"
-                    ]
+                    ],
+                    "Uin": "abc"
                 }
             }
         ],

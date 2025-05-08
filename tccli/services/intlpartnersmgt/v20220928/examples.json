@@ -24,6 +24,14 @@
         "title": "审批子客申请"
       }
     ],
+    "ApproveSubAgentApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApproveSubAgentApply\n<公共请求参数>\n\n{\n    \"SubAgentUin\": 100000,\n    \"ApproveType\": \"pass\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91158930-****-496f-****-8f32f5edabcc\"\n    }\n}",
+        "title": "审批通过"
+      }
+    ],
     "CreateAccount": [
       {
         "document": "申请创建客户账户",
@@ -284,6 +292,14 @@
         "title": "查询申请中子客信息"
       }
     ],
+    "QueryPendingSubAgentsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryPendingSubAgentsV2\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Status\": \"Reviewing\",\n                \"SubAgentUin\": 2000000000,\n                \"Name\": \"张三\",\n                \"Mobile\": \"188****8888\",\n                \"ApplyTime\": \"2023-01-03 12:11:32\",\n                \"MaterialUrl\": \"xx.abc.cos.com\",\n                \"Email\": \"abc@gmail.com\"\n            }\n        ],\n        \"RequestId\": \"abc45-****-sjncek2-kdng****\"\n    }\n}",
+        "title": "查询申请中二级经销商信息"
+      }
+    ],
     "QueryPolicyProductListByCode": [
       {
         "document": "通过经销商政策code和产品二层名称查询政策列表数据",
@@ -311,7 +327,7 @@
     "QueryT1IndirectCustomersDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryT1IndirectCustomersDetail\n<公共请求参数>\n\n\n\n{\n\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"SubAgentUin\": 200000000000\n}",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryT1IndirectCustomersDetail\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"SubAgentUin\": 200000000000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"********\",\n        \"Total\": 1,\n        \"SubAgentUin\": 200000000000,\n        \"SubAgentName\": \"张三\",\n        \"Data\": [\n            {\n                \"ClientUin\": 200000000001,\n                \"ClientName\": \"李四\",\n                \"ClientBindTime\": \"2024-02-02 09:25:38\"\n            }\n        ]\n    }\n}",
         "title": "查询一级经销商间接子客"
       }

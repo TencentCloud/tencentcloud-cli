@@ -62,7 +62,8 @@ Output:
                         "Region": "ap-shanghai",
                         "Paths": [
                             "/test"
-                        ]
+                        ],
+                        "Uin": "100032979603"
                     },
                     "GooseFSSource": {
                         "Id": "",

@@ -65,7 +65,8 @@ Output:
                                 "Region": "ap-guangzhou",
                                 "Paths": [
                                     "automl/public/分类-均衡-ml-gnvrfzmp-v1/ems/sdk/model_service.py"
-                                ]
+                                ],
+                                "Uin": "100023008439"
                             },
                             "AlgorithmFramework": "",
                             "ModelFormat": "",
@@ -77,7 +78,8 @@ Output:
                                 "Region": "ap-guangzhou",
                                 "Paths": [
                                     "automl/public/分类-均衡-ml-gnvrfzmp-v1/ems/sdk/model_service.py"
-                                ]
+                                ],
+                                "Uin": "100023008439"
                             }
                         },
                         "VolumeMount": null,

@@ -17,11 +17,11 @@ Output:
 {
     "Response": {
         "Data": {
-            "VoicePrintId": "KJHGUGKGGGFGYFVDA",
+            "VoicePrintId": "KJHGUG****GGFGYFVDA",
             "Score": "60.0",
             "Decision": 1
         },
-        "RequestId": "abc"
+        "RequestId": "dasdasdadsdas*****dasdada"
     }
 }
 ```

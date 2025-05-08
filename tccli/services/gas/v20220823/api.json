@@ -1,11 +1,11 @@
 {
   "actions": {
     "GetPerformanceDispatch": {
-      "document": "获取压测模块任务分发接口",
+      "document": "控制台已下线 对应的云API接口也一起下线\n\n获取压测模块任务分发接口",
       "input": "GetPerformanceDispatchRequest",
       "name": "获取压测模块任务分发接口",
       "output": "GetPerformanceDispatchResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

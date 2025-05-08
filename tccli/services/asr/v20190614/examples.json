@@ -132,7 +132,7 @@
       {
         "document": "用户通过该接口，可获得所有的关键词表及其信息。",
         "input": "https://asr.tencentcloudapi.com/?Action=GetAsrKeyWordLibList\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibList\": [\n                {\n                    \"KeyWordLibId\": \"aa6f402f263f12ea856fc81fbecfd0sd\",\n                    \"Name\": \"示例词表\",\n                    \"KeyWordList\": [\n                        \"避风港\"\n                    ],\n                    \"CreateTime\": \"2024-08-24T13:28:48+00:00\",\n                    \"UpdateTime\": \"2024-08-24T13:28:48+00:00\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KeyWordLibList\": [\n                {\n                    \"KeyWordLibId\": \"aa6f402f263f******56fc81fbecfd0sd\",\n                    \"Name\": \"示例词表\",\n                    \"KeyWordList\": [\n                        \"避风港\"\n                    ],\n                    \"CreateTime\": \"2024-08-24T13:28:48+00:00\",\n                    \"UpdateTime\": \"2024-08-24T13:28:48+00:00\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"b3808ad3-d8dd-4b65-96c9-7d6f1f81b6b6\"\n    }\n}",
         "title": "列举关键词表"
       }
     ],
@@ -163,8 +163,8 @@
     "GetModelInfo": [
       {
         "document": "通过模型id获取模型信息",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetModelInfo\n<公共请求参数>\n\n{\n    \"ModelId\": \"5a15aa3ae4c611eda0d56c92bf48cdf2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ModelName\": \"test\",\n            \"DictName\": \"c6824a6d-05ec-431c-95c9\",\n            \"ModelId\": \"5a15aa3ae4c611eda0d56c92bf48cdf2\",\n            \"ModelType\": \"8k\",\n            \"ServiceType\": \"\",\n            \"ModelState\": 1,\n            \"AtUpdated\": \"2023-04-27 14:40:09\",\n            \"TagInfos\": null\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetModelInfo\n<公共请求参数>\n\n{\n    \"ModelId\": \"5a15aa3ae******da0d56c92bf48cdf2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ModelName\": \"通用模型\",\n            \"DictName\": \"c6824a6d-05ec-431c-95c9\",\n            \"ModelId\": \"5a15aa3ae******da0d56c92bf48cdf2\",\n            \"ModelType\": \"8k\",\n            \"ServiceType\": \"\",\n            \"ModelState\": 1,\n            \"AtUpdated\": \"2023-04-27 14:40:09\",\n            \"TagInfos\": null\n        },\n        \"RequestId\": \"dsafsswdadas******dssadas\"\n    }\n}",
         "title": "通过模型id获取模型信息"
       }
     ],
@@ -282,7 +282,7 @@
       {
         "document": "验证音频和说话人id是否一致",
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintVerify\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 16000,\n    \"VoicePrintId\": \"KJHGUGKGGGFGYFVDA\",\n    \"Data\": \"UklGRiRTBwBXQVZFZm10IBAA\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"KJHGUGKGGGFGYFVDA\",\n            \"Score\": \"60.0\",\n            \"Decision\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"KJHGUG****GGFGYFVDA\",\n            \"Score\": \"60.0\",\n            \"Decision\": 1\n        },\n        \"RequestId\": \"dasdasdadsdas*****dasdada\"\n    }\n}",
         "title": "说话人验证"
       }
     ]

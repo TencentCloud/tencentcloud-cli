@@ -14,7 +14,7 @@ Output:
         "Data": {
             "KeyWordLibList": [
                 {
-                    "KeyWordLibId": "aa6f402f263f12ea856fc81fbecfd0sd",
+                    "KeyWordLibId": "aa6f402f263f******56fc81fbecfd0sd",
                     "Name": "示例词表",
                     "KeyWordList": [
                         "避风港"

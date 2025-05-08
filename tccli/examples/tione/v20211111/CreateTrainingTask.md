@@ -24,6 +24,7 @@ tccli tione CreateTrainingTask --cli-unfold-argument  \
     --CodePackagePath.Bucket test-gz-1256580188 \
     --CodePackagePath.Region ap-guangzhou \
     --CodePackagePath.Paths test/ \
+    --CodePackagePath.Uin  \
     --EncodedStartCmdInfo.StartCmdInfo eyJTdGFydENtZCI6IiIsIlBzU3RhcnRDbWQiOiIiLCJXb3JrZXJTdGFydENtZCI6InNsZWVwIDEwIn0= \
     --DataConfigs.0.DataSourceType CFS \
     --DataConfigs.0.MappingPath /opt/ml/input/data/ \
@@ -33,6 +34,7 @@ tccli tione CreateTrainingTask --cli-unfold-argument  \
     --Output.Bucket test-gz-1256580188 \
     --Output.Region ap-guangzhou \
     --Output.Paths cos_test/ \
+    --Output.Uin  \
     --LogEnable False \
     --VpcId vpc-a26qv3af \
     --SubnetId subnet-m7xhqcyc

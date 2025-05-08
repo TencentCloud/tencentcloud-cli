@@ -46,7 +46,8 @@ Output:
                     "test/output/"
                 ],
                 "Region": "ap-guangzhou",
-                "Bucket": "test-bucket"
+                "Bucket": "test-bucket",
+                "Uin": "102211000"
             },
             "OptimizationLevel": "FP16",
             "ModelVersion": "v1",
@@ -57,7 +58,8 @@ Output:
                     "test/input/inception.pt"
                 ],
                 "Region": "ap-guangzhou",
-                "Bucket": "test-bucket"
+                "Bucket": "test-bucket",
+                "Uin": "102211000"
             },
             "GPUType": "T4",
             "ModelId": "m-608587242317024640",

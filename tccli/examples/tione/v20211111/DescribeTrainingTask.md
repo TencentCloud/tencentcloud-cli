@@ -51,7 +51,8 @@ Output:
                 "Region": "abc",
                 "Paths": [
                     "abc"
-                ]
+                ],
+                "Uin": "abc"
             },
             "StartCmdInfo": {
                 "StartCmd": "abc",
@@ -71,7 +72,8 @@ Output:
                         "Region": "abc",
                         "Paths": [
                             "abc"
-                        ]
+                        ],
+                        "Uin": "abc"
                     },
                     "CFSSource": {
                         "Id": "abc",
@@ -98,7 +100,8 @@ Output:
                 "Region": "abc",
                 "Paths": [
                     "abc"
-                ]
+                ],
+                "Uin": "abc"
             },
             "LogEnable": true,
             "LogConfig": {
