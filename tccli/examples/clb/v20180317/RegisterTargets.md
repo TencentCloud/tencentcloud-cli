@@ -31,10 +31,10 @@ Input:
 ```
 tccli clb RegisterTargets --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2rm0 \
-    --ListenerId lbl-4fbxq45k \
+    --ListenerId lbl-d1ubsydq \
     --LocationId loc-r2q3jd4c \
     --Targets.0.InstanceId ins-dm4xtz0i \
-    --Targets.0.Port 334 \
+    --Targets.0.Port 233 \
     --Targets.0.Weight 10
 ```
 
@@ -56,7 +56,7 @@ Input:
 ```
 tccli clb RegisterTargets --cli-unfold-argument  \
     --LoadBalancerId lb-cuxw2rm0 \
-    --ListenerId lbl-4fbxq45k \
+    --ListenerId lbl-d1ubsydq \
     --Domain foo.net \
     --Url /bar8 \
     --Targets.0.InstanceId ins-dm4xtz0i \

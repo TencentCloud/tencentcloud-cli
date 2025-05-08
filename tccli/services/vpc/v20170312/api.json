@@ -1009,7 +1009,7 @@
       "status": "online"
     },
     "DescribeAddressBandwidthRange": {
-      "document": "查询指定EIP的带宽上下限范围。",
+      "document": "本接口（DescribeAddressBandwidthRange）用于查询指定EIP的带宽上下限范围。",
       "input": "DescribeAddressBandwidthRangeRequest",
       "name": "查询指定EIP带宽上下限",
       "output": "DescribeAddressBandwidthRangeResponse",
@@ -2024,7 +2024,7 @@
       "status": "online"
     },
     "InquiryPriceRenewAddresses": {
-      "document": "本接口（InquiryPriceRenewAddresses）用于续费预付费弹性公网IP询价。",
+      "document": "本接口（InquiryPriceRenewAddresses）用于续费预付费弹性公网IP询价，只支持包月按带宽预付费的计费模式。",
       "input": "InquiryPriceRenewAddressesRequest",
       "name": "弹性公网IP续费询价",
       "output": "InquiryPriceRenewAddressesResponse",
@@ -2115,7 +2115,7 @@
       "status": "online"
     },
     "ModifyAddressesRenewFlag": {
-      "document": "调整EIP续费标识",
+      "document": "本接口（ModifyAddressesRenewFlag）用于调整EIP续费标识。",
       "input": "ModifyAddressesRenewFlagRequest",
       "name": "调整包月IP续费标识",
       "output": "ModifyAddressesRenewFlagResponse",
@@ -3258,7 +3258,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的弹性网卡ID",
+          "document": "绑定的弹性网卡ID，null表示没有绑定弹性网卡。",
           "example": "null",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -3268,7 +3268,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资源内网ip",
+          "document": "绑定的资源内网ip，null表示没有绑定资源内网ip。",
           "example": "null",
           "member": "string",
           "name": "PrivateAddressIp",
@@ -3338,7 +3338,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IP的运营商信息，当前可能返回值包括\"CMCC\",\"CTCC\",\"CUCC\",\"BGP\"",
+          "document": "弹性公网IP的运营商信息，当前可能返回值包括\"CMCC\"(移动),\"CTCC\"(电信),\"CUCC\"(联通),\"BGP\"(常规BGP)。",
           "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
@@ -3348,7 +3348,7 @@
         },
         {
           "disabled": false,
-          "document": "是否本地带宽EIP",
+          "document": "是否本地带宽EIP，可选值：\n<li>true：本地带宽EIP</li>\n<li>false：非本地带宽EIP</li>",
           "example": "false",
           "member": "bool",
           "name": "LocalBgp",
@@ -3388,7 +3388,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费包月带宽IP到期时间。\n时间格式：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-10-06T07:48:30Z",
           "member": "date",
           "name": "DeadlineDate",
@@ -3398,7 +3398,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP绑定的实例类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EIP绑定的实例类型。可选值：\n<li>CVM：云服务器</li>\n<li>NAT：NAT 网关</li>\n<li>HAVIP：高可用虚拟IP</li>\n<li>ENI：弹性网卡</li>\n<li>CLB：内网CLB</li>\n<li>DHCPIP：弹性内网IP</li>\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
@@ -3835,7 +3835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Ftp协议Alg功能是否开启",
+          "document": "Ftp协议Alg功能是否开启，可选值：\n<li>true：开启Ftp协议Alg功能</li>\n<li>false：不开启Ftp协议Alg功能</li>",
           "example": "true",
           "member": "bool",
           "name": "Ftp",
@@ -3845,7 +3845,7 @@
         },
         {
           "disabled": false,
-          "document": "Sip协议Alg功能是否开启",
+          "document": "Sip协议Alg功能是否开启，可选值：\n<li>true：开启Sip协议Alg功能</li>\n<li>false：不开启Sip协议Alg功能</li>",
           "example": "true",
           "member": "bool",
           "name": "Sip",
@@ -4532,13 +4532,13 @@
         },
         {
           "disabled": false,
-          "document": "辅助CIDR拆分的子网。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助CIDR拆分的子网。",
           "example": "[{\"VpcId\": \"vpc-7zqx75u3\", \"SubnetId\": \"subnet-9b1gk064\", \"CidrBlock\": \"11.0.0.0/16\", \"Zone\": \"ap-guangzhou-2\", \"SubnetName\": \"demo\"}]",
           "member": "Subnet",
           "name": "SubnetSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4711,7 +4711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。",
+          "document": "弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。",
           "example": "eipv6-nzvwsush",
           "member": "string",
           "name": "IPv6AddressId",
@@ -4720,7 +4720,7 @@
         },
         {
           "disabled": false,
-          "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过登录控制台查询，也可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。",
+          "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过登录[控制台](https://console.cloud.tencent.com/vpc/eni?rid=1)查询，也可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/api/215/15817)接口返回值中的networkInterfaceId获取。",
           "example": "eni-jyhoxx61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -4729,7 +4729,7 @@
         },
         {
           "disabled": false,
-          "document": "要绑定的内网 IPv6。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIPv6Address ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIPv6Address 是指定的 NetworkInterfaceId 上的一个内网 IPv6。指定弹性网卡的内网 IPv6 可通过登录控制台查询，也可通过DescribeNetworkInterfaces接口返回值中的Ipv6AddressSet.Address获取。",
+          "document": "要绑定的内网 IPv6。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIPv6Address ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIPv6Address 是指定的 NetworkInterfaceId 上的一个内网 IPv6。指定弹性网卡的内网 IPv6 可通过登录[控制台](https://console.cloud.tencent.com/vpc/eni?rid=1)查询，也可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/api/215/15817)接口返回值中的Ipv6AddressSet.Address获取。",
           "example": "fc00:200:300:700:0:9c64:2c95:b711",
           "member": "string",
           "name": "PrivateIPv6Address",
@@ -14026,7 +14026,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EIP资源ID列表，单次查询上限20。",
+          "document": "EIP资源ID列表，单次查询上限20，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。",
           "example": "[\"eip-test1234\", \"eip-1234test\"]",
           "member": "string",
           "name": "AddressIds",
@@ -16726,7 +16726,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识 IPv6 的唯一 ID 列。\n\n- 传统弹性公网 IPv6 唯一 ID 形如：`eip-11112222`\n- 弹性公网 IPv6 唯一 ID 形如：`eipv6-11112222`\n\n注意：参数不支持同时指定`IPv6AddressIds`和`Filters`。",
+          "document": "标识 IPv6 的唯一 ID 列。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。\n\n- 传统弹性公网 IPv6 唯一 ID 形如：`eip-11112222`\n- 弹性公网 IPv6 唯一 ID 形如：`eipv6-11112222`\n\n注意：参数不支持同时指定`IPv6AddressIds`和`Filters`。",
           "example": "[\"eipv6-kxjsieow\"]",
           "member": "string",
           "name": "IPv6AddressIds",
@@ -16735,7 +16735,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`IPv6AddressIds`和`Filters`。详细的过滤条件如下：\n\n- address-id - String - 是否必填：否 - （过滤条件）按照弹性公网IPv6的唯一ID过滤。\n- public-ipv6-address - String - 是否必填：否 - （过滤条件）按照公网 IPv6 的 IP 地址过滤。\n- network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。\n- instance-id - String - 是否必填：否 - （过滤条件）按照绑定实例的唯一ID过滤。\n- charge-type - String - 是否必填：否 - （过滤条件）按照计费类型过滤。\n- private-ipv6-address - String - 是否必填：否 - （过滤条件）按照绑定的内网 IPv6 地址过滤。\n- egress - String - 是否必填：否 - （过滤条件）按照出口过滤。\n- address-type - String - 是否必填：否 - （过滤条件）按照IPv6类型 进行过滤。可选值：'EIP6'，'EIPv6'，'WanIPv6'，'HighQualityEIPv6'。默认值是'EIPv6'。\n- address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'。\n- address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'，'PRIVATE'。\n- address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\n- tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。\n- tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`IPv6AddressIds`和`Filters`。详细的过滤条件如下：\n\n- address-id - String - 是否必填：否 - （过滤条件）按照弹性公网IPv6的唯一ID过滤。\n- public-ipv6-address - String - 是否必填：否 - （过滤条件）按照公网 IPv6 的 IP 地址过滤。\n- network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。\n- instance-id - String - 是否必填：否 - （过滤条件）按照绑定实例的唯一ID过滤。\n- charge-type - String - 是否必填：否 - （过滤条件）按照计费类型过滤。\n- private-ipv6-address - String - 是否必填：否 - （过滤条件）按照绑定的内网 IPv6 地址过滤。\n- egress - String - 是否必填：否 - （过滤条件）按照出口过滤。\n- address-type - String - 是否必填：否 - （过滤条件）按照IPv6类型 进行过滤。可选值：'EIP6'：传统弹性公网 IPv6，'EIPv6'：弹性公网 IPv6，'WanIPv6'：普通公网 IPv6，'HighQualityEIPv6'：精品弹性公网 IPv6。默认值是'EIPv6'。\n- address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'：常规BGP，'CMCC'：移动，'CUCC'：联通, 'CTCC'：电信。\n- address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'：创建中，'BINDING'：绑定中，'BIND'：已绑，'UNBINDING'：解绑中，'UNBIND'：未绑定，'OFFLINING'：下线中，'BIND_ENI'：绑定了ENI，'PRIVATE'：仅开通内网的IPv6。\n- address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\n- tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。\n- tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -16744,7 +16744,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询传统型IPv6地址信息。",
+          "document": "是否查询传统型IPv6地址信息。可选值：\n<li>True：查询传统型IPv6地址信息</li>\n<li>False：不查询传统型IPv6地址信息</li>\n默认值：False",
           "example": "False",
           "member": "bool",
           "name": "Traditional",
@@ -22809,7 +22809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。",
+          "document": "弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。",
           "example": "eipv6-nzvwsush",
           "member": "string",
           "name": "IPv6AddressId",
@@ -22818,7 +22818,7 @@
         },
         {
           "disabled": false,
-          "document": "解绑时是否保持绑定弹性网卡。",
+          "document": "解绑时是否保持绑定弹性网卡。可选值：true、false。\n默认值：false",
           "example": "false",
           "member": "bool",
           "name": "KeepBindWithEni",
@@ -23409,7 +23409,7 @@
         },
         {
           "disabled": false,
-          "document": "VPCID。",
+          "document": "VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-hj3he929",
           "member": "string",
           "name": "VpcId",
@@ -23499,7 +23499,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。格式：YYYY-MM-DD HH:MM:SS。",
           "example": "2018-04-03 15:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -23519,33 +23519,33 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "终端节点服务名称。",
           "example": "demo",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CDC 集群唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC 集群唯一 ID",
           "example": "cluster-d8htgb6k",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对。\t",
           "example": "[{\"Key\": \"tag-key\", \"Value\": \"tag-value\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -23586,7 +23586,7 @@
         {
           "disabled": false,
           "document": "终端节点服务名称。",
-          "example": "demo",
+          "example": "ServiceName1",
           "member": "string",
           "name": "ServiceName",
           "output_required": true,
@@ -23605,7 +23605,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的ID，比如lb-xxx。",
+          "document": "后端服务的ID，比如lb-lip4e6bp。",
           "example": "lb-nswq8wkq",
           "member": "string",
           "name": "ServiceInstanceId",
@@ -23616,7 +23616,7 @@
         {
           "disabled": false,
           "document": "是否自动接受。",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "AutoAcceptFlag",
           "output_required": true,
@@ -23625,27 +23625,27 @@
         },
         {
           "disabled": false,
-          "document": "关联的终端节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的终端节点个数。",
           "example": "0",
           "member": "uint64",
           "name": "EndPointCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "终端节点对象数组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "终端节点对象数组。",
+          "example": "[{\"EndPointId\": \"vpce-pnpcflil\", \"VpcId\": \"vpc-hj3he929\", \"SubnetId\": \"subnet-4t7fr3fi\", \"EndPointVip\": \"10.0.0.8\"}]",
           "member": "EndPoint",
           "name": "EndPointSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。格式为YYYY-MM-DD HH:MM:SS字符串。",
           "example": "2018-04-03 15:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -23655,8 +23655,8 @@
         },
         {
           "disabled": false,
-          "document": "挂载的PAAS服务类型，CLB,CDB,CRS",
-          "example": "CLB,CDB,CRS",
+          "document": "挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。",
+          "example": "CRS",
           "member": "string",
           "name": "ServiceType",
           "output_required": true,
@@ -23665,43 +23665,43 @@
         },
         {
           "disabled": false,
-          "document": "CDC 集群唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC 集群唯一 ID",
           "example": "cluster-d8htgb6k",
           "member": "string",
           "name": "CdcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "终端节点服务Uin。",
           "example": "251007979123",
           "member": "string",
           "name": "ServiceUin",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务IP类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务IP类型",
           "example": "26",
           "member": "int64",
           "name": "BusinessIpType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "标签键值对。\t",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -25105,16 +25105,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li></ul>默认值：TRAFFIC_POSTPAID_BY_HOUR。</li>\n</ul>",
+          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li>\n</ul></li>\n</ul>",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "EIP出带宽上限，单位：Mbps。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值范围取决于EIP计费方式：<ul>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：1 Mbps 至 200 Mbps</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li></ul>默认值：1 Mbps。</li>\n<li>账号为传统账户类型的用户，EIP出带宽上限取决于与其绑定的实例的公网出带宽上限，无需传递此参数。</li></ul>",
+          "document": "EIP出带宽上限，单位：Mbps。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值范围取决于EIP计费方式：<ul>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：1 Mbps 至 200 Mbps</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li></ul>默认值：1 Mbps。</li>\n<li>账号为传统账户类型的用户，EIP出带宽上限取决于与其绑定的实例的公网出带宽上限，无需传递此参数。</li></ul>\n",
           "example": "1",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
@@ -25132,7 +25132,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP类型。默认值：EIP。\n\n<ul style=\"margin:0\"><li>精品IP，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul><ul style=\"margin:0\">\n        <li>高防IP，可选值：<ul>\n                <li>AntiDDoSEIP：高防IP</li>\n            </ul>\n        </li>\n    </ul>",
+          "document": "EIP类型。默认值：EIP。\n<ul style=\"margin:0\"><li>弹性公网IP，可选值：<ul><li>EIP：弹性公网IP</li></ul></li></ul>\n<ul style=\"margin:0\"><li>精品IP，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅新加坡和中国香港支持精品IP。</li></ul>\n<ul style=\"margin:0\"><li>高防IP，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP，详情可见弹性公网IP[产品概述](https://cloud.tencent.com/document/product/1199/41646)。</li></ul>",
           "example": "EIP",
           "member": "string",
           "name": "AddressType",
@@ -25288,7 +25288,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "续费资源实例ID。",
+          "document": "续费资源实例ID。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。",
           "example": "eip-test1234",
           "member": "string",
           "name": "AddressIds",
@@ -25297,7 +25297,7 @@
         },
         {
           "disabled": false,
-          "document": "包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。",
+          "document": "包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，不支持其他计费模式。",
           "example": "12",
           "member": "AddressChargePrepaid",
           "name": "AddressChargePrepaid",
@@ -25636,7 +25636,7 @@
         },
         {
           "disabled": false,
-          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>",
+          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li><li> MONTH :表示计价单元是按月来计算。当前涉及该计价单元的场景有：包月按带宽预付费（BANDWIDTH_PREPAID_BY_MONTH）。</li></ul>",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
@@ -26916,7 +26916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EIP唯一标识ID列表，形如'eip-xxxx'",
+          "document": "EIP唯一标识ID列表，形如'eip-xxxx'，可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。",
           "example": "[\"eip-alfxy9c8\"]",
           "member": "string",
           "name": "AddressIds",
@@ -30626,23 +30626,23 @@
         },
         {
           "disabled": false,
-          "document": "下一跳网关名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下一跳网关名称。",
           "example": "demo",
           "member": "string",
           "name": "NextHopName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络探测描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络探测描述。",
           "example": "demo",
           "member": "string",
           "name": "NetDetectDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -31322,58 +31322,58 @@
         },
         {
           "disabled": false,
-          "document": "网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。",
           "example": "TKE",
           "member": "string",
           "name": "Business",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网卡所关联的CDC实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡所关联的CDC实例ID。",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "弹性网卡类型：0:标准型/1:扩展型。默认值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "弹性网卡类型：0:标准型/1:扩展型。默认值为0。",
           "example": "0",
           "member": "uint64",
           "name": "AttachType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。",
           "example": "cls-j85c20d4-reserved",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务质量级别：\nPT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n\n可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务质量级别：\nPT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n\n可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n",
           "example": "AG",
           "member": "string",
           "name": "QosLevel",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -32410,7 +32410,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IPv6地址唯一ID。",
+          "document": "IPv6地址唯一ID。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressId。",
           "example": "['eipv6-jfiwlckv']",
           "member": "string",
           "name": "IPv6AddressIds",
@@ -34234,14 +34234,14 @@
         },
         {
           "disabled": false,
-          "document": "创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建IPv6目的网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。",
           "example": "3402:4e00:20:1200::/56",
           "member": "string",
           "name": "DestinationIpv6CidrBlock",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -34256,14 +34256,14 @@
         },
         {
           "disabled": false,
-          "document": "路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由策略是否发布到云联网。该字段仅做出参使用，作为入参字段时此参数不生效。",
           "example": "true",
           "member": "bool",
           "name": "PublishedToVbc",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -34278,14 +34278,14 @@
         },
         {
           "disabled": false,
-          "document": "CDC 集群唯一 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDC 集群唯一 ID。",
           "example": "cluster-d8htgb6k",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -35204,7 +35204,8 @@
           "example": "ppm-f5n1f8da",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35214,7 +35215,8 @@
           "example": "ppmg-f5n1f8da",
           "member": "string",
           "name": "ServiceGroupId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -35500,14 +35502,14 @@
         },
         {
           "disabled": false,
-          "document": "是否创建新的cos桶，默认为False。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否创建新的cos桶，默认为False。",
           "example": "true",
           "member": "bool",
           "name": "CreateNewCos",
           "output_required": true,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -35544,14 +35546,14 @@
         },
         {
           "disabled": false,
-          "document": "时间备份策略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "时间备份策略。",
+          "example": "[{\"BackupDay\": \"monday\", \"BackupTime\": \"3:00\"}]",
           "member": "BackupPolicy",
           "name": "BackupPolicies",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -35566,25 +35568,25 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "标签键值对。\t",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37784,23 +37786,23 @@
         },
         {
           "disabled": false,
-          "document": "辅助CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "辅助CIDR",
           "example": "{\"VpcId\":\"vpc-5k6fot41\", \"CidrBlock\":\"172.16.1.0/24\", \"AssistantType\":0, \"SubnetSet\":[{\"VpcId\": \"vpc-7zqx75u3\", \"SubnetId\": \"subnet-9b1gk064\", \"CidrBlock\": \"11.0.0.0/16\", \"Zone\": \"ap-guangzhou-2\", \"SubnetName\": \"demo\"}], \"Region\":\"ap-guangzhou\"}",
           "member": "AssistantCidr",
           "name": "AssistantCidrSet",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回多运营商IPv6 Cidr Block\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回多运营商IPv6 Cidr Block",
           "example": "[{\"IPv6CidrBlock\": \"2402:4e00:1717:8200::/56\", \"ISPType\": \"BGP\", \"AddressType\": \"GUA\"}]",
           "member": "ISPIPv6CidrBlock",
           "name": "Ipv6CidrBlockSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -37810,7 +37812,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AppId。",
+          "document": "AppId。可通过登录 腾讯云账号中心控制台 获取。",
           "example": "1254277469",
           "member": "uint64",
           "name": "Owner",
@@ -37820,7 +37822,7 @@
         },
         {
           "disabled": false,
-          "document": "Uin。",
+          "document": "用户Uin。可通过登录 腾讯云账号中心控制台 获取。",
           "example": "700000483554",
           "member": "string",
           "name": "UserUin",
@@ -37831,7 +37833,7 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "demo",
+          "example": "VpcEndPointServiceUser1",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -37840,7 +37842,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "创建时间。格式为字符串YYYY-MM-DD HH:MM:SS。",
           "example": "2021-01-14 15:58:40",
           "member": "string",
           "name": "CreateTime",
@@ -37850,7 +37852,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n",
           "example": "vpcsvc-b2mrmmx7",
           "member": "string",
           "name": "EndPointServiceId",

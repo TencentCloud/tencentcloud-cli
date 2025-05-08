@@ -2451,7 +2451,7 @@
     "DisassociateIPv6Address": [
       {
         "document": "解绑弹性公网IPv6。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateIPv6Addresses\n<公共请求参数>\n\n{\n    \"IPv6AddressId\": \"eipv6-or8cse19\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateIPv6Address\n<公共请求参数>\n\n{\n    \"IPv6AddressId\": \"eipv6-or8cse19\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"631011dd-6dfa-41b5-be7c-47bd61d82978\"\n    }\n}",
         "title": "解绑弹性公网IPv6"
       }
@@ -2615,13 +2615,13 @@
     "InquiryPriceAllocateAddresses": [
       {
         "document": "小时流量计费模式弹性公网IP询价。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressType\": \"EIP\",\n    \"InternetMaxBandwidthOut\": \"1\",\n    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressType\": \"EIP\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"ChargeUnit\": \"HOUR\",\n                \"UnitPrice\": 0.8,\n                \"DiscountPrice\": 0.8\n            }\n        },\n        \"RequestId\": \"90d508a8-9ee8-4220-9c8e-9faeedce3ab4\"\n    }\n}",
         "title": "小时流量计费模式弹性公网IP询价"
       },
       {
         "document": "小时带宽计费模式弹性公网IP询价。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressType\": \"EIP\",\n    \"InternetMaxBandwidthOut\": \"1\",\n    \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressType\": \"EIP\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\"\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"UnitPrice\": 0.063,\n                \"DiscountPrice\": 0.063,\n                \"ChargeUnit\": \"HOUR\"\n            }\n        },\n        \"RequestId\": \"ebc826be-ec1a-4522-b08f-8da3fe5adedc\"\n    }\n}",
         "title": "小时带宽计费模式弹性公网IP询价"
       },

@@ -15,7 +15,7 @@
       "status": "online"
     },
     "AssociateTargetGroups": {
-      "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。\n限制说明：\n- 四层监听器绑定旧版目标组需要监听器开启后端目标组。\n- 七层绑定目标组，数据结构 TargetGroupAssosication 中 LocationId 为必填项。\n- 负载均衡的 VPC 需要和目标组的 VPC 一致。",
       "input": "AssociateTargetGroupsRequest",
       "name": "规则关联目标组",
       "output": "AssociateTargetGroupsResponse",
@@ -85,14 +85,14 @@
       "status": "online"
     },
     "CreateLoadBalancerSnatIps": {
-      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。",
       "input": "CreateLoadBalancerSnatIpsRequest",
       "name": "添加SnatIp",
       "output": "CreateLoadBalancerSnatIpsResponse",
       "status": "online"
     },
     "CreateRule": {
-      "document": "CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "document": "CreateRule 接口用于在一个已存在的负载均衡七层监听器下创建转发规则，七层监听器中，后端服务必须绑定到规则上而非监听器上。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。",
       "input": "CreateRuleRequest",
       "name": "创建负载均衡七层监听器转发规则",
       "output": "CreateRuleResponse",
@@ -141,7 +141,7 @@
       "status": "online"
     },
     "DeleteLoadBalancerSnatIps": {
-      "document": "这个接口用于删除SnatPro的负载均衡的SnatIp。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "这个接口用于删除SnatPro的负载均衡的SnatIp。\n本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。",
       "input": "DeleteLoadBalancerSnatIpsRequest",
       "name": "删除SnatIp",
       "output": "DeleteLoadBalancerSnatIpsResponse",
@@ -162,7 +162,7 @@
       "status": "online"
     },
     "DeleteTargetGroups": {
-      "document": "删除目标组",
+      "document": "删除目标组，支持批量删除目标组，单次最多批量删除 20 个目标组。",
       "input": "DeleteTargetGroupsRequest",
       "name": "删除目标组",
       "output": "DeleteTargetGroupsResponse",
@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DisassociateTargetGroups": {
-      "document": "解除规则的目标组关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
+      "document": "解除规则的目标组关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。\n当解绑七层转发规则时，LocationId 为必填项。",
       "input": "DisassociateTargetGroupsRequest",
       "name": "解除规则的目标组关联关系",
       "output": "DisassociateTargetGroupsResponse",
@@ -428,7 +428,7 @@
       "status": "online"
     },
     "InquiryPriceRefundLoadBalancer": {
-      "document": "InquiryPriceRefundLoadBalancer接口查询负载均衡退费价格。",
+      "document": "InquiryPriceRefundLoadBalancer接口查询负载均衡退费价格，只支持预付费类型的负载均衡实例。",
       "input": "InquiryPriceRefundLoadBalancerRequest",
       "name": "退还负载均衡实例询价",
       "output": "InquiryPriceRefundLoadBalancerResponse",
@@ -484,7 +484,7 @@
       "status": "online"
     },
     "ModifyFunctionTargets": {
-      "document": "修改负载均衡转发规则上所绑定的云函数。",
+      "document": "修改负载均衡转发规则上所绑定的云函数。\n限制说明：\n- 仅支持绑定“Event 函数”类型的云函数。",
       "input": "ModifyFunctionTargetsRequest",
       "name": "修改转发规则绑定的云函数",
       "output": "ModifyFunctionTargetsResponse",
@@ -568,7 +568,7 @@
       "status": "online"
     },
     "RegisterFunctionTargets": {
-      "document": "RegisterFunctionTargets 接口用来将一个云函数绑定到负载均衡的7层转发规则，在此之前您需要先行创建相关的7层监听器（HTTP、HTTPS）和转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。<br/>\n限制说明：\n- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、东京、硅谷地域支持绑定 SCF。\n- 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。 \n- 传统型负载均衡不支持绑定 SCF。\n- 基础网络类型不支持绑定 SCF。\n- CLB 默认支持绑定同地域下的所有 SCF，可支持跨 VPC 绑定 SCF，不支持跨地域绑定。\n- 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。\n- 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。\n- CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。",
+      "document": "RegisterFunctionTargets 接口用来将一个云函数绑定到负载均衡的7层转发规则，在此之前您需要先行创建相关的7层监听器（HTTP、HTTPS）和转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。<br/>\n限制说明：\n- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、东京、硅谷地域支持绑定 SCF。\n- 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。 \n- 传统型负载均衡不支持绑定 SCF。\n- 基础网络类型不支持绑定 SCF。\n- CLB 默认支持绑定同地域下的所有 SCF，可支持跨 VPC 绑定 SCF，不支持跨地域绑定。\n- 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。\n- 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。\n- CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。\n- 一个转发规则只支持绑定一个云函数。",
       "input": "RegisterFunctionTargetsRequest",
       "name": "绑定云函数到转发规则上",
       "output": "RegisterFunctionTargetsResponse",
@@ -582,7 +582,7 @@
       "status": "online"
     },
     "RegisterTargets": {
-      "document": "RegisterTargets 接口用来将一台或多台后端服务绑定到负载均衡的监听器（或7层转发规则），在此之前您需要先行创建相关的4层监听器或7层转发规则。对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
+      "document": "RegisterTargets 接口用来将一台或多台后端服务绑定到负载均衡的监听器（或7层转发规则），在此之前您需要先行创建相关的4层监听器或7层转发规则。对于四层监听器（TCP、UDP），只需指定监听器ID即可，对于七层监听器（HTTP、HTTPS），还需通过LocationId或者Domain+Url指定转发规则。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用  [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)  接口查询本次任务是否成功。",
       "input": "RegisterTargetsRequest",
       "name": "绑定后端机器到监听器上",
       "output": "RegisterTargetsResponse",
@@ -617,7 +617,7 @@
       "status": "online"
     },
     "SetLoadBalancerSecurityGroups": {
-      "document": "SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 DescribeLoadBalancers 接口。本接口是set语义，\n绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。\n解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可不传此参数，或传入空数组。注意：内网 CLB 绑定 EIP 后，CLB 上的安全组对来自 EIP 的流量不生效，对来自内网 CLB 的流量生效。",
+      "document": "SetLoadBalancerSecurityGroups 接口支持对一个公网负载均衡实例执行设置（绑定、解绑）安全组操作。查询一个负载均衡实例目前已绑定的安全组，可使用 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口。本接口是set语义，\n绑定操作时，入参需要传入负载均衡实例要绑定的所有安全组（已绑定的+新增绑定的）。\n解绑操作时，入参需要传入负载均衡实例执行解绑后所绑定的所有安全组；如果要解绑所有安全组，可不传此参数，或传入空数组。注意：内网 CLB 绑定 EIP 后，CLB 上的安全组对来自 EIP 的流量不生效，对来自内网 CLB 的流量生效。",
       "input": "SetLoadBalancerSecurityGroupsRequest",
       "name": "设置负载均衡实例的安全组",
       "output": "SetLoadBalancerSecurityGroupsResponse",
@@ -631,7 +631,7 @@
       "status": "online"
     },
     "SetSecurityGroupForLoadbalancers": {
-      "document": "绑定或解绑一个安全组到多个公网负载均衡实例。注意：内网负载均衡不支持绑定安全组。",
+      "document": "绑定或解绑一个安全组到多个公网负载均衡实例。",
       "input": "SetSecurityGroupForLoadbalancersRequest",
       "name": "绑定或解绑一个安全组到多个负载均衡实例",
       "output": "SetSecurityGroupForLoadbalancersResponse",
@@ -741,7 +741,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定的关系数组。一次请求最多支持20个。",
+          "document": "绑定的关系数组，目标组类型需要一致。\n一次请求最多支持20个。\n",
           "example": "无",
           "member": "TargetGroupAssociation",
           "name": "Associations",
@@ -1663,7 +1663,7 @@
         },
         {
           "disabled": false,
-          "document": "上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。",
+          "document": "上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。",
           "example": "new_certca",
           "member": "string",
           "name": "CertCaName",
@@ -1674,7 +1674,7 @@
         },
         {
           "disabled": false,
-          "document": "上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。",
+          "document": "上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。",
           "example": "-----BEGIN CERTIFICATE----- certcontent -----END CERTIFICATE",
           "member": "string",
           "name": "CertCaContent",
@@ -2721,7 +2721,7 @@
         },
         {
           "disabled": false,
-          "document": "配置类型",
+          "document": "配置类型， 可选值：CLB（实例维度配置）， SERVER（服务维度配置），LOCATION（规则维度配置）",
           "example": "CLB",
           "member": "string",
           "name": "ConfigType",
@@ -2751,7 +2751,7 @@
         },
         {
           "disabled": false,
-          "document": "增加配置时间",
+          "document": "配置的创建时间。\n格式：YYYY-MM-DD HH:mm:ss",
           "example": "2022-12-22 17:56:55",
           "member": "string",
           "name": "CreateTimestamp",
@@ -2761,7 +2761,7 @@
         },
         {
           "disabled": false,
-          "document": "修改配置时间",
+          "document": "配置的修改时间。\n格式：YYYY-MM-DD HH:mm:ss",
           "example": "2022-12-22 17:56:55",
           "member": "string",
           "name": "UpdateTimestamp",
@@ -3375,7 +3375,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡唯一性ID，例如：lb-12345678。",
+          "document": "负载均衡唯一性ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口查询。例如：lb-12345678。",
           "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
@@ -3384,7 +3384,7 @@
         },
         {
           "disabled": false,
-          "document": "添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。单个CLB实例可申请的默认上限为10个。",
+          "document": "添加的SnatIp信息，可指定IP申请，或者指定子网自动申请。可以通过 [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784) 查询获取，单个CLB实例可申请的默认上限为10个。",
           "example": "无",
           "member": "SnatIp",
           "name": "SnatIps",
@@ -3420,7 +3420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例 ID。",
+          "document": "负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/214/30685) 接口获取",
           "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
@@ -3429,7 +3429,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器 ID。",
+          "document": "监听器 ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取",
           "example": "lbl-4fbx*****",
           "member": "string",
           "name": "ListenerId",
@@ -3457,7 +3457,7 @@
           "example": "[\"loc-ho6lvh8m\"]",
           "member": "string",
           "name": "LocationIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3538,7 +3538,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务默认权重。\n<ul>\n    <li>取值范围[0, 100]</li>\n    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>\n</ul>\n",
+          "document": "后端服务默认权重。\n<ul>\n    <li>取值范围[0, 100]</li>\n    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>\n</ul>\nv1 目标组类型不支持设置 Weight 参数。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
@@ -3553,6 +3553,24 @@
           "name": "FullListenSwitch",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，0:关闭；1:开启， 默认关闭。",
+          "example": "true",
+          "member": "bool",
+          "name": "KeepaliveEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。",
+          "example": "30",
+          "member": "uint64",
+          "name": "SessionExpireTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3611,7 +3629,7 @@
         },
         {
           "disabled": false,
-          "document": "存储时间，单位天\n- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。",
+          "document": "存储时间，单位天，默认为 30。\n- 日志接入标准存储时，支持1至3600天，值为3640时代表永久保存。\n- 日志接入低频存储时，支持7至3600天，值为3640时代表永久保存。",
           "example": "30",
           "member": "uint64",
           "name": "Period",
@@ -3878,7 +3896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡唯一ID，例如：lb-12345678。",
+          "document": "负载均衡唯一ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。例如：lb-12345678。",
           "example": "lb-cuxw****",
           "member": "string",
           "name": "LoadBalancerId",
@@ -3887,8 +3905,8 @@
         },
         {
           "disabled": false,
-          "document": "删除SnatIp地址数组。",
-          "example": "[\"192.168.0.128\\r\\n\"]",
+          "document": "删除SnatIp地址数组，最大支持删除数量为20个。",
+          "example": "[\"192.168.0.128\"]",
           "member": "string",
           "name": "Ips",
           "required": true,
@@ -4148,7 +4166,7 @@
         },
         {
           "disabled": false,
-          "document": "待解绑的服务器信息。",
+          "document": "待解绑的服务器信息，支持批量解除绑定，单次批量解除数量最多为20个。\n",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -4838,7 +4856,7 @@
         },
         {
           "disabled": false,
-          "document": "拉取页偏移，默认值0",
+          "document": "拉取页偏移，默认值0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4847,7 +4865,7 @@
         },
         {
           "disabled": false,
-          "document": "拉取数目，默认值20",
+          "document": "拉取数目，默认值20。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -4865,7 +4883,7 @@
         },
         {
           "disabled": false,
-          "document": "配置ID",
+          "document": "配置ID，可以通过 [DescribeCustomizedConfigList](https://cloud.tencent.com/document/api/214/60009) 接口查询。",
           "example": "pz-12345678",
           "member": "string",
           "name": "UconfigIds",
@@ -4874,7 +4892,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件如下：\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 负载均衡ID 过滤，如：\"lb-12345678\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 负载均衡Vip 过滤，如：\"1.1.1.1\",\"2204::22:3\"。</li>",
+          "document": "过滤条件如下：\n- loadbalancer-id\n按照【负载均衡 ID】进行过滤。实例计费模式例如：lb-9vxezxza。\n类型：String\n必选：否\n获取方式：[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)\n- vip\n按照【负载均衡VIP】进行过滤。网络计费模式例如：\"1.1.1.1\",\"2204::22:3\"。\n类型：String\n必选：否\n获取方式：[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)",
           "example": "[{\"Name\":\"loadbalancer-id\",\"Values\":[\"lb-12345678\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -4890,7 +4908,7 @@
         {
           "disabled": false,
           "document": "配置列表",
-          "example": "[             {                 \"UconfigId\": \"pz-go2gs3d6\",                 \"ConfigType\": \"CLB\",                 \"ConfigContent\": \"client_max_body_size 1m;\",                 \"ConfigName\": \"122222\",                 \"CreateTimestamp\": \"2019-11-28 20:44:24\",                 \"UpdateTimestamp\": \"2020-03-01 11:11:27\"             }         ]",
+          "example": "[{\"UconfigId\": \"pz-go2gs3d6\",\"ConfigType\": \"CLB\",\"ConfigContent\": \"client_max_body_size 1m;\",\"ConfigName\": \"confname\",\"CreateTimestamp\": \"2019-11-28 20:44:24\",\"UpdateTimestamp\": \"2020-03-01 11:11:27\"}]",
           "member": "ConfigListItem",
           "name": "ConfigList",
           "output_required": true,
@@ -5162,8 +5180,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务端证书的ID，或客户端证书的ID",
-          "example": "[\"RwFAfr8Y\\r\\n\"]",
+          "document": "服务端证书的ID，或客户端证书的ID。可以通过 [DescribeCertificate](https://cloud.tencent.com/document/api/400/41674) 接口查询。\n数组最大长度为20。",
+          "example": "[\"RwFAfr8Y\"]",
           "member": "string",
           "name": "CertIds",
           "required": true,
@@ -5181,7 +5199,7 @@
           "example": "无",
           "member": "CertIdRelatedWithLoadBalancers",
           "name": "CertSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5635,7 +5653,7 @@
         },
         {
           "disabled": false,
-          "document": "查询可用区资源列表条件，详细的过滤条件如下：\n<li>master-zone -- String - 是否必填：否 - （过滤条件）按照 地区 类型过滤，如：\"ap-guangzhou-2\"。</li><li>ip-version -- String - 是否必填：否 - （过滤条件）按照 IP 类型过滤，可选值：\"IPv4\"、\"IPv6\"、\"IPv6_Nat\"。</li>\n<li> isp -- String - 是否必填：否 - （过滤条件）按照 Isp 类型过滤，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\"。</li>",
+          "document": "查询可用区资源列表条件，详细的过滤条件如下：\n- master-zone\n按照【地域可用区】进行过滤，例如：ap-guangzhou-2。\n类型：String\n必选：否\n- ip-version\n按照【IP 类型】进行过滤，例如：IPv4。\n类型：String\n必选：否\n可选项：IPv4、IPv6、IPv6_Nat\n- isp\n按照【ISP 类型】进行过滤，例如：BGP。\n类型：String\n必选：否\n可选项：BGP、CMCC（中国移动）、CUCC（中国联通）、CTCC（中国电信）、BGP_PRO、INTERNAL（内网）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5737,7 +5755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，当前仅支持TargetGroupId，BindIP，InstanceId过滤。",
+          "document": "过滤条件，当前支持按照 TargetGroupId，BindIP，InstanceId 多个条件组合过滤。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5774,6 +5792,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5783,6 +5802,7 @@
           "example": "无",
           "member": "TargetGroupBackend",
           "name": "TargetGroupInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5792,6 +5812,7 @@
           "example": "2",
           "member": "uint64",
           "name": "RealCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5884,7 +5905,7 @@
         {
           "disabled": false,
           "document": "目标组ID，与Filters互斥。",
-          "example": "[\"lbtg-5xunivs0\\r\\n\"]",
+          "example": "[\"lbtg-5xunivs0\"]",
           "member": "string",
           "name": "TargetGroupIds",
           "required": false,
@@ -5910,7 +5931,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件数组，与TargetGroupIds互斥，支持TargetGroupVpcId和TargetGroupName。",
+          "document": "过滤条件数组，与TargetGroupIds互斥，支持 TargetGroupVpcId（私有网络 ID）和 TargetGroupName（目标组名称）以及 Tag（标签）。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6187,7 +6208,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待解绑的规则关系数组。",
+          "document": "待解绑的规则关系数组，支持批量解绑多个监听器，单次批量解除最多20个。",
           "example": "无",
           "member": "TargetGroupAssociation",
           "name": "Associations",
@@ -6771,7 +6792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例ID",
+          "document": "负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
           "example": "lb-dr0mo6w4",
           "member": "string",
           "name": "LoadBalancerId",
@@ -6799,6 +6820,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6835,6 +6857,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6852,7 +6875,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例ID",
+          "document": "负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
           "example": "lb-xxxxxxxx",
           "member": "string",
           "name": "LoadBalancerId",
@@ -6880,6 +6903,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7076,8 +7100,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "vpc的字符串id，只支持字符串id。",
-          "example": "vpc-xxxxx",
+          "document": "vpc的字符串id，只支持字符串id。\n可以通过 [DescribeVpcs](https://cloud.tencent.com/document/api/215/15778) 接口查询。",
+          "example": "vpc-p5sf61yj",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -7085,8 +7109,8 @@
         },
         {
           "disabled": false,
-          "document": "需要查询后端的内网ip，可以是cvm和弹性网卡。",
-          "example": "1.1.1.1",
+          "document": "需要查询后端的内网 IP，可以是 CVM 和弹性网卡。\n可以通过 [DescribeAddresses](https://cloud.tencent.com/document/product/215/16702) 接口查询。",
+          "example": "10.0.0.3",
           "member": "string",
           "name": "PrivateIp",
           "required": true,
@@ -7732,7 +7756,7 @@
         },
         {
           "disabled": false,
-          "document": "在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 snat 的。",
+          "document": "是否开启 SNAT，在 2016 年 12 月份之前的传统型内网负载均衡都是开启了 SNAT 的。",
           "example": "false",
           "member": "bool",
           "name": "Snat",
@@ -7743,7 +7767,7 @@
         },
         {
           "disabled": false,
-          "document": "0：表示未被隔离，1：表示被隔离。",
+          "document": "是否被隔离，0：表示未被隔离，1：表示被隔离。",
           "example": "0",
           "member": "uint64",
           "name": "Isolation",
@@ -9167,7 +9191,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的后端云函数服务列表。",
+          "document": "要修改的后端云函数服务列表，仅支持 Event 函数类型。",
           "example": "无",
           "member": "FunctionTarget",
           "name": "FunctionTargets",
@@ -9501,8 +9525,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例ID数组，默认支持20个负载均衡实例ID。",
-          "example": "[\"lb-1234abcd\\r\\n\",\"lb-5678wwqq\\r\\n\"]",
+          "document": "负载均衡实例ID数组，默认支持20个负载均衡实例ID。\n可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
+          "example": "[\"lb-1234abcd\",\"lb-5678wwqq\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -9573,7 +9597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的负载均衡实例ID。",
+          "document": "一个或多个待操作的负载均衡实例ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。\n列表支持最大长度为20。",
           "example": "[\"lb-1234abcd\",\"lb-5678wwqq\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -9753,10 +9777,28 @@
         },
         {
           "disabled": false,
-          "document": "后端服务默认权重。\n<ul>\n    <li>取值范围[0, 100]</li>\n    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> \n</ul>",
+          "document": "后端服务默认权重。\n<ul>\n    <li>取值范围[0, 100]</li>\n    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> \n</ul>\nv1目标组类型不支持设置Weight参数。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启长连接，此参数仅适用于HTTP/HTTPS目标组，true:关闭；false:开启， 默认关闭。",
+          "example": "true",
+          "member": "bool",
+          "name": "KeepaliveEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "会话保持时间，单位：秒。可选值：30~3600，默认 0，表示不开启。TCP/UDP目标组不支持该参数。",
+          "example": "30",
+          "member": "uint64",
+          "name": "SessionExpireTime",
           "required": false,
           "type": "int"
         }
@@ -9789,7 +9831,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改端口的服务器数组。",
+          "document": "待修改端口的服务器数组，在这个接口 NewPort 和 Port 为必填项。",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -9825,7 +9867,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改权重的服务器数组。",
+          "document": "待修改权重的服务器数组，在这个接口 Port 为必填项。",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -10111,7 +10153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额名称，取值范围：\n<li> TOTAL_OPEN_CLB_QUOTA：用户当前地域下的公网CLB配额 </li>\n<li> TOTAL_INTERNAL_CLB_QUOTA：用户当前地域下的内网CLB配额 </li>\n<li> TOTAL_LISTENER_QUOTA：一个CLB下的监听器配额 </li>\n<li> TOTAL_LISTENER_RULE_QUOTA：一个监听器下的转发规则配额 </li>\n<li> TOTAL_TARGET_BIND_QUOTA：一条转发规则下可绑定设备的配额 </li>\n<li> TOTAL_SNAP_IP_QUOTA： 一个CLB实例下跨地域2.0的SNAT IP配额 </li>\n<li>TOTAL_ISP_CLB_QUOTA：用户当前地域下的三网CLB配额 </li>",
+          "document": "配额名称，取值范围：\n<li> TOTAL_OPEN_CLB_QUOTA：用户当前地域下的公网CLB配额 </li>\n<li> TOTAL_INTERNAL_CLB_QUOTA：用户当前地域下的内网CLB配额 </li>\n<li> TOTAL_LISTENER_QUOTA：一个CLB下的监听器配额 </li>\n<li> TOTAL_LISTENER_RULE_QUOTA：一个监听器下的转发规则配额 </li>\n<li> TOTAL_TARGET_BIND_QUOTA：一条转发规则下可绑定设备的配额 </li>\n<li> TOTAL_SNAT_IP_QUOTA： 一个CLB实例下跨地域2.0的SNAT IP配额 </li>\n<li>TOTAL_ISP_CLB_QUOTA：用户当前地域下的三网CLB配额 </li>\n<li>TOTAL_FULL_PORT_RANGE_LISTENER_QUOTA：一个CLB实例下的单个协议全端口段监听器配额</li>",
           "example": "TOTAL_OPEN_CLB_QUOTA",
           "member": "string",
           "name": "QuotaId",
@@ -10228,7 +10270,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器实例数组",
+          "document": "服务器实例数组，服务器和目标组的 VPC 需相同。",
           "example": "无",
           "member": "TargetGroupInstance",
           "name": "TargetGroupInstances",
@@ -10282,7 +10324,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的ID，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。",
+          "document": "转发规则的ID，可以通过 [DescribeListeners](https://cloud.tencent.com/document/product/214/30686) 接口获取，当绑定后端服务到七层转发规则时，必须提供此参数或Domain+Url两者之一。",
           "example": "loc-fi8g****",
           "member": "string",
           "name": "LocationId",
@@ -10780,7 +10822,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/TRPC，TRPC暂未对外开放，默认HTTP。",
+          "document": "负载均衡与后端服务之间的转发协议，目前支持 HTTP/HTTPS/GRPC/GRPCS/TRPC，TRPC暂未对外开放，默认HTTP。",
           "example": "HTTP",
           "member": "string",
           "name": "ForwardType",
@@ -11215,7 +11257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作类型。\n- ADD：添加\n- DELETE：删除\n- UPDATE：修改\n- BIND：绑定\n- UNBIND：解绑",
+          "document": "操作类型。\n- ADD：创建\n- DELETE：删除\n- UPDATE：修改\n- BIND：绑定\n- UNBIND：解绑",
           "example": "ADD",
           "member": "string",
           "name": "OperationType",
@@ -11233,7 +11275,7 @@
         },
         {
           "disabled": false,
-          "document": "个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段",
+          "document": "个性化配置内容。创建个性化配置或修改个性化配置的内容时，必传此字段。\n具体限制查看 [七层个性化配置](https://cloud.tencent.com/document/product/214/15171)",
           "example": "client_max_body_size 222M;",
           "member": "string",
           "name": "ConfigContent",
@@ -11242,7 +11284,7 @@
         },
         {
           "disabled": false,
-          "document": "个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段",
+          "document": "个性化配置名称。创建个性化配置或修改个性化配置的名字时，必传此字段。",
           "example": "config_test",
           "member": "string",
           "name": "ConfigName",
@@ -11251,7 +11293,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例ID。绑定解绑时，必传此字段",
+          "document": "负载均衡实例ID。绑定解绑时，必传此字段。\n可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
           "example": "[lb-55rh44i6]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -11288,7 +11330,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例 ID。",
+          "document": "负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
           "example": "lb-cuxw2r00",
           "member": "string",
           "name": "LoadBalancerId",
@@ -11298,7 +11340,7 @@
         {
           "disabled": false,
           "document": "日志服务(CLS)的日志集 ID。\n<li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/58624) 接口获取日志集 ID。</li>\n<li>删除日志主题时，此参数填写为**空字符串**即可。</li>",
-          "example": "xxxx-xx-xx-xx-xxxxxxxx",
+          "example": "ac251c08-778c-4fbc-981b-4898dd48d928",
           "member": "string",
           "name": "LogSetId",
           "required": true,
@@ -11307,7 +11349,7 @@
         {
           "disabled": false,
           "document": "日志服务(CLS)的日志主题 ID。\n<li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/56454) 接口获取日志主题 ID。</li>\n<li>删除日志主题时，此参数填写为**空字符串**即可。</li>",
-          "example": "xxxx-xx-xx-xx-yyyyyyyy",
+          "example": "f43636fe-06fc-417b-9349-da4bc8a03745",
           "member": "string",
           "name": "LogTopicId",
           "required": true,
@@ -11342,7 +11384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例 ID",
+          "document": "负载均衡实例 ID，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
           "example": "lb-cuxw2r00",
           "member": "string",
           "name": "LoadBalancerId",
@@ -11351,8 +11393,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定50个安全组，如果要解绑所有安全组，可不传此参数。",
-          "example": "[\"sg-0936o7sd\\r\\n\",\"sg-12345678\\r\\n\"]",
+          "document": "安全组ID构成的数组，一个负载均衡实例最多可绑定50个安全组，如果要解绑所有安全组，可不传此参数。\n可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口查询。",
+          "example": "[\"sg-0936o7sd\",\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroups",
           "required": false,
@@ -11423,7 +11465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组ID，如 sg-12345678",
+          "document": "安全组ID，如 sg-12345678。可以通过 [DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808) 接口获取。",
           "example": "sg-12345678",
           "member": "string",
           "name": "SecurityGroup",
@@ -11441,8 +11483,8 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例ID数组",
-          "example": "[\"lb-0936o712\\r\\n\",\"lb-tttt5555\\r\\n\"]",
+          "document": "负载均衡实例ID数组，可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。\n列表支持的最大长度为20。",
+          "example": "[\"lb-0936o712\",\"lb-tttt5555\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -11468,8 +11510,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "lb的字符串ID",
-          "example": "lb-12345678",
+          "document": "负载均衡实例 ID。\n可以通过 [DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459) 接口查询。",
+          "example": "lb-57x2wzka",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -11478,7 +11520,7 @@
         {
           "disabled": false,
           "document": "性能容量型规格，取值范围：\n<li> clb.c2.medium：标准型规格 </li>\n<li> clb.c3.small：高阶型1规格 </li>\n<li> clb.c3.medium：高阶型2规格 </li>\n<li> clb.c4.small：超强型1规格 </li>\n<li> clb.c4.medium：超强型2规格 </li>\n<li> clb.c4.large：超强型3规格 </li>\n<li> clb.c4.xlarge：超强型4规格 </li>如需了解规格详情，请参见[实例规格对比](https://cloud.tencent.com/document/product/214/84689)",
-          "example": "SLA",
+          "example": "clb.c4.xlarge",
           "member": "string",
           "name": "SlaType",
           "required": true,
@@ -11977,7 +12019,7 @@
         },
         {
           "disabled": false,
-          "document": "目标组实例的权重\n\nv2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。",
+          "document": "目标组实例的权重\nv2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。\n取值范围：0-100",
           "example": "10",
           "member": "uint64",
           "name": "Weight",

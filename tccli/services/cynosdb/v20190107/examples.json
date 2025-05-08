@@ -72,6 +72,14 @@
         "title": "关闭数据库代理连接地址"
       }
     ],
+    "CloseSSL": [
+      {
+        "document": "关闭SSL加密",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseSSL\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-jd510000\",\n    \"InstanceId\": \"cynosdbmysql-ins-906n0000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1,\n        \"RequestId\": \"42d79173-6d36-4239-b7ad-5b993559a5c6\",\n        \"TaskId\": 1\n    }\n}",
+        "title": "关闭SSL加密"
+      }
+    ],
     "CloseWan": [
       {
         "document": "",

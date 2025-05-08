@@ -702,6 +702,14 @@
         "title": "获取分级分级扫描的表集合"
       }
     ],
+    "DescribeDSPADiscoveryTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryTasks\n<公共请求参数>\n\n{\n    \"DataSourceType\": \"cdb\",\n    \"DspaId\": \"dspa-001\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"91c7a73v-e540-4780-8b8e-74e0b65b4f1a\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Name\": \"通用规则集测试\",\n                \"Description\": \"\",\n                \"Period\": 0,\n                \"Plan\": 0,\n                \"Enable\": 1,\n                \"TimingStartTime\": null,\n                \"GeneralRuleSetEnable\": 0,\n                \"DataSourceInfo\": {\n                    \"ResourceRegion\": \"ap-guangzhou\",\n                    \"DataSourceId\": \"cdb-6dcpe42v\",\n                    \"DataSourceName\": \"采集测试\",\n                    \"ProxyAddress\": null,\n                    \"Condition\": \"test_report,dsgctest001\",\n                    \"DataSourceType\": \"cdb\"\n                },\n                \"ComplianceUpdate\": false,\n                \"Result\": {\n                    \"Id\": 4142,\n                    \"EndTime\": \"2024-11-05 17:17:30\",\n                    \"Status\": 3,\n                    \"Result\": \"\"\n                }\n            }\n        ]\n    }\n}",
+        "title": "获取分类分级任务列表"
+      }
+    ],
     "DescribeDSPAESDataAssetByComplianceId": [
       {
         "document": "概览页",

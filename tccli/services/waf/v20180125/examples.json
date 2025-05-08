@@ -1134,6 +1134,14 @@
         "title": "设置防护域名WAF开关"
       }
     ],
+    "ModifyInstanceAttackLogPost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAttackLogPost\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\"\n    }\n}",
+        "title": "开通实例攻击日志投递"
+      }
+    ],
     "ModifyInstanceElasticMode": [
       {
         "document": "",

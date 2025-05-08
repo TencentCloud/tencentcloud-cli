@@ -317,7 +317,7 @@
     "CreateTask": [
       {
         "document": "创建任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"TaskExt\": [\n        {\n            \"Key\": \"aa\",\n            \"Value\": \"vv\"\n        }\n    ],\n    \"TaskName\": \"aaab\",\n    \"TaskType\": \"35\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"WorkflowId\": \"34e51bc4-0cd9-11ed-8909-bc97e105ba60\",\n    \"TaskExt\": [\n        {\n            \"Key\": \"key1\",\n            \"Value\": \"val1\"\n        }\n    ],\n    \"TaskName\": \"aaab\",\n    \"TaskType\": 35\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2eeae735-b9c1-4c99-a4dd-54f3e8da674f\",\n        \"Data\": {\n            \"Id\": \"20220801203612642\"\n        }\n    }\n}",
         "title": "范例"
       }
@@ -336,6 +336,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskFolder\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1522676572149563392\",\n    \"FolderName\": \"FFFOOOLLLDDDEERR\",\n    \"ParentFolderId\": \"6cccb832-b76a-11ed-b7fc-043f72e73c62\",\n    \"WorkflowId\": \"63b3878f-0602-11ee-b7fc-043f72e73c62\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"277e97b2-8475-11ee-bfeb-b8cef68a6637\",\n        \"RequestId\": \"7d1d9f10-fb66-40c3-b704-5e174ebc95dd\"\n    }\n}",
         "title": "创建工作流中任务目录接口"
+      }
+    ],
+    "CreateTaskNew": [
+      {
+        "document": "创建任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTaskNew\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"c3ebf6b9-d34b-4dff-bc5d-334f8ce11ad1\",\n    \"TaskName\": \"test342342\",\n    \"TaskType\": 35,\n    \"TaskExt\": [\n        {\n            \"Key\": \"extraInfo\",\n            \"Value\": \"eyJmcm9tTWFwcGluZyI6ZmFsc2V9\"\n        }\n    ],\n    \"ProductName\": \"DATA_DEV\",\n    \"LeftCoordinate\": 224,\n    \"TopCoordinate\": 224,\n    \"Content\": \"IyEvYmluL2Jhc2gKIyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiMKIyNhdXRob3I6IGtldmlubmllCiMjY3JlYXRlIHRpbWU6IDIwMjQtMTEtMDcgMTA6NTQ6MzUKIyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiMK\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"20241107105820356\",\n        \"RequestId\": \"a8b7605c-c3d8-4f92-8e23-4bfb4a57cfd8\"\n    }\n}",
+        "title": "创建任务"
       }
     ],
     "CreateTaskVersionDs": [
@@ -1880,6 +1888,14 @@
         "title": "添加父任务依赖"
       }
     ],
+    "ModifyTaskLinksDs": [
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskLinksDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1492511691706699776\",\n    \"TaskFrom\": \"20240307211633923\",\n    \"TaskTo\": \"20240307211852581\",\n    \"LinkDependencyType\": \"real_real\",\n    \"WorkflowId\": \"ca1253e8-dc84-11ee-8d13-a4ae120f8272\",\n    \"RealFromWorkflowId\": \"ca1253e8-dc84-11ee-8d13-a4ae120f82sda\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"LinkId\": \"ca125988-dc84-11ee-8d13-a4ae120f8272\",\n        \"RequestId\": \"ca1sad259-dc84-11ee-8d13-a4ae120f8272\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "ModifyTaskName": [
       {
         "document": "",
@@ -1926,6 +1942,14 @@
         "title": "编排空间-工作流-移动任务到工作流文件夹示例"
       }
     ],
+    "RegisterDsEvent": [
+      {
+        "document": "新建事件",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterDsEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1492511691706699776\",\n    \"Name\": \"test_event_1\",\n    \"EventSubType\": \"DAY\",\n    \"TimeToLive\": \"30\",\n    \"TimeUnit\": \"DAYS\",\n    \"Owner\": \"micofywang\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreationTs\": null,\n            \"Description\": \"test\",\n            \"DimensionFormat\": \"yyyyMMdd\",\n            \"EventBroadcastType\": \"BROADCAST\",\n            \"EventSubType\": \"DAY\",\n            \"EventType\": \"TIME_SERIES\",\n            \"Listeners\": null,\n            \"Name\": \"test_event_1\",\n            \"Owner\": \"micofywang\",\n            \"ProjectId\": \"1492511691706699776\",\n            \"ProjectName\": \"\",\n            \"Properties\": null,\n            \"TimeToLive\": 30,\n            \"TimeUnit\": \"DAYS\"\n        },\n        \"RequestId\": \"7bf51807-efe1-499a-952f-d6b040effaa0\"\n    }\n}",
+        "title": "注册事件（新建事件）"
+      }
+    ],
     "RegisterEvent": [
       {
         "document": "注册事件",
@@ -1954,6 +1978,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveWorkflowDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"WorkflowId\": \"a09dac50-ed66-11ed-8909-bc97e105ba60\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"要删除的工作流不存在\"\n        },\n        \"RequestId\": \"9849acb3-fde9-4c6e-806c-9230fe4ccf01\"\n    }\n}",
         "title": "工作流不存在"
+      }
+    ],
+    "RenewWorkflowOwnerDs": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewWorkflowOwnerDs\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"Owner\": \"jaydenjhu\",\n    \"OwnerId\": \"100028664112\",\n    \"WorkflowIds\": [\n        \"f5d1b42f-ed67-11ed-8909-bc97e105ba60\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Failed\": 0,\n            \"Success\": 1,\n            \"Total\": 1\n        },\n        \"RequestId\": \"6bedbc71-7c98-4223-a4b9-f43a072be9ec\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "RenewWorkflowSchedulerInfoDs": [
@@ -2144,6 +2176,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProjectUserRole\n<公共请求参数>\n\n{\n    \"RoleIds\": [\n        \"3083526074237440\"\n    ],\n    \"UserIds\": [\n        \"10000377159\"\n    ],\n    \"ProjectId\": \"69244775408074752\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c315ddb4-27fd-4bb3-826-f9c9ddefda\"\n    }\n}",
         "title": "成功示例"
+      }
+    ],
+    "UpdateWorkflowInfo": [
+      {
+        "document": "更新工作流通用配置（基本信息 & 参数）",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkflowInfo\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470547050521227264\",\n    \"OperatorName\": \"kevinnie\",\n    \"WorkflowId\": \"3dfadfde-af87-11ee-8ec8-b8599f277de5\",\n    \"Owner\": \"zhanglin\",\n    \"OwnerId\": \"100028579801\",\n    \"WorkflowDesc\": \"fd\",\n    \"WorkflowName\": \"bp_ext_clone_01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"947beddf-ecac-472e-8727-fba35e8cb96e\"\n    }\n}",
+        "title": "工作流更新整合接口"
       }
     ],
     "UpdateWorkflowOwner": [

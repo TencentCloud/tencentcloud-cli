@@ -19,6 +19,7 @@ Output:
             {
                 "UpdatedTime": "2020-09-22 00:00:00",
                 "TargetGroupId": "lbtg-xxxxxxxx",
+                "Protocol": "TCP",
                 "VpcId": "vpc-xxxxxxxx",
                 "CreatedTime": "2020-09-22 00:00:00",
                 "AssociatedRule": [
@@ -75,6 +76,7 @@ Output:
                 "TargetGroupId": "lbtg-5xunivs0",
                 "VpcId": "vpc-i1cnjuhx",
                 "TargetGroupName": "tg111_for_l4",
+                "Protocol": "TCP",
                 "Port": 111,
                 "CreatedTime": "2019-07-14 16:18:43",
                 "UpdatedTime": "2019-07-14 16:18:43",
@@ -107,6 +109,7 @@ Output:
                 "TargetGroupId": "lbtg-dxnp10nc",
                 "VpcId": "vpc-i1cnjuhx",
                 "TargetGroupName": "tg111_for_l41563508267",
+                "Protocol": "TCP",
                 "Port": 111,
                 "CreatedTime": "2019-07-19 11:51:08",
                 "UpdatedTime": "2019-07-19 11:51:07",
@@ -116,6 +119,7 @@ Output:
                 "TargetGroupId": "lbtg-bjfi6nt6",
                 "VpcId": "vpc-i1cnjuhx",
                 "TargetGroupName": "tg111_for_l41563508507",
+                "Protocol": "TCP",
                 "Port": 111,
                 "CreatedTime": "2019-07-19 11:55:08",
                 "UpdatedTime": "2019-07-19 11:55:08",

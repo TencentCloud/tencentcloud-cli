@@ -8,8 +8,8 @@ Input:
 tccli wedata CreateTask --cli-unfold-argument  \
     --ProjectId 1 \
     --WorkflowId 34e51bc4-0cd9-11ed-8909-bc97e105ba60 \
-    --TaskExt.0.Key aa \
-    --TaskExt.0.Value vv \
+    --TaskExt.0.Key key1 \
+    --TaskExt.0.Value val1 \
     --TaskName aaab \
     --TaskType 35
 ```

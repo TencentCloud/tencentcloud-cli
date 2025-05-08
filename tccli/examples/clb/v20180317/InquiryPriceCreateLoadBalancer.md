@@ -19,12 +19,21 @@ Output:
 {
     "Response": {
         "Price": {
-            "BandwidthPrice": null,
-            "InstancePrice": {
-                "OriginalPrice": 37.4,
-                "DiscountPrice": 37.4,
+            "BandwidthPrice": {
+                "ChargeUnit": null,
+                "Discount": 34.7841,
+                "DiscountPrice": 8,
+                "OriginalPrice": 23,
                 "UnitPrice": null,
-                "ChargeUnit": null
+                "UnitPriceDiscount": null
+            },
+            "InstancePrice": {
+                "ChargeUnit": null,
+                "Discount": 28.9198,
+                "DiscountPrice": 41.64,
+                "OriginalPrice": 144,
+                "UnitPrice": null,
+                "UnitPriceDiscount": null
             },
             "LcuPrice": null
         },
@@ -53,20 +62,24 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "UnitPrice": 0.02,
+                "UnitPrice": 0.2,
+                "UnitPriceDiscount": 0.0574,
                 "ChargeUnit": "HOUR",
                 "OriginalPrice": null,
-                "DiscountPrice": null
+                "DiscountPrice": null,
+                "Discount": 28.6951
             },
             "BandwidthPrice": {
-                "UnitPrice": 0.8,
-                "ChargeUnit": "GB",
+                "UnitPrice": 0,
+                "UnitPriceDiscount": 0,
+                "ChargeUnit": "0",
                 "OriginalPrice": null,
-                "DiscountPrice": null
+                "DiscountPrice": null,
+                "Discount": 100
             },
             "LcuPrice": null
         },
-        "RequestId": "f4953b5c-990c-49fa-9937-7aebef241d42"
+        "RequestId": "8abe5fc0-690d-458a-a15e-7f7467968f5d"
     }
 }
 ```
@@ -92,20 +105,24 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "UnitPrice": 0.02,
+                "UnitPrice": 0.2,
+                "UnitPriceDiscount": 0.0574,
                 "ChargeUnit": "HOUR",
                 "OriginalPrice": null,
-                "DiscountPrice": null
+                "DiscountPrice": null,
+                "Discount": 28.6951
             },
             "BandwidthPrice": {
-                "UnitPrice": 48,
-                "ChargeUnit": "Mbps/MONTH",
+                "UnitPrice": 0,
+                "UnitPriceDiscount": 0,
+                "ChargeUnit": "0",
                 "OriginalPrice": null,
-                "DiscountPrice": null
+                "DiscountPrice": null,
+                "Discount": 100
             },
             "LcuPrice": null
         },
-        "RequestId": "19a2e45d-ed96-4f60-a954-99a4d41752f3"
+        "RequestId": "4233547b-4201-4b65-a9f4-304dfcf2a6f0"
     }
 }
 ```
@@ -130,20 +147,24 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
-                "UnitPrice": 0.02,
+                "UnitPrice": 0.2,
+                "UnitPriceDiscount": 0.0574,
                 "ChargeUnit": "HOUR",
                 "OriginalPrice": null,
-                "DiscountPrice": null
+                "DiscountPrice": null,
+                "Discount": 28.6951
             },
             "BandwidthPrice": {
                 "UnitPrice": 0.04,
+                "UnitPriceDiscount": 0.0137,
                 "ChargeUnit": "HOUR",
                 "OriginalPrice": null,
-                "DiscountPrice": null
+                "DiscountPrice": null,
+                "Discount": 34.2927
             },
             "LcuPrice": null
         },
-        "RequestId": "835f9cd8-6af1-4ac6-8fc3-2a9f900b7fff"
+        "RequestId": "2c77d1f1-7cdb-49e8-b91c-da9aa1becb27"
     }
 }
 ```

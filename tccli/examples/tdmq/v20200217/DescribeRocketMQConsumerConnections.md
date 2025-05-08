@@ -46,7 +46,7 @@ Output:
             "Namespace": "test_namespace",
             "TPS": 10
         },
-        "RequestId": "abc"
+        "RequestId": "2823b88c-bc6c-412b-a6dd-18eb9682d233"
     }
 }
 ```

@@ -872,6 +872,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开远程命令执行检测（0=关， 1=开）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRemoteCommandExecutionAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开内存马执行检测（0=关， 1=开）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsMemoryHijackingAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2278,6 +2298,24 @@
           "example": "0",
           "member": "int64",
           "name": "IsInstrumentationVulnerabilityScan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启远程命令攻击检测",
+          "example": "0",
+          "member": "int64",
+          "name": "IsRemoteCommandExecutionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启内存马检测",
+          "example": "0",
+          "member": "int64",
+          "name": "IsMemoryHijackingAnalysis",
           "required": false,
           "type": "int"
         }

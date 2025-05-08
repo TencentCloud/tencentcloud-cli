@@ -138,7 +138,7 @@
     ],
     "DeleteTopic": [
       {
-        "document": "删除主题",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"4687272f-f35c-4aef-9941-ced81c164d4b\"\n    }\n}",
         "title": "删除主题"

@@ -6,20 +6,13 @@ Input:
 
 ```
 tccli wedata UpdateWorkflowInfo --cli-unfold-argument  \
-    --ProjectId abc \
-    --OperatorName abc \
-    --WorkflowId abc \
-    --Owner abc \
-    --OwnerId abc \
-    --WorkflowDesc abc \
-    --WorkflowName abc \
-    --FolderId abc \
-    --UserGroupId abc \
-    --UserGroupName abc \
-    --WorkflowParams.0.ParamKey abc \
-    --WorkflowParams.0.ParamValue abc \
-    --GeneralTaskParams.0.Type abc \
-    --GeneralTaskParams.0.Value abc
+    --ProjectId 1470547050521227264 \
+    --OperatorName kevinnie \
+    --WorkflowId 3dfadfde-af87-11ee-8ec8-b8599f277de5 \
+    --Owner zhanglin \
+    --OwnerId 100028579801 \
+    --WorkflowDesc fd \
+    --WorkflowName bp_ext_clone_01
 ```
 
 Output: 
@@ -27,7 +20,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "abc"
+        "RequestId": "947beddf-ecac-472e-8727-fba35e8cb96e"
     }
 }
 ```

@@ -155,7 +155,7 @@
       "status": "online"
     },
     "DescribeFusionInstanceList": {
-      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，集群ID查询\n3. InstanceType, 集群类型查询，支持多选\n4. Version，集群版本查询\n当使用TagFilters查询时，Filters参数失效。",
+      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，集群ID查询\n3. InstanceType, 集群类型查询，支持多选\n4. Version，集群版本查询",
       "input": "DescribeFusionInstanceListRequest",
       "name": "查询集群列表",
       "output": "DescribeFusionInstanceListResponse",
@@ -525,6 +525,62 @@
       ],
       "type": "object"
     },
+    "ClientSubscriptionInfo": {
+      "document": "客户端订阅详情，可用于辅助判断哪些客户端订阅关系不一致",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "local@67841",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址",
+          "example": "111.206.96.149:8083",
+          "member": "string",
+          "name": "ClientAddr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅主题",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅表达式",
+          "example": "test_tag",
+          "member": "string",
+          "name": "SubString",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅方式",
+          "example": "TAG",
+          "member": "string",
+          "name": "ExpressionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ConsumeGroupItem": {
       "document": "消费组信息",
       "members": [
@@ -758,11 +814,20 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "测试消费组",
+          "example": "test remark info.",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1427,6 +1492,15 @@
           "name": "MsgTTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1927,18 +2001,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费组列表",
-          "example": "[]",
+          "example": "无",
           "member": "ConsumeGroupItem",
           "name": "Data",
           "output_required": true,
@@ -2201,13 +2275,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2275,13 +2349,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2473,7 +2547,7 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -2483,7 +2557,7 @@
         {
           "disabled": false,
           "document": "接入点列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "Endpoint",
           "name": "EndpointList",
           "output_required": true,
@@ -3792,13 +3866,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4391,13 +4465,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4548,13 +4622,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4736,7 +4810,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "测试主题",
+          "example": "test remark info.",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -4776,7 +4850,7 @@
         {
           "disabled": false,
           "document": "订阅关系列表",
-          "example": "[]",
+          "example": "无",
           "member": "SubscriptionData",
           "name": "SubscriptionData",
           "output_required": true,
@@ -5279,6 +5353,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[10001,10002]",
+          "member": "int64",
+          "name": "ZoneIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5643,6 +5727,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已冻结",
+          "example": "0",
+          "member": "bool",
+          "name": "IsFrozen",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8069,6 +8163,16 @@
           "name": "MessageModel",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅不一致的客户端列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientSubscriptionInfo",
+          "name": "ClientSubscriptionInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

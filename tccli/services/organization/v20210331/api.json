@@ -9633,14 +9633,14 @@
         },
         {
           "disabled": false,
-          "document": "策略名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略名称。",
           "example": "QcloudAccessForOceanusRole",
           "member": "string",
           "name": "PolicyName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10337,14 +10337,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略ID。",
           "example": "426322",
           "member": "int64",
           "name": "RolePolicyId",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10442,36 +10442,36 @@
         },
         {
           "disabled": false,
-          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步的集团账号目标账号的类型，ManagerUin管理账号;MemberUin成员账号",
           "example": "MemberUin",
           "member": "string",
           "name": "TargetType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务类型。",
           "example": "CreateRoleAssignment",
           "member": "string",
           "name": "TaskType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态：InProgress: 进行中，Failed: 失败 3:Success: 成功",
           "example": "InProgress",
           "member": "string",
           "name": "TaskStatus",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11274,14 +11274,14 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "失败",
           "member": "string",
           "name": "FailureReason",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

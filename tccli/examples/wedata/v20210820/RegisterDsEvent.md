@@ -1,21 +1,18 @@
-**Example 1: 注册事件**
+**Example 1: 注册事件（新建事件）**
 
-注册事件
+新建事件
 
 Input: 
 
 ```
 tccli wedata RegisterDsEvent --cli-unfold-argument  \
-    --ProjectId abc \
-    --Name abc \
-    --EventType abc \
-    --EventSubType abc \
-    --EventBroadcastType abc \
-    --DimensionFormat abc \
-    --TimeToLive abc \
-    --TimeUnit abc \
-    --Owner abc \
-    --Description abc
+    --ProjectId 1492511691706699776 \
+    --Name test_event_1 \
+    --EventSubType DAY \
+    --TimeToLive 30 \
+    --TimeUnit DAYS \
+    --Owner micofywang \
+    --Description test
 ```
 
 Output: 
@@ -23,45 +20,22 @@ Output:
 {
     "Response": {
         "Data": {
-            "Name": "abc",
-            "EventType": "abc",
-            "EventSubType": "abc",
-            "EventBroadcastType": "abc",
-            "DimensionFormat": "abc",
-            "TimeToLive": 0,
-            "TimeUnit": "abc",
-            "CreationTs": "abc",
-            "Owner": "abc",
-            "Properties": "abc",
-            "Description": "abc",
-            "Listeners": [
-                {
-                    "Key": "abc",
-                    "Type": "abc",
-                    "CreationTs": "abc",
-                    "PropertiesList": [
-                        {
-                            "ParamKey": "abc",
-                            "ParamValue": "abc"
-                        }
-                    ],
-                    "EventName": "abc",
-                    "TaskInfo": {
-                        "TaskId": "abc",
-                        "TaskName": "abc",
-                        "WorkflowId": "abc",
-                        "WorkflowName": "abc",
-                        "TaskTypeId": 0,
-                        "TaskType": "abc",
-                        "ProjectId": "abc"
-                    },
-                    "EventProjectId": "abc"
-                }
-            ],
-            "ProjectId": "abc",
-            "ProjectName": "abc"
+            "CreationTs": null,
+            "Description": "test",
+            "DimensionFormat": "yyyyMMdd",
+            "EventBroadcastType": "BROADCAST",
+            "EventSubType": "DAY",
+            "EventType": "TIME_SERIES",
+            "Listeners": null,
+            "Name": "test_event_1",
+            "Owner": "micofywang",
+            "ProjectId": "1492511691706699776",
+            "ProjectName": "",
+            "Properties": null,
+            "TimeToLive": 30,
+            "TimeUnit": "DAYS"
         },
-        "RequestId": "abc"
+        "RequestId": "7bf51807-efe1-499a-952f-d6b040effaa0"
     }
 }
 ```

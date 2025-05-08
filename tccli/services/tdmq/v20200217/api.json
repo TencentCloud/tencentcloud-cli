@@ -4020,6 +4020,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4822,6 +4831,24 @@
           "name": "UnackPolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启异常消费者隔离",
+          "example": "true",
+          "member": "bool",
+          "name": "IsolateConsumerEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "消费者 Ack 超时时间，单位：秒，范围60-（3600*24）",
+          "example": "60",
+          "member": "int64",
+          "name": "AckTimeOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6984,6 +7011,15 @@
           "name": "QueryDlqMsg",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "生产时间",
+          "example": "2024-04-11T23:03:47.328+08:00",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9423,7 +9459,7 @@
         {
           "disabled": false,
           "document": "记录数。",
-          "example": "1",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -9433,7 +9469,7 @@
         {
           "disabled": false,
           "document": "命名空间角色集合。",
-          "example": "[]",
+          "example": "无",
           "member": "EnvironmentRole",
           "name": "EnvironmentRoleSets",
           "output_required": true,
@@ -9561,7 +9597,7 @@
         {
           "disabled": false,
           "document": "订阅组列表",
-          "example": "[]",
+          "example": "无",
           "member": "RocketMQGroup",
           "name": "Groups",
           "output_required": true,
@@ -9914,7 +9950,7 @@
         {
           "disabled": false,
           "document": "轨迹详情列表",
-          "example": "[     {         \"Stage\": \"produce\",         \"Data\": {             \"ProducerName\": \"生产者名\",             \"ProduceTime\": \"消息生产时间\",             \"ProducerAddr\": \"客户端地址\",             \"Duration\": \"耗时ms\",             \"Status\": \"状态（0：成功，1：失败）\"         }     },     {         \"Stage\": \"persist\",         \"Data\": {             \"PersistTime\": \"存储时间\",             \"Duration\": \"耗时ms\",             \"Status\": \"状态（0：成功，1：失败）\"         }     } ]",
+          "example": "[     {         \"Stage\": \"produce\",         \"Data\": {             \"Status\": 1         }     },     {         \"Stage\": \"persist\",         \"Data\": {             \"Status\": 1         }     } ]",
           "member": "TraceResult",
           "name": "Result",
           "output_required": true,
@@ -11068,7 +11104,7 @@
         {
           "disabled": false,
           "document": "生产详情列表",
-          "example": "[]",
+          "example": "无",
           "member": "TopicStats",
           "name": "TopicStatsList",
           "output_required": false,
@@ -14361,6 +14397,24 @@
           "name": "UnackPolicy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启异常消费者隔离",
+          "example": "true",
+          "member": "bool",
+          "name": "IsolateConsumerEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "消费者 Ack 超时时间，单位：秒，范围60-（3600*24",
+          "example": "60",
+          "member": "int64",
+          "name": "AckTimeOut",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17381,21 +17435,21 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
-          "example": "test_topic",
-          "member": "string",
-          "name": "Topic",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "重置方式，0表示从最新位点开始，1表示从指定时间点开始",
           "example": "1",
           "member": "uint64",
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -17649,6 +17703,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大角色数量",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxRoleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS限额",
+          "example": "4000",
+          "member": "int64",
+          "name": "MaxTpsLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17941,6 +18015,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已冻结",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFrozen",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20711,6 +20795,26 @@
           "name": "Tenant",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启异常消费者隔离",
+          "example": "true",
+          "member": "bool",
+          "name": "IsolateConsumerEnable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者 Ack 超时时间，单位：秒",
+          "example": "60",
+          "member": "int64",
+          "name": "AckTimeOut",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

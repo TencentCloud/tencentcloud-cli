@@ -146,58 +146,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入框类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输入框类型",
           "example": "type",
           "member": "string",
           "name": "LabelType",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "初始化展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "初始化展示",
           "example": "12",
           "member": "string",
           "name": "Starter",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "展示排序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "展示排序",
           "example": "desc",
           "member": "int64",
           "name": "Order",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AttributeKey值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AttributeKey值",
           "example": "tag1",
           "member": "string",
           "name": "Value",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "中文标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "中文标签",
           "example": "事件",
           "member": "string",
           "name": "Label",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -207,47 +207,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集状态，1：开启，0：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跟踪集状态，1：开启，0：关闭",
           "example": "1",
           "member": "int64",
           "name": "AuditStatus",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "COS存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS存储桶名称",
           "example": "gz_bucket",
           "member": "string",
           "name": "CosBucketName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跟踪集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跟踪集名称",
           "example": "audit_track",
           "member": "string",
           "name": "AuditName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志前缀",
           "example": "cloudtrail",
           "member": "string",
           "name": "LogFilePrefix",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -257,25 +257,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域描述",
           "example": "广州地域",
           "member": "string",
           "name": "CmqRegionName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cmq地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cmq地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CmqRegion",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -746,23 +746,23 @@
         },
         {
           "disabled": false,
-          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启将集团成员操作日志投递到集团管理账号或者可信服务管理账号",
           "example": "1",
           "member": "uint64",
           "name": "TrackForAllMembers",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据投递过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据投递过滤条件",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -914,23 +914,23 @@
         },
         {
           "disabled": false,
-          "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"CloudAuditEvent\": \"\",         \"EventName\": \"PostTrack\",         \"EventTime\": \"xxxx\",         \"EventId\": \"\",         \"SecretId\": \"xxxxxxA2bADrx2jeiQPQy2kIV05F4xjl9Nxxxxx\",         \"ErrorCode\": 0,         \"RequestID\": \"xxxxx-8fd8-4121-b1e8-6264292eeb4f\",         \"SourceIPAddress\": \"xx.xx.96.xx\",         \"EventSource\": \"xx.ap-chongqing.api.tencentyun.com/\",         \"EventRegion\": \"ap-guangzhou\",         \"Resources\": {             \"ResourceName\": \"\",             \"ResourceType\": \"tandon\"         },         \"Username\": \"root\",         \"AccountID\": xxxx,         \"Location\": \"xxxx\",         \"ResourceTypeCn\": \"腾讯云安灯\",         \"EventNameCn\": \"智能客服官网浏览记录上报\",         \"ResourceRegion\": \"\"     } ]",
+          "document": "日志集合",
+          "example": "无",
           "member": "Event",
           "name": "Events",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1023,14 +1023,14 @@
         },
         {
           "disabled": false,
-          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书ID",
           "example": "AKIDY3c****N0DyAaUPZRd",
           "member": "string",
           "name": "SecretId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1078,14 +1078,14 @@
         },
         {
           "disabled": false,
-          "document": "源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源IP",
           "example": "127.0.0.1",
           "member": "string",
           "name": "SourceIPAddress",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1139,14 +1139,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源筛选条件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " [             {                 \"ResourceType\": \"cam\",                 \"ActionType\": \"*\",                 \"EventNames\": [                     \"AddSubAccount\",                     \"AddSubAccountCheckingMFA\"                 ]             }                      ]",
+          "document": "资源筛选条件",
+          "example": "[{\"ResourceType\":\"cam\",\"ActionType\":\"*\",\"EventNames\":[\"AddSubAccount\",\"AddSubAccountCheckingMFA\"]}]",
           "member": "ResourceField",
           "name": "ResourceFields",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1220,25 +1220,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "作为密钥更容易辨识，更容易被人看懂的别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作为密钥更容易辨识，更容易被人看懂的别名",
           "example": "audit_name",
           "member": "string",
           "name": "Alias",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CMK的全局唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CMK的全局唯一标识",
           "example": "key_34244",
           "member": "string",
           "name": "KeyId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1253,13 +1253,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询跟踪集概要集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询跟踪集概要集合",
           "example": " {  \"AuditStatus\": 0, \"CosBucketName\": \"test bucket\",\"AuditName\": \"test\", \"LogFilePrefix\": \"audit\" }  ]",
           "member": "AuditSummary",
           "name": "AuditSummarys",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1474,43 +1474,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "查看更多日志的凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查看更多日志的凭证",
           "example": "79ba1f24-c21c-4858-a8e6-a9266b0599ff",
           "member": "string",
           "name": "NextToken",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"CloudAuditEvent\": \"*\",         \"EventId\": \"e92a92fc259c4a9333d2a7ce64d1ef201\",         \"EventName\": \"LookupEvents\",         \"EventTime\": \"2019-03-20 12:36:27\",         \"SecretId\": \"XXX\",         \"ErrorCode\": 0,         \"RequestID\": \"15936031437374_1553056587.6815_v2\",         \"AccountID\": 1150691759,         \"SourceIPAddress\": \"*\",         \"EventSource\": \"cloudaudit.api.tencentyun.com/v2/index.php\",         \"EventRegion\": \"ap-guangzhou\",         \"Resources\": {             \"ResourceName\": \"\",             \"ResourceType\": \"cloudaudit\"         },         \"Username\": \"root\",         \"ResourceTypeCn\": \"操作审计\",         \"EventNameCn\": \"检索日志\"     } ]",
+          "document": "日志集合",
+          "example": "无",
           "member": "Event",
           "name": "Events",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志集合是否结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志集合是否结束",
           "example": "1",
           "member": "bool",
           "name": "ListOver",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1712,25 +1712,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源类型",
           "example": "cloudaudit",
           "member": "string",
           "name": "ResourceType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源名称",
           "example": "ins-234234",
           "member": "string",
           "name": "ResourceName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1740,36 +1740,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）",
           "example": "cvm",
           "member": "string",
           "name": "ResourceType",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跟踪事件类型（读：Read；写：Write；全部：*）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跟踪事件类型（读：Read；写：Write；全部：*）",
           "example": "Read",
           "member": "string",
           "name": "ActionType",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"\"]；指定ResourceType时，支持全部接口：[\"\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"\"]；指定ResourceType时，支持全部接口：[\"\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）",
           "example": "[\"AddUser\"]",
           "member": "string",
           "name": "EventNames",
           "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1897,25 +1897,25 @@
         },
         {
           "disabled": false,
-          "document": "被指定存储用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被指定存储用户ID",
           "example": "23424",
           "member": "string",
           "name": "StorageAccountId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "被指定存储用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被指定存储用户appid",
           "example": "3545646",
           "member": "string",
           "name": "StorageAppId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

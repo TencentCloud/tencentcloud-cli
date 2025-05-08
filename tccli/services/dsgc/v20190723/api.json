@@ -609,6 +609,13 @@
       "output": "DescribeDSPADiscoveryTaskTablesResponse",
       "status": "online"
     },
+    "DescribeDSPADiscoveryTasks": {
+      "document": "获取分类分级任务列表",
+      "input": "DescribeDSPADiscoveryTasksRequest",
+      "name": "获取分类分级任务信息列表",
+      "output": "DescribeDSPADiscoveryTasksResponse",
+      "status": "online"
+    },
     "DescribeDSPAESDataAssetByComplianceId": {
       "document": "根据合规组id，去查询ES的概览页统计数据",
       "input": "DescribeDSPAESDataAssetByComplianceIdRequest",
@@ -1838,7 +1845,7 @@
         {
           "disabled": false,
           "document": "支持的数据源类型",
-          "example": "[mysq,pgsql]",
+          "example": "[mysql,pgsql]",
           "member": "string",
           "name": "SupportDataSource",
           "output_required": true,
@@ -2307,7 +2314,7 @@
         {
           "disabled": false,
           "document": "数据源Id",
-          "example": "cos-xadsa",
+          "example": "cos-cd514cb2baa46034bedae480c871f5b6a367e123",
           "member": "string",
           "name": "DataSourceId",
           "output_required": true,
@@ -9456,6 +9463,107 @@
       ],
       "type": "object"
     },
+    "DescribeDSPADiscoveryTasksRequest": {
+      "document": "DescribeDSPADiscoveryTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DSPA实例ID",
+          "example": "dspa-001",
+          "member": "string",
+          "name": "DspaId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型，可取值如下：\ncdb 表示云数据库 MySQL,\ndcdb 表示TDSQL MySQL版,\nmariadb 表示云数据库 MariaDB,\npostgres 表示云数据库 PostgreSQL,\ncynosdbpg 表示TDSQL-C PostgreSQL版,\ncynosdbmysql 表示TDSQL-C MySQL版,\nselfbuilt-db 表示自建数据库",
+          "example": "cdb",
+          "member": "string",
+          "name": "DataSourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "扫描敏感数据任务",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务扫描结果状态，可供选择的状态值有：-1待触发 0待扫描 1扫描中 2扫描终止 3扫描成功 4扫描失败",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回结果集数量，默认值是10000，最大值为10000，根据该资源的个数限制条件，该资源的个数不会超过10000，所以如果不输入该字段，默认获取全量数据",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDSPADiscoveryTasksResponse": {
+      "document": "DescribeDSPADiscoveryTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "DspaDiscoveryTask",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的任务列表数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDSPAESDataAssetByComplianceIdRequest": {
       "document": "DescribeDSPAESDataAssetByComplianceId请求参数结构体",
       "members": [
@@ -10520,7 +10628,7 @@
         {
           "disabled": false,
           "document": "下载链接集合",
-          "example": "[htpp://www.xxx.com/url]",
+          "example": "[http://www.xxx.com/url]",
           "member": "string",
           "name": "DownloadUrlSet",
           "output_required": false,
@@ -12666,6 +12774,112 @@
       ],
       "usage": "out"
     },
+    "DspaDiscoveryTask": {
+      "document": "分类分级任务相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行周期，0单次 1每天 2每周 3每月",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行计划，0立即 1定时",
+          "example": "无",
+          "member": "int64",
+          "name": "Plan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务开关；1 打开，0 关闭",
+          "example": "无",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据对象信息",
+          "example": "无",
+          "member": "DspaDiscoveryTaskDataSource",
+          "name": "DataSourceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通用规则集开关，0 关闭，1 启用",
+          "example": "1",
+          "member": "int64",
+          "name": "GeneralRuleSetEnable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务最新的一次执行结果信息，该字段用于查询任务列表接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScanTaskResult",
+          "name": "Result",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-1212:12:12",
+          "member": "string",
+          "name": "TimingStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联模板是否更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ComplianceUpdate",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DspaDiscoveryTaskCOSCondition": {
       "document": "描述对象存储类敏感识别扫描人元数据条件。",
       "members": [
@@ -14492,7 +14706,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "ap-shanghia",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "ResourceRegion",
           "output_required": false,
@@ -15662,7 +15876,7 @@
         {
           "disabled": false,
           "document": "风险等级名称",
-          "example": "riskLevel",
+          "example": "高风险",
           "member": "string",
           "name": "RiskLevelName",
           "required": true,
@@ -15671,7 +15885,7 @@
         {
           "disabled": false,
           "document": "风险的描述",
-          "example": "rislDesc",
+          "example": "高风险",
           "member": "string",
           "name": "RiskLevelDescription",
           "required": true,
@@ -15806,7 +16020,7 @@
         {
           "disabled": false,
           "document": "模板的描述",
-          "example": "tmplate-desc",
+          "example": "template-desc",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,

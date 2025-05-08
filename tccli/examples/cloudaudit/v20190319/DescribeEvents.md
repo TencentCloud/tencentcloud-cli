@@ -22,6 +22,7 @@ Output:
                 "EventName": "CreateAuditTrack",
                 "EventTime": "1680513809",
                 "SecretId": "xxxxxxx",
+                "EventId": "008ef803-4549-41fe-a7e6-433122273683",
                 "ErrorCode": 0,
                 "RequestID": "008ef803-4549-41fe-a7e6-433122273683",
                 "SourceIPAddress": "111.111.111.111",

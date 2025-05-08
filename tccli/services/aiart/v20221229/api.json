@@ -701,79 +701,89 @@
       "members": [
         {
           "disabled": false,
-          "document": "水印 Url",
-          "example": "无",
+          "document": "水印 Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxx.com/logo.jpg",
           "member": "string",
           "name": "LogoUrl",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准",
-          "example": "无",
+          "document": "水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "LogoImage",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配",
-          "example": "无",
+          "document": "水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"X\": 10, \"Y\": 10, \"Width\": 10, \"Height\": 10}",
           "member": "LogoRect",
           "name": "LogoRect",
+          "output_required": false,
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "LogoRect": {
       "document": "输入框",
       "members": [
         {
           "disabled": false,
-          "document": "左上角X坐标",
-          "example": "无",
+          "document": "左上角X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "X",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "左上角Y坐标",
-          "example": "无",
+          "document": "左上角Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "Y",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "方框宽度",
-          "example": "无",
+          "document": "方框宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "Width",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "方框高度",
-          "example": "无",
+          "document": "方框高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "int64",
           "name": "Height",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "QueryDrawPortraitJobRequest": {
       "document": "QueryDrawPortraitJob请求参数结构体",

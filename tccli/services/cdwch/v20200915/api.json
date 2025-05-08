@@ -864,7 +864,7 @@
         {
           "disabled": false,
           "document": "数据节点\nSpecName从DescribeSpec接口中返回的DataSpec.Name获取",
-          "example": "{\"SpecName\":\"SCH1\", \"Count\":1, \"DiskSize\":200}",
+          "example": "{\"SpecName\":\"S_16_64_H\", \"Count\":1, \"DiskSize\":200}",
           "member": "NodeSpec",
           "name": "DataSpec",
           "required": true,
@@ -918,7 +918,7 @@
         {
           "disabled": false,
           "document": "ZK节点\nSpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取",
-          "example": "{\"SpecName\":\"SCH1\", \"Count\":1, \"DiskSize\":200}",
+          "example": "{\"SpecName\":\"S_4_16_P\", \"Count\":1, \"DiskSize\":200}",
           "member": "NodeSpec",
           "name": "CommonSpec",
           "required": false,
@@ -936,7 +936,7 @@
         {
           "disabled": false,
           "document": "副可用去信息",
-          "example": "[{\"ap-guangzhou-3\",\"user-1\"}]",
+          "example": "[   {     \"SecondaryZone\": \"ap-guangzhou-4\",     \"SecondarySubnet\": \"subnet-atpdmj7g\",     \"SecondaryUserSubnetIPNum\": 223   },   {     \"SecondaryZone\": \"ap-guangzhou-6\",     \"SecondarySubnet\": \"subnet-e4nl52om\",     \"SecondaryUserSubnetIPNum\": 4   } ]",
           "member": "SecondaryZoneInfo",
           "name": "SecondaryZoneInfo",
           "required": false,

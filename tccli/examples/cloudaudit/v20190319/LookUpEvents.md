@@ -26,7 +26,9 @@ Output:
                 "ErrorCode": 0,
                 "RequestID": "15936031437374_1553056587.6815_v2",
                 "AccountID": 1150691759,
+                "Location": "未知",
                 "SourceIPAddress": "59.37.125.124",
+                "ResourceRegion": "ap-guangzhou",
                 "EventSource": "cloudaudit.api.tencentyun.com/v2/index.php",
                 "EventRegion": "ap-guangzhou",
                 "Resources": {
