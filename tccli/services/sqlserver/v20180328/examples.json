@@ -536,6 +536,14 @@
         "title": " 查询OnCvm双节点的新购询价计费参数"
       }
     ],
+    "DescribeInstanceByIp": [
+      {
+        "document": "查询CVM环境下的实例归属",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceByIp\n<公共请求参数>\n\n{\n    \"Ip\": \"192.168.0.23\",\n    \"Env\": \"cvm\",\n    \"Port\": 1433\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"251301403\",\n        \"Equipment\": \"2\",\n        \"RequestId\": \"8fa41534-eb60-11ee-8790-525400542aa8\",\n        \"ResourceId\": \"mssql-72td34zp\"\n    }\n}",
+        "title": "查询CVM环境下的实例归属"
+      }
+    ],
     "DescribeInstanceByOrders": [
       {
         "document": "根据订单号查询实例ID集合",

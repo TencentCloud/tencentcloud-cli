@@ -448,6 +448,13 @@
       "output": "DescribeInquiryPriceParameterResponse",
       "status": "online"
     },
+    "DescribeInstanceByIp": {
+      "document": "本接口（DescribeInstanceByIp）用于安全团队通过宿主机IP定位实例归属。",
+      "input": "DescribeInstanceByIpRequest",
+      "name": "通过宿主机信息查询实例归属信息",
+      "output": "DescribeInstanceByIpResponse",
+      "status": "online"
+    },
     "DescribeInstanceByOrders": {
       "document": "本接口（DescribeInstanceByOrders）用于根据订单号查询资源ID",
       "input": "DescribeInstanceByOrdersRequest",
@@ -9170,6 +9177,81 @@
           "member": "string",
           "name": "Parameter",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceByIpRequest": {
+      "document": "DescribeInstanceByIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "宿主机IP地址",
+          "example": "192.168.0.23",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境，m-物理机环境 cvm-cvm虚拟机环境",
+          "example": "cvm",
+          "member": "string",
+          "name": "Env",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在端口",
+          "example": "1433",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceByIpResponse": {
+      "document": "DescribeInstanceByIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例资源ID",
+          "example": "mssql-72td34zp",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属的APPID",
+          "example": "251301403",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "架构 1-同可用区双节点 2-单节点(基础版，SSIS商业智能服务，只读副本) 3-跨可用区双节点 10-多节点",
+          "example": "2",
+          "member": "string",
+          "name": "Equipment",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

@@ -20,14 +20,15 @@ Output:
             {
                 "ZoneId": "zone-24wjy25v1cwi",
                 "ProxyId": "sid-2qwk27xf7j9g",
-                "ProxyName": "test",
+                "ProxyName": "myproxy",
                 "Area": "mainland",
-                "Cname": "test.24wjy25v1cwi.eo.dnse5.com",
+                "Cname": "myproxy.24wjy25v1cwi.eo.dnse5.com",
                 "Ips": [],
                 "Status": "online",
                 "Ipv6": "off",
                 "StaticIp": "off",
                 "AccelerateMainland": "off",
+                "L4ProxyRuleCount": 1,
                 "UpdateTime": "2023-09-22T15:31:04+00:00"
             }
         ],

@@ -6251,6 +6251,67 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageSecret",
+          "name": "ImageSecret",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageSecret": {
+      "document": "自定义镜像仓库凭据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于加密密码的KMS公钥ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9a3b93e2-0f68-11ef-9b3e-5254000fd567",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_user",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码,base64编码； 当keyId不为空时，密码是加密后的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dGVzdF9wYXNzd29yZAo=",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户凭据ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100033215875_1000321732173_ap-guangzhou_NOTEBOOK_S7RkFublldbD",
+          "member": "string",
+          "name": "SecretId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
