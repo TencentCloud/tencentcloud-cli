@@ -70,6 +70,13 @@
       "output": "DescribeAgentDealsByCacheResponse",
       "status": "online"
     },
+    "DescribeAgentDealsPriceDetailByDealName": {
+      "document": "供代理商使用名下有效普通代客的预付费子订单号查询订单费用详情",
+      "input": "DescribeAgentDealsPriceDetailByDealNameRequest",
+      "name": "查询伙伴订单的费用详情",
+      "output": "DescribeAgentDealsPriceDetailByDealNameResponse",
+      "status": "online"
+    },
     "DescribeAgentPayDealsV2": {
       "document": "可以查询代理商代付的预付费订单",
       "input": "DescribeAgentPayDealsV2Request",
@@ -1321,6 +1328,45 @@
       ],
       "usage": "out"
     },
+    "DealPriceDetail": {
+      "document": "订单价格详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子订单号",
+          "example": "20250411030002711111111",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单归属人uin（代客uin）",
+          "example": "1000001",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品价格详情列表",
+          "example": "无",
+          "member": "SubProductPriceDetail",
+          "name": "SubProductPriceDetail",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DescribeAgentAuditedClientsRequest": {
       "document": "DescribeAgentAuditedClients请求参数结构体",
       "members": [
@@ -1871,6 +1917,61 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDealsPriceDetailByDealNameRequest": {
+      "document": "DescribeAgentDealsPriceDetailByDealName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下单年份（订单创建时间归属年份）",
+          "example": "2025",
+          "member": "uint64",
+          "name": "DealCreatYear",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子订单号，每个请求最多查询100条",
+          "example": "[\"20250411030002711111111\", \"20250411030002722222222\"]",
+          "member": "string",
+          "name": "DealNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "订单归属代客uin",
+          "example": "100001",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentDealsPriceDetailByDealNameResponse": {
+      "document": "DescribeAgentDealsPriceDetailByDealName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子订单的费用详情",
+          "example": "无",
+          "member": "DealPriceDetail",
+          "name": "DealList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2887,6 +2988,56 @@
         }
       ],
       "type": "object"
+    },
+    "SubProductPriceDetail": {
+      "document": "订单子产品价格详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子产品名称",
+          "example": "云服务器CVM-标准型SA5",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣值，=100时表示无折扣，=85时表示8.5折",
+          "example": "85",
+          "member": "float",
+          "name": "DiscountValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价，折扣前价格，单位：分",
+          "example": "900000",
+          "member": "int64",
+          "name": "TotalCost",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折后价，单位：分",
+          "example": "765000",
+          "member": "int64",
+          "name": "RealTotalCost",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UnbindClientElem": {
       "document": "解绑客户信息",

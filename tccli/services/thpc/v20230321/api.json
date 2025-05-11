@@ -426,7 +426,7 @@
         },
         {
           "disabled": false,
-          "document": "队列名称。<br><li>最多支持32个字符。",
+          "document": "队列名称。<br><li>最多支持32个字符。</li>",
           "example": "compute",
           "member": "string",
           "name": "QueueName",

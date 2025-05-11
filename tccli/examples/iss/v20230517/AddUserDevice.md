@@ -111,9 +111,6 @@ tccli iss AddUserDevice --cli-unfold-argument  \
     --Type 1 \
     --OrganizationId 189 \
     --ClusterId 4169d92e-****-****-****-************ \
-    --TransportProtocol 0 \
-    --Password 37********10 \
-    --ProtocolType 0 \
     --AppName testapp \
     --StreamName teststream
 ```

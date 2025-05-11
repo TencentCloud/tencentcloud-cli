@@ -86,6 +86,20 @@
         "title": "获取某代理商缓存订单"
       }
     ],
+    "DescribeAgentDealsPriceDetailByDealName": [
+      {
+        "document": "订单号不存在或订单非当前伙伴的普通代客预付费订单",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentDealsPriceDetailByDealName\n<公共请求参数>\n\n{\n    \"DealCreatYear\": 2022,\n    \"DealNames\": [\n        \"20221129388001245619661\",\n        \"20221129388001245611101\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealList\": [],\n        \"RequestId\": \"b70c7e34-9ea6-44a9-ba7c-40dc071b5116\"\n    }\n}",
+        "title": "输入的订单未查询到结果"
+      },
+      {
+        "document": "成功查询订单费用详情",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentDealsPriceDetailByDealName\n<公共请求参数>\n\n{\n    \"DealCreatYear\": 2025,\n    \"DealNames\": [\n        \"20250411030002731555371\",\n        \"20250411941002731407001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DealList\": [\n            {\n                \"DealName\": \"20250411030002731555371\",\n                \"OwnerUin\": \"100000032030\",\n                \"SubProductPriceDetail\": [\n                    {\n                        \"DiscountValue\": 100,\n                        \"Name\": \"流量包\",\n                        \"RealTotalCost\": 9900,\n                        \"TotalCost\": 9900\n                    }\n                ]\n            },\n            {\n                \"DealName\": \"20250411941002731407001\",\n                \"OwnerUin\": \"700001111941\",\n                \"SubProductPriceDetail\": [\n                    {\n                        \"DiscountValue\": 100,\n                        \"Name\": \"带宽-按带宽计费\",\n                        \"RealTotalCost\": 0,\n                        \"TotalCost\": 0\n                    },\n                    {\n                        \"DiscountValue\": 87,\n                        \"Name\": \"内存-标准型S5\",\n                        \"RealTotalCost\": 3900,\n                        \"TotalCost\": 4500\n                    },\n                    {\n                        \"DiscountValue\": 87,\n                        \"Name\": \"CPU-标准型S5\",\n                        \"RealTotalCost\": 3900,\n                        \"TotalCost\": 4500\n                    },\n                    {\n                        \"DiscountValue\": 100,\n                        \"Name\": \"高效云系统盘\",\n                        \"RealTotalCost\": 3500,\n                        \"TotalCost\": 3500\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"73a3fa9b-6149-4165-aaf9-c6cc7f57e87c\"\n    }\n}",
+        "title": "成功查询订单"
+      }
+    ],
     "DescribeAgentPayDealsV2": [
       {
         "document": "",

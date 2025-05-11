@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli waf ModifyInstanceAttackLogPost --cli-unfold-argument ```
+tccli waf ModifyInstanceAttackLogPost --cli-unfold-argument  \
+    --InstanceId waf_000000001 \
+    --AttackLogPost 1
+```
 
 Output: 
 ```

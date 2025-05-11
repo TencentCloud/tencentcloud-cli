@@ -4666,7 +4666,7 @@
         {
           "disabled": false,
           "document": "待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。",
-          "example": "无",
+          "example": "{\"FormatVersion\": \"1.0\"***}",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -8058,7 +8058,7 @@
         {
           "disabled": false,
           "document": "版本文件的内容。以 JSON 格式返回。",
-          "example": "无",
+          "example": "{\"FormatVersion\": \"1.0\"***}",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -9344,7 +9344,7 @@
         {
           "disabled": false,
           "document": "四层代理实例所属站点的 ID。",
-          "example": "无",
+          "example": "zone-24wjy25v1cwi",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -9767,7 +9767,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>origin-group-id<br>   按照【<strong>源站组ID</strong>】进行过滤。源站组ID形如：origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a<br>   模糊查询：不支持</li><li>origin-group-name<br>   按照【<strong>源站组名称</strong>】进行过滤<br>   模糊查询：支持。使用模糊查询时，仅支持填写一个源站组名称</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>origin-group-id：按照源站组 ID 进行过滤，不支持模糊查询。源站组 ID 形如：origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a；</li><li>origin-group-name： 按照源站组名称进行过滤，使用模糊查询时，仅支持填写一个源站组名称。</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -10623,7 +10623,7 @@
         {
           "disabled": false,
           "document": "数据归属地区。该参数已废弃。请在 Filters.country 中按客户端地域过滤数据。",
-          "example": "无",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -12577,7 +12577,7 @@
         {
           "disabled": false,
           "document": "导出的配置的具体内容。以 JSON 格式返回，按照 UTF-8 方式进行编码。配置内容可参考下方示例。",
-          "example": "无",
+          "example": "{\"FormatVersion\": \"1.0\"***}",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -13959,7 +13959,7 @@
         {
           "disabled": false,
           "document": "待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置内容可通过站点配置导出接口（ExportZoneConfig）获取。您可以单独导入「站点加速-全局加速配置」或「站点加速-规则引擎」，传入对应的字段即可，详情可以参考下方示例。",
-          "example": "无",
+          "example": "{\"FormatVersion\": \"1.0\"***}",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -22505,7 +22505,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点或者加速域名。",
+          "document": "站点域名或者站点下的加速域名。",
           "example": "qq.com",
           "member": "string",
           "name": "Domain",
@@ -22531,7 +22531,7 @@
         {
           "disabled": false,
           "document": "当验证结果为不通过时，该字段会返回原因，协助您排查问题。",
-          "example": "无",
+          "example": "DnsVerification look up \"edgeonereclaim.hewhehe.qq.cool\" TXT record , content expected: \"reclaim-szexbv5iejcjxne8agf4lr2resmj7c3a\", actual: empty.",
           "member": "string",
           "name": "Result",
           "output_required": true,

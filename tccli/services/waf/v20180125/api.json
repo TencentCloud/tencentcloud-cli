@@ -19761,7 +19761,26 @@
     },
     "ModifyInstanceAttackLogPostRequest": {
       "document": "ModifyInstanceAttackLogPost请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_000001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "攻击日志投递开关",
+          "example": "1",
+          "member": "int64",
+          "name": "AttackLogPost",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ModifyInstanceAttackLogPostResponse": {

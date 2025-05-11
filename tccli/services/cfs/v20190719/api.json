@@ -1037,6 +1037,15 @@
           "name": "EnableAutoScaleUp",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "v1.5：创建普通版的通用文件系统；\nv3.1：创建增强版的通用文件系统\n说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。",
+          "example": "v1.5",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

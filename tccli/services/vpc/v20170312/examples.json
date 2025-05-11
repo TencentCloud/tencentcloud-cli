@@ -2649,7 +2649,7 @@
     "InquiryPriceModifyAddressesBandwidth": [
       {
         "document": "小时流量EIP修改带宽询价。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": \"2\",\n    \"AddressIds\": [\n        \"eip-hxlqja90\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": 2,\n    \"AddressIds\": [\n        \"eip-hxlqja90\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"UnitPrice\": 0.8,\n                \"DiscountPrice\": 0.8,\n                \"ChargeUnit\": \"HOUR\"\n            }\n        },\n        \"RequestId\": \"7daad6af-50de-4df5-8238-0d76c7be62e1\"\n    }\n}",
         "title": "小时流量EIP修改带宽询价"
       },
