@@ -278,6 +278,8 @@ tccli/services/cme/__init__.py
 tccli/services/cme/cme_client.py
 tccli/services/cme/v20191029/api.json
 tccli/services/cme/v20191029/examples.json
+tccli/services/cmg/__init__.py
+tccli/services/cmg/cmg_client.py
 tccli/services/cmq/__init__.py
 tccli/services/cmq/cmq_client.py
 tccli/services/cmq/v20190304/api.json

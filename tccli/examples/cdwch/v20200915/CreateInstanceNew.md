@@ -10,16 +10,16 @@ tccli cdwch CreateInstanceNew --cli-unfold-argument  \
     --MountDiskType 0 \
     --HAZk True \
     --Zone ap-beijing-2 \
-    --DataSpec.SpecName SCH1 \
+    --DataSpec.SpecName S_16_64_H \
     --DataSpec.Count 2 \
     --DataSpec.DiskSize 200 \
-    --CommonSpec.SpecName SCH1 \
+    --CommonSpec.SpecName S_4_16_H \
     --CommonSpec.Count 3 \
     --CommonSpec.DiskSize 100 \
     --HaFlag False \
     --UserVPCId vpc-8visjoh9 \
     --UserSubnetId subnet-03ij1dki \
-    --ProductVersion 21.8.12.29 \
+    --ProductVersion 23.8.9.1 \
     --ChargeProperties.ChargeType POSTPAID_BY_HOUR
 ```
 

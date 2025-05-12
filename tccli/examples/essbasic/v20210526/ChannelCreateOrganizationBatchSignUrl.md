@@ -25,3 +25,30 @@ Output:
 }
 ```
 
+**Example 2: 创建合同组签署链接**
+
+
+
+Input: 
+
+```
+tccli essbasic ChannelCreateOrganizationBatchSignUrl --cli-unfold-argument  \
+    --Agent.AppId 60exxxxxxxxxxxxxxxxxxxxxc16e9 \
+    --Agent.ProxyOrganizationOpenId org_open_id \
+    --Name  \
+    --Mobile  \
+    --FlowGroupId yDxxxxxxxxxxxxxxxxxxxxxxxx \
+    --OpenId user_open_id
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SignUrl": "https://embed.test.qian.tencent.cn/console/?channel=PROXYCHANNEL&expiredTime=1695805069&code=xxxxx&menuStatus=ENABLE&token=xxxx",
+        "ExpiredTime": 0,
+        "RequestId": "s1695804769054178191"
+    }
+}
+```
+

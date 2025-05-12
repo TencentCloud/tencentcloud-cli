@@ -1152,7 +1152,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "废弃字段。",
           "example": "无",
           "member": "BinlogInfo",

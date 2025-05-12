@@ -1735,6 +1735,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom",
+          "member": "string",
+          "name": "OperationMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时扩缩容配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimerScale",
+          "name": "TimerScale",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2194,6 +2216,78 @@
         }
       ],
       "usage": "out"
+    },
+    "TimerScale": {
+      "document": "定时扩缩容配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "循环类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none",
+          "member": "string",
+          "name": "CycleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "循环起始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-08",
+          "member": "string",
+          "name": "StartDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "循环结束\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-08",
+          "member": "string",
+          "name": "EndDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23:59:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "副本个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplicaNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UpdateCloudRunServerRequest": {
       "document": "UpdateCloudRunServer请求参数结构体",

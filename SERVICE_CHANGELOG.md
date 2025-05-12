@@ -1,26 +1,10 @@
-# Release 3.0.1197.1
+# Release 3.0.1198.1
 
-## 云拨测(cat) 版本：2018-04-09
+## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
 
-### 第 24 次发布
+### 第 12 次发布
 
-发布时间：2025-05-12 01:09:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeProbeMetricTagValues](http://document.tencentcloudapi.woa.com/document/product/280/86736)
-
-
-
-## 文件存储(cfs) 版本：2019-07-19
-
-### 第 28 次发布
-
-发布时间：2025-05-12 01:11:16
+发布时间：2025-05-13 01:08:27
 
 本次发布包含了以下内容：
 
@@ -28,45 +12,161 @@
 
 修改接口：
 
-* [CreateCfsFileSystem](http://document.tencentcloudapi.woa.com/document/product/582/38174)
+* [DeployResource](http://document.tencentcloudapi.woa.com/document/product/1780/85286)
 
-	* 新增入参：CfsVersion
+	* 新增入参：ShareClbId, WebAccess, ClientAccess, IntranetAccess, ExternalAccess
+
+* [DescribeDeviceAccounts](http://document.tencentcloudapi.woa.com/document/product/1780/85261)
+
+	* 新增出参：DeviceAccountSet
+
+* [ModifyResource](http://document.tencentcloudapi.woa.com/document/product/1780/85315)
+
+
+新增数据结构：
+
+* [DeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1780/85236#DeviceAccount)
+
+修改数据结构：
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource)
+
+	* 新增成员：ShareClb, OpenClbId, LbVipIsp, TUICmdPort, TUIDirectPort, WebAccess, ClientAccess, ExternalAccess
 
 
 
 
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 136 次发布
+
+发布时间：2025-05-13 01:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCpuExpandStrategy
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 72 次发布
+
+发布时间：2025-05-13 01:11:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeEnterpriseSGRuleProgress](http://document.tencentcloudapi.woa.com/document/product/1132/77909)
+
+	* 新增出参：UserStopped
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 135 次发布
+
+发布时间：2025-05-13 01:17:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePrepareFlowGroup](http://document.tencentcloudapi.woa.com/document/product/1668/86756)
+
+修改接口：
+
+* [CreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81399)
+
+	* 新增入参：FlowGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>FlowIds
+
+
+修改数据结构：
+
+* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+
+	* 新增成员：SignCouponKey
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 186 次发布
+
+发布时间：2025-05-13 01:17:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreatePrepareFlowGroup](http://document.tencentcloudapi.woa.com/document/product/1595/86757)
+
+修改接口：
+
+* [ChannelCreateOrganizationBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82075)
+
+	* 新增入参：FlowGroupId
+
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：FileIds, Approvers
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 全球应用加速(gaap) 版本：2018-05-29
+
+### 第 33 次发布
+
+发布时间：2025-05-13 01:18:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateFirstLinkSession
+* DeleteFirstLinkSession
+* DescribeFirstLinkSession
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Capacity
+* DestAddressInfo
+* DeviceInfo
+* SrcAddressInfo
+
+
+
+## 云数据库 KeeWiDB(keewidb) 版本：2022-03-08
 
 ### 第 6 次发布
 
-发布时间：2025-05-12 01:18:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ImageQuestion](http://document.tencentcloudapi.woa.com/document/product/1744/86737)
-
-新增数据结构：
-
-* [ImageMessage](http://document.tencentcloudapi.woa.com/document/product/1744/85813#ImageMessage)
-
-修改数据结构：
-
-* [Delta](http://document.tencentcloudapi.woa.com/document/product/1744/85813#Delta)
-
-	* 新增成员：ReasoningContent
-
-
-
-
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
-
-### 第 38 次发布
-
-发布时间：2025-05-12 01:22:08
+发布时间：2025-05-13 01:22:17
 
 本次发布包含了以下内容：
 
@@ -74,84 +174,16 @@
 
 修改接口：
 
-* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/240/38565)
+* [DescribeInstanceBackups](http://document.tencentcloudapi.woa.com/document/product/1712/80444)
 
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+## 云数据库Redis(redis) 版本：2018-04-12
 
+### 第 54 次发布
 
-
-## 渠道合作伙伴(partners) 版本：2018-03-21
-
-### 第 18 次发布
-
-发布时间：2025-05-12 01:23:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAgentDealsPriceDetailByDealName](http://document.tencentcloudapi.woa.com/document/product/563/86738)
-
-新增数据结构：
-
-* [DealPriceDetail](http://document.tencentcloudapi.woa.com/document/product/563/16047#DealPriceDetail)
-* [SubProductPriceDetail](http://document.tencentcloudapi.woa.com/document/product/563/16047#SubProductPriceDetail)
-
-
-
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
-
-### 第 52 次发布
-
-发布时间：2025-05-12 01:25:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeInstanceByIp](http://document.tencentcloudapi.woa.com/document/product/238/86739)
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 77 次发布
-
-发布时间：2025-05-12 01:29:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [ImageSecret](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageSecret)
-
-修改数据结构：
-
-* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ImageInfo)
-
-	* 新增成员：ImageSecret
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 212 次发布
-
-发布时间：2025-05-12 01:31:29
+发布时间：2025-05-13 01:26:13
 
 本次发布包含了以下内容：
 
@@ -159,18 +191,56 @@
 
 修改接口：
 
-* [ReturnNormalAddresses](http://document.tencentcloudapi.woa.com/document/product/215/76777)
+* [DescribeBackupUrl](http://document.tencentcloudapi.woa.com/document/product/239/34443)
 
-	* <font color="#dd0000">**修改入参**：</font>AddressIps
+* [DescribeSlowLog](http://document.tencentcloudapi.woa.com/document/product/239/37984)
+
+* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/239/39374)
+
+* [EnableReplicaReadonly](http://document.tencentcloudapi.woa.com/document/product/239/34437)
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/239/31785)
+
+* [StartupInstance](http://document.tencentcloudapi.woa.com/document/product/239/39415)
+
+
+修改数据结构：
+
+* [InstanceSet](http://document.tencentcloudapi.woa.com/document/product/239/20022#InstanceSet)
+
+* [ProductConf](http://document.tencentcloudapi.woa.com/document/product/239/20022#ProductConf)
+
+
+
+
+## 云托管 CloudBase Run(tcbr) 版本：2022-02-17
+
+### 第 7 次发布
+
+发布时间：2025-05-13 01:28:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [TimerScale](http://document.tencentcloudapi.woa.com/document/product/1711/80400#TimerScale)
+
+修改数据结构：
+
+* [ServerBaseConfig](http://document.tencentcloudapi.woa.com/document/product/1711/80400#ServerBaseConfig)
+
+	* 新增成员：OperationMode, TimerScale
 
 
 
 
 ## Web 应用防火墙(waf) 版本：2018-01-25
 
-### 第 86 次发布
+### 第 87 次发布
 
-发布时间：2025-05-12 01:33:04
+发布时间：2025-05-13 01:34:02
 
 本次发布包含了以下内容：
 
@@ -178,9 +248,52 @@
 
 修改接口：
 
-* [ModifyInstanceAttackLogPost](http://document.tencentcloudapi.woa.com/document/product/627/86720)
+* [DescribeBotSceneList](http://document.tencentcloudapi.woa.com/document/product/627/86184)
 
-	* 新增入参：InstanceId, AttackLogPost
+	* 新增入参：SceneId
+
+* [DescribeBotSceneUCBRule](http://document.tencentcloudapi.woa.com/document/product/627/86182)
+
+	* 新增入参：RuleId
+
+* [DescribeObjects](http://document.tencentcloudapi.woa.com/document/product/627/83503)
+
+	* 新增入参：Order, By
+
+* [ModifyBotSceneUCBRule](http://document.tencentcloudapi.woa.com/document/product/627/86180)
+
+	* 新增出参：RuleIdList
+
+* [UpsertCCRule](http://document.tencentcloudapi.woa.com/document/product/627/83532)
+
+	* 新增入参：LimitMethod
+
+
+新增数据结构：
+
+* [ParamCompareList](http://document.tencentcloudapi.woa.com/document/product/627/53609#ParamCompareList)
+
+修改数据结构：
+
+* [CCRuleItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#CCRuleItems)
+
+	* 新增成员：LimitMethod
+
+* [ClbObject](http://document.tencentcloudapi.woa.com/document/product/627/53609#ClbObject)
+
+	* 新增成员：ModifyTime, AddTime
+
+* [InOutputBotUCBRule](http://document.tencentcloudapi.woa.com/document/product/627/53609#InOutputBotUCBRule)
+
+	* 新增成员：DelayTime
+
+* [InOutputUCBRuleEntry](http://document.tencentcloudapi.woa.com/document/product/627/53609#InOutputUCBRuleEntry)
+
+	* 新增成员：ParamCompareList
+
+* [LoadBalancer](http://document.tencentcloudapi.woa.com/document/product/627/53609#LoadBalancer)
+
+	* <font color="#dd0000">**修改成员**：</font>Vip
 
 
 

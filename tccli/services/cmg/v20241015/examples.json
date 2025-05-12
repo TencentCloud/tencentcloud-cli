@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "CreateTask": [
+      {
+        "document": "创建迁移任务",
+        "input": "POST / HTTP/1.1\nHost: cmg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"ProductCode\": \"cfs-master\",\n    \"SecretID\": \"AKID70y5CFGD1dxxxxxxxx\",\n    \"SecretKey\": \"iGahfVEl5FFxxxxxxx\",\n    \"CFSData\": {\n        \"SourceFs\": {\n            \"LocalFolder\": \"/data/cfs-538z50a9/src\",\n            \"SubFolder\": \"/\",\n            \"FileSystemType\": \"NFS\",\n            \"FileSystemID\": \"0a4274847f\",\n            \"IP\": \"0a4274847f-nws8.cn-hangzhou.nas.aliyuncs.com\",\n            \"MountID\": \"\"\n        },\n        \"DestFs\": {\n            \"LocalFolder\": \"/data/cfs-538z50a9/dest\",\n            \"SubFolder\": \"/\",\n            \"FileSystemType\": \"NFS\",\n            \"FileSystemID\": \"cfs-538z50a9\",\n            \"IP\": \"10.0.0.4\",\n            \"MountID\": \"mfvir3sm\"\n        }\n    },\n    \"TaskMode\": 1,\n    \"ClusterID\": \"cluster-7OQ1b0JS\",\n    \"Cmd\": \"CfsMigrate\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5f76ca39-1c0d-4a30-91b7-ab8d8c6d557e\",\n        \"TaskID\": \"task-ZQqiMPrE\"\n    }\n}",
+        "title": "创建迁移任务"
+      }
+    ],
+    "DescribeTaskResult": [
+      {
+        "document": "查询任务执行结果",
+        "input": "POST / HTTP/1.1\nHost: cmg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResult\n<公共请求参数>\n\n{\n    \"TaskID\": \"task-ZQqiMPrE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"EndTime\": \"\",\n            \"Progress\": \"\",\n            \"StartTime\": \"\",\n            \"StepList\": [\n                {\n                    \"Code\": 200,\n                    \"Msg\": \"\",\n                    \"Process\": 0,\n                    \"StepId\": \"prepare_param\",\n                    \"StepName\": \"\",\n                    \"Weight\": 1\n                },\n                {\n                    \"Code\": 200,\n                    \"Msg\": \"\",\n                    \"Process\": 0,\n                    \"StepId\": \"run_docker\",\n                    \"StepName\": \"\",\n                    \"Weight\": 2\n                }\n            ],\n            \"TaskID\": \"task-ZQqiMPrE\",\n            \"TaskStatus\": \"task_success_cmg\"\n        },\n        \"RequestId\": \"3cff65c3-4d99-417d-a90f-90a26cb0a97e\"\n    }\n}",
+        "title": "查询任务执行结果"
+      }
+    ],
+    "DescribeTaskResultList": [
+      {
+        "document": "查询任务执行结果列表",
+        "input": "POST / HTTP/1.1\nHost: cmg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResultList\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5tJbJqBV42pqoQafBDCd\",\n        \"TotalCount\": 10,\n        \"Items\": [\n            {\n                \"TaskID\": \"task-oQdm6gJ9\",\n                \"TaskStatus\": \"task_success_cmg\",\n                \"Progress\": \"\",\n                \"StepList\": [\n                    {\n                        \"StepId\": \"prepare_param\",\n                        \"StepName\": \"\",\n                        \"Code\": 200,\n                        \"Msg\": \"\",\n                        \"Process\": 0,\n                        \"Weight\": 1\n                    },\n                    {\n                        \"StepId\": \"run_docker\",\n                        \"StepName\": \"\",\n                        \"Code\": 200,\n                        \"Msg\": \"\",\n                        \"Process\": 0,\n                        \"Weight\": 2\n                    }\n                ],\n                \"StartTime\": \"\",\n                \"EndTime\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询任务执行结果列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

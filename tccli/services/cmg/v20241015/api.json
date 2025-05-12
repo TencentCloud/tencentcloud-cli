@@ -1,0 +1,489 @@
+{
+  "actions": {
+    "CreateTask": {
+      "document": "下发迁移任务到迁移集群",
+      "input": "CreateTaskRequest",
+      "name": "创建迁移任务",
+      "output": "CreateTaskResponse",
+      "status": "online"
+    },
+    "DescribeTaskResult": {
+      "document": "查询迁移任务执行详情",
+      "input": "DescribeTaskResultRequest",
+      "name": "查询迁移任务结果",
+      "output": "DescribeTaskResultResponse",
+      "status": "online"
+    },
+    "DescribeTaskResultList": {
+      "document": "查询任务执行结果列表",
+      "input": "DescribeTaskResultListRequest",
+      "name": "查询任务执行结果列表",
+      "output": "DescribeTaskResultListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-10-15",
+    "api_brief": "介绍如何使用API对迁移服务平台进行操作，包括注册迁移任务、更改迁移任务所属项目等。",
+    "serviceNameCN": "迁移服务平台",
+    "serviceShortName": "cmg"
+  },
+  "objects": {
+    "CfsConfig": {
+      "document": "Cfs 迁移配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源端文件存储信息",
+          "example": "{\"FsID\": \"xxx\"}",
+          "member": "FileSystemInfo",
+          "name": "SourceFs",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对端(腾讯云)文件存储信息",
+          "example": "{\"FsID\": \"xxx\"}无",
+          "member": "FileSystemInfo",
+          "name": "DestFs",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 默认模式\n1 文件清单迁移模式",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件清单地址， 一般上传到 cos",
+          "example": "http://bucketName.ap-guanghzou.com",
+          "member": "string",
+          "name": "FileListUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "覆盖模式\n0: 不覆盖\n1： 全覆盖        \n2: 条件覆盖",
+          "example": "0",
+          "member": "int64",
+          "name": "OverWriteMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateTaskRequest": {
+      "document": "CreateTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件类型",
+          "example": "CfsMaster",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件存储迁移信息",
+          "example": "无",
+          "member": "CfsConfig",
+          "name": "CFSData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "运行模式， 迁移集群这里固定为1",
+          "example": "1",
+          "member": "int64",
+          "name": "TaskMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "迁移集群ID",
+          "example": "cmg-xxx",
+          "member": "string",
+          "name": "ClusterID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "迁移指令(对应不同迁移模式)",
+          "example": "DoMigrate",
+          "member": "string",
+          "name": "Cmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号SecretID",
+          "example": "AKID70y5CFGD1d7SdxGYotnXXXXX",
+          "member": "string",
+          "name": "SecretID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号SecretKey",
+          "example": "iGahfVEl5FF9vhPxIcruXXXXXX",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskResponse": {
+      "document": "CreateTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "task-xx",
+          "member": "string",
+          "name": "TaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResultListRequest": {
+      "document": "DescribeTaskResultList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单次请求返回的数量，默认值为 20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResultListResponse": {
+      "document": "DescribeTaskResultList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务执行结果列表",
+          "example": "无",
+          "member": "DescribeTaskResultRespData",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "50",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResultRequest": {
+      "document": "DescribeTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "cmg-xxx",
+          "member": "string",
+          "name": "TaskID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResultRespData": {
+      "document": "任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "task-xx",
+          "member": "string",
+          "name": "TaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行状态\ntask_pending_cmg:待分发任务(排队中);task_distributing_cmg:任务分发中;task_running_cmg:任务运行中;task_success_cmg:任务成功;task_failed_cmg:任务失败;\n",
+          "example": "task_pending_cmg",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度详情 json str",
+          "example": "{progress: 1}",
+          "member": "string",
+          "name": "Progress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤详情 json str",
+          "example": "[{\"Stepld\": \"DoMigrate\"}]",
+          "member": "StepInfo",
+          "name": "StepList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2006-01-02 15:04:05.000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2006-01-02 15:04:05.000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeTaskResultResponse": {
+      "document": "DescribeTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务执行结果",
+          "example": "无",
+          "member": "DescribeTaskResultRespData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FileSystemInfo": {
+      "document": "文件存储信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器挂载路径",
+          "example": "/data/dir",
+          "member": "string",
+          "name": "LocalFolder",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件存储子目录",
+          "example": "/sub_dir",
+          "member": "string",
+          "name": "SubFolder",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件存储类型",
+          "example": "NAS",
+          "member": "string",
+          "name": "FileSystemType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件存储id",
+          "example": "fs-xxx",
+          "member": "string",
+          "name": "FileSystemID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载点IP",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载点ID",
+          "example": "mount-xxx",
+          "member": "string",
+          "name": "MountID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StepInfo": {
+      "document": "任务执行步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤标识",
+          "example": "DoMigrate",
+          "member": "string",
+          "name": "StepId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤名称",
+          "example": "开始迁移",
+          "member": "string",
+          "name": "StepName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤执行结果\n200 成功   500 失败  206 进度更新中",
+          "example": "200",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因(如有)",
+          "example": "can not mount",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤进度",
+          "example": "1",
+          "member": "int64",
+          "name": "Process",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤权重",
+          "example": "1",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

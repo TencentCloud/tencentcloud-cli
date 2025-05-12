@@ -309,8 +309,8 @@
     "DescribeDeviceAccounts": [
       {
         "document": "查询主机账号列表",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceAccounts\n<公共请求参数>\n\n{\n    \"DeviceId\": 1,\n    \"Account\": \"testvalue\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceAccounts\n<公共请求参数>\n\n{\n    \"DeviceId\": 1,\n    \"Account\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\",\n        \"DeviceAccountSet\": [\n            {\n                \"BoundPrivateKey\": true,\n                \"Account\": \"root\",\n                \"Id\": 1,\n                \"BoundPassword\": true,\n                \"DeviceId\": 1\n            }\n        ]\n    }\n}",
         "title": "查询主机账号列表"
       }
     ],
