@@ -3947,7 +3947,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n<li>template-id</li>按照【防火墙模板所属的ID】进行过滤。\n类型：String\n必选：否\n<li>template-name</li>按照【防火墙模板所属的名称】进行过滤。\n类型：String\n必选：否\n<li>template-type</li>按照【防火墙模板的类型】进行过滤。\n类型：String\n必选：否\n取值: \"PRIVATE\"(个人模版)\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。",
+          "document": "过滤器列表。\n<li>template-id</li>按照【防火墙模板所属的ID】进行过滤。\n类型：String\n必选：否\n<li>template-name</li>按照【防火墙模板所属的名称】进行过滤。\n类型：String\n必选：否\n<li>template-type</li>按照【防火墙模板的类型】进行过滤。\n类型：String\n必选：否\n取值: \"PRIVATE\"(个人模板)\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 100。参数不支持同时指定 TemplateIds 和 Filters。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6195,7 +6195,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型。取值: \"PRIVATE\"(个人模版)",
+          "document": "模板类型。取值: \"PRIVATE\"(个人模板)",
           "example": "PRIVATE",
           "member": "string",
           "name": "TemplateType",

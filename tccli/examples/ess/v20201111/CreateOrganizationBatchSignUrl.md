@@ -132,3 +132,30 @@ Output:
 }
 ```
 
+**Example 6: 获取合同组签署链接**
+
+
+
+Input: 
+
+```
+tccli ess CreateOrganizationBatchSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UXXXzjEwg0vjoimj \
+    --Agent.ProxyOrganizationId  \
+    --FlowGroupId yDwFmUUckpstqfvzUxxx3jo1f3cqjkGm \
+    --UserId yDRCLUUgygq2xun5UXXXzjEwg0vjoimj \
+    --Name 张三 \
+    --Mobile 18888888888
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1706100107,
+        "RequestId": "s1705495307288609862",
+        "SignUrl": "https://embed.test.qian.tencent.cn/contract-sign?embed=1&expiredOn=1706100107&code=yDCNBUUckpvlibz6UEMbkWeSzl6YurH0&shortKey=yDCNBUzgvS93aBhXs3ae&channel=TENCENTCLOUD"
+    }
+}
+```
+

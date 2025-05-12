@@ -5021,6 +5021,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限频方式",
+          "example": "only_limit",
+          "member": "string",
+          "name": "LimitMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5581,6 +5591,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2025-03-26 12:00:05",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-03-20 00:00:05",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6061,8 +6091,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "防护域名配置信息",
-          "example": "{         \"Status\": \"1\",         \"Engine\": \"1\",         \"Domain\": \"lucainfo.qcloudwaf.com\",         \"DomainId\": \"waf-d4foqwZy\",         \"LoadBalancerSet\": [             {                 \"Protocol\": \"HTTP\",                 \"Zone\": \"1\",                 \"Region\": \"gz\",                 \"LoadBalancerName\": \"门户\",                 \"ListenerId\": \"lbl-87vxk72\",                 \"Vip\": \"127.0.0.1\",                 \"ListenerName\": \"监听器测试\",                 \"LoadBalancerId\": \"lb-2s7f791x\",                 \"Vport\": \"80\"             }         ],         \"Level\": \"1\",         \"MainDomain\": \"snv.vom\",         \"Region\": \"cd\",         \"FlowMode\": \"1\",         \"State\": \"1\",         \"ClsStatus\": \"1\",         \"IsCdn\": \"1\",         \"Mode\": \"1\",         \"Edition\": \"clb-waf\"     }",
+          "document": "防护域名配置信息。内网负载均衡器必须携带对应的NumericalVpcId。",
+          "example": "无",
           "member": "HostRecord",
           "name": "Host",
           "required": true,
@@ -8938,6 +8968,15 @@
           "name": "IsValid",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的场景id",
+          "example": "1231313",
+          "member": "string",
+          "name": "SceneId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8958,7 +8997,7 @@
         {
           "disabled": false,
           "document": "当TotalCount为0时，返回空",
-          "example": "[       {         \"SceneId\": \"3000004602\",         \"Type\": \"default\",         \"SceneName\": \"默认场景\",         \"UpdateTime\": 1666262225512,         \"BusinessType\": [],         \"ClientType\": [           \"browser\"         ],         \"Priority\": 100,         \"MatchCondition\": [],         \"MatchType\": \"\",         \"ActionMatchType\": \"and\",         \"SceneStatus\": true,         \"JsInjectStatus\": false,         \"AIStatus\": true,         \"TIStatus\": true,         \"StatisticStatus\": false,         \"ActionRuleCount\": 1,         \"UCBCount\": 0, \"UAStatus\":true       }     ]",
+          "example": "[       {         \"SceneId\": \"3000004602\",         \"Type\": \"default\",         \"SceneName\": \"默认场景\",         \"UpdateTime\": 1666262225512]",
           "member": "BotSceneInfo",
           "name": "BotSceneList",
           "output_required": true,
@@ -9034,13 +9073,13 @@
         },
         {
           "disabled": false,
-          "document": "当前开启的、匹配范围为全局、优先级最高的场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前开启的、匹配范围为全局、优先级最高的场景",
           "example": "{             \"SceneId\": \"3000004882\",             \"SceneName\": \"登录防护场景2\",             \"Priority\": 1,             \"UpdateTime\": 1667198325353         }",
           "member": "GlobalSceneInfo",
           "name": "CurrentGlobalScene",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9153,6 +9192,15 @@
           "name": "ValidStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "2342",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9162,13 +9210,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据包\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{       \"Res\": [         {           \"Domain\": \"admin.com\",           \"Name\": \"custom-1\",           \"Rule\": [             {               \"Key\": \"url\",               \"Op\": \"eq\",               \"Value\": {                 \"BasicValue\": \"/login\",                 \"LogicValue\": true,                 \"BelongValue\": [                   \"/login\"                 ],                 \"ValidKey\": \"url\",                 \"MultiValue\": [                   \"/login\"                 ]               },               \"OpOp\": \"rematch\",               \"OpArg\": [                 \"name\"               ],               \"OpValue\": 0,               \"Name\": \"age\"             }           ],           \"Action\": \"monitor\",           \"OnOff\": \"on\",           \"RuleType\": 0,           \"Prior\": 0,           \"Timestamp\": 0,           \"Label\": \"human\",           \"Id\": \"3021313\",           \"SceneId\": \"3021312412\",           \"ValidTime\": 0,           \"Appid\": 1,           \"AdditionArg\": \"none\",           \"Desc\": \"none\",           \"RuleId\": \"320032232\",           \"PreDefine\": true,           \"JobType\": \"hour\",           \"JobDateTime\": {             \"Timed\": [               {                 \"StartDateTime\": 1,                 \"EndDateTime\": 1               }             ],             \"Cron\": [               {                 \"Days\": [                   1                 ],                 \"WDays\": [                   1                 ],                 \"StartTime\": \"1231312414\",                 \"EndTime\": \"12313124111\"               }             ],             \"TimeTZone\": \"utc+8\"           },           \"ExpireTime\": 1         }       ],       \"TotalCount\": 0     }",
+          "document": "返回数据包",
+          "example": "{       \"Res\": [       ],       \"TotalCount\": 0     }",
           "member": "DescribeBotUCBRuleRsp",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9420,7 +9468,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书",
+          "document": "证书类型，此参数和GmCertType不可同时为0。 0：不检测国际标准证书 1：证书来源为自有证书 2：证书来源为托管证书",
           "example": "1",
           "member": "int64",
           "name": "CertType",
@@ -9456,7 +9504,7 @@
         },
         {
           "disabled": false,
-          "document": "国密证书类型。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
+          "document": "国密证书类型，此参数和CertType不可同时为0。0：不检测国密证书 1：证书来源为自有国密证书 2：证书来源为托管国密证书",
           "example": "0",
           "member": "int64",
           "name": "GmCertType",
@@ -11393,6 +11441,24 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，支持asc或者desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据哪个字段排序",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11403,7 +11469,7 @@
         {
           "disabled": false,
           "document": "对象列表",
-          "example": "[                     {                         \"ApiStatus\": 0,                         \"BotStatus\": 0,                         \"ClsStatus\": 0,                         \"InstanceId\": \"waf_2kuil2ft02vqm7z3\",                         \"InstanceLevel\": 3,                         \"InstanceName\": \"gz-Default1\",                         \"IpHeaders\": [                             \"spheader\",                             \"myheader\"                         ],                         \"NumericalVpcId\": -1,                         \"ObjectFlowMode\": 1,                         \"ObjectId\": \"lb-70mdt3it\",                         \"ObjectName\": \"zunhua-multi-test_pjk1\",                         \"PostCKafkaStatus\": 0,                         \"PostCLSStatus\": 0,                         \"PreciseDomains\": [],                         \"PrivateIp\": [                             \"\"                         ],                         \"Proxy\": 3,                         \"PublicIp\": [                             \"139.186.100.71\"                         ],                         \"Region\": \"ap-chongqing\",                         \"Status\": 1,                         \"Type\": \"CLB\",                         \"VirtualDomain\": \"lb-70mdt3it.clb-default.qcloudwaf.com\",                         \"Vpc\": \"vpc-jl1cw1e9\",                         \"VpcName\": \"Default-VPC\"                     }                 ]",
+          "example": "无",
           "member": "ClbObject",
           "name": "ClbObjects",
           "output_required": true,
@@ -16292,6 +16358,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "惩罚时间",
+          "example": "10",
+          "member": "int64",
+          "name": "DelayTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16396,6 +16473,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数匹配",
+          "example": "[{\"Key\":\"ddp\",\"Value\":\"waf\"},{\"Key\":\"ddp2\",\"Value\":\"waf1\"}]",
+          "member": "ParamCompareList",
+          "name": "ParamCompareList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17311,17 +17399,6 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的IP",
-          "example": "136.51.67.104",
-          "member": "string",
-          "name": "Vip",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "负载均衡实例的端口",
           "example": "80",
           "member": "uint64",
@@ -17361,6 +17438,17 @@
           "name": "Zone",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例的IP。域名化CLB VIP可填空。",
+          "example": "136.51.67.104",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18686,7 +18774,7 @@
         {
           "disabled": false,
           "document": "规则内容, 增加编码SceneId信息,1.BOT全局白名单处调用时，SceneId为\"global\", RuleType传10, Action为\"permit\";2.BOT场景配置时，SceneId为场景ID",
-          "example": "{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\",         \"Rule\":[             {                 \"Key\":\"robots_exist\",                 \"Value\":{                     \"LogicValue\":\"false\"                 },                 \"Op\":\"logic\"             }         ],         \"Label\":\"友好BOT\",         \"Prior\":\"100\",         \"Appid\":\"251197210\",         \"Action\":\"permit\",         \"Desc\":\"云图API测试场景UCB\",         \"OnOff\":\"on\"     }",
+          "example": "{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\"  }",
           "member": "InOutputBotUCBRule",
           "name": "Rule",
           "required": false,
@@ -18695,7 +18783,7 @@
         {
           "disabled": false,
           "document": "530改批量操作",
-          "example": "[{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\",         \"Rule\":[             {                 \"Key\":\"robots_exist\",                 \"Value\":{                     \"LogicValue\":\"false\"                 },                 \"Op\":\"logic\"             }         ],         \"Label\":\"友好BOT\",         \"Prior\":\"100\",         \"Appid\":\"251197210\",         \"Action\":\"permit\",         \"Desc\":\"云图API测试场景UCB\",         \"OnOff\":\"on\"     }]",
+          "example": "[{         \"RuleType\":\"10\",         \"Name\":\"云图API全局白名单测试改名1\",         \"RuleId\":\"3000004932\",         \"ValidTime\":\"0\",         \"Timestamp\":\"1666164720592\",         \"AdditionArg\":\"none\",         \"Domain\":\"fgsta.qcloudwaf.com\"  }]",
           "member": "InOutputBotUCBRule",
           "name": "BatchRules",
           "required": false,
@@ -18715,6 +18803,16 @@
           "name": "Data",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "[\"1231\"]",
+          "example": "修改成功的ruleid列表",
+          "member": "string",
+          "name": "RuleIdList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -21133,6 +21231,34 @@
       ],
       "type": "object"
     },
+    "ParamCompareList": {
+      "document": "bot-自定义规则请求参数比对结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求参数比对的匹配参数",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求参数比对的匹配值",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PeakPointsItem": {
       "document": "PeakPoints数组项",
       "members": [
@@ -22853,7 +22979,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分配的服务器id",
+          "document": "分配的服务器id。首次接入的域名和端口该参数填0，已接入的域名和端口分配的id可以通过DescribeDomainDetailsSaas或DescribeDomains接口获取。",
           "example": "36582",
           "member": "uint64",
           "name": "NginxServerId",
@@ -23546,7 +23672,7 @@
         },
         {
           "disabled": false,
-          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
+          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
           "example": "\"[]\"",
           "member": "string",
           "name": "OptionsArr",
@@ -23615,6 +23741,15 @@
           "name": "Length",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限频方式",
+          "example": "only_limit",
+          "member": "string",
+          "name": "LimitMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

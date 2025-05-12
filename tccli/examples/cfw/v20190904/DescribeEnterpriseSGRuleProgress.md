@@ -11,8 +11,9 @@ Output:
 ```
 {
     "Response": {
-        "Progress": 50,
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "Progress": 100,
+        "RequestId": "e94a6272-4e68-4614-8433-363f87dfb28b",
+        "UserStopped": false
     }
 }
 ```

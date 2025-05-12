@@ -2318,6 +2318,24 @@
           "name": "IsMemoryHijackingAnalysis",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0=全文索引，1=键值索引",
+          "example": "0",
+          "member": "int64",
+          "name": "LogIndexType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "traceId的索引key",
+          "example": "trace_id",
+          "member": "string",
+          "name": "LogTraceIdKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

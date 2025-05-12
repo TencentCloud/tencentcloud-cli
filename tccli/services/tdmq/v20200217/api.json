@@ -7997,7 +7997,7 @@
         },
         {
           "disabled": false,
-          "document": "一页限制,moren",
+          "document": "一页限制，默认值 20",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -13684,7 +13684,7 @@
         },
         {
           "disabled": false,
-          "document": "vhost名",
+          "document": "VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。",
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
@@ -13693,8 +13693,8 @@
         },
         {
           "disabled": false,
-          "document": "VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。",
-          "example": "testVhost",
+          "document": "Virtual Host 描述",
+          "example": "For testing",
           "member": "string",
           "name": "Description",
           "required": false,

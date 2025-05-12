@@ -965,7 +965,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的Url",
+          "document": "文件的Url（有效期24小时）",
           "example": "https://xxx.gif",
           "member": "string",
           "name": "Url",
@@ -3434,8 +3434,8 @@
         },
         {
           "disabled": false,
-          "document": "输入图 Base64 数据。最多支持200个 utf-8 字符，ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "无",
+          "document": "输入图 Base64 数据。\n大小：单边分辨率要求不小于50，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -3443,8 +3443,8 @@
         },
         {
           "disabled": false,
-          "document": "输入图Url。最多支持200个 utf-8 字符，ImageBase64、ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
-          "example": "无",
+          "document": "输入图Url。\n大小：单边分辨率要求不小于50，不大于5000。大小不超过8m（base64编码后会大30%左右，建议实际输入图片不超过6m）\n格式：jpg，png，jpeg，webp。\nImageBase64/ImageUrl和 Prompt必填其一，且Prompt和ImageBase64/ImageUrl不能同时存在。",
+          "example": "https://****/imageurl.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -3467,8 +3467,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
-          "example": "无",
+          "document": "任务id（有效期24小时）",
+          "example": "1172498703139831808",
           "member": "string",
           "name": "JobId",
           "output_required": false,

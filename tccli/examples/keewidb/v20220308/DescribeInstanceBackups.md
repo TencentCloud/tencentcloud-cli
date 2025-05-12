@@ -41,7 +41,6 @@ Output:
                 "Status": 2
             }
         ],
-        "BackupSet": [],
         "RequestId": "1bb3c529-3db5-4bca-9f2b-4c04f919adf5",
         "TotalCount": 3
     }

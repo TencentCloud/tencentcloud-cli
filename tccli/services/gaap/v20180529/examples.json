@@ -108,14 +108,6 @@
         "title": "CreateDomainErrorPageInfo"
       }
     ],
-    "CreateFirstLinkSession": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFirstLinkSession\n<公共请求参数>\n\n{\n    \"TemplateId\": \"flt-4av6kul7\",\n    \"DestAddressInfo\": {\n        \"DestIp\": [\n            \"143.244.174.31\"\n        ]\n    },\n    \"SrcAddressInfo\": {\n        \"SrcIpv4\": \"10.51.105.127\",\n        \"SrcPublicIpv4\": \"211.97.128.200\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Duration\": 1790\n    }\n}",
-        "title": "创建接入段加速会话"
-      }
-    ],
     "CreateGlobalDomain": [
       {
         "document": "创建域名示例",
@@ -240,14 +232,6 @@
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainErrorPageInfo\n<公共请求参数>\n\n{\n    \"ErrorPageId\": \"'errorPage-xxxx'\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\"\n    }\n}",
         "title": "DeleteDomainErrorPageInfo"
-      }
-    ],
-    "DeleteFirstLinkSession": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFirstLinkSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "删除接入段加速会话"
       }
     ],
     "DeleteGlobalDomain": [
@@ -400,14 +384,6 @@
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainErrorPageInfoByIds\n<公共请求参数>\n\n{\n    \"ErrorPageIds\": [\n        \"errorPage-lhlnux1v\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d9f4d84-b825-4a4f-8c4c-3c87c559c84c\",\n        \"ErrorPageSet\": [\n            {\n                \"Body\": \"sx\",\n                \"Status\": 0,\n                \"Domain\": \"test.domain\",\n                \"ClearHeaders\": [\n                    \"MyClearHeader\",\n                    \"MyClearHeader1\"\n                ],\n                \"ListenerId\": \"listener-23egjhxb\",\n                \"ErrorNos\": [\n                    501,\n                    502\n                ],\n                \"ErrorPageId\": \"errorPage-lhlnux1v\",\n                \"NewErrorNo\": 4123,\n                \"SetHeaders\": [\n                    {\n                        \"HeaderName\": \"MyName\",\n                        \"HeaderValue\": \"MyValue\"\n                    },\n                    {\n                        \"HeaderName\": \"MyName1\",\n                        \"HeaderValue\": \"MyValue1\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "DescribeDomainErrorPageInfoByIds"
-      }
-    ],
-    "DescribeFirstLinkSession": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirstLinkSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"MTYzMjczNDYyNDU0MWE5OWY3MWMzYTQ3OGZhMjJkY2NlNDU0NDE2YzE3-3-65537\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"DestIpv4\": [\n            \"143.244.174.31\"\n        ],\n        \"Duration\": 1771,\n        \"SuiteType\": \"T100K\",\n        \"RequestId\": \"q708a7c6-db58-4729-8e09-2ea6b727109p\",\n        \"SrcPublicIpv4\": \"211.97.129.234\"\n    }\n}",
-        "title": "查询接入段加速会话信息"
       }
     ],
     "DescribeGlobalDomainDns": [

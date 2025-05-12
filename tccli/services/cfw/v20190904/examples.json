@@ -347,8 +347,8 @@
     "DescribeEnterpriseSGRuleProgress": [
       {
         "document": "",
-        "input": "https://cfw.tencentcloudapi.com/?Action=DescribeEnterpriseSGRuleProgress\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Progress\": 50,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSGRuleProgress\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"e94a6272-4e68-4614-8433-363f87dfb28b\",\n        \"UserStopped\": false\n    }\n}",
         "title": "查询新版安全组下发进度"
       }
     ],

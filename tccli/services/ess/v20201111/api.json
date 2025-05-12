@@ -322,6 +322,13 @@
       "output": "CreatePrepareFlowResponse",
       "status": "online"
     },
+    "CreatePrepareFlowGroup": {
+      "document": "接口（CreatePrepareFlowGroup）用于创建嵌入式合同组签署流程。\n\n- 该接口当前仅支持文件发起\n- 该接口能力和CreateFlowGroupByFiles，~~CreateFlowGroupByTemplates~~保持一致。\n- 返回的FlowGroupId 为临时id，只有在页面内成功发起后FlowGroupId才会有效。",
+      "input": "CreatePrepareFlowGroupRequest",
+      "name": "获取发起合同组嵌入链接",
+      "output": "CreatePrepareFlowGroupResponse",
+      "status": "online"
+    },
     "CreatePreparedPersonalEsign": {
       "document": "本接口（CreatePreparedPersonalEsign）用于创建导入个人印章（处方单场景专用，使用此接口请与客户经理确认）。",
       "input": "CreatePreparedPersonalEsignRequest",
@@ -2039,7 +2046,7 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。",
+          "document": "**在绝对定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。",
           "example": "100",
           "member": "float",
           "name": "ComponentPosX",
@@ -2050,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。",
+          "document": "**在绝对定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。",
           "example": "100",
           "member": "float",
           "name": "ComponentPosY",
@@ -5992,7 +5999,7 @@
           "example": "[\"yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw\"]",
           "member": "string",
           "name": "FlowIds",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -6039,6 +6046,15 @@
           "name": "RecipientIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同组Id，传入此参数则可以不传FlowIds",
+          "example": "yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6429,6 +6445,89 @@
           "name": "ValidTo",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrepareFlowGroupRequest": {
+      "document": "CreatePrepareFlowGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
+          "example": "入职合同集",
+          "member": "string",
+          "name": "FlowGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同（流程）组的子合同信息，支持2-50个子合同",
+          "example": "无",
+          "member": "FlowGroupInfo",
+          "name": "FlowGroupInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，取值有： <ul><li> **1**：模板</li> <li> **2**：文件</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrepareFlowGroupResponse": {
+      "document": "CreatePrepareFlowGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同(流程)组的合同组Id",
+          "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
+          "member": "string",
+          "name": "FlowGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "嵌入式合同组发起链接",
+          "example": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1744785243&code=yDtBLUUckpx65&businessId=yDtBLUUckYNlO&channel=TENCENTCLOUD&operateSource=byFileGroup&themeId=saas_web_theme",
+          "member": "string",
+          "name": "PrepareUrl",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

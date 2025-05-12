@@ -7,7 +7,7 @@ Input:
 ```
 tccli bh DescribeDeviceAccounts --cli-unfold-argument  \
     --DeviceId 1 \
-    --Account testvalue
+    --Account root
 ```
 
 Output: 
@@ -15,7 +15,16 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "c7c79e35-65b9-4c2a-beea-a038fdf8c082"
+        "RequestId": "c7c79e35-65b9-4c2a-beea-a038fdf8c082",
+        "DeviceAccountSet": [
+            {
+                "BoundPrivateKey": true,
+                "Account": "root",
+                "Id": 1,
+                "BoundPassword": true,
+                "DeviceId": 1
+            }
+        ]
     }
 }
 ```
