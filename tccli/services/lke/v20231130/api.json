@@ -1616,6 +1616,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值总数",
+          "example": "无",
+          "member": "string",
+          "name": "LabelTotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3677,6 +3687,15 @@
           "name": "LastLabelBizId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询范围 all(或者传空):标准词和相似词 standard:标准词 similar:相似词",
+          "example": "无",
+          "member": "string",
+          "name": "QueryScope",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4408,6 +4427,26 @@
           "name": "CateBizId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的用户自定义ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerKnowledgeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的属性标记，0: 不做用户外部权限校验",
+          "example": "无",
+          "member": "uint64",
+          "name": "AttributeFlags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8776,6 +8815,15 @@
           "name": "Query",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每个属性同步拉取的标签值数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "LabelSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9170,6 +9218,26 @@
           "name": "CateBizId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的用户自定义ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerKnowledgeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的属性标记，0: 不做用户外部权限校验",
+          "example": "无",
+          "member": "uint64",
+          "name": "AttributeFlags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -10990,6 +11058,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否专属并发模型",
+          "example": "无",
+          "member": "bool",
+          "name": "IsExclusive",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11425,6 +11504,24 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档的用户自定义ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerKnowledgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档的属性标记，0: 不做用户外部权限校验",
+          "example": "无",
+          "member": "uint64",
+          "name": "AttributeFlags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13861,8 +13958,8 @@
         },
         {
           "disabled": false,
-          "document": "文件类型(md|txt|docx|pdf|xlsx)",
-          "example": "md|txt|docx|pdf|xlsx",
+          "document": "文档支持下面类型\npdf、doc、docx、ppt、mhtml、pptx、wps、ppsx，单个文件不超过200MB；\nxlsx、xls、md、txt、csv、html，单个文件不超过20MB；\n\n图片支持下面类型：\njpg、png、jpeg、tiff、bmp、gif，单个文件不超过50MB",
+          "example": "md",
           "member": "string",
           "name": "FileType",
           "required": true,
@@ -13993,6 +14090,24 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档的用户自定义ID",
+          "example": "无",
+          "member": "string",
+          "name": "CustomerKnowledgeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档的属性标记，0: 不做用户外部权限校验",
+          "example": "无",
+          "member": "uint64",
+          "name": "AttributeFlags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -237,7 +237,7 @@
         {
           "disabled": false,
           "document": "集群调度器。",
-          "example": "SGE",
+          "example": "SLURM",
           "member": "string",
           "name": "SchedulerType",
           "output_required": true,

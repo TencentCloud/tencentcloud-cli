@@ -892,6 +892,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLS索引类型(0=全文索引，1=键值索引)",
+          "example": "0",
+          "member": "int64",
+          "name": "LogIndexType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "traceId的索引key: 当CLS索引类型为键值索引时生效",
+          "example": "trace_id",
+          "member": "string",
+          "name": "LogTraceIdKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2321,7 +2341,7 @@
         },
         {
           "disabled": false,
-          "document": "0=全文索引，1=键值索引",
+          "document": "CLS索引类型(0=全文索引，1=键值索引)",
           "example": "0",
           "member": "int64",
           "name": "LogIndexType",
@@ -2330,7 +2350,7 @@
         },
         {
           "disabled": false,
-          "document": "traceId的索引key",
+          "document": "traceId的索引key: 当CLS索引类型为键值索引时生效",
           "example": "trace_id",
           "member": "string",
           "name": "LogTraceIdKey",

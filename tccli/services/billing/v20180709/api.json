@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateAllocationRule": {
+      "document": "创建公摊规则",
+      "input": "CreateAllocationRuleRequest",
+      "name": "创建公摊规则",
+      "output": "CreateAllocationRuleResponse",
+      "status": "online"
+    },
     "CreateAllocationTag": {
       "document": "批量设置分账标签",
       "input": "CreateAllocationTagRequest",
@@ -7,11 +14,46 @@
       "output": "CreateAllocationTagResponse",
       "status": "online"
     },
+    "CreateAllocationUnit": {
+      "document": "创建分账单元",
+      "input": "CreateAllocationUnitRequest",
+      "name": "创建分账单元",
+      "output": "CreateAllocationUnitResponse",
+      "status": "online"
+    },
+    "CreateGatherRule": {
+      "document": "创建归集规则",
+      "input": "CreateGatherRuleRequest",
+      "name": "创建归集规则",
+      "output": "CreateGatherRuleResponse",
+      "status": "online"
+    },
+    "DeleteAllocationRule": {
+      "document": "公摊规则删除接口",
+      "input": "DeleteAllocationRuleRequest",
+      "name": "公摊规则删除接口",
+      "output": "DeleteAllocationRuleResponse",
+      "status": "online"
+    },
     "DeleteAllocationTag": {
       "document": "批量取消设置分账标签",
       "input": "DeleteAllocationTagRequest",
       "name": "批量取消设置分账标签",
       "output": "DeleteAllocationTagResponse",
+      "status": "online"
+    },
+    "DeleteAllocationUnit": {
+      "document": "删除分账单元",
+      "input": "DeleteAllocationUnitRequest",
+      "name": "删除分账单元",
+      "output": "DeleteAllocationUnitResponse",
+      "status": "online"
+    },
+    "DeleteGatherRule": {
+      "document": "删除归集规则",
+      "input": "DeleteGatherRuleRequest",
+      "name": "删除归集规则",
+      "output": "DeleteGatherRuleResponse",
       "status": "online"
     },
     "DescribeAccountBalance": {
@@ -56,6 +98,20 @@
       "output": "DescribeAllocationOverviewResponse",
       "status": "online"
     },
+    "DescribeAllocationRuleDetail": {
+      "document": "查询公摊规则详情",
+      "input": "DescribeAllocationRuleDetailRequest",
+      "name": "查询公摊规则详情",
+      "output": "DescribeAllocationRuleDetailResponse",
+      "status": "online"
+    },
+    "DescribeAllocationRuleSummary": {
+      "document": "查询所有公摊规则概览",
+      "input": "DescribeAllocationRuleSummaryRequest",
+      "name": "查询所有公摊规则概览",
+      "output": "DescribeAllocationRuleSummaryResponse",
+      "status": "online"
+    },
     "DescribeAllocationSummaryByBusiness": {
       "document": "查询分账账单按产品汇总",
       "input": "DescribeAllocationSummaryByBusinessRequest",
@@ -77,11 +133,25 @@
       "output": "DescribeAllocationSummaryByResourceResponse",
       "status": "online"
     },
+    "DescribeAllocationTree": {
+      "document": "查询分账目录树",
+      "input": "DescribeAllocationTreeRequest",
+      "name": "查询分账目录树",
+      "output": "DescribeAllocationTreeResponse",
+      "status": "online"
+    },
     "DescribeAllocationTrendByMonth": {
       "document": "查询分账账单费用趋势",
       "input": "DescribeAllocationTrendByMonthRequest",
       "name": "查询分账账单费用趋势",
       "output": "DescribeAllocationTrendByMonthResponse",
+      "status": "online"
+    },
+    "DescribeAllocationUnitDetail": {
+      "document": "查询分账单元详情",
+      "input": "DescribeAllocationUnitDetailRequest",
+      "name": "查询分账单元详情",
+      "output": "DescribeAllocationUnitDetailResponse",
       "status": "online"
     },
     "DescribeBillAdjustInfo": {
@@ -259,6 +329,13 @@
       "output": "DescribeGatherResourceResponse",
       "status": "online"
     },
+    "DescribeGatherRuleDetail": {
+      "document": "查询归集规则详情",
+      "input": "DescribeGatherRuleDetailRequest",
+      "name": "查询归集规则详情",
+      "output": "DescribeGatherRuleDetailResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanResourceInfo": {
       "document": "查询节省计划详情",
       "input": "DescribeSavingPlanResourceInfoRequest",
@@ -285,6 +362,27 @@
       "input": "DescribeVoucherUsageDetailsRequest",
       "name": "获取代金券使用记录",
       "output": "DescribeVoucherUsageDetailsResponse",
+      "status": "online"
+    },
+    "ModifyAllocationRule": {
+      "document": "编辑公摊规则",
+      "input": "ModifyAllocationRuleRequest",
+      "name": "编辑公摊规则",
+      "output": "ModifyAllocationRuleResponse",
+      "status": "online"
+    },
+    "ModifyAllocationUnit": {
+      "document": "修改分账单元信息",
+      "input": "ModifyAllocationUnitRequest",
+      "name": "修改分账单元",
+      "output": "ModifyAllocationUnitResponse",
+      "status": "online"
+    },
+    "ModifyGatherRule": {
+      "document": "编辑归集规则",
+      "input": "ModifyGatherRuleRequest",
+      "name": "编辑归集规则",
+      "output": "ModifyGatherRuleResponse",
       "status": "online"
     },
     "PayDeals": {
@@ -1802,6 +1900,34 @@
       ],
       "usage": "out"
     },
+    "AllocationRationExpression": {
+      "document": "分摊比例表达式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公摊规则所属分账单元ID",
+          "example": "11",
+          "member": "uint64",
+          "name": "NodeId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元所占公摊比例，按占比分摊传0",
+          "example": "40.51",
+          "member": "float",
+          "name": "Ratio",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AllocationRule": {
       "document": "当前资源命中公摊规则信息",
       "members": [
@@ -1825,6 +1951,173 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AllocationRuleExpression": {
+      "document": "分账规则表达式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "RuleKey：分账维度\n枚举值：\nownerUin - 使用者UIN,\noperateUin - 操作者UIN,\nbusinessCode - 产品一层编码,\nproductCode - 产品二层编码,\nitemCode - 产品四层编码,\nprojectId - 项目ID,\nregionId - 地域ID,\nresourceId - 资源ID,\ntag - 标签键值对,\npayMode - 计费模式,\ninstanceType - 实例类型,\nactionType - 交易类型",
+          "example": "businessCode",
+          "member": "string",
+          "name": "RuleKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账维度规则\n枚举值：\nin - 是\nnot in - 不是",
+          "example": "=",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账维度值，例如当RuleKey为businessCode时，[\"p_cbs\",\"p_sqlserver\"]表示产品一层是\"p_cbs\",\"p_sqlserver\"的费用",
+          "example": "[\"p_cbs\",\"p_sqlserver\"]",
+          "member": "string",
+          "name": "RuleValue",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账逻辑连接词，枚举值如下：\nand - 且\nor - 或",
+          "example": "and",
+          "member": "string",
+          "name": "Connectors",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "嵌套规则",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AllocationRuleOverview": {
+      "document": "公摊规则概览",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公摊规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊策略类型\n枚举值：\n1 - 自定义分摊占比 \n2 - 等比分摊 \n3 - 按占比分摊",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则最后更新时间",
+          "example": "2022-10-13 19:13:11",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元概览",
+          "example": "无",
+          "member": "AllocationUnit",
+          "name": "AllocationNode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationRulesSummary": {
+      "document": "公摊规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增公摊规则名称",
+          "example": "公摊规则",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊策略类型，枚举值如下：\n1 - 自定义分摊占比 \n2 - 等比分摊\n3 - 按占比分摊",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则表达式",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "RuleDetail",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊比例表达式，按占比分摊不传",
+          "example": "无",
+          "member": "AllocationRationExpression",
+          "name": "RatioDetail",
+          "output_required": true,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -3294,6 +3587,52 @@
       ],
       "usage": "out"
     },
+    "AllocationTree": {
+      "document": "分账目录树",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称",
+          "example": "财务部",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识",
+          "example": "9096-asd",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子树",
+          "example": "无",
+          "member": "AllocationTree",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AllocationTreeNode": {
       "document": "当前归属单元信息",
       "members": [
@@ -3310,6 +3649,32 @@
         {
           "disabled": false,
           "document": "分账单元名称",
+          "example": "财务部",
+          "member": "string",
+          "name": "TreeNodeUniqKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AllocationUnit": {
+      "document": "分账单元id和名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "NodeId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账规则名称",
           "example": "财务部",
           "member": "string",
           "name": "TreeNodeUniqKeyName",
@@ -7725,6 +8090,52 @@
       ],
       "usage": "out"
     },
+    "CreateAllocationRuleRequest": {
+      "document": "CreateAllocationRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公摊规则列表",
+          "example": "无",
+          "member": "AllocationRulesSummary",
+          "name": "RuleList",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAllocationRuleResponse": {
+      "document": "CreateAllocationRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增公摊规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAllocationTagRequest": {
       "document": "CreateAllocationTag请求参数结构体",
       "members": [
@@ -7743,6 +8154,126 @@
     "CreateAllocationTagResponse": {
       "document": "CreateAllocationTag返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAllocationUnitRequest": {
+      "document": "CreateAllocationUnit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增分账单元父节点ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ParentId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新增分账单元名称",
+          "example": "财务部",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAllocationUnitResponse": {
+      "document": "CreateAllocationUnit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增分账单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识",
+          "example": "abcd",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGatherRuleRequest": {
+      "document": "CreateGatherRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则所属分账单元ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "归集规则详情",
+          "example": "无",
+          "member": "GatherRuleSummary",
+          "name": "RuleList",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGatherRuleResponse": {
+      "document": "CreateGatherRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归集规则ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8018,6 +8549,42 @@
       ],
       "usage": "out"
     },
+    "DeleteAllocationRuleRequest": {
+      "document": "DeleteAllocationRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所删除公摊规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "月份，默认当前月",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAllocationRuleResponse": {
+      "document": "DeleteAllocationRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAllocationTagRequest": {
       "document": "DeleteAllocationTag请求参数结构体",
       "members": [
@@ -8035,6 +8602,78 @@
     },
     "DeleteAllocationTagResponse": {
       "document": "DeleteAllocationTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAllocationUnitRequest": {
+      "document": "DeleteAllocationUnit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所删除分账单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAllocationUnitResponse": {
+      "document": "DeleteAllocationUnit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatherRuleRequest": {
+      "document": "DeleteGatherRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所删除归集规则ID",
+          "example": "13",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGatherRuleResponse": {
+      "document": "DeleteGatherRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9064,6 +9703,185 @@
       ],
       "type": "object"
     },
+    "DescribeAllocationRuleDetailRequest": {
+      "document": "DescribeAllocationRuleDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所查询公摊规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationRuleDetailResponse": {
+      "document": "DescribeAllocationRuleDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公摊规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则所属UIN",
+          "example": "9096",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊策略类型，枚举值如下：\n1 - 自定义分摊占比 \n2 - 等比分摊 \n3 - 按占比分摊",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则表达式",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "RuleDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公摊比例表达式，Type为1和2时返回",
+          "example": "无",
+          "member": "AllocationRationExpression",
+          "name": "RatioDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationRuleSummaryRequest": {
+      "document": "DescribeAllocationRuleSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每次获取数据量，最大值1000",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "2",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公摊策略类型，用于筛选。\n枚举值如下： \n1 - 自定义分摊占比 \n2 - 等比分摊 \n3 - 按占比分摊",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公摊规则名称或分账单元名称，用于模糊筛选。",
+          "example": "产品部",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationRuleSummaryResponse": {
+      "document": "DescribeAllocationRuleSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公摊规则表达式",
+          "example": "无",
+          "member": "AllocationRuleOverview",
+          "name": "RuleList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAllocationSummaryByBusinessRequest": {
       "document": "DescribeAllocationSummaryByBusiness请求参数结构体",
       "members": [
@@ -9694,6 +10512,73 @@
       ],
       "type": "object"
     },
+    "DescribeAllocationTreeRequest": {
+      "document": "DescribeAllocationTree请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationTreeResponse": {
+      "document": "DescribeAllocationTree返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称",
+          "example": "财务部",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元唯一标识",
+          "example": "9096-asd",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子树",
+          "example": "无",
+          "member": "AllocationTree",
+          "name": "Children",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAllocationTrendByMonthRequest": {
       "document": "DescribeAllocationTrendByMonth请求参数结构体",
       "members": [
@@ -9758,6 +10643,132 @@
           "name": "Stat",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationUnitDetailRequest": {
+      "document": "DescribeAllocationUnitDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所查询分账单元Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllocationUnitDetailResponse": {
+      "document": "DescribeAllocationUnitDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元所属UIN",
+          "example": "9096",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元名称",
+          "example": "财务部",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元父节点ID",
+          "example": "11",
+          "member": "uint64",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源组织名称",
+          "example": "一组",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源组织ID",
+          "example": "asd123",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注说明",
+          "example": "分账",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分账单元标识",
+          "example": "asd123",
+          "member": "string",
+          "name": "TreeNodeUniqKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "若分账单元设置归集规则，返回归集规则ID，若无分账规则，则不返回",
+          "example": "12",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10066,7 +11077,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已废弃参数，未开放",
           "example": "0",
           "member": "string",
@@ -12767,6 +13778,82 @@
       ],
       "type": "object"
     },
+    "DescribeGatherRuleDetailRequest": {
+      "document": "DescribeGatherRuleDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所查询归集规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGatherRuleDetailResponse": {
+      "document": "DescribeGatherRuleDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归集规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集规则所属UIN",
+          "example": "9096",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集规则最后更新时间",
+          "example": "2022-11-14 09:45:24",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归集规则详情",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "RuleDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSavingPlanResourceInfoRequest": {
       "document": "DescribeSavingPlanResourceInfo请求参数结构体",
       "members": [
@@ -14023,6 +15110,21 @@
       ],
       "usage": "out"
     },
+    "GatherRuleSummary": {
+      "document": "归集规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账规则表达式",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "RuleDetail",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "JsonObject": {
       "document": "Json对象",
       "members": [
@@ -14050,6 +15152,195 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAllocationRuleRequest": {
+      "document": "ModifyAllocationRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所编辑公摊规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "编辑后公摊规则名称",
+          "example": "规则名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公摊策略类型，枚举值如下： 1 - 自定义分摊占比 2 - 等比分摊 3 - 按占比分摊",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "编辑后公摊规则表达式",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "RuleDetail",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "编辑后公摊比例表达式",
+          "example": "无",
+          "member": "AllocationRationExpression",
+          "name": "RatioDetail",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllocationRuleResponse": {
+      "document": "ModifyAllocationRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllocationUnitRequest": {
+      "document": "ModifyAllocationUnit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所修改分账单元ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改后分账单元名称",
+          "example": "财务部",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后分账单元源组织名称",
+          "example": "财务一组",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后分账单元源组织ID",
+          "example": "asd123",
+          "member": "string",
+          "name": "SourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账单元备注说明",
+          "example": "分账",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAllocationUnitResponse": {
+      "document": "ModifyAllocationUnit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGatherRuleRequest": {
+      "document": "ModifyGatherRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所编辑归集规则ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "所编辑分账规则详情",
+          "example": "无",
+          "member": "AllocationRuleExpression",
+          "name": "RuleDetail",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "月份，不传默认当前月",
+          "example": "2022-10-01 00:00:00",
+          "member": "string",
+          "name": "Month",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGatherRuleResponse": {
+      "document": "ModifyGatherRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PayDealsRequest": {
       "document": "PayDeals请求参数结构体",

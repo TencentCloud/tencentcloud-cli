@@ -2572,7 +2572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "生命周期挂钩ID",
+          "document": "生命周期挂钩ID。可以通过调用接口 [DescribeLifecycleHooks](https://cloud.tencent.com/document/api/377/34452) ，取返回信息中的 LifecycleHookId 获取生命周期挂钩ID。",
           "example": "ash-5rynk2n5",
           "member": "string",
           "name": "LifecycleHookId",
@@ -2872,6 +2872,15 @@
           "name": "AutoScalingGroupIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询时排除取消类型活动。默认值为 false，表示不排除取消类型活动。",
+          "example": "false",
+          "member": "bool",
+          "name": "ExcludeCancelledActivity",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2882,7 +2891,7 @@
         {
           "disabled": false,
           "document": "符合条件的伸缩活动信息集合。说明：伸缩组伸缩活动不存在的则不返回，如传50个伸缩组ID，返回45条数据，说明其中有5个伸缩组伸缩活动不存在。",
-          "example": "[{\"DetailedStatusMessageSet\": [], \"InvocationResultSet\": [], \"Description\": \"Activity was launched in response to a difference between desired capacity and actual capacity, scale out 1 instance(s).\", \"LifecycleActionResultSet\": [], \"AutoScalingGroupId\": \"asg-44xoulwh\", \"RelatedInstanceSet\": [{\"InstanceId\": \"ins-qfve9yyr\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"ActivityType\": \"SCALE_OUT\", \"ActivityId\": \"asa-p9xww1hx\", \"StartTime\": \"2024-11-12T05:30:21Z\", \"CreatedTime\": \"2024-11-12T05:30:21Z\", \"StatusMessageSimplified\": \"Success\", \"EndTime\": \"2024-11-12T05:30:52Z\", \"Cause\": \"Activity was launched in response to a difference between desired capacity and actual capacity.\", \"StatusMessage\": \"Success\", \"StatusCode\": \"SUCCESSFUL\"}]",
+          "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
           "output_required": true,
@@ -5008,7 +5017,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期挂钩默认结果",
+          "document": "定义伸缩组在生命周期挂钩超时或 LifecycleCommand 执行失败时应采取的操作，取值范围如下：\n- CONTINUE: 默认值，表示继续执行扩缩容活动\n- ABANDON: 针对扩容挂钩，挂钩超时或 LifecycleCommand 执行失败的 CVM 实例会直接释放或移出；而针对缩容挂钩，会继续执行缩容活动",
           "example": "CONTINUE",
           "member": "string",
           "name": "DefaultResult",
@@ -5018,7 +5027,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期挂钩等待超时时间",
+          "document": "生命周期挂钩超时等待时间（以秒为单位），范围从 30 到 7200 秒。",
           "example": "300",
           "member": "int64",
           "name": "HeartbeatTimeout",
@@ -5028,7 +5037,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期挂钩适用场景",
+          "document": "生命周期挂钩场景，取值范围如下:\n- INSTANCE_LAUNCHING: 扩容生命周期挂钩\n- INSTANCE_TERMINATING: 缩容生命周期挂钩",
           "example": "INSTANCE_TERMINATING",
           "member": "string",
           "name": "LifecycleTransition",
@@ -5048,7 +5057,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间，采用 UTC 标准计时",
           "example": "2024-11-11T15:29:59Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -5068,7 +5077,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期挂钩适用场景",
+          "document": "进行生命周期挂钩的场景类型，取值范围包括 NORMAL 和 EXTENSION，默认值为 NORMAL。\n说明：设置为EXTENSION值，在AttachInstances、DetachInstances、RemoveInstances 接口时会触发生命周期挂钩操作，值为NORMAL则不会在这些接口中触发生命周期挂钩。",
           "example": "NORMAL",
           "member": "string",
           "name": "LifecycleTransitionType",
@@ -6854,7 +6863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩组ID。",
+          "document": "伸缩组ID。可以通过如下方式获取可用的伸缩组ID:\n<li>通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 查询伸缩组ID。</li>\n<li>通过调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>",
           "example": "asg-12yqet78",
           "member": "string",
           "name": "AutoScalingGroupId",
@@ -6863,7 +6872,7 @@
         },
         {
           "disabled": false,
-          "document": "希望缩容的实例数量。",
+          "document": "希望缩容的实例数量。该参数的静态取值范围是 [1,2000]，同时该参数不得大于期望数与最小值的差值。例如伸缩组期望数为 100，最小值为 20，此时可取值范围为 [1,80]。",
           "example": "1",
           "member": "uint64",
           "name": "ScaleInNumber",
@@ -6882,7 +6891,7 @@
           "example": "asa-k1q8oaz6",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -5038,6 +5038,23 @@
       ],
       "usage": "both"
     },
+    "ExecAction": {
+      "document": "执行命令探针检查行为",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行命令列表",
+          "example": "[\"ls\", \"la\", \"./\"]",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -5274,6 +5291,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用端口",
+          "example": "8051",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8108,6 +8136,34 @@
       ],
       "usage": "out"
     },
+    "NumOrPercent": {
+      "document": "用于表示百分比或数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Num,Percent ,分别表示数量和百分比，默认为 Num",
+          "example": "Num",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数值",
+          "example": "10",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Option": {
       "document": "键值对",
       "members": [
@@ -8472,6 +8528,39 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行命令检查 行为",
+          "example": "无",
+          "member": "ExecAction",
+          "name": "Exec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tcp socket 检查行为",
+          "example": "无",
+          "member": "TCPSocketAction",
+          "name": "TCPSocket",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探针类型，默认 HTTPGet，可选值：HTTPGet、Exec、TCPSocket",
+          "example": "HTTPGet",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8889,6 +8978,34 @@
         }
       ],
       "usage": "out"
+    },
+    "RollingUpdate": {
+      "document": "滚动更新策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "滚动更新的最大不可用",
+          "example": "无",
+          "member": "NumOrPercent",
+          "name": "MaxUnavailable",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新的最大新增实例",
+          "example": "无",
+          "member": "NumOrPercent",
+          "name": "MaxSurge",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SSHConfig": {
       "document": "notebook ssh端口配置",
@@ -9803,6 +9920,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于监控的创建来源字段",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "MonitorSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10205,6 +10332,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新配置",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10364,7 +10502,7 @@
           "example": "TI.S.MEDIUM.POST",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10374,7 +10512,7 @@
           "example": "70",
           "member": "uint64",
           "name": "TotalCost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10384,7 +10522,7 @@
           "example": "70",
           "member": "uint64",
           "name": "RealTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10394,7 +10532,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SpecCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -10689,6 +10827,23 @@
         }
       ],
       "type": "object"
+    },
+    "TCPSocketAction": {
+      "document": "tcp socket 健康探针检查行为",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用端口",
+          "example": "8501",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TJCallInfo": {
       "document": "太极服务的调用信息",

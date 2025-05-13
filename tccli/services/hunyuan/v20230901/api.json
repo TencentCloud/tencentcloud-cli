@@ -196,6 +196,57 @@
       ],
       "type": "object"
     },
+    "Approximate": {
+      "document": "用户位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示 ISO 国家代码",
+          "example": "CN",
+          "member": "string",
+          "name": "Country",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示城市名称",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示区域名称",
+          "example": "南山区",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示IANA时区",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "Timezone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示详细地址",
+          "example": "深圳市南山区海天二路33号腾讯滨海大厦",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Character": {
       "document": "人物描述",
       "members": [
@@ -406,6 +457,15 @@
           "name": "EnableDeepRead",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "知识注入相关的参数信息",
+          "example": "无",
+          "member": "WebSearchOptions",
+          "name": "WebSearchOptions",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2223,6 +2283,21 @@
         }
       ],
       "usage": "both"
+    },
+    "Knowledge": {
+      "document": "外部知识",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示具体的知识信息文本",
+          "example": "暴雨+雷暴+8级大风！深圳将迎强对流天气！",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "LogoParam": {
       "document": "logo参数",
@@ -4118,6 +4193,54 @@
         }
       ],
       "usage": "out"
+    },
+    "UserLocation": {
+      "document": "用户位置详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示位置类型",
+          "example": "approximate",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户近似位置的详细信息",
+          "example": "无",
+          "member": "Approximate",
+          "name": "Approximate",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "WebSearchOptions": {
+      "document": "知识注入相关的参数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示用户注入的知识信息",
+          "example": "无",
+          "member": "Knowledge",
+          "name": "Knowledge",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户位置详细信息",
+          "example": "无",
+          "member": "UserLocation",
+          "name": "UserLocation",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

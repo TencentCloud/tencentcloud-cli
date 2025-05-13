@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateAllocationRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAllocationRule\n<公共请求参数>\n\n{\n    \"RuleList\": {\n        \"Name\": \"测试1\",\n        \"Type\": \"2\",\n        \"RatioDetail\": [\n            {\n                \"Ratio\": \"25\",\n                \"NodeId\": \"6\"\n            },\n            {\n                \"Ratio\": \"25\",\n                \"NodeId\": \"7\"\n            },\n            {\n                \"Ratio\": \"25\",\n                \"NodeId\": \"8\"\n            },\n            {\n                \"Ratio\": \"25\",\n                \"NodeId\": \"9\"\n            }\n        ],\n        \"RuleDetail\": {\n            \"Connectors\": \"and\",\n            \"Children\": [\n                {\n                    \"RuleKey\": \"ownerUin\",\n                    \"Operator\": \"in\",\n                    \"RuleValue\": [\n                        \"700000384179\"\n                    ]\n                },\n                {\n                    \"RuleKey\": \"businessCode\",\n                    \"Operator\": \"in\",\n                    \"RuleValue\": [\n                        \"p_cbs\"\n                    ]\n                },\n                {\n                    \"Connectors\": \"or\",\n                    \"Children\": [\n                        {\n                            \"RuleKey\": \"itemCode\",\n                            \"Operator\": \"in\",\n                            \"RuleValue\": [\n                                \"sv_cbs_memspace_premium\",\n                                \"sv_cdn_cn_flux_package\",\n                                \"sv_ci_pkg_co_re_10\"\n                            ]\n                        }\n                    ]\n                },\n                {\n                    \"RuleKey\": \"projectId\",\n                    \"Operator\": \"in\",\n                    \"RuleValue\": [\n                        \"0\"\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 33,\n        \"RequestId\": \"aab8393d-ceba-44e2-819f-6d4fd0ebf987\"\n    }\n}",
+        "title": "创建公摊规则1"
+      }
+    ],
     "CreateAllocationTag": [
       {
         "document": "批量设置分账标签",
@@ -8,12 +16,64 @@
         "title": "批量设置分账标签"
       }
     ],
+    "CreateAllocationUnit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAllocationUnit\n<公共请求参数>\n\n{\n    \"Name\": \"财务部\",\n    \"ParentId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 2,\n        \"RequestId\": \"5ac3b178-3434-452e-9a1e-dc8b8089a2d8\"\n    }\n}",
+        "title": "创建普通分账单元"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAllocationUnit\n<公共请求参数>\n\n{\n    \"ParentId\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"RequestId\": \"ebe202d2-9746-4c9a-a931-f569651e5894\"\n    }\n}",
+        "title": "创建分账目录树根结点"
+      }
+    ],
+    "CreateGatherRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatherRule\n<公共请求参数>\n\n{\n    \"Id\": \"6\",\n    \"RuleList\": {\n        \"RuleDetail\": {\n            \"Connectors\": \"and\",\n            \"Children\": [\n                {\n                    \"RuleKey\": \"businessCode\",\n                    \"Operator\": \"in\",\n                    \"RuleValue\": [\n                        \"p_cvm\",\n                        \"p_nat\"\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 23,\n        \"RequestId\": \"215ccaa8-3b2b-425c-b53b-375df0c491e6\"\n    }\n}",
+        "title": "创建归集规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatherRule\n<公共请求参数>\n\n{\n    \"Id\": \"8\",\n    \"RuleList\": {\n        \"RuleDetail\": {\n            \"Connectors\": \"and\",\n            \"Children\": [\n                {\n                    \"RuleKey\": \"businessCode\",\n                    \"Operator\": \"in\",\n                    \"RuleValue\": [\n                        \"p_cvm\",\n                        \"p_nat\"\n                    ]\n                },\n                {\n                    \"RuleKey\": \"regionId\",\n                    \"Operator\": \"in\",\n                    \"RuleValue\": [\n                        \"9\",\n                        \"5\"\n                    ]\n                },\n                {\n                    \"Connectors\": \"and\",\n                    \"Children\": [\n                        {\n                            \"RuleKey\": \"projectId\",\n                            \"Operator\": \"not in\",\n                            \"RuleValue\": [\n                                \"1270522\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 24,\n        \"RequestId\": \"4c396774-36bc-4897-a03d-41a18357d63d\"\n    }\n}",
+        "title": "创建归集嵌套规则"
+      }
+    ],
+    "DeleteAllocationRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllocationRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"21\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e0f48e2a-e884-4ebc-83ee-eb98ff194bfa\"\n    }\n}",
+        "title": "公摊规则删除示例"
+      }
+    ],
     "DeleteAllocationTag": [
       {
         "document": "批量取消设置分账标签",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllocationTag\n<公共请求参数>\n\n{\n    \"TagKey\": [\n        \"测试7\",\n        \"测试3\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c0edd0d-81a7-4e25-a292-e2a281c612ed\"\n    }\n}",
         "title": "批量取消设置分账标签"
+      }
+    ],
+    "DeleteAllocationUnit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllocationUnit\n<公共请求参数>\n\n{\n    \"Id\": \"18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"169af64e-15a9-49f3-a9df-0b6f0afbe525\"\n    }\n}",
+        "title": "删除分账单元"
+      }
+    ],
+    "DeleteGatherRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatherRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3f217f8c-7fca-489c-872f-f0780ee3b147\"\n    }\n}",
+        "title": "删除归集规则示例"
       }
     ],
     "DescribeAccountBalance": [
@@ -64,6 +124,22 @@
         "title": "DescribeAllocationOverview"
       }
     ],
+    "DescribeAllocationRuleDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllocationRuleDetail\n<公共请求参数>\n\n{\n    \"Month\": \"202210\",\n    \"RuleId\": \"24\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 24,\n        \"Uin\": \"909619400\",\n        \"Name\": \"test_allocation2\",\n        \"Type\": 1,\n        \"RuleDetail\": {\n            \"Connectors\": \"and\",\n            \"Children\": [\n                {\n                    \"RuleKey\": \"businessCode\",\n                    \"Operator\": \"=\",\n                    \"RuleValue\": [\n                        \"p_cvm\"\n                    ]\n                },\n                {\n                    \"RuleKey\": \"regionId\",\n                    \"Operator\": \"=\",\n                    \"RuleValue\": [\n                        \"9\"\n                    ]\n                },\n                {\n                    \"Connectors\": \"and\",\n                    \"Children\": [\n                        {\n                            \"RuleKey\": \"projectId\",\n                            \"Operator\": \"=\",\n                            \"RuleValue\": [\n                                \"1270522\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RatioDetail\": [\n            {\n                \"NodeId\": 6,\n                \"Ratio\": 40\n            },\n            {\n                \"NodeId\": 7,\n                \"Ratio\": 60\n            }\n        ],\n        \"RequestId\": \"b9fd53c2-d5d3-4f49-8a6d-dd0b2e9c02bf\"\n    }\n}",
+        "title": "查询公摊规则详情"
+      }
+    ],
+    "DescribeAllocationRuleSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllocationRuleSummary\n<公共请求参数>\n\n{\n    \"Month\": \"2022-11\",\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"RuleList\": [\n            {\n                \"RuleId\": 33,\n                \"RuleName\": \"测试1\",\n                \"Type\": 2,\n                \"UpdateTime\": \"2022-10-30 17:26:16\",\n                \"AllocationNode\": [\n                    {\n                        \"NodeId\": 6,\n                        \"TreeNodeUniqKeyName\": \"产品一部\"\n                    },\n                    {\n                        \"NodeId\": 7,\n                        \"TreeNodeUniqKeyName\": \"产品二部\"\n                    },\n                    {\n                        \"NodeId\": 8,\n                        \"TreeNodeUniqKeyName\": \"产品三部\"\n                    },\n                    {\n                        \"NodeId\": 9,\n                        \"TreeNodeUniqKeyName\": \"产品四部\"\n                    }\n                ]\n            },\n            {\n                \"RuleId\": 29,\n                \"RuleName\": \"test_allocation2\",\n                \"Type\": 1,\n                \"UpdateTime\": \"2022-10-24 12:05:04\",\n                \"AllocationNode\": [\n                    {\n                        \"NodeId\": 2,\n                        \"TreeNodeUniqKeyName\": \"财务部\"\n                    },\n                    {\n                        \"NodeId\": 5,\n                        \"TreeNodeUniqKeyName\": \"组织部\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"78933c15-099c-4958-9ca0-8c148bc1da04\"\n    }\n}",
+        "title": "查询公摊规则概览"
+      }
+    ],
     "DescribeAllocationSummaryByBusiness": [
       {
         "document": "",
@@ -88,12 +164,28 @@
         "title": "查询分账账单按资源汇总"
       }
     ],
+    "DescribeAllocationTree": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllocationTree\n<公共请求参数>\n\n{\n    \"Month\": \"2022-11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 1,\n        \"Name\": \"集团\",\n        \"TreeNodeUniqKey\": \"909619400-63567fc182c5a\",\n        \"Children\": [\n            {\n                \"Id\": 2,\n                \"Name\": \"财务部\",\n                \"TreeNodeUniqKey\": \"909619400-63567ffc4a1b3\",\n                \"Children\": []\n            },\n            {\n                \"Id\": 4,\n                \"Name\": \"产品部\",\n                \"TreeNodeUniqKey\": \"909619400-6357486e737c1\",\n                \"Children\": [\n                    {\n                        \"Id\": 6,\n                        \"Name\": \"产品一部\",\n                        \"TreeNodeUniqKey\": \"909619400-6358ee8995950\",\n                        \"Children\": []\n                    },\n                    {\n                        \"Id\": 7,\n                        \"Name\": \"产品二部\",\n                        \"TreeNodeUniqKey\": \"909619400-6358ee8e7ae35\",\n                        \"Children\": []\n                    },\n                    {\n                        \"Id\": 8,\n                        \"Name\": \"产品三部\",\n                        \"TreeNodeUniqKey\": \"909619400-6358ee9354431\",\n                        \"Children\": []\n                    },\n                    {\n                        \"Id\": 9,\n                        \"Name\": \"产品四部\",\n                        \"TreeNodeUniqKey\": \"909619400-6358ee977ff68\",\n                        \"Children\": []\n                    },\n                    {\n                        \"Id\": 10,\n                        \"Name\": \"产品五部\",\n                        \"TreeNodeUniqKey\": \"909619400-6358ee9c73690\",\n                        \"Children\": []\n                    }\n                ]\n            },\n            {\n                \"Id\": 5,\n                \"Name\": \"组织部\",\n                \"TreeNodeUniqKey\": \"909619400-6358ee6cb2f8f\",\n                \"Children\": []\n            }\n        ],\n        \"RequestId\": \"8e6f00af-4843-481c-9e3a-d61ba53b07ed\"\n    }\n}",
+        "title": "查询整颗树"
+      }
+    ],
     "DescribeAllocationTrendByMonth": [
       {
         "document": "查询分账报表费用趋势",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllocationTrendByMonth\n<公共请求参数>\n\n{\n    \"Month\": \"2024-02\",\n    \"TreeNodeUniqKey\": \"合计费用(折后总额)\"\n}",
         "output": "{\n    \"Response\": {\n        \"Current\": {\n            \"Month\": \"2024-02\",\n            \"Name\": \"2024年02月\",\n            \"RealTotalCost\": \"32953.81\"\n        },\n        \"Previous\": [\n            {\n                \"Month\": \"2023-09\",\n                \"Name\": \"2023年09月\",\n                \"RealTotalCost\": \"14372.07\"\n            },\n            {\n                \"Month\": \"2023-10\",\n                \"Name\": \"2023年10月\",\n                \"RealTotalCost\": \"107337.26\"\n            },\n            {\n                \"Month\": \"2023-11\",\n                \"Name\": \"2023年11月\",\n                \"RealTotalCost\": \"35828.25\"\n            },\n            {\n                \"Month\": \"2023-12\",\n                \"Name\": \"2023年12月\",\n                \"RealTotalCost\": \"-1507335.00\"\n            },\n            {\n                \"Month\": \"2024-01\",\n                \"Name\": \"2024年01月\",\n                \"RealTotalCost\": \"82679.62\"\n            }\n        ],\n        \"RequestId\": \"f6f9372f-f7e7-462e-b20a-cbd5b6b77c4d\",\n        \"Stat\": {\n            \"Average\": {\n                \"BeginMonth\": \"2023-09\",\n                \"EndMonth\": \"2024-02\",\n                \"RealTotalCost\": \"-205694.00\"\n            }\n        }\n    }\n}",
         "title": "查询分账报表费用趋势"
+      }
+    ],
+    "DescribeAllocationUnitDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllocationUnitDetail\n<公共请求参数>\n\n{\n    \"Id\": \"6\",\n    \"Month\": \"2022-10-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 6,\n        \"Uin\": \"909619400\",\n        \"Name\": \"产品一部\",\n        \"ParentId\": 4,\n        \"SourceName\": \"一组\",\n        \"SourceId\": \"asd221\",\n        \"Remark\": \"备注1\",\n        \"TreeNodeUniqKey\": \"909619400-6358ee8995950\",\n        \"RuleId\": 23,\n        \"RequestId\": \"e93a707c-f31f-417f-a39b-e72380132dbb\"\n    }\n}",
+        "title": "查询分账单元详情"
       }
     ],
     "DescribeBillAdjustInfo": [
@@ -350,6 +442,14 @@
         "title": "查询分账账单资源归集汇总"
       }
     ],
+    "DescribeGatherRuleDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGatherRuleDetail\n<公共请求参数>\n\n{\n    \"Id\": \"17\",\n    \"Month\": \"2022-11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 17,\n        \"Uin\": \"909619400\",\n        \"UpdateTime\": \"2022-10-21 17:44:22\",\n        \"RuleDetail\": {\n            \"Connectors\": \"and\",\n            \"Children\": [\n                {\n                    \"RuleKey\": \"businessCode\",\n                    \"Operator\": \"=\",\n                    \"RuleValue\": [\n                        \"p_cvm\"\n                    ]\n                },\n                {\n                    \"RuleKey\": \"regionId\",\n                    \"Operator\": \"=\",\n                    \"RuleValue\": [\n                        \"9\"\n                    ]\n                },\n                {\n                    \"Connectors\": \"and\",\n                    \"Children\": [\n                        {\n                            \"RuleKey\": \"projectId\",\n                            \"Operator\": \"=\",\n                            \"RuleValue\": [\n                                \"1270522\"\n                            ]\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"fcbfb5c0-9589-4c78-a01b-481ab01cbf76\"\n    }\n}",
+        "title": "查询归集规则详情"
+      }
+    ],
     "DescribeSavingPlanResourceInfo": [
       {
         "document": "查询名下可共享的sp资源详细",
@@ -380,6 +480,42 @@
         "input": "https://billing.tencentcloudapi.com/?Action=DescribeVoucherUsageDetails\n&Limit=10\n&Offset=1\n&VoucherId=\"abc\"\n&Operator=\"abc\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalUsedAmount\": 10000000,\n        \"TotalCount\": 1,\n        \"RequestId\": \"1820282306173927424\",\n        \"UsageRecords\": [\n            {\n                \"UsedAmount\": 10000000,\n                \"PayScene\": \"common\",\n                \"UsedTime\": \"2024-03-29 02:03:27\",\n                \"VoucherId\": \"VHPIUDFG9GUZDESWPR4W99\",\n                \"SeqId\": \"10071_2024032902_1300223973_1711649007\",\n                \"UsageDetails\": [\n                    {\n                        \"Action\": \"purchase\",\n                        \"BillingItemCode\": \"v_cvm_bandwidth\",\n                        \"SubProductName\": \"云服务器CVM-标准型S1\",\n                        \"SubProductEnName\": \"CVM Standard S1\",\n                        \"ProductName\": \"云服务器CVM\",\n                        \"ProductCode\": \"cvm\",\n                        \"SubBillingItemCode\": \"sv_cvm_bandwidth_prepay\",\n                        \"ProductEnName\": \"Cloud Virtual Machine(CVM)\",\n                        \"CalcUnit\": \"1\",\n                        \"SubProductCode\": \"p_cvm\"\n                    }\n                ],\n                \"PayMode\": \"postpay\"\n            }\n        ]\n    }\n}",
         "title": "获取代金券使用记录"
+      }
+    ],
+    "ModifyAllocationRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllocationRule\n<公共请求参数>\n\n{\n    \"Name\": \"test_allocation2\",\n    \"RuleDetail\": {\n        \"Connectors\": \"and\",\n        \"Children\": [\n            {\n                \"RuleKey\": \"businessCode\",\n                \"Operator\": \"\",\n                \"RuleValue\": [\n                    \"p_cvm\"\n                ]\n            },\n            {\n                \"RuleKey\": \"regionId\",\n                \"Operator\": \"\",\n                \"RuleValue\": [\n                    \"9\"\n                ]\n            },\n            {\n                \"Connectors\": \"and\",\n                \"Children\": [\n                    {\n                        \"RuleKey\": \"projectId\",\n                        \"Operator\": \"\",\n                        \"RuleValue\": [\n                            \"1270522\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    },\n    \"Type\": \"1\",\n    \"RatioDetail\": [\n        {\n            \"Ratio\": \"40\",\n            \"NodeId\": \"13\"\n        },\n        {\n            \"Ratio\": \"60\",\n            \"NodeId\": \"14\"\n        }\n    ],\n    \"RuleId\": \"24\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"297a49ab-623b-4b3f-bd3a-1309cae4f76b\"\n    }\n}",
+        "title": "编辑公摊规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllocationRule\n<公共请求参数>\n\n{\n    \"Name\": \"test_allocation1\",\n    \"RuleDetail\": {\n        \"Connectors\": \"and\",\n        \"Children\": [\n            {\n                \"RuleKey\": \"businessCode\",\n                \"Operator\": \"\",\n                \"RuleValue\": [\n                    \"p_nat\"\n                ]\n            }\n        ]\n    },\n    \"Type\": \"2\",\n    \"RatioDetail\": [\n        {\n            \"Ratio\": \"50\",\n            \"NodeId\": \"13\"\n        },\n        {\n            \"Ratio\": \"50\",\n            \"NodeId\": \"14\"\n        }\n    ],\n    \"RuleId\": \"22\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"937c1611-0e37-4a9d-8e01-f4854937a555\"\n    }\n}",
+        "title": "编辑公摊规则示例"
+      }
+    ],
+    "ModifyAllocationUnit": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllocationUnit\n<公共请求参数>\n\n{\n    \"SourceName\": \"五部一组\",\n    \"SourceId\": \"asd123\",\n    \"Remark\": \"分账\",\n    \"Name\": \"产品五部\",\n    \"Id\": \"13\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb9b55-2d4f-4178-9898-f6757b174117\"\n    }\n}",
+        "title": "编辑分账单元信息"
+      }
+    ],
+    "ModifyGatherRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatherRule\n<公共请求参数>\n\n{\n    \"Id\": \"23\",\n    \"RuleDetail\": {\n        \"Connectors\": \"and\",\n        \"Children\": [\n            {\n                \"RuleKey\": \"businessCode\",\n                \"Operator\": \"not in\",\n                \"RuleValue\": [\n                    \"p_cvm\",\n                    \"p_nat\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73c8c569-7791-4b2d-bc40-f3c18c5f40d2\"\n    }\n}",
+        "title": "编辑归集规则"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatherRule\n<公共请求参数>\n\n{\n    \"Id\": \"24\",\n    \"RuleDetail\": {\n        \"Connectors\": \"and\",\n        \"Children\": [\n            {\n                \"RuleKey\": \"businessCode\",\n                \"Operator\": \"in\",\n                \"RuleValue\": [\n                    \"p_cvm\",\n                    \"p_nat\"\n                ]\n            },\n            {\n                \"RuleKey\": \"regionId\",\n                \"Operator\": \"in\",\n                \"RuleValue\": [\n                    \"9\",\n                    \"5\"\n                ]\n            },\n            {\n                \"Connectors\": \"and\",\n                \"Children\": [\n                    {\n                        \"RuleKey\": \"projectId\",\n                        \"Operator\": \"not in\",\n                        \"RuleValue\": [\n                            \"1270522\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901c2178-fa8d-4878-8680-952ea3788a59\"\n    }\n}",
+        "title": "编辑归集规则1"
       }
     ],
     "PayDeals": [

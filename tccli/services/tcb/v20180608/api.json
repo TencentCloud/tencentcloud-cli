@@ -8287,6 +8287,24 @@
           "name": "Channels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，单页限制个数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8300,6 +8318,7 @@
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8309,6 +8328,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
