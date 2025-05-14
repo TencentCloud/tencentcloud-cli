@@ -51,7 +51,7 @@
     "CreateCustomDnsHost": [
       {
         "document": "创建自定义DNS Host任务",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esfdhgfgdhigq\",\n    \"DnsName\": \"ns1\",\n    \"IpSet\": [\n        \"1.2.4.8\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-dwwwwwwq\",\n    \"DnsName\": \"ns1\",\n    \"IpSet\": [\n        \"1.2.4.8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 6543,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
         "title": "创建自定义DNS Host任务"
       }
@@ -311,7 +311,7 @@
     "DescribeTemplate": [
       {
         "document": "",
-        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplate\n&TemplateId=模板ID\n&<公共请求参数>",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplate\n&TemplateId=tmpl-dgmgwpe2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c209d0e-f244-435f-8222-d86741c3edbd\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"ContactInfo\": {\n                \"Province\": \"hu nan sheng\",\n                \"RegistrantType\": \"I\",\n                \"OrganizationName\": \"yan zheng org name\",\n                \"OrganizationNameCN\": \"验证的企业名称\",\n                \"Country\": \"CN\",\n                \"RegistrantName\": \"registrant name\",\n                \"ZipCode\": \"425000\",\n                \"Telephone\": \"155*********\",\n                \"City\": \"ce shi\",\n                \"RegistrantNameCN\": \"注册人名称\",\n                \"StreetCN\": \"咸嘉湖街道\",\n                \"Street\": \"xian jia hu jie dao\",\n                \"ProvinceCN\": \"湖南省\",\n                \"CityCN\": \"长沙市\",\n                \"CountryCN\": \"中国\",\n                \"Email\": \"dnspod@dnspod.com\"\n            },\n            \"UpdatedOn\": \"2020-07-28 13:33:55\",\n            \"AuditStatus\": \"InAudit\",\n            \"IsBlack\": false,\n            \"CreatedOn\": \"2020-07-28 12:50:23\",\n            \"UserUin\": \"12334********\",\n            \"IsDefault\": \"no\",\n            \"TemplateId\": \"tmpl-dgmgwpe2\",\n            \"InvalidReason\": \"\",\n            \"IsValidTemplate\": 1,\n            \"CertificateInfo\": {\n                \"CertificateType\": \"SFZ\",\n                \"CertificateCode\": \"12345679\",\n                \"ImgUrl\": \"https://image.com/******\",\n                \"OriginImgUrl\": \"https://tencentyun.com/******\",\n                \"RegistrantCertificateCode\": \"12345679\",\n                \"RegistrantCertificateType\": \"SFZ\",\n                \"RegistrantImgUrl\": \"https://image.com/******\"\n            }\n        }\n    }\n}",
         "title": "获取模板信息"
       }

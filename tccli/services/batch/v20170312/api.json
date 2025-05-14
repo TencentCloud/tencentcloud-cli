@@ -162,7 +162,7 @@
       "status": "online"
     },
     "RetryJobs": {
-      "document": "用于重试作业中失败的任务实例。\n当且仅当作业处于“FAILED”状态，支持重试操作。重试操作成功后，作业会按照“DAG”中指定的任务依赖关系，依次重试各个任务中失败的任务实例。任务实例的历史信息将被重置，如同首次运行一样，参与后续的调度和执行。",
+      "document": "用于重试作业中失败的任务实例。\n仅当作业处于“FAILED”状态，支持重试操作。重试操作成功后，作业会按照有向无环图中指定的任务依赖关系，依次重试各个任务中失败的任务实例。任务实例的历史信息将被重置，如同首次运行一样，参与后续的调度和执行。",
       "input": "RetryJobsRequest",
       "name": "重试作业",
       "output": "RetryJobsResponse",
@@ -190,14 +190,14 @@
       "status": "online"
     },
     "TerminateJob": {
-      "document": "用于终止作业。\n当作业处于“SUBMITTED”状态时，禁止终止操作；当作业处于“SUCCEED”状态时，终止操作不会生效。\n终止作业是一个异步过程。整个终止过程的耗时和任务总数成正比。终止的效果相当于所含的所有任务实例进行TerminateTaskInstance操作。具体效果和用法可参考TerminateTaskInstance。",
+      "document": "用于终止作业。\n当作业处于“SUBMITTED”状态时，禁止终止操作；当作业处于“SUCCEED”状态时，终止操作不会生效。\n终止作业是一个异步过程。整个终止过程的耗时和任务总数成正比。终止的效果相当于所含的所有任务实例进行[TerminateTaskInstance](https://cloud.tencent.com/document/product/599/15908)操作。具体效果和用法可参考[TerminateTaskInstance](https://cloud.tencent.com/document/product/599/15908)。",
       "input": "TerminateJobRequest",
       "name": "终止作业",
       "output": "TerminateJobResponse",
       "status": "online"
     },
     "TerminateTaskInstance": {
-      "document": "用于终止任务实例。\n对于状态已经为“SUCCEED”和“FAILED”的任务实例，不做处理。\n对于状态为“SUBMITTED”、“PENDING”、“RUNNABLE”的任务实例，状态将置为“FAILED”状态。\n对于状态为“STARTING”、“RUNNING”、“FAILED_INTERRUPTED”的任务实例，分区两种情况：如果未显示指定计算环境，会先销毁CVM服务器，然后将状态置为“FAILED”，具有一定耗时；如果指定了计算环境EnvId，任务实例状态置为“FAILED”，并重启执行该任务的CVM服务器，具有一定的耗时。\n对于状态为“FAILED_INTERRUPTED”的任务实例，终止操作实际成功之后，相关资源和配额才会释放。",
+      "document": "用于终止任务实例。\n对于状态已经为“SUCCEED”和“FAILED”的任务实例，不做处理。\n对于状态为“SUBMITTED”、“PENDING”、“RUNNABLE”的任务实例，状态将置为“FAILED”状态。\n对于状态为“STARTING”、“RUNNING”、“FAILED_INTERRUPTED”的任务实例，区分两种情况：如果未显示指定计算环境，会先销毁CVM服务器，然后将状态置为“FAILED”，具有一定耗时；如果指定了计算环境EnvId，任务实例状态置为“FAILED”，并重启执行该任务的CVM服务器，具有一定的耗时。\n对于状态为“FAILED_INTERRUPTED”的任务实例，终止操作实际成功之后，相关资源和配额才会释放。",
       "input": "TerminateTaskInstanceRequest",
       "name": "终止任务实例",
       "output": "TerminateTaskInstanceResponse",
@@ -266,7 +266,7 @@
         },
         {
           "disabled": false,
-          "document": "活动状态",
+          "document": "活动状态。取值范围：<br><li>SUBMITTED：已提交</li><li>PROCESSING：处理中</li><li>SUCCEED：成功</li><li>FAILED：失败</li>",
           "example": "SUCCEED",
           "member": "string",
           "name": "ActivityState",
@@ -422,7 +422,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行命令。与Commands不能同时指定。",
+          "document": "松耦合任务执行命令。与Commands不能同时指定，一般使用Command字段提交任务。",
           "example": "sleep 10",
           "member": "string",
           "name": "Command",
@@ -434,7 +434,7 @@
         {
           "disabled": false,
           "document": "应用程序软件包的远程存储路径",
-          "example": "/tmp",
+          "example": "cos://kelvin-test-1251762227.cos.ap-nanjing.myqcloud.com/batch_test/",
           "member": "string",
           "name": "PackagePath",
           "output_required": false,
@@ -455,7 +455,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行命令信息。与Command不能同时指定。",
+          "document": "紧耦合任务执行命令信息。与Command不能同时指定。Command和Commands必须指定一个。",
           "example": "无",
           "member": "CommandLine",
           "name": "Commands",
@@ -472,7 +472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-nuydksjj",
           "member": "string",
           "name": "EnvId",
@@ -481,7 +481,7 @@
         },
         {
           "disabled": false,
-          "document": "加入计算环境实例列表",
+          "document": "加入计算环境实例列表，每次请求的实例的上限为100。",
           "example": "无",
           "member": "Instance",
           "name": "Instances",
@@ -831,7 +831,7 @@
         },
         {
           "disabled": false,
-          "document": "计算节点状态",
+          "document": "计算节点状态。取值范围：<br><li>PENDING：表示创建中</li><li>SUBMITTED：表示已提交创建</li><li>CREATING：表示创建中</li><li>CREATED：表示创建完成</li><li>CREATION_FAILED：表示创建失败。</li><li>RUNNING：表示运行中。</li><li>ABNORMAL：表示节点异常。</li><li>DELETING：表示删除中。</li>",
           "example": "RUNNING",
           "member": "string",
           "name": "ComputeNodeState",
@@ -1068,7 +1068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务模板名称",
+          "document": "任务模板名称，最大长度限制60个字符。",
           "example": "job1",
           "member": "string",
           "name": "TaskTemplateName",
@@ -1086,7 +1086,7 @@
         },
         {
           "disabled": false,
-          "document": "任务模板描述",
+          "document": "任务模板描述，最大长度限制200个字符。",
           "example": "test template",
           "member": "string",
           "name": "TaskTemplateDescription",
@@ -1259,7 +1259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-3dhmblr3",
           "member": "string",
           "name": "EnvId",
@@ -1286,7 +1286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
           "example": "job-f5da1edl",
           "member": "string",
           "name": "JobId",
@@ -1313,8 +1313,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用于删除任务模板信息",
-          "example": "[\"task-tmpl-7vtx96n2\\r\\n\"]",
+          "document": "用于删除任务模板信息，最大数量上限100，环境模版ID通过调用接口 [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/15902)获取。",
+          "example": "[\"task-tmpl-7vtx96n2\"]",
           "member": "string",
           "name": "TaskTemplateIds",
           "required": true,
@@ -1368,7 +1368,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>",
+          "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/product/213/15707)过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照[机型系列](https://cloud.tencent.com/document/product/213/15748)过滤。实例机型系列形如：S1、I1、M1等。</li>",
           "example": "\t[{\"Name\":\"zone\",\"Values\":[\"ap-guangzhou-1\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -1405,7 +1405,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -1414,7 +1414,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量，默认为0.",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -1423,7 +1423,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "返回数量，默认值20，最大值100.",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -1451,7 +1451,7 @@
           "example": "无",
           "member": "Activity",
           "name": "ActivitySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1461,7 +1461,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1479,7 +1479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -1616,7 +1616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID列表，与Filters参数不能同时指定。",
+          "document": "计算环境ID列表，与Filters参数不能同时指定，最大限制100。环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "[\"env-5o4gphir\"]",
           "member": "string",
           "name": "EnvIds",
@@ -1625,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>\n与EnvIds参数不能同时指定。",
+          "document": "过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>与EnvIds参数不能同时指定。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1643,7 +1643,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "返回数量，默认值20，最大值100。",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -1705,7 +1705,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -1775,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "计算环境类型",
+          "document": "计算环境管理类型，枚举如下： MANAGED: 由客户在Batch平台主动创建； THPC_QUEUE: 由thpc平台创建，关联thpc平台集群队列。",
           "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
@@ -1795,7 +1795,7 @@
         },
         {
           "disabled": false,
-          "document": "下一步动作",
+          "document": "下一步的动作，枚举如下： DELETING: 删除中",
           "example": "DELETING",
           "member": "string",
           "name": "NextAction",
@@ -1837,7 +1837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID列表，与Filters参数不能同时指定。",
+          "document": "计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "[\"env-lcx7qbbr\\n\"]",
           "member": "string",
           "name": "EnvIds",
@@ -1846,7 +1846,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li>\n<li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li>\n<li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>\n与EnvIds参数不能同时指定。",
+          "document": "过滤条件<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤，可用区通过调用接口 [DescribeZones](https://cloud.tencent.com/document/api/213/15707)获取。</li><li> env-id - String - 是否必填：否 -（过滤条件）按照计算环境ID过滤。</li><li> env-name - String - 是否必填：否 -（过滤条件）按照计算环境名称过滤。</li><li> resource-type - String - 是否必填：否 -（过滤条件）按照计算资源类型过滤，取值CVM或者CPM(黑石)。</li><li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li><li>tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li><li>tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>与EnvIds参数不能同时指定。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1864,7 +1864,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "返回数量，默认值20，最大值100。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -1883,7 +1883,7 @@
           "example": "无",
           "member": "ComputeEnvView",
           "name": "ComputeEnvSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1893,7 +1893,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1911,7 +1911,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>\n<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。</li>\n<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 ( POSTPAID_BY_HOUR：表示后付费，即按量计费机型 | SPOTPAID：表示竞价付费机型。 )  </li>",
+          "document": "过滤条件。\n<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/product/213/15707)过滤。</li>\n<li> instance-family String - 是否必填：否 -（过滤条件）按照[机型系列](https://cloud.tencent.com/document/product/213/15748)过滤。实例机型系列形如：S1、I1、M1等。</li>\n<li> instance-type - String - 是否必填：否 - （过滤条件）按照[机型](https://cloud.tencent.com/document/product/213/15749)过滤。实例机型形如：：S5.12XLARGE128、S5.12XLARGE96等。</li>\n<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 ( POSTPAID_BY_HOUR：表示后付费，即按量计费机型 | SPOTPAID：表示竞价付费机型。 )  </li>",
           "example": "[{\"Name\":\"zone\",\"Values\":[\"ap-guangzhou-1\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -1954,7 +1954,7 @@
         {
           "disabled": false,
           "document": "CVM实例分类列表",
-          "example": "[{\"InstanceFamilySet\": [\"C3\",\"CN3\"],\"InstanceCategory\": \"COMPUTE_3\"}",
+          "example": "[{\"InstanceFamilySet\": [\"C3\",\"CN3\"],\"InstanceCategory\": \"COMPUTE_3\"}]",
           "member": "InstanceCategoryItem",
           "name": "InstanceCategorySet",
           "output_required": true,
@@ -1975,7 +1975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业标识",
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
           "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
@@ -2040,7 +2040,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "CreateTime",
@@ -2050,7 +2050,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
           "example": "2018-02-07T09:33:01Z",
           "member": "string",
           "name": "EndTime",
@@ -2248,7 +2248,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>\n与JobIds参数不能同时指定。",
+          "document": "过滤条件\n<li> job-id - String - 是否必填：否 -（过滤条件）按照作业ID过滤。</li>\n<li> job-name - String - 是否必填：否 -（过滤条件）按照作业名称过滤。</li>\n<li> job-state - String - 是否必填：否 -（过滤条件）按照作业状态过滤。</li>\n\n    - SUBMITTED：已提交；\n    - PENDING：等待中；\n    - RUNNABLE：可运行；\n    - STARTING：启动中；\n    - RUNNING：运行中；\n    - SUCCEED：成功；\n    - FAILED：失败；\n    - FAILED_INTERRUPTED：失败后保留实例。\n\n<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/product/213/15707)过滤。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>\n与JobIds参数不能同时指定。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2266,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量",
+          "document": "返回job数量限制，最大值: 100，默认值: 20.",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -2313,7 +2313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID。JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。",
           "example": "job-mawzp3ja",
           "member": "string",
           "name": "JobId",
@@ -2331,8 +2331,8 @@
         },
         {
           "disabled": false,
-          "document": "任务实例集合",
-          "example": "[\"0\\r\\n\",\"1\\r\\n\"]",
+          "document": "任务实例集合；与Offset不能同时指定。",
+          "example": "[0, 1]",
           "member": "uint64",
           "name": "TaskInstanceIndexes",
           "required": false,
@@ -2340,7 +2340,7 @@
         },
         {
           "disabled": false,
-          "document": "起始任务实例",
+          "document": "起始任务实例。与TaskInstanceIndexes参数不能同时指定。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2349,8 +2349,8 @@
         },
         {
           "disabled": false,
-          "document": "最大任务实例数",
-          "example": "100",
+          "document": "最大任务实例数, 最大值为10.",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2368,7 +2368,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2378,7 +2378,7 @@
           "example": "无",
           "member": "TaskInstanceLog",
           "name": "TaskInstanceLogSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2396,7 +2396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
           "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
@@ -2432,7 +2432,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详情如下：\n<li> task-instance-type - String - 是否必填： 否 - 按照任务实例状态进行过滤（SUBMITTED：已提交；PENDING：等待中；RUNNABLE：可运行；STARTING：启动中；RUNNING：运行中；SUCCEED：成功；FAILED：失败；FAILED_INTERRUPTED：失败后保留实例）。</li>",
+          "document": "过滤条件，详情如下：\ntask-instance-state     - String - 是否必填： 否 - 按照任务实例状态进行过滤（\n\n- SUBMITTED：已提交；\n- PENDING：等待中；\n- RUNNABLE：可运行；\n- STARTING：启动中；\n- RUNNING：运行中；\n- SUCCEED：成功；\n- FAILED：失败；\n- FAILED_INTERRUPTED：失败后保留实例）。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2613,7 +2613,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-1mekuyxs",
           "member": "string",
           "name": "EnvId",
@@ -2622,8 +2622,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID列表",
-          "example": "[\"ins-kjoossv5\\r\\n\"]",
+          "document": "实例ID列表，实例ID通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728)获取。",
+          "example": "[\"ins-kjoossv5\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3173,7 +3173,7 @@
         {
           "disabled": false,
           "document": "实例类型名",
-          "example": "[\"C3\", \"CN3\"]",
+          "example": "COMPUTE_3",
           "member": "string",
           "name": "InstanceCategory",
           "output_required": true,
@@ -3183,7 +3183,7 @@
         {
           "disabled": false,
           "document": "实例族列表",
-          "example": "COMPUTE_3",
+          "example": "[\"C3\", \"CN3\"]",
           "member": "string",
           "name": "InstanceFamilySet",
           "output_required": true,
@@ -3808,38 +3808,34 @@
           "member": "Task",
           "name": "Tasks",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "作业名称",
+          "document": "作业名称; 字符串长度限制60.",
           "example": "test-job",
           "member": "string",
           "name": "JobName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "作业描述",
+          "document": "作业描述；字符串长度限制200.",
           "example": "test-job",
           "member": "string",
           "name": "JobDescription",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级",
+          "document": "作业优先级，任务（Task）和任务实例（TaskInstance）会继承作业优先级；范围0～100，数值越大，优先级越高。",
           "example": "1",
           "member": "uint64",
           "name": "Priority",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3848,8 +3844,7 @@
           "member": "Dependence",
           "name": "Dependences",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3858,8 +3853,7 @@
           "member": "Notification",
           "name": "Notifications",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3868,8 +3862,7 @@
           "member": "string",
           "name": "TaskExecutionDependOn",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3878,8 +3871,7 @@
           "member": "string",
           "name": "StateIfCreateCvmFailed",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3888,8 +3880,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3898,8 +3889,7 @@
           "member": "string",
           "name": "NotificationTarget",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3909,7 +3899,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
           "example": "job-f4llnqoz",
           "member": "string",
           "name": "JobId",
@@ -3929,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "作业状态",
+          "document": "作业状态:\n- SUBMITTED：已提交；\n- PENDING：等待中；\n- RUNNABLE：可运行；\n- STARTING：启动中；\n- RUNNING：运行中；\n- SUCCEED：成功；\n- FAILED：失败；\n- FAILED_INTERRUPTED：失败后保留实例。",
           "example": "RUNNING",
           "member": "string",
           "name": "JobState",
@@ -3959,8 +3949,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "2024-12-19 14:40:37",
+          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ",
+          "example": "2021-05-07T04:19:49Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3969,8 +3959,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "2024-12-19 14:40:37",
+          "document": "结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ",
+          "example": "2021-05-07T04:22:06Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -4094,7 +4084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -4103,7 +4093,7 @@
         },
         {
           "disabled": false,
-          "document": "计算节点期望个数",
+          "document": "计算节点期望个数，最大上限2000。",
           "example": "2",
           "member": "int64",
           "name": "DesiredComputeNodeCount",
@@ -4157,7 +4147,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务模板ID",
+          "document": "任务模板ID; 详见[任务模版](https://cloud.tencent.com/document/product/599/15902)。",
           "example": "task-tmpl-606i415o",
           "member": "string",
           "name": "TaskTemplateId",
@@ -4166,7 +4156,7 @@
         },
         {
           "disabled": false,
-          "document": "任务模板名称",
+          "document": "任务模板名称；字节长度限制60。",
           "example": "A",
           "member": "string",
           "name": "TaskTemplateName",
@@ -4175,7 +4165,7 @@
         },
         {
           "disabled": false,
-          "document": "任务模板描述",
+          "document": "任务模板描述；字节长度限制200。",
           "example": "first template",
           "member": "string",
           "name": "TaskTemplateDescription",
@@ -4244,18 +4234,16 @@
           "member": "string",
           "name": "EnvName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "计算节点期望个数",
+          "document": "计算节点期望个数，最大上限2000.",
           "example": "1",
           "member": "int64",
           "name": "DesiredComputeNodeCount",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4264,18 +4252,16 @@
           "member": "string",
           "name": "EnvDescription",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "计算环境管理类型",
+          "document": "计算环境管理类型，枚举如下：\nMANAGED: 由客户在Batch平台主动创建；\nTHPC_QUEUE: 由THPC平台创建，关联THPC平台的集群队列。",
           "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4284,8 +4270,7 @@
           "member": "EnvData",
           "name": "EnvData",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -4294,8 +4279,7 @@
           "member": "MountDataDisk",
           "name": "MountDataDisks",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4304,8 +4288,7 @@
           "member": "Authentication",
           "name": "Authentications",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4314,8 +4297,7 @@
           "member": "InputMapping",
           "name": "InputMappings",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4324,8 +4306,7 @@
           "member": "AgentRunningMode",
           "name": "AgentRunningMode",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -4334,8 +4315,7 @@
           "member": "Notification",
           "name": "Notifications",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4344,8 +4324,7 @@
           "member": "string",
           "name": "ActionIfComputeNodeInactive",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4354,8 +4333,7 @@
           "member": "int64",
           "name": "ResourceMaxRetryCount",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4364,8 +4342,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4374,8 +4351,7 @@
           "member": "string",
           "name": "NotificationTarget",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -4658,8 +4634,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID列表。",
-          "example": "[\"job-rybewp57\\r\\n\",\"job-97zcl3wt\\r\\n\"]",
+          "document": "作业ID列表。最大重试作业数100；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。",
+          "example": "[\"job-rybewp57\",\"job-97zcl3wt\"]",
           "member": "string",
           "name": "JobIds",
           "required": true,
@@ -5323,7 +5299,7 @@
         },
         {
           "disabled": false,
-          "document": "任务实例状态",
+          "document": "任务实例状态: \n- PENDING：等待中；\n- RUNNABLE：可运行；\n- STARTING：启动中；\n- RUNNING：运行中；\n- SUCCEED：成功；\n- FAILED：失败；\n- FAILED_INTERRUPTED：失败后保留实例。",
           "example": "RUNNING",
           "member": "string",
           "name": "TaskInstanceState",
@@ -5363,8 +5339,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "2024-12-19 14:43:20",
+          "document": "创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -5373,8 +5349,8 @@
         },
         {
           "disabled": false,
-          "document": "启动时间",
-          "example": "2024-12-19 14:43:49",
+          "document": "启动时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "LaunchTime",
           "output_required": true,
@@ -5383,8 +5359,8 @@
         },
         {
           "disabled": false,
-          "document": "开始运行时间",
-          "example": "2024-12-19 14:46:49",
+          "document": "开始运行时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "RunningTime",
           "output_required": true,
@@ -5393,8 +5369,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "2024-12-19 14:48:17",
+          "document": "结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -5591,7 +5567,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "任务状态:\n- PENDING：等待中；\n- RUNNABLE：可运行；\n- STARTING：启动中；\n- RUNNING：运行中；\n- SUCCEED：成功；\n- FAILED：失败；\n- FAILED_INTERRUPTED：失败后保留实例。",
           "example": "FAILED",
           "member": "string",
           "name": "TaskState",
@@ -5601,8 +5577,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "2017-08-01 22:41:36",
+          "document": "开始时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -5611,8 +5587,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2017-08-01 23:41:36",
+          "document": "结束时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -5627,7 +5603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-lcx7qbbr",
           "member": "string",
           "name": "EnvId",
@@ -5636,7 +5612,7 @@
         },
         {
           "disabled": false,
-          "document": "计算节点ID",
+          "document": "计算节点ID，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "node-lcpcej85",
           "member": "string",
           "name": "ComputeNodeId",
@@ -5663,7 +5639,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "env-lcx7qbbr",
           "member": "string",
           "name": "EnvId",
@@ -5672,7 +5648,7 @@
         },
         {
           "disabled": false,
-          "document": "计算节点ID列表",
+          "document": "计算节点ID列表，最大数量上限100，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
           "example": "[\"node-k9fwel23\"]",
           "member": "string",
           "name": "ComputeNodeIds",
@@ -5699,7 +5675,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
           "example": "job-rybewp57",
           "member": "string",
           "name": "JobId",
@@ -5726,7 +5702,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "作业ID",
+          "document": "作业ID；详见[作业列表](https://cloud.tencent.com/document/product/599/15909)。",
           "example": "job-rybewp57",
           "member": "string",
           "name": "JobId",
@@ -5735,7 +5711,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "任务名称；详见[作业提交信息](https://cloud.tencent.com/document/product/599/15910)",
           "example": "A",
           "member": "string",
           "name": "TaskName",

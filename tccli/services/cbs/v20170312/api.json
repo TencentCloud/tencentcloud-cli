@@ -36,7 +36,7 @@
       "status": "online"
     },
     "CopySnapshotCrossRegions": {
-      "document": "本接口（CopySnapshotCrossRegions）用于快照跨地域复制。\n\n* 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。\n* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2022年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。",
+      "document": "本接口（CopySnapshotCrossRegions）用于快照跨地域复制。\n\n* 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。\n* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2025年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。",
       "input": "CopySnapshotCrossRegionsRequest",
       "name": "快照跨地域复制",
       "output": "CopySnapshotCrossRegionsResponse",
@@ -537,7 +537,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚前是否执行自动关机",
+          "document": "回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。",
           "example": "False",
           "member": "bool",
           "name": "AutoStopInstance",
@@ -546,7 +546,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚完成后是否自动开机",
+          "document": "回滚完成后是否自动开机，仅支持回滚快照至已挂载的云硬盘时传入。该参数传入时，需要同时传入AutoStopInstance参数。",
           "example": "False",
           "member": "bool",
           "name": "AutoStartInstance",
@@ -1051,7 +1051,7 @@
         {
           "disabled": false,
           "document": "快照需要复制到的目标地域，各地域的标准取值可通过接口[DescribeRegions](https://cloud.tencent.com/document/product/213/9456)查询，且只能传入支持快照的地域。",
-          "example": "[\"ap-beijing\\r\\n\"]",
+          "example": "[\"ap-beijing\"]",
           "member": "string",
           "name": "DestinationRegions",
           "required": true,
@@ -1087,6 +1087,7 @@
           "example": "无",
           "member": "SnapshotCopyResult",
           "name": "SnapshotCopyResultSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1668,7 +1669,7 @@
         {
           "disabled": false,
           "document": "要删除的快照ID列表，可通过[DescribeSnapshots](/document/product/362/15647)查询。",
-          "example": "[\"snap-gybrif0z\\n\"]",
+          "example": "[\"snap-gybrif0z\"]",
           "member": "string",
           "name": "SnapshotIds",
           "required": true,
@@ -1793,8 +1794,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的云硬盘ID。",
-          "example": "disk-xxxx",
+          "document": "要查询的云硬盘ID，通过[DescribeDisks](https://tcloud4api.woa.com/document/product/362/15601?!preview&!document=1)接口查询。",
+          "example": "disk-lg4ckc93",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -1812,15 +1813,17 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云盘绑定的定期快照列表。",
-          "example": "[]",
+          "example": "无",
           "member": "AutoSnapshotPolicy",
           "name": "AutoSnapshotPolicySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3009,7 +3012,7 @@
         },
         {
           "disabled": false,
-          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](https://cloud.tencent.com/document/product/362/15647)接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
           "example": "0",
           "member": "int64",
           "name": "DeleteSnapshot",
@@ -3955,8 +3958,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘ID。",
-          "example": "disk-xxxxxxxx",
+          "document": "云硬盘ID。可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-b1f7xvod",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -3964,7 +3967,7 @@
         },
         {
           "disabled": false,
-          "document": "调整之后的云硬盘备份点配额。",
+          "document": "调整之后的云硬盘备份点配额。取值范围为1 ~ 1024。",
           "example": "1",
           "member": "uint64",
           "name": "DiskBackupQuota",
@@ -3991,7 +3994,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "额外购买的云硬盘性能值，单位MB/s。",
+          "document": "额外购买的云硬盘性能值，单位MiB/s。",
           "example": "300",
           "member": "uint64",
           "name": "ThroughputPerformance",
@@ -4000,7 +4003,7 @@
         },
         {
           "disabled": false,
-          "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "document": "需要购买额外性能值的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。仅大小超过460GiB的增强型SSD（CLOUD_HSSD）和极速型SSD（CLOUD_TSSD）云硬盘才支持购买额外性能。",
           "example": "disk-dritwhhm",
           "member": "string",
           "name": "DiskId",
@@ -4144,8 +4147,8 @@
         },
         {
           "disabled": false,
-          "document": "快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。",
-          "example": "2021-06-28 00:00:00",
+          "document": "快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。注：该参数仅在参数IsPermanent为False时生效。",
+          "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
           "name": "Deadline",
           "required": false,

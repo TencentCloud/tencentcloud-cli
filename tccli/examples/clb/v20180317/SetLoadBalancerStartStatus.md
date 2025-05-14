@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli clb SetLoadBalancerStartStatus --cli-unfold-argument  \
-    --LoadBalancerId lb-xxxxxxxx \
+    --LoadBalancerId lb-hwdt33e0 \
     --OperationType Stop
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "b3196d4c-2722-4893-8d86-e33136199469"
     }
 }
 ```

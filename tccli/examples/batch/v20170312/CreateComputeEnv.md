@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli batch CreateComputeEnv --cli-unfold-argument  \
-    --Placement.Zone ap-guangzhou-2 \
-    --ComputeEnv.EnvName 'test compute env' \
-    --ComputeEnv.EnvDescription 'test compute env' \
+    --ComputeEnv.EnvName test compute env \
+    --ComputeEnv.EnvDescription EnvDescription \
     --ComputeEnv.EnvType MANAGED \
     --ComputeEnv.EnvData.InstanceType S1.SMALL2 \
     --ComputeEnv.EnvData.ImageId img-bd78fy2t \
-    --ComputeEnv.DesiredComputeNodeCount 1
+    --ComputeEnv.DesiredComputeNodeCount 1 \
+    --Placement.Zone ap-guangzhou-2
 ```
 
 Output: 

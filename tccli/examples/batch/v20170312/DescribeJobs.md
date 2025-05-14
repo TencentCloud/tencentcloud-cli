@@ -16,7 +16,7 @@ Output:
         "TotalCount": 2,
         "JobSet": [
             {
-                "EndTime": null,
+                "EndTime": "2020-09-21T08:59:45Z",
                 "JobState": "STARTING",
                 "Tags": [
                     {

@@ -1566,6 +1566,14 @@
         "title": "查询实时任务表粒度指标概览"
       }
     ],
+    "DescribeTaskTemplates": [
+      {
+        "document": "分页查询模版列表",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskTemplates\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1470547050521227264\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"OrderFields\": [\n        {\n            \"Name\": \"UpdateTime\",\n            \"Direction\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"PageCount\": 0,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"c2b2edf2-8537-4fb8-869a-92fa10cf3bb7\"\n    }\n}",
+        "title": "分页查询模版列表"
+      }
+    ],
     "DescribeTasksForCodeTemplate": [
       {
         "document": "",
@@ -1674,6 +1682,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DiagnosePro\n<公共请求参数>\n\n{\n    \"SearchCondition\": {\n        \"Instance\": {\n            \"TaskId\": \"20240307211852581\",\n            \"CurRunDate\": \"2024-04-10 00:00:00\"\n        }\n    },\n    \"ProjectId\": \"1492511691706699776\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": {\n                \"Diagnose\": \"该实例执行失败\",\n                \"Operation\": \"结合运行日志排查失败原因\",\n                \"Reason\": \"用户代码和执行环境存在异常\",\n                \"TaskId\": \"20240307211852581\",\n                \"TaskName\": \"python_task_failed\",\n                \"Url\": \"\"\n            },\n            \"Table\": {\n                \"Column\": [],\n                \"Data\": []\n            }\n        },\n        \"RequestId\": \"cf111dff-a9c3-407d-83b5-d9424da7af12\"\n    }\n}",
         "title": "实例诊断示例"
+      }
+    ],
+    "DownloadLogByLine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadLogByLine\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"CurRunDate\": \"abc\",\n    \"DetailId\": \"abc\",\n    \"StartLine\": 0,\n    \"LineCount\": 0,\n    \"FilePath\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"RecordId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 0,\n            \"Content\": [\n                \"abc\"\n            ],\n            \"Over\": true,\n            \"InstanceState\": \"abc\",\n            \"InstanceId\": \"abc\",\n            \"TaskId\": \"abc\",\n            \"WorkerType\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "下载日志信息"
       }
     ],
     "DryRunDIOfflineTask": [

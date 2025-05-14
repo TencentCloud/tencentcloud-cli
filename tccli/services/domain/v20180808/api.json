@@ -444,7 +444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量修改的域名。",
+          "document": "批量修改的域名数组\n个数最大不超过4000",
           "example": "[\"h101.tencent.com\"]",
           "member": "string",
           "name": "Domains",
@@ -453,7 +453,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID\n可从DescribeTemplates接口获取",
+          "document": "模板ID \n可从[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取",
           "example": "tmpl-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -758,7 +758,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否需要额外支付",
+          "document": "是否需要额外支付\ntrue: 需要额外支付\nfalse: 不需要额外支付",
           "example": "false",
           "member": "bool",
           "name": "IsNeedPay",
@@ -768,7 +768,7 @@
         },
         {
           "disabled": false,
-          "document": "计费请求参数，以类Json字符串的形式进行返回。用于计费下单",
+          "document": "计费请求参数，以类Json字符串的形式进行返回。json字符串前有一个\">\"特定标识符号，去掉标识符的字符串可用于计费下单\n",
           "example": "无",
           "member": "string",
           "name": "BillingParam",
@@ -1367,7 +1367,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "document": "域名实例ID \n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "domain-dwwwwwwq",
           "member": "string",
           "name": "DomainId",
@@ -1594,7 +1594,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码\n通过调用SendPhoneEmailCode接口发送到手机或邮箱的验证码：https://cloud.tencent.com/document/api/242/62666",
+          "document": "验证码\n通过调用[SendPhoneEmailCode](https://cloud.tencent.com/document/api/242/62666)接口发送到手机或邮箱的验证码",
           "example": "234567",
           "member": "string",
           "name": "VerifyCode",
@@ -1829,7 +1829,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID\n可通过DescribeTemplates接口获取",
+          "document": "模板ID\n可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取",
           "example": "tmpl-itxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -2188,7 +2188,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量\n默认：20 取值范围【1，200】",
+          "document": "每页数量\n默认：20 取值范围[1，200]",
           "example": "20",
           "member": "uint64",
           "name": "PageSize",
@@ -2224,7 +2224,7 @@
         },
         {
           "disabled": false,
-          "document": "排序规则：asc升序，desc降序",
+          "document": "排序规则：\nasc:升序\ndesc:降序\n默认：asc",
           "example": "asc",
           "member": "string",
           "name": "SortOrder",
@@ -2530,7 +2530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预约ID \n可通过[DescribeBiddingSuccessfulList](https://cloud.tencent.com/document/api/242/106596)接口获取",
+          "document": "预约ID \n可通过[DescribeBiddingList](https://cloud.tencent.com/document/api/242/106598)接口获取",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
@@ -2666,7 +2666,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量\n默认：20 取值范围【1，200】",
+          "document": "每页数量\n默认：20 取值范围[1，200]",
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "排序规则：asc升序，desc降序",
+          "document": "排序规则：\nasc：升序\ndesc：降序\n默认：asc",
           "example": "asc",
           "member": "string",
           "name": "SortOrder",
@@ -2814,7 +2814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "document": "域名\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -3819,8 +3819,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID\n通过DescribeTemplateList接口获取:https://cloud.tencent.com/document/api/242/48940",
-          "example": "tmpl-itxxxxxx",
+          "document": "模板ID\n通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取",
+          "example": "tmpl-dgmgwpe2",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -4100,7 +4100,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhobited: 注册商禁止续费",
+          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhibited: 注册商禁止续费",
           "example": "ok",
           "member": "string",
           "name": "DomainStatus",
@@ -4524,7 +4524,7 @@
         },
         {
           "disabled": false,
-          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhobited: 注册商禁止续费",
+          "document": "域名状态。\nok：正常\nserverHold：注册局暂停解析 \nclientHold：注册商暂停解析\npendingTransfer：转移中\nrenewingPeriod：续费期\nredemptionPeriod：偿还期\npendingDelete：删除期\nserverTransferProhibited：注册局禁止转移\nserverUpdateProhibited：注册局禁止更新\nserverDeleteProhibited：注册局禁止删除\nclientTransferProhibited：注册商禁止转移\nclientUpdateProhibited：注册商禁止更新\nclientDeleteProhibited：注册商禁止删除\nserverRenewProhibited: 注册局禁止续费\nclientRenewProhibited: 注册商禁止续费",
           "example": "ok",
           "member": "string",
           "name": "DomainStatus",
@@ -5681,7 +5681,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "document": "域名实例ID\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "domain-dwerewwq",
           "member": "string",
           "name": "DomainId",
@@ -5800,7 +5800,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2020-10-01 00:00:00",
           "member": "string",
           "name": "CreatedOn",
@@ -5810,7 +5810,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "更新时间 \n格式:YYYY-MM-DD HH:mm:ss",
           "example": "2020-10-01 00:00:00",
           "member": "string",
           "name": "UpdatedOn",
@@ -5924,7 +5924,7 @@
         },
         {
           "disabled": false,
-          "document": "模板ID。\n可通过DescribeTemplates接口获取",
+          "document": "模板ID。 \n可通过[DescribeTemplateList](https://cloud.tencent.com/document/api/242/48940)接口获取",
           "example": "tmpl-xxxxx",
           "member": "string",
           "name": "TemplateId",

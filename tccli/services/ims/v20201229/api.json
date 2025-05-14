@@ -452,30 +452,30 @@
         {
           "disabled": false,
           "document": "该字段用于返回识别对象的ID以方便识别和区分。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回识命中的子标签名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "PornSum",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "89",
           "member": "uint64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -488,7 +488,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回模型识别出的场景结果，如广告、色情、有害内容等场景。",
-          "example": "无",
+          "example": "Porn",
           "member": "string",
           "name": "Scene",
           "output_required": true,
@@ -498,7 +498,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回针对当前恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "无",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -508,7 +508,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Porn",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -518,7 +518,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回对应恶意标签下的子标签的检测结果，如：*Porn-SexBehavior*等子标签。",
-          "example": "无",
+          "example": "PornSum",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -528,7 +528,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表图片越有可能属于当前返回的标签；如：*色情 99*，则表明该图片非常有可能属于色情内容；*色情 0*，则表明该图片不属于色情内容。",
-          "example": "无",
+          "example": "89",
           "member": "uint64",
           "name": "Score",
           "output_required": true,
@@ -554,7 +554,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回识别对象的ID以方便识别和区分。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Id",
           "output_required": true,
@@ -564,7 +564,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义库的ID，以方便自定义库管理和配置。",
-          "example": "无",
+          "example": "1df4c4c8-c419-436a-a1e3-e60d97efe3af",
           "member": "string",
           "name": "LibId",
           "output_required": true,
@@ -574,7 +574,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义库的名称,以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试图库",
           "member": "string",
           "name": "LibName",
           "output_required": true,
@@ -584,7 +584,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回识别图像对象的ID以方便文件管理。",
-          "example": "无",
+          "example": "1df4c4c8-c419-436a-a1e3-e60d97efe3af",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
@@ -594,7 +594,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -604,7 +604,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回其他自定义标签以满足您的定制化场景需求，若无需求则可略过。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Phone",
           "member": "string",
           "name": "Tag",
           "output_required": true,
@@ -614,7 +614,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回对应模型命中的分值，取值为**0-100**，如：*Porn 99* 则代表相应识别内容命中色情标签的分值为99。",
-          "example": "无",
+          "example": "89",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -630,7 +630,7 @@
         {
           "disabled": false,
           "document": "该字段表示模型的场景识别结果，默认取值为Similar。",
-          "example": "无",
+          "example": "Similar",
           "member": "string",
           "name": "Scene",
           "output_required": true,
@@ -640,7 +640,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -650,7 +650,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Review",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -660,7 +660,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Phone",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -670,7 +670,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回图片检索模型识别的分值，取值为**0-100**，表示该审核图片**与库中样本的相似分值**，得分越高，代表当前内容越有可能命中相似图库内的样本。",
-          "example": "无",
+          "example": "89",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -696,50 +696,50 @@
         {
           "disabled": false,
           "document": "该参数用于返回检测框**左上角位置的横坐标**（x）所在的像素位置，结合剩余参数可唯一确定检测框的大小和位置。",
-          "example": "无",
+          "example": "51",
           "member": "float",
           "name": "X",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回检测框**左上角位置的纵坐标**（y）所在的像素位置，结合剩余参数可唯一确定检测框的大小和位置。",
-          "example": "无",
+          "example": "448",
           "member": "float",
           "name": "Y",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回**检测框的宽度**（由左上角出发在x轴向右延伸的长度），结合剩余参数可唯一确定检测框的大小和位置。",
-          "example": "无",
+          "example": "130",
           "member": "float",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回**检测框的高度**（由左上角出发在y轴向下延伸的长度），结合剩余参数可唯一确定检测框的大小和位置。",
-          "example": "无",
+          "example": "119",
           "member": "float",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回**检测框的旋转角度**，该参数结合X和Y两个坐标参数可唯一确定检测框的具体位置；取值：**0-360**（**角度制**），方向为**逆时针旋转**。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "Rotate",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -752,40 +752,40 @@
         {
           "disabled": false,
           "document": "该参数用于返回识别对象的ID以方便识别和区分。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回命中的实体标签。",
-          "example": "无",
+          "example": "QRCODE",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回对应实体标签所对应的值或内容。如：当标签为*二维码(QrCode)*时，该字段为识别出的二维码对应的URL地址。",
-          "example": "无",
+          "example": "https://xxx.com/images/image1.jpg",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回对应实体标签命中的分值，取值为**0-100**，如：*QrCode 99* 则代表相应识别内容命中二维码场景标签的概率非常高。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -795,27 +795,27 @@
           "example": "无",
           "member": "Location",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回命中的实体二级标签。",
-          "example": "无",
+          "example": "QRCODE",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该参数用于返回命中的人脸id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "xxx-xxx-xxx",
           "member": "string",
           "name": "ObjectId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -828,7 +828,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回实体识别出的实体场景结果，如二维码、logo、图片OCR等场景。",
-          "example": "无",
+          "example": "QrCode",
           "member": "string",
           "name": "Scene",
           "output_required": true,
@@ -838,7 +838,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回针对当前恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "无",
+          "example": "Block",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -848,7 +848,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -858,7 +858,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior* 等子标签。",
-          "example": "无",
+          "example": "QRCODE",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -868,7 +868,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回命中当前恶意标签下子标签的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Score",
           "output_required": true,
@@ -878,7 +878,7 @@
         {
           "disabled": false,
           "document": "该标签用于返回所识别出的实体名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"QRCODE\"]",
           "member": "string",
           "name": "Names",
           "output_required": true,
@@ -904,7 +904,7 @@
         {
           "disabled": false,
           "document": "标识模型命中还是关键词命中",
-          "example": "Model",
+          "example": "Keyword",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -914,7 +914,7 @@
         {
           "disabled": false,
           "document": "命中关键词",
-          "example": "啦啦",
+          "example": "名师试听",
           "member": "string",
           "name": "Keyword",
           "output_required": true,
@@ -924,7 +924,7 @@
         {
           "disabled": false,
           "document": "自定义词库名称",
-          "example": "测试词库1",
+          "example": "测试词库",
           "member": "string",
           "name": "LibName",
           "output_required": true,
@@ -950,7 +950,7 @@
         {
           "disabled": false,
           "document": "该字段表示识别场景，取值默认为OCR（图片OCR识别）。",
-          "example": "无",
+          "example": "OCR",
           "member": "string",
           "name": "Scene",
           "output_required": true,
@@ -960,7 +960,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回优先级最高的恶意标签对应的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -970,7 +970,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回OCR检测结果所对应的优先级最高的恶意标签，表示模型推荐的审核结果，建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Review",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -980,7 +980,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Label）下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。",
-          "example": "无",
+          "example": "EcommercePromotion",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -990,7 +990,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Score",
           "output_required": true,
@@ -1010,7 +1010,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回OCR识别出的文字信息。",
-          "example": "无",
+          "example": "【免费试听】",
           "member": "string",
           "name": "Text",
           "output_required": true,
@@ -1026,7 +1026,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回OCR识别出的文本内容。<br>备注：OCR文本识别上限在**5000字节内**。",
-          "example": "无",
+          "example": "【免费试听】",
           "member": "string",
           "name": "Text",
           "output_required": true,
@@ -1036,7 +1036,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -1046,7 +1046,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义库的ID，以方便自定义库管理和配置。",
-          "example": "无",
+          "example": "test-1",
           "member": "string",
           "name": "LibId",
           "output_required": true,
@@ -1056,7 +1056,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义库的名称，以方便自定义库管理和配置。",
-          "example": "无",
+          "example": "测试词库",
           "member": "string",
           "name": "LibName",
           "output_required": true,
@@ -1066,7 +1066,7 @@
         {
           "disabled": false,
           "document": "该参数用于返回在当前label下命中的关键词。",
-          "example": "无",
+          "example": "免费试听",
           "member": "string",
           "name": "Keywords",
           "output_required": true,
@@ -1076,7 +1076,7 @@
         {
           "disabled": false,
           "document": "该参数用于返回在当前恶意标签下模型命中的分值，取值为**0-100**；分数越高，代表当前场景越符合该恶意标签所对应的场景。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Score",
           "output_required": true,
@@ -1096,7 +1096,7 @@
         {
           "disabled": false,
           "document": "该参数用于返回OCR文本识别结果的置信度，取值在**0**（**置信度最低**）-**100**（**置信度最高**），越高代表对应图像越有可能是识别出的文字；如：*你好 99*，则表明OCR识别框内的文字大概率是”你好“。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Rate",
           "output_required": true,
@@ -1106,7 +1106,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意二级标签。",
-          "example": "无",
+          "example": "EcommercePromotion",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -1142,7 +1142,7 @@
         {
           "disabled": false,
           "document": "关键词结束位置",
-          "example": "10",
+          "example": "4",
           "member": "int64",
           "name": "End",
           "output_required": false,
@@ -1184,20 +1184,20 @@
         {
           "disabled": false,
           "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "89",
           "member": "int64",
           "name": "Score",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1207,7 +1207,7 @@
           "example": "无",
           "member": "Location",
           "name": "Location",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1220,92 +1220,83 @@
         {
           "disabled": false,
           "document": "该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>\n备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "UserId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应的账号昵称信息。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Nickname",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>\n该字段与账号ID参数（UserId）配合使用可确定唯一账号。",
-          "example": "无",
+          "example": "172300",
           "member": "string",
           "name": "AccountType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的性别信息。<br>\n取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Gender",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的年龄信息。<br>\n取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。",
-          "example": "无",
+          "example": "16",
           "member": "uint64",
           "name": "Age",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的等级信息。<br>\n取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Level",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>\n备注：请保持手机号格式的统一，如区号格式（086/+86）等。",
-          "example": "无",
+          "example": "176****2131",
           "member": "string",
           "name": "Phone",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，**长度不超过5000个汉字字符**。",
-          "example": "无",
+          "example": "Desc01",
           "member": "string",
           "name": "Desc",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。<br>备注：头像图片**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时。",
-          "example": "无",
+          "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "HeadUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

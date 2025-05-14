@@ -224,6 +224,13 @@
       "output": "DescribeDomainAnalyticsResponse",
       "status": "online"
     },
+    "DescribeDomainAndRecordList": {
+      "document": "批量操作中搜索域名",
+      "input": "DescribeDomainAndRecordListRequest",
+      "name": "批量操作中搜索域名",
+      "output": "DescribeDomainAndRecordListResponse",
+      "status": "online"
+    },
     "DescribeDomainCustomLineList": {
       "document": "获取域名的自定义线路列表",
       "input": "DescribeDomainCustomLineListRequest",
@@ -854,6 +861,168 @@
           "name": "Remark",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchSearchDomainInfo": {
+      "document": "批量操作筛选域名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名 ID",
+          "example": "12620698",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名套餐等级",
+          "example": "DP_Free",
+          "member": "string",
+          "name": "DomainGrade",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录信息列表",
+          "example": "无",
+          "member": "BatchSearchRecordInfo",
+          "name": "RecordList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchSearchRecordInfo": {
+      "document": "批量操作筛选记录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析记录 ID",
+          "example": "15689601",
+          "member": "uint64",
+          "name": "RecordId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析线路",
+          "example": "默认",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "首页",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TTL(秒)",
+          "example": "600",
+          "member": "uint64",
+          "name": "TTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录类型",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录是否启用",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enabled",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "记录分组 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子域名",
+          "example": "test",
+          "member": "string",
+          "name": "SubDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析值",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MX优先级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MX",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -3469,6 +3638,124 @@
           "example": "无",
           "member": "DomainAliasAnalyticsItem",
           "name": "AliasData",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainAndRecordListRequest": {
+      "document": "DescribeDomainAndRecordList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索所有域名。AllDomain、GroupIdList、DomainList、DomainIdList 参数传任一个即可。优先级为：AllDomain > GroupIdList  > DomainList > DomainIdList。",
+          "example": "yes",
+          "member": "string",
+          "name": "AllDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要搜索的域名列表。",
+          "example": "无",
+          "member": "string",
+          "name": "DomainList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要搜索的域名 ID 列表。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DomainIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要搜索的域名分组 ID 列表。",
+          "example": "无",
+          "member": "uint64",
+          "name": "GroupIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "记录类型筛选",
+          "example": "A",
+          "member": "string",
+          "name": "RecordType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子域名筛选",
+          "example": "www",
+          "member": "string",
+          "name": "SubKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录值筛选",
+          "example": "192",
+          "member": "string",
+          "name": "ValueKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "线路筛选",
+          "example": "默认",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注筛选",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录状态筛选\n1：正常\n0：暂停\n",
+          "example": "1",
+          "member": "string",
+          "name": "Enabled",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainAndRecordListResponse": {
+      "document": "DescribeDomainAndRecordList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名列表",
+          "example": "无",
+          "member": "BatchSearchDomainInfo",
+          "name": "DetailList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false

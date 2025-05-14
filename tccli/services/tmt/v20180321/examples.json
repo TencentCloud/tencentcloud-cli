@@ -24,6 +24,20 @@
         "title": "API调用"
       }
     ],
+    "ImageTranslateLLM": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageTranslateLLM\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"962cc025-f31c-466a-9a2d-c7947bd866c2\"\n    }\n}",
+        "title": "图片翻译调用示例"
+      },
+      {
+        "document": "成功示例2",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageTranslateLLM\n<公共请求参数>\n\n{\n    \"Url\": \"https://xxx.com/image.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Angle\": 90,\n        \"RequestId\": \"d434a671-2835-4bed-a3c3-66becaf6a50c\",\n        \"TransDetails\": [\n            {\n                \"BoundingBox\": {\n                    \"Height\": 34,\n                    \"Width\": 202,\n                    \"X\": 37,\n                    \"Y\": 57\n                },\n                \"LineHeight\": 15,\n                \"LinesCount\": 1,\n                \"SourceLineText\": \"你好\",\n                \"TargetLineText\": \"hello\"\n            }\n        ]\n    }\n}",
+        "title": "成功示例2"
+      }
+    ],
     "LanguageDetect": [
       {
         "document": "语种识别",

@@ -268,6 +268,14 @@
         "title": "域名解析量统计"
       }
     ],
+    "DescribeDomainAndRecordList": [
+      {
+        "document": "批量操作中搜索域名",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAndRecordList\n<公共请求参数>\n\n{\n    \"AllDomain\": \"yes\",\n    \"RecordType\": \"A\",\n    \"SubKeyword\": \"www\",\n    \"ValueKeyword\": \"192\",\n    \"Area\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7d6bfc77-6cba-478d-80bc-278cacf7ab79\",\n        \"DetailList\": [\n            {\n                \"DomainId\": 12620698,\n                \"Domain\": \"example.com\",\n                \"DomainGrade\": \"DP_Free\",\n                \"RecordList\": [\n                    {\n                        \"RecordId\": 15934040,\n                        \"Area\": \"默认\",\n                        \"Remark\": \"\",\n                        \"TTL\": 600,\n                        \"RecordType\": \"A\",\n                        \"Enabled\": 1,\n                        \"Weight\": 0,\n                        \"GroupId\": 0,\n                        \"SubDomain\": \"create-with-remark\",\n                        \"Value\": \"127.0.0.1\",\n                        \"MX\": 0\n                    },\n                    {\n                        \"RecordId\": 15934041,\n                        \"Area\": \"默认\",\n                        \"Remark\": \"yyyy\",\n                        \"TTL\": 600,\n                        \"RecordType\": \"A\",\n                        \"Enabled\": 1,\n                        \"Weight\": 0,\n                        \"GroupId\": 0,\n                        \"SubDomain\": \"create-with-remark\",\n                        \"Value\": \"127.0.0.3\",\n                        \"MX\": 0\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "批量操作中搜索域名"
+      }
+    ],
     "DescribeDomainCustomLineList": [
       {
         "document": "获取域名的自定义线路列表",

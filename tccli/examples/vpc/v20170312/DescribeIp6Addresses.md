@@ -1,6 +1,6 @@
-**Example 1: 根据Filter查询IPv6信息**
+**Example 1: 根据 Filter 查询 IPv6 信息**
 
-根据Filter查询IPv6信息。
+根据 Filter 查询 IPv6 信息。
 
 Input: 
 
@@ -54,9 +54,9 @@ Output:
 }
 ```
 
-**Example 2: 根据Ip6AddressIds查询IPv6信息**
+**Example 2: 根据 Ip6AddressIds 查询 IPv6 信息**
 
-根据Ip6AddressIds查询IPv6信息。
+根据 Ip6AddressIds 查询 IPv6 信息。
 
 Input: 
 

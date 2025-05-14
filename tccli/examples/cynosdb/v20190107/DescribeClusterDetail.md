@@ -17,8 +17,8 @@ Output:
             "ClusterId": "cynosdbmysql-sgvwu2is",
             "ClusterName": "cynodbmysql-自定义用户名",
             "Region": "ap-guangzhou",
-            "Zone": "ap-guangzhou-1",
-            "PhysicalZone": "ap-guangzhou-1",
+            "Zone": "ap-guangzhou-5",
+            "PhysicalZone": "ap-guangzhou-5",
             "Status": "running",
             "StatusDesc": "运行中",
             "ServerlessStatus": "运行中",
@@ -55,7 +55,7 @@ Output:
             },
             "CynosVersion": "3.1.10",
             "BusinessType": "",
-            "HasSlaveZone": "",
+            "HasSlaveZone": "yes",
             "IsFreeze": "no",
             "Tasks": [
                 {

@@ -5140,8 +5140,8 @@
         },
         {
           "disabled": false,
-          "document": "Dockefile的路径",
-          "example": "Dockefile",
+          "document": "Dockerfile的路径",
+          "example": "Dockerfile",
           "member": "string",
           "name": "DockerfilePath",
           "output_required": true,
@@ -6619,8 +6619,8 @@
         },
         {
           "disabled": false,
-          "document": "Dockefile的路径",
-          "example": "Dockefile",
+          "document": "Dockerfile的路径",
+          "example": "Dockerfile",
           "member": "string",
           "name": "DockerfilePath",
           "output_required": true,
@@ -6680,7 +6680,7 @@
         {
           "disabled": false,
           "document": "策略类型",
-          "example": "Dockefile",
+          "example": "Dockerfile",
           "member": "string",
           "name": "PolicyType",
           "output_required": true,

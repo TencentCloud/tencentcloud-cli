@@ -17941,12 +17941,40 @@
       ],
       "usage": "out"
     },
+    "ImageAreaBoxInfo": {
+      "document": "图片框选区域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字。</li>\n默认值：logo。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "logo",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片框选区域坐标 (像素级)，[x1, y1, x2, y2]，即左上角坐标、右下角坐标。\n示例值：[101, 85, 111, 95]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[101, 85, 111, 95]",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageEncodeConfig": {
       "document": "图片编码格式参数",
       "members": [
         {
           "disabled": false,
-          "document": "图片格式，取值范围：JPG、BMP、GIF、PNG、WebP，缺省为原图格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片格式，取值范围：JPEG、PNG、BMP、WebP，缺省为原图格式。不支持动画。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "JPEG",
           "member": "string",
           "name": "Format",
@@ -17985,6 +18013,17 @@
         },
         {
           "disabled": false,
+          "document": "综合增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageQualityEnhanceConfig",
+          "name": "ImageQualityEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "色彩增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ColorEnhanceConfig",
@@ -18014,6 +18053,51 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageEraseConfig": {
+      "document": "图片擦除参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图标擦除配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageEraseLogoConfig",
+          "name": "ImageEraseLogo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageEraseLogoConfig": {
+      "document": "图标擦除配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要擦除的多个框选区域，注意：参数数组长度最大为2。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageAreaBoxInfo",
+          "name": "ImageAreaBoxes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -18284,6 +18368,17 @@
           "example": "无",
           "member": "ImageEnhanceConfig",
           "name": "EnhanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片擦除配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageEraseConfig",
+          "name": "EraseConfig",
           "output_required": false,
           "required": false,
           "type": "object",

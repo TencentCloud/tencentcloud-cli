@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain CreateCustomDnsHost --cli-unfold-argument  \
-    --DomainId domain-esfdhgfgdhigq \
+    --DomainId domain-dwwwwwwq \
     --DnsName ns1 \
     --IpSet 1.2.4.8
 ```

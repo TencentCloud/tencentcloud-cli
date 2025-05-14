@@ -369,7 +369,7 @@
           "example": "10.0.1.2",
           "member": "string",
           "name": "NodeIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -379,17 +379,17 @@
           "example": "ins-a1b2c3d4",
           "member": "string",
           "name": "NodeInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "初始密码",
-          "example": "abcedfg",
+          "example": "ABCDEFG",
           "member": "string",
           "name": "InitialPassword",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -606,7 +606,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "mydownload",
+          "example": "DOWNLOAD",
           "member": "string",
           "name": "TaskName",
           "required": true,

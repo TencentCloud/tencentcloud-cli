@@ -16975,6 +16975,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1是基础2025版本；0不是",
+          "example": "基础2025版本标识",
+          "member": "uint64",
+          "name": "BasicFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

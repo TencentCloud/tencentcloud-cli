@@ -168,6 +168,14 @@
         "title": "修改工作空间的名称"
       }
     ],
+    "ModifyWorkspacesRenewFlag": [
+      {
+        "document": "修改工作空间实例的续费标识",
+        "input": "POST / HTTP/1.1\nHost: thpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspacesRenewFlag\n<公共请求参数>\n\n{\n    \"SpaceIds\": [\n        \"wks-xxxx\"\n    ],\n    \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"84dea32c-55a7-4a07-b2e9-f7ba4dfaad58\"\n    }\n}",
+        "title": "修改工作空间实例的续费标识"
+      }
+    ],
     "SetAutoScalingConfiguration": [
       {
         "document": "集群配置弹性伸缩策略信息。",

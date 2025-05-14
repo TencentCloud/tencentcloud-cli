@@ -13,9 +13,9 @@ tccli batch SubmitJob --cli-unfold-argument  \
     --Job.Tasks.0.TaskName hello2 \
     --Job.Tasks.0.TaskInstanceNum 1 \
     --Job.Tasks.0.Application.DeliveryForm LOCAL \
-    --Job.Tasks.0.Application.Command 'python -c "fib' \
+    --Job.Tasks.0.Application.Command 'sleep 10' \
     --Job.Tasks.0.ComputeEnv.EnvType MANAGED \
-    --Job.Tasks.0.ComputeEnv.EnvData.InstanceType S1.SMALL1 \
+    --Job.Tasks.0.ComputeEnv.EnvData.InstanceType SA5.MEDIUM4 \
     --Job.Tasks.0.ComputeEnv.EnvData.ImageId img-bd78fy2t \
     --Job.Tasks.0.RedirectInfo.StdoutRedirectPath cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/ \
     --Job.Tasks.0.RedirectInfo.StderrRedirectPath cos://dondonbatch-1251783334.cosgz.myqcloud.com/hello2/logs/

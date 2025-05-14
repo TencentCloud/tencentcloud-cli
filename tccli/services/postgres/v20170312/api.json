@@ -2895,8 +2895,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "【废弃】不再需要指定，内核版本号与主实例保持一致",
+          "disabled": true,
+          "document": "不再需要指定，内核版本号与主实例保持一致",
           "example": "DBVersion",
           "member": "string",
           "name": "DBVersion",
@@ -8201,8 +8201,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "【废弃参数，不再生效】，实例计费类型。",
+          "disabled": true,
+          "document": "实例计费类型。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",

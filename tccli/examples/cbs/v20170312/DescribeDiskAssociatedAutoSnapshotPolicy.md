@@ -28,8 +28,11 @@ Output:
                 "InstanceIdSet": [],
                 "RetentionAmount": 0,
                 "RetentionDays": 3,
+                "Tags": [],
                 "Policy": [
                     {
+                        "IntervalDays": 2,
+                        "DayOfMonth": [],
                         "DayOfWeek": [
                             0,
                             1,

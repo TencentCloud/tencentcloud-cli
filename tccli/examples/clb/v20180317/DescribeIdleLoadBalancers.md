@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 46,
+        "TotalCount": 1,
         "IdleLoadBalancers": [
             {
                 "LoadBalancerId": "lb-1l1i6a3k",
