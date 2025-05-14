@@ -16,6 +16,14 @@
         "title": "终止自治任务（单次）"
       }
     ],
+    "CancelDBAutonomyEvent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelDBAutonomyEvent\n<公共请求参数>\n\n{\n    \"EventId\": 1,\n    \"InstanceId\": \"crs-m5toyq2w\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2a46502-fb93-4fc5-9f22-a788f26c298d\"\n    }\n}",
+        "title": "终止自治事件"
+      }
+    ],
     "CancelKillTask": [
       {
         "document": "",
@@ -206,6 +214,14 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagReportTasks\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsql-cerses\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"8ca4d610-dcf3-11ed-9a8b-393823b6fd49\",\n        \"Items\": [\n            {\n                \"Status\": \"success\",\n                \"AsyncRequestId\": 173,\n                \"ErrMsg\": \"\",\n                \"CreateTime\": \"2023-04-17 15:37:55\",\n                \"FileName\": \"tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz\",\n                \"FileSize\": 0.326,\n                \"DownloadUrl\": \"https://dbbrain-gz-xxx.cos.ap-guangzhou.tencentcos.cn/tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkMfJhxjhBTahcIaNgNsBKDwZx74pmsY3%2638be613391610\",\n                \"Progress\": 22,\n                \"FinishTime\": \"2024-07-23 16:05:23\"\n            }\n        ]\n    }\n}",
         "title": "查询审计日志文件列表"
+      }
+    ],
+    "DescribeDBAutonomyAction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBAutonomyAction\n<公共请求参数>\n\n{\n    \"ActionId\": 11,\n    \"InstanceId\": \"crs-m5toyq2w\",\n    \"Product\": \"redis\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ActionId\": 1295,\n        \"CreateTime\": \"2025-05-08 14:33:00\",\n        \"EventId\": 55,\n        \"ExpireTime\": 0,\n        \"FinishTime\": \"2025-05-08 14:50:55\",\n        \"Info\": \"[{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"扩容任务【7477146】\\\"}},{\\\"Layout\\\":\\\"vertical\\\",\\\"DataType\\\":\\\"table\\\",\\\"Data\\\":{\\\"Names\\\":[\\\"任务类型\\\"],\\\"Data\\\":[{\\\"预期扩容后规格\\\":\\\"4GiB\\\"}]}},{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"触1发原因\\\"}}]\",\n        \"Reason\": \"指标\\\\\\\"mem_util\\\\\\\"大于50%持续超过10分钟\",\n        \"RequestId\": \"80340cd2-adca-4e6a-81af-1ca998426a61\",\n        \"Status\": \"CANCELLED\",\n        \"TaskId\": 7477145,\n        \"TriggerTime\": \"2025-05-08 14:33:00\",\n        \"Type\": \"RedisAutoScaleUp\",\n        \"UpdateTime\": \"2025-05-08 14:33:00\"\n    }\n}",
+        "title": "查询自治事件任务详情"
       }
     ],
     "DescribeDBAutonomyActions": [

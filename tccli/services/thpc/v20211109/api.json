@@ -442,8 +442,8 @@
         },
         {
           "disabled": false,
-          "document": "调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>",
-          "example": "SGE",
+          "document": "调度器类型。<br><li>SLURM：SLURM调度器。</li>",
+          "example": "SLURM",
           "member": "string",
           "name": "SchedulerType",
           "required": false,

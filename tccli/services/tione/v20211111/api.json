@@ -1535,6 +1535,24 @@
           "name": "HealthProbe",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新策略",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "sidecar配置",
+          "example": "无",
+          "member": "SidecarSpec",
+          "name": "Sidecar",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8160,6 +8178,24 @@
           "name": "HealthProbe",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "滚动更新策略",
+          "example": "无",
+          "member": "RollingUpdate",
+          "name": "RollingUpdate",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "sidecar配置",
+          "example": "无",
+          "member": "SidecarSpec",
+          "name": "Sidecar",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11473,6 +11509,23 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SidecarSpec": {
+      "document": "sidecar容器配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像配置",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

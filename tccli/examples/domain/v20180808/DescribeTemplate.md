@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeTemplate --cli-unfold-argument  \
-    --TemplateId 模板ID
+    --TemplateId tmpl-dgmgwpe2
 ```
 
 Output: 

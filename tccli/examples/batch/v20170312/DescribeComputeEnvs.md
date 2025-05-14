@@ -38,7 +38,8 @@ Output:
                 "DesiredComputeNodeCount": 1,
                 "EnvName": "test-compute-env",
                 "Placement": {
-                    "Zone": "ap-guangzhou-4"
+                    "Zone": "ap-guangzhou-4",
+                    "ProjectId": 0
                 },
                 "NextAction": "",
                 "CreateTime": "2020-09-22T06:51:42Z"

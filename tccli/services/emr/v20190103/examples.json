@@ -611,9 +611,9 @@
     "ModifyUserGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Users\": [\n        \"abc\"\n    ],\n    \"UserGroup\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "修改用户组"
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Users\": [\n        \"a1\"\n    ],\n    \"UserGroup\": \"odinlli1\",\n    \"Groups\": [\n        \"jianpan-test\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ed88598-13df-461f-9419-f9ef20926e99\"\n    }\n}",
+        "title": "修改用户的用户组"
       }
     ],
     "ModifyUserManagerPwd": [

@@ -14086,7 +14086,7 @@
         {
           "disabled": false,
           "document": "用户信息列表",
-          "example": "无",
+          "example": "[\"a1\"]",
           "member": "string",
           "name": "Users",
           "required": true,
@@ -14095,10 +14095,28 @@
         {
           "disabled": false,
           "document": "用户组",
-          "example": "无",
+          "example": "odinlli1",
           "member": "string",
           "name": "UserGroup",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户副组",
+          "example": "[\"jianpan-test\"]",
+          "member": "string",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "系统用户",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
           "type": "string"
         }
       ],
