@@ -14936,7 +14936,7 @@
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14946,7 +14946,7 @@
           "example": "192.168.0.0/16",
           "member": "string",
           "name": "CidrIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14956,7 +14956,7 @@
           "example": "ALL",
           "member": "string",
           "name": "PortRange",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14966,7 +14966,7 @@
           "example": "ALL",
           "member": "string",
           "name": "IpProtocol",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14976,7 +14976,7 @@
           "example": "‘’",
           "member": "string",
           "name": "Dir",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14986,7 +14986,17 @@
           "example": "‘’",
           "member": "string",
           "name": "AddressModule",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID，嵌套安全组的规则ID",
+          "example": "\"sg-g9hazxxx\"",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14996,7 +15006,7 @@
           "example": "放通内网",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18639,8 +18649,8 @@
         },
         {
           "disabled": false,
-          "document": "审计规则。同RuleTemplateIds都不填是全审计。",
-          "example": "无",
+          "document": "审计规则（该参数已废弃，不再生效）。",
+          "example": "[{\"RuleFilters\": [{\"Compare\": \"NEQ\",\"Type\": \"host\",\"Value\": [\"127.0.0.1\"]}]}]",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "required": false,
@@ -21122,6 +21132,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RO延迟复制状态。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ReplicationStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

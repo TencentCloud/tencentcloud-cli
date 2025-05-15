@@ -49,7 +49,7 @@ Output:
                 }
             ],
             "QosLevel": "PT",
-            "ResourceId": null,
+            "ResourceId": "",
             "State": "PENDING",
             "SubnetId": "subnet-r8x0gown",
             "TagSet": [],

@@ -79,6 +79,24 @@
           "name": "SqlToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源分配类型（0=固定，1=动态\t",
+          "example": "0",
+          "member": "int64",
+          "name": "AllocationType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态分配范围\t",
+          "example": "1,5",
+          "member": "string",
+          "name": "AllocationRange",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

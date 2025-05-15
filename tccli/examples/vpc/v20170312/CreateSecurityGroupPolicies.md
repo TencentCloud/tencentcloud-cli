@@ -9,7 +9,7 @@ tccli vpc CreateSecurityGroupPolicies --cli-unfold-argument  \
     --SecurityGroupId sg-ohuuioma \
     --SecurityGroupPolicySet.Ingress.0.PolicyIndex 0 \
     --SecurityGroupPolicySet.Ingress.0.Protocol All \
-    --SecurityGroupPolicySet.Ingress.0.PolicyDescription demo \
+    --SecurityGroupPolicySet.Ingress.0.PolicyDescription PolicyDescription1 \
     --SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressGroupId ipmg-o8w64jdg \
     --SecurityGroupPolicySet.Ingress.0.AddressTemplate.AddressId ipm-ngk4c2dw \
     --SecurityGroupPolicySet.Ingress.0.Ipv6CidrBlock ::/0 \
@@ -19,10 +19,10 @@ tccli vpc CreateSecurityGroupPolicies --cli-unfold-argument  \
     --SecurityGroupPolicySet.Ingress.0.ServiceTemplate.ServiceGroupId sg-ohuuioma \
     --SecurityGroupPolicySet.Ingress.0.ServiceTemplate.ServiceId ppm-f5n1f8da \
     --SecurityGroupPolicySet.Ingress.0.CidrBlock 0.0.0.0/0 \
-    --SecurityGroupPolicySet.Ingress.0.Port 80 \
+    --SecurityGroupPolicySet.Ingress.0.Port All \
     --SecurityGroupPolicySet.Egress.0.PolicyIndex 0 \
     --SecurityGroupPolicySet.Egress.0.Protocol All \
-    --SecurityGroupPolicySet.Egress.0.PolicyDescription demo \
+    --SecurityGroupPolicySet.Egress.0.PolicyDescription PolicyDescription2 \
     --SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressGroupId ipmg-o8w64jdg \
     --SecurityGroupPolicySet.Egress.0.AddressTemplate.AddressId ipm-ngk4c2dw \
     --SecurityGroupPolicySet.Egress.0.Ipv6CidrBlock ::/0 \
@@ -32,7 +32,7 @@ tccli vpc CreateSecurityGroupPolicies --cli-unfold-argument  \
     --SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceGroupId sg-ohuuioma \
     --SecurityGroupPolicySet.Egress.0.ServiceTemplate.ServiceId ppm-f5n1f8da \
     --SecurityGroupPolicySet.Egress.0.CidrBlock 0.0.0.0/0 \
-    --SecurityGroupPolicySet.Egress.0.Port 80
+    --SecurityGroupPolicySet.Egress.0.Port All
 ```
 
 Output: 

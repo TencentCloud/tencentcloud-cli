@@ -62,6 +62,7 @@ Output:
                     "ReplaceMonitorUnhealthy": false,
                     "ReplaceLoadBalancerUnhealthy": false,
                     "ScalingMode": "CLASSIC_SCALING",
+                    "DesiredCapacitySyncWithMaxMinSize": false,
                     "ReplaceMode": "RECREATE"
                 },
                 "LaunchConfigurationName": "product-asc-001",
@@ -125,6 +126,7 @@ Output:
                 "Tags": [
                     {
                         "Key": "city",
+                        "ResourceType": "auto-scaling-group",
                         "Value": "shenzhen"
                     }
                 ],
@@ -173,6 +175,7 @@ Output:
                     "ReplaceMonitorUnhealthy": false,
                     "ReplaceLoadBalancerUnhealthy": false,
                     "ReplaceMode": "RECREATE",
+                    "DesiredCapacitySyncWithMaxMinSize": false,
                     "ScalingMode": "CLASSIC_SCALING"
                 },
                 "LaunchConfigurationName": "sz-asc",

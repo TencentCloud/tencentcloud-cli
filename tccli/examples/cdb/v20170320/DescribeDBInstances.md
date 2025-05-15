@@ -95,6 +95,7 @@ Output:
                             {
                                 "Zone": "ap-guangzhou-3",
                                 "MasterInstanceId": "cdb-fapcrp1q",
+                                "ReplicationStatus": "success",
                                 "Memory": 1000,
                                 "Status": 1,
                                 "VpcId": 511512,
@@ -139,6 +140,7 @@ Output:
                             {
                                 "Zone": "ap-guangzhou-4",
                                 "MasterInstanceId": "cdb-fapcrp12",
+                                "ReplicationStatus": "success",
                                 "Memory": 1000,
                                 "Status": 1,
                                 "VpcId": 511512,

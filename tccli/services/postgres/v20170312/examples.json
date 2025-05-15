@@ -924,20 +924,6 @@
         "title": "开通实例外网"
       }
     ],
-    "OpenServerlessDBExtranetAccess": [
-      {
-        "document": "根据实例ID开通serverless实例外网",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenServerlessDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "根据实例ID开通serverless实例外网"
-      },
-      {
-        "document": "根据实例名开通serverless实例外网",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenServerlessDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceName\": \"db-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "根据实例名开通serverless实例外网"
-      }
-    ],
     "RebalanceReadOnlyGroup": [
       {
         "document": "",
