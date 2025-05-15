@@ -17,40 +17,44 @@ Output:
     "Response": {
         "EndPointServiceSet": [
             {
-                "EndPointServiceId": "vpcsvc-pnpcflil",
-                "VpcId": "vpc-hj3he929",
-                "ServiceOwner": "1254277469",
-                "ServiceName": "test_002",
-                "ServiceVip": "10.101.1.11",
-                "ServiceInstanceId": "lb-nswq8wkq",
+                "EndPointServiceId": "vpcsvc-kngiybxl",
+                "VpcId": "vpc-cc59iepy",
+                "ServiceOwner": "1308945662",
+                "ServiceName": "ServiceName1",
+                "ServiceVip": "9.254.118.7",
+                "ServiceInstanceId": "lb-81v1v5ah",
                 "AutoAcceptFlag": true,
                 "EndPointCount": 1,
+                "CreateTime": "2025-02-24 16:08:00",
+                "ServiceType": "CLB",
+                "CdcId": "",
+                "TagSet": [],
+                "ServiceUin": "100023008439",
+                "BusinessIpType": 1,
                 "EndPointSet": [
                     {
-                        "ServiceVpcId": "vpc-hj3he929",
+                        "ServiceName": "ServiceName1",
                         "GroupSet": [
-                            "sg-tyhgrwet"
+                            "sg-6mqq4vm7"
                         ],
-                        "ServiceName": "demo",
-                        "State": "PENDING",
-                        "ServiceVip": "10.101.1.11",
-                        "EndPointName": "demo",
-                        "VpcId": "vpc-hj3he929",
-                        "EndPointOwner": "1302384414",
-                        "EndPointId": "vpce-h0fk8lfc",
-                        "SubnetId": "subnet-4t7fr3fi",
-                        "CreateTime": "0000-00-00 00:00:00",
-                        "EndPointServiceId": "vpcsvc-kngiybxl",
-                        "EndPointVip": "10.101.1.11"
+                        "EndPointId": "vpce-mpflh8wj",
+                        "VpcId": "vpc-12fpjaso",
+                        "SubnetId": "subnet-hlpwg8yh",
+                        "EndPointOwner": "1308945662",
+                        "EndPointName": "webhook-to-cls-fkwqdgqh-apiserver",
+                        "ServiceVpcId": "vpc-cc59iepy",
+                        "ServiceVip": "9.254.118.7",
+                        "EndPointVip": "9.0.255.131",
+                        "State": "ACTIVE",
+                        "CreateTime": "2025-02-24 17:32:43",
+                        "EndPointServiceId": "vpcsvc-fowynafi",
+                        "CdcId": "cluster-d8htgb6k"
                     }
-                ],
-                "CreateTime": "0000-00-00 00:00:00",
-                "ServiceType": "CLB",
-                "CdcId": "cdc-4d8a10a1"
+                ]
             }
         ],
         "TotalCount": 1,
-        "RequestId": "452e8b38-10a1-4d8a-8a31-a64b89c8f565"
+        "RequestId": "0ef824ac-e70d-4886-a777-f2ec9e184ce9"
     }
 }
 ```

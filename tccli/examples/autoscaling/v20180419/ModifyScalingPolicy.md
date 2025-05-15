@@ -16,7 +16,6 @@ tccli as ModifyScalingPolicy --cli-unfold-argument  \
     --MetricAlarm.Statistic AVERAGE \
     --MetricAlarm.Threshold 50 \
     --MetricAlarm.MetricName CPU_UTILIZATION \
-    --NotificationUserGroupIds 1678 \
     --AdjustmentValue 1
 ```
 

@@ -511,6 +511,13 @@
       "output": "DescribeBatchOperateTaskResponse",
       "status": "online"
     },
+    "DescribeCodeTemplateDetail": {
+      "document": "查询代码模版具体详情",
+      "input": "DescribeCodeTemplateDetailRequest",
+      "name": "查询代码模版具体详情",
+      "output": "DescribeCodeTemplateDetailResponse",
+      "status": "online"
+    },
     "DescribeColumnLineage": {
       "document": "列出字段血缘信息",
       "input": "DescribeColumnLineageRequest",
@@ -1400,6 +1407,13 @@
       "output": "GenHiveTableDDLSqlResponse",
       "status": "online"
     },
+    "GetBatchDetailErrorLog": {
+      "document": "获取批量操作错误日志",
+      "input": "GetBatchDetailErrorLogRequest",
+      "name": "获取批量操作错误日志",
+      "output": "GetBatchDetailErrorLogResponse",
+      "status": "online"
+    },
     "GetCosToken": {
       "document": "获取cos token",
       "input": "GetCosTokenRequest",
@@ -1468,6 +1482,13 @@
       "input": "KillScheduleInstancesRequest",
       "name": "实例运维-批量终止l实例",
       "output": "KillScheduleInstancesResponse",
+      "status": "online"
+    },
+    "ListBatchDetail": {
+      "document": "获取批量操作详情列表",
+      "input": "ListBatchDetailRequest",
+      "name": "获取操作详情列表",
+      "output": "ListBatchDetailResponse",
       "status": "online"
     },
     "ListInstances": {
@@ -3398,6 +3419,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AsyncResourceVO": {
+      "document": "操作资源DTO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处理Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6215,13 +6282,24 @@
         },
         {
           "disabled": false,
-          "document": "任务脚本是否发生变化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模版脚本是否发生变化\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ScriptChange",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代码模版脚本，base64编码返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c2VsZWN0IDE7",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14278,6 +14356,61 @@
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeBatchOperateTaskPage",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeTemplateDetailRequest": {
+      "document": "DescribeCodeTemplateDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1470547050521227264",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模版Id",
+          "example": "20250227112841503",
+          "member": "string",
+          "name": "CodeTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回脚本内容，默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedReturnScriptContent",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCodeTemplateDetailResponse": {
+      "document": "DescribeCodeTemplateDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代码详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CodeTemplateDetail",
           "name": "Data",
           "output_required": true,
           "type": "object",
@@ -28215,6 +28348,61 @@
       ],
       "usage": "in"
     },
+    "GetBatchDetailErrorLogRequest": {
+      "document": "GetBatchDetailErrorLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量操作ID",
+          "example": "1457",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源对象ID",
+          "example": "efc02db7-f631-458e-84e7-7947762eab8d",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBatchDetailErrorLogResponse": {
+      "document": "GetBatchDetailErrorLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetCosTokenRequest": {
       "document": "GetCosToken请求参数结构体",
       "members": [
@@ -33552,6 +33740,122 @@
         }
       ],
       "usage": "both"
+    },
+    "ListBatchDetailRequest": {
+      "document": "ListBatchDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量操作历史Id",
+          "example": "无",
+          "member": "uint64",
+          "name": "JobId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBatchDetailResponse": {
+      "document": "ListBatchDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量操作ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "JobId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行类型：\nASYNC-异步\nSYNC-同步\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RunType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsyncResourceVO",
+          "name": "SuccessResource",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AsyncResourceVO",
+          "name": "FailResource",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "job类型\nBATCH_DELETE --批量删除：1、任务名称：ResourceName\nBATCH_CREATE_VERSION --批量提交：1、任务名称：ResourceId 2、资源组：GroupId\nBATCH_MODIFY_DATASOURCE --批量修改数据源：1、任务名称：ResourceName\nBATCH_MODIFY_INCHARGE --批量修改责任人：1、任务名称：ResourceName\nBATCH_MODIFY_PARAMETER --批量修改参数：1、任务名称：ResourceName\nBATCH_MODIFY_SCHEDULE --批量修改调度计划：1、任务名称：ResourceName\nBATCH_MODIFY_GROUPID --批量修改资源组：1、任务名称：ResourceName\nBATCH_MODIFY_CONFIG --批量修改高级配置：1、任务名称：ResourceName\nBATCH_MODIFY_SCHEDULE_PARAMETER --批量修改调度参数：1、任务名称：ResourceName\nFORM_CREATE_VERSION--模版提交\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JobType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CREATING(\"CREATING\", \"创建中\"),\nINIT(\"INIT\", \"已被创建\"),\nRUNNING(\"RUNNING\", \"运行中\"),\nSUCCESS(\"SUCCESS\", \"成功\"),\nFAIL(\"FAIL\", \"失败\"),\nPART_SUCCESS(\"PART_SUCCESS\", \"部分成功\"),\nPART_SUCCESS_WITH_ALARM(\"PART_SUCCESS_WITH_ALARM\", \"部分成功有告警\"),\nSUCCESS_WITH_ALARM(\"SUCCESS_WITH_ALARM\", \"成功有告警\"),\nUNKNOWN(\"UNKNOWN\", \"未知状态\");\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JobStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalResource",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "批量提交是是否需要审批，其他的批量操作默认为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "NeedApprove",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListInstancesRequest": {
       "document": "ListInstances请求参数结构体",

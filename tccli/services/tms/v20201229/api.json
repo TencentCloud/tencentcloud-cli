@@ -21,7 +21,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的全部恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -31,7 +31,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回对应当前标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -41,7 +41,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测文本命中的关键词信息，用于标注文本违规的具体原因（如：*加我微信*）。该参数可能会有多个返回值，代表命中的多个关键词；如返回值为空且Score不为空，则代表识别结果所对应的恶意标签（Label）是来自于语义模型判断的返回值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"添加微信\",\"加好友\"]",
           "member": "string",
           "name": "Keywords",
           "output_required": true,
@@ -51,7 +51,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -61,7 +61,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义关键词对应的词库类型，取值为**1**（黑白库）和**2**（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LibType",
           "output_required": true,
@@ -71,7 +71,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义库的ID，以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_1",
           "member": "string",
           "name": "LibId",
           "output_required": true,
@@ -81,7 +81,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义库的名称,以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试词库",
           "member": "string",
           "name": "LibName",
           "output_required": true,
@@ -91,7 +91,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Label）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SocialMediaPlatform",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -101,7 +101,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Keyword\":\"约炮\",\"Score\":100,\"SubLabel\":\"Sexy\"}",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -203,30 +203,30 @@
         {
           "disabled": false,
           "document": "标识模型命中还是关键词命中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Model",
+          "example": "Keyword",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "命中关键词\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "啦啦",
+          "example": "添加好友",
           "member": "string",
           "name": "Keyword",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "自定义词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试词库1",
+          "example": "测试词库",
           "member": "string",
           "name": "LibName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -236,7 +236,7 @@
           "example": "无",
           "member": "Positions",
           "name": "Positions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -275,20 +275,20 @@
         {
           "disabled": false,
           "document": "该字段用于返回账号信息检测对应的风险类别，取值为：**RiskAccount**（账号存在风险）、**RiskIP**（IP地址存在风险）、**RiskIMEI**（移动设备识别码存在风险）。",
-          "example": "无",
+          "example": "RiskAccount",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该字段用于返回账号信息检测对应的风险等级，取值为：**1**（疑似存在风险）和**2**（存在恶意风险）。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -341,7 +341,7 @@
         {
           "disabled": false,
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "InternalError",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -383,7 +383,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "添加微信",
           "member": "string",
           "name": "Keyword",
           "output_required": false,
@@ -393,7 +393,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回子标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "SocialMediaPlatform",
           "member": "string",
           "name": "SubLabel",
           "output_required": false,
@@ -611,122 +611,110 @@
         {
           "disabled": false,
           "document": "该字段表示业务用户ID,填写后，系统可根据账号过往违规历史优化审核结果判定，有利于存在可疑违规风险时的辅助判断。<br>\n备注：该字段可传入微信openid、QQopenid、字符串等账号信息，与账号类别参数（AccountType）配合使用可确定唯一账号。",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "UserId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应的账号昵称信息。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Nickname",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户ID对应的账号类型，取值：**1**-微信uin，**2**-QQ号，**3**-微信群uin，**4**-qq群号，**5**-微信openid，**6**-QQopenid，**7**-其它string。<br>\n该字段与账号ID参数（UserId）配合使用可确定唯一账号。",
-          "example": "无",
+          "example": "172300",
           "member": "int64",
           "name": "AccountType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的性别信息。<br>\n取值：**0**（默认值，代表性别未知）、**1**（男性）、**2**（女性）。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Gender",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的年龄信息。<br>\n取值：**0**（默认值，代表年龄未知）-（**自定义年龄上限**）之间的整数。",
-          "example": "无",
+          "example": "16",
           "member": "int64",
           "name": "Age",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的等级信息。<br>\n取值：**0**（默认值，代表等级未知）、**1**（等级较低）、**2**（等级中等）、**3**（等级较高），目前**暂不支持自定义等级**。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Level",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户对应账号的手机号信息，支持全球各地区手机号的记录。<br>\n备注：请保持手机号格式的统一，如区号格式（086/+86）等。",
-          "example": "无",
+          "example": "176****2131",
           "member": "string",
           "name": "Phone",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户头像图片的访问链接(URL)，支持PNG、JPG、JPEG、BMP、GIF、WEBP格式。\n备注：头像图片大小不超过5MB，建议分辨率不低于256x256；图片下载时间限制为3秒，超过则会返回下载超时。",
-          "example": "无",
+          "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "HeadUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务用户的简介信息，支持汉字、英文及特殊符号，长度不超过5000个汉字字符。",
-          "example": "无",
+          "example": "Desc01",
           "member": "string",
           "name": "Desc",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示业务群聊场景时的房间ID。",
-          "example": "无",
+          "example": "roomid_1",
           "member": "string",
           "name": "RoomId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段表示消息接受者ID",
-          "example": "无",
+          "example": "user_1",
           "member": "string",
           "name": "ReceiverId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "消息生成时间，精确到毫秒",
-          "example": "无",
+          "example": "2025-05-15 14:41:27",
           "member": "int64",
           "name": "SendTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

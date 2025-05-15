@@ -1440,6 +1440,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务错误消息",
+          "example": "超出配额限制",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5261,7 +5271,7 @@
         },
         {
           "disabled": false,
-          "document": "认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部",
+          "document": "认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 3-ioa 不传为全部",
           "example": "[0,1]",
           "member": "uint64",
           "name": "AuthTypeSet",
@@ -5283,6 +5293,24 @@
           "example": "[\"Name\":\"Status\",\"Values\":[\"Locked\"]]",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取cam用户, 0-否，1-是",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCamUser",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户来源，0-bh，1-ioa,不传为全部",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "UserFromSet",
           "required": false,
           "type": "list"
         }
@@ -5522,6 +5550,16 @@
           "name": "SSLCertName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IOA侧的资源ID",
+          "example": "10034",
+          "member": "int64",
+          "name": "IOAId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5833,6 +5871,67 @@
           "member": "uint64",
           "name": "Count",
           "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IOAUserGroup": {
+      "document": "同步过来的ioa用户分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ioa用户组织id",
+          "example": "85232",
+          "member": "uint64",
+          "name": "OrgId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ioa用户组织名称",
+          "example": "测试",
+          "member": "string",
+          "name": "OrgName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ioa用户组织id路径\t",
+          "example": "2321.23341.2334",
+          "member": "string",
+          "name": "OrgIdPath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ioa用户组织名称路径\t",
+          "example": "全网账户.钉钉.测试",
+          "member": "string",
+          "name": "OrgNamePath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ioa关联用户源类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "Source",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -7792,6 +7891,36 @@
           "example": "1",
           "member": "uint64",
           "name": "ExternalAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0默认值。0-免费版（试用版）ioa，1-付费版ioa",
+          "example": "0",
+          "member": "uint64",
+          "name": "IOAResource",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "零信任堡垒机用户扩展包个数。1个扩展包对应20个用户数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackageIOAUserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 零信任堡垒机带宽扩展包个数。一个扩展包表示4M带宽",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackageIOABandwidth",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10094,6 +10223,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户来源，0-bh,1-ioa",
+          "example": "0",
+          "member": "uint64",
+          "name": "UserFrom",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ioa同步过来的用户相关信息",
+          "example": "{\"Orgid\":4234,\"OrgName\":\"测试\"}",
+          "member": "IOAUserGroup",
+          "name": "IOAUserGroup",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

@@ -620,6 +620,14 @@
         "title": "批量操作任务列表"
       }
     ],
+    "DescribeCodeTemplateDetail": [
+      {
+        "document": "查看代码模版详情",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeTemplateDetail\n<公共请求参数>\n\n{\n    \"CodeTemplateId\": \"20250311155509313\",\n    \"ProjectId\": \"1470547050521227264\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BrokerIp\": \"any\",\n            \"CodeTemplateDesc\": null,\n            \"CodeTemplateId\": \"20250311155509313\",\n            \"CodeTemplateName\": \"copy11\",\n            \"Ext\": {\n                \"DryRunExtAttributes\": null,\n                \"DryRunParameter\": null,\n                \"Properties\": [\n                    {\n                        \"ParamKey\": \"bucket\",\n                        \"ParamValue\": \"wedata-fusion-dev-1257305158\"\n                    },\n                    {\n                        \"ParamKey\": \"ftp.file.name\",\n                        \"ParamValue\": \"/datastudio/codeTemplate/1470547050521227264/copy11.py\"\n                    },\n                    {\n                        \"ParamKey\": \"region\",\n                        \"ParamValue\": \"ap-nanjing\"\n                    }\n                ],\n                \"TaskId\": \"20250311155509313\"\n            },\n            \"FolderId\": \"\",\n            \"FolderName\": \"\",\n            \"InCharge\": \"kevinnie\",\n            \"InChargeId\": \"100028578763\",\n            \"LastUpdateTime\": \"2025-03-11 15:55:09\",\n            \"ProjectId\": \"1470547050521227264\",\n            \"ResourceGroup\": null,\n            \"ScriptChange\": true,\n            \"Submit\": false,\n            \"TaskType\": 30,\n            \"UpdateUser\": \"kevinnie\",\n            \"UpdateUserId\": \"100028578763\"\n        },\n        \"RequestId\": \"9b5e61e9-0575-4c1e-9103-c1a1be7efc11\"\n    }\n}",
+        "title": "查看代码模版详情"
+      }
+    ],
     "DescribeColumnLineage": [
       {
         "document": "列出表血缘信息",
@@ -1738,6 +1746,14 @@
         "title": "GenHiveTableDDLSql"
       }
     ],
+    "GetBatchDetailErrorLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetBatchDetailErrorLog\n<公共请求参数>\n\n{\n    \"JobId\": 1,\n    \"ResourceId\": \"efc02db7-f631-458e-84e7-7947762eab8d\",\n    \"ProjectId\": \"1461767738399854592\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"delete workflow fail\",\n        \"RequestId\": \"4b948422-9254-422c-9d0d-9c45935ca88c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetCosToken": [
       {
         "document": "开发空间-获取cos token",
@@ -1816,6 +1832,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillScheduleInstances\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"Instances\": [\n        {\n            \"TaskId\": \"20230313145539749\",\n            \"CurRunDate\": \"2023-03-13 14:55:53\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ErrorDesc\": null,\n            \"ErrorId\": null,\n            \"Result\": true\n        },\n        \"RequestId\": \"7ac627e0-4ebf-4127-a3f0-a2d82c64f0e3\"\n    }\n}",
         "title": "批量终止实例"
+      }
+    ],
+    "ListBatchDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBatchDetail\n<公共请求参数>\n\n{\n    \"JobId\": 118786,\n    \"ProjectId\": \"1461767738399854592\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailResource\": [\n            {\n                \"ExtraInfo\": null,\n                \"ProcessId\": 190394,\n                \"ResourceId\": \"20250415191408327\",\n                \"ResourceName\": \"aaaadasd\"\n            }\n        ],\n        \"JobId\": 118786,\n        \"JobStatus\": \"FAIL\",\n        \"JobType\": \"BATCH_MODIFY_SCHEDULE\",\n        \"NeedApprove\": false,\n        \"RequestId\": \"2fe33308-82db-4d40-a275-d9fca1e5e284\",\n        \"RunType\": \"ASYNC\",\n        \"SuccessResource\": [],\n        \"TotalResource\": 1\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "ListInstances": [

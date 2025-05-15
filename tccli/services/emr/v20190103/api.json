@@ -19056,6 +19056,15 @@
           "name": "ReMark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户副组",
+          "example": "groups",
+          "member": "string",
+          "name": "Groups",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -19080,6 +19089,17 @@
           "example": "自定义",
           "member": "string",
           "name": "UserType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组名",
+          "example": "组名",
+          "member": "string",
+          "name": "Groups",
           "output_required": false,
           "required": false,
           "type": "string",

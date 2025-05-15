@@ -1071,6 +1071,15 @@
           "name": "TokenNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能",
+          "example": "{\"ChatBIConfigList\":[{\"ConfigType\":\"TableFilter\",\"ConfigDetails\":{\"Values\":[\"123\",\"456\"]}},{\"ConfigType\":\"SqlView\",\"ConfigDetails\":{\"Enabled\":false}}]}",
+          "member": "string",
+          "name": "ConfigParam",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3125,6 +3134,16 @@
           "name": "SingleUserMultiToken",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "嵌出显示配置，目前为ChatBI嵌出场景用，TableFilter表示数据表列表过滤，SqlView表示sql查看功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ChatBIConfigList\":[{\"ConfigType\":\"TableFilter\",\"ConfigDetails\":{\"Values\":[\"26513\"]}},{\"ConfigType\":\"SqlView\",\"ConfigDetails\":{\"Enabled\":false}}]}",
+          "member": "string",
+          "name": "ConfigParam",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

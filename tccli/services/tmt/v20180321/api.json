@@ -334,6 +334,24 @@
       "members": [
         {
           "disabled": false,
+          "document": "图片数据的Base64字符串，经Base64编码后不超过 9M，分辨率建议600*800以上，支持PNG、JPG、JPEG格式。",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言，支持语言列表：\n\n- 中文：zh\n- 繁体（台湾）：zh-TW\n- 繁体（香港）：zh-HK\n- 英文：en\n- 日语：ja\n- 韩语：ko\n- 泰语：th\n- 越南语：vi\n- 俄语：ru\n- 德语：de\n- 法语：fr\n- 阿拉伯语：ar\n- 西班牙语：es\n- 意大利语：it\n- 印度尼西亚语：id\n- 马来西亚语：ms\n- 葡萄牙语：pt\n- 土耳其语：tr\n- ",
+          "example": "en",
+          "member": "string",
+          "name": "Target",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "输入图 Url。 使用Url的时候，Data参数需要传入\"\"。 图片限制：小于 10MB，分辨率建议600*800以上，格式支持 jpg、jpeg、png。\n",
           "example": "https://xxx.com/image.jpg",
           "member": "string",
@@ -347,6 +365,56 @@
     "ImageTranslateLLMResponse": {
       "document": "ImageTranslateLLM返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "图片数据的Base64字符串，输出格式为JPG。\n",
+          "example": "iVBORw0KGgoAAAANSUhEUgAAAdkAAABPCAYAAACnD7%252FoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAJ......CCyAAAAwCQgsgAAAMAkILIAAADAJCCyAAAAwCQgsgAAAMAkILIAAADAFJblX8%252F8oMOWYN6nAAAAAElFTkSuQmCC",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原文本主要源语言。",
+          "example": "en",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标翻译语言。",
+          "example": "zh",
+          "member": "string",
+          "name": "Target",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片中的全部原文本。",
+          "example": "hello",
+          "member": "string",
+          "name": "SourceText",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片中全部译文。",
+          "example": "你好",
+          "member": "string",
+          "name": "TargetText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "逆时针图片角度，取值范围为0-359",

@@ -567,6 +567,13 @@
       "output": "DescribeOverviewL7DataResponse",
       "status": "online"
     },
+    "DescribePlans": {
+      "document": "查询套餐信息列表，支持分页。",
+      "input": "DescribePlansRequest",
+      "name": "查询套餐信息列表",
+      "output": "DescribePlansResponse",
+      "status": "online"
+    },
     "DescribePrefetchTasks": {
       "document": "DescribePrefetchTasks 用于查询预热任务提交历史记录及执行进度，通过 CreatePrefetchTasks 接口提交的任务可通过此接口进行查询。",
       "input": "DescribePrefetchTasksRequest",
@@ -2672,6 +2679,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2679,9 +2687,10 @@
         {
           "disabled": false,
           "document": "通用详细基础规则。如果为null，默认使用历史配置。",
-          "example": "{}",
+          "example": "无",
           "member": "BotManagedRule",
           "name": "BotManagedRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2689,29 +2698,32 @@
         {
           "disabled": false,
           "document": "用户画像规则。如果为null，默认使用历史配置。",
-          "example": "{}",
+          "example": "无",
           "member": "BotPortraitRule",
           "name": "BotPortraitRule",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Bot智能分析。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "document": "Bot智能分析。如果为null，默认使用历史配置。",
+          "example": "无",
           "member": "IntelligenceRule",
           "name": "IntelligenceRule",
+          "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Bot自定义规则。如果为null，默认使用历史配置。",
-          "example": "[]",
+          "example": "无",
           "member": "BotUserRule",
           "name": "BotUserRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2719,22 +2731,24 @@
         {
           "disabled": false,
           "document": "Bot主动特征识别规则。",
-          "example": "[]",
+          "example": "无",
           "member": "AlgDetectRule",
           "name": "AlgDetectRule",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Bot托管定制策略，入参可不填，仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Bot托管定制策略，入参可不填，仅出参使用。",
           "example": "无",
           "member": "BotUserRule",
           "name": "Customizes",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2748,19 +2762,21 @@
           "example": "monitor",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "处置方式的触发概率，范围0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "处置方式的触发概率，范围0-100。",
           "example": "10",
           "member": "uint64",
           "name": "Percent",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2774,6 +2790,7 @@
           "example": "drop",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2784,59 +2801,65 @@
           "example": "1",
           "member": "int64",
           "name": "RuleID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "放行的规则ID。默认所有规则不配置放行。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "放行的规则ID。默认所有规则不配置放行。",
           "example": "[1,2]",
           "member": "int64",
           "name": "TransManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "JS挑战的规则ID。默认所有规则不配置JS挑战。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "JS挑战的规则ID。默认所有规则不配置JS挑战。",
           "example": "[1,2]",
           "member": "int64",
           "name": "AlgManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数字验证码的规则ID。默认所有规则不配置数字验证码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数字验证码的规则ID。默认所有规则不配置数字验证码。",
           "example": "[1,2]",
           "member": "int64",
           "name": "CapManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "观察的规则ID。默认所有规则不配置观察。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "观察的规则ID。默认所有规则不配置观察。",
           "example": "[1,2]",
           "member": "int64",
           "name": "MonManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "拦截的规则ID。默认所有规则不配置拦截。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截的规则ID。默认所有规则不配置拦截。",
           "example": "[1,2]",
           "member": "int64",
           "name": "DropManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2850,6 +2873,7 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2860,49 +2884,54 @@
           "example": "1",
           "member": "int64",
           "name": "RuleID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "JS挑战的规则ID。默认所有规则不配置JS挑战。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "JS挑战的规则ID。默认所有规则不配置JS挑战。",
           "example": "[1,2]",
           "member": "int64",
           "name": "AlgManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数字验证码的规则ID。默认所有规则不配置数字验证码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数字验证码的规则ID。默认所有规则不配置数字验证码。",
           "example": "[1,2]",
           "member": "int64",
           "name": "CapManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "观察的规则ID。默认所有规则不配置观察。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "观察的规则ID。默认所有规则不配置观察。",
           "example": "[1,2]",
           "member": "int64",
           "name": "MonManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "拦截的规则ID。默认所有规则不配置拦截。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拦截的规则ID。默认所有规则不配置拦截。",
           "example": "[1,2]",
           "member": "int64",
           "name": "DropManagedIds",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9999,6 +10028,89 @@
       ],
       "type": "object"
     },
+    "DescribePlansRequest": {
+      "document": "DescribePlans请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20。详细的过滤条件如下：<li>plan-type<br>  按照【<strong>套餐类型</strong>】进行过滤。<br>  可选的类型有：<br>  plan-trial：试用版套餐；<br>  plan-personal：个人版套餐；<br>  plan-basic：基础版套餐； <br>  plan-standard：标准版套餐； <br>  plan-enterprise：企业版套餐。 </li><li>plan-id<br>  按照【<strong>套餐 ID</strong>】进行过滤。套餐 ID 形如：edgeone-268z103ob0sx。</li><li>area<br>  按照【<strong>套餐加速地域</strong>】进行过滤。</li>  服务区域，可选的类型有：<br>  mainland: 中国大陆；<br>  overseas: 全球（不包括中国大陆)；<br>  global: 全球（包括中国大陆)。<br><li>status<br>  按照【<strong>套餐状态</strong>】进行过滤。<br>  可选的状态有：<br>  normal：正常状态；<br>  expiring-soon：即将过期；<br>  expired：已到期;<br>  isolated：已隔离。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，取值有：\n<li> enable-time：生效时间；</li>\n<li> expire-time：过期时间。</li>不填写使用默认值 enable-time。",
+          "example": "enable-time",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向，取值有：\n<li>asc：从小到大排序；</li>\n<li>desc：从大到小排序。</li>不填写使用默认值 desc。",
+          "example": "desc",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：200。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlansResponse": {
+      "document": "DescribePlans返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的套餐个数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐信息列表。",
+          "example": "无",
+          "member": "Plan",
+          "name": "Plans",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrefetchTasksRequest": {
       "document": "DescribePrefetchTasks请求参数结构体",
       "members": [
@@ -12354,19 +12466,21 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "例外规则详情。如果为null，默认使用历史配置。",
+          "example": "无",
           "member": "ExceptUserRule",
           "name": "ExceptUserRules",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12420,41 +12534,41 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，如果为null，默认由底层按当前时间生成。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间，如果为null，默认由底层按当前时间生成。",
           "example": "2024-07-15T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "匹配条件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配条件。",
           "example": "无",
           "member": "ExceptUserRuleCondition",
           "name": "ExceptUserRuleConditions",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则生效的范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则生效的范围。",
           "example": "无",
           "member": "ExceptUserRuleScope",
           "name": "ExceptUserRuleScope",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "优先级，取值范围0-100。如果为null，默认由底层设置为0。",
-          "example": "0",
+          "example": "无",
           "member": "int64",
           "name": "RulePriority",
           "output_required": true,
@@ -12520,39 +12634,43 @@
           "example": "complete",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "生效的模块，该字段取值有：\n<li>waf：托管规则；</li>\n<li>rate：速率限制；</li>\n<li>acl：自定义规则；</li>\n<li>cc：cc攻击防护；</li>\n<li>bot：Bot防护。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生效的模块，该字段取值有：\n<li>waf：托管规则；</li>\n<li>rate：速率限制；</li>\n<li>acl：自定义规则；</li>\n<li>cc：cc攻击防护；</li>\n<li>bot：Bot防护。</li>",
           "example": "[\"waf\"]",
           "member": "string",
           "name": "Modules",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。",
           "example": "无",
           "member": "PartialModule",
           "name": "PartialModules",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。",
           "example": "无",
           "member": "SkipCondition",
           "name": "SkipConditions",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12712,23 +12830,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首段包的统计时长，单位是秒，即期望首段包的统计时长是多少，默认5秒。",
           "example": "10",
           "member": "uint64",
           "name": "StatTime",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14114,23 +14234,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭；</li>",
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础管控规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "基础管控规则。如果为null，默认使用历史配置。",
+          "example": "无",
           "member": "IpTableRule",
           "name": "IpTableRules",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14206,14 +14328,14 @@
         },
         {
           "disabled": false,
-          "document": "规则名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名。",
           "example": "rule1",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18443,22 +18565,220 @@
           "example": "waf",
           "member": "string",
           "name": "Module",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模块下的需要例外的具体规则ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模块下的需要例外的具体规则ID列表。",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "Include",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "Plan": {
+      "document": "套餐信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐类型。取值有：\n<li>plan-trial: 试用版套餐；</li>\n<li>plan-personal: 个人版套餐；</li>\n<li>plan-basic: 基础版套餐；</li>\n<li>plan-standard: 标准版套餐；</li>\n<li>plan-enterprise-v2: 企业版套餐；</li>\n<li>plan-enterprise-model-a: 企业版 Model A 套餐。</li>\n<li>plan-enterprise: 旧企业版套餐。</li>",
+          "example": "plan-personal",
+          "member": "string",
+          "name": "PlanType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐 ID。形如 edgeone-2y041pblwaxe。",
+          "example": "edgeone-2y041pblwaxe",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务区域，取值有：\n<li>mainland: 中国大陆；</li>\n<li>overseas: 全球（不包括中国大陆)；</li>\n<li>global: 全球（包括中国大陆)。</li>",
+          "example": "oversea",
+          "member": "string",
+          "name": "Area",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐状态，取值有：\n<li>normal：正常状态；</li>\n<li>expiring-soon：即将到期状态；</li>\n<li>expired：到期状态；</li>\n<li>isolated：隔离状态；</li>\n<li>overdue-isolated：欠费隔离状态。</li>",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费类型，取值有：\n<li>0: 后付费；</li>\n<li>1: 预付费。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐绑定的站点信息，包括站点id和站点名称，站点状态。",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "ZonesInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内智能加速请求数规格，单位：次。",
+          "example": "1",
+          "member": "int64",
+          "name": "SmartRequestCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内VAU规格，单位：个。",
+          "example": "10",
+          "member": "int64",
+          "name": "VAUCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内内容加速流量规格，单位：字节。",
+          "example": "1",
+          "member": "int64",
+          "name": "AccTrafficCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内智能加速流量规格，单位：字节。",
+          "example": "1",
+          "member": "int64",
+          "name": "SmartTrafficCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内DDoS防护流量规格，单位：字节。",
+          "example": "1",
+          "member": "int64",
+          "name": "DDoSTrafficCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内安全流量规格，单位：字节。",
+          "example": "1",
+          "member": "int64",
+          "name": "SecTrafficCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内安全请求数规格，单位：次。",
+          "example": "1",
+          "member": "int64",
+          "name": "SecRequestCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内四层加速流量规格，单位：字节。",
+          "example": "1",
+          "member": "int64",
+          "name": "L4TrafficCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐内中国大陆网络优化流量规格，单位：字节。",
+          "example": "1",
+          "member": "int64",
+          "name": "CrossMLCTrafficCapacity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐是否允许绑定新站点，取值有：\n<li>true: 允许绑定新站点；</li>\n<li>false: 不允许绑定新站点。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Bindable",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐生效时间。",
+          "example": "2020-09-22T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "EnabledTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐过期时间。",
+          "example": "2020-09-22T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐所支持的功能，取值有：<li>ContentAcceleration：内容加速功能；</li><li>SmartAcceleration：智能加速功能；</li><li>L4：四层加速功能；</li><li>Waf：高级 Web 防护；</li><li>QUIC：QUIC功能；</li><li>CrossMLC：中国大陆网络优化功能；</li><li>ProcessMedia：媒体处理功能；</li><li>L4DDoS：四层DDoS防护功能；</li>L7DDoS功能只会出现以下所有规格中的一项<li>L7DDoS.CM30G；七层DDoS防护功能-中国大陆30G保底带宽规格；</li><li>L7DDoS.CM60G；七层DDoS防护功能-中国大陆60G保底带宽规格；</li><li>L7DDoS.CM100G；七层DDoS防护功能-中国大陆100G保底带宽规格；</li><li>L7DDoS.Anycast300G；七层DDoS防护功能-中国大陆以外Anycast300G保底带宽规格；</li><li>L7DDoS.AnycastUnlimited；七层DDoS防护功能-中国大陆以外Anycast无上限全力防护规格；</li><li>L7DDoS.CM30G_Anycast300G；七层DDoS防护功能-中国大陆30G保底带宽规格，中国大陆以外Anycast300G保底带宽规格；</li><li>L7DDoS.CM60G_Anycast300G；七层DDoS防护功能-中国大陆60G保底带宽规格，中国大陆以外Anycast300G保底带宽规格；</li><li>L7DDoS.CM100G_Anycast300G；七层DDoS防护功能-中国大陆100G保底带宽规格，中国大陆以外Anycast300G保底带宽规格；</li><li>L7DDoS.CM30G_AnycastUnlimited；七层DDoS防护功能-中国大陆30G保底带宽规格，中国大陆以外Anycast无上限全力防护规格；</li><li>L7DDoS.CM60G_AnycastUnlimited；七层DDoS防护功能-中国大陆60G保底带宽规格，中国大陆以外Anycast无上限全力防护规格；</li><li>L7DDoS.CM100G_AnycastUnlimited；七层DDoS防护功能-中国大陆100G保底带宽规格，中国大陆以外Anycast无上限全力防护规格；</li>",
+          "example": "[\"ContentAcceleration\",\"Waf\"]",
+          "member": "string",
+          "name": "Features",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PlanInfo": {
       "document": "edgeone套餐信息",
@@ -18855,36 +19175,36 @@
         },
         {
           "disabled": false,
-          "document": "速率限制模板功能。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "速率限制模板功能。如果为null，默认使用历史配置。",
           "example": "无",
           "member": "RateLimitTemplate",
           "name": "RateLimitTemplate",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "智能客户端过滤。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能客户端过滤。如果为null，默认使用历史配置。",
           "example": "无",
           "member": "RateLimitIntelligence",
           "name": "RateLimitIntelligence",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "速率限制-托管定制规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "速率限制-托管定制规则。如果为null，默认使用历史配置。",
           "example": "无",
           "member": "RateLimitUserRule",
           "name": "RateLimitCustomizes",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18966,14 +19286,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板等级名称，取值有：\n<li>sup_loose：超级宽松；</li>\n<li>loose：宽松；</li>\n<li>emergency：紧急；</li>\n<li>normal：适中；</li>\n<li>strict：严格；</li>\n<li>close：关闭，仅精准速率限制生效。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板等级名称，取值有：\n<li>sup_loose：超级宽松；</li>\n<li>loose：宽松；</li>\n<li>emergency：紧急；</li>\n<li>normal：适中；</li>\n<li>strict：严格；</li>\n<li>close：关闭，仅精准速率限制生效。</li>",
           "example": "loose",
           "member": "string",
           "name": "Mode",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18988,25 +19308,25 @@
         },
         {
           "disabled": false,
-          "document": "模板处置方式，取值有：\n<li>alg：JavaScript挑战；</li>\n<li>monitor：观察。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板处置方式，取值有：\n<li>alg：JavaScript挑战；</li>\n<li>monitor：观察。</li>",
           "example": "alg",
           "member": "string",
           "name": "Action",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "惩罚时间，取值范围0-2天，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "惩罚时间，取值范围0-2天，单位秒。",
           "example": "10",
           "member": "int64",
           "name": "PunishTime",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -21002,124 +21322,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "托管规则。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管规则。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "WafConfig",
           "name": "WafConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "速率限制。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "速率限制。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "RateLimitConfig",
           "name": "RateLimitConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义规则。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义规则。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "AclConfig",
           "name": "AclConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Bot配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Bot配置。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "BotConfig",
           "name": "BotConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "七层防护总开关。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "七层防护总开关。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "SwitchConfig",
           "name": "SwitchConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础访问管控。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础访问管控。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "IpTableConfig",
           "name": "IpTableConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "例外规则配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "例外规则配置。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "ExceptConfig",
           "name": "ExceptConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "DropPageConfig",
           "name": "DropPageConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板配置。此处仅出参数使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板配置。此处仅出参数使用。",
           "example": "无",
           "member": "TemplateConfig",
           "name": "TemplateConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "慢速攻击配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "慢速攻击配置。如果入参为空或不填，默认使用历史配置。",
           "example": "无",
           "member": "SlowPostConfig",
           "name": "SlowPostConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测长度限制配置。仅出参使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检测长度限制配置。仅出参使用。",
           "example": "无",
           "member": "DetectLengthLimitConfig",
           "name": "DetectLengthLimitConfig",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21375,49 +21695,54 @@
           "example": "off",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "首包配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首包配置。",
           "example": "无",
           "member": "FirstPartConfig",
           "name": "FirstPartConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "基础配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础配置。",
           "example": "无",
           "member": "SlowRateConfig",
           "name": "SlowRateConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "慢速攻击的处置动作，取值有：\n<li>monitor：观察；</li>\n<li>drop：拦截。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "慢速攻击的处置动作，取值有：\n<li>monitor：观察；</li>\n<li>drop：拦截。</li>",
           "example": "monitor",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本规则的Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "本规则的Id。",
           "example": "1",
           "member": "uint64",
           "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -23234,6 +23559,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ZoneInfo": {
+      "document": "返回站点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点id。",
+          "example": "zone-1234567890",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点名称。",
+          "example": "edgeone.test",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点是否停用。取值有：<li>false：非停用；</li>\n<li>true：停用。</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "Paused",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ZoneSetting": {
       "document": "站点配置。",

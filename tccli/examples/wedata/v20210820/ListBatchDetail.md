@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 成功示例**
 
 
 
@@ -6,42 +6,30 @@ Input:
 
 ```
 tccli wedata ListBatchDetail --cli-unfold-argument  \
-    --JobId 1
+    --JobId 118786 \
+    --ProjectId 1461767738399854592
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "JobId": 1,
-        "RunType": "abc",
-        "SuccessResource": [
-            {
-                "ProcessId": "abc",
-                "ResourceId": "abc",
-                "ResourceName": "abc",
-                "ExtraInfo": [
-                    {
-                        "ParamKey": "abc",
-                        "ParamValue": "abc"
-                    }
-                ]
-            }
-        ],
         "FailResource": [
             {
-                "ProcessId": "abc",
-                "ResourceId": "abc",
-                "ResourceName": "abc",
-                "ExtraInfo": [
-                    {
-                        "ParamKey": "abc",
-                        "ParamValue": "abc"
-                    }
-                ]
+                "ExtraInfo": null,
+                "ProcessId": 190394,
+                "ResourceId": "20250415191408327",
+                "ResourceName": "aaaadasd"
             }
         ],
-        "RequestId": "abc"
+        "JobId": 118786,
+        "JobStatus": "FAIL",
+        "JobType": "BATCH_MODIFY_SCHEDULE",
+        "NeedApprove": false,
+        "RequestId": "2fe33308-82db-4d40-a275-d9fca1e5e284",
+        "RunType": "ASYNC",
+        "SuccessResource": [],
+        "TotalResource": 1
     }
 }
 ```

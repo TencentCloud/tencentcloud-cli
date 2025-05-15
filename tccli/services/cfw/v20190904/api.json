@@ -8585,7 +8585,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(intance)\n2表示子网实例(intance)\n3表示CVM实例(intance)\n4表示CLB实例(intance)\n5表示ENI实例(intance)\n6表示数据库实例(intance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
           "example": "0",
           "member": "int64",
           "name": "SourceType",
@@ -8605,7 +8605,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(intance)\n2表示子网实例(intance)\n3表示CVM实例(intance)\n4表示CLB实例(intance)\n5表示ENI实例(intance)\n6表示数据库实例(intance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
           "example": "0",
           "member": "int64",
           "name": "TargetType",
@@ -11719,12 +11719,11 @@
         {
           "disabled": false,
           "document": "过滤的类型，例如实例id",
-          "example": "NatinsId",
+          "example": "NatInsId",
           "member": "string",
           "name": "FilterType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -11733,8 +11732,7 @@
           "member": "string",
           "name": "FilterContent",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

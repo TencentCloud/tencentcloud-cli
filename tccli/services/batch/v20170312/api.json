@@ -2349,7 +2349,7 @@
         },
         {
           "disabled": false,
-          "document": "最大任务实例数, 最大值为10.",
+          "document": "最大任务实例数；默认值为5， 最大值为10。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",

@@ -2049,6 +2049,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志下载进度。",
+          "example": "100",
+          "member": "int64",
+          "name": "ProgressRate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8640,7 +8650,7 @@
         {
           "disabled": false,
           "document": "审计日志文件详情。",
-          "example": "无",
+          "example": "[{\"CreateTime\": \"2024-11-14 14:57:37\",\"DownloadUrl\": \"https://bj-audit-1256375829.cos***\",\"ErrMsg\": \"\",\"FileName\": \"1312368346_cynosdbmysql-ins-3v*****_1731567456_95888306.csv\",\"FileSize\": 1,\"Status\": \"success\"}]",
           "member": "AuditLogFile",
           "name": "Items",
           "output_required": true,
@@ -16940,9 +16950,9 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "审计规则。同RuleTemplateIds都不填是全审计。",
-          "example": "无",
+          "disabled": true,
+          "document": "审计规则(废弃)。",
+          "example": "[{\"RuleFilters\": [{\"Type\": \"host\",\"Compare\": \"INC\",\"Value\": [\"172.1.1.1\"]}]}]",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
           "required": false,

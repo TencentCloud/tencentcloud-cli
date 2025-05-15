@@ -946,7 +946,7 @@
       "status": "online"
     },
     "DeleteVpcEndPointService": {
-      "document": "本接口（DeleteVpcEndPointService）用于删除终端节点服务。",
+      "document": "本接口（DeleteVpcEndPointService）用于删除终端节点服务。限制：当有终端节点关联到终端节点服务时，无法删除终端节点服务。",
       "input": "DeleteVpcEndPointServiceRequest",
       "name": "删除终端节点服务",
       "output": "DeleteVpcEndPointServiceResponse",
@@ -7560,7 +7560,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。\n",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
@@ -9352,7 +9352,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。",
           "example": "vpc-0akbol5v",
           "member": "string",
           "name": "VpcId",
@@ -10619,7 +10619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-q26u781x。",
           "member": "string",
           "name": "VpcId",
@@ -10628,7 +10628,7 @@
         },
         {
           "disabled": false,
-          "document": "子网实例ID。",
+          "document": "子网实例ID。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。",
           "example": "subnet-qmqye6ew。",
           "member": "string",
           "name": "SubnetId",
@@ -10637,8 +10637,8 @@
         },
         {
           "disabled": false,
-          "document": "终端节点名称。",
-          "example": "示例名称。",
+          "document": "终端节点名称。限制为60个字符。",
+          "example": "EndPointName1。",
           "member": "string",
           "name": "EndPointName",
           "required": true,
@@ -10646,7 +10646,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。",
           "example": "vpcsvc-ettmyyrn。",
           "member": "string",
           "name": "EndPointServiceId",
@@ -10664,7 +10664,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID。",
+          "document": "安全组ID。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。",
           "example": "sg-123456。",
           "member": "string",
           "name": "SecurityGroupId",
@@ -10719,7 +10719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。",
+          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-ihwh81fr",
           "member": "string",
           "name": "VpcId",
@@ -10729,7 +10729,7 @@
         {
           "disabled": false,
           "document": "终端节点服务名称。",
-          "example": "demo",
+          "example": "EndPointServiceName1",
           "member": "string",
           "name": "EndPointServiceName",
           "required": true,
@@ -10746,7 +10746,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务ID，比如lb-xxx。",
+          "document": "后端服务ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；CDB可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；CRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；GWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。\n",
           "example": "lb-7xwasqqy",
           "member": "string",
           "name": "ServiceInstanceId",
@@ -10764,7 +10764,7 @@
         },
         {
           "disabled": false,
-          "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。",
+          "document": "挂载的PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡）。不填默认挂载为CLB。",
           "example": "CLB",
           "member": "string",
           "name": "ServiceType",
@@ -10819,7 +10819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "UIN。",
+          "document": "UIN。腾讯云账号中心控制台获取。",
           "example": "700000483554",
           "member": "string",
           "name": "UserUin",
@@ -10828,7 +10828,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。",
           "example": "vpcsvc-b2mrmmx7",
           "member": "string",
           "name": "EndPointServiceId",
@@ -10837,8 +10837,8 @@
         },
         {
           "disabled": false,
-          "document": "白名单描述。",
-          "example": "demo",
+          "document": "白名单描述。长度不超过60个字符。",
+          "example": "Description1",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -12609,7 +12609,7 @@
         },
         {
           "disabled": false,
-          "document": "私用网络唯一ID。删除云联网流日志时，可不填，其他流日志类型必填。可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取流日志对应的私有网络唯一ID。也可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取当前账户的私有网络唯一ID。\n",
+          "document": "私用网络唯一ID。删除云联网流日志时，可不填，其他流日志类型必填。可通过[DescribeFlowLogs](https://cloud.tencent.com/document/product/215/35012)接口获取流日志对应的私有网络唯一ID。也可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取当前账户的私有网络唯一ID。\n",
           "example": "vpc-ec37wwkm",
           "member": "string",
           "name": "VpcId",
@@ -13656,7 +13656,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端节点ID。",
+          "document": "终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。",
           "example": "vpce-h0fk8lfc",
           "member": "string",
           "name": "EndPointId",
@@ -13692,7 +13692,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端节点ID。",
+          "document": "终端节点ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。",
           "example": "vpcsvc-kngiybxl",
           "member": "string",
           "name": "EndPointServiceId",
@@ -13728,8 +13728,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户UIN数组。",
-          "example": "['123']",
+          "document": "用户UIN数组。登录 腾讯云账号中心控制台",
+          "example": "['2126195383']",
           "member": "string",
           "name": "UserUin",
           "required": true,
@@ -13737,7 +13737,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。",
           "example": "vpcsvc-b2mrmmx7",
           "member": "string",
           "name": "EndPointServiceId",
@@ -14392,7 +14392,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>",
+          "document": "过滤条件，参数不支持同时指定VpcIds和Filters。\n\n当前支持的过滤条件如下：\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。（当前仅支持该过滤条件）</li>",
           "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-6v2ht8q5\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -16009,7 +16009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。该接口不支持拉取CCN类型的流日志，所以该字段为必选。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。该接口不支持拉取CCN类型的流日志，所以该字段为必选。",
           "example": "vpc-hj3he929",
           "member": "string",
           "name": "VpcId",
@@ -16055,7 +16055,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。",
           "example": "vpc-7zayowkt",
           "member": "string",
           "name": "VpcId",
@@ -18022,7 +18022,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。\n</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。\n</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
+          "document": "过滤条件，参数不支持同时指定NetworkInterfaceIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。可通过可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。\n</li>\n<li>subnet-id - String - （过滤条件）所属子网实例ID，形如：subnet-f49l6u0z。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。\n</li>\n<li>network-interface-id - String - （过滤条件）弹性网卡实例ID，形如：eni-5k56k7k7。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n</li>\n<li>attachment.instance-id - String - （过滤条件）绑定的云服务器实例ID，形如：ins-3nqpdn3i。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。\n</li>\n<li>groups.security-group-id - String - （过滤条件）绑定的安全组实例ID，例如：sg-f9ekbxeq。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n</li>\n<li>network-interface-name - String - （过滤条件）网卡实例名称。</li>\n<li>network-interface-description - String - （过滤条件）网卡实例描述。</li>\n<li>address-ip - String - （过滤条件）内网IPv4地址，单IP后缀模糊匹配，多IP精确匹配。可以与`ip-exact-match`配合做单IP的精确匹配查询。</li>\n<li>ip-exact-match - Boolean - （过滤条件）内网IPv4精确匹配查询，存在多值情况，只取第一个。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。使用请参考示例2</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>\n<li>is-primary - Boolean - 是否必填：否 - （过滤条件）按照是否主网卡进行过滤。值为true时，仅过滤主网卡；值为false时，仅过滤辅助网卡；此过滤参数未提供时，同时过滤主网卡和辅助网卡。</li>\n<li>eni-type - String -是否必填：否- （过滤条件）按照网卡类型进行过滤。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡。</li>\n<li>eni-qos - String -是否必填：否- （过滤条件）按照网卡服务质量进行过滤。PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</li>\n<li>address-ipv6 - String - 是否必填：否 -（过滤条件）内网IPv6地址过滤，支持多ipv6地址查询，如果和address-ip一起使用取交集。</li>\n<li>public-address-ip - String - （过滤条件）公网IPv4地址，精确匹配。</li>\n<li>address-type - String - （过滤条件）IPv6 Cidr 的类型，精确匹配。`GUA`(全球单播地址), `ULA`(唯一本地地址)。</li>",
           "example": "[{'Name': 'vpc-id', 'Values': ['vpc-q26u781x']}]",
           "member": "Filter",
           "name": "Filters",
@@ -19998,7 +19998,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定SubnetIds和Filters。",
+          "document": "子网实例ID查询。形如：subnet-pxir56ns。每次请求的实例的上限为100（该参数指定的子网是否返回，需要结合分页拉取参数Limit和Offset）。参数不支持同时指定SubnetIds和Filters。",
           "example": "subnet-pxir56ns",
           "member": "string",
           "name": "SubnetIds",
@@ -20504,7 +20504,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> end-point-service-id- String - （过滤条件）终端节点服务ID。</li>\n<li>end-point-name - String - （过滤条件）终端节点实例名称。</li>\n<li> end-point-id- String - （过滤条件）终端节点实例ID。</li>\n<li> vpc-id- String - （过滤条件）VPC实例ID。</li>",
+          "document": "过滤条件。当前支持如下过滤条件：\n<li> end-point-service-id- String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n</li>\n<li>end-point-name - String - （过滤条件）终端节点实例名称。</li>\n<li> end-point-id- String - （过滤条件）终端节点实例ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) \n接口获取。</li>\n<li> vpc-id- String - （过滤条件）VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。\n</li>",
           "example": "[{\"Name\": \"vpc-id\", \"Values\": [\"vpc-ahnu4rv5\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -20531,7 +20531,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点ID列表。",
+          "document": "终端节点ID列表。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) \n获取。",
           "example": "[\"vpce-h0fk8lfc\"]",
           "member": "string",
           "name": "EndPointId",
@@ -20587,7 +20587,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>",
+          "document": "过滤条件。不支持同时传入参数 EndPointServiceIds and Filters。\n<li> service-id - String - （过滤条件）终端节点服务唯一ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n</li>\n<li>service-name - String - （过滤条件）终端节点实例名称。</li>\n<li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-dehd3e33。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；\nMYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；\nCRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；\nGWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取。\n</li>\n<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB（负载均衡），CDB（云数据库 MySQL），CRS（云数据库 Redis），GWLB（网关负载均衡），不填默认查询类型为CLB。</li>",
           "example": "[{\"Name\": \"service-type\", \"Values\": [\"CDB\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -20614,7 +20614,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。不支持同时传入参数 EndPointServiceIds and Filters。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。不支持同时传入参数 EndPointServiceIds and Filters。",
           "example": "[\"vpcsvc-pnpcflil\"]",
           "member": "string",
           "name": "EndPointServiceIds",
@@ -20697,8 +20697,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> user-uin String - （过滤条件）用户UIN。</li>\n<li> end-point-service-id String - （过滤条件）终端节点服务ID。</li>",
-          "example": "无",
+          "document": "过滤条件。\n<li> user-uin String - （过滤条件）用户UIN。登录 腾讯云账号中心控制台 获取。</li>\n<li> end-point-service-id String - （过滤条件）终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n</li>",
+          "example": "[{\"Name\":\"end-point-service-id\",\"Values\":[\"vpcsvc-og1w5cum\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -22953,7 +22953,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组ID数组。",
+          "document": "安全组ID数组。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。",
           "example": "[\"sg-serghftg\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -22962,7 +22962,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点ID。",
+          "document": "终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。",
           "example": "vpce-h0fk8lfc",
           "member": "string",
           "name": "EndPointId",
@@ -23299,7 +23299,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。",
           "example": "vpcsvc-8gdaqxi0",
           "member": "string",
           "name": "EndPointServiceId",
@@ -23308,7 +23308,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点ID。",
+          "document": "终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。",
           "example": "[\"vpce-8gdaqxi0\"]",
           "member": "string",
           "name": "EndPointId",
@@ -23409,7 +23409,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
+          "document": "VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。",
           "example": "vpc-hj3he929",
           "member": "string",
           "name": "VpcId",
@@ -23761,7 +23761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
+          "document": "私用网络唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。",
           "example": "vpc-pq9vxykj",
           "member": "string",
           "name": "VpcId",
@@ -29325,7 +29325,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端节点ID。",
+          "document": "终端节点ID。可通过[DescribeVpcEndPoint](https://cloud.tencent.com/document/product/215/54679) 获取。",
           "example": "vpce-nswq8wkq",
           "member": "string",
           "name": "EndPointId",
@@ -29334,8 +29334,8 @@
         },
         {
           "disabled": false,
-          "document": "终端节点名称。",
-          "example": "demo",
+          "document": "终端节点名称。长度限制为60个字符。",
+          "example": "EndPointName1",
           "member": "string",
           "name": "EndPointName",
           "required": false,
@@ -29343,7 +29343,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表。",
+          "document": "安全组ID列表。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。",
           "example": "[\"sg-hj3he929\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -29379,7 +29379,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。\n",
           "example": "vpces-hhth8n9j",
           "member": "string",
           "name": "EndPointServiceId",
@@ -29388,7 +29388,7 @@
         },
         {
           "disabled": false,
-          "document": "VPCID。",
+          "document": "VPC唯一ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/1108/43663)接口获取。",
           "example": "vpc-a2oj00df",
           "member": "string",
           "name": "VpcId",
@@ -29397,8 +29397,8 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务名称。",
-          "example": "demo",
+          "document": "终端节点服务名称。长度不超过60个字符。",
+          "example": "EndPointServiceName1",
           "member": "string",
           "name": "EndPointServiceName",
           "required": false,
@@ -29415,7 +29415,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的ID，比如lb-xxx。",
+          "document": "后端服务的ID，比如lb-p1hiksdg。CLB可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/product/1108/48459)接口获取；\nMYSQL可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/240/38568)接口获取；\nCRS可通过[DescribeInstances](https://cloud.tencent.com/document/product/239/20018)接口获取；\nGWLB可通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)接口获取\n",
           "example": "lb-75d88uw8",
           "member": "string",
           "name": "ServiceInstanceId",
@@ -29451,7 +29451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户UIN。",
+          "document": "用户UIN。可以通过终端节点所在的用户通过登录 腾讯云账号中心控制台获取。",
           "example": "700000483554",
           "member": "string",
           "name": "UserUin",
@@ -29460,7 +29460,7 @@
         },
         {
           "disabled": false,
-          "document": "终端节点服务ID。",
+          "document": "终端节点服务ID。可通过[DescribeVpcEndPointService](https://cloud.tencent.com/document/product/215/54678)接口获取。",
           "example": "vpcsvc-b2mrmmx7",
           "member": "string",
           "name": "EndPointServiceId",
@@ -29469,7 +29469,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单描述信息。",
+          "document": "白名单描述信息。长度不超过60个字符。",
           "example": "demo",
           "member": "string",
           "name": "Description",

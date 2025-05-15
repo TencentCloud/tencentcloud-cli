@@ -2851,84 +2851,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否启用IPVS",
-          "example": "false",
-          "member": "bool",
-          "name": "IPVS",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "是否启用集群节点自动扩缩容(创建集群流程不支持开启此功能)",
           "example": "false",
           "member": "bool",
           "name": "AsEnabled",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "集群使用的runtime类型，包括\"docker\"和\"containerd\"两种类型，默认为\"docker\"",
-          "example": "docker",
-          "member": "string",
-          "name": "ContainerRuntime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）",
-          "example": "lan-ip",
-          "member": "string",
-          "name": "NodeNameType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群自定义参数",
-          "example": "无",
-          "member": "ClusterExtraArgs",
-          "name": "ExtraArgs",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。",
-          "example": "GR",
-          "member": "string",
-          "name": "NetworkType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。",
-          "example": "false",
-          "member": "bool",
-          "name": "IsNonStaticIpMode",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "是否启用集群删除保护",
-          "example": "false",
-          "member": "bool",
-          "name": "DeletionProtection",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：\niptables模式：IPVS和KubeProxyMode都不设置\nipvs模式: 设置IPVS为true, KubeProxyMode不设置\nipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf\n使用ipvs-bpf的网络模式需要满足以下条件：\n1. 集群版本必须为1.14及以上；\n2. 系统镜像必须是: Tencent Linux 2.4；",
-          "example": "kube-proxy-eni",
-          "member": "string",
-          "name": "KubeProxyMode",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -2941,15 +2869,6 @@
         },
         {
           "disabled": false,
-          "document": "审计日志上传到的logset日志集",
-          "example": "342ea0aa-e45a-41dd-84f5-f7a2929d3fac",
-          "member": "string",
-          "name": "AuditLogsetId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "审计日志上传到的topic",
           "example": "342ea0aa-e45a-41dd-84f5-f7a2929d3fac",
           "member": "string",
@@ -2959,30 +2878,12 @@
         },
         {
           "disabled": false,
-          "document": "区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写\"tke-route-eni\"，独立网卡模式填写\"tke-direct-eni\"，默认为共享网卡模式",
-          "example": "tke-direct-eni",
+          "document": "审计日志上传到的logset日志集",
+          "example": "342ea0aa-e45a-41dd-84f5-f7a2929d3fac",
           "member": "string",
-          "name": "VpcCniType",
+          "name": "AuditLogsetId",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "运行时版本",
-          "example": "1.16.3",
-          "member": "string",
-          "name": "RuntimeVersion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否开节点podCIDR大小的自定义模式",
-          "example": "false",
-          "member": "bool",
-          "name": "EnableCustomizedPodCIDR",
-          "required": false,
-          "type": "bool"
         },
         {
           "disabled": false,
@@ -3004,6 +2905,60 @@
         },
         {
           "disabled": false,
+          "document": "集群使用的runtime类型，包括\"docker\"和\"containerd\"两种类型，默认为\"docker\"",
+          "example": "docker",
+          "member": "string",
+          "name": "ContainerRuntime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用集群删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开节点podCIDR大小的自定义模式",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCustomizedPodCIDR",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "元数据拆分存储Etcd配置",
+          "example": "无",
+          "member": "EtcdOverrideConfig",
+          "name": "EtcdOverrideConfigs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群自定义参数",
+          "example": "无",
+          "member": "ClusterExtraArgs",
+          "name": "ExtraArgs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用IPVS",
+          "example": "false",
+          "member": "bool",
+          "name": "IPVS",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。",
           "example": "false",
           "member": "bool",
@@ -3013,12 +2968,66 @@
         },
         {
           "disabled": false,
+          "document": "集群VPC-CNI模式是否为非固定IP，默认: FALSE 固定IP。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNonStaticIpMode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群的网络代理模型，目前tke集群支持的网络代理模式有三种：iptables,ipvs,ipvs-bpf，此参数仅在使用ipvs-bpf模式时使用，三种网络模式的参数设置关系如下：\niptables模式：IPVS和KubeProxyMode都不设置\nipvs模式: 设置IPVS为true, KubeProxyMode不设置\nipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf\n使用ipvs-bpf的网络模式需要满足以下条件：\n1. 集群版本必须为1.14及以上；\n2. 系统镜像必须是: Tencent Linux 2.4；",
+          "example": "kube-proxy-eni",
+          "member": "string",
+          "name": "KubeProxyMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群网络类型（包括GR(全局路由)和VPC-CNI两种模式，默认为GR。",
+          "example": "GR",
+          "member": "string",
+          "name": "NetworkType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群中节点NodeName类型（包括 hostname,lan-ip两种形式，默认为lan-ip。如果开启了hostname模式，创建节点时需要设置HostName参数，并且InstanceName需要和HostName一致）",
+          "example": "lan-ip",
+          "member": "string",
+          "name": "NodeNameType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "是否开启QGPU共享",
           "example": "false",
           "member": "bool",
           "name": "QGPUShareEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "运行时版本",
+          "example": "1.16.3",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区分共享网卡多IP模式和独立网卡模式，共享网卡多 IP 模式填写\"tke-route-eni\"，独立网卡模式填写\"tke-direct-eni\"，默认为共享网卡模式",
+          "example": "tke-direct-eni",
+          "member": "string",
+          "name": "VpcCniType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3552,6 +3561,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "etcd自定义参数，只支持独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"node-data-dir=/data\"]",
+          "member": "string",
+          "name": "Etcd",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "kube-apiserver自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"max-requests-inflight=500\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"max-requests-inflight=200\"]",
           "member": "string",
@@ -3578,17 +3598,6 @@
           "example": "[\"kube-api-burst=500\"]",
           "member": "string",
           "name": "KubeScheduler",
-          "output_required": true,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "etcd自定义参数，只支持独立集群\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"node-data-dir=/data\"]",
-          "member": "string",
-          "name": "Etcd",
           "output_required": true,
           "required": false,
           "type": "list",
@@ -16085,6 +16094,21 @@
       ],
       "usage": "both"
     },
+    "EtcdOverrideConfig": {
+      "document": "元数据拆分存储Etcd配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "k8s资源，支持核心资源，控制类资源，配置及敏感资源",
+          "example": "[\"/configmaps\",\"/pods\",\"apps/deployments\"]",
+          "member": "string",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "Event": {
       "document": "服务事件",
       "members": [
@@ -17563,13 +17587,13 @@
         },
         {
           "disabled": false,
-          "document": "节点内网IP",
+          "document": "节点内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.127.12",
           "member": "string",
           "name": "LanIP",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

@@ -32,7 +32,43 @@ Output:
 }
 ```
 
-**Example 2: 创建企业用户H5签署链接**
+**Example 2: 创建个人用户H5签署链接-并指定签署方签署认证方式**
+
+发起流程后，给其中的C端签署人创建签署链接。同时指定其签署时候的认证方式为人脸和密码签署且按照设置的顺序进行推荐，签署认证方式仅此链接生效。
+
+Input: 
+
+```
+tccli essbasic ChannelCreateFlowSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.AppId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --FlowApproverInfos.0.Mobile 13200000001 \
+    --FlowApproverInfos.0.Name 典子谦 \
+    --FlowApproverInfos.0.ApproverSignTypes 1 2 \
+    --FlowApproverInfos.0.SignTypeSelector 1 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfos": [
+            {
+                "ApproverType": "PERSON",
+                "LongUrl": "https://quick.qian.tencent.cn/home?ApproverIdCardNumber=NCoqK***&ApproverIdCardType=ID_CARD&ApproverMobile=MTU4%3D&ApproverName=%25E9%2583%2591%****1%2589&ApproverType=1&Code=yDwhGUUckp3s****z1m3P&CodeType=QUICK&FlowId=yD****T&ShowHeader=1&token=HXC***d",
+                "Mobile": "13200000000",
+                "Name": "典子谦",
+                "SignUrl": "https://test.essurl.cn/HXC***d"
+            }
+        ],
+        "RequestId": "s1690514917653165172"
+    }
+}
+```
+
+**Example 3: 创建企业用户H5签署链接**
 
 发起流程后，给其中的B端签署人创建签署链接
 
@@ -67,7 +103,7 @@ Output:
 }
 ```
 
-**Example 3: 创建企业用户H5预览链接**
+**Example 4: 创建企业用户H5预览链接**
 
 发起流程后，给其中的B端签署人创建预览链接
 
@@ -103,7 +139,7 @@ Output:
 }
 ```
 
-**Example 4: 创建合同发起方预览链接**
+**Example 5: 创建合同发起方预览链接**
 
 发起流程后，给其中的合同发起方创建预览链接
 
@@ -136,7 +172,7 @@ Output:
 }
 ```
 
-**Example 5: 创建个人用户H5签署链接，并指定视频问答模式认证**
+**Example 6: 创建个人用户H5签署链接，并指定视频问答模式认证**
 
 发起流程后，给其中的C端签署人创建签署链接，并指定视频问答模式认证
 
