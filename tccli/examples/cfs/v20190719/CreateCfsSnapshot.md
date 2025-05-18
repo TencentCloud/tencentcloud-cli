@@ -7,7 +7,7 @@ Input:
 ```
 tccli cfs CreateCfsSnapshot --cli-unfold-argument  \
     --FileSystemId cfs-abcdefgh \
-    --SnapshotName test
+    --SnapshotName defaulsnapshot
 ```
 
 Output: 

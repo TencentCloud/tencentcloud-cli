@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DeleteCfsPGroup": {
-      "document": "本接口（DeleteCfsPGroup）用于删除权限组。",
+      "document": "本接口（DeleteCfsPGroup）用于删除权限组，只有未绑定文件系统的权限组才能够被此接口删除。",
       "input": "DeleteCfsPGroupRequest",
       "name": "删除权限组",
       "output": "DeleteCfsPGroupResponse",
@@ -367,7 +367,7 @@
         },
         {
           "disabled": false,
-          "document": "快照策略ID",
+          "document": "快照策略名称",
           "example": "default",
           "member": "string",
           "name": "PolicyName",
@@ -437,8 +437,8 @@
         },
         {
           "disabled": false,
-          "document": "快照策略状态，1代表快照策略状态正常。这里只有一种状态",
-          "example": "1",
+          "document": "快照策略状态，available代表快照策略状态正常。这里只有一种状态",
+          "example": "available",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -697,7 +697,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照策略ID",
+          "document": "快照策略ID，通过快照策略列表获取",
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -706,7 +706,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统列表",
+          "document": "文件系统id列表，用“,”分隔，文件系统id通过查询文件系统列表获得",
           "example": "cfs-abc,cfs-bdc.",
           "member": "string",
           "name": "FileSystemIds",
@@ -725,6 +725,7 @@
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -768,8 +769,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书描述",
-          "example": "证书描述",
+          "document": "证书描述，不超过64字符",
+          "example": "用于访问CFS的凭证",
           "member": "string",
           "name": "CertDesc",
           "required": true,
@@ -805,8 +806,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照重复时间点,0-23",
-          "example": "'1,3,5'",
+          "document": "快照重复时间点,0-23，小时",
+          "example": "1,3,5",
           "member": "string",
           "name": "Hour",
           "required": true,
@@ -823,8 +824,8 @@
         },
         {
           "disabled": false,
-          "document": "快照重复日期，星期一到星期日。 1代表星期一、7代表星期天",
-          "example": "'2,3'",
+          "document": "快照重复日期，星期一到星期日。 1代表星期一、7代表星期天，与DayOfMonth，IntervalDays 三者选一",
+          "example": "2,3",
           "member": "string",
           "name": "DayOfWeek",
           "required": false,
@@ -832,7 +833,7 @@
         },
         {
           "disabled": false,
-          "document": "快照保留时长，单位天",
+          "document": "快照保留时长，单位天，默认永久0",
           "example": "3",
           "member": "uint64",
           "name": "AliveDays",
@@ -841,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。",
+          "document": "快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一",
           "example": "1",
           "member": "string",
           "name": "DayOfMonth",
@@ -850,7 +851,7 @@
         },
         {
           "disabled": false,
-          "document": "间隔天数",
+          "document": "间隔天数，与DayOfWeek，DayOfMonth 三者选一",
           "example": "10",
           "member": "uint64",
           "name": "IntervalDays",
@@ -1233,7 +1234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -1356,7 +1357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统id",
+          "document": "文件系统 ID，通过查询文件系统接口获取",
           "example": "cfs-gagaggag",
           "member": "string",
           "name": "FileSystemId",
@@ -1365,8 +1366,8 @@
         },
         {
           "disabled": false,
-          "document": "快照名称",
-          "example": "snapshot-xxx",
+          "document": "快照名称，不超过64字符",
+          "example": "CFS定期快照",
           "member": "string",
           "name": "SnapshotName",
           "required": false,
@@ -1647,7 +1648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -1666,7 +1667,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1676,7 +1677,7 @@
           "example": "1250000000",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1694,7 +1695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -1703,7 +1704,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID",
+          "document": "规则 ID，通过查询权限组规则接口获取",
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
@@ -1722,7 +1723,7 @@
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1732,7 +1733,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1750,7 +1751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统快照id",
+          "document": "文件系统快照id，可通过查询快照列表接口获取",
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
@@ -1759,7 +1760,7 @@
         },
         {
           "disabled": false,
-          "document": "需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项",
+          "document": "需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项",
           "example": "[\"snapcfs-xx\",\"snapcfs-xx1\"]",
           "member": "string",
           "name": "SnapshotIds",
@@ -1778,7 +1779,7 @@
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1859,7 +1860,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "文件系统 ID，通过查询文件系统接口获取",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -1868,7 +1869,7 @@
         },
         {
           "disabled": false,
-          "document": "指定配额类型，包括Uid、Gid、Dir",
+          "document": "指定配额类型，包括Uid（按用户ID限制）、Gid（按用户组ID限制）、Dir（按目录限制）",
           "example": "Uid",
           "member": "string",
           "name": "UserType",
@@ -1877,7 +1878,7 @@
         },
         {
           "disabled": false,
-          "document": "UID/GID信息",
+          "document": "UID/GID信息，和DirectoryPath参数，两者必须填写一个",
           "example": "1000",
           "member": "string",
           "name": "UserId",
@@ -1886,7 +1887,7 @@
         },
         {
           "disabled": false,
-          "document": "设置目录配额的目录的绝对路径",
+          "document": "设置目录配额的目录的绝对路径，和UserId参数，两者必须填写一个",
           "example": "/cfs/xx",
           "member": "string",
           "name": "DirectoryPath",
@@ -2097,7 +2098,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID。",
+          "document": "文件系统 ID，通过查询文件系统接口获取",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -2106,7 +2107,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset 分页码",
+          "document": "Offset 分页码，默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2115,7 +2116,7 @@
         },
         {
           "disabled": false,
-          "document": "Limit 页面大小",
+          "document": "Limit 页面大小，默认为10，最大值为100",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2189,7 +2190,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset 分页码",
+          "document": "Offset 分页码,默认0",
           "example": "10",
           "member": "uint64",
           "name": "Offset",
@@ -2198,7 +2199,7 @@
         },
         {
           "disabled": false,
-          "document": "Limit 页面大小",
+          "document": "Limit 页面大小，默认10",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2281,7 +2282,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -2300,7 +2301,7 @@
           "example": "无",
           "member": "PGroupRuleInfo",
           "name": "RuleList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2548,7 +2549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "文件系统 ID，查询文件系统列表可以获得id",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -2595,7 +2596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统快照ID",
+          "document": "文件系统快照ID，通过快照创建接口获得",
           "example": "snapcfs-xx",
           "member": "string",
           "name": "SnapshotId",
@@ -2605,7 +2606,7 @@
         {
           "disabled": false,
           "document": "起始时间",
-          "example": "2021-08-11 11:51:xx",
+          "example": "2021-08-11 11:51:33",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -2614,7 +2615,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2021-08-11 11:51:xx",
+          "example": "2021-08-11 11:51:33",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2957,7 +2958,7 @@
         {
           "disabled": false,
           "document": "文件系统协议类型, 支持 NFS,CIFS,TURBO",
-          "example": "SMB",
+          "example": "NFS",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -3066,7 +3067,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统处理快照状态",
+          "document": "文件系统处理快照状态,snapping：快照中，normal：正常状态",
           "example": "snapping",
           "member": "string",
           "name": "SnapStatus",
@@ -3530,7 +3531,7 @@
           "example": "cfs-hge16re9",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3540,7 +3541,7 @@
           "example": "mount-0ylt3o7o",
           "member": "string",
           "name": "MountTargetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3550,7 +3551,7 @@
           "example": "10.1.0.7",
           "member": "string",
           "name": "IpAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3560,27 +3561,27 @@
           "example": "fwsuvz0l",
           "member": "string",
           "name": "FSID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "挂载点状态",
+          "document": "挂载点状态，包括creating：创建中；available：运行中；\ndeleting：删除中；\ncreate_failed： 创建失败",
           "example": "available",
           "member": "string",
           "name": "LifeCycleState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络类型",
+          "document": "网络类型，包括VPC,CCN",
           "example": "VPC",
           "member": "string",
           "name": "NetworkInterface",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3590,7 +3591,7 @@
           "example": "vpc-hq13cw04",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3600,7 +3601,7 @@
           "example": "qcloudtest",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3610,7 +3611,7 @@
           "example": "subnet-jdl08no5",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3620,7 +3621,7 @@
           "example": "qcloudtest",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3630,7 +3631,7 @@
           "example": "ccn-1xhbcp41",
           "member": "string",
           "name": "CcnID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3640,7 +3641,7 @@
           "example": "10.0.0.0/24",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4171,7 +4172,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4181,17 +4182,17 @@
           "example": "2",
           "member": "uint64",
           "name": "SnapshotNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照总容量",
+          "document": "快照总容量，单位是MiB",
           "example": "33",
           "member": "uint64",
           "name": "SnapshotSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4306,7 +4307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要解绑的文件系统ID列表，用\",\" 分割",
+          "document": "需要解绑的文件系统ID列表，用\",\" 分割，文件系统id 通创建文件系统接口获得",
           "example": "cfs-abc,cfs-dbc",
           "member": "string",
           "name": "FileSystemIds",
@@ -4315,8 +4316,8 @@
         },
         {
           "disabled": false,
-          "document": "解绑的快照ID",
-          "example": "asp-xx",
+          "document": "解绑的快照ID，通过创建快照策略接口获得",
+          "example": "asp-gagagacg",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "required": true,
@@ -4331,10 +4332,10 @@
         {
           "disabled": false,
           "document": "快照策略ID",
-          "example": "asp-xx",
+          "example": "asp-gagagacg",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4352,7 +4353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照策略ID",
+          "document": "快照策略ID,查询快照策略列表获取",
           "example": "asp-xx",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -4361,7 +4362,7 @@
         },
         {
           "disabled": false,
-          "document": "快照策略名称",
+          "document": "快照策略名称，不超过64个字符",
           "example": "cfspolicygz",
           "member": "string",
           "name": "PolicyName",
@@ -4370,8 +4371,8 @@
         },
         {
           "disabled": false,
-          "document": "快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日",
-          "example": "'1,2'",
+          "document": "快照定期备份，按照星期一到星期日。 1代表星期一，7代表星期日，与DayOfMonth，IntervalDays 三者选一个",
+          "example": "1,2",
           "member": "string",
           "name": "DayOfWeek",
           "required": false,
@@ -4380,7 +4381,7 @@
         {
           "disabled": false,
           "document": "快照定期备份在一天的哪一小时",
-          "example": "'1,3,4'",
+          "example": "1,3,4",
           "member": "string",
           "name": "Hour",
           "required": false,
@@ -4388,7 +4389,7 @@
         },
         {
           "disabled": false,
-          "document": "快照保留日期",
+          "document": "快照保留天数",
           "example": "20",
           "member": "uint64",
           "name": "AliveDays",
@@ -4406,8 +4407,8 @@
         },
         {
           "disabled": false,
-          "document": "定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥",
-          "example": "'1,3,4,10'",
+          "document": "定期快照在每月的第几天创建快照，该参数与DayOfWeek,IntervalDays 三者选一",
+          "example": "1,3,4,10",
           "member": "string",
           "name": "DayOfMonth",
           "required": false,
@@ -4415,7 +4416,7 @@
         },
         {
           "disabled": false,
-          "document": "间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥",
+          "document": "间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 三者选一",
           "example": "1",
           "member": "uint64",
           "name": "IntervalDays",
@@ -4518,7 +4519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -4527,7 +4528,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "文件系统 ID，通过查询文件系统接口获取",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -4546,7 +4547,7 @@
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4556,7 +4557,7 @@
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4610,7 +4611,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -4685,7 +4686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID",
+          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -4694,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID",
+          "document": "规则 ID，通过查询权限组规则接口获取",
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
@@ -4721,7 +4722,7 @@
         },
         {
           "disabled": false,
-          "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash。\nall_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
+          "document": "用户权限，值为all_squash、no_all_squash、root_squash、no_root_squash，默认值为root_squash\nall_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
           "example": "no_root_squash",
           "member": "string",
           "name": "UserPermission",
@@ -4730,7 +4731,7 @@
         },
         {
           "disabled": false,
-          "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低",
+          "document": "规则优先级，参数范围1-100。 其中 1 为最高，100为最低，默认值为100",
           "example": "7",
           "member": "int64",
           "name": "Priority",
@@ -4817,8 +4818,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统快照ID",
-          "example": "snapcfs-xx",
+          "document": "文件系统快照ID,查询文件系统快照列表获取",
+          "example": "snapcfs-4agklgllg",
           "member": "string",
           "name": "SnapshotId",
           "required": true,
@@ -4826,7 +4827,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统快照名称",
+          "document": "文件系统快照名称，与AliveDays 必须填一个",
           "example": "snapshot123",
           "member": "string",
           "name": "SnapshotName",
@@ -4835,7 +4836,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统快照保留天数",
+          "document": "文件系统快照保留天数，与SnapshotName必须填一个，如果原来是永久保留时间，不允许修改成短期有效期",
           "example": "7",
           "member": "uint64",
           "name": "AliveDays",

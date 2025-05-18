@@ -14116,7 +14116,7 @@
           "example": "odinlli1",
           "member": "string",
           "name": "UserGroup",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {

@@ -204,14 +204,6 @@
         "title": "接口调用成功示例"
       }
     ],
-    "ReconstructDocumentDemo": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReconstructDocumentDemo\n<公共请求参数>\n\n{\n    \"FileUrl\": \"http://example.pdf\",\n    \"FileType\": \"PDF\",\n    \"FileStartPageNumber\": 1,\n    \"FileEndPageNumber\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"MarkdownBase64\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "调用示例"
-      }
-    ],
     "ReconstructDocumentSSE": [
       {
         "document": "",

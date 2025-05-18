@@ -19,7 +19,7 @@
     "CreateAutoSnapshotPolicy": [
       {
         "document": "创建文件系统快照策略",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"DayOfWeek\": \"\\\"1,2\\\"\",\n    \"Hour\": \"\\\"2,3\\\"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoSnapshotPolicy\n<公共请求参数>\n\n{\n    \"DayOfWeek\": \"1,2\",\n    \"Hour\": \"2,4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"AutoSnapshotPolicyId\": \"asp-12345\"\n    }\n}",
         "title": "创建文件系统快照策略"
       }
@@ -43,7 +43,7 @@
     "CreateCfsRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCfsRule\n<公共请求参数>\n\n{\n    \"RWPermission\": \"rw\",\n    \"AuthClientIp\": \"10.1.1.10\",\n    \"PGroupId\": \"pgroup-12345\",\n    \"Priority\": \"9\",\n    \"UserPermission\": \"root_squash\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCfsRule\n<公共请求参数>\n\n{\n    \"RWPermission\": \"rw\",\n    \"AuthClientIp\": \"10.1.1.10\",\n    \"PGroupId\": \"pgroup-12345\",\n    \"Priority\": 9,\n    \"UserPermission\": \"root_squash\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"RuleId\": \"rule-12345\",\n        \"PGroupId\": \"pgroup-12345\",\n        \"AuthClientIp\": \"10.1.1.10\",\n        \"RWPermission\": \"rw\",\n        \"UserPermission\": \"root_squash\",\n        \"Priority\": 9\n    }\n}",
         "title": "创建权限组规则"
       }
@@ -51,7 +51,7 @@
     "CreateCfsSnapshot": [
       {
         "document": "",
-        "input": "https://cfs.tencentcloudapi.com/?Action=CreateCfsSnapshot\n&FileSystemId=cfs-abcdefgh\n&SnapshotName=test\n&<公共请求参数>",
+        "input": "https://cfs.tencentcloudapi.com/?Action=CreateCfsSnapshot\n&FileSystemId=cfs-abcdefgh\n&SnapshotName=defaulsnapshot\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"SnapshotId\": \"snapcfs-abababb\"\n    }\n}",
         "title": "创建文件系统快照"
       }
@@ -76,7 +76,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCfsFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "删除文件系统"
       }
     ],
@@ -98,7 +98,7 @@
     ],
     "DeleteCfsSnapshot": [
       {
-        "document": "",
+        "document": "删除快照的场景",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCfsSnapshot\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snapcfs-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"SnapshotId\": \"snapcfs-12345\"\n    }\n}",
         "title": "删除快照"
@@ -164,7 +164,7 @@
       {
         "document": "查询文件系统",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfsFileSystems\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-318f2b7ba\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FileSystems\": [\n            {\n                \"AppId\": 1300275735,\n                \"AutoScaleUpRule\": null,\n                \"AutoSnapshotPolicyId\": \"\",\n                \"BandwidthLimit\": 100,\n                \"BandwidthResourcePkg\": \"\",\n                \"Capacity\": 2097152,\n                \"CreationTime\": \"2024-07-09 10:52:35\",\n                \"CreationToken\": \"denny-test-003\",\n                \"Encrypted\": false,\n                \"FileSystemId\": \"cfs-318f2b7ba\",\n                \"FsName\": \"denny-test-003\",\n                \"KmsKeyId\": \"\",\n                \"LifeCycleState\": \"available\",\n                \"PGroup\": {\n                    \"Name\": \"默认权限组\",\n                    \"PGroupId\": \"pgroupbasic\"\n                },\n                \"Protocol\": \"NFS\",\n                \"SizeByte\": 0,\n                \"SizeLimit\": 1000000,\n                \"SnapStatus\": \"normal\",\n                \"StorageResourcePkg\": \"\",\n                \"StorageType\": \"SD\",\n                \"Tags\": [],\n                \"TieringDetail\": {\n                    \"SecondaryTieringSizeInBytes\": -1,\n                    \"TieringSizeInBytes\": -1\n                },\n                \"TieringState\": \"NotAvailable\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneId\": 100002\n            }\n        ],\n        \"RequestId\": \"8edb5b83-6bd2-4f0a-8ee9-d8ee96fff8dc\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FileSystems\": [\n            {\n                \"AppId\": 1300275735,\n                \"AutoScaleUpRule\": {\n                    \"ScaleThreshold\": 80,\n                    \"TargetThreshold\": 70,\n                    \"Status\": \"open\"\n                },\n                \"AutoSnapshotPolicyId\": \"\",\n                \"BandwidthLimit\": 100,\n                \"BandwidthResourcePkg\": \"\",\n                \"Capacity\": 2097152,\n                \"CreationTime\": \"2024-07-09 10:52:35\",\n                \"CreationToken\": \"denny-test-003\",\n                \"Encrypted\": false,\n                \"FileSystemId\": \"cfs-318f2b7ba\",\n                \"FsName\": \"denny-test-003\",\n                \"KmsKeyId\": \"\",\n                \"LifeCycleState\": \"available\",\n                \"PGroup\": {\n                    \"Name\": \"默认权限组\",\n                    \"PGroupId\": \"pgroupbasic\"\n                },\n                \"Protocol\": \"NFS\",\n                \"SizeByte\": 0,\n                \"SizeLimit\": 1000000,\n                \"SnapStatus\": \"normal\",\n                \"StorageResourcePkg\": \"\",\n                \"StorageType\": \"SD\",\n                \"Tags\": [],\n                \"TieringDetail\": {\n                    \"SecondaryTieringSizeInBytes\": -1,\n                    \"TieringSizeInBytes\": -1\n                },\n                \"TieringState\": \"NotAvailable\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneId\": 100002\n            }\n        ],\n        \"RequestId\": \"8edb5b83-6bd2-4f0a-8ee9-d8ee96fff8dc\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询文件系统"
       }
     ],
@@ -337,7 +337,7 @@
     "UpdateCfsRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsRule\n<公共请求参数>\n\n{\n    \"RWPermission\": \"rw\",\n    \"Priority\": \"7\",\n    \"PGroupId\": \"pgroup-12345\",\n    \"RuleId\": \"rule-12345\",\n    \"AuthClientIp\": \"10.0.0.10\",\n    \"UserPermission\": \"no_root_squash\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsRule\n<公共请求参数>\n\n{\n    \"RWPermission\": \"rw\",\n    \"Priority\": 7,\n    \"PGroupId\": \"pgroup-12345\",\n    \"RuleId\": \"rule-12345\",\n    \"AuthClientIp\": \"10.0.0.10\",\n    \"UserPermission\": \"no_root_squash\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"PGroupId\": \"pgroup-12345\",\n        \"RuleId\": \"rule-12345\",\n        \"AuthClientIp\": \"10.0.0.10\",\n        \"RWPermission\": \"rw\",\n        \"UserPermission\": \"no_root_squash\",\n        \"Priority\": 7\n    }\n}",
         "title": "更新权限组规则"
       }
