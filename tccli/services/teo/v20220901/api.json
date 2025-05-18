@@ -20336,14 +20336,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速。</li>\n<li>SetContentIdentifierParameters：设置内容标识符。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>",
+          "example": "Cache",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -20710,7 +20710,7 @@
         },
         {
           "disabled": false,
-          "document": "内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容标识配置参数，当 Name 取值为 SetContentIdentifier 时，该参数必填。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SetContentIdentifierParameters",
           "name": "SetContentIdentifierParameters",
@@ -20718,6 +20718,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。\n该功能灰度中，如需使用，请联系腾讯云客服。",
+          "example": "无",
+          "member": "VaryParameters",
+          "name": "VaryParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22845,6 +22856,23 @@
         }
       ],
       "usage": "out"
+    },
+    "VaryParameters": {
+      "document": "[Vary 特性](https://cloud.tencent.com/document/product/1552/89301) 配置参数。\n该功能灰度中，如需使用，请联系腾讯云客服。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Vary 特性配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VerifyOwnershipRequest": {
       "document": "VerifyOwnership请求参数结构体",

@@ -16,7 +16,11 @@ Output:
         "FileSystems": [
             {
                 "AppId": 1300275735,
-                "AutoScaleUpRule": null,
+                "AutoScaleUpRule": {
+                    "ScaleThreshold": 80,
+                    "TargetThreshold": 70,
+                    "Status": "open"
+                },
                 "AutoSnapshotPolicyId": "",
                 "BandwidthLimit": 100,
                 "BandwidthResourcePkg": "",

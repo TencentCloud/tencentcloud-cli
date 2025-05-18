@@ -2376,7 +2376,7 @@
       "usage": "both"
     },
     "CbsVolume": {
-      "document": "EKS Instnace CBS volume",
+      "document": "EKS Instance CBS volume",
       "members": [
         {
           "disabled": false,
@@ -15394,7 +15394,7 @@
         },
         {
           "disabled": false,
-          "document": "EKS Cotainer Instance Id",
+          "document": "EKS Container Instance Id",
           "example": "eksci-xxx",
           "member": "string",
           "name": "EksCiId",
@@ -15405,7 +15405,7 @@
         },
         {
           "disabled": false,
-          "document": "EKS Cotainer Instance Name",
+          "document": "EKS Container Instance Name",
           "example": "eks",
           "member": "string",
           "name": "EksCiName",

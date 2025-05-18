@@ -225,6 +225,15 @@
           "name": "SubSyncFlag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建者名称",
+          "example": "weizhang",
+          "member": "string",
+          "name": "RtxName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

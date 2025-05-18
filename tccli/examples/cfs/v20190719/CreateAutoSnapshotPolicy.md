@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfs CreateAutoSnapshotPolicy --cli-unfold-argument  \
-    --DayOfWeek "1,2" \
-    --Hour "2,3"
+    --DayOfWeek 1,2 \
+    --Hour 2,4
 ```
 
 Output: 

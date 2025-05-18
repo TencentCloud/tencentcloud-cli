@@ -1411,7 +1411,7 @@
         },
         {
           "disabled": false,
-          "document": "最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "1",
           "member": "int64",
           "name": "MinSize",
@@ -1420,7 +1420,7 @@
         },
         {
           "disabled": false,
-          "document": "最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "1",
           "member": "int64",
           "name": "MaxSize",
@@ -1429,7 +1429,7 @@
         },
         {
           "disabled": false,
-          "document": "期望实例数，大小介于最小实例数和最大实例数之间。不传入时默认值等于最小值。",
+          "document": "期望实例数，取值范围 [0,2000]，默认值等于当前 MinSize，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "1",
           "member": "int64",
           "name": "DesiredCapacity",
@@ -1493,7 +1493,7 @@
         },
         {
           "disabled": false,
-          "document": "最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "1",
           "member": "uint64",
           "name": "MaxSize",
@@ -1502,7 +1502,7 @@
         },
         {
           "disabled": false,
-          "document": "最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "1",
           "member": "uint64",
           "name": "MinSize",
@@ -1529,7 +1529,7 @@
         },
         {
           "disabled": false,
-          "document": "期望实例数，取值范围 [0,2000]，默认值为最小值。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "期望实例数，取值范围 [0,2000]，默认值等于当前 MinSize，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "1",
           "member": "uint64",
           "name": "DesiredCapacity",
@@ -5514,7 +5514,7 @@
         },
         {
           "disabled": false,
-          "document": "期望实例数，取值范围 [0,2000]。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "期望实例数，取值范围 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "2",
           "member": "uint64",
           "name": "DesiredCapacity",
@@ -5523,7 +5523,7 @@
         },
         {
           "disabled": false,
-          "document": "最小实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "最小实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "0",
           "member": "uint64",
           "name": "MinSize",
@@ -5532,7 +5532,7 @@
         },
         {
           "disabled": false,
-          "document": "最大实例数，取值范围为0-2000。需满足最大值大于等于期望值，期望值大于等于最小值。",
+          "document": "最大实例数，取值范围为 [0,2000]，同时需满足 MaxSize >= DesiredCapacity >= MinSize 。",
           "example": "20",
           "member": "uint64",
           "name": "MaxSize",
