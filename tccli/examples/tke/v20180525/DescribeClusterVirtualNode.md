@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DescribeClusterVirtualNode --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
-    --NodePoolId np-abcd1234
+    --ClusterId cls-e55paxnt \
+    --NodePoolId np-e55paxnt
 ```
 
 Output: 
@@ -18,9 +18,10 @@ Output:
         "TotalCount": 1,
         "Nodes": [
             {
-                "Name": "eklet-subnet-abcd1234-0",
-                "SubnetId": "subnet-abcd1234",
-                "Phase": "Running"
+                "Name": "eklet-subnet-e55paxnt-0",
+                "SubnetId": "subnet-e55paxnt",
+                "Phase": "Running",
+                "CreatedTime": "2023-10-15T14:30:00Z"
             }
         ]
     }

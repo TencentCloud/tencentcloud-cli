@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tke AddVpcCniSubnets --cli-unfold-argument  \
-    --VpcId vpc-xxxx \
-    --ClusterId cls-xxxx \
-    --SubnetIds subnet-xxxxx
+    --VpcId vpc-e55paxnt \
+    --ClusterId cls-e55paxnt \
+    --SubnetIds subnet-e55paxnt
 ```
 
 Output: 

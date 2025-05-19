@@ -476,6 +476,13 @@
       "output": "DescribeSnapshotsDeniedActionsResponse",
       "status": "online"
     },
+    "DescribeUserOriginAccount": {
+      "document": "查询用户账号对应的资源大账号信息。",
+      "input": "DescribeUserOriginAccountRequest",
+      "name": "查询用户关联的资源大账号信息",
+      "output": "DescribeUserOriginAccountResponse",
+      "status": "online"
+    },
     "DescribeUserQualifiedCrowdPackages": {
       "document": "本接口(DescribeUserQualifiedCrowdPackages)用于查询用户符合条件的人群包列表。",
       "input": "DescribeUserQualifiedCrowdPackagesRequest",
@@ -5956,6 +5963,63 @@
           "name": "SnapshotSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserOriginAccountRequest": {
+      "document": "DescribeUserOriginAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户AppID",
+          "example": "12345678",
+          "member": "int64",
+          "name": "UserAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserOriginAccountResponse": {
+      "document": "DescribeUserOriginAccount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源大账号AppID",
+          "example": "12345678",
+          "member": "int64",
+          "name": "OriginAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源大账号Uin",
+          "example": "11203456813",
+          "member": "string",
+          "name": "OriginUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号状态，枚举值：\n\n1. NORMAL\n2. ISOLATED",
+          "example": "Normal",
+          "member": "string",
+          "name": "AccountState",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

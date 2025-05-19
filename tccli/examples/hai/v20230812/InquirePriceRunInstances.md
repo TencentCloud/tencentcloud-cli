@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli hai InquirePriceRunInstances --cli-unfold-argument  \
-    --ApplicationId app-jknfna \
-    --BundleType S \
+    --ApplicationId app-gao2ylm1 \
+    --BundleType XL \
     --SystemDisk.DiskType CLOUD_PREMIUM \
     --SystemDisk.DiskSize 250 \
     --InstanceName hai

@@ -14,7 +14,7 @@ tccli essbasic ChannelCreatePrepareFlowGroup --cli-unfold-argument  \
     --BaseFlowInfos.0.FlowName 第三方预发起合同 \
     --BaseFlowInfos.0.FlowType 第三方嵌入式文件发起合同 \
     --BaseFlowInfos.0.FileIds yDCWiUUckpv6iggyUyuqIrwyppQVS7TR \
-    --BaseFlowInfos.0.FlowDescription 描述 \
+    --BaseFlowInfos.0.FlowDescription 这是2025年购买食物的合同 \
     --BaseFlowInfos.0.Deadline 1757034793 \
     --BaseFlowInfos.0.Unordered False \
     --BaseFlowInfos.0.IntelligentStatus CLOSE \
@@ -24,10 +24,10 @@ tccli essbasic ChannelCreatePrepareFlowGroup --cli-unfold-argument  \
     --BaseFlowInfos.0.Approvers.0.ApproverType 1 \
     --BaseFlowInfos.0.Approvers.0.OrganizationName  \
     --BaseFlowInfos.0.Approvers.0.NotChannelOrganization False \
-    --BaseFlowInfos.0.Approvers.0.ApproverName 张轩 \
+    --BaseFlowInfos.0.Approvers.0.ApproverName 典子签 \
     --BaseFlowInfos.0.Approvers.0.ApproverOption.CanEditApprover True \
     --BaseFlowInfos.0.Approvers.0.IsFullText True \
-    --BaseFlowInfos.0.Approvers.0.ApproverMobile 18729585347 \
+    --BaseFlowInfos.0.Approvers.0.ApproverMobile 18700000000 \
     --BaseFlowInfos.0.Approvers.0.SignComponents.0.ChannelComponentId  \
     --BaseFlowInfos.0.Approvers.0.SignComponents.0.ComponentDateFontSize 0 \
     --BaseFlowInfos.0.Approvers.0.SignComponents.0.ComponentDescription  \

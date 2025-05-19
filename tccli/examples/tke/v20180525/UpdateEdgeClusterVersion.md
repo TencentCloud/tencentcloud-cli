@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke UpdateEdgeClusterVersion --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx \
+    --ClusterId cls-2wds9k9p \
     --EdgeVersion 1.0.1
 ```
 

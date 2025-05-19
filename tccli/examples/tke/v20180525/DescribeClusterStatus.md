@@ -17,12 +17,12 @@ Output:
                 "ClusterClosingNodeNum": 0,
                 "ClusterAuditEnabled": true,
                 "ClusterDeletionProtection": true,
-                "ClusterId": "xx",
+                "ClusterId": "cls-1oxlc88c",
                 "ClusterBMonitor": true,
                 "ClusterInitNodeNum": 0,
-                "ClusterState": "xx",
+                "ClusterState": "",
                 "ClusterClosedNodeNum": 0,
-                "ClusterInstanceState": "xx",
+                "ClusterInstanceState": "",
                 "ClusterRunningNodeNum": 0,
                 "ClusterFailedNodeNum": 0
             }

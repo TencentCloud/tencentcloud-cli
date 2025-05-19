@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DeleteEdgeClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-1234abcd \
+    --ClusterId cls-2wds9k9p \
     --InstanceIds cvm-xgj3ca32
 ```
 

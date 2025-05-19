@@ -29,7 +29,11 @@ Output:
             "ChartDescription": "Open source, advanced key-value store. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets.",
             "AppVersion": "5.0.7",
             "FirstDeployedTime": "2020-04-09 15:28:28.707549 +0800 CST",
-            "LastDeployedTime": "2020-04-09 15:28:28.707549 +0800 CST"
+            "LastDeployedTime": "2020-04-09 15:28:28.707549 +0800 CST",
+            "ChartFrom": "other",
+            "ChartURL": "",
+            "ComputedValues": "",
+            "Resources": ""
         },
         "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2"
     }

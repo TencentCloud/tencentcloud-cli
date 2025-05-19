@@ -10,7 +10,7 @@ tccli privatedns CreatePrivateZone --cli-unfold-argument  \
     --TagSet.0.TagKey owner \
     --TagSet.0.TagValue xxxxxxxxxx \
     --VpcSet.0.Region ap-guangzhou \
-    --VpcSet.0.UniqVpcId vpc-xxxxxl \
+    --VpcSet.0.UniqVpcId vpc-dw3911rr \
     --AccountVpcSet.0.Uin 1000458200 \
     --AccountVpcSet.0.Region ap-guangzhou \
     --AccountVpcSet.0.UniqVpcId vpc-adsebmy1 \

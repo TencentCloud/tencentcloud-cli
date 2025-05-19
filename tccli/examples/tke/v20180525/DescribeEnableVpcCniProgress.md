@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeEnableVpcCniProgress --cli-unfold-argument  \
-    --ClusterId cls-abcdefgh
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 

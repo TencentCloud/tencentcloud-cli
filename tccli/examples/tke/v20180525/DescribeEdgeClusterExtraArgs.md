@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeEdgeClusterExtraArgs --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 

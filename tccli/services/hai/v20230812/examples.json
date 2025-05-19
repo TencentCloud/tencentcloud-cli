@@ -19,8 +19,8 @@
     "DescribeApplications": [
       {
         "document": "查询应用",
-        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        \"app-jxnaqazx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-jxnaqazx\",\n                \"ApplicationName\": \"应用名称\",\n                \"Description\": \"应用描述\",\n                \"ConfigEnvironment\": \"\",\n                \"MinSystemDiskSize\": 80,\n                \"ApplicationState\": \"ONLINE\",\n                \"ApplicationSize\": 50,\n                \"ApplicationType\": \"PRIVATE_APPLICATION\",\n                \"CreateTime\": \"2023-09-18 16:48:47\"\n            }\n        ],\n        \"RequestId\": \"2b1fae52-8004-4a13-a20a-26ea1149f9df\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        \"app-7j7f9jhn\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-7j7f9jhn\",\n                \"ApplicationName\": \"混元-DiT WebUI\",\n                \"ApplicationSize\": 120,\n                \"ApplicationState\": \"ONLINE\",\n                \"ApplicationType\": \"PUBLIC_APPLICATION\",\n                \"ConfigEnvironment\": \"Ubuntu20.04, Python 3.8.12, CUDA 11.7, cuDNN 8, HunYuanDiT, JupyterLab, Gradio\",\n                \"CreateTime\": \"2024-07-11 16:36:08\",\n                \"Description\": \"混元-DiT是腾讯自研的高性能细粒度中文理解多分辨率扩散Transformer模型。提供双语生成能力，中国元素理解具有优势。\",\n                \"MinSystemDiskSize\": 150\n            }\n        ],\n        \"RequestId\": \"c344dc00-13a2-4d80-ae95-6e2d9fd0105d\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询应用"
       }
     ],
@@ -59,8 +59,8 @@
     "DescribeScenes": [
       {
         "document": "查询场景",
-        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"SceneIds\": [\n        \"sc-xxxxxxxx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82505ff0-ca36-486b-849f-50996228e838\",\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"sc-abcdefgh\",\n                \"SceneName\": \"人工智能\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"SceneIds\": [\n        \"sc-7ramp21e\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82505ff0-ca36-486b-849f-50996228e838\",\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"sc-7ramp21e\",\n                \"SceneName\": \"AI模型\"\n            }\n        ]\n    }\n}",
         "title": "查询场景"
       }
     ],
@@ -75,7 +75,7 @@
     "InquirePriceRunInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-jknfna\",\n    \"BundleType\": \"S\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"hai\"\n}",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-gao2ylm1\",\n    \"BundleType\": \"XL\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"hai\"\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.88,\n                \"DiscountUnitPrice\": 0.88,\n                \"Discount\": 100.0,\n                \"ChargeUnit\": \"HOUR\",\n                \"Amount\": 1\n            },\n            \"CloudDiskPrice\": {\n                \"UnitPrice\": 0,\n                \"DiscountUnitPrice\": 0,\n                \"Discount\": 0,\n                \"ChargeUnit\": \"HOUR\",\n                \"Amount\": 1\n            }\n        },\n        \"RequestId\": \"c5ec5837-b9d0-46dd-911e-6c91d488b938\"\n    }\n}",
         "title": "发货询价"
       }
@@ -83,7 +83,7 @@
     "RunInstances": [
       {
         "document": "创建hai实例",
-        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-jknfna\",\n    \"BundleType\": \"S\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"hai\"\n}",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-gao2ylm1\",\n    \"BundleType\": \"XL\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"hai\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"hai-qcgdfaptd\"\n        ],\n        \"RequestId\": \"e267492d-fadaf-45a9-a139-416bc8652861\"\n    }\n}",
         "title": "创建实例"
       }

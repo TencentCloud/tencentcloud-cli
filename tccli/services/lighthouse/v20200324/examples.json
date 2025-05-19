@@ -550,6 +550,14 @@
         "title": "查看快照操作限制列表"
       }
     ],
+    "DescribeUserOriginAccount": [
+      {
+        "document": "查询用户对应的资源大账号信息",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"UserAppId\": 12345678\n}",
+        "output": "{\n    \"Response\": {\n        \"OriginAppId\": 118977311,\n        \"OriginUin\": \"100210924731\",\n        \"AccountState\": \"NORMAL\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "查询用户对应的资源大账号信息"
+      }
+    ],
     "DescribeUserQualifiedCrowdPackages": [
       {
         "document": "",

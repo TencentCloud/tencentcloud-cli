@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cbs InquirePriceModifyDiskBackupQuota --cli-unfold-argument  \
-    --DiskId disk-xxxxxxxx \
+    --DiskId disk-l7mxexxc \
     --DiskBackupQuota 1
 ```
 

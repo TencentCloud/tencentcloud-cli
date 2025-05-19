@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DrainClusterVirtualNode --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
-    --NodeName eklet-subnet-abcd1234-0
+    --ClusterId cls-e55paxnt \
+    --NodeName eklet-subnet-e55paxnt-0
 ```
 
 Output: 

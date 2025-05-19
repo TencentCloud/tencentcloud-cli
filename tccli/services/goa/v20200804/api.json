@@ -1,11 +1,11 @@
 {
   "actions": {
     "ResetAuthUserPassword": {
-      "document": "重置用户密码",
+      "document": "此产品已废弃, 申请云API下线\n\n重置用户密码",
       "input": "ResetAuthUserPasswordRequest",
       "name": "重置用户密码",
       "output": "ResetAuthUserPasswordResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tke EnableVpcCniNetworkType --cli-unfold-argument  \
-    --ClusterId cls-abcdefgh \
+    --ClusterId cls-e55paxnt \
     --EnableStaticIp False \
     --VpcCniType tke-route-eni \
-    --Subnets subnet-abcdefg1 subnet-abcdefg2
+    --Subnets subnet-e55paxnt subnet-e55paxnt
 ```
 
 Output: 

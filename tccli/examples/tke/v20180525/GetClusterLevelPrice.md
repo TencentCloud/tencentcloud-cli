@@ -15,7 +15,8 @@ Output:
     "Response": {
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "Cost": 6,
-        "TotalCost": 6
+        "TotalCost": 6,
+        "Policy": 100
     }
 }
 ```

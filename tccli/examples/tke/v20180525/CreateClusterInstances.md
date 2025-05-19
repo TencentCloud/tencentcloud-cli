@@ -1,13 +1,13 @@
 **Example 1: 扩展集群节点示例**
 
-
+扩展集群节点
 
 Input: 
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx \
-    --RunInstancePara {"Placement":{"Zone":"ap-guangzhou-4"},"InstanceType":"S3.SMALL1"}
+    --RunInstancePara {"Placement":{"Zone":"ap-guangzhou-4"},"InstanceType":"S3.SMALL1"} \
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "InstanceIdSet": [
-            "ins-xxxxxxxx"
+            "ins-e55paxnt"
         ],
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
@@ -33,33 +33,35 @@ Input:
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
+    --ClusterId cls-nfjdk3n0 \
+    --InstanceAdvancedSettings.DesiredPodNumber 120 \
+    --InstanceAdvancedSettings.Taints None \
     --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
     --InstanceAdvancedSettings.DataDisks.0.DiskSize 50 \
-    --InstanceAdvancedSettings.DataDisks.0.DiskType CLOUD_PREMIUM \
+    --InstanceAdvancedSettings.DataDisks.0.DiskType CLOUD_BSSD \
     --InstanceAdvancedSettings.DataDisks.0.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.0.MountTarget /data2 \
+    --InstanceAdvancedSettings.DataDisks.0.MountTarget /run \
+    --InstanceAdvancedSettings.DataDisks.0.DiskPartition /dev/vda \
     --InstanceAdvancedSettings.DataDisks.1.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.1.DiskSize 120 \
-    --InstanceAdvancedSettings.DataDisks.1.DiskType CLOUD_PREMIUM \
+    --InstanceAdvancedSettings.DataDisks.1.DiskSize 50 \
+    --InstanceAdvancedSettings.DataDisks.1.DiskType CLOUD_BSSD \
     --InstanceAdvancedSettings.DataDisks.1.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.1.MountTarget /data4 \
-    --InstanceAdvancedSettings.DataDisks.2.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.2.DiskSize 100 \
-    --InstanceAdvancedSettings.DataDisks.2.DiskType CLOUD_PREMIUM \
-    --InstanceAdvancedSettings.DataDisks.2.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.2.MountTarget /data3 \
-    --InstanceAdvancedSettings.DataDisks.3.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.3.DiskSize 50 \
-    --InstanceAdvancedSettings.DataDisks.3.DiskType CLOUD_PREMIUM \
-    --InstanceAdvancedSettings.DataDisks.3.FileSystem ext4 \
-    --InstanceAdvancedSettings.DataDisks.3.MountTarget /data5 \
-    --InstanceAdvancedSettings.DockerGraphPath /var/lib/docker \
-    --InstanceAdvancedSettings.MountTarget /var/lib/docker \
+    --InstanceAdvancedSettings.DataDisks.1.MountTarget /var/lib/data2 \
+    --InstanceAdvancedSettings.DataDisks.1.DiskPartition /dev/vda \
+    --InstanceAdvancedSettings.DockerGraphPath  \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Name  \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Version  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version  \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Name  \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Version  \
+    --InstanceAdvancedSettings.GPUArgs.MIGEnable False \
+    --InstanceAdvancedSettings.PreStartUserScript  \
     --InstanceAdvancedSettings.Unschedulable 0 \
     --InstanceAdvancedSettings.UserScript  \
-    --SkipValidateOptions GlobalRouteCIDRCheck VpcCniCIDRCheck \
-    --RunInstancePara xx \
-    --ClusterId cls-xxxxx
+    --RunInstancePara {"InstanceChargeType":"POSTPAID_BY_HOUR","Placement":{"Zone":"ap-beijing-1","ProjectId":0},"InstanceType":"S5.LARGE8","SystemDisk":{"DiskType":"CLOUD_BSSD","DiskSize":50},"DataDisks":[{"DiskType":"CLOUD_BSSD","DiskSize":50},{"DiskType":"CLOUD_BSSD","DiskSize":50}],"VirtualPrivateCloud":{"VpcId":"vpc-fcccepnm","SubnetId":"subnet-f6c7fr8d","AsVpcGateway":false,"Ipv6AddressCount":0},"InternetAccessible":{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":0,"PublicIpAssigned":false},"InstanceCount":1,"ImageId":"img-fqais24x","HostName":"tke","InstanceName":"tke","LoginSettings":{"KeyIds":["skey-f6c7fr8d"]},"SecurityGroupIds":["sg-f6c7fr8d"],"EnhancedService":{"SecurityService":{"Enabled":true},"MonitorService":{"Enabled":true}}}
 ```
 
 Output: 
@@ -67,7 +69,7 @@ Output:
 {
     "Response": {
         "InstanceIdSet": [
-            "ins-xxxxxxxx"
+            "ins-e55paxnt"
         ],
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }

@@ -1,24 +1,4 @@
-**Example 1: DescribeRIUtilizationDetail**
-
-
-
-Input: 
-
-```
-tccli tke DescribeRIUtilizationDetail --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 0,
-        "RIUtilizationDetailSet": [],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
-    }
-}
-```
-
-**Example 2: Filter Name值不支持**
+**Example 1: Filter Name值不支持**
 
 Filter Name只支持文档中的示例值
 
@@ -38,6 +18,26 @@ Output:
             "Message": "Filter Name:not-support-filter-name not supported"
         },
         "RequestId": "e6a4cb0c-defc-4829-8c12-784f300cea6a"
+    }
+}
+```
+
+**Example 2: DescribeRIUtilizationDetail**
+
+
+
+Input: 
+
+```
+tccli tke DescribeRIUtilizationDetail --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 0,
+        "RIUtilizationDetailSet": [],
+        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
     }
 }
 ```

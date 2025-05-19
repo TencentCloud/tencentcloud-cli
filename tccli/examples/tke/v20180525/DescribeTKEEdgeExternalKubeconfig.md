@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tke DescribeTKEEdgeExternalKubeconfig --cli-unfold-argument  \
-    --ClusterId cls123
+    --ClusterId cls-2wds9k9p
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Kubeconfig": "123",
+        "Kubeconfig": "[REDACTED]",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

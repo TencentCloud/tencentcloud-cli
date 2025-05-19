@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tke DeleteClusterNodePool --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx \
+    --ClusterId cls-e55paxnt \
     --KeepInstance true \
-    --NodePoolIds np-xxxxxxxx
+    --NodePoolIds np-e55paxnt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxx"
+        "RequestId": "d174dcb6-659b-4ab6-9533-e470a7d91e43"
     }
 }
 ```

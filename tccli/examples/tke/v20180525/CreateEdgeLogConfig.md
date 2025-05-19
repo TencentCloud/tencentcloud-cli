@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke CreateEdgeLogConfig --cli-unfold-argument  \
     --LogConfig '{"apiVersion":"cls.cloud.tencent.com/v1","kind":"LogConfig"... }' \
-    --ClusterId cls-1234abcd
+    --ClusterId cls-2wds9k9p
 ```
 
 Output: 

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tke DeleteAddon --cli-unfold-argument  \
-    --ClusterId cls-123deabc \
-    --AddonName cbs
+    --ClusterId cls-kihzth22 \
+    --AddonName nvidia-gpu
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "0edfedeb-47cd-41b1-bab9-79dcc88d4e66"
     }
 }
 ```

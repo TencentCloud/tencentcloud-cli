@@ -13,19 +13,19 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "24564577-a642-4164-8752-4668d4ca8886",
-        "ServiceAccounts": {
-            "JWKSURI": "https://cls-7ph3twqe.ccs.tencent-cloud.com/openid/v1/jwks",
-            "Issuer": "https://cls-7ph3twqe.ccs.tencent-cloud.com"
-        },
+        "LatestOperationState": "",
         "OIDCConfig": {
-            "AutoCreateOIDCConfig": true,
-            "AutoInstallPodIdentityWebhookAddon": true,
-            "AutoCreateClientId": [
-                "84ec9912f0be4066be862afaff9d3c48"
-            ]
+            "AutoCreateClientId": null,
+            "AutoCreateOIDCConfig": null,
+            "AutoInstallPodIdentityWebhookAddon": null
         },
-        "LatestOperationState": "Updating"
+        "RequestId": "844ea54c-4271-48a7-b6da-686f44782d91",
+        "ServiceAccounts": {
+            "AutoCreateDiscoveryAnonymousAuth": null,
+            "Issuer": "https://kubernetes.default.svc.cluster.local",
+            "JWKSURI": null,
+            "UseTKEDefault": null
+        }
     }
 }
 ```

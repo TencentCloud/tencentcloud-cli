@@ -592,14 +592,6 @@
         "title": "资源包查询"
       }
     ],
-    "DescribeMeasureWhiteUinList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureWhiteUinList\n<公共请求参数>\n\n{\n    \"Interface\": {\n        \"InterfaceName\": \"qcloud.yunapi.DescribeMeasureWhiteUinList\",\n        \"Para\": {\n            \"ProductCode\": \"p_ccc\",\n            \"Uin\": \"123\"\n        }\n    },\n    \"RouteKey\": \"p_ccc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"IsTestWhiteList\": true,\n            \"Step\": \"1\",\n            \"IsGrayscaleWhiteList\": false\n        },\n        \"RequestId\": \"\"\n    }\n}",
-        "title": "查询uin是否在白名单列表"
-      }
-    ],
     "DescribePrivilege": [
       {
         "document": "响应中IsTopPriorityPrivilegeUin为false，说明该uin不是最高优先级特权用户；因入参StopIfNotTopPriorityPrivilegeUin设置为true，则不会返回特权信息。",

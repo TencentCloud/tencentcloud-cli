@@ -63,8 +63,8 @@
     "CheckCertificate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificate\n<公共请求参数>\n\n{\n    \"Certificate\": \"abc\",\n    \"PrivateKey\": \"abc\",\n    \"CertificateType\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificate\n<公共请求参数>\n\n{\n    \"Certificate\": \"hsg**hhs\",\n    \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----****-----END RSA PRIVATE KEY-----\",\n    \"CertificateType\": \"SVR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b626074-a30d-404a-89d1-4be1675ebcf2\"\n    }\n}",
         "title": "请求成功示例"
       }
     ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs DescribeUserQuota --cli-unfold-argument  \
-    --FileSystemId cfs-12345
+    --FileSystemId cfs-abc12345
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
             {
                 "UserType": "Uid",
                 "UserId": "1000",
-                "FileSystemId": "cfs-12345",
+                "FileSystemId": "cfs-abc12345",
                 "CapacityHardLimit": 10,
                 "FileHardLimit": 10000,
                 "Status": "available",

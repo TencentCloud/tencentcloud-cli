@@ -365,7 +365,7 @@
       "status": "deprecated"
     },
     "DescribeBackupConfig": {
-      "document": "本接口(DescribeBackupConfig)用于查询数据库备份配置信息。",
+      "document": "本接口（DescribeBackupConfig）用于查询数据库备份配置信息。",
       "input": "DescribeBackupConfigRequest",
       "name": "查询云数据库备份配置信息",
       "output": "DescribeBackupConfigResponse",
@@ -8957,20 +8957,22 @@
       "document": "DescribeBackupConfig返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "自动备份开始的最早时间点，单位为时刻。例如，2 - 凌晨 2:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）",
           "example": "10",
           "member": "int64",
           "name": "StartTimeMin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "自动备份开始的最晚时间点，单位为时刻。例如，6 - 凌晨 6:00。（该字段已废弃，建议使用 BackupTimeWindow 字段）",
           "example": "14",
           "member": "int64",
           "name": "StartTimeMax",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8980,6 +8982,7 @@
           "example": "7",
           "member": "int64",
           "name": "BackupExpireDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8989,6 +8992,7 @@
           "example": "physical",
           "member": "string",
           "name": "BackupMethod",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8998,15 +9002,17 @@
           "example": "7",
           "member": "int64",
           "name": "BinlogExpireDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例自动备份的时间窗。",
-          "example": "无",
+          "example": "{\"BackupPeriodStrategy\": \"weekly\",\"BackupPeriodTime\": \"00:00-12:00\",\"Days\": [],\"Friday\": \"10:00-14:00\",\"Monday\": \"10:00-14:00\",\"Saturday\": \"10:00-14:00\",\"Sunday\": \"10:00-14:00\",\"Thursday\": \"10:00-14:00\",\"Tuesday\": \"10:00-14:00\",\"Wednesday\": \"10:00-14:00\"}",
           "member": "CommonTimeWindow",
           "name": "BackupTimeWindow",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9016,6 +9022,7 @@
           "example": "off",
           "member": "string",
           "name": "EnableBackupPeriodSave",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9025,6 +9032,7 @@
           "example": "1080",
           "member": "int64",
           "name": "BackupPeriodSaveDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9034,6 +9042,7 @@
           "example": "weekly",
           "member": "string",
           "name": "BackupPeriodSaveInterval",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9043,6 +9052,7 @@
           "example": "1",
           "member": "int64",
           "name": "BackupPeriodSaveCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9052,6 +9062,7 @@
           "example": "1970-01-01 00:00:01",
           "member": "string",
           "name": "StartBackupPeriodSaveDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9061,6 +9072,7 @@
           "example": "off",
           "member": "string",
           "name": "EnableBackupArchive",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9070,6 +9082,7 @@
           "example": "180",
           "member": "int64",
           "name": "BackupArchiveDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9079,6 +9092,7 @@
           "example": "off",
           "member": "string",
           "name": "EnableBinlogArchive",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9088,6 +9102,7 @@
           "example": "180",
           "member": "int64",
           "name": "BinlogArchiveDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9097,6 +9112,7 @@
           "example": "off",
           "member": "string",
           "name": "EnableBackupStandby",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9106,6 +9122,7 @@
           "example": "30",
           "member": "int64",
           "name": "BackupStandbyDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9115,6 +9132,7 @@
           "example": "off",
           "member": "string",
           "name": "EnableBinlogStandby",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9124,6 +9142,7 @@
           "example": "30",
           "member": "int64",
           "name": "BinlogStandbyDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16121,7 +16140,7 @@
       "document": "IsolateDBInstance返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。(该返回字段目前已废弃，可以通过 DescribeDBInstances 接口查询实例的隔离状态)",
           "example": "e48eb1e9-0ca0ecae-c0dac9c7-60d12864",
           "member": "string",
@@ -17993,7 +18012,7 @@
       "document": "ModifyDBInstanceVipVport返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "异步任务ID。(该返回字段目前已废弃)",
           "example": "d2baf2fb-cbae62df-7dd0d736-9cbd3e31",
           "member": "string",
@@ -18467,7 +18486,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "废弃参数，无意义。",
           "example": "1000",
           "member": "int64",
@@ -20622,6 +20641,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启RO故障剔除。1-开启，0-关闭。默认为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisasterKickOut",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "故障最小保留Ro数",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisasterReserveMinRo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20636,8 +20677,7 @@
           "member": "string",
           "name": "RoGroupName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -20646,8 +20686,7 @@
           "member": "int64",
           "name": "RoMaxDelayTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -20656,8 +20695,7 @@
           "member": "int64",
           "name": "RoOfflineDelay",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -20666,8 +20704,7 @@
           "member": "int64",
           "name": "MinRoInGroup",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -20676,8 +20713,7 @@
           "member": "string",
           "name": "WeightMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -20686,8 +20722,25 @@
           "member": "int64",
           "name": "ReplicationDelayTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启RO故障剔除。1-开启，0-关闭。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DisasterKickOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "故障最小保留Ro数",
+          "example": "0",
+          "member": "uint64",
+          "name": "DisasterReserveMinRo",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

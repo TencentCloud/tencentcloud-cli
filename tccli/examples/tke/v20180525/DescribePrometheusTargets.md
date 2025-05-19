@@ -19,25 +19,25 @@ Output:
             {
                 "Targets": [
                     {
-                        "LastScrape": "xx",
-                        "ScrapeDuration": 0.0,
-                        "Url": "xx",
+                        "Url": "abc",
+                        "State": "abc",
                         "Labels": [
                             {
-                                "Name": "xx",
-                                "Value": "xx"
+                                "Name": "abc",
+                                "Value": "abc"
                             }
                         ],
-                        "State": "xx",
-                        "Error": "xx"
+                        "LastScrape": "abc",
+                        "ScrapeDuration": 0,
+                        "Error": "abc"
                     }
                 ],
+                "JobName": "abc",
                 "Total": 1,
-                "Up": 1,
-                "JobName": "xx"
+                "Up": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

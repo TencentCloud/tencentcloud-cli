@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tke CreateClusterVirtualNodePool --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
+    --ClusterId cls-e55paxnt \
     --Name vk-nodepoll \
-    --SubnetIds subnet-abcd1234 \
-    --SecurityGroupIds sg-abcd1234
+    --SubnetIds subnet-e55paxnt \
+    --SecurityGroupIds sg-e55paxnt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "NodePoolId": "np-abcd1234",
+        "NodePoolId": "np-e55paxnt",
         "RequestId": "1ac0d3ae-063e-4789-93fe-3c73e93191b9"
     }
 }

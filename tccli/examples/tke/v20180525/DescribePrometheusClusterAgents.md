@@ -6,31 +6,34 @@ Input:
 
 ```
 tccli tke DescribePrometheusClusterAgents --cli-unfold-argument  \
-    --InstanceId xx \
-    --Limit 1 \
-    --Offset 1
+    --InstanceId abc \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "Agents": [
             {
-                "Status": "xx",
-                "ClusterName": "xx",
+                "ClusterType": "abc",
+                "ClusterId": "abc",
+                "Status": "abc",
+                "ClusterName": "abc",
                 "ExternalLabels": [
                     {
-                        "Name": "xx",
-                        "Value": "xx"
+                        "Name": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "ClusterId": "xx",
-                "ClusterType": "xx"
+                "Region": "abc",
+                "VpcId": "abc",
+                "FailedReason": "abc"
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "abc"
     }
 }
 ```

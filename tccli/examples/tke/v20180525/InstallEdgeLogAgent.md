@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke InstallEdgeLogAgent --cli-unfold-argument  \
-    --ClusterId ""
+    --ClusterId "cls-2wds9k9p"
 ```
 
 Output: 

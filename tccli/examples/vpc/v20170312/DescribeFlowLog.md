@@ -26,7 +26,7 @@ Output:
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
-                "StorageType": "cls",
+                "StorageType": "ckafka",
                 "FlowLogStorage": {
                     "StorageTopic": "topic-siqmaox1",
                     "StorageId": "ckafka-akwiqms1"

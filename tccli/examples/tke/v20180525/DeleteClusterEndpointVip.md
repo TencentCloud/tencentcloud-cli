@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DeleteClusterEndpointVip --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx
+    --ClusterId cls-2wds9k9p
 ```
 
 Output: 

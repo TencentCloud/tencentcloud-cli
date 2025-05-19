@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeClusterEndpointVipStatus --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx,
+    --ClusterId cls-2wds9k9p,
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Status": "Creating",
-        "ErrorMsg": "",
+        "ErrorMsg": "create failed",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

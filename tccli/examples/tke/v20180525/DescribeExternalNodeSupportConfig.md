@@ -13,10 +13,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx",
+        "RequestId": "4c6c63c7-b23e-4896-bf3b-6bc44d",
         "ClusterCIDR": "172.22.0.0/16",
         "NetworkType": "CiliumVXLan",
-        "SubnetId": "subnet-drsvvxxx",
+        "SubnetId": "subnet-e55paxnt",
         "Enabled": true,
         "AS": "1001",
         "SwitchIP": "1.1.1.1",

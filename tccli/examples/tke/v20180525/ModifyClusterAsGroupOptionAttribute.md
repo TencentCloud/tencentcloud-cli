@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tke ModifyClusterAsGroupOptionAttribute --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx \
+    --ClusterId cls-2wds9k9p \
     --ClusterAsGroupOption.IsScaleDownEnabled true \
-    --ClusterAsGroupOption.UnregisteredNodeRemovalTime x \
-    --ClusterAsGroupOption.OkTotalUnreadyCount x \
-    --ClusterAsGroupOption.ScaleDownUnreadyTime x \
-    --ClusterAsGroupOption.MaxTotalUnreadyPercentage x
+    --ClusterAsGroupOption.UnregisteredNodeRemovalTime 10 \
+    --ClusterAsGroupOption.OkTotalUnreadyCount 3 \
+    --ClusterAsGroupOption.ScaleDownUnreadyTime 10 \
+    --ClusterAsGroupOption.MaxTotalUnreadyPercentage 20
 ```
 
 Output: 

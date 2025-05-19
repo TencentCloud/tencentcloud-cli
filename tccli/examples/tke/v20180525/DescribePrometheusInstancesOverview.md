@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tke DescribePrometheusInstancesOverview --cli-unfold-argument  \
+    --Offset 1 \
     --Limit 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Offset 1
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 
@@ -18,25 +18,25 @@ Output:
     "Response": {
         "Instances": [
             {
+                "InstanceId": "abc",
+                "InstanceName": "abc",
+                "VpcId": "abc",
+                "SubnetId": "abc",
                 "InstanceStatus": 0,
-                "BoundNormal": 0,
-                "VpcId": "xx",
-                "AutoRenewFlag": 0,
-                "InstanceId": "xx",
-                "BoundTotal": 0,
-                "ExpireTime": "xx",
-                "SpecName": "xx",
-                "InstanceChargeType": 0,
+                "ChargeStatus": 0,
                 "EnableGrafana": 0,
+                "GrafanaURL": "abc",
+                "InstanceChargeType": 0,
+                "SpecName": "abc",
                 "DataRetentionTime": 0,
-                "GrafanaURL": "xx",
-                "SubnetId": "xx",
-                "InstanceName": "xx",
-                "ChargeStatus": 0
+                "ExpireTime": "abc",
+                "AutoRenewFlag": 0,
+                "BoundTotal": 0,
+                "BoundNormal": 0
             }
         ],
         "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

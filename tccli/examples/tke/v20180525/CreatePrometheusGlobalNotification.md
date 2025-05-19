@@ -6,31 +6,31 @@ Input:
 
 ```
 tccli tke CreatePrometheusGlobalNotification --cli-unfold-argument  \
-    --InstanceId xx \
-    --Notification.AlertManager.Url xx \
-    --Notification.AlertManager.ClusterId xx \
-    --Notification.AlertManager.ClusterType xx \
-    --Notification.RepeatInterval xx \
-    --Notification.WebHook xx \
+    --InstanceId abc \
     --Notification.Enabled True \
+    --Notification.Type abc \
+    --Notification.WebHook abc \
+    --Notification.AlertManager.ClusterType abc \
+    --Notification.AlertManager.ClusterId abc \
+    --Notification.AlertManager.Url abc \
+    --Notification.RepeatInterval abc \
+    --Notification.TimeRangeStart abc \
+    --Notification.TimeRangeEnd abc \
+    --Notification.NotifyWay abc \
+    --Notification.ReceiverGroups abc \
     --Notification.PhoneNotifyOrder 1 \
+    --Notification.PhoneCircleTimes 0 \
     --Notification.PhoneInnerInterval 0 \
     --Notification.PhoneCircleInterval 0 \
-    --Notification.NotifyWay xx \
-    --Notification.ReceiverGroups xx \
-    --Notification.PhoneArriveNotice True \
-    --Notification.PhoneCircleTimes 0 \
-    --Notification.TimeRangeStart xx \
-    --Notification.Type xx \
-    --Notification.TimeRangeEnd xx
+    --Notification.PhoneArriveNotice True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Id": "xx",
-        "RequestId": "xx"
+        "Id": "abc",
+        "RequestId": "abc"
     }
 }
 ```

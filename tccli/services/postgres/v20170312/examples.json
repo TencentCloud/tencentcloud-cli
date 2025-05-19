@@ -24,14 +24,6 @@
         "title": "关闭实例外网"
       }
     ],
-    "CloseServerlessDBExtranetAccess": [
-      {
-        "document": "关闭serverless公网地址",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseServerlessDBExtranetAccess\n<公共请求参数>\n\n{\n    \"DBInstanceName\": \"test-db-instance\",\n    \"DBInstanceId\": \"postgres-apzvwncr\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "关闭serverless公网地址"
-      }
-    ],
     "CreateAccount": [
       {
         "document": "创建数据库普通账号",
@@ -214,20 +206,6 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReadOnlyGroupNetworkAccess\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-4s9dejli\",\n    \"VpcId\": \"vpc-gaestjaf\",\n    \"Vip\": \"127.*.*.*\",\n    \"ReadOnlyGroupId\": \"pgro-4t9c6g7k\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"FlowId\": 912\n    }\n}",
         "title": "删除RO组网络"
-      }
-    ],
-    "DeleteServerlessDBInstance": [
-      {
-        "document": "以指定实例ID方式删除实例，删除一个实例ID为“postgres-xxxxx”的serverless实例。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-xxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "指定实例ID删除serverlessDB实例"
-      },
-      {
-        "document": "以指定实例名方式删除实例，删除一个实例名为“serverlessdb-test”的serverless实例。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServerlessDBInstance\n<公共请求参数>\n\n{\n    \"DBInstanceName\": \"serverlessdb-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\"\n    }\n}",
-        "title": "指定实例名删除serverlessDB实例"
       }
     ],
     "DescribeAccountPrivileges": [

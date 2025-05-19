@@ -1,24 +1,4 @@
-**Example 1: DescribeReservedInstances**
-
-查询预留券列表
-
-Input: 
-
-```
-tccli tke DescribeReservedInstances --cli-unfold-argument ```
-
-Output: 
-```
-{
-    "Response": {
-        "TotalCount": 0,
-        "ReservedInstanceSet": [],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
-    }
-}
-```
-
-**Example 2: Filter Name值不支持**
+**Example 1: Filter Name值不支持**
 
 Filter Name只支持文档中的示例值
 
@@ -39,6 +19,26 @@ Output:
             "Message": "Filter Name:not-support-filter-name not supported"
         },
         "RequestId": "b31166bd-80d6-4868-b13a-952bc1cdc74c"
+    }
+}
+```
+
+**Example 2: DescribeReservedInstances**
+
+查询预留券列表
+
+Input: 
+
+```
+tccli tke DescribeReservedInstances --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "TotalCount": 0,
+        "ReservedInstanceSet": [],
+        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
     }
 }
 ```

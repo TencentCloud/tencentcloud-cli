@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tke DeletePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId xx \
-    --AlertIds xx \
-    --Names xx
+    --InstanceId abc \
+    --AlertIds abc \
+    --Names abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "abc"
     }
 }
 ```

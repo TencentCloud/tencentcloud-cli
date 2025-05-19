@@ -13,48 +13,50 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "InstanceSet": [
             {
+                "InstanceId": "ins-ocd7e1lx",
+                "LanIP": "9.165.0.2",
+                "InstanceRole": "WORKER",
+                "InstanceState": "running",
+                "NodePoolId": "",
+                "AutoscalingGroupId": "",
+                "FailedReason": "=Ready:True",
+                "DrainStatus": "",
                 "InstanceAdvancedSettings": {
-                    "DockerGraphPath": "/data/docker",
+                    "MountTarget": "",
+                    "DockerGraphPath": "",
+                    "UserScript": "",
+                    "Unschedulable": 0,
                     "Labels": [
                         {
-                            "Name": "key",
-                            "Value": "value"
+                            "Name": "node-type",
+                            "Value": "controller"
+                        }
+                    ],
+                    "Taints": null,
+                    "DataDisks": [
+                        {
+                            "DiskType": "CLOUD_PREMIUM",
+                            "FileSystem": "ext4",
+                            "DiskSize": 200,
+                            "AutoFormatAndMount": true,
+                            "MountTarget": "/var/lib/docker",
+                            "DiskPartition": ""
                         }
                     ],
                     "ExtraArgs": {
-                        "Kubelet": [
-                            "--register-node=true"
-                        ]
+                        "Kubelet": []
                     },
-                    "Unschedulable": 0,
-                    "UserScript": "ZWNobyAiMTAuMTA3LjEwMy41N",
-                    "MountTarget": "/var/lib/docker",
-                    "DataDisks": [
-                        {
-                            "DiskPartition": "",
-                            "DiskType": "CLOUD_PREMIUM",
-                            "DiskSize": 0,
-                            "FileSystem": "ext4",
-                            "AutoFormatAndMount": true,
-                            "MountTarget": "/var/lib/docker"
-                        }
-                    ]
+                    "DesiredPodNumber": 32,
+                    "GPUArgs": null,
+                    "PreStartUserScript": null
                 },
-                "InstanceId": "ins-wggphft5",
-                "InstanceRole": "WORKER",
-                "LanIP": "10.0.39.19",
-                "DrainStatus": "drained",
-                "AutoscalingGroupId": "asg-ewqsfgrt",
-                "InstanceState": "running",
-                "CreatedTime": "2021-02-22T07:14:11Z",
-                "NodePoolId": "np-3j4elm0k",
-                "FailedReason": "=Ready:True"
+                "CreatedTime": "2021-03-09T08:26:51Z"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2"
+        "RequestId": "342ea0aa-e45a-41dd-84f5-f7a2929d3fac"
     }
 }
 ```

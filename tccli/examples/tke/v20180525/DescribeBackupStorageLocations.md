@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeBackupStorageLocations --cli-unfold-argument  \
-    --Names abc
+    --Names tke-backup
 ```
 
 Output: 
@@ -15,13 +15,13 @@ Output:
     "Response": {
         "BackupStorageLocationSet": [
             {
-                "Name": "abc",
+                "Name": "tke-backup-1",
                 "StorageRegion": "ap-guangzhou",
                 "Provider": "tencentcloud",
-                "Bucket": "tke-backup-xx",
-                "Path": "",
+                "Bucket": "tke-backup-2wds9k9p",
+                "Path": "/data",
                 "State": "Available",
-                "Message": "",
+                "Message": "success",
                 "LastValidationTime": "2023-04-07T03:18:10Z"
             }
         ],

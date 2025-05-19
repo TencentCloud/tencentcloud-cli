@@ -9109,6 +9109,16 @@
         },
         {
           "disabled": false,
+          "document": "子用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100032979603",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "子用户名称",
           "example": "username",
           "member": "string",
@@ -9356,11 +9366,21 @@
         {
           "disabled": false,
           "document": "pod资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{                             \"Role\": \"WORKER\",                             \"Cpu\": 180000,                             \"Memory\": 921600,                             \"GpuType\": \"HCC-A100\",                             \"Gpu\": 800,                             \"InstanceType\": \"\",                             \"InstanceTypeAlias\": \"\",                             \"InstanceNum\": 2,                             \"RDMAConfig\": {                                 \"Enable\": true                             },                             \"ExtendedResourceList\": {},                             \"ArchType\": \"\"                         }",
+          "example": "{\"Role\": \"WORKER\", \"Cpu\": 180000,\"Memory\": 921600,\"GpuType\": \"HCC-A100\",\"Gpu\": 800,                           \"InstanceType\": \"\",\"InstanceTypeAlias\": \"\", \"InstanceNum\": 2,\"RDMAConfig\": {\"Enable\": true                             }}",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfo",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod所属任务的SubUin信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100031385875",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -13059,6 +13079,26 @@
           "member": "string",
           "name": "CallbackUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务subUin信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务创建者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

@@ -15,25 +15,49 @@ Output:
     "Response": {
         "InspectionResultsItems": [
             {
-                "Name": "test",
+                "Name": "ClusterSecurity",
                 "Statistics": [
-                    {},
-                    {},
-                    {},
-                    {}
+                    {
+                        "HealthyLevel": "risk",
+                        "Count": 2
+                    },
+                    {
+                        "HealthyLevel": "serious",
+                        "Count": 1
+                    },
+                    {
+                        "HealthyLevel": "failed",
+                        "Count": 0
+                    },
+                    {
+                        "HealthyLevel": "good",
+                        "Count": 10
+                    }
                 ]
             },
             {
-                "Name": "test2",
+                "Name": "NodeHealth",
                 "Statistics": [
-                    {},
-                    {},
-                    {},
-                    {}
+                    {
+                        "HealthyLevel": "serious",
+                        "Count": 1
+                    },
+                    {
+                        "HealthyLevel": "failed",
+                        "Count": 0
+                    },
+                    {
+                        "HealthyLevel": "good",
+                        "Count": 10
+                    },
+                    {
+                        "HealthyLevel": "risk",
+                        "Count": 2
+                    }
                 ]
             }
         ],
-        "RequestId": "kubejarvis-test-case1"
+        "RequestId": "d174dcb6-659b-4ab6-9533-e470a7d91e43"
     }
 }
 ```

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DeleteClusterAsGroups --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx \
-    --AutoScalingGroupIds asg-xxxxxxxx \
+    --ClusterId cls-2wds9k9p \
+    --AutoScalingGroupIds asg-2wds9k9p \
     --KeepInstance false
 ```
 

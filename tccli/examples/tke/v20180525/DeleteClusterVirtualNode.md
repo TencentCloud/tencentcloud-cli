@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DeleteClusterVirtualNode --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
-    --NodeNames eklet-subnet-abcd1234-0
+    --ClusterId cls-e55paxnt \
+    --NodeNames eklet-subnet-e55paxnt-0
 ```
 
 Output: 

@@ -7,17 +7,17 @@ Input:
 ```
 tccli tke CreateBackupStorageLocation --cli-unfold-argument  \
     --StorageRegion ap-guangzhou \
+    --Bucket tke-backup-test \
+    --Name tke-storage-backup \
     --Provider tencentcloud \
-    --Bucket tke-backup-xxx \
-    --Path  \
-    --Name test-registry-1
+    --Path tke
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "4bef4bc7-edf2-4de6-a2e1-684bfc37185f"
+        "RequestId": "6b4cf747-ecfb-42ae-a1fb-a0132353c80b"
     }
 }
 ```
