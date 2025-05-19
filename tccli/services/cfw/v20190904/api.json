@@ -435,9 +435,9 @@
       "status": "online"
     },
     "DescribeSwitchLists": {
-      "document": "防火墙开关列表，已废弃，请使用DescribeFwEdgeIps",
+      "document": "防火墙开关列表，请换用DescribeFwEdgeIps",
       "input": "DescribeSwitchListsRequest",
-      "name": "防火墙开关列表，已废弃，请使用DescribeFwEdgeIps",
+      "name": "防火墙开关列表，请换用DescribeFwEdgeIps",
       "output": "DescribeSwitchListsResponse",
       "status": "online"
     },
@@ -7664,7 +7664,7 @@
         {
           "disabled": false,
           "document": "列表数据",
-          "example": "[{\"Area\":\"成都\",\"AssetType\":\"CVM\",\"Id\":6414090,\"InstanceId\":\"ins-fdysvd0j\",\"InstanceName\":\"nta-服务端性能\",\"IntranetIp\":\"10.26.26.11,10.26.26.15,10.26.26.30,10.26.26.31,10.26.26.32,10.26.26.33,10.26.26.34,10.26.26.35,10.26.26.36,10.26.26.37\",\"LastTime\":\"2024-03-08 14:56:54\",\"PortTimes\":0,\"PublicIp\":\"1.14.67.183\",\"PublicIpType\":2,\"ScanMode\":\"light\",\"ScanStatus\":0,\"Switch\":0}]",
+          "example": "无",
           "member": "SwitchListsData",
           "name": "Data",
           "output_required": true,
@@ -13803,7 +13803,7 @@
         },
         {
           "disabled": false,
-          "document": "（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）\n规则状态，true表示启用，false表示禁用",
+          "document": "（入参时Enable无意义；由通用配置中新增规则启用状态控制）\n规则状态，true表示启用，false表示禁用",
           "example": "true",
           "member": "string",
           "name": "Enable",

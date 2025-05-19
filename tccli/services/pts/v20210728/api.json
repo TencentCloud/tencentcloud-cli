@@ -1937,6 +1937,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "两个时间点的时间间隔，单位纳秒",
+          "example": "100",
+          "member": "int64",
+          "name": "Step",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -689,11 +689,72 @@
   },
   "metadata": {
     "apiVersion": "2023-11-30",
-    "api_brief": "提供腾讯云大模型知识引擎API能力",
-    "serviceNameCN": "大模型知识引擎",
+    "api_brief": "提供腾讯云智能体开发平台API能力",
+    "serviceNameCN": "腾讯云智能体开发平台",
     "serviceShortName": "lke"
   },
   "objects": {
+    "AICallConfig": {
+      "document": "智能通话",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启用语音互动功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableVoiceInteract",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用语音通话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableVoiceCall",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启用数智人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDigitalHuman",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " ",
+          "member": "VoiceConfig",
+          "name": "Voice",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数智人配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " ",
+          "member": "DigitalHumanConfig",
+          "name": "DigitalHuman",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AgentDebugInfo": {
       "document": "Agent调试信息",
       "members": [
@@ -867,6 +928,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent的图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentIcon",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -927,6 +999,39 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "展示正在执行的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "正在浏览网页",
+          "member": "string",
+          "name": "DisplayStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云桌面的URL地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SandboxUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云桌面里面通过浏览器打开的URL地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.qq.com",
+          "member": "string",
+          "name": "DisplayUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1129,6 +1234,16 @@
           "name": "TraceId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "Files",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3172,6 +3287,16 @@
           "name": "TmpSecretKey",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "临时证书appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5777,6 +5902,45 @@
       ],
       "type": "object"
     },
+    "DigitalHumanConfig": {
+      "document": "数智人配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数智人资产key",
+          "example": "qPfqrKkXGihmCqbJM2mZgkZGvKG1dFdvsLplgctolz4=",
+          "member": "string",
+          "name": "AssetKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数智人名称",
+          "example": "呦呦",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图像",
+          "example": "https://xxxx.png",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DocFilterFlag": {
       "document": "文档列表筛选标识位",
       "members": [
@@ -6333,6 +6497,16 @@
           "example": "无",
           "member": "string",
           "name": "DocId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8119,6 +8293,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置语音通话参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AICallConfig",
+          "name": "AiCall",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8458,6 +8643,17 @@
           "example": "true",
           "member": "bool",
           "name": "IsEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启异步调用工作流",
+          "example": "false",
+          "member": "bool",
+          "name": "AsyncWorkflow",
           "output_required": false,
           "required": false,
           "type": "bool",
@@ -11069,6 +11265,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型支持智能通话效果",
+          "example": "无",
+          "member": "uint64",
+          "name": "SupportAiCallStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12125,6 +12332,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowInfo",
+          "name": "WorkFlow",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12262,7 +12479,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object",
+          "document": "参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object, 99:null, 100:upspecified",
           "example": "0",
           "member": "int64",
           "name": "Type",
@@ -12313,6 +12530,28 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OneOf类型参数",
+          "example": "无",
+          "member": "PluginToolReqParam",
+          "name": "OneOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AnyOf类型参数",
+          "example": "无",
+          "member": "PluginToolReqParam",
+          "name": "AnyOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -12515,6 +12754,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数",
+          "example": "无",
+          "member": "string",
+          "name": "CustomVariables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15203,6 +15453,45 @@
       ],
       "type": "object"
     },
+    "VoiceConfig": {
+      "document": "音色参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公有云音色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "501001",
+          "member": "uint64",
+          "name": "VoiceType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tts_timbre_yuehua",
+          "member": "string",
+          "name": "TimbreKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "月华",
+          "member": "string",
+          "name": "VoiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "WordRecognizeInfo": {
       "document": "解析为 word 文档的结果",
       "members": [
@@ -15235,7 +15524,7 @@
         {
           "disabled": false,
           "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "WorkflowId",
           "output_required": false,
@@ -15246,7 +15535,7 @@
         {
           "disabled": false,
           "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "挂号工作流",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
@@ -15257,7 +15546,7 @@
         {
           "disabled": false,
           "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "WorkflowRunId",
           "output_required": false,
@@ -15268,12 +15557,117 @@
         {
           "disabled": false,
           "document": "节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "WorkflowRunNodeInfo",
           "name": "RunNodes",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选项卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"选项A\",\"选项B\"]",
+          "member": "string",
+          "name": "OptionCards",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多气泡的输出结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"是的\",\"请稍等，正在为您查询\"]",
+          "member": "string",
+          "name": "Outputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流发布时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1746800121",
+          "member": "string",
+          "name": "WorkflowReleaseTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowInfo": {
+      "document": "工作流信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "挂号工作流",
+          "member": "string",
+          "name": "WorkflowName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选项卡\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"选项A\",\"选项B\"]",
+          "member": "string",
+          "name": "OptionCards",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多气泡的输出结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"是的\",\"请稍等，正在为您查询\"]",
+          "member": "string",
+          "name": "Outputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流发布时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1746800121",
+          "member": "string",
+          "name": "WorkflowReleaseTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

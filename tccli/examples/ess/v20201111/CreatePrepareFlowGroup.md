@@ -10,7 +10,7 @@ tccli ess CreatePrepareFlowGroup --cli-unfold-argument  \
     --FlowGroupInfos.0.FileIds yDCWiUUckpv6iggyUyuqIrwyppQVS7TR \
     --FlowGroupInfos.0.FlowName 预发起合同 \
     --FlowGroupInfos.0.FlowType 嵌入式文件发起合同 \
-    --FlowGroupInfos.0.FlowDescription 描述 \
+    --FlowGroupInfos.0.FlowDescription 这是2025年购买食物的合同 \
     --FlowGroupInfos.0.Deadline 1757034793 \
     --FlowGroupInfos.0.Unordered False \
     --FlowGroupInfos.0.NeedSignReview False \

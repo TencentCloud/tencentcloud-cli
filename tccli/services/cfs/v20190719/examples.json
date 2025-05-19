@@ -27,7 +27,7 @@
     "CreateCfsFileSystem": [
       {
         "document": "创建文件系统场景",
-        "input": "https://cfs.tencentcloudapi.com/?Action=CreateCfsFileSystem\n&NetInterface=basic\n&Zone=ap-beijing-1\n&PGroupId=pgroupbasic\n&FsName=test_fs\n&<公共请求参数>",
+        "input": "https://cfs.tencentcloudapi.com/?Action=CreateCfsFileSystem\n&NetInterface=VPC\n&Zone=ap-beijing-1\n&PGroupId=pgroupbasic\n&FsName=test_fs\n&VpcId=vpc-123abc\n&SubnetId=subnet-123abc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"CreationTime\": \"2017-11-23 20:51:34\",\n        \"CreationToken\": \"test_fs\",\n        \"FileSystemId\": \"cfs-ocakq8tt\",\n        \"LifeCycleState\": \"creating\",\n        \"SizeByte\": 0,\n        \"ZoneId\": 800001,\n        \"FsName\": \"test_fs\",\n        \"Encrypted\": false\n    }\n}",
         "title": "创建文件系统实例"
       }
@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfsSnapshots\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Snapshots\": [\n            {\n                \"CreationTime\": \"abc\",\n                \"SnapshotName\": \"abc\",\n                \"SnapshotId\": \"abc\",\n                \"Status\": \"abc\",\n                \"RegionName\": \"abc\",\n                \"FileSystemId\": \"abc\",\n                \"Size\": 1,\n                \"AliveDay\": 1,\n                \"Percent\": 1,\n                \"AppId\": 1,\n                \"DeleteTime\": \"abc\",\n                \"FsName\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"SnapshotType\": \"abc\",\n                \"SnapshotTime\": \"abc\"\n            }\n        ],\n        \"TotalSize\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd01b47d-2b57-4721-a237-1bdf59eac8b4\",\n        \"Snapshots\": [\n            {\n                \"AliveDay\": 0,\n                \"AppId\": 1300275735,\n                \"CreationTime\": \"2024-09-27 16:03:06\",\n                \"DeleteTime\": \"0\",\n                \"FileSystemId\": \"cfs-12345\",\n                \"FsName\": \"aileen-api-charge\",\n                \"Percent\": 0,\n                \"RegionName\": \"ap-guangzhou\",\n                \"Size\": 0,\n                \"SnapshotId\": \"snapcfs-5v2hgj3p\",\n                \"SnapshotName\": \"heihei\",\n                \"SnapshotTime\": \"2024-09-27 16:03:06\",\n                \"SnapshotType\": \"Standard\",\n                \"Status\": \"creating\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"TotalSize\": 0\n    }\n}",
         "title": "查询快照"
       }
     ],
@@ -235,8 +235,8 @@
     "DescribeUserQuota": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserQuotaInfo\": [\n            {\n                \"UserType\": \"Uid\",\n                \"UserId\": \"1000\",\n                \"FileSystemId\": \"cfs-12345\",\n                \"CapacityHardLimit\": 10,\n                \"FileHardLimit\": 10000,\n                \"Status\": \"available\",\n                \"DirectoryPath\": \"/cfs/abc\",\n                \"CapacityUsed\": 1,\n                \"FileUsed\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserQuotaInfo\": [\n            {\n                \"UserType\": \"Uid\",\n                \"UserId\": \"1000\",\n                \"FileSystemId\": \"cfs-abc12345\",\n                \"CapacityHardLimit\": 10,\n                \"FileHardLimit\": 10000,\n                \"Status\": \"available\",\n                \"DirectoryPath\": \"/cfs/abc\",\n                \"CapacityUsed\": 1,\n                \"FileUsed\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "查询文件系统配额"
       }
     ],
@@ -244,28 +244,28 @@
       {
         "document": "更新文件系统自动扩容策略",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCFSFileSystemAutoScaleRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-agaga\",\n    \"Status\": 1,\n    \"ScaleUpThreshold\": 85,\n    \"TargetThreshold\": 70\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"gagagagad-xdx\",\n        \"FileSystemId\": \"cfs-agaga\",\n        \"Status\": 1,\n        \"ScaleUpThreshold\": 85,\n        \"TargetThreshold\": 70\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"FileSystemId\": \"cfs-agaga\",\n        \"Status\": 1,\n        \"ScaleUpThreshold\": 85,\n        \"TargetThreshold\": 70\n    }\n}",
         "title": "更新文件系统自动扩容策略"
       }
     ],
     "ScaleUpFileSystem": [
       {
         "document": "扩容文件系统",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCFSFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-agagag\",\n    \"TargetCapacity\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"agagaga-tatatatata-tatata\",\n        \"FileSystemId\": \"cfs-agagag\",\n        \"TargetCapacity\": 10\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCFSFileSystem\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-4abc12345\",\n    \"TargetCapacity\": 20480\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"agagaga-tatatatata-tatata\",\n        \"FileSystemId\": \"cfs-4abc12345\",\n        \"TargetCapacity\": 20480\n    }\n}",
         "title": "扩容文件系统"
       }
     ],
     "SetUserQuota": [
       {
         "document": "用于设置用户配额",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"UserType\": \"Uid\",\n    \"UserId\": \"1000\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"UserType\": \"Uid\",\n    \"UserId\": \"1000\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "设置文件系统用户配额"
       },
       {
         "document": "用于设置文件系统目录配额",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"UserType\": \"Dir\",\n    \"DirectoryPath\": \"/cfs/123\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"UserType\": \"Dir\",\n    \"DirectoryPath\": \"/cfs/123\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fasfsaaejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "设置文件系统目录配额"
       }
@@ -321,7 +321,7 @@
     "UpdateCfsFileSystemSizeLimit": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsFileSystemSizeLimit\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"FsLimit\": \"1000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCfsFileSystemSizeLimit\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\",\n    \"FsLimit\": \"1000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "更新文件系统存储容量限制"
       }

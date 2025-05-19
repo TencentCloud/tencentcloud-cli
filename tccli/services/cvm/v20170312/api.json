@@ -6216,7 +6216,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入镜像的操作系统架构，`x86_64` 或 `i386`",
+          "document": "导入镜像的操作系统架构。\n取值范围包括：`x86_64` 、`i386`、`arm_64`",
           "example": "x86_64",
           "member": "string",
           "name": "Architecture",
@@ -6225,7 +6225,7 @@
         },
         {
           "disabled": false,
-          "document": "导入镜像的操作系统类型，通过`DescribeImportImageOs`获取",
+          "document": "导入镜像的操作系统类型 。\n可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsListSupported`获取。",
           "example": "CentOS",
           "member": "string",
           "name": "OsType",
@@ -6234,7 +6234,7 @@
         },
         {
           "disabled": false,
-          "document": "导入镜像的操作系统版本，通过`DescribeImportImageOs`获取",
+          "document": "导入镜像的操作系统版本。\n可通过 [DescribeImportImageOs](https://cloud.tencent.com/document/api/213/15718) 接口返回值中的`ImportImageOsVersionSet`获取。",
           "example": "6",
           "member": "string",
           "name": "OsVersion",
@@ -6252,7 +6252,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像名称",
+          "document": "镜像名称。\n最多支持 60 个字符。",
           "example": "sample",
           "member": "string",
           "name": "ImageName",
@@ -6261,7 +6261,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像描述",
+          "document": "镜像描述。\n最多支持 256 个字符。",
           "example": "sampleimage",
           "member": "string",
           "name": "ImageDescription",
@@ -6270,7 +6270,7 @@
         },
         {
           "disabled": false,
-          "document": "只检查参数，不执行任务",
+          "document": "只检查参数，不执行任务。\n默认值：false",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -6279,7 +6279,7 @@
         },
         {
           "disabled": false,
-          "document": "是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)",
+          "document": "是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)\n默认值：false",
           "example": "false",
           "member": "bool",
           "name": "Force",
@@ -6297,7 +6297,7 @@
         },
         {
           "disabled": false,
-          "document": "导入镜像后，激活操作系统采用的许可证类型。\n可选项：\nTencentCloud: 腾讯云官方许可\nBYOL: 自带许可（Bring Your Own License）",
+          "document": "导入镜像后，激活操作系统采用的许可证类型。\n默认值：TencentCloud\n取值范围：\nTencentCloud: 腾讯云官方许可\nBYOL: 自带许可（Bring Your Own License）",
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
@@ -6306,7 +6306,7 @@
         },
         {
           "disabled": false,
-          "document": "启动模式",
+          "document": "启动模式。\n取值范围：`Legacy BIOS`、`UEFI`\n默认值：Legacy BIOS",
           "example": "Legacy BIOS",
           "member": "string",
           "name": "BootMode",

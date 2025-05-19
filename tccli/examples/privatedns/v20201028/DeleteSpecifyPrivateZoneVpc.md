@@ -10,7 +10,7 @@ tccli privatedns DeleteSpecifyPrivateZoneVpc --cli-unfold-argument  \
     --VpcSet.0.UniqVpcId vpc-dae2312 \
     --VpcSet.0.Region ap-guangzhou \
     --AccountVpcSet.0.UniqVpcId vpc-2314dae \
-    --AccountVpcSet.0.Region ap-gangzhou \
+    --AccountVpcSet.0.Region ap-guangzhou \
     --AccountVpcSet.0.Uin 1000032110 \
     --AccountVpcSet.0.VpcName vpc-testname
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs UpdateCfsFileSystemSizeLimit --cli-unfold-argument  \
-    --FileSystemId cfs-12345 \
+    --FileSystemId cfs-abc12345 \
     --FsLimit 1000
 ```
 

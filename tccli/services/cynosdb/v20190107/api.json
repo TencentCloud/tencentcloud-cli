@@ -3920,7 +3920,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已废弃。",
           "example": "已废弃",
           "member": "AuditLogFilter",
@@ -4660,6 +4660,24 @@
           "name": "InstanceInitInfos",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库唯一标识",
+          "example": "cynosmysql-gdn-dbsgxagb",
+          "member": "string",
+          "name": "GdnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库代理配置",
+          "example": "无",
+          "member": "ProxyConfig",
+          "name": "ProxyConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5795,6 +5813,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库唯一标识",
+          "example": "cynosdbmysql-gdn-dbssdfa1",
+          "member": "string",
+          "name": "GdnId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6308,6 +6337,26 @@
           "example": "stable",
           "member": "string",
           "name": "CynosVersionTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库网络唯一标识",
+          "example": "cynosdbmysql-gdn-xdgsdbsa",
+          "member": "string",
+          "name": "GdnId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群在全球数据网络中的角色。\n主集群- primary\n从集群 - standby\n如为空，该字段无效",
+          "example": "primary",
+          "member": "string",
+          "name": "GdnRole",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6932,6 +6981,16 @@
           "name": "NodeList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库唯一标识",
+          "example": "cynosdbmysql-gdn-cgsxflsb",
+          "member": "string",
+          "name": "GdnId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8715,7 +8774,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已废弃。",
           "example": "无",
           "member": "AuditLogFilter",
@@ -18394,6 +18453,84 @@
         }
       ],
       "usage": "out"
+    },
+    "ProxyConfig": {
+      "document": "访问代理配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)",
+          "example": "cynosdbmysql-xxxxxxx",
+          "member": "int64",
+          "name": "ProxyCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "4000",
+          "member": "int64",
+          "name": "Mem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "连接池类型：SessionConnectionPool(会话级别连接池 )",
+          "example": "SessionConnectionPool",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启连接池,yes-开启，no-不开启",
+          "example": "yes",
+          "member": "string",
+          "name": "OpenConnectionPool",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "连接池阈值：单位（秒）",
+          "example": "0",
+          "member": "int64",
+          "name": "ConnectionPoolTimeOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "描述说明",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库节点信息（该参数与ProxyCount需要任选一个输入）",
+          "example": "无",
+          "member": "ProxyZone",
+          "name": "ProxyZones",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "ProxyConnectionPoolInfo": {
       "document": "数据库代理连接池信息",

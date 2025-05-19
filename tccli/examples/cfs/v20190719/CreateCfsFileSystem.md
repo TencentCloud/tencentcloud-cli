@@ -6,10 +6,12 @@ Input:
 
 ```
 tccli cfs CreateCfsFileSystem --cli-unfold-argument  \
-    --NetInterface basic \
+    --NetInterface VPC \
     --Zone ap-beijing-1 \
     --PGroupId pgroupbasic \
-    --FsName test_fs
+    --FsName test_fs \
+    --VpcId vpc-123abc \
+    --SubnetId subnet-123abc
 ```
 
 Output: 

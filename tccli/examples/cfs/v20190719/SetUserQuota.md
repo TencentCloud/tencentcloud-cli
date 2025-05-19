@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs SetUserQuota --cli-unfold-argument  \
-    --FileSystemId cfs-12345 \
+    --FileSystemId cfs-abc12345 \
     --UserType Uid \
     --UserId 1000 \
     --CapacityHardLimit 10 \
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli cfs SetUserQuota --cli-unfold-argument  \
-    --FileSystemId cfs-12345 \
+    --FileSystemId cfs-abc12345 \
     --UserType Dir \
     --DirectoryPath /cfs/123 \
     --CapacityHardLimit 10 \

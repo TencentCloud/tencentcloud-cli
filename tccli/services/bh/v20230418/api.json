@@ -5895,7 +5895,7 @@
         {
           "disabled": false,
           "document": "ioa用户组织名称",
-          "example": "测试",
+          "example": "开发部",
           "member": "string",
           "name": "OrgName",
           "output_required": true,
@@ -5917,7 +5917,7 @@
         {
           "disabled": false,
           "document": "ioa用户组织名称路径\t",
-          "example": "全网账户.钉钉.测试",
+          "example": "全网账户.钉钉.开发部",
           "member": "string",
           "name": "OrgNamePath",
           "output_required": true,

@@ -21,13 +21,6 @@
       "output": "CloseDBExtranetAccessResponse",
       "status": "online"
     },
-    "CloseServerlessDBExtranetAccess": {
-      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口（CloseServerlessDBExtranetAccess）用于关闭serverlessDB实例公网地址",
-      "input": "CloseServerlessDBExtranetAccessRequest",
-      "name": "【废弃】关闭serverlessDB实例公网地址",
-      "output": "CloseServerlessDBExtranetAccessResponse",
-      "status": "deprecated"
-    },
     "CreateAccount": {
       "document": "此接口用于创建数据账号，返回的Oid为账号唯一标识。与数据库系统表pg_roles中记录的oid一致。",
       "input": "CreateAccountRequest",
@@ -167,13 +160,6 @@
       "name": "删除RO组网络",
       "output": "DeleteReadOnlyGroupNetworkAccessResponse",
       "status": "online"
-    },
-    "DeleteServerlessDBInstance": {
-      "document": "该产品形态需要下线，已完成客户实例全部下线、后端服务下线等\n\n【接口下线中，请勿使用】本接口 (DeleteServerlessDBInstance) 用于删除一个ServerlessDB实例。",
-      "input": "DeleteServerlessDBInstanceRequest",
-      "name": "【废弃】删除ServerlessDB实例",
-      "output": "DeleteServerlessDBInstanceResponse",
-      "status": "deprecated"
     },
     "DescribeAccountPrivileges": {
       "document": "查询数据库账号对某数据库对象拥有的权限列表。",
@@ -1713,42 +1699,6 @@
           "type": "int",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CloseServerlessDBExtranetAccessRequest": {
-      "document": "CloseServerlessDBExtranetAccess请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例唯一标识符",
-          "example": "postgres-apzvwncr",
-          "member": "string",
-          "name": "DBInstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例名称",
-          "example": "test-db-instance",
-          "member": "string",
-          "name": "DBInstanceName",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CloseServerlessDBExtranetAccessResponse": {
-      "document": "CloseServerlessDBExtranetAccess返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4536,42 +4486,6 @@
           "type": "int",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteServerlessDBInstanceRequest": {
-      "document": "DeleteServerlessDBInstance请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
-          "example": "user-data-db",
-          "member": "string",
-          "name": "DBInstanceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "DB实例ID，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
-          "example": "postgres-xxxxx",
-          "member": "string",
-          "name": "DBInstanceId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteServerlessDBInstanceResponse": {
-      "document": "DeleteServerlessDBInstance返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

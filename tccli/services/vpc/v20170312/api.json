@@ -8388,7 +8388,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流日志实例名字。长度为不超过60个字节。",
+          "document": "流日志实例名称。长度为不超过60个字符。",
           "example": "check-flowlog",
           "member": "string",
           "name": "FlowLogName",
@@ -8397,7 +8397,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志所属资源类型，VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC， SUBNET，CCN，DCG时，请通过工单加入白名单。",
+          "document": "流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。当选择VPC，SUBNET，CCN，DCG时，请通过工单加入白名单。",
           "example": "NETWORKINTERFACE",
           "member": "string",
           "name": "ResourceType",
@@ -8433,7 +8433,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志实例描述。",
+          "document": "流日志实例描述。长度不超过512个字符。",
           "example": "check-flowlog",
           "member": "string",
           "name": "FlowLogDescription",
@@ -8442,7 +8442,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志存储ID（cls的日志主题ID，\n可通过[DescribeTopics](https://cloud.tencent.com/document/api/1179/46086)接口获取。\n）。当StorageType为cls时，CloudLogId为必选。",
+          "document": "流日志存储ID（cls的日志主题ID，\n可通过[DescribeTopics](https://cloud.tencent.com/document/product/614/56454)接口获取。\n）。当StorageType为cls时，CloudLogId为必选。",
           "example": "99991111-2222-4444-9999-222266663333",
           "member": "string",
           "name": "CloudLogId",
@@ -8460,7 +8460,7 @@
         },
         {
           "disabled": false,
-          "document": "消费端类型：cls、ckafka。默认值cls。当选择kafka时，请通过工单加入白名单。",
+          "document": "消费端类型：cls、ckafka。默认值cls。当选择ckafka时，请通过工单加入白名单。",
           "example": "cls",
           "member": "string",
           "name": "StorageType",
@@ -16073,8 +16073,8 @@
         },
         {
           "disabled": false,
-          "document": "流日志实例名字。",
-          "example": "demo",
+          "document": "流日志实例名称。长度不超过60个字符。",
+          "example": "FlowLogName1",
           "member": "string",
           "name": "FlowLogName",
           "required": false,
@@ -16082,7 +16082,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志所属资源类型：VPC(私有网络)，SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。\n",
+          "document": "流日志所属资源类型，VPC（私有网络），SUBNET（子网），NETWORKINTERFACE（网卡），CCN（云联网），NAT（网络地址转化），DCG（专线网关）。\n",
           "example": "VPC",
           "member": "string",
           "name": "ResourceType",
@@ -16188,7 +16188,7 @@
         {
           "disabled": false,
           "document": "流日志实例集合。",
-          "example": "[{\"ResourceId\": \"eni-78ysaex1\", \"VpcId\": \"vpc-pq9vxykj\", \"ResourceType\": \"NETWORKINTERFACE\", \"TrafficType\": \"ACCEPT\", \"StorageType\": \"kafka\", \"FlowLogId\": \"fl-2edhcclz\", \"FlowLogStorage\": {\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}}]",
+          "example": "[{\"ResourceId\": \"eni-78ysaex1\", \"VpcId\": \"vpc-pq9vxykj\", \"ResourceType\": \"NETWORKINTERFACE\", \"StorageType\": \"ckafka\", \"FlowLogId\": \"fl-2edhcclz\", \"FlowLogStorage\": {\"StorageTopic\": \"topic-siqmaox1\", \"StorageId\": \"ckafka-akwiqms1\"}}]",
           "member": "FlowLog",
           "name": "FlowLog",
           "output_required": true,
@@ -27437,7 +27437,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志实例名字。长度为不超过60字节。",
+          "document": "流日志实例名称。长度为不超过60字符。",
           "example": "FlowLogName1",
           "member": "string",
           "name": "FlowLogName",
@@ -27446,7 +27446,7 @@
         },
         {
           "disabled": false,
-          "document": "流日志实例描述。长度为不超过512字节。",
+          "document": "流日志实例描述。长度为不超过512个字符。",
           "example": "FlowLogDescription1",
           "member": "string",
           "name": "FlowLogDescription",

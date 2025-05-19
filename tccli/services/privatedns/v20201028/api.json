@@ -181,7 +181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VpcId： vpc-xadsafsdasd",
+          "document": "VpcId",
           "example": "vpc-hgje12gt",
           "member": "string",
           "name": "UniqVpcId",
@@ -192,7 +192,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
+          "document": "Vpc所属地区",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -203,7 +203,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc所属账号: 123456789",
+          "document": "Vpc所属账号",
           "example": "10005630010",
           "member": "string",
           "name": "Uin",
@@ -214,7 +214,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc资源名称：testname",
+          "document": "vpc资源名称",
           "example": "testname",
           "member": "string",
           "name": "VpcName",

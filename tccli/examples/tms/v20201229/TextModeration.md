@@ -7,14 +7,14 @@ Input:
 ```
 tccli tms TextModeration --cli-unfold-argument  \
     --Content 5Yqg5oiR5aW95Y+LIOe7meS9oOS8mOaDoOWIuA== \
-    --BizType test
+    --BizType TencentCloudDefault
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "123",
+        "RequestId": "d636333a-0d14-4962-8287-e6e8af0a10f2",
         "BizType": "test",
         "Label": "Ad",
         "SubLabel": "",

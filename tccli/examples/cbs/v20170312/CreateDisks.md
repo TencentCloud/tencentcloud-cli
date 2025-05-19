@@ -41,7 +41,7 @@ tccli cbs CreateDisks --cli-unfold-argument  \
     --Placement.Zone ap-guangzhou-2 \
     --DiskChargeType PREPAID \
     --DiskCount 1 \
-    --DiskType CLOUD_BASIC \
+    --DiskType CLOUD_HSSD \
     --DiskChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
     --DiskChargePrepaid.Period 1 \
     --SnapshotId snap-iepc4w3h

@@ -923,7 +923,7 @@
         },
         {
           "disabled": false,
-          "document": "<font coloe=\"red\">【已废弃】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置",
+          "document": "<font color=\"red\">【已不再使用】</font>签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: 该字段已不再使用, 请用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannel",
@@ -3191,8 +3191,8 @@
         },
         {
           "disabled": false,
-          "document": "已废弃字段，客户端Token，保持接口幂等性,最大长度64个字符",
-          "example": "yDSLMUUckpotxh18UEnJP33SwMj5LRdW",
+          "document": "该字段已不再使用",
+          "example": "该字段已不再使用",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -4685,6 +4685,15 @@
           "name": "SignComponentConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑（展示）水印控件属性\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -4794,8 +4803,8 @@
         },
         {
           "disabled": false,
-          "document": "已经废弃字段，客户端Token，保持接口幂等性,最大长度64个字符",
-          "example": "cdMyoi1W6hm99",
+          "document": "该字段已不再使用",
+          "example": "该字段已不再使用",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -6643,7 +6652,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段已废弃，请使用InitiatorComponents",
+          "document": "该字段已不再使用，请使用InitiatorComponents",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -6733,7 +6742,7 @@
         },
         {
           "disabled": true,
-          "document": "<font color=\"red\">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>\n签署控件的配置信息，用在嵌入式发起的页面配置，\n包括  \n\n- 签署控件 是否默认展示日期.",
+          "document": "<font color=\"red\">此字段已不再使用，请使用 CreateFlowOption 里面的 SignComponentConfig</font>\n签署控件的配置信息，用在嵌入式发起的页面配置，\n包括  \n\n- 签署控件 是否默认展示日期.",
           "example": "无",
           "member": "SignComponentConfig",
           "name": "SignComponentConfig",
@@ -6825,8 +6834,8 @@
         },
         {
           "disabled": true,
-          "document": "印章图片的base64\n注：已废弃\n请先通过UploadFiles接口上传文件，获取 FileId",
-          "example": "已废弃",
+          "document": "该字段已不再使用",
+          "example": "该字段已不再使用",
           "member": "string",
           "name": "SealImage",
           "required": false,
@@ -6852,7 +6861,7 @@
         },
         {
           "disabled": false,
-          "document": "此字段已废弃，请勿继续使用。",
+          "document": "该字段已不再使用",
           "example": "false",
           "member": "bool",
           "name": "EnableAutoSign",
@@ -10880,6 +10889,15 @@
           "example": "true",
           "member": "bool",
           "name": "SkipUploadFile",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑（展示）水印控件属性\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>\n",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditWatermark",
           "required": false,
           "type": "bool"
         }
@@ -16136,7 +16154,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义ID数组，与上传文件一一对应\n\n注: `历史遗留问题，已经废弃，调用接口时不用赋值`",
+          "document": "该字段已不再使用",
           "example": "9b337a42",
           "member": "string",
           "name": "CustomIds",

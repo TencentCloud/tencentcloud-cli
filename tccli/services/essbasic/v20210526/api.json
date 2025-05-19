@@ -610,7 +610,7 @@
       "status": "online"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，<font color='red'> **不建议使用，将会废弃**</font>。",
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，<font color='red'> **不建议使用**</font>。",
       "input": "PrepareFlowsRequest",
       "name": "准备待发起文件",
       "output": "PrepareFlowsResponse",
@@ -1798,7 +1798,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n<ul>\n<li>若为个人参与方：ApproverType:\"PERSON\"</li>\n<li>若为企业参与方：ApproverType:\"ORGANIZATION\"。同时若签署方为saas企业员工， OrganizationName 参数需传入参与方企业名称。若签署方为渠道子客企业员工，还需要传 OpenId、OrganizationOpenId。</li>\n</ul>\n\n注:\n`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`\n`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
+          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n<ul>\n<li>若为个人参与方：ApproverType:\"PERSON\"</li>\n<li>若为企业参与方：ApproverType:\"ORGANIZATION\"。同时若签署方为saas企业员工， OrganizationName 参数需传入参与方企业名称。若签署方为渠道子客企业员工，除了 OrganizationName 还需要传 OpenId、OrganizationOpenId。（如果OrganizationOpenId对应子客企业已经认证激活，则可以省略OrganizationName参数）</li>\n</ul>\n\n注:\n`1. 暂不支持签署人拖动签署控件功能，以及签批控件。`\n`2. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfo",
@@ -3068,7 +3068,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverType必传。\n若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。\n若为子客企业签署方则需传OpenId、OrganizationOpenId，OrganizationName 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）\n\n此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：\n1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。\n2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。\n3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。\n4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "document": "流程签署人列表，其中结构体的ApproverType必传。\n若为个人签署方或saas企业签署方，则Name，Mobile必传。OrganizationName 传对应企业名称。\n若为子客企业签署方则需传OpenId、OrganizationOpenId、OrganizationName， 其他可不传。（如果对应OrganizationOpenId 子客已经认证激活了，则可以省去OrganizationName）\n\n此结构体和发起接口参与方结构体复用，除了上述参数外，可传递的参数有：\n1. RecipientId: 发起合同会返回，可以直接用于指定需要生成链接的签署方。\n2. ApproverSignTypes: 指定签署方签署时候的认证方式，仅此链接生效。\n3. SignTypeSelector: 可以指定签署方签署合同的认证校验方式的选择模式。\n4. Intention: 指定H5签署视频核身的意图配置，仅视频签署需要使用。\n\n注:\n`1. 签署人只能有手写签名、时间类型、印章类型、签批类型的签署控件和内容填写控件，其他类型的签署控件暂时未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfos",
@@ -3737,8 +3737,8 @@
         },
         {
           "disabled": false,
-          "document": "此字段已废弃，请勿继续使用。",
-          "example": "字段已废弃",
+          "document": "该字段已不再使用",
+          "example": "该字段已不再使用",
           "member": "bool",
           "name": "EnableAutoSign",
           "required": false,
@@ -7656,6 +7656,15 @@
           "name": "SignComponentConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑（展示）水印控件属性\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -9712,6 +9721,15 @@
           "name": "SkipUploadFile",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁止编辑（展示）水印控件属性\n<ul><li>（默认） false -否</li> <li> true - 禁止编辑</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "ForbidEditWatermark",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cfs ScaleUpFileSystem --cli-unfold-argument  \
-    --FileSystemId cfs-agagag \
-    --TargetCapacity 1
+    --FileSystemId cfs-4abc12345 \
+    --TargetCapacity 20480
 ```
 
 Output: 
@@ -15,8 +15,8 @@ Output:
 {
     "Response": {
         "RequestId": "agagaga-tatatatata-tatata",
-        "FileSystemId": "cfs-agagag",
-        "TargetCapacity": 10
+        "FileSystemId": "cfs-4abc12345",
+        "TargetCapacity": 20480
     }
 }
 ```

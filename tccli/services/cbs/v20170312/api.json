@@ -1,7 +1,7 @@
 {
   "actions": {
     "ApplyDiskBackup": {
-      "document": "本接口（ApplyDiskBackup）用于回滚备份点到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘备份点，如果您需要复制备份点数据到其它云硬盘上，请先使用 CreateSnapshot 将备份点转换为快照，然后使用 CreateDisks 接口创建新的弹性云硬盘，将快照数据复制到新购云硬盘上。\n* 用于回滚的备份点必须处于NORMAL状态。备份点状态可以通过DescribeDiskBackups接口查询，见输出参数中BackupState字段解释。\n* 如果是弹性云硬盘，则云硬盘必须处于未挂载状态，云硬盘挂载状态可以通过DescribeDisks接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云硬盘，则实例必须处于关机状态，实例状态可以通过DescribeInstancesStatus接口查询。",
+      "document": "本接口（ApplyDiskBackup）用于回滚备份点到原云硬盘。\n\n* 仅支持回滚到原云硬盘上。对于数据盘备份点，如果您需要复制备份点数据到其它云硬盘上，请先使用[CreateSnapshot](/document/product/362/15648) 将备份点转换为快照，然后使用[CreateDisks](/document/product/362/16312) 接口创建新的弹性云硬盘，将快照数据复制到新购云硬盘上。\n* 用于回滚的备份点必须处于NORMAL状态。备份点状态可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询，见输出参数中BackupState字段解释。\n* 如果是弹性云硬盘，则云硬盘必须处于未挂载状态，云硬盘挂载状态可以通[DescribeDisks](/document/product/362/16315)接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云硬盘，则实例必须处于关机状态，实例状态可以通过[DescribeInstancesStatus](/document/product/213/15738)接口查询。",
       "input": "ApplyDiskBackupRequest",
       "name": "回滚备份点",
       "output": "ApplyDiskBackupResponse",
@@ -411,7 +411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘备份点ID，可通过 DescribeDiskBackups 查询。",
+          "document": "云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。",
           "example": "dbp-xxxxxxxx",
           "member": "string",
           "name": "DiskBackupId",
@@ -420,7 +420,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点原云硬盘ID，可通过DescribeDisks接口查询。",
+          "document": "云硬盘备份点原云硬盘ID，可以通过[DescribeDisks](/document/product/362/16315)接口查。",
           "example": "disk-xxxxxxxx",
           "member": "string",
           "name": "DiskId",
@@ -438,7 +438,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机",
+          "document": "回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机; AutoStartInstance参数需要在AutoStopInstance为true时才能为true。",
           "example": "false",
           "member": "bool",
           "name": "AutoStartInstance",
@@ -882,7 +882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要绑定的定期快照策略ID。",
+          "document": "要绑定的定期快照策略ID，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。",
           "example": "asp-6xtxct37",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -1260,7 +1260,7 @@
         },
         {
           "disabled": false,
-          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>",
+          "document": "硬盘介质类型。取值范围：<br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_BSSD：表示通用型SSD云硬盘</li><br><li>CLOUD_SSD：表示SSD云硬盘</li><br><li>CLOUD_HSSD：表示增强型SSD云硬盘</li><br><li>CLOUD_TSSD：表示极速型SSD云硬盘。</li>极速型SSD云硬盘（CLOUD_TSSD）仅支持随部分实例类型一同购买，暂不支持单独创建。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -1305,7 +1305,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数。使用此参数可给云硬盘购买额外的性能。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
+          "document": "使用此参数可给云硬盘购买额外的性能，单位MB/s。<br>当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。",
           "example": "100",
           "member": "uint64",
           "name": "ThroughputPerformance",
@@ -1314,7 +1314,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空",
+          "document": "购买加密盘时自定义密钥，当传入该参数时，Encrypt参数不得为空。",
           "example": "7ffe44e1-f57a-11e9-be2f-525400ea888",
           "member": "string",
           "name": "KmsKeyId",
@@ -1332,7 +1332,7 @@
         },
         {
           "disabled": false,
-          "document": "可选参数，默认为False。传入True时，云盘将创建为共享型云盘。",
+          "document": "传入True时，云盘将创建为共享型云盘，默认为False。因共享型云盘不支持加密，此参数与Encrypt参数不可同时传入。",
           "example": "False",
           "member": "bool",
           "name": "Shareable",
@@ -1350,7 +1350,7 @@
         },
         {
           "disabled": false,
-          "document": "传入该参数用于创建加密云盘，取值固定为ENCRYPT。",
+          "document": "传入该参数用于创建加密云盘，取值固定为ENCRYPT。因共享型云盘不支持加密，此参数与Shareable参数不可同时传入。",
           "example": "ENCRYPT",
           "member": "string",
           "name": "Encrypt",
@@ -1368,7 +1368,7 @@
         },
         {
           "disabled": false,
-          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过DescribeSnapshots接口返回的快照详情的IsPermanent字段来判断，true表示永久快照，false表示非永久快照。",
+          "document": "销毁云盘时删除关联的非永久保留快照。0 表示非永久快照不随云盘销毁而销毁，1表示非永久快照随云盘销毁而销毁，默认取0。快照是否永久保留可以通过[DescribeSnapshots](document/api/362/15647)接口返回的快照详情的IsPermanent字段来判断，True表示永久快照，False表示非永久快照。",
           "example": "0",
           "member": "int64",
           "name": "DeleteSnapshot",
@@ -1377,7 +1377,7 @@
         },
         {
           "disabled": false,
-          "document": "创建云盘时指定自动挂载并初始化该数据盘。",
+          "document": "创建云盘时指定自动挂载并初始化该数据盘。因加密盘不支持自动挂载及初始化，此参数与Encrypt参数不可同时传入。",
           "example": "无",
           "member": "AutoMountConfiguration",
           "name": "AutoMountConfiguration",
@@ -1395,7 +1395,7 @@
         },
         {
           "disabled": false,
-          "document": "创建云盘时是否开启性能突发",
+          "document": "创建云盘时是否开启性能突发。",
           "example": "True",
           "member": "bool",
           "name": "BurstPerformance",
@@ -1569,7 +1569,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要删除的定期快照策略ID列表。",
+          "document": "要删除的定期快照策略ID列表，通过[ DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)接口查询。",
           "example": "[\"asp-mrsrn243\",\"asp-3lpl7ev3\"]",
           "member": "string",
           "name": "AutoSnapshotPolicyIds",
@@ -1596,7 +1596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待删除的云硬盘备份点ID。",
+          "document": "待删除的云硬盘备份点ID，可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。",
           "example": "[\"dbp-xxxxxxxx\"]",
           "member": "string",
           "name": "DiskBackupIds",
@@ -1713,7 +1713,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。参数不支持同时指定`AutoSnapshotPolicyIds`和`Filters`。<br><li>auto-snapshot-policy-id - Array of String - 是否必填：否 -（过滤条件）按定期快照策略ID进行过滤。定期快照策略ID形如：`asp-11112222`。<br><li>auto-snapshot-policy-state - Array of String - 是否必填：否 -（过滤条件）按定期快照策略的状态进行过滤。定期快照策略ID形如：`asp-11112222`。(NORMAL：正常 | ISOLATED：已隔离。)<br><li>auto-snapshot-policy-name - Array of String - 是否必填：否 -（过滤条件）按定期快照策略名称进行过滤。",
+          "document": "过滤条件。参数不支持同时指定`AutoSnapshotPolicyIds`和`Filters`。<br>\n<li>auto-snapshot-policy-id - Array of String - 是否必填：否 -（过滤条件）按定期快照策略ID进行过滤。定期快照策略ID形如：`asp-3stvwfxx`。</li>\n<li>auto-snapshot-policy-state - Array of String - 是否必填：否 -（过滤条件）按定期快照策略的状态进行过滤。定期快照策略ID形如：`asp-3stvwfxx`。(NORMAL：正常 | ISOLATED：已隔离。)</li>\n<li>auto-snapshot-policy-name - Array of String - 是否必填：否 -（过滤条件）按定期快照策略名称进行过滤。</li>",
           "example": "[{\"Name\":\"auto-snapshot-policy-state\",\"Values\":[\"NORMAL\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -1740,7 +1740,7 @@
         },
         {
           "disabled": false,
-          "document": "输出定期快照列表的排列顺序。取值范围：<br><li>ASC：升序排列<br><li>DESC：降序排列。",
+          "document": "输出定期快照列表的排列顺序。取值范围：<br><li>ASC：升序排列<br></li><li>DESC：降序排列。</li>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -1749,8 +1749,8 @@
         },
         {
           "disabled": false,
-          "document": "定期快照列表排序的依据字段。取值范围：<br><li>CREATETIME：依据定期快照的创建时间排序<br>默认按创建时间排序。",
-          "example": "CREATETIME",
+          "document": "定期快照列表排序的依据字段。取值范围：<br><li>CREATE_TIME：依据定期快照的创建时间排序，默认按创建时间排序。</li>",
+          "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -1768,15 +1768,17 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "定期快照策略列表。",
-          "example": "[]",
+          "example": "无",
           "member": "AutoSnapshotPolicy",
           "name": "AutoSnapshotPolicySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1794,7 +1796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的云硬盘ID，通过[DescribeDisks](https://tcloud4api.woa.com/document/product/362/15601?!preview&!document=1)接口查询。",
+          "document": "要查询的云硬盘ID，通过[DescribeDisks](https://cloud.tencent.com/document/api/362/16315)接口查询。",
           "example": "disk-lg4ckc93",
           "member": "string",
           "name": "DiskId",
@@ -3496,8 +3498,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘ID， 通过DescribeDisks（查询云硬盘信息）接口查询。",
-          "example": "disk-xxxxxxx",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
           "required": true,
@@ -3524,7 +3526,7 @@
           "example": "无",
           "member": "Price",
           "name": "DiskPrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3814,8 +3816,8 @@
         },
         {
           "disabled": false,
-          "document": "是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。",
-          "example": "TRUE",
+          "document": "是否激活定期快照策略，`false`表示未激活，`true`表示激活；默认为`true`。",
+          "example": "true",
           "member": "bool",
           "name": "IsActivated",
           "required": false,
@@ -3823,8 +3825,8 @@
         },
         {
           "disabled": false,
-          "document": "通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。",
-          "example": "TRUE",
+          "document": "通过该定期快照策略创建的快照是否永久保留。`false`表示非永久保留，`true`表示永久保留，默认为`false`。",
+          "example": "true",
           "member": "bool",
           "name": "IsPermanent",
           "required": false,
@@ -4030,8 +4032,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的云硬盘ID。每次请求批量云硬盘上限为100。",
-          "example": "[\"disk-jwk0zvrg\\r\\n\"]",
+          "document": "一个或多个待操作的云硬盘ID,可以通过[DescribeDisks](/document/product/362/16315)接口查询。每次请求批量云硬盘上限为100。",
+          "example": "[\"disk-jwk0zvrg\"]",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -4120,7 +4122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照ID, 可通过[DescribeSnapshots](/document/product/362/15647)查询。",
+          "document": "快照ID, 可通过[DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)查询。",
           "example": "snap-gybrif0z",
           "member": "string",
           "name": "SnapshotId",
@@ -4298,7 +4300,7 @@
       "usage": "both"
     },
     "Policy": {
-      "document": "描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的时刻点执行该条定期快照策。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，仅可设置其中一条策略规则。",
+      "document": "描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的时刻点执行该条定期快照策。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，必填且仅可设置其中一条策略规则。如果同时传入互斥规则，则只有一条生效，优先级为上文列出顺序：例如将三条规则全部设置，只有 DayOfWeek 生效。",
       "members": [
         {
           "disabled": false,
@@ -4317,7 +4319,7 @@
           "example": "[0,1,2]",
           "member": "uint64",
           "name": "DayOfWeek",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4328,7 +4330,7 @@
           "example": "[2, 3, 4]",
           "member": "uint64",
           "name": "DayOfMonth",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4339,7 +4341,7 @@
           "example": "50",
           "member": "uint64",
           "name": "IntervalDays",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4742,7 +4744,7 @@
         },
         {
           "disabled": false,
-          "document": "快照类型，目前该项取值可以为PRIVATE_SNAPSHOT或者SHARED_SNAPSHOT",
+          "document": "快照类型，目前该项取值可以为`PRIVATE_SNAPSHOT`（私有快照）或者`SHARED_SNAPSHOT`（共享快照）",
           "example": "PRIVATE_SNAPSHOT",
           "member": "string",
           "name": "SnapshotType",
@@ -4752,7 +4754,7 @@
         },
         {
           "disabled": false,
-          "document": "创建此快照的云硬盘大小，单位GB。",
+          "document": "创建此快照的云硬盘大小，单位GiB。",
           "example": "10",
           "member": "uint64",
           "name": "DiskSize",
@@ -4772,7 +4774,7 @@
         },
         {
           "disabled": false,
-          "document": "快照正在跨地域复制的目的地域，默认取值为[]。",
+          "document": "快照正在跨地域复制的目的地域，若没有则返回`[]`。",
           "example": "[\"ap-guangzhou\", \"ap-nanjing\"]",
           "member": "string",
           "name": "CopyingToRegions",
@@ -5121,10 +5123,19 @@
         },
         {
           "disabled": false,
-          "document": "要解绑定期快照策略的云盘ID列表。",
-          "example": "[\"disk-dw0bbzws\\r\\n\"]",
+          "document": "要解绑定期快照策略的云盘ID列表。此参数与 InstanceIds 参数至少需要传入一个。",
+          "example": "[\"disk-dw0bbzws\"]",
           "member": "string",
           "name": "DiskIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要解绑定期快照策略的实例ID列表。此参数与 DiskIds 参数至少需要传入一个。",
+          "example": "[\"ins-locaa0iu\"]",
+          "member": "string",
+          "name": "InstanceIds",
           "required": false,
           "type": "list"
         }

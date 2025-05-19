@@ -15,21 +15,21 @@
       "status": "online"
     },
     "DescribeApplications": {
-      "document": "查询应用",
+      "document": "本接口（DescribeApplications）用于查询应用",
       "input": "DescribeApplicationsRequest",
       "name": "查询应用",
       "output": "DescribeApplicationsResponse",
       "status": "online"
     },
     "DescribeInstanceNetworkStatus": {
-      "document": "查询实例的网络配置及消耗情况",
+      "document": "本接口（DescribeInstanceNetworkStatus）用于查询实例的网络配置及消耗情况",
       "input": "DescribeInstanceNetworkStatusRequest",
       "name": "查询实例的网络配置及消耗情况",
       "output": "DescribeInstanceNetworkStatusResponse",
       "status": "online"
     },
     "DescribeInstances": {
-      "document": "查询实例",
+      "document": "本接口（DescribeInstances）用户查询实例",
       "input": "DescribeInstancesRequest",
       "name": "查询实例",
       "output": "DescribeInstancesResponse",
@@ -43,21 +43,21 @@
       "status": "online"
     },
     "DescribeRegions": {
-      "document": "查询地域列表",
+      "document": "本接口（DescribeRegions）用于查询地域列表",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
     "DescribeScenes": {
-      "document": "查询场景",
+      "document": "本接口（DescribeScenes）用于查询场景",
       "input": "DescribeScenesRequest",
       "name": "查询场景",
       "output": "DescribeScenesResponse",
       "status": "online"
     },
     "DescribeServiceLoginSettings": {
-      "document": "查询服务登录配置",
+      "document": "本接口（DescribeServiceLoginSettings）用于查询服务登录配置",
       "input": "DescribeServiceLoginSettingsRequest",
       "name": "查询服务登录配置",
       "output": "DescribeServiceLoginSettingsResponse",
@@ -78,14 +78,14 @@
       "status": "online"
     },
     "StartInstance": {
-      "document": "本接口 (StartInstance) 用于主动启动实例。",
+      "document": "本接口 (StartInstance) 用于主动启动实例。\n‘运行中’、‘预付费’的实例不支持启动实例",
       "input": "StartInstanceRequest",
       "name": "启动实例",
       "output": "StartInstanceResponse",
       "status": "online"
     },
     "StopInstance": {
-      "document": "本接口 (StopInstance) 用于主动关闭实例。",
+      "document": "本接口 (StopInstance) 用于主动关闭实例。\n‘已关机’、‘预付费’的实例不支持关机",
       "input": "StopInstanceRequest",
       "name": "关闭实例",
       "output": "StopInstanceResponse",
@@ -112,7 +112,7 @@
         {
           "disabled": false,
           "document": "应用id\n",
-          "example": "app-12345678",
+          "example": "app-7j7f9jhn",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
@@ -122,7 +122,7 @@
         {
           "disabled": false,
           "document": "应用名称",
-          "example": "Llama2 13B",
+          "example": "混元-DiT WebUI",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
@@ -132,7 +132,7 @@
         {
           "disabled": false,
           "document": "应用描述\n",
-          "example": "Llama2 13B是一款由Meta AI开源的LLM模型。Llama-2-13b-chat是高性能原生开源版本，适用于多种对话场景。注：该环境暂无 webui 可视化调试页面，需通过命令行调试。",
+          "example": "混元-DiT是腾讯自研的高性能细粒度中文理解多分辨率扩散Transformer模型。提供双语生成能力，中国元素理解具有优势。",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -142,7 +142,7 @@
         {
           "disabled": false,
           "document": "应用的环境配置",
-          "example": "Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab",
+          "example": "Ubuntu20.04, Python 3.8.12, CUDA 11.7, cuDNN 8, HunYuanDiT, JupyterLab, Gradio",
           "member": "string",
           "name": "ConfigEnvironment",
           "output_required": true,
@@ -151,8 +151,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小下限",
-          "example": "80",
+          "document": "系统盘大小下限，单位GB",
+          "example": "150",
           "member": "int64",
           "name": "MinSystemDiskSize",
           "output_required": true,
@@ -161,8 +161,8 @@
         },
         {
           "disabled": false,
-          "document": "应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION",
-          "example": "PRIVATE_APPLICATION",
+          "document": "应用类型，目前该项取值可以为PUBLIC_APPLICATION（公共应用）；PRIVATE_APPLICATION（自定义应用）；COMMUNITY_APPLICATION（社区应用）",
+          "example": "PUBLIC_APPLICATION",
           "member": "string",
           "name": "ApplicationType",
           "output_required": true,
@@ -181,8 +181,8 @@
         },
         {
           "disabled": false,
-          "document": "应用创建时间",
-          "example": "2023-11-01 00:00:00",
+          "document": "应用创建时间，格式：%Y-%m-%d %H:%M:%S",
+          "example": "2024-07-11 16:36:08",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -191,8 +191,8 @@
         },
         {
           "disabled": false,
-          "document": "应用大小",
-          "example": "50",
+          "document": "应用大小，单位GB",
+          "example": "120",
           "member": "int64",
           "name": "ApplicationSize",
           "output_required": true,
@@ -326,7 +326,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器，跟ApplicationIds不能共用，支持的filter主要有：\napplication-id: 精确匹配;\nscene-id: 精确匹配;\napplication-name: 模糊匹配;\napplication-type: 精确匹配;",
+          "document": "过滤器，跟ApplicationIds不能共用，支持的filter主要有：application-id: 精确匹配;scene-id: 精确匹配，通过调用接口 [DescribeScenes](https://cloud.tencent.com/document/api/1721/101608)获取;application-name: 模糊匹配;application-type: 精确匹配，枚举类型如下：PUBLIC_APPLICATION（公共应用）/ PRIVATE_APPLICATION（自定义应用）/ COMMUNITY_APPLICATION（社区应用）;",
           "example": "[{\"Name\":\"application-id\", \"Values\":[\"app-12345678\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -335,7 +335,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "偏移量，不得小于0，默认为0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -344,7 +344,7 @@
         },
         {
           "disabled": false,
-          "document": "返回量，默认为20\nMC：1000\n用户：100\n",
+          "document": "返回量，不得大于100，默认为20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -409,7 +409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID数组，单次请求最多不超过100个实例",
+          "document": "实例ID数组，单次请求最多不超过100个实例；实例ID通过调用接口[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612)获取。",
           "example": "[\"hai-12345678\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -456,7 +456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例元组",
+          "document": "实例元组，数量上限100",
           "example": "[\"hai-12345678\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -465,7 +465,7 @@
         },
         {
           "disabled": false,
-          "document": "描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有：instance-id，实例id；instance-state，实例状态；charge-type，付费方式；public-ip-address，公网IP过滤",
+          "document": "描述键值对过滤器，用于条件过滤查询。目前支持的过滤器有： instance-id，实例id； instance-state，实例状态：RUNNING，PENDING，STOPPED，ARREARS，STOPPED_NO_CHARGE； charge-type，付费方式：PREPAID_BY_MONTH，POSTPAID_BY_HOUR； public-ip-address，公网IP过滤",
           "example": "[{\"Name\":\"instance-state\", \"Values\":[\"RUNNING\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -474,7 +474,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0\n",
+          "document": "偏移量，默认为0，不得大于100",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -483,7 +483,7 @@
         },
         {
           "disabled": false,
-          "document": "返回量，默认为20",
+          "document": "返回量，默认为20，不能小于0",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -499,7 +499,7 @@
         {
           "disabled": false,
           "document": "实例总数\n",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -509,7 +509,7 @@
         {
           "disabled": false,
           "document": "分页实例详情\n",
-          "example": "[{\"InstanceId\":\"hai-oeifqhon\"}]",
+          "example": "[{\"InstanceId\":\"hai-jklfaded\"}]",
           "member": "Instance",
           "name": "InstanceSet",
           "output_required": true,
@@ -640,8 +640,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景id列表",
-          "example": "[\"sc-abcdefgh\"]\t",
+          "document": "场景id列表，单次能查询100个场景id",
+          "example": "[\"sc-7ramp21e\"]",
           "member": "string",
           "name": "SceneIds",
           "required": false,
@@ -677,7 +677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "实例ID通过调用接口[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612)获取。",
           "example": "hai-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -702,7 +702,7 @@
         {
           "disabled": false,
           "document": "服务登录配置详情",
-          "example": "[{\"ServiceName\":\"JupyterLab\",\"Url\":\"http://1.1.1.1:80/lab?token=ed68d8b88aaa15c1b8309c921ae1e76e9cf0ff48d3fb6407b7beb41b716f464e\"}]",
+          "example": "[{\"ServiceName\": \"jupyter\",\"Url\": \"http://1.14.52.185:80?40a0153b6c8ff839b2b83f9a3918daa55facad3c3e7a9b4a0e2377bd08f4aaa2\"}]",
           "member": "LoginSetting",
           "name": "LoginSettings",
           "output_required": true,
@@ -747,7 +747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。",
           "example": "app-jknfna",
           "member": "string",
           "name": "ApplicationId",
@@ -756,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "算力套餐类型",
+          "document": "算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A.",
           "example": "XL",
           "member": "string",
           "name": "BundleType",
@@ -774,7 +774,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例数量。",
+          "document": "购买实例数量，单次请求实例数量上限为10。",
           "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "实例显示名称",
+          "document": "实例显示名称，名称长度限制为128个字符。",
           "example": "hai",
           "member": "string",
           "name": "InstanceName",
@@ -926,7 +926,7 @@
         },
         {
           "disabled": false,
-          "document": "显存",
+          "document": "显存，单位：GB",
           "example": "16GB+",
           "member": "string",
           "name": "GPUMemory",
@@ -936,7 +936,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU核数",
+          "document": "CPU核数，单位：核",
           "example": "8核",
           "member": "string",
           "name": "CPU",
@@ -946,7 +946,7 @@
         },
         {
           "disabled": false,
-          "document": "内存\n",
+          "document": "内存，单位：GB\n",
           "example": "32GB",
           "member": "string",
           "name": "Memory",
@@ -1016,7 +1016,7 @@
         },
         {
           "disabled": false,
-          "document": "实例创建时间",
+          "document": "实例创建时间，时间格式：\"YYYY-MM-DD HH:MM:SS\"",
           "example": "2023-11-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -1026,7 +1026,7 @@
         },
         {
           "disabled": false,
-          "document": "公网出带宽上限，默认10Mbps",
+          "document": "公网出带宽上限，默认10Mbps，单位：Mbps",
           "example": "10Mbps",
           "member": "string",
           "name": "MaxOutBandwidth",
@@ -1036,7 +1036,7 @@
         },
         {
           "disabled": false,
-          "document": "每月免费流量，默认500G",
+          "document": "每月免费流量，默认500G，单位：GB",
           "example": "500",
           "member": "string",
           "name": "MaxFreeTraffic",
@@ -1066,7 +1066,7 @@
         },
         {
           "disabled": false,
-          "document": "应用服务的操作系统类型",
+          "document": "应用服务的操作系统类型；参数：linux、windows",
           "example": "linux or windows",
           "member": "string",
           "name": "OSType",
@@ -1456,7 +1456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ap-guangzhou\n",
+          "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -1466,7 +1466,7 @@
         },
         {
           "disabled": false,
-          "document": "华南地区(广州)",
+          "document": "地域名称",
           "example": "华南地区(广州)",
           "member": "string",
           "name": "RegionName",
@@ -1486,7 +1486,7 @@
         },
         {
           "disabled": false,
-          "document": "学术加速是否支持：\nNO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。对于ALREADY_SUPPORT的地域才需进一步调用DescribeScholarRocketStatus查看学术加速是开启还是关闭",
+          "document": "学术加速是否支持：\nNO_NEED_SUPPORT表示不需支持；NOT_SUPPORT_YET表示暂未支持；ALREADY_SUPPORT表示已经支持。",
           "example": "ALREADY_SUPPORT",
           "member": "string",
           "name": "ScholarRocketSupportState",
@@ -1502,7 +1502,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "应用ID通过调用接口[DescribeApplications](https://cloud.tencent.com/document/api/1721/101609)获取。",
           "example": "app-jknfna",
           "member": "string",
           "name": "ApplicationId",
@@ -1511,7 +1511,7 @@
         },
         {
           "disabled": false,
-          "document": "算力套餐类型",
+          "document": "算力套餐类型, 枚举：XL,XL_2X, 3XL, 3XL_2X, 4XL, 24GB_A",
           "example": "XL",
           "member": "string",
           "name": "BundleType",
@@ -1529,7 +1529,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例数量。",
+          "document": "购买实例数量，单次请求实例数量上限为10.",
           "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
@@ -1538,7 +1538,7 @@
         },
         {
           "disabled": false,
-          "document": "实例显示名称",
+          "document": "实例显示名称，名称长度限制为128个字符.",
           "example": "hai",
           "member": "string",
           "name": "InstanceName",
@@ -1621,8 +1621,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "'hai-2dfajzo4q'",
+          "document": "实例ID\n可通过DescribeInstances获取实例ID",
+          "example": "hai-2dfajzo4q",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1667,8 +1667,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "'hai-2dfajzo4q'",
+          "document": "实例ID\n可通过DescribeInstances获取实例ID",
+          "example": "hai-2dfajzo4q",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1733,7 +1733,7 @@
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GB。默认值为 80",
+          "document": "系统盘大小，单位：GB。默认值为 80，取值范围：80-1000",
           "example": "250",
           "member": "int64",
           "name": "DiskSize",
@@ -1761,7 +1761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表",
+          "document": "实例ID列表\n可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId",
           "example": "['hai-2dfajzo4q']\t",
           "member": "string",
           "name": "InstanceIds",

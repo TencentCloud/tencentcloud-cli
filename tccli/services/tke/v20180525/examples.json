@@ -1504,14 +1504,6 @@
         "title": "启用vpc-cni网络"
       }
     ],
-    "ForwardApplicationRequestV3": [
-      {
-        "document": "",
-        "input": "https://tke.tencentcloudapi.com/?Action=ForwardApplicationRequestV3\n&Method=GET\n&Path=/apis/application.tkestack.io/v1/namespaces/cls-gk7cm35k/apps/\n&ClusterName=cls-gk7cm35k\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ResponseBody\": \"{\\\"kind\\\":\\\"App\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "操作TKE集群的addon"
-      }
-    ],
     "ForwardTKEEdgeApplicationRequestV3": [
       {
         "document": "",

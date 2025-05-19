@@ -22,12 +22,12 @@ Output:
                 "CreatedTime": "2019-05-07 18:00:26",
                 "FlowLogDescription": "",
                 "FlowLogId": "fl-2edhcclz",
-                "FlowLogName": "demo",
+                "FlowLogName": "FlowLogName1",
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
-                "StorageType": "cls",
+                "StorageType": "ckafka",
                 "FlowLogStorage": {
                     "StorageTopic": "topic-siqmaox1",
                     "StorageId": "ckafka-akwiqms1"
@@ -42,12 +42,12 @@ Output:
                 "CreatedTime": "2019-05-08 10:48:26",
                 "FlowLogDescription": "",
                 "FlowLogId": "fl-f42uhpkj",
-                "FlowLogName": "demo",
+                "FlowLogName": "FlowLogName2",
                 "ResourceId": "eni-78ysaex1",
                 "ResourceType": "NETWORKINTERFACE",
                 "TrafficType": "ACCEPT",
                 "VpcId": "vpc-pq9vxykj",
-                "StorageType": "cls",
+                "StorageType": "ckafka",
                 "FlowLogStorage": {
                     "StorageTopic": "topic-siqmaox1",
                     "StorageId": "ckafka-akwiqms1"
