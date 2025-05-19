@@ -8,6 +8,14 @@
         "title": "请求示例"
       }
     ],
+    "BatchProcessMedia": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchProcessMedia\n<公共请求参数>\n\n{\n    \"InputInfo\": [\n        {\n            \"Type\": \"URL\",\n            \"UrlInputInfo\": {\n                \"Url\": \"https://tetst-xxx-12xxxxx.cos.ap-xxxxx.myqcloud.com/processmedia/52.mp4\"\n            }\n        }\n    ],\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"tetst-xxxx-125xxxxx\",\n            \"Region\": \"ap-xxxxx\"\n        }\n    },\n    \"OutputDir\": \"/output/\",\n    \"SmartSubtitlesTask\": {\n        \"RawParameter\": {\n            \"SubtitleType\": 2,\n            \"VideoSrcLanguage\": \"zh\",\n            \"SubtitleFormat\": \"vtt\",\n            \"TranslateSwitch\": \"ON\",\n            \"TranslateDstLanguage\": \"en\"\n        }\n    },\n    \"TaskNotifyConfig\": {\n        \"NotifyType\": \"URL\",\n        \"NotifyUrl\": \"http://xxxx.com/v2/push/mps_test?token=73YcsZyP\"\n    },\n    \"SessionContext\": \"asdzxcs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b30891cd-cdc7-47db-94d3-4dbb85641dad\",\n        \"TaskId\": \"24000030-BatchTask-e6fefa34fc497449c1a043b9a594c7det20\"\n    }\n}",
+        "title": "发起任务"
+      }
+    ],
     "BatchStartStreamLinkFlow": [
       {
         "document": "请求示例",
@@ -538,6 +546,14 @@
         "title": "DescribeAsrHotwordsList"
       }
     ],
+    "DescribeBatchTaskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchTaskDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"24xxxx-BatchTask-6b24c23ee5xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BatchTaskResult\": {\n            \"InputInfos\": [\n                {\n                    \"CosInputInfo\": {\n                        \"Bucket\": \"\",\n                        \"Object\": \"\",\n                        \"Region\": \"\"\n                    },\n                    \"S3InputInfo\": null,\n                    \"Type\": \"URL\",\n                    \"UrlInputInfo\": {\n                        \"Url\": \"http://tetst-xxxx-12234xxx.cos.ap-xxxx.myqcloud.com/processmedia/52.mp4\"\n                    }\n                }\n            ],\n            \"Metadatas\": [\n                {\n                    \"AudioDuration\": 55.454,\n                    \"AudioStreamSet\": [\n                        {\n                            \"Bitrate\": 252293,\n                            \"Channel\": 1,\n                            \"Codec\": \"aac\",\n                            \"Codecs\": \"\",\n                            \"Loudness\": 0,\n                            \"SamplingRate\": 44100\n                        }\n                    ],\n                    \"Bitrate\": 1734778,\n                    \"Container\": \"mp4\",\n                    \"Duration\": 55.455,\n                    \"Height\": 1080,\n                    \"Rotate\": 0,\n                    \"Size\": 12025270,\n                    \"VideoDuration\": 54.955,\n                    \"VideoStreamSet\": [\n                        {\n                            \"Bitrate\": 1487136,\n                            \"Codec\": \"h264\",\n                            \"Codecs\": \"\",\n                            \"ColorPrimaries\": \"\",\n                            \"ColorSpace\": \"\",\n                            \"ColorTransfer\": \"\",\n                            \"Fps\": 32,\n                            \"FpsDenominator\": 0,\n                            \"FpsNumerator\": 0,\n                            \"HdrType\": \"sdr\",\n                            \"Height\": 1080,\n                            \"Width\": 1920\n                        }\n                    ],\n                    \"Width\": 1920\n                }\n            ],\n            \"SmartSubtitlesTaskResult\": {\n                \"Input\": {\n                    \"Definition\": 0,\n                    \"RawParameter\": {\n                        \"AsrHotWordsConfigure\": null,\n                        \"ExtInfo\": \"\",\n                        \"SubtitleFormat\": \"vtt\",\n                        \"SubtitleType\": 2,\n                        \"TranslateDstLanguage\": \"en\",\n                        \"TranslateSwitch\": \"ON\",\n                        \"VideoSrcLanguage\": \"zh\"\n                    }\n                },\n                \"Outputs\": [\n                    {\n                        \"ErrCodeExt\": \"\",\n                        \"Message\": \"SUCCESS\",\n                        \"Progress\": 100,\n                        \"Status\": \"SUCCESS\",\n                        \"TransTextTask\": {\n                            \"SegmentSet\": [\n                                {\n                                    \"Confidence\": 99,\n                                    \"EndTimeOffset\": 2.424,\n                                    \"StartTimeOffset\": 1.774,\n                                    \"Text\": \"走路。\",\n                                    \"Trans\": \"Walking.\",\n                                    \"Wordlist\": []\n                                },\n                                {\n                                    \"Confidence\": 99,\n                                    \"EndTimeOffset\": 55.121,\n                                    \"StartTimeOffset\": 53.721,\n                                    \"Text\": \"就在你跟再说。\",\n                                    \"Trans\": \"Just before you tell me.\",\n                                    \"Wordlist\": []\n                                }\n                            ],\n                            \"SubtitlePath\": \"http://tetst-xxxx-12234xxx.cos.ap-xxxx.myqcloud.com/output/3529.vtt\"\n                        }\n                    }\n                ]\n            }\n        },\n        \"BeginProcessTime\": \"2025-05-17T07:15:11Z\",\n        \"CreateTime\": \"2025-05-17T07:15:11Z\",\n        \"ExtInfo\": \"\",\n        \"FinishTime\": \"2025-05-17T07:15:36Z\",\n        \"RequestId\": \"0af8e6df-622d-49b5-98e6-4d8e3f294e5f\",\n        \"SessionContext\": \"asdzxcs\",\n        \"SessionId\": \"qwer123\",\n        \"Status\": \"FINISH\",\n        \"TaskId\": \"24xxxxx-BatchTask-e6fefa34fc497xxxxxxx7det20\",\n        \"TaskNotifyConfig\": {\n            \"AwsSQS\": null,\n            \"CmqModel\": \"\",\n            \"CmqRegion\": \"\",\n            \"NotifyKey\": \"\",\n            \"NotifyMode\": \"Finish\",\n            \"NotifyType\": \"URL\",\n            \"NotifyUrl\": \"http://xxxx.com/v2/push/mps_test?token=73YcsZyP\",\n            \"QueueName\": \"\",\n            \"TopicName\": \"\"\n        },\n        \"TaskType\": \"BatchTask\",\n        \"TasksPriority\": 0\n    }\n}",
+        "title": "查询结果"
+      }
+    ],
     "DescribeContentReviewTemplates": [
       {
         "document": "从序号 0 开始，获取 10 个智能审核模板，包括系统默认智能审核模板。",
@@ -566,6 +582,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 1,\n                \"Type\": \"abc\",\n                \"Name\": \"abc\",\n                \"Width\": 1,\n                \"Height\": 1,\n                \"ResolutionAdaptive\": \"abc\",\n                \"SampleType\": \"abc\",\n                \"SampleInterval\": 1,\n                \"RowCount\": 1,\n                \"ColumnCount\": 1,\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"FillType\": \"abc\",\n                \"Comment\": \"abc\",\n                \"Format\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取雪碧图模板列表"
+      }
+    ],
+    "DescribeImageTaskDetail": [
+      {
+        "document": "查询任务结果",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageTaskDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"24000089-WorkflowTask-0723542d0c164c958ba116874fa9b0c4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-05-16T07:44:26Z\",\n        \"FinishTime\": \"2025-05-16T07:44:30Z\",\n        \"RequestId\": \"147e6b46-efeb-48cf-9186-b195b2bf4f9d\",\n        \"Status\": \"FINISH\",\n        \"TaskType\": \"WorkflowTask\"\n    }\n}",
+        "title": "获取任务详情"
       }
     ],
     "DescribeLiveRecordTemplates": [
