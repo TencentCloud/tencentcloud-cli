@@ -2127,6 +2127,15 @@
           "name": "JobDateTime",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5031,6 +5040,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cel表达式",
+          "example": "has(request.cookies) && has(request.cookies.asda) && request.cookies.asda.contains('asdad')",
+          "member": "string",
+          "name": "CelRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑操作符",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6725,13 +6754,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "正常情况下为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正常情况下为null",
           "example": "success",
           "member": "string",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19279,11 +19308,20 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23638,24 +23676,6 @@
         },
         {
           "disabled": false,
-          "document": "检测Url",
-          "example": "/test",
-          "member": "string",
-          "name": "Url",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含",
-          "example": "0",
-          "member": "int64",
-          "name": "MatchFunc",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验",
           "example": "22",
           "member": "string",
@@ -23679,6 +23699,24 @@
           "member": "int64",
           "name": "ValidTime",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检测Url",
+          "example": "/test",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含",
+          "example": "0",
+          "member": "int64",
+          "name": "MatchFunc",
+          "required": false,
           "type": "int"
         },
         {
@@ -23759,6 +23797,24 @@
           "example": "only_limit",
           "member": "string",
           "name": "LimitMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cel表达式",
+          "example": "has(request.cookies) && has(request.cookies.asda) && request.cookies.asda.contains('asdad')",
+          "member": "string",
+          "name": "CelRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置方式的逻辑操作符，and或者or",
+          "example": "or",
+          "member": "string",
+          "name": "LogicalOp",
           "required": false,
           "type": "string"
         }

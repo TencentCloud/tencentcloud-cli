@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod DescribeSnapshotList --cli-unfold-argument  \
-    --Domain domain.com
+    --Domain dnspod.cn
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
                 "Status": "normal",
                 "CosUrl": "https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx1.csv",
                 "CreatedOn": "2022-10-16 11:34:20",
-                "Domain": "domain.com"
+                "Domain": "dnspod.cn"
             },
             {
                 "Id": "3EEXXF2D",
@@ -29,7 +29,7 @@ Output:
                 "Status": "normal",
                 "CosUrl": "https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx2.csv",
                 "CreatedOn": "2022-09-16 11:34:09",
-                "Domain": "domain.com"
+                "Domain": "dnspod.cn"
             },
             {
                 "Id": "B1XXXX8A",
@@ -37,7 +37,7 @@ Output:
                 "Status": "normal",
                 "CosUrl": "https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_xx3.csv",
                 "CreatedOn": "2022-08-16 11:34:03",
-                "Domain": "domain.com"
+                "Domain": "dnspod.cn"
             }
         ],
         "Info": {

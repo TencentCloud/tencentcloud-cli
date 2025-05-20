@@ -7213,7 +7213,7 @@
         },
         {
           "disabled": false,
-          "document": "数量,  数量需大于2",
+          "document": "数量,  数量需大于2, 最大1000",
           "example": "2",
           "member": "uint64",
           "name": "Count",
@@ -7227,15 +7227,6 @@
           "member": "string",
           "name": "SessionId",
           "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "最后一条记录ID",
-          "example": "无",
-          "member": "string",
-          "name": "LastRecordId",
-          "required": false,
           "type": "string"
         },
         {
@@ -7258,7 +7249,16 @@
         },
         {
           "disabled": false,
-          "document": "传该值，代表拉取该记录id的前后总共count条消息记录",
+          "document": "最后一条记录ID， 消息从后往前获取\n\nMidRecordId与LastRecordId只能选择一个\n",
+          "example": "无",
+          "member": "string",
+          "name": "LastRecordId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传该值，代表拉取该记录id的前后总共count条消息记录\n\nMidRecordId与LastRecordId只能选择一个\n",
           "example": "无",
           "member": "string",
           "name": "MidRecordId",

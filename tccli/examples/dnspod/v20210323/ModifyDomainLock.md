@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod ModifyDomainLock --cli-unfold-argument  \
-    --Domain dnspod.site \
+    --Domain dnspod.cn \
     --DomainId 62 \
     --LockDays 30
 ```

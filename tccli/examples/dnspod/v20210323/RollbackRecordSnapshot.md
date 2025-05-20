@@ -7,7 +7,7 @@ Input:
 ```
 tccli dnspod RollbackRecordSnapshot --cli-unfold-argument  \
     --TaskId 179 \
-    --Domain domain.com \
+    --Domain dnspod.cn \
     --SnapshotId A4EE5XXX \
     --RecordList.0.RecordId 11112 \
     --RecordList.0.SubDomain no_line \

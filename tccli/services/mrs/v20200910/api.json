@@ -1269,6 +1269,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内窥镜报告V2",
+          "example": "无",
+          "member": "Check",
+          "name": "EndoscopyV2",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6812,6 +6822,16 @@
           "example": "正常",
           "member": "string",
           "name": "InferNormal",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标本",
+          "example": "血",
+          "member": "string",
+          "name": "Sample",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13877,6 +13897,16 @@
           "example": "object",
           "member": "TimelineInformation",
           "name": "Timeline",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内窥镜报告V2",
+          "example": "object",
+          "member": "Check",
+          "name": "EndoscopyV2",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dnspod DeleteRecord --cli-unfold-argument  \
-    --Domain dnspod.site \
-    --DomainId 62 \
+    --Domain dnspod.cn \
+    --DomainId 1923 \
     --RecordId 162
 ```
 

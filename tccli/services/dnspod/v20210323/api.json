@@ -197,7 +197,7 @@
       "status": "online"
     },
     "DescribeBatchTask": {
-      "document": "获取任务详情",
+      "document": "获取批量操作任务执行详情",
       "input": "DescribeBatchTaskRequest",
       "name": "获取任务详情",
       "output": "DescribeBatchTaskResponse",
@@ -1042,7 +1042,7 @@
         },
         {
           "disabled": false,
-          "document": "快照 ID",
+          "document": "快照记录 ID",
           "example": "BCED853D",
           "member": "string",
           "name": "SnapshotId",
@@ -1550,7 +1550,7 @@
         {
           "disabled": false,
           "document": "域名数组",
-          "example": "[dnspod1.cn,dnspod2.cn]",
+          "example": "[\"dnspod1.cn\",\"dnspod2.cn\"]",
           "member": "string",
           "name": "DomainList",
           "required": true,
@@ -1815,6 +1815,7 @@
           "example": "1",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2143,8 +2144,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID，多个 domain_id 用英文逗号进行分割。",
-          "example": "31,32",
+          "document": "域名ID，多个域名ID用英文逗号进行分割。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "example": "[\"49\",\"53\"]",
           "member": "string",
           "name": "DomainIdList",
           "required": true,
@@ -2171,6 +2172,7 @@
           "example": "无",
           "member": "CreateRecordBatchDetail",
           "name": "DetailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2180,6 +2182,7 @@
           "example": "101",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2198,7 +2201,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -2215,7 +2218,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -2234,6 +2237,7 @@
           "example": "1578",
           "member": "uint64",
           "name": "GroupId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2260,7 +2264,7 @@
         },
         {
           "disabled": false,
-          "document": "记录类型，通过 API 记录类型获得，大写英文，比如：A 。",
+          "document": "记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。",
           "example": "A",
           "member": "string",
           "name": "RecordType",
@@ -2269,7 +2273,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
+          "document": "记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，中文，比如：默认。",
           "example": "默认",
           "member": "string",
           "name": "RecordLine",
@@ -2305,7 +2309,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -2314,7 +2318,7 @@
         },
         {
           "disabled": false,
-          "document": "MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。",
+          "document": "MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。",
           "example": "10",
           "member": "uint64",
           "name": "MX",
@@ -2496,6 +2500,7 @@
           "example": "1",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2589,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
+          "document": "记录线路",
           "example": "默认",
           "member": "string",
           "name": "RecordLine",
@@ -2625,7 +2630,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -2661,7 +2666,7 @@
         },
         {
           "disabled": false,
-          "document": "记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
+          "document": "记录分组 Id。",
           "example": "3430",
           "member": "uint64",
           "name": "GroupId",
@@ -3166,7 +3171,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3174,7 +3179,7 @@
         },
         {
           "disabled": false,
-          "document": "分组 ID",
+          "document": "分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组",
           "example": "145",
           "member": "uint64",
           "name": "GroupId",
@@ -3183,7 +3188,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -3301,7 +3306,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3309,7 +3314,7 @@
         },
         {
           "disabled": false,
-          "document": "快照记录 ID",
+          "document": "快照 ID。可以通过接口DescribeSnapshotList查询快照 ID",
           "example": "EG34GE",
           "member": "string",
           "name": "SnapshotId",
@@ -3318,7 +3323,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -3599,7 +3604,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "1143114",
           "member": "uint64",
           "name": "DomainId",
@@ -3783,7 +3788,7 @@
         },
         {
           "disabled": false,
-          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "1009",
           "member": "uint64",
           "name": "DomainId",
@@ -3857,7 +3862,7 @@
         },
         {
           "disabled": false,
-          "document": "根据域名分组 id 获取域名，可通过 DescribeDomain 或 DescribeDomainList 接口 GroupId 字段获取。",
+          "document": "根据域名分组 id 获取域名",
           "example": "[1]",
           "member": "int64",
           "name": "GroupId",
@@ -4065,7 +4070,7 @@
         },
         {
           "disabled": false,
-          "document": "分组ID, 获取指定分组的域名",
+          "document": "分组ID, 获取指定分组的域名，可以通过接口DescribeDomainGroupList查看当前域名分组信息",
           "example": "1",
           "member": "int64",
           "name": "GroupId",
@@ -4414,7 +4419,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "61",
           "member": "uint64",
           "name": "DomainId",
@@ -4433,6 +4438,7 @@
           "example": "无",
           "member": "DomainShareUserInfo",
           "name": "DomainShareList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4469,6 +4475,7 @@
           "example": "无",
           "member": "WhoisInfo",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4578,6 +4585,7 @@
           "example": "无",
           "member": "LineGroupItem",
           "name": "LineGroups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4587,6 +4595,7 @@
           "example": "无",
           "member": "LineGroupSum",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4650,7 +4659,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "1923",
           "member": "uint64",
           "name": "DomainId",
@@ -4669,6 +4678,7 @@
           "example": "true",
           "member": "bool",
           "name": "Exist",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4695,7 +4705,7 @@
         },
         {
           "disabled": false,
-          "document": "要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。",
+          "document": "要获取的解析记录所属的域名 Id，如果传了 DomainId，系统将会忽略 Domain 参数。 ",
           "example": "81345824",
           "member": "uint64",
           "name": "DomainId",
@@ -4722,7 +4732,7 @@
         },
         {
           "disabled": false,
-          "document": "获取某些线路ID的解析记录。可以通过接口 DescribeRecordLineList 查看当前域名允许的线路信息。",
+          "document": "获取某些线路ID的解析记录。",
           "example": "[\"0\"]",
           "member": "string",
           "name": "RecordLine",
@@ -4731,7 +4741,7 @@
         },
         {
           "disabled": false,
-          "document": "获取某些分组下的解析记录时，传这个分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
+          "document": "获取某些分组下的解析记录时，传这个分组 Id。",
           "example": "[23]",
           "member": "uint64",
           "name": "GroupId",
@@ -4767,7 +4777,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认值为0。如果入参携带\"Domain\",\"ffset\",\"Limit\" 这3个以外的参数，记录结果限制最大3000条",
+          "document": "偏移量，默认值为0。如果入参携带\"Domain\",\"offset\",\"Limit\" 这3个以外的参数，记录结果限制最大3000条",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4941,7 +4951,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -4949,7 +4959,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -4986,6 +4996,7 @@
           "example": "无",
           "member": "RecordGroupInfo",
           "name": "GroupList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5012,7 +5023,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询线路列表的域名 ID。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。",
+          "document": "要查询线路列表的域名 ID。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。",
           "example": "97213027",
           "member": "uint64",
           "name": "DomainId",
@@ -5114,8 +5125,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要获取的解析记录所属的域名",
-          "example": "shenjianing.com",
+          "document": "域名",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5123,7 +5134,7 @@
         },
         {
           "disabled": false,
-          "document": "要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "81345824",
           "member": "uint64",
           "name": "DomainId",
@@ -5168,7 +5179,7 @@
         },
         {
           "disabled": false,
-          "document": "获取某个分组下的解析记录时，传这个分组Id。",
+          "document": "获取某个分组下的解析记录时，传这个分组Id。可通过DescribeRecordGroupList接口获取所有分组",
           "example": "23",
           "member": "uint64",
           "name": "GroupId",
@@ -5498,7 +5509,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5506,7 +5517,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "121313",
           "member": "uint64",
           "name": "DomainId",
@@ -5525,6 +5536,7 @@
           "example": "无",
           "member": "SnapshotConfig",
           "name": "SnapshotConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5543,7 +5555,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5551,7 +5563,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -5570,6 +5582,7 @@
           "example": "无",
           "member": "SnapshotPageInfo",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5579,6 +5592,7 @@
           "example": "无",
           "member": "SnapshotInfo",
           "name": "SnapshotList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6019,6 +6033,7 @@
           "example": "无",
           "member": "VASStatisticItem",
           "name": "VASList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7073,6 +7088,7 @@
           "example": "https://xx.cos.yy.com/zzz.csv",
           "member": "string",
           "name": "CosUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7700,7 +7716,7 @@
         },
         {
           "disabled": false,
-          "document": "域名要锁定的天数，最多可锁定的天数可以通过获取域名权限接口获取。",
+          "document": "域名要锁定的天数，最多可锁定的天数可以通过DescribeDomainPurview接口获取。",
           "example": "30",
           "member": "uint64",
           "name": "LockDays",
@@ -7728,6 +7744,7 @@
           "example": "无",
           "member": "LockInfo",
           "name": "LockInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7988,7 +8005,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
+          "document": "记录线路，中文，比如：默认。",
           "example": "联通",
           "member": "string",
           "name": "RecordLine",
@@ -7997,7 +8014,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "12620688",
           "member": "uint64",
           "name": "DomainId",
@@ -8015,7 +8032,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "线路的 ID，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -8291,7 +8308,7 @@
         },
         {
           "disabled": false,
-          "document": "MX记录优先级，仅当修改为 MX 记录时为必填参数。",
+          "document": "MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。",
           "example": "5",
           "member": "string",
           "name": "MX",
@@ -8316,7 +8333,7 @@
         },
         {
           "disabled": false,
-          "document": "见modifyRecordBatchDetail",
+          "document": "见ModifyRecordBatchDetail",
           "example": "无",
           "member": "ModifyRecordBatchDetail",
           "name": "DetailList",
@@ -8384,6 +8401,7 @@
           "example": "162",
           "member": "uint64",
           "name": "RecordId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8402,7 +8420,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -8419,7 +8437,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的分组 ID",
+          "document": "要修改的分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组",
           "example": "146",
           "member": "uint64",
           "name": "GroupId",
@@ -8428,7 +8446,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -8447,6 +8465,7 @@
           "example": "1578",
           "member": "uint64",
           "name": "GroupId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8527,7 +8546,7 @@
         },
         {
           "disabled": false,
-          "document": "记录类型，通过 API 记录类型获得，大写英文，比如：A 。",
+          "document": "记录类型，可通过接口DescribeRecordType获得，大写英文，比如：A 。",
           "example": "A",
           "member": "string",
           "name": "RecordType",
@@ -8536,7 +8555,7 @@
         },
         {
           "disabled": false,
-          "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
+          "document": "记录线路，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息。比如：默认。",
           "example": "默认",
           "member": "string",
           "name": "RecordLine",
@@ -8581,7 +8600,7 @@
         },
         {
           "disabled": false,
-          "document": "线路的 ID，通过 API 记录线路获得，英文字符串，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
+          "document": "线路的 ID，可以通过接口DescribeRecordLineList查看当前域名允许的线路信息，比如：10=1。参数RecordLineId优先级高于RecordLine，如果同时传递二者，优先使用RecordLineId参数。",
           "example": "10=1",
           "member": "string",
           "name": "RecordLineId",
@@ -8590,7 +8609,7 @@
         },
         {
           "disabled": false,
-          "document": "MX 优先级，当记录类型是 MX 时有效，范围1-20，MX 记录时必选。",
+          "document": "MX 优先级，当记录类型是 MX、HTTPS、SVCB 时必填，范围1-65535。",
           "example": "10",
           "member": "uint64",
           "name": "MX",
@@ -8737,7 +8756,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -8745,7 +8764,7 @@
         },
         {
           "disabled": false,
-          "document": "分组 ID",
+          "document": "分组 ID，可通过DescribeRecordGroupList接口获取所有记录分组",
           "example": "145",
           "member": "uint64",
           "name": "GroupId",
@@ -8754,7 +8773,7 @@
         },
         {
           "disabled": false,
-          "document": "记录 ID，多个 ID 用竖线“|”分割",
+          "document": "记录 ID，多个 ID 用竖线“|”分割，可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
           "example": "123232|2343232",
           "member": "string",
           "name": "RecordId",
@@ -8763,7 +8782,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -8862,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "1923",
           "member": "uint64",
           "name": "DomainId",
@@ -8925,7 +8944,7 @@
         },
         {
           "disabled": false,
-          "document": "记录 ID 。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
+          "document": "记录 ID 。",
           "example": "162",
           "member": "uint64",
           "name": "RecordId",
@@ -8934,7 +8953,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
           "example": "1923",
           "member": "uint64",
           "name": "DomainId",
@@ -9741,7 +9760,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "xxyy.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -9749,7 +9768,7 @@
         },
         {
           "disabled": false,
-          "document": "快照 ID",
+          "document": "快照 ID。可以通过接口DescribeSnapshotList查询快照 ID",
           "example": "BCED853D",
           "member": "string",
           "name": "SnapshotId",
@@ -9767,7 +9786,7 @@
         },
         {
           "disabled": false,
-          "document": "之前的快照回滚任务 ID",
+          "document": "之前的快照回滚任务 ID。可从RollbackSnapshot接口获取",
           "example": "45",
           "member": "uint64",
           "name": "TaskId",
@@ -9776,7 +9795,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。",
+          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
           "example": "3123",
           "member": "uint64",
           "name": "DomainId",
@@ -9795,6 +9814,7 @@
           "example": "23113",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

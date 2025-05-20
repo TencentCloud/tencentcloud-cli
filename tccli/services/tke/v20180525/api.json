@@ -1700,7 +1700,7 @@
         {
           "disabled": false,
           "document": "实例额外需要设置参数信息(默认值)",
-          "example": "{\"MountTarget\":\"/data\",\"DockerGraphPath\":\"/data/docker\",\"Unschedulable\":0,\"DataDisks\":[{\"FileSystem\":\"xfs\",\"AutoFormatAndMount\":true,\"MountTarget\":\"/data\",\"DiskPartition\":\"/dev/vdb\"}],\"ExtraArgs\":{\"Kubelet\":[\"root-dir=/data/kubelet\",\"eviction-hard=memory.available<500Mi\",\"feature-gates=VolumeSubpathEnvExpansion=true\",\"kube-reserved=cpu=264m,memory=1000Mi\",\"system-reserved=cpu=110m,memory=1000Mi\",\"cpu-manager-policy=static\"]}}",
+          "example": "{\"MountTarget\":\"/data\",\"DockerGraphPath\":\"/data/docker\",\"Unschedulable\":0,\"DataDisks\":[{\"FileSystem\":\"xfs\",\"AutoFormatAndMount\":true,\"MountTarget\":\"/data\",\"DiskPartition\":\"/dev/vdb\"}],\"ExtraArgs\":{\"Kubelet\":[\"root-dir=/data/kubelet\"]}}",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
           "required": false,
@@ -1745,7 +1745,7 @@
         {
           "disabled": false,
           "document": "节点池选项",
-          "example": "{\"AddToNodePool\":true,\"NodePoolId\":\"np-hzfuue8h\",\"InheritConfigurationFromNodePool\":true}}",
+          "example": "{\"AddToNodePool\":true,\"NodePoolId\":\"np-hzfuue8h\",\"InheritConfigurationFromNodePool\":true}",
           "member": "NodePoolOption",
           "name": "NodePool",
           "required": false,
@@ -1787,7 +1787,7 @@
         {
           "disabled": false,
           "document": "失败的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[",
+          "example": "[\"ins-4z4055z4\",\"ins-jz4005a6\"]",
           "member": "string",
           "name": "FailedInstanceIds",
           "output_required": true,
@@ -1797,7 +1797,7 @@
         {
           "disabled": false,
           "document": "成功的节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[",
+          "example": "[\"ins-4z4055z4\",\"ins-jz4005a6\"]",
           "member": "string",
           "name": "SuccInstanceIds",
           "output_required": true,
@@ -1807,7 +1807,7 @@
         {
           "disabled": false,
           "document": "超时未返回出来节点的ID(可能失败，也可能成功)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[",
+          "example": "[\"ins-4z4055z4\",\"ins-jz4005a6\"]",
           "member": "string",
           "name": "TimeoutInstanceIds",
           "output_required": true,
@@ -1817,7 +1817,7 @@
         {
           "disabled": false,
           "document": "失败的节点的失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[",
+          "example": "[\"instance id not found\"]",
           "member": "string",
           "name": "FailedReasons",
           "output_required": true,

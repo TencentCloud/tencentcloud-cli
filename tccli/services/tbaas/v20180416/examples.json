@@ -66,7 +66,7 @@
     ],
     "GetInvokeTx": [
       {
-        "document": "",
+        "document": "查询异步模式下Invoke接口的调用结果",
         "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetInvokeTx\n<公共请求参数>\n\n{\n    \"PeerGroup\": \"NewOrg02\",\n    \"ClusterId\": \"251005746envnew\",\n    \"PeerName\": \"peer0.neworg02.envnew\",\n    \"Module\": \"transaction\",\n    \"TxId\": \"280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c\",\n    \"GroupName\": \"NewOrg02\",\n    \"Operation\": \"query_txid\",\n    \"ChannelName\": \"ch042103\"\n}",
         "output": "{\n    \"Response\": {\n        \"BlockId\": 6,\n        \"RequestId\": \"551b801e-6dbe-46be-aa46-f8cc3ff1cd09\",\n        \"TxValidationCode\": 0,\n        \"TxValidationMsg\": \"VALID\"\n    }\n}",
         "title": "查询异步模式下Invoke接口的调用结果"

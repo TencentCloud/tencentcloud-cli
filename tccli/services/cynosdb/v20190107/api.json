@@ -5574,6 +5574,17 @@
         },
         {
           "disabled": false,
+          "document": "cynos版本标签",
+          "example": "beta",
+          "member": "string",
+          "name": "CynosVersionTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "存储容量",
           "example": "1000",
           "member": "int64",
@@ -5820,6 +5831,17 @@
           "example": "cynosdbmysql-gdn-dbssdfa1",
           "member": "string",
           "name": "GdnId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群角色。主集群- primary，从集群 - standby，如果 GdnId为空，该字段无效。",
+          "example": "primary",
+          "member": "string",
+          "name": "GdnRole",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -19792,7 +19814,7 @@
         },
         {
           "disabled": false,
-          "document": "回档到serverlessls集群时最小CPU",
+          "document": "回档到 Serverless 集群时最小 CPU",
           "example": "0",
           "member": "int64",
           "name": "MinCpu",
@@ -19802,7 +19824,7 @@
         },
         {
           "disabled": false,
-          "document": "回档到serverlessls集群时最大CPU",
+          "document": "回档到 Serverless 集群时最大 CPU",
           "example": "10",
           "member": "int64",
           "name": "MaxCpu",

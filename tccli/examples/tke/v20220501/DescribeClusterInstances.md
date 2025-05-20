@@ -76,9 +76,26 @@ Output:
                 "Native": {
                     "CPU": 2,
                     "CreatedAt": "2023-08-17 20:46:39",
+                    "DataDisks": [
+                        {
+                            "AutoFormatAndMount": true,
+                            "DiskPartition": "",
+                            "DiskSize": 50,
+                            "DiskType": "CLOUD_PREMIUM",
+                            "FileSystem": "ext4",
+                            "MountTarget": "/data"
+                        }
+                    ],
                     "DisplayName": "tke-np-4h43fuxj-worker",
                     "ExpiredTime": "",
                     "GPU": 0,
+                    "GPUParams": {
+                        "CUDA": "",
+                        "CUDNN": "",
+                        "Driver": "",
+                        "Fabric": false,
+                        "MIGEnable": false
+                    },
                     "InstanceChargeType": "POSTPAID_BY_HOUR",
                     "InstanceFamily": "S2",
                     "InstanceType": "S2.MEDIUM2",
@@ -88,6 +105,9 @@ Output:
                         "MaxBandwidthOut": 0
                     },
                     "IsProtectedFromScaleIn": false,
+                    "KeyIds": [
+                        "skey-ccccc"
+                    ],
                     "LanIp": "10.0.0.x",
                     "LoginStatus": "Opened",
                     "MachineName": "np-4h43fuxj-4h43fuxj",
@@ -100,7 +120,15 @@ Output:
                         "sg-ccccc"
                     ],
                     "SubnetId": "subnet-nqx1ymwm",
+                    "SystemDisk": {
+                        "AutoFormatAndMount": false,
+                        "DiskSize": 50,
+                        "DiskType": "CLOUD_PREMIUM",
+                        "FileSystem": "",
+                        "MountTarget": ""
+                    },
                     "VpcId": "vpc-zzzzz",
+                    "WanIp": "",
                     "Zone": "ap-guangzhou-3"
                 },
                 "NodePoolId": "np-4h43fuxj",

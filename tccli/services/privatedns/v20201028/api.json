@@ -231,7 +231,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VpcId： vpc-xadsafsdasd",
+          "document": "VpcId",
           "example": "vpc-dfaqw1f",
           "member": "string",
           "name": "VpcId",
@@ -2475,7 +2475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VpcId： vpc-xadsafsdasd",
+          "document": "VpcId",
           "example": "vpc-dsd8ulf",
           "member": "string",
           "name": "UniqVpcId",

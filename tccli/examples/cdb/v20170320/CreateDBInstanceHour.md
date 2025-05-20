@@ -37,3 +37,41 @@ Output:
 }
 ```
 
+**Example 2: 创建实例时设置表名大小写敏感**
+
+创建实例时设置表名大小写敏感
+
+Input: 
+
+```
+tccli cdb CreateDBInstanceHour --cli-unfold-argument  \
+    --GoodsNum 1 \
+    --Memory 1000 \
+    --Volume 25 \
+    --EngineVersion 8.0 \
+    --UniqVpcId vpc-4pagx2lk \
+    --UniqSubnetId subnet-a2eaqb1t \
+    --Zone ap-beijing-3 \
+    --InstanceRole master \
+    --ParamList.0.Name lower_case_table_names \
+    --ParamList.0.Value 0 \
+    --DeviceType UNIVERSAL \
+    --Cpu 1 \
+    --EngineType InnoDB
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6166b535-64e8-4372-86fc-d6e26791f4fc",
+        "InstanceIds": [
+            "cdb-grq223rc"
+        ],
+        "DealIds": [
+            "20250519054092411681522"
+        ]
+    }
+}
+```
+

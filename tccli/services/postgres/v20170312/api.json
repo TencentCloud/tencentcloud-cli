@@ -462,13 +462,6 @@
       "output": "DisIsolateDBInstancesResponse",
       "status": "online"
     },
-    "InitDBInstances": {
-      "document": "早期接口，不规范，已提供新接口 CreateInstances 替换\n\n本接口（InitDBInstances）用于初始化云数据库PostgreSQL实例。本接口已废弃，推荐使用接口[CreateInstances](https://cloud.tencent.com/document/api/409/56107)替代。",
-      "input": "InitDBInstancesRequest",
-      "name": "初始化实例（废弃）",
-      "output": "InitDBInstancesResponse",
-      "status": "deprecated"
-    },
     "InquiryPriceCreateDBInstances": {
       "document": "本接口 (InquiryPriceCreateDBInstances) 用于查询购买实例的价格信息。",
       "input": "InquiryPriceCreateDBInstancesRequest",
@@ -7820,70 +7813,6 @@
         }
       ],
       "usage": "in"
-    },
-    "InitDBInstancesRequest": {
-      "document": "InitDBInstances请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID集合。",
-          "example": "[\"postgres-6fego161\\n\"]",
-          "member": "string",
-          "name": "DBInstanceIdSet",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "实例根账号用户名。",
-          "example": "testuser",
-          "member": "string",
-          "name": "AdminName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例根账号用户名对应的密码。",
-          "example": "testuser%40123",
-          "member": "string",
-          "name": "AdminPassword",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例字符集，目前只支持：UTF8、LATIN1。",
-          "example": "UTF8",
-          "member": "string",
-          "name": "Charset",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "InitDBInstancesResponse": {
-      "document": "InitDBInstances返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID集合。",
-          "example": "[\"postgres-6fego161\"]",
-          "member": "string",
-          "name": "DBInstanceIdSet",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "InquiryPriceCreateDBInstancesRequest": {
       "document": "InquiryPriceCreateDBInstances请求参数结构体",

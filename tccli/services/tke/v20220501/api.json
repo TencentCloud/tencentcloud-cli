@@ -2377,7 +2377,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费模式（已弃用）",
+          "document": "节点计费模式",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "PayMode",
@@ -2393,6 +2393,16 @@
           "name": "Memory",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点系统盘配置信息",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2447,6 +2457,46 @@
         },
         {
           "disabled": false,
+          "document": "节点外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "WanIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key-l6gtb5p0\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点GPU相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUParams",
+          "name": "GPUParams",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[sg-4h43fuxjx]",
           "member": "string",
@@ -2484,6 +2534,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**原生节点的 Machine 类型**\n\n- Native 表示 CXM 类型的原生节点\n- NativeCVM 表示 CVM 类型的原生节点",
+          "example": "Native, NativeCVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod DeleteSnapshot --cli-unfold-argument  \
-    --Domain domain.com \
+    --Domain dnspod.cn \
     --SnapshotId B102XXXA
 ```
 

@@ -168,6 +168,13 @@
       "output": "RetrieveKnowledgeResponse",
       "status": "online"
     },
+    "RetrieveKnowledgeRealtime": {
+      "document": "用于实时检索在UploadDocRealtime接口上传的实时文档内容。 使用场景：适用于在会话中对文档进行问答的场景",
+      "input": "RetrieveKnowledgeRealtimeRequest",
+      "name": "实时检索知识库内容",
+      "output": "RetrieveKnowledgeRealtimeResponse",
+      "status": "online"
+    },
     "RunRerank": {
       "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。",
       "input": "RunRerankRequest",
@@ -180,13 +187,6 @@
       "input": "UploadDocRequest",
       "name": "上传文档",
       "output": "UploadDocResponse",
-      "status": "online"
-    },
-    "UploadDocRealtime": {
-      "document": "用于上传实时文档内容。\n实时文档在上传后可以立即通过SearchRealtime进行实时检索，适用于在会话中对文档进行问答的场景。",
-      "input": "UploadDocRealtimeRequest",
-      "name": "实时文档上传",
-      "output": "UploadDocRealtimeResponse",
       "status": "online"
     }
   },
@@ -2371,6 +2371,89 @@
       ],
       "usage": "in"
     },
+    "RetrieveKnowledgeRealtimeRequest": {
+      "document": "RetrieveKnowledgeRealtime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID。",
+          "example": "1840331836752986944",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于检索的文本。",
+          "example": "国庆放几天假",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实时文件ID列表。",
+          "example": "[\"1828720159590123264\"]",
+          "member": "string",
+          "name": "DocIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "检索方法，默认使用`HYBRID`混合检索。\n- `SEMANTIC`：语义检索\n- `FULL_TEXT`：全文检索\n- `HYBRID`：混合检索",
+          "example": "SEMANTIC",
+          "member": "string",
+          "name": "RetrievalMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索设置。",
+          "example": "{\"TopK\":3,\"ScoreThreshold\":0.7}",
+          "member": "RetrievalSetting",
+          "name": "RetrievalSetting",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RetrieveKnowledgeRealtimeResponse": {
+      "document": "RetrieveKnowledgeRealtime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索结果",
+          "example": "[{\"Metadata\":{\"Type\":\"DOC\",\"ResultSource\":\"SEMANTIC\",\"ChunkPageNumbers\":[1,2]},\"Score\":0,\"Title\":\"example.pdf\",\"Content\":\"国庆放7天假\"}]",
+          "member": "RetrievalRecord",
+          "name": "Records",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索结果数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RetrieveKnowledgeRequest": {
       "document": "RetrieveKnowledge请求参数结构体",
       "members": [
@@ -2632,69 +2715,6 @@
         }
       ],
       "usage": "out"
-    },
-    "UploadDocRealtimeRequest": {
-      "document": "UploadDocRealtime请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "知识库ID",
-          "example": "4901991032",
-          "member": "string",
-          "name": "KnowledgeBaseId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文件名，可选。\n**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。",
-          "example": "example.pdf",
-          "member": "string",
-          "name": "FileName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文件类型。\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF`、`DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M \n - `TXT`、`MD` 最大10M \n - 其他 最大20M",
-          "example": "PDF",
-          "member": "string",
-          "name": "FileType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
-          "example": "https://example.com/example.pdf",
-          "member": "string",
-          "name": "FileUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "过期时间的秒数，最长24小时，默认24小时",
-          "example": "86400",
-          "member": "int64",
-          "name": "ExpireTime",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "UploadDocRealtimeResponse": {
-      "document": "UploadDocRealtime返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "UploadDocRequest": {
       "document": "UploadDoc请求参数结构体",

@@ -27,6 +27,7 @@ Output:
                 "DomainStatus": "online",
                 "OriginDetail": {
                     "OriginType": "IP_DOMAIN",
+                    "HostHeader": null,
                     "Origin": "origin.qq.com",
                     "BackupOrigin": "",
                     "PrivateParameters": [],

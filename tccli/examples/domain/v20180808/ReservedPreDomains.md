@@ -7,7 +7,9 @@ Input:
 ```
 tccli domain ReservedPreDomains --cli-unfold-argument  \
     --DomainList aksdwe1.cn aksdwe2.cn \
-    --TemplateId tmpl-abxxxxxx
+    --TemplateId tmpl-qdpjnfe8 \
+    --IsAutoPay 0 \
+    --IsBidAutoPay 0
 ```
 
 Output: 

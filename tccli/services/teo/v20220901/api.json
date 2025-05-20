@@ -5613,6 +5613,15 @@
           "name": "Headers",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "媒体分片预热控制，取值有：\n<li>on：开启分片预热，预热描述文件，并递归解析描述文件分片进行预热；</li>\n<li>off：仅预热提交的描述文件；</li>不填写时，默认值为 off。\n\n注意事项：\n1. 支持的描述文件为 M3U8，对应分片为 TS；\n2. 要求描述文件能正常请求，并按行业标准描述分片路径；\n3. 递归解析深度不超过 3 层；\n4. 解析获取的分片会正常累加每日预热用量，当用量超出配额时，会静默处理，不再执行预热。\n\n该参数为白名单功能，如有需要，请联系腾讯云工程师处理。",
+          "example": "off",
+          "member": "string",
+          "name": "PrefetchMediaSegments",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16874,7 +16883,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。",
+          "document": "HTTP 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 http 或者 follow 时该参数必填。",
           "example": "80",
           "member": "int64",
           "name": "HTTPOriginPort",
@@ -16885,7 +16894,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。",
+          "document": "HTTPS 回源端口，取值范围 1～65535。当回源协议 OriginProtocol 为 https 或者 follow 时该参数必填。",
           "example": "443",
           "member": "int64",
           "name": "HTTPSOriginPort",
@@ -16896,7 +16905,7 @@
         },
         {
           "disabled": false,
-          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>不填写时，默认值为off。",
+          "document": "指定是否允许访问私有对象存储源站，当源站类型 OriginType = COS 或 AWSS3 时该参数必填，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>",
           "example": "on",
           "member": "string",
           "name": "PrivateAccess",
@@ -17900,6 +17909,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "当前配置的回源 HOST 头。",
+          "example": "www.tencentcloud.com\t",
+          "member": "string",
+          "name": "HostHeader",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "disabled": true,
           "document": "MO 子应用 ID",
           "example": "无",
@@ -18263,6 +18282,15 @@
           "name": "PrivateParameters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义回源 HOST 头，该参数仅当 OriginType=IP_DOMAIN 时生效。\n如果 OriginType=COS 或 AWS_S3 时，回源 HOST 头将与源站域名保持一致。\n如果OriginType=ORIGIN_GROUP 或 LB 时，回源 HOST 头遵循源站组内配置，如果没有配置则默认为加速域名。\n如果 OriginType=VOD 或 SPACE 时，无需配置该头部，按对应的回源域名生效。",
+          "example": "www.tencentcloud.com",
+          "member": "string",
+          "name": "HostHeader",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": true,
@@ -20336,7 +20364,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置。该功能灰度中，如需使用，请联系腾讯云客服。</li>",
+          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速；</li>\n<li>SetContentIdentifier：设置内容标识符；</li>\n<li>Vary：Vary 特性配置。</li>",
           "example": "Cache",
           "member": "string",
           "name": "Name",
@@ -20721,7 +20749,7 @@
         },
         {
           "disabled": false,
-          "document": "Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。\n该功能灰度中，如需使用，请联系腾讯云客服。",
+          "document": "Vary 特性配置参数，当 Name 取值为 Vary 时，该参数必填。",
           "example": "无",
           "member": "VaryParameters",
           "name": "VaryParameters",
@@ -22858,7 +22886,7 @@
       "usage": "out"
     },
     "VaryParameters": {
-      "document": "[Vary 特性](https://cloud.tencent.com/document/product/1552/89301) 配置参数。\n该功能灰度中，如需使用，请联系腾讯云客服。",
+      "document": "[Vary 特性](https://cloud.tencent.com/document/product/1552/89301) 配置参数。",
       "members": [
         {
           "disabled": false,

@@ -1720,8 +1720,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
-          "example": "domain-dwwwwwwq",
+          "document": "域名实例ID\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
+          "example": "domain-esydsfsdq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -2749,7 +2749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "document": "域名实例ID\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "domain-esysdasdgq",
           "member": "string",
           "name": "DomainId",
@@ -2759,7 +2759,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，取值范围[1,100]",
-          "example": "1",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2768,7 +2768,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "20",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -3436,7 +3436,7 @@
         },
         {
           "disabled": false,
-          "document": "四级分类\n1:\"仅含2种数字\"\n1:\"仅含2种数字\"\n2:\"仅含3种数字\"\n4:\"仅含1种字母\"\n8:\"仅含1种数字\"\n",
+          "document": "四级分类\n1:\"仅含2种数字\"\n2:\"仅含3种数字\"\n4:\"仅含1种字母\"\n8:\"仅含1种数字\"\n",
           "example": "6",
           "member": "int64",
           "name": "ClassFour",
@@ -3481,7 +3481,7 @@
         },
         {
           "disabled": false,
-          "document": "是否搜索白金域名",
+          "document": "是否搜索白金域名（默认值为false）",
           "example": "false",
           "member": "bool",
           "name": "IsTop",
@@ -4668,7 +4668,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "document": "域名实例ID\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "domain-esyfsdfgq",
           "member": "string",
           "name": "DomainId",
@@ -5562,7 +5562,7 @@
         {
           "disabled": false,
           "document": "预约预释放域名列表",
-          "example": "[\"tencent01.com\",\"tencent02.com\"]",
+          "example": "[\"aksdwe1.cn\",\"aksdwe2.cn\"]",
           "member": "string",
           "name": "DomainList",
           "required": true,
@@ -5743,7 +5743,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名实例ID\n可通过DescribeDomainNameList接口获取(https://cloud.tencent.com/document/api/242/48941)",
+          "document": "域名实例ID\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "domain-eszczxcigq",
           "member": "string",
           "name": "DomainId",

@@ -1801,8 +1801,8 @@
           "type": "list"
         },
         {
-          "disabled": false,
-          "document": "已废弃。该过滤条件下的审计日志结果集作为分析日志。",
+          "disabled": true,
+          "document": "已废弃。",
           "example": "{\"SqlTypes\": [\"CREATE\"]}",
           "member": "AuditLogFilter",
           "name": "AuditLogFilter",
@@ -4801,7 +4801,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已废弃。",
           "example": "{\"SqlTypes\": [\"CREATE\"]}",
           "member": "AuditLogFilter",
@@ -5882,7 +5882,7 @@
         },
         {
           "disabled": false,
-          "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。",
+          "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。\n说明：表名大小写敏感的开启和关闭可通过参数 lower_case_table_names 进行设置，参数值为0表示开启，参数值为1表示关闭，若不设置则此参数默认值为0。若您创建的是 MySQL 8.0 版本的实例，则需要在创建实例时通过设置 lower_case_table_names 参数来开启或关闭表名大小写敏感，创建实例后无法修改参数，即创建后无法修改表名大小写敏感。其他数据库版本的实例支持在创建实例后修改 lower_case_table_names 参数。创建实例时设置表名大小写敏感的 API 调用方法请参见本文中的示例2。",
           "example": "[{\"Name\": \"auto_increment_increment\",\"Value\": \"1\"}]",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -6316,7 +6316,7 @@
         },
         {
           "disabled": false,
-          "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。",
+          "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。\n说明：表名大小写敏感的开启和关闭可通过参数 lower_case_table_names 进行设置，参数值为0表示开启，参数值为1表示关闭，若不设置则此参数默认值为0。若您创建的是 MySQL 8.0 版本的实例，则需要在创建实例时通过设置 lower_case_table_names 参数来开启或关闭表名大小写敏感，创建实例后无法修改参数，即创建后无法修改表名大小写敏感。其他数据库版本的实例支持在创建实例后修改 lower_case_table_names 参数。创建实例时设置表名大小写敏感的 API 调用方法请参见本文中的示例3。",
           "example": "[{\"Name\": \"auto_increment_increment\",\"Value\": \"1\"}]",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -8048,7 +8048,7 @@
         {
           "disabled": false,
           "document": "审计日志详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"AffectRows\": 1,\"CheckRows\": 0,\"CpuTime\": 375.786,\"DBName\": \"wyang\",\"ErrCode\": 0,\"ExecTime\": 1503,\"Host\": \"100.122.76.176\",\"IoWaitTime\": 7,\"LockWaitTime\": 1140,\"NsTime\": 104188594,\"PolicyName\": \"sys_default\",\"SentRows\": 0,\"Sql\": \"INSERT INTO `andy_db` values('张三',0)\",\"SqlType\": \"INSERT\",\"ThreadId\": 162,\"Timestamp\": \"2023-06-07 17:50:05.104\",\"TrxLivingTime\": 1475,\"User\": \"root\"}]",
+          "example": "[\"AffectRows\": 1,\"CheckRows\": 0,\"CpuTime\": 375.786,\"DBName\": \"wyang\",\"User\": \"root\"}]",
           "member": "AuditLog",
           "name": "Items",
           "output_required": true,
@@ -15820,8 +15820,8 @@
           "type": "bool"
         },
         {
-          "disabled": false,
-          "document": "审计规则。",
+          "disabled": true,
+          "document": "废弃。",
           "example": "full",
           "member": "AuditRuleFilters",
           "name": "AuditRuleFilters",
@@ -17354,7 +17354,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "审计规则（该参数已废弃，不再生效）。",
           "example": "[{\"RuleFilters\": [{\"Compare\": \"NEQ\",\"Type\": \"host\",\"Value\": [\"127.0.0.1\"]}]}]",
           "member": "AuditRuleFilters",

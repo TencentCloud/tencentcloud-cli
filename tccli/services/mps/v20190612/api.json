@@ -10890,6 +10890,15 @@
           "name": "EnhanceConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数，序列化的 json 字符串。",
+          "example": "{\\\"video_info\\\":{\\\"keep_gop\\\":0}}",
+          "member": "string",
+          "name": "StdExtInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13147,6 +13156,16 @@
           "name": "Status",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片处理任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageProcessTaskResult",
+          "name": "ImageProcessTaskResultSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -18375,6 +18394,34 @@
       ],
       "usage": "both"
     },
+    "ImageDenoiseConfig": {
+      "document": "图片降噪配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，可选值：\n<li>weak</li>\n<li>strong</li>\n默认值：weak。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "weak",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ImageEncodeConfig": {
       "document": "图片编码格式参数",
       "members": [
@@ -18419,6 +18466,17 @@
         },
         {
           "disabled": false,
+          "document": "降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageDenoiseConfig",
+          "name": "Denoise",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "综合增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageQualityEnhanceConfig",
@@ -18456,6 +18514,17 @@
           "example": "无",
           "member": "FaceEnhanceConfig",
           "name": "FaceEnhance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低光照增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LowLightEnhanceConfig",
+          "name": "LowLightEnhance",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -18508,6 +18577,78 @@
         }
       ],
       "usage": "both"
+    },
+    "ImageProcessTaskOutput": {
+      "document": "图片处理结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出文件的路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/output/test.jpeg",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageProcessTaskResult": {
+      "document": "图片处理任务结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转码任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageProcessTaskOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "转码进度，取值范围 [0-100]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ImageQualityEnhanceConfig": {
       "document": "综合增强配置",
@@ -27220,6 +27361,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数，序列化的 json 字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"video_info\":{\"color_prim\":\"bt709\"}}",
+          "member": "string",
+          "name": "StdExtInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音视频增强配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnhanceConfig",
+          "name": "EnhanceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -3480,7 +3480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "高性能计算集群ID数组。",
+          "document": "一个或多个待操作的高性能计算集群ID。集群ID信息可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。每次请求高性能计算集群信息的批量上限为100，默认配合Limit传参数，不能超过Limit值，Limit默认20。",
           "example": "[\"hpc-p64fdfa9\"]",
           "member": "string",
           "name": "HpcClusterIds",
@@ -3489,7 +3489,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群名称。",
+          "document": "高性能计算集群名称，长度限制[1-60]。",
           "example": "MyCluster",
           "member": "string",
           "name": "Name",
@@ -3498,7 +3498,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "可用区信息。可用区信息可通过 [查询可用区信息](https://cloud.tencent.com/document/api/213/15707) 接口获取。",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -3516,8 +3516,8 @@
         },
         {
           "disabled": false,
-          "document": "本次请求量, 默认值20。",
-          "example": "20",
+          "document": "本次请求量, 默认值20，范围限制为[1-100]。",
+          "example": "默认为20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3525,7 +3525,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群类型。",
+          "document": "高性能计算集群类型，当前有三个取值：分别是CDC/CHC/STANDARD，其中STANDARD是默认的标准模式。",
           "example": "CDC/CHC/STANDARD",
           "member": "string",
           "name": "HpcClusterType",
@@ -3534,7 +3534,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。\t",
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC场景类型。\t",
           "example": "例如cdc场景：cluster-iu5gustw，其他场景暂不支持。",
           "member": "string",
           "name": "HpcClusterBusinessId",
@@ -9322,7 +9322,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "高性能计算集群ID。",
+          "document": "高性能计算集群ID。集群ID可通过 [查询高性能集群信息](https://cloud.tencent.com/document/api/213/83220) 接口获取。",
           "example": "hpc-jtynq57p",
           "member": "string",
           "name": "HpcClusterId",
@@ -9331,7 +9331,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群新名称。",
+          "document": "高性能计算集群新名称，长度限制[1-60]。",
           "example": "MyHpcCluster",
           "member": "string",
           "name": "Name",
@@ -9340,7 +9340,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群新备注。",
+          "document": "高性能计算集群新备注，长度[1-256]。",
           "example": "myRemark",
           "member": "string",
           "name": "Remark",
@@ -9583,7 +9583,7 @@
         },
         {
           "disabled": false,
-          "document": "角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。\n举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。\n该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。",
+          "document": "角色类别，与CamRoleName搭配使用，该值可从CAM [ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)或[ GetRole ](https://cloud.tencent.com/document/product/598/36221)接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。\n举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。\n该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。",
           "example": "user",
           "member": "string",
           "name": "CamRoleType",
@@ -9673,7 +9673,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为1",
+          "document": "一个或多个待操作的实例ID。可通过[ DescribeInstances ](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100",
           "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -12450,7 +12450,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”，镜像为“image”，密钥为“keypair”",
+          "document": "标签绑定的资源类型，云服务器为“instance”，专用宿主机为“host”，镜像为“image”，密钥为“keypair”，置放群组为“ps”，高性能计算集群为“hpc”。",
           "example": "instance",
           "member": "string",
           "name": "ResourceType",

@@ -391,7 +391,7 @@
     "ReservedPreDomains": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReservedPreDomains\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"aksdwe1.cn\",\n        \"aksdwe2.cn\"\n    ],\n    \"TemplateId\": \"tmpl-abxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReservedPreDomains\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"aksdwe1.cn\",\n        \"aksdwe2.cn\"\n    ],\n    \"TemplateId\": \"tmpl-qdpjnfe8\",\n    \"IsAutoPay\": 0,\n    \"IsBidAutoPay\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"SucDomainList\": [\n            \"aksdwe1.cn\"\n        ],\n        \"FailDomainList\": [\n            {\n                \"Domain\": \"aksdwe2.cn\",\n                \"FailReason\": \"域名下架\"\n            }\n        ],\n        \"SucDomains\": [\n            {\n                \"Domain\": \"aksdwe1.cn\",\n                \"BusinessId\": \"P00117****\"\n            }\n        ],\n        \"RequestId\": \"sdwewx-sdowe-***\"\n    }\n}",
         "title": "成功示例"
       }

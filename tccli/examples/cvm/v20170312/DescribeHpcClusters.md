@@ -25,6 +25,8 @@ Output:
                 "CurrentNum": 0,
                 "InstanceIds": [],
                 "HpcClusterNetMode": 30,
+                "HpcClusterType": "STANDARD",
+                "HpcClusterBusinessId": "cluster-ax457mhr",
                 "CreateTime": "2020-06-02T07:55:05Z",
                 "Tags": [
                     {

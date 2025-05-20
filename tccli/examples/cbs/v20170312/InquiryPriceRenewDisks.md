@@ -14,17 +14,45 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "86f40e10-8b5e-4085-8aea-6188283e38de",
+        "RequestId": "2e7414a3-369f-4995-b708-80eb2e7414a3",
         "DiskPrice": {
-            "DiscountPrice": 7,
-            "UnitPrice": null,
-            "UnitPriceHigh": null,
-            "OriginalPriceHigh": "7",
-            "OriginalPrice": 7,
-            "UnitPriceDiscount": null,
             "UnitPriceDiscountHigh": null,
-            "DiscountPriceHigh": "7",
-            "ChargeUnit": null
+            "DiscountPrice": 250.0,
+            "DetailPrices": [
+                {
+                    "PriceTitle": "云硬盘备份点配额",
+                    "DiscountPrice": 0.0,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskBackupQuota",
+                    "OriginalPrice": 0.0,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                },
+                {
+                    "PriceTitle": "云硬盘空间",
+                    "DiscountPrice": 250.0,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskSpace",
+                    "OriginalPrice": 500.0,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                }
+            ],
+            "UnitPriceHigh": null,
+            "OriginalPriceHigh": "500",
+            "ChargeUnit": null,
+            "OriginalPrice": 500.0,
+            "UnitPriceDiscount": null,
+            "DiscountPriceHigh": "250",
+            "UnitPrice": null
         }
     }
 }
@@ -47,17 +75,45 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "86f40e10-8b5e-4085-8aea-6188283e38de",
+        "RequestId": "2e7414a3-369f-4995-b708-80eb2e7414a3",
         "DiskPrice": {
-            "DiscountPrice": 7,
-            "UnitPrice": null,
-            "UnitPriceHigh": null,
-            "OriginalPriceHigh": "7",
-            "OriginalPrice": 7,
-            "UnitPriceDiscount": null,
             "UnitPriceDiscountHigh": null,
-            "DiscountPriceHigh": "7",
-            "ChargeUnit": null
+            "DiscountPrice": 250,
+            "DetailPrices": [
+                {
+                    "PriceTitle": "云硬盘备份点配额",
+                    "DiscountPrice": 0,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskBackupQuota",
+                    "OriginalPrice": 0,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                },
+                {
+                    "PriceTitle": "云硬盘空间",
+                    "DiscountPrice": 250,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskSpace",
+                    "OriginalPrice": 500,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                }
+            ],
+            "UnitPriceHigh": null,
+            "OriginalPriceHigh": "500",
+            "ChargeUnit": null,
+            "OriginalPrice": 500,
+            "UnitPriceDiscount": null,
+            "DiscountPriceHigh": "250",
+            "UnitPrice": null
         }
     }
 }

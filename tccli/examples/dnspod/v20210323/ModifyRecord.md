@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod ModifyRecord --cli-unfold-argument  \
-    --Domain dnspod.site \
+    --Domain dnspod.cn \
     --DomainId 62 \
     --SubDomain bbbb \
     --RecordType A \

@@ -206,6 +206,12 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"RoGroup\": {\n        \"RoGroupMode\": \"allinone\",\n        \"RoGroupName\": \"jersey\",\n        \"RoMaxDelayTime\": 5,\n        \"MinRoInGroup\": 1,\n        \"RoOfflineDelay\": 1\n    },\n    \"GoodsNum\": 1,\n    \"InstanceRole\": \"ro\",\n    \"MasterInstanceId\": \"cdb-fn3f9xpx\",\n    \"Period\": 1,\n    \"Volume\": 100,\n    \"Memory\": 4000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171205110051\"\n        ],\n        \"InstanceIds\": [\n            \"cdbro-hlpl4ik9\"\n        ]\n    }\n}",
         "title": "购买只读实例"
+      },
+      {
+        "document": "创建实例时设置表名大小写敏感",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"Memory\": 1000,\n    \"Volume\": 25,\n    \"Period\": 1,\n    \"GoodsNum\": 1,\n    \"Zone\": \"ap-beijing-3\",\n    \"UniqVpcId\": \"vpc-4pagx2lk\",\n    \"UniqSubnetId\": \"subnet-a2eaqb1t\",\n    \"InstanceRole\": \"master\",\n    \"EngineVersion\": \"8.0\",\n    \"ParamList\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"0\"\n        }\n    ],\n    \"DeviceType\": \"UNIVERSAL\",\n    \"Cpu\": 1,\n    \"EngineType\": \"InnoDB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6166b535-64e8-4372-86fc-d6e25791f4fc\",\n        \"InstanceIds\": [\n            \"cdb-grq113rc\"\n        ],\n        \"DealIds\": [\n            \"20250519054092411681521\"\n        ]\n    }\n}",
+        "title": "创建实例时设置表名大小写敏感"
       }
     ],
     "CreateDBInstanceHour": [
@@ -214,6 +220,12 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"ResourceTags\": [\n        {\n            \"TagKey\": \"march\",\n            \"TagValue\": [\n                \"march1\"\n            ]\n        }\n    ],\n    \"Zone\": \"ap-guangzhou-3\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"ProjectId\": 0,\n    \"SlaveZone\": \"ap-guangzhou-3\",\n    \"InstanceRole\": \"master\",\n    \"GoodsNum\": 1,\n    \"DeployMode\": 0,\n    \"Volume\": 25,\n    \"EngineVersion\": \"5.6\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": 1000,\n    \"ProtectMode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"InstanceIds\": [\n            \"cdb-03brtubb\"\n        ],\n        \"DealIds\": [\n            \"20171201160000002670226599824833\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
+      },
+      {
+        "document": "创建实例时设置表名大小写敏感",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstanceHour\n<公共请求参数>\n\n{\n    \"GoodsNum\": 1,\n    \"Memory\": 1000,\n    \"Volume\": 25,\n    \"EngineVersion\": \"8.0\",\n    \"UniqVpcId\": \"vpc-4pagx2lk\",\n    \"UniqSubnetId\": \"subnet-a2eaqb1t\",\n    \"Zone\": \"ap-beijing-3\",\n    \"InstanceRole\": \"master\",\n    \"ParamList\": [\n        {\n            \"Name\": \"lower_case_table_names\",\n            \"Value\": \"0\"\n        }\n    ],\n    \"DeviceType\": \"UNIVERSAL\",\n    \"Cpu\": 1,\n    \"EngineType\": \"InnoDB\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6166b535-64e8-4372-86fc-d6e26791f4fc\",\n        \"InstanceIds\": [\n            \"cdb-grq223rc\"\n        ],\n        \"DealIds\": [\n            \"20250519054092411681522\"\n        ]\n    }\n}",
+        "title": "创建实例时设置表名大小写敏感"
       }
     ],
     "CreateDatabase": [

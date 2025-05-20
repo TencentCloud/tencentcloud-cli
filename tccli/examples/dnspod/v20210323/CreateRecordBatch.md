@@ -1,6 +1,6 @@
 **Example 1: 批量添加记录**
 
- 
+ 批量添加记录
 
 Input: 
 
@@ -24,35 +24,41 @@ Output:
                 "RecordList": [
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
+                        "TTL": 600,
                         "Id": 0,
-                        "SubDomain": "www",
+                        "SubDomain": "test",
                         "RecordType": "A",
                         "Value": "1.2.3.4",
+                        "MX": 5,
                         "ErrMsg": null,
                         "Status": "waiting",
+                        "Weight": "10",
                         "Operation": "plus"
                     },
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
+                        "TTL": 600,
                         "Id": 1,
                         "SubDomain": "wap",
                         "RecordType": "A",
                         "Value": "1.2.3.4",
+                        "MX": 5,
                         "ErrMsg": null,
                         "Status": "waiting",
+                        "Weight": "10",
                         "Operation": "plus"
                     },
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
+                        "TTL": 600,
                         "Id": 2,
                         "SubDomain": "bbs",
                         "RecordType": "A",
                         "Value": "1.2.3.4",
+                        "MX": 5,
                         "ErrMsg": null,
                         "Status": "waiting",
+                        "Weight": "10",
                         "Operation": "plus"
                     }
                 ],
@@ -68,35 +74,41 @@ Output:
                 "RecordList": [
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
+                        "TTL": 600,
                         "Id": 0,
-                        "SubDomain": "www",
+                        "SubDomain": "test",
                         "RecordType": "A",
                         "Value": "1.2.3.4",
+                        "MX": 5,
                         "ErrMsg": null,
                         "Status": "waiting",
+                        "Weight": "10",
                         "Operation": "plus"
                     },
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
+                        "TTL": 600,
                         "Id": 1,
                         "SubDomain": "wap",
                         "RecordType": "A",
                         "Value": "1.2.3.4",
+                        "MX": 5,
                         "ErrMsg": null,
                         "Status": "waiting",
+                        "Weight": "10",
                         "Operation": "plus"
                     },
                     {
                         "RecordLine": "默认",
-                        "TTL": "600",
+                        "TTL": 600,
                         "Id": 2,
                         "SubDomain": "bbs",
                         "RecordType": "A",
                         "Value": "1.2.3.4",
+                        "MX": 5,
                         "ErrMsg": null,
                         "Status": "waiting",
+                        "Weight": "10",
                         "Operation": "plus"
                     }
                 ],
