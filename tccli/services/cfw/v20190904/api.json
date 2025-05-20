@@ -259,6 +259,13 @@
       "output": "DescribeBlockStaticListResponse",
       "status": "online"
     },
+    "DescribeCFWEngineStatus": {
+      "document": "cfw实例运行状态查询",
+      "input": "DescribeCFWEngineStatusRequest",
+      "name": "云防火墙引擎状态全链路接口",
+      "output": "DescribeCFWEngineStatusResponse",
+      "status": "online"
+    },
     "DescribeCfwEips": {
       "document": "查询防火墙弹性公网IP",
       "input": "DescribeCfwEipsRequest",
@@ -5849,6 +5856,61 @@
       ],
       "type": "object"
     },
+    "DescribeCFWEngineStatusRequest": {
+      "document": "DescribeCFWEngineStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排障开始时间",
+          "example": "2024-07-15 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排障结束时间",
+          "example": "2024-07-15 03:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "ins-h1fxg9l4",
+          "member": "string",
+          "name": "UniqInsId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCFWEngineStatusResponse": {
+      "document": "DescribeCFWEngineStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排障结果",
+          "example": "无",
+          "member": "EngineTraceData",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCfwEipsRequest": {
       "document": "DescribeCfwEips请求参数结构体",
       "members": [
@@ -8995,6 +9057,42 @@
         }
       ],
       "usage": "in"
+    },
+    "EngineTraceData": {
+      "document": "全链路引擎异常数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排障状态\n\nabnormal: 异常，指标或配置异常，会导致故障\n\nchange：变更，排障期间有变更\n\nsuspicious：可疑，可能会导致故障\n\noptimizable：可优化，产品姿势上有优化空间\n\nunknown:未知，指标或者配置查询失败，不能确认是否正常\n\nprompt: 提示，需要产品使用上的提醒\n\nnormal: 正常",
+          "example": "abnormal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面展示出的排障异常关键信息",
+          "example": "引擎高负载",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部跳转链接",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EngineVersionInfo": {
       "document": "引擎版本信息",

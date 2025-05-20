@@ -8,7 +8,7 @@ Input:
 tccli dnspod DescribeRecordList --cli-unfold-argument  \
     --Offset 0 \
     --Limit 2 \
-    --Domain shenjianing.com \
+    --Domain dnspod.cn \
     --DomainId 123 \
     --Subdomain www \
     --Keyword dnspod \

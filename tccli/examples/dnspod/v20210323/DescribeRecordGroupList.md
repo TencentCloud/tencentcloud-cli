@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod DescribeRecordGroupList --cli-unfold-argument  \
-    --Domain recordgroup.com \
+    --Domain dnspod.cn \
     --Offset 0 \
     --Limit 10
 ```

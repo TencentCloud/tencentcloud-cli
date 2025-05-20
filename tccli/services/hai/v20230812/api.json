@@ -1,7 +1,7 @@
 {
   "actions": {
     "CreateApplication": {
-      "document": "本接口（CreateApplicaiton）用于对HAI实例制作自定义应用。",
+      "document": "本接口（CreateApplication）用于对HAI实例制作自定义应用。",
       "input": "CreateApplicationRequest",
       "name": "创建自定义应用",
       "output": "CreateApplicationResponse",

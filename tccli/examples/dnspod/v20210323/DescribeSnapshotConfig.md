@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod DescribeSnapshotConfig --cli-unfold-argument  \
-    --Domain xx.com
+    --Domain dnspod.cn
 ```
 
 Output: 

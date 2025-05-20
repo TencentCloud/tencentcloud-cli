@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"lhsday.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"456b895b-6bd8-4d86-83cd-98298712b2e9\",\n        \"DomainId\": \"lhdo-qpnq8qzk\",\n        \"DNSState\": \"UNUSE_DNSPOD\",\n        \"EffectiveDNS\": [\n            \"t8j7g.dnspod.net\",\n            \"u6n7d.dnspod.net\"\n        ]\n    }\n}",
+        "title": "添加域名"
+      }
+    ],
     "ApplyDiskBackup": [
       {
         "document": "回滚云硬盘备份点",
@@ -22,6 +30,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=ApplyInstanceSnapshot\n&InstanceId=lhins-k31c771o\n&SnapshotId=lhsnap-nv6aqcv6\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"96aee6e3-172c-4f0f-be7c-fc46b9865763\"\n    }\n}",
         "title": "回滚实例快照"
+      }
+    ],
+    "AssignInstancesIpv6Address": [
+      {
+        "document": "给实例分配IPv6地址",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignInstancesIpv6Address\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"232b2817-ec08-43f3-8d78-41b1bfb6082c\"\n    }\n}",
+        "title": "给实例分配IPv6地址"
       }
     ],
     "AssociateInstancesKeyPairs": [
@@ -56,6 +72,14 @@
         "title": "取消镜像跨账号共享"
       }
     ],
+    "CheckFirewallRules": [
+      {
+        "document": "查询防火墙规则放通状态。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckFirewallRules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-aglzynfg\",\n    \"FirewallRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": \"8081\"\n        },\n        {\n            \"Protocol\": \"UDP\",\n            \"Port\": \"8082\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActiveFirewallRuleSet\": [\n            {\n                \"AppType\": \"自定义\",\n                \"Protocol\": \"TCP\",\n                \"Port\": \"8081\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"\",\n                \"Action\": \"ACCEPT\"\n            }\n        ],\n        \"InactiveFirewallRuleSet\": [\n            {\n                \"Protocol\": \"UDP\",\n                \"Port\": \"8082\",\n                \"FirewallRuleDescription\": \"\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"AppType\": \"自定义\",\n                \"Action\": \"ACCEPT\"\n            }\n        ],\n        \"RequestId\": \"667cc0c1-fa3e-4752-a36b-4bf45ec4bc7d\"\n    }\n}",
+        "title": "查询防火墙规则放通状态。"
+      }
+    ],
     "CreateBlueprint": [
       {
         "document": "使用实例创建镜像",
@@ -70,6 +94,22 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBlueprintForMigrate\n<公共请求参数>\n\n{\n    \"BlueprintName\": \"test-0006\",\n    \"InstanceId\": \"lhmins-m9oaw2cp\"\n}",
         "output": "{\n    \"Response\": {\n        \"BlueprintId\": \"lhbp-i7vqx7r5\",\n        \"RequestId\": \"e4907750-3aa0-488d-a146-aeab66513441\"\n    }\n}",
         "title": "通过在线迁移临时实例创建自定义镜像"
+      }
+    ],
+    "CreateDNSRecord": [
+      {
+        "document": "用户对指定域名新增一条解析记录",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDNSRecord\n<公共请求参数>\n\n{\n    \"DomainId\": \"lhdo-b9h9nda1\",\n    \"Record\": {\n        \"Subdomain\": \"abc\",\n        \"RecordType\": \"A\",\n        \"RecordValue\": \"192.168.1.1\",\n        \"ResourceType\": \"INSTANCE\",\n        \"ResourceKey\": \"lhins-abcd1234\",\n        \"ResourceRegion\": \"ap-guangzhou\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordId\": \"lhdr-abcd1234\",\n        \"RequestId\": \"eaebb8c7-beda-4233-a66£-769c020g568\"\n    }\n}",
+        "title": "新增域名解析记录"
+      }
+    ],
+    "CreateDNSRecords": [
+      {
+        "document": "用户对指定域名新增一条解析记录",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDNSRecords\n<公共请求参数>\n\n{\n    \"DomainId\": \"lhdo-b9h9nda1\",\n    \"Records\": [\n        {\n            \"Subdomain\": \"abc\",\n            \"RecordType\": \"A\",\n            \"RecordValue\": \"192.168.1.1\",\n            \"ResourceType\": \"INSTANCE\",\n            \"ResourceKey\": \"lhins-abcd1234\",\n            \"ResourceRegion\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordIdSet\": [\n            \"lhdr-abcd1234\"\n        ],\n        \"ErrorIndexSet\": [],\n        \"ErrorMessageSet\": [],\n        \"RequestId\": \"eaebb8c7-beda-4233-a66£-769c020g56a\"\n    }\n}",
+        "title": "新增域名解析记录"
       }
     ],
     "CreateDiskBackup": [
@@ -144,12 +184,28 @@
         "title": "创建密钥对"
       }
     ],
+    "DebugFunctionVersion": [
+      {
+        "document": "调试函数function-001的版本2，body为test。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DebugFunctionVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"FunctionName\": \"function-001\",\n    \"FunctionVersion\": 2,\n    \"Body\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Body\": \"Body: test\",\n        \"CostTime\": 15624,\n        \"RequestId\": \"e9dda6d6-9d24-403d-a38a-d7fbdf5b0669\",\n        \"StatusCode\": 200\n    }\n}",
+        "title": "调试函数版本"
+      }
+    ],
     "DeleteBlueprints": [
       {
         "document": "删除一个自定义镜像",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-1ynlfst1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ecad302e-6952-4c06-a64c-2f8f6c526029\"\n    }\n}",
         "title": "删除一个自定义镜像"
+      }
+    ],
+    "DeleteDNSRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDNSRecord\n<公共请求参数>\n\n{\n    \"RecordId\": \"lhdr-dvxu5wn6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c0b01324-1053-4c8c-b45d-3b37f03e7617\"\n    }\n}",
+        "title": "删除解析记录"
       }
     ],
     "DeleteDiskBackups": [
@@ -208,12 +264,60 @@
         "title": "查询实例信息"
       }
     ],
+    "DescribeAllBlueprintsOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllBlueprintsOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AllBlueprintsOverview\": {\n            \"IsolatedCount\": 0,\n            \"NormalCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"BlueprintsDetailSet\": [\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-guangzhou\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-singapore\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-hongkong\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-tokyo\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-chengdu\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"eu-moscow\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-beijing\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-shanghai\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"ap-nanjing\"\n            },\n            {\n                \"BlueprintsOverview\": {\n                    \"IsolatedCount\": 0,\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"QuotaOverview\": {\n                    \"Available\": 20,\n                    \"Total\": 20\n                },\n                \"Region\": \"na-siliconvalley\"\n            }\n        ],\n        \"RequestId\": \"a9fe8531-558e-48af-b45e-b66b63aba2b7\"\n    }\n}",
+        "title": "查询全地域镜像概览"
+      }
+    ],
+    "DescribeAllDiskBackupsOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllDiskBackupsOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5116bf04-9e01-49fc-9f80-2688b947e00d\",\n        \"AllDiskBackupsOverview\": {\n            \"TotalCount\": 13,\n            \"NormalCount\": 0\n        },\n        \"DiskBackupsDetailSet\": [\n            {\n                \"Region\": \"ap-chengdu\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"eu-moscow\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"na-toronto\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"na-siliconvalley\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-tokyo\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-beijing\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-singapore\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-mumbai\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"ap-nanjing\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            },\n            {\n                \"Region\": \"eu-frankfurt\",\n                \"DiskBackupsOverview\": {\n                    \"TotalCount\": 1,\n                    \"NormalCount\": 0\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询全地域云硬盘备份点概览"
+      }
+    ],
+    "DescribeAllDisksOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllDisksOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AllDataDisksOverview\": {\n            \"ExpiringCount\": 25,\n            \"ShutdownCount\": 1,\n            \"TotalCount\": 57\n        },\n        \"AllSystemDisksOverview\": {\n            \"TotalCount\": 170\n        },\n        \"DisksDetailSet\": [\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 3,\n                    \"ShutdownCount\": 1,\n                    \"TotalCount\": 4\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-guangzhou\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 8\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 1,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 3\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 5\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 0,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 0\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-hongkong\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 3\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 2,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 3\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-beijing\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 35\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 0,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 2\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-singapore\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 6\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 4,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 6\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"na-siliconvalley\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 1\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 1,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 4\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-chengdu\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 3\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 3,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 4\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-tokyo\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 1\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 0,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 4\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-nanjing\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 3\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 2,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 2\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-mumbai\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 2\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 5,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 7\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"eu-frankfurt\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 1\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 0,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 2\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"na-toronto\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 1,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 11\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-seoul\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 101\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 2,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 2\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-jakarta\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 1\n                }\n            },\n            {\n                \"DataDisksOverview\": {\n                    \"ExpiringCount\": 1,\n                    \"ShutdownCount\": 0,\n                    \"TotalCount\": 3\n                },\n                \"ErrorCode\": \"\",\n                \"Region\": \"sa-saopaulo\",\n                \"SystemDisksOverview\": {\n                    \"TotalCount\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"10264b2f-6998-4e43-9e1d-bd3b06e5a0ce\"\n    }\n}",
+        "title": "查询全地域磁盘概览"
+      }
+    ],
+    "DescribeAllInstancesMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllInstancesMetrics\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"bundle-type\",\n            \"Values\": [\n                \"RAZOR_SPEED_BUNDLE\"\n            ]\n        }\n    ],\n    \"Metrics\": [\n        \"MaxExpiredTime\"\n    ],\n    \"Uins\": [\n        \"100000001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14e4cb2b-cf4a-4d8b-a0d5-44341cf97f34\",\n        \"UserMetricResults\": [\n            {\n                \"Uin\": \"100000001\",\n                \"MetricResults\": [\n                    {\n                        \"Name\": \"MaxExpiredTime\",\n                        \"Values\": [\n                            \"2024-12-16 22:10:44\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询用户全地域实例的最大到期时间"
+      }
+    ],
     "DescribeAllInstancesOverview": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllInstancesOverview\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14e4cb2b-cf4a-4d8b-a0d5-44341cf97f34\",\n        \"AllInstancesOverview\": {\n            \"TotalCount\": 6672,\n            \"RunningCount\": 5856,\n            \"ShutdownCount\": 64,\n            \"ExpiringCount\": 0,\n            \"ExpiredCount\": 6624\n        },\n        \"InstancesDetailSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-shanghai\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-hongkong\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-beijing\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-singapore\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"na-siliconvalley\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-chengdu\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-tokyo\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-nanjing\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-mumbai\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"eu-frankfurt\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-seoul\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-jakarta\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"sa-saopaulo\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"ap-bangkok\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            },\n            {\n                \"Region\": \"na-ashburn\",\n                \"InstancesOverview\": {\n                    \"TotalCount\": 417,\n                    \"RunningCount\": 366,\n                    \"ShutdownCount\": 4,\n                    \"ExpiringCount\": 0,\n                    \"ExpiredCount\": 414\n                },\n                \"QuotaOverview\": {\n                    \"Total\": 100,\n                    \"Available\": 18\n                },\n                \"ErrorCode\": \"\"\n            }\n        ]\n    }\n}",
         "title": "查询全地域实例概览"
+      }
+    ],
+    "DescribeAllPublicBlueprints": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllPublicBlueprints\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"423366c9-c0c2-451d-8e9d-e332eb7d9099\",\n        \"TotalCount\": 3,\n        \"BlueprintInfoSet\": [\n            {\n                \"BlueprintId\": \"lhbp-j9flli0n\",\n                \"DisplayTitle\": \"CentOS-7.6-m\",\n                \"DisplayVersion\": \"7.6-m\",\n                \"Description\": \"CentOS是一款流行的开源Linux发行版，是RHEL（Red Hat Enterprise Linux）源代码经过再编译而成。\",\n                \"OsName\": \"CentOS 7.6 64bit\",\n                \"Platform\": \"CENTOS\",\n                \"PlatformType\": \"\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"http://abc.png-m\",\n                \"RequiredSystemDiskSize\": 20,\n                \"BlueprintState\": \"NORMAL\",\n                \"CreatedTime\": \"2022-08-31T09:56:40+08:00\",\n                \"BlueprintName\": \"centos\",\n                \"SupportAutomationTools\": true,\n                \"RequiredMemorySize\": 2,\n                \"SceneIdSet\": [],\n                \"CommunityUrl\": \"\",\n                \"GuideUrl\": \"\",\n                \"DockerVersion\": \"\",\n                \"RegionSet\": [\n                    \"ap-hongkong\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询全地域镜像信息"
+      }
+    ],
+    "DescribeAllResourcesCount": [
+      {
+        "document": "查询全地域实例数量",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllResourcesCount\n<公共请求参数>\n\n{\n    \"ResourceNames\": [\n        \"INSTANCE\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f818021e-d2ed-43b5-882d-390d54f807f5\",\n        \"ResourcesCountSet\": [\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-guangzhou\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-shanghai\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-hongkong\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-beijing\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-singapore\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"na-siliconvalley\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-chengdu\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-tokyo\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-nanjing\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-mumbai\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"eu-frankfurt\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"na-toronto\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-seoul\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"ap-jakarta\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            },\n            {\n                \"ErrorCode\": \"\",\n                \"Region\": \"sa-saopaulo\",\n                \"ResourceCountDetailSet\": [\n                    {\n                        \"ResourceCount\": 382,\n                        \"ResourceName\": \"INSTANCE\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "查询全地域实例数量"
       }
     ],
     "DescribeAllScenes": [
@@ -224,6 +328,22 @@
         "title": "查询全地域使用场景信息"
       }
     ],
+    "DescribeAllSnapshotsOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllSnapshotsOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AllSnapshotsOverview\": {\n            \"NormalCount\": 0,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"9bdc8519-2b62-457f-b807-82a2cfdd02e5\",\n        \"SnapshotsDetailSet\": [\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-hongkong\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-guangzhou\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-shanghai\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-beijing\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-nanjing\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-tokyo\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-chengdu\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"ap-singapore\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"na-siliconvalley\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            },\n            {\n                \"QuotaOverview\": {\n                    \"Available\": 2,\n                    \"Total\": 2\n                },\n                \"Region\": \"eu-moscow\",\n                \"SnapshotsOverview\": {\n                    \"NormalCount\": 0,\n                    \"TotalCount\": 0\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询全地域快照概览"
+      }
+    ],
+    "DescribeBlueprintBundles": [
+      {
+        "document": "查询镜像实例",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprintBundles\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-5e886mc4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintBundleSet\": [\n            {\n                \"BundleId\": \"bundle_game_mc_gen_03\",\n                \"CPU\": 2,\n                \"Memory\": 8,\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": 50,\n                \"InternetMaxBandwidthOut\": 6,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"MonthlyTraffic\": 500,\n                \"Price\": {\n                    \"InstancePrice\": {\n                        \"Currency\": \"CNY\",\n                        \"OriginalBundlePrice\": 80,\n                        \"OriginalPrice\": 80,\n                        \"Discount\": 100,\n                        \"DiscountPrice\": 80\n                    }\n                },\n                \"SupportLinuxUnixPlatform\": true,\n                \"SupportWindowsPlatform\": true,\n                \"BundleType\": \"GAME_PORTAL_BUNDLE\",\n                \"BundleTypeDescription\": \"游戏专区\",\n                \"BundleTypePriority\": 110,\n                \"BundleSalesState\": \"AVAILABLE\",\n                \"BundleDisplayLabel\": \"NORMAL\",\n                \"SupportSlot\": 4\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"a04dba8e-efb7-4c9b-ac19-2b5b779b3e1b\"\n    }\n}",
+        "title": "查询镜像实例"
+      }
+    ],
     "DescribeBlueprintInstances": [
       {
         "document": "",
@@ -232,12 +352,28 @@
         "title": "查询镜像实例信息"
       }
     ],
+    "DescribeBlueprintSharePermission": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprintSharePermission\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-fypya4jw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SharePermissionSet\": [\n            {\n                \"CreatedTime\": \"2021-07-27T03:44:15Z\",\n                \"ImageId\": \"img-jxk9gnz6\"\n            }\n        ],\n        \"RequestId\": \"9842d6d6-8f8d-42cf-a9ad-846a47a28456\"\n    }\n}",
+        "title": "查询自定义镜像共享信息"
+      }
+    ],
     "DescribeBlueprints": [
       {
         "document": "查询镜像信息",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprints\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-lf6jlx98\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BlueprintSet\": [\n            {\n                \"BlueprintId\": \"lhbp-lf6jlx98\",\n                \"DisplayTitle\": \"宝塔Linux面板\",\n                \"DisplayVersion\": \"8.1.0 腾讯云专享版\",\n                \"BlueprintName\": \"btpanel_exclusive\",\n                \"Description\": \"宝塔Linux面板（BT-Panel）是一款简单好用的服务器运维管理面板，支持一键LAMP/LNMP/集群/监控/网站/FTP/数据库/JAVA等100多项服务器管理功能，能够极大提升运维管理效率。宝塔面板腾讯云专享版由腾讯云与堡塔公司联合开发，与普通版相比，专享版默认集成腾讯云COSFS、CDN和DNS解析插件，让用户更便捷的使用宝塔面板对腾讯云产品进行管理和操作。该镜像基于OpenCloudOS 9操作系统。\",\n                \"OsName\": \"OpenCloudOS 9\",\n                \"Platform\": \"OPENCLOUDOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"BlueprintType\": \"APP_OS\",\n                \"ImageUrl\": \"https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/bt-panel.svg\",\n                \"RequiredSystemDiskSize\": 20,\n                \"RequiredMemorySize\": 1,\n                \"BlueprintState\": \"NORMAL\",\n                \"SupportAutomationTools\": true,\n                \"ImageId\": \"\",\n                \"CommunityUrl\": \"https://www.bt.cn\",\n                \"GuideUrl\": \"https://cloud.tencent.com/document/product/1207/47425\",\n                \"SceneIdSet\": [\n                    \"lhsc-3bzsddow\"\n                ],\n                \"DockerVersion\": null,\n                \"BlueprintShared\": false,\n                \"CreatedTime\": \"2024-05-08T03:43:06Z\"\n            }\n        ],\n        \"RequestId\": \"817c4e56-36fc-47ff-bfb6-c4462816972b\"\n    }\n}",
         "title": "查询镜像信息"
+      }
+    ],
+    "DescribeBlueprintsShareAcrossAccountInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlueprintsShareAcrossAccountInfos\n<公共请求参数>\n\n{\n    \"BlueprintIds\": [\n        \"lhbp-6jc6l8yb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintShareAcrossAccountInfoSet\": [\n            {\n                \"BlueprintId\": \"lhbp-6jc6l8yb\",\n                \"AccountId\": \"700000164995\",\n                \"CreatedTime\": \"2023-09-13T00:29:12Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d339efa9-f637-4ba9-a7c6-fb89ce67d76f\"\n    }\n}",
+        "title": "查询镜像跨账号共享信息"
       }
     ],
     "DescribeBundleConfigs": [
@@ -256,6 +392,20 @@
         "title": "查询套餐折扣-成功返回"
       }
     ],
+    "DescribeBundleTypes": [
+      {
+        "document": "国内站查询套餐类型",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBundleTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BundleTypeDetailSet\": [\n            {\n                \"BundleType\": \"STARTER_BUNDLE\",\n                \"Description\": \"入门型\"\n            },\n            {\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"Description\": \"通用型\"\n            },\n            {\n                \"BundleType\": \"ENTERPRISE_BUNDLE\",\n                \"Description\": \"企业型\"\n            },\n            {\n                \"BundleType\": \"STORAGE_BUNDLE\",\n                \"Description\": \"存储型\"\n            },\n            {\n                \"BundleType\": \"EXCLUSIVE_BUNDLE\",\n                \"Description\": \"专属型\"\n            },\n            {\n                \"BundleType\": \"HK_EXCLUSIVE_BUNDLE\",\n                \"Description\": \"香港专属型\"\n            },\n            {\n                \"BundleType\": \"CAREFREE_BUNDLE\",\n                \"Description\": \"无忧型\"\n            },\n            {\n                \"BundleType\": \"BEFAST_BUNDLE\",\n                \"Description\": \"蜂驰型\"\n            }\n        ],\n        \"RequestId\": \"bc561f9a-5df5-4af5-9d5f-64881c295fa6\"\n    }\n}",
+        "title": "国内站查询套餐类型"
+      },
+      {
+        "document": "国际站查询套餐类型",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBundleTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BundleTypeDetailSet\": [\n            {\n                \"BundleType\": \"STARTER_BUNDLE\",\n                \"Description\": \"Starter Type\"\n            },\n            {\n                \"BundleType\": \"GENERAL_BUNDLE\",\n                \"Description\": \"General Type\"\n            },\n            {\n                \"BundleType\": \"ENTERPRISE_BUNDLE\",\n                \"Description\": \"Enterprise Type\"\n            },\n            {\n                \"BundleType\": \"STORAGE_BUNDLE\",\n                \"Description\": \"Storage Type\"\n            },\n            {\n                \"BundleType\": \"EXCLUSIVE_BUNDLE\",\n                \"Description\": \"Exclusive Type\"\n            },\n            {\n                \"BundleType\": \"HK_EXCLUSIVE_BUNDLE\",\n                \"Description\": \"HK Exclusive Type\"\n            },\n            {\n                \"BundleType\": \"CAREFREE_BUNDLE\",\n                \"Description\": \"Carefree Type\"\n            },\n            {\n                \"BundleType\": \"BEFAST_BUNDLE\",\n                \"Description\": \"BeFast Type\"\n            }\n        ],\n        \"RequestId\": \"333a0eea-c2d5-49f1-892e-c296367acde9\"\n    }\n}",
+        "title": "国际站查询套餐类型"
+      }
+    ],
     "DescribeBundles": [
       {
         "document": "查询套餐-成功返回",
@@ -270,6 +420,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCcnAttachedInstances\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"CcnAttachedInstanceSet\": [\n            {\n                \"CcnId\": \"ccn-pf78xmcp\",\n                \"CidrBlock\": [\n                    \"10.0.0.0/16\"\n                ],\n                \"State\": \"PENDING\",\n                \"AttachedTime\": \"2021-05-08 17:21:05\",\n                \"Description\": \"Lighthouse attach ccn instance\"\n            }\n        ],\n        \"RequestId\": \"b0f73b4b-bf36-4611-8e3b-e3dfe0353cd6\"\n    }\n}",
         "title": "查询云联网关联的实例信息"
+      }
+    ],
+    "DescribeDNSRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDNSRecords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b11db5bc-f6fd-4a4c-9035-b289af22d98f\",\n        \"TotalCount\": 2,\n        \"RecordSet\": [\n            {\n                \"RecordId\": \"lhdr-jxj6qkjw\",\n                \"Subdomain\": \"aa\",\n                \"RecordState\": \"NORMAL\",\n                \"RecordType\": \"A\",\n                \"RecordValue\": \"2.3.4.5\",\n                \"ResourceType\": \"\",\n                \"ResourceKey\": \"\",\n                \"ResourceRegion\": \"\",\n                \"DomainId\": \"lhdo-3ob8xfuu\",\n                \"DomainName\": \"lhsday.com\",\n                \"CreatedTime\": \"2022-09-27T03:29:22Z\",\n                \"UpdatedTime\": \"2022-09-27T03:29:22Z\"\n            },\n            {\n                \"RecordId\": \"lhdr-qpnq8qzk\",\n                \"Subdomain\": \"www\",\n                \"RecordState\": \"NORMAL\",\n                \"RecordType\": \"A\",\n                \"RecordValue\": \"1.2.3.4\",\n                \"ResourceType\": \"\",\n                \"ResourceKey\": \"\",\n                \"ResourceRegion\": \"\",\n                \"DomainId\": \"lhdo-3ob8xfuu\",\n                \"DomainName\": \"lhsday.com\",\n                \"CreatedTime\": \"2022-09-27T03:29:22Z\",\n                \"UpdatedTime\": \"2022-09-27T03:29:22Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询解析记录"
       }
     ],
     "DescribeDiskBackups": [
@@ -360,6 +518,22 @@
         "title": "查询Docker容器列表"
       }
     ],
+    "DescribeDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n{\n    \"DomainIds\": [\n        \"lhdo-3ob8xfu\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37b3c92f-4b1d-4889-a46f-8dc7d61d76e1\",\n        \"TotalCount\": 1,\n        \"DomainSet\": [\n            {\n                \"DomainId\": \"lhdo-3ob8xfuu\",\n                \"DomainName\": \"lhsday.com\",\n                \"PurchaseState\": \"\",\n                \"DNSState\": \"UNUSE_DNSPOD\",\n                \"RegisterTime\": \"\",\n                \"ExpireTime\": \"\",\n                \"EffectiveDNS\": [\n                    \"t8j7g.dnspod.net\",\n                    \"u6n7d.dnspod.net\"\n                ],\n                \"CreatedTime\": \"2022-09-27T03:12:43Z\",\n                \"UpdatedTime\": \"2022-09-27T03:12:43Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询域名列表"
+      }
+    ],
+    "DescribeFeaturesAvailability": [
+      {
+        "document": "查询当前资源组合是否支持在创建实例后自动开启IPv6。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFeaturesAvailability\n<公共请求参数>\n\n{\n    \"Features\": [\n        {\n            \"FeatureDimensions\": [\n                {\n                    \"Name\": \"BlueprintId\",\n                    \"Values\": [\n                        \"lhbp-8l0svqtk\"\n                    ]\n                },\n                {\n                    \"Name\": \"BundleId\",\n                    \"Values\": [\n                        \"bundle_starter_mc_med2_01\"\n                    ]\n                },\n                {\n                    \"Name\": \"InstanceCount\",\n                    \"Values\": [\n                        \"10\"\n                    ]\n                },\n                {\n                    \"Name\": \"Zone\",\n                    \"Values\": [\n                        \"ap-guangzhou-2\"\n                    ]\n                }\n            ],\n            \"FeatureName\": \"CREATE_INSTANCE_SUPPORT_IPV6\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FeatureAvailabilityResults\": [\n            {\n                \"FeatureName\": \"CREATE_INSTANCE_SUPPORT_IPV6\",\n                \"IsAvailable\": true,\n                \"Message\": \"支持分配IPv6。\"\n            }\n        ],\n        \"RequestId\": \"90c1b3d3-8cc3-49f6-b81c-e70c8e3f9308\"\n    }\n}",
+        "title": "查询创建实例是否支持IPv6"
+      }
+    ],
     "DescribeFirewallRules": [
       {
         "document": "",
@@ -422,12 +596,84 @@
         "title": "查询防火墙模板"
       }
     ],
+    "DescribeFunctionActivities": [
+      {
+        "document": "查询实例lhins-gtn3ojxp下所有的函数活动。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionActivities\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"ActivityIds\": [],\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"CreatedTimeBegin\": 0,\n    \"CreatedTimeEnd\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionActivitySet\": [\n            {\n                \"ActivityId\": \"lhfa-a8diredk\",\n                \"ActivityName\": \"DeployFunction\",\n                \"ActivityState\": \"SUCCESS\",\n                \"CreatedTime\": \"2023-02-23T08:33:17Z\",\n                \"EndTime\": \"2023-02-23T08:33:18Z\",\n                \"ErrorMessage\": \"\",\n                \"FunctionNames\": [\n                    \"function-001\"\n                ]\n            },\n            {\n                \"ActivityId\": \"lhfa-o9i15qeg\",\n                \"ActivityName\": \"CreateFunctionVersion\",\n                \"ActivityState\": \"SUCCESS\",\n                \"CreatedTime\": \"2023-02-23T08:31:42Z\",\n                \"EndTime\": \"2023-02-23T08:31:43Z\",\n                \"ErrorMessage\": \"\",\n                \"FunctionNames\": [\n                    \"function-001\"\n                ]\n            },\n            {\n                \"ActivityId\": \"lhfa-k7q4widg\",\n                \"ActivityName\": \"CreateFunction\",\n                \"ActivityState\": \"FAILED\",\n                \"CreatedTime\": \"2023-02-23T08:27:56Z\",\n                \"EndTime\": \"2023-02-23T08:27:57Z\",\n                \"ErrorMessage\": \"SW50ZXJuYWwgRXJyb3Iu\",\n                \"FunctionNames\": [\n                    \"function002\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a5a61025-c0e7-4716-9102-7821db9e0dfd\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询实例下所有的函数活动"
+      },
+      {
+        "document": "查询创建时间在1677120579(2023-02-23 10:49:39)到1677206979(2023-02-24 10:49:39)内的函数活动。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionActivities\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"ActivityIds\": [],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"CreatedTimeBegin\": 1677120579,\n    \"CreatedTimeEnd\": 1677206979\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionActivitySet\": [\n            {\n                \"ActivityId\": \"lhfa-qj4yiup4\",\n                \"ActivityName\": \"CreateFunction\",\n                \"ActivityState\": \"SUCCESS\",\n                \"CreatedTime\": \"2023-02-24T02:14:29Z\",\n                \"EndTime\": \"2023-02-24T02:14:30Z\",\n                \"ErrorMessage\": \"\",\n                \"FunctionNames\": [\n                    \"action-1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a775c6c7-6759-4e5f-b2b0-e0310010ecd3\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定时间范围内的函数活动"
+      },
+      {
+        "document": "查询实例lhins-gtn3ojxp下所有的的CreateFunction和DeployFunction函数活动信息。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctionActivities\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"Filters\": [\n        {\n            \"Name\": \"activity-name\",\n            \"Values\": [\n                \"DeployFunction\",\n                \"CreateFunction\"\n            ]\n        }\n    ],\n    \"Limit\": 0,\n    \"Offset\": 20,\n    \"CreatedTimeBegin\": 0,\n    \"CreatedTimeEnd\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionActivitySet\": [\n            {\n                \"ActivityId\": \"lhfa-a8diredk\",\n                \"ActivityName\": \"DeployFunction\",\n                \"ActivityState\": \"SUCCESS\",\n                \"CreatedTime\": \"2023-02-23T08:33:17Z\",\n                \"EndTime\": \"2023-02-23T08:33:18Z\",\n                \"ErrorMessage\": \"\",\n                \"FunctionNames\": [\n                    \"function-001\"\n                ]\n            },\n            {\n                \"ActivityId\": \"lhfa-k7q4widg\",\n                \"ActivityName\": \"CreateFunction\",\n                \"ActivityState\": \"FAILED\",\n                \"CreatedTime\": \"2023-02-23T08:27:56Z\",\n                \"EndTime\": \"2023-02-23T08:27:57Z\",\n                \"ErrorMessage\": \"SW50ZXJuYWwgRXJyb3Iu\",\n                \"FunctionNames\": [\n                    \"function002\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a5a61025-c0e7-4716-9102-7821db9e0dfd\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询实例下所有的CreateFunction和DeployFunction函数活动"
+      }
+    ],
+    "DescribeFunctions": [
+      {
+        "document": "查询实例下的所有函数。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctions\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"FunctionNames\": [],\n    \"Filters\": [],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionSet\": [\n            {\n                \"CreatedTime\": \"2023-02-23T08:27:55Z\",\n                \"DeployStatus\": \"RUNNING\",\n                \"DeployVersion\": 1,\n                \"FunctionDescribe\": \"描述信息\",\n                \"FunctionEntry\": {\n                    \"HttpMethods\": [\n                        \"ANY\"\n                    ],\n                    \"HttpPath\": \"/path2\",\n                    \"NeedAuthenticate\": false\n                },\n                \"FunctionName\": \"function002\",\n                \"Template\": \"golang-http\",\n                \"UpdatedTime\": \"2023-02-23T08:27:55Z\"\n            },\n            {\n                \"CreatedTime\": \"2023-02-22T03:34:48Z\",\n                \"DeployStatus\": \"RUNNING\",\n                \"DeployVersion\": 1,\n                \"FunctionDescribe\": \"这是一条简单的描述\",\n                \"FunctionEntry\": {\n                    \"HttpMethods\": [\n                        \"DELETE\",\n                        \"GET\",\n                        \"POST\"\n                    ],\n                    \"HttpPath\": \"/python3\",\n                    \"NeedAuthenticate\": false\n                },\n                \"FunctionName\": \"python3\",\n                \"Template\": \"python3-http\",\n                \"UpdatedTime\": \"2023-02-22T03:34:48Z\"\n            },\n            {\n                \"CreatedTime\": \"2023-02-22T02:26:20Z\",\n                \"DeployStatus\": \"RUNNING\",\n                \"DeployVersion\": 4,\n                \"FunctionDescribe\": \"修改后的描述\",\n                \"FunctionEntry\": {\n                    \"HttpMethods\": [\n                        \"ANY\"\n                    ],\n                    \"HttpPath\": \"/update\",\n                    \"NeedAuthenticate\": false\n                },\n                \"FunctionName\": \"function-001\",\n                \"Template\": \"golang-http\",\n                \"UpdatedTime\": \"2023-02-23T08:37:55Z\"\n            }\n        ],\n        \"RequestId\": \"c678aa31-016c-4bdf-a5bc-c4e5b49c7f59\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询所有函数"
+      },
+      {
+        "document": "查询函数名为function-001的函数。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctions\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"FunctionNames\": [\n        \"function-001\"\n    ],\n    \"Filters\": [],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionSet\": [\n            {\n                \"CreatedTime\": \"2023-02-22T02:26:20Z\",\n                \"DeployStatus\": \"RUNNING\",\n                \"DeployVersion\": 4,\n                \"FunctionDescribe\": \"修改后的描述\",\n                \"FunctionEntry\": {\n                    \"HttpMethods\": [\n                        \"ANY\"\n                    ],\n                    \"HttpPath\": \"/update\",\n                    \"NeedAuthenticate\": false\n                },\n                \"FunctionName\": \"function-001\",\n                \"Template\": \"golang-http\",\n                \"UpdatedTime\": \"2023-02-23T08:37:55Z\"\n            }\n        ],\n        \"RequestId\": \"834600ae-4102-4e78-b362-6b7ad58670ea\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据函数名查询函数"
+      },
+      {
+        "document": "查询函数名包含function的函数",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFunctions\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-gtn3ojxp\",\n    \"FunctionNames\": [],\n    \"Filters\": [\n        {\n            \"Name\": \"vague-function-name\",\n            \"Values\": [\n                \"function\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionSet\": [\n            {\n                \"CreatedTime\": \"2023-02-23T08:27:55Z\",\n                \"DeployStatus\": \"RUNNING\",\n                \"DeployVersion\": 1,\n                \"FunctionDescribe\": \"描述信息\",\n                \"FunctionEntry\": {\n                    \"HttpMethods\": [\n                        \"ANY\"\n                    ],\n                    \"HttpPath\": \"/path2\",\n                    \"NeedAuthenticate\": false\n                },\n                \"FunctionName\": \"function002\",\n                \"Template\": \"golang-http\",\n                \"UpdatedTime\": \"2023-02-23T08:27:55Z\"\n            },\n            {\n                \"CreatedTime\": \"2023-02-22T02:26:20Z\",\n                \"DeployStatus\": \"RUNNING\",\n                \"DeployVersion\": 4,\n                \"FunctionDescribe\": \"修改后的描述\",\n                \"FunctionEntry\": {\n                    \"HttpMethods\": [\n                        \"ANY\"\n                    ],\n                    \"HttpPath\": \"/update\",\n                    \"NeedAuthenticate\": false\n                },\n                \"FunctionName\": \"function-001\",\n                \"Template\": \"golang-http\",\n                \"UpdatedTime\": \"2023-02-23T08:37:55Z\"\n            }\n        ],\n        \"RequestId\": \"d82943dc-b190-41e3-a961-d9d7a6403335\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "根据filter模糊查询函数"
+      }
+    ],
     "DescribeGeneralResourceQuotas": [
       {
         "document": "查询实例资源配额信息",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeGeneralResourceQuotas\n&ResourceNames.0=GENERAL_BUNDLE_INSTANCE\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GeneralResourceQuotaSet\": [\n            {\n                \"ResourceName\": \"GENERAL_BUNDLE_INSTANCE\",\n                \"ResourceQuotaAvailable\": 9,\n                \"ResourceQuotaTotal\": 10\n            }\n        ],\n        \"RequestId\": \"4dd1a440-39ca-49fb-9f2f-c995db3ae20b\"\n    }\n}",
         "title": "查询通用资源配额信息"
+      }
+    ],
+    "DescribeGraphData": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeGraphData\n&Module=lighthouse,\n&Namespace=qce/cvm,\n&MetricName=disk_usage,\n&UnInstanceID=lhins-20109vr5,\n&UUID=105047cf-0190-496f-806f-017064cc9971,\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2021-03-19T18:11:21+08:00\",\n        \"MetricName\": \"disk_usage\",\n        \"Partitions\": [],\n        \"Period\": 0,\n        \"RequestId\": \"a61a15bc-0228-4661-9957-f893ddadc7b6\",\n        \"StartTime\": \"2021-03-19T17:11:21+08:00\"\n    }\n}",
+        "title": "获取硬盘分区使用图"
+      }
+    ],
+    "DescribeImagesToShare": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImagesToShare\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-cs2rrmp0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSet\": [\n            {\n                \"ImageId\": \"img-cs2rrmp0\",\n                \"ImageName\": \"ubuntu\",\n                \"ImageDescription\": \"ubuntu\",\n                \"ImageSize\": 50,\n                \"ImageSource\": \"CREATE_IMAGE\",\n                \"ImageClass\": \"SystemImage\",\n                \"ImageState\": \"NORMAL\",\n                \"IsSupportCloudinit\": true,\n                \"Architecture\": \"x86_64\",\n                \"OsName\": \"Ubuntu Server 20.04 LTS 64bit\",\n                \"Platform\": \"Ubuntu\",\n                \"CreatedTime\": \"2021-07-23T08:49:36Z\",\n                \"IsShareable\": true,\n                \"UnshareableReason\": \"\"\n            }\n        ],\n        \"RequestId\": \"c5aafa9d-20e4-400e-852c-b800f607dd91\"\n    }\n}",
+        "title": "查询CVM的自定义镜像列表共享到轻量应用服务器"
+      }
+    ],
+    "DescribeInstallCertificateTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstallCertificateTasks\n<公共请求参数>\n\n{\n    \"Limit\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstallCertificateTaskSet\": [\n            {\n                \"InstanceId\": \"lhins-aaaabbbb\",\n                \"CertificateId\": \"yrrzyb53\",\n                \"Domain\": \"a.b.com\",\n                \"InvocationId\": \"inv-aaaaeeee\",\n                \"TaskStatus\": \"PENDING\",\n                \"TaskOutput\": \"\",\n                \"InstallTime\": \"2022-09-23T07:41:55Z\"\n            }\n        ],\n        \"RequestId\": \"cb31e424-0b5f-4f25-8cfc-76121aed5b58\"\n    }\n}",
+        "title": "查询证书安装任务"
+      }
+    ],
+    "DescribeInstanceByOriginInstanceIds": [
+      {
+        "document": "查询实例用户小账号信息",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceByOriginInstanceIds\n<公共请求参数>\n\n{\n\n    \"OriginInstanceIds\": [\n        \"ins-6x5rvkze\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceAccountSet\": [\n            {\n                \"OriginInstanceId\": \"ins-6x5rvkze\",\n                \"InstanceId\": \"lhins-jsba6yqd\",\n                \"AccountAppId\": 2223344567\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"841cfe80-4676-4033-9889-09ff7904ec18\"\n    }\n}",
+        "title": "查询实例用户小账号信息"
       }
     ],
     "DescribeInstanceDimensions": [
@@ -452,6 +698,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeInstances\n&Limit=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"lhins-ruy9d2tw\",\n                \"BundleId\": \"bundle_bw_small1_1\",\n                \"BlueprintId\": \"lhbp-5e8807lo\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"InstanceName\": \"lighthouse-test\",\n                \"OsName\": \"CentOS 7.6 64bit\",\n                \"Platform\": \"CENTOS\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskSize\": 50,\n                    \"DiskId\": \"lhdisk-gayq6kyd\"\n                },\n                \"PrivateAddresses\": [\n                    \"10.0.0.5\"\n                ],\n                \"PublicAddresses\": [\n                    \"170.106.15.201\"\n                ],\n                \"InternetAccessible\": {\n                    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                    \"InternetMaxBandwidthOut\": 20,\n                    \"PublicIpAssigned\": true\n                },\n                \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"LoginSettings\": {\n                    \"KeyIds\": []\n                },\n                \"Tags\": [\n                    {\n                        \"Key\": \"lighthouse\",\n                        \"Value\": \"great\"\n                    }\n                ],\n                \"InstanceState\": \"RUNNING\",\n                \"InstanceRestrictState\": \"NORMAL\",\n                \"Uuid\": \"1322d32a-2641-45f3-a244-559405b32228\",\n                \"LatestOperation\": \"StartInstances\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"LatestOperationRequestId\": \"6b9a6dac-888a-4b4d-9739-0d0b66cbfa88\",\n                \"CreatedTime\": \"2020-04-28T03:46:09Z\",\n                \"ExpiredTime\": \"2020-05-28T03:46:09Z\",\n                \"IsolatedTime\": null\n            }\n        ],\n        \"RequestId\": \"c9aa9e9b-bb2b-4390-b8da-fc976ffc4608\"\n    }\n}",
         "title": "查看实例列表"
+      }
+    ],
+    "DescribeInstancesCreateBlueprintAttributes": [
+      {
+        "document": "查询实例创建镜像属性",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesCreateBlueprintAttributes\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-9tnyxdje\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceCreateBlueprintAttributesSet\": [\n            {\n                \"InstanceId\": \"lhins-9tnyxdje\",\n                \"SupportOnlineCreateBlueprint\": true\n            }\n        ],\n        \"RequestId\": \"601be4eb-7280-44ea-8515-2b1044ff68c7\"\n    }\n}",
+        "title": "查询实例创建镜像属性"
       }
     ],
     "DescribeInstancesDeniedActions": [
@@ -510,6 +764,34 @@
         "title": "查询实例可修改套餐列表"
       }
     ],
+    "DescribeMonitorData": [
+      {
+        "document": "拉取实例某段时间内统计周期为 5 分钟的 CPU 利用率监控数据",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeMonitorData\n&Namespace=qce/cvm\n&MetricName=cpu_usage\n&Period=300\n&StartTime=2020-06-16T00:00:00+08:00\n&EndTime=2020-06-16T20:05:00+08:00\n&Dimensions=[{\"unInstanceId\": \"lhins-k31c771o\"}]\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2020-06-16 00:00:00\",\n        \"EndTime\": \"2020-06-16 20:05:00\",\n        \"Period\": 300,\n        \"MetricName\": \"cpu_usage\",\n        \"DataPoints\": \"[{\\\"Dimensions\\\": {\\\"unInstanceId\\\": \\\"lhins-k31c771o\\\"}, \\\"Points\\\": [0.7, 0.583, 0.633, 0.583, 0.533, 0.633, 0.55, 0.6, 0.55, 0.583, 0.6, 0.533, 0.566, 0.516, 0.566, 0.55, 0.583, 0.533, 0.6, 0.55, 0.583, 0.566, 0.583, 0.6, 0.55, 1.566, 0.683, 0.65, 0.65, 0.583, 0.633, 0.616, 0.666, 0.716, 0.65, 0.716, 0.7, 0.633, 0.95, 0.616, 0.6, 0.65, 0.666, 0.7, 0.65, 0.733, 0.75, 0.683, 0.7, 0.65, 0.7, 0.716, 0.7, 0.716, 0.716, 0.833, 0.733, 0.816, 0.733, 0.733, 0.683, 0.7, 0.633, 0.683, 0.633, 0.7, 0.633, 0.6, 0.683, 0.75, 0.666, 0.6, 0.616, 0.65, 0.55, 0.566, 0.583, 0.6, 0.6, 0.5, 0.483, 0.583, 0.516, 0.5, 0.516, 0.533, 0.516, 0.55, 0.533, 0.616, 0.633, 0.6, 0.6, 0.75, 0.633, 0.666, 0.7, 0.683, 0.7, 0.683, 0.716, 0.683, 0.7, 0.833, 0.816, 0.75, 0.783, 0.966, 0.783, 0.816, 0.75, 0.75, 0.75, 0.7, 0.716, 0.766, 0.716, 0.733, 0.766, 0.733, 0.7, 0.666, 0.633, 0.666, 0.7, 0.766, 0.766, 0.766, 0.766, 0.733, 0.733, 0.733, 0.766, 0.633, 0.65, 0.633, 0.75, 0.766, 0.733, 0.7, 0.75, 0.816, 0.833, 0.75, 0.75, 0.8, 0.883, 0.616, 0.6, 0.683, 0.616, 0.6, 0.616, 0.6, 0.566, 0.666, 0.583, 0.566, 0.55, 0.616, 0.616, 0.633, 0.6, 0.616, 0.616, 0.566, 0.616, 0.683, 0.616, 0.583, 0.55, 0.516, 0.5, 0.516, 0.516, 0.566, 0.533, 0.516, 0.6, 0.583, 0.566, 0.55, 0.6, 0.583, 0.6, 0.566, 0.633, 0.616, 0.616, 0.65, 0.616, 0.583, 0.6, 0.616, 0.616, 0.633, 0.616, 0.683, 0.633, 0.683, 0.616, 0.633, 0.583, 0.65, 0.65, 0.633, 0.65, 0.633, 0.633, 0.683, 0.65, 0.616, 0.716, 0.7, 0.65, 0.666, 0.633, 0.716, 0.566, 0.65, 0.65, 0.583, 0.566, 0.583, 0.566, 0.533, 0.533, 0.516, 0.466, 0.533, 0.55, 0.5, 0.516, 0.716, 0.516, 0.5, 0.533, 0.466, 0.466, 0.483, 0.483, 0.516]}]\",\n        \"RequestId\": \"8e435789-c67f-4d3e-96d5-a2740ee28af4\"\n    }\n}",
+        "title": "拉取单个实例监控数据示例"
+      },
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeMonitorData\n&Namespace=qce/cvm\n&MetricName=cpu_usage\n&Period=300\n&StartTime=2020-06-16T00:00:00+08:00\n&EndTime=2020-06-16T20:05:00+08:00\n&Dimensions=[{\"unInstanceId\":\"lhins-k31c771o\"},{\"unInstanceId\":\"lhins-aglzynfg\"}]\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2020-06-16 00:00:00\",\n        \"EndTime\": \"2020-06-16 20:05:00\",\n        \"Period\": 300,\n        \"MetricName\": \"cpu_usage\",\n        \"DataPoints\": \"[{\\\"Dimensions\\\": {\\\"unInstanceId\\\": \\\"lhins-k31c771o\\\"}, \\\"Points\\\": [0.7, 0.583, 0.633, 0.583, 0.533, 0.633, 0.55, 0.6, 0.55, 0.583, 0.6, 0.533, 0.566, 0.516, 0.566, 0.55, 0.583, 0.533, 0.6, 0.55, 0.583, 0.566, 0.583, 0.6, 0.55, 1.566, 0.683, 0.65, 0.65, 0.583, 0.633, 0.616, 0.666, 0.716, 0.65, 0.716, 0.7, 0.633, 0.95, 0.616, 0.6, 0.65, 0.666, 0.7, 0.65, 0.733, 0.75, 0.683, 0.7, 0.65, 0.7, 0.716, 0.7, 0.716, 0.716, 0.833, 0.733, 0.816, 0.733, 0.733, 0.683, 0.7, 0.633, 0.683, 0.633, 0.7, 0.633, 0.6, 0.683, 0.75, 0.666, 0.6, 0.616, 0.65, 0.55, 0.566, 0.583, 0.6, 0.6, 0.5, 0.483, 0.583, 0.516, 0.5, 0.516, 0.533, 0.516, 0.55, 0.533, 0.616, 0.633, 0.6, 0.6, 0.75, 0.633, 0.666, 0.7, 0.683, 0.7, 0.683, 0.716, 0.683, 0.7, 0.833, 0.816, 0.75, 0.783, 0.966, 0.783, 0.816, 0.75, 0.75, 0.75, 0.7, 0.716, 0.766, 0.716, 0.733, 0.766, 0.733, 0.7, 0.666, 0.633, 0.666, 0.7, 0.766, 0.766, 0.766, 0.766, 0.733, 0.733, 0.733, 0.766, 0.633, 0.65, 0.633, 0.75, 0.766, 0.733, 0.7, 0.75, 0.816, 0.833, 0.75, 0.75, 0.8, 0.883, 0.616, 0.6, 0.683, 0.616, 0.6, 0.616, 0.6, 0.566, 0.666, 0.583, 0.566, 0.55, 0.616, 0.616, 0.633, 0.6, 0.616, 0.616, 0.566, 0.616, 0.683, 0.616, 0.583, 0.55, 0.516, 0.5, 0.516, 0.516, 0.566, 0.533, 0.516, 0.6, 0.583, 0.566, 0.55, 0.6, 0.583, 0.6, 0.566, 0.633, 0.616, 0.616, 0.65, 0.616, 0.583, 0.6, 0.616, 0.616, 0.633, 0.616, 0.683, 0.633, 0.683, 0.616, 0.633, 0.583, 0.65, 0.65, 0.633, 0.65, 0.633, 0.633, 0.683, 0.65, 0.616, 0.716, 0.7, 0.65, 0.666, 0.633, 0.716, 0.566, 0.65, 0.65, 0.583, 0.566, 0.583, 0.566, 0.533, 0.533, 0.516, 0.466, 0.533, 0.55, 0.5, 0.516, 0.716, 0.516, 0.5, 0.533, 0.466, 0.466, 0.483, 0.483, null]}, {\\\"Dimensions\\\": {\\\"unInstanceId\\\": \\\"lhins-aglzynfg\\\"}, \\\"Points\\\": [0.75, 0.8, 0.766, 0.766, 0.75, 0.75, 0.766, 0.816, 0.783, 0.733, 0.85, 0.766, 0.766, 0.75, 0.733, 0.766, 0.75, 0.716, 0.75, 0.733, 0.8, 0.7, 0.733, 0.766, 0.85, 0.766, 0.783, 0.75, 2.149, 1.066, 0.8, 1.149, 0.85, 0.8, 0.8, 0.8, 0.783, 0.9, 0.85, 0.816, 0.816, 0.833, 0.816, 1, 1.283, 0.85, 0.883, 0.9, 0.866, 0.85, 0.783, 0.783, 0.8, 1, 0.816, 0.766, 0.85, 0.816, 0.85, 0.816, 0.75, 0.816, 0.816, 0.783, 0.816, 0.816, 0.783, 0.816, 0.8, 0.833, 0.8, 0.85, 0.766, 0.766, 0.783, 0.716, 0.7, 0.733, 0.716, 0.75, 0.816, 0.816, 0.833, 0.9, 0.9, 0.866, 0.9, 1, 0.916, 0.916, 0.833, 0.95, 0.883, 0.866, 0.85, 0.883, 0.883, 0.85, 1.016, 0.916, 0.866, 0.833, 0.816, 0.8, 0.933, 0.783, 0.883, 0.883, 0.9, 0.866, 1.116, 1.166, 0.966, 0.9, 0.95, 0.783, 0.766, 0.75, 0.733, 0.75, 0.716, 0.75, 0.783, 0.7, 0.683, 0.7, 0.683, 0.733, 0.683, 0.716, 0.683, 0.683, 0.65, 0.7, 0.716, 0.833, 0.733, 0.816, 0.85, 0.85, 0.95, 0.883, 0.9, 0.883, 1, 0.983, 0.933, 0.883, 1.033, 0.966, 1.033, 1.233, 1.216, 1.066, 1.05, 1, 1.016, 1.083, 1.133, 1.133, 0.95, 1.033, 1.016, 1.033, 1.033, 1.083, 0.966, 0.95, 1.033, 0.983, 0.866, 0.9, 1, 0.933, 0.966, 0.933, 0.933, 0.883, 0.933, 0.933, 1.016, 0.916, 0.966, 1.016, 0.916, 0.916, 1, 1.016, 0.95, 0.9, 0.966, 1.283, 0.983, 5.849, 0.933, 0.95, 0.933, 0.95, 0.933, 0.966, 0.95, 1.05, 1.05, 1.033, 1.016, 1.083, 0.85, 0.95, 0.833, 0.966, 0.833, 0.933, 0.866, 0.883, 5.866, 3.933, 0.95, 1.149, 0.966, 1.033, 0.95, 0.933, 0.9, 0.95, 0.9, 0.916, 1.066, 1.05, 0.95, 1.016, 1.033, 1, 0.983, 1.033, 1.066, 1.066, 1.1, 1.1, 1, 0.95, 0.95, null]}]\",\n        \"RequestId\": \"d319dd29-d809-4b9c-aa30-43be558963b0\"\n    }\n}",
+        "title": "拉取多个实例监控数据示例"
+      },
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=DescribeMonitorData\n&Namespace=qce/block_storage\n&MetricName=disk_usage\n&Period=300\n&StartTime=2020-06-09T17:31:13+08:00\n&EndTime=2020-06-09T18:31:13+08:00\n&Dimensions.0.Name=diskId\n&Dimensions=[{\"InstanceId\": \"lhins-k31c771o\"}]\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2020-06-09 17:30:00\",\n        \"EndTime\": \"2020-06-09 18:30:00\",\n        \"Period\": 300,\n        \"MetricName\": \"disk_usage\",\n        \"DataPoints\": \"[{\\\"Dimensions\\\": {\\\"InstanceId\\\": \\\"lhins-k31c771o\\\", \\\"vmUuid\\\": \\\"b57c4319-f96d-4fc7-9c7a-712478956767\\\", \\\"ProjectId\\\": \\\"1153379\\\", \\\"DiskName\\\": \\\"vda1\\\"}, \\\"Points\\\": [7.69, 7.69, 7.69, 7.69, 7.69, 7.7, 7.7, 7.7, 7.7, 7.7, 7.7, 7.7, 7.7]}]\",\n        \"RequestId\": \"da47bc2e-fc8c-4c67-ac5e-23865aea205d\"\n    }\n}",
+        "title": "拉取某个硬盘某段时间内统计周期为 60 秒的 IO 繁忙比率监控数据。"
+      }
+    ],
+    "DescribePresetFirewallRules": [
+      {
+        "document": "查询预设防火墙规则列表",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePresetFirewallRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FirewallRuleSet\": [\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Windows login (3389)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"Windows remote desktop login\",\n                \"Port\": \"3389\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Windows login optimization (3389)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"Optimize Windows remote desktop login experience\",\n                \"Port\": \"3389\",\n                \"Protocol\": \"UDP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Linux login (22)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"Linux SSH login\",\n                \"Port\": \"22\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"FTP (21)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"FTP service (21)\",\n                \"Port\": \"21\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"HTTP (80)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"Web HTTP service (80), such as Apache, Nginx, etc.\",\n                \"Port\": \"80\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"HTTPS (443)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"Web HTTPS service (443), such as Apache, Nginx, etc.\",\n                \"Port\": \"443\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"MySQL (3306)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"MySQL database service (3306)\",\n                \"Port\": \"3306\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"SQL Server (1433)\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"SQL Server database service (1433)\",\n                \"Port\": \"1433\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"All TCP\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"All TCP\",\n                \"Port\": \"1-65535\",\n                \"Protocol\": \"TCP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"All UDP\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"All UDP\",\n                \"Port\": \"1-65535\",\n                \"Protocol\": \"UDP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"Ping\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"Use Ping to test network connectivity (Allow ALL ICMP)\",\n                \"Port\": \"ALL\",\n                \"Protocol\": \"ICMP\"\n            },\n            {\n                \"Action\": \"ACCEPT\",\n                \"AppType\": \"ALL\",\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"FirewallRuleDescription\": \"All TCP、UDP、ICMP and GRE\",\n                \"Port\": \"ALL\",\n                \"Protocol\": \"ALL\"\n            }\n        ],\n        \"RequestId\": \"254770cd-c72c-46e3-a634-900980a89f3c\",\n        \"TotalCount\": 12\n    }\n}",
+        "title": "查询预设防火墙规则列表"
+      }
+    ],
     "DescribeRegions": [
       {
         "document": "",
@@ -526,12 +808,28 @@
         "title": "查询实例可重装镜像"
       }
     ],
+    "DescribeResourceAccounts": [
+      {
+        "document": "查询资源大账号信息",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceAccounts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ResourceAccountSet\": [\n            {\n                \"AppId\": 2233445678,\n                \"Uin\": \"100033445566\"\n            }\n        ],\n        \"RequestId\": \"3c627c2a-4e39-4dd6-b8f6-1c98edbb256a\"\n    }\n}",
+        "title": "查询资源大账号信息"
+      }
+    ],
     "DescribeScenes": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"lhsc-abcd1235\",\n                \"DisplayName\": \"测试1\",\n                \"Description\": \"测试测试1\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4836c744-4de2-44c0-ba5c-096ccf8c923f\"\n    }\n}",
         "title": "查询使用场景"
+      }
+    ],
+    "DescribeServiceLinkedRoleExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceLinkedRoleExist\n<公共请求参数>\n\n{\n    \"RoleName\": \"xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b4afc89-4695-4832-96f9-a222517ab923\",\n        \"Exist\": true\n    }\n}",
+        "title": "查询角色是否存在"
       }
     ],
     "DescribeSnapshots": [
@@ -550,6 +848,14 @@
         "title": "查看快照操作限制列表"
       }
     ],
+    "DescribeSupportHttpsInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportHttpsInstances\n<公共请求参数>\n\n{\n    \"Limit\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"SupportHttpsInstanceSet\": [\n            {\n                \"InstanceId\": \"lhins-aaaabbbb\",\n                \"InstanceName\": \"insname\",\n                \"PublicAddresses\": [\n                    \"1.2.3.4\"\n                ],\n                \"AutomationAgentStatus\": \"Offline\"\n            }\n        ],\n        \"RequestId\": \"cb31e424-0b5f-4f25-8cfc-76121aed5b58\"\n    }\n}",
+        "title": "查询支持开启 HTTPS 的实例"
+      }
+    ],
     "DescribeUserOriginAccount": [
       {
         "document": "查询用户对应的资源大账号信息",
@@ -558,12 +864,36 @@
         "title": "查询用户对应的资源大账号信息"
       }
     ],
+    "DescribeUserPreferences": [
+      {
+        "document": "查询用户偏好配置",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPreferences\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0a16f87c-f793-4527-adfb-d73b3ad2de92\",\n        \"ConsoleInstancesViewType\": \"LIST\",\n        \"ConsoleNewUserGuide\": false,\n        \"ConsoleAIGuide\": true\n    }\n}",
+        "title": "查询用户偏好配置"
+      }
+    ],
     "DescribeUserQualifiedCrowdPackages": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQualifiedCrowdPackages\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43ee9cd6-787c-43ac-943b-d1a4d637807a\",\n        \"CrowdPackageSet\": [\n            {\n                \"CrowdPackageName\": \"TELEMARKETING\",\n                \"Description\": \"电销\"\n            }\n        ]\n    }\n}",
         "title": "用户符合条件的人群包列表"
+      }
+    ],
+    "DescribeUserSceneAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSceneAttribute\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae6906ae-b887-4f0b-8934-8a3e65709c5c\",\n        \"SceneId\": 0,\n        \"NeedGuide\": false\n    }\n}",
+        "title": "查询用户场景教学信息"
+      }
+    ],
+    "DescribeVpcsInternal": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcsInternal\n<公共请求参数>\n\n{\n    \"VpcIds\": [\n        \"vpc-nzpgrbrj\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"VpcSet\": [\n            {\n                \"VpcId\": \"vpc-nzpgrbrj\",\n                \"AppId\": 251010674\n            }\n        ],\n        \"RequestId\": \"ac5b2e80-bc71-4c48-be07-10abedced7dd\"\n    }\n}",
+        "title": "查询 VPC 详细信息"
       }
     ],
     "DescribeZones": [
@@ -598,6 +928,50 @@
         "title": "解绑密钥对"
       }
     ],
+    "EnableInstancesNetworkLineLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableInstancesNetworkLineLabel\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-1fvhioyz\"\n    ],\n    \"NetworkLineLabel\": \"HighQualityReturnBandwidth\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d244fa0d-9d4d-48b9-8329-6b81db88ee45\"\n    }\n}",
+        "title": "为实例启用指定的网络线路标签"
+      }
+    ],
+    "EnterRescueMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnterRescueMode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-aaaabbbb\",\n    \"Password\": \"this_is_a_demo!\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ee5b113-30e9-40fe-849d-cd041a977d2a\"\n    }\n}",
+        "title": "进入救援模式"
+      }
+    ],
+    "ExitRescueMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExitRescueMode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-aaaabbbb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ee5b113-30e9-40fe-849d-cd041a977d2a\"\n    }\n}",
+        "title": "退出救援模式"
+      }
+    ],
+    "GetMonitorData": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=GetMonitorData\n&Namespace=QCE/CVM\n&MetricName=CPUUsage\n&Period=300\n&StartTime=2020-04-10T00:00:00+08:00\n&EndTime=2020-04-10T00:10:00+08:00\n&Instances.0.Dimensions.0.Name=InstanceId\n&Instances.0.Dimensions.0.Value=lhins-aglzynfg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2020-04-10 00:00:00\",\n        \"EndTime\": \"2020-04-10 00:10:00\",\n        \"Period\": 300,\n        \"MetricName\": \"CPUUsage\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"lhins-aglzynfg\"\n                    }\n                ],\n                \"Timestamps\": [\n                    1586448000,\n                    1586448300,\n                    1586448600\n                ],\n                \"Values\": [\n                    0.816,\n                    0.883,\n                    0.883\n                ]\n            }\n        ],\n        \"RequestId\": \"0cbdd8e1-0d0a-45a6-a957-f74acfbe91d9\"\n    }\n}",
+        "title": "拉取单个实例监控数据"
+      },
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=GetMonitorData\n&Namespace=QCE/BLOCK_STORAGE\n&MetricName=DiskUtil\n&Period=300\n&StartTime=2020-05-16T20:00:00+08:00\n&EndTime=2020-05-16T20:30:00+08:00\n&Instances.0.Dimensions.0.Name=diskId\n&Instances.0.Dimensions.0.Value=lhdisk-f71kc5bh\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2020-05-16 20:00:00\",\n        \"EndTime\": \"2020-05-16 20:30:00\",\n        \"Period\": 300,\n        \"MetricName\": \"DiskUtil\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"diskId\",\n                        \"Value\": \"lhdisk-f71kc5bh\"\n                    }\n                ],\n                \"Timestamps\": [\n                    1589630400,\n                    1589630700,\n                    1589631000,\n                    1589631300,\n                    1589631600,\n                    1589631900,\n                    1589632200\n                ],\n                \"Values\": [\n                    0.15,\n                    0.148,\n                    0.169,\n                    0.16,\n                    0.11,\n                    0.133,\n                    0.134\n                ]\n            }\n        ],\n        \"RequestId\": \"004714bd-f37b-4a0e-81d5-26d9e0a89281\"\n    }\n}",
+        "title": "拉取某个硬盘某段时间内统计周期为 60 秒的 IO 繁忙比率监控数据"
+      },
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=GetMonitorData\n&Namespace=QCE/BLOCK_STORAGE\n&MetricName=DiskReadIops\n&Period=300\n&StartTime=2020-04-03T00:00:00+08:00\n&EndTime=2020-04-03T00:10:00+08:00\n&Instances.0.Dimensions.0.Name=InstanceId\n&Instances.0.Dimensions.0.Value=lhins-6ufhphs3\n&Instances.1.Dimensions.0.Name=InstanceId\n&Instances.1.Dimensions.0.Value=lhins-aglzynfg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2020-04-03 00:00:00\",\n        \"EndTime\": \"2020-04-03 00:10:00\",\n        \"Period\": 300,\n        \"MetricName\": \"DiskUsage\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"lhins-6ufhphs3\"\n                    },\n                    {\n                        \"Name\": \"vmUuid\",\n                        \"Value\": \"b57c4319-f96d-4fc7-9c7a-712478956767\"\n                    },\n                    {\n                        \"Name\": \"ProjectId\",\n                        \"Value\": \"1153379\"\n                    },\n                    {\n                        \"Name\": \"DiskName\",\n                        \"Value\": \"vda1\"\n                    }\n                ],\n                \"Timestamps\": [\n                    1585843200,\n                    1585843500,\n                    1585843800\n                ],\n                \"Values\": [\n                    38.299,\n                    38.28,\n                    38.28\n                ]\n            },\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"lhins-aglzynfg\"\n                    },\n                    {\n                        \"Name\": \"vmUuid\",\n                        \"Value\": \"d83faaa9-8efb-42a0-b0c4-25a8e892858e\"\n                    },\n                    {\n                        \"Name\": \"ProjectId\",\n                        \"Value\": \"1153379\"\n                    },\n                    {\n                        \"Name\": \"DiskName\",\n                        \"Value\": \"vda1\"\n                    }\n                ],\n                \"Timestamps\": [\n                    1585843200,\n                    1585843500,\n                    1585843800\n                ],\n                \"Values\": [\n                    25.649,\n                    25.649,\n                    25.559\n                ]\n            }\n        ],\n        \"RequestId\": \"33b70a1d-1176-47e9-b764-ed530c5706fe\"\n    }\n}",
+        "title": "拉取多个实例某段时间内统计周期为 300 秒的磁盘分区使用率监控数据"
+      }
+    ],
     "ImportKeyPair": [
       {
         "document": "",
@@ -630,6 +1004,38 @@
         "title": "创建实例询价-成功返回"
       }
     ],
+    "InquirePriceIsolateDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceIsolateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-5wv5mklk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskRefundPriceSet\": [\n            {\n                \"DiskId\": \"lhdisk-5wv5mklk\",\n                \"RefundPrice\": {\n                    \"RefundAmount\": 6.77,\n                    \"RefundDetail\": \"退款：6.77元，现金券： 0元,代金券/折扣券不退（订单号20231025995000773495711：部件云硬盘:现金支付7元-原价7*使用时间3.2258%=剩余6.77元;\"\n                }\n            }\n        ],\n        \"TotalPrice\": 6.77,\n        \"RequestId\": \"9fa56411-0966-450a-bfa6-33321e23a211\"\n    }\n}",
+        "title": "退还云硬盘询价"
+      }
+    ],
+    "InquirePriceIsolateInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceIsolateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-f4flvxuh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceRefundPriceSet\": [\n            {\n                \"InstanceId\": \"lhins-f4flvxuh\",\n                \"RefundPrice\": {\n                    \"RefundAmount\": 98.0,\n                    \"RefundDetail\": \"退款：98元，现金券： 0元,代金券/折扣券不退（订单号20231020995000763739861：部件轻量应用服务器:现金支付54元=剩余54元;订单号20231020995000763770811：部件轻量应用服务器:现金支付40元-原价40*使用时间19.3548%=剩余32.26元;订单号20231020995000763883651：部件轻量应用服务器:现金支付14元-原价14*使用时间16.129%=剩余11.74元;\"\n                },\n                \"DiskRefundPriceSet\": []\n            }\n        ],\n        \"TotalPrice\": 98.0,\n        \"RequestId\": \"ce100397-ba85-40bb-ba90-ac951eb017f3\"\n    }\n}",
+        "title": "退还实例询价"
+      }
+    ],
+    "InquirePriceModifyDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModifyDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-gqsibq9s\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 1.99,\n            \"OriginalPrice\": 3.61,\n            \"Discount\": 100,\n            \"DiscountPrice\": 3.61,\n            \"DetailPrices\": []\n        },\n        \"RequestId\": \"e0d75bac-5f87-4a72-aa6f-6211964237ec\"\n    }\n}",
+        "title": "变配云硬盘询价"
+      }
+    ],
+    "InquirePriceModifyDisksBackupQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceModifyDisksBackupQuota\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-guzg7nsa\"\n    ],\n    \"DiskBackupQuota\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 1.99,\n            \"OriginalPrice\": 3.61,\n            \"Discount\": 100,\n            \"DiscountPrice\": 3.61,\n            \"DetailPrices\": []\n        },\n        \"RequestId\": \"e0d75bac-5f87-4a72-aa6f-6211964237ec\"\n    }\n}",
+        "title": "调整云硬盘备份点配额询价"
+      }
+    ],
     "InquirePriceRenewDisks": [
       {
         "document": "",
@@ -644,6 +1050,30 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": 1\n    },\n    \"InstanceIds\": [\n        \"lhins-iqrj7783\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"Currency\": \"CNY\",\n                \"OriginalBundlePrice\": 50,\n                \"OriginalPrice\": 50,\n                \"Discount\": 40,\n                \"DiscountPrice\": 20\n            }\n        },\n        \"DataDiskPriceSet\": [],\n        \"InstancePriceDetailSet\": [\n            {\n                \"InstanceId\": \"lhins-iqrj7783\",\n                \"InstancePrice\": {\n                    \"Currency\": \"CNY\",\n                    \"OriginalBundlePrice\": 50,\n                    \"OriginalPrice\": 50,\n                    \"Discount\": 40,\n                    \"DiscountPrice\": 20\n                },\n                \"InstancePriceType\": \"RENEW_ACTIVITY\",\n                \"DiscountDetail\": [\n                    {\n                        \"TimeSpan\": 1,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 40,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 100,\n                            \"ActivityDiscount\": 40,\n                            \"FinalDiscount\": 40,\n                            \"DiscountType\": \"activity\"\n                        },\n                        \"TotalCost\": 50,\n                        \"RealTotalCost\": 20\n                    },\n                    {\n                        \"TimeSpan\": 2,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 30,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 100,\n                            \"ActivityDiscount\": 30,\n                            \"FinalDiscount\": 30,\n                            \"DiscountType\": \"activity\"\n                        },\n                        \"TotalCost\": 100,\n                        \"RealTotalCost\": 30\n                    },\n                    {\n                        \"TimeSpan\": 3,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 25,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 100,\n                            \"ActivityDiscount\": 25,\n                            \"FinalDiscount\": 25,\n                            \"DiscountType\": \"activity\"\n                        },\n                        \"TotalCost\": 150,\n                        \"RealTotalCost\": 37.5\n                    },\n                    {\n                        \"TimeSpan\": 4,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 100,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 100,\n                            \"ActivityDiscount\": null,\n                            \"FinalDiscount\": 100,\n                            \"DiscountType\": null\n                        },\n                        \"TotalCost\": 200,\n                        \"RealTotalCost\": 200\n                    },\n                    {\n                        \"TimeSpan\": 5,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 100,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 100,\n                            \"ActivityDiscount\": null,\n                            \"FinalDiscount\": 100,\n                            \"DiscountType\": null\n                        },\n                        \"TotalCost\": 250,\n                        \"RealTotalCost\": 250\n                    },\n                    {\n                        \"TimeSpan\": 6,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 88,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 88,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 88,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 300,\n                        \"RealTotalCost\": 264\n                    },\n                    {\n                        \"TimeSpan\": 7,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 88,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 88,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 88,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 350,\n                        \"RealTotalCost\": 308\n                    },\n                    {\n                        \"TimeSpan\": 8,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 88,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 88,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 88,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 400,\n                        \"RealTotalCost\": 352\n                    },\n                    {\n                        \"TimeSpan\": 9,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 88,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 88,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 88,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 450,\n                        \"RealTotalCost\": 396\n                    },\n                    {\n                        \"TimeSpan\": 10,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 88,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 88,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 88,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 500,\n                        \"RealTotalCost\": 440\n                    },\n                    {\n                        \"TimeSpan\": 11,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 88,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 88,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 88,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 550,\n                        \"RealTotalCost\": 484\n                    },\n                    {\n                        \"TimeSpan\": 12,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 85,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 85,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 85,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 600,\n                        \"RealTotalCost\": 510\n                    },\n                    {\n                        \"TimeSpan\": 24,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 85,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 85,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 85,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 1200,\n                        \"RealTotalCost\": 1020\n                    },\n                    {\n                        \"TimeSpan\": 36,\n                        \"TimeUnit\": \"m\",\n                        \"Discount\": 85,\n                        \"PolicyDetail\": {\n                            \"UserDiscount\": 100,\n                            \"CommonDiscount\": 85,\n                            \"ActivityDiscount\": 100,\n                            \"FinalDiscount\": 85,\n                            \"DiscountType\": \"common\"\n                        },\n                        \"TotalCost\": 1800,\n                        \"RealTotalCost\": 1530\n                    }\n                ]\n            }\n        ],\n        \"TotalPrice\": {\n            \"OriginalPrice\": 50,\n            \"DiscountPrice\": 20\n        },\n        \"RequestId\": \"22e25e9c-a1d2-4a82-aca0-6fd9e18f3df2\"\n    }\n}",
         "title": "续费实例询价-成功返回"
+      }
+    ],
+    "InquirePriceResizeDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceResizeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-jgszqvs0\"\n    ],\n    \"DiskSize\": 40\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskPrice\": {\n            \"OriginalDiskPrice\": 7,\n            \"OriginalPrice\": 7,\n            \"Discount\": 100,\n            \"DiscountPrice\": 7,\n            \"DetailPrices\": [\n                {\n                    \"PriceName\": \"DiskSpace\",\n                    \"OriginUnitPrice\": 7,\n                    \"OriginalPrice\": 7,\n                    \"Discount\": 100,\n                    \"DiscountPrice\": 7\n                }\n            ]\n        },\n        \"RequestId\": \"4aa10e72-1664-4df6-b043-a6cb92ebf069\"\n    }\n}",
+        "title": "扩容云硬盘询价"
+      }
+    ],
+    "InstallAutomationTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAutomationTool\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-aaaabbbb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ee5b113-30e9-40fe-849d-cd041a977d2a\"\n    }\n}",
+        "title": "安装自动化助手"
+      }
+    ],
+    "InstallCertificate": [
+      {
+        "document": "安装 SSL 证书",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-aaaabbbb\",\n    \"CertificateId\": \"yrrzyb53\",\n    \"Domain\": \"test.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InvocationId\": \"inv-aaaaeeee\",\n        \"RequestId\": \"cb31e424-0b5f-4f25-8cfc-76121aed5b58\"\n    }\n}",
+        "title": "安装 SSL 证书"
       }
     ],
     "IsolateDisks": [
@@ -668,6 +1098,28 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintAttribute\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-1ynlfst1\",\n    \"BlueprintName\": \"new-blueprint\",\n    \"Description\": \"new-blueprint\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"896682bb-fb47-4fce-94d9-9a4f2abbfaac\"\n    }\n}",
         "title": "修改镜像的名称与描述"
+      }
+    ],
+    "ModifyBlueprintSharePermission": [
+      {
+        "document": "共享轻量应用服务器镜像到CVM镜像。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintSharePermission\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-fypya4jw\",\n    \"Permission\": \"SHARE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4fe640d6-4912-4b43-9b3a-cc3bbab4cef2\"\n    }\n}",
+        "title": "共享轻量应用服务器镜像到CVM镜像"
+      },
+      {
+        "document": "取消轻量应用服务器镜像共享到CVM镜像",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlueprintSharePermission\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-fypya4jw\",\n    \"Permission\": \"CANCEL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cbc209f3-9ae3-4138-a3a5-fe4d83a43d24\"\n    }\n}",
+        "title": "取消轻量应用服务器镜像共享到CVM镜像"
+      }
+    ],
+    "ModifyDNSRecord": [
+      {
+        "document": "修改解析记录",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDNSRecord\n<公共请求参数>\n\n{\n    \"RecordValue\": \"2.3.4.5\",\n    \"ResourceType\": \"INSTANCE\",\n    \"ResourceKey\": \"lhins-abcd2345\",\n    \"RecordId\": \"lhdr-dvxu5wn6\",\n    \"ResourceRegion\": \"ap-guangzho\",\n    \"Subdomain\": \"www\",\n    \"RecordType\": \"A\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7612faba-597a-4a69-8294-702ad67229a1\"\n    }\n}",
+        "title": "修改解析记录"
       }
     ],
     "ModifyDiskBackupsAttribute": [
@@ -734,6 +1186,28 @@
         "title": "修改防火墙模板"
       }
     ],
+    "ModifyImageSharePermission": [
+      {
+        "document": "共享CVM镜像到轻量应用服务器镜像。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSharePermission\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-xkd784jw\",\n    \"Permission\": \"SHARE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintId\": \"lhbp-su83x02a\",\n        \"RequestId\": \"4fe640d6-4912-4b43-9b3a-cc3bbab4cef2\"\n    }\n}",
+        "title": "共享CVM镜像到轻量应用服务器镜像"
+      },
+      {
+        "document": "CVM镜像取消共享到轻量应用服务器镜像",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSharePermission\n<公共请求参数>\n\n{\n    \"ImageId\": \"img-xkd784jw\",\n    \"Permission\": \"CANEL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BlueprintId\": null,\n        \"RequestId\": \"4fe640d6-4912-4b43-9b3a-cc3bbab4cef2\"\n    }\n}",
+        "title": "CVM镜像取消共享到轻量应用服务器镜像"
+      }
+    ],
+    "ModifyInstancePublicAddress": [
+      {
+        "document": "",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=ModifyInstancePublicAddress\n&InstanceId=lhins-ruy9d2tw\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c00f930f-1dd2-4c40-8c4c-97d1be78be73\"\n    }\n}",
+        "title": "变更实例公网地址"
+      }
+    ],
     "ModifyInstancesAttribute": [
       {
         "document": "修改实例的名称\n",
@@ -748,6 +1222,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesBundle\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-1a2b3c\"\n    ],\n    \"BundleId\": \"bundle_gen_lin_01\",\n    \"AutoVoucher\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3964a892-5399-4eb7-a35b-8bddfe683ab4\"\n    }\n}",
         "title": "变更实例套餐"
+      }
+    ],
+    "ModifyInstancesIpv6Bandwidth": [
+      {
+        "document": "修改实例IPv6带宽",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesIpv6Bandwidth\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-abcd1234\"\n    ],\n    \"Ipv6Bandwidth\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"232b2817-ec08-43f3-8d78-41b1bfb6082c\"\n    }\n}",
+        "title": "修改实例IPv6带宽"
       }
     ],
     "ModifyInstancesRenewFlag": [
@@ -766,6 +1248,22 @@
         "title": "修改快照信息"
       }
     ],
+    "ModifyUserPreferences": [
+      {
+        "document": "修改用户偏好配置",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPreferences\n<公共请求参数>\n\n{\n\n    \"ConsoleInstancesViewType\": \"CARD\",\n    \"ConsoleNewUserGuide\": false,\n    \"ConsoleAIGuide\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a8f93af-ec10-4667-8ede-de51fefc03cc\"\n    }\n}",
+        "title": "修改用户偏好配置"
+      }
+    ],
+    "ModifyUserSceneAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserSceneAttribute\n<公共请求参数>\n\n{\n    \"SceneId\": 1,\n    \"NeedGuide\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aefc08fb-4c06-47ae-899b-b37843e44264\"\n    }\n}",
+        "title": "修改用户场景教学信息"
+      }
+    ],
     "RebootInstances": [
       {
         "document": "本示例用于重启两个实例。",
@@ -780,6 +1278,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDockerContainers\n<公共请求参数>\n\n{\n    \"ContainerIds\": [\n        \"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415\"\n    ],\n    \"InstanceId\": \"lhins-nwycpjl3\"\n}",
         "output": "{\n    \"Response\": {\n        \"DockerActivityId\": \"lhda-nn82v77w\",\n        \"RequestId\": \"2c715b55-de1f-4a46-94a8-caeeee86b0f1\"\n    }\n}",
         "title": "删除Docker容器"
+      }
+    ],
+    "RemoveDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDomain\n<公共请求参数>\n\n{\n    \"DomainId\": \"lhdo-3ob8xfu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f312b314-46de-448e-b587-d9f6083bec94\"\n    }\n}",
+        "title": "移除域名"
       }
     ],
     "RenameDockerContainer": [
@@ -878,6 +1384,14 @@
         "title": "创建并运行Docker容器"
       }
     ],
+    "SearchInstances": [
+      {
+        "document": "模糊搜索实例摘要信息",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchInstances\n<公共请求参数>\n\n{\n    \"Limit\": \"100\",\n    \"Keyword\": \"i\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"InstanceDigestSet\": [\n            {\n                \"InstanceId\": \"lhins-xxxxzzzz\",\n                \"InstanceName\": \"insxxx\",\n                \"PublicAddresses\": [\n                    \"33.44.55.66\"\n                ]\n            },\n            {\n                \"InstanceId\": \"lhins-aaaabbbb\",\n                \"InstanceName\": \"insname\",\n                \"PublicAddresses\": [\n                    \"1.2.1.2\"\n                ]\n            }\n        ],\n        \"RequestId\": \"cb31e424-0b5f-4f25-8cfc-76121aed5b58\"\n    }\n}",
+        "title": "模糊搜索实例摘要信息"
+      }
+    ],
     "ShareBlueprintAcrossAccounts": [
       {
         "document": "",
@@ -918,6 +1432,94 @@
         "title": "关闭实例"
       }
     ],
+    "SwitchParameterCreateDisks": [
+      {
+        "document": "新购云硬盘下单参数转换",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterCreateDisks\n<公共请求参数>\n\n{\n    \"DiskSize\": 50,\n    \"DiskType\": \"CLOUD_PREMIUM\",\n    \"DiskCount\": 1,\n    \"DiskName\": \"test\",\n    \"Zone\": \"ap-hongkong-2\",\n    \"DiskChargePrepaid\": {\n        \"Period\": 1\n    },\n    \"DiskBackupQuota\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskOrder\": \"{\\\"ownerUin\\\": \\\"800000294207\\\", \\\"uin\\\": \\\"800000294207\\\", \\\"appId\\\": 251221987, \\\"projectId\\\": 0, \\\"goods\\\": [{\\\"goodsCategoryId\\\": 102849, \\\"goodsNum\\\": 1, \\\"goodsDetail\\\": {\\\"pid\\\": 1010456, \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_disk\\\", \\\"productInfo\\\": [{\\\"name\\\": \\\"云硬盘类型\\\", \\\"value\\\": \\\"数据盘\\\"}, {\\\"name\\\": \\\"云硬盘介质类型\\\", \\\"value\\\": \\\"高性能云硬盘\\\"}, {\\\"name\\\": \\\"云硬盘大小\\\", \\\"value\\\": \\\"50\\\"}, {\\\"name\\\": \\\"地域\\\", \\\"value\\\": \\\"中国香港\\\"}, {\\\"name\\\": \\\"云硬盘备份点配额\\\", \\\"value\\\": \\\"1\\\"}], \\\"sv_lighthouse_disk_premium_01\\\": 50, \\\"diskBackupQuota\\\": 1, \\\"sv_lighthouse_disk_backup_storage_general\\\": 50, \\\"autoRenewFlag\\\": 0, \\\"timeUnit\\\": \\\"m\\\", \\\"timeSpan\\\": 1, \\\"zone\\\": \\\"ap-hongkong-2\\\", \\\"diskSize\\\": 50, \\\"diskType\\\": \\\"CLOUD_PREMIUM\\\", \\\"intl\\\": false, \\\"diskName\\\": \\\"test\\\", \\\"signature\\\": \\\"fe7f80004b46385bc76be7089c547fe3\\\"}, \\\"regionId\\\": 5, \\\"payMode\\\": 1}], \\\"zoneId\\\": 300002}\",\n        \"RequestId\": \"509029a2-b4cf-4f7a-9285-b24492b1fe29\"\n    }\n}",
+        "title": "新购云硬盘下单参数转换"
+      }
+    ],
+    "SwitchParameterCreateInstances": [
+      {
+        "document": "新购参数转换-成功返回",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterCreateInstances\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"bp-11110001\",\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceName\": \"Ubuntu\",\n    \"BundleId\": \"bundle_ntp_small1_500\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceOrder\": \"\",\n        \"RequestId\": \"bf9c621a-8414-4797-beae-efe1fba90fe9\"\n    }\n}",
+        "title": "新购参数转换-成功返回"
+      }
+    ],
+    "SwitchParameterModifyDisks": [
+      {
+        "document": "变配云硬盘参数转换",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterModifyDisks\n<公共请求参数>\n\n{\n    \"DiskBackupQuota\": \"1\",\n    \"DiskIds\": [\n        \"lhdisk-dfxp6r28\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskOrder\": \"\",\n        \"RequestId\": \"2603eefa-2ee8-44cb-826a-49142b6ac624\"\n    }\n}",
+        "title": "变配云硬盘参数转换"
+      }
+    ],
+    "SwitchParameterModifyDisksBackupQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterModifyDisksBackupQuota\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-guzg7nsa\"\n    ],\n    \"DiskBackupQuota\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskOrder\": \"{\\\"ownerUin\\\": \\\"700000164995\\\", \\\"uin\\\": \\\"700000164995\\\", \\\"appId\\\": 251202221, \\\"projectId\\\": 0, \\\"zoneId\\\": 300002, \\\"goods\\\": [{\\\"goodsCategoryId\\\": 1025096, \\\"payMode\\\": 1, \\\"regionId\\\": 5, \\\"goodsNum\\\": 1, \\\"action\\\": \\\"modify\\\", \\\"goodsDetail\\\": {\\\"resourceId\\\": \\\"lhdisk-guzg7nsa\\\", \\\"oldConfig\\\": {\\\"timeUnit\\\": \\\"m\\\", \\\"pid\\\": 1010456, \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_disk\\\", \\\"sv_lighthouse_disk_premium_01\\\": 20, \\\"diskType\\\": \\\"CLOUD_PREMIUM\\\", \\\"diskSize\\\": 20, \\\"operation\\\": \\\"ModifyDisksBackupQuota\\\", \\\"diskBackupQuota\\\": 3, \\\"sv_lighthouse_disk_backup_storage_general\\\": 60, \\\"signature\\\": \\\"b892d477d3a5a63b74b248d05c773690\\\"}, \\\"newConfig\\\": {\\\"timeUnit\\\": \\\"m\\\", \\\"pid\\\": 1010456, \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_disk\\\", \\\"sv_lighthouse_disk_premium_01\\\": 20, \\\"diskType\\\": \\\"CLOUD_PREMIUM\\\", \\\"diskSize\\\": 20, \\\"diskBackupQuota\\\": 4, \\\"sv_lighthouse_disk_backup_storage_general\\\": 80, \\\"operation\\\": \\\"ModifyDisksBackupQuota\\\", \\\"signature\\\": \\\"bd0ebd56c1f78cb8bc38177b774c46f3\\\"}, \\\"curDeadline\\\": \\\"2023-10-22 12:20:03\\\", \\\"productInfo\\\": [{\\\"name\\\": \\\"云硬盘类型\\\", \\\"value\\\": \\\"数据盘\\\"}, {\\\"name\\\": \\\"云硬盘介质类型\\\", \\\"value\\\": \\\"高性能云硬盘\\\"}, {\\\"name\\\": \\\"云硬盘大小\\\", \\\"value\\\": \\\"20\\\"}, {\\\"name\\\": \\\"地域\\\", \\\"value\\\": \\\"中国香港\\\"}, {\\\"name\\\": \\\"云硬盘备份点配额\\\", \\\"value\\\": \\\"4\\\"}]}}]}\",\n        \"RequestId\": \"822edbc4-5d4a-4e19-9d61-2a243f04d06e\"\n    }\n}",
+        "title": "调整云硬盘备份点配额参数转换"
+      }
+    ],
+    "SwitchParameterModifyInstancesBundle": [
+      {
+        "document": "修改实例套餐下单参数转换",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=SwitchParameterModifyInstancesBundle\n&InstanceIds.0=lhins-8ogy0ktp\n&BundleId=bundle_ntp_medium8_2000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceOrder\": \"{\\\"ownerUin\\\": \\\"123\\\", \\\"uin\\\": \\\"123\\\", \\\"appId\\\": 123, \\\"projectId\\\": 0, \\\"zoneId\\\": 0, \\\"goods\\\": [{\\\"goodsCategoryId\\\": 102035, \\\"action\\\": \\\"modify\\\", \\\"payMode\\\": 1, \\\"regionId\\\": 1, \\\"goodsNum\\\": 1, \\\"goodsDetail\\\": {\\\"resourceId\\\": \\\"lhins-8ogy0ktp\\\", \\\"oldConfig\\\": {\\\"timeUnit\\\": \\\"m\\\", \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_bundle_ntp_medium8_2000\\\", \\\"pid\\\": 1002610, \\\"sv_lighthouse_compute_med8_2000\\\": 1, \\\"sv_lighthouse_rootdisk_cbsssd_med8_2000\\\": 1, \\\"sv_lighthouse_trafficpkg_med8_2000\\\": 1}, \\\"newConfig\\\": {\\\"timeUnit\\\": \\\"m\\\", \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_bundle_ntp_medium8_2000\\\", \\\"pid\\\": 1002610, \\\"sv_lighthouse_compute_med8_2000\\\": 1, \\\"sv_lighthouse_rootdisk_cbsssd_med8_2000\\\": 1, \\\"sv_lighthouse_trafficpkg_med8_2000\\\": 1}, \\\"curDeadline\\\": \\\"2020-12-23 20:10:24\\\", \\\"productInfo\\\": [{\\\"name\\\": \\\"\\\\u8fd0\\\\u7b97\\\\u7ec4\\\\u4ef6\\\", \\\"value\\\": \\\"\\\\u8fd0\\\\u7b97\\\\u7ec4\\\\u4ef6 (MEDIUM8 | 2000GB)\\\"}, {\\\"name\\\": \\\"\\\\u4e91SSD\\\\u7cfb\\\\u7edf\\\\u76d8\\\", \\\"value\\\": \\\"\\\\u4e91SSD\\\\u7cfb\\\\u7edf\\\\u76d8 (MEDIUM8 | 2000GB)\\\"}, {\\\"name\\\": \\\"\\\\u6d41\\\\u91cf\\\\u5305\\\", \\\"value\\\": \\\"\\\\u6d41\\\\u91cf\\\\u5305 (MEDIUM8 | 2000GB)\\\"}]}}]}\",\n        \"RequestId\": \"3e9526fa-b04c-4af8-a360-1e322d78107f\"\n    }\n}",
+        "title": "修改实例套餐下单参数转换"
+      }
+    ],
+    "SwitchParameterRenewDisks": [
+      {
+        "document": "续费磁盘订单参数转换",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterRenewDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-eobj8huv\"\n    ],\n    \"RenewDiskChargePrepaid\": {\n        \"Period\": 1,\n        \"CurInstanceDeadline\": \"2022-05-05 19:20:20\",\n        \"TimeUnit\": \"m\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskOrder\": \"\",\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
+        "title": "续费磁盘订单参数转换"
+      }
+    ],
+    "SwitchParameterRenewInstances": [
+      {
+        "document": "续费参数转换",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterRenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"lhins-11110001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceOrder\": \"{\\\"ownerUin\\\": \\\"700000164995\\\", \\\"uin\\\": \\\"700000181909\\\", \\\"appId\\\": 251202221, \\\"projectId\\\": 0, \\\"goods\\\": [{\\\"goodsCategoryId\\\": 1024533, \\\"goodsNum\\\": 1, \\\"goodsDetail\\\": {\\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_bundle_excl01_linux_01\\\", \\\"pid\\\": 1012247, \\\"sv_lighthouse_compute_e_linux_med2_50_100\\\": 1, \\\"sv_lighthouse_rootdisk_e_ssd_linux_med2_50_100\\\": 1, \\\"sv_lighthouse_trafficpkg_e_linux_med2_50_100\\\": 1, \\\"productInfo\\\": [{\\\"name\\\": \\\"\\\\u8fd0\\\\u7b97\\\\u7ec4\\\\u4ef6\\\", \\\"value\\\": \\\"2\\\\u6838CPU\\\\u30012GB\\\\u5185\\\\u5b58 (\\\\u4e13\\\\u5c5e\\\\u578bLinux-2\\\\u68382G-50G-100G)\\\"}, {\\\"name\\\": \\\"\\\\u4e91SSD\\\\u7cfb\\\\u7edf\\\\u76d8\\\", \\\"value\\\": \\\"50GB SSD\\\\u4e91\\\\u786c\\\\u76d8 (\\\\u4e13\\\\u5c5e\\\\u578bLinux-2\\\\u68382G-50G-100G)\\\"}, {\\\"name\\\": \\\"\\\\u6d41\\\\u91cf\\\\u5305\\\", \\\"value\\\": \\\"100GB/\\\\u6708\\\\u6d41\\\\u91cf\\\\u5305 (\\\\u4e13\\\\u5c5e\\\\u578bLinux-2\\\\u68382G-50G-100G)\\\"}, {\\\"name\\\": \\\"\\\\u5730\\\\u57df\\\", \\\"value\\\": \\\"\\\\u4e2d\\\\u56fd\\\\u9999\\\\u6e2f\\\"}], \\\"resourceId\\\": \\\"lhins-atqh8y7p\\\", \\\"autoRenewFlag\\\": 0, \\\"timeUnit\\\": \\\"m\\\", \\\"timeSpan\\\": 1, \\\"curDeadline\\\": \\\"2023-01-11 10:23:20\\\", \\\"signature\\\": \\\"620d9e29793449cd0b591f111964b1d4\\\"}, \\\"regionId\\\": 5, \\\"payMode\\\": 1}, {\\\"goodsCategoryId\\\": 102850, \\\"goodsNum\\\": 1, \\\"payMode\\\": 1, \\\"regionId\\\": 5, \\\"goodsDetail\\\": {\\\"pid\\\": 1010456, \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_disk\\\", \\\"productInfo\\\": [{\\\"name\\\": \\\"\\\\u4e91\\\\u786c\\\\u76d8\\\\u7c7b\\\\u578b\\\", \\\"value\\\": \\\"\\\\u6570\\\\u636e\\\\u76d8\\\"}, {\\\"name\\\": \\\"\\\\u4e91\\\\u786c\\\\u76d8\\\\u4ecb\\\\u8d28\\\\u7c7b\\\\u578b\\\", \\\"value\\\": \\\"\\\\u9ad8\\\\u6027\\\\u80fd\\\\u4e91\\\\u786c\\\\u76d8\\\"}, {\\\"name\\\": \\\"\\\\u4e91\\\\u786c\\\\u76d8\\\\u5927\\\\u5c0f\\\", \\\"value\\\": \\\"20\\\"}, {\\\"name\\\": \\\"\\\\u5730\\\\u57df\\\", \\\"value\\\": \\\"\\\\u4e2d\\\\u56fd\\\\u9999\\\\u6e2f\\\"}], \\\"sv_lighthouse_disk_premium_01\\\": 20, \\\"resourceId\\\": \\\"lhdisk-ffyrsb6q\\\", \\\"autoRenewFlag\\\": 0, \\\"timeUnit\\\": \\\"m\\\", \\\"timeSpan\\\": 1, \\\"curDeadline\\\": \\\"2023-02-11 10:58:58\\\", \\\"signature\\\": \\\"82fa227ce7977c4cfcb0ca9ad175b9b7\\\"}}], \\\"zoneId\\\": 0}\",\n        \"RequestId\": \"abf344d9-7d32-4b2c-9912-c154f233ec74\"\n    }\n}",
+        "title": "续费参数转换-成功返回"
+      }
+    ],
+    "SwitchParameterResizeDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterResizeDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-jgszqvs0\"\n    ],\n    \"DiskSize\": 40\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskOrder\": \"{\\\"ownerUin\\\": \\\"700000164995\\\", \\\"uin\\\": \\\"700000164995\\\", \\\"appId\\\": 251202221, \\\"projectId\\\": 0, \\\"zoneId\\\": 300002, \\\"goods\\\": [{\\\"goodsCategoryId\\\": 1025096, \\\"payMode\\\": 1, \\\"regionId\\\": 5, \\\"goodsNum\\\": 1, \\\"action\\\": \\\"modify\\\", \\\"goodsDetail\\\": {\\\"resourceId\\\": \\\"lhdisk-jgszqvs0\\\", \\\"oldConfig\\\": {\\\"timeUnit\\\": \\\"m\\\", \\\"pid\\\": 1010456, \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_disk\\\", \\\"diskType\\\": \\\"CLOUD_PREMIUM\\\", \\\"diskSize\\\": 20, \\\"operation\\\": \\\"ResizeDisks\\\", \\\"sv_lighthouse_disk_premium_01\\\": 20, \\\"signature\\\": \\\"d1c819a18e614e038ea8cd96f46c55cc\\\"}, \\\"newConfig\\\": {\\\"timeUnit\\\": \\\"m\\\", \\\"pid\\\": 1010456, \\\"productCode\\\": \\\"p_lighthouse\\\", \\\"subProductCode\\\": \\\"sp_lighthouse_disk\\\", \\\"diskType\\\": \\\"CLOUD_PREMIUM\\\", \\\"diskSize\\\": 40, \\\"operation\\\": \\\"ResizeDisks\\\", \\\"sv_lighthouse_disk_premium_01\\\": 40, \\\"signature\\\": \\\"40e20c0a8c823f7ac7ab96eab8eecb56\\\"}, \\\"curDeadline\\\": \\\"2023-12-10 11:14:26\\\", \\\"productInfo\\\": [{\\\"name\\\": \\\"云硬盘类型\\\", \\\"value\\\": \\\"数据盘\\\"}, {\\\"name\\\": \\\"云硬盘介质类型\\\", \\\"value\\\": \\\"高性能云硬盘\\\"}, {\\\"name\\\": \\\"云硬盘大小\\\", \\\"value\\\": \\\"40\\\"}, {\\\"name\\\": \\\"地域\\\", \\\"value\\\": \\\"中国香港\\\"}]}}]}\",\n        \"RequestId\": \"1062704c-1e8e-445b-b283-b20c21b87012\"\n    }\n}",
+        "title": "扩容云硬盘参数转换"
+      }
+    ],
+    "SwitchParameterTerminateDisks": [
+      {
+        "document": "销毁磁盘订单参数转换",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchParameterTerminateDisks\n<公共请求参数>\n\n{\n    \"DiskIds\": [\n        \"lhdisk-eobj8huv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DiskOrder\": \"\",\n        \"RequestId\": \"0d5e192e-10a2-44a6-a6ce-2ac6b01f7646\"\n    }\n}",
+        "title": "销毁磁盘订单参数转换"
+      }
+    ],
+    "SwitchParameterTerminateInstances": [
+      {
+        "document": "隔离参数转换-成功返回",
+        "input": "https://lighthouse.tencentcloudapi.com/?Action=SwitchParameterTerminateInstances\n&InstanceIds.0=lhins-11110001\n&InstanceIds.1=lhins-11110002\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"InstanceOrder\": \"\",\n        \"RequestId\": \"a961f0f6-10ec-413f-8bf6-47d98299e84f\"\n    }\n}",
+        "title": "隔离参数转换-成功返回"
+      }
+    ],
+    "SyncBlueprint": [
+      {
+        "document": "向两个地域同步自定义镜像。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncBlueprint\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-ls883feh\",\n    \"DestinationRegions\": [\n        \"ap-singapore\",\n        \"ap-hongkong\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"647f2a53-c672-45fa-980b-385423898a69\"\n    }\n}",
+        "title": "跨地域同步自定义镜像"
+      }
+    ],
     "TerminateDisks": [
       {
         "document": "销毁云硬盘",
@@ -940,6 +1542,22 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstancesForMigrate\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhmins-dlxf9hs3\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa76a376-e945-41a0-92e5-63df37b09cff\"\n    }\n}",
         "title": "销毁在线迁移临时实例"
+      }
+    ],
+    "UpdateGameDedicatedServers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGameDedicatedServers\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-jyzmnp95\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d244fa0d-9d4d-48b9-8329-6b81db88ee45\"\n    }\n}",
+        "title": "更新游戏专区实例游戏服务"
+      }
+    ],
+    "UpgradeInstancesPerformance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstancesPerformance\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-d2liflor\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"132d37d7-e48f-47f0-a314-e203bcc336a2\"\n    }\n}",
+        "title": "升级实例性能"
       }
     ]
   },

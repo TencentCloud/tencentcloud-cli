@@ -5,14 +5,19 @@
 Input: 
 
 ```
-tccli dnspod CreateDomainsAnalyticsFile --cli-unfold-argument ```
+tccli dnspod CreateDomainsAnalyticsFile --cli-unfold-argument  \
+    --Domains dnspod.cn \
+    --DNSFormat DATE \
+    --StartDate 2023-02-09 \
+    --EndDate 2023-02-10
+```
 
 Output: 
 ```
 {
     "Response": {
         "JobId": 1,
-        "RequestId": "xx"
+        "RequestId": "033a322d-e4e1-4b4d-bb74-aab903901d2f"
     }
 }
 ```

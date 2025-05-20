@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dnspod DescribeRecord --cli-unfold-argument  \
-    --Domain dnspod.site \
-    --DomainId 62 \
+    --Domain dnspod.cn \
+    --DomainId 1923 \
     --RecordId 162
 ```
 
@@ -17,7 +17,7 @@ Output:
     "Response": {
         "RequestId": "ab4f1426-ea15-42ea-8183-dc1b44151166",
         "RecordInfo": {
-            "Id": 158,
+            "Id": 162,
             "SubDomain": "www",
             "RecordType": "A",
             "RecordLine": "百度",

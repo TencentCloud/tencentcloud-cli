@@ -14,17 +14,58 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6c6088bc-15e6-42e5-9d73-d5e41593117e",
+        "RequestId": "138749c3-94a5-426e-8621-37c4b228951c",
         "DiskPrice": {
-            "DiscountPrice": null,
-            "UnitPrice": 0.18,
-            "UnitPriceHigh": "0.18",
+            "UnitPriceDiscountHigh": null,
+            "DiscountPrice": 119.95,
+            "DetailPrices": [
+                {
+                    "PriceTitle": "云硬盘备份点配额",
+                    "DiscountPrice": 0.0,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskBackupQuota",
+                    "OriginalPrice": 0.0,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                },
+                {
+                    "PriceTitle": "云硬盘空间",
+                    "DiscountPrice": 119.95,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskSpace",
+                    "OriginalPrice": 428.42,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                },
+                {
+                    "PriceTitle": "云硬盘性能包",
+                    "DiscountPrice": 0.0,
+                    "ChargeUnit": null,
+                    "UnitPriceHigh": null,
+                    "OriginalPriceHigh": null,
+                    "PriceName": "DiskExtraPerformance",
+                    "OriginalPrice": 0.0,
+                    "UnitPriceDiscountHigh": null,
+                    "UnitPriceDiscount": null,
+                    "DiscountPriceHigh": null,
+                    "UnitPrice": null
+                }
+            ],
+            "UnitPriceHigh": null,
             "OriginalPriceHigh": null,
-            "OriginalPrice": null,
-            "UnitPriceDiscount": 0.18,
-            "UnitPriceDiscountHigh": "0.18",
+            "ChargeUnit": null,
+            "OriginalPrice": 428.42,
+            "UnitPriceDiscount": null,
             "DiscountPriceHigh": null,
-            "ChargeUnit": "HOUR"
+            "UnitPrice": null
         }
     }
 }

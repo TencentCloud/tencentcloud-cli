@@ -1256,6 +1256,14 @@
         "title": "使用二要素生成修改员工手机号链接"
       }
     ],
+    "CreateUserNameChangeUrl": [
+      {
+        "document": "生成个人通用更名链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserNameChangeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"19561039c9***********32520fde6a\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"Endpoint\": \"HTTP\",\n    \"UserData\": \"TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5LCBleGNlZWRzIHRoZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1748247333,\n        \"MiniAppId\": \"\",\n        \"RequestId\": \"s1747642533895017639\",\n        \"UserVerifyUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=MP_PERSONAL_VERIFY&shortKey=yDttYU******bLXcb\"\n    }\n}",
+        "title": "生成个人更名链接"
+      }
+    ],
     "CreateUserVerifyUrl": [
       {
         "document": "获取c端用户实名链接",

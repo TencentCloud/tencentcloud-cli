@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod ModifyRecordGroup --cli-unfold-argument  \
-    --Domain domain.com \
+    --Domain dnspod.cn \
     --GroupName 分组2 \
     --GroupId 145
 ```

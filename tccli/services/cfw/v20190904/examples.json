@@ -320,6 +320,14 @@
         "title": "DescribeBlockStaticList 告警中心柱形图"
       }
     ],
+    "DescribeCFWEngineStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCFWEngineStatus\n<公共请求参数>\n\n{\n    \"UniqInsId\": \"ins-h1fxg9l4\",\n    \"StartTime\": \"2025-04-15 00:00:00\",\n    \"EndTime\": \"2025-04-15 17:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Status\": \"abnormal\",\n                \"Summary\": \"引擎高负载\",\n                \"Url\": \"\"\n            }\n        ],\n        \"RequestId\": \"39268ae2-7796-47ed-a3b9-d8f8d8eb8dc8\"\n    }\n}",
+        "title": "cfw实例运行状态查询"
+      }
+    ],
     "DescribeCfwEips": [
       {
         "document": "",

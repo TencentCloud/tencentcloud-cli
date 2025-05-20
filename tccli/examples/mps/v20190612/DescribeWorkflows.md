@@ -89,6 +89,76 @@ Output:
                                 "TEHDConfig": {
                                     "Type": "abc",
                                     "MaxVideoBitrate": 0
+                                },
+                                "StdExtInfo": "abc",
+                                "EnhanceConfig": {
+                                    "VideoEnhance": {
+                                        "FrameRate": {
+                                            "Switch": "abc",
+                                            "Fps": 1
+                                        },
+                                        "SuperResolution": {
+                                            "Switch": "abc",
+                                            "Type": "abc",
+                                            "Size": 0
+                                        },
+                                        "Hdr": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        },
+                                        "Denoise": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        },
+                                        "ImageQualityEnhance": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        },
+                                        "ColorEnhance": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        },
+                                        "SharpEnhance": {
+                                            "Switch": "abc",
+                                            "Intensity": 0
+                                        },
+                                        "FaceEnhance": {
+                                            "Switch": "abc",
+                                            "Intensity": 0
+                                        },
+                                        "LowLightEnhance": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        },
+                                        "ScratchRepair": {
+                                            "Switch": "abc",
+                                            "Intensity": 0
+                                        },
+                                        "ArtifactRepair": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        }
+                                    },
+                                    "AudioEnhance": {
+                                        "Denoise": {
+                                            "Switch": "abc"
+                                        },
+                                        "Separate": {
+                                            "Switch": "abc",
+                                            "Type": "abc",
+                                            "Track": "abc"
+                                        },
+                                        "VolumeBalance": {
+                                            "Switch": "abc",
+                                            "Type": "abc"
+                                        },
+                                        "Beautify": {
+                                            "Switch": "abc",
+                                            "Types": [
+                                                "abc"
+                                            ]
+                                        }
+                                    }
                                 }
                             },
                             "OverrideParameter": {

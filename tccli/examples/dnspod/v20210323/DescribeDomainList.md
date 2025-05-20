@@ -57,7 +57,13 @@ Output:
                 "UpdatedOn": "2023-03-09 11:51:56",
                 "VipAutoRenew": "YES",
                 "VipEndAt": "2024-01-16 15:56:31",
-                "VipStartAt": "2023-01-16 15:56:31"
+                "VipStartAt": "2023-01-16 15:56:31",
+                "TagList": [
+                    {
+                        "TagKey": "app",
+                        "TagValue": "redis"
+                    }
+                ]
             }
         ],
         "RequestId": "bfb3f27e-4dba-4a5c-9aff-08d1c27d1c61"

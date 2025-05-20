@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod DeleteRecordGroup --cli-unfold-argument  \
-    --Domain domain.com \
+    --Domain dnspod.cn \
     --GroupId 156
 ```
 

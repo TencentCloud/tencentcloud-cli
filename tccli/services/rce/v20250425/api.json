@@ -1,0 +1,175 @@
+{
+  "actions": {
+    "DescribeRiskLabels": {
+      "document": "此接口用于查询风险标签",
+      "input": "DescribeRiskLabelsRequest",
+      "name": "查询风险标签",
+      "output": "DescribeRiskLabelsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2025-04-25",
+    "api_brief": "完善的服务体系\n快速部署服务体系，前期专业的恶意诊断，提供最优安全策略，后期重大活动专人跟进，全面分析实时数据报表。\n\n腾讯同款安全服务\n天御防刷服务已为腾讯多款产品和业务提供完善的账号保护体系，经历了数亿用户十年的考验。",
+    "serviceNameCN": "全栈式风控引擎",
+    "serviceShortName": "rce"
+  },
+  "objects": {
+    "DescribeRiskLabelsRequest": {
+      "document": "DescribeRiskLabels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "device token",
+          "example": "v3:AAAAA*****AAAAA",
+          "member": "string",
+          "name": "DeviceToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskLabelsResponse": {
+      "document": "DescribeRiskLabels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputRiskLabels",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OutputRiskLabels": {
+      "document": "查询风险标签出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "OK",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputRiskLabelsInfo",
+          "name": "Value",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求id",
+          "example": "****-a88508484ebb",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputRiskLabelsExtraInfoPair": {
+      "document": "风险标签扩展属性键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key键",
+          "example": "brand",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "value值",
+          "example": "apple",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputRiskLabelsInfo": {
+      "document": "查询风险标签出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[101,201]",
+          "member": "int64",
+          "name": "RiskType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备标识",
+          "example": "F802B8142******C4E40844D",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展属性",
+          "example": "无",
+          "member": "OutputRiskLabelsExtraInfoPair",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token生成时间戳",
+          "example": "1647330450369",
+          "member": "string",
+          "name": "TokenTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

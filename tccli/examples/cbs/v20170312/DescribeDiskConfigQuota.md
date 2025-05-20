@@ -30,6 +30,13 @@ Output:
                 "MinDiskSize": 10,
                 "DiskChargeType": "PREPAID",
                 "Price": {
+                    "DiscountPriceHigh": "81",
+                    "DiscountPrice": 1.0,
+                    "UnitPriceHigh": "1.00",
+                    "UnitPriceDiscountHigh": "1.00",
+                    "OriginalPriceHigh": "10",
+                    "ChargeUnit": "H",
+                    "OriginalPrice": 1.0,
                     "UnitPriceDiscount": 0.21,
                     "UnitPrice": 0.21
                 }
