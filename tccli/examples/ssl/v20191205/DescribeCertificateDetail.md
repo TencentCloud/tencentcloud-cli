@@ -57,7 +57,7 @@ Output:
                     "DvAuthKey": "_875bed25cf9e03596931d91cb0a52bd9.ninghhuang.online",
                     "DvAuthValue": "a3108492878a2d989949fa50522dd2b0.cc7346307ff022fcfa68e025f6dbf6ad.cmcdpcwca5iljv.trust-provider.com",
                     "DvAuthDomain": "ninghhuang.online",
-                    "DvAuthPath": null,
+                    "DvAuthPath": "",
                     "DvAuthSubDomain": "_875bed25cf9e03596931d91cb0a52bd9",
                     "DvAuthVerifyType": "CNAME"
                 }
@@ -65,7 +65,7 @@ Output:
             "DvAuthKey": "_875bed25cf9e03596931d91cb0a52bd9.ninghhuang.online",
             "DvAuthValue": "a3108492878a2d989949fa50522dd2b0.cc7346307ff022fcfa68e025f6dbf6ad.cmcdpcwca5iljv.trust-provider.com",
             "DvAuthDomain": "ni****ang.online",
-            "DvAuthPath": null,
+            "DvAuthPath": "",
             "DvAuthKeySubDomain": "_875bed25cf9e03596931d91cb0a52bd9"
         },
         "VerifyType": "DNS_AUTO",
@@ -147,7 +147,7 @@ Output:
                     "DvAuthKey": "_882a77cde28ffe49e5764ab3afb75849.ninghhuang.online",
                     "DvAuthValue": "97f80ec4c7947178cec6b5a093ed34b0.a5cd7986aaaffdfd37437c9c6de1dd30.cmcopc2ncmbffy.trust-provider.com",
                     "DvAuthDomain": "ninghhuang.online",
-                    "DvAuthPath": null,
+                    "DvAuthPath": "",
                     "DvAuthSubDomain": "_882a77cde28ffe49e5764ab3afb75849",
                     "DvAuthVerifyType": "CNAME"
                 }
@@ -155,7 +155,7 @@ Output:
             "DvAuthKey": "_882a77cde28ffe49e5764ab3afb75849.ninghhuang.online",
             "DvAuthValue": "97f80ec4c7947178cec6b5a093ed34b0.a5cd7986aaaffdfd37437c9c6de1dd30.cmcopc2ncmbffy.trust-provider.com",
             "DvAuthDomain": "ninghhuang.online",
-            "DvAuthPath": null,
+            "DvAuthPath": "",
             "DvAuthKeySubDomain": "_882a77cde28ffe49e5764ab3afb75849"
         },
         "VerifyType": "DNS_AUTO",

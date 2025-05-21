@@ -6135,7 +6135,7 @@
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CreateBusinessResourceRequest": {
       "document": "CreateBusinessResource请求参数结构体",

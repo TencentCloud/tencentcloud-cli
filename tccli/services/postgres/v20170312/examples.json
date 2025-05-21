@@ -972,14 +972,6 @@
         "title": "解除数据库账号锁定"
       }
     ],
-    "UpgradeDBInstance": [
-      {
-        "document": "调整实例postgres-6bwgamo3规格为内存2GB、存储100GB。",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"Storage\": \"200\",\n    \"DBInstanceId\": \"postgres-6bwgamo3\",\n    \"Memory\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08fdf411-5d39-44f2-8e1d-a58ee60b237d\",\n        \"DealName\": \"201806127634\",\n        \"BillId\": \"20241204591002321368561\"\n    }\n}",
-        "title": "升级实例"
-      }
-    ],
     "UpgradeDBInstanceKernelVersion": [
       {
         "document": "升级实例内核小版本",

@@ -232,21 +232,21 @@
         },
         {
           "disabled": false,
-          "document": "检索的值，各检索值间为OR关系",
-          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
-          "member": "string",
-          "name": "Values",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "枚举类型，代表Name与Values之间的匹配关系\nenum FilterOperatorType {\n    //等于\n    FILTER_OPERATOR_TYPE_EQUAL = 1;\n    //大于\n    FILTER_OPERATOR_TYPE_GREATER = 2;\n    //小于\n    FILTER_OPERATOR_TYPE_LESS = 3;\n    //大于等于\n    FILTER_OPERATOR_TYPE_GREATER_EQ = 4;\n    //小于等于\n    FILTER_OPERATOR_TYPE_LESS_EQ = 5;\n    //不等于\n    FILTER_OPERATOR_TYPE_NO_EQ = 6;\n    //not in\n    FILTER_OPERATOR_TYPE_NOT_IN = 8;\n    //模糊匹配\n    FILTER_OPERATOR_TYPE_FUZZINESS = 9;\n}",
           "example": "1",
           "member": "int64",
           "name": "OperatorType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索的值，各检索值间为OR关系",
+          "example": "[\"109.24.115.11\",\"83.24.11.24\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
         }
       ],
       "usage": "in"

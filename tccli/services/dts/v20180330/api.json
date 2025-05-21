@@ -1311,7 +1311,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "目标实例vip。已废弃，无需填写",
           "example": "192.168.0.12",
           "member": "string",
@@ -1322,7 +1322,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "目标实例vport。已废弃，无需填写",
           "example": "3306",
           "member": "int64",

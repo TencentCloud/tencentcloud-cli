@@ -1788,8 +1788,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
+          "disabled": true,
+          "document": "废弃字段。请使用TagList传参。",
           "example": "具体参考数据结构。",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
@@ -1802,6 +1802,15 @@
           "example": "keyname",
           "member": "string",
           "name": "TagKeys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
+          "example": "无",
+          "member": "InstanceTagInfo",
+          "name": "TagList",
           "required": false,
           "type": "list"
         }

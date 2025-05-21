@@ -11492,6 +11492,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12178,6 +12189,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12579,6 +12600,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadatas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12920,7 +12952,8 @@
           "example": "type",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12930,12 +12963,13 @@
           "example": "dev",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "KeyValue": {
       "document": "Key/Value结构",
@@ -17206,6 +17240,46 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局属性",
+          "example": "Global",
+          "member": "string",
+          "name": "GlobalType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属组类型",
+          "example": "ClusterFederationGroup",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组id",
+          "example": "986b8507b256d967b8840b127511fbafc5e37c363be039b6270ae4da827b654a",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为主地域",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMainRegion",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17315,7 +17389,7 @@
         {
           "disabled": false,
           "document": "子用户密码",
-          "example": "无",
+          "example": "sub@asdasd123",
           "member": "string",
           "name": "SubPassword",
           "output_required": false,

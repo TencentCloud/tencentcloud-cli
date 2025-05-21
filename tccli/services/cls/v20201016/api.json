@@ -799,7 +799,7 @@
       "status": "online"
     },
     "ModifyMachineGroup": {
-      "document": "修改机器组",
+      "document": "修改机器组。\n注意：修改接口直接覆盖历史数据，改为本次合法入参数据，请谨慎调用此接口。",
       "input": "ModifyMachineGroupRequest",
       "name": "修改机器组",
       "output": "ModifyMachineGroupResponse",
@@ -5251,6 +5251,24 @@
           "name": "DataTransformType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定加工数据的开始时间, 秒级时间戳。\n - 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。",
+          "example": "1746686554",
+          "member": "uint64",
+          "name": "ProcessFromTimestamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定加工数据的结束时间，秒级时间戳。\n\n-  不可指定未来的时间\n-  不填则表示持续执行",
+          "example": "1746687554",
+          "member": "uint64",
+          "name": "ProcessToTimestamp",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6037,6 +6055,15 @@
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全文检索标记。1：关闭，2：打开。默认：1",
+          "example": "1",
+          "member": "uint64",
+          "name": "FullQuery",
           "required": false,
           "type": "int"
         }
@@ -7137,6 +7164,36 @@
           "name": "FailureLogKey",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定加工数据的开始时间，秒级时间戳。\n- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。",
+          "example": "1746686554",
+          "member": "uint64",
+          "name": "ProcessFromTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定加工数据的结束时间，秒级时间戳。\n1. 不可指定未来的时间\n2. 不填则表示持续执行",
+          "example": "1746687554",
+          "member": "uint64",
+          "name": "ProcessToTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "历史任务状态 1:未完成, 2:已完成",
+          "example": "2",
+          "member": "uint64",
+          "name": "HistoryTaskStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -9200,6 +9257,26 @@
           "name": "ConsumerContent",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网消费开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetConsume",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网消费开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIntranetConsume",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -14577,6 +14654,24 @@
           "name": "ConsumerContent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "外网消费开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetConsume",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "内网消费开关。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIntranetConsume",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14796,7 +14891,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。",
+          "document": "机器组类型。 \nType：ip，Values中为ip字符串列表机器组；\nType：label，Values中为标签字符串列表机器组。",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -15115,6 +15210,15 @@
           "example": "0",
           "member": "uint64",
           "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全文检索查询标记。1：关闭，2：打开。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FullQuery",
           "required": false,
           "type": "int"
         }
@@ -16009,6 +16113,24 @@
           "name": "ConsumerContent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "外网消费开关，默认开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetConsume",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "内网消费开关，默认开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIntranetConsume",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -17003,6 +17125,16 @@
           "example": "1",
           "member": "uint64",
           "name": "HasServicesLog",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全文检索标记。1：关闭，2：打开。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FullQuery",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

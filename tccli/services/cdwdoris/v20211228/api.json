@@ -10256,6 +10256,15 @@
           "name": "HaType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "前端鉴权使用",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckAuth",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11054,6 +11063,15 @@
           "name": "HaType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "前端鉴权使用",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckAuth",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11123,12 +11141,30 @@
         },
         {
           "disabled": false,
-          "document": "角色（MATER/CORE），MASTER 对应 FE，CORE对应BE",
+          "document": "角色（MASTER/CORE），MASTER 对应 FE，CORE对应BE",
           "example": "BE",
           "member": "string",
           "name": "Type",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "前端鉴权使用，后端API调用传false，传true不会执行变配",
+          "example": "false",
+          "member": "bool",
+          "name": "CheckAuth",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否滚动重启",
+          "example": "false",
+          "member": "bool",
+          "name": "RollingRestart",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

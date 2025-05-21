@@ -24,6 +24,22 @@
         "title": "获取英文分类"
       }
     ],
+    "DescribeDocWriteList": [
+      {
+        "document": "通过写写id获取对应文档信息",
+        "input": "POST / HTTP/1.1\nHost: tencentcloudintl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocWriteList\n<公共请求参数>\n\n{\n    \"WriteNodeId\": \"127809374270681088\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"297b8763-c48e-4923-959a-a18ed01fc83c\",\n        \"Response\": {\n            \"DocWriteData\": [\n                {\n                    \"Id\": 495,\n                    \"Lang\": \"ind\",\n                    \"WriteLatestVersion\": \"1709778540\",\n                    \"WriteNodeId\": \"138381141413535744\",\n                    \"WritePublishedVersion\": \"1709778540\"\n                },\n                {\n                    \"Id\": 495,\n                    \"Lang\": \"ko\",\n                    \"WriteLatestVersion\": \"1700100875\",\n                    \"WriteNodeId\": \"127809374270681088\",\n                    \"WritePublishedVersion\": \"1700100875\"\n                }\n            ],\n            \"RequestId\": \"297b8763-c48e-4923-959a-a18ed01fc83c\"\n        }\n    }\n}",
+        "title": "通过写写id获取对应文档信息"
+      }
+    ],
+    "DescribeDocumentList": [
+      {
+        "document": "获取文档列表",
+        "input": "POST / HTTP/1.1\nHost: tencentcloudintl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocumentList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Id\": 54220\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12de358a-6689-4729-a636-479747e36f30\",\n        \"Response\": {\n            \"List\": [\n                {\n                    \"CategoryId\": 1165,\n                    \"CategoryName\": \"模拟实时音视频\",\n                    \"CategorySwitch\": 0,\n                    \"Description\": \"\",\n                    \"Disable\": 0,\n                    \"DisableUpdateTime\": \"2024-12-03 19:07:30\",\n                    \"DocumentLanguage\": \"en\",\n                    \"Extension\": \"\",\n                    \"FirstReleaseTime\": \"2024-12-03 11:07:30\",\n                    \"Html\": \"\",\n                    \"Id\": 54220,\n                    \"InMenu\": 1,\n                    \"Keyword\": \"\",\n                    \"Markdown\": \"\",\n                    \"RecentReleaseTime\": \"2024-12-03 11:07:30\",\n                    \"RedirectUrl\": \"\",\n                    \"ShowToc\": 0,\n                    \"Slate\": \"\",\n                    \"SlateSdkVersion\": \"\",\n                    \"Source\": \"twrite\",\n                    \"Title\": \"andrekzhu\",\n                    \"Toc\": \"\",\n                    \"Visible\": 0,\n                    \"VisibleUpdateTime\": \"2024-12-03 19:07:30\"\n                }\n            ],\n            \"RequestId\": \"12de358a-6689-4729-a636-479747e36f30\",\n            \"Total\": 1\n        }\n    }\n}",
+        "title": "获取文档列表"
+      }
+    ],
     "GetDictTree": [
       {
         "document": "",

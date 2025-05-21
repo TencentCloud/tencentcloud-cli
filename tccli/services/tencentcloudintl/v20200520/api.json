@@ -21,6 +21,20 @@
       "output": "DescribeCategoryListByLangResponse",
       "status": "online"
     },
+    "DescribeDocWriteList": {
+      "document": "依据写写id获取对应文档id",
+      "input": "DescribeDocWriteListRequest",
+      "name": "依据写写id获取对应文档id",
+      "output": "DescribeDocWriteListResponse",
+      "status": "online"
+    },
+    "DescribeDocumentList": {
+      "document": "文档列表",
+      "input": "DescribeDocumentListRequest",
+      "name": "文档列表",
+      "output": "DescribeDocumentListResponse",
+      "status": "online"
+    },
     "GetDictTree": {
       "document": "获取官网产品字典树接口",
       "input": "GetDictTreeRequest",
@@ -558,6 +572,324 @@
       ],
       "type": "object"
     },
+    "DescribeDocWrite": {
+      "document": "依据写写id返回对应的文档id和写写id",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档id",
+          "example": "495",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写写ID",
+          "example": "138381141413535744",
+          "member": "string",
+          "name": "WriteNodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写写发布版本",
+          "example": "1709778540",
+          "member": "string",
+          "name": "WritePublishedVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "写写最后版本",
+          "example": "1709778540",
+          "member": "string",
+          "name": "WriteLatestVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下面这些中的zh,en,ko,ind,pt,jp",
+          "example": "语言",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDocWriteList": {
+      "document": "写写与文档的对应关系列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "写写与文档的对应关系",
+          "example": "             {                 \"Id\": 495,                 \"WriteNodeId\": \"138381141413535744\",                 \"WritePublishedVersion\": \"1709778540\",                 \"WriteLatestVersion\": \"1709778540\",                 \"Lang\": \"ind\"             }]",
+          "member": "DescribeDocWrite",
+          "name": "DocWriteData",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求id",
+          "example": "38436ce6-b902-4b93-b518-1d0d7a15ee8a",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDocWriteListRequest": {
+      "document": "DescribeDocWriteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "写写id",
+          "example": "127809374270681088",
+          "member": "string",
+          "name": "WriteNodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语言，zh,en,ko,pt,jp,ind 之一",
+          "example": "ko",
+          "member": "string",
+          "name": "Lang",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocWriteListResponse": {
+      "document": "DescribeDocWriteList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档与写写列表信息",
+          "example": "{\"Response\":{\"DocWriteData\":[{\"Id\":495,\"WriteNodeId\":\"127809374270681088\",\"WritePublishedVersion\":\"1700100875\",\"WriteLatestVersion\":\"1700100875\",\"Lang\":\"ko\"}],\"RequestId\":\"\"}}",
+          "member": "DescribeDocWriteList",
+          "name": "Response",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentList": {
+      "document": "文档列表返回结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档列表",
+          "example": "[{\"Id\":54220,\"Title\":\"andrekzhu\",\"CategoryId\":1165,\"CategoryName\":\"模拟实时音视频\",\"Markdown\":\"\",\"Html\":\"\",\"DocumentLanguage\":\"en\",\"ShowToc\":0,\"Source\":\"twrite\",\"SlateSdkVersion\":\"\"}]",
+          "member": "DocumentItem",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求id",
+          "example": "38436ce6-b902-4b93-b518-1d0d7a15ee8a",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDocumentListRequest": {
+      "document": "DescribeDocumentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "限制数目。取值范围：1~100。默认值：100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。取值是limit的整数倍。默认值 : 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "44971",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文档分类ID。",
+          "example": "213",
+          "member": "int64",
+          "name": "CategoryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "首次发布时间筛选开始时间（示例值：2021-08-02）",
+          "example": "2021-08-02",
+          "member": "date",
+          "name": "FirstReleaseTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "首次发布时间筛选结束时间（示例值：2023-08-02）",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "FirstReleaseTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间筛选开始时间（示例值：2021-08-02）",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "RecentReleaseTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最近更新时间筛选结束时间（示例值：2023-08-02）",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "RecentReleaseTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下线文档筛选开始时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "DisableUpdateTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下线文档筛选结束时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "DisableUpdateTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏文档筛选开始时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "VisibleUpdateTimeStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏文档筛选结束时间",
+          "example": "2022-08-02",
+          "member": "date",
+          "name": "VisibleUpdateTimeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档语言(zh:中文;en:英文,默认:zh)",
+          "example": "en",
+          "member": "string",
+          "name": "DocumentLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID列表(最多10个)",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDocumentListResponse": {
+      "document": "DescribeDocumentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档总数量",
+          "example": "{\"Response\":{\"List\":[{\"Id\":54220,\"Title\":\"andrekzhu\",\"CategoryId\":1165,\"CategoryName\":\"模拟实时音视频\",\"InMenu\":1,\"DocumentLanguage\":\"en\",\"Source\":\"twrite\",\"SlateSdkVersion\":\"\"}],\"RequestId\":\"RequestIdPeter\",\"Total\":1}}",
+          "member": "DescribeDocumentList",
+          "name": "Response",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DictIconInfo": {
       "document": "产品字典图标信息",
       "members": [
@@ -911,6 +1243,252 @@
         }
       ],
       "usage": "both"
+    },
+    "DocumentItem": {
+      "document": "文档数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "81874",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档名称",
+          "example": "表格自适应宽度",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档分类ID",
+          "example": "2436",
+          "member": "int64",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档分类名称",
+          "example": "表格自适应宽度",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档Markdown",
+          "example": "Markdown格式",
+          "member": "string",
+          "name": "Markdown",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档Html",
+          "example": "html格式",
+          "member": "string",
+          "name": "Html",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档首次发布时间",
+          "example": "2024-12-03 11:07:30",
+          "member": "string",
+          "name": "FirstReleaseTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档最近更新时间",
+          "example": "2024-12-03 11:07:30",
+          "member": "string",
+          "name": "RecentReleaseTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否弃用（1:弃用，0:正常）",
+          "example": "0",
+          "member": "int64",
+          "name": "Disable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档是否对外可见（1:是;2:否）",
+          "example": "1",
+          "member": "int64",
+          "name": "Visible",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否展示为菜单项（1:是;2:否）",
+          "example": "1",
+          "member": "int64",
+          "name": "InMenu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档分类是否对外可见（1:是;2:否）",
+          "example": "1",
+          "member": "int64",
+          "name": "CategorySwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档重定向链接",
+          "example": "注意：此字段可能返回 null，表示取不到有效值。",
+          "member": "string",
+          "name": "RedirectUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Slate内容。base64编码格式",
+          "example": "[ { \"type\": \"h1\", \"nodeId\": \"1.5C.-.E8.83.8C.E6.99.AF\", \"children\": [ { \"text\": \"云 API 更新历史\" } ] } ]",
+          "member": "string",
+          "name": "Slate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文章弃用时间",
+          "example": "2024-12-03 11:07:30",
+          "member": "string",
+          "name": "DisableUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文章隐藏时间",
+          "example": "2024-12-03 11:07:30",
+          "member": "string",
+          "name": "VisibleUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档语言",
+          "example": "zh",
+          "member": "string",
+          "name": "DocumentLanguage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Toc",
+          "example": "Toc",
+          "member": "string",
+          "name": "Toc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "Keyword",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "简介",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展",
+          "example": "Extension",
+          "member": "string",
+          "name": "Extension",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否展示toc",
+          "example": "0",
+          "member": "int64",
+          "name": "ShowToc",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档来源",
+          "example": "twrite",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "slate sdk 版本",
+          "example": "SlateSdkVersion",
+          "member": "string",
+          "name": "SlateSdkVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GetCatalogueRspData": {
       "document": "类目返回结果",

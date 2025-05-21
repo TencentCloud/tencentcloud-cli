@@ -49,6 +49,13 @@
       "output": "CreateClusterResponse",
       "status": "online"
     },
+    "CreateGroupsSTD": {
+      "document": "用户管理-批量创建用户组",
+      "input": "CreateGroupsSTDRequest",
+      "name": "用户管理-批量创建用户组",
+      "output": "CreateGroupsSTDResponse",
+      "status": "online"
+    },
     "CreateInstance": {
       "document": "创建EMR集群实例",
       "input": "CreateInstanceRequest",
@@ -4243,6 +4250,52 @@
         }
       ],
       "usage": "in"
+    },
+    "CreateGroupsSTDRequest": {
+      "document": "CreateGroupsSTD请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "emr-mzkssfla",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量用户组信息",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "Groups",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateGroupsSTDResponse": {
+      "document": "CreateGroupsSTD返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个用户组的输出结果",
+          "example": "无",
+          "member": "ResultItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateInstanceRequest": {
       "document": "CreateInstance请求参数结构体",
@@ -10707,6 +10760,45 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GroupInfo": {
+      "document": "用户组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组名",
+          "example": "groupTest",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "userGroup",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户列表",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17800,6 +17892,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ResultItem": {
+      "document": "用户组的输出结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "此处为用户组名",
+          "example": "groupTest",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建用户组是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "若是创建失败, 提供失败原因",
+          "example": "用户组已存在",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RunJobFlowRequest": {
       "document": "RunJobFlow请求参数结构体",
