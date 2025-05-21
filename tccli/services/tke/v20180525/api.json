@@ -1754,7 +1754,7 @@
         {
           "disabled": false,
           "document": "校验规则相关选项，可配置跳过某些校验规则。目前支持GlobalRouteCIDRCheck（跳过GlobalRouter的相关校验），VpcCniCIDRCheck（跳过VpcCni相关校验）",
-          "example": "[[\"GlobalRouteCIDRCheck\",\"VpcCniCIDRCheck\"]",
+          "example": "[\"GlobalRouteCIDRCheck\",\"VpcCniCIDRCheck\"]",
           "member": "string",
           "name": "SkipValidateOptions",
           "required": false,

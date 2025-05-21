@@ -16196,8 +16196,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域英文ID，类似ap-guanghou",
-          "example": "ap-guanghou",
+          "document": "地域英文ID，类似ap-guangzhou",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,

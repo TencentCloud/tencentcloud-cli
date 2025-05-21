@@ -16920,7 +16920,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）",
+          "document": "任务状态（1：分析失败；2：下载/读取视频/图片失败；3：成功）",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -16931,7 +16931,7 @@
         {
           "disabled": false,
           "document": "识别到的目标类型。可能取值：\n\n- `person`：人\n- `vehicle`：车辆\n- `dog`：狗\n- `cat`：猫\n- `fire`：火焰\n- `smoke`：烟雾\n- `package`：快递包裹\n- `license_plate`：车牌\n",
-          "example": "[\"person\", \"vehicle\"]",
+          "example": "[\"person\"]",
           "member": "string",
           "name": "DetectedClassifications",
           "output_required": false,
@@ -16940,10 +16940,20 @@
         },
         {
           "disabled": false,
-          "document": "视频摘要文本",
+          "document": "摘要文本",
           "example": "一人在水泥地面上行走",
           "member": "string",
           "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "摘要文本（次选语言）",
+          "example": "A person walking on the concrete floor",
+          "member": "string",
+          "name": "AlternativeSummary",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -1559,6 +1559,24 @@
           "name": "TechTitle",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书类型",
+          "example": "81",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "只针对Dnspod系列证书有效，ca机构类型可为sectigo和digicert",
+          "example": "sectigo",
+          "member": "string",
+          "name": "CaType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

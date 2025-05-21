@@ -659,7 +659,7 @@
       "status": "online"
     },
     "SaveDoc": {
-      "document": "知识库文档问答保存。\n将文件存储到应用的知识库内需要三步：\n1.获取临时密钥，参考[接口文档](https://cloud.tencent.com/document/product/1759/105050)。获取临时密钥不同参数组合权限不一样，可参考 [知识引擎操作 cos 指南](https://cloud.tencent.com/document/product/1759/116238)\n2.调用腾讯云提供的 cos 存储接口，将文件存储到知识引擎 cos 中：具体可参考[ COS SDK 概览](https://cloud.tencent.com/document/product/436/6474), 注意使用的是临时密钥的方式操作 COS \n3.调用本接口，将文件的基础信息存储到知识引擎中。\n以上步骤可参考[文档](https://cloud.tencent.com/document/product/1759/108903)，文档最后有[代码demo](https://cloud.tencent.com/document/product/1759/108903#demo)，可作为参考。",
+      "document": "知识库文档问答保存。\n将文件存储到应用的知识库内需要三步：\n1.获取临时密钥，参考[接口文档](https://cloud.tencent.com/document/product/1759/105050)。获取临时密钥不同参数组合权限不一样，可参考 [智能体开发平台操作 cos 指南](https://cloud.tencent.com/document/product/1759/116238)\n2.调用腾讯云提供的 cos 存储接口，将文件存储到智能体开发平台 cos 中：具体可参考[ COS SDK 概览](https://cloud.tencent.com/document/product/436/6474), 注意使用的是临时密钥的方式操作 COS \n3.调用本接口，将文件的基础信息存储到智能体开发平台中。\n以上步骤可参考[文档](https://cloud.tencent.com/document/product/1759/108903)，文档最后有[代码demo](https://cloud.tencent.com/document/product/1759/108903#demo)，可作为参考。",
       "input": "SaveDocRequest",
       "name": "知识库文档录入",
       "output": "SaveDocResponse",
@@ -4552,26 +4552,6 @@
           "name": "CateBizId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文档的用户自定义ID",
-          "example": "无",
-          "member": "string",
-          "name": "CustomerKnowledgeId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "文档的属性标记，0: 不做用户外部权限校验",
-          "example": "无",
-          "member": "uint64",
-          "name": "AttributeFlags",
-          "output_required": false,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11711,24 +11691,6 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文档的用户自定义ID",
-          "example": "无",
-          "member": "string",
-          "name": "CustomerKnowledgeId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文档的属性标记，0: 不做用户外部权限校验",
-          "example": "无",
-          "member": "uint64",
-          "name": "AttributeFlags",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"
@@ -14340,24 +14302,6 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文档的用户自定义ID",
-          "example": "无",
-          "member": "string",
-          "name": "CustomerKnowledgeId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文档的属性标记，0: 不做用户外部权限校验",
-          "example": "无",
-          "member": "uint64",
-          "name": "AttributeFlags",
-          "required": false,
-          "type": "list"
         }
       ],
       "type": "object"

@@ -687,7 +687,7 @@
       "status": "online"
     },
     "ModifyMachineGroup": {
-      "document": "修改机器组",
+      "document": "修改机器组。\n注意：修改接口直接覆盖历史数据，改为本次合法入参数据，请谨慎调用此接口。",
       "input": "ModifyMachineGroupRequest",
       "name": "修改机器组",
       "output": "ModifyMachineGroupResponse",
@@ -12893,7 +12893,7 @@
         },
         {
           "disabled": false,
-          "document": "机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。",
+          "document": "机器组类型。 \nType：ip，Values中为ip字符串列表机器组；\nType：label，Values中为标签字符串列表机器组。",
           "example": "无",
           "member": "MachineGroupTypeInfo",
           "name": "MachineGroupType",
@@ -14873,6 +14873,16 @@
           "example": "1",
           "member": "uint64",
           "name": "HasServicesLog",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全文检索标记。1：关闭，2：打开。",
+          "example": "1",
+          "member": "uint64",
+          "name": "FullQuery",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

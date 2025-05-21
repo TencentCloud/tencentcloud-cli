@@ -42,6 +42,13 @@
       "output": "CreateFileSystemResponse",
       "status": "online"
     },
+    "CreateFileset": {
+      "document": "创建Fileset",
+      "input": "CreateFilesetRequest",
+      "name": "创建Fileset",
+      "output": "CreateFilesetResponse",
+      "status": "online"
+    },
     "DeleteCrossVpcSubnetSupportForClientNode": {
       "document": "为客户端节点删除跨vpc子网访问能力",
       "input": "DeleteCrossVpcSubnetSupportForClientNodeRequest",
@@ -54,6 +61,13 @@
       "input": "DeleteFileSystemRequest",
       "name": "删除文件系统",
       "output": "DeleteFileSystemResponse",
+      "status": "online"
+    },
+    "DeleteFileset": {
+      "document": "删除Fileset",
+      "input": "DeleteFilesetRequest",
+      "name": "删除Fileset",
+      "output": "DeleteFilesetResponse",
       "status": "online"
     },
     "DescribeClientNodes": {
@@ -105,6 +119,20 @@
       "output": "DescribeFileSystemsResponse",
       "status": "online"
     },
+    "DescribeFilesetGeneralConfig": {
+      "document": "查询Fileset通用配置",
+      "input": "DescribeFilesetGeneralConfigRequest",
+      "name": "查询Fileset通用配置",
+      "output": "DescribeFilesetGeneralConfigResponse",
+      "status": "online"
+    },
+    "DescribeFilesets": {
+      "document": "查询Fileset列表",
+      "input": "DescribeFilesetsRequest",
+      "name": "查询Fileset列表",
+      "output": "DescribeFilesetsResponse",
+      "status": "online"
+    },
     "DetachFileSystemBucket": {
       "document": "解绑文件系统与Bucket的映射",
       "input": "DetachFileSystemBucketRequest",
@@ -138,6 +166,20 @@
       "input": "QueryDataRepositoryBandwidthRequest",
       "name": "查询数据流动带宽",
       "output": "QueryDataRepositoryBandwidthResponse",
+      "status": "online"
+    },
+    "UpdateFileset": {
+      "document": "修改FIleset",
+      "input": "UpdateFilesetRequest",
+      "name": "修改Fileset",
+      "output": "UpdateFilesetResponse",
+      "status": "online"
+    },
+    "UpdateFilesetGeneralConfig": {
+      "document": "修改Fileset通用配置",
+      "input": "UpdateFilesetGeneralConfigRequest",
+      "name": "修改Fileset通用配置",
+      "output": "UpdateFilesetGeneralConfigResponse",
       "status": "online"
     }
   },
@@ -763,6 +805,88 @@
       ],
       "type": "object"
     },
+    "CreateFilesetRequest": {
+      "document": "CreateFileset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-683u5pct",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset名称",
+          "example": "fset_001",
+          "member": "string",
+          "name": "FsetName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset目录",
+          "example": "/myfset/fset_001/",
+          "member": "string",
+          "name": "FsetDir",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset容量配额（需带单位G）",
+          "example": "100G",
+          "member": "string",
+          "name": "QuotaSizeLimit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset文件数配额",
+          "example": "1000000",
+          "member": "string",
+          "name": "QuotaFilesLimit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset文件删除操作审计",
+          "example": "enable/disable",
+          "member": "string",
+          "name": "AuditState",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFilesetResponse": {
+      "document": "CreateFileset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Fileset id",
+          "example": "fset_1743578359192",
+          "member": "string",
+          "name": "FsetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCrossVpcSubnetSupportForClientNodeRequest": {
       "document": "DeleteCrossVpcSubnetSupportForClientNode请求参数结构体",
       "members": [
@@ -816,6 +940,42 @@
     },
     "DeleteFileSystemResponse": {
       "document": "DeleteFileSystem返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFilesetRequest": {
+      "document": "DeleteFileset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-683u5pct",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset id",
+          "example": "fset_123000",
+          "member": "string",
+          "name": "FsetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFilesetResponse": {
+      "document": "DeleteFileset返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1161,6 +1321,108 @@
       ],
       "type": "object"
     },
+    "DescribeFilesetGeneralConfigRequest": {
+      "document": "DescribeFilesetGeneralConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-683u5pct",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFilesetGeneralConfigResponse": {
+      "document": "DescribeFilesetGeneralConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配额对root用户生效",
+          "example": "yes/no",
+          "member": "string",
+          "name": "EnforceQuotaOnRoot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置状态",
+          "example": "active/modify",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFilesetsRequest": {
+      "document": "DescribeFilesets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-683u5pct",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FsetId列表",
+          "example": "fset_1743578359192",
+          "member": "string",
+          "name": "FilesetIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "FsetDir列表",
+          "example": "/fset_test_001/",
+          "member": "string",
+          "name": "FilesetDirs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFilesetsResponse": {
+      "document": "DescribeFilesets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Fileset列表",
+          "example": "无",
+          "member": "FilesetInfo",
+          "name": "FilesetList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetachFileSystemBucketRequest": {
       "document": "DetachFileSystemBucket请求参数结构体",
       "members": [
@@ -1377,6 +1639,155 @@
         }
       ],
       "usage": "out"
+    },
+    "FilesetInfo": {
+      "document": "Fileset信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Fileset id",
+          "example": "fset_123000",
+          "member": "string",
+          "name": "FsetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Fileset名称",
+          "example": "test123",
+          "member": "string",
+          "name": "FsetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Fileset目录",
+          "example": "myfset/fset_001",
+          "member": "string",
+          "name": "FsetDir",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Fileset容量配额限定值",
+          "example": "100G",
+          "member": "string",
+          "name": "QuotaSizeLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用容量配额",
+          "example": "1024K",
+          "member": "string",
+          "name": "QuotaSizeUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容量配额使用占比",
+          "example": "10%",
+          "member": "string",
+          "name": "QuotaSizeUsedPercent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Fileset文件数配额限定值",
+          "example": "1000000",
+          "member": "string",
+          "name": "QuotaFilesLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用文件数配额",
+          "example": "1000",
+          "member": "string",
+          "name": "QuotaFilesUsed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件数配额使用占比",
+          "example": "5%",
+          "member": "string",
+          "name": "QuotaFilesUsedPercent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Fileset审计",
+          "example": "true/false",
+          "member": "string",
+          "name": "AuditState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Fileset状态：creating 配置中 active 已生效 modify 修改中",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GooseFSxAttribute": {
       "document": "GooseFSx文件系统的属性",
@@ -1818,6 +2229,105 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateFilesetGeneralConfigRequest": {
+      "document": "UpdateFilesetGeneralConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-683u5pct",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配额对root用户生效",
+          "example": "yes/no",
+          "member": "string",
+          "name": "EnforceQuotaOnRoot",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFilesetGeneralConfigResponse": {
+      "document": "UpdateFilesetGeneralConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFilesetRequest": {
+      "document": "UpdateFileset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统id",
+          "example": "x-c60-683u5pct",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset id",
+          "example": "fset_123000",
+          "member": "string",
+          "name": "FsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "容量配额限定值",
+          "example": "100G",
+          "member": "string",
+          "name": "QuotaSizeLimit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件数配额限定值",
+          "example": "1000000",
+          "member": "string",
+          "name": "QuotaFilesLimit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Fileset文件删除操作审计",
+          "example": "enable/disable",
+          "member": "string",
+          "name": "AuditState",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFilesetResponse": {
+      "document": "UpdateFileset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

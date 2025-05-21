@@ -714,13 +714,6 @@
       "output": "UnlockAccountResponse",
       "status": "online"
     },
-    "UpgradeDBInstance": {
-      "document": "早期接口，不规范，已提供新接口 ModifyDBInstanceSpec 替换\n\n本接口（UpgradeDBInstance）用于升级实例配置。本接口已废弃，推荐使用接口[ModifyDBInstanceSpec](https://cloud.tencent.com/document/api/409/63689)替代。",
-      "input": "UpgradeDBInstanceRequest",
-      "name": "升级实例配置（废弃）",
-      "output": "UpgradeDBInstanceResponse",
-      "status": "deprecated"
-    },
     "UpgradeDBInstanceKernelVersion": {
       "document": "本接口（UpgradeDBInstanceKernelVersion）用于升级实例的内核版本号。",
       "input": "UpgradeDBInstanceKernelVersionRequest",
@@ -12066,125 +12059,6 @@
     "UpgradeDBInstanceMajorVersionResponse": {
       "document": "UpgradeDBInstanceMajorVersion返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpgradeDBInstanceRequest": {
-      "document": "UpgradeDBInstance请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "升级后的实例内存大小，单位GB",
-          "example": "2",
-          "member": "int64",
-          "name": "Memory",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "升级后的实例磁盘大小，单位GB",
-          "example": "200",
-          "member": "int64",
-          "name": "Storage",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "实例ID，形如postgres-lnp6j617",
-          "example": "postgres-6bwgamo3",
-          "member": "string",
-          "name": "DBInstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否自动使用代金券,1是,0否，默认不使用",
-          "example": "0",
-          "member": "int64",
-          "name": "AutoVoucher",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "代金券ID列表，目前仅支持指定一张代金券",
-          "example": "[     \"OZRCGNAV8D9BMI9KMG1FIQ\" ]",
-          "member": "string",
-          "name": "VoucherIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "活动ID",
-          "example": "36921",
-          "member": "int64",
-          "name": "ActivityId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。",
-          "example": "0",
-          "member": "int64",
-          "name": "SwitchTag",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "切换开始时间",
-          "example": "8:30:00",
-          "member": "string",
-          "name": "SwitchStartTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "切换截止时间",
-          "example": "8:30:00",
-          "member": "string",
-          "name": "SwitchEndTime",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UpgradeDBInstanceResponse": {
-      "document": "UpgradeDBInstance返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "交易名字。",
-          "example": "201806127634",
-          "member": "string",
-          "name": "DealName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "冻结流水号",
-          "example": "20241204591002321368561",
-          "member": "string",
-          "name": "BillId",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

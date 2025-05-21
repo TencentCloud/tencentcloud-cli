@@ -43,11 +43,11 @@
       "status": "online"
     },
     "CreateClassificationRule": {
-      "document": "创建识别规则",
+      "document": "旧版本DSGC接口下线\n\n创建识别规则",
       "input": "CreateClassificationRuleRequest",
       "name": "创建识别规则",
       "output": "CreateClassificationRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateDSPAAssessmentRiskLevel": {
       "document": "风险项页面---创建风险等级",
@@ -162,18 +162,18 @@
       "status": "online"
     },
     "CreateNewClassification": {
-      "document": "创建新分类",
+      "document": "旧版本DSGC接口下线\n\n创建新分类",
       "input": "CreateNewClassificationRequest",
       "name": "创建新分类",
       "output": "CreateNewClassificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateOrCopyStandard": {
-      "document": "创建或复制分级分类模板",
+      "document": "旧版本DSGC接口下线\n\n创建或复制分级分类模板",
       "input": "CreateOrCopyStandardRequest",
       "name": "创建或复制分级分类模板",
       "output": "CreateOrCopyStandardResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DecribeSuggestRiskLevelMatrix": {
       "document": "风险等级的定义页面-创建风险等级的时候生成的一个默认的矩阵",
@@ -260,18 +260,18 @@
       "status": "online"
     },
     "DescribeClassificationInfo": {
-      "document": "查询分类信息\n",
+      "document": "旧版本DSGC接口下线\n\n查询分类信息\n",
       "input": "DescribeClassificationInfoRequest",
       "name": "查询分类信息",
       "output": "DescribeClassificationInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeClassificationRuleCount": {
-      "document": "查询标准下所有分类的识别规则数量(不算子分类下的识别规则)",
+      "document": "旧版本DSGC接口下线\n\n查询标准下所有分类的识别规则数量(不算子分类下的识别规则)",
       "input": "DescribeClassificationRuleCountRequest",
       "name": "查询标准下所有分类的识别规则数量(不算子分类下的识别规则)",
       "output": "DescribeClassificationRuleCountResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDSPAAssessmentHighRiskTop10Overview": {
       "document": "查询高风险资产的top10",
@@ -701,11 +701,11 @@
       "status": "online"
     },
     "DescribeLeafClassification": {
-      "document": "查询标准下所有叶子节点分类",
+      "document": "旧版本DSGC接口下线\n\n查询标准下所有叶子节点分类",
       "input": "DescribeLeafClassificationRequest",
       "name": "查询标准下所有叶子节点分类",
       "output": "DescribeLeafClassificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMongoAssetSensitiveDistribution": {
       "document": "数据资产报告-查询mongo 的敏感资产报告，包含（数据库资产，设敏级别数据库top10，资产详情）",
@@ -736,11 +736,11 @@
       "status": "online"
     },
     "DescribeRuleList": {
-      "document": "查询分类下规则列表\n",
+      "document": "旧版本DSGC接口下线\n\n查询分类下规则列表\n",
       "input": "DescribeRuleListRequest",
       "name": "查询分类下规则列表",
       "output": "DescribeRuleListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSensitiveCOSDataDistribution": {
       "document": "数据资产报告-查询cos的敏感数据分布（分级分布 分类分布 敏感规则分布详情列表）",
@@ -827,18 +827,18 @@
       "status": "online"
     },
     "ModifyClassificationRule": {
-      "document": "编辑识别规则",
+      "document": "旧版本DSGC接口下线\n\n编辑识别规则",
       "input": "ModifyClassificationRuleRequest",
       "name": "编辑识别规则",
       "output": "ModifyClassificationRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyClassificationRuleState": {
-      "document": "修改识别规则状态",
+      "document": "旧版本DSGC接口下线\n\n修改识别规则状态",
       "input": "ModifyClassificationRuleStateRequest",
       "name": "修改识别规则状态",
       "output": "ModifyClassificationRuleStateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyDSPAAssessmentRisk": {
       "document": "修改DSPA评估风险项，支持修改Status",
@@ -939,46 +939,46 @@
       "status": "online"
     },
     "ModifyLevelInfo": {
-      "document": "修改敏感级别信息",
+      "document": "旧版本DSGC接口下线\n\n修改敏感级别信息",
       "input": "ModifyLevelInfoRequest",
       "name": "修改敏感级别信息",
       "output": "ModifyLevelInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyLevelName": {
-      "document": "修改级别名称",
+      "document": "旧版本DSGC接口下线\n\n修改级别名称",
       "input": "ModifyLevelNameRequest",
       "name": "修改级别名称",
       "output": "ModifyLevelNameResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyLevelState": {
-      "document": "开启级别或关闭级别",
+      "document": "旧版本DSGC接口下线\n\n开启级别或关闭级别",
       "input": "ModifyLevelStateRequest",
       "name": "修改级别状态",
       "output": "ModifyLevelStateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMergeClassification": {
-      "document": "一个分类合并到另一个分类中（分类拖拽功能）",
+      "document": "旧版本DSGC接口下线\n\n一个分类合并到另一个分类中（分类拖拽功能）",
       "input": "ModifyMergeClassificationRequest",
       "name": "一个分类合并到另一个分类中（分类拖拽功能）",
       "output": "ModifyMergeClassificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyNewClassification": {
-      "document": "修改分类信息",
+      "document": "旧版本DSGC接口下线\n\n修改分类信息",
       "input": "ModifyNewClassificationRequest",
       "name": "修改分类信息",
       "output": "ModifyNewClassificationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyStandardInfo": {
-      "document": "修改分级分类模板信息",
+      "document": "旧版本DSGC接口下线\n\n修改分级分类模板信息",
       "input": "ModifyStandardInfoRequest",
       "name": "修改分级分类模板信息",
       "output": "ModifyStandardInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryDSPAMetaResourceDbList": {
       "document": "查询DSPA实例的db列表",
@@ -7305,12 +7305,22 @@
       "document": "DescribeDSPAAssessmentRiskSideList返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "风险面列表",
           "example": "[{\"Key\":\"cloudstorage_security\",\"Value\":2}]",
           "member": "Note",
           "name": "RiskSideItmeList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险面列表",
+          "example": "无",
+          "member": "Note",
+          "name": "RiskSideItemList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12859,13 +12869,13 @@
         },
         {
           "disabled": false,
-          "document": "任务最新的一次执行结果信息，该字段用于查询任务列表接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务最新的一次执行结果信息，该字段用于查询任务列表接口",
           "example": "{\"Id\":665,\"EndTime\":\"2025-05-12 04:53:03\",\"Status\":3,\"Result\":\"\",\"ResultDescription\":\"\",\"Suggestion\":\"\",\"Progress\":100}",
           "member": "ScanTaskResult",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -12879,13 +12889,13 @@
         },
         {
           "disabled": false,
-          "document": "关联模板是否更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联模板是否更新",
           "example": "true",
           "member": "bool",
           "name": "ComplianceUpdate",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

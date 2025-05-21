@@ -48,6 +48,14 @@
         "title": "创建文件系统"
       }
     ],
+    "CreateFileset": [
+      {
+        "document": "创建FIleset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetName\": \"fset_test_006\",\n    \"FsetDir\": \"/fset_test_006/\",\n    \"QuotaSizeLimit\": \"1024G\",\n    \"QuotaFilesLimit\": \"1024\",\n    \"AuditState\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FsetId\": \"fset_1745742041947\",\n        \"RequestId\": \"1c44ae43-f00d-460f-a093-469c407b6fb5\"\n    }\n}",
+        "title": "创建FIleset"
+      }
+    ],
     "DeleteCrossVpcSubnetSupportForClientNode": [
       {
         "document": "为客户端节点删除跨vpc子网访问能力",
@@ -62,6 +70,14 @@
         "input": "https://goosefs.tencentcloudapi.com/?Action=DeleteFileSystem\n&FileSystemId=x_c60_r3c4fa1f\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "删除文件系统"
+      }
+    ],
+    "DeleteFileset": [
+      {
+        "document": "删除Fileset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetId\": \"fset_1745468035294\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2465d830-6362-418e-8d28-f60e418aec7e\"\n    }\n}",
+        "title": "删除Fileset"
       }
     ],
     "DescribeClientNodes": [
@@ -120,6 +136,22 @@
         "title": "罗列文件系统"
       }
     ],
+    "DescribeFilesetGeneralConfig": [
+      {
+        "document": "查询Fileset通用配置",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFilesetGeneralConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnforceQuotaOnRoot\": \"yes\",\n        \"RequestId\": \"ccec6e4e-0775-4af5-966c-788fa3215bd2\",\n        \"Status\": \"active\"\n    }\n}",
+        "title": "查询Fileset通用配置"
+      }
+    ],
+    "DescribeFilesets": [
+      {
+        "document": "查询Fileset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFilesets\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FilesetList\": [\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:05+08:00\",\n                \"FsetDir\": \"/fset/fset_test_001/\",\n                \"FsetId\": \"fset_1745468035223\",\n                \"FsetName\": \"fset_test_001\",\n                \"ModifyTime\": \"2025-04-27T16:17:23+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"2\",\n                \"QuotaFilesUsedPercent\": \"0.20%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"35651584K\",\n                \"QuotaSizeUsedPercent\": \"3.32%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:12+08:00\",\n                \"FsetDir\": \"/fset/fset_test_002/\",\n                \"FsetId\": \"fset_1745468035263\",\n                \"FsetName\": \"fset_test_002\",\n                \"ModifyTime\": \"2025-04-27T16:17:35+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"2\",\n                \"QuotaFilesUsedPercent\": \"0.20%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"20971520K\",\n                \"QuotaSizeUsedPercent\": \"1.95%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:13+08:00\",\n                \"FsetDir\": \"/fset/fset_test_003/\",\n                \"FsetId\": \"fset_1745468035273\",\n                \"FsetName\": \"fset_test_003\",\n                \"ModifyTime\": \"2025-04-27T16:17:40+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"2\",\n                \"QuotaFilesUsedPercent\": \"0.20%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"31457280K\",\n                \"QuotaSizeUsedPercent\": \"2.93%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:21+08:00\",\n                \"FsetDir\": \"/fset/fset_test_004/\",\n                \"FsetId\": \"fset_1745468035284\",\n                \"FsetName\": \"fset_test_004\",\n                \"ModifyTime\": \"2025-04-27T16:17:46+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"1\",\n                \"QuotaFilesUsedPercent\": \"0.10%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0.00%\",\n                \"Status\": \"active\"\n            },\n            {\n                \"AuditState\": \"disable\",\n                \"CreateTime\": \"2025-04-22T20:55:22+08:00\",\n                \"FsetDir\": \"/fset/fset_test_005/\",\n                \"FsetId\": \"fset_1745468035294\",\n                \"FsetName\": \"fset_test_005\",\n                \"ModifyTime\": \"2025-04-27T16:17:53+08:00\",\n                \"QuotaFilesLimit\": \"1024\",\n                \"QuotaFilesUsed\": \"1\",\n                \"QuotaFilesUsedPercent\": \"0.10%\",\n                \"QuotaSizeLimit\": \"1024G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0.00%\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"RequestId\": \"2ab92d6c-dd47-429a-8b31-0ec56c574a2b\"\n    }\n}",
+        "title": "查询Fileset"
+      }
+    ],
     "DetachFileSystemBucket": [
       {
         "document": "解绑文件系统与Bucket的映射",
@@ -158,6 +190,22 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDataRepositoryBandwidth\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x_c60_123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"Bandwidth\": 600,\n        \"MinBandwidth\": 0,\n        \"BandwidthStatus\": 1,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "查询数据流动带宽"
+      }
+    ],
+    "UpdateFileset": [
+      {
+        "document": "修改Fileset",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetId\": \"fset_1745742041947\",\n    \"QuotaSizeLimit\": \"2048G\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01c9ae21-4423-4593-a836-6d06c233faea\"\n    }\n}",
+        "title": "修改Fileset"
+      }
+    ],
+    "UpdateFilesetGeneralConfig": [
+      {
+        "document": "修改Fileset通用配置",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFilesetGeneralConfig\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"EnforceQuotaOnRoot\": \"yes\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351d5641-a330-45ef-beec-8174cb9115fb\"\n    }\n}",
+        "title": "修改Fileset通用配置"
       }
     ]
   },

@@ -8480,7 +8480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "续费周期。",
+          "document": "续费周期。\n单位：月。\n取值范围: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]",
           "example": "1",
           "member": "int64",
           "name": "Period",
