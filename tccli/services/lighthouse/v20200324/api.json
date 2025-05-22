@@ -2516,7 +2516,7 @@
         {
           "disabled": false,
           "document": "镜像Id。",
-          "example": "\"lhbp-123456\"",
+          "example": "lhbp-5exe07sc",
           "member": "string",
           "name": "BlueprintId",
           "output_required": true,
@@ -2526,7 +2526,7 @@
         {
           "disabled": false,
           "document": "镜像展示标题。",
-          "example": "\"\"",
+          "example": "Halo建站",
           "member": "string",
           "name": "DisplayTitle",
           "output_required": true,
@@ -2536,7 +2536,7 @@
         {
           "disabled": false,
           "document": "镜像展示版本。",
-          "example": "\"\"",
+          "example": "1.4.0",
           "member": "string",
           "name": "DisplayVersion",
           "output_required": true,
@@ -2546,7 +2546,7 @@
         {
           "disabled": false,
           "document": "镜像描述信息。",
-          "example": "\"\"",
+          "example": "Halo 是一款强大易用的开源建站工具，它提供了易于使用的界面和丰富的功能，让用户可以轻松创建博客及各类专业网站或内容管理系统。",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -2556,7 +2556,7 @@
         {
           "disabled": false,
           "document": "操作系统名称。",
-          "example": "\"\"",
+          "example": "Ubuntu Server 22.04 LTS 64bit",
           "member": "string",
           "name": "OsName",
           "output_required": true,
@@ -2566,7 +2566,7 @@
         {
           "disabled": false,
           "document": "操作系统平台。",
-          "example": "\"\"",
+          "example": "Ubuntu (UBUNTU)",
           "member": "string",
           "name": "Platform",
           "output_required": true,
@@ -2576,7 +2576,7 @@
         {
           "disabled": false,
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
-          "example": "\"\"",
+          "example": "LINUX_UNIX",
           "member": "string",
           "name": "PlatformType",
           "output_required": true,
@@ -2586,7 +2586,7 @@
         {
           "disabled": false,
           "document": "镜像类型，如 APP_OS、PURE_OS。",
-          "example": "\"\"",
+          "example": "APP_OS",
           "member": "string",
           "name": "BlueprintType",
           "output_required": true,
@@ -2596,7 +2596,7 @@
         {
           "disabled": false,
           "document": "镜像图片 URL。",
-          "example": "\"\"",
+          "example": "https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/71915605-5d41-4edf-87d9-b4697d41e80f.svg",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
@@ -2616,7 +2616,7 @@
         {
           "disabled": false,
           "document": "镜像状态。",
-          "example": "\"\"",
+          "example": "NORMAL",
           "member": "string",
           "name": "BlueprintState",
           "output_required": true,
@@ -2636,7 +2636,7 @@
         {
           "disabled": false,
           "document": "镜像名称。",
-          "example": "\"\"",
+          "example": "halo",
           "member": "string",
           "name": "BlueprintName",
           "output_required": true,
@@ -2676,7 +2676,7 @@
         {
           "disabled": false,
           "document": "官方网站Url。",
-          "example": "\"\"",
+          "example": "https://www.halo.run/",
           "member": "string",
           "name": "CommunityUrl",
           "output_required": true,
@@ -2686,7 +2686,7 @@
         {
           "disabled": false,
           "document": "指导文章Url。",
-          "example": "\"\"",
+          "example": "https://cloud.tencent.com/document/product/1207/106472",
           "member": "string",
           "name": "GuideUrl",
           "output_required": true,
@@ -2712,6 +2712,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否支持扫码登录。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportScanLogin",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

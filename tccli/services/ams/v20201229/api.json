@@ -49,7 +49,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回审核内容是否命中审核模型；取值：0（**未命中**）、1（**命中**）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HitFlag",
           "output_required": true,
@@ -59,7 +59,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -69,7 +69,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Block",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -79,7 +79,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -89,7 +89,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频文件经ASR识别后的文本信息。最长可识别**5小时**的音频文件，若超出时长限制，接口将会报错。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "加不加微信",
           "member": "string",
           "name": "Text",
           "output_required": true,
@@ -99,7 +99,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://tianyu-content-moderation-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/vod/w-video-aCUvYiAxxxxx/audio_0_1111.mp3",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -109,7 +109,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频文件的时长，单位为毫秒。",
-          "example": "无",
+          "example": "29000",
           "member": "string",
           "name": "Duration",
           "output_required": true,
@@ -119,7 +119,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回额外附加信息，不同客户或Biztype下返回信息不同。",
-          "example": "无",
+          "example": "{ad}",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -159,7 +159,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Add",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -209,7 +209,7 @@
         {
           "disabled": false,
           "document": "三级标签",
-          "example": "无",
+          "example": "Add friend",
           "member": "string",
           "name": "SubTag",
           "output_required": false,
@@ -219,7 +219,7 @@
         {
           "disabled": false,
           "document": "三级标签码",
-          "example": "无",
+          "example": "20105213301",
           "member": "string",
           "name": "SubTagCode",
           "output_required": false,
@@ -235,50 +235,50 @@
         {
           "disabled": false,
           "document": "该字段用于返回对应的语言种类信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cmn",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该参数用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于当前返回的语种标签；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "99",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "15",
           "member": "float",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "*内测中，敬请期待*\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "SubLabelCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -367,20 +367,20 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果需要检测的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "cmn",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "80",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -390,17 +390,17 @@
           "example": "1",
           "member": "float",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "15",
           "member": "float",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -509,7 +509,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频片段的开始时间，单位为秒。对于点播文件，该参数代表对应音频相对于完整音轨的偏移时间，如0（代表不偏移），5（音轨开始后5秒），10（音轨开始后10秒）；对于直播文件，该参数则返回对应音频片段开始时的Unix时间戳，如：1594650717。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "400",
           "member": "string",
           "name": "OffsetTime",
           "output_required": true,
@@ -528,8 +528,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "入库时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-05-15T01:00:47Z",
           "member": "string",
           "name": "CreatedAt",
           "output_required": false,
@@ -1260,20 +1260,20 @@
         {
           "disabled": false,
           "document": "该字段表示文件访问类型，取值为**URL**（资源链接）和**COS** (腾讯云对象存储)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "URL",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段表示文件访问的链接地址，格式为标准URL格式。<br> 备注：当Type为URL时此字段不为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://cms.xxx.xx/5.mp4",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1283,7 +1283,7 @@
           "example": "无",
           "member": "BucketInfo",
           "name": "BucketInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1372,50 +1372,50 @@
         {
           "disabled": false,
           "document": "该字段用于返回传入的媒体文件的编码格式，如wav、mp3、aac、flac、amr、3gp、 m4a、wma、ogg、ape等。",
-          "example": "无",
+          "example": "wav",
           "member": "string",
           "name": "Codecs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为毫秒。**默认值为15秒**，支持用户自定义配置。",
-          "example": "无",
+          "example": "5760",
           "member": "int64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "*内测中，敬请期待*",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "*内测中，敬请期待*",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "*内测中，敬请期待*",
-          "example": "无",
+          "example": "http://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/vod/w-video-aCHKme/screenshot_3_1747045061.jpg",
           "member": "string",
           "name": "Thumbnail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1428,7 +1428,7 @@
         {
           "disabled": false,
           "document": "固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "Moan",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -1438,7 +1438,7 @@
         {
           "disabled": false,
           "document": "机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。\n（如：Moan 99，则该样本属于呻吟/娇喘的置信度非常高。）",
-          "example": "1",
+          "example": "80",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -1448,7 +1448,7 @@
         {
           "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过",
-          "example": "1",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -1458,7 +1458,7 @@
         {
           "disabled": false,
           "document": "违规事件开始时间，单位为秒（s）；",
-          "example": "1",
+          "example": "0",
           "member": "float",
           "name": "StartTime",
           "output_required": true,
@@ -1468,7 +1468,7 @@
         {
           "disabled": false,
           "document": "违规事件结束时间，单位为秒（s）；",
-          "example": "1",
+          "example": "15",
           "member": "float",
           "name": "EndTime",
           "output_required": true,
@@ -1478,7 +1478,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "EroticVoice",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -1520,20 +1520,20 @@
         {
           "disabled": false,
           "document": "可能的取值有：Teenager 、Gender\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "Gender",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "识别标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1625,20 +1625,20 @@
         {
           "disabled": false,
           "document": "根据Label字段确定具体名称：\n当Label 为Teenager 时 Name可能取值有：Teenager \n当Label 为Gender 时 Name可能取值有：Male 、Female\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "Gender",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
+          "example": "89",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1648,7 +1648,7 @@
           "example": "3",
           "member": "float",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -1658,7 +1658,7 @@
           "example": "4",
           "member": "float",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -1671,7 +1671,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频审核任务数据所对应的数据ID，方便后续查询和管理审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3930493",
           "member": "string",
           "name": "DataId",
           "output_required": true,
@@ -1681,7 +1681,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频审核任务所生成的任务ID，用于标识具体审核任务，方便后续查询和管理。",
-          "example": "无",
+          "example": "w-video-aCHKmeasqRq1",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -1691,7 +1691,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回所查询内容的任务状态。\n<br>取值：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。",
-          "example": "无",
+          "example": "FINISH",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -1701,7 +1701,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频审核任务所对应的任务名称，方便后续查询和管理审核任务。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试视频",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1711,7 +1711,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回调用音频审核接口时传入的BizType参数，方便数据的辨别和管理。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "BizType",
           "output_required": true,
@@ -1721,7 +1721,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回调用音频审核接口时输入的音频审核类型，取值为：**AUDIO**（点播音频）和**LIVE_AUDIO**（直播音频），默认值为AUDIO。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "AUDIO",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -1731,7 +1731,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Pass",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -1761,7 +1761,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回被查询任务创建的时间，格式采用 ISO 8601标准。",
-          "example": "无",
+          "example": "2025-05-12T10:16:57.059Z",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
@@ -1771,7 +1771,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回被查询任务最后更新时间，格式采用 ISO 8601标准。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-05-12T10:39:48.097Z",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": true,
@@ -1797,42 +1797,38 @@
         {
           "disabled": false,
           "document": "该字段用于传入任务对应的业务类型供筛选器进行筛选。Biztype为策略的具体的编号，用于接口调度，在内容安全控制台中可配置。不同Biztype关联不同的业务场景与审核策略，调用前请确认正确的Biztype。Biztype仅为**数字、字母与下划线的组合**，长度为3-32个字符。<br>备注：在不传入该参数时筛选器默认不筛选业务类型。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "BizType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段用于传入音频审核对应的任务类型供筛选器进行筛选，取值为：**VIDEO**（点播视频审核），**AUDIO**（点播音频审核）， **LIVE_VIDEO**（直播视频审核）, **LIVE_AUDIO**（直播音频审核）。<br>备注：在不传入该参数时筛选器默认不筛选任务类型。",
-          "example": "无",
+          "example": "VIDEO",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段用于传入音频审核对应的建议操作供筛选器进行筛选，取值为：**Block**：建议屏蔽，**Review**：建议人工复审，**Pass**：建议通过。<br>备注：在不传入该参数时筛选器默认不筛选建议操作。",
-          "example": "无",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "该字段用于传入审核任务的任务状态供筛选器进行筛选，取值为：**FINISH**（任务已完成）、**PENDING** （任务等待中）、**RUNNING** （任务进行中）、**ERROR** （任务出错）、**CANCELLED** （任务已取消）。<br>备注：在不传入该参数时筛选器默认不筛选任务状态。",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "TaskStatus",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1876,40 +1872,40 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回当前标签对应的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Label）下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高** ），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容；*色情 0*，则表明该文本不属于色情内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "89",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Phone",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1968,7 +1964,7 @@
         {
           "disabled": false,
           "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告。\n以及其他令人反感、不安全或不适宜的内容类型。\n\n如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Normal",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -1978,7 +1974,7 @@
         {
           "disabled": false,
           "document": "命中的关键词，为空则代表该违规内容出自于模型的判断；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "[\"加微信\"]",
           "member": "string",
           "name": "Keywords",
           "output_required": true,
@@ -1988,7 +1984,7 @@
         {
           "disabled": false,
           "document": "命中关键词库的库标识；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "libid_1",
           "member": "string",
           "name": "LibId",
           "output_required": true,
@@ -1998,7 +1994,7 @@
         {
           "disabled": false,
           "document": "命中关键词库的名字；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "测试词库",
           "member": "string",
           "name": "LibName",
           "output_required": true,
@@ -2008,7 +2004,7 @@
         {
           "disabled": false,
           "document": "机器判断当前分类的置信度，取值范围：0~100。分数越高，表示越有可能属于当前分类。\n（如：Porn 99，则该样本属于色情的置信度非常高。）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "89",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -2018,7 +2014,7 @@
         {
           "disabled": false,
           "document": "建议您拿到判断结果后的执行操作。\n建议值，Block：建议屏蔽，Review：建议复审，Pass：建议通过\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -2027,7 +2023,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义词库的类型，自定义词库相关的信息可登录控制台中查看；\n\n1：自定义黑白库；\n\n2：自定义库；",
+          "document": "自定义词库的类型，自定义词库相关的信息可登录控制台中查看；\n1：自定义黑白库；\n2：公库；",
           "example": "1",
           "member": "int64",
           "name": "LibType",
@@ -2038,7 +2034,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "Add",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -2140,7 +2136,7 @@
         {
           "disabled": false,
           "document": "用户等级，默认0 未知 1 低 2 中 3 高",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Level",
           "required": false,
@@ -2149,7 +2145,7 @@
         {
           "disabled": false,
           "document": "性别 默认0 未知 1 男性 2 女性",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Gender",
           "required": false,
@@ -2158,7 +2154,7 @@
         {
           "disabled": false,
           "document": "年龄 默认0 未知",
-          "example": "无",
+          "example": "16",
           "member": "uint64",
           "name": "Age",
           "required": false,
@@ -2167,7 +2163,7 @@
         {
           "disabled": false,
           "document": "业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
-          "example": "无",
+          "example": "user1",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -2176,7 +2172,7 @@
         {
           "disabled": false,
           "document": "手机号",
-          "example": "无",
+          "example": "176****2131",
           "member": "string",
           "name": "Phone",
           "required": false,
@@ -2185,7 +2181,7 @@
         {
           "disabled": false,
           "document": "业务用户ID类型 \"1-微信uin 2-QQ号 3-微信群uin 4-qq群号 5-微信openid 6-QQopenid 7-其它string\"",
-          "example": "无",
+          "example": "1-微信uin",
           "member": "string",
           "name": "AccountType",
           "required": false,
@@ -2194,7 +2190,7 @@
         {
           "disabled": false,
           "document": "用户昵称",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -2203,7 +2199,7 @@
         {
           "disabled": false,
           "document": "用户头像图片链接",
-          "example": "无",
+          "example": "https://cmstest-123.cos.ap-guangzhou.myqcloud.com/image.jpg",
           "member": "string",
           "name": "HeadUrl",
           "required": false,
@@ -2212,7 +2208,7 @@
         {
           "disabled": false,
           "document": "用户简介，长度不超过5000字",
-          "example": "无",
+          "example": "Desc_1",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -2221,7 +2217,7 @@
         {
           "disabled": false,
           "document": "群聊场景房间ID",
-          "example": "无",
+          "example": "roomid_1",
           "member": "string",
           "name": "RoomId",
           "required": false,
@@ -2230,7 +2226,7 @@
         {
           "disabled": false,
           "document": "群聊场景群ID",
-          "example": "无",
+          "example": "groupid_1",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -2239,7 +2235,7 @@
         {
           "disabled": false,
           "document": "群聊场景群用户数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "GroupSize",
           "required": false,
@@ -2248,7 +2244,7 @@
         {
           "disabled": false,
           "document": "消息接收者ID",
-          "example": "无",
+          "example": "userid_1",
           "member": "string",
           "name": "ReceiverId",
           "required": false,
@@ -2257,7 +2253,7 @@
         {
           "disabled": false,
           "document": "消息生成时间，毫秒",
-          "example": "无",
+          "example": "2025-05-15 15:40:06",
           "member": "string",
           "name": "SendTime",
           "required": false,

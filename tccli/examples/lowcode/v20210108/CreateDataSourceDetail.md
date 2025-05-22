@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli lowcode CreateDataSourceDetail --cli-unfold-argument  \
-    --Title abc \
-    --Name abc \
-    --Type abc \
-    --Description abc \
-    --Schema abc \
-    --EnvId abc \
-    --Methods abc \
-    --DataSourceVersion abc \
-    --SchemaVersion abc \
-    --Creator abc \
+    --Title  \
+    --Name  \
+    --Type  \
+    --Description  \
+    --Schema  \
+    --EnvId  \
+    --Methods  \
+    --DataSourceVersion  \
+    --SchemaVersion  \
+    --Creator  \
     --AsyncCall 0 \
     --TemplateType 0 \
-    --TemplateCode abc \
-    --TicketId abc \
-    --Configuration abc \
-    --BindAppCode abc \
-    --SubType abc \
-    --CredentialInfo.SecretId abc \
-    --CredentialInfo.SecretKey abc \
-    --GroupId abc
+    --TemplateCode  \
+    --TicketId  \
+    --Configuration  \
+    --BindAppCode  \
+    --SubType  \
+    --CredentialInfo.SecretId  \
+    --CredentialInfo.SecretKey  \
+    --GroupId 
 ```
 
 Output: 
@@ -33,63 +33,63 @@ Output:
 {
     "Response": {
         "Data": {
-            "Id": "abc",
-            "Title": "abc",
-            "Name": "abc",
-            "Type": "abc",
-            "Description": "abc",
-            "Schema": "abc",
-            "CmsProject": "abc",
-            "PkgId": "abc",
-            "SchemaVersion": "abc",
-            "CreatorId": "abc",
-            "CreatedAt": "abc",
-            "UpdatedAt": "abc",
-            "EnvId": "abc",
-            "DataSourceVersion": "abc",
+            "Id": "datasource",
+            "Title": "datasource",
+            "Name": "datasource",
+            "Type": "1",
+            "Description": "",
+            "Schema": "",
+            "CmsProject": "",
+            "PkgId": "",
+            "SchemaVersion": "",
+            "CreatorId": "",
+            "CreatedAt": "",
+            "UpdatedAt": "",
+            "EnvId": "",
+            "DataSourceVersion": "1",
             "AppUsageList": [
                 {
-                    "Id": "abc",
-                    "Title": "abc",
+                    "Id": "datasource",
+                    "Title": "datasource",
                     "EditStatusUse": 0,
                     "PreviewStatusUse": 0,
                     "OnlineStatusUse": 0,
-                    "DataSourceId": "abc"
+                    "DataSourceId": ""
                 }
             ],
-            "PublishedAt": "abc",
+            "PublishedAt": "",
             "ChildDataSourceIds": [
-                "abc"
+                ""
             ],
-            "Fun": "abc",
+            "Fun": "",
             "ScfStatus": 1,
-            "Methods": "abc",
+            "Methods": "",
             "ChildDataSourceNames": [
-                "abc"
+                ""
             ],
             "IsNewDataSource": 0,
-            "ViewId": "abc",
-            "Configuration": "abc",
-            "TemplateCode": "abc",
+            "ViewId": "",
+            "Configuration": "",
+            "TemplateCode": "",
             "Source": 0,
-            "PublishVersion": "abc",
-            "PublishViewId": "abc",
-            "SubType": "abc",
+            "PublishVersion": "",
+            "PublishViewId": "",
+            "SubType": "",
             "AuthStatus": 0,
             "AuthInfo": {
-                "AuthUser": "abc"
+                "AuthUser": ""
             },
             "PublishStatus": 0,
             "UpdateVersion": 0,
             "RelationFieldList": [
                 {
-                    "Field": "abc",
-                    "Format": "abc",
-                    "RelateDataSourceName": "abc"
+                    "Field": "",
+                    "Format": "",
+                    "RelateDataSourceName": ""
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "wsxedcrfv"
     }
 }
 ```
