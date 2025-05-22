@@ -6470,24 +6470,27 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "各来源地址的慢日志占比详情列表。",
-          "example": "-",
+          "example": "[{\"UserHost\":\"xx.xx.xx.xx\",\"Ratio\":100,\"Count\":1}]",
           "member": "SlowLogHost",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "各来源用户名的慢日志占比详情列表。",
-          "example": "-",
+          "example": "[{\"UserName\":\"test\",\"Ratio\":100,\"Count\":1}]",
           "member": "SlowLogUser",
           "name": "UserNameItems",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6497,6 +6500,7 @@
           "example": "1",
           "member": "int64",
           "name": "UserTotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6639,7 +6643,7 @@
         {
           "disabled": false,
           "document": "慢日志明细",
-          "example": "[{\"LockTime\":0,\"UserHost\":\"169.254.128.9\",\"RowsSent\":1,\"UserName\":\"root\",\"Database\":\"information_schema\",\"SqlText\":\"/* dbbrain user mark */select SLEEP(10)\",\"QueryTime\":10,\"RowsExamined\":0,\"Timestamp\":\"2023-03-31 10:47:35\"},{\"LockTime\":0,\"UserHost\":\"169.254.128.9\",\"RowsSent\":1,\"UserName\":\"root\",\"Database\":\"information_schema\",\"SqlText\":\"/* dbbrain user mark */select SLEEP(8)\",\"QueryTime\":8,\"RowsExamined\":0,\"Timestamp\":\"2023-03-31 10:47:45\"}]",
+          "example": "[{\"LockTime\":0,\"UserHost\":\"169.254.128.9\",\"RowsSent\":1,\"UserName\":\"root\",\"Database\":\"information_schema\",\"SqlText\":\"/* dbbrain user mark */select SLEEP(10)\",\"QueryTime\":10,\"RowsExamined\":0,\"Timestamp\":\"2023-03-31 10:47:35\"}]",
           "member": "SlowLogInfoItem",
           "name": "Rows",
           "output_required": true,

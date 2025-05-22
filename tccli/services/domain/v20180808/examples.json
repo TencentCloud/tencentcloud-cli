@@ -202,7 +202,7 @@
       {
         "document": "我得标的域名",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340187d9-be66-43e7-a837-80049dad20ec\",\n        \"SuccessfulList\": [\n            {}\n        ],\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"340187d9-be66-43e7-a837-80049dad20ec\",\n        \"SuccessfulList\": [\n            {\n                \"PayEndTime\": \"2023-12-25 16:00:00\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "我得标的域名"
       }
     ],

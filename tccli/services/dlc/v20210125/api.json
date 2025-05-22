@@ -4449,6 +4449,15 @@
           "name": "IsSessionStarted",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "依赖包信息",
+          "example": "无",
+          "member": "DependencyPackage",
+          "name": "DependencyPackages",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8100,6 +8109,100 @@
         }
       ],
       "type": "object"
+    },
+    "DependencyPackage": {
+      "document": "任务依赖包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "依赖包类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Maven",
+          "member": "string",
+          "name": "PackageSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "依赖包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "com.hedera.hashgraph:hapi:0.61.3",
+          "member": "string",
+          "name": "MavenPackage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "依赖包仓库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://mirrors.cloud.tencent.com/nexus/repository/maven-public",
+          "member": "string",
+          "name": "MavenRepository",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "maven包exclusion信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "json:json",
+          "member": "string",
+          "name": "MavenExclusion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pypi包信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "requests",
+          "member": "string",
+          "name": "PypiPackage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pypi索引地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://pypi.org/simple",
+          "member": "string",
+          "name": "PypiIndexUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件包的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jar",
+          "member": "string",
+          "name": "PackageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件包的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://a/b/c.jar",
+          "member": "string",
+          "name": "PackagePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAdvancedStoreLocationRequest": {
       "document": "DescribeAdvancedStoreLocation请求参数结构体",
@@ -14774,6 +14877,15 @@
           "name": "IsSessionStarted",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标准引擎依赖包",
+          "example": "无",
+          "member": "DependencyPackage",
+          "name": "DependencyPackages",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

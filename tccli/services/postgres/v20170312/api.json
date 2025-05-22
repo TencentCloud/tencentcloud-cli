@@ -239,9 +239,9 @@
       "status": "online"
     },
     "DescribeDBBackups": {
-      "document": "本接口（DescribeDBBackups）用于查询实例备份列表。本接口已废弃，推荐使用接口[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)替代。",
+      "document": "本接口（DescribeDBBackups）用于查询实例备份列表。**本接口属于早期接口，已停止功能迭代，推荐使用接口**[DescribeBaseBackups](https://cloud.tencent.com/document/api/409/89022)**替代**。",
       "input": "DescribeDBBackupsRequest",
-      "name": "查询实例备份列表（废弃）",
+      "name": "查询实例备份列表",
       "output": "DescribeDBBackupsResponse",
       "status": "online"
     },
@@ -309,9 +309,9 @@
       "status": "online"
     },
     "DescribeDBXlogs": {
-      "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。本接口已废弃，推荐使用接口[DescribeLogBackups](https://cloud.tencent.com/document/api/409/89021)替代。",
+      "document": "本接口（DescribeDBXlogs）用于获取实例Xlog列表。 **本接口属于早期接口，已停止功能迭代，推荐使用接口**[DescribeLogBackups](https://cloud.tencent.com/document/api/409/89021)**替代**。",
       "input": "DescribeDBXlogsRequest",
-      "name": "获取实例Xlog列表（废弃）",
+      "name": "获取实例Xlog列表",
       "output": "DescribeDBXlogsResponse",
       "status": "online"
     },
@@ -393,9 +393,9 @@
       "status": "online"
     },
     "DescribeProductConfig": {
-      "document": "本接口（DescribeProductConfig）用于查询售卖规格配置。本接口已废弃，推荐使用新接口[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)。",
+      "document": "本接口（DescribeProductConfig）用于查询售卖规格配置。**本接口属于早期接口，已停止功能迭代，推荐使用新接口**[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)**替代**。",
       "input": "DescribeProductConfigRequest",
-      "name": "查询售卖规格配置（废弃）",
+      "name": "查询售卖规格配置",
       "output": "DescribeProductConfigResponse",
       "status": "online"
     },
@@ -5330,7 +5330,7 @@
         {
           "disabled": false,
           "document": "备份列表",
-          "example": "[     {         \"SetId\": \"f77ecd1a-087c-5c66-8c35-95c835d7ec24\",         \"Status\": 2,         \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",         \"StartTime\": \"2018-06-22 01:56:01.181971\",         \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015612.tar.gz?giz7Z4LlMjascFkshSSB4+B1gaI0F3HAQIZcFPDbIsdfgfJdfs+89qfhuYQ5wC0ooTcDIdUwB4iJlL1by8xfKkcMAv8nr8g67P6hhg5YOnk=\",         \"Strategy\": 1,         \"DbList\": [             \"db1\"         ],         \"Way\": 1,         \"EndTime\": \"2018-06-22 01:56:55.071181\",         \"Type\": 1,         \"Id\": 450,         \"Size\": 3654968     } ]",
+          "example": "无",
           "member": "DBBackup",
           "name": "BackupList",
           "output_required": true,
@@ -6007,7 +6007,7 @@
         {
           "disabled": false,
           "document": "Xlog列表",
-          "example": "[     {         \"StartTime\": \"2018-06-22 01:56:46\",         \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",         \"EndTime\": \"2018-06-22 01:56:53\",         \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==\",         \"Id\": 450,         \"Size\": 247967     },     {         \"StartTime\": \"2018-06-22 01:56:17\",         \"InternalAddr\": \"http://172.16.16.30:8366/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",         \"EndTime\": \"2018-06-22 01:56:45\",         \"ExternalAddr\": \"https://gz-dl-postgres.cloud.tencent.com/download/20180622015617_20180622015645.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3Eamxg5sq4mNUSXLgasiI8P5xiJVUBOrLUPKLYacTxFWP8y56/f36byxdYH5+PGMzOA==\",         \"Id\": 450,         \"Size\": 899618     } ]",
+          "example": "无",
           "member": "Xlog",
           "name": "XlogList",
           "output_required": true,
@@ -6810,7 +6810,7 @@
         {
           "disabled": false,
           "document": "售卖规格列表。",
-          "example": "[     {         \"Region\": \"ap-guangzhou\",         \"Zone\": \"ap-guangzhou-2\",         \"SupportKMSRegions\": [             \"ap-guangzhou\"         ],         \"SpecItemInfoList\": [             {                 \"SpecCode\": \"pg.it.2xlarge16\",                 \"Version\": \"10.4\",                 \"VersionName\": \"PostgreSQL 10\",                 \"Cpu\": 1,                 \"Memory\": 2048,                 \"MaxStorage\": 1000,                 \"MinStorage\": 10,                 \"Qps\": 2100,                 \"Pid\": 11004,                 \"Type\": \"TS85\",                 \"KernelVersion\": \"v10.4_r1.0\",                 \"MajorVersion\": \"10\",                 \"IsSupportTDE\": 1             }         ]     } ]",
+          "example": "无",
           "member": "SpecInfo",
           "name": "SpecInfoList",
           "output_required": true,

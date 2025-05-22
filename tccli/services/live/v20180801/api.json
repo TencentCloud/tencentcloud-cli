@@ -18573,6 +18573,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键帧间隔 GOP ，单位：ms。",
+          "example": "2000",
+          "member": "int64",
+          "name": "GopSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

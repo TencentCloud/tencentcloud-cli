@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成个人/企业用户的批量待办链接。\n**注意：**\n1. 该接口可生成签署人的批量、合同组签署/查看链接 。\n2. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n5. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
       "input": "CreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署或查看链接",
       "output": "CreateBatchQuickSignUrlResponse",
@@ -211,7 +211,7 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n2. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。配置方式请参考：<a href=\"https://qian.tencent.com/developers/company/openqianh5/\">跳转电子签H5</a>。\n如需跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n3. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。\n4. H5签署现在仅支持中国大陆身份证和中国港澳台居民居住证。",
       "input": "CreateFlowSignUrlRequest",
       "name": "获取H5签署链接",
       "output": "CreateFlowSignUrlResponse",
@@ -11981,7 +11981,7 @@
         },
         {
           "disabled": false,
-          "document": "签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: <font color=\"red\">将要废弃</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`",
+          "document": "签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: <font color=\"red\">不再使用</font >, `用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置`",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannel",
@@ -12026,7 +12026,7 @@
         },
         {
           "disabled": false,
-          "document": "<font color=\"red\">字段已经废弃</font>，当前只支持true，默认为true",
+          "document": "<font color=\"red\">字段不再使用</font>，当前只支持true，默认为true",
           "example": "true",
           "member": "bool",
           "name": "Required",
@@ -12053,7 +12053,7 @@
         },
         {
           "disabled": false,
-          "document": "已经废弃, 快速注册相关信息",
+          "document": "<font color=\"red\">不再使用</font >, 快速注册相关信息",
           "example": "无",
           "member": "RegisterInfo",
           "name": "RegisterInfo",

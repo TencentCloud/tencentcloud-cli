@@ -1,36 +1,4 @@
-**Example 1: 例子**
-
-
-
-Input: 
-
-```
-tccli dsgc DescribeDSPASupportedMetas --cli-unfold-argument  \
-    --MetaTypes cdb
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Metas": [
-            {
-                "MetaType": "cdb",
-                "Regions": [
-                    "ap-guangzhou"
-                ],
-                "SupportedAuthTypes": [
-                    "automatic"
-                ]
-            }
-        ],
-        "MaxDBInstanceLimit": 0,
-        "RequestId": "18dafbf7-83d5-4159-aeaf-4a02f1975176"
-    }
-}
-```
-
-**Example 2: 示例**
+**Example 1: 示例**
 
 
 
@@ -99,7 +67,7 @@ Output:
                 "Regions": [
                     "ap-guangzhou"
                 ],
-                "SupportedAuthTypes": null
+                "SupportedAuthTypes": []
             },
             {
                 "MetaType": "mysql_like_proto",

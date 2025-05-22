@@ -316,7 +316,7 @@
       "status": "online"
     },
     "ModifyTemplate": {
-      "document": "修改模板信息",
+      "document": "修改模板信息,仅能修改模板未通过审核的，即[模板详情](https://cloud.tencent.com/document/product/242/50018)中：AuditStatus不为Approved状态的",
       "input": "ModifyTemplateRequest",
       "name": "修改模板",
       "output": "ModifyTemplateResponse",
@@ -4906,8 +4906,8 @@
         },
         {
           "disabled": false,
-          "document": "模板ID",
-          "example": "temp-xxxxdowf",
+          "document": "模板ID\n可通过接口: [DescribeTemplateList](https://cloud.tencent.com/document/product/242/48940)",
+          "example": "tmpl-3mm9fxug",
           "member": "string",
           "name": "TemplateId",
           "required": true,

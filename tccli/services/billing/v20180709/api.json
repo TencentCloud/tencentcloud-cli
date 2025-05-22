@@ -4504,7 +4504,7 @@
         },
         {
           "disabled": false,
-          "document": "订单ID：包年包月计费模式下订购的订单号",
+          "document": "订单ID：包年包月计费模式下对应子订单号。后付费计费模式下账单费用不存在订单概念，可忽略此参数。\n",
           "example": "20211202400008418120371",
           "member": "string",
           "name": "OrderId",
@@ -11052,7 +11052,7 @@
         {
           "disabled": false,
           "document": "周期开始时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。最多可拉取18个月内的数据。",
-          "example": "2018-11-0100:00:00",
+          "example": "2018-11-01 00:00:00",
           "member": "string",
           "name": "BeginTime",
           "required": false,
@@ -11061,7 +11061,7 @@
         {
           "disabled": false,
           "document": "周期结束时间，格式为yyyy-mm-dd hh:ii:ss，Month和BeginTime&EndTime必传一个，如果有该字段则Month字段无效。BeginTime和EndTime必须一起传，且为相同月份，不支持跨月查询，查询结果是整月数据。最多可拉取近18个月内的数据。",
-          "example": "2018-11-0123:59:59",
+          "example": "2018-11-01 23:59:59",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -12472,7 +12472,7 @@
         {
           "disabled": false,
           "document": "表头信息",
-          "example": "无",
+          "example": "{ \"name\":\"产品\", \"total\":\"总计\", \"headDetail\":[ { \"name\":\"2023-12-01 00:00:00\" }, { \"name\":\"2024-01-01 00:00:00\" } ] }",
           "member": "AnalyseHeaderDetail",
           "name": "Header",
           "output_required": false,
@@ -12482,7 +12482,7 @@
         {
           "disabled": false,
           "document": "数据明细",
-          "example": "无",
+          "example": "{ \"name\":\"云服务器CVM\", \"total\":11.63454774, \"timeDetail\":[ { \"time\":\"2023-12-01 00:00:00\", \"money\":\"2.92527168\" }, { \"time\":\"2024-01-01 00:00:00\", \"money\":\"8.70927606\" } ] }",
           "member": "AnalyseDetail",
           "name": "Detail",
           "output_required": false,
@@ -12492,7 +12492,7 @@
         {
           "disabled": false,
           "document": "数据总计",
-          "example": "无",
+          "example": "{ \"name\":\"总计\", \"total\":7662.59744864, \"timeDetail\":[ { \"name\":\"2023-12-01 00:00:00\", \"money\":\"7313.09744864\" }, { \"name\":\"2024-01-01 00:00:00\", \"money\":\"349.50000000\" } ] }",
           "member": "AnalyseDetail",
           "name": "TotalDetail",
           "output_required": false,

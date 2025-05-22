@@ -998,9 +998,9 @@
     ],
     "ModifySparkApp": [
       {
-        "document": "本接口用于更新spark作业",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkApp\n<公共请求参数>\n\n{\n    \"SparkAppId\": \"batch_sadfafd\",\n    \"AppName\": \"spark-test\",\n    \"AppType\": 1,\n    \"DataEngine\": \"spark-engine\",\n    \"Eni\": \"kafka-eni\",\n    \"IsLocal\": \"cos\",\n    \"AppFile\": \"test.jar\",\n    \"RoleArn\": 12,\n    \"MainClass\": \"com.test.WordCount\",\n    \"AppConf\": \"spark-default.properties\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"com.test2.jar\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppFiles\": \"spark-default.properties\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"AppExecutorMaxNumbers\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ae4707a-9f72-44aa-9fd4-65cb739d6301\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySparkApp\n<公共请求参数>\n\n{\n    \"AppName\": \"jar_check_1\",\n    \"AppType\": 1,\n    \"DataEngine\": \"thea_T282_spark_勿删\",\n    \"IsLocal\": \"lakefs\",\n    \"AppFile\": \"lakefs://demo/1304581893/.system/sparkAppJar/20250519/be923656-33c0-4b6a-a4f8-814efb293f29/app-1.0-SNAPSHOT.jar\",\n    \"IsLocalJars\": \"cos\",\n    \"AppJars\": \"\",\n    \"IsLocalFiles\": \"cos\",\n    \"AppArchives\": \"\",\n    \"IsLocalArchives\": \"cos\",\n    \"AppFiles\": \"\",\n    \"IsLocalPythonFiles\": \"cos\",\n    \"AppPythonFiles\": \"\",\n    \"RoleArn\": 1211,\n    \"SparkImage\": \"\",\n    \"MainClass\": \"org.example.job.AppTest\",\n    \"CmdArgs\": \"\",\n    \"AppConf\": \"\",\n    \"AppExecutorSize\": \"small\",\n    \"AppDriverSize\": \"small\",\n    \"AppExecutorNums\": 1,\n    \"MaxRetries\": 1,\n    \"DataSource\": \"\",\n    \"SessionId\": \"\",\n    \"AppExecutorMaxNumbers\": 1,\n    \"IsInherit\": 0,\n    \"SparkImageVersion\": \"\",\n    \"DependencyPackages\": [\n        {\n            \"PackageSource\": \"Maven\",\n            \"MavenPackage\": \"com.github.penfeizhou.android.animation:glide-plugin:3.0.5\"\n        }\n    ],\n    \"IsSessionStarted\": false,\n    \"SparkAppId\": \"batch_776890ff-4f47-48e7-88ea-5c50c55c3866\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d1e95669-101e-4d06-a9a7-c56d83f60b03\"\n    }\n}",
         "title": "更新spark作业"
       }
     ],

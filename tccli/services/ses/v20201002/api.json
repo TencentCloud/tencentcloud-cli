@@ -619,6 +619,15 @@
           "name": "EmailIdentity",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成的dkim密钥长度。0:1024，1:2048",
+          "example": "0",
+          "member": "uint64",
+          "name": "DKIMOption",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -1165,6 +1165,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云盘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disk-kped07j8",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

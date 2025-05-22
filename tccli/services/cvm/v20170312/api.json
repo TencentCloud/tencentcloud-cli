@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateLaunchTemplateVersion": {
-      "document": "本接口（CreateLaunchTemplateVersion）根据指定的实例模板ID以及对应的模板版本号创建新的实例启动模板，若未指定模板版本号则使用默认版本号。每个实例启动模板最多创建30个版本。",
+      "document": "本接口（CreateLaunchTemplateVersion）根据指定的实例模板ID以及对应的模板版本号创建新的实例启动模板，若未指定模板版本号则使用默认版本号。每个实例启动模板最多创建30个版本。\n* 新实例模板中未显式指定的参数值，使用指定版本号对应参数值覆盖。",
       "input": "CreateLaunchTemplateVersionRequest",
       "name": "创建实例启动模板新版本",
       "output": "CreateLaunchTemplateVersionResponse",
@@ -2185,7 +2185,7 @@
         },
         {
           "disabled": false,
-          "document": "实例启动模板版本描述。长度为2~256个英文或中文字符。",
+          "document": "实例启动模板版本描述。长度为2~256个英文或中文字符，默认为空字符。",
           "example": "MyLaunchTemplateVersionDesc",
           "member": "string",
           "name": "LaunchTemplateVersionDescription",
@@ -2212,7 +2212,7 @@
         },
         {
           "disabled": false,
-          "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
+          "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘，详情请参考[ 云硬盘使用限制](https://cloud.tencent.com/document/product/362/5145)。",
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
@@ -2239,7 +2239,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
+          "document": "购买实例数量。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
@@ -2266,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的 `SecurityGroupId` 字段来获取。若不指定该参数，则绑定指定项目下的默认安全组，如默认安全组不存在则将自动创建。\n",
           "example": "[\"sg-rf6ogz49\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -2311,7 +2311,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组id，仅支持指定一个。",
+          "document": "置放群组id，仅支持指定一个。该参数可以通过调用 [ DescribeDisasterRecoverGroups ](https://cloud.tencent.com/document/api/213/17810) 的返回值中的 `DisasterRecoverGroupId` 字段来获取。",
           "example": "[\"ps-3p88qhfo\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -2365,7 +2365,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
+          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。",
           "example": "hpc-a5n666lo",
           "member": "string",
           "name": "HpcClusterId",
@@ -2457,7 +2457,7 @@
         {
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。",
-          "example": "{ \"Zone\": \"ap-guangzhou-6\" }\t",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -2474,7 +2474,7 @@
         },
         {
           "disabled": false,
-          "document": "若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本。",
+          "document": "若给定，新实例启动模板将基于给定的版本号创建。若未指定则使用默认版本,可以通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323)查询默认版本。",
           "example": "1",
           "member": "int64",
           "name": "LaunchTemplateVersion",
@@ -2483,7 +2483,7 @@
         },
         {
           "disabled": false,
-          "document": "实例启动模板版本描述。长度为2~256个英文或中文字符。",
+          "document": "实例启动模板版本描述。长度为2~256个英文或中文字符，不指定该参数时默认为空字符。",
           "example": "new_version",
           "member": "string",
           "name": "LaunchTemplateVersionDescription",
@@ -2511,7 +2511,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "{     \"DiskSize\": 50 }",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -2520,7 +2520,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
-          "example": "[     {         \"DiskSize\": 50,         \"DiskType\": \"CLOUD_PREMIUM\"     } ]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -2529,7 +2529,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若不指定该参数，则默认使用基础网络。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。",
-          "example": "{     \"VpcId\": \"vpc-rhfaxx31\",     \"SubnetId\": \"subnet-x7vxgqe\" }",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
@@ -2538,7 +2538,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "{     \"PublicIpAssigned\": \"false\" }",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -2546,7 +2546,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例数量。包年包月实例取值范围：[1，300]，按量计费实例取值范围：[1，100]。默认取值：1。指定购买实例的数量不能超过用户所能购买的剩余配额数量，具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
+          "document": "购买实例数量。具体配额相关限制详见[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)。",
           "example": "1",
           "member": "int64",
           "name": "InstanceCount",
@@ -2565,7 +2565,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置实例的登录方式为密钥或保持镜像的原始登录设置。",
-          "example": "{     \"KeyIds\": [         \"skey-9tzxxb4j\"     ] }",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -2583,7 +2583,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与云镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。",
-          "example": "{     \"SecurityService\": {         \"Enabled\": \"true\"     } }",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -2610,7 +2610,7 @@
         {
           "disabled": false,
           "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
-          "example": "{     \"TimerAction\": \"TerminateInstances\",     \"ActionTime\": \"2024-05-29T11:26:40Z\t\" }",
+          "example": "无",
           "member": "ActionTimer",
           "name": "ActionTimer",
           "required": false,
@@ -2628,7 +2628,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。",
-          "example": "[     {         \"ResourceType\": \"instance\",         \"Tags\": [             {                 \"Key\": \"myTag\",                 \"Value\": \"cloud\"             }         ]     } ]",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -2637,7 +2637,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
-          "example": "{     \"SpotOptions\": {         \"MaxPrice\": \"1000\"     } }",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -2663,7 +2663,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
+          "document": "CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
           "example": "testroleName001",
           "member": "string",
           "name": "CamRoleName",
@@ -2691,7 +2691,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "{     \"Period\": 36,     \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\" }",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -10018,7 +10018,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
+          "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 `ProjectId` 字段来获取。默认取值0，表示默认项目。",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
@@ -10029,7 +10029,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。",
+          "document": "实例所属的专用宿主机ID列表，仅用于入参。如果您有购买专用宿主机并且指定了该参数，则您购买的实例就会随机的部署在这些专用宿主机上。该参数可以通过调用 [DescribeHosts](https://cloud.tencent.com/document/api/213/16474) 的返回值中的 `HostId` 字段来获取。",
           "example": "[\"host-o5i742go\"]",
           "member": "string",
           "name": "HostIds",

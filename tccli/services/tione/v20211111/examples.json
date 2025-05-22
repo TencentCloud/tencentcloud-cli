@@ -168,6 +168,14 @@
         "title": "查询数据集列表"
       }
     ],
+    "DescribeEvents": [
+      {
+        "document": "获取服务相关的事件(k8s事件)信息",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"Service\": \"INFER\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceKind\",\n            \"Values\": [\n                \"Pod\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Id\": \"44b40fe5-9546-42fd-b75d-557802e0029d\",\n                \"Message\": \"Created container sidecar-nginx\",\n                \"FirstTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"LastTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"Count\": 1,\n                \"Type\": \"Normal\",\n                \"ResourceKind\": \"Pod\",\n                \"ResourceName\": \"ms-cp6rgw9r-1-864587bdb4-p5cv6\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"090e057a-0d4e-488a-978b-83b1636fee99\"\n    }\n}",
+        "title": "获取事件"
+      }
+    ],
     "DescribeInferTemplates": [
       {
         "document": "",

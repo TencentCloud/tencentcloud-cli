@@ -29,7 +29,7 @@ Output:
 
 用于颁发凭证的DID标识是非本腾讯云账号创建的场景
 由于凭证颁发凭证的DID为非本账号创建，默认无设置凭证状态的权限，因此需要临时凭证进行操作鉴权
-OriginCredentialt和CredentialStatus不需设置，OperateCredential携带建操作鉴权临时凭证,凭证通过IssueCredential接口颁发，凭证参数说明如下：
+OriginCredential和CredentialStatus不需设置，OperateCredential携带建操作鉴权临时凭证,凭证通过IssueCredential接口颁发，凭证参数说明如下：
 1. 凭证模板 id (cpt)固定为 1
 2. claim需三个字段：
 (1) action: 固定为updateCredentialState 

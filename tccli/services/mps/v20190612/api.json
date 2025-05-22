@@ -862,7 +862,7 @@
       "status": "online"
     },
     "ProcessImage": {
-      "document": "发起图片处理，功能包括：\n1. 格式转换；\n2. 图像增强；",
+      "document": "发起图片处理，功能包括：\n1. 格式转换；\n2. 图像增强；\n3. 图像擦除;",
       "input": "ProcessImageRequest",
       "name": "发起图片处理",
       "output": "ProcessImageResponse",
@@ -6497,7 +6497,7 @@
         },
         {
           "disabled": false,
-          "document": "当前热词库状态，数值表示绑定该热词库的智能字幕模板数量。\nStatus 为 0 ，表示该热词库没有被智能字幕模版引用可以删除；\nStatus 不为 0，表示该热词库不能被删除。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前热词库状态，数值表示绑定该热词库的智能字幕模板数量。\nStatus 为 0 ，表示该热词库没有被智能字幕模板引用可以删除；\nStatus 不为 0，表示该热词库不能被删除。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -17128,7 +17128,7 @@
         {
           "disabled": false,
           "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 100 个，每个标签长度最多 16 个字符。",
-          "example": "[\"张三\"]",
+          "example": "[\"artist\"]",
           "member": "string",
           "name": "UserDefineLibraryLabelSet",
           "output_required": true,
@@ -17183,7 +17183,7 @@
         {
           "disabled": false,
           "document": "用户自定义人物过滤标签，指定需要返回的用户自定义人物的标签。如果未填或者为空，则全部自定义人物结果都返回。\n标签个数最多 100 个，每个标签长度最多 16 个字符。",
-          "example": "[\"张三\"]",
+          "example": "[\"artist\"]",
           "member": "string",
           "name": "UserDefineLibraryLabelSet",
           "required": false,
@@ -18371,7 +18371,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字。</li>\n默认值：logo。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字；</li>\n默认值：logo。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "logo",
           "member": "string",
           "name": "Type",
@@ -18386,6 +18386,17 @@
           "example": "[101, 85, 111, 95]",
           "member": "int64",
           "name": "AreaCoordSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片框选区域坐标，[x1, y1, x2, y2]，即左上角坐标、右下角坐标， 当AreaCoordSet未指定时生效。\n- [0.1, 0.1, 0.3, 0.3] :  表示比例 （数值小于1）\n- [50, 50, 350, 280] : 表示像素 （数值大于等于1）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0.1, 0.1, 0.2, 0.2]",
+          "member": "float",
+          "name": "BoundingBox",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -23284,7 +23295,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "热词库 id \n如果热词库是文本热词：Name 和 Content 至少填一个 \n如果热词库是：Name、FileContent 和 FileName 至少填一个 \n",
+          "document": "热词库 id \n如果热词库是临时热词：Name 和 Content 至少填一个 \n如果热词库是文件热词：Name、FileContent 和 FileName 至少填一个 \n",
           "example": "hwd-aexxxxxxxxxxxxxx1481",
           "member": "string",
           "name": "HotwordsId",
@@ -26240,7 +26251,7 @@
         {
           "disabled": false,
           "document": "图片处理生成的文件输出的路径。如果不填表示与 InputInfo 中文件所在的目录一致。如果是目录，如`/image/201907/`，表示继承原文件名输出到该目录。",
-          "example": "无",
+          "example": "/image/",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -29504,7 +29515,7 @@
         {
           "disabled": false,
           "document": "智能字幕模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "模版1",
+          "example": "模板1",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -29514,7 +29525,7 @@
         {
           "disabled": false,
           "document": "智能字幕模板描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "用于A的模版",
+          "example": "用于A的模板",
           "member": "string",
           "name": "Comment",
           "output_required": false,

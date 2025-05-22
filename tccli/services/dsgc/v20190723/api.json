@@ -42,13 +42,6 @@
       "output": "CreateAssetSortingReportTaskResponse",
       "status": "online"
     },
-    "CreateClassificationRule": {
-      "document": "旧版本DSGC接口下线\n\n创建识别规则",
-      "input": "CreateClassificationRuleRequest",
-      "name": "创建识别规则",
-      "output": "CreateClassificationRuleResponse",
-      "status": "deprecated"
-    },
     "CreateDSPAAssessmentRiskLevel": {
       "document": "风险项页面---创建风险等级",
       "input": "CreateDSPAAssessmentRiskLevelRequest",
@@ -161,20 +154,6 @@
       "output": "CreateIdentifyRuleAnotherNameResponse",
       "status": "online"
     },
-    "CreateNewClassification": {
-      "document": "旧版本DSGC接口下线\n\n创建新分类",
-      "input": "CreateNewClassificationRequest",
-      "name": "创建新分类",
-      "output": "CreateNewClassificationResponse",
-      "status": "deprecated"
-    },
-    "CreateOrCopyStandard": {
-      "document": "旧版本DSGC接口下线\n\n创建或复制分级分类模板",
-      "input": "CreateOrCopyStandardRequest",
-      "name": "创建或复制分级分类模板",
-      "output": "CreateOrCopyStandardResponse",
-      "status": "deprecated"
-    },
     "DecribeSuggestRiskLevelMatrix": {
       "document": "风险等级的定义页面-创建风险等级的时候生成的一个默认的矩阵",
       "input": "DecribeSuggestRiskLevelMatrixRequest",
@@ -258,20 +237,6 @@
       "name": "查询cos资产分布详情",
       "output": "DescribeCOSAssetSensitiveDistributionResponse",
       "status": "online"
-    },
-    "DescribeClassificationInfo": {
-      "document": "旧版本DSGC接口下线\n\n查询分类信息\n",
-      "input": "DescribeClassificationInfoRequest",
-      "name": "查询分类信息",
-      "output": "DescribeClassificationInfoResponse",
-      "status": "deprecated"
-    },
-    "DescribeClassificationRuleCount": {
-      "document": "旧版本DSGC接口下线\n\n查询标准下所有分类的识别规则数量(不算子分类下的识别规则)",
-      "input": "DescribeClassificationRuleCountRequest",
-      "name": "查询标准下所有分类的识别规则数量(不算子分类下的识别规则)",
-      "output": "DescribeClassificationRuleCountResponse",
-      "status": "deprecated"
     },
     "DescribeDSPAAssessmentHighRiskTop10Overview": {
       "document": "查询高风险资产的top10",
@@ -700,13 +665,6 @@
       "output": "DescribeExportTaskResultResponse",
       "status": "online"
     },
-    "DescribeLeafClassification": {
-      "document": "旧版本DSGC接口下线\n\n查询标准下所有叶子节点分类",
-      "input": "DescribeLeafClassificationRequest",
-      "name": "查询标准下所有叶子节点分类",
-      "output": "DescribeLeafClassificationResponse",
-      "status": "deprecated"
-    },
     "DescribeMongoAssetSensitiveDistribution": {
       "document": "数据资产报告-查询mongo 的敏感资产报告，包含（数据库资产，设敏级别数据库top10，资产详情）",
       "input": "DescribeMongoAssetSensitiveDistributionRequest",
@@ -734,13 +692,6 @@
       "name": "获取资产报表任务列表",
       "output": "DescribeReportTasksResponse",
       "status": "online"
-    },
-    "DescribeRuleList": {
-      "document": "旧版本DSGC接口下线\n\n查询分类下规则列表\n",
-      "input": "DescribeRuleListRequest",
-      "name": "查询分类下规则列表",
-      "output": "DescribeRuleListResponse",
-      "status": "deprecated"
     },
     "DescribeSensitiveCOSDataDistribution": {
       "document": "数据资产报告-查询cos的敏感数据分布（分级分布 分类分布 敏感规则分布详情列表）",
@@ -825,20 +776,6 @@
       "name": "拉取用户云资源",
       "output": "ListDSPAMetaResourcesResponse",
       "status": "online"
-    },
-    "ModifyClassificationRule": {
-      "document": "旧版本DSGC接口下线\n\n编辑识别规则",
-      "input": "ModifyClassificationRuleRequest",
-      "name": "编辑识别规则",
-      "output": "ModifyClassificationRuleResponse",
-      "status": "deprecated"
-    },
-    "ModifyClassificationRuleState": {
-      "document": "旧版本DSGC接口下线\n\n修改识别规则状态",
-      "input": "ModifyClassificationRuleStateRequest",
-      "name": "修改识别规则状态",
-      "output": "ModifyClassificationRuleStateResponse",
-      "status": "deprecated"
     },
     "ModifyDSPAAssessmentRisk": {
       "document": "修改DSPA评估风险项，支持修改Status",
@@ -937,48 +874,6 @@
       "name": "调整任务扫描结果",
       "output": "ModifyDSPATaskResultResponse",
       "status": "online"
-    },
-    "ModifyLevelInfo": {
-      "document": "旧版本DSGC接口下线\n\n修改敏感级别信息",
-      "input": "ModifyLevelInfoRequest",
-      "name": "修改敏感级别信息",
-      "output": "ModifyLevelInfoResponse",
-      "status": "deprecated"
-    },
-    "ModifyLevelName": {
-      "document": "旧版本DSGC接口下线\n\n修改级别名称",
-      "input": "ModifyLevelNameRequest",
-      "name": "修改级别名称",
-      "output": "ModifyLevelNameResponse",
-      "status": "deprecated"
-    },
-    "ModifyLevelState": {
-      "document": "旧版本DSGC接口下线\n\n开启级别或关闭级别",
-      "input": "ModifyLevelStateRequest",
-      "name": "修改级别状态",
-      "output": "ModifyLevelStateResponse",
-      "status": "deprecated"
-    },
-    "ModifyMergeClassification": {
-      "document": "旧版本DSGC接口下线\n\n一个分类合并到另一个分类中（分类拖拽功能）",
-      "input": "ModifyMergeClassificationRequest",
-      "name": "一个分类合并到另一个分类中（分类拖拽功能）",
-      "output": "ModifyMergeClassificationResponse",
-      "status": "deprecated"
-    },
-    "ModifyNewClassification": {
-      "document": "旧版本DSGC接口下线\n\n修改分类信息",
-      "input": "ModifyNewClassificationRequest",
-      "name": "修改分类信息",
-      "output": "ModifyNewClassificationResponse",
-      "status": "deprecated"
-    },
-    "ModifyStandardInfo": {
-      "document": "旧版本DSGC接口下线\n\n修改分级分类模板信息",
-      "input": "ModifyStandardInfoRequest",
-      "name": "修改分级分类模板信息",
-      "output": "ModifyStandardInfoResponse",
-      "status": "deprecated"
     },
     "QueryDSPAMetaResourceDbList": {
       "document": "查询DSPA实例的db列表",
@@ -2961,23 +2856,6 @@
       ],
       "type": "object"
     },
-    "CreateClassificationRuleRequest": {
-      "document": "CreateClassificationRule请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "CreateClassificationRuleResponse": {
-      "document": "CreateClassificationRule返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateComplianceRules": {
       "document": "合规组分类关联规则信息",
       "members": [
@@ -4546,40 +4424,6 @@
       ],
       "type": "object"
     },
-    "CreateNewClassificationRequest": {
-      "document": "CreateNewClassification请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "CreateNewClassificationResponse": {
-      "document": "CreateNewClassification返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOrCopyStandardRequest": {
-      "document": "CreateOrCopyStandard请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "CreateOrCopyStandardResponse": {
-      "document": "CreateOrCopyStandard返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DBInstanceInfo": {
       "document": "绑定的实例信息",
       "members": [
@@ -5881,40 +5725,6 @@
           "type": "list",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeClassificationInfoRequest": {
-      "document": "DescribeClassificationInfo请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeClassificationInfoResponse": {
-      "document": "DescribeClassificationInfo返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeClassificationRuleCountRequest": {
-      "document": "DescribeClassificationRuleCount请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeClassificationRuleCountResponse": {
-      "document": "DescribeClassificationRuleCount返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10432,23 +10242,6 @@
       ],
       "type": "object"
     },
-    "DescribeLeafClassificationRequest": {
-      "document": "DescribeLeafClassification请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeLeafClassificationResponse": {
-      "document": "DescribeLeafClassification返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeMongoAssetSensitiveDistributionRequest": {
       "document": "DescribeMongoAssetSensitiveDistribution请求参数结构体",
       "members": [
@@ -10719,23 +10512,6 @@
           "type": "list",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRuleListRequest": {
-      "document": "DescribeRuleList请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeRuleListResponse": {
-      "document": "DescribeRuleList返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -15775,40 +15551,6 @@
       ],
       "type": "object"
     },
-    "ModifyClassificationRuleRequest": {
-      "document": "ModifyClassificationRule请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyClassificationRuleResponse": {
-      "document": "ModifyClassificationRule返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyClassificationRuleStateRequest": {
-      "document": "ModifyClassificationRuleState请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyClassificationRuleStateResponse": {
-      "document": "ModifyClassificationRuleState返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyDSPAAssessmentRiskLatestRequest": {
       "document": "ModifyDSPAAssessmentRiskLatest请求参数结构体",
       "members": [
@@ -16960,108 +16702,6 @@
     },
     "ModifyDSPATaskResultResponse": {
       "document": "ModifyDSPATaskResult返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLevelInfoRequest": {
-      "document": "ModifyLevelInfo请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyLevelInfoResponse": {
-      "document": "ModifyLevelInfo返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLevelNameRequest": {
-      "document": "ModifyLevelName请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyLevelNameResponse": {
-      "document": "ModifyLevelName返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyLevelStateRequest": {
-      "document": "ModifyLevelState请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyLevelStateResponse": {
-      "document": "ModifyLevelState返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyMergeClassificationRequest": {
-      "document": "ModifyMergeClassification请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyMergeClassificationResponse": {
-      "document": "ModifyMergeClassification返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyNewClassificationRequest": {
-      "document": "ModifyNewClassification请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyNewClassificationResponse": {
-      "document": "ModifyNewClassification返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyStandardInfoRequest": {
-      "document": "ModifyStandardInfo请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "ModifyStandardInfoResponse": {
-      "document": "ModifyStandardInfo返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -728,10 +728,10 @@
         "title": "创建个人用户H5签署链接"
       },
       {
-        "document": "发起流程后，给其中的B端签署人创建签署链接",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 0,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"OrganizationName\": \"***有限公司\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 0,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=0&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
-        "title": "创建企业用户H5签署链接"
+        "document": "发起流程后，给其中的C端签署人创建签署链接。\n同时指定其签署时候的认证方式为人脸和密码签署且按照设置的顺序进行推荐，签署认证方式仅此链接生效。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"ApproverSignTypes\": [\n                1,\n                2\n            ],\n            \"SignTypeSelector\": 1\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 1,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
+        "title": "创建个人用户H5签署链接-重新指定认证方式"
       },
       {
         "document": "发起流程后，给其中的B端签署人创建预览链接",
@@ -744,6 +744,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"UrlType\": 1,\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"\",\n                \"ApproverName\": \"\",\n                \"ApproverType\": 0,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&PreviewType=2&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
         "title": "创建合同发起方预览链接"
+      },
+      {
+        "document": "发起流程后，给其中的B端签署人创建签署链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 0,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"OrganizationName\": \"***有限公司\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 0,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=0&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
+        "title": "创建企业用户H5签署链接"
       },
       {
         "document": "发起流程后，给其中的C端签署人创建签署链接，并且使用视频认证方式",

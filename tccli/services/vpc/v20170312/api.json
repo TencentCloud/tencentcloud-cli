@@ -876,7 +876,7 @@
       "status": "online"
     },
     "DeleteSecurityGroupPolicies": {
-      "document": "本接口（DeleteSecurityGroupPolicies）用于用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。",
+      "document": "本接口（DeleteSecurityGroupPolicies）用于删除安全组规则（SecurityGroupPolicy）。\n* SecurityGroupPolicySet.Version 用于指定要操作的安全组的版本。传入 Version 版本号若不等于当前安全组的最新版本，将返回失败；若不传 Version 则直接删除指定PolicyIndex的规则。",
       "input": "DeleteSecurityGroupPoliciesRequest",
       "name": "删除安全组规则",
       "output": "DeleteSecurityGroupPoliciesResponse",
@@ -13404,7 +13404,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。",
+          "document": "安全组规则集合。一个请求中只能删除单个方向的一条或多条规则。支持指定索引（PolicyIndex） 匹配删除和安全组规则匹配删除两种方式，一个请求中只能使用一种匹配方式。\n使用安全组规则匹配删除时，需要填写`Action`， `Protocol`， `CidrBlock`， `Port`参数。",
           "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
@@ -32955,7 +32955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",

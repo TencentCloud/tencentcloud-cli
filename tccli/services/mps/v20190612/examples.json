@@ -1170,6 +1170,12 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessImage\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Bucket\": \"bucket-test\",\n            \"Region\": \"ap-shanghai\",\n            \"Object\": \"/image/test.png\"\n        }\n    },\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"bucket-test\",\n            \"Region\": \"ap-shanghai\"\n        }\n    },\n    \"ImageTask\": {\n        \"EncodeConfig\": {\n            \"Format\": \"jpeg\",\n            \"Quality\": 75\n        },\n        \"EnhanceConfig\": {\n            \"SuperResolution\": {\n                \"Switch\": \"ON\"\n            }\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"03b25aab-8883-497e-838f-d760c3e220f6\",\n        \"TaskId\": \"3pg2p4jEfbFHYo2rgB0Kzl0esg4NeBItcZyllxO4HNJXdNeRUhk9GjDMjCj1auPv\"\n    }\n}",
         "title": "发起图片增强"
+      },
+      {
+        "document": "发起图片擦除",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ProcessImage\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"COS\",\n        \"CosInputInfo\": {\n            \"Bucket\": \"bucket-test\",\n            \"Region\": \"ap-shanghai\",\n            \"Object\": \"/image/test.png\"\n        }\n    },\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"bucket-test\",\n            \"Region\": \"ap-shanghai\"\n        }\n    },\n    \"ImageTask\": {\n        \"EncodeConfig\": {\n            \"Format\": \"jpeg\",\n            \"Quality\": 75\n        },\n        \"EraseConfig\": {\n            \"ImageEraseLogo\": {\n                \"Switch\": \"ON\",\n                \"ImageAreaBoxes\": [\n                    {\n                        \"Type\": \"logo\",\n                        \"AreaCoordSet\": [\n                            101,\n                            85,\n                            111,\n                            95\n                        ]\n                    }\n                ]\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"03b25aab-8883-497e-838f-d760c3e220f6\",\n        \"TaskId\": \"3pg2p4jEfbFHYo2rgB0Kzl0esg4NeBItcZyllxO4HNJXdNeRUhk9GjDMjCj1auPv\"\n    }\n}",
+        "title": "发起图片擦除"
       }
     ],
     "ProcessLiveStream": [

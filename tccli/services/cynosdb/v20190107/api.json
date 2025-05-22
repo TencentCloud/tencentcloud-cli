@@ -9132,7 +9132,7 @@
         {
           "disabled": false,
           "document": "备份下载地址",
-          "example": "https://ncdb-bj-pitr-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/data/mysqldump/****9fd2-691a-11ef-b99a-b02628437590/2024-10-28/1879681/data_backup_1879681_20241028022147.xb?q-sign-algorithm=sha1&q-ak=************&q-sign-time=1730079993%3B1730123193&q-key-time=1730079993%3B1730123193&q-header-list=host&q-url-param-list=&q-signature=*****************",
+          "example": "https://ncdb-bj-pitr-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/data/mysqldump/****9fd2-691a-11ef-b99a-b02628437590/2024-10-28/1879681/data_backup_1879681_20241028022147.xb?q-sign-algorithm=sha1&q-ak=************&q-sign-time=1730079993%3B1730123193",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,
@@ -9398,7 +9398,7 @@
         {
           "disabled": false,
           "document": "下载地址",
-          "example": "https://ncdb-cdc-bj-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/cdc/BinlogCapture/71***d45-8cfd-11ef-b99a-b02628437590/29.18.12.168_20650_1/mysql-bin.001002/file?q-sign-algorithm=sha1&q-ak=**************&q-sign-time=17300***57%3B1730123657&q-key-time=17300***57%3B1730123657&q-header-list=host&q-url-param-list=&q-signature=**************",
+          "example": "https://ncdb-cdc-bj-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/cdc/BinlogCapture/71***d45-8cfd-11ef-b99a-b02628437590/29.18.12.168_20650_1/mysql-bin.001002/file?q-sign-algorithm=sha1&q-ak=**************&q-sign-time=17300***57%3B1730123657",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,

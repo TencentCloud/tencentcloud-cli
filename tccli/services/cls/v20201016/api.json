@@ -3683,8 +3683,8 @@
           "type": "bool"
         },
         {
-          "disabled": false,
-          "document": "该参数已废弃，请使用Status参数控制是否开启告警策略。",
+          "disabled": true,
+          "document": "请使用Status参数控制是否开启告警策略。",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -4131,8 +4131,8 @@
           "type": "object"
         },
         {
-          "disabled": false,
-          "document": "日志格式化方式，用于容器采集场景。 - 已废弃\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
+          "disabled": true,
+          "document": "日志格式化方式，用于容器采集场景。\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
           "example": "stdout-containerd",
           "member": "string",
           "name": "LogFormat",
@@ -6026,7 +6026,7 @@
         },
         {
           "disabled": false,
-          "document": "知方式对应的值。\n<br> <li/> 当ReceiverType不是 Wecom 时，Values必填。",
+          "document": "知方式对应的值。\n<br> <li/> 当ReceiverType不是 WeCom 时，Values必填。",
           "example": "[\"168053\",\"12345\"]",
           "member": "string",
           "name": "Values",
@@ -6037,7 +6037,7 @@
         },
         {
           "disabled": false,
-          "document": "仪表盘通知渠道。\n<br><li/> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li/> 当ReceiverType是 Email 或 Wecom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仪表盘通知渠道。\n<br><li/> 支持：[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]。\n<br><li/> 当ReceiverType是 Email 或 WeCom 时，ReceiverChannels不能赋值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"Email\",\"Sms\",\"WeChat\",\"Phone\"]",
           "member": "string",
           "name": "ReceiverChannels",
@@ -6048,7 +6048,7 @@
         },
         {
           "disabled": false,
-          "document": "回调Url。\n<br><li/> 当ReceiverType是 Wecom 时，Url必填。\n<br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。",
+          "document": "回调Url。\n<br><li/> 当ReceiverType是 WeCom 时，Url必填。\n<br><li/> 当ReceiverType不是 WeCom 时，Url不能填写。",
           "example": "http://xxx",
           "member": "string",
           "name": "Url",
@@ -11695,7 +11695,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃，请使用Status参数控制是否开启告警策略。",
           "example": "true",
           "member": "bool",
@@ -12010,8 +12010,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "日志格式化方式，用于容器采集场景。目前已经废弃\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
+          "disabled": true,
+          "document": "日志格式化方式，用于容器采集场景。\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
           "example": "stdout-containerd",
           "member": "string",
           "name": "LogFormat",
@@ -12039,7 +12039,7 @@
         {
           "disabled": false,
           "document": "组合解析采集规则，用于复杂场景下的日志采集。\n- 取值参考：[使用组合解析提取模式采集日志\n](https://cloud.tencent.com/document/product/614/61310)",
-          "example": "{\\\"processors\\\": [{\\\"type\\\": \\\"processor_multiline_fullregex\\\", \\\"detail\\\": {\\\"ExtractRegex\\\": \\\"\\\\\\\\w+\\\\\\\\n(\\\\\\\\d.*).*\\\", \\\"ExtractKeys\\\": [\\\"test\\\"], \\\"BeginRegex\\\": \\\"[a-zA-Z].*\\\"}, \\\"processors\\\": [{\\\"type\\\": \\\"processor_split_delimiter\\\", \\\"detail\\\": {\\\"ExtractKeys\\\": [\\\"line_number\\\", \\\"log_time\\\", \\\"json_log\\\"], \\\"Delimiter\\\": \\\"&\\\", \\\"SourceKey\\\": \\\"test\\\"}, \\\"processors\\\": [{\\\"type\\\": \\\"processor_json\\\", \\\"detail\\\": {\\\"ExtractKeys\\\": [\\\"filter\\\", \\\"file_name\\\", \\\"var_length\\\"], \\\"SourceKey\\\": \\\"json_log\\\"}}]}]}]}",
+          "example": "{\"processors\":[{\"type\":\"processor_multiline_fullregex\",\"detail\":{\"ExtractRegex\":\"\\\\w+\\\\n(\\\\d.*).*\",\"ExtractKeys\":[\"test\"],\"BeginRegex\":\"[a-zA-Z].*\"},\"processors\":[]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -16267,7 +16267,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃，请使用NoticeContentId。",
           "example": "[\"Content-Type: application/json\"]",
           "member": "string",
@@ -16278,7 +16278,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃，请使用NoticeContentId。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{{.Level}}]{{.Alarm}}",
           "member": "string",

@@ -15724,32 +15724,29 @@
         {
           "disabled": false,
           "document": "维度",
-          "example": "",
+          "example": "vm_uuid",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "操作符，支持等于(eq)、不等于(ne)，以及in",
-          "example": "",
+          "document": "操作符，支持=、in",
+          "example": "=",
           "member": "string",
           "name": "Operator",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "维度值，当Op是eq、ne时，只使用第一个元素",
-          "example": "",
+          "document": "维度值，当Op是=时，只使用第一个元素",
+          "example": "dsdsedcsd",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
