@@ -674,15 +674,6 @@
         },
         {
           "disabled": false,
-          "document": "记录权重值(暂未支持)。",
-          "example": "10",
-          "member": "uint64",
-          "name": "Weight",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "记录的 MX 记录值，非 MX 记录类型，默认为 0，MX记录则必选。",
           "example": "20",
           "member": "uint64",
@@ -698,24 +689,6 @@
           "name": "TTL",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "记录状态(暂未支持)。0表示禁用，1表示启用。默认启用。",
-          "example": "1",
-          "member": "uint64",
-          "name": "Enabled",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "记录备注(暂未支持)。",
-          "example": "记录的备注信息",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
         }
       ],
       "usage": "in"

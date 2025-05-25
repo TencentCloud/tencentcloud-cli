@@ -1,20 +1,21 @@
-**Example 1: test**
+**Example 1: 删除用户**
 
-test
+
 
 Input: 
 
 ```
 tccli emr DeleteUserManagerUserList --cli-unfold-argument  \
-    --InstanceId emr-test \
-    --UserNameList userTest
+    --InstanceId emr-o88f3whr \
+    --UserNameList user1 \
+    --DeleteHomeDir True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "782d3570-9f82-4bff-974a-17cf684fdfx9"
+        "RequestId": "49bcbf5a-f2e6-44fb-9aac-8bef6b107366"
     }
 }
 ```

@@ -19,9 +19,9 @@
     "AddUsersForUserManager": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUsersForUserManager\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-dadda\",\n    \"UserManagerUserList\": [\n        {\n            \"UserName\": \"test1\",\n            \"UserGroup\": \"test1\",\n            \"PassWord\": \"test1\",\n            \"ReMark\": \"test1\"\n        },\n        {\n            \"UserName\": \"test2\",\n            \"UserGroup\": \"test2\",\n            \"PassWord\": \"test2\",\n            \"ReMark\": \"test2\"\n        },\n        {\n            \"UserName\": \"test3\",\n            \"UserGroup\": \"test3\",\n            \"PassWord\": \"test3\",\n            \"ReMark\": \"test3\"\n        },\n        {\n            \"UserName\": \"test4\",\n            \"UserGroup\": \"test4\",\n            \"PassWord\": \"test4\",\n            \"ReMark\": \"test4\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FailedUserList\": [],\n        \"RequestId\": \"782d3570-9f82-4bff-974a-17cf684fdfe9\",\n        \"SuccessUserList\": [\n            \"test1\",\n            \"test2\",\n            \"test3\",\n            \"test4\"\n        ]\n    }\n}",
-        "title": "test"
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUsersForUserManager\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-o88f3whr\",\n    \"UserManagerUserList\": [\n        {\n            \"UserName\": \"user1\",\n            \"UserGroup\": \"group1\",\n            \"PassWord\": \"ceshi123\",\n            \"ReMark\": \"ceshi\",\n            \"Groups\": [\n                \"group1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedUserList\": [],\n        \"RequestId\": \"69048737-8f4f-4825-b4f6-a67dbf3f198c\",\n        \"SuccessUserList\": [\n            \"user1\"\n        ]\n    }\n}",
+        "title": "新增用户"
       }
     ],
     "AttachDisks": [
@@ -82,10 +82,10 @@
     ],
     "DeleteUserManagerUserList": [
       {
-        "document": "test",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserManagerUserList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-test\",\n    \"UserNameList\": [\n        \"userTest\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"782d3570-9f82-4bff-974a-17cf684fdfx9\"\n    }\n}",
-        "title": "test"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserManagerUserList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-o88f3whr\",\n    \"UserNameList\": [\n        \"user1\"\n    ],\n    \"DeleteHomeDir\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49bcbf5a-f2e6-44fb-9aac-8bef6b107366\"\n    }\n}",
+        "title": "删除用户"
       }
     ],
     "DeployYarnConf": [

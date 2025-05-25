@@ -876,7 +876,7 @@
         },
         {
           "disabled": false,
-          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体\n<ul><li> 个人签名/印章</li>\n<li> 企业印章</li>\n<li> 骑缝章等签署控件</li></ul>",
+          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】合同中的该名签署方的签署控件列表，列表中可支持下列多种签署控件,控件的详细定义参考开发者中心的Component结构体\n<ul><li> 个人签名/印章</li>\n<li> 企业印章</li>\n<li> 骑缝章等签署控件</li></ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -1038,7 +1038,7 @@
         },
         {
           "disabled": false,
-          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n</ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`",
+          "document": "【在用文件发起合同场景下才有效，模板发起场景下需要在模板中配置】签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n</ul>\n\n具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)\n\n注：`此参数仅在通过文件发起合同或者合同组时生效`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -1440,7 +1440,7 @@
         },
         {
           "disabled": false,
-          "document": "是否回调证书信息:\n<ul><li>**false**: 不需要(默认)</li>\n<li>**true**:需要</li></ul>",
+          "document": "是否回调证书信息:\n<ul><li>**false**: 不需要(默认)</li>\n<li>**true**:需要</li></ul>\n\n注：`该字段已经失效，请勿设置此参数。`",
           "example": "false",
           "member": "bool",
           "name": "CertInfoCallback",
@@ -1476,7 +1476,7 @@
         },
         {
           "disabled": false,
-          "document": "开通时候的身份验证方式, 取值为：\n<ul><li>**WEIXINAPP** : 微信人脸识别</li>\n<li>**INSIGHT** : 慧眼人脸认别</li>\n<li>**TELECOM** : 运营商三要素验证</li></ul>\n注：\n<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>\n<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>",
+          "document": "开通时候的身份验证方式, 取值为：\n<ul><li>**WEIXINAPP** : 微信人脸识别</li>\n<li>**INSIGHT** : 慧眼人脸识别</li>\n<li>**TELECOM** : 运营商三要素验证</li></ul>\n注：\n<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>\n<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannels",
@@ -1485,7 +1485,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户自动签合同的扣费方式。\n\n<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>",
+          "document": "设置用户自动签合同的扣费方式。\n\n<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>\n\n注：`该字段已经失效，请勿设置此参数。`",
           "example": "1",
           "member": "int64",
           "name": "LicenseType",
@@ -3925,7 +3925,7 @@
         },
         {
           "disabled": false,
-          "document": "发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）\n<ul><li> 单行文本控件      </li>\n<li> 多行文本控件      </li>\n<li> 勾选框控件        </li>\n<li> 数字控件          </li>\n<li> 图片控件          </li>\n<li> 水印控件等          </li>\n</ul>",
+          "document": "发起的时候合成到PDF上的填写控件（需要提供填写控件的内容）\n<ul><li> 单行文本控件      </li>\n<li> 多行文本控件      </li>\n<li> 勾选框控件        </li>\n<li> 数字控件          </li>\n<li> 图片控件          </li>\n<li> 水印控件等          </li>\n</ul>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/e004195ee4cb98a7f9bc12eb4a0a0b77.png)",
           "example": "无",
           "member": "Component",
           "name": "Components",

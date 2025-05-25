@@ -12212,6 +12212,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务AppId",
+          "example": "1318247800",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

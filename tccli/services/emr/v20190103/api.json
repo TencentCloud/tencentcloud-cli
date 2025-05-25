@@ -736,7 +736,7 @@
         {
           "disabled": false,
           "document": "集群字符串ID",
-          "example": "emr-xxx",
+          "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -745,7 +745,7 @@
         {
           "disabled": false,
           "document": "用户信息列表",
-          "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
+          "example": "无",
           "member": "UserInfoForUserManager",
           "name": "UserManagerUserList",
           "required": true,
@@ -760,7 +760,7 @@
         {
           "disabled": false,
           "document": "添加成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"123\"]",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "SuccessUserList",
           "output_required": true,
@@ -770,7 +770,7 @@
         {
           "disabled": false,
           "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"123\"]",
+          "example": "无",
           "member": "string",
           "name": "FailedUserList",
           "output_required": true,
@@ -4097,7 +4097,7 @@
         {
           "disabled": false,
           "document": "集群实例ID",
-          "example": "emr-xxx",
+          "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4106,7 +4106,7 @@
         {
           "disabled": false,
           "document": "集群用户名列表",
-          "example": "[\"emr\", \"es\"]",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "UserNameList",
           "required": false,
