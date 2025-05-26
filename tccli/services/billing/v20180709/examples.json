@@ -52,6 +52,14 @@
         "title": "创建归集嵌套规则"
       }
     ],
+    "CreateMeasurePackageBindStrategy": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMeasurePackageBindStrategy\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_snapshot\",\n    \"BindProductCode\": \"p_snapshot\",\n    \"ResourceIds\": [\n        \"snap-j4d000ezWGZGU67\"\n    ],\n    \"BindObjectId\": \"test-p_snapshot\",\n    \"RegionId\": \"1\",\n    \"BindProperties\": [\n        {\n            \"PropertyKey\": \"regionId\",\n            \"PropertyValue\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 0\n        },\n        \"RequestId\": \"e9d12c06-ea7f-400c-97e1-3b1b88522639\"\n    }\n}",
+        "title": "创建资源包绑定策略"
+      }
+    ],
     "DeleteAllocationRule": [
       {
         "document": "",
@@ -490,6 +498,14 @@
         "title": "获取商品信息"
       }
     ],
+    "DescribeMeasureBoundPackageList": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureBoundPackageList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"ProductCode\": \"p_bsp\",\n    \"SubscriptionId\": \"bsp100570\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BindPackages\": [\n                {\n                    \"BindProperties\": [],\n                    \"EffectiveTime\": \"2025-02-28 11:29:33\",\n                    \"InvalidTime\": \"9999-99-99 99:99:99\",\n                    \"ResourceId\": \"bsp-jlj000eALGlLEc5\"\n                },\n                {\n                    \"BindProperties\": [\n                        {\n                            \"PropertyKey\": \"regionId\",\n                            \"PropertyValue\": \"47\"\n                        }\n                    ],\n                    \"EffectiveTime\": \"2025-03-04 15:15:07\",\n                    \"InvalidTime\": \"9999-99-99 99:99:99\",\n                    \"ResourceId\": \"bsp-jln000eAMm5Odlo\"\n                },\n                {\n                    \"BindProperties\": [\n                        {\n                            \"PropertyKey\": \"regionId\",\n                            \"PropertyValue\": \"47\"\n                        }\n                    ],\n                    \"EffectiveTime\": \"2025-03-04 15:17:04\",\n                    \"InvalidTime\": \"9999-99-99 99:99:99\",\n                    \"ResourceId\": \"bsp-jln000eAMlZAb44\"\n                },\n                {\n                    \"BindProperties\": [],\n                    \"EffectiveTime\": \"2025-03-04 16:43:24\",\n                    \"InvalidTime\": \"9999-99-99 99:99:99\",\n                    \"ResourceId\": \"bsp-jln000eAMmNWl47\"\n                }\n            ]\n        },\n        \"RequestId\": \"67838c79-2980-41cc-bae5-5fd5c7c4ab25\"\n    }\n}",
+        "title": "资源包绑定策略查询"
+      }
+    ],
     "DescribeMeasureDeductionDetailFlow": [
       {
         "document": "无",
@@ -568,12 +584,36 @@
         "title": "tccc-查询tccc_valueadded_tts-总量"
       }
     ],
+    "DescribeMeasurePostPayState": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasurePostPayState\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_bsp\",\n    \"SubscriptionId\": \"bsp100570\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"State\": 1\n        },\n        \"RequestId\": \"d252bea5-dfb9-45b8-85b3-fcbcc0405094\"\n    }\n}",
+        "title": "查询计量后付费按量计费策略"
+      }
+    ],
+    "DescribeMeasurePostPayStateBatch": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasurePostPayStateBatch\n<公共请求参数>\n\n{\n    \"Para\": [\n        {\n            \"ProductCode\": \"p_bsp\",\n            \"SubscriptionId\": \"bsp100570\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Data\": [\n                {\n                    \"ProductCode\": \"p_bsp\",\n                    \"State\": 1,\n                    \"SubProductCode\": \"\",\n                    \"SubscriptionId\": \"bsp100570\"\n                }\n            ]\n        },\n        \"RequestId\": \"16c87052-35a2-4028-b400-a74726a18521\"\n    }\n}",
+        "title": "批量查询计量后付费按量计费策略"
+      }
+    ],
     "DescribeMeasureResourceAlarmThreshold": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureResourceAlarmThreshold\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_trade_t_s\",\n    \"ThresholdType\": 4,\n    \"GroupId\": \"fkkTestGroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"GroupId\": \"fkkTestGroup\",\n            \"ProductCode\": \"p_trade_t_s\",\n            \"ResourceId\": \"\",\n            \"ThresholdType\": 4,\n            \"ThresholdValueType\": 0,\n            \"Thresholds\": [\n                50\n            ],\n            \"Uin\": \"100007908562\",\n            \"UserLevelConfig\": true,\n            \"Valid\": 1\n        },\n        \"RequestId\": \"gabriecheng-test-20250410-1\"\n    }\n}",
         "title": "包分类余量预警"
+      }
+    ],
+    "DescribeMeasureResourceAutoPurchaseConfig": [
+      {
+        "document": "指定产品和包分组，查询当前用户的续购配置",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureResourceAutoPurchaseConfig\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_clb\",\n    \"GroupIdList\": [\n        \"p_clb_lcu_domestic\",\n        \"p_clb_lcu_international\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AutoRePurchaseFlag\": 1,\n                \"GroupId\": \"p_clb_lcu_domestic\",\n                \"ProductCode\": \"p_clb\",\n                \"RemainThreshold\": \"0\",\n                \"ResourceId\": \"clblcu-jfm000fwAPUz1np\"\n            }\n        ],\n        \"RequestId\": \"b35a6eb0-f3dd-4dad-9bf3-d2e42488eeac\"\n    }\n}",
+        "title": "查询续购配置"
       }
     ],
     "DescribeMeasureResourceDetails": [
@@ -696,6 +736,14 @@
         "title": "编辑分账单元信息"
       }
     ],
+    "ModifyAndCheckMeasurePostPayState": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndCheckMeasurePostPayState\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_bsp\",\n    \"State\": 1,\n    \"RegionId\": \"1\",\n    \"TriggerType\": 1,\n    \"SubscriptionId\": \"bsp_test_003\",\n    \"Origin\": \"measure\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Available\": true,\n            \"CurrentState\": 1\n        },\n        \"RequestId\": \"34032f2a-3ea8-4c83-b90a-1e58e7441a49\"\n    }\n}",
+        "title": "变更计量后付费按量计费策略并检查计量能力可用状态"
+      }
+    ],
     "ModifyGatherRule": [
       {
         "document": "",
@@ -708,6 +756,14 @@
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatherRule\n<公共请求参数>\n\n{\n    \"Id\": \"24\",\n    \"RuleDetail\": {\n        \"Connectors\": \"and\",\n        \"Children\": [\n            {\n                \"RuleKey\": \"businessCode\",\n                \"Operator\": \"in\",\n                \"RuleValue\": [\n                    \"p_cvm\",\n                    \"p_nat\"\n                ]\n            },\n            {\n                \"RuleKey\": \"regionId\",\n                \"Operator\": \"in\",\n                \"RuleValue\": [\n                    \"9\",\n                    \"5\"\n                ]\n            },\n            {\n                \"Connectors\": \"and\",\n                \"Children\": [\n                    {\n                        \"RuleKey\": \"projectId\",\n                        \"Operator\": \"not in\",\n                        \"RuleValue\": [\n                            \"1270522\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"901c2178-fa8d-4878-8680-952ea3788a59\"\n    }\n}",
         "title": "编辑归集规则1"
+      }
+    ],
+    "ModifyMeasurePostPayState": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMeasurePostPayState\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_rav\",\n    \"State\": 1,\n    \"SubscriptionId\": \"rav-test111\",\n    \"Origin\": \"measure\",\n    \"TriggerType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CurrentState\": 1\n        },\n        \"RequestId\": \"1f2800c4-a88c-4f32-b1fd-0a7368437610\"\n    }\n}",
+        "title": "变更计量后付费按量计费策略"
       }
     ],
     "ModifyMeasureResourceAlarmThreshold": [
@@ -770,6 +826,26 @@
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetResourceRenewStrategyInner\n<公共请求参数>\n\n{\n    \"OwnerUin\": \"302000020582\",\n    \"Operator\": \"302000020582\",\n    \"ProductCode\": \"p_tencentmeeting_saas\",\n    \"SubProductCode\": \"sp_tencentmeeting_saas_prov2\",\n    \"ReferenceId\": \"4a2de158ccef369cb5de5f8bd\",\n    \"ResourceIds\": [\n        \"302000020582_2024110418004318007093_100\"\n    ],\n    \"RegionApCode\": \"ap-guangzhou\",\n    \"ResourceRenewStrategy\": \"strategy_vip_no_auto\"\n}",
         "output": "{\n    \"Response\": {\n        \"ReferenceId\": \"4a2de158ccef369cb5de5f8bd\",\n        \"RequestId\": \"53f187ec-13f4-4d32-8306-d8acc19578fd\",\n        \"ResourceSet\": []\n    }\n}",
         "title": "参考示例"
+      }
+    ],
+    "UpdateValidResourceAlarmThreshold": [
+      {
+        "document": "客户级余量预警配置停用请求",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateValidResourceAlarmThreshold\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_trade_t_s\",\n    \"ThresholdType\": 4,\n    \"ValidStatus\": 0,\n    \"GroupId\": \"TestGroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 0\n        },\n        \"RequestId\": \"a6cb7a6e-9137-4112-8dcd-b51fd7e3b07f\"\n    }\n}",
+        "title": "停用余量预警配置示例"
+      },
+      {
+        "document": "客户级余量预警配置启用请求",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateValidResourceAlarmThreshold\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_trade_t_s\",\n    \"ThresholdType\": 4,\n    \"ValidStatus\": 1,\n    \"GroupId\": \"TestGroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 0\n        },\n        \"RequestId\": \"a6cb7a6e-9137-4112-8dcd-b51fd7e3b07f\"\n    }\n}",
+        "title": "启用余量预警配置示例"
+      },
+      {
+        "document": "当用户需要更新的预警配置不存在时返回错误",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateValidResourceAlarmThreshold\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_trade_t_s\",\n    \"ThresholdType\": 6,\n    \"ValidStatus\": 0,\n    \"GroupId\": \"TestGroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"not find db config\"\n        },\n        \"RequestId\": \"2dd5b7c5-2ecd-472c-95b9-4cb3488190d2\"\n    }\n}",
+        "title": "启动/停用客户级配置时配置不存在"
       }
     ]
   },

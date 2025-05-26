@@ -33,7 +33,7 @@ Output:
 
 **Example 2: 添加VPC内网间规则2**
 
-添加VPC内网间规则地址模版
+添加VPC内网间规则地址模板
 
 Input: 
 

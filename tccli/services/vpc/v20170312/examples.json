@@ -2320,6 +2320,14 @@
         "title": "demo"
       }
     ],
+    "DescribeInstanceCapable": [
+      {
+        "document": "查询机型能力",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceCapable\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"796bd5f4-92d5-4e49-8770-a46749cfb960\"\n    }\n}",
+        "title": "查询机型能力"
+      }
+    ],
     "DescribeInstanceJumbo": [
       {
         "document": "查询指定云服务器是否支持巨帧。",

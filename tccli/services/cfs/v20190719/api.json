@@ -815,7 +815,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称",
+          "document": "策略名称,限制64个字符数量仅支持输入中文、字母、数字、_或-",
           "example": "cfs-policy",
           "member": "string",
           "name": "PolicyName",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。与DayOfWeek，IntervalDays 三者选一",
+          "document": "快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照；例如1 代表1号；与DayOfWeek，IntervalDays 三者选一",
           "example": "1",
           "member": "string",
           "name": "DayOfMonth",
@@ -906,7 +906,7 @@
         },
         {
           "disabled": false,
-          "document": "权限组 ID,pgroupbasic 是默认权限组",
+          "document": "权限组 ID,pgroupbasic 是默认权限组，通过控制查询权限组列表接口获取[DescribeCfsPGroups](https://cloud.tencent.com/document/product/582/38157)",
           "example": "pgroupbasic",
           "member": "string",
           "name": "PGroupId",
@@ -933,7 +933,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取",
+          "document": "私有网络（VPC） ID，若网络类型选择的是VPC，该字段为必填.通过查询私有网络接口获取，\n[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)",
           "example": "vpc-abc123",
           "member": "string",
           "name": "VpcId",
@@ -942,7 +942,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取",
+          "document": "子网 ID，若网络类型选择的是VPC，该字段为必填。通过查询子网接口获取，\n[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)",
           "example": "subnet-abc234",
           "member": "string",
           "name": "SubnetId",
@@ -987,7 +987,7 @@
         },
         {
           "disabled": false,
-          "document": "云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取",
+          "document": "云联网ID， 若网络类型选择的是CCN，该字段为必填;通过查询云联网列表接口获取，通过接口\n[DescribeCcns](https://cloud.tencent.com/document/product/215/19199)\n",
           "example": "ccn-abc123",
           "member": "string",
           "name": "CcnId",
@@ -1014,7 +1014,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统快照ID，通过查询快照列表获取该参数",
+          "document": "文件系统快照ID，通过查询快照列表获取该参数，\n[DescribeCfsSnapshots](https://cloud.tencent.com/document/product/582/80206)",
           "example": "snapcfs-abc1234",
           "member": "string",
           "name": "SnapshotId",
@@ -1023,7 +1023,7 @@
         },
         {
           "disabled": false,
-          "document": "定期快照策略ID，通过查询快照策略信息获取",
+          "document": "定期快照策略ID，通过查询快照策略信息获取,\n[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/product/582/38157)",
           "example": "asp-abc1234",
           "member": "string",
           "name": "AutoSnapshotPolicyId",

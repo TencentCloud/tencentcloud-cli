@@ -1,45 +1,10 @@
-# Release 3.0.1207.1
+# Release 3.0.1208.1
 
-## 腾讯云CA(ca) 版本：2023-02-28
-
-### 第 3 次发布
-
-发布时间：2025-05-26 01:13:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeFileUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1774/86891)
-
-
-
-## DNSPod(dnspod) 版本：2021-03-23
-
-### 第 52 次发布
-
-发布时间：2025-05-26 01:28:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [AddRecordBatch](http://document.tencentcloudapi.woa.com/document/product/1427/56185#AddRecordBatch)
-
-	* <font color="#dd0000">**删除成员**：</font>Weight, Enabled, Remark
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 费用中心(billing) 版本：2018-07-09
 
 ### 第 93 次发布
 
-发布时间：2025-05-26 01:31:51
+发布时间：2025-05-27 01:11:15
 
 本次发布包含了以下内容：
 
@@ -47,90 +12,151 @@
 
 新增接口：
 
-* [DeleteGroupsSTD](http://document.tencentcloudapi.woa.com/document/product/589/86894)
-* [ModifyUserGroupsRemark](http://document.tencentcloudapi.woa.com/document/product/589/86893)
-* [ModifyUsersOfGroupSTD](http://document.tencentcloudapi.woa.com/document/product/589/86892)
+* [CreateMeasurePackageBindStrategy](http://document.tencentcloudapi.woa.com/document/product/555/86897)
+* [DescribeMeasureBoundPackageList](http://document.tencentcloudapi.woa.com/document/product/555/86896)
+* [DescribeMeasurePostPayState](http://document.tencentcloudapi.woa.com/document/product/555/86902)
+* [DescribeMeasurePostPayStateBatch](http://document.tencentcloudapi.woa.com/document/product/555/86901)
+* [DescribeMeasureResourceAutoPurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/555/86895)
+* [ModifyAndCheckMeasurePostPayState](http://document.tencentcloudapi.woa.com/document/product/555/86900)
+* [ModifyMeasurePostPayState](http://document.tencentcloudapi.woa.com/document/product/555/86899)
+* [UpdateValidResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/86903)
+
+新增数据结构：
+
+* [AccountThresholdUpdateValidData](http://document.tencentcloudapi.woa.com/document/product/555/19183#AccountThresholdUpdateValidData)
+* [AutoPurchaseConfig](http://document.tencentcloudapi.woa.com/document/product/555/19183#AutoPurchaseConfig)
+* [BindMeasureResourceData](http://document.tencentcloudapi.woa.com/document/product/555/19183#BindMeasureResourceData)
+* [BindPackageInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#BindPackageInfo)
+* [BindPackageList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BindPackageList)
+* [DescribeMeasurePostPayStateData](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasurePostPayStateData)
+* [DescribePostPayStateBatchData](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribePostPayStateBatchData)
+* [DescribePostPayStateBatchReq](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribePostPayStateBatchReq)
+* [DescribePostPayStateBatchRes](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribePostPayStateBatchRes)
+* [ModifyAndCheckMeasurePostPayStateData](http://document.tencentcloudapi.woa.com/document/product/555/19183#ModifyAndCheckMeasurePostPayStateData)
+* [ModifyMeasurePostPayStateData](http://document.tencentcloudapi.woa.com/document/product/555/19183#ModifyMeasurePostPayStateData)
 
 
 
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 8 次发布
+### 第 62 次发布
 
-发布时间：2025-05-26 01:37:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [WebSearchOptions](http://document.tencentcloudapi.woa.com/document/product/1744/85813#WebSearchOptions)
-
-	* 新增成员：EnableBriefMusicSearch
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 97 次发布
-
-发布时间：2025-05-26 01:49:32
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* RegisterTable
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* Fields
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 81 次发布
-
-发布时间：2025-05-26 02:14:39
+发布时间：2025-05-27 01:17:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [TrainingTaskSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskSetItem)
+* [CreateInstanceNew](http://document.tencentcloudapi.woa.com/document/product/1706/82859)
 
-	* 新增成员：AppId
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+	* 新增入参：IsSSC, SSCCU, CacheDiskSize
 
 
 
-## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 92 次发布
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
 
-发布时间：2025-05-26 02:17:43
+### 第 104 次发布
+
+发布时间：2025-05-27 01:20:21
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [RecognizeConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecognizeConfig)
+* [CreateDatahubTask](http://document.tencentcloudapi.woa.com/document/product/597/75537)
 
-	* 新增成员：VadSilenceTime
+	* 新增入参：Description
 
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/597/40835)
+
+* [DescribeInstancesDetail](http://document.tencentcloudapi.woa.com/document/product/597/40834)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 188 次发布
+
+发布时间：2025-05-27 01:35:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+	* 新增入参：SignatureTypes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云游戏(gs) 版本：2019-11-18
+
+### 第 20 次发布
+
+发布时间：2025-05-27 01:37:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RestartAndroidInstancesApp](http://document.tencentcloudapi.woa.com/document/product/1162/85995)
+
+	* 新增入参：Activity
+
+* [StartAndroidInstancesApp](http://document.tencentcloudapi.woa.com/document/product/1162/85994)
+
+	* 新增入参：Activity
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 41 次发布
+
+发布时间：2025-05-27 01:56:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDataPerformancePage](http://document.tencentcloudapi.woa.com/document/product/1464/59944)
+
+	* 新增入参：WebVitals
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 215 次发布
+
+发布时间：2025-05-27 02:15:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceCapable](http://document.tencentcloudapi.woa.com/document/product/215/86904)
 
 
 
