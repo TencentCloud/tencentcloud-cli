@@ -11726,14 +11726,14 @@
         },
         {
           "disabled": false,
-          "document": "是否为隐藏可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为隐藏可用区",
           "example": "false",
           "member": "bool",
           "name": "Hidden",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

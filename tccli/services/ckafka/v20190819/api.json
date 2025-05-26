@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateInstancePost": {
-      "document": "由于出参需要更新，当前接口将会在未来版本中废弃，建议用户迁移使用 CreatePostPaidInstance 接口。创建按量计费实例。通常用于 SDK 或云 API 控制台调用接口，创建后付费 CKafka 实例。调用接口与在 CKafka 控制台购买按量付费实例效果相同。",
+      "document": "由于出参需要更新，建议用户迁移使用 CreatePostPaidInstance 接口。创建按量计费实例。通常用于 SDK 或云 API 控制台调用接口，创建后付费 CKafka 实例。调用接口与在 CKafka 控制台购买按量付费实例效果相同。",
       "input": "CreateInstancePostRequest",
       "name": "创建按量计费实例",
       "output": "CreateInstancePostResponse",
@@ -3248,7 +3248,7 @@
         {
           "disabled": false,
           "document": "数据源",
-          "example": "{\"Type\":\"EB\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\",\"Topic\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1566144000,\"ResourceName\":\"ckafka测试\",\"ZoneId\":100003,\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"EnableToleration\":false,\"QpsLimit\":4000,\"TableMappings\":[{\"Database\":\"db1\",\"Table\":\"table1\",\"Topic\":\"topic1\",\"TopicId\":\"topic-id\"}],\"UseTableMapping\":false,\"UseAutoCreateTopic\":false,\"CompressionType\":\"none\",\"MsgMultiple\":1,\"ConnectorSyncType\":\"DATA_SYNC_TYPE\",\"KeepPartition\":false},\"EventBusParam\":{\"Type\":\"COS\",\"SelfBuilt\":false,\"Resource\":\"resource-test\",\"Namespace\":\"namespace-test\",\"FunctionName\":\"function-test\",\"Qualifier\":\"qualifier-test\"},\"MongoDBParam\":{\"Database\":\"database-test\",\"Collection\":\"collection-test\",\"CopyExisting\":true,\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ListeningEvent\":\"insert,update\",\"ReadPreference\":\"主节点\",\"Pipeline\":\"pipeline-test\",\"SelfBuilt\":false},\"EsParam\":{\"Resource\":\"resource-test\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"DropInvalidMessage\":true,\"Index\":\"index-test\",\"DateFormat\":\"yyyy-MM-dd\",\"ContentKey\":\"key-test\",\"DropInvalidJsonMessage\":true,\"DocumentIdField\":\"$.payload.name\",\"IndexType\":\"JSONPATH\",\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"DatabasePrimaryKey\":\"pk_test\",\"DropDlq\":{\"Type\":\"DLQ\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"},\"RetryInterval\":1,\"MaxRetryAttempts\":2,\"TopicParam\":{\"Resource\":\"appId-test\"},\"DlqType\":\"TOPIC\"},\"RecordMappingList\":[{\"ColumnName\":\"column-test\",\"JsonKey\":\"key-test\"}],\"DateField\":\"create_timestamp\",\"RecordMappingMode\":\"EXIST_MAPPING\"},\"TdwParam\":{\"Bid\":\"bid-test\",\"Tid\":\"tid-test\",\"IsDomestic\":true,\"TdwHost\":\"tl-tdbank-tdmanager.tencent-distribute.com\",\"TdwPort\":8099},\"DtsParam\":{\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"Topic\":\"topic-test\",\"GroupId\":\"group-test\",\"GroupUser\":\"username-test\",\"GroupPassword\":\"password-test\",\"TranSql\":true},\"ClickHouseParam\":{\"Cluster\":\"cluster-test\",\"Database\":\"database-test\",\"Table\":\"table-test\",\"Schema\":[{\"ColumnName\":\"column_test\",\"JsonKey\":\"column_test\",\"Type\":\"String\",\"AllowNull\":false}],\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ServiceVip\":\"10.0.0.5\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":false,\"DropInvalidMessage\":true,\"Type\":\"emr\",\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"BatchSize\":1000,\"ConsumerFetchMinBytes\":1000000,\"ConsumerFetchMaxWaitMs\":30000},\"ClsParam\":{\"DecodeJson\":true,\"Resource\":\"resource-test\",\"LogSet\":\"logset-test\",\"ContentKey\":\"key-test\",\"TimeField\":\"time\"},\"CosParam\":{\"BucketName\":\"bucket-name-test\",\"Region\":\"ap-guangzhou\",\"ObjectKey\":\"key-test\",\"AggregateBatchSize\":100,\"AggregateInterval\":1,\"FormatOutputType\":\"json\",\"ObjectKeyPrefix\":\"prefix-test\",\"DirectoryTimeFormat\":\"/%Y/%m/%d/%H\"},\"MySQLParam\":{\"Database\":\"database-test\",\"Table\":\"table-test\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\",\"DdlTopic\":\"topic-test\",\"DataSourceMonitorMode\":\"TABLE\",\"DataSourceMonitorResource\":\"table-test\",\"DataSourceIncrementMode\":\"TIMESTAMP\",\"DataSourceIncrementColumn\":\"column_test\",\"DataSourceStartFrom\":\"HEAD\",\"DataTargetInsertMode\":\"INSERT\",\"DataTargetPrimaryKeyField\":\"id\",\"DataTargetRecordMapping\":[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}],\"TopicRegex\":\"(.*).db.(.*)\",\"TopicReplacement\":\"$1\",\"KeyColumns\":\"db1.table2.k1,k2\",\"DropInvalidMessage\":true,\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"OutputFormat\":\"DEFAULT\",\"IsTablePrefix\":false,\"IncludeContentChanges\":\"all\",\"IncludeQuery\":false,\"RecordWithSchema\":false,\"SignalDatabase\":\"database-test\",\"IsTableRegular\":false,\"SignalTable\":\"table-test\",\"DateTimeZone\":\"UTC+8\",\"SelfBuilt\":false},\"PostgreSQLParam\":{\"Database\":\"database-test\",\"Table\":\"*\",\"Resource\":\"resource-test\",\"PluginName\":\"decoderbufs\",\"SnapshotMode\":\"initial\",\"DataFormat\":\"JSON\",\"DataTargetInsertMode\":\"INSERT\",\"DataTargetPrimaryKeyField\":\"id\",\"DataTargetRecordMapping\":[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}],\"DropInvalidMessage\":true,\"IsTableRegular\":false,\"KeyColumns\":\"db1.table2.k1,k2\",\"RecordWithSchema\":false},\"TopicParam\":{\"Resource\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1566144000,\"TopicId\":\"topic-test\",\"CompressionType\":\"none\",\"UseAutoCreateTopic\":false,\"MsgMultiple\":1},\"MariaDBParam\":{\"Database\":\"database-test\",\"Table\":\"table-test\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\",\"KeyColumns\":\"db1.table2.k1,k2\",\"IsTablePrefix\":false,\"OutputFormat\":\"DEFAULT\",\"IncludeContentChanges\":\"all\",\"IncludeQuery\":false,\"RecordWithSchema\":false},\"SQLServerParam\":{\"Database\":\"database-test\",\"Table\":\"*\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\"},\"CtsdbParam\":{\"Resource\":\"resource-test\",\"CtsdbMetric\":\"metric-test\"},\"ScfParam\":{\"FunctionName\":\"function-test\",\"Namespace\":\"default\",\"Qualifier\":\"$DEFAULT\",\"BatchSize\":1000,\"MaxRetries\":5},\"MqttParam\":{\"Topics\":\"topic-test\",\"CleanSession\":true,\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":1883,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Qos\":1,\"MaxTasks\":1,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":false}}",
+          "example": "无",
           "member": "DatahubResource",
           "name": "SourceResource",
           "required": false,
@@ -3257,7 +3257,7 @@
         {
           "disabled": false,
           "document": "数据目标",
-          "example": "{\"Type\":\"EB\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\",\"Topic\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1566144000,\"ResourceName\":\"ckafka测试\",\"ZoneId\":100003,\"TopicId\":\"topic-test\",\"PartitionNum\":1,\"EnableToleration\":false,\"QpsLimit\":4000,\"TableMappings\":[{\"Database\":\"db1\",\"Table\":\"table1\",\"Topic\":\"topic1\",\"TopicId\":\"topic-id\"}],\"UseTableMapping\":false,\"UseAutoCreateTopic\":false,\"CompressionType\":\"none\",\"MsgMultiple\":1,\"ConnectorSyncType\":\"DATA_SYNC_TYPE\",\"KeepPartition\":false},\"EventBusParam\":{\"Type\":\"COS\",\"SelfBuilt\":false,\"Resource\":\"resource-test\",\"Namespace\":\"namespace-test\",\"FunctionName\":\"function-test\",\"Qualifier\":\"qualifier-test\"},\"MongoDBParam\":{\"Database\":\"database-test\",\"Collection\":\"collection-test\",\"CopyExisting\":true,\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ListeningEvent\":\"insert,update\",\"ReadPreference\":\"主节点\",\"Pipeline\":\"pipeline-test\",\"SelfBuilt\":false},\"EsParam\":{\"Resource\":\"resource-test\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"SelfBuilt\":false,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"DropInvalidMessage\":true,\"Index\":\"index-test\",\"DateFormat\":\"yyyy-MM-dd\",\"ContentKey\":\"key-test\",\"DropInvalidJsonMessage\":true,\"DocumentIdField\":\"$.payload.name\",\"IndexType\":\"JSONPATH\",\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"DatabasePrimaryKey\":\"pk_test\",\"DropDlq\":{\"Type\":\"DLQ\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"},\"RetryInterval\":1,\"MaxRetryAttempts\":2,\"TopicParam\":{\"Resource\":\"appId-test\"},\"DlqType\":\"TOPIC\"},\"RecordMappingList\":[{\"ColumnName\":\"column-test\",\"JsonKey\":\"key-test\"}],\"DateField\":\"create_timestamp\",\"RecordMappingMode\":\"EXIST_MAPPING\"},\"TdwParam\":{\"Bid\":\"bid-test\",\"Tid\":\"tid-test\",\"IsDomestic\":true,\"TdwHost\":\"tl-tdbank-tdmanager.tencent-distribute.com\",\"TdwPort\":8099},\"DtsParam\":{\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"Topic\":\"topic-test\",\"GroupId\":\"group-test\",\"GroupUser\":\"username-test\",\"GroupPassword\":\"password-test\",\"TranSql\":true},\"ClickHouseParam\":{\"Cluster\":\"cluster-test\",\"Database\":\"database-test\",\"Table\":\"table-test\",\"Schema\":[{\"ColumnName\":\"column_test\",\"JsonKey\":\"column_test\",\"Type\":\"String\",\"AllowNull\":false}],\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":8099,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"ServiceVip\":\"10.0.0.5\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":false,\"DropInvalidMessage\":true,\"Type\":\"emr\",\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"BatchSize\":1000,\"ConsumerFetchMinBytes\":1000000,\"ConsumerFetchMaxWaitMs\":30000},\"ClsParam\":{\"DecodeJson\":true,\"Resource\":\"resource-test\",\"LogSet\":\"logset-test\",\"ContentKey\":\"key-test\",\"TimeField\":\"time\"},\"CosParam\":{\"BucketName\":\"bucket-name-test\",\"Region\":\"ap-guangzhou\",\"ObjectKey\":\"key-test\",\"AggregateBatchSize\":100,\"AggregateInterval\":1,\"FormatOutputType\":\"json\",\"ObjectKeyPrefix\":\"prefix-test\",\"DirectoryTimeFormat\":\"/%Y/%m/%d/%H\"},\"MySQLParam\":{\"Database\":\"database-test\",\"Table\":\"table-test\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\",\"DdlTopic\":\"topic-test\",\"DataSourceMonitorMode\":\"TABLE\",\"DataSourceMonitorResource\":\"table-test\",\"DataSourceIncrementMode\":\"TIMESTAMP\",\"DataSourceIncrementColumn\":\"column_test\",\"DataSourceStartFrom\":\"HEAD\",\"DataTargetInsertMode\":\"INSERT\",\"DataTargetPrimaryKeyField\":\"id\",\"DataTargetRecordMapping\":[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}],\"TopicRegex\":\"(.*).db.(.*)\",\"TopicReplacement\":\"$1\",\"KeyColumns\":\"db1.table2.k1,k2\",\"DropInvalidMessage\":true,\"DropCls\":{\"DropInvalidMessageToCls\":true,\"DropClsRegion\":\"ap-guangzhou\",\"DropClsOwneruin\":\"10003080064\",\"DropClsTopicId\":\"eafds-vfdfsdf-dbdfsdf\",\"DropClsLogSet\":\"wqead-bfdebv-sfds\"},\"OutputFormat\":\"DEFAULT\",\"IsTablePrefix\":false,\"IncludeContentChanges\":\"all\",\"IncludeQuery\":false,\"RecordWithSchema\":false,\"SignalDatabase\":\"database-test\",\"IsTableRegular\":false,\"SignalTable\":\"table-test\",\"DateTimeZone\":\"UTC+8\",\"SelfBuilt\":false},\"PostgreSQLParam\":{\"Database\":\"database-test\",\"Table\":\"*\",\"Resource\":\"resource-test\",\"PluginName\":\"decoderbufs\",\"SnapshotMode\":\"initial\",\"DataFormat\":\"JSON\",\"DataTargetInsertMode\":\"INSERT\",\"DataTargetPrimaryKeyField\":\"id\",\"DataTargetRecordMapping\":[{\"JsonKey\":\"test-key\",\"Type\":\"Integer\",\"AllowNull\":false,\"ColumnName\":\"column_test\",\"ExtraInfo\":\"AUTO_INCREMENT COMMENT 'ID'\",\"ColumnSize\":\"32\",\"DecimalDigits\":\"10\",\"AutoIncrement\":true,\"DefaultValue\":\"0\"}],\"DropInvalidMessage\":true,\"IsTableRegular\":false,\"KeyColumns\":\"db1.table2.k1,k2\",\"RecordWithSchema\":false},\"TopicParam\":{\"Resource\":\"topic-test\",\"OffsetType\":\"timestamp\",\"StartTime\":1566144000,\"TopicId\":\"topic-test\",\"CompressionType\":\"none\",\"UseAutoCreateTopic\":false,\"MsgMultiple\":1},\"MariaDBParam\":{\"Database\":\"database-test\",\"Table\":\"table-test\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\",\"KeyColumns\":\"db1.table2.k1,k2\",\"IsTablePrefix\":false,\"OutputFormat\":\"DEFAULT\",\"IncludeContentChanges\":\"all\",\"IncludeQuery\":false,\"RecordWithSchema\":false},\"SQLServerParam\":{\"Database\":\"database-test\",\"Table\":\"*\",\"Resource\":\"resource-test\",\"SnapshotMode\":\"initial\"},\"CtsdbParam\":{\"Resource\":\"resource-test\",\"CtsdbMetric\":\"metric-test\"},\"ScfParam\":{\"FunctionName\":\"function-test\",\"Namespace\":\"default\",\"Qualifier\":\"$DEFAULT\",\"BatchSize\":1000,\"MaxRetries\":5},\"MqttParam\":{\"Topics\":\"topic-test\",\"CleanSession\":true,\"Resource\":\"resource-test\",\"Ip\":\"10.0.0.5\",\"Port\":1883,\"UserName\":\"username-test\",\"Password\":\"password-test\",\"Qos\":1,\"MaxTasks\":1,\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\",\"SelfBuilt\":false}}",
+          "example": "无",
           "member": "DatahubResource",
           "name": "TargetResource",
           "required": false,
@@ -3266,14 +3266,14 @@
         {
           "disabled": false,
           "document": "数据处理规则",
-          "example": "{\"AnalysisFormat\":\"DELIMITER\",\"OutputFormat\":\"JSON\",\"FailureParam\":{\"Type\":\"DLQ\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"},\"RetryInterval\":1,\"MaxRetryAttempts\":1,\"TopicParam\":{\"Resource\":\"appId-test\"},\"DlqType\":\"TOPIC\"},\"Content\":\"content-test\",\"SourceType\":\"TOPIC\",\"Regex\":\",\",\"MapParam\":[{\"Key\":\"key-test\",\"Type\":\"DEFAULT\",\"Value\":\"value-test\"}],\"FilterParam\":[{\"Key\":\"key-test\",\"Type\":\"REGULAR\",\"MatchMode\":\"PREFIX\",\"Value\":\"value-test\"}],\"Result\":\"result-test\",\"AnalyseResult\":[{\"Type\":\"DEFAULT\",\"Key\":\"1\"},{\"Type\":\"DEFAULT\",\"Key\":\"2\"}],\"UseEventBus\":true}",
+          "example": "无",
           "member": "TransformParam",
           "name": "TransformParam",
           "required": false,
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例连接参数【已废弃】",
           "example": "{\"ServiceVip\":\"10.0.0.30\",\"UniqVpcId\":\"vpc-test\"}",
           "member": "PrivateLinkParam",
@@ -3293,7 +3293,7 @@
         {
           "disabled": false,
           "document": "数据处理规则",
-          "example": "{\"AnalysisFormat\":\"DELIMITER\",\"OutputFormat\":\"JSON\",\"FailureParam\":{\"Type\":\"DLQ\",\"KafkaParam\":{\"SelfBuilt\":false,\"Resource\":\"ckafka-test\"},\"RetryInterval\":1,\"MaxRetryAttempts\":1,\"TopicParam\":{\"Resource\":\"appId-test\"},\"DlqType\":\"TOPIC\"},\"Content\":\"content-test\",\"SourceType\":\"TOPIC\",\"Regex\":\",\",\"MapParam\":[{\"Key\":\"key-test\",\"Type\":\"DEFAULT\",\"Value\":\"value-test\"}],\"FilterParam\":[{\"Key\":\"key-test\",\"Type\":\"REGULAR\",\"MatchMode\":\"PREFIX\",\"Value\":\"value-test\"}],\"Result\":\"result-test\",\"AnalyseResult\":[{\"Type\":\"DEFAULT\",\"Key\":\"1\"},{\"Type\":\"DEFAULT\",\"Key\":\"2\"}],\"UseEventBus\":true}",
+          "example": "无",
           "member": "TransformsParam",
           "name": "TransformsParam",
           "required": false,
@@ -3316,6 +3316,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务描述信息",
+          "example": "任务描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8093,7 +8102,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已经废弃， 使用InstanceIdList",
           "example": "[\"ckafka-test\"]",
           "member": "string",
@@ -8128,7 +8137,7 @@
         {
           "disabled": false,
           "document": "返回的实例详情结果对象",
-          "example": "{\"TotalCount\":1,\"InstanceList\":[{\"InstanceId\":\"ckafka-test\",\"InstanceName\":\"ckafka-test\",\"Vip\":\"10.0.0.5\",\"Vport\":\"9092\",\"VipList\":[{\"Vip\":\"10.0.0.5\",\"Vport\":\"9092\"}],\"Status\":1,\"Bandwidth\":320,\"DiskSize\":500,\"ZoneId\":100004,\"VpcId\":\"vpc-test\",\"SubnetId\":\"subnet-test\",\"RenewFlag\":1,\"Healthy\":0,\"HealthyMessage\":\"healthymessage-test\",\"CreateTime\":1566144000,\"ExpireTime\":1566144000,\"IsInternal\":0,\"TopicNum\":2,\"Tags\":[{\"TagKey\":\"tagkey-test\",\"TagValue\":\"tagvalue-test\"}],\"Version\":\"1.1.1\",\"ZoneIds\":[100004],\"Cvm\":0,\"InstanceType\":\"profession\",\"DiskType\":\"CLOUD_SSD\",\"MaxTopicNumber\":250,\"MaxPartitionNumber\":500,\"RebalanceTime\":\"1566144000\",\"PartitionNumber\":1,\"PublicNetworkChargeType\":\"BANDWIDTH_PREPAID\",\"PublicNetwork\":0,\"ClusterType\":\"CLOUD_CVM\",\"Features\":[\"features-test\"],\"RebalanceDeadLineTimeStamp\":\"1566144000\",\"AllowDowngrade\":true,\"StorageBillingType\":\"BILL_BY_QUANTITY\",\"FreePartitionNumber\":0}]}",
+          "example": "无",
           "member": "InstanceDetailResponse",
           "name": "Result",
           "output_required": true,
@@ -8193,7 +8202,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已废弃。匹配标签key值。",
           "example": "tagkey-test",
           "member": "string",
@@ -10249,7 +10258,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "类型，DLQ死信队列，IGNORE_ERROR保留，DROP废弃",
+          "document": "类型，DLQ死信队列，IGNORE_ERROR保留，DROP丢弃",
           "example": "DLQ",
           "member": "string",
           "name": "Type",

@@ -9153,7 +9153,7 @@
           "example": "100",
           "member": "int64",
           "name": "PhoneAlarmNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9163,7 +9163,7 @@
           "example": "100",
           "member": "int64",
           "name": "AdvancedMetricNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9173,7 +9173,7 @@
           "example": "100",
           "member": "int64",
           "name": "APIUsageNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9183,7 +9183,7 @@
           "example": "100",
           "member": "int64",
           "name": "AlarmSMSNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

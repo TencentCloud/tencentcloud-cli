@@ -4327,7 +4327,7 @@
         },
         {
           "disabled": false,
-          "document": "公网ip",
+          "document": "公网IP",
           "example": "139.155.142.*",
           "member": "string",
           "name": "PublicIp",
@@ -4338,7 +4338,7 @@
         },
         {
           "disabled": false,
-          "document": "私网ip",
+          "document": "私网IP",
           "example": "172.16.0.9",
           "member": "string",
           "name": "PrivateIp",
@@ -4448,7 +4448,7 @@
         },
         {
           "disabled": false,
-          "document": "uuid",
+          "document": "主机安全Agent UUID",
           "example": "82721b6e-3126-4660-ac4e-c281dba1b23f",
           "member": "string",
           "name": "InstanceUuid",
@@ -4459,7 +4459,7 @@
         },
         {
           "disabled": false,
-          "document": "qquid",
+          "document": "云主机 CVM UUID",
           "example": "82721b6e-3126-4660-ac4e-c281dba1b23f",
           "member": "string",
           "name": "InstanceQUuid",
@@ -9697,7 +9697,7 @@
         },
         {
           "disabled": false,
-          "document": "memberiD",
+          "document": "memberId信息",
           "example": "mem-c1g2e3dxa5xv96",
           "member": "string",
           "name": "MemberId",
@@ -10272,7 +10272,7 @@
         },
         {
           "disabled": false,
-          "document": "公网ip",
+          "document": "公网IP",
           "example": "139.155.*.171",
           "member": "string",
           "name": "PublicIp",
@@ -10522,7 +10522,7 @@
         },
         {
           "disabled": false,
-          "document": "memberid信息",
+          "document": "MemberId信息",
           "example": "mem-1g04ca5wfqafca",
           "member": "string",
           "name": "MemberId",
@@ -13395,7 +13395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID，无业务意义\n仅作为唯一键",
+          "document": "主键ID，无业务意义仅作为唯一键",
           "example": "601606",
           "member": "int64",
           "name": "ID",
@@ -13465,7 +13465,7 @@
         },
         {
           "disabled": false,
-          "document": "所属主账号memberid",
+          "document": "所属主账号memberId信息",
           "example": "mem-abx0gds1",
           "member": "string",
           "name": "OwnerMemberID",

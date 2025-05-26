@@ -1994,6 +1994,33 @@
           "name": "UserMultiZoneInfoArr",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否存算分离",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSSC",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "CU数",
+          "example": "64",
+          "member": "int64",
+          "name": "SSCCU",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "缓存盘大小",
+          "example": "200",
+          "member": "string",
+          "name": "CacheDiskSize",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

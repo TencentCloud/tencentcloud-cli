@@ -3156,6 +3156,15 @@
           "name": "NetStatus",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回webvitals数据",
+          "example": "true",
+          "member": "bool",
+          "name": "WebVitals",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

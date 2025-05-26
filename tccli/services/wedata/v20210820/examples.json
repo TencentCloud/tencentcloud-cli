@@ -1162,6 +1162,14 @@
         "title": "实时任务同步速度趋势"
       }
     ],
+    "DescribeRealViewSchemaPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRealViewSchemaPage\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2347806860396163072\",\n    \"PageNumber\": 1,\n    \"PageSize\": 300,\n    \"DatabaseName\": \"di_dev\",\n    \"DatasourceId\": \"65408\",\n    \"DataSourceType\": \"SQLSERVER\",\n    \"Keyword\": \"\",\n    \"Env\": \"development\",\n    \"Model\": \"STANDARD\",\n    \"DevDatasourceId\": \"65407\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"SchemaName\": \"abc\",\n                \"OriginDatabaseName\": \"abc\"\n            }\n        ],\n        \"PageNumber\": 1,\n        \"PageSize\": 1,\n        \"TotalCount\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeRealViewSchemaPage"
+      }
+    ],
     "DescribeReportTaskDetail": [
       {
         "document": "成功调用",

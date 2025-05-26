@@ -1635,7 +1635,7 @@
         },
         {
           "disabled": false,
-          "document": "自提人身份证号",
+          "document": "自提人证件号码",
           "example": "100000000000000005",
           "member": "string",
           "name": "PickUpStuffIDCard",
@@ -1652,6 +1652,17 @@
           "name": "PickUpTime",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件类型，非必传，默认为IDENTITY_CARD。\n对应关系如下：IDENTITY_CARD: 身份证,\nHONG_KONG_AND_MACAO_PASS: 港澳通行证',\nPASSPORT: 护照,\nDRIVING_LICENSE: 驾照,\nOTHER: 其他",
+          "example": "IDENTITY_CARD",
+          "member": "string",
+          "name": "IDCardType",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2649,6 +2660,15 @@
           "example": "rackPowerOn",
           "member": "string",
           "name": "DstService",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机架名称关键字实现模糊搜索",
+          "example": "R",
+          "member": "string",
+          "name": "RackName",
           "required": false,
           "type": "string"
         }
@@ -5196,7 +5216,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号",
+          "document": "证件号码",
           "example": "100000000000000005",
           "member": "string",
           "name": "StuffIDCard",
@@ -5224,6 +5244,17 @@
           "name": "OperationTime",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件类型，非必传，默认为IDENTITY_CARD。\n对应关系如下：IDENTITY_CARD: 身份证,\nHONG_KONG_AND_MACAO_PASS: 港澳通行证',\nPASSPORT: 护照,\nDRIVING_LICENSE: 驾照,\nOTHER: 其他",
+          "example": "IDENTITY_CARD",
+          "member": "string",
+          "name": "IDCardType",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

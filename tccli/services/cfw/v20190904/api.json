@@ -1242,7 +1242,7 @@
         {
           "disabled": false,
           "document": "需要添加的vpc内网间规则列表",
-          "example": "[{\"Description\":\"阻断\",\"DestContent\":\"gping.com\",\"DestType\":\"domain\",\"Direction\":0,\"EdgeId\":\"ALL\",\"Enable\":\"true\",\"FwGroupId\":\"全局规则\",\"Id\":0,\"InternalUuid\":0,\"IpVersion\":1,\"LogId\":\"\",\"OrderIndex\":1493,\"ParamTemplateId\":\"\",\"Port\":\"-1/-1\",\"Protocol\":\"HTTPS\",\"RuleAction\":\"drop\",\"RuleSource\":0,\"Scope\":\"全局规则\",\"ServiceTemplateId\":\"\",\"SourceContent\":\"2400:ee00:101c:5100::/56\",\"SourceType\":\"net\",\"TargetContent\":\"gping.com\",\"TargetType\":\"domain\",\"Uid\":\"\",\"Uuid\":0}]",
+          "example": "[{\"Description\":\"阻断\",\"DestContent\":\"gping.com\",\"DestType\":\"domain\",\"EdgeId\":\"ALL\",\"Enable\":\"true\",\"FwGroupId\":\"全局规则\",\"Port\":\"-1/-1\",\"Protocol\":\"HTTPS\",\"RuleAction\":\"drop\",\"Scope\":\"全局规则\",\"SourceContent\":\"\",\"SourceType\":\"net\"}]",
           "member": "VpcRuleItem",
           "name": "Rules",
           "required": true,
@@ -5879,7 +5879,7 @@
         {
           "disabled": false,
           "document": "规则列表",
-          "example": "[{\"AclTags\":\"名称\",\"BetaList\":[{\"TaskId\":\"9001\",\"TaskName\":\"autotest\",\"LastTime\":\"1999-01-01 00:00:01\"}],\"Cidr\":\"192.16.1.0/24\",\"Detail\":\"企业安全组描述\",\"InstanceName\":\"企业安全组实例\",\"IsDelay\":0,\"IsNew\":1,\"OrderIndex\":1,\"ParameterName\":\"参数模版\",\"Port\":\"-1/-1\",\"PrivateIp\":\"1.1.1.1\",\"Protocol\":\"ANY\",\"ProtocolPortName\":\"模版\",\"PublicIp\":\"1.1.1.1\",\"Region\":\"AllRegion\",\"RuleUuid\":61257,\"ServiceTemplateId\":\"ip-didd011\",\"SouCidr\":\"192.168.1.0/24\",\"SouInstanceName\":\"模版名称\",\"SouParameterName\":\"模版名称\",\"SouPrivateIp\":\"1.1.1.1\",\"SouPublicIp\":\"1.1.1.1\",\"SourceId\":\"ipmg-17hphuxg\",\"SourceType\":7,\"Status\":1,\"Strategy\":1,\"TargetId\":\"cfwrg-b803523898534bcbd9b7d2c7d92c175e1712804418\",\"TargetType\":100,\"Uuid\":\"cfw_newsg_1300448058_0.0.0.0/0_17228848067531\",\"Id\":61257}]",
+          "example": "[{\"AclTags\":\"名称\",\"Cidr\":\"192.16.1.0/24\",\"Detail\":\"企业安全组描述\",\"InstanceName\":\"企业安全组实例\",\"IsDelay\":0,\"IsNew\":1,\"OrderIndex\":1,\"Port\":\"-1/-1\",\"PrivateIp\":\"1.1.1.1\",\"Protocol\":\"ANY\"}]",
           "member": "EnterpriseSecurityGroupRuleRuleInfo",
           "name": "Data",
           "output_required": true,
@@ -7371,7 +7371,7 @@
         {
           "disabled": false,
           "document": "搜索值",
-          "example": "TCP模版",
+          "example": "TCP模板",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -7432,7 +7432,7 @@
         {
           "disabled": false,
           "document": "安全组规则列表数据",
-          "example": "[{\"OrderIndex\":1,\"SourceId\":\"ipm-dyodhpby\",\"SourceType\":7,\"TargetId\":\"subnet-fmo10koi\",\"TargetType\":2,\"Protocol\":\"ANY\",\"Port\":\"-1/-1\",\"Strategy\":2,\"Detail\":\"andy的规则\",\"BothWay\":0,\"Id\":1,\"Status\":1,\"IsNew\":1,\"VpcId\":\"vpc-8xuf8kf5\",\"SubnetId\":\"subnet-fmo10koi\",\"InstanceName\":\"InstanceName\",\"PublicIp\":\"1.1.1.1\",\"PrivateIp\":\"9.0.0.1\",\"Cidr\":\"9.0.0.1/32\",\"ServiceTemplateId\":\"ppmg-jz17vpis\",\"Direction\":0,\"ProtocolPortType\":1,\"Uuid\":\"cfw_sg_appid_0.0.0.0/0_17295140975391\",\"Region\":\"ap-guangzhou\",\"AssetGroupNameIn\":\"/全部资产/\",\"AssetGroupNameOut\":\"/全部资产/\",\"ParameterName\":\"自动化勿删IP组模板\",\"ProtocolPortName\":\"端口协议类型参数模板名称\",\"BothWayInfo\":[{\"OrderIndex\":1,\"SourceId\":\"1.1.1.1\",\"SourceType\":7,\"TargetId\":\"1.1.1.1\",\"TargetType\":2,\"Protocol\":\"ANY\",\"Port\":\"-1/-1\",\"Strategy\":2,\"Detail\":\"andy的规则\",\"Status\":1,\"IsNew\":1,\"BothWay\":0,\"VpcId\":\"vpc-iedpwx01d\",\"SubnetId\":\"subnet-ed2witec\",\"InstanceName\":\"andy的cvm\",\"PublicIp\":\"1.1.1.1\",\"PrivateIp\":\"1.1.1.1\",\"Cidr\":\"10.72.1.0/24\",\"ServiceTemplateId\":\"pp-peodxd0e\",\"Direction\":1,\"Region\":\"ap-guangzhou\",\"ProtocolPortType\":1}]}]",
+          "example": "[{\"OrderIndex\":1,\"SourceId\":\"ipm-dyodhpby\",\"SourceType\":7,\"TargetId\":\"subnet-fmo10koi\",\"TargetType\":2,\"Protocol\":\"ANY\",\"Port\":\"-1/-1\",\"Strategy\":2,\"Detail\":\"andy的规则\",\"BothWay\":0,\"Id\":1,\"Status\":1,\"IsNew\":1}]",
           "member": "SecurityGroupListData",
           "name": "Data",
           "output_required": true,
@@ -8585,7 +8585,7 @@
         },
         {
           "disabled": false,
-          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "源规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
           "example": "0",
           "member": "int64",
           "name": "SourceType",
@@ -8605,7 +8605,7 @@
         },
         {
           "disabled": false,
-          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模版(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
+          "document": "目的规则类型 \n取值范围 0/1/2/3/4/5/6/7/8/9/100\n0表示ip(net),\n1表示VPC实例(instance)\n2表示子网实例(instance)\n3表示CVM实例(instance)\n4表示CLB实例(instance)\n5表示ENI实例(instance)\n6表示数据库实例(instance)\n7表示模板(template)\n8表示标签(tag)\n9表示地域(region)\n100表示资产分组(resourcegroup)",
           "example": "0",
           "member": "int64",
           "name": "TargetType",
@@ -15666,7 +15666,7 @@
         {
           "disabled": false,
           "document": "端口协议组名称",
-          "example": "常用参数模版",
+          "example": "常用参数模板",
           "member": "string",
           "name": "ParamTemplateName",
           "output_required": false,

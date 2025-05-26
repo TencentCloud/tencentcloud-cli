@@ -48,6 +48,14 @@
         "title": "创建EMR集群实例"
       }
     ],
+    "CreateGroupsSTD": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGroupsSTD\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-o88f3whr\",\n    \"Groups\": [\n        {\n            \"GroupName\": \"group4\",\n            \"Description\": \"ceshi\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Item\": \"group4\",\n                \"Reason\": \"\",\n                \"Result\": true\n            }\n        ],\n        \"RequestId\": \"ceff5822-18bb-43d7-8c63-199597aa50de\"\n    }\n}",
+        "title": "增加用户组"
+      }
+    ],
     "CreateInstance": [
       {
         "document": "",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoScaleStrategy\n<公共请求参数>\n\n{\n    \"GroupId\": 6,\n    \"InstanceId\": \"emr-5urm\",\n    \"StrategyId\": 413,\n    \"StrategyType\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"586a9cb9-adcb-4f74-9e6f-01482ac4cffe\"\n    }\n}",
         "title": "删除弹性扩缩容规则示例"
+      }
+    ],
+    "DeleteGroupsSTD": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroupsSTD\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-o88f3whr\",\n    \"GroupNames\": [\n        \"group1\",\n        \"group2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Item\": \"group1\",\n                \"Reason\": \"\",\n                \"Result\": true\n            },\n            {\n                \"Item\": \"group2\",\n                \"Reason\": \"Group group2 not found or being processed\",\n                \"Result\": false\n            }\n        ],\n        \"RequestId\": \"24b928fe-29f4-4c15-8a4c-700eb86c713a\"\n    }\n}",
+        "title": "删除用户组"
       }
     ],
     "DeleteNodeResourceConfig": [
@@ -520,12 +536,28 @@
         "title": "serverless hbase修改实例名称"
       }
     ],
+    "ModifyUserGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Users\": [\n        \"user1\"\n    ],\n    \"UserGroup\": \"group4\",\n    \"Groups\": [\n        \"group4\"\n    ],\n    \"Remark\": \"modify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"43d2a958-6cdf-422b-903e-0bbf2aaa2619\"\n    }\n}",
+        "title": "修改用户的用户组"
+      }
+    ],
     "ModifyUserManagerPwd": [
       {
         "document": "test",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserManagerPwd\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-test\",\n    \"UserName\": \"emr-test\",\n    \"PassWord\": \"emr-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9b28a61-ad66-4b30-bbeb-9b1539a73ded\"\n    }\n}",
         "title": "test"
+      }
+    ],
+    "ModifyUsersOfGroupSTD": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUsersOfGroupSTD\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-o88f3whr\",\n    \"Group\": \"group3\",\n    \"Users\": [\n        \"user1\"\n    ],\n    \"Description\": \"modify\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"554a474b-c1dd-4627-9b80-42b4b9e95add\"\n    }\n}",
+        "title": "修改用户组内用户"
       }
     ],
     "ModifyYarnDeploy": [
