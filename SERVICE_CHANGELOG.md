@@ -1,10 +1,125 @@
-# Release 3.0.1206.1
+# Release 3.0.1207.1
 
-## 费用中心(billing) 版本：2018-07-09
+## 腾讯云CA(ca) 版本：2023-02-28
+
+### 第 3 次发布
+
+发布时间：2025-05-26 01:13:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeFileUploadUrl](http://document.tencentcloudapi.woa.com/document/product/1774/86891)
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 52 次发布
+
+发布时间：2025-05-26 01:28:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddRecordBatch](http://document.tencentcloudapi.woa.com/document/product/1427/56185#AddRecordBatch)
+
+	* <font color="#dd0000">**删除成员**：</font>Weight, Enabled, Remark
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 93 次发布
+
+发布时间：2025-05-26 01:31:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteGroupsSTD](http://document.tencentcloudapi.woa.com/document/product/589/86894)
+* [ModifyUserGroupsRemark](http://document.tencentcloudapi.woa.com/document/product/589/86893)
+* [ModifyUsersOfGroupSTD](http://document.tencentcloudapi.woa.com/document/product/589/86892)
+
+
+
+## 腾讯混元大模型(hunyuan) 版本：2023-09-01
+
+### 第 8 次发布
+
+发布时间：2025-05-26 01:37:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebSearchOptions](http://document.tencentcloudapi.woa.com/document/product/1744/85813#WebSearchOptions)
+
+	* 新增成员：EnableBriefMusicSearch
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 97 次发布
+
+发布时间：2025-05-26 01:49:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* RegisterTable
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Fields
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 81 次发布
+
+发布时间：2025-05-26 02:14:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TrainingTaskSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingTaskSetItem)
+
+	* 新增成员：AppId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
 
 ### 第 92 次发布
 
-发布时间：2025-05-23 01:11:39
+发布时间：2025-05-26 02:17:43
 
 本次发布包含了以下内容：
 
@@ -12,174 +127,9 @@
 
 修改数据结构：
 
-* [BudgetHistoryRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetHistoryRecords)
+* [RecognizeConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#RecognizeConfig)
 
-	* 新增成员：HasForecast, ForecastDiff, ForecastCost, ForecastProgress
-
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 61 次发布
-
-发布时间：2025-05-23 01:18:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfo)
-
-	* 新增成员：RIp, ComputeGroupId, CreateTime
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 116 次发布
-
-发布时间：2025-05-23 01:21:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56466)
-
-* [CreateConfigExtra](http://document.tencentcloudapi.woa.com/document/product/614/71166)
-
-* [ModifyAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56459)
-
-* [ModifyConfigExtra](http://document.tencentcloudapi.woa.com/document/product/614/71163)
-
-
-修改数据结构：
-
-* [WebCallback](http://document.tencentcloudapi.woa.com/document/product/614/56471#WebCallback)
-
-
-
-
-## Elasticsearch Service(es) 版本：2018-04-16
-
-### 第 85 次发布
-
-发布时间：2025-05-23 01:35:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [LogstashNodeInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#LogstashNodeInfo)
-
-	* 新增成员：Zone
-
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 73 次发布
-
-发布时间：2025-05-23 01:48:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BlueprintInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BlueprintInfo)
-
-	* 新增成员：SupportScanLogin
-
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 83 次发布
-
-发布时间：2025-05-23 01:49:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PushQualityData](http://document.tencentcloudapi.woa.com/document/product/267/20474#PushQualityData)
-
-	* 新增成员：GopSize
-
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 92 次发布
-
-发布时间：2025-05-23 01:53:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ImageAreaBoxInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageAreaBoxInfo)
-
-	* 新增成员：BoundingBox
-
-
-
-
-## 邮件推送(ses) 版本：2020-10-02
-
-### 第 29 次发布
-
-发布时间：2025-05-23 02:02:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateEmailIdentity](http://document.tencentcloudapi.woa.com/document/product/1288/51048)
-
-	* 新增入参：DKIMOption
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 214 次发布
-
-发布时间：2025-05-23 02:19:48
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DeleteSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/15809)
-
-	* 新增入参：BpaasApplicationId
-
-* [ReplaceSecurityGroupPolicies](http://document.tencentcloudapi.woa.com/document/product/215/77253)
-
-	* 新增入参：BpaasApplicationId
+	* 新增成员：VadSilenceTime
 
 
 

@@ -77,6 +77,13 @@
       "output": "DeleteAutoScaleStrategyResponse",
       "status": "online"
     },
+    "DeleteGroupsSTD": {
+      "document": "批量删除用户组",
+      "input": "DeleteGroupsSTDRequest",
+      "name": "用户管理-批量删除用户组",
+      "output": "DeleteGroupsSTDResponse",
+      "status": "online"
+    },
     "DeleteNodeResourceConfig": {
       "document": "删除当前集群的节点规格配置",
       "input": "DeleteNodeResourceConfigRequest",
@@ -546,11 +553,25 @@
       "output": "ModifyUserGroupResponse",
       "status": "online"
     },
+    "ModifyUserGroupsRemark": {
+      "document": "批量修改用户组备注",
+      "input": "ModifyUserGroupsRemarkRequest",
+      "name": "用户管理-批量修改用户组备注",
+      "output": "ModifyUserGroupsRemarkResponse",
+      "status": "online"
+    },
     "ModifyUserManagerPwd": {
       "document": "修改用户密码（用户管理）",
       "input": "ModifyUserManagerPwdRequest",
       "name": "修改用户密码（用户管理）",
       "output": "ModifyUserManagerPwdResponse",
+      "status": "online"
+    },
+    "ModifyUsersOfGroupSTD": {
+      "document": "变更用户组用户信息",
+      "input": "ModifyUsersOfGroupSTDRequest",
+      "name": "用户管理-变更用户组用户信息",
+      "output": "ModifyUsersOfGroupSTDResponse",
       "status": "online"
     },
     "ModifyYarnDeploy": {
@@ -897,7 +918,7 @@
         {
           "disabled": false,
           "document": "集群字符串ID",
-          "example": "emr-xxx",
+          "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -906,7 +927,7 @@
         {
           "disabled": false,
           "document": "用户信息列表",
-          "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
+          "example": "无",
           "member": "UserInfoForUserManager",
           "name": "UserManagerUserList",
           "required": true,
@@ -921,7 +942,7 @@
         {
           "disabled": false,
           "document": "添加成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"123\"]",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "SuccessUserList",
           "output_required": true,
@@ -931,7 +952,7 @@
         {
           "disabled": false,
           "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"123\"]",
+          "example": "无",
           "member": "string",
           "name": "FailedUserList",
           "output_required": true,
@@ -4257,7 +4278,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "emr-mzkssfla",
+          "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5063,6 +5084,52 @@
       ],
       "type": "object"
     },
+    "DeleteGroupsSTDRequest": {
+      "document": "DeleteGroupsSTD请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "emr-o88f3whr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称数组",
+          "example": "[\"group1\",\"group2\"]",
+          "member": "string",
+          "name": "GroupNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGroupsSTDResponse": {
+      "document": "DeleteGroupsSTD返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除返回结果",
+          "example": "无",
+          "member": "ResultItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNodeResourceConfigRequest": {
       "document": "DeleteNodeResourceConfig请求参数结构体",
       "members": [
@@ -5132,7 +5199,7 @@
         {
           "disabled": false,
           "document": "集群实例ID",
-          "example": "emr-xxx",
+          "example": "emr-o88f3whr",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5141,7 +5208,7 @@
         {
           "disabled": false,
           "document": "集群用户名列表",
-          "example": "[\"emr\", \"es\"]",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "UserNameList",
           "required": false,
@@ -14206,7 +14273,7 @@
         {
           "disabled": false,
           "document": "用户信息列表",
-          "example": "[\"a1\"]",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "Users",
           "required": true,
@@ -14214,8 +14281,8 @@
         },
         {
           "disabled": false,
-          "document": "用户组",
-          "example": "odinlli1",
+          "document": "用户主组，cvm集群为必填参数，tke集群选填",
+          "example": "group4",
           "member": "string",
           "name": "UserGroup",
           "required": false,
@@ -14224,7 +14291,7 @@
         {
           "disabled": false,
           "document": "用户副组",
-          "example": "[\"jianpan-test\"]",
+          "example": "[\"group4\"]",
           "member": "string",
           "name": "Groups",
           "required": false,
@@ -14233,7 +14300,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "系统用户",
+          "example": "modify",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -14244,6 +14311,51 @@
     },
     "ModifyUserGroupResponse": {
       "document": "ModifyUserGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupsRemarkRequest": {
+      "document": "ModifyUserGroupsRemark请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "emr-test",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "GroupNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户组描述",
+          "example": "系统组",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupsRemarkResponse": {
+      "document": "ModifyUserGroupsRemark返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14290,6 +14402,79 @@
     "ModifyUserManagerPwdResponse": {
       "document": "ModifyUserManagerPwd返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUsersOfGroupSTDRequest": {
+      "document": "ModifyUsersOfGroupSTD请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "emr-o88f3whr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组名",
+          "example": "group3",
+          "member": "string",
+          "name": "Group",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户列表",
+          "example": "[\"user1\"]",
+          "member": "string",
+          "name": "Users",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户组描述",
+          "example": "modify",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "枚举类, ADD, DELETE, SYNC\n\n\n枚举类说明:\n- ADD: 新增的批量用户, 多次新增相同的用户不会报错\n- DELETE: 从用户组里删除的批量用户, 删除不存在的用户不会报错\n- SYNC: 用于同步整个用户组, 当列表为空时代表清空整个用户组\n默认为SYNC\n",
+          "example": "SYNC",
+          "member": "string",
+          "name": "OperateAction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUsersOfGroupSTDResponse": {
+      "document": "ModifyUsersOfGroupSTD返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否修改成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Data",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

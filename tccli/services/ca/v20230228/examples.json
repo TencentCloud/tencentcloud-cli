@@ -14,6 +14,14 @@
         "title": "CreateVerifyReport"
       }
     ],
+    "DescribeFileUploadUrl": [
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: ca.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUploadUrl\n<公共请求参数>\n\n{\n    \"Types\": [\n        \"pdf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Keys\": [\n            \"2300001383-11f7b07e-2b34-4bae-ae94-318ba1f7c2ff0.pdf\"\n        ],\n        \"RequestId\": \"11f7b07e-2b34-4bae-ae94-318ba1f7c2ff\",\n        \"StatusCode\": 1,\n        \"Urls\": [\n            \"https://approvals-1312375811.cos.ap-shanghai.myqcloud.com/2300001383-11f7b07e-2b34-4bae-ae94-318ba1f7c2ff0.pdf?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDJRIzPZS3NQChwub1A2dx0mHVR6UcT2KM%26q-sign-time%3D1681991977%3B1681992337%26q-key-time%3D1681991977%3B1681992337%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D780532a0b933a66f6700d9b79617972fb6c8d987\"\n        ]\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeVerifyReport": [
       {
         "document": "验签报告查询",

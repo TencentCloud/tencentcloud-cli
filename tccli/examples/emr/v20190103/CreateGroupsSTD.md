@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli emr CreateGroupsSTD --cli-unfold-argument  \
-    --InstanceId emr-mzkssfla \
-    --Groups.0.GroupName testgroup1
+    --InstanceId emr-o88f3whr \
+    --Groups.0.GroupName group4 \
+    --Groups.0.Description ceshi
 ```
 
 Output: 
@@ -16,12 +17,12 @@ Output:
     "Response": {
         "Data": [
             {
-                "Item": "testgroup1",
+                "Item": "group4",
                 "Reason": "",
                 "Result": true
             }
         ],
-        "RequestId": "ecb47f14-b4a5-4a7b-bf3e-0664606778af"
+        "RequestId": "ceff5822-18bb-43d7-8c63-199597aa50de"
     }
 }
 ```

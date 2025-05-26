@@ -980,13 +980,6 @@
       "output": "ModifyRemoteURLsResponse",
       "status": "online"
     },
-    "RegisterTable": {
-      "document": "废弃接口\n\n预注册表结构",
-      "input": "RegisterTableRequest",
-      "name": "预注册表结构",
-      "output": "RegisterTableResponse",
-      "status": "deprecated"
-    },
     "ResumeGrafanaInstance": {
       "document": "本接口（ResumeGrafanaInstance）用于 Grafana 包年包月实例的停服续费，调用后按原版本续费一个月。仍在运行中的实例无法使用该接口进行续费。",
       "input": "ResumeGrafanaInstanceRequest",
@@ -14564,32 +14557,6 @@
       ],
       "type": "object"
     },
-    "Fields": {
-      "document": "表结构字段集合",
-      "members": [
-        {
-          "disabled": false,
-          "document": "字段名",
-          "example": "\"abc\"",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "字段类型，子类型由@符与主类型分隔，维度类型为tag",
-          "example": "[\"histogram@count\",\"histogram@+Inf\",\"histogram@1000_0000\"]",
-          "member": "string",
-          "name": "Values",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
-    },
     "Filter": {
       "document": "查询过滤参数",
       "members": [
@@ -21212,79 +21179,6 @@
         }
       ],
       "usage": "out"
-    },
-    "RegisterTableRequest": {
-      "document": "RegisterTable请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "命名空间",
-          "example": "\"abc\"",
-          "member": "string",
-          "name": "Namespace",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "视图",
-          "example": "\"abc\"",
-          "member": "string",
-          "name": "Measurement",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "注册字段。Name为字段名，值为字段类型，子类型由@符与主类型分隔，维度类型为tag",
-          "example": "无",
-          "member": "Fields",
-          "name": "Fields",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "默认为mc，当trace业务注册时，填trace",
-          "example": "\"mc\"",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "排序键,clickhouse表索引",
-          "example": "\"abc\"",
-          "member": "string",
-          "name": "OrderKey",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "RegisterTableResponse": {
-      "document": "RegisterTable返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "消息返回体",
-          "example": "\"Success.\"",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "RemoteWrite": {
       "document": "多写配置",

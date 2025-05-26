@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli emr ModifyUserGroup --cli-unfold-argument  \
-    --Users a1 \
-    --UserGroup odinlli1 \
-    --Groups jianpan-test
+    --Users user1 \
+    --UserGroup group4 \
+    --Groups group4 \
+    --Remark modify
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ed88598-13df-461f-9419-f9ef20926e99"
+        "RequestId": "43d2a958-6cdf-422b-903e-0bbf2aaa2619"
     }
 }
 ```

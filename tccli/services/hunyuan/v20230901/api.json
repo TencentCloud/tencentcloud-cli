@@ -4395,6 +4395,15 @@
           "name": "UserLocation",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启音乐问答精简正文长度",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBriefMusicSearch",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
