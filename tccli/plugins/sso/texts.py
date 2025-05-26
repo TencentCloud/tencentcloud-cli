@@ -15,6 +15,8 @@ texts = {
         "logout_success": "登出成功, 密钥凭证已被删除: %s",
         "no_account": "未找到成员账号, 请确认是否同步过 CAM 角色",
         "no_role": "当前成员账号不存在授权角色",
+        "specified_uin_not_found": "未找到指定的 uin，uin=%s，all=[%s]",
+        "specified_role_not_found": "未找到指定的 role, role=%s, all=[%s]",
     },
     "en-US": {
         "invalid_auth_url": "The entered url is invalid: %s",
@@ -27,6 +29,8 @@ texts = {
         "logout_success": "Logout succeed, credential has been removed: %s",
         "no_account": "no account found, please confirm the account is synchronized",
         "no_role": "no role found in current account",
+        "specified_uin_not_found": "Specified uin not found, uin=%s, all=[%s]",
+        "specified_role_not_found": "Specified role not found, role=%s, all=[%s]",
     }
 }
 

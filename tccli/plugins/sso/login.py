@@ -65,9 +65,17 @@ def login(args, profile, language):
         print_message(_("no_account"))
         return
 
-    idx = terminal.select_from_items(
-        _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
-    account = accounts[idx]
+    specified_uin = args.get("uin", "")
+    if specified_uin:
+        account = next((x for x in accounts if str(x["Uin"]) == specified_uin), None)
+        if not account:
+            print_message(_("specified_uin_not_found") % (specified_uin, ",".join(str(x["Uin"]) for x in accounts)))
+            return
+    else:
+        idx = terminal.select_from_items(
+            _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
+        account = accounts[idx]
+
     print_message("uin: %s" % account["Uin"])
     print_message("username: %s" % account["Name"])
 
@@ -76,9 +84,18 @@ def login(args, profile, language):
         print_message(_("no_role"))
         return
 
-    idx = terminal.select_from_items(
-        _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
-    role = roles[idx]
+    specified_role = args.get("rolename", "")
+    if specified_role:
+        role = next((x for x in roles if x["RoleConfigurationName"] == specified_role), None)
+        if not role:
+            print_message(
+                _("specified_role_not_found") % (specified_role, ",".join(x["RoleConfigurationName"] for x in roles)))
+            return
+    else:
+        idx = terminal.select_from_items(
+            _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
+        role = roles[idx]
+
     print_message("role: %s" % role["RoleConfigurationName"])
 
     saml_resp = sso.gen_saml_response(
