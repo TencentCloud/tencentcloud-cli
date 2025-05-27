@@ -442,7 +442,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "-",
+          "example": "cluster",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -491,7 +491,7 @@
         },
         {
           "disabled": false,
-          "document": "集群状态, 1 未初始化,，3 初始化中，2 运行中",
+          "document": "集群状态, 1 未初始化,3 初始化中，2 运行中",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -572,7 +572,7 @@
         {
           "disabled": false,
           "document": "网络",
-          "example": "[]",
+          "example": "ccn-a",
           "member": "CCN",
           "name": "CCNs",
           "output_required": true,
@@ -602,7 +602,7 @@
         {
           "disabled": false,
           "document": "集群绑定的标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "tag",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -612,7 +612,7 @@
         {
           "disabled": false,
           "document": "集群隔离时间; 没隔离时间，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "IsolatedTime",
           "output_required": true,
@@ -622,7 +622,7 @@
         {
           "disabled": false,
           "document": "集群过期时间; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -632,7 +632,7 @@
         {
           "disabled": false,
           "document": "距离过期还有多少秒; 没过期概念，则为 -\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "2024-12-12 10:00:00",
           "member": "string",
           "name": "SecondsUntilExpiry",
           "output_required": true,
@@ -702,7 +702,7 @@
         {
           "disabled": false,
           "document": "集群的版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "2019",
           "member": "ClusterVersion",
           "name": "Version",
           "output_required": true,
@@ -722,7 +722,7 @@
         {
           "disabled": false,
           "document": "集群的默认日志采集配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "log",
           "member": "string",
           "name": "DefaultLogCollectConf",
           "output_required": true,
@@ -742,7 +742,7 @@
         {
           "disabled": false,
           "document": "空间信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "space-aa",
           "member": "WorkSpaceClusterItem",
           "name": "Correlations",
           "output_required": true,
@@ -882,7 +882,7 @@
         {
           "disabled": false,
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "BillingResourceMode",
           "output_required": false,
@@ -948,6 +948,16 @@
           "output_required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "setats集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Setats",
+          "name": "Setats",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3453,7 +3463,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个作业ID查询。作业ID形如：cql-11112222，每次请求的作业上限为100。参数不支持同时指定JobIds和Filters。",
-          "example": "[]",
+          "example": "[\"cql-123\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -3503,6 +3513,15 @@
           "name": "ExtraResult",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询引用connector",
+          "example": "setats",
+          "member": "string",
+          "name": "ConnectorOptions",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3523,7 +3542,7 @@
         {
           "disabled": false,
           "document": "作业列表",
-          "example": "[]",
+          "example": "[{}]",
           "member": "JobV1",
           "name": "JobSet",
           "output_required": true,
@@ -6732,6 +6751,78 @@
       ],
       "usage": "out"
     },
+    "ResourceRefLatest": {
+      "document": "资源引用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "resource-123",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "space-g7pfiemf",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c.conf",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ResultColumn": {
       "document": "Sql Gateway返回Column类型",
       "members": [
@@ -7308,6 +7399,222 @@
           "name": "Type",
           "output_required": true,
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Setats": {
+      "document": "setats类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "setats serialId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "setats-dx1",
+          "member": "string",
+          "name": "SetatsSerialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1  // 停止\n2  // 运行中\n3  // 初始化中\n4  // 扩容中\n5  // Warehoouse未配置\n6  // Warehoouse配置中\n7  // 重启中\n-2 // 已删除(集群被销毁时更新为此状态)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "setats warehouse\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"\"}",
+          "member": "Warehouse",
+          "name": "Warehouse",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "setats master 机器规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"\"}",
+          "member": "SetatsCvmInfo",
+          "name": "MasterInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "setats worker规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"\"}",
+          "member": "SetatsCvmInfo",
+          "name": "WorkerInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"\"]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-11-11 11:11:11",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间 秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "SecondsUntilExpiry",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-11-11 11:11:11",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "manager url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1:6072",
+          "member": "string",
+          "name": "ManagerUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-11-11 11:11:11",
+          "member": "string",
+          "name": "IsolatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SetatsCvmInfo": {
+      "document": "setats 机器规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "setats机器cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "setats机器内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32",
+          "member": "float",
+          "name": "Mem",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "setats worker 并行度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DefaultParallelism",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "setats 机器磁盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SetatsDisk",
+          "name": "Disk",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SetatsDisk": {
+      "document": "setats disk",
+      "members": [
+        {
+          "disabled": false,
+          "document": "磁盘类型\nCLOUD_BSSD\nCLOUD_SSD\nCLOUD_HSSD\nCLOUD_PREMIUM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "160",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -8141,6 +8448,111 @@
         }
       ],
       "type": "object"
+    },
+    "Warehouse": {
+      "document": "Setats Warehouse结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "location\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "catalogtype\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hadoop",
+          "member": "string",
+          "name": "CatalogType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uri",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "warehouse url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hdfs://HDFS1018835/usr/setats",
+          "member": "string",
+          "name": "WarehouseUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "认证方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kerberos",
+          "member": "string",
+          "name": "Authentication",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceRefLatest",
+          "name": "ResourceRefs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hive warehouse uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "thrift://172.28.22.40:7004",
+          "member": "string",
+          "name": "HiveUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"\"}",
+          "member": "Property",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WorkSpaceClusterItem": {
       "document": "空间和集群绑定关系",

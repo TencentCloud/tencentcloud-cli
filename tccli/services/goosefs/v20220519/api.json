@@ -1657,7 +1657,7 @@
         {
           "disabled": false,
           "document": "Fileset名称",
-          "example": "test123",
+          "example": "myfset",
           "member": "string",
           "name": "FsetName",
           "output_required": true,
@@ -1745,7 +1745,7 @@
         {
           "disabled": false,
           "document": "Fileset审计",
-          "example": "true/false",
+          "example": "enable/disable",
           "member": "string",
           "name": "AuditState",
           "output_required": false,
@@ -1756,7 +1756,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2025-04-08T19:38:54+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": false,
@@ -1767,7 +1767,7 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "无",
+          "example": "2025-04-29T15:20:23+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
           "output_required": false,

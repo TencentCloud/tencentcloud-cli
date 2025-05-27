@@ -1564,6 +1564,60 @@
           "name": "DomainId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管账号维度。1-集群，2-命名空间，3-工作负载",
+          "example": "1",
+          "member": "uint64",
+          "name": "ManageDimension",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管账号id",
+          "example": "1",
+          "member": "int64",
+          "name": "ManageAccountId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管账号名称",
+          "example": "root",
+          "member": "string",
+          "name": "ManageAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管账号凭证",
+          "example": "test-kubeconfig",
+          "member": "string",
+          "name": "ManageKubeconfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管的namespace",
+          "example": "nameSpace0",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管的workload",
+          "example": "workload0",
+          "member": "string",
+          "name": "Workload",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2810,6 +2864,15 @@
           "example": "0",
           "member": "uint64",
           "name": "Trial",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否共享clb，0：不共享，1：共享",
+          "example": "0",
+          "member": "uint64",
+          "name": "ShareClb",
           "required": false,
           "type": "int"
         }
@@ -5561,6 +5624,66 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管维度。1-集群，2-命名空间，3-工作负载",
+          "example": "1",
+          "member": "uint64",
+          "name": "ManageDimension",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群托管账号id\t",
+          "example": "100",
+          "member": "uint64",
+          "name": "ManageAccountId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群命名空间\t",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群工作负载\t",
+          "example": "workload",
+          "member": "string",
+          "name": "Workload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群pod已同步数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "SyncPodCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群pod总数量\t",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalPodCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5615,6 +5738,26 @@
           "member": "bool",
           "name": "BoundPrivateKey",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否托管凭证, true-托管，false-未托管",
+          "example": "true",
+          "member": "bool",
+          "name": "BoundKubeconfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为k8s资产管理账号\t",
+          "example": "true",
+          "member": "bool",
+          "name": "IsK8SManageAccount",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -7924,6 +8067,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "堡垒机实例对应的零信任实例id",
+          "example": "ioa-bh-1-833ae717984772235e780aa",
+          "member": "string",
+          "name": "IOAResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8544,6 +8697,16 @@
           "example": "adef2345defdadaefdc1",
           "member": "string",
           "name": "SignValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型",
+          "example": "TKE",
+          "member": "string",
+          "name": "DeviceKind",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9910,6 +10073,46 @@
           "name": "ReplayType",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话资产类型",
+          "example": "Linux",
+          "member": "string",
+          "name": "DeviceKind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群命名空间",
+          "example": "namespace1",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群工作负载",
+          "example": "workload1",
+          "member": "string",
+          "name": "Workload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "K8S集群容器名称",
+          "example": "pod0",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

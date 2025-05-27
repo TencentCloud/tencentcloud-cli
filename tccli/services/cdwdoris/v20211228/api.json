@@ -2014,13 +2014,22 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "缓存盘大小",
           "example": "200",
           "member": "string",
           "name": "CacheDiskSize",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存盘大小",
+          "example": "200",
+          "member": "int64",
+          "name": "CacheDataDiskSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

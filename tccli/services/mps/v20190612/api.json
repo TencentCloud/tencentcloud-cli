@@ -15260,6 +15260,15 @@
           "name": "EndTime",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对端客户端或者服务端的IP地址",
+          "example": "101.101.101.101",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15453,6 +15462,15 @@
           "name": "Period",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对端客户端或者服务端的IP地址",
+          "example": "101.101.101.101",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15543,6 +15561,15 @@
           "member": "string",
           "name": "EndTime",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对端客户端或者服务端的IP地址",
+          "example": "101.101.101.101",
+          "member": "string",
+          "name": "RemoteIp",
+          "required": false,
           "type": "string"
         }
       ],

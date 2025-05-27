@@ -5700,14 +5700,14 @@
         },
         {
           "disabled": false,
-          "document": "0: 非u2f硬件token 1: u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 非u2f硬件token 1: u2f硬件token",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5783,14 +5783,14 @@
         },
         {
           "disabled": false,
-          "document": "u2f硬件token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "u2f硬件token",
           "example": "0",
           "member": "uint64",
           "name": "U2FToken",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6675,7 +6675,7 @@
           "example": "123xxxxx",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6685,7 +6685,7 @@
           "example": "名称",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6695,7 +6695,7 @@
           "example": "123xxxxx",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6705,7 +6705,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6715,7 +6715,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6725,7 +6725,7 @@
           "example": "151xxxx1001",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6735,7 +6735,7 @@
           "example": "86",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6745,29 +6745,29 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-12-09 11:39:46",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称",
           "example": "昵称",
           "member": "string",
           "name": "NickName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

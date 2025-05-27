@@ -455,6 +455,13 @@
       "output": "DescribeClusterInfoResponse",
       "status": "online"
     },
+    "DescribeCpuExpandHistory": {
+      "document": "本接口（DescribeCpuExpandHistory）用于查询扩容历史。",
+      "input": "DescribeCpuExpandHistoryRequest",
+      "name": "查询扩容历史",
+      "output": "DescribeCpuExpandHistoryResponse",
+      "status": "online"
+    },
     "DescribeDBFeatures": {
       "document": "本接口（DescribeDBFeatures）用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。",
       "input": "DescribeDBFeaturesRequest",
@@ -1294,7 +1301,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该值已废弃",
           "example": "2021-09-09 16:40:30",
           "member": "datetime",
@@ -1760,6 +1767,92 @@
         }
       ],
       "usage": "in"
+    },
+    "AnalysisNodeInfo": {
+      "document": "分析引擎节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "libradbn-0",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点状态",
+          "example": "例如：\"applying\"、\"normal\"、\"deleting\"",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据加载状态",
+          "example": "例如：\"Created\"、\"Running\"、\"Paused\"、\"Stopped\"、\"Removed\"、\"Error\"",
+          "member": "string",
+          "name": "DataStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数，单位：核",
+          "example": "4",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存大小，单位: MB",
+          "example": "16",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小，单位：GB",
+          "example": "100",
+          "member": "uint64",
+          "name": "Storage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所在可用区",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据同步错误信息",
+          "example": "Paused by Command",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AnalyzeAuditLogsRequest": {
       "document": "AnalyzeAuditLogs请求参数结构体",
@@ -9535,6 +9628,107 @@
       ],
       "type": "object"
     },
+    "DescribeCpuExpandHistoryRequest": {
+      "document": "DescribeCpuExpandHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "cdb-dctw4edd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容策略，值包括：all，manual，auto",
+          "example": "manual",
+          "member": "string",
+          "name": "ExpandStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容状态，值包括：all，extend，reduce，extend_failed",
+          "example": "extend",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的开始时间。只能查看30天内的扩容历史",
+          "example": "2024-10-29 00:01:24",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询的结束时间。只能查看30天内的扩容历史",
+          "example": "2024-10-30 00:01:24",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页入参",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页入参",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCpuExpandHistoryResponse": {
+      "document": "DescribeCpuExpandHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "满足查询要求的扩容历史",
+          "example": "[{\"OperationType\":\"extend\",\"...\"}]",
+          "member": "HistoryJob",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数出参",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBFeaturesRequest": {
       "document": "DescribeDBFeatures请求参数结构体",
       "members": [
@@ -13691,6 +13885,92 @@
       ],
       "usage": "out"
     },
+    "HistoryJob": {
+      "document": "单条扩容历史记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型",
+          "example": " extend、 reduce 、extend_failed",
+          "member": "string",
+          "name": "OperationType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容类型",
+          "example": "manual、auto、oss",
+          "member": "string",
+          "name": "ExpandType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容开始时间",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容结束时间",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容前核数",
+          "example": "无",
+          "member": "int64",
+          "name": "OldCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容后核数",
+          "example": "无",
+          "member": "int64",
+          "name": "NewCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增减的cpu数",
+          "example": "无",
+          "member": "int64",
+          "name": "ExtendCPUNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "extend_failed操作上报",
+          "example": "无",
+          "member": "string",
+          "name": "Error",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ImportRecord": {
       "document": "导入任务记录",
       "members": [
@@ -14740,6 +15020,26 @@
           "name": "ClusterInfo",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析引擎节点列表",
+          "example": "无",
+          "member": "AnalysisNodeInfo",
+          "name": "AnalysisNodeInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备带宽，单位G。当DeviceClass不为空时此参数才有效。例：25-表示当前设备带宽为25G；10-表示当前设备带宽为10G。",
+          "example": "25",
+          "member": "uint64",
+          "name": "DeviceBandwidth",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -17961,6 +18261,34 @@
       ],
       "usage": "out"
     },
+    "PeriodStrategy": {
+      "document": "按周期扩容策略中的所选择的周期",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩容周期",
+          "example": "无",
+          "member": "TImeCycle",
+          "name": "TimeCycle",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间间隔",
+          "example": "无",
+          "member": "TimeInterval",
+          "name": "TimeInterval",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ProxyAddress": {
       "document": "数据库代理地址信息",
       "members": [
@@ -20454,6 +20782,24 @@
           "name": "AutoStrategy",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "按时间段扩容策略",
+          "example": "[{\"StartTime\": \"2024-10-17 10:00:00\",\"EndTime\": \"2024-10-17 12:00:00\"}]",
+          "member": "TimeIntervalStrategy",
+          "name": "TimeIntervalStrategy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "按周期扩容策略",
+          "example": "无",
+          "member": "PeriodStrategy",
+          "name": "PeriodStrategy",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -20874,6 +21220,89 @@
       ],
       "type": "object"
     },
+    "TImeCycle": {
+      "document": "扩容的周期",
+      "members": [
+        {
+          "disabled": false,
+          "document": "周一的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Monday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周二的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Tuesday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周三的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Wednesday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周四的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Thursday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周五的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Friday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周六的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Saturday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周日的扩容时间段",
+          "example": "10:00-12:00",
+          "member": "bool",
+          "name": "Sunday",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TablePrivilege": {
       "document": "数据库表权限",
       "members": [
@@ -21188,6 +21617,62 @@
         }
       ],
       "usage": "out"
+    },
+    "TimeInterval": {
+      "document": "时间段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "02:00:37",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "03:00:37",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TimeIntervalStrategy": {
+      "document": "按时间段扩容策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始扩容时间",
+          "example": "2024-10-17 10:00:00",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束扩容时间",
+          "example": "2024-10-17 12:00:00",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UpgradeCDBProxyVersionRequest": {
       "document": "UpgradeCDBProxyVersion请求参数结构体",

@@ -162,6 +162,14 @@
         "title": "获取统计数据"
       }
     ],
+    "ListAddressUnsubscribeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAddressUnsubscribeConfig\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressUnsubscribeConfigList\": [\n            {\n                \"Address\": \"test@example.com\",\n                \"Status\": 1,\n                \"UnsubscribeConfig\": \"1\"\n            }\n        ],\n        \"RequestId\": \"a4f27645-5c17-4f27-aa9f-746c2e2d821d\",\n        \"Total\": 1\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "ListBlackEmailAddress": [
       {
         "document": "",

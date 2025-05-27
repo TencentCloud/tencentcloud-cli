@@ -568,6 +568,14 @@
         "title": "查询云盘版实例信息"
       }
     ],
+    "DescribeCpuExpandHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCpuExpandHistory\n<公共请求参数>\n\n{\n    \"EndTime\": 1744006585,\n    \"InstanceId\": \"cdb-1yjb41f3\",\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"StartTime\": 1743920185\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"EndTime\": 1743696012,\n                \"Error\": \"\",\n                \"ExpandType\": \"auto\",\n                \"ExtendCPUNum\": 2,\n                \"NewCpu\": 6,\n                \"OldCpu\": 8,\n                \"OperationType\": \"reduce\",\n                \"StartTime\": 1743696005\n            }\n        ],\n        \"RequestId\": \"32ae2a3d-2c59-4115-942a-2620dd9d5d07\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "用于查询扩容历史"
+      }
+    ],
     "DescribeDBFeatures": [
       {
         "document": "查询实例特性，诸如内核小版本、是否开启审计等。",

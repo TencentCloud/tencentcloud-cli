@@ -7607,8 +7607,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回补录计划id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"0c2dd8d6-ab68-48cc-8264-85b70ff4b291\"",
+          "document": "返回补录计划名称_ok\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"patch_20250527184634_1417_ok“",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -9515,6 +9515,33 @@
           "name": "SelfWorkflowDependency",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务 TASK； 项目： PROJECT",
+          "example": "无",
+          "member": "string",
+          "name": "MakeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "无",
+          "member": "string",
+          "name": "StatusList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补录是否跳过事件检查",
+          "example": "无",
+          "member": "string",
+          "name": "MakeCheckEventType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9525,7 +9552,7 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "{\"Id\": \"0c2dd8d6-ab68-48cc-8264-85b70ff4b291\"}",
+          "example": "{\"Id\": \"patch_20250527184634_1417_ok\"}",
           "member": "CommonIdOpsDto",
           "name": "Data",
           "output_required": true,
@@ -25546,7 +25573,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "11",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -25555,7 +25582,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "123",
+          "example": "11",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -25573,7 +25600,7 @@
         {
           "disabled": false,
           "document": "任务详情id，用于读取切分的日志文件",
-          "example": "123",
+          "example": "11",
           "member": "string",
           "name": "DetailId",
           "required": false,
@@ -25632,6 +25659,24 @@
           "name": "FileType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询文件标志：0: 从执行机获取，1: 从cos获取，获取不到会再从执行机获取",
+          "example": "0",
+          "member": "int64",
+          "name": "QueryFileFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "透传字段，如果queryFileFlag为1，则ext回作为上一页的分页标识offset",
+          "example": "11",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27534,6 +27579,45 @@
           "example": "无",
           "member": "string",
           "name": "OfflineSyncTask",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExtensionInfoVO": {
+      "document": "key-value 键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "taskId",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "任务id",
+          "member": "string",
+          "name": "Description",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -30429,6 +30513,26 @@
           "name": "JobLogErrorTip",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行实例的扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtensionInfoVO",
+          "name": "ExecutionExtendedProps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如果queryFileFlag为1，则ext返回当前页数据的结束行信息，下一页把这个extInfo透传过来\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

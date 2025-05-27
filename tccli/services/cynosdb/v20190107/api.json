@@ -3020,6 +3020,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库网络任务",
+          "example": "无",
+          "member": "GdnTaskInfo",
+          "name": "GdnTaskInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6381,6 +6391,36 @@
           "name": "GdnRole",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级存储使用量，单位：G",
+          "example": "100",
+          "member": "int64",
+          "name": "UsedArchiveStorage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归档状态，枚举值<li>normal:正常</li><li>archiving:归档中</li><li>resuming:恢复中</li><li>archived :已归档</li>",
+          "example": "normal",
+          "member": "string",
+          "name": "ArchiveStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归档进度，百分比。",
+          "example": "64",
+          "member": "int64",
+          "name": "ArchiveProgress",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -12359,6 +12399,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoArchive",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13107,6 +13157,82 @@
         }
       ],
       "type": "object"
+    },
+    "GdnTaskInfo": {
+      "document": "全球数据库任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全球数据库唯一标识",
+          "example": "cynosdbmysql-gdn-byo4q0th",
+          "member": "string",
+          "name": "GdnId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全球数据库唯一别名",
+          "example": "gdnname",
+          "member": "string",
+          "name": "GdnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主集群ID",
+          "example": "cynosdbmysql-byo4q0t2",
+          "member": "string",
+          "name": "PrimaryClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主集群所在地域",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "PrimaryClusterRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "从集群所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StandbyClusterRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "从集群ID",
+          "example": "cynosdbmysql-byo4q0t2",
+          "member": "string",
+          "name": "StandbyClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "从集群别名",
+          "example": "standbycluster",
+          "member": "string",
+          "name": "StandbyClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GrantAccountPrivilegesRequest": {
       "document": "GrantAccountPrivileges请求参数结构体",
@@ -16499,6 +16625,15 @@
           "name": "MaxRoCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoArchive",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18481,7 +18616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)",
+          "document": "数据库代理组节点个数。该参数不再建议使用,建议使用ProxyZones",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "int64",
           "name": "ProxyCount",
@@ -18508,7 +18643,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：SessionConnectionPool(会话级别连接池 )",
+          "document": "连接池类型:SessionConnectionPool(会话级别连接池 )",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -18526,7 +18661,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阈值：单位（秒）",
+          "document": "连接池阈值:单位（秒）",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -18536,7 +18671,7 @@
         {
           "disabled": false,
           "document": "描述说明",
-          "example": "无",
+          "example": "只读代理",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -20498,6 +20633,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启归档，可选范围<li>yes</li><li>no</li>默认值:yes",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoArchive",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

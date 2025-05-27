@@ -171,7 +171,7 @@ tccli teo ModifyL7AccRule --cli-unfold-argument  \
     --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.2.Name Content-Disposition \
     --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.Name ClientIPHeader \
     --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.ClientIPHeaderParameters.Switch on \
-    --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.ClientIPHeaderParameters.HeaderName test \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.ClientIPHeaderParameters.HeaderName testheader \
     --Rule.Branches.0.SubRules.19.Branches.0.Actions.2.Name ClientIPCountry \
     --Rule.Branches.0.SubRules.19.Branches.0.Actions.2.ClientIPCountryParameters.Switch on \
     --Rule.Branches.0.SubRules.19.Branches.0.Actions.2.ClientIPCountryParameters.HeaderName EO-Client-IPCountry \

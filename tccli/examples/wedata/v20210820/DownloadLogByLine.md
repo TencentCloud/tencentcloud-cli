@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli wedata DownloadLogByLine --cli-unfold-argument  \
-    --TaskId abc \
-    --CurRunDate abc \
-    --DetailId abc \
+    --TaskId 123 \
+    --CurRunDate 123 \
+    --DetailId 123 \
     --StartLine 0 \
     --LineCount 0 \
-    --FilePath abc \
-    --ProjectId abc \
-    --RecordId abc
+    --FilePath 123 \
+    --ProjectId 123 \
+    --RecordId 123
 ```
 
 Output: 
@@ -23,15 +23,15 @@ Output:
         "Data": {
             "Count": 0,
             "Content": [
-                "abc"
+                "123"
             ],
             "Over": true,
-            "InstanceState": "abc",
-            "InstanceId": "abc",
-            "TaskId": "abc",
+            "InstanceState": "123",
+            "InstanceId": "123",
+            "TaskId": "123",
             "WorkerType": 0
         },
-        "RequestId": "abc"
+        "RequestId": "123"
     }
 }
 ```

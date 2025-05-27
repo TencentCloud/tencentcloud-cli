@@ -8560,6 +8560,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的开始调度时间",
+          "example": "2025-05-14 15:47:01",
+          "member": "string",
+          "name": "StartScheduleTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态的补充信息",
+          "example": "当前实例已排队x小时x分钟，优先级P0",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9722,6 +9744,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于监控查询的Source\n枚举值，部分情况下与CreateSource不同，通过该字段兼容",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "MonitorSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10195,6 +10227,16 @@
           "example": "NORMAL",
           "member": "string",
           "name": "MonitorSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子用户的 nickname",
+          "example": "user2",
+          "member": "string",
+          "name": "SubUinName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

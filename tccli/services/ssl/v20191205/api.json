@@ -2397,6 +2397,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡",
+          "example": "0",
+          "member": "int64",
+          "name": "Forward",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

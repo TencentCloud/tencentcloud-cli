@@ -579,7 +579,7 @@ Output:
                                                 "Name": "ClientIPHeader",
                                                 "ClientIPHeaderParameters": {
                                                     "Switch": "on",
-                                                    "HeaderName": "test"
+                                                    "HeaderName": "testheader"
                                                 }
                                             },
                                             {

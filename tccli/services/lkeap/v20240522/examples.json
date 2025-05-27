@@ -33,7 +33,7 @@
     "CreateQA": [
       {
         "document": "创建问答对",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是腾讯大模型知识引擎\",\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是您的智能助手\",\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"QaId\": \"1830995120618932160\",\n        \"RequestId\": \"28c960e9-c3ba-4a6d-be28-0d5d0dcca5ca\"\n    }\n}",
         "title": "创建问答对"
       },
@@ -175,7 +175,7 @@
     "ModifyQA": [
       {
         "document": "修改问答对",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"QaId\": \"1830995120618932160\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是腾讯大模型知识引擎\",\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"QaId\": \"1830995120618932160\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是您的智能助手\",\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f4843c1-8f3b-4a0b-ad7e-91b47f2b93c7\"\n    }\n}",
         "title": "修改问答对"
       }

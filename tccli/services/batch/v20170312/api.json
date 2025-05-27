@@ -287,7 +287,7 @@
         {
           "disabled": false,
           "document": "活动开始时间",
-          "example": "2021-10-04 22:47:06",
+          "example": "2021-10-04T22:47:06Z",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -297,7 +297,7 @@
         {
           "disabled": false,
           "document": "活动结束时间",
-          "example": "2021-10-05 01:02:14",
+          "example": "2021-10-05T01:02:14Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -472,7 +472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-nuydksjj",
           "member": "string",
           "name": "EnvId",
@@ -862,7 +862,7 @@
         {
           "disabled": false,
           "document": "资源创建完成时间",
-          "example": "2022-12-20 09:11:15",
+          "example": "2022-12-20T09:11:15Z",
           "member": "string",
           "name": "ResourceCreatedTime",
           "output_required": true,
@@ -1259,7 +1259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取，不能对状态处于删除中或者存在计算实例未销毁的环境发起删除动作。",
           "example": "env-3dhmblr3",
           "member": "string",
           "name": "EnvId",
@@ -1405,7 +1405,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -1432,7 +1432,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n<li> compute-node-id - String - 是否必填：否 -（过滤条件）按照计算节点ID过滤。</li>",
+          "document": "过滤条件<li> compute-node-id - String - 是否必填：否 -（过滤条件）按照计算节点ID过滤，节点ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1616,7 +1616,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID列表，与Filters参数不能同时指定，最大限制100。环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID列表，与Filters参数不能同时指定，最大限制100，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "[\"env-5o4gphir\"]",
           "member": "string",
           "name": "EnvIds",
@@ -1690,7 +1690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -1837,8 +1837,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID列表，与Filters参数不能同时指定。最大数量上限100，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
-          "example": "[\"env-lcx7qbbr\\n\"]",
+          "document": "计算环境ID列表，与Filters参数不能同时指定。最大数量上限100。",
+          "example": "[\"env-lcx7qbbr\"]",
           "member": "string",
           "name": "EnvIds",
           "required": false,
@@ -2613,7 +2613,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-1mekuyxs",
           "member": "string",
           "name": "EnvId",
@@ -3139,7 +3139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例ID，可通过调用接口[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)获取。",
           "example": "ins-makv4qr2",
           "member": "string",
           "name": "InstanceId",
@@ -3148,7 +3148,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID",
+          "document": "镜像ID，可通过调用接口[DescribeImages](https://cloud.tencent.com/document/product/213/15715)获取。",
           "example": "img-fy8cew7d",
           "member": "string",
           "name": "ImageId",
@@ -4084,7 +4084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -5603,7 +5603,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-lcx7qbbr",
           "member": "string",
           "name": "EnvId",
