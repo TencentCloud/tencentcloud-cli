@@ -1,0 +1,1355 @@
+{
+  "actions": {
+    "BatchGetStatisticsData": {
+      "document": "获取云产品的监控数据",
+      "input": "BatchGetStatisticsDataRequest",
+      "name": "批量拉取监控数据",
+      "output": "BatchGetStatisticsDataResponse",
+      "status": "online"
+    },
+    "DescribeAlarmNotifyHistories": {
+      "document": "按需查询告警的通知历史",
+      "input": "DescribeAlarmNotifyHistoriesRequest",
+      "name": "查询告警通知历史",
+      "output": "DescribeAlarmNotifyHistoriesResponse",
+      "status": "online"
+    },
+    "DescribeAndonToolAlarmHistories": {
+      "document": "安灯工具获取告警历史",
+      "input": "DescribeAndonToolAlarmHistoriesRequest",
+      "name": "安灯工具获取告警历史",
+      "output": "DescribeAndonToolAlarmHistoriesResponse",
+      "status": "online"
+    },
+    "DescribeAndonToolMetricData": {
+      "document": "安灯工具获取指标数据",
+      "input": "DescribeAndonToolMetricDataRequest",
+      "name": "安灯工具获取指标数据",
+      "output": "DescribeAndonToolMetricDataResponse",
+      "status": "online"
+    },
+    "DescribeAndonToolProducts": {
+      "document": "获取安灯工具产品视图列表",
+      "input": "DescribeAndonToolProductsRequest",
+      "name": "获取安灯工具产品视图列表",
+      "output": "DescribeAndonToolProductsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-06-16",
+    "api_brief": "介绍如何使用API对腾讯云可观测平台进行操作，包括查询监控数据、创建报警规则等。",
+    "serviceNameCN": "腾讯云可观测平台",
+    "serviceShortName": "monitor"
+  },
+  "objects": {
+    "AlarmNotifyHistory": {
+      "document": "单个告警通知历史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知的唯一ID",
+          "example": "d9729feb74992cc3482b350163a1a010_cdc",
+          "member": "string",
+          "name": "NotifyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警策略ID",
+          "example": "policy-123",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警周期iD",
+          "example": "r_ad-123",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知时间 unix秒级时间戳",
+          "example": "1732802380",
+          "member": "int64",
+          "name": "NotifyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发时间 unix秒级时间戳",
+          "example": "1732802380",
+          "member": "int64",
+          "name": "TriggerTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别",
+          "example": "None",
+          "member": "string",
+          "name": "TriggerLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警内容",
+          "example": "content",
+          "member": "string",
+          "name": "AlarmContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警对象",
+          "example": "object",
+          "member": "string",
+          "name": "AlarmObject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次告警通知涉及到的渠道合集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"QCloudYehe_sms\"]",
+          "member": "string",
+          "name": "ChannelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "渠道的接收人信息",
+          "example": "[{}]",
+          "member": "ChannelsReceivers",
+          "name": "ChannelsReceivers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警策略名称",
+          "example": "默认告警策略",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus实例ID, 仅当 MT_PROME 时有效",
+          "example": "prom-123",
+          "member": "string",
+          "name": "PromeInstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Prometheus实例所在的地域, 仅当 MT_PROME 时有效",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PromeInstanceRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知模板相关的配置信息",
+          "example": "[{\"NoticeId\": \"notice-xxx\", \"NoticeName\": \"default\"}]",
+          "member": "NotifyRelatedNotice",
+          "name": "Notices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复",
+          "example": "Trigger",
+          "member": "string",
+          "name": "TriggerStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AndonToolAlarmHistoryItem": {
+      "document": "安灯工具告警历史元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警历史唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaaa-bbbb-cccc",
+          "member": "string",
+          "name": "AlertID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qce/cvm",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "告警对象",
+          "member": "string",
+          "name": "AlarmObject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "告警内容",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "首次触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "FirstOccurTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "LastOccurTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AlarmStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "policy-xxxx",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略2.0 originID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "PolicyV2OriginID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "策略名称",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认项目",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维度列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"abc\",\"Value\":\"123\"}]",
+          "member": "AndonToolDimensionItem",
+          "name": "Dimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AndonToolDimensionItem": {
+      "document": "安灯工具中维度的参数item",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维度value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AndonToolMetricDataItem": {
+      "document": "安灯工具指标数据元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.23",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AndonToolMetricDataPoint": {
+      "document": "安灯工具指标数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Dimension\": [{\"Key\":\"unInstanceId\", \"Value\": \"ins-wv6if848\" }]}",
+          "member": "AndonToolDimensionItem",
+          "name": "Dimension",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间点数据集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Timestamp\": 1690532944,\"Value\": 1.12}]",
+          "member": "AndonToolMetricDataItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AndonToolProductViewNameItem": {
+      "document": "AndonToolProductViewNameItem\n\n安灯工具产品列表 产品视图子数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductShowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qce/cvm",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "ViewName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云服务器-基础监控",
+          "member": "string",
+          "name": "ViewNameShowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API维度key列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "unInstanceId",
+          "member": "string",
+          "name": "APIDimensionKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AMP ProductName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"barad\",\"barad_bind_all\"]",
+          "member": "string",
+          "name": "AMPProductNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要所有的API维度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedAllAPIDimension",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchGetStatisticsDataRequest": {
+      "document": "BatchGetStatisticsData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视图名称",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称，如CPUUsage，仅支持单指标拉取。各个云产品的详细指标说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的指标英文名即为MetricName",
+          "example": "cpu_usage",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "统计方法",
+          "example": "max",
+          "member": "string",
+          "name": "Statistics",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为1440个。",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间，如2018-09-22T19:51:23+08:00",
+          "example": "2024-11-20 21:12:50",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间。 EndTime不能小于StartTime",
+          "example": "2024-11-20 23:07:40",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "维度组合",
+          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"d651829d-32c6-48fc-8902-e691e9c2046a\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"4d48043f-5d5f-4a1e-b4e6-195491231c36\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"120df06f-7890-4a1a-84e5-3a7515083efc\"}]}]\t",
+          "member": "Instance",
+          "name": "DimensionsList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "计算算子",
+          "example": " {   \"Function\": \"TOP\",         \"N\": 5     }",
+          "member": "Expr",
+          "name": "Expr",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetStatisticsDataResponse": {
+      "document": "BatchGetStatisticsData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计周期",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名",
+          "example": "CPUUsage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据点数组",
+          "example": "无",
+          "member": "DataPoint",
+          "name": "DataPoints",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2019-03-24T10:50:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2019-03-24T20:50:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelsReceivers": {
+      "document": "接受人详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知渠道名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "叮叮",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[124,234]",
+          "member": "string",
+          "name": "Receivers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送结果,0-无效,1-成功,2-失败,3-无需发送\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SendStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接受者类型，仅部分需要细分的渠道有值。\n比如官网消息渠道会有三种取值，UIDs/Group/UINs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UINs",
+          "member": "string",
+          "name": "ReceiverType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DataPoint": {
+      "document": "监控数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例对象维度组合",
+          "example": "{\"Name\":\"instanceId\", \"Value\":\"ins-jiyyjnea\"}",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了",
+          "example": "[1736784000, 1736784060]",
+          "member": "float",
+          "name": "Timestamps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控值数组，该数组和Timestamps一一对应",
+          "example": "[10, 5.8, 7000.54]",
+          "member": "float",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAlarmNotifyHistoriesRequest": {
+      "document": "DescribeAlarmNotifyHistories请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROME",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间点，unix秒级时间戳",
+          "example": "1732801290",
+          "member": "int64",
+          "name": "QueryBaseTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒",
+          "example": "1800",
+          "member": "int64",
+          "name": "QueryBeforeSeconds",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "{1,2}",
+          "member": "PageByNoParams",
+          "name": "PageParams",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "当监控类型为 MT_QCE 时候需要填写，归属的命名空间",
+          "example": "qce/cvm",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当监控类型为 MT_QCE 时候需要填写， 告警策略类型",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询某个策略的通知历史",
+          "example": "policy-123",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询某个策略某个告警的通知历史，SessionId必须和PolicyId搭配使用，不支持单独查询",
+          "example": "s-123",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于策略名称检索, 模糊检索",
+          "example": "默认告警",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于告警对象检索，模糊检索",
+          "example": "cvm实例ins-123",
+          "member": "string",
+          "name": "AlarmObject",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于告警内容检索，模糊检索",
+          "example": "CPU高负载",
+          "member": "string",
+          "name": "AlarmContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询某个prometheus实例的通知历史, 仅当 MT_PROM 时有效",
+          "example": "prom-123",
+          "member": "string",
+          "name": "PromeInstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否递增排序，为1时表示递增，否则表示递降.",
+          "example": "0",
+          "member": "int64",
+          "name": "OrderAscending",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmNotifyHistoriesResponse": {
+      "document": "DescribeAlarmNotifyHistories返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警历史",
+          "example": "[{}]",
+          "member": "AlarmNotifyHistory",
+          "name": "AlarmNotifyHistoryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页情况",
+          "example": "{\"PerPage\": 10}",
+          "member": "PageByNoResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndonToolAlarmHistoriesRequest": {
+      "document": "DescribeAndonToolAlarmHistories请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "qce/cvm",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视图",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API维度列表",
+          "example": "[{\"Key\":\"abc\",\"Value\":\"123\"}]",
+          "member": "AndonToolDimensionItem",
+          "name": "Dimensions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，缺省为当前时间",
+          "example": "1690533944",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "amp 产品名称列表",
+          "example": "[\"barad\"]",
+          "member": "string",
+          "name": "AMPProductNames",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndonToolAlarmHistoriesResponse": {
+      "document": "DescribeAndonToolAlarmHistories返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "暂无",
+          "member": "AndonToolAlarmHistoryItem",
+          "name": "Histories",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndonToolMetricDataRequest": {
+      "document": "DescribeAndonToolMetricData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基础监控命名空间",
+          "example": "qce/cvm",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基础监控视图",
+          "example": "cvm_device",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基础监控指标",
+          "example": "cpu_usage",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询维度",
+          "example": "{\"Dimension\": [{\"Key\":\"unInstanceId\", \"Value\": \"ins-wv6if848\" }]}",
+          "member": "AndonToolDimensionItem",
+          "name": "Dimension",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统计粒度",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndonToolMetricDataResponse": {
+      "document": "DescribeAndonToolMetricData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计粒度",
+          "example": "60",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "基础监控指标",
+          "example": "cpu_usage",
+          "member": "string",
+          "name": "Metric",
+          "output_required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1690532944",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "{\"Dimension\":[], \"Data\":[]}",
+          "member": "AndonToolMetricDataPoint",
+          "name": "DataPoint",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻页表示（暂未启用）",
+          "example": "aaaa-bbbb-cccc",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAndonToolProductsRequest": {
+      "document": "DescribeAndonToolProducts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAndonToolProductsResponse": {
+      "document": "DescribeAndonToolProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品视图列表",
+          "example": "{\"ProductList\":[{\"Product\":\"cvm\",\"ProductShowName\":\"云服务器\",\"Namespace\":\"qce/cvm\",\"ViewName\":\"cvm_device\",\"ViewNameShowName\":\"云服务器-基础监控\",\"APIDimensionKeys\":[\"unInstanceId\"]}]}",
+          "member": "AndonToolProductViewNameItem",
+          "name": "ProductList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Dimension": {
+      "document": "实例对象的维度组合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "instanceId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-123",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Expr": {
+      "document": "计算算子",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算子名称",
+          "example": "PERCENTILE",
+          "member": "string",
+          "name": "Function",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算子入参值",
+          "example": "99",
+          "member": "float",
+          "name": "N",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "Instance": {
+      "document": "实例维度组合数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的维度组合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NotifyRelatedNotice": {
+      "document": "通知历史中关联的通知模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知模板ID",
+          "example": "notice-123",
+          "member": "string",
+          "name": "NoticeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知模板的名称",
+          "example": "默认通知模板",
+          "member": "string",
+          "name": "NoticeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PageByNoParams": {
+      "document": "分页请求参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个分页的数量是多少\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19",
+          "member": "int64",
+          "name": "PerPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第几个分页，从1开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PageNo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PageByNoResult": {
+      "document": "分页结果参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总共有多少数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总共有多少个分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前的分页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentPageNo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否遍历到末尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnd",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

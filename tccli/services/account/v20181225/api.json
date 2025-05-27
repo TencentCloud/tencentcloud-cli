@@ -3772,10 +3772,10 @@
         {
           "disabled": false,
           "document": "token sn\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "efd920d22594ncksa2e6",
           "member": "string",
           "name": "Tokensn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

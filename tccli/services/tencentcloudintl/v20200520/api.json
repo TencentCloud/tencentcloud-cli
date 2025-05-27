@@ -777,7 +777,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发布时间筛选开始时间（示例值：2021-08-02）",
+          "document": "首次发布时间筛选开始时间（示例值：2021-08-02）,与 FirstReleaseTimeEnd 时间范围限制在半年内",
           "example": "2021-08-02",
           "member": "date",
           "name": "FirstReleaseTimeStart",
@@ -786,7 +786,7 @@
         },
         {
           "disabled": false,
-          "document": "首次发布时间筛选结束时间（示例值：2023-08-02）",
+          "document": "首次发布时间筛选结束时间（示例值：2023-08-02），与 FirstReleaseTimeStart时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "FirstReleaseTimeEnd",
@@ -795,7 +795,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间筛选开始时间（示例值：2021-08-02）",
+          "document": "最近更新时间筛选开始时间（示例值：2021-08-02）与 RecentReleaseTimeEnd 时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "RecentReleaseTimeStart",
@@ -804,7 +804,7 @@
         },
         {
           "disabled": false,
-          "document": "最近更新时间筛选结束时间（示例值：2023-08-02）",
+          "document": "最近更新时间筛选结束时间（示例值：2023-08-02）与 RecentReleaseTimeStart 时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "RecentReleaseTimeEnd",
@@ -813,7 +813,7 @@
         },
         {
           "disabled": false,
-          "document": "下线文档筛选开始时间",
+          "document": "下线文档筛选开始时间，与 DisableUpdateTimeEnd 时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "DisableUpdateTimeStart",
@@ -822,7 +822,7 @@
         },
         {
           "disabled": false,
-          "document": "下线文档筛选结束时间",
+          "document": "下线文档筛选结束时间，与 DisableUpdateTimeStart 时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "DisableUpdateTimeEnd",
@@ -831,7 +831,7 @@
         },
         {
           "disabled": false,
-          "document": "隐藏文档筛选开始时间",
+          "document": "隐藏文档筛选开始时间，与 VisibleUpdateTimeEnd 时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "VisibleUpdateTimeStart",
@@ -840,7 +840,7 @@
         },
         {
           "disabled": false,
-          "document": "隐藏文档筛选结束时间",
+          "document": "隐藏文档筛选结束时间，与 VisibleUpdateTimeStart 时间范围限制在半年内",
           "example": "2022-08-02",
           "member": "date",
           "name": "VisibleUpdateTimeEnd",

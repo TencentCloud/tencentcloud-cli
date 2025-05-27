@@ -224,6 +224,13 @@
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
+    "DescribeMessageByTopic": {
+      "document": "根据订阅查询消息",
+      "input": "DescribeMessageByTopicRequest",
+      "name": "根据订阅查询消息",
+      "output": "DescribeMessageByTopicResponse",
+      "status": "online"
+    },
     "DescribeMessageList": {
       "document": "根据一级Topic查询消息列表",
       "input": "DescribeMessageListRequest",
@@ -2967,6 +2974,70 @@
       ],
       "type": "object"
     },
+    "DescribeMessageByTopicRequest": {
+      "document": "DescribeMessageByTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "home/room",
+          "example": "发送topic或者订阅表达式",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，毫秒级时间戳 。",
+          "example": "1712025623202",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询消息条数，最大1024，默认100.",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageByTopicResponse": {
+      "document": "DescribeMessageByTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息列表",
+          "example": "无",
+          "member": "MQTTMessage",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMessageListRequest": {
       "document": "DescribeMessageList请求参数结构体",
       "members": [
@@ -4110,6 +4181,62 @@
           "name": "MaxSubscription",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MQTTMessage": {
+      "document": "MQTT消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "15397032005D639FEE4879C38A130016",
+          "member": "string",
+          "name": "MessageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息发送的客户端Id",
+          "example": "client-1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息服务质量等级",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息在服务端的存储时间，毫秒级时间戳",
+          "example": "1745828681259",
+          "member": "int64",
+          "name": "StoreTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源topic",
+          "example": "home/room",
+          "member": "string",
+          "name": "OriginTopic",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

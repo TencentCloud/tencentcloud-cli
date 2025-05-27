@@ -9,7 +9,7 @@ tccli lkeap ModifyQA --cli-unfold-argument  \
     --KnowledgeBaseId 4901991032 \
     --QaId 1830995120618932160 \
     --Question 你是谁 \
-    --Answer 我是腾讯大模型知识引擎 \
+    --Answer 我是您的智能助手 \
     --AttributeLabels.0.AttributeId 1830994685416869312 \
     --AttributeLabels.0.LabelIds 1830994685429452224
 ```

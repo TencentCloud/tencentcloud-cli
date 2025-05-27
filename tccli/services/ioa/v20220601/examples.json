@@ -782,6 +782,14 @@
         "title": "删除零信任网关"
       }
     ],
+    "DescribeAIEDRIncidentDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCPUMemoryUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b406e6d5-62e2-4232-bbf2-cabada9bb08b\"\n    }\n}",
+        "title": "获取AI助手所需的EDR事件详情"
+      }
+    ],
     "DescribeAPISecrets": [
       {
         "document": "",
