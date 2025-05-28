@@ -184,6 +184,14 @@
         "title": "创建密钥对"
       }
     ],
+    "CreateMcpServer": [
+      {
+        "document": "创建一个新的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-lart4xxz\",\n    \"Name\": \"map\",\n    \"Command\": \"ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=\",\n    \"Description\": \"此MCP Server用于提供地图访问功能。\",\n    \"Envs\": [\n        {\n            \"Key\": \"MAP_API_KEY\",\n            \"Value\": \"api_key_xxx_xxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerId\": \"lhms-oartxxxz\",\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "创建MCP Server"
+      }
+    ],
     "DebugFunctionVersion": [
       {
         "document": "调试函数function-001的版本2，body为test。",
@@ -756,6 +764,22 @@
         "title": "查询用户密钥对列表"
       }
     ],
+    "DescribeMcpServerTemplates": [
+      {
+        "document": "限制返回结果最多为一项",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpTemplates\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"name-description\",\n            \"Values\": [\n                \"map\"\n            ]\n        }\n    ],\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"McpServerTemplateSet\": [\n            {\n                \"Name\": \"AMap\",\n                \"Command\": \"bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9tYXA=\",\n                \"Description\": \"高德地图官网MCP Server\",\n                \"IconUrl\": \"https://lbs.amap.com/favicon.ico\",\n                \"CommunityUrl\": \"https://lbs.amap.com/api/mcp-server/summary\",\n                \"PlatformUrl\": \"https://console.amap.com/dev/index\",\n                \"EnvSet\": [\n                    {\n                        \"Key\": \"MAP_API_KEY\",\n                        \"Value\": \"api_key_xxx_xxx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"d8a6d860-c9bb-4390-b8da-fc976ffc7712\"\n    }\n}",
+        "title": "查询MCP Server模板列表"
+      }
+    ],
+    "DescribeMcpServers": [
+      {
+        "document": "查询指定实例下的MCP Server列表。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-lart4xxz\",\n    \"McpServerIds\": [\n        \"lhms-oartxxxz\"\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"McpServerSet\": [\n            {\n                \"McpServerId\": \"lhms-oartxxxz\",\n                \"Name\": \"map\",\n                \"IconUrl\": \"https://example.com/icon.png\",\n                \"Command\": \"ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=\",\n                \"State\": \"RUNNING\",\n                \"ServerUrl\": \"http://127.0.0.1/map/sse\",\n                \"Config\": \"{\\\"mcpServers\\\":{\\\"map\\\":{\\\"url\\\":\\\"http://127.0.0.1/map/sse\\\"}}}\",\n                \"Description\": \"此MCP Server用于提供地图访问功能。\",\n                \"CreatedTime\": \"2025-05-09T17:50:14Z\",\n                \"UpdatedTime\": \"2025-05-09T17:50:14Z\",\n                \"EnvSet\": [\n                    {\n                        \"Key\": \"MAP_API_KEY\",\n                        \"Value\": \"api_key_xxx_xxx\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "查询MCP Server列表"
+      }
+    ],
     "DescribeModifyInstanceBundles": [
       {
         "document": "查询实例可修改套餐列表",
@@ -1240,6 +1264,14 @@
         "title": "修改实例的续费标识"
       }
     ],
+    "ModifyMcpServer": [
+      {
+        "document": "修改指定MCP Server的信息。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMcpServer\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-lart4xxz\",\n    \"McpServerId\": \"lhms-oartxxxz\",\n    \"Name\": \"map-new\",\n    \"Command\": \"ZW5jb2RlZCBuZXcgY29tbWFuZA==\",\n    \"Description\": \"更新后的MCP Server备注。\",\n    \"Envs\": [\n        {\n            \"Key\": \"MAP_API_KEY\",\n            \"Value\": \"api_key_new\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "修改MCP Server信息"
+      }
+    ],
     "ModifySnapshotAttribute": [
       {
         "document": "",
@@ -1286,6 +1318,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDomain\n<公共请求参数>\n\n{\n    \"DomainId\": \"lhdo-3ob8xfu\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f312b314-46de-448e-b587-d9f6083bec94\"\n    }\n}",
         "title": "移除域名"
+      }
+    ],
+    "RemoveMcpServers": [
+      {
+        "document": "删除指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-lart4xxz\",\n    \"McpServerIds\": [\n        \"lhms-oartxxxz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "删除MCP Server"
       }
     ],
     "RenameDockerContainer": [
@@ -1376,6 +1416,14 @@
         "title": "重启Docker容器"
       }
     ],
+    "RestartMcpServers": [
+      {
+        "document": "重启指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-ruy9d2tw\",\n    \"McpServerIds\": [\n        \"lhms-oartxxxz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "重启MCP Server"
+      }
+    ],
     "RunDockerContainers": [
       {
         "document": "",
@@ -1416,6 +1464,14 @@
         "title": "启动指定ID的实例"
       }
     ],
+    "StartMcpServers": [
+      {
+        "document": "开启指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-ruy9d2tw\",\n    \"McpServerIds\": [\n        \"lhms-oartxxxz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "开启MCP Server"
+      }
+    ],
     "StopDockerContainers": [
       {
         "document": "",
@@ -1430,6 +1486,14 @@
         "input": "https://lighthouse.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5fd6992a-f8b1-4cd2-9574-cb4251bc524f\"\n    }\n}",
         "title": "关闭实例"
+      }
+    ],
+    "StopMcpServers": [
+      {
+        "document": "关闭指定实例下的MCP Server。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMcpServers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"lhins-ruy9d2tw\",\n    \"McpServerIds\": [\n        \"lhms-oartxxxz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42582c39-52fd-4a00-8019-c3c995e8f9d6\"\n    }\n}",
+        "title": "关闭MCP Server"
       }
     ],
     "SwitchParameterCreateDisks": [

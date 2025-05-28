@@ -161,6 +161,13 @@
       "output": "CreateKeyPairResponse",
       "status": "online"
     },
+    "CreateMcpServer": {
+      "document": "本接口（CreateMcpServer）用于创建MCP Server。\n- 本接口为异步接口，请求发送成功后会返回一个 McpServerId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。",
+      "input": "CreateMcpServerRequest",
+      "name": "创建MCP Server",
+      "output": "CreateMcpServerResponse",
+      "status": "online"
+    },
     "DebugFunctionVersion": {
       "document": "本接口（DebugFunctionVersion）用于调试函数版本。\n- 只能调试函数Status为Ready状态的函数版本，可通过DescribeFunctionVersion接口查询函数版本信息。",
       "input": "DebugFunctionVersionRequest",
@@ -630,6 +637,20 @@
       "output": "DescribeKeyPairsResponse",
       "status": "online"
     },
+    "DescribeMcpServerTemplates": {
+      "document": "本接口（DescribeMcpServerTemplates）用于查询MCP Server模板列表。",
+      "input": "DescribeMcpServerTemplatesRequest",
+      "name": "查询MCP Server模板列表",
+      "output": "DescribeMcpServerTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeMcpServers": {
+      "document": "本接口（DescribeMcpServers）用于查询MCP Server列表。",
+      "input": "DescribeMcpServersRequest",
+      "name": "查询MCP Server列表",
+      "output": "DescribeMcpServersResponse",
+      "status": "online"
+    },
     "DescribeModifyInstanceBundles": {
       "document": "本接口（DescribeModifyInstanceBundles）用于查询实例可变更套餐列表。",
       "input": "DescribeModifyInstanceBundlesRequest",
@@ -1022,6 +1043,13 @@
       "output": "ModifyInstancesRenewFlagResponse",
       "status": "online"
     },
+    "ModifyMcpServer": {
+      "document": "本接口（ModifyMcpServer）用于修改实例的MCP Server信息。",
+      "input": "ModifyMcpServerRequest",
+      "name": "修改MCP Server",
+      "output": "ModifyMcpServerResponse",
+      "status": "online"
+    },
     "ModifySnapshotAttribute": {
       "document": "本接口（ModifySnapshotAttribute）用于修改指定快照的属性。\n<li>“快照名称”仅为方便用户自己管理之用。</li>",
       "input": "ModifySnapshotAttributeRequest",
@@ -1062,6 +1090,13 @@
       "input": "RemoveDomainRequest",
       "name": "移除域名",
       "output": "RemoveDomainResponse",
+      "status": "online"
+    },
+    "RemoveMcpServers": {
+      "document": "本接口（RemoveMcpServers）用于删除MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "input": "RemoveMcpServersRequest",
+      "name": "删除MCP Server",
+      "output": "RemoveMcpServersResponse",
       "status": "online"
     },
     "RenameDockerContainer": {
@@ -1141,6 +1176,13 @@
       "output": "RestartDockerContainersResponse",
       "status": "online"
     },
+    "RestartMcpServers": {
+      "document": "本接口（RestartMcpServers）用于重启实例中的MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "input": "RestartMcpServersRequest",
+      "name": "重启MCP Server",
+      "output": "RestartMcpServersResponse",
+      "status": "online"
+    },
     "RunDockerContainers": {
       "document": "创建并运行多个Docker容器，之后可以通过返回的ActivityIds调用<a href=\"https://cloud.tencent.com/document/product/1207/95476\" target=\"_blank\">DescribeDockerActivities</a>接口查询创建情况。",
       "input": "RunDockerContainersRequest",
@@ -1176,6 +1218,13 @@
       "output": "StartInstancesResponse",
       "status": "online"
     },
+    "StartMcpServers": {
+      "document": "本接口（StartMcpServers）用于开启实例中的MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "input": "StartMcpServersRequest",
+      "name": "开启MCP Server",
+      "output": "StartMcpServersResponse",
+      "status": "online"
+    },
     "StopDockerContainers": {
       "document": "停止实例内的Docker容器，之后可以通过返回的ActivityId调用[DescribeDockerActivities](https://cloud.tencent.com/document/product/1207/95476)接口查询停止情况。",
       "input": "StopDockerContainersRequest",
@@ -1188,6 +1237,13 @@
       "input": "StopInstancesRequest",
       "name": "关闭实例",
       "output": "StopInstancesResponse",
+      "status": "online"
+    },
+    "StopMcpServers": {
+      "document": "本接口（StopMcpServers）用于关闭实例中的MCP Server。\n- 本接口为异步接口，此时操作并未立即完成。实例操作结果可以通过调用 DescribeMcpServers 接口查询。\n- 本接口在操作多个MCP Server时，会尽可能处理完成，不会因为某一个失败而停止。由于操作为异步，您需要通过调用 DescribeMcpServers 接口查询操作结果。",
+      "input": "StopMcpServersRequest",
+      "name": "关闭MCP Server",
+      "output": "StopMcpServersResponse",
       "status": "online"
     },
     "SwitchParameterCreateDisks": {
@@ -4339,6 +4395,79 @@
           "name": "KeyPair",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMcpServerRequest": {
+      "document": "CreateMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-lart4xxz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。最大长度：64",
+          "example": "map",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
+          "example": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注。最大长度：2048",
+          "example": "此MCP Server用于提供地图访问功能。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量。最大长度：10",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMcpServerResponse": {
+      "document": "CreateMcpServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server ID。",
+          "example": "lhms-oartxxxz",
+          "member": "string",
+          "name": "McpServerId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8587,6 +8716,145 @@
           "name": "KeyPairSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerTemplatesRequest": {
+      "document": "DescribeMcpServerTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器列表。\n<li>name-description</li>按照MCP Server模板名称或描述进行过滤（支持模糊匹配）。\n类型：String\n必选：否\n每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。",
+          "example": "[{\"Name\":\"name-description\",\"Values\":[\"map\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServerTemplatesResponse": {
+      "document": "DescribeMcpServerTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server模板列表。",
+          "example": "无",
+          "member": "McpServerTemplate",
+          "name": "McpServerTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的MCP Server模板数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServersRequest": {
+      "document": "DescribeMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-lart4xxz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。列表为空时查询实例所有的MCP Server。",
+          "example": "lhms-oartxxxz",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/product/1207/47578)中的相关小节。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMcpServersResponse": {
+      "document": "DescribeMcpServers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server列表。",
+          "example": "无",
+          "member": "McpServer",
+          "name": "McpServerSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的MCP Server数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -14354,6 +14622,272 @@
       ],
       "usage": "out"
     },
+    "McpServer": {
+      "document": "MCP Server信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server ID。",
+          "example": "lhms-oartxxxz",
+          "member": "string",
+          "name": "McpServerId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。最大长度：64",
+          "example": "map",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server图标地址",
+          "example": "http://127.0.0.1/map/icon.png",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
+          "example": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server状态。枚举值如下：\n\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关闭\nSTARTING：表示开启中\nSTOPPING：表示关闭中\nRESTARTING：表示重启中\nREMOVING：表示删除中\nUNKNOWN：表示未知\nENV_ERROR：表示环境错误",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server访问地址。",
+          "example": "http://127.0.0.1/map/sse",
+          "member": "string",
+          "name": "ServerUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server配置",
+          "example": "{\\\"mcpServers\\\":{\\\"map\\\":{\\\"url\\\":\\\"http://127.0.0.1/map/sse\\\"}}}}",
+          "member": "string",
+          "name": "Config",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注",
+          "example": "此MCP Server用于提供地图访问功能。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2025-05-09T17:50:14Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server修改时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
+          "example": "2025-05-09T17:50:14Z",
+          "member": "datetime_iso",
+          "name": "UpdatedTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "EnvSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerEnv": {
+      "document": "MCP Server环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server的环境变量键。最大长度：128",
+          "example": "MAP_API_KEY",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server的环境变量值。最大长度：1024",
+          "example": "api_key_xxx_xxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerTemplate": {
+      "document": "MCP Server模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server名称",
+          "example": "AMap",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码之后的MCP Server启动命令。",
+          "example": "bnB4IC15IEBtb2RlbGNvbnRleHRwcm90b2NvbC9tYXA=",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "高德地图官网MCP Server",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server图标地址",
+          "example": "https://lbs.amap.com/favicon.ico",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server社区地址",
+          "example": "https://lbs.amap.com/api/mcp-server/summary",
+          "member": "string",
+          "name": "CommunityUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server关联的开发平台地址或开放平台地址",
+          "example": "https://console.amap.com/dev/index",
+          "member": "string",
+          "name": "PlatformUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量",
+          "example": "无",
+          "member": "McpServerTemplateEnv",
+          "name": "EnvSet",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "McpServerTemplateEnv": {
+      "document": "MCP Server模板环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "MCP Server模板的环境变量键",
+          "example": "MAP_API_KEY",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server模板的环境变量值",
+          "example": "api_key_xxx_xxx",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MetricDimension": {
       "document": "查询统计信息时返回的维度信息",
       "members": [
@@ -15177,6 +15711,78 @@
       ],
       "type": "object"
     },
+    "ModifyMcpServerRequest": {
+      "document": "ModifyMcpServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可以通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-lart4xxz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID。可以通过DescribeMcpServers接口返回值中的McpServerId获取。",
+          "example": "lhms-oartxxxz",
+          "member": "string",
+          "name": "McpServerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server名称。",
+          "example": "map",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码后的MCP Server启动命令。最大长度：2048",
+          "example": "ZW5jb2RlZCBtY3Agc2VydmVyIGNvbW1hbmQ=",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server备注",
+          "example": "此MCP Server用于提供地图访问功能。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server环境变量。最大长度：10。用于完整替换MCP Server的环境变量。当该字段为空时，系统将清除当前所有环境变量。若无需修改环境变量，请勿传递该字段。",
+          "example": "无",
+          "member": "McpServerEnv",
+          "name": "Envs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMcpServerResponse": {
+      "document": "ModifyMcpServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySnapshotAttributeRequest": {
       "document": "ModifySnapshotAttribute请求参数结构体",
       "members": [
@@ -15570,6 +16176,42 @@
     },
     "RemoveDomainResponse": {
       "document": "RemoveDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMcpServersRequest": {
+      "document": "RemoveMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。可以通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-lart4xxz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
+          "example": "lhms-oartxxxz",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveMcpServersResponse": {
+      "document": "RemoveMcpServers返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16254,6 +16896,42 @@
       ],
       "type": "object"
     },
+    "RestartMcpServersRequest": {
+      "document": "RestartMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-ruy9d2tw",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
+          "example": "无",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartMcpServersResponse": {
+      "document": "RestartMcpServers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RunDockerContainersRequest": {
       "document": "RunDockerContainers请求参数结构体",
       "members": [
@@ -16900,6 +17578,42 @@
       ],
       "type": "object"
     },
+    "StartMcpServersRequest": {
+      "document": "StartMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-ruy9d2tw",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
+          "example": "无",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartMcpServersResponse": {
+      "document": "StartMcpServers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopDockerContainersRequest": {
       "document": "StopDockerContainers请求参数结构体",
       "members": [
@@ -16963,6 +17677,42 @@
     },
     "StopInstancesResponse": {
       "document": "StopInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMcpServersRequest": {
+      "document": "StopMcpServers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
+          "example": "lhins-ruy9d2tw",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MCP Server ID列表。可通过[DescribeMcpServers](https://cloud.tencent.com/document/api/待补充)接口返回值中的McpServerId获取。最大长度：10",
+          "example": "无",
+          "member": "string",
+          "name": "McpServerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopMcpServersResponse": {
+      "document": "StopMcpServers返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

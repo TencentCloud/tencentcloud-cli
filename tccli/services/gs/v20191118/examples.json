@@ -74,7 +74,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceWebShell\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-123456-abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Key\": \"key-01\",\n        \"Address\": \"ap-shenzhen-1.webssh.crtrcloud.com\",\n        \"Zone\": \"ap-shenzhen-1\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Key\": \"key-01\",\n        \"Address\": \"ap-shenzhen-1.webssh.crtrcloud.com\",\n        \"Zone\": \"ap-shenzhen-1\",\n        \"ConnectUrl\": \"https://ex-cloud-gaming.crtrcloud.com/cloud_gaming_web/webterm/index.html?container=xxx&shell-key=xxxx&shell-addr=ap-shenzhen-1.webssh.crtrcloud.com\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建安卓实例 WebShell 连接"
       }
     ],

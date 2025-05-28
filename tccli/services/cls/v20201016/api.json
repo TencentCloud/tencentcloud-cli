@@ -2041,6 +2041,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云产品实例 id。",
+          "example": "cls-bvioqtmk",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警模版 id。",
+          "example": "1cb6260b-79f5-47ff-be36-d2a5dde547ff",
+          "member": "string",
+          "name": "AlarmTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

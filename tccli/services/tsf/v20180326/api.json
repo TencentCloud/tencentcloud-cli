@@ -1565,7 +1565,7 @@
   "metadata": {
     "apiVersion": "2018-03-26",
     "api_brief": "介绍如何使用API对腾讯微服务平台TSF进行操作，包括部署组、程序包管理等。",
-    "serviceNameCN": "微服务平台 TSF",
+    "serviceNameCN": "微服务平台",
     "serviceShortName": "tsf"
   },
   "objects": {
@@ -3339,6 +3339,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "-",
+          "example": "无",
+          "member": "CommonOption",
+          "name": "Paths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

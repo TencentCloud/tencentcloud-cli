@@ -91,6 +91,13 @@
       "output": "CreateGrafanaNotificationChannelResponse",
       "status": "online"
     },
+    "CreateNotificationSetting": {
+      "document": "创建告警通知配置",
+      "input": "CreateNotificationSettingRequest",
+      "name": "创建告警通知配置",
+      "output": "CreateNotificationSettingResponse",
+      "status": "online"
+    },
     "CreatePolicyGroup": {
       "document": "增加策略组",
       "input": "CreatePolicyGroupRequest",
@@ -236,6 +243,13 @@
       "input": "DeleteGrafanaNotificationChannelRequest",
       "name": "删除 Grafana 告警通道",
       "output": "DeleteGrafanaNotificationChannelResponse",
+      "status": "online"
+    },
+    "DeleteNotificationSetting": {
+      "document": "删除告警通知配置",
+      "input": "DeleteNotificationSettingRequest",
+      "name": "删除告警通知配置",
+      "output": "DeleteNotificationSettingResponse",
       "status": "online"
     },
     "DeletePolicyGroup": {
@@ -537,6 +551,20 @@
       "input": "DescribeMonitorTypesRequest",
       "name": "查询监控类型",
       "output": "DescribeMonitorTypesResponse",
+      "status": "online"
+    },
+    "DescribeNotificationSetting": {
+      "document": "查询告警通知配置详情",
+      "input": "DescribeNotificationSettingRequest",
+      "name": "查询告警通知配置详情",
+      "output": "DescribeNotificationSettingResponse",
+      "status": "online"
+    },
+    "DescribeNotificationSettings": {
+      "document": "查询告警通知配置列表",
+      "input": "DescribeNotificationSettingsRequest",
+      "name": "查询告警通知配置列表",
+      "output": "DescribeNotificationSettingsResponse",
       "status": "online"
     },
     "DescribePhoneAlarmFlowTotalCount": {
@@ -915,6 +943,13 @@
       "input": "ModifyGrafanaInstanceRequest",
       "name": "修改 Grafana 实例属性",
       "output": "ModifyGrafanaInstanceResponse",
+      "status": "online"
+    },
+    "ModifyNotificationSetting": {
+      "document": "修改告警通知配置",
+      "input": "ModifyNotificationSettingRequest",
+      "name": "修改告警通知配置",
+      "output": "ModifyNotificationSettingResponse",
       "status": "online"
     },
     "ModifyPolicyGroup": {
@@ -4494,6 +4529,97 @@
       ],
       "type": "object"
     },
+    "CreateNotificationSettingRequest": {
+      "document": "CreateNotificationSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROME",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PolicyOneOnOne 通知模板与告警策略一对一绑定关系；ConvergenceOneOnOne 通知模板与收敛规则一对一绑定关系",
+          "example": "PolicyOneOnOne",
+          "member": "string",
+          "name": "MatchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于ID匹配",
+          "example": "policy-jei2n3",
+          "member": "string",
+          "name": "MatchById",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配参数",
+          "example": "trigger",
+          "member": "string",
+          "name": "MatchParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用告警升级",
+          "example": "true",
+          "member": "bool",
+          "name": "HasEscalation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关联的通知模板",
+          "example": "无",
+          "member": "NotificationSettingNotice",
+          "name": "Notices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "升级规则",
+          "example": "无",
+          "member": "NotificationPart",
+          "name": "EscalationRules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotificationSettingResponse": {
+      "document": "CreateNotificationSetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的通知配置ID",
+          "example": "jejhje",
+          "member": "string",
+          "name": "SettingId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePolicyGroupCondition": {
       "document": "创建策略传入的阈值告警条件",
       "members": [
@@ -6074,6 +6200,42 @@
     },
     "DeleteGrafanaNotificationChannelResponse": {
       "document": "DeleteGrafanaNotificationChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotificationSettingRequest": {
+      "document": "DeleteNotificationSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_CLS",
+          "member": "string",
+          "name": "MonitorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知配置ID",
+          "example": "[\"sdfdfd\"]",
+          "member": "string",
+          "name": "SettingIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNotificationSettingResponse": {
+      "document": "DeleteNotificationSetting返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9738,6 +9900,180 @@
           "member": "MonitorTypeInfo",
           "name": "MonitorTypeInfos",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotificationSettingRequest": {
+      "document": "DescribeNotificationSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_CLS",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知配置ID",
+          "example": "sdfdfd",
+          "member": "string",
+          "name": "SettingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅在匹配ID查询时有效",
+          "example": "PolicyOneOnOne",
+          "member": "string",
+          "name": "MatchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于ID匹配",
+          "example": "policy-jei2n3",
+          "member": "string",
+          "name": "MatchById",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotificationSettingResponse": {
+      "document": "DescribeNotificationSetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知配置详情",
+          "example": "无",
+          "member": "NotificationSetting",
+          "name": "Setting",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotificationSettingsRequest": {
+      "document": "DescribeNotificationSettings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_CLS",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知配置ID",
+          "example": "sdfdfd",
+          "member": "string",
+          "name": "SettingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PolicyOneOnOne 通知模板与告警策略一对一绑定关系；ConvergenceOneOnOne 通知模板与收敛规则一对一绑定关系",
+          "example": "PolicyOneOnOne",
+          "member": "string",
+          "name": "MatchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于ID匹配",
+          "example": "policy-jei2n3",
+          "member": "string",
+          "name": "MatchById",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配参数",
+          "example": "trigger",
+          "member": "string",
+          "name": "MatchParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用告警升级",
+          "example": "true",
+          "member": "bool",
+          "name": "HasEscalation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关联的通知模板",
+          "example": "无",
+          "member": "NotificationSettingNotice",
+          "name": "Notices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "无",
+          "member": "PageByNoParams",
+          "name": "PageParams",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNotificationSettingsResponse": {
+      "document": "DescribeNotificationSettings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置列表",
+          "example": "无",
+          "member": "NotificationSetting",
+          "name": "Settings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页结果",
+          "example": "无",
+          "member": "PageByNoResult",
+          "name": "PageResult",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -17243,6 +17579,96 @@
       ],
       "type": "object"
     },
+    "ModifyNotificationSettingRequest": {
+      "document": "ModifyNotificationSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_CLS",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知配置ID",
+          "example": "sdfdfd",
+          "member": "string",
+          "name": "SettingId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PolicyOneOnOne 通知模板与告警策略一对一绑定关系；ConvergenceOneOnOne 通知模板与收敛规则一对一绑定关系",
+          "example": "PolicyOneOnOne",
+          "member": "string",
+          "name": "MatchType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "基于ID匹配",
+          "example": "policy-jei2n3",
+          "member": "string",
+          "name": "MatchById",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配参数",
+          "example": "trigger",
+          "member": "string",
+          "name": "MatchParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用告警升级",
+          "example": "true",
+          "member": "bool",
+          "name": "HasEscalation",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关联的通知模板",
+          "example": "无",
+          "member": "NotificationSettingNotice",
+          "name": "Notices",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "升级规则",
+          "example": "无",
+          "member": "NotificationPart",
+          "name": "EscalationRules",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNotificationSettingResponse": {
+      "document": "ModifyNotificationSetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyPolicyGroupCondition": {
       "document": "修改告警策略组传入的指标阈值条件",
       "members": [
@@ -17950,6 +18376,200 @@
       ],
       "usage": "both"
     },
+    "NotificationPart": {
+      "document": "通知环节配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警升级时候的环节序号, 有效值从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PartSeqNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知设置",
+          "example": "无",
+          "member": "NotificationSettingNotice",
+          "name": "Notices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外的检查条件，例如: 未被认领",
+          "example": "Unclaimed",
+          "member": "string",
+          "name": "CheckPoints",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上一个环节超过指定时间后到达当前环节 单位秒",
+          "example": "3000",
+          "member": "int64",
+          "name": "AfterLastPartSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NotificationSetting": {
+      "document": "告警通知配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_PROME",
+          "member": "string",
+          "name": "MonitorType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知配置ID",
+          "example": "sdfdfd",
+          "member": "string",
+          "name": "SettingId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PolicyOneOnOne 通知模板与告警策略一对一绑定关系；ConvergenceOneOnOne 通知模板与收敛规则一对一绑定关系",
+          "example": "PolicyOneOnOne",
+          "member": "string",
+          "name": "MatchType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "基于ID匹配",
+          "example": "policy-jei2n3",
+          "member": "string",
+          "name": "MatchById",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配参数",
+          "example": "trigger",
+          "member": "string",
+          "name": "MatchParams",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用告警升级",
+          "example": "true",
+          "member": "bool",
+          "name": "HasEscalation",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的通知模板",
+          "example": "无",
+          "member": "NotificationSettingNotice",
+          "name": "Notices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "升级规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NotificationPart",
+          "name": "EscalationRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知频率",
+          "example": "300",
+          "member": "uint64",
+          "name": "Frequency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NotificationSettingNotice": {
+      "document": "通知配置-通知模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知模板ID",
+          "example": "notice-hegaje",
+          "member": "string",
+          "name": "NoticeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容模板ID",
+          "example": "tmpl-xhegaje",
+          "member": "string",
+          "name": "ContentTmplId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适用的告警等级",
+          "example": "[\"Warn\"]",
+          "member": "string",
+          "name": "Levels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Operator": {
       "document": "维度支持的操作符信息",
       "members": [
@@ -17975,6 +18595,84 @@
         }
       ],
       "usage": "out"
+    },
+    "PageByNoParams": {
+      "document": "分页请求参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个分页的数量是多少\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19",
+          "member": "int64",
+          "name": "PerPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第几个分页，从1开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PageByNoResult": {
+      "document": "分页结果参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总共有多少数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总共有多少个分页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前的分页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentPageNo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否遍历到末尾\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnd",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PeriodsSt": {
       "document": "周期内的统计方式",

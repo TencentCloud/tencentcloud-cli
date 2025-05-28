@@ -24,7 +24,7 @@ Output:
         "ListOver": false,
         "Analysis": false,
         "ColNames": [],
-        "Columns": null,
+        "Columns": [],
         "Results": [
             {
                 "Time": 1679902806070,
@@ -41,10 +41,9 @@ Output:
             }
         ],
         "AnalysisResults": [],
-        "AnalysisRecords": null,
+        "AnalysisRecords": [],
         "RequestId": "79f593e5-1374-4463-xxxx-c49d0b3c5290",
-        "SamplingRate": 0,
-        "Topics": null
+        "SamplingRate": 0
     }
 }
 ```

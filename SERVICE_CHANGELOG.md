@@ -1,10 +1,10 @@
-# Release 3.0.1209.1
+# Release 3.0.1210.1
 
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+## 商业智能分析 BI(bi) 版本：2022-01-05
 
-### 第 14 次发布
+### 第 29 次发布
 
-发布时间：2025-05-28 01:11:14
+发布时间：2025-05-29 01:11:23
 
 本次发布包含了以下内容：
 
@@ -12,75 +12,29 @@
 
 修改接口：
 
-* [BindDeviceResource](http://document.tencentcloudapi.woa.com/document/product/1780/85267)
+* [DescribeUserRoleProjectList](http://document.tencentcloudapi.woa.com/document/product/1707/82404)
 
-	* 新增入参：ManageDimension, ManageAccountId, ManageAccount, ManageKubeconfig, Namespace, Workload
-
-* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1780/85317)
-
-	* 新增入参：ShareClb
+	* 新增入参：UserIdList, Keyword
 
 
 修改数据结构：
 
-* [Device](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Device)
+* [Data](http://document.tencentcloudapi.woa.com/document/product/1707/80324#Data)
 
-	* 新增成员：ManageDimension, ManageAccountId, Namespace, Workload, SyncPodCount, TotalPodCount
+	* 新增成员：EditUrl
 
-* [DeviceAccount](http://document.tencentcloudapi.woa.com/document/product/1780/85236#DeviceAccount)
+* [Project](http://document.tencentcloudapi.woa.com/document/product/1707/80324#Project)
 
-	* 新增成员：BoundKubeconfig, IsK8SManageAccount
-
-* [Resource](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Resource)
-
-	* 新增成员：IOAResourceId
-
-* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SearchCommandResult)
-
-	* 新增成员：DeviceKind
-
-* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SessionResult)
-
-	* 新增成员：DeviceKind, Namespace, Workload, PodName
+	* 新增成员：NormalCount, FreeCount, AdhocCount, BriefingCount
 
 
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 140 次发布
+### 第 141 次发布
 
-发布时间：2025-05-28 01:15:36
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCpuExpandHistory](http://document.tencentcloudapi.woa.com/document/product/236/86912)
-
-新增数据结构：
-
-* [AnalysisNodeInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AnalysisNodeInfo)
-* [HistoryJob](http://document.tencentcloudapi.woa.com/document/product/236/15878#HistoryJob)
-
-修改数据结构：
-
-* [AccountInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AccountInfo)
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
-
-	* 新增成员：AnalysisNodeInfos, DeviceBandwidth
-
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 63 次发布
-
-发布时间：2025-05-28 01:18:17
+发布时间：2025-05-29 01:15:09
 
 本次发布包含了以下内容：
 
@@ -88,60 +42,56 @@
 
 修改接口：
 
-* [CreateInstanceNew](http://document.tencentcloudapi.woa.com/document/product/1706/82859)
+* [DescribeCPUExpandStrategyInfo](http://document.tencentcloudapi.woa.com/document/product/236/85940)
 
-	* 新增入参：CacheDataDiskSize
-
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 130 次发布
-
-发布时间：2025-05-28 01:27:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeServerlessStrategy](http://document.tencentcloudapi.woa.com/document/product/1003/84782)
-
-	* 新增出参：AutoArchive, AutoArchiveDelayHours
-
-* [ModifyServerlessStrategy](http://document.tencentcloudapi.woa.com/document/product/1003/84781)
-
-	* 新增入参：AutoArchive, AutoArchiveDelayHours
-
-* [RollbackToNewCluster](http://document.tencentcloudapi.woa.com/document/product/1003/83588)
-
-	* 新增入参：AutoArchive, AutoArchiveDelayHours
-
-
-新增数据结构：
-
-* [GdnTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#GdnTaskInfo)
-
-修改数据结构：
-
-* [BizTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#BizTaskInfo)
-
-	* 新增成员：GdnTaskInfo
-
-* [CynosdbClusterDetail](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbClusterDetail)
-
-	* 新增成员：UsedArchiveStorage, ArchiveStatus, ArchiveProgress
+	* 新增出参：PeriodStrategy, TimeIntervalStrategy
 
 
 
 
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
+## 云应用(cloudapp) 版本：2022-05-30
 
 ### 第 4 次发布
 
-发布时间：2025-05-28 01:40:21
+发布时间：2025-05-29 01:20:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [License](http://document.tencentcloudapi.woa.com/document/product/1767/84242#License)
+
+	* 新增成员：LicenseLevel
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 117 次发布
+
+发布时间：2025-05-29 01:21:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlertHistoryRecord](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlertHistoryRecord)
+
+	* 新增成员：InstanceId, AlarmTemplateId
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 94 次发布
+
+发布时间：2025-05-29 01:32:22
 
 本次发布包含了以下内容：
 
@@ -149,15 +99,21 @@
 
 新增接口：
 
-* [DescribeAIEDRIncidentDetail](http://document.tencentcloudapi.woa.com/document/product/1794/86914)
+* [DescribeGroupsSTD](http://document.tencentcloudapi.woa.com/document/product/589/86919)
+
+新增数据结构：
+
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/589/33981#Filter)
+* [GroupInfos](http://document.tencentcloudapi.woa.com/document/product/589/33981#GroupInfos)
+* [Order](http://document.tencentcloudapi.woa.com/document/product/589/33981#Order)
 
 
 
-## 媒体处理(mps) 版本：2019-06-12
+## 云游戏(gs) 版本：2019-11-18
 
-### 第 93 次发布
+### 第 21 次发布
 
-发布时间：2025-05-28 01:52:02
+发布时间：2025-05-29 01:36:47
 
 本次发布包含了以下内容：
 
@@ -165,26 +121,18 @@
 
 修改接口：
 
-* [DescribeStreamLinkFlowMediaStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76521)
+* [CreateAndroidInstanceWebShell](http://document.tencentcloudapi.woa.com/document/product/1162/86012)
 
-	* 新增入参：RemoteIp
-
-* [DescribeStreamLinkFlowSRTStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76519)
-
-	* 新增入参：RemoteIp
-
-* [DescribeStreamLinkFlowStatistics](http://document.tencentcloudapi.woa.com/document/product/862/76518)
-
-	* 新增入参：RemoteIp
+	* 新增出参：ConnectUrl
 
 
 
 
-## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 14 次发布
+### 第 74 次发布
 
-发布时间：2025-05-28 01:53:24
+发布时间：2025-05-29 01:45:06
 
 本次发布包含了以下内容：
 
@@ -192,53 +140,33 @@
 
 新增接口：
 
-* [DescribeMessageByTopic](http://document.tencentcloudapi.woa.com/document/product/1773/86916)
+* [CreateMcpServer](http://document.tencentcloudapi.woa.com/document/product/1207/86928)
+* [DescribeMcpServerTemplates](http://document.tencentcloudapi.woa.com/document/product/1207/86927)
+* [DescribeMcpServers](http://document.tencentcloudapi.woa.com/document/product/1207/86926)
+* [ModifyMcpServer](http://document.tencentcloudapi.woa.com/document/product/1207/86925)
+* [RemoveMcpServers](http://document.tencentcloudapi.woa.com/document/product/1207/86924)
+* [RestartMcpServers](http://document.tencentcloudapi.woa.com/document/product/1207/86923)
+* [StartMcpServers](http://document.tencentcloudapi.woa.com/document/product/1207/86922)
+* [StopMcpServers](http://document.tencentcloudapi.woa.com/document/product/1207/86921)
 
 新增数据结构：
 
-* [MQTTMessage](http://document.tencentcloudapi.woa.com/document/product/1773/84898#MQTTMessage)
+* [McpServer](http://document.tencentcloudapi.woa.com/document/product/1207/47576#McpServer)
+* [McpServerEnv](http://document.tencentcloudapi.woa.com/document/product/1207/47576#McpServerEnv)
+* [McpServerTemplate](http://document.tencentcloudapi.woa.com/document/product/1207/47576#McpServerTemplate)
+* [McpServerTemplateEnv](http://document.tencentcloudapi.woa.com/document/product/1207/47576#McpServerTemplateEnv)
 
 
 
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 61 次发布
-
-发布时间：2025-05-28 01:54:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/849/52008)
-
-	* 新增入参：ConnectorOptions
-
-
-新增数据结构：
-
-* [ResourceRefLatest](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResourceRefLatest)
-* [Setats](http://document.tencentcloudapi.woa.com/document/product/849/52010#Setats)
-* [SetatsCvmInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#SetatsCvmInfo)
-* [SetatsDisk](http://document.tencentcloudapi.woa.com/document/product/849/52010#SetatsDisk)
-* [Warehouse](http://document.tencentcloudapi.woa.com/document/product/849/52010#Warehouse)
-
-修改数据结构：
-
-* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
-
-	* 新增成员：Setats
+## 腾讯云可观测平台(monitor) 版本：2023-06-16
 
 
 
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-## 邮件推送(ses) 版本：2020-10-02
+### 第 98 次发布
 
-### 第 30 次发布
-
-发布时间：2025-05-28 01:59:25
+发布时间：2025-05-29 01:50:07
 
 本次发布包含了以下内容：
 
@@ -246,38 +174,27 @@
 
 新增接口：
 
-* [ListAddressUnsubscribeConfig](http://document.tencentcloudapi.woa.com/document/product/1288/86917)
+* [CreateNotificationSetting](http://document.tencentcloudapi.woa.com/document/product/248/86933)
+* [DeleteNotificationSetting](http://document.tencentcloudapi.woa.com/document/product/248/86932)
+* [DescribeNotificationSetting](http://document.tencentcloudapi.woa.com/document/product/248/86931)
+* [DescribeNotificationSettings](http://document.tencentcloudapi.woa.com/document/product/248/86930)
+* [ModifyNotificationSetting](http://document.tencentcloudapi.woa.com/document/product/248/86929)
 
 新增数据结构：
 
-* [AddressUnsubscribeConfigData](http://document.tencentcloudapi.woa.com/document/product/1288/51053#AddressUnsubscribeConfigData)
+* [NotificationPart](http://document.tencentcloudapi.woa.com/document/product/248/30354#NotificationPart)
+* [NotificationSetting](http://document.tencentcloudapi.woa.com/document/product/248/30354#NotificationSetting)
+* [NotificationSettingNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#NotificationSettingNotice)
+* [PageByNoParams](http://document.tencentcloudapi.woa.com/document/product/248/30354#PageByNoParams)
+* [PageByNoResult](http://document.tencentcloudapi.woa.com/document/product/248/30354#PageByNoResult)
 
 
 
-## SSL 证书(ssl) 版本：2019-12-05
+## 微服务平台(tsf) 版本：2018-03-26
 
-### 第 82 次发布
+### 第 62 次发布
 
-发布时间：2025-05-28 02:01:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ClbInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbInstanceDetail)
-
-	* 新增成员：Forward
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2021-11-11
-
-### 第 82 次发布
-
-发布时间：2025-05-28 02:10:32
+发布时间：2025-05-29 02:13:14
 
 本次发布包含了以下内容：
 
@@ -285,41 +202,27 @@
 
 修改数据结构：
 
-* [Pod](http://document.tencentcloudapi.woa.com/document/product/851/74915#Pod)
+* [AvailableZoneScatterScheduleRule](http://document.tencentcloudapi.woa.com/document/product/649/36099#AvailableZoneScatterScheduleRule)
 
-	* 新增成员：StartScheduleTime, Message
+	* 新增成员：Paths
 
-* [Service](http://document.tencentcloudapi.woa.com/document/product/851/74915#Service)
-
-	* 新增成员：MonitorSource
-
-* [ServiceGroup](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceGroup)
-
-	* 新增成员：SubUinName
-
-
-
-
-## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 216 次发布
+### 第 217 次发布
 
-发布时间：2025-05-28 02:16:27
+发布时间：2025-05-29 02:15:05
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
-
-* [ModifyAddressesBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/19214)
-
+* [AssociateHaVipInstance](http://document.tencentcloudapi.woa.com/document/product/215/86935)
+* [DisassociateHaVipInstance](http://document.tencentcloudapi.woa.com/document/product/215/86934)
 
 
 

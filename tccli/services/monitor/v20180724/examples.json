@@ -230,6 +230,14 @@
         "title": "创建 Grafana 告警通道"
       }
     ],
+    "CreateNotificationSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNotificationSetting\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"MatchType\": \"PolicyOneOnOne\",\n    \"MatchById\": \"policy-erictest2\",\n    \"HasEscalation\": true,\n    \"Notices\": [\n        {\n            \"NoticeId\": \"notice-erictest\",\n            \"ContentTmplId\": \"tmpl-erictest\",\n            \"Levels\": [\n                \"None\"\n            ]\n        }\n    ],\n    \"EscalationRules\": [\n        {\n            \"PartSeqNum\": 1,\n            \"Notices\": [\n                {\n                    \"NoticeId\": \"notice-erictest11\",\n                    \"ContentTmplId\": \"tmpl-erictest11\",\n                    \"Levels\": [\n                        \"None\"\n                    ]\n                },\n                {\n                    \"NoticeId\": \"notice-erictest12\",\n                    \"ContentTmplId\": \"tmpl-erictest12\",\n                    \"Levels\": [\n                        \"None\"\n                    ]\n                }\n            ],\n            \"AfterLastPartSeconds\": 3000\n        },\n        {\n            \"PartSeqNum\": 2,\n            \"Notices\": [\n                {\n                    \"NoticeId\": \"notice-erictest21\",\n                    \"ContentTmplId\": \"tmpl-erictest21\",\n                    \"Levels\": [\n                        \"None\"\n                    ]\n                }\n            ],\n            \"AfterLastPartSeconds\": 5000\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"569fe099-bb56-48d1-9ec2-41c22593b433\",\n        \"SettingId\": \"ntfs-3c5yw37f4oopcb9n\"\n    }\n}",
+        "title": "测试环境真实示例"
+      }
+    ],
     "CreatePolicyGroup": [
       {
         "document": "",
@@ -408,6 +416,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除 Grafana 告警通道"
+      }
+    ],
+    "DeleteNotificationSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNotificationSetting\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"SettingIds\": [\n        \"st-1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71844578-4a95-4a47-b4e5-6e207b8bb421\"\n    }\n}",
+        "title": "测试环境真实示例"
       }
     ],
     "DeletePolicyGroup": [
@@ -782,6 +798,22 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorTypes\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\"\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorTypes\": [\n            \"MT_QCE\"\n        ],\n        \"MonitorTypeInfos\": [\n            {\n                \"Id\": \"1002\",\n                \"Name\": \"MT_QCE\",\n                \"SortId\": 1\n            }\n        ],\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
         "title": "查询所有监控类型"
+      }
+    ],
+    "DescribeNotificationSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotificationSetting\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"SettingId\": \"ntfs-naqf3gjd6k5nzaj4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ece1619-b169-4ecc-b5a5-a731778d1876\",\n        \"Setting\": {\n            \"EscalationRules\": [\n                {\n                    \"AfterLastPartSeconds\": 3000,\n                    \"CheckPoints\": [],\n                    \"Notices\": [\n                        {\n                            \"ContentTmplId\": \"tmpl-erictest11\",\n                            \"Levels\": [\n                                \"None\"\n                            ],\n                            \"NoticeId\": \"notice-erictest11\"\n                        },\n                        {\n                            \"ContentTmplId\": \"tmpl-erictest12\",\n                            \"Levels\": [\n                                \"None\"\n                            ],\n                            \"NoticeId\": \"notice-erictest12\"\n                        }\n                    ],\n                    \"PartSeqNum\": 1\n                },\n                {\n                    \"AfterLastPartSeconds\": 5000,\n                    \"CheckPoints\": [],\n                    \"Notices\": [\n                        {\n                            \"ContentTmplId\": \"tmpl-erictest21\",\n                            \"Levels\": [\n                                \"None\"\n                            ],\n                            \"NoticeId\": \"notice-erictest21\"\n                        }\n                    ],\n                    \"PartSeqNum\": 2\n                }\n            ],\n            \"Frequency\": 0,\n            \"HasEscalation\": true,\n            \"MatchById\": \"policy-erictest2\",\n            \"MatchParams\": \"\",\n            \"MatchType\": \"PolicyOneOnOne\",\n            \"MonitorType\": \"\",\n            \"Notices\": [],\n            \"SettingId\": \"ntfs-naqf3gjd6k5nzaj4\"\n        }\n    }\n}",
+        "title": "测试环境真实示例"
+      }
+    ],
+    "DescribeNotificationSettings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNotificationSettings\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"PageParams\": {\n        \"PerPage\": 10,\n        \"PageNo\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PageResult\": {\n            \"CurrentPageNo\": 1,\n            \"IsEnd\": true,\n            \"TotalCount\": 1,\n            \"TotalPage\": 1\n        },\n        \"RequestId\": \"91e283df-c1c2-435d-a766-62a0455b57bf\",\n        \"Settings\": [\n            {\n                \"EscalationRules\": [\n                    {\n                        \"AfterLastPartSeconds\": 3000,\n                        \"CheckPoints\": [],\n                        \"Notices\": [\n                            {\n                                \"ContentTmplId\": \"tmpl-erictest11\",\n                                \"Levels\": [\n                                    \"None\"\n                                ],\n                                \"NoticeId\": \"notice-erictest11\"\n                            },\n                            {\n                                \"ContentTmplId\": \"tmpl-erictest12\",\n                                \"Levels\": [\n                                    \"None\"\n                                ],\n                                \"NoticeId\": \"notice-erictest12\"\n                            }\n                        ],\n                        \"PartSeqNum\": 1\n                    },\n                    {\n                        \"AfterLastPartSeconds\": 5000,\n                        \"CheckPoints\": [],\n                        \"Notices\": [\n                            {\n                                \"ContentTmplId\": \"tmpl-erictest21\",\n                                \"Levels\": [\n                                    \"None\"\n                                ],\n                                \"NoticeId\": \"notice-erictest21\"\n                            }\n                        ],\n                        \"PartSeqNum\": 2\n                    }\n                ],\n                \"Frequency\": 0,\n                \"HasEscalation\": true,\n                \"MatchById\": \"policy-erictest2\",\n                \"MatchParams\": \"\",\n                \"MatchType\": \"PolicyOneOnOne\",\n                \"MonitorType\": \"\",\n                \"Notices\": [],\n                \"SettingId\": \"ntfs-3c5yw37f4oopcb9n\"\n            }\n        ]\n    }\n}",
+        "title": "测试环境真实示例"
       }
     ],
     "DescribePhoneAlarmFlowTotalCount": [
@@ -1244,6 +1276,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"InstanceName\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改 Grafana 实例属性"
+      }
+    ],
+    "ModifyNotificationSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotificationSetting\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"SettingId\": \"ntfs-3c5yw37f4oopcb9n\",\n    \"MatchType\": \"PolicyOneOnOne\",\n    \"MatchById\": \"policy-erictest2\",\n    \"HasEscalation\": false,\n    \"Notices\": [\n        {\n            \"NoticeId\": \"notice-erictest\",\n            \"ContentTmplId\": \"tmpl-erictest\",\n            \"Levels\": [\n                \"None\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afb342b4-bb31-407a-823a-52eb0513ced8\"\n    }\n}",
+        "title": "测试环境真实示例"
       }
     ],
     "ModifyPolicyGroup": [
