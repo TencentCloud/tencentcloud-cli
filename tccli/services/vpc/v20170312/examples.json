@@ -176,6 +176,20 @@
         "title": "专线网关绑定NAT网关"
       }
     ],
+    "AssociateHaVipInstance": [
+      {
+        "document": "限制HAVIP只能在指定的网卡范围内漂移。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateHaVipInstance\n&<公共请求参数>\n{\n  \"HaVipAssociationSet\": [\n    {\n      \"HaVipId\": \"havip-crb65sya\",\n      \"InstanceId\": \"eni-pzrckpyd\",\n      \"InstanceType\": \"ENI\"\n    }\n  ]\n}\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "HAVIP绑定网卡"
+      },
+      {
+        "document": "限制HAVIP只能在指定的子机范围内漂移。",
+        "input": "https://vpc.tencentcloudapi.com/?Action=AssociateHaVipInstance\n&<公共请求参数>\n{\n  \"HaVipAssociationSet\": [\n    {\n      \"HaVipId\": \"havip-crb65sya\",\n      \"InstanceId\": \"ins-nkgrfbic\",\n      \"InstanceType\": \"CVM\"\n    }\n  ]\n}\n",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "HAVIP绑定子机"
+      }
+    ],
     "AssociateIPv6Address": [
       {
         "document": "弹性公网IPv6绑定弹性网卡。",
@@ -2446,6 +2460,20 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DisassociateDirectConnectGatewayNatGateway\n&VpcId=\"vpc-8xpno8ee\"\n&DirectConnectGatewayId=\"dcg-fxa6gh5t\"\n&NatGatewayId=\"nat-ig8xpno8\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbffc3f0-1807-4683-89ee-2d2b96425ee1\"\n    }\n}",
         "title": "专线网关解绑NAT网关"
+      }
+    ],
+    "DisassociateHaVipInstance": [
+      {
+        "document": "将网卡从HAVIP漂移范围解绑。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateHaVipInstance\n<公共请求参数>\n\n{\n    \"HaVipAssociationSet\": [\n        {\n            \"HaVipId\": \"havip-crb65sya\",\n            \"InstanceId\": \"eni-pzrckpyd\",\n            \"InstanceType\": \"ENI\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "HAVIP解绑网卡"
+      },
+      {
+        "document": "将子机从HAVIP漂移范围解绑。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateHaVipInstance\n<公共请求参数>\n\n{\n    \"HaVipAssociationSet\": [\n        {\n            \"HaVipId\": \"havip-crb65sya\",\n            \"InstanceId\": \"ins-nkgrfbic\",\n            \"InstanceType\": \"CVM\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "title": "HAVIP解绑子机"
       }
     ],
     "DisassociateIPv6Address": [

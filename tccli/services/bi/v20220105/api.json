@@ -1445,9 +1445,19 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://",
+          "member": "string",
+          "name": "EditUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2885,6 +2895,24 @@
           "example": "sys_project_admin",
           "member": "string",
           "name": "RoleCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id列表",
+          "example": "[\"1111\",\"2222\"]",
+          "member": "string",
+          "name": "UserIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键词",
+          "example": "搜索关键词",
+          "member": "string",
+          "name": "Keyword",
           "required": false,
           "type": "string"
         }
@@ -4719,6 +4747,46 @@
           "name": "OwnerName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仪表盘页面数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NormalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自由画布页面数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FreeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "即席分析页面数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AdhocCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "简报页面数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BriefingCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

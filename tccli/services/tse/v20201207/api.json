@@ -836,8 +836,8 @@
   },
   "metadata": {
     "apiVersion": "2020-12-07",
-    "api_brief": "介绍如何使用 API 对腾讯云微服务引擎进行操作，包括创建托管服务集群、查询集群信息等。",
-    "serviceNameCN": "微服务引擎",
+    "api_brief": "介绍如何使用 API 对腾讯云微服务平台进行操作，包括创建托管服务集群、查询集群信息等。",
+    "serviceNameCN": "TSF-Polaris&Nacos&ZK&网关",
     "serviceShortName": "tse"
   },
   "objects": {

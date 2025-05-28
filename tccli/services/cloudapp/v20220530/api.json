@@ -187,6 +187,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权的层级：Master 主授权；Child 子授权/增强型授权",
+          "example": "Master",
+          "member": "string",
+          "name": "LicenseLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

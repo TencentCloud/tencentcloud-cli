@@ -3494,6 +3494,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例对应的功能列表，true表示支持，false 表示不支持",
+          "example": "{\"billing\":true,\"monitor\":true}",
+          "member": "string",
+          "name": "Features",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4347,6 +4357,16 @@
           "name": "IsolatedTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Serverless 扩展字段",
+          "example": "{\"tps\":\"2000\"}",
+          "member": "string",
+          "name": "ServerlessExt",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

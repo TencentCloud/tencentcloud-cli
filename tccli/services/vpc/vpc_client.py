@@ -485,7 +485,7 @@ def doModifyIPv6AddressesAttributes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreatePrivateNatGateway(args, parsed_globals):
+def doAssociateHaVipInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -514,11 +514,11 @@ def doCreatePrivateNatGateway(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreatePrivateNatGatewayRequest()
+    model = models.AssociateHaVipInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreatePrivateNatGateway(model)
+        rsp = client.AssociateHaVipInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1819,6 +1819,58 @@ def doDescribeIp6Addresses(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DescribeIp6Addresses(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreatePrivateNatGateway(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreatePrivateNatGatewayRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreatePrivateNatGateway(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5321,7 +5373,7 @@ def doDescribeAddressTemplates(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateVpnConnection(args, parsed_globals):
+def doCreateAddressTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -5350,11 +5402,11 @@ def doCreateVpnConnection(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateVpnConnectionRequest()
+    model = models.CreateAddressTemplateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateVpnConnection(model)
+        rsp = client.CreateAddressTemplate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6811,6 +6863,58 @@ def doModifySnapshotPolicies(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ModifySnapshotPolicies(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDisassociateDhcpIpWithAddressIp(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DisassociateDhcpIpWithAddressIpRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DisassociateDhcpIpWithAddressIp(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9585,7 +9689,7 @@ def doDescribePrivateNatGateways(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateAddressTemplate(args, parsed_globals):
+def doCreateVpnConnection(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9614,11 +9718,11 @@ def doCreateAddressTemplate(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateAddressTemplateRequest()
+    model = models.CreateVpnConnectionRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateAddressTemplate(model)
+        rsp = client.CreateVpnConnection(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -14785,7 +14889,7 @@ def doDescribePrivateNatGatewayTranslationNatRules(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisassociateDhcpIpWithAddressIp(args, parsed_globals):
+def doDisassociateHaVipInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -14814,11 +14918,11 @@ def doDisassociateDhcpIpWithAddressIp(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisassociateDhcpIpWithAddressIpRequest()
+    model = models.DisassociateHaVipInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DisassociateDhcpIpWithAddressIp(model)
+        rsp = client.DisassociateHaVipInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -21409,7 +21513,7 @@ ACTION_MAP = {
     "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
     "ModifyAddressInternetChargeType": doModifyAddressInternetChargeType,
     "ModifyIPv6AddressesAttributes": doModifyIPv6AddressesAttributes,
-    "CreatePrivateNatGateway": doCreatePrivateNatGateway,
+    "AssociateHaVipInstance": doAssociateHaVipInstance,
     "AcceptVpcPeeringConnection": doAcceptVpcPeeringConnection,
     "EnableGatewayFlowMonitor": doEnableGatewayFlowMonitor,
     "DescribeAddresses": doDescribeAddresses,
@@ -21435,6 +21539,7 @@ ACTION_MAP = {
     "AllocateAddresses": doAllocateAddresses,
     "DeleteCdcLDCXList": doDeleteCdcLDCXList,
     "DescribeIp6Addresses": doDescribeIp6Addresses,
+    "CreatePrivateNatGateway": doCreatePrivateNatGateway,
     "DeleteNetworkAclQuintupleEntries": doDeleteNetworkAclQuintupleEntries,
     "DeleteDirectConnectGateway": doDeleteDirectConnectGateway,
     "CreateNetworkInterface": doCreateNetworkInterface,
@@ -21502,7 +21607,7 @@ ACTION_MAP = {
     "DescribeVpcPrivateIpAddresses": doDescribeVpcPrivateIpAddresses,
     "ModifyIp6Translator": doModifyIp6Translator,
     "DescribeAddressTemplates": doDescribeAddressTemplates,
-    "CreateVpnConnection": doCreateVpnConnection,
+    "CreateAddressTemplate": doCreateAddressTemplate,
     "TransformAddress": doTransformAddress,
     "DescribeVpcEndPoint": doDescribeVpcEndPoint,
     "DescribeIp6TranslatorQuota": doDescribeIp6TranslatorQuota,
@@ -21531,6 +21636,7 @@ ACTION_MAP = {
     "ModifyIPv6AddressesBandwidth": doModifyIPv6AddressesBandwidth,
     "RefreshDirectConnectGatewayRouteToNatGateway": doRefreshDirectConnectGatewayRouteToNatGateway,
     "ModifySnapshotPolicies": doModifySnapshotPolicies,
+    "DisassociateDhcpIpWithAddressIp": doDisassociateDhcpIpWithAddressIp,
     "DeleteVpnGatewaySslClient": doDeleteVpnGatewaySslClient,
     "CreateNatGatewayDestinationIpPortTranslationNatRule": doCreateNatGatewayDestinationIpPortTranslationNatRule,
     "ModifyAddressTemplateAttribute": doModifyAddressTemplateAttribute,
@@ -21584,7 +21690,7 @@ ACTION_MAP = {
     "RemoveIp6Rules": doRemoveIp6Rules,
     "RejectVpcPeeringConnection": doRejectVpcPeeringConnection,
     "DescribePrivateNatGateways": doDescribePrivateNatGateways,
-    "CreateAddressTemplate": doCreateAddressTemplate,
+    "CreateVpnConnection": doCreateVpnConnection,
     "ModifyCustomerGatewayAttribute": doModifyCustomerGatewayAttribute,
     "EnableCcnRoutes": doEnableCcnRoutes,
     "CreatePrivateNatGatewayDestinationIpPortTranslationNatRule": doCreatePrivateNatGatewayDestinationIpPortTranslationNatRule,
@@ -21684,7 +21790,7 @@ ACTION_MAP = {
     "ResetVpnGatewayInternetMaxBandwidth": doResetVpnGatewayInternetMaxBandwidth,
     "ModifyVpnConnectionAttribute": doModifyVpnConnectionAttribute,
     "DescribePrivateNatGatewayTranslationNatRules": doDescribePrivateNatGatewayTranslationNatRules,
-    "DisassociateDhcpIpWithAddressIp": doDisassociateDhcpIpWithAddressIp,
+    "DisassociateHaVipInstance": doDisassociateHaVipInstance,
     "CreateHaVip": doCreateHaVip,
     "DescribeTenantCcns": doDescribeTenantCcns,
     "CreateHighPriorityRoutes": doCreateHighPriorityRoutes,

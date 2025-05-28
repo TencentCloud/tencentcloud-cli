@@ -5899,7 +5899,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询限制数目，默认为 100，最大可设置为 1000",
+          "document": "分页查询限制数目，默认为 100，最大可设置为 100",
           "example": "1",
           "member": "int64",
           "name": "Limit",

@@ -12394,14 +12394,14 @@
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。",
+          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-xxxxxx",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

@@ -168,6 +168,13 @@
       "output": "DescribeGlobalConfigResponse",
       "status": "online"
     },
+    "DescribeGroupsSTD": {
+      "document": "查询用户组",
+      "input": "DescribeGroupsSTDRequest",
+      "name": "用户管理-查询用户组",
+      "output": "DescribeGroupsSTDResponse",
+      "status": "online"
+    },
     "DescribeHBaseTableOverview": {
       "document": "获取Hbase表级监控数据概览接口",
       "input": "DescribeHBaseTableOverviewRequest",
@@ -5261,6 +5268,89 @@
       ],
       "type": "object"
     },
+    "DescribeGroupsSTDRequest": {
+      "document": "DescribeGroupsSTD请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "emr-mzkssfla",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述键值对过滤器，用于条件过滤查询",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述排序，用于排序",
+          "example": "无",
+          "member": "Order",
+          "name": "OrderFields",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupsSTDResponse": {
+      "document": "DescribeGroupsSTD返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组信息",
+          "example": "无",
+          "member": "GroupInfos",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的用户组数量",
+          "example": "11",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHBaseTableOverviewRequest": {
       "document": "DescribeHBaseTableOverview请求参数结构体",
       "members": [
@@ -8935,6 +9025,34 @@
       ],
       "usage": "out"
     },
+    "Filter": {
+      "document": "键值对过滤器，用于条件过滤查询.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。",
+          "example": "groupName",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值。",
+          "example": "nametest",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filters": {
       "document": "Emr集群列表实例自定义查询过滤",
       "members": [
@@ -9119,6 +9237,78 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GroupInfos": {
+      "document": "用户组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "nameTest",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "系统组",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-7-13",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组类型",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组类型描述",
+          "example": "系统用户组",
+          "member": "string",
+          "name": "GroupTypeDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13914,6 +14104,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Order": {
+      "document": "描述排序，用于排序.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段。",
+          "example": "create_time",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Desc or Asc。",
+          "example": "asc",
+          "member": "string",
+          "name": "Direction",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -101,7 +101,7 @@
     "ReportConversion": {
       "document": "本接口 (ReportConversion) 用于短信转化率上报。将已接收到短信的流水号上报到腾讯云短信服务。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>该接口当前以白名单方式对外开放，如有需要请联系  <a href=\"https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81\">腾讯云短信小助手</a> 开通。</li></ul></blockquote>",
       "input": "ReportConversionRequest",
-      "name": "上报转换率",
+      "name": "上报转化率",
       "output": "ReportConversionResponse",
       "status": "online"
     },

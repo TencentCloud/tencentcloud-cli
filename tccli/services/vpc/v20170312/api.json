@@ -112,6 +112,13 @@
       "output": "AssociateDirectConnectGatewayNatGatewayResponse",
       "status": "online"
     },
+    "AssociateHaVipInstance": {
+      "document": "本接口（AssociateHaVipInstance）用于HAVIP绑定子机或网卡（限制HaVip的飘移范围）。",
+      "input": "AssociateHaVipInstanceRequest",
+      "name": "HAVIP绑定子机或网卡",
+      "output": "AssociateHaVipInstanceResponse",
+      "status": "online"
+    },
     "AssociateIPv6Address": {
       "document": "本接口（AssociateIPv6Address）用于将弹性公网IPv6（简称EIPv6）实例绑定到 CVM 或弹性网卡配置的内网 IPv6 地址上。\n\n- 将 EIPv6 绑定到 CVM 上，其本质是将 EIPv6 绑定到 CVM 弹性网卡所配置的内网 IPv6 地址上。\n- 将 EIPv6 绑定到指定网卡的内网 IPv6 时，需确保该内网 IPv6 地址为未绑定状态，才能执行绑定操作。",
       "input": "AssociateIPv6AddressRequest",
@@ -1867,6 +1874,13 @@
       "input": "DisassociateDirectConnectGatewayNatGatewayRequest",
       "name": "专线网关解绑NAT网关",
       "output": "DisassociateDirectConnectGatewayNatGatewayResponse",
+      "status": "online"
+    },
+    "DisassociateHaVipInstance": {
+      "document": "本接口（DisassociateHaVipInstance）用于HAVIP解绑子机或网卡（去掉HaVip飘移范围）。",
+      "input": "DisassociateHaVipInstanceRequest",
+      "name": "HAVIP解绑定子机或网卡",
+      "output": "DisassociateHaVipInstanceResponse",
       "status": "online"
     },
     "DisassociateIPv6Address": {
@@ -4696,6 +4710,23 @@
     },
     "AssociateDirectConnectGatewayNatGatewayResponse": {
       "document": "AssociateDirectConnectGatewayNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateHaVipInstanceRequest": {
+      "document": "AssociateHaVipInstance请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AssociateHaVipInstanceResponse": {
+      "document": "AssociateHaVipInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22794,6 +22825,33 @@
     },
     "DisassociateDirectConnectGatewayNatGatewayResponse": {
       "document": "DisassociateDirectConnectGatewayNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateHaVipInstanceRequest": {
+      "document": "DisassociateHaVipInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HaVip解绑的子机或网卡。最多支持10个实例。",
+          "example": "[{\"HaVipId\": \"havip-7tqt5jn6\", \"InstanceType\": \"CVM\", \"InstanceId\": \"ins-3qx9elib\"}]",
+          "member": "HaVipAssociation",
+          "name": "HaVipAssociationSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateHaVipInstanceResponse": {
+      "document": "DisassociateHaVipInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
