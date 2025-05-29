@@ -285,25 +285,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "cos地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cos地域",
           "example": "ap-guanghzou",
           "member": "string",
           "name": "CosRegion",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域描述",
           "example": "广州地域",
           "member": "string",
           "name": "CosRegionName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

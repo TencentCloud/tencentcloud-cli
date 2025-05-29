@@ -5534,7 +5534,7 @@
       "type": "object"
     },
     "CkafkaRouteInfo": {
-      "document": "ckafkal路由详情",
+      "document": "Ckafka路由详情",
       "members": [
         {
           "disabled": false,
@@ -12966,7 +12966,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "execle下载地址",
+          "document": "excel下载地址",
           "example": "https://www.**.com/**",
           "member": "string",
           "name": "DownloadUrl",
@@ -24407,7 +24407,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "execle下载地址",
+          "document": "excel下载地址",
           "example": "https://www.***.com/***",
           "member": "string",
           "name": "DownloadUrl",
