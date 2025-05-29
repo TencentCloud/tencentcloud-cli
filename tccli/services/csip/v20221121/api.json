@@ -3783,7 +3783,7 @@
         },
         {
           "disabled": false,
-          "document": "新的漏洞风险id(同全网漏洞表的riskid)",
+          "document": "新的漏洞风险id(同全网漏洞表的RiskId)",
           "example": "id-5532s",
           "member": "string",
           "name": "VulRiskId",

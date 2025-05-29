@@ -8,6 +8,14 @@
         "title": "新增批量发送任务"
       }
     ],
+    "CreateAddressUnsubscribeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAddressUnsubscribeConfig\n<公共请求参数>\n\n{\n    \"Address\": \"test@example.com\",\n    \"UnsubscribeConfig\": \"7\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c30ca2e0-71d7-40dc-8808-fce32493b1f7\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "CreateCustomBlacklist": [
       {
         "document": "",
@@ -74,6 +82,14 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReceiverDetailWithData\n<公共请求参数>\n\n{\n    \"ReceiverId\": 123,\n    \"Datas\": [\n        {\n            \"Email\": \"example@gmail.com\",\n            \"TemplateData\": \"{\\\"name\\\":\\\"john\\\",\\\"age\\\":\\\"12\\\"}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "添加收件人地址附带模板参数"
+      }
+    ],
+    "DeleteAddressUnsubscribeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddressUnsubscribeConfig\n<公共请求参数>\n\n{\n    \"Address\": \"test@example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"003fc71e-55d3-443e-b72e-eb8b4e8c1379\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "DeleteBlackList": [
@@ -252,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendEmail\n<公共请求参数>\n\n{\n    \"FromEmailAddress\": \"QCLOUDTEAM <noreply@mail.qcloud.com>\",\n    \"ReplyToAddresses\": \"qcloud@tencent.com\",\n    \"Destination\": [\n        \"user@example.com\"\n    ],\n    \"Simple\": {\n        \"Text\": \"aGVsbG8gd29ybGQ=\"\n    },\n    \"Subject\": \"YourTestSubject\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\",\n        \"MessageId\": \"qcloud-ses-messageid\"\n    }\n}",
         "title": "发送纯文本邮件"
+      }
+    ],
+    "UpdateAddressUnsubscribeConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddressUnsubscribeConfig\n<公共请求参数>\n\n{\n    \"Address\": \"test@example.com\",\n    \"UnsubscribeConfig\": \"1\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"962cdec7-08bf-40f0-b3cf-0acb944bff4d\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "UpdateCustomBlackList": [

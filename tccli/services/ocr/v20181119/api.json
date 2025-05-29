@@ -372,7 +372,7 @@
       "status": "online"
     },
     "RecognizeGeneralInvoice": {
-      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票等常用标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicFlightTicketFull</td>\n          <td> 电子发票(机票行程单)</td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicTrainTicketFull</td>\n          <td> 电子发票(铁路电子客票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> TaxPayment </td>\n          <td> 完税凭证 </td>\n          <td> 18 </td>\n        </tr>\n        <tr>\n          <td> CustomsPaymentReceipt </td>\n          <td> 海关缴款 </td>\n          <td> 19 </td>\n        </tr>\n        <tr>\n          <td> BankSlip </td>\n          <td> 银行回单 </td>\n          <td> 20 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票等常用标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicFlightTicketFull</td>\n          <td> 电子发票(机票行程单)</td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicTrainTicketFull</td>\n          <td> 电子发票(铁路电子客票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> TaxPayment </td>\n          <td> 完税凭证 </td>\n          <td> 18 </td>\n        </tr>\n        <tr>\n          <td> CustomsPaymentReceipt </td>\n          <td> 海关缴款 </td>\n          <td> 19 </td>\n        </tr>\n        <tr>\n          <td> BankSlip </td>\n          <td> 银行回单 </td>\n          <td> 20 </td>\n        </tr>\n        <tr>\n          <td> OnlineTaxiItinerary </td>\n          <td> 网约车行程单 </td>\n          <td> 21 </td>\n        </tr>\n        <tr>\n          <td> CustomsDeclaration </td>\n          <td> 海关进/出口货物报关单 </td>\n          <td> 22 </td>\n        </tr>\n        <tr>\n          <td> OverseasInvoice </td>\n          <td> 海外发票 </td>\n          <td> 23 </td>\n        </tr>\n        <tr>\n          <td> ShoppingReceipt </td>\n          <td> 购物小票 </td>\n          <td> 24 </td>\n        </tr>\n        <tr>\n          <td> SaleInventory </td>\n          <td> 销货清单 </td>\n          <td> 25 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "RecognizeGeneralInvoiceRequest",
       "name": "通用票据识别（高级版）",
       "output": "RecognizeGeneralInvoiceResponse",
@@ -2876,6 +2876,32 @@
           "name": "Y",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CustomsDeclaration": {
+      "document": "海关进/出口货物报关单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8070,6 +8096,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码数据。",
+          "example": "01,01,4400153130,24741581,86013.75,20160330,,35FB,",
+          "member": "string",
+          "name": "QRCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10512,6 +10548,32 @@
       ],
       "usage": "out"
     },
+    "OnlineTaxiItinerary": {
+      "document": "网约车行程单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OnlineTaxiItineraryInfo": {
       "document": "网约车行程单识别结果",
       "members": [
@@ -10716,6 +10778,32 @@
           "member": "OtherInvoiceItem",
           "name": "OtherInvoiceItemList",
           "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverseasInvoice": {
+      "document": "海外发票",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -13319,7 +13407,7 @@
         },
         {
           "disabled": false,
-          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。\n暂不支持多个参数进行局部控制。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书\n20：银行回单\n-1：其他发票",
+          "document": "需要识别的票据类型列表，为空或不填表示识别全部类型。当传入单个类型时，图片均采用该票类型进行处理。\n暂不支持多个参数进行局部控制。\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票 ）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书\n20：银行回单\n21：网约车行程单\n22：海关进/出口货物报关单\n23：海外发票\n24：购物小票\n25：销货清单\n-1：其他发票",
           "example": "[0,1]",
           "member": "int64",
           "name": "Types",
@@ -13377,6 +13465,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnableItemPolygon",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启二维码识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableQRCode",
           "required": false,
           "type": "bool"
         }
@@ -15341,6 +15438,32 @@
       ],
       "type": "object"
     },
+    "SaleInventory": {
+      "document": "销货清单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SealInfo": {
       "document": "印章信息",
       "members": [
@@ -15747,6 +15870,32 @@
       ],
       "usage": "out"
     },
+    "ShoppingReceipt": {
+      "document": "购物小票",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SingleInvoiceInfo": {
       "document": "混贴票据中单张发票的内容",
       "members": [
@@ -16082,6 +16231,56 @@
           "example": "无",
           "member": "BankSlip",
           "name": "BankSlip",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网约车行程单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OnlineTaxiItinerary",
+          "name": "OnlineTaxiItinerary",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "海关进/出口货物报关单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomsDeclaration",
+          "name": "CustomsDeclaration",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "海外发票\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OverseasInvoice",
+          "name": "OverseasInvoice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购物小票\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ShoppingReceipt",
+          "name": "ShoppingReceipt",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "销货清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SaleInventory",
+          "name": "SaleInventory",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

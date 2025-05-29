@@ -6261,7 +6261,7 @@
         },
         {
           "disabled": false,
-          "document": "应用模板的执行状态。\n\n- SUCCESS：成功\n- FAILED：失败",
+          "document": "应用模板的执行状态。\n\n- SUCCESS：成功\n- RUNNING：运行中\n- FAILED：失败",
           "example": "SUCCESS",
           "member": "string",
           "name": "ApplyState",

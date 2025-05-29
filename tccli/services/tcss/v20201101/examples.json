@@ -1341,7 +1341,7 @@
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeEscapeRuleInfo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8663c94-1030-4256-8e10-a3822d7b5e10\",\n        \"RuleSet\": [\n            {\n                \"Group\": \"PROCESS_PRIVILEGE\",\n                \"IsEnable\": true,\n                \"Name\": \"突破namespace限制\",\n                \"Type\": \"PRIVILEGE\"\n            },\n            {\n                \"Group\": \"RISK_CONTAINER\",\n                \"IsEnable\": true,\n                \"Name\": \"敏感路径挂载\",\n                \"Type\": \"MOUNT_SENSITIVE_PTAH\"\n            },\n            {\n                \"Group\": \"CONTAINER_ESCAPE\",\n                \"IsEnable\": true,\n                \"Name\": \"逃逸漏洞利用\",\n                \"Type\": \"ESCAPE_VUL_OCCURRED\"\n            },\n            {\n                \"Group\": \"CONTAINER_ESCAPE\",\n                \"IsEnable\": true,\n                \"Name\": \"访问Docker API接口逃逸\",\n                \"Type\": \"ESCAPE_DOCKER_API\"\n            },\n            {\n                \"Group\": \"CONTAINER_ESCAPE\",\n                \"IsEnable\": true,\n                \"Name\": \"篡改敏感文件逃逸\",\n                \"Type\": \"ESCAPE_TAMPER_SENSITIVE_FILE\"\n            },\n            {\n                \"Group\": \"CONTAINER_ESCAPE\",\n                \"IsEnable\": true,\n                \"Name\": \"利用cgroup机制逃逸\",\n                \"Type\": \"ESCAPE_CGROUPS\"\n            }\n        ]\n    }\n}",
-        "title": "getescapeRule"
+        "title": "获取逃逸规则"
       }
     ],
     "DescribeEscapeSafeState": [

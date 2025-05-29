@@ -1,4 +1,4 @@
-**Example 1: getescapeRule**
+**Example 1: 获取逃逸规则**
 
 
 

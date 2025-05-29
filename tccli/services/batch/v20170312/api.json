@@ -1143,7 +1143,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br /><li>LOCAL_BASIC：本地硬盘<br /> <li>LOCAL_SSD：本地SSD硬盘<br /><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br /><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br /><li>CLOUD_BASIC：普通云硬盘<br /><li> CLOUD_PREMIUM：高性能云硬盘<br /><li>CLOUD_SSD：SSD云硬盘<br /><li> CLOUD_HSSD：增强型SSD云硬盘<br /> <li>CLOUD_TSSD：极速型SSD云硬盘<br /><li>CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。</li></li></li> </li> </li></li></li></li></li></li>",
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br /><li>LOCAL_BASIC：本地硬盘 </li> <li>LOCAL_SSD：本地SSD硬盘</li><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定</li><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定</li><li>CLOUD_BASIC：普通云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li> <li>CLOUD_TSSD：极速型SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><br />默认取值：LOCAL_BASIC<br/><br />该参数对`ResizeInstanceDisk`接口无效。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -1158,7 +1158,7 @@
           "example": "disk-ciezoimt",
           "member": "string",
           "name": "DiskId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1180,7 +1180,7 @@
           "example": "snap-6yczrj8x",
           "member": "string",
           "name": "SnapshotId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1198,40 +1198,40 @@
         },
         {
           "disabled": false,
-          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。",
+          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kms-abcd1234",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
+          "document": "云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。",
+          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-1648zauv",
           "member": "string",
           "name": "CdcId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "突发性能\n\n <b>注：内测中。</b>",
+          "document": "突发性能\n <b>注：内测中。</b>",
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
@@ -1479,7 +1479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/15892)获取。",
+          "document": "计算环境ID，环境ID通过调用接口 [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/15893)获取。",
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
@@ -4849,7 +4849,7 @@
           "example": "disk-xyzw1234",
           "member": "string",
           "name": "DiskId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5784,7 +5784,7 @@
           "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5795,7 +5795,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

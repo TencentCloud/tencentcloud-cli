@@ -133,7 +133,12 @@ Output:
                             }
                         ]
                     },
-                    "BankSlip": null
+                    "BankSlip": null,
+                    "OnlineTaxiItinerary": null,
+                    "CustomsDeclaration": null,
+                    "OverseasInvoice": null,
+                    "ShoppingReceipt": null,
+                    "SaleInventory": null
                 },
                 "Page": 1,
                 "CutImage": "",
@@ -206,7 +211,12 @@ Output:
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
                     "VatSpecialInvoice": null,
-                    "BankSlip": null
+                    "BankSlip": null,
+                    "OnlineTaxiItinerary": null,
+                    "CustomsDeclaration": null,
+                    "OverseasInvoice": null,
+                    "ShoppingReceipt": null,
+                    "SaleInventory": null
                 },
                 "Page": 1,
                 "CutImage": "",
@@ -294,7 +304,12 @@ Output:
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
                     "VatSpecialInvoice": null,
-                    "BankSlip": null
+                    "BankSlip": null,
+                    "OnlineTaxiItinerary": null,
+                    "CustomsDeclaration": null,
+                    "OverseasInvoice": null,
+                    "ShoppingReceipt": null,
+                    "SaleInventory": null
                 },
                 "Page": 1,
                 "CutImage": "",

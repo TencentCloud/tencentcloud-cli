@@ -7,6 +7,13 @@
       "output": "BatchSendEmailResponse",
       "status": "online"
     },
+    "CreateAddressUnsubscribeConfig": {
+      "document": "创建地址级退订配置",
+      "input": "CreateAddressUnsubscribeConfigRequest",
+      "name": "创建地址级退订配置",
+      "output": "CreateAddressUnsubscribeConfigResponse",
+      "status": "online"
+    },
     "CreateCustomBlacklist": {
       "document": "添加自定义黑名单",
       "input": "CreateCustomBlacklistRequest",
@@ -54,6 +61,13 @@
       "input": "CreateReceiverDetailWithDataRequest",
       "name": "添加收件人地址附带模板参数",
       "output": "CreateReceiverDetailWithDataResponse",
+      "status": "online"
+    },
+    "DeleteAddressUnsubscribeConfig": {
+      "document": "删除地址级退订配置",
+      "input": "DeleteAddressUnsubscribeConfigRequest",
+      "name": "删除地址级退订配置",
+      "output": "DeleteAddressUnsubscribeConfigResponse",
       "status": "online"
     },
     "DeleteBlackList": {
@@ -194,6 +208,13 @@
       "input": "SendEmailRequest",
       "name": "发送邮件",
       "output": "SendEmailResponse",
+      "status": "online"
+    },
+    "UpdateAddressUnsubscribeConfig": {
+      "document": "用于更新地址级退订配置",
+      "input": "UpdateAddressUnsubscribeConfigRequest",
+      "name": "更新地址级退订配置",
+      "output": "UpdateAddressUnsubscribeConfigResponse",
       "status": "online"
     },
     "UpdateCustomBlackList": {
@@ -531,6 +552,51 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAddressUnsubscribeConfigRequest": {
+      "document": "CreateAddressUnsubscribeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发信地址",
+          "example": "test@exmaple.com",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语",
+          "example": "0",
+          "member": "string",
+          "name": "UnsubscribeConfig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭，1:打开",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAddressUnsubscribeConfigResponse": {
+      "document": "CreateAddressUnsubscribeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCustomBlacklistRequest": {
       "document": "CreateCustomBlacklist请求参数结构体",
@@ -1078,6 +1144,33 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteAddressUnsubscribeConfigRequest": {
+      "document": "DeleteAddressUnsubscribeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要操作的发信地址",
+          "example": "test@example.com",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAddressUnsubscribeConfigResponse": {
+      "document": "DeleteAddressUnsubscribeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteBlackListRequest": {
       "document": "DeleteBlackList请求参数结构体",
@@ -3010,6 +3103,51 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateAddressUnsubscribeConfigRequest": {
+      "document": "UpdateAddressUnsubscribeConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发信地址",
+          "example": "test@example.com",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "退订链接选项 0: 不加入退订链接 1: 简体中文 2: 英文 3: 繁体中文 4: 西班牙语 5: 法语 6: 德语 7: 日语 8: 韩语 9: 阿拉伯语 10: 泰语",
+          "example": "0",
+          "member": "string",
+          "name": "UnsubscribeConfig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:关闭配置，1:打开配置",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAddressUnsubscribeConfigResponse": {
+      "document": "UpdateAddressUnsubscribeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateCustomBlackListRequest": {
       "document": "UpdateCustomBlackList请求参数结构体",

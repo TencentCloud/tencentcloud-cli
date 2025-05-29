@@ -442,11 +442,11 @@
       "status": "online"
     },
     "ModifyResourceScheduleConfig": {
-      "document": "修改YARN资源调度的资源配置。已废弃，请使用`ModifyYarnQueueV2`来修改队列配置",
+      "document": "已废弃，请使用ModifyYarnQueueV2来修改队列配置，近一年无相关日志\n\n修改YARN资源调度的资源配置。已废弃，请使用`ModifyYarnQueueV2`来修改队列配置",
       "input": "ModifyResourceScheduleConfigRequest",
       "name": "修改YARN资源调度的资源配置（旧）",
       "output": "ModifyResourceScheduleConfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyResourceScheduler": {
       "document": "修改了yarn的资源调度器，点击部署生效。",
@@ -498,11 +498,11 @@
       "status": "online"
     },
     "ModifyYarnDeploy": {
-      "document": "部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效",
+      "document": "该接口已废弃，请使用DeployYarnConf完成部署生效\n\n部署生效。已废弃，请使用`DeployYarnConf`接口进行部署生效",
       "input": "ModifyYarnDeployRequest",
       "name": "部署生效（旧）",
       "output": "ModifyYarnDeployResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyYarnQueueV2": {
       "document": "修改资源调度中队列信息",

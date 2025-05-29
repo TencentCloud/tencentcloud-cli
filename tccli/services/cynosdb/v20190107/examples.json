@@ -330,12 +330,28 @@
         "title": "查询备份配置信息"
       }
     ],
+    "DescribeBackupDownloadRestriction": [
+      {
+        "document": "查询备份下载限制",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadRestriction\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-2p3wjmzt\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupLimitClusterRestrictions\": [\n            {\n                \"BackupLimitRestriction\": {\n                    \"IpComparisonSymbol\": \"In\",\n                    \"LimitIps\": [],\n                    \"LimitType\": \"Customize\",\n                    \"LimitVpcs\": [\n                        {\n                            \"Region\": \"ap-guangzhou\",\n                            \"VpcList\": []\n                        }\n                    ],\n                    \"VpcComparisonSymbol\": \"In\"\n                },\n                \"ClusterId\": \"cynosdbmysql-2p3wjmzt\"\n            }\n        ],\n        \"RequestId\": \"36eca298-c9b7-4e13-8f33-3c07926ee0d8\"\n    }\n}",
+        "title": "查询备份下载限制"
+      }
+    ],
     "DescribeBackupDownloadUrl": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadUrl\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-dnofdr2d\",\n    \"BackupId\": 1879681\n}",
         "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://ncdb-bj-pitr-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/data/mysqldump/****9fd2-691a-11ef-b99a-b02628437590/2024-10-28/1879681/data_backup_1879681_20241028022147.xb?q-sign-algorithm=sha1&q-ak=************&q-sign-time=1730079993%3B1730123193&q-key-time=1730079993%3B1730123193&q-header-list=host&q-url-param-list=&q-signature=*****************\",\n        \"RequestId\": \"9e56617c-c7cc-44e1-a967-6beb418ad5e7\"\n    }\n}",
         "title": "查询集群备份文件下载地址"
+      }
+    ],
+    "DescribeBackupDownloadUserRestriction": [
+      {
+        "document": "当前地域用户级别设置的默认备份下载来源限制",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDownloadUserRestriction\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"OnlyUserRestriction\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupLimitClusterRestrictions\": [\n            {\n                \"BackupLimitRestriction\": {\n                    \"IpComparisonSymbol\": \"In\",\n                    \"LimitIps\": [],\n                    \"LimitType\": \"Customize\",\n                    \"LimitVpcs\": [\n                        {\n                            \"Region\": \"ap-guangzhou\",\n                            \"VpcList\": []\n                        }\n                    ],\n                    \"VpcComparisonSymbol\": \"In\"\n                },\n                \"ClusterId\": \"cynosdbmysql-2p3wjmzt\"\n            }\n        ],\n        \"RequestId\": \"36eca298-c9b7-4e13-8f33-3c07926ee0d8\"\n    }\n}",
+        "title": "当前地域用户级别设置的默认备份下载来源限制"
       }
     ],
     "DescribeBackupList": [
@@ -456,6 +472,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-mwg7212w\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7651f1c0-3429-11ef-81fc-6fec1c9e2c66\",\n        \"ValidatePasswordDictionary\": {\n            \"CurrentValue\": \"\",\n            \"Default\": \"\",\n            \"Description\": \"The dictionary words that validate_password uses for checking passwords.\",\n            \"EnumValue\": [],\n            \"Func\": \"\",\n            \"FuncPattern\": \"\",\n            \"IsFunc\": false,\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"0\",\n            \"Min\": \"0\",\n            \"ModifiableInfo\": {\n                \"IsModifiable\": 0\n            },\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_txsql_dictionary\",\n            \"ParamType\": \"string\"\n        },\n        \"ValidatePasswordLength\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"8\",\n            \"Description\": \"The minimum number of characters that validate_password requires passwords to have.\",\n            \"EnumValue\": [],\n            \"Func\": \"\",\n            \"FuncPattern\": \"\",\n            \"IsFunc\": false,\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"256\",\n            \"Min\": \"8\",\n            \"ModifiableInfo\": {\n                \"IsModifiable\": 0\n            },\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_length\",\n            \"ParamType\": \"integer\"\n        },\n        \"ValidatePasswordMixedCaseCount\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"1\",\n            \"Description\": \"The minimum number of lowercase and uppercase characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger.\",\n            \"EnumValue\": [],\n            \"Func\": \"\",\n            \"FuncPattern\": \"\",\n            \"IsFunc\": false,\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"50\",\n            \"Min\": \"1\",\n            \"ModifiableInfo\": {\n                \"IsModifiable\": 0\n            },\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_mixed_case_count\",\n            \"ParamType\": \"integer\"\n        },\n        \"ValidatePasswordNumberCount\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"1\",\n            \"Description\": \"The minimum number of numeric (digit) characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger. \",\n            \"EnumValue\": [],\n            \"Func\": \"\",\n            \"FuncPattern\": \"\",\n            \"IsFunc\": false,\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"50\",\n            \"Min\": \"1\",\n            \"ModifiableInfo\": {\n                \"IsModifiable\": 0\n            },\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_number_count\",\n            \"ParamType\": \"integer\"\n        },\n        \"ValidatePasswordPolicy\": {\n            \"CurrentValue\": \"LOW\",\n            \"Default\": \"MEDIUM\",\n            \"Description\": \"The password policy enforced by validate_password.\",\n            \"EnumValue\": [\n                \"MEDIUM\",\n                \"STRONG\"\n            ],\n            \"Func\": \"\",\n            \"FuncPattern\": \"\",\n            \"IsFunc\": false,\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"2\",\n            \"Min\": \"0\",\n            \"ModifiableInfo\": {\n                \"IsModifiable\": 0\n            },\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_policy\",\n            \"ParamType\": \"enum\"\n        },\n        \"ValidatePasswordSpecialCharCount\": {\n            \"CurrentValue\": \"0\",\n            \"Default\": \"1\",\n            \"Description\": \"The minimum number of nonalphanumeric characters that validate_password requires passwords to have if the password policy is MEDIUM or stronger. \",\n            \"EnumValue\": [],\n            \"Func\": \"\",\n            \"FuncPattern\": \"\",\n            \"IsFunc\": false,\n            \"IsGlobal\": 0,\n            \"MatchType\": \"\",\n            \"MatchValue\": \"\",\n            \"Max\": \"50\",\n            \"Min\": \"1\",\n            \"ModifiableInfo\": {\n                \"IsModifiable\": 0\n            },\n            \"NeedReboot\": 0,\n            \"ParamName\": \"validate_password_special_char_count\",\n            \"ParamType\": \"integer\"\n        }\n    }\n}",
         "title": "查看集群密码复杂度详情"
+      }
+    ],
+    "DescribeClusterReadOnly": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterReadOnly\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-jl17y89v\",\n        \"cynosdbmysql-2d9pq38h\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterReadOnlyValues\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-jl17y89v\",\n                \"ReadOnlyValue\": \"ON\"\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-2d9pq38h\",\n                \"ReadOnlyValue\": \"ON\"\n            }\n        ],\n        \"RequestId\": \"48b7cd8a-f6dd-4e47-a78a-ssfff\"\n    }\n}",
+        "title": "查询集群只读开关"
       }
     ],
     "DescribeClusterTransparentEncryptInfo": [
@@ -856,6 +880,22 @@
         "title": "修改集群备份配置"
       }
     ],
+    "ModifyBackupDownloadRestriction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupDownloadRestriction\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-2p3wjmzt\"\n    ],\n    \"LimitType\": \"NoLimit\",\n    \"VpcComparisonSymbol\": \"\",\n    \"IpComparisonSymbol\": \"\",\n    \"LimitVpcs\": [],\n    \"LimitIps\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1530aee8-5130-45ce-9f4e-dfb50a55e4d4\"\n    }\n}",
+        "title": "修改集群下载限制"
+      }
+    ],
+    "ModifyBackupDownloadUserRestriction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupDownloadUserRestriction\n<公共请求参数>\n\n{\n    \"LimitType\": \"NoLimit\",\n    \"VpcComparisonSymbol\": \"\",\n    \"IpComparisonSymbol\": \"\",\n    \"LimitVpcs\": [],\n    \"LimitIps\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1530aee8-5130-45ce-9f4e-dfb50a55e4d4\"\n    }\n}",
+        "title": "修改用户当前地域的备份文件限制"
+      }
+    ],
     "ModifyBackupName": [
       {
         "document": "",
@@ -910,6 +950,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ValidatePasswordLength\": 0,\n    \"ValidatePasswordMixedCaseCount\": 0,\n    \"ValidatePasswordDictionary\": [\n        \"admin\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-abcdxxxx\",\n    \"ValidatePasswordNumberCount\": 0,\n    \"ValidatePasswordSpecialCharCount\": 0,\n    \"ValidatePasswordPolicy\": \"MEDIUM\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51169b54-61d4-4604-a07e-e519a5527923\",\n        \"FlowId\": \"147283\"\n    }\n}",
         "title": "用于修改/开启集群密码复杂度"
+      }
+    ],
+    "ModifyClusterReadOnly": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterReadOnly\n<公共请求参数>\n\n{\n    \"ClusterIds\": [\n        \"cynosdbmysql-jl17y89v\",\n        \"cynosdbmysql-2d9pq38h\"\n    ],\n    \"ReadOnlyOperation\": \"ON\",\n    \"IsInMaintainPeriod\": \"no\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterTaskIds\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-jl17y89v\",\n                \"TaskId\": \"176551\"\n            },\n            {\n                \"ClusterId\": \"cynosdbmysql-2d9pq38h\",\n                \"TaskId\": \"176552\"\n            }\n        ],\n        \"RequestId\": \"48b7cd8a-f6dd-4e47-a78a-ssfff\"\n    }\n}",
+        "title": "修改集群只读开关"
       }
     ],
     "ModifyClusterSlaveZone": [

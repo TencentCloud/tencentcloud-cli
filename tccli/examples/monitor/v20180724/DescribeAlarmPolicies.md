@@ -426,7 +426,7 @@ tccli monitor DescribeAlarmPolicies --cli-unfold-argument  \
     --PageNumber 1 \
     --MonitorTypes MT_QCE \
     --Namespaces cvm_device \
-    --Dimensions [{"Dimensions": { "unInstanceId": "ins-qr8d555g"}},{ "Dimensions": { "unInstanceId": "ins-qr8d555h"}}]
+    --Dimensions [[{"name":"unInstanceId","value":"ins-qr8d555g"}],[{"name":"unInstanceId","value":"ins-qr8d555g"}]]
 ```
 
 Output: 

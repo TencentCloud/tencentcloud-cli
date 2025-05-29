@@ -2356,7 +2356,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
+          "document": "CAM角色名称。可通过[ DescribeRoleList ](https://cloud.tencent.com/document/product/598/36223)接口返回值中的`RoleName `获取。",
           "example": "testroleName001",
           "member": "string",
           "name": "CamRoleName",
@@ -2465,7 +2465,7 @@
         },
         {
           "disabled": false,
-          "document": "启动模板ID，新版本将基于该实例启动模板ID创建。",
+          "document": "启动模板ID，新版本将基于该实例启动模板ID创建。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。",
           "example": "lt-86v7g7g8",
           "member": "string",
           "name": "LaunchTemplateId",
@@ -2618,7 +2618,7 @@
         },
         {
           "disabled": false,
-          "document": "置放群组id，仅支持指定一个。",
+          "document": "置放群组id，仅支持指定一个。可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。",
           "example": "[\"ps-3p88qhfo\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
@@ -2672,7 +2672,7 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
+          "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。该参数可以通过调用 [DescribeHpcClusters](https://cloud.tencent.com/document/api/213/83220) 的返回值中的 `HpcClusterId` 字段来获取。",
           "example": "hpc-a5n666lo",
           "member": "string",
           "name": "HpcClusterId",
@@ -2765,7 +2765,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br /><li>LOCAL_BASIC：本地硬盘<br /> <li>LOCAL_SSD：本地SSD硬盘<br /><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br /><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br /><li>CLOUD_BASIC：普通云硬盘<br /><li> CLOUD_PREMIUM：高性能云硬盘<br /><li>CLOUD_SSD：SSD云硬盘<br /><li> CLOUD_HSSD：增强型SSD云硬盘<br /> <li>CLOUD_TSSD：极速型SSD云硬盘<br /><li>CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。</li></li></li> </li> </li></li></li></li></li></li>",
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br /><li>LOCAL_BASIC：本地硬盘 </li> <li>LOCAL_SSD：本地SSD硬盘</li><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定</li><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定</li><li>CLOUD_BASIC：普通云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li> <li>CLOUD_TSSD：极速型SSD云硬盘</li><li>CLOUD_BSSD：通用型SSD云硬盘</li><br />默认取值：LOCAL_BASIC<br/><br />该参数对`ResizeInstanceDisk`接口无效。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -2780,7 +2780,7 @@
           "example": "disk-ciezoimt",
           "member": "string",
           "name": "DiskId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2802,7 +2802,7 @@
           "example": "snap-6yczrj8x",
           "member": "string",
           "name": "SnapshotId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2820,40 +2820,40 @@
         },
         {
           "disabled": false,
-          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。",
+          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kms-abcd1234",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）",
+          "document": "云硬盘性能，单位：MiB/s。使用此参数可给云硬盘购买额外的性能。\n当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。",
+          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cdc-1648zauv",
           "member": "string",
           "name": "CdcId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "突发性能\n\n <b>注：内测中。</b>",
+          "document": "突发性能\n <b>注：内测中。</b>",
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
@@ -4196,7 +4196,7 @@
         },
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区例如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p> <li><strong>project-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID例如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>host-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID例如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>dedicated-cluster-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDC](https://cloud.tencent.com/document/product/1346) ID</strong>】进行过滤。[CDC](https://cloud.tencent.com/document/product/1346) ID例如：cluster-xxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>vpc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>VPC ID</strong>】进行过滤。VPC ID例如：vpc-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>subnet-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>子网ID</strong>】进行过滤。子网ID例如：subnet-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例ID</strong>】进行过滤。实例ID例如：ins-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>uuid</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例UUID</strong>】进行过滤。实例UUID例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>security-group-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>安全组ID</strong>】进行过滤。安全组ID例如: sg-8jlk3f3r。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-charge-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-state</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>private-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的内网IP</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>public-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的公网IP</strong>】进行过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>ipv6-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例的IPv6地址</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>creation-start-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例创建起始时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>creation-end-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例创建截止时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
+          "document": "<li><strong>zone</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区例如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p> <li><strong>project-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID例如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>host-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID例如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>dedicated-cluster-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDC](https://cloud.tencent.com/document/product/1346) ID</strong>】进行过滤。[CDC](https://cloud.tencent.com/document/product/1346) ID例如：cluster-xxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>vpc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>VPC ID</strong>】进行过滤。VPC ID例如：vpc-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>subnet-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>子网ID</strong>】进行过滤。子网ID例如：subnet-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例ID</strong>】进行过滤。实例ID例如：ins-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>uuid</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例UUID</strong>】进行过滤。实例UUID例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>security-group-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>安全组ID</strong>】进行过滤。安全组ID例如: sg-8jlk3f3r。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-charge-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-state</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>private-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的内网IP</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>public-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的公网IP</strong>】进行过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>ipv6-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例的IPv6地址</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>creation-start-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>创建实例请求的起始时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>creation-end-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>创建实例请求的截止时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4499,17 +4499,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例启动模板版本集合。",
-          "example": "NA",
+          "example": "无",
           "member": "LaunchTemplateVersionInfo",
           "name": "LaunchTemplateVersionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8752,7 +8752,7 @@
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8802,7 +8802,7 @@
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8812,7 +8812,7 @@
           "example": "testroleName001",
           "member": "string",
           "name": "CamRoleName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8822,7 +8822,7 @@
           "example": "hpc-a5n666lo",
           "member": "string",
           "name": "HpcClusterId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8852,7 +8852,7 @@
           "example": "TXlVc2VyRGF0YQo=",
           "member": "string",
           "name": "UserData",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8862,7 +8862,7 @@
           "example": "[\"ps-3p88qhfo\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8872,7 +8872,7 @@
           "example": "无",
           "member": "ActionTimer",
           "name": "ActionTimer",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8882,7 +8882,7 @@
           "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8892,7 +8892,7 @@
           "example": "MyHostName",
           "member": "string",
           "name": "HostName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8902,7 +8902,7 @@
           "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
           "member": "string",
           "name": "ClientToken",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8912,7 +8912,7 @@
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8922,7 +8922,7 @@
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12376,7 +12376,7 @@
           "example": "disk-xyzw1234",
           "member": "string",
           "name": "DiskId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12577,7 +12577,7 @@
           "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -12588,7 +12588,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false

@@ -2315,9 +2315,10 @@
         {
           "disabled": false,
           "document": "告警触发条件的判断方式. 0: 任意; 1: 全部; 2: 复合. 当取值为2的时候为复合告警，与参数 ComplexExpression 配合使用.\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IsUnionRule",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2325,9 +2326,10 @@
         {
           "disabled": false,
           "document": "告警触发条件列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"MetricName\": \"CpuUsage\", \"Period\": 60, \"Operator\": \"gt\", \"Value\": 60}]",
           "member": "AlarmPolicyRule",
           "name": "Rules",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -2338,6 +2340,7 @@
           "example": "(1 OR 2) AND (3 OR 4)",
           "member": "string",
           "name": "ComplexExpression",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

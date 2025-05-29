@@ -88,7 +88,6 @@ Output:
                         "ThroughputPerformance": 0,
                         "KmsKeyId": null,
                         "DiskSize": 50,
-                        "SnapshotId": null,
                         "DiskId": "disk-bzsodtn1"
                     }
                 ],
@@ -308,7 +307,6 @@ Output:
                         "ThroughputPerformance": 0,
                         "KmsKeyId": null,
                         "DiskSize": 50,
-                        "SnapshotId": null,
                         "DiskId": "disk-bzsodtn1"
                     }
                 ],
