@@ -12920,7 +12920,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "过滤条件，支持的搜索字段：\"ClusterId\"、\"ClusterName\"、\"InstanceId\"、\"InstanceName\"、\"Status\"、\"TaskId\"、\"TaskType\"",
           "example": "无",
           "member": "QueryFilter",
           "name": "Filters",
@@ -19789,19 +19789,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
-          "example": "[\"projectId\"]",
+          "document": "搜索字符串",
+          "example": "[\"1723\"]",
           "member": "string",
-          "name": "Names",
+          "name": "Values",
           "required": true,
           "type": "list"
         },
         {
           "disabled": false,
-          "document": "搜索字符串",
-          "example": "[\"1723\"]",
+          "document": "搜索字段，目前支持：\"InstanceId\", \"ProjectId\", \"InstanceName\", \"Vip\"",
+          "example": "[\"projectId\"]",
           "member": "string",
-          "name": "Values",
+          "name": "Names",
           "required": true,
           "type": "list"
         },

@@ -256,6 +256,14 @@
         "title": "示例"
       }
     ],
+    "DescribeMessageByTopic": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageByTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g839agr2\",\n    \"Topic\": \"home/room3\",\n    \"StartTime\": 1745828681259\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE48935F932F004D\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:48:34\"\n            },\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE48935FA6B80050\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:48:39\"\n            },\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE48935FBA410057\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:48:44\"\n            },\n            {\n                \"ClientId\": \"mqttxxxxxx\",\n                \"MessageId\": \"15397032005D639FEE4893603732005C\",\n                \"OriginTopic\": \"home/room3\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": \"2025-04-29 14:49:16\"\n            }\n        ],\n        \"RequestId\": \"6af56edc-5085-4583-8366-7f125c973603\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMessageList": [
       {
         "document": "",
@@ -339,7 +347,7 @@
     "ModifyInstanceCertBinding": [
       {
         "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceCertBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"SSLServerCertId\": \"\",\n    \"SSLCaCertId\": \"\",\n    \"X509Mode\": \"TLS\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceCertBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"SSLServerCertId\": \"S1RsDhNc\",\n    \"SSLCaCertId\": \"L1RsEhNf\",\n    \"X509Mode\": \"mTLS\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"91843178-a4a3-4ced-b5d9-f679962393c4\"\n    }\n}",
         "title": "示例"
       }

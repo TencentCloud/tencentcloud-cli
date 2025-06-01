@@ -36,7 +36,7 @@
       "status": "online"
     },
     "CreateInsPublicEndpoint": {
-      "document": "为MQTT实例创建公网接入点",
+      "document": "为MQTT实例创建公网接入点，未开启公网的集群可调用。",
       "input": "CreateInsPublicEndpointRequest",
       "name": "为MQTT实例创建公网接入点",
       "output": "CreateInsPublicEndpointResponse",
@@ -224,6 +224,13 @@
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
+    "DescribeMessageByTopic": {
+      "document": "根据订阅查询消息",
+      "input": "DescribeMessageByTopicRequest",
+      "name": "根据订阅查询消息",
+      "output": "DescribeMessageByTopicResponse",
+      "status": "online"
+    },
     "DescribeMessageList": {
       "document": "根据一级Topic查询消息列表",
       "input": "DescribeMessageListRequest",
@@ -267,7 +274,7 @@
       "status": "online"
     },
     "ModifyAuthorizationPolicy": {
-      "document": "修改策略规则",
+      "document": "修改策略规则，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)",
       "input": "ModifyAuthorizationPolicyRequest",
       "name": "修改授权策略",
       "output": "ModifyAuthorizationPolicyResponse",
@@ -302,7 +309,7 @@
       "status": "online"
     },
     "ModifyJWKSAuthenticator": {
-      "document": "修改MQTT JWKS 认证器",
+      "document": "修改MQTT JWKS 认证器，全量配置修改，需要提交完整的修改后配置。",
       "input": "ModifyJWKSAuthenticatorRequest",
       "name": "修改MQTTJWKS认证器",
       "output": "ModifyJWKSAuthenticatorResponse",
@@ -877,7 +884,7 @@
         },
         {
           "disabled": false,
-          "document": "策略优先级，越小越优先，不能重复",
+          "document": "策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -886,7 +893,7 @@
         },
         {
           "disabled": false,
-          "document": "决策：\nallow 允许\ndeny 拒绝",
+          "document": "决策：\nallow：允许符合该策略的设备的访问请求。\ndeny：拒绝覆盖该策略的设备的访问请求。\n可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
           "example": "allow",
           "member": "string",
           "name": "Effect",
@@ -895,7 +902,7 @@
         },
         {
           "disabled": false,
-          "document": "操作\nconnect：连接\npub：发布\nsub：订阅",
+          "document": "操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\nconnect：连接\npub：发布\nsub：订阅",
           "example": "connect",
           "member": "string",
           "name": "Actions",
@@ -904,7 +911,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-保留消息\n1,匹配保留消息；\n2,匹配非保留消息，\n3.匹配保留和非保留消息",
+          "document": "条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n1,匹配保留消息；\n2,匹配非保留消息，\n3.匹配保留和非保留消息",
           "example": "1",
           "member": "int64",
           "name": "Retain",
@@ -913,7 +920,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：服务质量\n0：最多一次\n1：最少一次\n2：精确一次",
+          "document": "条件：服务质量\n0：最多一次\n1：最少一次\n2：精确一次\n可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
           "example": "1",
           "member": "string",
           "name": "Qos",
@@ -922,7 +929,7 @@
         },
         {
           "disabled": false,
-          "document": "资源，需要匹配的订阅",
+          "document": "资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n",
           "example": "topic1",
           "member": "string",
           "name": "Resources",
@@ -949,7 +956,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：客户端IP地址，支持IP或者CIDR",
+          "document": "条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -1005,7 +1012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1014,8 +1021,8 @@
         },
         {
           "disabled": false,
-          "document": "jwks端点",
-          "example": "127.0.0.1",
+          "document": "jwks服务地址",
+          "example": "http://127.0.0.1",
           "member": "string",
           "name": "Endpoint",
           "required": true,
@@ -1023,7 +1030,7 @@
         },
         {
           "disabled": false,
-          "document": "最大并发连接数，默认8，范围：1-20",
+          "document": "最大并发连接数，默认8，范围：1-10",
           "example": "10",
           "member": "int64",
           "name": "Concurrency",
@@ -1032,8 +1039,8 @@
         },
         {
           "disabled": false,
-          "document": "网络请求方法 Get 或 Post，默认post",
-          "example": "Post",
+          "document": "网络请求方法 GET 或 POST，默认POST",
+          "example": "POST",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -1041,7 +1048,7 @@
         },
         {
           "disabled": false,
-          "document": "认证器是否开启：open-启用；close-关闭",
+          "document": "认证器是否开启：open-启用；close-关闭，默认open-启用",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -1050,7 +1057,7 @@
         },
         {
           "disabled": false,
-          "document": "说明",
+          "document": "说明，最多支持128个字符。",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -1078,7 +1085,7 @@
         {
           "disabled": false,
           "document": "转发请求header",
-          "example": "[]",
+          "example": "无",
           "member": "HeaderItem",
           "name": "Header",
           "required": false,
@@ -1087,7 +1094,7 @@
         {
           "disabled": false,
           "document": "转发请求body",
-          "example": "[]",
+          "example": "无",
           "member": "BodyItem",
           "name": "Body",
           "required": false,
@@ -1113,8 +1120,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1132,7 +1139,7 @@
         {
           "disabled": false,
           "document": "公网访问规则",
-          "example": "[ \t\t{ \t\t\t\"IpRule\": \"1.1.1.1\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"remark\" \t\t} \t]",
+          "example": "无",
           "member": "PublicAccessRule",
           "name": "Rules",
           "required": false,
@@ -1158,7 +1165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型，\nBASIC 基础版\nPRO  专业版",
+          "document": "实例类型，需要和SkuCode保持对应关系，可参考 [获取MQTT产品售卖规格](https://cloud.tencent.com/document/api/1778/116232) 接口获取。\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版\n",
           "example": "BASIC",
           "member": "string",
           "name": "InstanceType",
@@ -1167,8 +1174,8 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
-          "example": "abcd",
+          "document": "集群名称不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。",
+          "example": "instance-1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1176,8 +1183,8 @@
         },
         {
           "disabled": false,
-          "document": "商品规格，可用规格可通过接口DescribeProductSKUList查询",
-          "example": "basic_1k",
+          "document": "商品规格，需要和InstanceType保持对应关系，可参考 [获取MQTT产品售卖规格](https://cloud.tencent.com/document/api/1778/116232) 接口获取。",
+          "example": "pro_10k_1",
           "member": "string",
           "name": "SkuCode",
           "required": true,
@@ -1185,7 +1192,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "备注信息，最长 128 字符",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -1203,8 +1210,8 @@
         },
         {
           "disabled": false,
-          "document": "实例绑定的VPC信息",
-          "example": " [ \t\t{ \t\t\t\"VpcId\": \"vpc-9a5wnirv\", \t\t\t\"SubnetId\": \"subnet-0tw6tlfi\" \t\t} \t]",
+          "document": "实例绑定的VPC信息，需要传当前用户下可用的VPC和SUBNET",
+          "example": "无",
           "member": "VpcInfo",
           "name": "VpcList",
           "required": false,
@@ -1212,7 +1219,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启公网",
+          "document": "是否开启公网，默认false（关闭）",
           "example": "true",
           "member": "bool",
           "name": "EnablePublic",
@@ -1221,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽（单位：兆）",
+          "document": "公网带宽（单位：Mbps），EnablePublic 为True时，该字段必须填写且大于0.",
           "example": "1",
           "member": "int64",
           "name": "Bandwidth",
@@ -1230,8 +1237,8 @@
         },
         {
           "disabled": false,
-          "document": "公网访问白名单",
-          "example": "[ \t\t{ \t\t\t\"Ip\": \"1.1.1.1\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"11111111\" \t\t} \t]",
+          "document": "公网访问白名单，不传表示拒绝所有IP网络访问。",
+          "example": "无",
           "member": "IpRule",
           "name": "IpRules",
           "required": false,
@@ -1239,7 +1246,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费（0: 不自动续费；1: 自动续费）",
+          "document": "是否自动续费（0: 不自动续费；1: 自动续费），仅购买预付费集群时生效。默认1:自动续费",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
@@ -1248,7 +1255,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长（单位：月）",
+          "document": "购买时长（单位：月），购买预付费集群时生效，默认1m（月）。可选范围：1~12、24、36、48、60；",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -1257,7 +1264,7 @@
         },
         {
           "disabled": false,
-          "document": "付费模式（0: 后付费；1: 预付费）",
+          "document": "付费模式（0: 后付费；1: 预付费），默认0（后付费）。",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -1294,7 +1301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1303,7 +1310,7 @@
         },
         {
           "disabled": false,
-          "document": "jwks端点",
+          "document": "JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Endpoint",
@@ -1312,7 +1319,7 @@
         },
         {
           "disabled": false,
-          "document": "jwks刷新间隔,单位：秒",
+          "document": "认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。",
           "example": "100",
           "member": "int64",
           "name": "RefreshInterval",
@@ -1321,7 +1328,7 @@
         },
         {
           "disabled": false,
-          "document": "jwks文本",
+          "document": "jwks文本，（Text字段和Endpoint字段必须选择一个填写）",
           "example": "text",
           "member": "string",
           "name": "Text",
@@ -1330,7 +1337,7 @@
         },
         {
           "disabled": false,
-          "document": "认证器是否开启：open-启用；close-关闭",
+          "document": "认证器是否开启：open-启用；close-关闭，默认open-启用",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -1339,7 +1346,7 @@
         },
         {
           "disabled": false,
-          "document": "说明",
+          "document": "说明，不能超过 128 个字符",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -1348,7 +1355,7 @@
         },
         {
           "disabled": false,
-          "document": "设备连接时传递jwt的key；\nusername-使用用户名字段传递；\npassword-使用密码字段传递",
+          "document": "认证字段；\nusername-对应 MQTT CONNECT Packet 中 username 字段，\npassword-对应 MQTT CONNECT Packet 中 password 字段。\n\n默认username",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -1375,8 +1382,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1384,7 +1391,7 @@
         },
         {
           "disabled": false,
-          "document": "算法：hmac-based，public-key",
+          "document": "签名方式：hmac-based，public-key",
           "example": "hmac-based",
           "member": "string",
           "name": "Algorithm",
@@ -1393,7 +1400,7 @@
         },
         {
           "disabled": false,
-          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "document": "认证字段\npassword：对应 MQTT CONNECT Packet 中 password 字段，\nusername：对应 MQTT CONNECT Packet 中 username 字段\n默认username\n",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -1402,7 +1409,7 @@
         },
         {
           "disabled": false,
-          "document": "密码",
+          "document": "密钥，Algorithm为hmac-based需要传递该字段。",
           "example": "your-secret",
           "member": "string",
           "name": "Secret",
@@ -1411,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "公钥",
+          "document": "公钥，Algorithm为public-key时需要传递该字段。",
           "example": "text",
           "member": "string",
           "name": "PublicKey",
@@ -1420,7 +1427,7 @@
         },
         {
           "disabled": false,
-          "document": "认证器是否开启：open-启用；close-关闭",
+          "document": "认证器是否开启：open-启用；close-关闭，默认：open-启用",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -1429,7 +1436,7 @@
         },
         {
           "disabled": false,
-          "document": "说明",
+          "document": "说明，不能超过 128 个字符。",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -2631,7 +2638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件列表,支持以下字段\nInstanceName：集群名模糊搜索\nInstanceId：集群id精确搜索\nInstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）",
+          "document": "查询条件列表,支持以下字段\nInstanceName：集群名模糊搜索\nInstanceId：集群id精确搜索\nInstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）\n注意：配置TagFilters时该查询条件不生效。",
           "example": "[{\"Name\":\"InstanceName\",\"Values\":[\"instance1\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -2956,6 +2963,70 @@
           "name": "AuthorizationPolicy",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageByTopicRequest": {
+      "document": "DescribeMessageByTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "home/room",
+          "example": "发送topic或者订阅表达式",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，毫秒级时间戳 。",
+          "example": "1712025623202",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询消息条数，最大1024，默认100.",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageByTopicResponse": {
+      "document": "DescribeMessageByTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息列表",
+          "example": "无",
+          "member": "MQTTMessage",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3605,7 +3676,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许放行",
+          "document": "当前仅支持允许，默认允许。",
           "example": "true",
           "member": "bool",
           "name": "Allow",
@@ -3954,7 +4025,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nDESTROYED，已删除\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
+          "document": "实例状态，\nRUNNING, 运行中\nMAINTAINING，维护中\nABNORMAL，异常\nOVERDUE，欠费\nCREATING，创建中\nMODIFYING，变配中\nCREATE_FAILURE，创建失败\nMODIFY_FAILURE，变配失败\nDELETING，删除中",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -4115,6 +4186,62 @@
       ],
       "usage": "out"
     },
+    "MQTTMessage": {
+      "document": "MQTT消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "15397032005D639FEE4879C38A130016",
+          "member": "string",
+          "name": "MessageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息发送的客户端Id",
+          "example": "client-1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息服务质量等级",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息在服务端的存储时间，毫秒级时间戳",
+          "example": "1745828681259",
+          "member": "int64",
+          "name": "StoreTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源topic",
+          "example": "home/room",
+          "member": "string",
+          "name": "OriginTopic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MQTTMessageItem": {
       "document": "消息记录",
       "members": [
@@ -4169,7 +4296,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "死信重发次数\t",
           "example": "2",
           "member": "int64",
@@ -4179,7 +4306,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "死信重发成功次数",
           "example": "2",
           "member": "int64",
@@ -4189,7 +4316,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "子topic",
           "example": "subtopic",
           "member": "string",
@@ -4308,7 +4435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略",
+          "document": "授权策略ID，从 [查询授权策略](https://cloud.tencent.com/document/product/1778/111074) 接口获取",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -4317,7 +4444,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。\n",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -4326,7 +4453,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称",
+          "document": "策略名称，不能为空，3-64个字符，支持中文、字母、数字、“-”及“_”。",
           "example": "name",
           "member": "string",
           "name": "PolicyName",
@@ -4335,7 +4462,7 @@
         },
         {
           "disabled": false,
-          "document": "策略版本",
+          "document": "策略版本,默认为1，当前仅支持1",
           "example": "1",
           "member": "int64",
           "name": "PolicyVersion",
@@ -4344,7 +4471,7 @@
         },
         {
           "disabled": false,
-          "document": "策略优先级，越小越优先",
+          "document": "策略优先级，越小越优先，不能重复",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -4353,7 +4480,7 @@
         },
         {
           "disabled": false,
-          "document": "allow、deny",
+          "document": "决策：\nallow 允许\ndeny 拒绝",
           "example": "allow",
           "member": "string",
           "name": "Effect",
@@ -4362,7 +4489,7 @@
         },
         {
           "disabled": false,
-          "document": "connect、pub、sub",
+          "document": "操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\nconnect：连接\npub：发布\nsub：订阅",
           "example": "connect",
           "member": "string",
           "name": "Actions",
@@ -4371,7 +4498,7 @@
         },
         {
           "disabled": false,
-          "document": "资源",
+          "document": "资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n",
           "example": "topic1",
           "member": "string",
           "name": "Resources",
@@ -4380,7 +4507,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "条件-用户名",
           "example": "user1",
           "member": "string",
           "name": "Username",
@@ -4389,7 +4516,7 @@
         },
         {
           "disabled": false,
-          "document": "1.匹配保留消息；2.匹配非保留消息；3.匹配所有消息",
+          "document": "条件-保留消息\n1,匹配保留消息；\n2,匹配非保留消息，\n3.匹配保留和非保留消息",
           "example": "1",
           "member": "int64",
           "name": "Retain",
@@ -4398,7 +4525,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端",
+          "document": "条件：客户端ID，支持正则",
           "example": "client1",
           "member": "string",
           "name": "ClientId",
@@ -4407,7 +4534,7 @@
         },
         {
           "disabled": false,
-          "document": "IP",
+          "document": "条件：客户端IP地址，支持IP或者CIDR",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -4416,7 +4543,7 @@
         },
         {
           "disabled": false,
-          "document": "0、1、2",
+          "document": "条件：服务质量\n0：最多一次\n1：最少一次\n2：精确一次",
           "example": "1",
           "member": "string",
           "name": "Qos",
@@ -4425,7 +4552,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "备注信息，最长 128 字符",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -4452,8 +4579,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4461,8 +4588,8 @@
         },
         {
           "disabled": false,
-          "document": "端点",
-          "example": "127.0.0.1",
+          "document": "服务地址",
+          "example": " http://127.0.0.1",
           "member": "string",
           "name": "Endpoint",
           "required": false,
@@ -4479,7 +4606,7 @@
         },
         {
           "disabled": false,
-          "document": "最大并发连接数，默认8，范围：1-20",
+          "document": "最大并发连接数，默认8，范围：1-10",
           "example": "10",
           "member": "int64",
           "name": "Concurrency",
@@ -4506,7 +4633,7 @@
         },
         {
           "disabled": false,
-          "document": "说明",
+          "document": "说明，最多支持128个字符。",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -4525,7 +4652,7 @@
         {
           "disabled": false,
           "document": "请求header",
-          "example": "[]",
+          "example": "无",
           "member": "HeaderItem",
           "name": "Header",
           "required": false,
@@ -4534,7 +4661,7 @@
         {
           "disabled": false,
           "document": "请求body",
-          "example": "[]",
+          "example": "无",
           "member": "BodyItem",
           "name": "Body",
           "required": false,
@@ -4560,8 +4687,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4579,7 +4706,7 @@
         {
           "disabled": false,
           "document": "公网访问规则",
-          "example": "[ \t\t{ \t\t\t\"IpRule\": \"2.2.2.2\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"555\" \t\t} \t]",
+          "example": "无",
           "member": "PublicAccessRule",
           "name": "Rules",
           "required": true,
@@ -4605,28 +4732,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "服务端证书id",
-          "example": "serverCertId",
-          "member": "string",
-          "name": "SSLServerCertId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "CA证书id",
-          "example": "caId",
-          "member": "string",
-          "name": "SSLCaCertId",
           "required": true,
           "type": "string"
         },
@@ -4641,7 +4750,25 @@
         },
         {
           "disabled": false,
-          "document": "设备证书注册类型：\nJITP，自动注册；\nMANUAL 手动注册",
+          "document": "服务端证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS或BYOC时为必填。",
+          "example": "N4XIbZic",
+          "member": "string",
+          "name": "SSLServerCertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CA证书id，从 [获取证书列表](https://cloud.tencent.com/document/api/400/41671) 或者腾讯云证书服务控制台获取。X509Mode为mTLS时为必填",
+          "example": "N4idIbZiE",
+          "member": "string",
+          "name": "SSLCaCertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书注册类型：\nJITP：自动注册；\nAPI：手动注册\n默认值：API",
           "example": "JITP",
           "member": "string",
           "name": "DeviceCertificateProvisionType",
@@ -4695,7 +4822,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的备注信息，最多64个字符。",
+          "document": "要修改的备注信息，最多128个字符。",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -4712,7 +4839,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "客户端证书注册方式：\nJITP：自动注册\nAPI：手动通过API注册",
           "example": "JITP",
           "member": "string",
@@ -4721,7 +4848,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "自动注册证书是否自动激活",
           "example": "false",
           "member": "bool",
@@ -4758,8 +4885,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4767,7 +4894,7 @@
         },
         {
           "disabled": false,
-          "document": "端点",
+          "document": "JWKS服务器地址，（Text字段和Endpoint字段必须选择一个填写）",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Endpoint",
@@ -4776,7 +4903,7 @@
         },
         {
           "disabled": false,
-          "document": "认证器状态：open-启用；close-关闭",
+          "document": "认证器状态：open-启用（默认）；close-关闭",
           "example": "open",
           "member": "string",
           "name": "Status",
@@ -4785,8 +4912,8 @@
         },
         {
           "disabled": false,
-          "document": "刷新时间",
-          "example": "10",
+          "document": "认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址时生效。",
+          "example": "60",
           "member": "int64",
           "name": "RefreshInterval",
           "required": false,
@@ -4794,7 +4921,7 @@
         },
         {
           "disabled": false,
-          "document": "JSKS文本",
+          "document": "JWKS文本，认证服务器地址为空时生效。（Text字段和Endpoint字段必须选择一个填写）",
           "example": "text",
           "member": "string",
           "name": "Text",
@@ -4803,7 +4930,7 @@
         },
         {
           "disabled": false,
-          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "document": "认证字段；\nusername-对应 MQTT CONNECT Packet 中 username 字段， \npassword-对应 MQTT CONNECT Packet 中 password 字段。默认username",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -4812,7 +4939,7 @@
         },
         {
           "disabled": false,
-          "document": "说明",
+          "document": "说明，不能超过 128 个字符",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -4839,7 +4966,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -4848,7 +4975,7 @@
         },
         {
           "disabled": false,
-          "document": "算法：hmac-based，public-key",
+          "document": "签名方式：hmac-based，public-key",
           "example": "hmac-based",
           "member": "string",
           "name": "Algorithm",
@@ -4857,7 +4984,7 @@
         },
         {
           "disabled": false,
-          "document": "设备连接时传递jwt的key；\nusername-使用用户名字段传递；\npassword-使用密码字段传递",
+          "document": "认证字段\npassword：对应 MQTT CONNECT Packet 中 password 字段，\nusername：对应 MQTT CONNECT Packet 中 username 字段",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -4866,8 +4993,8 @@
         },
         {
           "disabled": false,
-          "document": "密码",
-          "example": "open",
+          "document": "密钥，Algorithm为hmac-based需要传递该字段。",
+          "example": "your-secret",
           "member": "string",
           "name": "Secret",
           "required": false,
@@ -4875,7 +5002,7 @@
         },
         {
           "disabled": false,
-          "document": "公钥",
+          "document": "公钥，Algorithm为public-key时需要传递该字段。",
           "example": " -----BEGIN CERTIFICATE----- -----END CERTIFICATE-----",
           "member": "string",
           "name": "PublicKey",
@@ -4884,19 +5011,28 @@
         },
         {
           "disabled": false,
-          "document": "JSKS文本",
-          "example": "text",
+          "document": "认证器是否开启：open-启用；close-关闭",
+          "example": "open",
           "member": "string",
-          "name": "Text",
+          "name": "Status",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "说明",
+          "document": "说明，不能超过 128 个字符",
           "example": "remark",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "JSKS文本",
+          "example": "text",
+          "member": "string",
+          "name": "Text",
           "required": false,
           "type": "string"
         }
@@ -5157,24 +5293,24 @@
           "member": "string",
           "name": "IpRule",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "允许或者拒绝",
+          "document": "当前仅支持允许，默认允许（allow）",
           "example": "true",
           "member": "bool",
           "name": "Allow",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "备注信息，最多64个字符。",
           "example": "this is remark",
           "member": "string",
           "name": "Remark",
@@ -5400,7 +5536,7 @@
         },
         {
           "disabled": false,
-          "document": " 客户端证书状态，默认激活状态（ACTIVE）\nACTIVE：激活     \nINACTIVE：未激活     \nREVOKED：吊销 \nPENDING_ACTIVATION：注册待激活",
+          "document": " 客户端证书状态，默认激活状态（ACTIVE）\nACTIVE：激活     \nINACTIVE：未激活     ",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",

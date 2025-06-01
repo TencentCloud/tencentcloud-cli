@@ -211,7 +211,7 @@
       "status": "online"
     },
     "ModifyFileSystemAutoScaleUpRule": {
-      "document": "用来设置文件系统扩容策略，，该接口只支持turbo文件系统",
+      "document": "用来设置文件系统扩容策略，该接口只支持turbo文件系统",
       "input": "ModifyFileSystemAutoScaleUpRuleRequest",
       "name": "更新文件系统自动扩容策略",
       "output": "ModifyFileSystemAutoScaleUpRuleResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "StopMigrationTask": {
-      "document": "用于终止迁移任务。\n此接口需提交工单，开启白名单之后才能使用。",
+      "document": "用于终止迁移任务，非运行中状态不支持终止。\n此接口需提交工单，开启白名单之后才能使用。",
       "input": "StopMigrationTaskRequest",
       "name": "终止迁移任务",
       "output": "StopMigrationTaskResponse",
@@ -1234,7 +1234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -1270,7 +1270,7 @@
         },
         {
           "disabled": false,
-          "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。\nall_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
+          "document": "用户权限，值为 all_squash、no_all_squash、root_squash、no_root_squash。默认值为root_squash\nall_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
           "example": "root_squash",
           "member": "string",
           "name": "UserPermission",
@@ -1357,7 +1357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID，通过查询文件系统接口获取",
+          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
           "example": "cfs-gagaggag",
           "member": "string",
           "name": "FileSystemId",
@@ -1366,7 +1366,7 @@
         },
         {
           "disabled": false,
-          "document": "快照名称，不超过64字符",
+          "document": "快照名称，支持不超过64字符长度，支持中文、数字、_、-",
           "example": "CFS定期快照",
           "member": "string",
           "name": "SnapshotName",
@@ -1584,7 +1584,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照策略ID，查询快照策略接口获取",
+          "document": "快照策略ID，查询快照策略接口获取,[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208)",
           "example": "asp-123abc",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -1621,7 +1621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID。说明，进行删除文件系统操作前需要先调用 DeleteMountTarget 接口删除该文件系统的挂载点，否则会删除失败。",
+          "document": "文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取。说明，进行删除文件系统操作前需要先调用 DeleteMountTarget 接口删除该文件系统的挂载点，否则会删除失败。",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -1648,7 +1648,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -1695,7 +1695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -1704,7 +1704,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID，通过查询权限组规则接口获取",
+          "document": "规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取",
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
@@ -1751,8 +1751,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统快照id，可通过查询快照列表接口获取",
-          "example": "snapcfs-xx",
+          "document": "快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取",
+          "example": "snapcfs-1245abcd",
           "member": "string",
           "name": "SnapshotId",
           "required": false,
@@ -1760,7 +1760,7 @@
         },
         {
           "disabled": false,
-          "document": "需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项",
+          "document": "需要删除的文件系统快照ID 列表，快照ID，跟ID列表至少填一项\n快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取",
           "example": "[\"snapcfs-xx\",\"snapcfs-xx1\"]",
           "member": "string",
           "name": "SnapshotIds",
@@ -1860,8 +1860,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID，通过查询文件系统接口获取",
-          "example": "cfs-12345",
+          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
+          "example": "cfs-12345efg",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -2098,7 +2098,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID，通过查询文件系统接口获取",
+          "document": "文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -2282,7 +2282,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -2418,7 +2418,7 @@
         },
         {
           "disabled": false,
-          "document": "按创建时间排序取值CreationTime",
+          "document": "按创建时间排序取值",
           "example": "CreationTime",
           "member": "string",
           "name": "OrderField",
@@ -2502,7 +2502,7 @@
         },
         {
           "disabled": false,
-          "document": "<br><li> taskId\n\n按照【迁移任务id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> taskName\n\n按照【迁移任务名字】进行模糊搜索过滤。\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<br><li> taskId按照【迁移任务id】进行过滤。类型：String必选：否<br></li><br><li>  taskName按照【迁移任务名字】进行模糊搜索过滤。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2517,7 +2517,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务的数量",
+          "document": "迁移任务的总数量",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
@@ -2549,7 +2549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID，查询文件系统列表可以获得id",
+          "document": "文件系统 ID，[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)可以获得id",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -2596,8 +2596,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统快照ID，通过快照创建接口获得",
-          "example": "snapcfs-xx",
+          "document": "快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取",
+          "example": "snapcfs-123abcdd",
           "member": "string",
           "name": "SnapshotId",
           "required": true,
@@ -2605,7 +2605,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间",
+          "document": "起始时间，格式“YYYY-MM-DD hh:mm:ss”",
           "example": "2021-08-11 11:51:33",
           "member": "string",
           "name": "StartTime",
@@ -2614,7 +2614,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "结束时间，格式“YYYY-MM-DD hh:mm:ss”",
           "example": "2021-08-11 11:51:33",
           "member": "string",
           "name": "EndTime",
@@ -2661,7 +2661,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID,通过查询文件系统列表获取",
+          "document": "文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取",
           "example": "cfs-abc12345",
           "member": "string",
           "name": "FileSystemId",
@@ -2841,7 +2841,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表",
+          "document": "可用区名称，例如ap-beijing-1，参考[简介](https://cloud.tencent.com/document/api/582/38144)文档中的地域与可用区列表",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -3433,7 +3433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统id,通过查询文件系统列表获取该参数",
+          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
           "example": "cfs-4abc12343",
           "member": "string",
           "name": "FileSystemId",
@@ -3847,7 +3847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID,通过查询文件系统列表获取",
+          "document": "文件系统 ID,通过[查询文件系统列表](https://cloud.tencent.com/document/api/582/38170)获取",
           "example": "cfs-abc12345",
           "member": "string",
           "name": "FileSystemId",
@@ -4307,7 +4307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要解绑的文件系统ID列表，用\",\" 分割，文件系统id 通创建文件系统接口获得",
+          "document": "需要解绑的文件系统ID列表，用\",\" 分割，文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
           "example": "cfs-abc,cfs-dbc",
           "member": "string",
           "name": "FileSystemIds",
@@ -4316,7 +4316,7 @@
         },
         {
           "disabled": false,
-          "document": "解绑的快照ID，通过创建快照策略接口获得",
+          "document": "解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取",
           "example": "asp-gagagacg",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
@@ -4353,8 +4353,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "快照策略ID,查询快照策略列表获取",
-          "example": "asp-xx",
+          "document": "解绑的快照策略ID，可以通过[DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/582/80208) 查询获取",
+          "example": "asp-1234abcd",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "required": true,
@@ -4453,8 +4453,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID",
-          "example": "cfs-12345",
+          "document": "文件系统 ID,通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取",
+          "example": "cfs-abc12345",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -4462,7 +4462,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义文件系统名称",
+          "document": "用户自定义文件系统名称，64字节内的中文字母数字或者 _,-,与CreationToken 至少填一个",
           "example": "fs_name",
           "member": "string",
           "name": "FsName",
@@ -4519,7 +4519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -4528,7 +4528,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统 ID，通过查询文件系统接口获取",
+          "document": "文件系统 ID，通过[查询文件系统接口](https://cloud.tencent.com/document/api/582/38170)获取",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -4611,7 +4611,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -4686,7 +4686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组 ID，通过创建权限组接口或者创建权限组规则接口获取",
+          "document": "权限组 ID，可通过[DescribeCfsPGroups接口](https://cloud.tencent.com/document/api/582/38157)获取",
           "example": "pgroup-12345",
           "member": "string",
           "name": "PGroupId",
@@ -4695,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "规则 ID，通过查询权限组规则接口获取",
+          "document": "规则 ID，可通过[DescribeCfsRules](https://cloud.tencent.com/document/api/582/38156)接口获取",
           "example": "rule-12345",
           "member": "string",
           "name": "RuleId",
@@ -4818,7 +4818,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统快照ID,查询文件系统快照列表获取",
+          "document": "快照ID，可以通过[DescribeCfsSnapshots](https://cloud.tencent.com/document/api/582/80206) 查询获取",
           "example": "snapcfs-4agklgllg",
           "member": "string",
           "name": "SnapshotId",
@@ -4827,7 +4827,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统快照名称，与AliveDays 必须填一个",
+          "document": "文件系统快照名称，与AliveDays 必须填一个，快照名称，支持不超过64字符长度，支持中文、数字、_、-",
           "example": "snapshot123",
           "member": "string",
           "name": "SnapshotName",
@@ -4873,7 +4873,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID,通过查询文件系统列表获取",
+          "document": "文件系统 ID,可通过[DescribeCfsFileSystems](https://cloud.tencent.com/document/api/582/38170)接口获取",
           "example": "cfs-abcd1234",
           "member": "string",
           "name": "FileSystemId",
