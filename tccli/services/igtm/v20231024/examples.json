@@ -45,8 +45,8 @@
     "CreateStrategy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StrategyName\": \"abc\",\n    \"Source\": [\n        {\n            \"DnsLineId\": 1,\n            \"Name\": \"abc\"\n        }\n    ],\n    \"MainAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"abc\"\n        }\n    ],\n    \"FallbackAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"abc\"\n        }\n    ],\n    \"KeepDomainRecords\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StrategyId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-sdsderd12e\",\n    \"StrategyName\": \"testname\",\n    \"Source\": [\n        {\n            \"DnsLineId\": 1,\n            \"Name\": \"line1\"\n        }\n    ],\n    \"MainAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"FallbackAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"KeepDomainRecords\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategyId\": 0,\n        \"RequestId\": \"abcasd232dsad1dsadasd\"\n    }\n}",
         "title": "创建策略"
       }
     ],
@@ -69,8 +69,8 @@
     "DeleteStrategy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": 1,\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": 1,\n    \"InstanceId\": \"gtm-ddgasdwe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9b19115c-8732-4940-9199-98952a13dsf15\"\n    }\n}",
         "title": "删除策略"
       }
     ],
@@ -173,8 +173,8 @@
     "ModifyAddressPool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressPool\n<公共请求参数>\n\n{\n    \"PoolId\": 1,\n    \"PoolName\": \"abc\",\n    \"TrafficStrategy\": \"abc\",\n    \"MonitorId\": 1,\n    \"AddressSet\": [\n        {\n            \"AddressId\": 1,\n            \"Addr\": \"abc\",\n            \"Location\": \"abc\",\n            \"Status\": \"abc\",\n            \"IsEnable\": \"abc\",\n            \"Weight\": 1,\n            \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressPool\n<公共请求参数>\n\n{\n    \"PoolId\": 1,\n    \"PoolName\": \"testname\",\n    \"TrafficStrategy\": \"all\",\n    \"MonitorId\": 1,\n    \"AddressSet\": [\n        {\n            \"AddressId\": 1,\n            \"Addr\": \"1.1.1.2\",\n            \"Location\": \"中国上海\",\n            \"Status\": \"ok\",\n            \"IsEnable\": \"ENABLED\",\n            \"Weight\": 1,\n            \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9b19115c-873gt2-4940-91339-98952a13f159\"\n    }\n}",
         "title": "编辑地址池"
       }
     ],
@@ -197,8 +197,8 @@
     "ModifyStrategy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StrategyId\": 1,\n    \"StrategyName\": \"abc\",\n    \"Source\": [\n        {\n            \"DnsLineId\": 1,\n            \"Name\": \"abc\"\n        }\n    ],\n    \"MainAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"abc\"\n        }\n    ],\n    \"FallbackAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"abc\"\n        }\n    ],\n    \"IsEnabled\": \"abc\",\n    \"KeepDomainRecords\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-sdsdrdasd\",\n    \"StrategyId\": 1,\n    \"StrategyName\": \"test_strategy\",\n    \"Source\": [\n        {\n            \"DnsLineId\": 1,\n            \"Name\": \"默认\"\n        }\n    ],\n    \"MainAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"FallbackAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"IsEnabled\": \"ENABLED\",\n    \"KeepDomainRecords\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"abdsadasddc12312jhjyg\"\n    }\n}",
         "title": "修改策略"
       }
     ]

@@ -7,15 +7,15 @@ Input:
 ```
 tccli igtm DeleteStrategy --cli-unfold-argument  \
     --StrategyId 1 \
-    --InstanceId abc
+    --InstanceId gtm-ddgasdwe
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Msg": "success",
+        "RequestId": "9b19115c-8732-4940-9199-98952a13dsf15"
     }
 }
 ```

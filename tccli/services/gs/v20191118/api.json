@@ -175,6 +175,13 @@
       "output": "DestroyAndroidInstancesResponse",
       "status": "online"
     },
+    "DistributeFileToAndroidInstances": {
+      "document": "分发文件到安卓实例",
+      "input": "DistributeFileToAndroidInstancesRequest",
+      "name": "分发文件到安卓实例",
+      "output": "DistributeFileToAndroidInstancesResponse",
+      "status": "online"
+    },
     "ExecuteCommandOnAndroidInstances": {
       "document": "在安卓实例上异步执行命令，命令输出结果如果内容过长会被截断",
       "input": "ExecuteCommandOnAndroidInstancesRequest",
@@ -390,6 +397,13 @@
       "input": "UploadFileToAndroidInstancesRequest",
       "name": "上传文件到安卓实例",
       "output": "UploadFileToAndroidInstancesResponse",
+      "status": "online"
+    },
+    "UploadFilesToAndroidInstances": {
+      "document": "批量上传文件到安卓实例",
+      "input": "UploadFilesToAndroidInstancesRequest",
+      "name": "批量上传文件到安卓实例",
+      "output": "UploadFilesToAndroidInstancesResponse",
       "status": "online"
     }
   },
@@ -1009,6 +1023,45 @@
           "example": "2022-02-15T01:51:55.786Z",
           "member": "string",
           "name": "CompleteTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AndroidInstanceUploadFile": {
+      "document": "安卓实例上传文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID",
+          "example": "cai_abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件上传 URL",
+          "example": "https://xxx",
+          "member": "string",
+          "name": "FileURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传目标目录，只能上传到 /sdcard/ 目录或其子目录下",
+          "example": "/sdcard/Download/",
+          "member": "string",
+          "name": "DestinationDirectory",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2700,6 +2753,61 @@
       ],
       "type": "object"
     },
+    "DistributeFileToAndroidInstancesRequest": {
+      "document": "DistributeFileToAndroidInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表",
+          "example": "[\"cai_xxx\"]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件下载 URL",
+          "example": "https://xxx",
+          "member": "string",
+          "name": "FileURL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传目标目录，只能上传到 /sdcard/ 目录或其子目录下",
+          "example": "/sdcard/Download/",
+          "member": "string",
+          "name": "DestinationDirectory",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DistributeFileToAndroidInstancesResponse": {
+      "document": "DistributeFileToAndroidInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务集合",
+          "example": "无",
+          "member": "AndroidInstanceTask",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExecuteCommandOnAndroidInstancesRequest": {
       "document": "ExecuteCommandOnAndroidInstances请求参数结构体",
       "members": [
@@ -4308,6 +4416,43 @@
     },
     "UploadFileToAndroidInstancesResponse": {
       "document": "UploadFileToAndroidInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例任务集合",
+          "example": "无",
+          "member": "AndroidInstanceTask",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFilesToAndroidInstancesRequest": {
+      "document": "UploadFilesToAndroidInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上传文件信息列表",
+          "example": "无",
+          "member": "AndroidInstanceUploadFile",
+          "name": "Files",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFilesToAndroidInstancesResponse": {
+      "document": "UploadFilesToAndroidInstances返回参数结构体",
       "members": [
         {
           "disabled": false,

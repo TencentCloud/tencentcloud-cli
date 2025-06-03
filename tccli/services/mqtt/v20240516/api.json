@@ -1165,7 +1165,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型，需要和SkuCode保持对应关系，可参考可参考 [获取MQTT产品售卖规格](https://cloud.tencent.com/document/api/1778/116232) 接口获取。\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版\n",
+          "document": "实例类型，需要和SkuCode保持对应关系，可参考 [获取MQTT产品售卖规格](https://cloud.tencent.com/document/api/1778/116232) 接口获取。\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版\n",
           "example": "BASIC",
           "member": "string",
           "name": "InstanceType",
@@ -1174,7 +1174,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "集群名称不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。",
           "example": "instance-1",
           "member": "string",
           "name": "Name",
@@ -1183,7 +1183,7 @@
         },
         {
           "disabled": false,
-          "document": "商品规格，，需要和InstanceType保持对应关系，可参考可参考 [获取MQTT产品售卖规格](https://cloud.tencent.com/document/api/1778/116232) 接口获取。",
+          "document": "商品规格，需要和InstanceType保持对应关系，可参考 [获取MQTT产品售卖规格](https://cloud.tencent.com/document/api/1778/116232) 接口获取。",
           "example": "pro_10k_1",
           "member": "string",
           "name": "SkuCode",
@@ -1228,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽（单位：Mbps）",
+          "document": "公网带宽（单位：Mbps），EnablePublic 为True时，该字段必须填写且大于0.",
           "example": "1",
           "member": "int64",
           "name": "Bandwidth",
@@ -1255,7 +1255,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长（单位：月），购买预付费集群时生效，默认m（月）。",
+          "document": "购买时长（单位：月），购买预付费集群时生效，默认1m（月）。可选范围：1~12、24、36、48、60；",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -1310,7 +1310,7 @@
         },
         {
           "disabled": false,
-          "document": "JWKS服务地址",
+          "document": "JWKS服务地址，（Text字段和Endpoint字段必须选择一个填写）",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Endpoint",
@@ -1319,7 +1319,7 @@
         },
         {
           "disabled": false,
-          "document": "认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址时生效。",
+          "document": "认证文本刷新间隔时间，单位：秒，最小值60，默认值60，最大值1000。填写认证服务器地址（Endpoint）时生效。",
           "example": "100",
           "member": "int64",
           "name": "RefreshInterval",
@@ -1328,7 +1328,7 @@
         },
         {
           "disabled": false,
-          "document": "jwks文本",
+          "document": "jwks文本，（Text字段和Endpoint字段必须选择一个填写）",
           "example": "text",
           "member": "string",
           "name": "Text",
@@ -1355,7 +1355,7 @@
         },
         {
           "disabled": false,
-          "document": "认证字段；\nusername-对应 MQTT CONNECT Packet 中 password 字段，\npassword-对应 MQTT CONNECT Packet 中 username 字段。",
+          "document": "认证字段；\nusername-对应 MQTT CONNECT Packet 中 username 字段，\npassword-对应 MQTT CONNECT Packet 中 password 字段。\n\n默认username",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -4894,7 +4894,7 @@
         },
         {
           "disabled": false,
-          "document": "JWKS服务器地址",
+          "document": "JWKS服务器地址，（Text字段和Endpoint字段必须选择一个填写）",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Endpoint",
@@ -4921,7 +4921,7 @@
         },
         {
           "disabled": false,
-          "document": "JWKS文本，认证服务器地址为空时生效。",
+          "document": "JWKS文本，认证服务器地址为空时生效。（Text字段和Endpoint字段必须选择一个填写）",
           "example": "text",
           "member": "string",
           "name": "Text",
@@ -4930,7 +4930,7 @@
         },
         {
           "disabled": false,
-          "document": "认证字段； username-对应 MQTT CONNECT Packet 中 password 字段， password-对应 MQTT CONNECT Packet 中 username 字段。默认username",
+          "document": "认证字段；\nusername-对应 MQTT CONNECT Packet 中 username 字段， \npassword-对应 MQTT CONNECT Packet 中 password 字段。默认username",
           "example": "username",
           "member": "string",
           "name": "From",

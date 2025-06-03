@@ -899,7 +899,7 @@
         {
           "disabled": false,
           "document": "主力地址池集合，最多允许配置四级",
-          "example": "[{\"AddressPools\":[{\"PoolId\":1,\"Weight\":50},{\"PoolId\":2,\"Weight\":50}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3,\"Weight\":30},{\"PoolId\":4,\"Weight\":70}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"all\"}]",
+          "example": "[{\"AddressPools\":[{\"PoolId\":1,\"Weight\":50}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3,\"Weight\":30}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"all\"}]",
           "member": "MainAddressPool",
           "name": "MainAddressPoolSet",
           "required": true,
@@ -2474,7 +2474,7 @@
         {
           "disabled": false,
           "document": "地址列表",
-          "example": "[]",
+          "example": "[{\"AddressId\":100,\"Addr\":\"1.1.1.2\",\"Location\":\"中国上海\",\"IsEnable\":\"ENABLED\",\"Weight\":99}]",
           "member": "Address",
           "name": "AddressSet",
           "required": false,
@@ -2765,7 +2765,7 @@
         {
           "disabled": false,
           "document": "主力地址池集合，需要全量传参",
-          "example": "[{\"AddressPools\":[{\"PoolId\":1,\"Weight\":50},{\"PoolId\":2,\"Weight\":50}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3,\"Weight\":30},{\"PoolId\":4,\"Weight\":70}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"all\"}]",
+          "example": "[{\"AddressPools\":[{\"PoolId\":1,\"Weight\":50}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3,\"Weight\":30}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"weight\"},{\"AddressPools\":[{\"PoolId\":3}],\"MinAliveNodeNum\":1,\"TrafficStrtegy\":\"all\"}]",
           "member": "MainAddressPool",
           "name": "MainAddressPoolSet",
           "required": true,

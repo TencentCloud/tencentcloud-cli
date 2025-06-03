@@ -7,9 +7,9 @@ Input:
 ```
 tccli mqtt ModifyInstanceCertBinding --cli-unfold-argument  \
     --InstanceId mqtt-jeredv33 \
-    --SSLServerCertId  \
-    --SSLCaCertId  \
-    --X509Mode TLS
+    --SSLServerCertId S1RsDhNc \
+    --SSLCaCertId L1RsEhNf \
+    --X509Mode mTLS
 ```
 
 Output: 

@@ -384,6 +384,14 @@
         "title": "示例1 查询企业安全组信息"
       }
     ],
+    "DescribeFwEdgeBar": [
+      {
+        "document": "互联网边界页概览数据",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwEdgeBar\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InFlowMax\": 1000000,\n        \"OutFlowMax\": 20000,\n        \"Width\": 100,\n        \"SerialWidth\": 50,\n        \"UnUsedWidth\": 50,\n        \"NatWidth\": 50,\n        \"AutoDefence\": 1,\n        \"OpenSwitchNum\": 10,\n        \"SwitchQuota\": 20,\n        \"SerialRegionNum\": \"1\",\n        \"InstanceQuota\": 10,\n        \"CloseSwitchNum\": 10,\n        \"RequestId\": \"30bb04dc-35ca-4d3a-8f40-535d0f5ec21a\"\n    }\n}",
+        "title": "互联网边界页概览数据"
+      }
+    ],
     "DescribeFwEdgeIps": [
       {
         "document": "串行防火墙开关列表",
@@ -628,6 +636,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwGroupSwitch\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"SwitchId\",\n            \"Values\": [\n                \"cfws-18def16a8b\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 1,\n    \"StartTime\": \"2023-03-09 20:40:19\",\n    \"EndTime\": \"2023-03-09 20:40:19\",\n    \"Order\": \"desc\",\n    \"By\": \"SwitchId\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8894118f-9353-4579-8294-0582de7e3495\",\n        \"SwitchList\": [\n            {\n                \"SwitchId\": \"cfwalls-1448c486f4\",\n                \"SwitchName\": \"云联网测试\",\n                \"SwitchMode\": 3,\n                \"ConnectType\": 0,\n                \"ConnectId\": \"ccn-wxecrvtb\",\n                \"ConnectName\": \"云联网1\",\n                \"SrcInstancesInfo\": [\n                    {\n                        \"InstanceId\": \"vpc-dw314am3\",\n                        \"InstanceName\": \"冲突sdwan\",\n                        \"InstanceCidr\": \"10.24.0.0/16\",\n                        \"Region\": \"ap-nanjing\"\n                    }\n                ],\n                \"DstInstancesInfo\": [\n                    {\n                        \"InstanceId\": \"vpc-dw314am3\",\n                        \"InstanceName\": \"冲突sdwan\",\n                        \"InstanceCidr\": \"10.24.0.0/16\",\n                        \"Region\": \"ap-nanjing\"\n                    }\n                ],\n                \"FwGroupId\": \"cfwg-03508673\",\n                \"FwGroupName\": \"生产防火墙\",\n                \"FwInsLst\": [\n                    {\n                        \"FwInsId\": \"cfwew-63a110d9\",\n                        \"FwInsName\": \"云联网测试-南京\",\n                        \"FwInsRegion\": \"ap-nanjing\"\n                    }\n                ],\n                \"FwInsRegion\": [\n                    \"ap-nanjing\"\n                ],\n                \"Enable\": 1,\n                \"Status\": 3,\n                \"BypassStatus\": 1,\n                \"AttachWithEdge\": 0,\n                \"CrossEdgeStatus\": 0,\n                \"IpsAction\": 0,\n                \"IpVersion\": 0\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "VPC间防火墙开关列表"
+      }
+    ],
+    "DescribeVpcFwStatusBar": [
+      {
+        "document": "DescribeVpcFwStatusBar 获取VPC防火墙状态栏数据",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwStatusBar\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FwBarStatus\": {\n            \"BandWidthUsed\": 5120,\n            \"DiffRegionFwInsId\": \"\",\n            \"DiffRegionFwInsName\": \"\",\n            \"DiffRegionMaxFlow\": 0,\n            \"FwGroupId\": \"\",\n            \"FwGroupMaxFlow\": 0,\n            \"FwGroupName\": \"\",\n            \"FwInsCount\": 6,\n            \"FwInsId\": \"cfwew-7d50f9f5\",\n            \"FwInsMaxFlow\": 9028,\n            \"FwInsName\": \" [autotest][勿删]自动化测试\",\n            \"FwSwitchCount\": 5,\n            \"JoinInstanceCount\": 13,\n            \"JoinVpcCntLimit\": 10,\n            \"SameRegionFwInsId\": \"cfwew-7d50f9f5\",\n            \"SameRegionFwInsName\": \" [autotest][勿删]自动化测试\",\n            \"SameRegionMaxFlow\": 9028,\n            \"VpcFwInsCntLimit\": 11,\n            \"VpcRegionCntLimit\": 5,\n            \"VpcThroughPut\": 10240,\n            \"FwGroupCount\": 1,\n            \"FwGroupMaxInsCount\": 10,\n            \"InstanceQuota\": 1\n        },\n        \"RequestId\": \"c9343d64-31c1-482c-bbd9-5d74c177e1fb\"\n    }\n}",
+        "title": "DescribeVpcFwStatusBar 获取VPC防火墙状态栏数据"
       }
     ],
     "ExpandCfwVertical": [

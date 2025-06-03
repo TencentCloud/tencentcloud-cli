@@ -315,6 +315,13 @@
       "output": "DescribeEnterpriseSecurityGroupRuleListResponse",
       "status": "online"
     },
+    "DescribeFwEdgeBar": {
+      "document": "互联网边界页概览数据",
+      "input": "DescribeFwEdgeBarRequest",
+      "name": "互联网边界页概览数据",
+      "output": "DescribeFwEdgeBarResponse",
+      "status": "online"
+    },
     "DescribeFwEdgeIps": {
       "document": "串行防火墙IP开关列表",
       "input": "DescribeFwEdgeIpsRequest",
@@ -523,6 +530,13 @@
       "input": "DescribeVpcFwGroupSwitchRequest",
       "name": "VPC防火墙(组)开关列表",
       "output": "DescribeVpcFwGroupSwitchResponse",
+      "status": "online"
+    },
+    "DescribeVpcFwStatusBar": {
+      "document": "获取VPC防火墙状态栏数据",
+      "input": "DescribeVpcFwStatusBarRequest",
+      "name": "获取VPC防火墙状态栏数据",
+      "output": "DescribeVpcFwStatusBarResponse",
       "status": "online"
     },
     "ExpandCfwVertical": {
@@ -6452,6 +6466,373 @@
       ],
       "type": "object"
     },
+    "DescribeFwEdgeBarRequest": {
+      "document": "DescribeFwEdgeBar请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFwEdgeBarResponse": {
+      "document": "DescribeFwEdgeBar返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总入站峰值带宽 单位 bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "InFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总入站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.6",
+          "member": "float",
+          "name": "InFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总出站峰值带宽 单位 bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "OutFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总出站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.6",
+          "member": "float",
+          "name": "OutFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100M",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "串行带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50M",
+          "member": "int64",
+          "name": "SerialWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "UnUsedWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NAT 分配带宽 单位 Mps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50M",
+          "member": "int64",
+          "name": "NatWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 不开启自动防护\n1 开启自动防护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoDefence",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "OpenSwitchNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关配额数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "SwitchQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "串行地域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SerialRegionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "InstanceQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关闭开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "CloseSwitchNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SwitchNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定资产数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "AssetNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "BuyWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "natfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "NatInstanceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpcfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
+          "member": "int64",
+          "name": "VpcInstanceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旁路防火墙弹性按量计费开关",
+          "example": "1",
+          "member": "int64",
+          "name": "ElasticSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旁路防火墙弹性带宽上限",
+          "example": "100",
+          "member": "int64",
+          "name": "ElasticBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "串行防火墙弹性总带宽上限",
+          "example": "100",
+          "member": "int64",
+          "name": "SerialElasticBandWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "串行防火墙弹性按量计费开关",
+          "example": "1",
+          "member": "int64",
+          "name": "SerialElasticSwitch",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旁路专用带宽",
+          "example": "100",
+          "member": "int64",
+          "name": "BypassOnlyBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可分配到串行防火墙和NAT防火墙的带宽值，将从旁路防火墙等额扣除",
+          "example": "100",
+          "member": "int64",
+          "name": "CanUsedBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙通用实例总数",
+          "example": "10",
+          "member": "int64",
+          "name": "AllInsQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旁路入站峰值带宽，单位bps",
+          "example": "1024000",
+          "member": "int64",
+          "name": "BypassInFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旁路出站峰值带宽，单位bps",
+          "example": "1024000",
+          "member": "int64",
+          "name": "BypassOutFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旁路入站峰值带宽，规格占比",
+          "example": "0.5",
+          "member": "float",
+          "name": "BypassInFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旁路出站峰值带宽，规格占比",
+          "example": "0.5",
+          "member": "float",
+          "name": "BypassOutFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格占比最大的串行地域入站峰值带宽，单位bps",
+          "example": "1024000",
+          "member": "int64",
+          "name": "SerialRegionInFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格占比最大的串行地域出站峰值带宽，单位bps",
+          "example": "1024000",
+          "member": "int64",
+          "name": "SerialRegionOutFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "串行地域入站峰值带宽，规格占比",
+          "example": "0.5",
+          "member": "float",
+          "name": "SerialRegionInFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "串行地域出站峰值带宽，规格占比",
+          "example": "0.5",
+          "member": "float",
+          "name": "SerialRegionOutFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格占比最大的串行地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "MaxSerialRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFwEdgeIpsRequest": {
       "document": "DescribeFwEdgeIps请求参数结构体",
       "members": [
@@ -8744,6 +9125,33 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwStatusBarRequest": {
+      "document": "DescribeVpcFwStatusBar请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVpcFwStatusBarResponse": {
+      "document": "DescribeVpcFwStatusBar返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC防火墙状态栏数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwBarStatus",
+          "name": "FwBarStatus",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15716,6 +16124,262 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcFwBarStatus": {
+      "document": "VPC防火墙状态栏信息数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跨地域峰值带宽对应实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-af7aa5a3",
+          "member": "string",
+          "name": "DiffRegionFwInsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域峰值带宽对应实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "春城无处不飞花",
+          "member": "string",
+          "name": "DiffRegionFwInsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域峰值带宽数值",
+          "example": "1024",
+          "member": "int64",
+          "name": "DiffRegionMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙总接入网络实例数量",
+          "example": "7",
+          "member": "int64",
+          "name": "JoinInstanceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙总开关数量",
+          "example": "7",
+          "member": "int64",
+          "name": "FwSwitchCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "FwInsCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同地域峰值带宽对应实例ID",
+          "example": "cfwew-af7aa5a3",
+          "member": "string",
+          "name": "SameRegionFwInsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同地域峰值带宽对应实例名称",
+          "example": "春城无处不飞花",
+          "member": "string",
+          "name": "SameRegionFwInsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同地域峰值带宽数值",
+          "example": "1024",
+          "member": "int64",
+          "name": "SameRegionMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙的购买带宽 2GB 单位为M",
+          "example": "2048",
+          "member": "int64",
+          "name": "VpcThroughPut",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2048",
+          "member": "int64",
+          "name": "BandWidthUsed",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单实例支持最大地域个数",
+          "example": "3",
+          "member": "int64",
+          "name": "VpcRegionCntLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户最大支持实例个数",
+          "example": "2",
+          "member": "int64",
+          "name": "VpcFwInsCntLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有模式下，最大支持接入的Vpc实例个数",
+          "example": "10",
+          "member": "int64",
+          "name": "JoinVpcCntLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwg-145667",
+          "member": "string",
+          "name": "FwGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名字",
+          "member": "string",
+          "name": "FwGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "FwGroupMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-145667",
+          "member": "string",
+          "name": "FwInsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名字",
+          "member": "string",
+          "name": "FwInsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "FwInsMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "FwGroupCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单个组最多建多少防火墙实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FwGroupMaxInsCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "InstanceQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群模式使用带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "ClusterModeWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主备模式使用带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MasterSlaveModeWitdh",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

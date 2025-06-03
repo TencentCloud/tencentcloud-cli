@@ -36,14 +36,15 @@ Output:
                 "FileTotalSize": 0,
                 "FileMigratedSize": 0,
                 "FileFailedSize": 0,
-                "FileTotalList": null,
-                "FileCompletedList": null,
-                "FileFailedList": null,
+                "FileTotalList": "",
+                "FileCompletedList": "",
+                "FileFailedList": "",
                 "CreateTime": 1662023240000,
-                "EndTime": 1662023548000
+                "EndTime": 1662023548000,
+                "Direction": 0
             }
         ],
-        "TotalCount": 2,
+        "TotalCount": 1,
         "RequestId": "c0f7c5d9-c8c4-401a-a6da-2106f3c6db76"
     }
 }
