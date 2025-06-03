@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CreateMigrationTask": {
-      "document": "用于创建迁移任务。\n此接口需提交工单，开启白名单之后才能使用。",
+      "document": "用于创建迁移任务。",
       "input": "CreateMigrationTaskRequest",
       "name": "创建迁移任务",
       "output": "CreateMigrationTaskResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "DeleteMigrationTask": {
-      "document": "用于删除迁移任务。\n此接口需提交工单，开启白名单之后才能使用。",
+      "document": "用于删除迁移任务。不支持删除等待中、创建中、运行中、取消中、终止中状态的任务。",
       "input": "DeleteMigrationTaskRequest",
       "name": "删除迁移任务",
       "output": "DeleteMigrationTaskResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeBucketList": {
-      "document": "用于获取数据源桶列表。\n此接口需提交工单，开启白名单之后才能使用。",
+      "document": "用于获取数据源桶列表。",
       "input": "DescribeBucketListRequest",
       "name": "获取对象存储桶列表",
       "output": "DescribeBucketListResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "StopMigrationTask": {
-      "document": "用于终止迁移任务，非运行中状态不支持终止。\n此接口需提交工单，开启白名单之后才能使用。",
+      "document": "用于终止迁移任务，可以终止等待中、运行中状态的任务。",
       "input": "StopMigrationTaskRequest",
       "name": "终止迁移任务",
       "output": "StopMigrationTaskResponse",
@@ -747,7 +747,7 @@
           "example": "name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -757,7 +757,7 @@
           "example": "region",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1440,7 +1440,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretId",
-          "example": "agKID0FnEWgyGnEUbBAmtZ8Yt59B49dKdgc",
+          "example": "secretid",
           "member": "string",
           "name": "SrcSecretId",
           "required": true,
@@ -1449,7 +1449,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretKey",
-          "example": "bo2KVXSzpX9qPn4C9zBaq0DHBybtghadg",
+          "example": "secretkey",
           "member": "string",
           "name": "SrcSecretKey",
           "required": true,
@@ -2042,8 +2042,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源账号的SecretId\n",
-          "example": "AKIXXXXXXX",
+          "document": "数据源账号的SecretId",
+          "example": "secretid",
           "member": "string",
           "name": "SrcSecretId",
           "required": true,
@@ -2052,7 +2052,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretKey",
-          "example": "02de6bxxxxxx",
+          "example": "secretkey",
           "member": "string",
           "name": "SrcSecretKey",
           "required": true,
@@ -3307,7 +3307,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移状态。0: 已完成；1: 进行中；2: 已终止",
+          "document": "迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -4220,7 +4220,7 @@
         {
           "disabled": false,
           "document": "迁移任务Id",
-          "example": "atagckgtl",
+          "example": "cfsmigrate-xxxxxxxx",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -4229,8 +4229,8 @@
         },
         {
           "disabled": false,
-          "document": "迁移状态。0: 已完成；1: 进行中；2: 已终止",
-          "example": "2",
+          "document": "迁移状态。0: 已完成；1: 创建中；2: 运行中；3: 终止中；4: 已终止；5: 创建失败；6: 运行失败；7: 结束中；8: 删除中；9: 等待中",
+          "example": "3",
           "member": "uint64",
           "name": "Status",
           "output_required": true,

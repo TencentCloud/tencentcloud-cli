@@ -27,7 +27,6 @@ Output:
                     "UpdateTime": "2019-12-31T03:59:14Z",
                     "ClassPath": "/a/b",
                     "TagSet": [],
-                    "TagInfoSet": [],
                     "PresetTagSet": [],
                     "PreviewUrl": "http://1810xxxxxxx2.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
                     "Owner": {

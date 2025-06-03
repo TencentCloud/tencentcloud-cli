@@ -62,14 +62,6 @@
         "title": "创建实例网络"
       }
     ],
-    "CreateDBInstances": [
-      {
-        "document": "新购实例",
-        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstances\n<公共请求参数>\n\n{\n    \"InstanceCount\": \"1\",\n    \"AutoRenewFlag\": \"1\",\n    \"Zone\": \"ap-guangzhou-5\",\n    \"DBVersion\": \"12.4\",\n    \"Storage\": \"10\",\n    \"Period\": \"1\",\n    \"SpecCode\": \"cdb.pg.z1.2g\",\n    \"InstanceChargeType\": \"prepaid\",\n    \"AutoVoucher\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\",\n        \"DealNames\": [\n            \"20180119110001\"\n        ],\n        \"DBInstanceIdSet\": [\n            \"postgres-xxxx\"\n        ],\n        \"BillId\": \"xxxxxxxxx\"\n    }\n}",
-        "title": "创建PostgreSQL实例"
-      }
-    ],
     "CreateDatabase": [
       {
         "document": "",

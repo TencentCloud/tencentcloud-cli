@@ -206,6 +206,14 @@
         "title": "DestroyAndroidInstances 示例"
       }
     ],
+    "DistributeFileToAndroidInstances": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeFileToAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99NQV3Qw7\"\n    ],\n    \"FileURL\": \"https://test.cos.ap-nanjing.myqcloud.com/tmp/wallpaper.jpg\",\n    \"DestinationDirectory\": \"/sdcard/Download/mor99\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d84c9b83-4e34-4a70-bba2-c617e5ae824a\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99wkeEIID\",\n                \"TaskId\": \"9c1a12a7-460b-449e-a9c8-1802395e579c\"\n            },\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99NQV3Qw7\",\n                \"TaskId\": \"8eafea29-17f8-4d27-8408-4e63732f8878\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ExecuteCommandOnAndroidInstances": [
       {
         "document": "",
@@ -452,6 +460,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFileToAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-abcd1234\"\n    ],\n    \"FileURL\": \"http://xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"615cf0a4-075e-4cf5-b26f-d786363daccd\",\n                \"AndroidInstanceId\": \"cai-abcd1234\"\n            }\n        ],\n        \"RequestId\": \"af454786-99e1-4fc7-8ffa-2ecef1e69715\"\n    }\n}",
         "title": "上传文件到安卓实例示例"
+      }
+    ],
+    "UploadFilesToAndroidInstances": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFilesToAndroidInstances\n<公共请求参数>\n\n{\n    \"Files\": [\n        {\n            \"AndroidInstanceId\": \"cai-251006279-ea99wkeEIID\",\n            \"FileURL\": \"https://test.cos.ap-nanjing.myqcloud.com/tmp/wallpaper.jpg\",\n            \"DestinationDirectory\": \"/sdcard/Download/mor11\"\n        },\n        {\n            \"AndroidInstanceId\": \"cai-251006279-ea99NQV3Qw7\",\n            \"FileURL\": \"https://test.cos.ap-nanjing.myqcloud.com/tmp/177.apk\",\n            \"DestinationDirectory\": \"/sdcard/Download/mor22\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9724ac8-759d-4ee5-8cf2-968731df5fd1\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99wkeEIID\",\n                \"TaskId\": \"111dda20-b082-4704-b8c5-92ade0fef1e1\"\n            },\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99NQV3Qw7\",\n                \"TaskId\": \"4cdabcd0-3e93-4b5a-b083-352123eb29e0\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
       }
     ]
   },

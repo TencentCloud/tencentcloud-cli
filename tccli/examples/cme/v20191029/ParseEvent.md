@@ -33,7 +33,6 @@ Output:
             "StorageNewFileCreatedEvent": {
                 "FileId": "",
                 "MaterialId": "",
-                "Operator": "",
                 "OperationType": "",
                 "Owner": {
                     "Type": "",
@@ -102,7 +101,6 @@ Output:
             "StorageNewFileCreatedEvent": {
                 "FileId": "",
                 "MaterialId": "",
-                "Operator": "",
                 "OperationType": "",
                 "Owner": {
                     "Type": "",
@@ -137,7 +135,7 @@ Input:
 ```
 tccli cme ParseEvent --cli-unfold-argument  \
     --Platform 1000000009 \
-    --EventContent {"EventType":"Storage.NewFileCreated","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","StorageNewFileCreatedEvent":{"FileId":"5285890818667693851","MaterialId":"60a75c1c30fcbe0001cc09d5","Operator":"3fa6b09e-05c6-433e-bc1e-6457d264f1dd","OperationType":"Upload","Owner":{"Type":"PERSON","Id":"3fa6b09e-05c6-433e-bc1e-6457d264f1dd"},"ClassPath":"/媒体"}}
+    --EventContent {"EventType":"Storage.NewFileCreated","Operator":"3fa6b09e-05c6-433e-bc1e-6457d290d9d9","StorageNewFileCreatedEvent":{"FileId":"5285890818667693851","MaterialId":"60a75c1c30fcbe0001cc09d5","OperationType":"Upload","Owner":{"Type":"PERSON","Id":"3fa6b09e-05c6-433e-bc1e-6457d264f1dd"},"ClassPath":"/媒体"}}
 ```
 
 Output: 
@@ -150,7 +148,6 @@ Output:
             "StorageNewFileCreatedEvent": {
                 "FileId": "85890818667698972737",
                 "MaterialId": "60a75c1c30fcbe00093ikd93k",
-                "Operator": "3fa6b09e-05c6-433e-bc1e-6457d290d9d9",
                 "OperationType": "Upload",
                 "Owner": {
                     "Type": "PERSON",
@@ -211,7 +208,6 @@ Output:
             "StorageNewFileCreatedEvent": {
                 "FileId": "",
                 "MaterialId": "",
-                "Operator": "",
                 "OperationType": "",
                 "Owner": {
                     "Type": "",
@@ -270,7 +266,6 @@ Output:
             "StorageNewFileCreatedEvent": {
                 "FileId": "",
                 "MaterialId": "",
-                "Operator": "",
                 "OperationType": "",
                 "Owner": {
                     "Type": "",

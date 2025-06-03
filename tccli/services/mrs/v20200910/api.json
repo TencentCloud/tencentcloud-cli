@@ -15,14 +15,14 @@
       "status": "online"
     },
     "ImageMaskAsync": {
-      "document": "图片脱敏-异步接口",
+      "document": "图片脱敏-异步接口\n短时间大批量调用（例如>100上传/10分钟），如果遇到错误码“FalledOperation.AsyncQueueFullError”，请于数分钟后再次尝试提交。",
       "input": "ImageMaskAsyncRequest",
       "name": "图片脱敏-异步接口",
       "output": "ImageMaskAsyncResponse",
       "status": "online"
     },
     "ImageMaskAsyncGetResult": {
-      "document": "图片脱敏-异步获取结果接口",
+      "document": "图片脱敏-异步获取结果接口\n请于上传请求后24小时内获取结果。",
       "input": "ImageMaskAsyncGetResultRequest",
       "name": "图片脱敏-异步获取结果接口",
       "output": "ImageMaskAsyncGetResultResponse",
@@ -6272,7 +6272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "异步任务ID\n1.应上传图片TaskID 仅 24 小时内有效，请于提交任务获取TaskID后24小时内调用ImageMaskAsyncGetResult接口获取结果.\n2.建议在获取到TaskID 后，5-10分钟后再调用 ImageMaskAsyncGetResult 接口获取脱敏结果。",
           "example": "1cf14582-bd61-4ea2-93ca-c63eaa8d427a",
           "member": "string",
           "name": "TaskID",
@@ -6342,7 +6342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密任务ID",
+          "document": "加密任务ID\n1.因此TaskID 仅 24 小时内有效，请于提交任务获取TaskID后24小时内调用ImageMaskAsyncGetResult接口获取结果.\n2.建议在获取到TaskID 后，5-10分钟后再调用 ImageMaskAsyncGetResult 接口获取脱敏结果。",
           "example": "1cf14582-bd61-4ea2-93ca-c63eaa8d427a",
           "member": "string",
           "name": "TaskID",

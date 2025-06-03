@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateProject": {
-      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>云转推项目：用于直播云转推<font color=red>（废弃，可使用媒体转推项目替代）</font>；</li>\n<li>媒体转推项目：用于媒体文件转直播输出。</li>",
+      "document": "创建多媒体创作引擎项目，目前支持的项目类型有：\n<li>视频剪辑项目：用于普通视频剪辑；</li>\n<li>直播剪辑项目：用于直播流剪辑；</li>\n<li>导播台项目：用于云导播台；</li>\n<li>视频拆条：用于视频拆条；</li>\n<li>录制回放项目：用于直播录制回放；</li>\n<li>媒体转推项目：用于媒体文件转直播输出。</li>",
       "input": "CreateProjectRequest",
       "name": "创建项目",
       "output": "CreateProjectResponse",
@@ -1195,7 +1195,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "画布宽高比。\n该字段已经废弃，请使用具体项目输入中的 AspectRatio 字段。",
           "example": "16:9",
           "member": "string",
@@ -3553,18 +3553,16 @@
           "member": "string",
           "name": "MediaKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段废弃，请勿使用。",
           "example": "1000000",
           "member": "int64",
           "name": "Definition",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3573,8 +3571,7 @@
           "member": "string",
           "name": "StorageId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -4849,7 +4846,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "媒体绑定的标签信息列表 。\n该字段已废弃。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MaterialTagInfo",
@@ -7429,7 +7426,7 @@
           "example": "5285890818667693889292992",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7439,17 +7436,17 @@
           "example": "60a75c1c30fcbe0001cc8990d0",
           "member": "string",
           "name": "MaterialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "操作者 Id。（废弃，请勿使用）",
           "example": "3fa6b09e-05c6-433e-bc1e-6457d264f1dd",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7459,7 +7456,7 @@
           "example": "Upload",
           "member": "string",
           "name": "OperationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7469,7 +7466,7 @@
           "example": "无",
           "member": "Entity",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7479,7 +7476,7 @@
           "example": "/媒体",
           "member": "string",
           "name": "ClassPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7489,7 +7486,7 @@
           "example": "125000800-PullUpload-6fdaf790821a36dbe95ec8f557366c71t",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7499,7 +7496,7 @@
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
           "name": "SourceContext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

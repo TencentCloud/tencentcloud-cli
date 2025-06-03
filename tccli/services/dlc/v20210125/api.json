@@ -630,6 +630,13 @@
       "output": "DescribeTableResponse",
       "status": "online"
     },
+    "DescribeTablePartitions": {
+      "document": "本接口（DescribeTablePartitions）用于查询数据表分区信息",
+      "input": "DescribeTablePartitionsRequest",
+      "name": "查询表分区信息",
+      "output": "DescribeTablePartitionsResponse",
+      "status": "online"
+    },
     "DescribeTables": {
       "document": "本接口（DescribeTables）用于查询数据表列表。",
       "input": "DescribeTablesRequest",
@@ -9592,6 +9599,15 @@
           "name": "Asc",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型：all：全部数据（默认）、permission：有权限的数据\n注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。",
+          "example": "default",
+          "member": "string",
+          "name": "DescribeType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11115,6 +11131,23 @@
       ],
       "type": "object"
     },
+    "DescribeTablePartitionsRequest": {
+      "document": "DescribeTablePartitions请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTablePartitionsResponse": {
+      "document": "DescribeTablePartitions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTableRequest": {
       "document": "DescribeTable请求参数结构体",
       "members": [
@@ -11406,6 +11439,15 @@
           "example": "HIVE",
           "member": "string",
           "name": "TableFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型：all：全部数据（默认）、permission：有权限的数据\n注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。",
+          "example": "all",
+          "member": "string",
+          "name": "DescribeType",
           "required": false,
           "type": "string"
         }
@@ -12711,6 +12753,15 @@
           "example": "2021-11-11 00:00:00",
           "member": "string",
           "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型：all：全部数据（默认）、permission：有权限的数据\n注意：此字段需要开启白名单使用，如果需要使用，请提交工单联系我们。",
+          "example": "all",
+          "member": "string",
+          "name": "DescribeType",
           "required": false,
           "type": "string"
         }

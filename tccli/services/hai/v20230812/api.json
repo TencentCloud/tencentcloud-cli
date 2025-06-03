@@ -317,7 +317,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用id列表",
+          "document": "应用id列表。单次请求数量上限为100个。",
           "example": "[\"app-12345678\"]",
           "member": "string",
           "name": "ApplicationIds",
@@ -388,7 +388,7 @@
         {
           "disabled": false,
           "document": "分页返回的应用列表",
-          "example": "[{\"ApplicationId\":\"app-12345678\",\"ApplicationName\":\"Llama2 13B\",\"ConfigEnvironment\":\"Ubuntu20.04, Python 3.8, Llama-2-13b-chat, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab\",\"Description\":\"xxx\",\"MinSystemDiskSize\":80}]",
+          "example": "[{\"ApplicationId\":\"app-xx\",\"ApplicationName\":\"Pytorch\",\"ApplicationSize\":50,\"ApplicationState\":\"ONLINE\",\"ApplicationType\":\"PUBLIC_APPLICATION\",\"ConfigEnvironment\":\"Ubuntu\",\"CreateTime\":\"xx\",\"Description\":\"xx\",\"MinSystemDiskSize\": 80}]",
           "member": "ApplicationInfo",
           "name": "ApplicationSet",
           "output_required": true,
@@ -1621,7 +1621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n可通过DescribeInstances获取实例ID",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。",
           "example": "hai-2dfajzo4q",
           "member": "string",
           "name": "InstanceId",
@@ -1667,7 +1667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n可通过DescribeInstances获取实例ID",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID。",
           "example": "hai-2dfajzo4q",
           "member": "string",
           "name": "InstanceId",
@@ -1761,7 +1761,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表\n可通过DescribeInstances接口获取ID列表.单次能查询100个InstanceId",
+          "document": "实例ID列表。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1721/101612) API获取实例ID列表。单次能查询100个InstanceId。",
           "example": "['hai-2dfajzo4q']\t",
           "member": "string",
           "name": "InstanceIds",

@@ -6426,7 +6426,7 @@
         },
         {
           "disabled": false,
-          "document": "**web嵌入发起合同场景下**，是否禁止移动和删除填写和签署控件\n<ul><li> <b>false（默认）</b> :不禁止移动和删除控件</li>\n<li> <b>true</b> : 可以移动和删除控件</li></ul>",
+          "document": "**web嵌入发起合同场景下**，是否禁止移动和删除填写和签署控件\n<ul><li> <b>false（默认）</b> :可以移动和删除控件</li>\n<li> <b>true</b> : 禁止移动和删除控件</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "ForbidMoveAndDelete",

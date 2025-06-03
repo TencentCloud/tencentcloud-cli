@@ -59,7 +59,7 @@
     "CreateMigrationTask": [
       {
         "document": "用于创建数据迁移任务",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrationTask\n<公共请求参数>\n\n{\n    \"BucketRegion\": \"ap-nanjing\",\n    \"SrcService\": \"COS\",\n    \"CoverType\": \"1\",\n    \"SrcSecretKey\": \"*****************************\",\n    \"BucketPath\": \"cos/\",\n    \"MigrationMode\": \"0\",\n    \"FileSystemId\": \"cfs-8dd58fd7\",\n    \"BucketName\": \"test-1-1256238147\",\n    \"FsPath\": \"/test/\",\n    \"MigrationType\": \"0\",\n    \"TaskName\": \"migrate1\",\n    \"SrcSecretId\": \"**************************************************\",\n    \"FsName\": \"oldfs\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMigrationTask\n<公共请求参数>\n\n{\n    \"BucketRegion\": \"ap-nanjing\",\n    \"SrcService\": \"COS\",\n    \"CoverType\": 1,\n    \"SrcSecretKey\": \"*****************************\",\n    \"BucketPath\": \"cos/\",\n    \"MigrationMode\": 0,\n    \"FileSystemId\": \"cfs-8dd58fd7\",\n    \"BucketName\": \"test-1-1256238147\",\n    \"FsPath\": \"/test/\",\n    \"MigrationType\": 0,\n    \"TaskName\": \"migrate1\",\n    \"SrcSecretId\": \"**************************************************\",\n    \"FsName\": \"oldfs\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"cfsmigrate-dfe9b1f2\",\n        \"RequestId\": \"91cd4a08-a105-4c59-b229-82f0fs7363b8\"\n    }\n}",
         "title": "创建迁移任务"
       }
@@ -282,7 +282,7 @@
       {
         "document": "用于终止迁移任务",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopMigrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"cfsmigrate-29de0e87\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"cfsmigrate-29de0e87\",\n        \"Status\": 2,\n        \"RequestId\": \"eff7c5d9-c8c4-401a-deda-2108d3cc8b76\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"cfsmigrate-29de0e87\",\n        \"Status\": 3,\n        \"RequestId\": \"eff7c5d9-c8c4-401a-deda-2108d3cc8b76\"\n    }\n}",
         "title": "终止迁移任务"
       }
     ],

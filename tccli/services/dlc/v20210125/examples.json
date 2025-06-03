@@ -732,6 +732,14 @@
         "title": "查询表信息"
       }
     ],
+    "DescribeTablePartitions": [
+      {
+        "document": "示例一",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTablePartitions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d15ab5d-164f-462a-b82c-ead5891c3b6c\"\n    }\n}",
+        "title": "示例一"
+      }
+    ],
     "DescribeTables": [
       {
         "document": "查询数据表列表。",

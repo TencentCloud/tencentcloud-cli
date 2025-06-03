@@ -2292,7 +2292,7 @@
         {
           "disabled": false,
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testextra",
+          "example": "附加信息内容",
           "member": "string",
           "name": "Extra",
           "output_required": true,

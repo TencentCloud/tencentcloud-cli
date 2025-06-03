@@ -72,14 +72,6 @@
         "title": "新建QA分类"
       }
     ],
-    "CreateReconstructDocumentFlow": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReconstructDocumentFlow\n<公共请求参数>\n\n{\n    \"FileStartPageNumber\": 1,\n    \"FileEndPageNumber\": 1,\n    \"Config\": {\n        \"TableResultType\": \"1\"\n    },\n    \"FileBase64\": \"data:application/pdf;base64,JVBERi0xLjcKXXX...\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"9e28e561e9a04ef096768d13deffe963\"\n    }\n}",
-        "title": "接口请求成功示例"
-      }
-    ],
     "CreateRejectedQuestion": [
       {
         "document": "创建新的拒答问题",

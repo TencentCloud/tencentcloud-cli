@@ -71,14 +71,6 @@
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Document\": \"\",\n                \"Index\": 1,\n                \"RelevanceScore\": 0.9998511075973511\n            },\n            {\n                \"Document\": \"\",\n                \"Index\": 0,\n                \"RelevanceScore\": 0.9996849298477173\n            }\n        ],\n        \"RequestId\": \"cf9c5598-9625-436d-bc81-8dd3900e63c0\",\n        \"Usage\": {\n            \"TotalTokens\": 10\n        }\n    }\n}",
         "title": "重排序"
       }
-    ],
-    "WebSearch": [
-      {
-        "document": "用户需要搜索 2025 年货币政策相关的网页内容，并指定来源为政府网站。",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: WebSearch\n<公共请求参数>\n\n{\n    \"Query\": \"2025年货币政策有哪些变化？\",\n    \"Count\": 20,\n    \"Site\": \"gov.cn\",\n    \"FetchContent\": false,\n    \"StartTime\": 1704038400,\n    \"EndTime\": 1712592000,\n    \"SearchEngine\": \"sogou\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21739985-c9bf-4add-998b-7c5b055b3289\",\n        \"Query\": \"2025年货币政策有哪些变化？\",\n        \"Status\": \"completed\",\n        \"SearchEngine\": \"sogou\",\n        \"Results\": [\n            {\n                \"Title\": \"2025年政府财政改革报告\",\n                \"Url\": \"www.example.gov.cn\",\n                \"Summary\": \"2025年财政改革措施为...\",\n                \"Time\": \"2025年4月9日\"\n            }\n        ]\n    }\n}",
-        "title": "联网搜索"
-      }
     ]
   },
   "version": "1.0"

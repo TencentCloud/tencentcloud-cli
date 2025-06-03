@@ -30,7 +30,6 @@ Output:
                     },
                     "PreviewUrl": "https://1810000002.vod2.myqcloud.com/b64e98aevodcq1810000002/0d014fa85285890795320102944/j5dCbqBV72QA.png",
                     "TagSet": [],
-                    "TagInfoSet": [],
                     "PresetTagSet": [],
                     "UpdateTime": "2019-10-28T12:10:25Z"
                 },
@@ -80,7 +79,6 @@ Output:
                     "UpdateTime": "2019-12-31T03:59:14Z",
                     "ClassPath": "/media",
                     "TagSet": [],
-                    "TagInfoSet": [],
                     "PresetTagSet": [],
                     "PreviewUrl": "http://1810000002.vod2.myqcloud.com/8d388656vodtranscq1810000002/accfa04c5285890797261730431/coverBySnapshot/1577764755_4069421039.100_0.jpg",
                     "Owner": {
@@ -201,7 +199,6 @@ Output:
                     },
                     "PreviewUrl": "",
                     "TagSet": [],
-                    "TagInfoSet": [],
                     "PresetTagSet": [],
                     "UpdateTime": "2019-10-29T09:37:29Z"
                 },

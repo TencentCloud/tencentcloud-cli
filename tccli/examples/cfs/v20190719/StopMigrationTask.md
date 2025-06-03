@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "TaskId": "cfsmigrate-29de0e87",
-        "Status": 2,
+        "Status": 3,
         "RequestId": "eff7c5d9-c8c4-401a-deda-2108d3cc8b76"
     }
 }

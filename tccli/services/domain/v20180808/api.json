@@ -1549,7 +1549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名ID\n可通过DescribeDomainList接口获取",
+          "document": "域名ID\n可通过[DescribeDomainNameList](https://cloud.tencent.com/document/api/242/48941)接口获取",
           "example": "domain-ewqdskla",
           "member": "string",
           "name": "DomainId",

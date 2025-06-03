@@ -454,6 +454,24 @@
           "name": "TargetRequestsPerSecond",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "压测项目ID",
+          "example": "project-12345",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "测试场景ID",
+          "example": "scenario-12345",
+          "member": "string",
+          "name": "ScenarioId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
