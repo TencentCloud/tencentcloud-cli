@@ -54,7 +54,9 @@ Output:
             }
         ],
         "RequestId": "098ea687-eba5-4b30-9c05-d3ee0749d0a7",
-        "TotalCount": 13
+        "TotalCount": 13,
+        "SupportCoreVersion": "4.15.0-142-|4.18.0-80|4.18.0-193.28.1*|5.4.0-77-*|5.4.119.19.009.56",
+        "InterceptionFailureTip": "非读写操作暂未支持拦截，如新建/重命名等，touch/mv 等操作。"
     }
 }
 ```

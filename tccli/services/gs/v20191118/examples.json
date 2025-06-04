@@ -35,7 +35,7 @@
     "CreateAndroidAppVersion": [
       {
         "document": "创建安卓应用版本",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"Command\": \"tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh\",\n    \"UninstallCommand\": \"cd test-1.0.X && ./uninstall.sh\",\n    \"DownloadUrl\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"Command\": \"tar -zxvf test-1.0.X.tar.gz && cd test-1.0.X && ./install.sh\",\n    \"UninstallCommand\": \"cd test-1.0.X && ./uninstall.sh\",\n    \"DownloadUrl\": \"\",\n    \"CleanupMode\": \"CLEANUP_AFTER_INSTALL\"\n}",
         "output": "{\n    \"Response\": {\n        \"AndroidAppVersion\": \"1705458203832573301\",\n        \"RequestId\": \"143c46a1-70f4-4371-8cc8-c30efef53c4e\"\n    }\n}",
         "title": "创建安卓应用版本"
       },
@@ -44,6 +44,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-ne70ubtu\",\n    \"DownloadUrl\": \"https://static.maoercdn.com/app/202312/29/MissEvan.apk\"\n}",
         "output": "{\n    \"Response\": {\n        \"AndroidAppVersion\": \"1705458203832573301\",\n        \"RequestId\": \"143c46a1-70f4-4371-8cc8-c30efef53c4e\"\n    }\n}",
         "title": "使用应用包下载链接创建安卓应用版本"
+      }
+    ],
+    "CreateAndroidInstanceADB": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceADB\n<公共请求参数>\n\n{\n    \"AndroidInstanceId\": \"cai-251006279-ea99cM7rbg6\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConnectCommand\": \"ssh -i private_key.pem -L 5555:cai-251006279-ea99cM7rbg6:5555 root@test-ap-shenzhen-1.webssh.crtrcloud.com -p 12222\",\n        \"HostName\": \"test-ap-shenzhen-1.webssh.crtrcloud.com\",\n        \"Port\": 12222,\n        \"PrivateKey\": \"-----BEGIN OPENSSH PRIVATE KEY-----\\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtz\\nc2gtZWQyNTUxOQAAACDZ2upaoRI2s2uMA8ESBiDnS9heOvxhBAQOQzSrFv1aagAA\\nAIjvnnQA7550AAAAAAtzc2gtZWQyNTUxOQAAACDZ2upaoRI2s2uMA8ESBiDnS9he\\nOvxhBAQOQzSrFv1aagAAAEAWnd+o1zmFUPf6K78mAcnFtIcV+OJ7D8mzaI050YgK\\ncdna6lqhEjaza4wDwRIGIOdL2F46/GEEBA5DNKsW/VpqAAAAAAECAwQF\\n-----END OPENSSH PRIVATE KEY-----\\n\",\n        \"RequestId\": \"c53f2591-97ae-4eec-a66c-c12e312ea519\",\n        \"UserName\": \"root\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "CreateAndroidInstanceImage": [
@@ -146,7 +154,7 @@
       {
         "document": "查询安卓应用信息",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidApps\n<公共请求参数>\n\n{\n    \"Offset\": 2,\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-ne70ubtu\",\n                \"AndroidAppVersionInfo\": [\n                    {\n                        \"AndroidAppVersion\": \"1705404913631168348\",\n                        \"CreateTime\": \"2024-01-16T11:36:20Z\",\n                        \"Command\": \"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\",\n                        \"UninstallCommand\": \"cd test-1.0.X && ./uninstall.sh\",\n                        \"State\": \"CREATE_SUCCESS\"\n                    },\n                    {\n                        \"AndroidAppVersion\": \"1705406075397560877\",\n                        \"CreateTime\": \"2024-01-16T11:54:35Z\",\n                        \"Command\": \"tar -zxvf test-2.0.X.tgz && cd test-2.0.X && ./install.sh\",\n                        \"UninstallCommand\": \"cd test-2.0.X && ./uninstall.sh\",\n                        \"State\": \"CREATE_FAIL\"\n                    }\n                ],\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user1\",\n                \"AppMode\": \"ADVANCED\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            },\n            {\n                \"AndroidAppId\": \"apk-d6fyydrc\",\n                \"AndroidAppVersionInfo\": null,\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user2\",\n                \"AppMode\": \"NORMAL\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            }\n        ],\n        \"RequestId\": \"5eae7edb-7e12-451e-a4c1-7cf0b777c6e7\",\n        \"TotalCount\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Apps\": [\n            {\n                \"AndroidAppId\": \"apk-ne70ubtu\",\n                \"AndroidAppVersionInfo\": [\n                    {\n                        \"AndroidAppVersion\": \"1705404913631168348\",\n                        \"CreateTime\": \"2024-01-16T11:36:20Z\",\n                        \"Command\": \"tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh\",\n                        \"UninstallCommand\": \"cd test-1.0.X && ./uninstall.sh\",\n                        \"CleanupMode\": \"CLEANUP_ON_UNINSTALL\",\n                        \"State\": \"CREATE_SUCCESS\"\n                    },\n                    {\n                        \"AndroidAppVersion\": \"1705406075397560877\",\n                        \"CreateTime\": \"2024-01-16T11:54:35Z\",\n                        \"Command\": \"tar -zxvf test-2.0.X.tgz && cd test-2.0.X && ./install.sh\",\n                        \"UninstallCommand\": \"cd test-2.0.X && ./uninstall.sh\",\n                        \"CleanupMode\": \"CLEANUP_AFTER_INSTALL\",\n                        \"State\": \"CREATE_FAIL\"\n                    }\n                ],\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user1\",\n                \"AppMode\": \"ADVANCED\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            },\n            {\n                \"AndroidAppId\": \"apk-d6fyydrc\",\n                \"AndroidAppVersionInfo\": null,\n                \"Name\": \"控制台测试1\",\n                \"State\": \"ONLINE\",\n                \"UserId\": \"user2\",\n                \"AppMode\": \"NORMAL\",\n                \"CreateTime\": \"2024-01-16T11:54:35Z\"\n            }\n        ],\n        \"RequestId\": \"5eae7edb-7e12-451e-a4c1-7cf0b777c6e7\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询安卓应用信息"
       }
     ],
@@ -238,6 +246,14 @@
         "title": "安装安卓实例应用"
       }
     ],
+    "InstallAndroidInstancesAppWithURL": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAndroidInstancesAppWithURL\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fJh1iNOc\"\n    ],\n    \"AndroidAppURL\": \"https://test.cos.ap-nanjing.myqcloud.com/tmp/177.apk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"057fce8a-1dc2-48df-bb5a-69a4f3fae4ac\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-6c8fJh1iNOc\",\n                \"TaskId\": \"64e5dee5-824b-4899-805a-bf0694e3334a\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyAndroidApp": [
       {
         "document": "",
@@ -283,6 +299,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesLabels\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99cM7rbg6\",\n        \"cai-251006279-ea993NPwvHN\"\n    ],\n    \"AndroidInstanceLabels\": [\n        {\n            \"Key\": \"key1\",\n            \"Value\": \"value1\"\n        },\n        {\n            \"Key\": \"key2\",\n            \"Value\": \"value2\"\n        },\n        {\n            \"Key\": \"key3\",\n            \"Value\": \"value3\"\n        }\n    ],\n    \"Operation\": \"ADD\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fe0851d4-fda2-4d73-9efc-9952971b611c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyAndroidInstancesProperties": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAndroidInstancesProperties\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99NQV3Qw7\"\n    ],\n    \"AndroidInstanceDevice\": {\n        \"Brand\": \"google\",\n        \"Model\": \"Pixel3\"\n    },\n    \"AndroidInstanceProperties\": [\n        {\n            \"Key\": \"testkey\",\n            \"Value\": \"testvalue\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16152a6a-d031-4506-8eba-466e6a286c01\"\n    }\n}",
         "title": "示例"
       }
     ],

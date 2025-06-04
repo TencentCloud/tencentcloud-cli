@@ -81,7 +81,8 @@ Output:
             "窃取用户信息，感染用户本地所有的html、exe、dll等格式的文件。"
         ],
         "VirusName": "Win32.Virus.Ramnit.Qwhl",
-        "WorkloadType": "DaemonSet"
+        "WorkloadType": "DaemonSet",
+        "ContainerStatus": "RUNNING"
     }
 }
 ```

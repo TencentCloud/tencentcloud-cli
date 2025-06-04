@@ -1,7 +1,7 @@
 {
   "actions": {
     "BackUpAndroidInstanceToStorage": {
-      "document": "备份云手机到指定存储",
+      "document": "备份云手机数据到指定存储，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果是备份到 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。",
       "input": "BackUpAndroidInstanceToStorageRequest",
       "name": "备份安卓实例到指定存储",
       "output": "BackUpAndroidInstanceToStorageResponse",
@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CopyAndroidInstance": {
-      "document": "复制安卓实例：\n1. 排除和包含文件只能指定/data下的文件，不指定时复制整个/data目录\n2. 源实例和目的实例必须在同一区域\n3. 复制时，源实例和目的实例都会停机，复制完后实例会自动启动\n4. 复制时会产生大量内网流量，请限制并发",
+      "document": "复制安卓实例：\n1. 排除和包含文件只能指定 /data 下的文件，不指定时复制整个 /data 目录\n2. 源实例和目的实例必须在同一区域\n3. 复制时，源实例和目的实例都会停机，复制完后实例会自动启动\n4. 复制时会产生大量内网流量，请限制并发",
       "input": "CopyAndroidInstanceRequest",
       "name": "复制安卓实例",
       "output": "CopyAndroidInstanceResponse",
@@ -35,6 +35,13 @@
       "output": "CreateAndroidAppVersionResponse",
       "status": "online"
     },
+    "CreateAndroidInstanceADB": {
+      "document": "创建云手机实例 ADB 连接信息，请将返回结果的 PrivateKey 字段保存为 pem 文件，并将 pem 文件权限设置为 600，再参考返回结果的 ConnectCommand 使用 adb 连接实例。",
+      "input": "CreateAndroidInstanceADBRequest",
+      "name": "创建安卓实例 ADB 连接",
+      "output": "CreateAndroidInstanceADBResponse",
+      "status": "online"
+    },
     "CreateAndroidInstanceImage": {
       "document": "创建安卓实例镜像",
       "input": "CreateAndroidInstanceImageRequest",
@@ -50,14 +57,14 @@
       "status": "online"
     },
     "CreateAndroidInstanceSSH": {
-      "document": "创建安卓实例 SSH 连接",
+      "document": "创建安卓实例 SSH 连接信息，请将返回结果的 PrivateKey 字段保存为 pem 文件，并将 pem 文件权限设置为 600，再参考返回结果的 ConnectCommand 使用 ssh 连接实例。",
       "input": "CreateAndroidInstanceSSHRequest",
       "name": "创建安卓实例SSH连接",
       "output": "CreateAndroidInstanceSSHResponse",
       "status": "online"
     },
     "CreateAndroidInstanceWebShell": {
-      "document": "创建安卓实例 WebShell 连接",
+      "document": "创建安卓实例 WebShell 连接信息，返回的 ConnectUrl 可通过浏览器直接打开访问，链接有效期 1 小时，链接打开后可持续使用。",
       "input": "CreateAndroidInstanceWebShellRequest",
       "name": "创建安卓实例 WebShell 连接",
       "output": "CreateAndroidInstanceWebShellResponse",
@@ -176,7 +183,7 @@
       "status": "online"
     },
     "DistributeFileToAndroidInstances": {
-      "document": "分发文件到安卓实例",
+      "document": "将一个文件批量分发到多个实例，一次接口调用触发一次文件分发，一次文件分发只会从公网下载一次，然后文件会走内网分发到实例列表中的实例。",
       "input": "DistributeFileToAndroidInstancesRequest",
       "name": "分发文件到安卓实例",
       "output": "DistributeFileToAndroidInstancesResponse",
@@ -190,7 +197,7 @@
       "status": "online"
     },
     "FetchAndroidInstancesLogs": {
-      "document": "批量获取安卓实例日志",
+      "document": "批量将实例的 logcat 日志文件上传到您已授权的 COS bucket 中，授权 COS bucket 请在控制台中操作。",
       "input": "FetchAndroidInstancesLogsRequest",
       "name": "批量获取安卓实例日志",
       "output": "FetchAndroidInstancesLogsResponse",
@@ -201,6 +208,13 @@
       "input": "InstallAndroidInstancesAppRequest",
       "name": "安装安卓实例应用",
       "output": "InstallAndroidInstancesAppResponse",
+      "status": "online"
+    },
+    "InstallAndroidInstancesAppWithURL": {
+      "document": "安装安卓实例应用",
+      "input": "InstallAndroidInstancesAppWithURLRequest",
+      "name": "通过 URL 安装安卓实例应用",
+      "output": "InstallAndroidInstancesAppWithURLResponse",
       "status": "online"
     },
     "ModifyAndroidApp": {
@@ -243,6 +257,13 @@
       "input": "ModifyAndroidInstancesLabelsRequest",
       "name": "批量修改安卓实例的标签",
       "output": "ModifyAndroidInstancesLabelsResponse",
+      "status": "online"
+    },
+    "ModifyAndroidInstancesProperties": {
+      "document": "批量修改安卓实例属性",
+      "input": "ModifyAndroidInstancesPropertiesRequest",
+      "name": "批量修改安卓实例属性",
+      "output": "ModifyAndroidInstancesPropertiesResponse",
       "status": "online"
     },
     "ModifyAndroidInstancesResolution": {
@@ -288,7 +309,7 @@
       "status": "online"
     },
     "RestoreAndroidInstanceFromStorage": {
-      "document": "指定存储还原云手机",
+      "document": "使用指定存储数据还原云手机，支持 COS 和兼容 AWS S3 协议的对象存储服务。如果还原数据来自 COS 时，会使用公网流量，授权 COS bucket 请在控制台中操作。",
       "input": "RestoreAndroidInstanceFromStorageRequest",
       "name": "指定存储还原安卓实例",
       "output": "RestoreAndroidInstanceFromStorageResponse",
@@ -393,14 +414,14 @@
       "status": "online"
     },
     "UploadFileToAndroidInstances": {
-      "document": "上传文件到安卓实例",
+      "document": "将文件下载到指定实例列表的实例上，每个实例都会从公网下载文件。如果您需要将同一个文件分发到多个实例，建议使用 DistributeFileToAndroidInstances 接口减少公网下载的流量。如果您需要将不同的文件下载到不同的实例，可考虑使用 UploadFilesToAndroidInstances 接口批量将不同文件下载到不同的实例。",
       "input": "UploadFileToAndroidInstancesRequest",
       "name": "上传文件到安卓实例",
       "output": "UploadFileToAndroidInstancesResponse",
       "status": "online"
     },
     "UploadFilesToAndroidInstances": {
-      "document": "批量上传文件到安卓实例",
+      "document": "批量将不同的文件下载到不同的实例，每个实例下载文件都是从公网下载，建议只用在文件下载使用一次的场景。如果您需要将同一个文件分发到不同实例，建议使用 DistributeFileToAndroidInstances 接口。",
       "input": "UploadFilesToAndroidInstancesRequest",
       "name": "批量上传文件到安卓实例",
       "output": "UploadFilesToAndroidInstancesResponse",
@@ -563,6 +584,16 @@
           "example": "\"tar -zxvf test-1\"cd test-1.0.X && ./uninstall.sh\"",
           "member": "string",
           "name": "UninstallCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。",
+          "example": "\"CLEANUP_ON_UNINSTALL\"",
+          "member": "string",
+          "name": "CleanupMode",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -824,6 +855,34 @@
       ],
       "usage": "both"
     },
+    "AndroidInstanceDevice": {
+      "document": "安卓实例设备信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "品牌",
+          "example": "YourBrand",
+          "member": "string",
+          "name": "Brand",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "型号",
+          "example": "YourModel",
+          "member": "string",
+          "name": "Model",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AndroidInstanceImage": {
       "document": "安卓实例镜像信息",
       "members": [
@@ -921,6 +980,30 @@
         }
       ],
       "usage": "both"
+    },
+    "AndroidInstanceProperty": {
+      "document": "安卓实例属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性键",
+          "example": "device.name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性值",
+          "example": "TestName",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "AndroidInstanceTask": {
       "document": "安卓实例任务信息",
@@ -1397,6 +1480,15 @@
           "name": "UninstallCommand",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用资源清理模式（实例安装应用所用资源），取值：CLEANUP_ON_UNINSTALL（默认值），卸载 App 时清理；CLEANUP_AFTER_INSTALL，安装 App 后立即清理。普通应用只有 CLEANUP_AFTER_INSTALL 模式。",
+          "example": "CLEANUP_ON_UNINSTALL",
+          "member": "string",
+          "name": "CleanupMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1411,6 +1503,83 @@
           "member": "string",
           "name": "AndroidAppVersion",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidInstanceADBRequest": {
+      "document": "CreateAndroidInstanceADB请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID",
+          "example": "cai-ab123456",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndroidInstanceADBResponse": {
+      "document": "CreateAndroidInstanceADB返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接私钥，需要保存为文件形式，例如 private_key.pem",
+          "example": "-----BEGIN OPENSSH PRIVATE KEY-----",
+          "member": "string",
+          "name": "PrivateKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名称",
+          "example": "root",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接端口",
+          "example": "12222",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接参考命令",
+          "example": "ssh -i private_key.pem -p 12222 root@10.0.0.1",
+          "member": "string",
+          "name": "ConnectCommand",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2996,6 +3165,52 @@
       ],
       "type": "object"
     },
+    "InstallAndroidInstancesAppWithURLRequest": {
+      "document": "InstallAndroidInstancesAppWithURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用下载 URL",
+          "example": "无",
+          "member": "string",
+          "name": "AndroidAppURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallAndroidInstancesAppWithURLResponse": {
+      "document": "InstallAndroidInstancesAppWithURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AndroidInstanceTask",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LabelRequirement": {
       "document": "标签要求",
       "members": [
@@ -3313,6 +3528,51 @@
     },
     "ModifyAndroidInstancesLabelsResponse": {
       "document": "ModifyAndroidInstancesLabels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidInstancesPropertiesRequest": {
+      "document": "ModifyAndroidInstancesProperties请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表",
+          "example": "[\"cai-abcd1234\"]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例设备",
+          "example": "无",
+          "member": "AndroidInstanceDevice",
+          "name": "AndroidInstanceDevice",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例其它属性列表",
+          "example": "无",
+          "member": "AndroidInstanceProperty",
+          "name": "AndroidInstanceProperties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAndroidInstancesPropertiesResponse": {
+      "document": "ModifyAndroidInstancesProperties返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
