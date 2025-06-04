@@ -940,7 +940,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "专用集群类型id（移到下一层级，已经废弃，后续将删除）",
           "example": "dctype-00000000",
           "member": "string",
@@ -950,7 +950,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "支持的存储类型列表（移到下一层级，已经废弃，后续将删除）",
           "example": "[\"SSD\"]",
           "member": "string",
@@ -960,7 +960,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "支持的上连交换机的链路传输速率(GiB)（移到下一层级，已经废弃，后续将删除）",
           "example": "[10,25,40,100]",
           "member": "int64",
@@ -970,7 +970,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "支持的实例族列表（移到下一层级，已经废弃，后续将删除）",
           "example": "[\"SA5t\"]",
           "member": "string",
@@ -2606,7 +2606,7 @@
       "document": "CDC宿主机的详细信息",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "宿主机IP（废弃）",
           "example": "10.1.1.1",
           "member": "string",

@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "d636333a-0d14-4962-8287-e6e8af0a10f2",
-        "BizType": "test",
+        "BizType": "TencentCloudDefault",
         "Label": "Ad",
         "SubLabel": "",
         "Suggestion": "Block",

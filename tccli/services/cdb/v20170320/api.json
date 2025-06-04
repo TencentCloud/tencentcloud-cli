@@ -13911,7 +13911,7 @@
         {
           "disabled": false,
           "document": "操作类型",
-          "example": " extend、 reduce 、extend_failed",
+          "example": "extend、reduce、extend_failed",
           "member": "string",
           "name": "OperationType",
           "output_required": false,
@@ -13930,8 +13930,8 @@
         },
         {
           "disabled": false,
-          "document": "扩容开始时间",
-          "example": "无",
+          "document": "扩容开始时间\n说明：此项显示的格式是 int 类型的 unix 时间戳",
+          "example": "1748590523",
           "member": "int64",
           "name": "StartTime",
           "output_required": false,
@@ -13940,8 +13940,8 @@
         },
         {
           "disabled": false,
-          "document": "扩容结束时间",
-          "example": "无",
+          "document": "扩容结束时间\n说明：此项显示的格式是 int 类型的 unix 时间戳",
+          "example": "1748590526",
           "member": "int64",
           "name": "EndTime",
           "output_required": false,
@@ -13951,7 +13951,7 @@
         {
           "disabled": false,
           "document": "扩容前核数",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "OldCpu",
           "output_required": false,
@@ -13961,7 +13961,7 @@
         {
           "disabled": false,
           "document": "扩容后核数",
-          "example": "无",
+          "example": "4",
           "member": "int64",
           "name": "NewCpu",
           "output_required": false,
@@ -13971,7 +13971,7 @@
         {
           "disabled": false,
           "document": "增减的cpu数",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ExtendCPUNum",
           "output_required": false,
@@ -13981,7 +13981,7 @@
         {
           "disabled": false,
           "document": "extend_failed操作上报",
-          "example": "无",
+          "example": "后端资源不足",
           "member": "string",
           "name": "Error",
           "output_required": false,

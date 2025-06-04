@@ -23,6 +23,7 @@ Output:
                         "CreateTime": "2024-01-16T11:36:20Z",
                         "Command": "tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh",
                         "UninstallCommand": "cd test-1.0.X && ./uninstall.sh",
+                        "CleanupMode": "CLEANUP_ON_UNINSTALL",
                         "State": "CREATE_SUCCESS"
                     },
                     {
@@ -30,6 +31,7 @@ Output:
                         "CreateTime": "2024-01-16T11:54:35Z",
                         "Command": "tar -zxvf test-2.0.X.tgz && cd test-2.0.X && ./install.sh",
                         "UninstallCommand": "cd test-2.0.X && ./uninstall.sh",
+                        "CleanupMode": "CLEANUP_AFTER_INSTALL",
                         "State": "CREATE_FAIL"
                     }
                 ],

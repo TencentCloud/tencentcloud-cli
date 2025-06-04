@@ -525,7 +525,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123",
+          "example": "w-video-aDKaIiA4vq3ZaAA1",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -817,7 +817,7 @@
         {
           "disabled": false,
           "document": "当任务状态为Error时，返回对应错误的类型，取值：\n**DECODE_ERROR**: 解码失败。（输入资源中可能包含无法解码的视频）\n**URL_ERROR**：下载地址验证失败。\n**TIMEOUT_ERROR**：处理超时。\n**CALLBACK_ERRORR**：回调错误。\n**MODERATION_ERROR**：审核失败。\n**URL_NOT_SUPPORTED**：源文件太大或没有图片音频帧\n任务状态非Error时默认返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "URL_ERROR",
           "member": "string",
           "name": "ErrorType",
           "output_required": true,
@@ -827,7 +827,7 @@
         {
           "disabled": false,
           "document": "当任务状态为Error时，该字段用于返回对应错误的详细描述，任务状态非Error时默认返回为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "InvalidArgument",
           "member": "string",
           "name": "ErrorDescription",
           "output_required": true,
@@ -847,7 +847,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频文件识别出的对应文本内容，最大支持**前1000个字符**。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "金牌讲师认证",
           "member": "string",
           "name": "AudioText",
           "output_required": true,
@@ -2053,41 +2053,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "命中的标签\nPorn 色情\nSexy 性感\nPolity 政治\nIllegal 违法\nAbuse 谩骂\nTerror 暴恐\nAd 广告\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "该字段用于返回检测结果所对应的恶意标签。\n返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "得分，分数是 0 ～ 100\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "89",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "命中的二级标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "phone",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

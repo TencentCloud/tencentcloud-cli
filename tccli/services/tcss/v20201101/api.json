@@ -6237,6 +6237,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有者名称",
+          "example": "fx-qi",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12108,6 +12118,24 @@
           "name": "Uuid",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "超级节点唯一id",
+          "example": "[\"7c9e719e-6236-bbbb-aaaa-20c9b9a1f6b1\"]",
+          "member": "string",
+          "name": "NodeUniqueIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "uuid列表",
+          "example": "[\"7c9e719e-6236-bbbb-aaaa-20c9b9a1f6b1\"]",
+          "member": "string",
+          "name": "UUIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12400,7 +12428,7 @@
         {
           "disabled": false,
           "document": "事件基本信息",
-          "example": "{             \"ClientIP\": \"106.55.163.***\",             \"ClusterID\": \"cls-13nfdn****\",             \"ClusterName\": \"demo-dev\",             \"ContainerId\": \"1***5fe59dbd61071f16d6165480d381********\",             \"ContainerIsolateOperationSrc\": \"system\",             \"ContainerName\": \"/adoring_ishizaka\",             \"ContainerNetStatus\": \"NORMAL\",             \"ContainerNetSubStatus\": \"NONE\",             \"EventCount\": 2,             \"EventId\": \"10302329\",             \"EventName\": \"异常进程事件-告警\",             \"EventType\": \"FILE_ABNORMAL_READ\",             \"FoundTime\": \"2024-10-21 15:55:45\",             \"HostID\": \"1414-18a1-4775-9e3f-cdfc898********\",             \"HostIP\": \"172.16.0.34\",             \"ImageId\": \"sha256:1413413431fd9255658c128086395d3********\",             \"ImageName\": \"alpine:latest\",             \"LatestFoundTime\": \"2024-10-21 20:57:12\",             \"Namespace\": \"default\",             \"NodeID\": \"d41d8cd98f00******\",             \"NodeName\": \"d41d8cd98f00*****\",             \"NodeSubNetCIDR\": \"fe80::8132:1b51:52******\",             \"NodeSubNetID\": \"sub-fn4nf***\",             \"NodeSubNetName\": \"dev\",             \"NodeType\": \"NORMAL\",             \"NodeUniqueID\": \"fe8dfjf2d2****\",             \"PodIP\": \"1.1.1.1\",             \"PodName\": \"pod-dev\",             \"PodStatus\": \"RUNNING\",             \"Status\": \"EVENT_DEALED\",             \"WorkloadType\": \"StatefulSet\"         }",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "output_required": true,
@@ -12420,7 +12448,7 @@
         {
           "disabled": false,
           "document": "父进程信息",
-          "example": "{             \"ProcessId\": 330852,             \"ProcessName\": \"containerd-shim\",             \"ProcessParam\": \"containerd-shim -namespace moby -workdir /data/kubernetes/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/ /var/run/docker/runtime-runc\",             \"ProcessPath\": \"/usr/bin/containerd-shim\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
           "output_required": true,
@@ -12430,7 +12458,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "{             \"Description\": \"检测到疑似反弹shell命令执行\",             \"GroupName\": \"SYSTEM_DEFINED_RULE\",             \"MatchRule\": {                 \"ProcessPath\": \"/usr/bin\",                 \"RuleId\": \"100000000000000000000004\",                 \"RuleLevel\": \"HIGH\",                 \"RuleMode\": \"RULE_MODE_ALERT\"             },             \"OperationTime\": \"2024-10-23 17:38:12\",             \"Remark\": \"for dev\",             \"RuleId\": \"124\",             \"RuleName\": \"REVERSE_SHELL\",             \"Solution\": \"排查反弹shell行为及目标地址是否为业务正常需要\"         }",
+          "example": "无",
           "member": "AbnormalProcessEventDescription",
           "name": "EventDetail",
           "output_required": true,
@@ -12800,7 +12828,7 @@
         {
           "disabled": false,
           "document": "事件基本信息",
-          "example": "         \"EventBaseInfo\": {             \"ClientIP\": \"175.178.**.**\",             \"ClusterID\": \"cls-demo1\",             \"ClusterName\": \"web-demo\",             \"ContainerId\": \"75D3326A-9B9C-4275-895A-16FDA1*****\",             \"ContainerIsolateOperationSrc\": \"\",             \"ContainerName\": \"/k8s_xenon_mysql-tce-cwp-mysql-2_sso_c9fdfba4-e31a-46bc-a43a-****\",             \"ContainerNetStatus\": \"NORMAL\",             \"ContainerNetSubStatus\": \"NONE\",             \"EventCount\": 130,             \"EventId\": \"5124493\",             \"EventName\": \"高危系统调用\",             \"EventType\": \"RISK_SYSCALL_EVENT_TYPE\",             \"FoundTime\": \"2024-10-23 00:05:17\",             \"HostID\": \"11141114-66fd-4171-93eb-2f4fc36ef1e1\",             \"HostIP\": \"10.0.0.105\",             \"ImageId\": \"sha256:11141114e95dce36e8455cf657e1e54d74bb8fac6111411141114\",             \"ImageName\": \"registry.tce.com/service-vendors/mysql-xenon:8.0.32-20240524-155426-11141114.rhel.amd64\",             \"LatestFoundTime\": \"2024-10-23 17:02:47\",             \"Namespace\": \"default\",             \"NodeID\": \"pod-dj4xjf***\",             \"NodeName\": \"tcs-10-0-0-105\",             \"NodeSubNetCIDR\": \"fe80::8132:1b51:5********\",             \"NodeSubNetID\": \"subnet-dfj4***\",             \"NodeSubNetName\": \"default\",             \"NodeType\": \"NORMAL\",             \"NodeUniqueID\": \"node-4jfjfgdnvnd****\",             \"PodIP\": \"10.0.0.11\",             \"PodName\": \"demonset\",             \"PodStatus\": \"running\",             \"Status\": \"EVENT_UNDEAL\",             \"WorkloadType\": \"StatefulSet\"         }",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "output_required": true,
@@ -12810,7 +12838,7 @@
         {
           "disabled": false,
           "document": "进程信息",
-          "example": "{             \"ProcessAuthority\": \"-rwxr-xr-x\",             \"ProcessId\": 2907621,             \"ProcessMd5\": \"8a5772dee965c8223aebc1225e*****\",             \"ProcessName\": \"xenoncli\",             \"ProcessParam\": \"xenoncli xenon ping\",             \"ProcessPath\": \"/usr/local/bin/xenoncli\",             \"ProcessStartUser\": \"root\",             \"ProcessTree\": \"xenoncli(2907621)|containerd-shim(330852)|containerd(17863)|dockerd(17838)|systemd(1)\",             \"ProcessUserGroup\": \"0\"         }",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "output_required": true,
@@ -12820,7 +12848,7 @@
         {
           "disabled": false,
           "document": "被篡改信息",
-          "example": "{             \"FileCreateTime\": \"2024-10-11 11:02:58\",             \"FileDiff\": \"UNKNOW\",             \"FileName\": \"pwnkit.so:.\",             \"FilePath\": \"/home/yunjing_testing_x86/GCONV_PATH=./pwnkit.so:.\",             \"FileSize\": 24,             \"FileType\": \"UNKNOWN\",             \"LatestTamperedFileMTime\": \"2024-10-11 11:02:58\",             \"NewFile\": \"default.txt\"         }",
+          "example": "无",
           "member": "FileAttributeInfo",
           "name": "TamperedFileInfo",
           "output_required": true,
@@ -12830,7 +12858,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "{             \"Description\": \"检测到系统命令被篡改\",             \"MatchRule\": {                 \"ProcessPath\": \"/home/yunjing_testing_x86/events_trigger_x86\",                 \"RuleId\": \"200000000000000000000002\",                 \"RuleMode\": \"RULE_MODE_ALERT\",                 \"TargetFilePath\": \"/home/yunjing_testing_x86/GCONV_PATH=./pwnkit.so:.\"             },             \"OperationTime\": \"1970-01-01 00:00:01\",             \"Remark\": \"demoset\",             \"RuleId\": \"222222222222222222222222\",             \"RuleName\": \"系统策略\",             \"Solution\": \"排查是否为正常业务需要的系统命令替换\"         }",
+          "example": "无",
           "member": "AccessControlEventDescription",
           "name": "EventDetail",
           "output_required": true,
@@ -12840,7 +12868,7 @@
         {
           "disabled": false,
           "document": "父进程信息",
-          "example": "{             \"ProcessId\": 330852,             \"ProcessName\": \"containerd-shim\",             \"ProcessParam\": \"containerd-shim -namespace moby -workdir /data/kubernetes/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/ /var/run/docker/runtime-runc\",             \"ProcessPath\": \"/usr/bin/containerd-shim\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "ParentProcessInfo",
           "output_required": true,
@@ -12850,7 +12878,7 @@
         {
           "disabled": false,
           "document": "祖先进程信息",
-          "example": "{             \"ProcessParam\": \"/usr/bin/containerd-shim-runc-v2 -namespace moby -address /run/containerd/containerd.sock\",             \"ProcessPath\": \"/usr/bin/containerd-shim-runc-v2\",             \"ProcessStartUser\": \"0\",             \"ProcessUserGroup\": \"0\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
           "output_required": true,
@@ -13025,11 +13053,31 @@
         {
           "disabled": false,
           "document": "访问控制事件数组",
-          "example": "[             {                 \"Behavior\": \"BEHAVIOR_ALERT\",                 \"ClusterID\": \"cls-fdj4****\",                 \"ClusterName\": \"demoset\",                 \"ContainerId\": \"a41351f3384159740167f25d83fcb206ffa154ab31d50c6594580ca6bac0b2cf\",                 \"ContainerIsolateOperationSrc\": \"system\",                 \"ContainerName\": \"container1\",                 \"ContainerNetStatus\": \"NORMAL\",                 \"ContainerNetSubStatus\": \"NONE\",                 \"ContainerStatus\": \"STOPPED\",                 \"Description\": \"检测到系统计划任务被修改\",                 \"EventCount\": 10012,                 \"EventType\": \"NORMAL\",                 \"FileName\": \"cron.update\",                 \"FilePath\": \"/etc/crontabs/cron.update\",                 \"FoundTime\": \"2020-10-29 18:11:10\",                 \"HostID\": \"f5a89f72-aaad-bbbc-cccc-eb3b3b74c2f0\",                 \"HostIP\": \"10.86.68.35\",                 \"Id\": \"4904016\",                 \"ImageId\": \"sha256:3926aaa0fe2ece5cbe51aaaf242b074c211beb8e046c9d4db4959c220be0171f\",                 \"ImageName\": \"iamge1\",                 \"LatestFoundTime\": \"2020-10-29 18:11:10\",                 \"MatchAction\": \"RULE_MODE_ALERT\",                 \"MatchFilePath\": \"/etc/crontabs/cron.update\",                 \"MatchProcessPath\": \"/bin/busybox\",                 \"MatchRuleId\": \"200000000000000000000001\",                 \"MatchRuleName\": \"系统策略\",                 \"NodeID\": \"8a5772dee965c8223aebc*****\",                 \"NodeName\": \"host1\",                 \"NodeType\": \"NORMAL\",                 \"NodeUniqueID\": \"d41d8cd98f00b204e9800998ecf8427e\",                 \"PodIP\": \"10.0.0.11\",                 \"PodName\": \"demoset\",                 \"ProcessName\": \"/bin/busybox\",                 \"PublicIP\": \"1.1.1.1\",                 \"RuleExist\": true,                 \"RuleId\": \"222222222222222222222222\",                 \"Solution\": \"排查是否为正常业务需要的计划任务修改\",                 \"Status\": \"EVENT_UNDEAL\"             }         ]",
+          "example": "无",
           "member": "AccessControlEventInfo",
           "name": "EventSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的内核版本",
+          "example": "4.15.0-142-|4.18.0-80|4.18.0-193.28.1*|5.4.0-77-*|5.4.119.19.009.56",
+          "member": "string",
+          "name": "SupportCoreVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拦截失败可能的原因",
+          "example": "非读写操作暂未支持拦截，如新建/重命名等，touch/mv 等操作。",
+          "member": "string",
+          "name": "InterceptionFailureTip",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -15841,7 +15889,7 @@
           "example": "[\"Instance****\"]",
           "member": "string",
           "name": "ExportField",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -15910,6 +15958,16 @@
           "example": "https://cwp-1258344***.cos.ap-guangzhou.myqcloud.com/file.txt",
           "member": "string",
           "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出任务id",
+          "example": "1012",
+          "member": "string",
+          "name": "JobId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16657,7 +16715,7 @@
           "example": "[Name]",
           "member": "string",
           "name": "ExportField",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -16714,9 +16772,19 @@
         {
           "disabled": false,
           "document": "excel文件下载地址",
-          "example": "https://cwp-1258344699.cos.ap-guangzhou.myqcloud.com/ImageVirusListExport-1256299843-241101101930.csv?q-sign-algorithm=sha1&q-ak=AKID******&q-sign-time=1730427570%3B1730434770&q-key-time=1730427570%3B1730434770&q-header-list=host&q-url-param-list=&q-signature=ca98fa9ee18dd70c8ff947683262f155452b5f66",
+          "example": "https://cwp-12583446xx.xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出任务id",
+          "example": "1012",
+          "member": "string",
+          "name": "JobId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -16822,7 +16890,7 @@
           "example": "[\"CVEId\"]",
           "member": "string",
           "name": "ExportField",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -16879,9 +16947,19 @@
         {
           "disabled": false,
           "document": "excel文件下载地址",
-          "example": "https://cwp-1258344699.cos.ap-guangzhou.myqcloud.com/RegistryImageList-1256299843-241101101931.csv?q-sign-algorithm=sha1&q-ak=AKID******&q-sign-time=1730427571%3B1730434771&q-key-time=1730427571%3B1730434771&q-header-list=host&q-url-param-list=&q-signature=1ad96620c6cf3c64de52962c33032c3ef3300e5b",
+          "example": "https://cwp-12583446xx.xxx",
           "member": "string",
           "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导出任务id",
+          "example": "1012",
+          "member": "string",
+          "name": "JobId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18390,6 +18468,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "失败主机数",
+          "example": "10",
+          "member": "uint64",
+          "name": "FailedHostCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "1002",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -18886,6 +18984,16 @@
           "member": "string",
           "name": "MasterIps",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有者名称",
+          "example": "tx-qi",
+          "member": "string",
+          "name": "OwnerName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20330,7 +20438,7 @@
         {
           "disabled": false,
           "document": "事件基本信息",
-          "example": "{             \"ClientIP\": \"159.75.90.111\",             \"ClusterID\": \"cls-sdfw3f3\",             \"ClusterName\": \"web-cluster\",             \"ContainerId\": \"a960d85856c7a77cb504b638c56f59a28057\",             \"ContainerIsolateOperationSrc\": \"system\",             \"ContainerName\": \"node1\",             \"ContainerNetStatus\": \"NORMAL\",             \"ContainerNetSubStatus\": \"NONE\",             \"EventCount\": 1,             \"EventId\": \"12486\",             \"EventName\": \"敏感路径挂载\",             \"EventType\": \"MOUNT_SENSITIVE_PTAH\",             \"FoundTime\": \"2024-10-23 17:13:51\",             \"HostID\": \"3b6b1bbc-1c7a-47e2-9ca8-e9c27ec9d068\",             \"HostIP\": \"172.17.1.6\",             \"ImageId\": \"sha256:b760a4831f5aab71c711f7537a107b751d0d0ce90dd32d8b358df3c5da385426\",             \"ImageName\": \"centos:7.6\",             \"LatestFoundTime\": \"2024-10-23 17:13:51\",             \"Namespace\": \"default\",             \"NodeID\": \"web-node1\",             \"NodeName\": \"VM-1-6-tencentos\",             \"NodeSubNetCIDR\": \"172.16.0.0/24\",             \"NodeSubNetID\": \"sub-ndifn***\",             \"NodeSubNetName\": \"dev\",             \"NodeType\": \"NORMAL\",             \"NodeUniqueID\": \"d41d8cd98f00b20*******\",             \"PodIP\": \"10.0.0.121\",             \"PodName\": \"kube-system/cilium-m2gkw\",             \"PodStatus\": \"NORMAL\",             \"Status\": \"EVENT_UNDEAL\",             \"WorkloadType\": \"StatefulSet\"         }",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "output_required": true,
@@ -20340,7 +20448,7 @@
         {
           "disabled": false,
           "document": "进程信息",
-          "example": "{             \"ProcessAuthority\": \"-rwxr-xr-x\",             \"ProcessId\": 2743103,             \"ProcessMd5\": \"81a7701a194c3a1179cfe4a7ac836626\",             \"ProcessName\": \"runc\",             \"ProcessParam\": \"cilium-agent --config-dir=/tmp/cilium/config-map\",             \"ProcessPath\": \"/opt/containerd/bin/runc\",             \"ProcessStartUser\": \"root\",             \"ProcessTree\": \"runc(2743103)|containerd-shim-runc-v2(289436)|systemd(1)\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "output_required": true,
@@ -20350,7 +20458,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "{             \"Description\": \"容器（ID:5893711bb2...）挂载了敏感目录/lib/modules,/proc/sys/net,/proc/sys/kernel，存在容器逃逸的风险，当攻击者攻破容器后，可通过篡改该目录下的敏感文件，从而实现容器逃逸，获得宿主机系统的控制权限，威胁宿主机上其它容器及内网的安全。\",             \"OperationTime\": \"1970-01-01 00:00:01\",             \"Remark\": \"dev\",             \"Solution\": \"修改挂载路径，只将必须的路径挂载到容器中，避免挂载敏感路径。\"         }",
+          "example": "无",
           "member": "EscapeEventDescription",
           "name": "EventDetail",
           "output_required": true,
@@ -20360,7 +20468,7 @@
         {
           "disabled": false,
           "document": "父进程信息",
-          "example": "{             \"ProcessParam\": \"/usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 613d6792485871ca66ab6dc4d1c24e827e1ff4ae6aff87b187e40059cd3ba3b9 -address /run/containerd/containerd.sock \",             \"ProcessPath\": \"containerd-shim-runc-v2\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "ParentProcessInfo",
           "output_required": true,
@@ -20370,7 +20478,7 @@
         {
           "disabled": false,
           "document": "祖先进程信息",
-          "example": "         \"AncestorProcessInfo\": {             \"ProcessParam\": \"/usr/lib/systemd/systemd --switched-root --system --deserialize 18 \",             \"ProcessPath\": \"systemd\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
           "output_required": true,
@@ -24070,7 +24178,7 @@
         {
           "disabled": false,
           "document": "事件基本信息",
-          "example": "{\"ClientIP\":\"43.138.**.**\",\"ClusterID\":\"12\",\"ClusterName\":\"name1\",\"ContainerId\":\"dc56fda9-58c8-4c4f-9e8c-b7296836c1fe\",\"ContainerIsolateOperationSrc\":\"ContainerIsolateOperationSrc\",\"ContainerName\":\"/fervent_goodall\",\"ContainerNetStatus\":\"NORMAL\",\"ContainerNetSubStatus\":\"NONE\",\"EventCount\":1,\"EventId\":\"464567\",\"EventName\":\"反弹shell\",\"EventType\":\"REVERSE_SHELL_EVENT_TYPE\",\"FoundTime\":\"2024-10-09 10:17:07\",\"HostID\":\"45641324-6360-4fd4-bfc7-843162cb8116\",\"HostIP\":\"10.0.1.233\",\"ImageId\":\"sha256:345234541324b561b4c16bcb82328cfe5809ab675bb17ab3a16c517c9\",\"ImageName\":\"centos:7\",\"LatestFoundTime\":\"2024-10-09 10:17:07\",\"Namespace\":\"Namespace\",\"NodeID\":\"NodeID\",\"NodeName\":\"k8s-node1\",\"NodeSubNetCIDR\":\"NodeSubNetCIDR\",\"NodeSubNetID\":\"NodeSubNetID\",\"NodeSubNetName\":\"NodeSubNetName\",\"NodeType\":\"NORMAL\",\"NodeUniqueID\":\"NodeUniqueID\",\"PodIP\":\"10.0.0.1\",\"PodName\":\"PodName\",\"PodStatus\":\"2\",\"Status\":\"EVENT_UNDEAL\",\"WorkloadType\":\"3\"}",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "output_required": true,
@@ -24080,7 +24188,7 @@
         {
           "disabled": false,
           "document": "进程信息",
-          "example": "{\"ProcessAuthority\":\"-rwxr-xr-x\",\"ProcessId\":737357,\"ProcessMd5\":\"81a7701a194c3a1179cfe4a7ac836626\",\"ProcessName\":\"bash\",\"ProcessParam\":\"bash -i\",\"ProcessPath\":\"/usr/bin/bash\",\"ProcessStartUser\":\"ProcessStartUser\",\"ProcessTree\":\"bash(737357)|bash(737356)|bash(733933)|containerd-shim-runc-v2(2178890)|systemd(1)\",\"ProcessUserGroup\":\"root\"}",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "output_required": true,
@@ -24090,7 +24198,7 @@
         {
           "disabled": false,
           "document": "父进程信息",
-          "example": "{\"ProcessId\":737356,\"ProcessName\":\"bash\",\"ProcessParam\":\"sh -c bash \",\"ProcessPath\":\"/usr/bin/bash\",\"ProcessStartUser\":\"ProcessStartUser\",\"ProcessUserGroup\":\"ProcessUserGroup\"}",
+          "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
           "output_required": true,
@@ -24100,7 +24208,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "{\"Description\":\"/fervent_goodall容器(ID:b18a9a3726...)内存在疑似反弹shell行为\",\"DstAddress\":\"175.178.**.**:3387\",\"OperationTime\":\"1970-01-01 00:00:01\",\"Remark\":\"Remark\",\"Solution\":\"清理容器内反弹shell进程，检查容器内服务是否存在漏洞、弱密码等风险\"}",
+          "example": "无",
           "member": "ReverseShellEventDescription",
           "name": "EventDetail",
           "output_required": true,
@@ -24110,7 +24218,7 @@
         {
           "disabled": false,
           "document": "祖先进程信息",
-          "example": "{\"ProcessParam\":\"bash\",\"ProcessPath\":\"/usr/bin/bash\",\"ProcessStartUser\":\"root\",\"ProcessUserGroup\":\"root\"}",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
           "output_required": true,
@@ -25065,7 +25173,7 @@
         {
           "disabled": false,
           "document": "恶意请求事件列表",
-          "example": "[{\"Address\": \"r4v4icyaaltpqelvmj2w45dvgeytcmbnpa4dmljwgq.h.nessus****\", \"City\": \"\", \"ClusterID\": \"cls-55jm****\", \"ClusterName\": \"k8s-tool\", \"ContainerID\": \"23800b52164fef1266ab259abf2476e7f498c01f98adeb1b4cb53f224000****\", \"ContainerIsolateOperationSrc\": \"\", \"ContainerName\": \"/nessus\", \"ContainerNetStatus\": \"NORMAL\", \"ContainerNetSubStatus\": \"NONE\", \"ContainerStatus\": \"DESTR****\", \"Description\": \"\", \"EventCount\": 3, \"EventID\": 1774008, \"EventStatus\": \"EVENT_UN****\", \"EventType\": \"DOMAIN\", \"FoundTime\": \"2024-02-02 10:4****\", \"HostID\": \"1e7c4560-8b24-4990-838b-8023d621****\", \"HostIP\": \"10.0.1****\", \"HostName\": \"VM-7-17-ce****\", \"ImageID\": \"sha256:b2362acbac0b6df9775a039560482a7a744fe54403aa45a9669b3163f68e****\", \"ImageName\": \"ramisec/nessus:la****\", \"LatestFoundTime\": \"2024-02-02 16:5****\", \"NodeID\": \"ins-2zwg****\", \"NodeName\": \"VM-7-17-ce****\", \"NodeType\": \"NORMAL\", \"NodeUniqueID\": \"ddcc216281ee8c098076deaa9717****\", \"PodIP\": \"10.0.1****\", \"PodName\": \"/\", \"PublicIP\": \"10.0.1****\", \"Solution\": \"\"}]",
+          "example": "无",
           "member": "RiskDnsEventInfo",
           "name": "List",
           "output_required": true,
@@ -25204,7 +25312,7 @@
         {
           "disabled": false,
           "document": "事件基本信息",
-          "example": "{             \"ClientIP\": \"175.178.113.111\",             \"ClusterID\": \"cls-demo1\",             \"ClusterName\": \"web-demo\",             \"ContainerId\": \"75D3326A-9B9C-4275-895A-16FDA1*****\",             \"ContainerIsolateOperationSrc\": \"ContainerIsolateOperationSrc\",             \"ContainerName\": \"/k8s_xenon_mysql-tce-cwp-mysql-2_sso_c9fdfba4-e31a-46bc-a43a-****\",             \"ContainerNetStatus\": \"NORMAL\",             \"ContainerNetSubStatus\": \"NONE\",             \"EventCount\": 130,             \"EventId\": \"5124493\",             \"EventName\": \"高危系统调用\",             \"EventType\": \"RISK_SYSCALL_EVENT_TYPE\",             \"FoundTime\": \"2024-10-23 00:05:17\",             \"HostID\": \"11141114-66fd-4171-93eb-2f4fc36ef1e1\",             \"HostIP\": \"10.0.0.105\",             \"ImageId\": \"sha256:11141114e95dce36e8455cf657e1e54d74bb8fac6111411141114\",             \"ImageName\": \"registry.tce.com/service-vendors/mysql-xenon:8.0.32-20240524-155426-11141114.rhel.amd64\",             \"LatestFoundTime\": \"2024-10-23 17:02:47\",             \"Namespace\": \"default\",             \"NodeID\": \"pod-dj4xjf***\",             \"NodeName\": \"tcs-10-0-0-105\",             \"NodeSubNetCIDR\": \"fe80::8132:1b51:5********\",             \"NodeSubNetID\": \"subnet-dfj4***\",             \"NodeSubNetName\": \"default\",             \"NodeType\": \"NORMAL\",             \"NodeUniqueID\": \"node-4jfjfgdnvnd****\",             \"PodIP\": \"10.0.0.11\",             \"PodName\": \"demonset\",             \"PodStatus\": \"running\",             \"Status\": \"EVENT_UNDEAL\",             \"WorkloadType\": \"StatefulSet\"         }",
+          "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
           "output_required": true,
@@ -25214,7 +25322,7 @@
         {
           "disabled": false,
           "document": "进程信息",
-          "example": "{             \"ProcessAuthority\": \"-rwxr-xr-x\",             \"ProcessId\": 2907621,             \"ProcessMd5\": \"8a5772dee965c8223aebc1225e*****\",             \"ProcessName\": \"xenoncli\",             \"ProcessParam\": \"xenoncli xenon ping\",             \"ProcessPath\": \"/usr/local/bin/xenoncli\",             \"ProcessStartUser\": \"root\",             \"ProcessTree\": \"xenoncli(2907621)|containerd-shim(330852)|containerd(17863)|dockerd(17838)|systemd(1)\",             \"ProcessUserGroup\": \"0\"         },",
+          "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
           "output_required": true,
@@ -25224,7 +25332,7 @@
         {
           "disabled": false,
           "document": "父进程信息",
-          "example": "{             \"ProcessId\": 330852,             \"ProcessName\": \"containerd-shim\",             \"ProcessParam\": \"containerd-shim -namespace moby -workdir /data/kubernetes/docker/containerd/daemon/io.containerd.runtime.v1.linux/moby/ /var/run/docker/runtime-runc\",             \"ProcessPath\": \"/usr/bin/containerd-shim\",             \"ProcessStartUser\": \"root\",             \"ProcessUserGroup\": \"root\"         }",
+          "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
           "output_required": true,
@@ -25234,7 +25342,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "{             \"Description\": \"sergid会导致运行进程的账号权限变更，可能带来安全风险\",             \"OperationTime\": \"1970-01-01 00:00:01\",             \"Remark\": \"user config\",             \"Solution\": \"使用存在潜在风险的系统调用，可能导致容器逃逸。建议对于不常用的系统调用，禁止容器使用，并及时更新宿主机的系统漏洞\",             \"SyscallName\": \"chroot\"         }",
+          "example": "无",
           "member": "RiskSyscallEventDescription",
           "name": "EventDetail",
           "output_required": true,
@@ -25244,7 +25352,7 @@
         {
           "disabled": false,
           "document": "祖先进程信息",
-          "example": "{             \"ProcessParam\": \"containerd --config /var/run/docker/containerd/containerd.toml --log-level warn\",             \"ProcessPath\": \"/usr/bin/containerd\",             \"ProcessStartUser\": \"0\",             \"ProcessUserGroup\": \"0\"         }",
+          "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
           "output_required": true,
@@ -28190,6 +28298,16 @@
           "example": "cvm",
           "member": "string",
           "name": "WorkloadType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ContainerStatus",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -39618,6 +39736,26 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "sha256:b2362acbac0b6df9775a039560482a7a744fe54403aa45a9669b3163f68e****",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器ID",
+          "example": "23800b52164fef1266ab259abf2476e7f498c01f98adeb1b4cb53f224000****",
+          "member": "string",
+          "name": "ContainerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -40516,6 +40654,16 @@
           "member": "string",
           "name": "WorkloadType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器运行状态",
+          "example": "EVENT_UNDEAL",
+          "member": "string",
+          "name": "ContainerStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -43345,7 +43493,7 @@
         {
           "disabled": false,
           "document": "建议方案",
-          "example": "1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；\n2.隔离或者删除相关的木马文件；\n3.对系统进行风险排查，并进行安全加固，详情可参考如下链接： \n【Linux】https://cloud.tencent.com/document/product/296/9604 \n【Windows】https://cloud.tencent.com/document/product/296/****",
+          "example": "1.检查恶意进程及非法端口",
           "member": "string",
           "name": "SuggestScheme",
           "output_required": true,
@@ -43528,6 +43676,16 @@
           "example": "clsfoo***",
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点内网IP，同innerIP",
+          "example": "10.72.20****",
+          "member": "string",
+          "name": "HostIP",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

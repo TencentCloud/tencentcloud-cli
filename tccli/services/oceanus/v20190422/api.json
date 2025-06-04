@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeJobEvents": {
-      "document": "获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型",
+      "document": "请求参数不包含 \"RunningOrderIds\"时，接口获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型;请求参数不包含 \"RunningOrderIds\"时，接口为查询作业实例ID接口,获取作业实例",
       "input": "DescribeJobEventsRequest",
       "name": "获取指定作业的事件",
       "output": "DescribeJobEventsResponse",
@@ -3113,10 +3113,10 @@
         {
           "disabled": false,
           "document": "该作业指定范围内的事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[ ]",
           "member": "JobEvent",
           "name": "Events",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3126,7 +3126,7 @@
           "example": "[3,2,1]",
           "member": "uint64",
           "name": "RunningOrderIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3136,8 +3136,18 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例对应的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "Versions",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {

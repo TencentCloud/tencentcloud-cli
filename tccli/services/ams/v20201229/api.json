@@ -1009,7 +1009,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "TaskLabel",
           "name": "Labels",
           "output_required": true,
@@ -1019,7 +1019,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "InputInfo",
           "name": "InputInfo",
           "output_required": true,
@@ -1039,7 +1039,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回音频片段的审核结果，主要包括开始时间和音频审核的相应结果。<br>具体输出内容请参见AudioSegments及AudioResult数据结构的详细描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "AudioSegments",
           "name": "AudioSegments",
           "output_required": true,
@@ -1099,7 +1099,7 @@
         {
           "disabled": false,
           "document": "媒体信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "MediaInfo",
           "name": "MediaInfo",
           "output_required": false,
@@ -1121,7 +1121,7 @@
         {
           "disabled": false,
           "document": "该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1139,7 +1139,7 @@
         {
           "disabled": false,
           "document": "该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。",
-          "example": "无",
+          "example": ".aCQX6qOnIv0SuMLH",
           "member": "string",
           "name": "PageToken",
           "required": false,
@@ -1148,7 +1148,7 @@
         {
           "disabled": false,
           "document": "该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
-          "example": "无",
+          "example": "2025-05-12T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -1157,7 +1157,7 @@
         {
           "disabled": false,
           "document": "该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
-          "example": "无",
+          "example": "2025-05-13T23:59:59+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -1172,7 +1172,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前查询的任务总量，格式为int字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "468",
           "member": "string",
           "name": "Total",
           "output_required": true,

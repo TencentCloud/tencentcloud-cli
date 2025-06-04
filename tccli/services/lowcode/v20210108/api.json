@@ -1328,6 +1328,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传文件状态",
+          "example": "Ready",
+          "member": "string",
+          "name": "DocStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件上传失败的具体原因",
+          "example": "failed",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos存储文件ID",
+          "example": "cloud://aa.doc",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1685,6 +1715,36 @@
           "example": "bob",
           "member": "string",
           "name": "Author",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档上传状态",
+          "example": "Ready",
+          "member": "string",
+          "name": "DocStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传文件失败时具体的错误消息",
+          "example": "xxx param invalid",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos存储文件ID",
+          "example": "cloud://aa.doc",
+          "member": "string",
+          "name": "FileId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

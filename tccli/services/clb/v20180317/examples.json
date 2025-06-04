@@ -384,6 +384,14 @@
         "title": "查询云主机绑定的负载均衡"
       }
     ],
+    "DescribeLBOperateProtect": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=DescribeLBOperateProtect\n&LoadBalancerIds.0=lb-rbw529fz\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"LoadBalancerSet\": [\n            {\n                \"LoadBalancerId\": \"lb-rbw529fz\",\n                \"ProtectState\": true,\n                \"OperatorUin\": \"125674504xx\",\n                \"Description\": \"CLB Operate Protect\",\n                \"ModifyTime\": \"2021-09-08 15:54:46\"\n            }\n        ],\n        \"RequestId\": \"63d7d5d7-523a-4c5e-bda2-ec953ed5ace4\"\n    }\n}",
+        "title": "查询负载均衡的操作保护信息"
+      }
+    ],
     "DescribeListeners": [
       {
         "document": "",

@@ -15,7 +15,8 @@ Output:
 {
     "Response": {
         "RequestId": "62e5c0e8-2cae-410a-8240-9cefbd419e08",
-        "DownloadUrl": "https://download.url"
+        "DownloadUrl": "https://download.url",
+        "JobId": "1012"
     }
 }
 ```

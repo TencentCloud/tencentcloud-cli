@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vm CancelTask --cli-unfold-argument  \
-    --TaskId 123
+    --TaskId w-video-aDKaIiA4vq3ZAaa1
 ```
 
 Output: 

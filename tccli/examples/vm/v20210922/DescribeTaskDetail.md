@@ -69,7 +69,7 @@ Output:
                         }
                     ],
                     "Url": "https://cos.ap-zhou.myqcloud.com/c019/image_1.jpg",
-                    "Extra": "{}"
+                    "Extra": ""
                 },
                 "OffsetTime": "1"
             }
@@ -97,7 +97,7 @@ Output:
                     "LanguageResults": [],
                     "Duration": "4000",
                     "Score": 1,
-                    "Extra": "{}",
+                    "Extra": "",
                     "SubLabel": "Anthem",
                     "RecognitionResults": [
                         {

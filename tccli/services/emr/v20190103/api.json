@@ -10810,6 +10810,15 @@
           "name": "Enable",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件Json模板",
+          "example": " [{     \"StrategyMeta\":{         \"type\": \"AND\"     },     \"StrategyList\":[{\"metricName\":\"elapsedtime\",\"Value\":10,\"opType\":\">=\",\"id\":\"0\"}],     \"StrategyLabels\":[{\"labelKey\":\"queue\",\"labelValue\":[\"root\",\"root.default\"]}] }]",
+          "member": "string",
+          "name": "SettingsJson",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -14375,6 +14384,16 @@
           "name": "Operation",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "StoreFile数量",
+          "example": "10",
+          "member": "float",
+          "name": "StoreFileNum",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

@@ -70,6 +70,13 @@
       "output": "CreateExporterIntegrationResponse",
       "status": "online"
     },
+    "CreateExternalCluster": {
+      "document": "注册外部集群到云上 TMP 实例",
+      "input": "CreateExternalClusterRequest",
+      "name": "注册外部 k8s 集群",
+      "output": "CreateExternalClusterResponse",
+      "status": "online"
+    },
     "CreateGrafanaInstance": {
       "document": "本接口（CreateGrafanaInstance）用于创建 Grafana 包年包月实例，默认基础版、到期自动续费、不可使用代金券。",
       "input": "CreateGrafanaInstanceRequest",
@@ -460,6 +467,13 @@
       "input": "DescribeExternalClusterRegisterCommandRequest",
       "name": "查看外部集群注册命令",
       "output": "DescribeExternalClusterRegisterCommandResponse",
+      "status": "online"
+    },
+    "DescribeExternalClusterUninstallCommand": {
+      "document": "查看外部集群 Agent 卸载命令",
+      "input": "DescribeExternalClusterUninstallCommandRequest",
+      "name": "查看外部集群 Agent 卸载命令",
+      "output": "DescribeExternalClusterUninstallCommandResponse",
       "status": "online"
     },
     "DescribeGrafanaChannels": {
@@ -4134,6 +4148,97 @@
           "name": "Names",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalClusterRequest": {
+      "document": "CreateExternalCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "prom-abcd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群所在地域",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "ClusterRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "cluster name",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "ecls-abcd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "外部标签",
+          "example": "[{\"Name\": \"cluster_name\", \"Value\": \"ai\"}]",
+          "member": "Label",
+          "name": "ExternalLabels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否打开预聚合规则",
+          "example": "bool",
+          "member": "bool",
+          "name": "OpenDefaultRecord",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网",
+          "example": "bool",
+          "member": "bool",
+          "name": "EnableExternal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExternalClusterResponse": {
+      "document": "CreateExternalCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "ecls-abcd",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -8704,6 +8809,52 @@
           "disabled": false,
           "document": "注册命令",
           "example": "--- apiVersion: v1 kind: Namespace metadata:   name: prom-abcd --- apiVersion: v1 kind: ServiceAccount metadata:   name: proxy-agent-installer   namespace:  prom-abcd --- apiVersion: rbac.authorization.k8s.io/v1 kind: ClusterRoleBinding metadata:   name: install-proxy-agent roleRef:   apiGroup: rbac.authorization.k8s.io   kind: ClusterRole   name: cluster-admin subjects: - kind: ServiceAccount   name: proxy-agent-installer   namespace:  prom-abcd --- apiVersion: batch/v1 kind: Job metadata:   name: proxy-agent-installer   namespace: prom-abcd spec:   backoffLimit: 5   ttlSecondsAfterFinished: 60   template:     spec:       tolerations:       - operator: Exists       serviceAccountName: proxy-agent-installer       containers:       - name: installer         image: ccr.ccs.tencentyun.com/cloudmonitor/agent-installer:v0.0.3         args:         - upgrade          - tmp         - ./         - --install         - -n         - prom-abcd         - --set         - proxyAgent.enabled=true         - --set          - proxyAgent.instanceId=prom-abcd         - --set         - proxyAgent.instanceToken=token         - --set         - proxyAgent.clusterId=ecls-abcd         - --set         - proxyAgent.clusterType=external         - --set         - proxyAgent.serverAddress=1.1.1.1:8008         - --set         - proxyAgent.image=ccr.ccs.tencentyun.com/cloudmonitor/multi-proxy:v1.0.12       restartPolicy: Never",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalClusterUninstallCommandRequest": {
+      "document": "DescribeExternalClusterUninstallCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "prom-abcd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "ecls-abcd",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalClusterUninstallCommandResponse": {
+      "document": "DescribeExternalClusterUninstallCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卸载命令",
+          "example": "apiVersion: batch/v1 kind: Job metadata:   name: uninstaller spec:   template:     spec:       containers:       - name: uninstaller         image: ccr.ccs.tencentyun.com/cloudmonitor/agent-installer:v0.0.8",
           "member": "string",
           "name": "Command",
           "output_required": true,

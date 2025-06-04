@@ -294,6 +294,13 @@
       "output": "DescribeLBListenersResponse",
       "status": "online"
     },
+    "DescribeLBOperateProtect": {
+      "document": "查询负载均衡的操作保护信息。",
+      "input": "DescribeLBOperateProtectRequest",
+      "name": "查询负载均衡操作保护",
+      "output": "DescribeLBOperateProtectResponse",
+      "status": "online"
+    },
     "DescribeListeners": {
       "document": "DescribeListeners 接口可根据负载均衡器 ID、监听器的协议或端口作为过滤条件获取监听器列表。如果不指定任何过滤条件，则返回该负载均衡实例下的所有监听器。",
       "input": "DescribeListenersRequest",
@@ -5101,6 +5108,43 @@
       ],
       "type": "object"
     },
+    "DescribeLBOperateProtectRequest": {
+      "document": "DescribeLBOperateProtect请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例ID。",
+          "example": "lb-ol9l5wxx",
+          "member": "string",
+          "name": "LoadBalancerIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLBOperateProtectResponse": {
+      "document": "DescribeLBOperateProtect返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的负载均衡操作保护信息数组。",
+          "example": "无",
+          "member": "LBOperateProtectInfo",
+          "name": "LoadBalancerSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeListenersRequest": {
       "document": "DescribeListeners请求参数结构体",
       "members": [
@@ -7091,6 +7135,62 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LBOperateProtectInfo": {
+      "document": "负载均衡的操作保护信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例 ID。",
+          "example": "lb-gfz73nxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保护状态，true：表示开启了操作保护，false：表示未开启操作保护。",
+          "example": "true",
+          "member": "bool",
+          "name": "ProtectState",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作保护的设置uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1235450",
+          "member": "string",
+          "name": "OperatorUin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置操作保护时的描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-09 15:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
