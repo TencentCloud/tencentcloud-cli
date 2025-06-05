@@ -2306,7 +2306,7 @@
           "example": "40",
           "member": "int64",
           "name": "Balance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2316,7 +2316,7 @@
           "example": "40",
           "member": "int64",
           "name": "Cash",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

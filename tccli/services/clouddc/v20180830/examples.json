@@ -1,37 +1,5 @@
 {
   "actions": {
-    "AuditActivity": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=AuditActivity\n&ActId=1\n&Status=1\n&AuditRemark=1\n&AccessToken=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{}\",\n        \"RequestId\": \"c709efd4-be95-486f-aabe-773651795402\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
-    "CreateLabelsToCustomer": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=CreateLabelsToCustomer\n&Industry=1\n&SubIndustry=2\n&LabelKey=GUOQI\n&Cids.0=ab081cb3b68e28f1e184e9f8dc3ab448\n&Cids.1=d1d7383e67b82aa9116d229bde649862\n&RequestFrom=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"[{\\\"code\\\":200047,\\\"msg\\\":\\\"\\\\u5ba2\\\\u6237\\\\u6807\\\\u7b7e\\\\uff1a\\\\u6218\\\\u7565\\\\u5730\\\\u56fe\\\\u5ba2\\\\u6237\\\\u5df2\\\\u6253\\\\u6807\\\\u5728\\\\u6d4b\\\\u8bd5\\\\u5ba2\\\\u6237\\\\u540d\\\\u79f01\\\\u5ba2\\\\u6237\\\\u4e0a\\\",\\\"cid\\\":\\\"ab081cb3b68e28f1e184e9f8dc3ab448\\\"},{\\\"cid\\\":\\\"d1d7383e67b82aa9116d229bde649862\\\",\\\"code\\\":0,\\\"msg\\\":\\\"ok\\\"}]\",\n        \"RequestId\": \"533f4300-d580-40f5-b4b5-021231bc23fb\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
-    "CreateProductPatch": [
-      {
-        "document": "产研侧有补丁包发布时，需要将物料传递到交付侧，目前是采用产研人员手工上传天途的方式，处理效率低下。\n因此需要开发产品补丁包接收接口，可以和产研的发布平台对接，发布平台发布完成将产品补丁包推送到天途。\n文档链接：https://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: CreateProductPatch\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"true\"\n    }\n}",
-        "title": "产研接口-推送产品补丁包信息接口"
-      }
-    ],
-    "DeleteMarkCustomerLabel": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=DeleteMarkCustomerLabel\n&Industry=1\n&SubIndustry=2\n&LabelKey=GUOQI\n&Cid=507eafdb04d5579c5b06d37cc9784ff5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"affected_rows\\\":1,\\\"insert_id\\\":96}\",\n        \"RequestId\": \"8f691174-1a79-4a5d-9948-d8585d9dea31\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "DescribeCompanyInfoByKeyword": [
       {
         "document": "",
@@ -72,14 +40,6 @@
         "title": "实例"
       }
     ],
-    "DescribeHuman": [
-      {
-        "document": "查询天途人力资源信息\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=847009213",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHuman\n<公共请求参数>\n\n{\n    \"Enterprise\": \"p_linzhongguang\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111\",\n        \"JsonData\": \"{\\\"TotalCount\\\":1,\\\"List\\\":[{\\\"workspace_id\\\":\\\"20418055\\\",\\\"JobName\\\":\\\"\\\\u4ea7\\\\u54c1\\\\u67b6\\\\u6784\\\\u5e08\\\",\\\"departments\\\":\\\"\\\\u534e\\\\u5357\\\\u6280\\\\u672f\\\\u652f\\\\u6301\\\\u7ec4\\\",\\\"name2\\\":\\\"\\\\u6797\\\\u4e2d\\\\u5e7f\\\",\\\"Personnelgender\\\":\\\"\\\\u7537\\\",\\\"Productorientation\\\":\\\"\\\\u901a\\\\u7528\\\\u7c7b\\\",\\\"time\\\":\\\"2020-01-02\\\",\\\"Method\\\":\\\"\\\\u5176\\\\u4ed6\\\",\\\"Phone_number\\\":\\\"13426275812\\\",\\\"Weixin_Account\\\":\\\"\\\",\\\"Account\\\":\\\"\\\",\\\"Level\\\":\\\"10\\\",\\\"CHANPIN\\\":\\\"[]\\\",\\\"Enterprise\\\":\\\"p_linzhongguang\\\",\\\"Incumbency\\\":\\\"\\\\u5728\\\\u804c\\\",\\\"base_land\\\":\\\"\\\\u5317\\\\u4eac-\\\\u5317\\\\u4eac\\\\u5e02\\\",\\\"label_job_front\\\":\\\"1.5\\\\u7ebf\\\",\\\"label_profession\\\":\\\"\\\\u653f\\\\u52a1\\\",\\\"region_level\\\":\\\"\\\",\\\"label_management\\\":\\\"\\\",\\\"a_order_list\\\":[],\\\"post_category\\\":\\\"\\\\u79c1\\\\u6709\\\\u5316\\\\u4ea7\\\\u54c1\\\\u80fd\\\\u529b\\\\u5efa\\\\u8bbe\\\",\\\"region\\\":\\\"\\\\u4e1c\\\\u533a\\\"}]}\"\n    }\n}",
-        "title": "天途人力资源接口"
-      }
-    ],
     "DescribeIndustryTrees": [
       {
         "document": "获取产业树列表",
@@ -96,60 +56,12 @@
         "title": "示例"
       }
     ],
-    "DescribeOrganizationInfo": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationInfo\n<公共请求参数>\n\n{\n    \"OrganizationUin\": 123\n}",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"AccountOver\\\":2439600,\\\"CashOver\\\":1951600,\\\"VoucherOver\\\":488000}\",\n        \"RequestId\": \"859f12d3-6249-4962-b07c-a19a408931c1\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "DescribePkgExist": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: entmap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePkgExist\n<公共请求参数>\n\n{\n    \"TaskId\": [\n        100000428\n    ],\n    \"QueryUin\": \"100032961887\"\n}",
         "output": "{\n    \"Response\": {\n        \"ExistResult\": [\n            {\n                \"Result\": 0,\n                \"TaskId\": 100000428\n            }\n        ],\n        \"RequestId\": \"0\"\n    }\n}",
         "title": "请求示例"
-      }
-    ],
-    "DescribeProductProjectInfo": [
-      {
-        "document": "解决的TO拆解问题（TO问题关联）或者  自身的规划\n界面/逻辑/数据字段/审批流\n文档链接：https://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DescribeProductProjectInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"[{\\\"ltc_id\\\":\\\"\\\\u65e0\\\",\\\"project_name\\\":\\\"\\\\u5357\\\\u901a\\\\u5e02\\\\u516c\\\\u5b89\\\\u5c40POC\\\",\\\"order_id\\\":\\\"TS373732019-04-01\\\",\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_type\\\":\\\"POC\\\\u6d4b\\\\u8bd5\\\",\\\"product_name\\\":\\\"Tstack\\\",\\\"customer_name\\\":\\\"\\\",\\\"game_point\\\":\\\"\\\",\\\"deliver_version\\\":\\\"\\\",\\\"progress\\\":\\\"100%\\\"},{\\\"ltc_id\\\":\\\"20191101123189\\\",\\\"project_name\\\":\\\"\\\\u5357\\\\u7f51\\\\u4e91\\\\u8f6f\\\\u4ef6\\\\u53ca\\\\u7ec4\\\\u4ef6\\\\u4f18\\\\u5316\\\\u5b8c\\\\u5584(\\\\u7b2c\\\\u4e00\\\\u6279)\\\\u6846\\\\u67b6\\\\u91c7\\\\u8d2d\\\\u9879\\\\u76ee\\\\uff08\\\\u53051-\\\\u5357\\\\u7f51\\\\u4e91\\\\u5e73\\\\u53f0\\\\u57fa\\\\u5ea7\\\\uff09\\\",\\\"order_id\\\":\\\"TS2020072485868\\\",\\\"service_stage\\\":\\\"\\\\u552e\\\\u540e\\\\u670d\\\\u52a1\\\",\\\"service_type\\\":\\\"\\\\u8fd0\\\\u7ef4\\\\u670d\\\\u52a1\\\",\\\"product_name\\\":\\\"TStack\\\",\\\"customer_name\\\":\\\"\\\\u4e1c\\\\u534e\\\\u8f6f\\\\u4ef6\\\\u80a1\\\\u4efd\\\\u516c\\\\u53f8\\\",\\\"game_point\\\":\\\"\\\",\\\"deliver_version\\\":\\\"\\\",\\\"progress\\\":\\\"46.15%\\\"},{\\\"ltc_id\\\":\\\"20190304113658\\\",\\\"project_name\\\":\\\"\\\\u6570\\\\u5b57\\\\u5e7f\\\\u4e1c-\\\\u817e\\\\u8baf\\\\u4e91\\\\u653f\\\\u52a1\\\\u4e91\\\\u670d\\\\u52a1\\\\u6846\\\\u67b6\\\\u91c7\\\\u8d2d\\\\uff082019\\\\u5e74\\\\u7b2c\\\\u4e00\\\\u6279\\\\uff09\\\",\\\"order_id\\\":\\\"TS2020082892129\\\",\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_type\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5b9e\\\\u65bd\\\",\\\"product_name\\\":\\\"TStack\\\",\\\"customer_name\\\":\\\"\\\\u6570\\\\u5b57\\\\u5e7f\\\\u4e1c\\\\u7f51\\\\u7edc\\\\u5efa\\\\u8bbe\\\\u6709\\\\u9650\\\\u516c\\\\u53f8\\\",\\\"game_point\\\":\\\"\\\",\\\"deliver_version\\\":\\\"6.9\\\",\\\"progress\\\":\\\"69.23%\\\"},{\\\"ltc_id\\\":\\\"20200219129392\\\",\\\"project_name\\\":\\\"\\\\u4e00\\\\u4f53\\\\u5316\\\\u5e73\\\\u53f0\\\\u5efa\\\\u8bbe\\\",\\\"order_id\\\":\\\"TE2020090393460\\\",\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_type\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5b9e\\\\u65bd\\\",\\\"product_name\\\":\\\"TStack\\\",\\\"customer_name\\\":\\\"\\\\u6c5f\\\\u82cf\\\\u7701\\\\u4eba\\\\u529b\\\\u8d44\\\\u6e90\\\\u548c\\\\u793e\\\\u4f1a\\\\u4fdd\\\\u969c\\\\u5385\\\",\\\"game_point\\\":\\\"\\\",\\\"deliver_version\\\":\\\"\\\\u72ec\\\\u7acb-141\\\\u7248\\\\u672c\\\",\\\"progress\\\":\\\"53.85%\\\"}]\"\n    }\n}",
-        "title": "产研接口-获取产品项目信息"
-      }
-    ],
-    "DescribeProductVersion": [
-      {
-        "document": "交付中心支持的自研产品有一套产品接入流程，通过此流程接入的产品名称和产品版本交付中心才可以支持交付。为了减少产研侧和交付侧的沟通成本，拟以交付侧的产品名称和版本为依据，因此需要天途提供产品名称和版本列表，供产研其他平台引用。\n文档链接：https://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DescribeProductVersion\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"[{\\\"productId\\\":10008,\\\"short\\\":\\\"TStack\\\",\\\"version\\\":[\\\"Kilo\\\",\\\"Pike\\\",\\\"6.7\\\",\\\"6.3\\\",\\\"6.5\\\",\\\"6.9\\\",\\\"6.9\\\",\\\"6.9\\\",\\\"6.9\\\",\\\"6.9\\\",\\\"6.9\\\",\\\"6.9\\\"],\\\"sonProduct\\\":[]}]\"\n    }\n}",
-        "title": "产研接口-获取产品信息接口"
-      }
-    ],
-    "DescribeQflowConfig": [
-      {
-        "document": "交付中心项目在andon 创建工单时需要获取交付配置信息。\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DescribeQflowConfig\n<公共请求参数> \n \n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"{\\\"region\\\":[{\\\"region_id\\\":1,\\\"region_name\\\":\\\"\\\\u534e\\\\u5357\\\"},{\\\"region_id\\\":2,\\\"region_name\\\":\\\"\\\\u897f\\\\u5357\\\"},{\\\"region_id\\\":3,\\\"region_name\\\":\\\"\\\\u534e\\\\u5317\\\"},{\\\"region_id\\\":4,\\\"region_name\\\":\\\"\\\\u534e\\\\u4e1c\\\"},{\\\"region_id\\\":5,\\\"region_name\\\":\\\"\\\\u6d4b\\\\u8bd5\\\\u533a\\\"}],\\\"serviceType\\\":[{\\\"id\\\":1,\\\"service_stage\\\":\\\"\\\\u552e\\\\u524d\\\\u54a8\\\\u8be2\\\",\\\"service_stage_code\\\":\\\"PRESALE\\\",\\\"service_type\\\":\\\"\\\\u4ea7\\\\u54c1\\\\u4e13\\\\u5bb6\\\\u54a8\\\\u8be2\\\",\\\"service_type_code\\\":\\\"ProductExpertConsultation\\\"},{\\\"id\\\":2,\\\"service_stage\\\":\\\"\\\\u552e\\\\u524d\\\\u54a8\\\\u8be2\\\",\\\"service_stage_code\\\":\\\"PRESALE\\\",\\\"service_type\\\":\\\"\\\\u5f00\\\\u53d1\\\\u6280\\\\u672f\\\\u54a8\\\\u8be2\\\",\\\"service_type_code\\\":\\\"DevelopmentTechnicalConsultation\\\"},{\\\"id\\\":3,\\\"service_stage\\\":\\\"\\\\u552e\\\\u524d\\\\u54a8\\\\u8be2\\\",\\\"service_stage_code\\\":\\\"PRESALE\\\",\\\"service_type\\\":\\\"\\\\u8fc1\\\\u4e91\\\\u54a8\\\\u8be2\\\",\\\"service_type_code\\\":\\\"CloudRelocationConsultation\\\"},{\\\"id\\\":4,\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_stage_code\\\":\\\"INSALE\\\",\\\"service_type\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5b9e\\\\u65bd\\\",\\\"service_type_code\\\":\\\"DeliveryImplementation\\\"},{\\\"id\\\":5,\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_stage_code\\\":\\\"INSALE\\\",\\\"service_type\\\":\\\"\\\\u4e13\\\\u4e1a\\\\u6d4b\\\\u8bd5\\\",\\\"service_type_code\\\":\\\"ProfessionalTest\\\"},{\\\"id\\\":6,\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_stage_code\\\":\\\"INSALE\\\",\\\"service_type\\\":\\\"\\\\u57f9\\\\u8bad\\\\u670d\\\\u52a1\\\",\\\"service_type_code\\\":\\\"TrainingService\\\"},{\\\"id\\\":7,\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_stage_code\\\":\\\"INSALE\\\",\\\"service_type\\\":\\\"\\\\u5b9a\\\\u5236\\\\u5f00\\\\u53d1\\\",\\\"service_type_code\\\":\\\"CustomizedDevelopment\\\"},{\\\"id\\\":8,\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_stage_code\\\":\\\"INSALE\\\",\\\"service_type\\\":\\\"\\\\u9879\\\\u76ee\\\\u7ba1\\\\u7406\\\",\\\"service_type_code\\\":\\\"ProjectManagement\\\"},{\\\"id\\\":9,\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_stage_code\\\":\\\"INSALE\\\",\\\"service_type\\\":\\\"POC\\\\u6d4b\\\\u8bd5\\\",\\\"service_type_code\\\":\\\"POCTest\\\"},{\\\"id\\\":10,\\\"service_stage\\\":\\\"\\\\u552e\\\\u540e\\\\u670d\\\\u52a1\\\",\\\"service_stage_code\\\":\\\"AFTERSALE\\\",\\\"service_type\\\":\\\"\\\\u7ef4\\\\u4fdd\\\\u670d\\\\u52a1\\\",\\\"service_type_code\\\":\\\"MaintenanceService\\\"},{\\\"id\\\":11,\\\"service_stage\\\":\\\"\\\\u552e\\\\u540e\\\\u670d\\\\u52a1\\\",\\\"service_stage_code\\\":\\\"AFTERSALE\\\",\\\"service_type\\\":\\\"\\\\u8fd0\\\\u7ef4\\\\u670d\\\\u52a1\\\",\\\"service_type_code\\\":\\\"OperationService\\\"},{\\\"id\\\":12,\\\"service_stage\\\":\\\"\\\\u552e\\\\u540e\\\\u670d\\\\u52a1\\\",\\\"service_stage_code\\\":\\\"AFTERSALE\\\",\\\"service_type\\\":\\\"\\\\u4e13\\\\u9879\\\\u4fdd\\\\u969c\\\\u670d\\\\u52a1\\\",\\\"service_type_code\\\":\\\"SpecialGuaranteeService\\\"},{\\\"id\\\":13,\\\"service_stage\\\":\\\"\\\\u552e\\\\u540e\\\\u670d\\\\u52a1\\\",\\\"service_stage_code\\\":\\\"AFTERSALE\\\",\\\"service_type\\\":\\\"\\\\u670d\\\\u52a1\\\\u9879\\\\u76ee\\\\u7ecf\\\\u7406\\\\uff08SPM\\\\uff09\\\",\\\"service_type_code\\\":\\\"ServiceProjectManager\\\"}]}\"\n    }\n}",
-        "title": "交付中心与安灯获取配置信息接口"
-      }
-    ],
-    "DescribeQflowProject": [
-      {
-        "document": "交付中心项目在andon 创建工单时需要获取项目信息。\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: DescribeQflowProject\n<公共请求参数> \n \n{\"LtcId\": \"2018091401522\"}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"[{\\\"ltc_id\\\":\\\"20181127110704\\\",\\\"project_name\\\":\\\"2019\\\\u5e74-\\\\u534e\\\\u661f\\\\u5149\\\\u7535-t6 ADC\\\\u9879\\\\u76ee\\\",\\\"customer_cid\\\":\\\"\\\",\\\"customer_uin\\\":\\\"100008404714\\\",\\\"customer_name\\\":\\\"\\\\u683c\\\\u521b\\\\u4e1c\\\\u667a\\\\uff08\\\\u6df1\\\\u5733\\\\uff09\\\\u79d1\\\\u6280\\\\u6709\\\\u9650\\\\u516c\\\\u53f8\\\"}]\"\n    }\n}",
-        "title": "交付中心与安灯获取项目信息接口"
-      }
-    ],
-    "DescribeQflowToAndon": [
-      {
-        "document": "交付中心项目在andon 创建工单时需要获取更全面的项目信息， 客户信息。\nhttps://iwiki.oa.tencent.com/pages/viewpage.action?pageId=268808245",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQflowToAndon\n<公共请求参数>\n\n{\n    \"LtcId\": \"2018091401522\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\",\n        \"JsonData\": \"[{\\\"ltc_id\\\":\\\"2018070901321\\\",\\\"project_name\\\":\\\"\\\\u6d77\\\\u901a\\\\u8bc1\\\\u5238\\\\u4eba\\\\u5de5\\\\u667a\\\\u80fd\\\\u949b\\\\u5e73\\\\u53f0\\\\u9879\\\\u76ee\\\",\\\"children\\\":[{\\\"ltc_id\\\":\\\"2018070901321\\\",\\\"order_id\\\":\\\"TE375312019-04-15\\\",\\\"project_name\\\":\\\"\\\\u6d77\\\\u901a\\\\u8bc1\\\\u5238\\\\u4eba\\\\u5de5\\\\u667a\\\\u80fd\\\\u949b\\\\u5e73\\\\u53f0\\\\u9879\\\\u76ee\\\",\\\"customer_cid\\\":\\\"55409d03885d1293680189b34cc18c84\\\",\\\"customer_uin\\\":\\\"1097352543\\\",\\\"customer_name\\\":\\\"\\\",\\\"server_provider\\\":\\\"\\\\u4e1c\\\\u533a-\\\\u817e\\\\u4e91\\\\u5fc6\\\\u60f3\\\",\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_type\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5b9e\\\\u65bd\\\",\\\"product_name\\\":\\\"TI-ONE\\\",\\\"server_name\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5de5\\\\u7a0b\\\\u5e08\\\",\\\"order_enter_date\\\":\\\"2019-04-15\\\",\\\"order_leave_date\\\":\\\"\\\\u65e0\\\",\\\"create_time\\\":\\\"2019-07-20 07:05:56\\\",\\\"project_trade\\\":\\\"\\\\u91d1\\\\u878d\\\",\\\"region\\\":\\\"\\\\u534e\\\\u4e1c\\\",\\\"region_id\\\":4,\\\"region_spm\\\":\\\"tomtliang\\\",\\\"region_technology_spmo\\\":\\\"\\\",\\\"department\\\":\\\"\\\\u667a\\\\u6167\\\\u884c\\\\u4e1a5\\\\u90e8\\\\u91d1\\\\u878d\\\",\\\"game_point\\\":\\\"\\\",\\\"deliver_version\\\":\\\"\\\"},{\\\"ltc_id\\\":\\\"2018070901321\\\",\\\"order_id\\\":\\\"TE375282019-04-15\\\",\\\"project_name\\\":\\\"\\\\u6d77\\\\u901a\\\\u8bc1\\\\u5238\\\\u4eba\\\\u5de5\\\\u667a\\\\u80fd\\\\u949b\\\\u5e73\\\\u53f0\\\\u9879\\\\u76ee\\\",\\\"customer_cid\\\":\\\"55409d03885d1293680189b34cc18c84\\\",\\\"customer_uin\\\":\\\"1097352543\\\",\\\"customer_name\\\":\\\"\\\",\\\"server_provider\\\":\\\"\\\\u4e1c\\\\u533a-\\\\u817e\\\\u4e91\\\\u5fc6\\\\u60f3\\\",\\\"service_stage\\\":\\\"\\\\u96c6\\\\u6210\\\\u4ea4\\\\u4ed8\\\",\\\"service_type\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5b9e\\\\u65bd\\\",\\\"product_name\\\":\\\"TI-ONE\\\",\\\"server_name\\\":\\\"\\\\u4ea4\\\\u4ed8\\\\u5de5\\\\u7a0b\\\\u5e08\\\",\\\"order_enter_date\\\":\\\"2019-04-10\\\",\\\"order_leave_date\\\":\\\"2019-08-31\\\",\\\"create_time\\\":\\\"2019-07-20 06:58:02\\\",\\\"project_trade\\\":\\\"\\\\u91d1\\\\u878d\\\",\\\"region\\\":\\\"\\\\u534e\\\\u4e1c\\\",\\\"region_id\\\":4,\\\"region_spm\\\":\\\"tomtliang\\\",\\\"region_technology_spmo\\\":\\\"\\\",\\\"department\\\":\\\"\\\\u667a\\\\u6167\\\\u884c\\\\u4e1a5\\\\u90e8\\\\u91d1\\\\u878d\\\",\\\"game_point\\\":\\\"\\\",\\\"deliver_version\\\":\\\"\\\"}]}]\"\n    }\n}",
-        "title": "交付中心与安灯对接接口"
       }
     ],
     "DescribeQueryGroupCustomersList": [
@@ -190,22 +102,6 @@
         "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTreeNodeInfoByCodes\n<公共请求参数>\n\n{\n    \"Codes\": [\n        \"abc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"NodeInfoList\": [\n            {\n                \"Code\": \"abc\",\n                \"CenterIds\": [\n                    0\n                ],\n                \"DepartmentIds\": [\n                    0\n                ],\n                \"Level\": 0,\n                \"Managers\": [\n                    \"abc\"\n                ],\n                \"Name\": \"abc\",\n                \"Status\": 0,\n                \"Version\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
-      }
-    ],
-    "ImportOfflineProduct": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=ImportOfflineProduct\r\n&OrganizationUin=12334556\r\n&GoodsList.0.customer_uin=123\r\n&GoodsList.0.customer_name=123\r\n&GoodsList.0.goods_name=123\r\n&GoodsList.0.amount=123\r\n&GoodsList.0.comment=123\r\n&AccessToken=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{}\",\n        \"RequestId\": \"c709efd4-be95-486f-aabe-773651795402\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
-    "ModifyProductMaterial": [
-      {
-        "document": "产研侧有新的版本发布或者优化升级时，需要将物料传递到交付侧，目前是采用产研人员手工上传天途的方式，处理效率低下。\n因此需要开发产品物料接收接口，可以和产研的发布平台对接，发布平台发布完成讲产品物料推送到天途。\n文档链接：https://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com \nContent-Type: application/json \nX-TC-Action: ModifyProductMaterial\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345\"\n    }\n}",
-        "title": "产研接口-推送产品物料信息"
       }
     ],
     "SendOutsideEmailAndSms": [

@@ -959,7 +959,7 @@
         {
           "disabled": false,
           "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "FailedUserList",
           "output_required": true,
@@ -969,7 +969,7 @@
         {
           "disabled": false,
           "document": "流程id。大于0表示启动了流程；等于0表示没有启动流程",
-          "example": "123",
+          "example": "4133444",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
@@ -10988,7 +10988,7 @@
         {
           "disabled": false,
           "document": "用户列表",
-          "example": "无",
+          "example": "[\"user\"]",
           "member": "string",
           "name": "Users",
           "output_required": false,
@@ -11016,7 +11016,7 @@
         {
           "disabled": false,
           "document": "用户名称列表",
-          "example": "无",
+          "example": "[\"user\"]",
           "member": "string",
           "name": "Users",
           "output_required": false,

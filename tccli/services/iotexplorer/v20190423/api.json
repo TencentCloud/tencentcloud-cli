@@ -13945,7 +13945,7 @@
         {
           "disabled": false,
           "document": "位置空间Id",
-          "example": "spaceId",
+          "example": "space00",
           "member": "string",
           "name": "SpaceId",
           "required": true,
@@ -13954,7 +13954,7 @@
         {
           "disabled": false,
           "document": "产品Id",
-          "example": "productId",
+          "example": "8U7HJ6G",
           "member": "string",
           "name": "ProductId",
           "required": true,

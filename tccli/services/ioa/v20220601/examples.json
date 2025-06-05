@@ -1489,7 +1489,7 @@
       },
       {
         "document": "DescribeDeviceCompliantInfo",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCompliantInfos\n<公共请求参数>\n\n{\n    \"GroupId\": 1,\n    \"OsType\": 0,\n    \"OnlineStatus\": 1,\n    \"ResultStatus\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCompliantInfos\n<公共请求参数>\n\n{\n    \"GroupId\": 1,\n    \"DomainInstanceId\": \"13\",\n    \"OsType\": 0,\n    \"OnlineStatus\": 1,\n    \"ResultStatus\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"5fb53dd5-0b63-4bfe-af36-ccdefb53a46a\"\n    }\n}",
         "title": "DescribeDeviceCompliantInfo"
       }
@@ -2983,8 +2983,8 @@
     "GetTaskResult": [
       {
         "document": "获取导入文件异步任务执行结果",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResult\n<公共请求参数>\n\n{\n    \"TaskID\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskID\": \"abc\",\n            \"TaskSTate\": \"abc\",\n            \"ErrorMsg\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTaskResult\n<公共请求参数>\n\n{\n    \"TaskID\": \"729353f6-4833-47fc-921c-afa1826d5f7f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskID\": \"729353f6-4833-47fc-921c-afa1826d5f7f\",\n            \"TaskSTate\": \"success\",\n            \"ErrorMsg\": \"成功\"\n        },\n        \"RequestId\": \"z61z353f6-4833-47fc-921c-afa1826d5f7f\"\n    }\n}",
         "title": "获取导入文件异步任务执行结果"
       }
     ],

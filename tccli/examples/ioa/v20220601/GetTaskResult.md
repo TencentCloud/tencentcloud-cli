@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ioa GetTaskResult --cli-unfold-argument  \
-    --TaskID abc
+    --TaskID 729353f6-4833-47fc-921c-afa1826d5f7f
 ```
 
 Output: 
@@ -14,11 +14,11 @@ Output:
 {
     "Response": {
         "Data": {
-            "TaskID": "abc",
-            "TaskSTate": "abc",
-            "ErrorMsg": "abc"
+            "TaskID": "729353f6-4833-47fc-921c-afa1826d5f7f",
+            "TaskSTate": "success",
+            "ErrorMsg": "成功"
         },
-        "RequestId": "abc"
+        "RequestId": "z61z353f6-4833-47fc-921c-afa1826d5f7f"
     }
 }
 ```

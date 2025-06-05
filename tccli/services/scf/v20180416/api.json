@@ -1089,6 +1089,106 @@
       ],
       "type": "object"
     },
+    "CosFsConfig": {
+      "document": "函数挂载的CosFs配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cos文件系统信息列表",
+          "example": "[{ \t\"CosRegion\": \"ap-guangzhou\", \t\"BucketName\": \"test-12345615\", \t\"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \t\"BucketMountDir\": \"/test/\", \t\"LocalMountDir\": \"/mnt/\", \t\"CosFsType\": \"CosFs\" }]",
+          "member": "CosFsInfo",
+          "name": "CosFsInsList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CosFsInfo": {
+      "document": "Cos文件系统挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要挂载的cos桶名称",
+          "example": "test-bucket-1234561",
+          "member": "string",
+          "name": "BucketName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos的接入点，域名信息",
+          "example": "cos.ap-chongqing.myqcloud.com",
+          "member": "string",
+          "name": "BucketEndpoint",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos挂载的远端目录",
+          "example": "/test",
+          "member": "string",
+          "name": "BucketMountDir",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数对应的挂载目录",
+          "example": "/mnt",
+          "member": "string",
+          "name": "LocalMountDir",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载的CosFs 类型",
+          "example": "CosFs",
+          "member": "string",
+          "name": "CosFsType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载的Cos所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos fs挂载时指定的特殊选项。",
+          "example": "-onoxattr",
+          "member": "string",
+          "name": "MountOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAliasRequest": {
       "document": "CreateAlias请求参数结构体",
       "members": [
@@ -1631,6 +1731,15 @@
           "name": "Plugins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "CosFS配置参数，用于云函数挂载Cos文件系统",
+          "example": "{ \t\"CosFsInsList\": [{ \t\t\"CosRegion\": \"ap-guangzhou\", \t\t\"BucketName\": \"test-12345615\", \t\t\"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \t\t\"BucketMountDir\": \"/test/\", \t\t\"LocalMountDir\": \"/mnt/\", \t\t\"CosFsType\": \"CosFs\" \t}] }",
+          "member": "CosFsConfig",
+          "name": "CosFsConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4158,6 +4267,16 @@
           "name": "Plugins",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CosFS配置参数，用于云函数关联Cos文件系统",
+          "example": "{ \t\"CosFsInsList\": [{ \t\t\"CosRegion\": \"ap-guangzhou\", \t\t\"BucketName\": \"test-12345615\", \t\t\"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \t\t\"BucketMountDir\": \"/test/\", \t\t\"LocalMountDir\": \"/mnt/\", \t\t\"CosFsType\": \"CosFs\" \t}] }",
+          "member": "CosFsConfig",
+          "name": "CosFsConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -8629,6 +8748,15 @@
           "name": "Plugins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "CosFS配置参数，用于云函数挂载Cos文件系统",
+          "example": "{ \"CosFsInsList\": [{ \"CosRegion\": \"ap-guangzhou\", \"BucketName\": \"test-12345615\", \"BucketEndpoint\": \"cos.ap-guangzhou.myqcloud.com\", \"BucketMountDir\": \"/test/\", \"LocalMountDir\": \"/mnt/\", \"CosFsType\": \"CosFs\" }] }",
+          "member": "CosFsConfig",
+          "name": "CosFsConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

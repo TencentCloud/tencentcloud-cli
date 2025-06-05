@@ -6178,6 +6178,24 @@
           "name": "ClusterTopology",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "原实例所在地域名，当传入异地备份时为必选项，例：ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "SrcRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "异地数据备份id",
+          "example": "12445233",
+          "member": "int64",
+          "name": "SpecifiedSubBackupId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

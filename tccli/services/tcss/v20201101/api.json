@@ -4146,6 +4146,15 @@
           "name": "WebhookToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tcr实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -35992,8 +36001,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "全部同步，俩参数必选一个 All优先",
-          "example": "True",
+          "document": "同步全部普通节点",
+          "example": "true",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -36001,12 +36010,39 @@
         },
         {
           "disabled": false,
-          "document": "要同步的主机列表uuid ，俩参数必选一个 All优先",
+          "document": "要同步的主机列表uuid ",
           "example": "[\"f63e2bbb-1070-4178-9934-9639ef33363b\"]",
           "member": "string",
           "name": "Hosts",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "同步全部超级节点",
+          "example": "true",
+          "member": "bool",
+          "name": "AllSuperHost",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "要同步的超级节点唯一id",
+          "example": "[\"dac9bff62384e6b3d7db830f7bf2b0a8\"]",
+          "member": "string",
+          "name": "NodeUniqueIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "超时时间(秒) 最低3600s",
+          "example": "3600",
+          "member": "uint64",
+          "name": "TimeoutSec",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -36022,6 +36058,16 @@
           "name": "Status",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "10086",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -43196,6 +43242,15 @@
           "name": "NeedScan",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "tcr实例ID",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

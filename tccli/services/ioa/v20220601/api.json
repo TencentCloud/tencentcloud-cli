@@ -365,7 +365,7 @@
       "status": "online"
     },
     "DeleteAccountGroupResources": {
-      "document": "删除账户组资源授权，私有化调用path为：capi/Assets/DeleteAccountGroupResources",
+      "document": "删除账户组资源授权，私有化调用path为：capi/NGN/DeleteAccountGroupResources",
       "input": "DeleteAccountGroupResourcesRequest",
       "name": "删除账户组资源",
       "output": "DeleteAccountGroupResourcesResponse",
@@ -14786,6 +14786,15 @@
         },
         {
           "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "滤条件、分页参数\n<li>Name - String - 是否必填：否 - 操作符: eq like ilike - 排序支持：是 - 按照设备名排序。</li>\n<li>UserName - String - 是否必填：否 - 操作符: eq like ilike - 排序支持：是 - 按照设备用户名排序。</li>\n<li>IoaUserName - String - 是 否必填 - 操作符: eq like ilike ：否 - 排序支持：是- 按照ioa用户名进行排序。</li>\n<li>Ip - String - 是否必填：否 - 操作符: eq like ilike - 排序支持：是 - 按照设备IP地址进行排序。</li>\n<li>MacAddr - String - 是否必填：否  - 操作符: eq like ilike - 排序支持：是 - 按照设备MAC地址进行排序。</li>\n<li>GroupId - int - 是否必填：否 - 排序支持：是 - 按照设备分组Id进行排序。</li>",
           "example": "无",
           "member": "Condition",
@@ -16113,14 +16122,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "下载的url",
+          "example": "\"https://xxxxxxx/path/file\"",
           "member": "string",
           "name": "DownloadURL",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16248,13 +16268,24 @@
         {
           "disabled": false,
           "document": "下载的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"https://www.xxx.cn/1/2\"",
           "member": "string",
           "name": "DownloadURL",
           "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -17564,7 +17595,7 @@
         {
           "disabled": false,
           "document": "非下载，则返回分页数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "{                         \"PageSize\": 1000,                         \"PageNum\": 1,                         \"PageCount\": 0,                         \"Total\": 0                     }",
           "member": "Paging",
           "name": "Paging",
           "output_required": true,
@@ -17575,7 +17606,7 @@
         {
           "disabled": false,
           "document": "item数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "[{}]",
           "member": "HardwareLogItem",
           "name": "List",
           "output_required": true,
@@ -17586,13 +17617,24 @@
         {
           "disabled": false,
           "document": "如果为下载，下载路径url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"https://xxxxx/1/2/3\"",
           "member": "string",
           "name": "DownUrl",
           "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "56577",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -31518,12 +31560,24 @@
         {
           "disabled": false,
           "document": "下载的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"https://www.xxx.cn/1/2/3\"",
           "member": "string",
           "name": "DownloadURL",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超过一定时间走异步任务",
+          "example": "112233",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -32015,9 +32069,18 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "729353f6-4833-47fc-921c-afa1826d5f7f",
           "member": "string",
           "name": "TaskID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务版本：v2 - 自定义组的批量导入绑定。其他业务不要传递该字段，保持为空",
+          "example": "v2",
+          "member": "string",
+          "name": "TaskVersion",
           "required": false,
           "type": "string"
         }
@@ -32033,6 +32096,7 @@
           "example": "无",
           "member": "TaskResultData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

@@ -8,6 +8,14 @@
         "title": "示例"
       }
     ],
+    "CleanAndroidInstancesAppData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CleanAndroidInstancesAppData\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99NQV3Qw7\"\n    ],\n    \"PackageName\": \"com.tencent.abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16152a6a-d031-4506-8eba-466e6a286c01\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ConnectAndroidInstance": [
       {
         "document": "连接安卓实例",
@@ -214,11 +222,27 @@
         "title": "DestroyAndroidInstances 示例"
       }
     ],
+    "DisableAndroidInstancesApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99NQV3Qw7\"\n    ],\n    \"PackageName\": \"com.tencent.abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16152a6a-d031-4506-8eba-466e6a286c01\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DistributeFileToAndroidInstances": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributeFileToAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99NQV3Qw7\"\n    ],\n    \"FileURL\": \"https://test.cos.ap-nanjing.myqcloud.com/tmp/wallpaper.jpg\",\n    \"DestinationDirectory\": \"/sdcard/Download/mor99\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d84c9b83-4e34-4a70-bba2-c617e5ae824a\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99wkeEIID\",\n                \"TaskId\": \"9c1a12a7-460b-449e-a9c8-1802395e579c\"\n            },\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99NQV3Qw7\",\n                \"TaskId\": \"8eafea29-17f8-4d27-8408-4e63732f8878\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "EnableAndroidInstancesApp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableAndroidInstancesApp\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99NQV3Qw7\"\n    ],\n    \"PackageName\": \"com.tencent.abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16152a6a-d031-4506-8eba-466e6a286c01\"\n    }\n}",
         "title": "示例"
       }
     ],

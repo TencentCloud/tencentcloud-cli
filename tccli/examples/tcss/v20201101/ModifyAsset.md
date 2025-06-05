@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli tcss ModifyAsset --cli-unfold-argument  \
-    --All True
+    --All True \
+    --AllSuperHost True \
+    --TimeoutSec 3600
 ```
 
 Output: 
@@ -14,7 +16,8 @@ Output:
 {
     "Response": {
         "RequestId": "33ec689a-e026-4700-8dc4-b559b97f0667",
-        "Status": "SUCCESS"
+        "Status": "SUCCESS",
+        "TaskId": 10086
     }
 }
 ```

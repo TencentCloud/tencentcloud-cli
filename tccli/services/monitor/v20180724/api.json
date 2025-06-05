@@ -966,13 +966,6 @@
       "output": "ModifyGrafanaInstanceResponse",
       "status": "online"
     },
-    "ModifyNotificationSetting": {
-      "document": "修改告警通知配置",
-      "input": "ModifyNotificationSettingRequest",
-      "name": "修改告警通知配置",
-      "output": "ModifyNotificationSettingResponse",
-      "status": "online"
-    },
     "ModifyPolicyGroup": {
       "document": "更新策略组",
       "input": "ModifyPolicyGroupRequest",
@@ -17776,96 +17769,6 @@
     },
     "ModifyGrafanaInstanceResponse": {
       "document": "ModifyGrafanaInstance返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyNotificationSettingRequest": {
-      "document": "ModifyNotificationSetting请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "监控类型",
-          "example": "MT_CLS",
-          "member": "string",
-          "name": "MonitorType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "通知配置ID",
-          "example": "sdfdfd",
-          "member": "string",
-          "name": "SettingId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "PolicyOneOnOne 通知模板与告警策略一对一绑定关系；ConvergenceOneOnOne 通知模板与收敛规则一对一绑定关系",
-          "example": "PolicyOneOnOne",
-          "member": "string",
-          "name": "MatchType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "基于ID匹配",
-          "example": "policy-jei2n3",
-          "member": "string",
-          "name": "MatchById",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "匹配参数",
-          "example": "trigger",
-          "member": "string",
-          "name": "MatchParams",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否启用告警升级",
-          "example": "true",
-          "member": "bool",
-          "name": "HasEscalation",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "关联的通知模板",
-          "example": "无",
-          "member": "NotificationSettingNotice",
-          "name": "Notices",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "升级规则",
-          "example": "无",
-          "member": "NotificationPart",
-          "name": "EscalationRules",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyNotificationSettingResponse": {
-      "document": "ModifyNotificationSetting返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -39,6 +39,7 @@ Input:
 ```
 tccli ioa DescribeDeviceCompliantInfos --cli-unfold-argument  \
     --GroupId 1 \
+    --DomainInstanceId 13 \
     --OsType 0 \
     --OnlineStatus 1 \
     --ResultStatus 1

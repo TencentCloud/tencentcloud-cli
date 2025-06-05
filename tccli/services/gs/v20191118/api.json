@@ -7,6 +7,13 @@
       "output": "BackUpAndroidInstanceToStorageResponse",
       "status": "online"
     },
+    "CleanAndroidInstancesAppData": {
+      "document": "批量清理安卓实例应用数据",
+      "input": "CleanAndroidInstancesAppDataRequest",
+      "name": "批量清理安卓实例应用数据",
+      "output": "CleanAndroidInstancesAppDataResponse",
+      "status": "online"
+    },
     "ConnectAndroidInstance": {
       "document": "连接安卓实例",
       "input": "ConnectAndroidInstanceRequest",
@@ -43,7 +50,7 @@
       "status": "online"
     },
     "CreateAndroidInstanceImage": {
-      "document": "创建安卓实例镜像",
+      "document": "使用指定的安卓实例创建镜像，创建镜像时指定的实例会关机，镜像创建完成后实例会自动开机。当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像创建完成处于可用状态。",
       "input": "CreateAndroidInstanceImageRequest",
       "name": "创建安卓实例镜像",
       "output": "CreateAndroidInstanceImageResponse",
@@ -59,7 +66,7 @@
     "CreateAndroidInstanceSSH": {
       "document": "创建安卓实例 SSH 连接信息，请将返回结果的 PrivateKey 字段保存为 pem 文件，并将 pem 文件权限设置为 600，再参考返回结果的 ConnectCommand 使用 ssh 连接实例。",
       "input": "CreateAndroidInstanceSSHRequest",
-      "name": "创建安卓实例SSH连接",
+      "name": "创建安卓实例 SSH 连接",
       "output": "CreateAndroidInstanceSSHResponse",
       "status": "online"
     },
@@ -141,7 +148,7 @@
       "status": "online"
     },
     "DescribeAndroidInstanceImages": {
-      "document": "查询安卓实例镜像",
+      "document": "查询安卓实例镜像信息，当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像处于可用状态。",
       "input": "DescribeAndroidInstanceImagesRequest",
       "name": "查询安卓实例镜像列表",
       "output": "DescribeAndroidInstanceImagesResponse",
@@ -182,11 +189,25 @@
       "output": "DestroyAndroidInstancesResponse",
       "status": "online"
     },
+    "DisableAndroidInstancesApp": {
+      "document": "批量禁用安卓实例应用",
+      "input": "DisableAndroidInstancesAppRequest",
+      "name": "批量禁用安卓实例应用",
+      "output": "DisableAndroidInstancesAppResponse",
+      "status": "online"
+    },
     "DistributeFileToAndroidInstances": {
       "document": "将一个文件批量分发到多个实例，一次接口调用触发一次文件分发，一次文件分发只会从公网下载一次，然后文件会走内网分发到实例列表中的实例。",
       "input": "DistributeFileToAndroidInstancesRequest",
       "name": "分发文件到安卓实例",
       "output": "DistributeFileToAndroidInstancesResponse",
+      "status": "online"
+    },
+    "EnableAndroidInstancesApp": {
+      "document": "批量启用安卓实例应用",
+      "input": "EnableAndroidInstancesAppRequest",
+      "name": "批量启用安桌实例应用",
+      "output": "EnableAndroidInstancesAppResponse",
       "status": "online"
     },
     "ExecuteCommandOnAndroidInstances": {
@@ -386,7 +407,7 @@
       "status": "online"
     },
     "SyncAndroidInstanceImage": {
-      "document": "同步安卓实例镜像",
+      "document": "同步安卓实例镜像到其他区域，当镜像的 AndroidInstanceImageState 为 NORMAL 时，镜像已经同步完成处于可用状态。",
       "input": "SyncAndroidInstanceImageRequest",
       "name": "同步安卓实例镜像",
       "output": "SyncAndroidInstanceImageResponse",
@@ -883,6 +904,34 @@
       ],
       "usage": "both"
     },
+    "AndroidInstanceError": {
+      "document": "安卓实例错误信息，用于批量安卓实例操作中返回部分操作错误的情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID",
+          "example": "cai-abcd1234",
+          "member": "string",
+          "name": "AndroidInstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "Error",
+          "name": "Error",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AndroidInstanceImage": {
       "document": "安卓实例镜像信息",
       "members": [
@@ -1267,6 +1316,52 @@
         }
       ],
       "usage": "in"
+    },
+    "CleanAndroidInstancesAppDataRequest": {
+      "document": "CleanAndroidInstancesAppData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表（最大100条数据）",
+          "example": "[\"cai-abcd1234\"]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用包名",
+          "example": "com.tencent.abc",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CleanAndroidInstancesAppDataResponse": {
+      "document": "CleanAndroidInstancesAppData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误列表。如果实例操作都成功，则响应没有这个字段；如果有实例操作失败，该字段包含了实例操作的错误信息",
+          "example": "无",
+          "member": "AndroidInstanceError",
+          "name": "AndroidInstanceErrors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ConnectAndroidInstanceRequest": {
       "document": "ConnectAndroidInstance请求参数结构体",
@@ -2922,6 +3017,52 @@
       ],
       "type": "object"
     },
+    "DisableAndroidInstancesAppRequest": {
+      "document": "DisableAndroidInstancesApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表（最大100条数据）",
+          "example": "[\"cai-abcd1234\"]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用包名",
+          "example": "com.tencent.abc",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableAndroidInstancesAppResponse": {
+      "document": "DisableAndroidInstancesApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误列表。如果实例操作都成功，则响应没有这个字段；如果有实例操作失败，该字段包含了实例操作的错误信息",
+          "example": "无",
+          "member": "AndroidInstanceError",
+          "name": "AndroidInstanceErrors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DistributeFileToAndroidInstancesRequest": {
       "document": "DistributeFileToAndroidInstances请求参数结构体",
       "members": [
@@ -2976,6 +3117,80 @@
         }
       ],
       "type": "object"
+    },
+    "EnableAndroidInstancesAppRequest": {
+      "document": "EnableAndroidInstancesApp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安卓实例 ID 列表（最大100条数据）",
+          "example": "[\"cai-abcd1234\"]",
+          "member": "string",
+          "name": "AndroidInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用包名",
+          "example": "com.tencent.abc",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableAndroidInstancesAppResponse": {
+      "document": "EnableAndroidInstancesApp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误列表。如果实例操作都成功，则响应没有这个字段；如果有实例操作失败，该字段包含了实例操作的错误信息",
+          "example": "无",
+          "member": "AndroidInstanceError",
+          "name": "AndroidInstanceErrors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Error": {
+      "document": "错误信息，用于批量接口中返回部分操作错误",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "AuthFailure.SignatureFailure",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误详细信息",
+          "example": "The provided credentials could not be validated. Please check your signature is correct.",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExecuteCommandOnAndroidInstancesRequest": {
       "document": "ExecuteCommandOnAndroidInstances请求参数结构体",
