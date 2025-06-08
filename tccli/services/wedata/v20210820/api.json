@@ -672,6 +672,13 @@
       "output": "DescribeExecStrategyResponse",
       "status": "online"
     },
+    "DescribeExecutorGroupMetric": {
+      "document": "商业化版本：根据id查询执行资源组指标",
+      "input": "DescribeExecutorGroupMetricRequest",
+      "name": "根据id查询执行资源组指标-商业化版本",
+      "output": "DescribeExecutorGroupMetricResponse",
+      "status": "online"
+    },
     "DescribeFieldBasicInfo": {
       "document": "元数据模型-字段基础信息查询接口",
       "input": "DescribeFieldBasicInfoRequest",
@@ -16548,6 +16555,106 @@
       ],
       "type": "object"
     },
+    "DescribeExecutorGroupMetricRequest": {
+      "document": "DescribeExecutorGroupMetric请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行资源组id",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用趋势开始时间(毫秒)",
+          "example": "无",
+          "member": "int64",
+          "name": "TrendStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用趋势结束时间(毫秒)",
+          "example": "无",
+          "member": "int64",
+          "name": "TrendEndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行资源组类型",
+          "example": "scheduler:调度, integration:集成, all:全部",
+          "member": "string",
+          "name": "ExecutorGroupType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行资源类型",
+          "example": "offline:离线资源  online:实时资源  loader:执行机 hosting:托管资源 all:全部",
+          "member": "string",
+          "name": "ExecutorResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行机ID",
+          "example": "ins-2zdje3dv",
+          "member": "string",
+          "name": "LoaderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标维度",
+          "example": "system: 系统指标  task: 任务指标  all: 全部",
+          "member": "string",
+          "name": "MetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标采集粒度",
+          "example": "1",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExecutorGroupMetricResponse": {
+      "document": "DescribeExecutorGroupMetric返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行组指标信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorResourceGroupInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFieldBasicInfoRequest": {
       "document": "DescribeFieldBasicInfo请求参数结构体",
       "members": [
@@ -27498,6 +27605,705 @@
       ],
       "usage": "out"
     },
+    "ExecutorResourceGroupInfo": {
+      "document": "资源组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行组id, 仅更新资源时需要传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorGroupDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SCHEDULER （标准调度资源组），CUSTOM_SCHEDULER （自定义调度资源），INTEGRATION（集成资源组），DATA_SERVICE（数据服务资源组）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExecutorResourceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区域中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpcId, 托管服务时需要传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "subnetId, 托管服务时需要传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "基础资源包，资源组至少包含一个基础资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorResourcePackageInfo",
+          "name": "BasicResourcePackage",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "增强资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorResourcePackageInfo",
+          "name": "AdvanceResourcePackage",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区域英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "RegionEn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区域Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcfa",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abcfa",
+          "member": "string",
+          "name": "ProjectDisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组关联项目数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AssociateProjectNums",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否锁定，false为未锁定，true为锁定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLocked",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源类型，0为系统默认，1为自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SourceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MQPackageVO",
+          "name": "MQPackageVO",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否首选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "FirstChoice",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组python版本绑定详情",
+          "example": "[\"python3.7\"]",
+          "member": "string",
+          "name": "PythonSubVersions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ExecutorResourcePackageExtInfo": {
+      "document": "执行资源包额外信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集成资源组：InLong集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InlongGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集成资源组：oceanus集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OceanusClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费相关：产品资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductResourceIdList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前资源包对应订单是否发货成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "BillingSuccess",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "apigw服务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "string",
+          "name": "ApigwServiceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "apigw服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "string",
+          "name": "ApigwServiceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集成相关：dataProxy配置规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataProxySpec",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "dataProxy数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataProxyNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "dataProxy状态，同ExecutorGroupStatus\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataProxyStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "inlongManager地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "string",
+          "name": "InLongManagerUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "inlong版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "InLongVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有化资源组相关: 执行及机器ip列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorMachineIpList",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutorResourcePackageInfo": {
+      "document": "执行资源包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源包规格相关：资源包个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourcePackageNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包规格相关：cpu个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "CpuNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutorResourcePackageId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包规格相关：内存大小，单位:G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MemSize",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包状态， /**\n     * 初始化中\n     */\n    INIT(0),\n    /**\n     * 运行中\n     */\n    RUNNING(1),\n    /**\n     * 运行异常\n     */\n    RUNNING_FAILED(2),\n    /**\n     * 释放中\n     */\n    DELETEING(3),\n    /**\n     * 已释放\n     */\n    DELETED(4),\n    /**\n     * 创建中\n     */\n    CREATING(5),\n    /**\n     * 创建失败\n     */\n    CREATE_FAILED(6),\n    /**\n     * 更新中\n     */\n    UPDATING(7),\n    /**\n     * 更新失败\n     */\n    UPDATE_FAILED(8),\n    /**\n     * 已到期\n     */\n    EXPIRED(9);\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包状态描述：保存创建失败，运行异常和更新失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusDescription",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包到期时间，时间戳毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包额外属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorResourcePackageExtInfo",
+          "name": "ExtInfo",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的项目id，可为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组绑定的时间，时间戳毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectBindTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包使用状态: cpu使用，内存使用及趋势\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorResourcePackageUsageInfo",
+          "name": "ResourcePackageUsage",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费相关：产品资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProductResourceIdList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "LifeTime",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有网络Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-1mwl8y2w",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有网络名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VPC-CLOUD-BJ",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-kt4zredb",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "禁止使用-腾讯云TDMQ Pulsar",
+          "member": "string",
+          "name": "SubnetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行资源相关：资源规格描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceStandard",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalMemory",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutorResourcePackageUsageInfo": {
+      "document": "执行资源包使用情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CPU占用百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "CpuUsagePercent",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存占用百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.3",
+          "member": "float",
+          "name": "MemUsagePercent",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包状态, /**\n     * 初始化中\n     */\n    INIT(0),\n    /**\n     * 运行中\n     */\n    RUNNING(1),\n    /**\n     * 运行异常\n     */\n    RUNNING_FAILED(2),\n    /**\n     * 释放中\n     */\n    DELETEING(3),\n    /**\n     * 已释放\n     */\n    DELETED(4),\n    /**\n     * 创建中\n     */\n    CREATING(5),\n    /**\n     * 创建失败\n     */\n    CREATE_FAILED(6),\n    /**\n     * 更新中\n     */\n    UPDATING(7),\n    /**\n     * 更新失败\n     */\n    UPDATE_FAILED(8),\n    /**\n     * 已到期\n     */\n    EXPIRED(9);\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Status",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/**\n     * 初始化中\n     */\n    INIT(0),\n    /**\n     * 运行中\n     */\n    RUNNING(1),\n    /**\n     * 运行异常\n     */\n    RUNNING_FAILED(2),\n    /**\n     * 释放中\n     */\n    DELETEING(3),\n    /**\n     * 已释放\n     */\n    DELETED(4),\n    /**\n     * 创建中\n     */\n    CREATING(5),\n    /**\n     * 创建失败\n     */\n    CREATE_FAILED(6),\n    /**\n     * 更新中\n     */\n    UPDATING(7),\n    /**\n     * 更新失败\n     */\n    UPDATE_FAILED(8),\n    /**\n     * 已到期\n     */\n运行中的任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RunningTaskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "等待中的任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "WaitingTaskNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源使用趋势: 开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "date",
+          "name": "UsageTrendStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源使用趋势: 结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "date",
+          "name": "UsageTrendEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源使用趋势列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutorUsageTrendInfo",
+          "name": "UsageTrendList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutorUsageTrendInfo": {
+      "document": "资源组/资源包使用趋势",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPU占用百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CpuUsagePercent",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存占用百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MemUsagePercent",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前并发度使用百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "ConcurrencyUsage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "oceanus CU使用百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "OceanusCuUsage",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExtParam": {
       "document": "扩展参数",
       "members": [
@@ -34484,6 +35290,152 @@
           "name": "ContainerName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MQPackageVO": {
+      "document": "MQPackageVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ckafka消息队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CKAFKA",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例Id/集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-a6owtz9t",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称/集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka测试集群",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "局域网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-8r6rj3be",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-cx0644xr",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源状态描述：保存创建失败，运行异常和更新失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DataProxy规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2C4G",
+          "member": "string",
+          "name": "DataProxySpec",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DataProxy数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DataProxyNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DataProxy状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DataProxyStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DataProxy状态描述：保存创建失败，运行异常和更新失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "运行中",
+          "member": "string",
+          "name": "DataProxyStatusDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "包年包月",
+          "member": "string",
+          "name": "BillingType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源到期时间，时间戳毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676025430000",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "LifeTime",
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

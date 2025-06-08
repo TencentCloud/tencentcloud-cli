@@ -44,7 +44,6 @@ Output:
                 "AsrFullTextConfigure": {
                     "Switch": "ON",
                     "SrcLanguage": "",
-                    "SubtitleFormat": "",
                     "SubtitleFormats": []
                 },
                 "AsrTranslateConfigure": {
@@ -94,7 +93,6 @@ Output:
                 "AsrFullTextConfigure": {
                     "Switch": "OFF",
                     "SrcLanguage": "",
-                    "SubtitleFormat": "",
                     "SubtitleFormats": []
                 },
                 "AsrTranslateConfigure": {
@@ -167,7 +165,6 @@ Output:
                 "AsrFullTextConfigure": {
                     "Switch": "ON",
                     "SrcLanguage": "",
-                    "SubtitleFormat": "",
                     "SubtitleFormats": []
                 },
                 "AsrTranslateConfigure": {

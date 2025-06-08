@@ -252,6 +252,13 @@
       "output": "DescribeWorkOrderTypesResponse",
       "status": "online"
     },
+    "ExportCustomerWorkOrderDetail": {
+      "document": "导出工单详情",
+      "input": "ExportCustomerWorkOrderDetailRequest",
+      "name": "导出客户工单详情",
+      "output": "ExportCustomerWorkOrderDetailResponse",
+      "status": "online"
+    },
     "ModifyWorkOrderTypeCollectFlag": {
       "document": "如果当前该工单类型是收藏状态，调用接口后变成未收藏状态，如果是未收藏状态，调用该接口变为收藏状态",
       "input": "ModifyWorkOrderTypeCollectFlagRequest",
@@ -3811,6 +3818,61 @@
         }
       ],
       "usage": "out"
+    },
+    "ExportCustomerWorkOrderDetailRequest": {
+      "document": "ExportCustomerWorkOrderDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务工单类型",
+          "example": "['rackPowerOn']",
+          "member": "string",
+          "name": "WorkOrderType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要导出的工单的起始时间",
+          "example": "2024-11-22 00:00:00",
+          "member": "string",
+          "name": "BeginDateTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要导出的工单的结束时间",
+          "example": "2025-05-11 00:00:00",
+          "member": "string",
+          "name": "EndDateTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportCustomerWorkOrderDetailResponse": {
+      "document": "ExportCustomerWorkOrderDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExpressDelivery": {
       "document": "快递寄件信息,快递寄件必填",

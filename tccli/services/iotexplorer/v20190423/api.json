@@ -260,7 +260,7 @@
       "status": "online"
     },
     "DeleteProject": {
-      "document": "提供删除某个项目的能力",
+      "document": "提供删除某个项目的能力。",
       "input": "DeleteProjectRequest",
       "name": "删除项目",
       "output": "DeleteProjectResponse",
@@ -960,7 +960,7 @@
       "status": "online"
     },
     "ModifyProject": {
-      "document": "修改项目",
+      "document": "修改项目。",
       "input": "ModifyProjectRequest",
       "name": "修改项目",
       "output": "ModifyProjectResponse",
@@ -13780,7 +13780,7 @@
           "example": "无",
           "member": "ProjectEntry",
           "name": "Project",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13799,7 +13799,7 @@
         {
           "disabled": false,
           "document": "位置空间Id",
-          "example": "spaceId",
+          "example": "space00",
           "member": "string",
           "name": "SpaceId",
           "required": true,
@@ -13808,7 +13808,7 @@
         {
           "disabled": false,
           "document": "产品Id",
-          "example": "productId",
+          "example": "8U7HJ6G",
           "member": "string",
           "name": "ProductId",
           "required": true,

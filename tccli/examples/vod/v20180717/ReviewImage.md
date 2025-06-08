@@ -33,22 +33,7 @@ Output:
             ],
             "SegmentSetFileUrl": "xxx/a.mp4",
             "SegmentSetFileUrlExpireTime": "2020-09-07T00:00:00+08:00"
-        },
-        "ReviewResultSet": [
-            {
-                "Type": "Porn.Image",
-                "PornImageResult": {
-                    "Confidence": 99,
-                    "Suggestion": "block",
-                    "Label": "porn"
-                },
-                "TerrorismImageResult": null,
-                "PoliticalImageResult": null,
-                "PornOcrResult": null,
-                "TerrorismOcrResult": null,
-                "PoliticalOcrResult": null
-            }
-        ]
+        }
     }
 }
 ```

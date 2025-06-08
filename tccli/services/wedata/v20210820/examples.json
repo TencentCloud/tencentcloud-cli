@@ -834,6 +834,14 @@
         "title": "例子"
       }
     ],
+    "DescribeExecutorGroupMetric": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExecutorGroupMetric\n<公共请求参数>\n\n{\n    \"TrendStartTime\": \"1\",\n    \"TrendEndTime\": \"1\",\n    \"ExecutorGroupId\": \"20220426145215957124\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8552e3a0-69ec-4c21-a4b7-142f4b9c4678\",\n        \"Data\": {\n            \"ExecutorGroupId\": \"20221208174634944660\",\n            \"ExecutorGroupName\": \"资源组-dlc\",\n            \"ExecutorGroupDesc\": null,\n            \"RegionId\": 8,\n            \"Region\": \"北京\",\n            \"RegionEn\": \"ap-beijing\",\n            \"VpcId\": \"vpc-87y7jn70\",\n            \"SubnetId\": \"subnet-677xoxsl\",\n            \"ProjectId\": \"1475268929806635008\",\n            \"ProjectName\": null,\n            \"ProjectDisplayName\": \"DLC_test\"\n        }\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeFieldBasicInfo": [
       {
         "document": "1",

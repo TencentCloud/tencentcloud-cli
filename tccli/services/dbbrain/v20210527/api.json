@@ -274,7 +274,7 @@
       "status": "online"
     },
     "DescribeIndexRecommendAggregationSlowLogs": {
-      "document": "查询某张表的慢查模板概览",
+      "document": "查询某张表的慢查模板概览，这个接口是对用户点击对应的推荐索引后，展示慢日志用的",
       "input": "DescribeIndexRecommendAggregationSlowLogsRequest",
       "name": "慢查模板概览",
       "output": "DescribeIndexRecommendAggregationSlowLogsResponse",
@@ -4536,7 +4536,7 @@
         },
         {
           "disabled": false,
-          "document": "表明。",
+          "document": "表名。",
           "example": "demo_collection",
           "member": "string",
           "name": "Collection",
@@ -4545,7 +4545,7 @@
         },
         {
           "disabled": false,
-          "document": "签名。",
+          "document": "签名。这个值是DescribelndexRecommendInfo接口返回",
           "example": "d6e6fe0025c258592dd6f442312f26ww",
           "member": "string",
           "name": "Signs",
@@ -4561,7 +4561,7 @@
         {
           "disabled": false,
           "document": "查询实例慢查询聚合结果。",
-          "example": "无",
+          "example": "{\"AvgExecTime\":1208,\"AvgDocsExamined\":12660,\"SlowLogCount\":3,\"SlowLogs\":[],\"SortCount\":0}",
           "member": "Aggregation",
           "name": "Aggregation",
           "output_required": true,

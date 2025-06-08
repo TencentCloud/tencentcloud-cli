@@ -11,7 +11,6 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "RequestId": "6xxxxe3a-6b8e-4b4e-9256-fdc700064ef3",
         "RoundPlaySet": [
             {

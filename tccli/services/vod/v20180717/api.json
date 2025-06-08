@@ -7325,7 +7325,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "生成的字幕文件格式，不填或者填空字符串表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>\n<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormats。</font>",
           "example": "vtt",
           "member": "string",
@@ -7382,7 +7382,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：\n<li>vtt：生成 WebVTT 字幕文件；</li>\n<li>srt：生成 SRT 字幕文件。</li>\n<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>",
           "example": "vtt",
           "member": "string",
@@ -16381,7 +16381,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "分页偏移量，默认值：0。已经废弃，请根据 ScrollToken 参数进行分批次查询。",
           "example": "0",
           "member": "int64",
@@ -16405,7 +16405,7 @@
       "document": "DescribeRoundPlays返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "符合过滤条件的轮播播单总数。已经废弃，分批次查询请请使用 ScrollToken 参数。",
           "example": "100",
           "member": "int64",
@@ -19697,7 +19697,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段已废弃。",
           "example": "uid-test",
           "member": "string",
@@ -22709,7 +22709,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段已废弃，请使用 PicUrlExpireTime。",
           "example": "2023-09-08T02:23:29Z",
           "member": "int64",
@@ -22795,7 +22795,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段已废弃，请使用 PicUrlExpireTime。",
           "example": "2023-09-08T02:23:29Z",
           "member": "int64",
@@ -33489,7 +33489,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段已废弃。",
           "example": "0",
           "member": "int64",
@@ -33499,7 +33499,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段已废弃。",
           "example": "success",
           "member": "string",
@@ -33972,7 +33972,7 @@
       "document": "ReviewImage返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "图片审核任务结果。\n<font color=red>注意：该字段已废弃，建议使用 MediaReviewResult。</font> ",
           "example": "无",
           "member": "ContentReviewResult",
@@ -37292,16 +37292,18 @@
           "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段已废弃，请勿使用。",
           "example": "100",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apm DescribeApmInstances --cli-unfold-argument  \
-    --Tags.0.Key appid \
-    --Tags.0.Value 1231
+    --Tags.0.Key appId \
+    --Tags.0.Value 251005942
 ```
 
 Output: 
@@ -16,38 +16,63 @@ Output:
     "Response": {
         "Instances": [
             {
-                "Name": "ss1123",
-                "InstanceId": "zE7Yu-g7R",
-                "Description": "ssd",
-                "TraceDuration": 3,
-                "AppId": 251005942,
-                "CreateUin": "1500000686",
-                "Tags": [],
-                "ServiceCount": 0,
-                "ClientCount": 0,
-                "TotalCount": 0,
-                "CountOfReportSpanPerDay": 0,
                 "AmountOfUsedStorage": 100,
-                "Status": 2,
-                "Region": "ap-guangzhou",
-                "ErrRateThreshold": 5,
-                "SampleRate": 100,
-                "ErrorSample": 0,
-                "SlowRequestSavedThreshold": 500,
-                "SpanDailyCounters": 1,
+                "AppId": 251005942,
                 "BillingInstance": 0,
-                "MetricDuration": 30,
+                "ClientCount": 0,
+                "CountOfReportSpanPerDay": 0,
+                "CreateUin": "1500000686",
                 "CustomShowTags": [],
-                "PayMode": 1,
-                "PayModeEffective": true,
-                "LogSource": "",
-                "LogRegion": "",
+                "DashboardTopicID": "",
+                "DefaultTSF": 0,
+                "Description": "",
+                "ErrRateThreshold": 5,
+                "ErrorSample": 1,
+                "Free": 2,
+                "InstanceId": "apm-u6HNYVXhz",
+                "IsInstrumentationVulnerabilityScan": 1,
+                "IsMemoryHijackingAnalysis": 1,
+                "IsRelatedDashboard": 0,
                 "IsRelatedLog": 0,
+                "IsRemoteCommandExecutionAnalysis": 1,
+                "IsSqlInjectionAnalysis": 1,
+                "LogIndexType": 0,
+                "LogRegion": "",
+                "LogSet": "",
+                "LogSource": "",
                 "LogTopicID": "",
-                "LogSet": ""
+                "LogTraceIdKey": "",
+                "MetricDuration": 3,
+                "Name": "test1",
+                "PayMode": 0,
+                "PayModeEffective": true,
+                "Region": "ap-guangzhou",
+                "ResponseDurationWarningThreshold": 500,
+                "SampleRate": 100,
+                "ServiceCount": 0,
+                "SlowRequestSavedThreshold": 500,
+                "SpanDailyCounters": 0,
+                "Status": 1,
+                "StopReason": 0,
+                "Tags": [
+                    {
+                        "Key": "负责人",
+                        "Value": "archerkang"
+                    },
+                    {
+                        "Key": "运营产品",
+                        "Value": "云监控产品"
+                    },
+                    {
+                        "Key": "运营部门",
+                        "Value": "/../../../../../../../../../../../../../../../../../../../../etc/./////.////.///.//./passwd"
+                    }
+                ],
+                "TotalCount": 0,
+                "TraceDuration": 7
             }
         ],
-        "RequestId": "7uv7qo2mmm1e3ao94113zuvm2sehp7mm"
+        "RequestId": "1afaff9e-88c9-4949-9c84-fd5eae88a88a"
     }
 }
 ```

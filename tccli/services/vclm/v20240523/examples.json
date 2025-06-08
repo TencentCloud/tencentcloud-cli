@@ -24,6 +24,14 @@
         "title": "调用成功-任务完成"
       }
     ],
+    "DescribeTemplateToVideoJob": [
+      {
+        "document": "任务成功完成，返回结果视频Url",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1305546906952867840\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"17288c38-8b83-4ad2-a818-ef2d2d87dfe7\",\n        \"ResultVideoUrl\": \"https://console.cloud.tencent.com/result.mp4\",\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "任务成功完成"
+      }
+    ],
     "DescribeVideoStylizationJob": [
       {
         "document": "成功调用查询任务接口，任务完成。",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitPortraitSingJob\n<公共请求参数>\n\n{\n    \"AudioUrl\": \"https://***/test.mp3\",\n    \"ImageUrl\": \"https://***/storageInvalid.jpg\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidImageSize\",\n            \"Message\": \"图片大小超出限定范围。上传图片的大小要求：在0MB到10MB范围内\"\n        },\n        \"RequestId\": \"cd17e6bb-afdb-4bed-8a15-55c461333104\"\n    }\n}",
         "title": "调用失败-图片大小超限"
+      }
+    ],
+    "SubmitTemplateToVideoJob": [
+      {
+        "document": "成功提交任务",
+        "input": "POST / HTTP/1.1\nHost: vclm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitTemplateToVideoJob\n<公共请求参数>\n\n{\n    \"Template\": \"hug\",\n    \"Images\": [\n        {\n            \"Url\": \"https://test.jpg\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1305518294765740032\",\n        \"RequestId\": \"2392f73f-6436-4f79-85dc-6283d2ca78ef\"\n    }\n}",
+        "title": "成功提交"
       }
     ],
     "SubmitVideoStylizationJob": [

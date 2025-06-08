@@ -41324,6 +41324,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令行参数 没有填*",
+          "example": "timeout=200",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -59442,6 +59453,56 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "17",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复任务是否创建了快照： 0-未创建，其他-已创建",
+          "example": "0",
+          "member": "uint64",
+          "name": "HasSnapshot",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后修复时间",
+          "example": "2021-03-24 16:37:57",
+          "member": "string",
+          "name": "LatestFixTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "说明",
+          "example": "说明英文",
+          "member": "string",
+          "name": "DescriptionEn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -59785,7 +59846,7 @@
         },
         {
           "disabled": false,
-          "document": "快照状态 0-初始状态1-快照创建成功；2-快照创建失败；",
+          "document": "快照状态 0-初始状态1-快照创建成功；2-快照创建失败；10-不支持，11-无需创建",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -59800,6 +59861,16 @@
           "member": "string",
           "name": "FailReason",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -59948,6 +60019,16 @@
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -60225,6 +60306,16 @@
           "name": "VulFixSwitch",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近修复时间",
+          "example": "2021-03-30 19:17:28",
+          "member": "string",
+          "name": "LatestFixTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

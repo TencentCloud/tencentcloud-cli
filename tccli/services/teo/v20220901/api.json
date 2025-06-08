@@ -1620,6 +1620,45 @@
       ],
       "usage": "both"
     },
+    "AdaptiveFrequencyControl": {
+      "document": "自适应频控",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自适应频控是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应频控的限制等级，当 Enabled 为 on 时，此字段必填。取值有：<li>Loose：宽松；</li><li>Moderate：适中；</li><li>Strict：严格。</li>",
+          "example": "Loose",
+          "member": "string",
+          "name": "Sensitivity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自适应频控的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li><li>Challenge：挑战，其中ChallengeActionParameters.Name仅支持JSChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AdvancedFilter": {
       "document": "描述键值对过滤器，用于条件过滤查询，支持模糊查询。例如过滤ID、名称、状态等。\n若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。\n若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
       "members": [
@@ -2426,6 +2465,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BandwidthAbuseDefense": {
+      "document": "流量防盗刷（仅适用中国大陆地区）的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量防盗刷（仅适用中国大陆地区）是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量防盗刷（仅适用中国大陆地区）的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li><li>Challenge：挑战，其中ChallengeActionParameters.Name仅支持JSChallenge。</li>",
+          "example": "参考 SecurityAction 结构",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3752,6 +3819,45 @@
       ],
       "usage": "both"
     },
+    "ChallengeActionParameters": {
+      "document": "Web 安全 Challenge 挑战的附加参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全执行的具体挑战动作。取值有：<li> InterstitialChallenge：插页式挑战；</li><li> InlineChallenge：内嵌式挑战；</li><li> JSChallenge：JavaScript 挑战；</li><li> ManagedChallenge：托管挑战。</li>",
+          "example": "JSChallenge",
+          "member": "string",
+          "name": "ChallengeOption",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重复挑战的时间间隔，当 Name 为 InterstitialChallenge/InlineChallenge 时，该字段必填。默认值为 300s。支持的单位有：<li>s：秒，取值范围1～60；</li><li>m：分，取值范围1～60；</li><li>h：小时，取值范围1～24。</li>\n",
+          "example": "300",
+          "member": "string",
+          "name": "Interval",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端认证方式 ID 。当 Name 为 InterstitialChallenge/InlineChallenge 时，该字段必填。",
+          "example": "attest-1j39ja9j",
+          "member": "string",
+          "name": "AttesterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CheckCnameStatusRequest": {
       "document": "CheckCnameStatus请求参数结构体",
       "members": [
@@ -3833,6 +3939,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ClientFiltering": {
+      "document": "智能客户端过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能客户端过滤是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能客户端过滤的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li><li>Challenge：挑战，其中ChallengeActionParameters.Name仅支持JSChallenge。</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ClientIPCountryParameters": {
       "document": "回源时携带客户端 IP 所属地域信息，值的格式为 ISO-3166-1 两位字母代码。",
@@ -7570,6 +7704,78 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DenyActionParameters": {
+      "document": "安全执行动作为封禁的附加参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否对来源 IP 延长封禁。取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n启用后，对触发规则的客户端 IP 持续拦截。当启用该选项时，必须同时指定 BlockIpDuration 参数。\n注意：该选项不可与 ReturnCustomPage 或 Stall 选项同时启用。",
+          "example": "off",
+          "member": "string",
+          "name": "BlockIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 BlockIP 为 on 时IP 的封禁时长。",
+          "example": "60s",
+          "member": "string",
+          "name": "BlockIpDuration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否使用自定义页面。取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n启用后，使用自定义页面内容拦截（响应）请求，当启用该选项时，必须同时指定 ResponseCode 和 ErrorPageId 参数。\n注意：该选项不可与 BlockIp 或 Stall 选项同时启用。\n",
+          "example": "on",
+          "member": "string",
+          "name": "ReturnCustomPage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义页面的状态码。",
+          "example": "404",
+          "member": "string",
+          "name": "ResponseCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义页面的PageId。",
+          "example": "p-2yr7ncnju1yk@zone-2xsnpvkhdjes",
+          "member": "string",
+          "name": "ErrorPageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否对请求来源挂起不予处理。取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>\n启用后，不再响应当前连接会话内请求，且不会主动断开连接。用于爬虫对抗时，消耗客户端连接资源。\n注意：该选项不可与 BlockIp 或 ReturnCustomPage 选项同时启用。",
+          "example": "on",
+          "member": "string",
+          "name": "Stall",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12684,6 +12890,139 @@
       ],
       "usage": "both"
     },
+    "ExceptionRule": {
+      "document": "Web安全的例外规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "例外规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：ExceptionRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>",
+          "example": "2181399686",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "例外规则的名称。",
+          "example": "SampleBasicExceptionRule",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "例外规则的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "example": "${http.request.uri.path} in ['/api/v3/test','/api/v3/submit'] and ${http.request.method} in ['POST']",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "例外规则执行选项，取值有：<li>WebSecurityModules: 指定例外规则的安全防护模块。</li><li>ManagedRules：指定托管规则。</li>",
+          "example": "WebSecurityModules",
+          "member": "string",
+          "name": "SkipScope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳过请求的具体类型，取值有：<li>SkipOnAllRequestFields: 跳过所有请求；</li><li>SkipOnSpecifiedRequestFields: 跳过指定请求字段。</li>仅当 SkipScope 为 ManagedRules 时有效。",
+          "example": "SkipOnSpecifiedRequestFields",
+          "member": "string",
+          "name": "SkipOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定例外规则的安全防护模块，仅当 SkipScope 为 WebSecurityModules 时有效。取值有：<li>websec-mod-managed-rules：托管规则；</li><li>websec-mod-rate-limiting：速率限制；</li><li>websec-mod-custom-rules：自定义规则；</li><li>websec-mod-adaptive-control：自适应频控、智能客户端过滤、慢速攻击防护、流量盗刷防护；</li><li>websec-mod-bot：Bot管理。</li>",
+          "example": "[\"websec-mod-custom-rules\",\"websec-mod-rate-limiting\"]",
+          "member": "string",
+          "name": "WebSecurityModulesForException",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定例外规则的具体托管规则，仅当 SkipScope 为 ManagedRules 时有效，且此时不能指定 ManagedRuleGroupsForException 。",
+          "example": "[\"4401215074\",\"4368124487\"]",
+          "member": "string",
+          "name": "ManagedRulesForException",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定例外规则的托管规则组，仅当 SkipScope 为 ManagedRules 时有效，且此时不能指定 ManagedRulesForException 。",
+          "example": "[\"wafgroup-sql-injection-attacks\"]",
+          "member": "string",
+          "name": "ManagedRuleGroupsForException",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定例外规则跳过指定请求字段的具体配置，仅当 SkipScope 为 ManagedRules 并且 SkipOption 为 SkipOnSpecifiedRequestFields 时有效。",
+          "example": "参考 RequestFieldsForException 结构",
+          "member": "RequestFieldsForException",
+          "name": "RequestFieldsForException",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "例外规则是否开启。取值有：<li>on：开启</li><li>off：关闭</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExceptionRules": {
+      "document": "Web安全的例外规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "例外规则的定义列表。使用 ModifySecurityPolicy 修改 Web 防护配置时: <li>若未指定 Rules 参数，或 Rules 参数长度为零：清空所有例外规则配置。</li><li>若 SecurityPolicy 参数中，未指定 ExceptionRules 参数值：保持已有例外规则配置，不做修改。</li>",
+          "example": "参考 ExceptionRule 结构",
+          "member": "ExceptionRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExportZoneConfigRequest": {
       "document": "ExportZoneConfig请求参数结构体",
       "members": [
@@ -13710,6 +14049,56 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HttpDDoSProtection": {
+      "document": "HTTP DDOS防护配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自适应频控的具体配置。",
+          "example": "无",
+          "member": "AdaptiveFrequencyControl",
+          "name": "AdaptiveFrequencyControl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能客户端过滤的具体配置。",
+          "example": "无",
+          "member": "ClientFiltering",
+          "name": "ClientFiltering",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量防盗刷的具体配置。",
+          "example": "无",
+          "member": "BandwidthAbuseDefense",
+          "name": "BandwidthAbuseDefense",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢速攻击防护的具体配置。",
+          "example": "无",
+          "member": "SlowAttackDefense",
+          "name": "SlowAttackDefense",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -15418,6 +15807,45 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MinimalRequestBodyTransferRate": {
+      "document": "正文传输最小速率阈值的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正文传输最小速率阈值，单位仅支持bps。",
+          "example": "50bps",
+          "member": "string",
+          "name": "MinimalAvgTransferRateThreshold",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正文传输最小速率统计时间范围，取值有：<li>10s：10秒；</li><li>30s：30秒；</li><li>60s：60秒；</li><li>120s：120秒。</li> ",
+          "example": "10s",
+          "member": "string",
+          "name": "CountingPeriod",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正文传输最小速率阈值是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -17265,7 +17693,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略配置。<li>当 SecurityPolicy 参数中的 CustomRule 被设置时，SecurityConfig 参数中的 AclConfg、 IpTableConfg 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略。</li><li>对于自定义规则以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>",
+          "document": "安全策略配置。<li>当 SecurityPolicy 参数中的 ExceptionRules 被设置时，SecurityConfig 参数中的 ExceptConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 CustomRules 被设置时，SecurityConfig 参数中的 AclConfig、 IpTableConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 HttpDDoSProtection 和 RateLimitingRules 被设置时，SecurityConfig 参数中的 RateLimitConfig 将被忽略；</li><li>当 SecurityPolicy 参数中的 ManagedRule 被设置时，SecurityConfig 参数中的 WafConfig 将被忽略；</li><li>对于例外规则、自定义规则、速率限制以及托管规则策略配置建议使用 SecurityPolicy 参数进行设置。</li>",
           "example": "无",
           "member": "SecurityConfig",
           "name": "SecurityConfig",
@@ -17274,7 +17702,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略配置。对 Web 防护自定义策略和托管规则配置建议使用，支持表达式语法对安全策略进行配置。",
+          "document": "安全策略配置。对 Web 例外规则、防护自定义策略、速率规则和托管规则配置建议使用，支持表达式语法对安全策略进行配置。",
           "example": "参考\tSecurityPolicy 结构",
           "member": "SecurityPolicy",
           "name": "SecurityPolicy",
@@ -19574,6 +20002,139 @@
       ],
       "usage": "both"
     },
+    "RateLimitingRule": {
+      "document": "速率限制的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "精准速率限制的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：RateLimitingRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>",
+          "example": "2181399690",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准速率限制的名称。",
+          "example": "SampleHttpDdosRule",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准速率限制的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "example": "${http.request.uri.path} in ['/api/v3/test','/api/v3/submit']",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "速率阈值请求特征的匹配方式， 当 Enabled 为 on 时，此字段必填。<br /><br />当条件有多个时，将组合多个条件共同进行统计计算，条件最多不可超过5条。取值有：<br/><li><b>http.request.ip</b>：客户端 IP；</li><li><b>http.request.xff_header_ip</b>：客户端 IP（优先匹配 XFF 头部）；</li><li><b>http.request.uri.path</b>：请求的访问路径；</li><li><b>http.request.cookies['session']</b>：名称为session的Cookie，其中session可替换为自己指定的参数；</li><li><b>http.request.headers['user-agent']</b>：名称为user-agent的HTTP头部，其中user-agent可替换为自己指定的参数；</li><li><b>http.request.ja3</b>：请求的JA3指纹；</li><li><b>http.request.uri.query['test']</b>：名称为test的URL查询参数，其中test可替换为自己指定的参数。</li> ",
+          "example": "http.request.ip",
+          "member": "string",
+          "name": "CountBy",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准速率限制在时间范围内的累计拦截次数，取值范围 1 ~ 100000。",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxRequestThreshold",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计的时间窗口，取值有：<li>1s：1秒；</li><li>5s：5秒；</li><li>10s：10秒；</li><li>20s：20秒；</li><li>30s：30秒；</li><li>40s：40秒；</li><li>50s：50秒；</li><li>1m：1分钟；</li><li>2m：2分钟；</li><li>5m：5分钟；</li><li>10m：10分钟；</li><li>1h：1小时。</li> ",
+          "example": "10s",
+          "member": "string",
+          "name": "CountingPeriod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Action 动作的持续时长，单位仅支持：<li>s：秒，取值 1 ~ 120；</li><li>m：分钟，取值 1 ~ 120；</li><li>h：小时，取值 1 ~ 48；</li><li>d：天，取值 1 ~ 30。</li>",
+          "example": "60s",
+          "member": "string",
+          "name": "ActionDuration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准速率限制的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中DenyActionParameters.Name支持Deny和ReturnCustomPage；</li><li>Challenge：挑战，其中ChallengeActionParameters.Name支持JSChallenge和ManagedChallenge；</li><li>Redirect：重定向至URL；</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准速率限制的优先级，范围是 0 ~ 100，默认为 0。",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准速率限制规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RateLimitingRules": {
+      "document": "精准速率限制的配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "精准速率限制的定义列表。使用 ModifySecurityPolicy 修改 Web 防护配置时: <br> <li>  若未指定 Rules 参数，或 Rules 参数长度为零：清空所有精准速率限制配置。</li> <li> 若 SecurityPolicy 参数中，未指定 RateLimitingRules 参数值：保持已有自定义规则配置，不做修改。</li>",
+          "example": "无",
+          "member": "RateLimitingRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RealtimeLogDeliveryTask": {
       "document": "实时日志投递任务。",
       "members": [
@@ -19836,6 +20397,73 @@
         }
       ],
       "type": "object"
+    },
+    "RequestBodyTransferTimeout": {
+      "document": "正文传输超时时长的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正文传输超时时长，取值 5 ~ 120，单位仅支持秒（s）。",
+          "example": "5s",
+          "member": "string",
+          "name": "IdleTimeout",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正文传输超时时长是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RequestFieldsForException": {
+      "document": "例外规则中的跳过字段配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跳过的具体字段。取值支持：<br/>\n<li>body.json：JSON 请求内容；此时 Condition 支持 key、value,  TargetField 支持 key、value，例如 { \"Scope\": \"body.json\",  \"Condition\": \"\", \"TargetField\": \"key\" }，表示 JSON 请求内容所有参数跳过 WAF 扫描；</li>\n<li style=\"margin-top:5px\">cookie：Cookie；此时 Condition 支持 key、value,  TargetField 支持 key、value，例如 { \"Scope\": \"cookie\",  \"Condition\": \"${key} in ['account-id'] and ${value} like ['prefix-*']\", \"TargetField\": \"value\" }，表示 Cookie 参数名称等于account-id 并且参数值通配符匹配 prefix-* 跳过 WAF 扫描；</li>\n<li style=\"margin-top:5px\">header：HTTP 头部参数；此时 Condition 支持 key、value,  TargetField 支持 key、value，例如 { \"Scope\": \"header\",  \"Condition\": \"${key} like ['x-auth-*']\", \"TargetField\": \"value\" }，表示 header 参数名称通配符匹配 x-auth-* 跳过 WAF 扫描；</li>\n<li style=\"margin-top:5px\">uri.query：URL 编码内容/查询参数；此时 Condition 支持 key、value,  TargetField 支持 key、value，例如 { \"Scope\": \"uri.query\",  \"Condition\": \"${key} in ['action'] and ${value} in ['upload', 'delete']\", \"TargetField\": \"value\" }，表示 URL 编码内容/查询参数的参数名称等于 action 并且参数值等于 upload 或 delete 跳过 WAF 扫描；</li>\n<li style=\"margin-top:5px\">uri：请求路径URI；此时 Condition 必须为空， TargetField 支持 query、path、fullpath，例如 { \"Scope\": \"uri\",  \"Condition\": \"\", \"TargetField\": \"query\" }，表示请求路径 URI 仅查询参数跳过 WAF 扫描；</li>\n<li style=\"margin-top:5px\">body：请求正文内容。此时 Condition 必须为空， TargetField 支持 fullbody、multipart，例如 { \"Scope\": \"body\",  \"Condition\": \"\", \"TargetField\": \"fullbody\" }，表示请求正文内容为完整请求正文跳过 WAF 扫描；</li>",
+          "example": "header",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跳过的具体字段的表达式，需要符合表达式语法。<br />\nCondition  支持表达式配置语法：<li> 按规则的匹配条件表达式语法编写，支持引用 key、value。</li><li> 支持 in、like 操作符，以及 and 逻辑组合。</li>\n例如：<li>${key} in ['x-trace-id']：参数名称等于x-trace-id。</li><li>${key} in ['x-trace-id'] and ${value} like ['Bearer *']：参数名称等于x-trace-id并且参数值通配符匹配Bearer *。</li>",
+          "example": "${key} in ['x-trace-id'] and ${value} like ['Bearer *']",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Scope 参数使用不同取值时，TargetField 表达式中支持的值如下：\n<li> body.json：支持 key、value</li>\n<li> cookie：支持 key、value</li>\n<li> header：支持 key、value</li>\n<li> uri.query：支持 key、value</li>\n<li> uri：支持 path、query、fullpath</li>\n<li> body：支持 fullbody、multipart</li>",
+          "example": "value",
+          "member": "string",
+          "name": "TargetField",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Resource": {
       "document": "计费资源",
@@ -21311,7 +21939,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全执行的具体动作。取值有：\n<li>Deny：拦截；</li><li>Monitor：观察；</li><li>ReturnCustomPage：使用指定页面拦截；</li><li>Redirect：重定向至 URL；</li><li>BlockIP：IP 封禁；</li><li>JSChallenge：JavaScript 挑战；</li><li>ManagedChallenge：托管挑战；</li><li>Disabled：未启用；</li><li>Allow：放行。</li>",
+          "document": "安全执行的具体动作。取值有：\n<li>Deny：拦截，阻止请求访问站点资源；</li>\n<li>Monitor：观察，仅记录日志；</li>\n<li>Redirect：重定向至 URL；</li>\n<li>Disabled：未启用，不启用指定规则；</li>\n<li>Allow：允许访问，但延迟处理请求；</li>\n<li>Challenge：挑战，响应挑战内容；</li>\n<li>BlockIP：待废弃，IP 封禁；</li>\n<li>ReturnCustomPage：待废弃，使用指定页面拦截；</li>\n<li>JSChallenge：待废弃，JavaScript 挑战；</li>\n<li>ManagedChallenge：待废弃，托管挑战。</li>",
           "example": "Deny",
           "member": "string",
           "name": "Name",
@@ -21322,21 +21950,10 @@
         },
         {
           "disabled": false,
-          "document": "当 Name 为 BlockIP 时的附加参数。",
-          "example": "参考 BlockIPActionParameters 结构",
-          "member": "BlockIPActionParameters",
-          "name": "BlockIPActionParameters",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当 Name 为 ReturnCustomPage 时的附加参数。",
-          "example": "参考 ReturnCustomPageActionParameters 结构",
-          "member": "ReturnCustomPageActionParameters",
-          "name": "ReturnCustomPageActionParameters",
+          "document": "当 Name 为 Deny 时的附加参数。",
+          "example": "参考 DenyActionParameters 结构",
+          "member": "DenyActionParameters",
+          "name": "DenyActionParameters",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -21348,6 +21965,39 @@
           "example": "参考 RedirectActionParameters 结构",
           "member": "RedirectActionParameters",
           "name": "RedirectActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当 Name 为 Challenge 时的附加参数。",
+          "example": "参考 ChallengeActionParameters 结构",
+          "member": "ChallengeActionParameters",
+          "name": "ChallengeActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待废弃，当 Name 为 BlockIP 时的附加参数。",
+          "example": "参考 BlockIPActionParameters 结构",
+          "member": "BlockIPActionParameters",
+          "name": "BlockIPActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待废弃，当 Name 为 ReturnCustomPage 时的附加参数。",
+          "example": "参考 ReturnCustomPageActionParameters 结构",
+          "member": "ReturnCustomPageActionParameters",
+          "name": "ReturnCustomPageActionParameters",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -21503,6 +22153,39 @@
           "example": "参考 ManagedRules 示例",
           "member": "ManagedRules",
           "name": "ManagedRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP DDOS防护配置。",
+          "example": "参考 HttpDDoSProtection 示例",
+          "member": "HttpDDoSProtection",
+          "name": "HttpDDoSProtection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "速率限制规则配置。",
+          "example": "参考 RateLimitingRules 示例",
+          "member": "RateLimitingRules",
+          "name": "RateLimitingRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "例外规则配置。",
+          "example": "参考 ExceptionRules 示例",
+          "member": "ExceptionRules",
+          "name": "ExceptionRules",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -21720,6 +22403,56 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SlowAttackDefense": {
+      "document": "慢速攻击防护的具体配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "慢速攻击防护是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢速攻击防护的处置方式，当 Enabled 为 on 时，此字段必填。SecurityAction 的 Name 取值支持：<li>Monitor：观察；</li><li>Deny：拦截；</li>",
+          "example": "无",
+          "member": "SecurityAction",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正文传输最小速率阈值的具体配置，当 Enabled 为 on 时，此字段必填。",
+          "example": "无",
+          "member": "MinimalRequestBodyTransferRate",
+          "name": "MinimalRequestBodyTransferRate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正文传输超时时长的具体配置，当 Enabled 为 on 时，此字段必填。",
+          "example": "无",
+          "member": "RequestBodyTransferTimeout",
+          "name": "RequestBodyTransferTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

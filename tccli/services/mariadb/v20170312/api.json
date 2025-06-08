@@ -1467,8 +1467,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "（废弃）可用区",
+          "disabled": true,
+          "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -1485,8 +1485,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "（废弃）Pid，可通过获取独享集群售卖配置接口得到",
+          "disabled": true,
+          "document": "Pid，可通过获取独享集群售卖配置接口得到",
           "example": "0",
           "member": "int64",
           "name": "Pid",
@@ -1494,8 +1494,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "（废弃）机型",
+          "disabled": true,
+          "document": "机型",
           "example": "SH02",
           "member": "string",
           "name": "Machine",
@@ -1530,8 +1530,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "（废弃）是否手动指定一组服务器分配, 运维使用",
+          "disabled": true,
+          "document": "是否手动指定一组服务器分配, 运维使用",
           "example": "0",
           "member": "int64",
           "name": "Manual",
@@ -1539,8 +1539,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "（废弃）DeviceNo参数",
+          "disabled": true,
+          "document": "DeviceNo参数",
           "example": "HYIO2A",
           "member": "string",
           "name": "DeviceNo",

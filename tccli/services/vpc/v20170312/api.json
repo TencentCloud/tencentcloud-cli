@@ -10604,7 +10604,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量包规格。可选值:\n<li>10: 10GB流量，有效期一个月</li>\n<li>50: 50GB流量，有效期一个月</li>\n<li>512: 512GB流量，有效期一个月</li>\n<li>1024: 1TB流量，有效期一个月</li>\n<li>5120: 5TB流量，有效期一个月</li>\n<li>51200: 50TB流量，有效期一个月</li>\n<li>60: 60GB流量，有效期半年</li>\n<li>300: 300GB流量，有效期半年</li>\n<li>600: 600GB流量，有效期半年</li>\n<li>3072: 3TB流量，有效期半年</li>\n<li>6144: 6TB流量，有效期半年</li>\n<li>30720: 30TB流量，有效期半年</li>\n<li>61440: 60TB流量，有效期半年</li>\n<li>307200: 300TB流量，有效期半年</li>",
+          "document": "流量包规格。可选值:\n<li>10: 10GB流量，有效期一个月</li>\n<li>50: 50GB流量，有效期一个月</li>\n<li>512: 512GB流量，有效期一个月</li>\n<li>1024: 1TB流量，有效期一个月</li>\n<li>5120: 5TB流量，有效期一个月</li>\n<li>51200: 50TB流量，有效期一个月</li>\n<li>60: 60GB流量，有效期半年</li>\n<li>300: 300GB流量，有效期半年</li>\n<li>3072: 3TB流量，有效期半年</li>\n<li>6144: 6TB流量，有效期半年</li>\n<li>30720: 30TB流量，有效期半年</li>\n<li>61440: 60TB流量，有效期半年</li>\n<li>307200: 300TB流量，有效期半年</li>",
           "example": "10",
           "member": "uint64",
           "name": "TrafficAmount",
@@ -10619,6 +10619,15 @@
           "name": "TrafficPackageCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "抵扣类型，默认为 FULL_TIME，可选值: \n<li>FULL_TIME: 全时流量包</li>\n<li>IDLE_TIME: 闲时流量包</li>",
+          "example": "FULL_TIME",
+          "member": "string",
+          "name": "DeductType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

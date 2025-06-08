@@ -805,7 +805,7 @@
         {
           "disabled": false,
           "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"user1\"]",
           "member": "string",
           "name": "FailedUserList",
           "output_required": true,
@@ -815,7 +815,7 @@
         {
           "disabled": false,
           "document": "流程id。大于0表示启动了流程；等于0表示没有启动流程",
-          "example": "123",
+          "example": "4133444",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
@@ -1139,6 +1139,23 @@
       ],
       "type": "object"
     },
+    "AutoScaleGroupAdvanceAttrs": {
+      "document": "自动伸缩组高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计算资源高级设置",
+          "example": "无",
+          "member": "ComputeResourceAdvanceParams",
+          "name": "ComputeResourceAdvanceParams",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AutoScaleRecord": {
       "document": "弹性扩缩容记录",
       "members": [
@@ -1355,7 +1372,7 @@
         },
         {
           "disabled": false,
-          "document": "下次能可扩容时间。",
+          "document": "下次可扩容时间。",
           "example": "1726015182",
           "member": "uint64",
           "name": "NextTimeCanScale",
@@ -1410,7 +1427,7 @@
         },
         {
           "disabled": false,
-          "document": "预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)",
+          "document": "预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；0表示默认不勾选（0），1表示勾选",
           "example": "0",
           "member": "int64",
           "name": "ChangeToPod",
@@ -1472,6 +1489,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组更多设置",
+          "example": "无",
+          "member": "AutoScaleGroupAdvanceAttrs",
+          "name": "ExtraAdvanceAttrs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -2803,6 +2831,56 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ComputeResourceAdvanceParams": {
+      "document": "计算资源高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点Label数组",
+          "example": "无",
+          "member": "TkeLabel",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点污点",
+          "example": "无",
+          "member": "Taint",
+          "name": "Taints",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "base64 编码的用户脚本，在初始化节点之前执行",
+          "example": "#!/bin/sh echo \"hello world\"",
+          "member": "string",
+          "name": "PreStartUserScript",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看",
+          "example": "#!/bin/sh echo \"hello world\"",
+          "member": "string",
+          "name": "UserScript",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9241,7 +9319,7 @@
         {
           "disabled": false,
           "document": "用户列表",
-          "example": "无",
+          "example": "[\"user\"]",
           "member": "string",
           "name": "Users",
           "output_required": false,
@@ -9269,7 +9347,7 @@
         {
           "disabled": false,
           "document": "用户名称列表",
-          "example": "无",
+          "example": "[\"user\"]",
           "member": "string",
           "name": "Users",
           "output_required": false,
@@ -10743,7 +10821,7 @@
         {
           "disabled": false,
           "document": "洞察结构化信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"allocatedMemMBSeconds\":118066,\"confMemSizeMB\":4096,\"minimumWastePercent\":48,\"suggestMemSizeMB\":3072,\"totalWastePercent\":48}\"",
+          "example": "{\"allocatedMemMBSeconds\":118066,\"confMemSizeMB\":4096,\"minimumWastePercent\":48,\"suggestMemSizeMB\":3072,\"totalWastePercent\":48}",
           "member": "string",
           "name": "Context",
           "output_required": false,
@@ -12025,7 +12103,7 @@
           "example": "93",
           "member": "int64",
           "name": "ServiceType",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -12034,7 +12112,7 @@
           "example": "3",
           "member": "int64",
           "name": "PodNum",
-          "required": true,
+          "required": false,
           "type": "int"
         }
       ],
@@ -17108,6 +17186,15 @@
           "name": "ComputeResourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源高级设置",
+          "example": "无",
+          "member": "ComputeResourceAdvanceParams",
+          "name": "ComputeResourceAdvanceParams",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -18790,6 +18877,45 @@
       ],
       "usage": "both"
     },
+    "Taint": {
+      "document": "Kubernetes Taint",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Taint Key",
+          "example": "node.kubernetes.io/unschedulable",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Taint Value",
+          "example": "true",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Taint Effect",
+          "example": "NoSchedule",
+          "member": "string",
+          "name": "Effect",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TaskSettings": {
       "document": "巡检任务参数",
       "members": [
@@ -19243,6 +19369,45 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优雅缩容业务pod标签，当node不存在上述pod或超过优雅缩容时间时，缩容节点",
+          "example": "无",
+          "member": "TkeLabel",
+          "name": "GraceDownLabel",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TkeLabel": {
+      "document": "Kubernetes Label",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Label Name",
+          "example": "cloud.tencent.com/node-instance-id",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Label Value",
+          "example": "ins-0dcxficf",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -1607,7 +1607,7 @@
         {
           "disabled": false,
           "document": "业务明细列表",
-          "example": "[       {         \"ActivityId\": \"0\",         \"Amt\": 125,         \"ClientRemark\": \"有特批\",         \"ClientType\": \"old\",         \"ClientUin\": \"2000002\",         \"GoodsType\": \"购买云服务\",         \"OrderId\": \"202401311730494235252\",         \"PayMode\": \"prepay\",         \"PayTime\": \"2024-01-31 06:06:46\",         \"PayerMode\": \"selfpay\",         \"ProjectType\": \"platform\",         \"SettleMonth\": \"2024-01\",         \"Uin\": \"1000001\"       } \t\t\t ]",
+          "example": "无",
           "member": "AgentBillElem",
           "name": "AgentBillSet",
           "output_required": true,
@@ -1774,7 +1774,7 @@
         {
           "disabled": false,
           "document": "待审核代客列表",
-          "example": "[       {         \"ApplyTime\": 1722396845,         \"ClientFlag\": \"b\",         \"ClientName\": \"测试测试\",         \"ClientUin\": \"2000002\",         \"HasOverdueBill\": 0,         \"Mail\": \"dadd*******@qq.com\",         \"Phone\": \"111****0090\",         \"SalesName\": \"testname\",         \"SalesUin\": \"1000001\",         \"Status\": 1,         \"Uin\": \"1000002\"       }     ]",
+          "example": "无",
           "member": "AgentClientElem",
           "name": "AgentClientSet",
           "output_required": true,
@@ -1902,7 +1902,7 @@
         {
           "disabled": false,
           "document": "订单数组",
-          "example": "[       {         \"ActionType\": \"purchase\",         \"ActivityId\": \"\",         \"AppId\": \"251255283\",         \"BigDealId\": \"2024012093925000000000\",         \"BillId\": \"2024012093925000111111\",         \"ClientRemark\": \"客户备注\",         \"ClientType\": \"old\",         \"CreatTime\": \"2024-10-23 16:57:28\",         \"Creater\": \"2000002\",         \"DealId\": \"293920000\",         \"DealName\": \"20240120939250001222222\",         \"DealStatus\": \"未支付\",         \"GoodsCategoryId\": \"101832\",         \"GoodsName\": \"腾讯会议（SAAS版）\",         \"GoodsNum\": \"1\",         \"GoodsPrice\": {           \"OriginalTotalCost\": 6988000,           \"RealTotalCost\": 6988000         },         \"OverdueTime\": \"2024-02-07 16:57:28\",         \"OwnerUin\": \"1000001\",         \"PayEndTime\": \"2024-01-23 16:57:33\",         \"Payer\": \"1000001\",         \"PayerMode\": \"0\",         \"PaymentMethod\": \"按年：1年\",         \"ProductInfo\": [           {             \"Name\": \"企业版高级账号\",             \"Value\": \"10\"           },           {             \"Name\": \"50方虚拟会议室\",             \"Value\": \"1\"           },           {             \"Name\": \"300方虚拟会议室\",             \"Value\": \"9\"           }         ],         \"ProjectType\": \"\",         \"RefundMap\": [],         \"ResourceIds\": [           \"700000942629_2024012362900000000001\"         ],         \"SalesUin\": \"2000002\",         \"Status\": \"1\",         \"SubGoodsName\": \"腾讯会议（SAAS版企业版）\",         \"UpdateTime\": \"2024-01-23 16:57:35\",         \"VoucherDecline\": \"0\"       }     ]",
+          "example": "无",
           "member": "AgentDealNewElem",
           "name": "AgentDealSet",
           "output_required": true,
@@ -2076,7 +2076,7 @@
         {
           "disabled": false,
           "document": "订单数组",
-          "example": "[             {                 \"DealId\": \"1078264383\",                 \"DealName\": \"20240108122000905906371\",                 \"BigDealId\": \"20240108122000905906361\",                 \"GoodsCategoryId\": \"100058\",                 \"OwnerUin\": \"700000232122\",                 \"AppId\": \"251205747\",                 \"GoodsNum\": \"1\",                 \"GoodsPrice\": {                     \"RealTotalCost\": 1650,                     \"OriginalTotalCost\": 1750                 },                 \"ProductInfo\": [                     {                         \"Name\": \"磁盘属性\",                         \"Value\": \"数据盘\"                     },                     {                         \"Name\": \"容量\",                         \"Value\": \"50GB\"                     },                     {                         \"Name\": \"磁盘类型\",                         \"Value\": \"高性能云硬盘\"                     },                     {                         \"Name\": \"可用区\",                         \"Value\": \"广州二区\"                     }                 ],                 \"Creater\": \"700000232122\",                 \"CreatTime\": \"2024-01-08 10:13:49\",                 \"UpdateTime\": \"2024-01-08 10:14:55\",                 \"PaymentMethod\": \"按月：1个月\",                 \"Payer\": \"700000413752\",                 \"BillId\": \"20240108122000905906371\",                 \"PayEndTime\": \"2024-01-08 10:14:53\",                 \"Status\": \"4\",                 \"VoucherDecline\": \"100\",                 \"PayerMode\": \"1\",                 \"GoodsName\": \"云硬盘CBS\",                 \"SubGoodsName\": \"高性能云硬盘\",                 \"ClientRemark\": \"test\",                 \"ClientType\": \"new\",                 \"ProjectType\": \"platform\",                 \"SalesUin\": \"0\",                 \"DealStatus\": \"分配完成\",                 \"ActionType\": \"purchase\",                 \"ActivityId\": \"0\",                 \"OverdueTime\": \"2024-01-23 10:13:48\",                 \"ResourceIds\": [                     \"disk-bos529hc\"                 ]             }         ]",
+          "example": "无",
           "member": "AgentDealNewElem",
           "name": "AgentPayDealSet",
           "output_required": true,
@@ -2232,7 +2232,7 @@
         {
           "disabled": false,
           "document": "订单数组",
-          "example": "[ \t\t\t\t\t { \t\t\t\t\t\t\t \"DealId\": \"1078276337\", \t\t\t\t\t\t\t \"DealName\": \"20240108121000906445591\", \t\t\t\t\t\t\t \"BigDealId\": \"20240108121000906445581\", \t\t\t\t\t\t\t \"GoodsCategoryId\": \"176258\", \t\t\t\t\t\t\t \"OwnerUin\": \"700000232121\", \t\t\t\t\t\t\t \"AppId\": \"251205746\", \t\t\t\t\t\t\t \"GoodsNum\": \"1\", \t\t\t\t\t\t\t \"GoodsPrice\": { \t\t\t\t\t\t\t\t\t \"RealTotalCost\": -100000, \t\t\t\t\t\t\t\t\t \"OriginalTotalCost\": -100000 \t\t\t\t\t\t\t }, \t\t\t\t\t\t\t \"ProductInfo\": [ \t\t\t\t\t\t\t\t\t { \t\t\t\t\t\t\t\t\t\t\t \"Name\": \"计费测试商品新购\", \t\t\t\t\t\t\t\t\t\t\t \"Value\": \"jfcs\" \t\t\t\t\t\t\t\t\t } \t\t\t\t\t\t\t ], \t\t\t\t\t\t\t \"Creater\": \"700000232121\", \t\t\t\t\t\t\t \"CreatTime\": \"2024-01-08 15:56:09\", \t\t\t\t\t\t\t \"UpdateTime\": \"2024-01-08 15:56:13\", \t\t\t\t\t\t\t \"PaymentMethod\": \"按月：个月\", \t\t\t\t\t\t\t \"Payer\": \"700000232121\", \t\t\t\t\t\t\t \"BillId\": \"20240108121000906445591\", \t\t\t\t\t\t\t \"PayEndTime\": \"2024-01-08 15:56:11\", \t\t\t\t\t\t\t \"Status\": \"6\", \t\t\t\t\t\t\t \"VoucherDecline\": \"0\", \t\t\t\t\t\t\t \"PayerMode\": \"0\", \t\t\t\t\t\t\t \"GoodsName\": \"计费测试商品\", \t\t\t\t\t\t\t \"SubGoodsName\": \"非资源工厂验证预付费子产品（勿动）\", \t\t\t\t\t\t\t \"ClientRemark\": \"test\", \t\t\t\t\t\t\t \"ClientType\": \"new\", \t\t\t\t\t\t\t \"ProjectType\": \"platform\", \t\t\t\t\t\t\t \"SalesUin\": \"0\", \t\t\t\t\t\t\t \"DealStatus\": \"已退款\", \t\t\t\t\t\t\t \"ActionType\": \"refund\", \t\t\t\t\t\t\t \"ActivityId\": \"0\", \t\t\t\t\t\t\t \"OverdueTime\": \"2024-01-23 15:56:09\", \t\t\t\t\t\t\t \"ResourceIds\": [ \t\t\t\t\t\t\t\t\t \"4712106445241\" \t\t\t\t\t\t\t ] \t\t\t\t\t } \t\t\t ]",
+          "example": "无",
           "member": "AgentDealNewElem",
           "name": "AgentPayDealSet",
           "output_required": true,
@@ -2282,7 +2282,7 @@
           "example": "40",
           "member": "int64",
           "name": "Balance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2292,7 +2292,7 @@
           "example": "40",
           "member": "int64",
           "name": "Cash",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

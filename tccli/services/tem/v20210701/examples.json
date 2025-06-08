@@ -336,6 +336,14 @@
         "title": "编辑环境"
       }
     ],
+    "ModifyGatewayIngress": [
+      {
+        "document": "修改网关的转发配置",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGatewayIngress\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"GatewayType\": \"clb\",\n    \"GatewayName\": \"xx\",\n    \"Name\": \"xx\",\n    \"Rules\": [\n        {\n            \"Protocol\": \"xx\",\n            \"Host\": \"xx\",\n            \"Http\": {\n                \"Paths\": [\n                    {\n                        \"Path\": \"xx\",\n                        \"Backend\": {\n                            \"ServiceName\": \"xx\",\n                            \"ServicePort\": 443\n                        }\n                    }\n                ]\n            }\n        }\n    ],\n    \"Tls\": [\n        {\n            \"CertificateId\": \"xx\",\n            \"Hosts\": [\n                \"xxx.com\"\n            ],\n            \"SecretName\": \"xx\"\n        }\n    ],\n    \"Mixed\": true,\n    \"RewriteType\": \"NONE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
+        "title": "修改网关的转发配置"
+      }
+    ],
     "ModifyIngress": [
       {
         "document": "创建或者更新 Ingress 规则",

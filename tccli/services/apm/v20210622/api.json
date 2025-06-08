@@ -1146,10 +1146,19 @@
         },
         {
           "disabled": false,
-          "document": "按业务系统名过滤",
+          "document": "按业务系统名过滤，支持模糊检索",
           "example": "可观测-测试",
           "member": "string",
           "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按业务系统 ID 过滤，支持模糊检索",
+          "example": "apm-CVfliqa8U",
+          "member": "string",
+          "name": "InstanceId",
           "required": false,
           "type": "string"
         },

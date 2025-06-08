@@ -238,6 +238,20 @@
         "title": "生成动态签署人批量领取链接-并且预设企业名称"
       }
     ],
+    "CreateContractDiffTaskWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContractDiffTaskWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw9iUUgyg36ykr3Ux4GQpt1FPWYQOZC\"\n    },\n    \"SkipFileUpload\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1748574341239597750\",\n        \"TaskId\": \"\",\n        \"WebUrl\": \"https://embed.qian.tencent.cn/contract-compare?embed=1&code=yDtthUUckpx9l14eUy8nTBEypH6h1yKt&channel=TENCENTCLOUD&embedType=CONTRACT_DIFF\"\n    }\n}",
+        "title": "创建合同对比web页面"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContractDiffTaskWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw9iUUgyg36ykr3Ux4GQpt1FPWYQOZC\"\n    },\n    \"OriginalFileResourceId\": \"yDttXUUckpx90i17UxPpcHHE1VDpNJPW\",\n    \"DiffFileResourceId\": \"yDttXUUckpx90i1xUxPpcHHyPdyqVErm\",\n    \"SkipFileUpload\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1748937464610832514\",\n        \"TaskId\": \"yDt31UUckpx91cypUyoAic6wP2oyarMN\",\n        \"WebUrl\": \"https://embed.qian.tencent.cn/contract-compare?embed=1&code=yDt31UUckpx9196lUxKwEYgzw4fEWCom&channel=TENCENTCLOUD&embedType=CONTRACT_DIFF&businessType=TASK_ID&businessId=yDt31UUckpx91cypUyoAic6wP2oyarMN\"\n    }\n}",
+        "title": "创建合同对比web页面 - 跳过文件上传确认页"
+      }
+    ],
     "CreateConvertTaskApi": [
       {
         "document": "适用场景：将jpg文件转换为pdf",
@@ -1412,6 +1426,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCancelFlowsTask\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"TaskId\": \"yDCVWUUckpwkjgiuUWGW8cRAzd93BVQb\"\n}",
         "output": "{\n    \"Response\": {\n        \"FailureFlows\": [\n            {\n                \"FlowId\": \"yDCNGUUckpvjdelbUuyImI9pY8I5Mep1\",\n                \"Reason\": \"合同当前状态不支持撤销\"\n            },\n            {\n                \"FlowId\": \"yDCV4UUckpwr0wq7UENkSSawLpt5Fz6C\",\n                \"Reason\": \"合同当前状态不支持撤销\"\n            },\n            {\n                \"FlowId\": \"yDw9jUUgyg54g2mdUxawbT61HrwMQ2gF\",\n                \"Reason\": \"合同信息不存在或非本企业发起的合同\"\n            }\n        ],\n        \"RequestId\": \"8698cab8-5947-49e6-8681-ce2080b70e73\",\n        \"SuccessFlowIds\": [\n            \"yDCN0UUckpvhnc6uUuyImI98ydIEe6bX\"\n        ],\n        \"TaskId\": \"yDCVWUUckpwkjgiuUWGW9cRAzd93BVQa\",\n        \"TaskStatus\": \"END\"\n    }\n}",
         "title": "查询批量撤销任务结果"
+      }
+    ],
+    "DescribeContractDiffTaskWebUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractDiffTaskWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw9iUUgyg36ykr3Ux4GQpt1FPWYQOZC\"\n    },\n    \"TaskId\": \"yDttgUUckpxxat41UyoAic6CrjE7K0x2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1748918302614730295\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/contract-compare?embed=1&code=yDt3RUUckpx9s4h8UuFSuGdR9VDNF2lh&channel=TENCENTCLOUD&embedType=CONTRACT_DIFF&businessType=TASK_ID&businessId=yDttgUUckpxxat41UyoAic6CrjE7K0x2\"\n    }\n}",
+        "title": "获取合同对比结果web页面"
       }
     ],
     "DescribeExtendedServiceAuthDetail": [

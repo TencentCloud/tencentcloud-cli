@@ -260,9 +260,9 @@
       "status": "online"
     },
     "MainlandPermitOCR": {
-      "document": "智能识别并结构化港澳台居民来往内地通行证正面全部字段，包含中文姓名、英文姓名、性别、出生日期、签发机关、有效期限、证件号、签发地点、签发次数、证件类别。\n\n默认接口请求频率限制：20次/秒。",
+      "document": "智能识别并结构化港澳台通行证及来往内地通行证正面全部字段，包含中文姓名、英文姓名、性别、出生日期、签发机关、有效期限、证件号、签发地点、签发次数、证件类别。\n\n默认接口请求频率限制：20次/秒。",
       "input": "MainlandPermitOCRRequest",
-      "name": "港澳台来往内地通行证识别",
+      "name": "港澳台通行证及来往内地通行证识别",
       "output": "MainlandPermitOCRResponse",
       "status": "online"
     },
@@ -500,7 +500,7 @@
     "SmartStructuralPro": {
       "document": "本接口支持智能提取各类证照、票据、表单、合同等结构化场景的key:value字段信息，并支持提取表格信息的key:value组的结构化，灵活高效，适用于各类非标准材料的信息录入场景，点击[立即体验](https://ocrdemo.cloud.tencent.com/)。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SmartStructuralProRequest",
-      "name": "文档抽取（多模态版）",
+      "name": "文档抽取（多模态）",
       "output": "SmartStructuralProResponse",
       "status": "online"
     },
@@ -5852,7 +5852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片/PDF的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -5861,7 +5861,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n要求图片经Base64编码后不超过 7M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP格式。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片/PDF的 Url 地址。要求图片经Base64编码后不超过10M，分辨率建议600*800以上，支持PNG、JPG、JPEG、BMP、PDF格式。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -8039,7 +8039,7 @@
         },
         {
           "disabled": false,
-          "document": "发票处于识别图片或PDF文件中的页教，默认从1开始。",
+          "document": "发票处于识别图片或PDF文件中的页码，默认从1开始。",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -8105,6 +8105,62 @@
           "name": "QRCode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "印章信息",
+          "example": "无",
+          "member": "InvoiceSealInfo",
+          "name": "InvoiceSealInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InvoiceSealInfo": {
+      "document": "印章信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否有公司印章（0：没有，1：有）",
+          "example": "0",
+          "member": "string",
+          "name": "CompanySealMark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有监制印章（0：没有，1：有）",
+          "example": "0",
+          "member": "string",
+          "name": "SupervisionSealMark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公司印章信息",
+          "example": "无",
+          "member": "string",
+          "name": "CompanySealMarkInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监制印章信息",
+          "example": "无",
+          "member": "string",
+          "name": "SupervisionSealMarkInfo",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -9178,7 +9234,7 @@
         },
         {
           "disabled": false,
-          "document": "图片正反面\nFRONT：正面、BACK：反面，默认为FRONT",
+          "document": "图片正反面\nFRONT：正面\nBACK：反面\n默认为FRONT",
           "example": "FRONT",
           "member": "string",
           "name": "CardSide",
@@ -9283,7 +9339,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。",
+          "document": "证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证、往来港澳通行证。",
           "example": "台湾居民来往大陆通行证",
           "member": "string",
           "name": "Type",
@@ -13476,6 +13532,15 @@
           "name": "EnableQRCode",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启印章识别，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSeal",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -16559,7 +16624,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nDispatchWeightNote -- 磅单发货单识别模板\nReceiptWeightNote -- 磅单收货单识别模板\nArticalRecognize -- 手写作文模版\nTable -- 表格模版",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nDispatchWeightNote -- 磅单发货单识别模板\nReceiptWeightNote -- 磅单收货单识别模板\nArticalRecognize -- 手写作文模版\nTable -- 表格模版\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",

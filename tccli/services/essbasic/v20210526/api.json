@@ -13457,7 +13457,7 @@
         },
         {
           "disabled": false,
-          "document": "二维码，在生成动态签署人跳转封面页链接时返回\n\n注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存。`",
+          "document": "二维码，在生成动态签署人跳转封面页链接时返回\n\n注：`此二维码下载链接有效期为5分钟，可下载二维码后本地保存，二维码有效期为90天。`",
           "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d**2f0db15e6b",
           "member": "string",
           "name": "SignQrcodeUrl",
