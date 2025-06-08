@@ -5992,7 +5992,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。",
           "example": "vpc-594gwq4l",
           "member": "string",
           "name": "UniqVpcId",
@@ -6354,7 +6354,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778) 。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
@@ -6788,7 +6788,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，如果不传则默认选择基础网络，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",

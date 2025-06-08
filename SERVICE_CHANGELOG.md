@@ -1,10 +1,26 @@
-# Release 3.0.1214.1
+# Release 3.0.1215.1
 
-## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+## 云硬盘(cbs) 版本：2017-03-12
 
-### 第 15 次发布
+### 第 50 次发布
 
-发布时间：2025-06-06 01:08:35
+发布时间：2025-06-09 01:09:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* GetSnapOverview
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 98 次发布
+
+发布时间：2025-06-09 01:16:28
 
 本次发布包含了以下内容：
 
@@ -12,104 +28,51 @@
 
 修改接口：
 
-* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1780/85309)
+* [ModifyPodNum](http://document.tencentcloudapi.woa.com/document/product/589/85469)
 
-	* 新增入参：DeviceKind
+	* 新增入参：PodNumList
 
+	* <font color="#dd0000">**修改入参**：</font>ServiceType, PodNum
 
+* [ScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/589/34264)
 
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 142 次发布
-
-发布时间：2025-06-06 01:10:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateCloneInstance](http://document.tencentcloudapi.woa.com/document/product/236/50424)
-
-	* 新增入参：SrcRegion, SpecifiedSubBackupId
+	* 新增入参：ComputeResourceAdvanceParams
 
 
+新增数据结构：
 
-
-## 磐石(clouddc) 版本：2018-08-30
-
-### 第 19 次发布
-
-发布时间：2025-06-06 01:12:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* AuditActivity
-* CreateLabelsToCustomer
-* CreateProductPatch
-* DeleteMarkCustomerLabel
-* DescribeHuman
-* DescribeOrganizationInfo
-* DescribeProductProjectInfo
-* DescribeProductVersion
-* DescribeQflowConfig
-* DescribeQflowProject
-* DescribeQflowToAndon
-* ImportOfflineProduct
-* ModifyProductMaterial
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* GoodsList
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 122 次发布
-
-发布时间：2025-06-06 01:13:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [AutoScaleGroupAdvanceAttrs](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleGroupAdvanceAttrs)
+* [ComputeResourceAdvanceParams](http://document.tencentcloudapi.woa.com/document/product/589/33981#ComputeResourceAdvanceParams)
+* [ServiceTypePodNum](http://document.tencentcloudapi.woa.com/document/product/589/33981#ServiceTypePodNum)
+* [Taint](http://document.tencentcloudapi.woa.com/document/product/589/33981#Taint)
+* [TkeLabel](http://document.tencentcloudapi.woa.com/document/product/589/33981#TkeLabel)
 
 修改数据结构：
 
-* [FileTamperRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#FileTamperRule)
+* [AutoScaleResourceConf](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleResourceConf)
 
-	* 新增成员：Args
+	* 新增成员：ExtraAdvanceAttrs
 
-* [VulEffectHostList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulEffectHostList)
+* [CreateComputeResourceConfig](http://document.tencentcloudapi.woa.com/document/product/589/33981#CreateComputeResourceConfig)
 
-	* 新增成员：MachineType, RegionId, HasSnapshot, LatestFixTime, DescriptionEn
+	* 新增成员：AdvanceParams
 
-* [VulFixStatusSnapshotInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulFixStatusSnapshotInfo)
+* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ImageInfo)
 
-	* 新增成员：MachineType
+	* 新增成员：Image
 
-* [VulInfoHostInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoHostInfo)
+* [TimeAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#TimeAutoScaleStrategy)
 
-	* 新增成员：MachineType
-
-* [VulInfoList](http://document.tencentcloudapi.woa.com/document/product/296/19867#VulInfoList)
-
-	* 新增成员：LatestFixTime
+	* 新增成员：GraceDownLabel
 
 
 
 
-## 云游戏(gs) 版本：2019-11-18
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 24 次发布
+### 第 139 次发布
 
-发布时间：2025-06-06 01:19:07
+发布时间：2025-06-09 01:17:23
 
 本次发布包含了以下内容：
 
@@ -117,173 +80,98 @@
 
 新增接口：
 
-* [CleanAndroidInstancesAppData](http://document.tencentcloudapi.woa.com/document/product/1162/86960)
-* [DisableAndroidInstancesApp](http://document.tencentcloudapi.woa.com/document/product/1162/86959)
-* [EnableAndroidInstancesApp](http://document.tencentcloudapi.woa.com/document/product/1162/86958)
-
-新增数据结构：
-
-* [AndroidInstanceError](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceError)
-* [Error](http://document.tencentcloudapi.woa.com/document/product/1162/40743#Error)
+* [CreateContractDiffTaskWebUrl](http://document.tencentcloudapi.woa.com/document/product/1668/86962)
+* [DescribeContractDiffTaskWebUrl](http://document.tencentcloudapi.woa.com/document/product/1668/86961)
 
 
 
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
+## 云游戏(gs) 版本：2019-11-18
 
-### 第 5 次发布
+### 第 25 次发布
 
-发布时间：2025-06-06 01:20:36
+发布时间：2025-06-09 01:18:50
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [DescribeDeviceCompliantInfos](http://document.tencentcloudapi.woa.com/document/product/1794/86418)
+* [DescribeAndroidInstancesAppBlacklist](http://document.tencentcloudapi.woa.com/document/product/1162/86967)
+* [DescribeAndroidInstancesByApps](http://document.tencentcloudapi.woa.com/document/product/1162/86969)
+* [ImportAndroidInstanceImage](http://document.tencentcloudapi.woa.com/document/product/1162/86963)
+* [ModifyAndroidInstancesAppBlacklist](http://document.tencentcloudapi.woa.com/document/product/1162/86966)
+* [ModifyAndroidInstancesResources](http://document.tencentcloudapi.woa.com/document/product/1162/86968)
+* [SetAndroidInstancesBGAppKeepAlive](http://document.tencentcloudapi.woa.com/document/product/1162/86965)
+* [SetAndroidInstancesFGAppKeepAlive](http://document.tencentcloudapi.woa.com/document/product/1162/86964)
 
-	* 新增入参：DomainInstanceId
+新增数据结构：
 
-* [GetTaskResult](http://document.tencentcloudapi.woa.com/document/product/1794/86558)
+* [AndroidInstanceAppBlacklist](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceAppBlacklist)
 
-	* 新增入参：TaskVersion
 
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 40 次发布
+
+发布时间：2025-06-09 01:30:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyGatewayIngress](http://document.tencentcloudapi.woa.com/document/product/1371/86970)
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 58 次发布
+
+发布时间：2025-06-09 01:30:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AdaptiveFrequencyControl](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AdaptiveFrequencyControl)
+* [BandwidthAbuseDefense](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BandwidthAbuseDefense)
+* [ChallengeActionParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ChallengeActionParameters)
+* [ClientFiltering](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ClientFiltering)
+* [DenyActionParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DenyActionParameters)
+* [ExceptionRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ExceptionRule)
+* [ExceptionRules](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ExceptionRules)
+* [HttpDDoSProtection](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HttpDDoSProtection)
+* [MinimalRequestBodyTransferRate](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MinimalRequestBodyTransferRate)
+* [RateLimitingRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitingRule)
+* [RateLimitingRules](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitingRules)
+* [RequestBodyTransferTimeout](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RequestBodyTransferTimeout)
+* [RequestFieldsForException](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RequestFieldsForException)
+* [SlowAttackDefense](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SlowAttackDefense)
 
 修改数据结构：
 
-* [DescribeDownloadDevicesRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDownloadDevicesRspData)
+* [SecurityAction](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SecurityAction)
 
-	* 新增成员：TaskId
+	* 新增成员：DenyActionParameters, ChallengeActionParameters
 
-* [DescribeDownloadHardwareChangeInfosRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDownloadHardwareChangeInfosRspData)
+* [SecurityPolicy](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SecurityPolicy)
 
-	* 新增成员：TaskId
+	* 新增成员：HttpDDoSProtection, RateLimitingRules, ExceptionRules
 
-* [DescribeHardwareLogRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeHardwareLogRspData)
 
-	* 新增成员：TaskId
 
-* [ExportSoftwareDownloadUrlRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#ExportSoftwareDownloadUrlRspData)
 
-	* 新增成员：TaskId
-
-
-
-
-## 云数据库 MariaDB(mariadb) 版本：2017-03-12
-
-### 第 49 次发布
-
-发布时间：2025-06-06 01:24:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDedicatedClusterDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/61370)
-
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
-
-
-
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
-
-### 第 101 次发布
-
-发布时间：2025-06-06 01:25:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ModifyNotificationSetting
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 59 次发布
-
-发布时间：2025-06-06 01:28:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
-
-	* 新增入参：CosFsConfig
-
-* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
-
-	* 新增出参：CosFsConfig
-
-* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
-
-	* 新增入参：CosFsConfig
-
-
-新增数据结构：
-
-* [CosFsConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#CosFsConfig)
-* [CosFsInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#CosFsInfo)
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 38 次发布
-
-发布时间：2025-06-06 01:30:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddAssetImageRegistryRegistryDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78913)
-
-	* 新增入参：InstanceId
-
-* [ModifyAsset](http://document.tencentcloudapi.woa.com/document/product/1662/78823)
-
-	* 新增入参：AllSuperHost, NodeUniqueIds, TimeoutSec
-
-	* 新增出参：TaskId
-
-* [UpdateAssetImageRegistryRegistryDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78812)
-
-	* 新增入参：InstanceId
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 219 次发布
-
-发布时间：2025-06-06 01:41:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateTrafficPackages](http://document.tencentcloudapi.woa.com/document/product/215/76926)
-
-	* 新增入参：DeductType
-
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 

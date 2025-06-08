@@ -9,12 +9,114 @@ tccli teo ModifySecurityPolicy --cli-unfold-argument  \
     --ZoneId zone-fa89j239a \
     --Entity Host \
     --Host a.eotest.com \
+    --SecurityPolicy.ExceptionRules.Rules.0.Id 1492837231 \
+    --SecurityPolicy.ExceptionRules.Rules.0.Name ExampleSkipModule \
+    --SecurityPolicy.ExceptionRules.Rules.0.Condition ${http.request.uri.path} in ['/api/v3/test','/api/v3/submit'] and ${http.request.method} in ['POST'] \
+    --SecurityPolicy.ExceptionRules.Rules.0.SkipScope WebSecurityModules \
+    --SecurityPolicy.ExceptionRules.Rules.0.WebSecurityModulesForException websec-mod-custom-rules websec-mod-rate-limiting \
+    --SecurityPolicy.ExceptionRules.Rules.0.Enabled On \
+    --SecurityPolicy.ExceptionRules.Rules.1.Id 1492837231 \
+    --SecurityPolicy.ExceptionRules.Rules.1.Name SampleSkipManagedRule \
+    --SecurityPolicy.ExceptionRules.Rules.1.Condition ${http.request.uri.path} in ['/api/v3/test','/api/v3/submit'] and ${http.request.method} in ['POST'] \
+    --SecurityPolicy.ExceptionRules.Rules.1.SkipScope ManagedRules \
+    --SecurityPolicy.ExceptionRules.Rules.1.SkipOption SkipOnAllRequestFields \
+    --SecurityPolicy.ExceptionRules.Rules.1.ManagedRulesForException 4401215074 4368124487 \
+    --SecurityPolicy.ExceptionRules.Rules.1.Enabled On \
+    --SecurityPolicy.ExceptionRules.Rules.2.Id 1492837231 \
+    --SecurityPolicy.ExceptionRules.Rules.2.Name SampleSkipManagedRule \
+    --SecurityPolicy.ExceptionRules.Rules.2.Condition ${http.request.uri.path} in ['/api/v3/test','/api/v3/submit'] and ${http.request.method} in ['POST'] \
+    --SecurityPolicy.ExceptionRules.Rules.2.SkipScope ManagedRules \
+    --SecurityPolicy.ExceptionRules.Rules.2.SkipOption SkipOnAllRequestFields \
+    --SecurityPolicy.ExceptionRules.Rules.2.ManagedRuleGroupsForException wafgroup-sql-injection-attacks \
+    --SecurityPolicy.ExceptionRules.Rules.2.Enabled On \
+    --SecurityPolicy.ExceptionRules.Rules.3.Id 1492837231 \
+    --SecurityPolicy.ExceptionRules.Rules.3.Name SampleSkipManagedRuleForField \
+    --SecurityPolicy.ExceptionRules.Rules.3.Condition ${http.request.uri.path} in ['/api/v3/test','/api/v3/submit'] and ${http.request.method} in ['POST'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.SkipScope ManagedRules \
+    --SecurityPolicy.ExceptionRules.Rules.3.ManagedRulesForException 4401215074 4368124487 \
+    --SecurityPolicy.ExceptionRules.Rules.3.SkipOption SkipOnSpecifiedRequestFields \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.0.Scope cookie \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.0.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.0.TargetField key \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.1.Scope cookie \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.1.Condition ${key} in ['session-id'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.1.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.2.Scope cookie \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.2.Condition ${key} in ['account-id'] and ${value} like ['prefix-*'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.2.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.3.Scope header \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.3.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.3.TargetField key \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.4.Scope header \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.4.Condition ${key} in ['x-trace-id'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.4.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.5.Scope header \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.5.Condition ${key} like ['x-auth-*'] and ${value} like ['Bearer *'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.5.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.6.Scope uri.query \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.6.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.6.TargetField key \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.7.Scope uri.query \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.7.Condition ${key} in ['action'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.7.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.8.Scope uri.query \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.8.Condition ${key} in ['action'] and ${value} in ['upload', 'delete'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.8.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.9.Scope uri \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.9.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.9.TargetField query \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.10.Scope uri \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.10.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.10.TargetField path \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.11.Scope uri \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.11.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.11.TargetField fullpath \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.12.Scope body.json \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.12.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.12.TargetField key \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.13.Scope body.json \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.13.Condition ${key} in ['user.id'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.13.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.14.Scope body.json \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.14.Condition ${key} in ['user.id'] and ${value} in ['1234', '5678'] \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.14.TargetField value \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.15.Scope body \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.15.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.15.TargetField fullbody \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.16.Scope body \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.16.Condition  \
+    --SecurityPolicy.ExceptionRules.Rules.3.RequestFieldsForException.16.TargetField multipart \
+    --SecurityPolicy.ExceptionRules.Rules.3.Enabled On \
     --SecurityPolicy.CustomRules.Rules.0.Id 1492837231 \
     --SecurityPolicy.CustomRules.Rules.0.Name SampleBasicACLRule \
     --SecurityPolicy.CustomRules.Rules.0.Condition ${http.request.ip} in ['1.1.1.1', '10.10.10.0/24', ${security.ip_group['123'@'zone-2xsnpvkhdjes']} ] \
     --SecurityPolicy.CustomRules.Rules.0.Action.Name Deny \
     --SecurityPolicy.CustomRules.Rules.0.Priority 10 \
     --SecurityPolicy.CustomRules.Rules.0.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.AdaptiveFrequencyControl.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.AdaptiveFrequencyControl.Sensitivity Loose \
+    --SecurityPolicy.HttpDDoSProtection.AdaptiveFrequencyControl.Action.Name Monitor \
+    --SecurityPolicy.HttpDDoSProtection.ClientFiltering.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.ClientFiltering.Action.Name Monitor \
+    --SecurityPolicy.HttpDDoSProtection.BandwidthAbuseDefense.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.BandwidthAbuseDefense.Action.Name Monitor \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.Action.Name Monitor \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.MinimalRequestBodyTransferRate.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.MinimalRequestBodyTransferRate.MinimalAvgTransferRateThreshold 50bps \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.MinimalRequestBodyTransferRate.CountingPeriod 60s \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.RequestBodyTransferTimeout.Enabled on \
+    --SecurityPolicy.HttpDDoSProtection.SlowAttackDefense.RequestBodyTransferTimeout.IdleTimeout 5s \
+    --SecurityPolicy.RateLimitingRules.Rules.0.Enabled on \
+    --SecurityPolicy.RateLimitingRules.Rules.0.Name SampleHttpDdosRule \
+    --SecurityPolicy.RateLimitingRules.Rules.0.Condition ${http.request.uri.path} in ['/api/v3/test','/api/v3/submit'] \
+    --SecurityPolicy.RateLimitingRules.Rules.0.CountBy http.request.ip http.request.cookies['UserSession'] \
+    --SecurityPolicy.RateLimitingRules.Rules.0.MaxRequestThreshold 1000 \
+    --SecurityPolicy.RateLimitingRules.Rules.0.CountingPeriod 2m \
+    --SecurityPolicy.RateLimitingRules.Rules.0.ActionDuration 20h \
+    --SecurityPolicy.RateLimitingRules.Rules.0.Action.Name ManagedChallenge \
+    --SecurityPolicy.RateLimitingRules.Rules.0.Id 2181399690 \
+    --SecurityPolicy.RateLimitingRules.Rules.0.Priority 100 \
     --SecurityPolicy.ManagedRules.Enabled on \
     --SecurityPolicy.ManagedRules.AutoUpdate.AutoUpdateToLatestVersion off \
     --SecurityPolicy.ManagedRules.AutoUpdate.RulesetVersion 2023-12-21T12:00:32Z \
