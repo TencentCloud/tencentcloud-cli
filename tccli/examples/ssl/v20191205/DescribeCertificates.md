@@ -109,7 +109,8 @@ Output:
                     "JKS": true,
                     "OTHER": true,
                     "ROOT": true
-                }
+                },
+                "IsHostingUploadRenewCert": false
             }
         ],
         "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
@@ -224,6 +225,7 @@ Output:
                 "HostingRenewCertId": "",
                 "HostingResourceTypes": [],
                 "IsDNSPODResolve": false,
+                "IsHostingUploadRenewCert": false,
                 "BoundResource": []
             }
         ],
@@ -339,6 +341,7 @@ Output:
                 "HostingRenewCertId": "",
                 "HostingResourceTypes": [],
                 "IsDNSPODResolve": false,
+                "IsHostingUploadRenewCert": false,
                 "BoundResource": []
             }
         ],
@@ -466,6 +469,7 @@ Output:
                     "ReplaceTime": 999
                 },
                 "IsDNSPODResolve": false,
+                "IsHostingUploadRenewCert": false,
                 "BoundResource": []
             }
         ],

@@ -254,6 +254,14 @@
         "title": "示例"
       }
     ],
+    "DistributePhotoToAndroidInstances": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DistributePhotoToAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99QMMwk3A\"\n    ],\n    \"PhotoURL\": \"https://test.cos.ap-nanjing.myqcloud.com/tmp/wallpaper.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"385f8b9c-4c2a-4d9f-8fcd-c06e8a606fe8\",\n        \"TaskSet\": [\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99wkeEIID\",\n                \"TaskId\": \"8ab16ee3-ea89-48ab-9aaf-18871420d567\"\n            },\n            {\n                \"AndroidInstanceId\": \"cai-251006279-ea99QMMwk3A\",\n                \"TaskId\": \"4f9bd67c-6f03-46d5-86c8-19393ab9a375\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "EnableAndroidInstancesApp": [
       {
         "document": "",
