@@ -2230,6 +2230,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是上传托管续费证书",
+          "example": "false",
+          "member": "bool",
+          "name": "IsHostingUploadRenewCert",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4691,6 +4701,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书域名类型， 1（单域名）；2（多域名）；3（泛域名）；4（多泛域名）",
+          "example": "1",
+          "member": "uint64",
+          "name": "DomainType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书类型，DV（域名型）；OV（企业型）；EV（增强型）",
+          "example": "OV",
+          "member": "string",
+          "name": "CertType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8216,6 +8246,45 @@
       ],
       "usage": "out"
     },
+    "ManagerPreAuditDomain": {
+      "document": "管理人预审核的域名列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预审核域名信息",
+          "example": "tencent.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预审核域名创建时间",
+          "example": "2025-01-01 08:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预审核域名过期时间",
+          "example": "2026-01-01 08:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ManagerStatusInfo": {
       "document": "管理人的四种审核状态",
       "members": [
@@ -8257,6 +8326,16 @@
           "name": "ExpireTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理人预审核的域名列表",
+          "example": "无",
+          "member": "ManagerPreAuditDomain",
+          "name": "ManagerPreAuditDomains",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

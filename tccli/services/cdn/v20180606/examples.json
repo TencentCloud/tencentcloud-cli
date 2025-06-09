@@ -355,7 +355,7 @@
     "DescribeTrafficPackages": [
       {
         "document": "查询流量包列表",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b1a70a67f5500913be355ac2f09ff191\",\n        \"TrafficPackages\": [\n            {\n                \"Id\": 22890370,\n                \"Type\": \"日常流量包\",\n                \"ConfigId\": 672,\n                \"Bytes\": 100000000000,\n                \"BytesUsed\": 0,\n                \"Status\": \"frozen\",\n                \"CreateTime\": \"2022-11-11 15:52:28\",\n                \"EnableTime\": \"2022-11-11 15:00:00\",\n                \"ExpireTime\": \"2023-11-11 15:00:00\",\n                \"ContractExtension\": false,\n                \"AutoExtension\": false,\n                \"ExtensionMode\": 0,\n                \"Area\": \"mainland\",\n                \"LifeTimeMonth\": 12,\n                \"RefundAvailable\": false,\n                \"Channel\": \"ACTIVE_PURCHASE\",\n                \"ExtensionAvailable\": false,\n                \"Region\": 0,\n                \"TrueEnableTime\": \"2022-11-11 15:00:00\",\n                \"TrueExpireTime\": \"2023-11-11 15:59:59\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"ExpiringCount\": 0,\n        \"EnabledCount\": 0,\n        \"PaidCount\": 1\n    }\n}",
         "title": "查询流量包列表"
       }

@@ -888,8 +888,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "该参数表示任务列表每页展示的任务条数，**默认值为10**（每页展示10条任务）。",
-          "example": "无",
+          "document": "该参数表示任务列表每页展示的任务条数，**默认值为10，最大值为100**（每页展示10条任务）。",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -907,7 +907,7 @@
         {
           "disabled": false,
           "document": "该参数表示翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。",
-          "example": "无",
+          "example": "aEjUgqOnIv0S1ZxQ.aEJUb42r3tX61Y-a",
           "member": "string",
           "name": "PageToken",
           "required": false,
@@ -916,7 +916,7 @@
         {
           "disabled": false,
           "document": "该参数表示任务列表的开始时间，格式为ISO8601标准的时间戳。**默认值为最近3天**，若传入该参数，则在这一时间到EndTime之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
-          "example": "无",
+          "example": "2025-06-05T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -925,7 +925,7 @@
         {
           "disabled": false,
           "document": "该参数表示任务列表的结束时间，格式为ISO8601标准的时间戳。**默认值为空**，若传入该参数，则在这StartTime到这一时间之间的任务将会被筛选出来。<br>备注：该参数与Filter共同起到任务筛选作用，二者作用无先后顺序。",
-          "example": "无",
+          "example": "2025-06-06T23:59:59+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -940,7 +940,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前查询的任务总量，格式为int字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "1200",
           "member": "string",
           "name": "Total",
           "output_required": true,
@@ -960,7 +960,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回翻页时使用的Token信息，由系统自动生成，并在翻页时向下一个生成的页面传递此参数，以方便快速翻页功能的实现。当到最后一页时，该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "4765-48dXwxJtbkKXW8d3eb",
+          "example": "aEjUgqOnIv0S1ZxQ.aEJUb42r3tX61Y-a",
           "member": "string",
           "name": "PageToken",
           "output_required": true,
@@ -1970,47 +1970,43 @@
       "usage": "out"
     },
     "TaskFilter": {
-      "document": "Cos TaskFilter ",
+      "document": "Cos TaskFilter",
       "members": [
         {
           "disabled": false,
           "document": "任务业务类型",
-          "example": "1",
+          "example": "default",
           "member": "string",
           "name": "BizType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "任务类型，可选：VIDEO，AUDIO， LIVE_VIDEO, LIVE_AUDIO",
-          "example": "1",
+          "example": "VIDEO",
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "建议，可选：Pass, Review,Block",
-          "example": "1",
+          "example": "Pass",
           "member": "string",
           "name": "Suggestion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "状态，可选：PENDING，RUNNING，ERROR，FINISH，CANCELLED",
-          "example": "1",
+          "example": "FINISH",
           "member": "string",
           "name": "TaskStatus",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

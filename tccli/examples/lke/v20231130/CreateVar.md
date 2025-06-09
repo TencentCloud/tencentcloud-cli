@@ -9,7 +9,9 @@ tccli lke CreateVar --cli-unfold-argument  \
     --AppBizId 1793260396881641472 \
     --VarName TimeID \
     --VarDesc 这个参数要来传时间 \
-    --VarType STRING
+    --VarType STRING \
+    --VarDefaultValue 2025-05-14 \
+    --VarDefaultFileName 
 ```
 
 Output: 

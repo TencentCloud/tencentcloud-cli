@@ -83,6 +83,8 @@ Output:
         "EncryptCertFingerprint": null,
         "EncryptAlgorithm": "RSA 2048",
         "CertChainInfo": null,
+        "DomainType": 1,
+        "CertType": "OV",
         "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
@@ -173,6 +175,8 @@ Output:
         "EncryptCertFingerprint": null,
         "EncryptAlgorithm": "RSA 2048",
         "CertChainInfo": null,
+        "DomainType": 1,
+        "CertType": "OV",
         "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }

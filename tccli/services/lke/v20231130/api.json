@@ -1831,6 +1831,32 @@
       ],
       "usage": "both"
     },
+    "AttributeLabelRefByWorkflow": {
+      "document": "标签值引用的工作流详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签值id",
+          "example": "无",
+          "member": "string",
+          "name": "AttributeLabelBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值引用的工作流列表",
+          "example": "无",
+          "member": "WorkflowRef",
+          "name": "WorkflowList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BaseConfig": {
       "document": "应用基础配置",
       "members": [
@@ -2219,6 +2245,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "引用的工作流详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttributeLabelRefByWorkflow",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2491,6 +2527,15 @@
           "name": "BaseConfig",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式",
+          "example": "standard",
+          "member": "string",
+          "name": "Pattern",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3115,6 +3160,24 @@
           "example": "STRING",
           "member": "string",
           "name": "VarType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量默认值",
+          "example": "2025-05-14",
+          "member": "string",
+          "name": "VarDefaultValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量文件默认名称",
+          "example": "无",
+          "member": "string",
+          "name": "VarDefaultFileName",
           "required": false,
           "type": "string"
         }
@@ -3857,6 +3920,15 @@
           "name": "SubScenes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)",
+          "example": "knowledge_qa",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4442,6 +4514,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "文档是否停用，false:未停用，true:已停用",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDisabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4859,6 +4941,16 @@
           "name": "QuestionDesc",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问答是否停用，false:未停用，true已停用",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDisabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -5470,6 +5562,15 @@
           "name": "AppBizIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)",
+          "example": "knowledge_qa",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5599,6 +5700,15 @@
           "name": "SubScenes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)",
+          "example": "knowledge_qa",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5800,6 +5910,17 @@
           "example": "https://xxxx.png",
           "member": "string",
           "name": "Avatar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预览图",
+          "example": "https://xxxx.png",
+          "member": "string",
+          "name": "PreviewUrl",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -8171,6 +8292,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库关联配置",
+          "example": "无",
+          "member": "ShareKnowledgeBase",
+          "name": "ShareKnowledgeBases",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8357,7 +8489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "知识来源 doc：文档，qa：问答  taskflow：业务流程，search：搜索增强，database:数据库\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Type",
@@ -9302,6 +9434,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "false:未停用，ture:已停用",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDisabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9338,7 +9480,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容",
+          "document": "查询内容\n\n输入特定标识 lke:system:untagged  将查询所有未关联标签的文档",
           "example": "无",
           "member": "string",
           "name": "Query",
@@ -9389,6 +9531,15 @@
           "name": "FilterFlag",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否只展示当前分类的数据 0不是，1是",
+          "example": "无",
+          "member": "uint64",
+          "name": "ShowCurrCate",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9567,7 +9718,7 @@
         },
         {
           "disabled": false,
-          "document": "查询问题",
+          "document": "查询问题\n\n输入特定标识 lke:system:untagged  将查询所有未关联标签的问答",
           "example": "无",
           "member": "string",
           "name": "Query",
@@ -9645,6 +9796,15 @@
           "name": "QueryType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否只展示当前分类的数据 0不是，1是",
+          "example": "无",
+          "member": "uint64",
+          "name": "ShowCurrCate",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9942,6 +10102,16 @@
           "name": "SimilarQuestionTips",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问答是否停用，false:未停用，ture:已停用",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDisabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -10879,6 +11049,15 @@
           "name": "SubScenes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型(knowledge_qa应用管理， shared_knowlege 共享知识库)",
+          "example": "knowledge_qa",
+          "member": "string",
+          "name": "AppType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11139,6 +11318,17 @@
           "example": "无",
           "member": "uint64",
           "name": "SupportAiCallStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专属并发数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Concurrency",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -13286,6 +13476,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "无",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14301,6 +14501,34 @@
       ],
       "usage": "both"
     },
+    "ShareKnowledgeBase": {
+      "document": "共享知识库配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库ID",
+          "example": "无",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索范围",
+          "example": "无",
+          "member": "SearchRange",
+          "name": "SearchRange",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SimilarQuestion": {
       "document": "相似问信息",
       "members": [
@@ -14630,7 +14858,7 @@
         {
           "disabled": false,
           "document": "变量名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "TimeID",
+          "example": "发票类型",
           "member": "string",
           "name": "VarName",
           "output_required": false,
@@ -14655,6 +14883,28 @@
           "example": "STRING",
           "member": "string",
           "name": "VarType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量默认值",
+          "example": "电子发票",
+          "member": "string",
+          "name": "VarDefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量文件默认名称",
+          "example": "无",
+          "member": "string",
+          "name": "VarDefaultFileName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -15500,6 +15750,67 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRef": {
+      "document": "WorkflowRef详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务流ID",
+          "example": "1255215",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务流名称",
+          "example": "开发票",
+          "member": "string",
+          "name": "WorkflowName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务流描述",
+          "example": "开发票主要是告诉你开票方式和流程",
+          "member": "string",
+          "name": "WorkflowDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "5215125",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1731505418",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -70,6 +70,13 @@
       "output": "InquirePriceRunInstancesResponse",
       "status": "online"
     },
+    "ResetInstancesPassword": {
+      "document": "本接口 (ResetInstancesPassword) 用于重置实例的用户密码。",
+      "input": "ResetInstancesPasswordRequest",
+      "name": "重置实例的用户密码",
+      "output": "ResetInstancesPasswordResponse",
+      "status": "online"
+    },
     "RunInstances": {
       "document": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。",
       "input": "RunInstancesRequest",
@@ -1496,6 +1503,61 @@
         }
       ],
       "usage": "out"
+    },
+    "ResetInstancesPasswordRequest": {
+      "document": "ResetInstancesPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "['hai-2dfajzo4q']\t",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例密码必须8-30位，推荐使用12位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]</li><br><li>大写字母：[A-Z]</li><br><li>数字：0-9</li><br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/</li>",
+          "example": "test@11111.",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为False，True代表只验证接口连通性",
+          "example": "False",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancesPasswordResponse": {
+      "document": "ResetInstancesPassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "task任务id",
+          "example": "23898659",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RunInstancesRequest": {
       "document": "RunInstances请求参数结构体",

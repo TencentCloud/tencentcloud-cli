@@ -16,6 +16,14 @@
         "title": "创建 TKE 节点池"
       }
     ],
+    "DeleteClusterMachines": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterMachines\n<公共请求参数>\n\n{\n    \"MachineNames\": [\n        \"np-5tx2l4dc-hbbv6\"\n    ],\n    \"ClusterId\": \"cls-l9l1o3y0\",\n    \"EnableScaleDown\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e54a99-9be0-4983-82ff-54dce2191c4a\"\n    }\n}",
+        "title": "删除原生节点池节点"
+      }
+    ],
     "DeleteHealthCheckPolicy": [
       {
         "document": "",

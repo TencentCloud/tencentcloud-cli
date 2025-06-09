@@ -56,6 +56,14 @@
         "title": "删除图片"
       }
     ],
+    "DeleteVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3facfb37-9ded-4c73-bef7-90a78a0c2936\"\n    }\n}",
+        "title": "删除jackson的声纹信息"
+      }
+    ],
     "DescribeAIConversation": [
       {
         "document": "",
@@ -264,6 +272,14 @@
         "title": "查询用户列表与通话指标"
       }
     ],
+    "DescribeVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoicePrint\n<公共请求参数>\n\n{\n    \"DescribeMode\": 1,\n    \"PageIndex\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": 1300056921,\n                \"AudioName\": \"jackson\",\n                \"CreateTime\": \"2025-06-05 18:40:27\",\n                \"ReqTimestamp\": 1749119970000,\n                \"UpdateTime\": \"2025-06-05 18:40:27\",\n                \"VoicePrintId\": \"20250605_e3f126cda7ad4196bfb1acfb10642d39fFPqPcCyY6KcccmO9t4CHqn-6qJMBnzaiLzdaeEi2Q\",\n                \"VoicePrintMetaInfo\": \"custom_metainfo\"\n            }\n        ],\n        \"RequestId\": \"10459f57-b3fb-42a3-99c7-0c037967e420\",\n        \"TotalCount\": 14\n    }\n}",
+        "title": "分页查询已经注册过的声纹信息"
+      }
+    ],
     "DescribeWebRecord": [
       {
         "document": "",
@@ -302,6 +318,14 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=10081\n&Height=80\n&Width=70\n&XPosition=10\n&YPosition=20\n&SdkAppId=1500000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "修改图片相关参数"
+      }
+    ],
+    "RegisterVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterVoicePrint\n<公共请求参数>\n\n{\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"ReqTimestamp\": 1749119700000,\n    \"AudioFormat\": 0,\n    \"AudioName\": \"jackson\",\n    \"AudioMetaInfo\": \"custom_metainfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47a8f838-8368-4dc7-a5ce-94b366692f6f\",\n        \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\"\n    }\n}",
+        "title": "注册jackson的声纹信息"
       }
     ],
     "RemoveUser": [
@@ -496,6 +520,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600011111,\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\",\n    \"StreamUrl\": \"https://a.b/test.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "更新任务"
+      }
+    ],
+    "UpdateVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\",\n    \"ReqTimestamp\": 1749120210000,\n    \"AudioFormat\": 0,\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"AudioMetaInfo\": \"update_metainfo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
+        "title": "更新jackson的音频信息"
       }
     ]
   },

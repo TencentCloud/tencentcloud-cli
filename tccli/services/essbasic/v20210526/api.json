@@ -603,7 +603,7 @@
       "status": "online"
     },
     "OperateTemplate": {
-      "document": "此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href=\"https://qian.tencent.com/developers/partner/callback_types_templates\" target=\"_blank\">模板操作相关回调</a>\n\n# 支持的操作\n## 1. 删除模板 (OperateType=DELETE)\n此操作会将模板从企业自有模板中彻底删除，若要保留模板而不删除，可将模板停用。\n\n## 2. 启用模板 (OperateType=ENABLE)\n此操作是将已停用的模板启用，操作幂等，若模板已启用，接口不报错。\n\n## 3. 停用模板 (OperateType=DISABLE)\n此操作是将已启用的模板停用，操作幂等，若模板已停用，接口不报错，停用后，无法通过此模板发起合同，已发起的合同不受影响。",
+      "document": "此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href=\"https://qian.tencent.com/developers/partner/callback_types_templates\" target=\"_blank\">模板操作相关回调</a>\n\n# 支持的操作\n## 1. 删除模板 (OperateType=DELETE)\n此操作会将模板从企业自有模板中彻底删除，若要保留模板而不删除，可将模板停用。\n\n## 2. 启用模板 (OperateType=ENABLE)\n此操作是将已停用的模板启用，操作幂等，若模板已启用，接口不报错。\n\n## 3. 停用模板 (OperateType=DISABLE)\n此操作是将已启用的模板停用，操作幂等，若模板已停用，接口不报错，停用后，无法通过此模板发起合同，已发起的合同不受影响。\n\n## 4. 复制模板 (OperateType=COPY)\n此操作将复制一个完全一样的模板，仅支持修改模板名称，若要修改其他模板内容，需到腾讯电子签控制台操作。",
       "input": "OperateTemplateRequest",
       "name": "企业模板管理",
       "output": "OperateTemplateResponse",
@@ -11888,7 +11888,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，可取值如下:\n<ul>\n<li>DELETE:  删除</li>\n<li>ENABLE: 启用</li>\n<li>DISABLE: 停用</li>\n</ul>",
+          "document": "操作类型，可取值如下:\n<ul>\n<li>DELETE:  删除</li>\n<li>ENABLE: 启用</li>\n<li>DISABLE: 停用</li>\n<li>COPY: 复制新建</li>\n</ul>",
           "example": "DELETE",
           "member": "string",
           "name": "OperateType",

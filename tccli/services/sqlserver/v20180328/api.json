@@ -6353,10 +6353,19 @@
         },
         {
           "disabled": false,
-          "document": "列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc",
+          "document": "列表项排序，desc-降序、asc-升序，按size排序默认desc，按database排序默认asc",
           "example": "desc",
           "member": "string",
           "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段（Size-按备份大小排序，DBs-按数据库名称排序），默认size",
+          "example": "Size",
+          "member": "string",
+          "name": "OrderByType",
           "required": false,
           "type": "string"
         }
@@ -6379,7 +6388,7 @@
         {
           "disabled": false,
           "document": "备份文件列表详情",
-          "example": " [{\"CrossExternalAddr\": \"https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c\",             \"CrossInternalAddr\": \"https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c\",\"CrossRegion\": \"ap-singapore\"}],\"Region\": \"ap-singapore\",\"DBs\": [\"db1\"],\"DownloadLink\": \"https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db1_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3de5e61bfbccf44f6c3dd8a710296108dc95ba16db\",\"FileName\": \"manual_specific_58002_db1_2021_09_14144312.bak\",\"Id\": 36074,\"Size\": 184}]",
+          "example": "无",
           "member": "BackupFile",
           "name": "BackupFiles",
           "output_required": true,
@@ -8334,6 +8343,15 @@
           "name": "Encryption",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8527,6 +8545,15 @@
           "example": "disable",
           "member": "string",
           "name": "Encryption",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段（Name-按名称排序，CreateTime-按创建时间排序），默认CreateTime",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderBy",
           "required": false,
           "type": "string"
         }

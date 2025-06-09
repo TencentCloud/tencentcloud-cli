@@ -11,8 +11,8 @@
     "CheckAttributeLabelRefer": [
       {
         "document": "检查知识标签是否被引用",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAttributeLabelRefer\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1696822786072117248\",\n    \"LabelBizId\": \"1734549420823662593\",\n    \"AttributeBizId\": [\n        \"1734549420823662592\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"IsRefer\": false,\n        \"RequestId\": \"2bf7f1f1-9346-4919-9561-e85805017676\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckAttributeLabelRefer\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1922557****89446528\",\n    \"LabelBizId\": \"19229118842****0208\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsRefer\": false,\n        \"List\": [\n            {\n                \"AttributeLabelBizId\": \"19229118842****0208\",\n                \"WorkflowList\": [\n                    {\n                        \"AppBizId\": \"\",\n                        \"UpdateTime\": 0,\n                        \"WorkflowDesc\": \"工作流\",\n                        \"WorkflowId\": \"3a3cd69e-caa5-****-bf10-0306105600e7\",\n                        \"WorkflowName\": \"工作流\"\n                    },\n                    {\n                        \"AppBizId\": \"\",\n                        \"UpdateTime\": 0,\n                        \"WorkflowDesc\": \"工作流2\",\n                        \"WorkflowId\": \"2eea1fcd-2c6c-****-b5d7-03bc34b6b41a\",\n                        \"WorkflowName\": \"工作流2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"1e53486e-****-454e-bf1a-5bed21f8036b\"\n    }\n}",
         "title": "检查知识标签是否被引用"
       }
     ],
@@ -91,7 +91,7 @@
     "CreateVar": [
       {
         "document": "创建变量",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVar\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\",\n    \"VarName\": \"TimeID\",\n    \"VarDesc\": \"这个参数要来传时间\",\n    \"VarType\": \"STRING\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVar\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\",\n    \"VarName\": \"TimeID\",\n    \"VarDesc\": \"这个参数要来传时间\",\n    \"VarType\": \"STRING\",\n    \"VarDefaultValue\": \"2025-05-14\",\n    \"VarDefaultFileName\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa7b90b3-bca5-4666-8bb8-e76b0374137c\",\n        \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\"\n    }\n}",
         "title": "创建变量"
       }
@@ -426,7 +426,7 @@
       {
         "document": "获取应用下的变量列表",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVarList\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\",\n                \"VarName\": \"TimeIDUpdate\",\n                \"VarDesc\": \"时间ID描述\",\n                \"VarType\": \"STRING\"\n            },\n            {\n                \"VarId\": \"d125c28b-55db-4478-9066-6115ab97ee17\",\n                \"VarName\": \"UserID\",\n                \"VarDesc\": \"用户ID描述\",\n                \"VarType\": \"STRING\"\n            }\n        ],\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\",\n        \"Total\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\",\n                \"VarName\": \"TimeIDUpdate\",\n                \"VarDesc\": \"时间ID描述\",\n                \"VarType\": \"STRING\",\n                \"VarDefaultValue\": \"2025-05-14\",\n                \"VarDefaultFileName\": \"\"\n            },\n            {\n                \"VarId\": \"d125c28b-55db-4478-9066-6115ab97ee17\",\n                \"VarName\": \"UserID\",\n                \"VarDesc\": \"用户ID描述\",\n                \"VarType\": \"STRING\",\n                \"VarDefaultValue\": \"6213673423\",\n                \"VarDefaultFileName\": \"\"\n            }\n        ],\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\",\n        \"Total\": 2\n    }\n}",
         "title": "获取应用下的变量列表"
       }
     ],

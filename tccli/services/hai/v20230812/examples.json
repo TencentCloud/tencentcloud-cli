@@ -80,6 +80,14 @@
         "title": "发货询价"
       }
     ],
+    "ResetInstancesPassword": [
+      {
+        "document": "实例重置密码",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstancesPassword\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-xxxx\"\n    ],\n    \"DryRun\": false,\n    \"Password\": \"test#123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e188f45e-e2db-4c30-81e0-2e7a3dfa7754\",\n        \"TaskId\": 232559186\n    }\n}",
+        "title": "实例重置密码"
+      }
+    ],
     "RunInstances": [
       {
         "document": "创建hai实例",

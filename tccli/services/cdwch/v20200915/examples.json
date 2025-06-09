@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActionAlterCkUser\n<公共请求参数>\n\n{\n    \"UserInfo\": {\n        \"InstanceId\": \"cdwch-1vud9x9x\",\n        \"UserName\": \"admin\",\n        \"PassWord\": \"base54加密\",\n        \"Describe\": \"测试用户\"\n    },\n    \"ApiType\": \"AddSystemUser\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"ErrMsg\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20a71202-27c4-4120-80c4-fb1a8e15dxxx\",\n        \"ErrMsg\": \"\"\n    }\n}",
         "title": "新增、修改集群用户"
       }
     ],

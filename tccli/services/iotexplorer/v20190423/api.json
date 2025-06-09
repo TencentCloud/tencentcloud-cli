@@ -9516,6 +9516,48 @@
       ],
       "usage": "in"
     },
+    "DiarySHLConfig": {
+      "document": "Diary Simple Highlight 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每个视频偏移时长，单位秒",
+          "example": "2",
+          "member": "uint64",
+          "name": "StartOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频浓缩倍数，支持1,2,4之间",
+          "example": "1",
+          "member": "uint64",
+          "name": "PlaySpeed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单个视频最小提取时长，单位秒",
+          "example": "2",
+          "member": "uint64",
+          "name": "MiniExtract",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每天最终输出视频时长，单位秒\n注：免费版固定10s",
+          "example": "10",
+          "member": "uint64",
+          "name": "OutDuration",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "DirectBindDeviceInFamilyRequest": {
       "document": "DirectBindDeviceInFamily请求参数结构体",
       "members": [
@@ -13283,7 +13325,7 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩",
+          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩\n- `SimpleHighlight`：TrueX SimpleHighlight",
           "example": "Highlight",
           "member": "string",
           "name": "ServiceType",
@@ -13316,6 +13358,15 @@
           "name": "Config",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SimpleHighlight 算法配置参数",
+          "example": "无",
+          "member": "DiarySHLConfig",
+          "name": "SHLConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

@@ -49,6 +49,13 @@
       "output": "DeletePictureResponse",
       "status": "online"
     },
+    "DeleteVoicePrint": {
+      "document": "传入声纹ID，删除之前注册的声纹信息",
+      "input": "DeleteVoicePrintRequest",
+      "name": "删除声纹信息",
+      "output": "DeleteVoicePrintResponse",
+      "status": "online"
+    },
     "DescribeAIConversation": {
       "document": "查询AI对话任务状态。",
       "input": "DescribeAIConversationRequest",
@@ -231,6 +238,13 @@
       "output": "DescribeUserInfoResponse",
       "status": "online"
     },
+    "DescribeVoicePrint": {
+      "document": "查询先前注册的声纹信息",
+      "input": "DescribeVoicePrintRequest",
+      "name": "查询声纹信息",
+      "output": "DescribeVoicePrintResponse",
+      "status": "online"
+    },
     "DescribeWebRecord": {
       "document": "查询页面录制任务",
       "input": "DescribeWebRecordRequest",
@@ -264,6 +278,13 @@
       "input": "ModifyPictureRequest",
       "name": "修改图片",
       "output": "ModifyPictureResponse",
+      "status": "online"
+    },
+    "RegisterVoicePrint": {
+      "document": "传入音频base64串，注册声纹信息，返回声纹ID",
+      "input": "RegisterVoicePrintRequest",
+      "name": "注册声纹信息",
+      "output": "RegisterVoicePrintResponse",
       "status": "online"
     },
     "RemoveUser": {
@@ -397,6 +418,13 @@
       "input": "UpdateStreamIngestRequest",
       "name": "更新输入在线媒体流",
       "output": "UpdateStreamIngestResponse",
+      "status": "online"
+    },
+    "UpdateVoicePrint": {
+      "document": "传入声纹ID以及对应音频信息，更新对应声纹信息",
+      "input": "UpdateVoicePrintRequest",
+      "name": "更新声纹信息",
+      "output": "UpdateVoicePrintResponse",
       "status": "online"
     }
   },
@@ -612,6 +640,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境音设置",
+          "example": "无",
+          "member": "AmbientSound",
+          "name": "AmbientSound",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "声纹配置",
+          "example": "无",
+          "member": "VoicePrint",
+          "name": "VoicePrint",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -648,6 +698,34 @@
         }
       ],
       "usage": "in"
+    },
+    "AmbientSound": {
+      "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shop: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境场景选择",
+          "example": "coffee_shop",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制环境音的音量。取值的范围是 [0,2]。值越低，环境音越小；值越高，环境音越响亮。如果未设置，则使用默认值 1。",
+          "example": "1.0",
+          "member": "float",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AudioEncode": {
       "document": "音频编码参数。",
@@ -1378,6 +1456,33 @@
     },
     "DeletePictureResponse": {
       "document": "DeletePicture返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVoicePrintRequest": {
+      "document": "DeleteVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹信息ID",
+          "example": "20250529_xxxxxx",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVoicePrintResponse": {
+      "document": "DeleteVoicePrint返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3230,6 +3335,80 @@
           "member": "UserInformation",
           "name": "UserList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoicePrintRequest": {
+      "document": "DescribeVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询方式，0表示查询特定VoicePrintId，1表示分页查询",
+          "example": "1",
+          "member": "uint64",
+          "name": "DescribeMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "声纹ID",
+          "example": "13000569123-fd91f128-52a6-4692-b94a-c0f9fd3c4287",
+          "member": "string",
+          "name": "VoicePrintIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当前页码,从1开始,DescribeMode为1时填写",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数 最少20,DescribeMode为1时填写",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVoicePrintResponse": {
+      "document": "DescribeVoicePrint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总的条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "声纹信息",
+          "example": "无",
+          "member": "VoicePrintInfo",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5631,6 +5810,79 @@
       ],
       "usage": "out"
     },
+    "RegisterVoicePrintRequest": {
+      "document": "RegisterVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整个wav音频文件的base64字符串,其中wav文件限定为16k或8k采样率, 16bit位深, 单声道, 8到18秒有效音频时长,编码数据大小不超过2M",
+          "example": "kAOgA9AEA...",
+          "member": "string",
+          "name": "Audio",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "毫秒时间戳",
+          "example": "1748249540000",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频格式,目前只支持0,代表wav",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频名称,长度不要超过32",
+          "example": "jackson",
+          "member": "string",
+          "name": "AudioName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "和声纹绑定的MetaInfo，长度最大不超过512",
+          "example": "metainfo string",
+          "member": "string",
+          "name": "AudioMetaInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterVoicePrintResponse": {
+      "document": "RegisterVoicePrint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹信息ID",
+          "example": "声纹信息id",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RemoveUserByStrRoomIdRequest": {
       "document": "RemoveUserByStrRoomId请求参数结构体",
       "members": [
@@ -7866,6 +8118,69 @@
       ],
       "type": "object"
     },
+    "UpdateVoicePrintRequest": {
+      "document": "UpdateVoicePrint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹信息ID",
+          "example": "20250529_xxxxxx",
+          "member": "string",
+          "name": "VoicePrintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "毫秒时间戳",
+          "example": "1748249540000",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音频格式,目前只支持0,代表wav",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "整个wav音频文件的base64字符串,其中wav文件限定为16k或8k采样率, 16bit位深, 单声道, 8到18秒有效音频时长,编码数据大小不超过2M",
+          "example": "f8AAAMABwAJAAsxxxx",
+          "member": "string",
+          "name": "Audio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "和声纹绑定的MetaInfo，长度最大不超过512",
+          "example": "metainfo string",
+          "member": "string",
+          "name": "AudioMetaInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVoicePrintResponse": {
+      "document": "UpdateVoicePrint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UserInformation": {
       "document": "用户信息，包括用户进房时间，退房时间等",
       "members": [
@@ -8133,6 +8448,120 @@
         }
       ],
       "usage": "in"
+    },
+    "VoicePrint": {
+      "document": "声纹配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹",
+          "example": "1",
+          "member": "uint64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id",
+          "example": "[\"your-voiceprint-id\"]",
+          "member": "string",
+          "name": "IdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VoicePrintInfo": {
+      "document": "声纹查询数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "声纹ID",
+          "example": "1300056123-fd91f128-52a6-4692-b94a-c0f9fd3c4287",
+          "member": "string",
+          "name": "VoicePrintId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "1300056123",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "和声纹绑定的MetaInfo",
+          "example": "metainfo",
+          "member": "string",
+          "name": "VoicePrintMetaInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-05-21 19:23:54",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-05-21 19:23:54",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频格式,当前只有0(代表wav)",
+          "example": "0",
+          "member": "uint64",
+          "name": "AudioFormat",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频名称",
+          "example": "jackson",
+          "member": "string",
+          "name": "AudioName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求毫秒时间戳",
+          "example": "1748249540000",
+          "member": "uint64",
+          "name": "ReqTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WaterMark": {
       "document": "水印布局参数",

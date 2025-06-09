@@ -6,9 +6,8 @@ Input:
 
 ```
 tccli lke CheckAttributeLabelRefer --cli-unfold-argument  \
-    --BotBizId 1696822786072117248 \
-    --LabelBizId 1734549420823662593 \
-    --AttributeBizId 1734549420823662592
+    --BotBizId 1922557****89446528 \
+    --LabelBizId 19229118842****0208
 ```
 
 Output: 
@@ -16,7 +15,28 @@ Output:
 {
     "Response": {
         "IsRefer": false,
-        "RequestId": "2bf7f1f1-9346-4919-9561-e85805017676"
+        "List": [
+            {
+                "AttributeLabelBizId": "19229118842****0208",
+                "WorkflowList": [
+                    {
+                        "AppBizId": "",
+                        "UpdateTime": 0,
+                        "WorkflowDesc": "工作流",
+                        "WorkflowId": "3a3cd69e-caa5-****-bf10-0306105600e7",
+                        "WorkflowName": "工作流"
+                    },
+                    {
+                        "AppBizId": "",
+                        "UpdateTime": 0,
+                        "WorkflowDesc": "工作流2",
+                        "WorkflowId": "2eea1fcd-2c6c-****-b5d7-03bc34b6b41a",
+                        "WorkflowName": "工作流2"
+                    }
+                ]
+            }
+        ],
+        "RequestId": "1e53486e-****-454e-bf1a-5bed21f8036b"
     }
 }
 ```

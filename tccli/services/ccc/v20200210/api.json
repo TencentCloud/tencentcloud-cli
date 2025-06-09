@@ -1584,6 +1584,32 @@
       ],
       "usage": "out"
     },
+    "Client": {
+      "document": "座席登录的终端信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录的端类型，\"Web\"表示web工作台，\"WeChatMiniProgram\"表示微信小程序",
+          "example": "Web",
+          "member": "string",
+          "name": "ClientType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前登录的端是否在前台。若登录的端是Web，则该值为true；若登录的端是WeChatMiniProgram，true表示打开着微信小程序，false表示微信小程序退到后台",
+          "example": "true",
+          "member": "bool",
+          "name": "IsConnected",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CompanyApplyInfo": {
       "document": "企业资质申请信息",
       "members": [
@@ -8703,6 +8729,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客服登录的端信息",
+          "example": "[{\"ClientType\": \"Web\", \"IsConnected\": true}]",
+          "member": "Client",
+          "name": "ClientInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

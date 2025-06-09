@@ -267,7 +267,7 @@
       "status": "online"
     },
     "ModifyDisksChargeType": {
-      "document": "本接口 (ModifyDisksChargeType) 用于切换云硬盘的计费模式。\n\n非弹性云硬盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云硬盘一起转换。\n默认接口请求频率限制：10次/秒。",
+      "document": "本接口 (ModifyDisksChargeType) 用于切换云硬盘的计费模式。\n\n非弹性云硬盘不支持此接口，请通过修改实例计费模式接口将实例连同非弹性云硬盘一起转换。",
       "input": "ModifyDisksChargeTypeRequest",
       "name": "修改弹性云硬盘计费模式",
       "output": "ModifyDisksChargeTypeResponse",
@@ -537,7 +537,7 @@
         },
         {
           "disabled": false,
-          "document": "回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。",
+          "document": "回滚前是否执行自动关机，仅支持回滚快照至已挂载的云硬盘时传入。\n此参数为true时，AutoStartInstance才能为true。",
           "example": "False",
           "member": "bool",
           "name": "AutoStopInstance",
@@ -696,7 +696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "已绑定当前定期快照策略的云盘ID列表。",
+          "document": "已绑定当前定期快照策略的云盘ID列表。\nDescribeDiskAssociatedAutoSnapshotPolicy场景下该字段返回为空。",
           "example": "[\"disk-pe1vkgim\"]",
           "member": "string",
           "name": "DiskIdSet",
@@ -726,7 +726,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是跨账号复制快照快照, 1：是, 0: 不是",
+          "document": "是否是跨账号复制快照, 1：是, 0: 不是",
           "example": "0",
           "member": "uint64",
           "name": "IsCopyToRemote",
@@ -777,7 +777,7 @@
         {
           "disabled": false,
           "document": "定期快照的执行策略。",
-          "example": "[{   \"Minute\": [10],   \"Hour\": [0, 12],   \"DayOfMonth\": [1, 15]}]",
+          "example": "[{\"Hour\": [0, 12],   \"DayOfMonth\": [1, 15]}]",
           "member": "Policy",
           "name": "Policy",
           "output_required": true,
@@ -1395,7 +1395,7 @@
         },
         {
           "disabled": false,
-          "document": "创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）。",
+          "document": "创建云盘时是否开启性能突发。当前仅支持极速型云盘（CLOUD_TSSD）和增强型SSD云硬盘（CLOUD_HSSD）且云盘大小不小于460GiB。",
           "example": "True",
           "member": "bool",
           "name": "BurstPerformance",
@@ -1879,7 +1879,7 @@
         },
         {
           "disabled": false,
-          "document": "输出云硬盘备份点列表的排列顺序。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>",
+          "document": "输出云硬盘备份点列表的排列顺序，默认排序：ASC。取值范围：<br><li>ASC：升序排列</li><br><li>DESC：降序排列。</li>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -3181,7 +3181,7 @@
         {
           "disabled": false,
           "document": "云硬盘备份点的创建时间。",
-          "example": "2022-01-01 12:00:00",
+          "example": "2025-03-27 14:00:13",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -4231,8 +4231,8 @@
         },
         {
           "disabled": false,
-          "document": "围笼Id。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cage-xxxxxxxx",
+          "document": "围笼Id，可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CageId的资源进行操作，可为空。 作为出参时，表示资源所属围笼ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cage-d0eqwu84",
           "member": "string",
           "name": "CageId",
           "output_required": true,
@@ -4275,8 +4275,8 @@
         },
         {
           "disabled": false,
-          "document": "实例所属的独享集群ID。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cdc-xxxxxxxx",
+          "document": "实例所属的独享集群ID。可通过 [DescribeDiskStoragePool](https://cloud.tencent.com/document/api/362/62143) 获取。作为入参时，表示对指定的CdcId独享集群的资源进行操作，可为空。 作为出参时，表示资源所属的独享集群的ID，可为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdc-8pz1i7hg",
           "member": "string",
           "name": "CdcId",
           "output_required": true,
@@ -4287,7 +4287,7 @@
         {
           "disabled": false,
           "document": "独享集群id。",
-          "example": "cluster-xxxxxxxx",
+          "example": "cluster-es1mfycs",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": true,
