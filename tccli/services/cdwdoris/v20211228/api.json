@@ -8247,6 +8247,15 @@
         },
         {
           "disabled": false,
+          "document": "计算组id，存算分离集群需要传入",
+          "example": "tchd-zg56vbaz-getkgw6x",
+          "member": "string",
+          "name": "ComputeGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "修改原因",
           "example": "为了性能提升",
           "member": "string",

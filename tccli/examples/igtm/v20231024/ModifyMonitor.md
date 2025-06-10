@@ -7,7 +7,7 @@ Input:
 ```
 tccli igtm ModifyMonitor --cli-unfold-argument  \
     --MonitorId 1 \
-    --MonitorName abc \
+    --MonitorName test \
     --CheckProtocol PING \
     --CheckInterval 1 \
     --Timeout 1 \
@@ -17,8 +17,8 @@ tccli igtm ModifyMonitor --cli-unfold-argument  \
     --DetectorGroupIds 1 \
     --PingNum 1 \
     --TcpPort 1 \
-    --Host abc \
-    --Path abc \
+    --Host url \
+    --Path /path \
     --ReturnCodeThreshold 1 \
     --EnableRedirect DISABLED \
     --EnableSni DISABLED \
@@ -30,7 +30,7 @@ Output:
 {
     "Response": {
         "Msg": "success",
-        "RequestId": "xxx"
+        "RequestId": "100-222"
     }
 }
 ```

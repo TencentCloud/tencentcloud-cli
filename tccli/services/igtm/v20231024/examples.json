@@ -32,7 +32,7 @@
       {
         "document": "新增监控器",
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控器1\",\n    \"DetectorGroupIds\": [\n        5,\n        6,\n        7\n    ],\n    \"CheckInterval\": 60,\n    \"PacketLossRate\": 20,\n    \"CheckProtocol\": \"HTTP\",\n    \"FailRate\": 20,\n    \"TcpPort\": 80,\n    \"EnableSni\": \"DISABLED\",\n    \"PingNum\": 10,\n    \"ReturnCodeThreshold\": 500,\n    \"Host\": \"test.com\",\n    \"Timeout\": 50,\n    \"Path\": \"/index.html\",\n    \"FailTimes\": 2,\n    \"DetectorStyle\": \"AUTO\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MonitorId\": 1,\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": 1,\n        \"RequestId\": \"ea6eaf52-428b-4d1d-b7d7-1712cf508124\"\n    }\n}",
         "title": "新增监控器"
       },
       {
@@ -189,8 +189,8 @@
     "ModifyMonitor": [
       {
         "document": "修改监控器",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": 1,\n    \"MonitorName\": \"abc\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 1,\n    \"Timeout\": 1,\n    \"FailTimes\": 1,\n    \"FailRate\": 1,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 1,\n    \"TcpPort\": 1,\n    \"Host\": \"abc\",\n    \"Path\": \"abc\",\n    \"ReturnCodeThreshold\": 1,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\",\n    \"PacketLossRate\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": 1,\n    \"MonitorName\": \"test\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 1,\n    \"Timeout\": 1,\n    \"FailTimes\": 1,\n    \"FailRate\": 1,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 1,\n    \"TcpPort\": 1,\n    \"Host\": \"url\",\n    \"Path\": \"/path\",\n    \"ReturnCodeThreshold\": 1,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\",\n    \"PacketLossRate\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"100-222\"\n    }\n}",
         "title": "修改监控器"
       }
     ],

@@ -19936,7 +19936,7 @@
         {
           "disabled": false,
           "document": "pod信息",
-          "example": "\"\"",
+          "example": "无",
           "member": "EKSPodInfo",
           "name": "EKSPods",
           "output_required": true,
@@ -26691,6 +26691,7 @@
           "member": "string",
           "name": "NodeName",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26701,6 +26702,7 @@
           "member": "uint64",
           "name": "Num",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26711,6 +26713,7 @@
           "member": "float",
           "name": "Cpu",
           "output_required": false,
+          "required": false,
           "type": "float",
           "value_allowed_null": false
         },
@@ -26721,6 +26724,7 @@
           "member": "float",
           "name": "Memory",
           "output_required": false,
+          "required": false,
           "type": "float",
           "value_allowed_null": false
         },
@@ -26731,11 +26735,56 @@
           "member": "float",
           "name": "Gpu",
           "output_required": false,
+          "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点资源的配额类型，exact表示精确配额，fuzzy 表示模糊配额。",
+          "example": "exact",
+          "member": "string",
+          "name": "QuotaType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额的计费类型，PREPAID表示包月，POSTPAID_BY_HOUR表示按量。",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "QuotaType为 exact 时，此字段有效，表示精确配额的资源类型。",
+          "example": "intel",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "置放群组 ID",
+          "example": "ps-12345678",
+          "member": "string",
+          "name": "DisasterRecoverGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Switch": {
       "document": "集群日志开关集合",

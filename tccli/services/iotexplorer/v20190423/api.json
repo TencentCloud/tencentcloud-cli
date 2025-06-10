@@ -276,12 +276,12 @@
     "DeleteTopicPolicy": {
       "document": "本接口（DeleteTopicPolicy）用于删除Topic",
       "input": "DeleteTopicPolicyRequest",
-      "name": "删除Topic",
+      "name": "删除Topic。",
       "output": "DeleteTopicPolicyResponse",
       "status": "online"
     },
     "DeleteTopicRule": {
-      "document": "删除规则",
+      "document": "删除规则。",
       "input": "DeleteTopicRuleRequest",
       "name": "删除规则",
       "output": "DeleteTopicRuleResponse",

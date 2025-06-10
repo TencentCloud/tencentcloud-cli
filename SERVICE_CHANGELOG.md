@@ -1,84 +1,156 @@
-# Release 3.0.1216.1
+# Release 3.0.1217.1
 
-## 云联络中心(ccc) 版本：2020-02-10
+## 区块链可信取证(btoe) 版本：2021-05-14
 
-### 第 85 次发布
+### 第 2 次发布
 
-发布时间：2025-06-10 01:14:51
+发布时间：2025-06-11 01:13:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateAudioDeposit
+* CreateDataDeposit
+* CreateDocDeposit
+* CreateHashDeposit
+* CreateHashDepositNoCert
+* CreateHashDepositNoSeal
+* CreateImageDeposit
+* CreateVideoDeposit
+* GetDepositCert
+* GetDepositFile
+* GetDepositInfo
+* VerifyEvidenceBlockChainTxHash
+* VerifyEvidenceHash
+
+
+
+## 区块链可信取证(btoe) 版本：2021-03-03
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 86 次发布
+
+发布时间：2025-06-11 01:15:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindNumberCallInInterface](http://document.tencentcloudapi.woa.com/document/product/679/86978)
+
 新增数据结构：
 
-* [Client](http://document.tencentcloudapi.woa.com/document/product/679/47715#Client)
+* [ClientInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#ClientInfo)
+* [Interface](http://document.tencentcloudapi.woa.com/document/product/679/47715#Interface)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Client
 
 修改数据结构：
 
 * [StaffStatusMetrics](http://document.tencentcloudapi.woa.com/document/product/679/47715#StaffStatusMetrics)
 
-	* 新增成员：ClientInfo
+	* <font color="#dd0000">**修改成员**：</font>ClientInfo
 
 
 
 
-## 云游戏(gs) 版本：2019-11-18
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 26 次发布
+### 第 64 次发布
 
-发布时间：2025-06-10 01:38:32
+发布时间：2025-06-11 01:18:54
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DistributePhotoToAndroidInstances](http://document.tencentcloudapi.woa.com/document/product/1162/86971)
+* [ModifyClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/84700)
+
+	* 新增入参：ComputeGroupId
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 105 次发布
+
+发布时间：2025-06-11 01:21:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDatahubTask](http://document.tencentcloudapi.woa.com/document/product/597/75543)
+
+	* 新增入参：Description
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 140 次发布
+
+发布时间：2025-06-11 01:35:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81950)
+
+	* 新增入参：CanSkipReadFlow
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 189 次发布
+
+发布时间：2025-06-11 01:36:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+	* 新增入参：CanSkipReadFlow
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
 ## 高性能应用服务(hai) 版本：2023-08-12
 
-### 第 14 次发布
+### 第 15 次发布
 
-发布时间：2025-06-10 01:40:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ResetInstancesPassword](http://document.tencentcloudapi.woa.com/document/product/1750/86972)
-
-
-
-## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
-
-### 第 36 次发布
-
-发布时间：2025-06-10 01:41:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillDetailData)
-
-	* 新增成员：CustomerDiscountRate
-
-
-
-
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
-
-### 第 6 次发布
-
-发布时间：2025-06-10 01:42:21
+发布时间：2025-06-11 01:38:49
 
 本次发布包含了以下内容：
 
@@ -86,20 +158,15 @@
 
 新增接口：
 
-* [DescribeDeviceHardwareInfoList](http://document.tencentcloudapi.woa.com/document/product/1794/86973)
-
-新增数据结构：
-
-* [DescribeDeviceHardwareInfoItem](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDeviceHardwareInfoItem)
-* [DescribeDeviceHardwareInfoListRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDeviceHardwareInfoListRspData)
+* [ResizeInstanceDisk](http://document.tencentcloudapi.woa.com/document/product/1750/86979)
 
 
 
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
+## 智能全局流量管理(igtm) 版本：2023-10-24
 
-### 第 76 次发布
+### 第 9 次发布
 
-发布时间：2025-06-10 01:46:07
+发布时间：2025-06-11 01:40:06
 
 本次发布包含了以下内容：
 
@@ -107,22 +174,33 @@
 
 修改接口：
 
-* [ModifyCloudStorageAIService](http://document.tencentcloudapi.woa.com/document/product/1081/83738)
+* [CreateMonitor](http://document.tencentcloudapi.woa.com/document/product/1696/83258)
 
-	* 新增入参：SHLConfig
+	* 新增入参：ContinuePeriod
 
+* [ModifyMonitor](http://document.tencentcloudapi.woa.com/document/product/1696/83254)
 
-新增数据结构：
-
-* [DiarySHLConfig](http://document.tencentcloudapi.woa.com/document/product/1081/34988#DiarySHLConfig)
-
+	* 新增入参：ContinuePeriod
 
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+修改数据结构：
 
-### 第 75 次发布
+* [MonitorDetail](http://document.tencentcloudapi.woa.com/document/product/1696/83274#MonitorDetail)
 
-发布时间：2025-06-10 01:50:56
+	* 新增成员：ContinuePeriod
+
+
+
+
+## 智能全局流量管理(igtm) 版本：2021-09-07
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 94 次发布
+
+发布时间：2025-06-11 01:52:33
 
 本次发布包含了以下内容：
 
@@ -130,83 +208,18 @@
 
 修改数据结构：
 
-* [Blueprint](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Blueprint)
+* [ImageEraseLogoConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEraseLogoConfig)
 
-	* 新增成员：DisplayLabel
-
-* [BlueprintInfo](http://document.tencentcloudapi.woa.com/document/product/1207/47576#BlueprintInfo)
-
-	* 新增成员：DisplayLabel
+	* 新增成员：DetectTypes
 
 
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+## 容器安全服务(tcss) 版本：2020-11-01
 
-### 第 53 次发布
+### 第 39 次发布
 
-发布时间：2025-06-10 02:04:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBackupFiles](http://document.tencentcloudapi.woa.com/document/product/238/61561)
-
-	* 新增入参：OrderByType
-
-* [DescribeDBs](http://document.tencentcloudapi.woa.com/document/product/238/19968)
-
-	* 新增入参：OrderBy
-
-* [DescribeDatabases](http://document.tencentcloudapi.woa.com/document/product/238/82611)
-
-	* 新增入参：OrderBy
-
-
-
-
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 83 次发布
-
-发布时间：2025-06-10 02:06:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCertificateDetail](http://document.tencentcloudapi.woa.com/document/product/400/41673)
-
-	* 新增出参：DomainType, CertType
-
-
-新增数据结构：
-
-* [ManagerPreAuditDomain](http://document.tencentcloudapi.woa.com/document/product/400/41679#ManagerPreAuditDomain)
-
-修改数据结构：
-
-* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
-
-	* 新增成员：IsHostingUploadRenewCert
-
-* [ManagerStatusInfo](http://document.tencentcloudapi.woa.com/document/product/400/41679#ManagerStatusInfo)
-
-	* 新增成员：ManagerPreAuditDomains
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 93 次发布
-
-发布时间：2025-06-10 02:18:02
+发布时间：2025-06-11 02:04:30
 
 本次发布包含了以下内容：
 
@@ -214,22 +227,31 @@
 
 新增接口：
 
-* [DeleteVoicePrint](http://document.tencentcloudapi.woa.com/document/product/647/86977)
-* [DescribeVoicePrint](http://document.tencentcloudapi.woa.com/document/product/647/86976)
-* [RegisterVoicePrint](http://document.tencentcloudapi.woa.com/document/product/647/86975)
-* [UpdateVoicePrint](http://document.tencentcloudapi.woa.com/document/product/647/86974)
+* [ModifyRiskDnsEventStatus](http://document.tencentcloudapi.woa.com/document/product/1662/86980)
 
-新增数据结构：
 
-* [AmbientSound](http://document.tencentcloudapi.woa.com/document/product/647/44055#AmbientSound)
-* [VoicePrint](http://document.tencentcloudapi.woa.com/document/product/647/44055#VoicePrint)
-* [VoicePrintInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#VoicePrintInfo)
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 91 次发布
+
+发布时间：2025-06-11 02:10:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+* [SuperNodeResource](http://document.tencentcloudapi.woa.com/document/product/457/31866#SuperNodeResource)
 
-	* 新增成员：AmbientSound, VoicePrint
+	* 新增成员：QuotaType, ChargeType, ResourceType, DisasterRecoverGroupId
+
+	* <font color="#dd0000">**修改成员**：</font>NodeName, Num, Cpu, Memory, Gpu
 
 
 

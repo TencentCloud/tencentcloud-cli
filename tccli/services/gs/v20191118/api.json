@@ -3060,7 +3060,7 @@
         },
         {
           "disabled": false,
-          "document": "字段过滤器。Filter 的 Name 有以下值：\nName：实例名称\nUserId：实例用户ID",
+          "document": "字段过滤器。Filter 的 Name 有以下值：\nName：实例名称\nUserId：实例用户ID\nHostSerialNumber：宿主机序列号\nHostServerSerialNumber：机箱序列号",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

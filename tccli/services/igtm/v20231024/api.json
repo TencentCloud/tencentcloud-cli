@@ -840,6 +840,15 @@
           "name": "PacketLossRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "持续周期数，可选值1-5",
+          "example": "1",
+          "member": "uint64",
+          "name": "ContinuePeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2706,6 +2715,15 @@
           "name": "PacketLossRate",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "持续周期数，可选值1-5",
+          "example": "1",
+          "member": "uint64",
+          "name": "ContinuePeriod",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2946,7 +2964,7 @@
         {
           "disabled": false,
           "document": "探测路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "/path",
           "member": "string",
           "name": "Path",
           "output_required": true,
@@ -3070,6 +3088,17 @@
           "example": "0",
           "member": "uint64",
           "name": "DetectNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "持续周期数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ContinuePeriod",
           "output_required": true,
           "required": false,
           "type": "int",
