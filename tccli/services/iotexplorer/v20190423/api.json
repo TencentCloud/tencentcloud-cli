@@ -22,7 +22,7 @@
       "status": "online"
     },
     "BindProducts": {
-      "document": "批量绑定子产品",
+      "document": "批量绑定子产品。",
       "input": "BindProductsRequest",
       "name": "批量绑定子产品",
       "output": "BindProductsResponse",
@@ -561,7 +561,7 @@
       "status": "online"
     },
     "DescribeGatewaySubProducts": {
-      "document": "用于获取网关可绑定或解绑的子产品",
+      "document": "用于获取网关可绑定或解绑的子产品。",
       "input": "DescribeGatewaySubProductsRequest",
       "name": "获取网关可操作的子产品",
       "output": "DescribeGatewaySubProductsResponse",
@@ -1128,7 +1128,7 @@
       "status": "online"
     },
     "UnbindProducts": {
-      "document": "批量解绑子产品",
+      "document": "批量解绑子产品。",
       "input": "UnbindProductsRequest",
       "name": "批量解绑子产品",
       "output": "UnbindProductsResponse",
@@ -15456,7 +15456,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "BJQM4UXMKN",
+          "example": "BJQM4UXKN",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -16617,7 +16617,7 @@
         {
           "disabled": false,
           "document": "网关产品ID",
-          "example": "12345ABCDE",
+          "example": "5GH6PKLE",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -16626,7 +16626,7 @@
         {
           "disabled": false,
           "document": "待解绑的子产品ID数组",
-          "example": "[\"12345ABCDE\\r\\n\"]",
+          "example": "[\"12OPF89HFE\"]",
           "member": "string",
           "name": "ProductIds",
           "required": true,
@@ -16644,7 +16644,7 @@
           "example": "[\"gateway_test1\"]",
           "member": "string",
           "name": "GatewayDeviceNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

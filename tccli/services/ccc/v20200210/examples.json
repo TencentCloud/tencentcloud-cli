@@ -16,6 +16,14 @@
         "title": "停止预测式外呼任务示例"
       }
     ],
+    "BindNumberCallInInterface": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindNumberCallInInterface\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"Number\": \"0086075586013388\",\n    \"CallInInterface\": {\n        \"URL\": \"https://cloud.tencent.com/\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "绑定号码呼入回调接口"
+      }
+    ],
     "BindNumberCallOutSkillGroup": [
       {
         "document": "绑定号码和技能组",

@@ -77,6 +77,13 @@
       "output": "CreateReleaseResponse",
       "status": "online"
     },
+    "CreateSharedKnowledge": {
+      "document": "创建共享知识库。",
+      "input": "CreateSharedKnowledgeRequest",
+      "name": "创建共享知识库",
+      "output": "CreateSharedKnowledgeResponse",
+      "status": "online"
+    },
     "CreateVar": {
       "document": "创建变量",
       "input": "CreateVarRequest",
@@ -131,6 +138,13 @@
       "input": "DeleteRejectedQuestionRequest",
       "name": "删除拒答问题",
       "output": "DeleteRejectedQuestionResponse",
+      "status": "online"
+    },
+    "DeleteSharedKnowledge": {
+      "document": "删除共享知识库。",
+      "input": "DeleteSharedKnowledgeRequest",
+      "name": "删除共享知识库",
+      "output": "DeleteSharedKnowledgeResponse",
       "status": "online"
     },
     "DescribeApp": {
@@ -243,6 +257,13 @@
       "input": "DescribeSegmentsRequest",
       "name": "获取片段详情",
       "output": "DescribeSegmentsResponse",
+      "status": "online"
+    },
+    "DescribeSharedKnowledge": {
+      "document": "查询共享知识库。",
+      "input": "DescribeSharedKnowledgeRequest",
+      "name": "查询共享知识库",
+      "output": "DescribeSharedKnowledgeResponse",
       "status": "online"
     },
     "DescribeStorageCredential": {
@@ -469,6 +490,13 @@
       "output": "ListQACateResponse",
       "status": "online"
     },
+    "ListReferShareKnowledge": {
+      "document": "查看应用引用了哪些共享知识库，可以看到共享知识库的基础信息，包括名称，id等",
+      "input": "ListReferShareKnowledgeRequest",
+      "name": "查看应用引用的共享知识库列表",
+      "output": "ListReferShareKnowledgeResponse",
+      "status": "online"
+    },
     "ListRejectedQuestion": {
       "document": "获取拒答问题",
       "input": "ListRejectedQuestionRequest",
@@ -516,6 +544,13 @@
       "input": "ListSelectDocRequest",
       "name": "获取文档下拉列表",
       "output": "ListSelectDocResponse",
+      "status": "online"
+    },
+    "ListSharedKnowledge": {
+      "document": "列举共享知识库。",
+      "input": "ListSharedKnowledgeRequest",
+      "name": "列举共享知识库",
+      "output": "ListSharedKnowledgeResponse",
       "status": "online"
     },
     "ListUnsatisfiedReply": {
@@ -616,6 +651,13 @@
       "output": "ReconstructDocumentResponse",
       "status": "online"
     },
+    "ReferShareKnowledge": {
+      "document": "应用引用共享知识库，可以引用一个或多个，每次都是全量覆盖",
+      "input": "ReferShareKnowledgeRequest",
+      "name": "引用共享知识库接口",
+      "output": "ReferShareKnowledgeResponse",
+      "status": "online"
+    },
     "RenameDoc": {
       "document": "文档重命名",
       "input": "RenameDocRequest",
@@ -663,6 +705,13 @@
       "input": "StopDocParseRequest",
       "name": "终止文档解析",
       "output": "StopDocParseResponse",
+      "status": "online"
+    },
+    "UpdateSharedKnowledge": {
+      "document": "更新共享知识库。",
+      "input": "UpdateSharedKnowledgeRequest",
+      "name": "更新共享知识库",
+      "output": "UpdateSharedKnowledgeResponse",
       "status": "online"
     },
     "UploadAttributeLabel": {
@@ -1262,6 +1311,34 @@
           "example": "无",
           "member": "string",
           "name": "AttrBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AppBaseInfo": {
+      "document": "应用基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1908652910168703264",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "共享知识库应用1",
+          "member": "string",
+          "name": "AppName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -3124,6 +3201,61 @@
       ],
       "type": "object"
     },
+    "CreateSharedKnowledgeRequest": {
+      "document": "CreateSharedKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库名称，字符数量范围：[1, 50]",
+          "example": "共享知识库1",
+          "member": "string",
+          "name": "KnowledgeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库描述，字符数量上限2000",
+          "example": "计算机基础理论知识库",
+          "member": "string",
+          "name": "KnowledgeDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Embedding模型，字符数量上限128",
+          "example": "general-text-embedding-v2.7",
+          "member": "string",
+          "name": "EmbeddingModel",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSharedKnowledgeResponse": {
+      "document": "CreateSharedKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateVarRequest": {
       "document": "CreateVar请求参数结构体",
       "members": [
@@ -3513,6 +3645,43 @@
     "DeleteRejectedQuestionResponse": {
       "document": "DeleteRejectedQuestion返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSharedKnowledgeRequest": {
+      "document": "DeleteSharedKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSharedKnowledgeResponse": {
+      "document": "DeleteSharedKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5341,6 +5510,43 @@
           "name": "List",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedKnowledgeRequest": {
+      "document": "DescribeSharedKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedKnowledgeResponse": {
+      "document": "DescribeSharedKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeDetailInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -8039,6 +8245,78 @@
       ],
       "type": "object"
     },
+    "KnowledgeBaseInfo": {
+      "document": "共享知识库基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库名称",
+          "example": "共享知识库1",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "计算机基础理论知识库",
+          "member": "string",
+          "name": "KnowledgeDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Embedding模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "general-text-embedding-v2.7",
+          "member": "string",
+          "name": "EmbeddingModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答提取模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "general-qa-extract-v1.8",
+          "member": "string",
+          "name": "QaExtractModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1747757139",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KnowledgeCapacityPieGraphDetail": {
       "document": "知识库容量饼图详情",
       "members": [
@@ -8120,6 +8398,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeDetailInfo": {
+      "document": "知识库详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeBaseInfo",
+          "name": "Knowledge",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppBaseInfo",
+          "name": "AppList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserBaseInfo",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -8681,6 +8998,56 @@
           "example": "无",
           "member": "string",
           "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KnowledgeUpdateInfo": {
+      "document": "共享知识库更新信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库名称",
+          "example": "共享知识库1",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "计算机基础理论知识库",
+          "member": "string",
+          "name": "KnowledgeDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Embedding模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "general-text-embedding-v2.7",
+          "member": "string",
+          "name": "EmbeddingModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "问答提取模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "general-qa-extract-v1.8",
+          "member": "string",
+          "name": "QaExtractModel",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -10117,6 +10484,61 @@
       ],
       "usage": "out"
     },
+    "ListReferShareKnowledgeRequest": {
+      "document": "ListReferShareKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用业务id",
+          "example": "1904370549674213379",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListReferShareKnowledgeResponse": {
+      "document": "ListReferShareKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库信息列表",
+          "example": "无",
+          "member": "KnowledgeBaseInfo",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListRejectedQuestionPreviewRequest": {
       "document": "ListRejectedQuestionPreview请求参数结构体",
       "members": [
@@ -10855,6 +11277,71 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSharedKnowledgeRequest": {
+      "document": "ListSharedKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页序号，编码从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，有效范围为[1,200]",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键字",
+          "example": "计算机",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSharedKnowledgeResponse": {
+      "document": "ListSharedKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "累计数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeDetailInfo",
+          "name": "KnowledgeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13490,6 +13977,60 @@
       ],
       "usage": "out"
     },
+    "ReferShareKnowledgeRequest": {
+      "document": "ReferShareKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用业务id",
+          "example": "1904370549674213379",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库业务id列表",
+          "example": "1904370549674213378",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReferShareKnowledgeResponse": {
+      "document": "ReferShareKnowledge返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RejectedQuestion": {
       "document": "发布拒答",
       "members": [
@@ -15229,6 +15770,52 @@
       ],
       "usage": "out"
     },
+    "UpdateSharedKnowledgeRequest": {
+      "document": "UpdateSharedKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享知识库更新信息",
+          "example": "无",
+          "member": "KnowledgeUpdateInfo",
+          "name": "Info",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSharedKnowledgeResponse": {
+      "document": "UpdateSharedKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UploadAttributeLabelRequest": {
       "document": "UploadAttributeLabel请求参数结构体",
       "members": [
@@ -15385,6 +15972,34 @@
         }
       ],
       "usage": "out"
+    },
+    "UserBaseInfo": {
+      "document": "用户基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "1906370579678213376",
+          "member": "string",
+          "name": "UserBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AI助手1",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ValueInfo": {
       "document": "任务流程参数信息",

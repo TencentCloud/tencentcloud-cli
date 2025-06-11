@@ -19,7 +19,7 @@ Output:
             {
                 "TaskId": "153303185323131331",
                 "Url": "http://www.test.com/",
-                "Status": "Done",
+                "Status": "done",
                 "PurgeType": "url",
                 "FlushType": "flush",
                 "CreateTime": "2018-07-30 18:10:53"

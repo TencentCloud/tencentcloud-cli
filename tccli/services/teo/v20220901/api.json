@@ -15376,7 +15376,7 @@
         },
         {
           "disabled": false,
-          "document": "该负载均衡实例绑的定四层层代理实例的列表。",
+          "document": "该负载均衡实例绑的四层代理实例的列表。",
           "example": "[\"sid-asdfsd1asdf\", \"sid-8asdfjasdfl\"]",
           "member": "string",
           "name": "L4UsedList",

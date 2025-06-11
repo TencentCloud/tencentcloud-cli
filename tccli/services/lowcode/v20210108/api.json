@@ -1510,6 +1510,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库容量,单位字节",
+          "example": "\"1024\"",
+          "member": "string",
+          "name": "TotalSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1964,6 +1974,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos存储文件ID",
+          "example": "cloud://aa.doc",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2256,6 +2276,15 @@
           "name": "Delimiter",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Cos存储文件ID",
+          "example": "cloud://aa.doc",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2286,7 +2315,7 @@
       "document": "上传知识库文档返回结果",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "给文件分配的 ID 信息。",
           "example": "docId",
           "member": "string",
@@ -2324,6 +2353,17 @@
           "example": "{\"url\":\"url\",\"title\":\"标题\"}",
           "member": "string",
           "name": "FileMetaData",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos存储文件ID",
+          "example": "cloud://aa.doc",
+          "member": "string",
+          "name": "FileId",
           "output_required": false,
           "required": false,
           "type": "string",

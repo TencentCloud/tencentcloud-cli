@@ -69,6 +69,13 @@
       "name": "按终端查看软件统计信息",
       "output": "DescribeSoftCensusListByDeviceResponse",
       "status": "online"
+    },
+    "DescribeSoftwareInformation": {
+      "document": "查看指定终端的软件详情列表,私有化调用path为：capi/Software/DescribeSoftwareInformation",
+      "input": "DescribeSoftwareInformationRequest",
+      "name": "查看软件详情列表",
+      "output": "DescribeSoftwareInformationResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -1015,7 +1022,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件参数（字段含义请参考接口返回值） - Name, 类型String，支持操作：【eq，like，ilike】，支持排序 - UserName, 类型String，支持操作：【eq，like，ilike】，支持排序 - IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序 - MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序 - Ip, 类型String，支持操作：【eq，like，ilike】，支持排序 ，支持排序分页参数- PageNum 从1开始，小于等于0时使用默认参数- PageSize 最大值5000，最好不超过100",
+          "document": "过滤条件参数（字段含义请参考接口返回值）  - Name, 类型String，支持操作：【eq，like，ilike】，支持排序  - UserName, 类型String，支持操作：【eq，like，ilike】，支持排序  - IoaUserName，类型String，支持操作：【eq，like，ilike】，支持排序  - MacAddr, 类型String，支持操作：【eq，like，ilike】，支持排序  - Ip, 类型String，支持操作：【eq，like，ilike】，支持排序  - Mid, 类型String，支持操作：【eq，like，ilike】，支持排序  ，支持排序分页参数  - PageNum 从1开始，小于等于0时使用默认参数 - PageSize 最大值5000，最好不超过100",
           "example": "\"Condition\":{\"Filters\":[],\"Sort\":{\"Field\":\"Id\",\"Order\":\"desc\"},\"PageSize\":10,\"PageNum\":1}",
           "member": "Condition",
           "name": "Condition",
@@ -1769,6 +1776,78 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSoftwareInformationPageData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件详情响应对象集合",
+          "example": "[{\"CorpName\":\"\",\"Id\":19396,\"InstallDate\":\"2025/04/03\",\"Mid\":\"B454307F6CA03B56E0CFEC44EABF93BB67E56D6F\",\"Name\":\"微信\",\"PiracyRisk\":0,\"SoftwareId\":19396,\"Version\":\"3.9.12.51\"}]",
+          "member": "SoftwareInformationData",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页公共对象",
+          "example": "{\"PageCount\":1,\"PageNum\":1,\"PageSize\":1000,\"Total\":1}",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeSoftwareInformationRequest": {
+      "document": "DescribeSoftwareInformation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端唯一标识Mid",
+          "example": "B454307F6CA03B56E0CFEC44EABF93BB67E56D6F",
+          "member": "string",
+          "name": "Mid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件、分页参数\n<li>Name - String - 过滤支持：是 - 操作符:eq,like - 排序支持：是 。</li>",
+          "example": "{\"PageSize\":100,\"PageNum\":1}",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSoftwareInformationResponse": {
+      "document": "DescribeSoftwareInformation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据",
+          "example": "{\"Items\":[{\"CorpName\":\"\",\"Id\":19396,\"InstallDate\":\"2025/04/03\",\"Mid\":\"B454307F6CA03B56E0CFEC44EABF93BB67E56D6F\",\"Name\":\"微信\",\"PiracyRisk\":0,\"SoftwareId\":19396,\"Version\":\"3.9.12.51\"}],\"Page\":{\"PageCount\":1,\"PageNum\":1,\"PageSize\":100,\"Total\":1}}",
+          "member": "DescribeSoftwareInformationPageData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2673,6 +2752,92 @@
         }
       ],
       "usage": "both"
+    },
+    "SoftwareInformationData": {
+      "document": "软件详情响应对象集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "软件名称",
+          "example": "Google Chrome",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安装时间",
+          "example": "2025/04/16",
+          "member": "string",
+          "name": "InstallDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件列表id(只支持32位)",
+          "example": "23532",
+          "member": "int64",
+          "name": "SoftwareId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一标识Mid",
+          "example": "B454307F6CA03B56E0CFEC44EABF93BB67E56D6F",
+          "member": "string",
+          "name": "Mid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "软件版本",
+          "example": "135.0.7049.95",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公司名",
+          "example": "\"\" //废弃",
+          "member": "string",
+          "name": "CorpName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表Id(只支持32位)",
+          "example": "23532",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "盗版风险（0:未支持，1:风险，2:未发现，3:未开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "PiracyRisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Sort": {
       "document": "Sort 排序字段",

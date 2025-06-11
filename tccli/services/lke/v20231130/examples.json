@@ -88,6 +88,14 @@
         "title": "创建发布"
       }
     ],
+    "CreateSharedKnowledge": [
+      {
+        "document": "创建共享知识库",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeName\": \"共享知识库1\",\n    \"KnowledgeDescription\": \"计算机基础理论知识库\",\n    \"EmbeddingModel\": \"general-text-embedding-v2.7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBizId\": \"1908652910168703294\",\n        \"RequestId\": \"798dbcd5-80e1-277d-aeb7-0018abab7686\"\n    }\n}",
+        "title": "创建共享知识库"
+      }
+    ],
     "CreateVar": [
       {
         "document": "创建变量",
@@ -150,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRejectedQuestion\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"RejectedBizIds\": [\n        \"1732953678087585792\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"930abc66-d4d4-4028-ac0a-162851ce955d\"\n    }\n}",
         "title": "DeleteRejectedQuestion"
+      }
+    ],
+    "DeleteSharedKnowledge": [
+      {
+        "document": "删除共享知识库",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeBizId\": \"1908652910168703294\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBizId\": \"1908652910168703294\",\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\"\n    }\n}",
+        "title": "删除共享知识库"
       }
     ],
     "DescribeApp": [
@@ -278,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSegments\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1771107658358063104\",\n    \"SegBizId\": [\n        \"17711076583580631041\",\n        \"17711076583580631042\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"83500528-9870-4c63-ad21-de5dc6d4a059\"\n    }\n}",
         "title": "片段请求"
+      }
+    ],
+    "DescribeSharedKnowledge": [
+      {
+        "document": "查询共享知识库",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeBizId\": \"1908652910168703294\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\",\n        \"Info\": {\n            \"AppList\": [\n                {\n                    \"AppBizId\": \"1906370579678213376\",\n                    \"AppName\": \"AI助手1\"\n                }\n            ],\n            \"Knowledge\": {\n                \"EmbeddingModel\": \"general-text-embedding-v2.7\",\n                \"KnowledgeBizId\": \"1908652910168703294\",\n                \"KnowledgeDescription\": \"计算机基础理论知识库\",\n                \"KnowledgeName\": \"共享知识库1\",\n                \"QaExtractModel\": \"general-qa-extract-v1.8\",\n                \"UpdateTime\": \"1747757139\"\n            },\n            \"User\": {\n                \"UserBizId\": \"1908176109182178608\",\n                \"UserName\": \"700000963993\"\n            }\n        }\n    }\n}",
+        "title": "查询共享知识库"
       }
     ],
     "DescribeStorageCredential": [
@@ -548,6 +572,14 @@
         "title": "获取QA分类"
       }
     ],
+    "ListReferShareKnowledge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReferShareKnowledge\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1908652910168703294\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\",\n        \"List\": [\n            {\n                \"EmbeddingModel\": \"general-text-embedding-v2.7\",\n                \"KnowledgeBizId\": \"1908652910168703294\",\n                \"KnowledgeDescription\": \"计算机基础理论知识库\",\n                \"KnowledgeName\": \"共享知识库1\",\n                \"QaExtractModel\": \"general-qa-extract-v1.8\",\n                \"UpdateTime\": \"1747757139\"\n            }\n        ]\n    }\n}",
+        "title": "查看应用引用的共享知识库列表"
+      }
+    ],
     "ListRejectedQuestion": [
       {
         "document": "获取拒答问题列表",
@@ -602,6 +634,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSelectDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1714970520775950336\",\n    \"FileName\": \"26\"\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Text\": \"26种病虫害防治方法.docx\",\n                \"Value\": \"630\"\n            }\n        ],\n        \"RequestId\": \"0b598870-f2e7-4fcc-ada0-7cf99a8fbc8e\"\n    }\n}",
         "title": "获取文档下拉列表"
+      }
+    ],
+    "ListSharedKnowledge": [
+      {
+        "document": "列举共享知识库",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSharedKnowledge\n<公共请求参数>\n\n{\n    \"Keyword\": \"计算机\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\",\n        \"KnowledgeList\": [\n            {\n                \"AppList\": [\n                    {\n                        \"AppBizId\": \"1906370579678213376\",\n                        \"AppName\": \"AI助手1\"\n                    }\n                ],\n                \"Knowledge\": {\n                    \"EmbeddingModel\": \"general-text-embedding-v2.7\",\n                    \"KnowledgeBizId\": \"1908652910168703294\",\n                    \"KnowledgeDescription\": \"计算机基础理论知识库\",\n                    \"KnowledgeName\": \"共享知识库1\",\n                    \"QaExtractModel\": \"general-qa-extract-v1.8\",\n                    \"UpdateTime\": \"1747757139\"\n                },\n                \"User\": {\n                    \"UserBizId\": \"1908176109182178608\",\n                    \"UserName\": \"700000963993\"\n                }\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "title": "列举共享知识库"
       }
     ],
     "ListUnsatisfiedReply": [
@@ -716,6 +756,14 @@
         "title": "接口调用成功示例"
       }
     ],
+    "ReferShareKnowledge": [
+      {
+        "document": "应用共享知识库",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReferShareKnowledge\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1904370549674213375\",\n    \"KnowledgeBizId\": [\n        \"1904370549674213377\",\n        \"1904370549674213378\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\"\n    }\n}",
+        "title": "应用引用共享知识库接口"
+      }
+    ],
     "RenameDoc": [
       {
         "document": "重命名文档-提交成功",
@@ -770,6 +818,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDocParse\n<公共请求参数>\n\n{\n    \"BotBizId\": \"1849805468212076928\",\n    \"DocBizId\": \"1849805468254056928\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7814b22e-da7e-401e-95c4-3e861d5298ee\"\n    }\n}",
         "title": "终止文档解析"
+      }
+    ],
+    "UpdateSharedKnowledge": [
+      {
+        "document": "更新共享知识库",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeBizId\": \"1908652910168703294\",\n    \"Info\": {\n        \"EmbeddingModel\": \"general-text-embedding-v2.7\",\n        \"KnowledgeDescription\": \"计算机基础理论知识库\",\n        \"KnowledgeName\": \"共享知识库1\",\n        \"QaExtractModel\": \"general-qa-extract-v1.8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\",\n        \"KnowledgeBizId\": \"1908652910168703294\"\n    }\n}",
+        "title": "更新共享知识库"
       }
     ],
     "UploadAttributeLabel": [

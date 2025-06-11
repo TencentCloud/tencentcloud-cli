@@ -294,6 +294,13 @@
       "output": "DescribeDomainShareUserListResponse",
       "status": "online"
     },
+    "DescribeDomainVipList": {
+      "document": "获取套餐列表",
+      "input": "DescribeDomainVipListRequest",
+      "name": "获取套餐列表",
+      "output": "DescribeDomainVipListResponse",
+      "status": "online"
+    },
     "DescribeDomainWhois": {
       "document": "获取域名Whois信息",
       "input": "DescribeDomainWhoisRequest",
@@ -439,6 +446,13 @@
       "input": "DescribeVASStatisticRequest",
       "name": "获取域名增值服务用量",
       "output": "DescribeVASStatisticResponse",
+      "status": "online"
+    },
+    "DescribeVasList": {
+      "document": "获取增值服务列表",
+      "input": "DescribeVasListRequest",
+      "name": "获取增值服务列表",
+      "output": "DescribeVasListResponse",
       "status": "online"
     },
     "DownloadSnapshot": {
@@ -2506,7 +2520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要添加 TXT 记录的域名。",
+          "document": "需要添加 TXT 记录的主域名。",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -2517,7 +2531,7 @@
         {
           "disabled": false,
           "document": "需要添加 TXT 记录的主机记录。",
-          "example": "dnspodcheck",
+          "example": "_dnspodcheck",
           "member": "string",
           "name": "Subdomain",
           "output_required": true,
@@ -2541,6 +2555,16 @@
           "member": "string",
           "name": "Value",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "需要添加 TXT 记录的上级域名(可选，主域名和上级域名任选一个添加即可)。",
+          "example": "sub",
+          "member": "string",
+          "name": "ParentDomain",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4424,6 +4448,98 @@
       ],
       "type": "object"
     },
+    "DescribeDomainVipListRequest": {
+      "document": "DescribeDomainVipList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数量，默认值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通过关键字搜索域名关联的套餐，默认值为空，为空时不作为筛选条件。",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用资源ID列表查询",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要筛选的套餐版本",
+          "example": "[\"DP_Plus\",\"DP_Ultra\"]",
+          "member": "string",
+          "name": "GradeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否只获取未绑定域名套餐",
+          "example": "true",
+          "member": "bool",
+          "name": "GetUnbindResource",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainVipListResponse": {
+      "document": "DescribeDomainVipList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合筛选条件的套餐总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐信息列表",
+          "example": "无",
+          "member": "PackageListItem",
+          "name": "PackageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainWhoisRequest": {
       "document": "DescribeDomainWhois请求参数结构体",
       "members": [
@@ -6006,6 +6122,89 @@
           "example": "无",
           "member": "VASStatisticItem",
           "name": "VASList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVasListRequest": {
+      "document": "DescribeVasList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数量，默认值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "使用资源 ID 列表查询",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "增值服务类型",
+          "example": "D_URLCOUNT",
+          "member": "string",
+          "name": "LimitType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVasListResponse": {
+      "document": "DescribeVasList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合筛选条件的套餐总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值服务信息列表",
+          "example": "无",
+          "member": "VasListItem",
+          "name": "VasList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9155,6 +9354,162 @@
       ],
       "usage": "out"
     },
+    "PackageListItem": {
+      "document": "套餐列表元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名的原始格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhaodapian.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐等级代码",
+          "example": "DP_FREE",
+          "member": "string",
+          "name": "Grade",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐名称",
+          "example": "免费版",
+          "member": "string",
+          "name": "GradeTitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费套餐开通时间",
+          "example": "2021-04-07 13:34:20",
+          "member": "datetime",
+          "name": "VipStartAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费套餐到期时间",
+          "example": "2022-04-07 13:34:20",
+          "member": "datetime",
+          "name": "VipEndAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名是否开通VIP自动续费，是：YES，否：NO，默认：DEFAULT",
+          "example": "YES",
+          "member": "string",
+          "name": "VipAutoRenew",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐剩余换绑/绑定域名次数",
+          "example": "2",
+          "member": "uint64",
+          "name": "RemainTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐资源ID",
+          "example": "bb355194",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名等级代号",
+          "example": "9",
+          "member": "uint64",
+          "name": "GradeLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐绑定的域名的状态",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐是否处于宽限期",
+          "example": "yes",
+          "member": "string",
+          "name": "IsGracePeriod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否降级",
+          "example": "true",
+          "member": "bool",
+          "name": "Downgrade",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联安全防护信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecurityInfo",
+          "name": "SecurityInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐绑定的域名是否为子域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSubDomain",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PayOrderWithBalanceRequest": {
       "document": "PayOrderWithBalance请求参数结构体",
       "members": [
@@ -9864,6 +10219,42 @@
       ],
       "type": "object"
     },
+    "SecurityInfo": {
+      "document": "套餐中安全防护信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否是免费赠送：yes-是；no-不是",
+          "example": "yes",
+          "member": "string",
+          "name": "IsDefendFree",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护类型",
+          "example": "security_almighty",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "sd12fgs12",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SnapshotConfig": {
       "document": "域名解析快照配置",
       "members": [
@@ -10484,6 +10875,122 @@
           "name": "UseCount",
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VasListItem": {
+      "document": "增值服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格总数",
+          "example": "5",
+          "member": "uint64",
+          "name": "LimitNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买时间",
+          "example": "2022-08-22",
+          "member": "string",
+          "name": "StartedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期时间",
+          "example": "2023-08-22",
+          "member": "string",
+          "name": "EndedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源唯一 ID",
+          "example": "33d4e22f",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识",
+          "example": "default",
+          "member": "string",
+          "name": "AutoRenew",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已绑定的域名",
+          "example": "xxx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型",
+          "example": "user",
+          "member": "string",
+          "name": "BindType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值服务类型",
+          "example": "ptr",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值服务名",
+          "example": "PTR 反解析记录",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可续费",
+          "example": "true",
+          "member": "bool",
+          "name": "CanRenew",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否只允许付费套餐域名可购买",
+          "example": "true",
+          "member": "bool",
+          "name": "VipDomain",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -3001,6 +3001,15 @@
         },
         {
           "disabled": false,
+          "document": "TCP_SSL和QUIC是否支持PP",
+          "example": "False",
+          "member": "bool",
+          "name": "ProxyProtocol",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "是否开启SNAT，True（开启）、False（关闭）。\n默认为关闭。",
           "example": "False",
           "member": "bool",
@@ -9486,6 +9495,15 @@
           "name": "IdleConnectTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TCP_SSL和QUIC是否支持PP",
+          "example": "False",
+          "member": "bool",
+          "name": "ProxyProtocol",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

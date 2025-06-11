@@ -8454,7 +8454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认为0，表示不启用声纹。1表示使用固定声纹，且需要填写voiceprint id。2表示使用动态声纹，不需要使用voiceprint id，内部动态选择主讲人声纹",
+          "document": "默认为0，表示不启用声纹。1表示启用声纹，此时需要填写voiceprint id。",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -8465,7 +8465,7 @@
         },
         {
           "disabled": false,
-          "document": "只有当VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id",
+          "document": "VoicePrint Mode为1时需要填写，目前仅支持填写一个声纹id",
           "example": "[\"your-voiceprint-id\"]",
           "member": "string",
           "name": "IdList",

@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Domain": "dnspod.cn",
-        "Subdomain": "dnspodcheck",
+        "Subdomain": "_dnspodcheck",
         "RecordType": "TXT",
         "Value": "3D015C717021A7A639D53673DB781317",
         "RequestId": "9cd72e8f-0bce-4330-b7d1-dcc402839a0a"

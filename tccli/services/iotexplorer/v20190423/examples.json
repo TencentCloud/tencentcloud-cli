@@ -1417,7 +1417,7 @@
     "UnbindProducts": [
       {
         "document": "",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=UnbindProducts\n&GatewayProductId=12345ABCDE\n&ProductIds.0=12345ABCDE\n&<公共请求参数>",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=UnbindProducts\n&GatewayProductId=89FEGTES8\n&ProductIds.0=UJ8HE90G\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GatewayDeviceNames\": [\n            \"gateway_test1\"\n        ],\n        \"RequestId\": \"32150866-743e-4a1b-ade5-c690ac2cc0b5\"\n    }\n}",
         "title": "批量解绑子产品"
       }
