@@ -77,6 +77,13 @@
       "output": "ResetInstancesPasswordResponse",
       "status": "online"
     },
+    "ResizeInstanceDisk": {
+      "document": "本接口（ResizeInstanceDisk）用于对指定HAI实例进行扩容云硬盘操作。",
+      "input": "ResizeInstanceDiskRequest",
+      "name": "扩容实例云硬盘",
+      "output": "ResizeInstanceDiskResponse",
+      "status": "online"
+    },
     "RunInstances": {
       "document": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。",
       "input": "RunInstancesRequest",
@@ -1550,6 +1557,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeInstanceDiskRequest": {
+      "document": "ResizeInstanceDisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要扩容云盘的HAI实例ID",
+          "example": "hai-0asd1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容云硬盘大小，单位为GB，必须大于当前云硬盘大小。",
+          "example": "180",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeInstanceDiskResponse": {
+      "document": "ResizeInstanceDisk返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

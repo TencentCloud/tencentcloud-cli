@@ -571,7 +571,7 @@
     "StartInstanceRefresh": [
       {
         "document": "将伸缩组 asg-9dn1a5y6 中的实例分成 3 个批次进行滚动更新，批次间会自动暂停。",
-        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"RefreshMode\": \"ROLLING_UPDATE\",\n    \"RefreshSettings\": {\n        \"RollingUpdateSettings\": {\n            \"BatchNumber\": 3,\n            \"BatchPause\": \"BATCH_INTERVAL_PAUSE\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"RefreshMode\": \"ROLLING_UPDATE_RESET\",\n    \"RefreshSettings\": {\n        \"RollingUpdateSettings\": {\n            \"BatchNumber\": 3,\n            \"BatchPause\": \"BATCH_INTERVAL_PAUSE\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RefreshActivityId\": \"asr-y67t5r4e\",\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
         "title": "滚动更新方式进行实例刷新"
       }

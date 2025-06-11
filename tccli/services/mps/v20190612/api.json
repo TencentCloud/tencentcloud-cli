@@ -18612,6 +18612,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"logo\", \"text\"]",
+          "member": "string",
+          "name": "DetectTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

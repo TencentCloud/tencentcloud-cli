@@ -8,7 +8,8 @@ Input:
 tccli tke DescribePodsBySpec --cli-unfold-argument  \
     --Cpu 1 \
     --Memory 2 \
-    --Filters.0.Name not-support-filter-name
+    --Filters.0.Name not-support-filter-name \
+    --Filters.0.Values intel
 ```
 
 Output: 

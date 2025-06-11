@@ -7689,7 +7689,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
+          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
@@ -7739,7 +7739,7 @@
         },
         {
           "disabled": false,
-          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。",
+          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示由云点播自动设置码率。",
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
@@ -18313,7 +18313,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示不设视频码率上限。",
+          "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示由云点播自动设置码率上限。",
           "example": "0",
           "member": "uint64",
           "name": "MaxVideoBitrate",
@@ -18577,7 +18577,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0 或不填时，表示自动选择最佳视频码率。",
+          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0 或不填时，表示由云点播自动设置码率。",
           "example": "500",
           "member": "uint64",
           "name": "Bitrate",
@@ -29177,7 +29177,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已弃用，请使用各个具体任务的 ErrCode。",
           "example": "0",
           "member": "int64",
@@ -29187,7 +29187,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "已弃用，请使用各个具体任务的 Message。",
           "example": "success",
           "member": "string",
@@ -31754,16 +31754,18 @@
           "example": "libfdk_aac",
           "member": "string",
           "name": "Codec",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
+          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "128",
           "member": "int64",
           "name": "Bitrate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31774,6 +31776,7 @@
           "example": "44100",
           "member": "int64",
           "name": "SampleRate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31784,6 +31787,7 @@
           "example": "2",
           "member": "int64",
           "name": "AudioChannel",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31896,16 +31900,18 @@
           "example": "libx264",
           "member": "string",
           "name": "Codec",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "1000",
           "member": "int64",
           "name": "Bitrate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31916,6 +31922,7 @@
           "example": "25",
           "member": "int64",
           "name": "Fps",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31926,6 +31933,7 @@
           "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -31936,6 +31944,7 @@
           "example": "128",
           "member": "int64",
           "name": "Width",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31946,6 +31955,7 @@
           "example": "128",
           "member": "int64",
           "name": "Height",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -31956,6 +31966,7 @@
           "example": "black",
           "member": "string",
           "name": "FillType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -31966,6 +31977,7 @@
           "example": "125",
           "member": "int64",
           "name": "Gop",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -36593,7 +36605,7 @@
         },
         {
           "disabled": false,
-          "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示不设视频码率上限。",
+          "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示由云点播自动设置码率上限。",
           "example": "0",
           "member": "uint64",
           "name": "MaxVideoBitrate",
@@ -38244,7 +38256,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "500",
           "member": "int64",
           "name": "Bitrate",
@@ -38294,7 +38306,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "500",
           "member": "int64",
           "name": "Bitrate",
@@ -38387,7 +38399,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "500",
           "member": "uint64",
           "name": "Bitrate",
@@ -38514,7 +38526,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "document": "视频流的码率，取值范围：0 和 [128, 100000]，单位：kbps。\n当取值为 0，表示由云点播自动设置码率。",
           "example": "500",
           "member": "uint64",
           "name": "Bitrate",

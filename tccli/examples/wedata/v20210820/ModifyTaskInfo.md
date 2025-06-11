@@ -1,6 +1,6 @@
-**Example 1: 范例**
+**Example 1: 成功示例**
 
-修改任务信息
+
 
 Input: 
 
@@ -29,7 +29,7 @@ tccli wedata ModifyTaskInfo --cli-unfold-argument  \
     --BrokerIp ins-g8j6pv4f \
     --InCharge micofywang \
     --Notes test \
-    --TaskParamInfos.0.ParamKey a \
+    --TaskParamInfos.0.ParamKey au \
     --TaskParamInfos.0.ParamValue 3 \
     --DependencyWorkflow no \
     --InChargeIds 100033435965
@@ -40,32 +40,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "d7f6c6d3-d483-4485-b600-c665c9aea28b"
-    }
-}
-```
-
-**Example 2: 错误示例**
-
-错误示例
-
-Input: 
-
-```
-tccli wedata ModifyTaskInfo --cli-unfold-argument  \
-    --ProjectId 1 \
-    --TaskId 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "AuthFailure.SignatureFailure",
-            "Message": "请求签名验证失败，请检查您的签名计算是否正确。"
-        },
-        "RequestId": "11d5af39-eac3-4960-b0d5-5cced5cdc49f"
+        "RequestId": "b41c3c3b-f7a8-4789-89f2-6b90711a6e5c"
     }
 }
 ```

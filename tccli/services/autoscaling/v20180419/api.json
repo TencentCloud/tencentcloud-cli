@@ -3291,7 +3291,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> refresh-activity-status-code - String - 是否必填：否 -（过滤条件）按照刷新活动状态过滤。（INIT：初始化中 | RUNNING：运行中 | SUCCESSFUL：活动成功 | FAILED_PAUSE：失败暂停 | AUTO_PAUSE：自动暂停 | MANUAL_PAUSE：手动暂停 | CANCELLED：活动取消 | FAILED：活动失败）</li>\n<li> refresh-activity-type - String - 是否必填：否 -（过滤条件）按照刷新活动类型过滤。（NORMAL：正常刷新活动 | ROLLBACK：回滚刷新活动）</li>\n<li> refresh-activity-id - String - 是否必填：否 -（过滤条件）按照刷新活动ID过滤。</li>\n<li> 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定RefreshActivityIds和Filters。</li>",
+          "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。可通过登录 [控制台](https://console.cloud.tencent.com/autoscaling/group) 或调用接口 [DescribeAutoScalingGroups](https://cloud.tencent.com/document/api/377/20438) ，取返回信息中的 AutoScalingGroupId 获取伸缩组ID。</li>\n<li> refresh-activity-status-code - String - 是否必填：否 -（过滤条件）按照刷新活动状态过滤。（INIT：初始化中 | RUNNING：运行中 | SUCCESSFUL：活动成功 | FAILED_PAUSE：失败暂停 | AUTO_PAUSE：自动暂停 | MANUAL_PAUSE：手动暂停 | CANCELLED：活动取消 | FAILED：活动失败）</li>\n<li> refresh-activity-type - String - 是否必填：否 -（过滤条件）按照刷新活动类型过滤。（NORMAL：正常刷新活动 | ROLLBACK：回滚刷新活动）</li>\n<li> refresh-activity-id - String - 是否必填：否 -（过滤条件）按照刷新活动ID过滤。</li>\n<li> 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定RefreshActivityIds和Filters。</li>",
           "example": "[{\"Name\": \"auto-scaling-group-id\", \"Values\": [\"asg-ewdpp04x\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -3335,7 +3335,7 @@
         {
           "disabled": false,
           "document": "符合条件的刷新活动信息集合。",
-          "example": "[{\"Status\": \"SUCCESSFUL\", \"RefreshBatchSet\": [{\"RefreshBatchNum\": 1, \"EndTime\": \"2024-11-06T19:01:08Z\", \"RefreshBatchRelatedInstanceSet\": [{\"InstanceId\": \"ins-me0846cu\", \"InstanceStatusMessage\": \"success\", \"LastActivityId\": \"asa-8ayecku8\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"StartTime\": \"2024-11-06T19:00:14Z\", \"RefreshBatchStatus\": \"SUCCESSFUL\"}], \"RefreshMode\": \"ROLLING_UPDATE_RESET\", \"AutoScalingGroupId\": \"asg-7nfe25uy\", \"ActivityType\": \"NORMAL\", \"RefreshSettings\": {\"CheckInstanceTargetHealth\": true, \"RollingUpdateSettings\": {\"BatchNumber\": 1, \"MaxSurge\": 1, \"BatchPause\": \"AUTOMATIC\"}}, \"OriginRefreshActivityId\": \"\", \"CurrentRefreshBatchNum\": 1, \"RefreshActivityId\": \"asr-1pex1gkq\", \"StartTime\": \"2024-11-06T18:59:20Z\", \"CreatedTime\": \"2024-11-06T18:59:20Z\", \"EndTime\": \"2024-11-06T19:01:15Z\"}]",
+          "example": "无",
           "member": "RefreshActivity",
           "name": "RefreshActivitySet",
           "output_required": true,
@@ -7474,7 +7474,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新模式。取值范围：\n<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>\n<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>",
+          "document": "刷新模式。默认值为 ROLLING_UPDATE_RESET，取值范围：\n<li>ROLLING_UPDATE_RESET：重装系统进行滚动更新</li>\n<li>ROLLING_UPDATE_REPLACE：新建实例替换进行滚动更新，该模式暂不支持回滚接口</li>",
           "example": "ROLLING_UPDATE_RESET",
           "member": "string",
           "name": "RefreshMode",

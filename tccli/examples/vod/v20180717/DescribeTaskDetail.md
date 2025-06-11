@@ -139,8 +139,6 @@ Output:
         "ProcedureTask": {
             "TaskId": "12567683xx-Procedure-2e1af2456351812be963e309cc133403t0",
             "Status": "FINISH",
-            "ErrCode": 0,
-            "Message": "",
             "SessionContext": "",
             "SessionId": "",
             "Operator": "",

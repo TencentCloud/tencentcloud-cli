@@ -1898,6 +1898,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当次token中所有用户活体视频的COS存储路径，仅当您开启数据存储服务且“IsReturnAllVideo”入参取值为true 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoDetailData",
+          "name": "LivenessVideos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2227,6 +2237,15 @@
           "example": "false",
           "member": "bool",
           "name": "IsEncryptResponse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回认证中间过程的刷脸重试视频，默认不开启，多段视频需要存储到COS空间中，因此开启后还需要额外开启数据存储服务才可生效。详见[数据存储指引](https://cloud.tencent.com/document/product/1007/104229)。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsReturnAllVideo",
           "required": false,
           "type": "bool"
         }
@@ -5196,6 +5215,32 @@
         }
       ],
       "usage": "in"
+    },
+    "VideoDetailData": {
+      "document": "核身过程视频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次活体一比一请求的唯一标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AE13A3B3-F276-4C65-9BC9-1FE137851581",
+          "member": "string",
+          "name": "Seq",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "活体视频的base64编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "Video",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "WeChatBillDetail": {
       "document": "账单详情",

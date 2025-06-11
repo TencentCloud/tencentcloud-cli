@@ -6,13 +6,11 @@ Input:
 
 ```
 tccli wedata RegisterDsEventListener --cli-unfold-argument  \
-    --ProjectId abc \
-    --Key abc \
-    --Type abc \
-    --EventName abc \
-    --EventProjectId 23 \
-    --Properties.0.ParamKey abc \
-    --Properties.0.ParamValue abc
+    --ProjectId 1470547050521227264 \
+    --Key 20250228113937526 \
+    --Type REST_API \
+    --EventName umin5 \
+    --EventProjectId 1460947878944567296
 ```
 
 Output: 
@@ -20,29 +18,15 @@ Output:
 {
     "Response": {
         "Data": {
-            "Key": "abc",
-            "Type": "abc",
-            "CreationTs": "abc",
-            "PropertiesList": [
-                {
-                    "ParamKey": "abc",
-                    "ParamValue": "abc"
-                }
-            ],
-            "EventName": "abc",
-            "TaskInfo": {
-                "TaskId": "abc",
-                "TaskName": "abc",
-                "WorkflowId": "abc",
-                "WorkflowName": "abc",
-                "TaskTypeId": 0,
-                "TaskType": "abc",
-                "ProjectId": "abc",
-                "CycleType": "abc"
-            },
-            "EventProjectId": "abc"
+            "CreationTs": "2025-02-28T03:45:25.011Z",
+            "EventName": "umin5",
+            "EventProjectId": "1460947878944567296",
+            "Key": "20250228113937526",
+            "PropertiesList": null,
+            "TaskInfo": null,
+            "Type": "REST_API"
         },
-        "RequestId": "abc"
+        "RequestId": "76e6951b-8e0f-4734-a4dc-ac3e6506cc08"
     }
 }
 ```

@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli tke DescribeRIUtilizationDetail --cli-unfold-argument  \
-    --Filters.0.Name not-support-filter-name
+    --Filters.0.Name not-support-filter-name \
+    --Filters.0.Values '2023-08-09 00:00:00'
 ```
 
 Output: 

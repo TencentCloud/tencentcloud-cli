@@ -13672,6 +13672,15 @@
           "name": "TaskName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务描述信息",
+          "example": "任务描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

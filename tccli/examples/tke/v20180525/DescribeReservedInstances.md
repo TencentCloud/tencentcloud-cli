@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke DescribeReservedInstances --cli-unfold-argument  \
     --Filters.0.Name not-support-filter-name \
-    --Filters.0.Values value
+    --Filters.0.Values Active
 ```
 
 Output: 
@@ -66,12 +66,13 @@ tccli tke DescribeReservedInstances --cli-unfold-argument  \
     --Filters.6.Name resource-type \
     --Filters.6.Values common \
     --Filters.7.Name gpu \
-    --Filters.7.Values  \
+    --Filters.7.Values t4 \
     --Filters.8.Name reserved-instance-id \
     --Filters.8.Values eksri-f9rwc82i \
     --Filters.9.Name reserved-instance-name \
     --Filters.9.Values c \
     --Filters.10.Name reserved-instance-not-deduct \
+    --Filters.10.Values c \
     --OrderField ExpireAt \
     --OrderDirection ASC
 ```

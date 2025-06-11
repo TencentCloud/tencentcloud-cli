@@ -21,8 +21,6 @@ Output:
                 "ProcedureStateChangeEvent": {
                     "TaskId": "1256712345-Procedure-475b7237438a39560b9879a4556cb177t2",
                     "Status": "FINISH",
-                    "ErrCode": 0,
-                    "Message": "",
                     "FileId": "5285890784246869930",
                     "FileName": "small",
                     "FileUrl": "https://123.vod2.myqcloud.com/d042887avodtransgzp1256768367/c643347c5285890784246869930/1546950643_4191274987.100_0.jpg",
@@ -80,8 +78,7 @@ Output:
                                     "Definition": 20,
                                     "WatermarkSet": [],
                                     "TraceWatermark": {
-                                        "Switch": "ON",
-                                        "Definition": 1
+                                        "Switch": "ON"
                                     },
                                     "CopyRightWatermark": {
                                         "Text": "copyRightxxx"

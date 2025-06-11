@@ -88,6 +88,14 @@
         "title": "实例重置密码"
       }
     ],
+    "ResizeInstanceDisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeInstanceDisk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-iog9qa62\",\n    \"DiskSize\": 180\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e3e3ae0-5418-a9f9-858c-9ec5589871a8\"\n    }\n}",
+        "title": "实例扩容云盘"
+      }
+    ],
     "RunInstances": [
       {
         "document": "创建hai实例",
