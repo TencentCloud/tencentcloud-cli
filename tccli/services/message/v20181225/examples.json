@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "ModifySendChannelOnMsgTypes": [
+      {
+        "document": "",
+        "input": "https://message.tencentcloudapi.com/?Action=ModifySendChannelOnMsgTypes\r\n&SendTypes.0.MsgType=207\r\n&SendTypes.0.SendChannel=7\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85d1906b-274b-44ac-a22e-4fdc00822347\"\n    }\n}",
+        "title": "批量修改消息接收渠道"
+      }
+    ]
+  },
+  "version": "1.0"
+}

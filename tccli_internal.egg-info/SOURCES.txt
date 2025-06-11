@@ -266,6 +266,8 @@ tccli/services/cloudhsm/__init__.py
 tccli/services/cloudhsm/cloudhsm_client.py
 tccli/services/cloudhsm/v20191112/api.json
 tccli/services/cloudhsm/v20191112/examples.json
+tccli/services/cloudrc/__init__.py
+tccli/services/cloudrc/cloudrc_client.py
 tccli/services/cloudstudio/__init__.py
 tccli/services/cloudstudio/cloudstudio_client.py
 tccli/services/cls/__init__.py
@@ -604,6 +606,8 @@ tccli/services/market/v20191010/api.json
 tccli/services/market/v20191010/examples.json
 tccli/services/memcached/__init__.py
 tccli/services/memcached/memcached_client.py
+tccli/services/message/__init__.py
+tccli/services/message/message_client.py
 tccli/services/mgobe/__init__.py
 tccli/services/mgobe/mgobe_client.py
 tccli/services/mgobe/v20190929/api.json

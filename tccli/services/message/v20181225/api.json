@@ -1,0 +1,73 @@
+{
+  "actions": {
+    "ModifySendChannelOnMsgTypes": {
+      "document": "批量修改消息接收渠道",
+      "input": "ModifySendChannelOnMsgTypesRequest",
+      "name": "批量修改消息接收渠道",
+      "output": "ModifySendChannelOnMsgTypesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2018-12-25",
+    "api_brief": "消息中心是用于接收、查看腾讯云给您发送的各类站内信通知。在消息中心，您可以按照产品订阅不同类型的消息通知和通知方式。",
+    "serviceNameCN": "消息中心",
+    "serviceShortName": "message"
+  },
+  "objects": {
+    "ModifySendChannelOnMsgTypesRequest": {
+      "document": "ModifySendChannelOnMsgTypes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息发送渠道",
+          "example": "",
+          "member": "SendType",
+          "name": "SendTypes",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySendChannelOnMsgTypesResponse": {
+      "document": "ModifySendChannelOnMsgTypes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendType": {
+      "document": "消息类型发送渠道",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息类型",
+          "example": "",
+          "member": "uint64",
+          "name": "MsgType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发送渠道",
+          "example": "",
+          "member": "uint64",
+          "name": "SendChannel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

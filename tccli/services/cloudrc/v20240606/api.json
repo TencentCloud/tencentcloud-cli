@@ -1,0 +1,1375 @@
+{
+  "actions": {
+    "ActivateService": {
+      "document": "开通服务",
+      "input": "ActivateServiceRequest",
+      "name": "开通服务",
+      "output": "ActivateServiceResponse",
+      "status": "online"
+    },
+    "CreateView": {
+      "document": "创建视图接口",
+      "input": "CreateViewRequest",
+      "name": "创建视图",
+      "output": "CreateViewResponse",
+      "status": "online"
+    },
+    "DeleteView": {
+      "document": "CMDB删除视图接口",
+      "input": "DeleteViewRequest",
+      "name": "删除视图",
+      "output": "DeleteViewResponse",
+      "status": "online"
+    },
+    "GetBoundTags": {
+      "document": "获取已绑定资源的标签集合",
+      "input": "GetBoundTagsRequest",
+      "name": "获取已绑定资源的标签列表",
+      "output": "GetBoundTagsResponse",
+      "status": "online"
+    },
+    "GetResource": {
+      "document": "查询资源详情",
+      "input": "GetResourceRequest",
+      "name": "获取资源信息",
+      "output": "GetResourceResponse",
+      "status": "online"
+    },
+    "GetResourceCount": {
+      "document": "查询资源概览。支持通过产品、可用区、标签。ConditionRule条件与ListResources接口完全相同。",
+      "input": "GetResourceCountRequest",
+      "name": "获取资源个数",
+      "output": "GetResourceCountResponse",
+      "status": "online"
+    },
+    "GetView": {
+      "document": "获取视图详情接口",
+      "input": "GetViewRequest",
+      "name": "获取视图信息",
+      "output": "GetViewResponse",
+      "status": "online"
+    },
+    "ListProducts": {
+      "document": "产品列表接口",
+      "input": "ListProductsRequest",
+      "name": "获取产品列表",
+      "output": "ListProductsResponse",
+      "status": "online"
+    },
+    "ListResources": {
+      "document": "查询条件包含\"且 ProductKey equals 某一产品\"时，支持传入该产品特有的产品字段；其他情况支持仅传入通用字段。",
+      "input": "ListResourcesRequest",
+      "name": "查询资源列表",
+      "output": "ListResourcesResponse",
+      "status": "online"
+    },
+    "ListViews": {
+      "document": "视图列表查询接口",
+      "input": "ListViewsRequest",
+      "name": "查询视图列表",
+      "output": "ListViewsResponse",
+      "status": "online"
+    },
+    "ListYuntiTagAuthorizations": {
+      "document": "获取云梯子账号有权限的标签列表",
+      "input": "ListYuntiTagAuthorizationsRequest",
+      "name": "获取云梯子用户标签权限列表",
+      "output": "ListYuntiTagAuthorizationsResponse",
+      "status": "online"
+    },
+    "ModifyView": {
+      "document": "修改视图接口",
+      "input": "ModifyViewRequest",
+      "name": "修改视图",
+      "output": "ModifyViewResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-06-06",
+    "api_brief": "介绍如何使用API调用腾讯云资源中心的查询接口。",
+    "serviceNameCN": "资源中心",
+    "serviceShortName": "cloudrc"
+  },
+  "objects": {
+    "ActivateServiceRequest": {
+      "document": "ActivateService请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ActivateServiceResponse": {
+      "document": "ActivateService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConditionRule": {
+      "document": "资源的查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是简单条件(simple)还是复杂条件(complex)",
+          "example": "simple",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RegionId",
+          "member": "string",
+          "name": "SimpleKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "简单条件的操作符，支持是(equals)、不是(not_equals)、包含(contains)、不包含(not_contains)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "equals",
+          "member": "string",
+          "name": "SimpleOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\", \"4\"]",
+          "member": "string",
+          "name": "SimpleValue",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复杂条件的逻辑运算符，支持与(and)、或(or)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "and",
+          "member": "string",
+          "name": "ComplexOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复杂条件的子规则，此处可以递归\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Type\":\"simple\",\"SimpleKey\":\"RegionId\",\"SimpleOption\":\"equals\",\"SimpleValue\":[\"4\"]},{\"Type\":\"simple\",\"SimpleKey\":\"ZoneId\",\"SimpleOption\":\"equals\",\"SimpleValue\":[\"100002\"]}]",
+          "member": "ConditionRule",
+          "name": "ComplexArray",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateViewRequest": {
+      "document": "CreateView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图名称",
+          "example": "后付费资源视图",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视图条件",
+          "example": "无",
+          "member": "ConditionRule",
+          "name": "ConditionRule",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "[{\"Key\":\"应用\",\"Value\":\"默认应用\"}]\t",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateViewResponse": {
+      "document": "CreateView返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteViewRequest": {
+      "document": "DeleteView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteViewResponse": {
+      "document": "DeleteView返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnumDefine": {
+      "document": "枚举定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "枚举名",
+          "example": "后付费",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "枚举值",
+          "example": "0",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FieldDefine": {
+      "document": "字段定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段ID",
+          "example": "Cpu",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "vCPU数量",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "当前资源实例包含的Cpu数量",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "核数",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型：int、string、enum",
+          "example": "int",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "枚举定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Name\":\"后付费\",\"Value\":\"0\"},{\"Name\":\"预付费\",\"Value\":\"1\"},{\"Name\":\"预留实例\",\"Value\":\"2\"}]",
+          "member": "EnumDefine",
+          "name": "EnumDefine",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持运算符\n\nequals/not_equals/contains/not_contains",
+          "example": "[\"equals\",\"not_equals\"]",
+          "member": "string",
+          "name": "SupportedSimpleOption",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FieldValue": {
+      "document": "资源的业务字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段键",
+          "example": "DiskSize",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "云硬盘容量",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "当前云硬盘的容量，单位是GB",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GB",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.10",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段值对应的枚举名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "后付费",
+          "member": "string",
+          "name": "ValueEnumName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Filter": {
+      "document": "过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段",
+          "example": "viewId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的值",
+          "example": "[\"vw-6wyborpx\", \"vw-lqrcpefn\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "GetBoundTagsRequest": {
+      "document": "GetBoundTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetBoundTagsResponse": {
+      "document": "GetBoundTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "[{\"Key\":\"project\",\"Value\":\"默认项目\"}]",
+          "member": "Tag",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourceCountRequest": {
+      "document": "GetResourceCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源计数维度类型，支持产品(product)、可用区(zone)、标签(tag)",
+          "example": "product",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源查询条件",
+          "example": "无",
+          "member": "ConditionRule",
+          "name": "ConditionRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourceCountResponse": {
+      "document": "GetResourceCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源个数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ProductCategory\":\"cdb\",\"ProductKey\":\"cam::cdb::instanceId\",\"Count\":21}]",
+          "member": "ResourceCount",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourceRequest": {
+      "document": "GetResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源唯一ID",
+          "example": "ZlIFm+oOQ3jLgwR3txrMYA==",
+          "member": "string",
+          "name": "ResourceUniqueId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetResourceResponse": {
+      "document": "GetResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源唯一ID，可以确定一个资源",
+          "example": "ZlIFm+oOQ3jLgwR3txrMYA==",
+          "member": "string",
+          "name": "ResourceUniqueId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "cdb-7bdd1goz",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb421715",
+          "member": "string",
+          "name": "ResourceAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "909619400",
+          "member": "int64",
+          "name": "Uin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品Key",
+          "example": "cam::cdb::instanceId",
+          "member": "string",
+          "name": "ProductKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-02-29 06:14:40",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FieldValue",
+          "name": "BusinessFields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"project\",\"Value\":\"默认项目\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetViewRequest": {
+      "document": "GetView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetViewResponse": {
+      "document": "GetView返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "后付费资源视图",
+          "member": "string",
+          "name": "ViewName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConditionRule",
+          "name": "ConditionRule",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "[{\"Key\":\"部门\",\"Value\":\"开发部\"}]\t",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 10:00:00",
+          "member": "string",
+          "name": "ViewCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 10:00:00",
+          "member": "string",
+          "name": "ViewUpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProductsRequest": {
+      "document": "ListProducts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListProductsResponse": {
+      "document": "ListProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ProductCategory\":\"clb\",\"ProductKey\":\"cam::clb::clb\",\"ProductPrimaryName\":\"负载均衡\",\"ProductSecondaryName\":\"负载均衡实例\",\"ConsoleUrlFormat\":\"/clb/detail?rid=${RegionId}&id=${ResourceId}\",\"BusinessFields\":[{\"Key\":\"ProductKey\",\"Name\":\"产品\",\"Description\":null,\"Unit\":null,\"Type\":\"string\",\"EnumDefine\":null,\"SupportedSimpleOption\":[\"equal\",\"not_equal\"]}]}]",
+          "member": "ProductDefine",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListResourcesRequest": {
+      "document": "ListResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "游标，第一次查询时输入0，后续查询输入上次响应的Cursor",
+          "example": "0",
+          "member": "string",
+          "name": "Cursor",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次返回资源个数，最多200",
+          "example": "30",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "无",
+          "member": "ConditionRule",
+          "name": "ConditionRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListResourcesResponse": {
+      "document": "ListResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "游标，加载下一页时，需要传入该值，为空时，代表已经到最后一页了\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "363583",
+          "member": "string",
+          "name": "Cursor",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourcesSummary",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListViewsRequest": {
+      "document": "ListViews请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，最大200",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "- **viewId**\n按照【视图ID】进行过滤。例如：vw-dlrk6v8u\n类型：String\n必选：否\n\n- **viewName**\n按照【视图名称】进行过滤，支持模糊匹配。\n类型：String\n必选：否\n- **tagKey**\n按照【标签键】进行过滤。例如：部门\n类型：String\n必选：否\n- **tag:tagKey**\n按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。\n类型：String\n必选：否",
+          "example": "[{\"Name\": \"viewId\", \"Values\": [\"vw-6wyborpx\", \"vw-lqrcpefn\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListViewsResponse": {
+      "document": "ListViews返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ViewSummary",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视图总数",
+          "example": "50",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListYuntiTagAuthorizationsRequest": {
+      "document": "ListYuntiTagAuthorizations请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListYuntiTagAuthorizationsResponse": {
+      "document": "ListYuntiTagAuthorizations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有权限的标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyViewRequest": {
+      "document": "ModifyView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图ID",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视图名称",
+          "example": "后付费资源视图",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视图条件",
+          "example": "无",
+          "member": "ConditionRule",
+          "name": "ConditionRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyViewResponse": {
+      "document": "ModifyView返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ProductDefine": {
+      "document": "产品定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品分类",
+          "example": "clb",
+          "member": "string",
+          "name": "ProductCategory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品Key",
+          "example": "cam::clb::clb",
+          "member": "string",
+          "name": "ProductKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品一级名称",
+          "example": "负载均衡",
+          "member": "string",
+          "name": "ProductPrimaryName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品二级名称",
+          "example": "负载均衡实例",
+          "member": "string",
+          "name": "ProductSecondaryName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品分类icon链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cloudcache.tencentcs.com/qcloud/ui/static/cloud_prod_dict/2039/3d/light.png",
+          "member": "string",
+          "name": "ProductCategoryIconUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控制台跳转链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/clb/detail?rid=${RegionId}&id=${ResourceId}",
+          "member": "string",
+          "name": "ConsoleUrlFormat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Description\":null,\"EnumDefine\":null,\"Key\":\"ZoneId\",\"Name\":\"可用区\",\"SupportedSimpleOption\":[\"equals\",\"not_equals\"],\"Type\":\"int\",\"Unit\":null},{\"Description\":null,\"EnumDefine\":null,\"Key\":\"ResourceId\",\"Name\":\"资源ID\",\"SupportedSimpleOption\":[\"equals\",\"not_equals\"],\"Type\":\"string\",\"Unit\":null}]",
+          "member": "FieldDefine",
+          "name": "BusinessFields",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceCount": {
+      "document": "按各维度统计的资源个数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb",
+          "member": "string",
+          "name": "ProductCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cam::cdb::instanceId",
+          "member": "string",
+          "name": "ProductKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "project",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认项目",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源个数",
+          "example": "10",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourcesSummary": {
+      "document": "资源概要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源唯一ID，可以确定一个资源",
+          "example": "le14gGgUspRCQqT0FOe9hw==",
+          "member": "string",
+          "name": "ResourceUniqueId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "cdb-7bdd1goz",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb421715",
+          "member": "string",
+          "name": "ResourceAlias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "909959400",
+          "member": "int64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品Key",
+          "example": "cam::cdb::instanceId",
+          "member": "string",
+          "name": "ProductKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100002",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费类型，包括后付费(0)、预付费(1)、预留实例(2)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.10",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.12.3",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-02-29 06:14:40",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Tag": {
+      "document": "标签键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "project",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认项目",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ViewSummary": {
+      "document": "视图概要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图id",
+          "example": "vw-6wyborpx",
+          "member": "string",
+          "name": "ViewId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图名称",
+          "example": "后付费资源视图",
+          "member": "string",
+          "name": "ViewName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图创建时间",
+          "example": "2024-11-18 14:28:10",
+          "member": "string",
+          "name": "ViewCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视图更新时间",
+          "example": "2024-11-18 14:28:10",
+          "member": "string",
+          "name": "ViewUpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "[{\"Key\":\"项目\",\"Value\":\"项目1\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

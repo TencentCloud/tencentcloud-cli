@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli ioa DescribeDLPRiskPersonList --cli-unfold-argument ```
+tccli ioa DescribeDLPRiskPersonList --cli-unfold-argument  \
+    --Condition.PageSize 10 \
+    --Condition.PageNum 0 \
+    --BeginTime 1600730187 \
+    --EndTime 1700730187
+```
 
 Output: 
 ```

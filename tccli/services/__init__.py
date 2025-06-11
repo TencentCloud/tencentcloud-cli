@@ -233,6 +233,9 @@ SERVICE_VERSIONS = {
     "cloudhsm": [
         "2019-11-12"
     ],
+    "cloudrc": [
+        "2024-06-06"
+    ],
     "cloudstudio": [
         "2023-05-08",
         "2021-05-24"
@@ -557,6 +560,9 @@ SERVICE_VERSIONS = {
     ],
     "memcached": [
         "2019-03-18"
+    ],
+    "message": [
+        "2018-12-25"
     ],
     "mgobe": [
         "2020-10-14",
