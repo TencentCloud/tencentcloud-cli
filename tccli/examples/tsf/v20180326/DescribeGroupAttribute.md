@@ -23,7 +23,33 @@ Output:
             "RunInstanceCount": 0,
             "GroupStatus": "Updating",
             "OffInstanceCount": 1,
-            "HealthCheckSettings": {},
+            "HealthCheckSettings": {
+                "ReadinessProbe": {
+                    "InitialDelaySeconds": 10,
+                    "PeriodSeconds": 10,
+                    "Port": 8000,
+                    "ActionType": "tcp",
+                    "SuccessThreshold": 3,
+                    "Type": "TCP",
+                    "TimeoutSeconds": 3,
+                    "FailureThreshold": 3
+                },
+                "LivenessProbe": {
+                    "ActionType": "tcp",
+                    "InitialDelaySeconds": 180,
+                    "TimeoutSeconds": 1,
+                    "PeriodSeconds": 1,
+                    "SuccessThreshold": 1,
+                    "FailureThreshold": 1,
+                    "Scheme": "http",
+                    "Port": 1,
+                    "Path": "/health",
+                    "Command": [
+                        "sh health.sh"
+                    ],
+                    "Type": "TCP"
+                }
+            },
             "IsNotEqualServiceConfig": false
         }
     }

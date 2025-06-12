@@ -120,11 +120,11 @@
       "status": "online"
     },
     "DescribeClusterRoles": {
-      "document": "查询GooseFS集群角色",
+      "document": "接口废弃\n\n查询GooseFS集群角色",
       "input": "DescribeClusterRolesRequest",
       "name": "查询GooseFS集群角色",
       "output": "DescribeClusterRolesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCvmResource": {
       "document": "查询预留cvm资源",
@@ -225,9 +225,9 @@
       "status": "online"
     },
     "TerminateCvmResource": {
-      "document": "购买预留cvm资源",
+      "document": "销毁CVM资源, 包括集群中的节点或者预留的资源. 销毁过程中包括删除数据库记录, 退还跨租户网卡, 删除tag等",
       "input": "TerminateCvmResourceRequest",
-      "name": "退还cvm资源内部运维接口",
+      "name": "退还CVM资源(包括集群中节点与预留的资源)",
       "output": "TerminateCvmResourceResponse",
       "status": "online"
     },
@@ -2862,6 +2862,33 @@
           "name": "InstanceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID, 可用区级别的预留资源, 不需要填写",
+          "example": "x-c60-a2b3d4",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是集群中的节点资源, 默认为false, 表示是预留资源",
+          "example": "true",
+          "member": "bool",
+          "name": "ClusterNodeFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否是客户顿管理节点, 默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "CustomerNodeFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

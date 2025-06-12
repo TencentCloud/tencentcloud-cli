@@ -9874,7 +9874,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。",
           "example": "cdb-xxdasd",
           "member": "string",
           "name": "InstanceId",
@@ -9889,7 +9889,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略类型。可选值 auto、manual。如果返回为NULL说明尚未开通弹性扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型。输出值 auto、manual。如果返回为 NULL 说明尚未开通弹性扩容策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "auto",
           "member": "string",
           "name": "Type",
@@ -9899,7 +9899,7 @@
         },
         {
           "disabled": false,
-          "document": "手动扩容的 CPU 。Type为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "手动扩容的 CPU 。Type 为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "ExpandCpu",
@@ -9909,8 +9909,8 @@
         },
         {
           "disabled": false,
-          "document": "自动扩容策略。Type 为 auto 时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "略",
+          "document": "自动扩容策略。Type 为 auto 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ExpandSecondPeriod\": 15,\"ExpandThreshold\": 70,\"ShrinkSecondPeriod\": 300,\"ShrinkThreshold\": 30}",
           "member": "AutoStrategy",
           "name": "AutoStrategy",
           "output_required": false,
@@ -9920,7 +9920,7 @@
         {
           "disabled": false,
           "document": "按周期扩容策略。",
-          "example": "无",
+          "example": "{\"TimeCycle\": {\"Friday\": true,\"Monday\": true,\"Saturday\": false,\"Sunday\": false,\"Thursday\": true,\"Tuesday\": false,\"Wednesday\": true},\"TimeInterval\": {\"EndTime\": \"00:00\",\"StartTime\": \"08:00\"}}",
           "member": "PeriodStrategy",
           "name": "PeriodStrategy",
           "output_required": false,
@@ -9929,8 +9929,8 @@
         },
         {
           "disabled": false,
-          "document": "按时间段扩容策略",
-          "example": "无",
+          "document": "按时间段扩容策略。",
+          "example": "{\"StartTime\": 1749722400}",
           "member": "TimeIntervalStrategy",
           "name": "TimeIntervalStrategy",
           "output_required": false,
@@ -22900,7 +22900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。",
           "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
@@ -22909,7 +22909,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期",
+          "document": "扩容类型。auto 自动  manual 立即生效 timeInterval 按时间段 period 按周期。\n",
           "example": "auto",
           "member": "string",
           "name": "Type",
@@ -22936,8 +22936,8 @@
         },
         {
           "disabled": false,
-          "document": "按时间段扩容策略",
-          "example": "[{\"StartTime\": \"2024-10-17 10:00:00\",\"EndTime\": \"2024-10-17 12:00:00\"}]",
+          "document": "按时间段扩容策略。",
+          "example": "[{\"StartTime\": 1749546000,\"EndTime\": 1749718800}]",
           "member": "TimeIntervalStrategy",
           "name": "TimeIntervalStrategy",
           "required": false,
@@ -22945,8 +22945,8 @@
         },
         {
           "disabled": false,
-          "document": "按周期扩容策略",
-          "example": "无",
+          "document": "按周期扩容策略。",
+          "example": "[{\"TimeCycle\": {\"Monday\": true,\"Tuesday\": false,\"Wednesday\": false,\"Thursday\": false,\"Friday\": true,\"Saturday\": false,\"Sunday\": false},\"TimeInterval\": {\"StartTime\": \"17:00\",\"EndTime\": \"20:00\"}}]",
           "member": "PeriodStrategy",
           "name": "PeriodStrategy",
           "required": false,
@@ -23529,8 +23529,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "周一的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周一扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Monday",
           "output_required": false,
@@ -23540,8 +23540,8 @@
         },
         {
           "disabled": false,
-          "document": "周二的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周二扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Tuesday",
           "output_required": false,
@@ -23551,8 +23551,8 @@
         },
         {
           "disabled": false,
-          "document": "周三的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周三扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Wednesday",
           "output_required": false,
@@ -23562,8 +23562,8 @@
         },
         {
           "disabled": false,
-          "document": "周四的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周四扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Thursday",
           "output_required": false,
@@ -23573,8 +23573,8 @@
         },
         {
           "disabled": false,
-          "document": "周五的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周五扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Friday",
           "output_required": false,
@@ -23584,8 +23584,8 @@
         },
         {
           "disabled": false,
-          "document": "周六的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周六扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Saturday",
           "output_required": false,
@@ -23595,8 +23595,8 @@
         },
         {
           "disabled": false,
-          "document": "周日的扩容时间段",
-          "example": "10:00-12:00",
+          "document": "按周期扩容时，是否选择周日扩容。\n说明：取值 true，表示选择，取值 false，表示不选择。",
+          "example": "true",
           "member": "bool",
           "name": "Sunday",
           "output_required": false,
@@ -23999,8 +23999,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "02:00:37",
+          "document": "开始时间。",
+          "example": "02:00",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -24010,8 +24010,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "03:00:37",
+          "document": "结束时间。",
+          "example": "03:00",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -24027,8 +24027,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始扩容时间",
-          "example": "2024-10-17 10:00:00",
+          "document": "开始扩容时间。\n说明：此值的格式为 Integer 的时间戳。",
+          "example": "1749546000",
           "member": "int64",
           "name": "StartTime",
           "output_required": false,
@@ -24038,8 +24038,8 @@
         },
         {
           "disabled": false,
-          "document": "结束扩容时间",
-          "example": "2024-10-17 12:00:00",
+          "document": "结束扩容时间。\n说明：此值的格式为 Integer 的时间戳。",
+          "example": "1749718800",
           "member": "int64",
           "name": "EndTime",
           "output_required": false,

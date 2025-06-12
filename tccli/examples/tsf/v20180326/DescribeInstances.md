@@ -20,21 +20,21 @@ Output:
             "Content": [
                 {
                     "ClusterType": "V",
-                    "ApplicationType": null,
-                    "GroupId": null,
+                    "ApplicationType": "",
+                    "GroupId": "group-id",
                     "ClusterId": "cluster-xxxxxx",
                     "InstanceStatus": "Running",
                     "InstanceName": "tsf自动化拨测",
-                    "WanIp": null,
-                    "GroupName": null,
+                    "WanIp": "",
+                    "GroupName": "name",
                     "InstanceId": "ins-xxxxxx",
-                    "NamespaceId": null,
+                    "NamespaceId": "nid",
                     "VpcId": "vpc-xxxxxx",
-                    "InstanceAvailableStatus": null,
+                    "InstanceAvailableStatus": "",
                     "ClusterName": "tsf-auto-dialtest",
-                    "ApplicationId": null,
-                    "ApplicationName": null,
-                    "NamespaceName": null,
+                    "ApplicationId": "application-id",
+                    "ApplicationName": "app-name",
+                    "NamespaceName": "namespace-name",
                     "LanIp": "10.0.2.4"
                 }
             ]
