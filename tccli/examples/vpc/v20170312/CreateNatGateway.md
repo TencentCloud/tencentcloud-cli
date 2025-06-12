@@ -109,10 +109,10 @@ Output:
                 "SourceIpTranslationNatRuleSet": [],
                 "IsExclusive": false,
                 "SmartScheduleMode": false,
-                "DedicatedClusterId": null,
+                "DedicatedClusterId": "",
                 "RestrictState": "NORMAL",
                 "NatProductVersion": 2,
-                "ExclusiveGatewayBandwidth": null
+                "ExclusiveGatewayBandwidth": 0
             }
         ],
         "TotalCount": 1,

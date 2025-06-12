@@ -91,6 +91,13 @@
       "output": "CreateVarResponse",
       "status": "online"
     },
+    "CreateWorkflowRun": {
+      "document": "本接口用来创建工作流的异步运行实例，创建成功后工作流会在后台异步运行，接口返回工作流运行实例ID（WorkflowRunId）等信息。后面可通过调用DescribeWorkflowRun接口查工作流运行的详情。\n注意：工作流的异步运行是基于应用的，需要先把对应的应用配置成“单工作流模式”，并且打开“异步调用”的开关，才能创建成功。",
+      "input": "CreateWorkflowRunRequest",
+      "name": "创建工作流的异步运行实例",
+      "output": "CreateWorkflowRunResponse",
+      "status": "online"
+    },
     "DeleteApp": {
       "document": "删除应用",
       "input": "DeleteAppRequest",
@@ -210,6 +217,13 @@
       "output": "DescribeKnowledgeUsagePieGraphResponse",
       "status": "online"
     },
+    "DescribeNodeRun": {
+      "document": "通过DescribeWorkflowRun接口获取了工作流异步运行的整体内容，其中包含了基本的节点信息，再通用本接口可查看节点的运行详情（包括输入、输出、日志等）。",
+      "input": "DescribeNodeRunRequest",
+      "name": "查看工作流异步运行实例的节点的运行详情",
+      "output": "DescribeNodeRunResponse",
+      "status": "online"
+    },
     "DescribeQA": {
       "document": "问答详情",
       "input": "DescribeQARequest",
@@ -292,6 +306,13 @@
       "input": "DescribeUnsatisfiedReplyContextRequest",
       "name": "获取不满意回复上下文",
       "output": "DescribeUnsatisfiedReplyContextResponse",
+      "status": "online"
+    },
+    "DescribeWorkflowRun": {
+      "document": "创建了工作流的异步运行实例后，通过本接口可以查询整体的运行详情。",
+      "input": "DescribeWorkflowRunRequest",
+      "name": "查询工作流异步运行实例的详情",
+      "output": "DescribeWorkflowRunResponse",
       "status": "online"
     },
     "ExportAttributeLabel": {
@@ -567,6 +588,13 @@
       "output": "ListUsageCallDetailResponse",
       "status": "online"
     },
+    "ListWorkflowRuns": {
+      "document": "此接口可查询已创建的所有工作流异步运行实例。",
+      "input": "ListWorkflowRunsRequest",
+      "name": "查询工作流异步运行实例的列表",
+      "output": "ListWorkflowRunsResponse",
+      "status": "online"
+    },
     "ModifyApp": {
       "document": "修改应用请求结构体",
       "input": "ModifyAppRequest",
@@ -705,6 +733,13 @@
       "input": "StopDocParseRequest",
       "name": "终止文档解析",
       "output": "StopDocParseResponse",
+      "status": "online"
+    },
+    "StopWorkflowRun": {
+      "document": "此接口用来停止正在进行的工作流异步运行实例。",
+      "input": "StopWorkflowRunRequest",
+      "name": "停止工作流异步运行实例",
+      "output": "StopWorkflowRunResponse",
       "status": "online"
     },
     "UpdateSharedKnowledge": {
@@ -3338,6 +3373,120 @@
       ],
       "type": "object"
     },
+    "CreateWorkflowRunRequest": {
+      "document": "CreateWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行环境。0: 测试环境； 1: 正式环境",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunEnv",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户输入的内容",
+          "example": "我想订明天的酒店",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "API参数配置",
+          "example": "[{\"Name\": \"name\", \"Value\":\"张三\"}}]",
+          "member": "CustomVariable",
+          "name": "CustomVariables",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkflowRunResponse": {
+      "document": "CreateWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行环境。0: 测试环境； 1: 正式环境",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunEnv",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户输入的内容",
+          "example": "我想订明天的酒店",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API参数配置",
+          "example": "[{\"Name\": \"name\", \"Value\":\"张三\"}}]",
+          "member": "CustomVariable",
+          "name": "CustomVariables",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Credentials": {
       "document": "临时密钥结构",
       "members": [
@@ -3383,6 +3532,34 @@
         }
       ],
       "usage": "out"
+    },
+    "CustomVariable": {
+      "document": "工作流的API参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数的值",
+          "example": "张三",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteAppRequest": {
       "document": "DeleteApp请求参数结构体",
@@ -4795,6 +4972,43 @@
       ],
       "type": "object"
     },
+    "DescribeNodeRunRequest": {
+      "document": "DescribeNodeRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点运行实例ID",
+          "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
+          "member": "string",
+          "name": "NodeRunId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeRunResponse": {
+      "document": "DescribeNodeRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点运行实例详情",
+          "example": "无",
+          "member": "NodeRunDetail",
+          "name": "NodeRun",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQARequest": {
       "document": "DescribeQA请求参数结构体",
       "members": [
@@ -6075,6 +6289,53 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkflowRunRequest": {
+      "document": "DescribeWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流运行实例ID",
+          "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkflowRunResponse": {
+      "document": "DescribeWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "WorkflowRunDetail",
+          "name": "WorkflowRun",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "无",
+          "member": "NodeRunBase",
+          "name": "NodeRuns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11581,6 +11842,98 @@
       ],
       "type": "object"
     },
+    "ListWorkflowRunsRequest": {
+      "document": "ListWorkflowRuns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行环境。0: 测试环境； 1: 正式环境",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunEnv",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListWorkflowRunsResponse": {
+      "document": "ListWorkflowRuns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行列表",
+          "example": "无",
+          "member": "WorkflowRunBase",
+          "name": "WorkflowRuns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Message": {
       "document": "一条message代表一条对话记录\nrole表示角色  user或者assistant\ncontent表示对话内容",
       "members": [
@@ -12927,6 +13280,359 @@
         }
       ],
       "usage": "out"
+    },
+    "NodeRunBase": {
+      "document": "节点运行的基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点运行的ID",
+          "example": "32d82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "NodeRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "e60de932-b050-65ce-261e-027760e93d81",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "工具节点1",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型。\n1： 开始节点\n2：参数提取节点\n3：大模型节点\n4：知识问答节点\n5：知识检索节点\n6：标签提取节点\n7：代码执行节点\n8：工具节点\n9：逻辑判断节点\n10：回复节点\n11：选项卡节点\n12：循环节点\n13：意图识别节点\n14：工作流节点\n15：插件节点\n16：结束节点\n17: 变量聚合节点数据\n18: 批处理节点\n19: 消息队列节点",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行状态。0: 初始状态；1: 运行中；2: 运行成功； 3: 运行失败； 4: 已取消",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "NodeErr.CallPluginToolFailed",
+          "member": "string",
+          "name": "FailCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "工具节点运行失败。",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗时间（毫秒）",
+          "example": "12000",
+          "member": "uint64",
+          "name": "CostMilliseconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的token总数",
+          "example": "560",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeRunDetail": {
+      "document": "工作流节点运行详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点运行的ID",
+          "example": "3af2e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "NodeRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "e60de932-b050-65ce-261e-027760e93d81",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "工具节点1",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型。\n1： 开始节点\n2：参数提取节点\n3：大模型节点\n4：知识问答节点\n5：知识检索节点\n6：标签提取节点\n7：代码执行节点\n8：工具节点\n9：逻辑判断节点\n10：回复节点\n11：选项卡节点\n12：循环节点\n13：意图识别节点\n14：工作流节点\n15：插件节点\n16：结束节点\n17: 变量聚合节点数据\n18: 批处理节点\n19: 消息队列节点",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行状态。0: 初始状态；1: 运行中；2: 运行成功； 3: 运行失败； 4: 已取消",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "NodeErr.CallPluginToolFailed",
+          "member": "string",
+          "name": "FailCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "工具节点运行失败。",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗时间（毫秒）",
+          "example": "12000",
+          "member": "uint64",
+          "name": "CostMilliseconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的token总数",
+          "example": "560",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入变量信息",
+          "example": "{\"Name\": \"张三\"}",
+          "member": "string",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的输入的完整内容的链接。（当Input内容超过限制的时候此字段才有值）",
+          "example": "无",
+          "member": "string",
+          "name": "InputRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出变量信息",
+          "example": "{\"Name\": \"张三\"}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的输出的完整内容的链接。（当Output内容超过限制的时候此字段才有值）",
+          "example": "无",
+          "member": "string",
+          "name": "OutputRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始输出信息。部分节点才有值，如工具节点、代码节点",
+          "example": "{\"Name\": \"张三\"}",
+          "member": "string",
+          "name": "TaskOutput",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的原始输出的完整内容的链接。（当TaskOutput内容超过限制的时候此字段才有值）",
+          "example": "无",
+          "member": "string",
+          "name": "TaskOutputRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的日志",
+          "example": "无",
+          "member": "string",
+          "name": "Log",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的日志的完整内容的链接志（当Log内容超过限制的时候才有值）",
+          "example": "无",
+          "member": "string",
+          "name": "LogRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳（毫秒）",
+          "example": "1672531100000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳（毫秒）",
+          "example": "1672531100000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "LLM统计信息。",
+          "example": "无",
+          "member": "StatisticInfo",
+          "name": "StatisticInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Option": {
       "document": "下拉框选项",
@@ -15276,6 +15982,33 @@
       ],
       "type": "object"
     },
+    "StopWorkflowRunRequest": {
+      "document": "StopWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流运行实例ID",
+          "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWorkflowRunResponse": {
+      "document": "StopWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StrValue": {
       "document": "字符串KV信息",
       "members": [
@@ -16425,6 +17158,304 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunBase": {
+      "document": "工作流运行实例的基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行环境。0: 测试环境； 1: 正式环境",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunEnv",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属工作流ID",
+          "example": "98cc312553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "订酒店",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行状态。0: 排队中；1: 运行中；2: 运行成功；3: 运行失败； 4: 已取消",
+          "example": "0",
+          "member": "uint64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "工具节点运行失败。",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的token总数",
+          "example": "560",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunDetail": {
+      "document": "工作流运行实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行环境。0: 测试环境； 1: 正式环境",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunEnv",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属工作流ID",
+          "example": "98cc312553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "订酒店",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行状态。0: 排队中；1: 运行中；2: 运行成功；3: 运行失败； 4: 已取消",
+          "example": "1",
+          "member": "uint64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "工具节点运行失败。",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的token总数",
+          "example": "560",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流画布Json",
+          "example": "无",
+          "member": "string",
+          "name": "DialogJson",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户的输入",
+          "example": "我想订明天的酒店",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主模型名称",
+          "example": "workflow-pro",
+          "member": "string",
+          "name": "MainModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API参数配置",
+          "example": "[{\"Name\": \"name\", \"Value\":\"张三\"}}]",
+          "member": "CustomVariable",
+          "name": "CustomVariables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

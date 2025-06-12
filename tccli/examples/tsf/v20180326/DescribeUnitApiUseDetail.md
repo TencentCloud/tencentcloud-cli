@@ -25,91 +25,6 @@ Output:
             "TotalCount": 20,
             "Content": [
                 {
-                    "NamespaceId": "ns-123456",
-                    "NamespaceName": "ns-test",
-                    "SumReqAmount": "8213434",
-                    "AvgFailureRate": "82.11",
-                    "AvgTimeCost": "10.11",
-                    "MetricDataPointMap": {
-                        "SumReqAmount": [
-                            {
-                                "Key": "1615374000000",
-                                "Value": null,
-                                "Tag": null
-                            },
-                            {
-                                "Key": "1615374060000",
-                                "Value": null,
-                                "Tag": null
-                            }
-                        ],
-                        "AvgFailureRate": [
-                            {
-                                "Key": "1615374000000",
-                                "Value": null,
-                                "Tag": null
-                            },
-                            {
-                                "Key": "1615374060000",
-                                "Value": null,
-                                "Tag": null
-                            }
-                        ],
-                        "AvgTimeCost": [
-                            {
-                                "Key": "1615374000000",
-                                "Value": null,
-                                "Tag": null
-                            },
-                            {
-                                "Key": "1615374060000",
-                                "Value": null,
-                                "Tag": null
-                            }
-                        ]
-                    },
-                    "TopStatusCode": [
-                        {
-                            "Name": "2xx",
-                            "Count": "20000",
-                            "Ratio": "0.35565"
-                        },
-                        {
-                            "Name": "4xx",
-                            "Count": "18000",
-                            "Ratio": "0.28625"
-                        }
-                    ],
-                    "TopTimeCost": [
-                        {
-                            "Name": "0_50_ms",
-                            "Count": "20000",
-                            "Ratio": "0.35565"
-                        },
-                        {
-                            "Name": "50_100_ms",
-                            "Count": "18000",
-                            "Ratio": "0.28625"
-                        },
-                        {
-                            "Name": "100_200_ms",
-                            "Count": "13000",
-                            "Ratio": "0.28625"
-                        },
-                        {
-                            "Name": "others",
-                            "Count": "13000",
-                            "Ratio": "0.28625"
-                        }
-                    ],
-                    "Quantile": {
-                        "MaxValue": "12.13",
-                        "MinValue": "0.32",
-                        "FifthPositionValue": "0.26",
-                        "NinthPositionValue": "1.32"
-                    }
-                },
-                {
                     "NamespaceId": "ns-1234567",
                     "NamespaceName": "ns-test2",
                     "SumReqAmount": "20",
@@ -119,37 +34,27 @@ Output:
                         "SumReqAmount": [
                             {
                                 "Key": "1615374000000",
-                                "Value": null,
-                                "Tag": null
-                            },
-                            {
-                                "Key": "1615374060000",
-                                "Value": null,
-                                "Tag": null
+                                "Value": "0",
+                                "Tag": ""
                             }
                         ],
                         "AvgFailureRate": [
                             {
                                 "Key": "1615374000000",
-                                "Value": null,
-                                "Tag": null
-                            },
-                            {
-                                "Key": "1615374060000",
-                                "Value": null,
-                                "Tag": null
+                                "Value": "0",
+                                "Tag": ""
                             }
                         ],
                         "AvgTimeCost": [
                             {
                                 "Key": "1615374000000",
-                                "Value": null,
-                                "Tag": null
+                                "Value": "0",
+                                "Tag": ""
                             },
                             {
                                 "Key": "1615374060000",
-                                "Value": null,
-                                "Tag": null
+                                "Value": "0",
+                                "Tag": ""
                             }
                         ]
                     },

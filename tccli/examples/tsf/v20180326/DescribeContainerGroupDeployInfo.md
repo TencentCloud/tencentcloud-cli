@@ -165,6 +165,16 @@ Output:
                     "MemRequest": "32",
                     "MemLimit": "128",
                     "HealthCheckSettings": {
+                        "ReadinessProbe": {
+                            "InitialDelaySeconds": 10,
+                            "PeriodSeconds": 10,
+                            "Port": 8000,
+                            "ActionType": "tcp",
+                            "SuccessThreshold": 3,
+                            "Type": "TCP",
+                            "TimeoutSeconds": 3,
+                            "FailureThreshold": 3
+                        },
                         "LivenessProbe": {
                             "ActionType": "tcp",
                             "InitialDelaySeconds": 180,
@@ -231,7 +241,33 @@ Output:
                     "CpuRequest": "0.1",
                     "MemRequest": "32",
                     "MemLimit": "128",
-                    "HealthCheckSettings": {},
+                    "HealthCheckSettings": {
+                        "ReadinessProbe": {
+                            "InitialDelaySeconds": 10,
+                            "PeriodSeconds": 10,
+                            "Port": 8000,
+                            "ActionType": "tcp",
+                            "SuccessThreshold": 3,
+                            "Type": "TCP",
+                            "TimeoutSeconds": 3,
+                            "FailureThreshold": 3
+                        },
+                        "LivenessProbe": {
+                            "ActionType": "tcp",
+                            "InitialDelaySeconds": 180,
+                            "TimeoutSeconds": 1,
+                            "PeriodSeconds": 1,
+                            "SuccessThreshold": 1,
+                            "FailureThreshold": 1,
+                            "Scheme": "http",
+                            "Port": 1,
+                            "Path": "/health",
+                            "Command": [
+                                "sh health.sh"
+                            ],
+                            "Type": "TCP"
+                        }
+                    },
                     "VolumeMountInfoList": [
                         {
                             "VolumeMountName": "host",

@@ -1896,6 +1896,14 @@
         "title": "示例-普通企业更新角色（不带权限树参数）"
       }
     ],
+    "OperateSeals": [
+      {
+        "document": "将停用的印章修改为启用状态",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateSeals\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCAOUUckpycr4l4UuOiTjVB3yTaFaLI\"\n    },\n    \"Act\": 1,\n    \"SealIds\": [\n        \"yDClqUUckpaj38v1UmGrVdB8iMEXjdyR\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73fd23a3-7e85-48e5-970a-ca50da5e25af\"\n    }\n}",
+        "title": "启用印章"
+      }
+    ],
     "OperateTemplate": [
       {
         "document": "删除企业下的模板yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",

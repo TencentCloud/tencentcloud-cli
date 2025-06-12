@@ -19,12 +19,12 @@ Output:
         "Result": {
             "Content": [
                 {
-                    "CreatedTime": null,
-                    "GatewayInstanceId": null,
-                    "Id": null,
+                    "CreatedTime": "2025",
+                    "GatewayInstanceId": "instance-id",
+                    "Id": "id",
                     "NamespaceId": "namespace-ygo3djma",
                     "NamespaceName": "cluster-container-jolyonzheng_default",
-                    "UpdatedTime": null
+                    "UpdatedTime": "2025"
                 }
             ],
             "TotalCount": 1

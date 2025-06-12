@@ -10094,6 +10094,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13819,7 +13820,7 @@
         {
           "disabled": false,
           "document": "翻页结构",
-          "example": "{\"Content\":[{\"ApiId\":\"api-1eqe6556\",\"ApiMatchType\":\"normal\",\"ApiType\":\"ms\",\"CreatedTime\":\"2024-12-23 01:29:41\",\"Description\":null,\"GatewayDeployGroupId\":null,\"GroupId\":\"grp-nb08ur29\",\"GroupName\":null,\"Host\":null,\"Md5\":\"c35e5178b28d1844054982d61481912e\",\"Method\":\"GET\",\"MicroserviceId\":\"ms-ba2jlxvk\",\"MicroserviceName\":\"provider-demo\",\"MockStatus\":\"disabled\",\"NamespaceId\":\"namespace-qab7bq9v\",\"NamespaceName\":\"shedfree_default\",\"Path\":\"/swagger/getMessageBoxAddress\",\"PathMapping\":null,\"RateLimitStatus\":null,\"ReleaseStatus\":\"released\",\"ReleasedTime\":null,\"RpcExt\":null,\"RpcType\":\"http\",\"Timeout\":null,\"UpdatedTime\":\"2024-12-23 01:30:03\",\"UsableStatus\":\"enabled\"},{\"ApiId\":\"api-61wtlegl\",\"ApiMatchType\":\"normal\",\"ApiType\":\"ms\",\"CreatedTime\":\"2024-12-23 01:29:41\",\"Description\":null,\"GatewayDeployGroupId\":null,\"GroupId\":\"grp-nb08ur29\",\"GroupName\":null,\"Host\":null,\"Md5\":\"91cc18acfc4bac04a0033d245888fe41\",\"Method\":\"GET\",\"MicroserviceId\":\"ms-ba2jlxvk\",\"MicroserviceName\":\"provider-demo\",\"MockStatus\":\"disabled\",\"NamespaceId\":\"namespace-qab7bq9v\",\"NamespaceName\":\"shedfree_default\",\"Path\":\"/swagger/getMessageContent\",\"PathMapping\":null,\"RateLimitStatus\":null,\"ReleaseStatus\":\"released\",\"ReleasedTime\":null,\"RpcExt\":null,\"RpcType\":\"http\",\"Timeout\":null,\"UpdatedTime\":\"2024-12-23 01:30:03\",\"UsableStatus\":\"enabled\"},{\"ApiId\":\"api-frikki3a\",\"ApiMatchType\":\"normal\",\"ApiType\":\"ms\",\"CreatedTime\":\"2024-12-23 01:29:41\",\"Description\":null,\"GatewayDeployGroupId\":null,\"GroupId\":\"grp-nb08ur29\",\"GroupName\":null,\"Host\":null,\"Md5\":\"e7139b32f8fad1a19a6e06cb14d32b01\",\"Method\":\"POST\",\"MicroserviceId\":\"ms-ba2jlxvk\",\"MicroserviceName\":\"provider-demo\",\"MockStatus\":\"disabled\",\"NamespaceId\":\"namespace-qab7bq9v\",\"NamespaceName\":\"shedfree_default\",\"Path\":\"/swagger/v3/getMessageBox\",\"PathMapping\":null,\"RateLimitStatus\":null,\"ReleaseStatus\":\"released\",\"ReleasedTime\":null,\"RpcExt\":null,\"RpcType\":\"http\",\"Timeout\":null,\"UpdatedTime\":\"2024-12-23 01:30:03\",\"UsableStatus\":\"enabled\"},{\"ApiId\":\"api-fu9iwsh4\",\"ApiMatchType\":\"normal\",\"ApiType\":\"ms\",\"CreatedTime\":\"2024-12-23 01:29:41\",\"Description\":null,\"GatewayDeployGroupId\":null,\"GroupId\":\"grp-nb08ur29\",\"GroupName\":null,\"Host\":null,\"Md5\":\"9ddbf8f8c4d6d1d1dfef5ebe259a95ac\",\"Method\":\"POST\",\"MicroserviceId\":\"ms-ba2jlxvk\",\"MicroserviceName\":\"provider-demo\",\"MockStatus\":\"disabled\",\"NamespaceId\":\"namespace-qab7bq9v\",\"NamespaceName\":\"shedfree_default\",\"Path\":\"/swagger/findMessages\",\"PathMapping\":null,\"RateLimitStatus\":null,\"ReleaseStatus\":\"released\",\"ReleasedTime\":null,\"RpcExt\":null,\"RpcType\":\"http\",\"Timeout\":null,\"UpdatedTime\":\"2024-12-23 01:30:03\",\"UsableStatus\":\"enabled\"},{\"ApiId\":\"api-how3wp44\",\"ApiMatchType\":\"normal\",\"ApiType\":\"ms\",\"CreatedTime\":\"2024-12-23 01:29:41\",\"Description\":null,\"GatewayDeployGroupId\":null,\"GroupId\":\"grp-nb08ur29\",\"GroupName\":null,\"Host\":null,\"Md5\":\"f5fc3353acb30ece71335a21c174d6a8\",\"Method\":\"GET\",\"MicroserviceId\":\"ms-ba2jlxvk\",\"MicroserviceName\":\"provider-demo\",\"MockStatus\":\"disabled\",\"NamespaceId\":\"namespace-qab7bq9v\",\"NamespaceName\":\"shedfree_default\",\"Path\":\"/swagger/getMessageBox\",\"PathMapping\":null,\"RateLimitStatus\":null,\"ReleaseStatus\":\"released\",\"ReleasedTime\":null,\"RpcExt\":null,\"RpcType\":\"http\",\"Timeout\":null,\"UpdatedTime\":\"2024-12-23 01:30:03\",\"UsableStatus\":\"enabled\"}],\"TotalCount\":7}",
+          "example": "无",
           "member": "TsfPageApiDetailInfo",
           "name": "Result",
           "output_required": true,
@@ -14493,7 +14494,7 @@
         {
           "disabled": false,
           "document": "API分组信息列表",
-          "example": "{\"Content\":[{\"AclMode\":\"none\",\"ApiCount\":0,\"AuthType\":\"secret\",\"BindedGatewayDeployGroups\":[],\"ClusterId\":null,\"ClusterName\":null,\"ClusterType\":null,\"CreatedTime\":\"2024-11-04 14:21:53\",\"Description\":\"\",\"GatewayInstanceId\":\"gw-ins-4qvyt5dc\",\"GatewayInstanceIdList\":null,\"GatewayInstanceType\":null,\"GroupContext\":\"/grpCtx\",\"GroupId\":\"grp-v446jrhc\",\"GroupName\":\"grpName\",\"GroupType\":\"ms\",\"NamespaceNameKey\":null,\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKey\":null,\"ServiceNameKeyPosition\":\"path\",\"Status\":\"drafted\",\"UpdatedTime\":\"2024-11-04 14:24:41\"}],\"TotalCount\":1}",
+          "example": "无",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
           "output_required": true,
@@ -15743,6 +15744,7 @@
           "example": "{\"Content\":[{\"Description\":\"\",\"Method\":\"GET\",\"MsgwApiType\":null,\"Path\":\"/echo-feign-url/{str}\",\"RpcType\":\"http\",\"Status\":1}],\"TotalCount\":1}",
           "member": "TsfApiListResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18362,6 +18364,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -23531,6 +23534,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -23667,6 +23671,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -25731,6 +25736,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -25785,6 +25791,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -26358,6 +26365,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -26477,6 +26485,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -29986,6 +29995,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -30525,6 +30535,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -30579,6 +30590,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -30679,7 +30691,7 @@
         {
           "disabled": false,
           "document": "配置模板数据",
-          "example": "#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n#请求连接超时时间\\nribbon.ConnectTimeout: 2000\\n#同一实例最大重试次数，不包括首次调用\\nribbon.MaxAutoRetries: 0\\n#重试其他实例的最大重试次数，不包括首次所选的server\\nribbon.MaxAutoRetriesNextServer: 1\\n#是否对所有操作请求都进行重试\\nribbon.OkToRetryOnAllOperations: false\\n",
+          "example": "ribbon.ReadTimeout: 5000",
           "member": "string",
           "name": "ConfigTemplateValue",
           "required": true,
@@ -30788,6 +30800,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

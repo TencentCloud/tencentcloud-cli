@@ -5388,6 +5388,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务描述信息",
+          "example": "任务描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7011,7 +7021,7 @@
         {
           "disabled": false,
           "document": "连接源列表",
-          "example": "{\"TotalCount\":1,\"ConnectResourceList\":[{\"ResourceId\":\"resource-test\",\"ResourceName\":\"resource-test\",\"Description\":\"description-test\",\"Type\":\"ES\",\"Status\":0,\"CreateTime\":\"2019/8/19 00:00:00\",\"ErrorMessage\":\"message-test\",\"DatahubTaskCount\":1,\"CurrentStep\":\"step-test\",\"TaskProgress\":0,\"StepList\":[\"step-test\"],\"EsConnectParam\":{\"Ip\":\"10.0.0.3\",\"Port\":9200,\"ServiceVip\":\"10.0.0.5\",\"UniqVpcId\":\"vpc-test\",\"UserName\":\"user-test\",\"Password\":\"pwd-test\",\"Resource\":\"resource-test\",\"SelfBuilt\":true,\"IsUpdate\":true}}]}",
+          "example": "{\"TotalCount\":1,\"ConnectResourceList\":[{\"ResourceId\":\"resource-test\",\"ResourceName\":\"resource-test\"]}",
           "member": "DescribeConnectResourcesResp",
           "name": "Result",
           "output_required": true,

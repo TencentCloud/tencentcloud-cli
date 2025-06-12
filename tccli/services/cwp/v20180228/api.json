@@ -8,11 +8,11 @@
       "status": "online"
     },
     "CancelIgnoreVul": {
-      "document": "取消漏洞忽略",
+      "document": "产品变动切换到了\\\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\\\n相关接口\n\n取消漏洞忽略",
       "input": "CancelIgnoreVulRequest",
       "name": "取消漏洞忽略",
       "output": "CancelIgnoreVulResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ChangeRuleEventsIgnoreStatus": {
       "document": "根据检测项id或事件id批量忽略事件或取消忽略",
@@ -2983,11 +2983,11 @@
       "status": "online"
     },
     "IgnoreImpactedHosts": {
-      "document": "本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
+      "document": "产品变动切换到了\\\\n切换到 AddVulIgnoreRule / ModifyVulIgnoreRule  CancelVulIgnoreRule\\\\n相关接口\n\n本接口 (IgnoreImpactedHosts) 用于忽略漏洞。",
       "input": "IgnoreImpactedHostsRequest",
       "name": "忽略漏洞",
       "output": "IgnoreImpactedHostsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "KeysLocalStorage": {
       "document": "获取本地存储键值列表",

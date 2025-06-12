@@ -421,14 +421,14 @@
       "status": "online"
     },
     "UploadConfirmLetter": {
-      "document": "本接口（UploadConfirmLetter）用于上传证书确认函。",
+      "document": "本接口（UploadConfirmLetter）上传证书确认函，不再维护其功能，请用户前往腾讯云证书控制台上传证书确认函",
       "input": "UploadConfirmLetterRequest",
       "name": "上传证书确认函",
       "output": "UploadConfirmLetterResponse",
       "status": "online"
     },
     "UploadRevokeLetter": {
-      "document": "本接口（UploadRevokeLetter）用于上传证书吊销确认函。",
+      "document": "本接口（UploadRevokeLetter）上传证书吊销确认函，不再维护其功能，请用户前往腾讯云证书控制台上传证书吊销确认函",
       "input": "UploadRevokeLetterRequest",
       "name": "上传证书吊销确认函",
       "output": "UploadRevokeLetterResponse",
@@ -1508,7 +1508,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填\n国密证书类型本字段不用传",
+          "document": "密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。当 CSR 生成方式为online的时候，此参数必填。\n",
           "example": "2048",
           "member": "string",
           "name": "CsrKeyParameter",
@@ -1517,7 +1517,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法，取值为ECC、RSA， 默认为RSA\n国密证书类型本字段不用传",
+          "document": "加密算法，取值为ECC、RSA， 默认为RSA。当 CSR 生成方式为online的时候，此参数必填。",
           "example": "RSA",
           "member": "string",
           "name": "CsrEncryptAlgo",

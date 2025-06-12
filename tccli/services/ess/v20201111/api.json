@@ -693,6 +693,13 @@
       "output": "ModifyIntegrationRoleResponse",
       "status": "online"
     },
+    "OperateSeals": {
+      "document": "修改印章状态（停用、启用）",
+      "input": "OperateSealsRequest",
+      "name": "更新印章状态",
+      "output": "OperateSealsResponse",
+      "status": "online"
+    },
     "OperateTemplate": {
       "document": "此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href=\"https://qian.tencent.com/developers/company/callback_types_templates\" target=\"_blank\">模板操作相关回调</a>\n\n\n# 支持的操作\n## 1. 删除模板 (OperateType=DELETE)\n此操作会将模板从企业自有模板中彻底删除，若要保留模板而不删除，可将模板停用。\n\n## 2. 启用模板 (OperateType=ENABLE)\n此操作是将已停用的模板启用，操作幂等，若模板已启用，接口不报错。\n\n## 3. 停用模板 (OperateType=DISABLE)\n此操作是将已启用的模板停用，操作幂等，若模板已停用，接口不报错，停用后，无法通过此模板发起合同，已发起的合同不受影响。\n\n## 4. 复制模板 (OperateType=COPY)\n此操作将复制一个完全一样的模板，仅支持修改模板名称，若要修改其他模板内容，需到腾讯电子签控制台操作。",
       "input": "OperateTemplateRequest",
@@ -13899,6 +13906,60 @@
         }
       ],
       "usage": "out"
+    },
+    "OperateSealsRequest": {
+      "document": "OperateSeals请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型，int，目前支持传入以下类型：\n<ul><li>1：启用印章</li></ul>\n<ul><li>2：停用印章</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Act",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要操作的印章ID，数组形式，印章ID可从【web控制台->印章 】获取。",
+          "example": "[\"yDRTZxxxxxJNR\"]",
+          "member": "string",
+          "name": "SealIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateSealsResponse": {
+      "document": "OperateSeals返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OperateTemplateRequest": {
       "document": "OperateTemplate请求参数结构体",

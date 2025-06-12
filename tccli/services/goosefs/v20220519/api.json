@@ -92,11 +92,11 @@
       "status": "online"
     },
     "DescribeClusterRoles": {
-      "document": "查询GooseFS集群角色",
+      "document": "接口废弃\n\n查询GooseFS集群角色",
       "input": "DescribeClusterRolesRequest",
       "name": "查询GooseFS集群角色",
       "output": "DescribeClusterRolesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDataRepositoryTaskStatus": {
       "document": "获取数据流通任务实时状态，用作客户端控制",

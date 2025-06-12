@@ -40,7 +40,8 @@ Output:
                         "Type": "ov",
                         "Status": "active",
                         "CreateTime": "2021-09-11 12:00:00",
-                        "ExpireTime": "2022-09-11 12:00:00"
+                        "ExpireTime": "2022-09-11 12:00:00",
+                        "ManagerPreAuditDomains": []
                     }
                 ]
             }
