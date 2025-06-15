@@ -5533,7 +5533,7 @@
         },
         {
           "disabled": false,
-          "document": "托管证书ID，Cert和CertId不能均未空，都填写时以CertId为准。",
+          "document": "托管证书ID，Cert和CertId不能均为空，都填写时以CertId为准。",
           "example": "证书ID",
           "member": "string",
           "name": "CertId",
@@ -6651,7 +6651,7 @@
         },
         {
           "disabled": false,
-          "document": "Domains 传入多个时，默认（false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）",
+          "document": "Domains 传入多个时，默认(false)返回多个域名的汇总数据\n可按需指定为 true，返回每一个 Domain 的明细数据（statusCode、2xx、3xx、4xx、5xx 指标暂不支持）",
           "example": "false",
           "member": "bool",
           "name": "Detail",

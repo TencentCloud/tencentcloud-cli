@@ -8,6 +8,20 @@
         "title": "送检任务示例"
       }
     ],
+    "CreateDeviceTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceTask\n<公共请求参数>\n\n{\n    \"Mid\": \"F1AFD85EC54480393C546B99C7CD014963761895\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ae64ad9-61da-4bca-9e69-8dbae22e9090\"\n    }\n}",
+        "title": "示例1"
+      },
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeviceTask\n<公共请求参数>\n\n{\n    \"Mid\": \"75129D715480905B6A9C4569893C7634663C2D68\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8519d47f-b0bb-488b-8db5-4b7350017223\"\n    }\n}",
+        "title": "测试"
+      }
+    ],
     "CreateDeviceVirtualGroup": [
       {
         "document": "创建自定义分组接口",
@@ -64,6 +78,20 @@
         "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceHardwareInfoList\n<公共请求参数>\n\n{\n    \"GroupId\": 11668614,\n    \"OsType\": 0,\n    \"DomainInstanceId\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountName\": \"\",\n                    \"Cpu\": \"12th Gen Intel(R) Core(TM) i7-12700H\",\n                    \"GroupId\": 11668615,\n                    \"GroupName\": \"未分组终端\",\n                    \"GroupNamePath\": \"全网终端.未分组终端\",\n                    \"HardDiskSize\": \"VMware Virtual NVMe Disk 44 GB\",\n                    \"Id\": 288665,\n                    \"Ip\": \"113.108.77.52\",\n                    \"MacAddr\": \"00:0C:29:96:E6:DE\",\n                    \"Memory\": \"4 GB\",\n                    \"Mid\": \"0A811A6ECD8D6F4CA516AB56B1C2ECFC68104148\",\n                    \"Monitor\": \"\",\n                    \"Name\": \"PC-20240705KXXE\",\n                    \"OsType\": 0,\n                    \"Status\": 5,\n                    \"UserName\": \"Administrator\"\n                },\n                {\n                    \"AccountName\": \"\",\n                    \"Cpu\": \"Intel Pentium III Xeon 处理器\",\n                    \"GroupId\": 11668634,\n                    \"GroupName\": \"dddd\",\n                    \"GroupNamePath\": \"全网终端.dddd\",\n                    \"HardDiskSize\": \"VMware, VMware Virtual S SCSI Disk Device 14 GB\",\n                    \"Id\": 288664,\n                    \"Ip\": \"113.108.77.52\",\n                    \"MacAddr\": \"B0:DC:EF:E7:37:EE\",\n                    \"Memory\": \"1024 MB\",\n                    \"Mid\": \"489C698CAECC13B1B7C44E59443F5CBB676B7F33\",\n                    \"Monitor\": \"\",\n                    \"Name\": \"cs-207addad83ae\",\n                    \"OsType\": 0,\n                    \"Status\": 5,\n                    \"UserName\": \"Administrator\"\n                },\n                {\n                    \"AccountName\": \"\",\n                    \"Cpu\": \"12th Gen Intel(R) Core(TM) i7-12700H\",\n                    \"GroupId\": 11668637,\n                    \"GroupName\": \"本地ip\",\n                    \"GroupNamePath\": \"全网终端.本地ip\",\n                    \"HardDiskSize\": \"SAMSUNG MZVL41T0HBLB-00BL7 953 GB\",\n                    \"Id\": 288663,\n                    \"Ip\": \"119.147.10.192\",\n                    \"MacAddr\": \"B0:DC:EF:E7:37:EA\",\n                    \"Memory\": \"32 GB\",\n                    \"Mid\": \"8314BF3FD3FD738410C4FBB0DDDA48786800AB00\",\n                    \"Monitor\": \"\",\n                    \"Name\": \"STEVENSSHE-NBIR\",\n                    \"OsType\": 0,\n                    \"Status\": 5,\n                    \"UserName\": \"Administrator\"\n                },\n                {\n                    \"AccountName\": \"\",\n                    \"Cpu\": \"\",\n                    \"GroupId\": 11668634,\n                    \"GroupName\": \"dddd\",\n                    \"GroupNamePath\": \"全网终端.dddd\",\n                    \"HardDiskSize\": \"\",\n                    \"Id\": 288662,\n                    \"Ip\": \"119.147.10.202\",\n                    \"MacAddr\": \"\",\n                    \"Memory\": \"\",\n                    \"Mid\": \"7EBWA5184BEC838B96B29CE8105EC66167F8D1B2\",\n                    \"Monitor\": \"\",\n                    \"Name\": \"lucal_win-PC7\",\n                    \"OsType\": 0,\n                    \"Status\": 5,\n                    \"UserName\": \"lucal_win\"\n                },\n                {\n                    \"AccountName\": \"\",\n                    \"Cpu\": \"\",\n                    \"GroupId\": 11668634,\n                    \"GroupName\": \"dddd\",\n                    \"GroupNamePath\": \"全网终端.dddd\",\n                    \"HardDiskSize\": \"\",\n                    \"Id\": 288661,\n                    \"Ip\": \"119.147.10.202\",\n                    \"MacAddr\": \"\",\n                    \"Memory\": \"\",\n                    \"Mid\": \"1EBWA5184BEC838B96B29CE8105EC66167F8CFBD\",\n                    \"Monitor\": \"\",\n                    \"Name\": \"lucal_win-PC\",\n                    \"OsType\": 0,\n                    \"Status\": 5,\n                    \"UserName\": \"lucal_win\"\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 20,\n                \"Total\": 5\n            }\n        },\n        \"RequestId\": \"e00b7ba5-f534-4067-9fda-83012521919d\"\n    }\n}",
         "title": "查询终端硬件信息列表"
+      }
+    ],
+    "DescribeDeviceInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceInfo\n<公共请求参数>\n\n{\n    \"Type\": \"process_list\",\n    \"Mid\": \"60A79588CD1400107221E490335AA1BA63730928\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c67af11-9c46-42aa-af5e-28f070199e82\",\n        \"Data\": {\n            \"NetworkList\": null,\n            \"ServiceList\": null,\n            \"ProcessList\": null\n        }\n    }\n}",
+        "title": "查询终端信息"
+      },
+      {
+        "document": "测试",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceInfo\n<公共请求参数>\n\n{\n    \"Mid\": \"EBCDB9C9923516F3C02B42B42DA564E7653F6EBC02\",\n    \"Type\": \"process_list\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"NetworkList\": null,\n            \"ProcessList\": null,\n            \"ServiceList\": null\n        },\n        \"RequestId\": \"26a20612-155c-4de1-adcc-52358ff7fb36\"\n    }\n}",
+        "title": "测试"
       }
     ],
     "DescribeDevices": [

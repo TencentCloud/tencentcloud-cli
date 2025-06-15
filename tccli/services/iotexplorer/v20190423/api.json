@@ -10218,7 +10218,7 @@
         {
           "disabled": false,
           "document": "需要绑定的设备",
-          "example": "dev001",
+          "example": "dev01",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -10245,7 +10245,7 @@
           "example": "无",
           "member": "DeviceSignatureInfo",
           "name": "DeviceSignature",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10679,7 +10679,7 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "dev1",
+          "example": "dev01",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -10724,7 +10724,7 @@
           "example": "[{\"CreateTime\":1608882530000,\"Longitude\":113.9709,\"Latitude\":22.",
           "member": "PositionItem",
           "name": "Positions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

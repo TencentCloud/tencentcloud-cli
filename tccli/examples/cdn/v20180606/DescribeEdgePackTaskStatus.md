@@ -8,7 +8,7 @@ Input:
 tccli cdn DescribeEdgePackTaskStatus --cli-unfold-argument  \
     --StartTime 2020-09-22T00:00:00+00:00 \
     --EndTime 2020-09-23T00:00:00+00:00 \
-    --Limit 0 \
+    --Limit 10 \
     --Offset 0
 ```
 

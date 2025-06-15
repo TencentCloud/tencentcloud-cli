@@ -3379,6 +3379,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3999,9 +4000,10 @@
         {
           "disabled": false,
           "document": "API 信息",
-          "example": "{\"ApiId\":\"api-m42wysh0\",\"ApiMatchType\":\"normal\",\"ApiType\":\"external\",\"CreatedTime\":\"2024-12-11 18:08:38\",\"Description\":null,\"GatewayDeployGroupId\":null,\"GroupId\":\"grp-h9xl5mmi\",\"GroupName\":null,\"Host\":\"http://test.com\",\"Md5\":\"39c57c50b244de7272311253edca3771\",\"Method\":\"GET\",\"MicroserviceId\":\"ms-external\",\"MicroserviceName\":\"ms-external\",\"MockStatus\":\"disabled\",\"NamespaceId\":\"namespace-external\",\"NamespaceName\":\"namespace-external\",\"Path\":\"/healthcheck\",\"PathMapping\":\"/health\",\"RateLimitStatus\":null,\"ReleaseStatus\":\"released\",\"ReleasedTime\":null,\"RpcExt\":null,\"RpcType\":\"http\",\"Timeout\":null,\"UpdatedTime\":\"2024-12-18 11:49:22\",\"UsableStatus\":\"enabled\"}",
+          "example": "无",
           "member": "ApiDetailInfo",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7030,6 +7032,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7574,7 +7577,7 @@
         {
           "disabled": false,
           "document": "配置模板数据",
-          "example": "#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n#请求连接超时时间\\nribbon.ConnectTimeout: 2000\\n#同一实例最大重试次数，不包括首次调用\\nribbon.MaxAutoRetries: 0\\n#重试其他实例的最大重试次数，不包括首次所选的server\\nribbon.MaxAutoRetriesNextServer: 1\\n#是否对所有操作请求都进行重试\\nribbon.OkToRetryOnAllOperations: false\\n",
+          "example": "ribbon.ReadTimeout: 5000",
           "member": "string",
           "name": "ConfigTemplateValue",
           "required": true,
@@ -7610,7 +7613,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8309,7 +8312,7 @@
         {
           "disabled": false,
           "document": "Api信息",
-          "example": "[{\"NamespaceId\":\"namespace-external\",\"MicroserviceId\":\"ms-external\",\"Path\":\"/echo_user\",\"Method\":\"GET\",\"PathMapping\":\"/echo_user\",\"Host\":\"http://www.qq.com\",\"Description\":\"This is desc\",\"RpcExt\":\"{\\\"shortServiceName\\\":\\\"personservice\\\",\\\"interfaceName\\\":\\\"com.tencent.tsf.atom.example.alibaba.dubbo.PersonService\\\",\\\"methodName\\\":\\\"complexCondition\\\",\\\"parameterTypes\\\":\\\"byte,short,int,long,float,double,boolean,char,java.lang.Integer,java.util.List<java.lang.Integer>,java.util.List<java.lang.Object>,java.util.List,java.util.Collection<java.lang.Integer>,java.lang.Integer[],java.lang.Object\\\",\\\"group\\\":null,\\\"version\\\":\\\"1.0\\\",\\\"loadbalance\\\":null,\\\"retries\\\":null,\\\"timeout\\\":null,\\\"protocol\\\":\\\"dubbo\\\",\\\"url\\\":null}\",\"RpcType\":\"http\",\"Md5\":\"1fd35524030bebc48e0f51a3a7fe6737\"}]",
+          "example": "无",
           "member": "ApiInfo",
           "name": "ApiList",
           "required": true,
@@ -8336,7 +8339,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8637,6 +8640,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9774,6 +9778,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9810,6 +9815,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9938,6 +9944,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -10312,6 +10319,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -10394,6 +10402,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11583,9 +11592,10 @@
         {
           "disabled": false,
           "document": "API 详情",
-          "example": "{\"CanRun\":true,\"Definitions\":[{\"Name\":\"\",\"Properties\":[{\"Description\":\"\",\"Name\":\"\",\"Type\":\"\"}]}],\"Description\":\"feignMeshUser\",\"MsgwApiType\":\"Normal\",\"Request\":[{\"DefaultValue\":null,\"Description\":\"tagName\",\"In\":\"query\",\"Name\":\"tagName\",\"Required\":false,\"Type\":\"string\"},{\"DefaultValue\":null,\"Description\":\"tagValue\",\"In\":\"query\",\"Name\":\"tagValue\",\"Required\":false,\"Type\":\"string\"}],\"RequestContentType\":null,\"Response\":[{\"Description\":\"OK\",\"Name\":\"_RESPONSE\",\"Type\":\"string\"}],\"Status\":1}",
+          "example": "无",
           "member": "ApiDetailResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11828,9 +11838,10 @@
         {
           "disabled": false,
           "document": "日使用统计对象",
-          "example": "{\"Quantile\":{\"FifthPositionValue\":\"18.70000\",\"MaxValue\":\"934.68000\",\"MinValue\":\"9.13000\",\"NinthPositionValue\":\"24.88900\"},\"TopStatusCode\":[{\"Count\":\"39788487\",\"Name\":\"2xx\",\"Ratio\":\"0.9999875593700789\"}],\"TopTimeCost\":[{\"Count\":\"39741921\",\"Name\":\"0_100_ms\",\"Ratio\":\"0.9988172353844087\"},{\"Count\":\"36896\",\"Name\":\"100_200_ms\",\"Ratio\":\"9.27291881958679E-4\"},{\"Count\":\"9941\",\"Name\":\"200_500_ms\",\"Ratio\":\"2.498430344360155E-4\"},{\"Count\":\"224\",\"Name\":\"500_2000_ms\",\"Ratio\":\"5.629699196626845E-6\"},{\"Count\":\"0\",\"Name\":\"2000_ms\",\"Ratio\":\"0.0\"}]}",
+          "example": "无",
           "member": "GroupApiUseStatistics",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12722,10 +12733,10 @@
         {
           "disabled": false,
           "document": "配置项分页对象",
-          "example": "{\"Content\":[{\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"amp-consumer\",\"ConfigId\":\"dcfg-vzk36owv\",\"ConfigName\":\"config_app\",\"ConfigType\":null,\"ConfigValue\":null,\"ConfigVersion\":null,\"ConfigVersionCount\":1,\"ConfigVersionDesc\":null,\"CreationTime\":null,\"DeleteFlag\":null,\"LastUpdateTime\":\"2024-12-24 18:04:02\"}],\"TotalCount\":1}",
+          "example": "无",
           "member": "TsfPageConfig",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13738,7 +13749,7 @@
         {
           "disabled": false,
           "document": "网关分组和API列表信息",
-          "example": "{\"GatewayDeployGroupId\":\"group-yd3b588a\",\"GatewayDeployGroupName\":\"group-zuul-1\",\"GroupNum\":1,\"Groups\":[{\"GatewayInstanceId\":\"gw-ins-b09khqjq\",\"GatewayInstanceType\":\"none\",\"GroupApiCount\":2,\"GroupApis\":[{\"ApiId\":\"api-0i1r0zuh\",\"Method\":\"GET\",\"MicroserviceName\":\"provider-demo\",\"NamespaceName\":\"ns_default\",\"Path\":\"/checkToken\"},{\"ApiId\":\"api-m0csucjn\",\"Method\":\"GET\",\"MicroserviceName\":\"provider-demo\",\"NamespaceName\":\"ns_default\",\"Path\":\"/swagger/getMessageDetail\"}],\"GroupId\":\"grp-nb08ur29\",\"GroupName\":\"grp_app\"}]}",
+          "example": "无",
           "member": "GatewayVo",
           "name": "Result",
           "output_required": true,
@@ -13860,6 +13871,7 @@
           "example": "{\"ErrorCount\":\"292635\",\"ErrorCountOfDay\":\"292635\",\"InvocationCount\":\"13412691\",\"InvocationCountOfDay\":\"13412691\",\"SuccessRatio\":\"0.97818\",\"SuccessRatioOfDay\":\"0.97818\"}",
           "member": "MonitorOverview",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13957,10 +13969,10 @@
         {
           "disabled": false,
           "document": "翻页结构体",
-          "example": "{\"Content\":[{\"ApplicationId\":\"application-ydopqnxa\",\"ApplicationName\":\"shedfree-gw\",\"ApplicationType\":\"V\",\"ClusterType\":\"V\",\"DeployGroupId\":\"group-yd3b588a\",\"DeployGroupName\":\"shed-zuul-1\",\"GroupStatus\":\"Running\"},{\"ApplicationId\":\"application-ydopqnxa\",\"ApplicationName\":\"shedfree-gw\",\"ApplicationType\":\"V\",\"ClusterType\":\"V\",\"DeployGroupId\":\"group-yq9d6wev\",\"DeployGroupName\":\"shed-zuul-3\",\"GroupStatus\":\"Running\"},{\"ApplicationId\":\"application-ydopqnxa\",\"ApplicationName\":\"shedfree-gw\",\"ApplicationType\":\"V\",\"ClusterType\":\"V\",\"DeployGroupId\":\"group-yx87px4a\",\"DeployGroupName\":\"shed-zuul-2\",\"GroupStatus\":\"Running\"}],\"TotalCount\":3}",
+          "example": "无",
           "member": "TsfPageGatewayDeployGroup",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14058,9 +14070,10 @@
         {
           "disabled": false,
           "document": "API分组信息",
-          "example": "{\"Content\":[{\"AclMode\":null,\"ApiCount\":0,\"AuthType\":null,\"BindedGatewayDeployGroups\":[],\"ClusterId\":null,\"ClusterName\":null,\"ClusterType\":null,\"CreatedTime\":null,\"Description\":null,\"GatewayInstanceId\":null,\"GatewayInstanceIdList\":null,\"GatewayInstanceType\":null,\"GroupContext\":null,\"GroupId\":\"non-tsf-gateway-group\",\"GroupName\":\"本地配置API\",\"GroupType\":null,\"NamespaceNameKey\":null,\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKey\":null,\"ServiceNameKeyPosition\":\"path\",\"Status\":null,\"UpdatedTime\":null},{\"AclMode\":\"none\",\"ApiCount\":15,\"AuthType\":\"none\",\"BindedGatewayDeployGroups\":[],\"ClusterId\":null,\"ClusterName\":null,\"ClusterType\":null,\"CreatedTime\":\"2024-12-23 01:29:13\",\"Description\":\"\",\"GatewayInstanceId\":\"gw-ins-b09khqjq\",\"GatewayInstanceIdList\":null,\"GatewayInstanceType\":\"none\",\"GroupContext\":\"/grpCxt\",\"GroupId\":\"grp-nb08ur29\",\"GroupName\":\"grpName\",\"GroupType\":\"ms\",\"NamespaceNameKey\":null,\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKey\":null,\"ServiceNameKeyPosition\":\"path\",\"Status\":\"released\",\"UpdatedTime\":\"2024-12-23 01:30:03\"}],\"TotalCount\":2}",
+          "example": "无",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14286,9 +14299,10 @@
         {
           "disabled": false,
           "document": "日使用统计对象",
-          "example": "{\"TopAvgTimeCost\":[{\"ApiId\":\"api-dtbc5cf0\",\"ApiPath\":\"/echo/{param}\",\"ServiceName\":\"provider-demo\",\"Value\":\"12.22782\"}],\"TopFailureRate\":[{\"ApiId\":\"api-dtbc5cf0\",\"ApiPath\":\"/echo/{param}\",\"ServiceName\":\"provider-demo\",\"Value\":\"0.02182\"}],\"TopReqAmount\":[{\"ApiId\":\"api-dtbc5cf0\",\"ApiPath\":\"/echo/{param}\",\"ServiceName\":\"provider-demo\",\"Value\":\"1.3412689E7\"}]}",
+          "example": "无",
           "member": "GroupDailyUseStatistics",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15854,6 +15868,7 @@
           "example": "{\"Blocked\":\"N\",\"GatewayGroupId\":\"group-yd3b588a\",\"Order\":1,\"PathRewriteId\":\"rewrite-2vz5pdwv\",\"Regex\":\"/app\",\"Replacement\":\"/user\"}",
           "member": "PathRewrite",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15917,6 +15932,7 @@
           "example": "{\"Content\":[{\"Blocked\":\"N\",\"GatewayGroupId\":\"group-yd3b588a\",\"Order\":1,\"PathRewriteId\":\"rewrite-2vz5pdwv\",\"Regex\":\"/app\",\"Replacement\":\"/user\"}],\"TotalCount\":1}",
           "member": "PathRewritePage",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

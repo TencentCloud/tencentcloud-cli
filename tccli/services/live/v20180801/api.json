@@ -995,7 +995,7 @@
       "status": "online"
     },
     "DescribeRecordTask": {
-      "document": "查询指定时间段范围内启动和结束的录制任务列表。\n- 使用前提\n1. 仅用于查询由 CreateRecordTask 接口创建的录制任务。\n2. 不能查询被 DeleteRecordTask 接口删除以及已过期（平台侧保留3个月）的录制任务。\n",
+      "document": "查询指定时间段范围内启动和结束的录制任务列表。\n- 使用前提\n1. 仅用于查询由 CreateRecordTask 接口创建的录制任务。\n2. 不能查询被 DeleteRecordTask 接口删除以及已过期（平台侧保留3个月）的录制任务。",
       "input": "DescribeRecordTaskRequest",
       "name": "查询录制任务列表（新）",
       "output": "DescribeRecordTaskResponse",
@@ -12514,7 +12514,7 @@
           "example": "RF1bV9tRVVEW=",
           "member": "string",
           "name": "ScrollToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12524,7 +12524,7 @@
           "example": "无",
           "member": "RecordTask",
           "name": "TaskList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

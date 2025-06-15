@@ -195,7 +195,7 @@
     "DescribeEdgePackTaskStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePackTaskStatus\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-23T00:00:00+00:00\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgePackTaskStatus\n<公共请求参数>\n\n{\n    \"StartTime\": \"2020-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2020-09-23T00:00:00+00:00\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"EdgePackTaskStatusSet\": [\n            {\n                \"Apk\": \"test.apk\",\n                \"UploadTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SrcDir\": [\n                    \"/src/\"\n                ],\n                \"DstDir\": \"/ext/\",\n                \"StatusDesc\": \"\",\n                \"Status\": \"done\"\n            }\n        ],\n        \"RequestId\": \"9b231c10-72a3-4a92-8498-ffxxxxxxx\"\n    }\n}",
         "title": "查询动态打包任务状态列"
       }
@@ -252,7 +252,7 @@
       {
         "document": "",
         "input": "https://cdn.tencentcloudapi.com/?Action=DescribeOriginData\n&StartTime=2018-09-04 00:00:00\n&EndTime=2018-09-04 12:00:00\n&Metric=flux\n&Domains.0=www.test.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test.com\",\n                \"OriginData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2bb261c-1476-4190-93ba-b3c9bae51249\",\n        \"Data\": [\n            {\n                \"Resource\": \"www.test.com\",\n                \"OriginData\": [\n                    {\n                        \"Metric\": \"flux\",\n                        \"DetailData\": [\n                            {\n                                \"Time\": \"2018-09-03 00:00:00\",\n                                \"Value\": 10\n                            },\n                            {\n                                \"Time\": \"2018-09-03 00:05:00\",\n                                \"Value\": 20\n                            }\n                        ],\n                        \"SummarizedData\": {\n                            \"Name\": \"sum\",\n                            \"Value\": 30\n                        }\n                    }\n                ]\n            }\n        ],\n        \"Interval\": \"5min\"\n    }\n}",
         "title": "查询Cdn回源数据"
       }
     ],

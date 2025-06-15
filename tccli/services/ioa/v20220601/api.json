@@ -7,6 +7,13 @@
       "output": "CreateDLPFileDetectionTaskResponse",
       "status": "online"
     },
+    "CreateDeviceTask": {
+      "document": "创建获取终端进程网络服务信息任务，私有化调用path为：capi/Assets/Device/DescribeDeviceInfo",
+      "input": "CreateDeviceTaskRequest",
+      "name": "创建获取终端进程网络服务信息任务",
+      "output": "CreateDeviceTaskResponse",
+      "status": "online"
+    },
     "CreateDeviceVirtualGroup": {
       "document": "创建终端自定义分组，私有化调用path为：/capi/Assets/Device/CreateDeviceVirtualGroup",
       "input": "CreateDeviceVirtualGroupRequest",
@@ -40,6 +47,13 @@
       "input": "DescribeDeviceHardwareInfoListRequest",
       "name": "查询终端硬件信息列表",
       "output": "DescribeDeviceHardwareInfoListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceInfo": {
+      "document": "获取终端进程网络服务信息，私有化调用path为：capi/Assets/Device/DescribeDeviceInfo",
+      "input": "DescribeDeviceInfoRequest",
+      "name": "获取终端进程网络服务信息",
+      "output": "DescribeDeviceInfoResponse",
       "status": "online"
     },
     "DescribeDevices": {
@@ -254,6 +268,33 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceTaskRequest": {
+      "document": "CreateDeviceTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端id",
+          "example": "无",
+          "member": "string",
+          "name": "Mid",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceTaskResponse": {
+      "document": "CreateDeviceTask返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1079,6 +1120,91 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeDeviceInfoRequest": {
+      "document": "DescribeDeviceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端id",
+          "example": "无",
+          "member": "string",
+          "name": "Mid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型  process_list network_list service_list",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceInfoResponse": {
+      "document": "DescribeDeviceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务响应数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeDeviceInfoRspData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceInfoRspData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的具体数据对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "DeviceProcessInfo",
+          "name": "ProcessList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页的具体数据对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "DeviceNetworkInfo",
+          "name": "NetworkList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页的具体数据对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "DeviceServiceInfo",
+          "name": "ServiceList",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeDevicesPageRsp": {
       "document": "分页的data数据",
@@ -2344,6 +2470,255 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceNetworkInfo": {
+      "document": "分页的具体数据对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本地地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "LocalAddr",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "LocalPort",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "ProcessId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ProcessName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "远程地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "RemoteAddr",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "远程端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "RemotePort",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceProcessInfo": {
+      "document": "分页的具体数据对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "CmdLine",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Memory",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "ProcessId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceServiceInfo": {
+      "document": "分页的具体数据对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "CmdLine",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "ProcessId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "StartType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

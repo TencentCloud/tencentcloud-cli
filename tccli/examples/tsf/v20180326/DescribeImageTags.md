@@ -23,14 +23,20 @@ Output:
                     "CreationTime": "2024-12-17T11:55:49Z",
                     "DockerVersion": "",
                     "ImageId": "sha256:b774178107747295705e9f919e5cf009d2dad7f343f18dea74a9f3b13e03b6ec",
-                    "Os": null,
+                    "Os": "",
                     "PushTime": "2024-12-17T11:55:49Z",
                     "RepoName": "tsf_100011913960/mesh-no-spec",
                     "Size": "72 MB",
                     "SizeByte": 72225778,
                     "TagId": "sha256:4c270bbe6abe54d0b9c5186d5c2d79a32b932fc65f5628518b88c093f69ecc19",
                     "TagName": "1217",
-                    "TcrRepoInfo": null,
+                    "TcrRepoInfo": {
+                        "Region": "gz",
+                        "RegistryId": "id",
+                        "RegistryName": "name",
+                        "Namespace": "namespace",
+                        "RepoName": "repo-name"
+                    },
                     "UpdateTime": "2024-12-17T11:55:57Z"
                 }
             ],

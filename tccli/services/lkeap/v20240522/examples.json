@@ -63,7 +63,7 @@
     "DeleteAttributeLabels": [
       {
         "document": "删除属性标签",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttributeLabel\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"AttributeIds\": [\n        \"1830996257455365986\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttributeLabels\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"AttributeIds\": [\n        \"1830996257455365986\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1966c811-59a6-4385-bd4f-4ce12bdaa21a\"\n    }\n}",
         "title": "删除属性标签"
       }
@@ -71,7 +71,7 @@
     "DeleteDocs": [
       {
         "document": "删除文档",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDoc\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"DocIds\": [\n        \"1830996257459865536\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocs\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"DocIds\": [\n        \"1830996257459865536\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3d05737-0b05-45cd-aa6a-fe16213cfe01\"\n    }\n}",
         "title": "删除文档"
       }
@@ -87,7 +87,7 @@
     "DeleteQAs": [
       {
         "document": "删除qa",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"QaIds\": [\n        \"1830996257459865536\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQAs\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"QaIds\": [\n        \"1830996257459865536\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c081879-196a-4df0-87ac-07e73a00952e\"\n    }\n}",
         "title": "删除问答对"
       }
@@ -143,7 +143,7 @@
     "ListAttributeLabels": [
       {
         "document": "获取标签列表",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAttributeLabel\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"PageNumber\": 1,\n    \"PageSize\": 50\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAttributeLabels\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"PageNumber\": 1,\n    \"PageSize\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttributeId\": \"1830880287852529408\",\n                \"AttributeKey\": \"stylee\",\n                \"AttributeName\": \"风格\",\n                \"Labels\": [\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"流行\"\n                    },\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"现代\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c5821f64-064a-448c-9279-b40eff06f4ae\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取标签列表"
       }
@@ -220,7 +220,7 @@
       {
         "document": "实时语义检索",
         "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetrieveKnowledgeRealtime\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"49019910106\",\n    \"Query\": \"国庆节放几天假\",\n    \"DocIds\": [\n        \"1828720159590123264\"\n    ],\n    \"RetrievalMethod\": \"SEMANTIC\",\n    \"RetrievalSetting\": {\n        \"TopK\": 3,\n        \"ScoreThreshold\": 0.7\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Metadata\": {\n                    \"Type\": \"DOC\",\n                    \"ResultSource\": \"SEMANTIC\",\n                    \"ChunkPageNumbers\": [\n                        1\n                    ]\n                },\n                \"Title\": \"example.pdf\",\n                \"Content\": \"国庆放七天假\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d422c101-96e6-4aeb-b51c-0ccb551a5a52\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Metadata\": {\n                    \"Type\": \"DOC\",\n                    \"ResultSource\": \"SEMANTIC\"\n                },\n                \"Title\": \"\",\n                \"Content\": \"国庆放七天假\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d422c101-96e6-4aeb-b51c-0ccb551a5a52\"\n    }\n}",
         "title": "实时语义检索"
       }
     ],

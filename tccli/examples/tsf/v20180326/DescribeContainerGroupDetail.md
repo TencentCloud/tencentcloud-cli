@@ -17,6 +17,7 @@ Output:
             "UpdatedTime": 0,
             "HealthCheckSettings": {
                 "ReadinessProbe": {
+                    "Type": "tcp",
                     "TimeoutSeconds": 1,
                     "InitialDelaySeconds": 1,
                     "ActionType": "TCP",

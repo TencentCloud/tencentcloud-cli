@@ -2130,6 +2130,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单明细对应的自定义tag",
+          "example": "{\"tag1\":\"vlue1\", \"tag2\":\"value2\"}",
+          "member": "string",
+          "name": "BillingTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4032,6 +4042,16 @@
           "name": "AppStatusDesc",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用是否在复制中",
+          "example": "无",
+          "member": "bool",
+          "name": "IsCopying",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -11746,8 +11766,8 @@
         },
         {
           "disabled": false,
-          "document": "页码",
-          "example": "无",
+          "document": "页码（从1开始）",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -11755,7 +11775,7 @@
         },
         {
           "disabled": false,
-          "document": "分页数量",
+          "document": "分页数量(最大值1000)",
           "example": "无",
           "member": "uint64",
           "name": "PageSize",
@@ -11804,6 +11824,15 @@
           "example": "knowledge_qa",
           "member": "string",
           "name": "AppType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账单明细对应的自定义tag",
+          "example": "{\"tag1\":\"vlue1\", \"tag2\":\"value2\"}",
+          "member": "string",
+          "name": "BillingTag",
           "required": false,
           "type": "string"
         }

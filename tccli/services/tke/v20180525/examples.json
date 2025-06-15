@@ -1020,6 +1020,14 @@
         "title": "查询开关列表接口示例"
       }
     ],
+    "DescribeMasterComponent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"Component\": \"kube-apiserver\",\n        \"Status\": \"Shutdown\"\n    }\n}",
+        "title": "获取kube-apiserver状态"
+      }
+    ],
     "DescribeOSImages": [
       {
         "document": "",
@@ -1686,6 +1694,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterVirtualNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"NodePoolId\": \"np-e55paxnt\",\n    \"Name\": \"virtual-node-prod\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
         "title": "修改超级节点池"
+      }
+    ],
+    "ModifyMasterComponent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\",\n    \"Operation\": \"shutdown\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "停机kube-apiserver"
       }
     ],
     "ModifyNodePoolDesiredCapacityAboutAsg": [

@@ -861,6 +861,13 @@
       "output": "DescribeLogSwitchesResponse",
       "status": "online"
     },
+    "DescribeMasterComponent": {
+      "document": "进行master组件停机故障演练时，获取master组件运行状态，支持kube-apiserver、kube-scheduler、kube-controller-manager",
+      "input": "DescribeMasterComponentRequest",
+      "name": "查询托管集群的master组件状态",
+      "output": "DescribeMasterComponentResponse",
+      "status": "online"
+    },
     "DescribeOSImages": {
       "document": "获取OS聚合信息",
       "input": "DescribeOSImagesRequest",
@@ -1349,6 +1356,13 @@
       "input": "ModifyClusterVirtualNodePoolRequest",
       "name": "修改超级节点池",
       "output": "ModifyClusterVirtualNodePoolResponse",
+      "status": "online"
+    },
+    "ModifyMasterComponent": {
+      "document": "修改master组件，支持kube-apiserver、kube-scheduler、kube-controller-manager副本数调整为0和恢复",
+      "input": "ModifyMasterComponentRequest",
+      "name": "修改托管集群master组件",
+      "output": "ModifyMasterComponentResponse",
       "status": "online"
     },
     "ModifyNodePoolDesiredCapacityAboutAsg": {
@@ -11939,6 +11953,62 @@
       ],
       "type": "object"
     },
+    "DescribeMasterComponentRequest": {
+      "document": "DescribeMasterComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-pd41w15e",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "master组件名称，支持kube-apiserver、kube-scheduler、kube-controller-manager",
+          "example": "kube-apiserver",
+          "member": "string",
+          "name": "Component",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMasterComponentResponse": {
+      "document": "DescribeMasterComponent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "master组件名称",
+          "example": "kube-apiserver",
+          "member": "string",
+          "name": "Component",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "master组件状态，三种状态：running、updating、shutdown",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOSImagesRequest": {
       "document": "DescribeOSImages请求参数结构体",
       "members": [],
@@ -19364,6 +19434,60 @@
     },
     "ModifyClusterVirtualNodePoolResponse": {
       "document": "ModifyClusterVirtualNodePool返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMasterComponentRequest": {
+      "document": "ModifyMasterComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-pd41w15e",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "master组件名称，支持kube-apiserver、kube-scheduler、kube-controller-manager",
+          "example": "kube-apiserver",
+          "member": "string",
+          "name": "Component",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "停机或恢复，值只能为：shutdown或restore",
+          "example": "shutdown",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为true时，不真正执行停机或恢复操作\t",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMasterComponentResponse": {
+      "document": "ModifyMasterComponent返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

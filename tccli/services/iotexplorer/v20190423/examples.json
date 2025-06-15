@@ -952,7 +952,7 @@
       {
         "document": "获取设备历史位置",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDeviceLocationHistory\n<公共请求参数>\n\n{\n    \"ProductId\": \"X4912BAIVR\",\n    \"DeviceName\": \"dev1\",\n    \"StartTime\": 1604890314000,\n    \"EndTime\": 1609890353000\n}",
-        "output": "{\n    \"Response\": {\n        \"Positions\": [\n            {\n                \"CreateTime\": 1608882530000,\n                \"Longitude\": 113.9709,\n                \"Latitude\": 22.562782\n            },\n            {\n                \"CreateTime\": 1608882530000,\n                \"Longitude\": 113.95,\n                \"Latitude\": 22.55782\n            },\n            {\n                \"CreateTime\": 1608890314000,\n                \"Longitude\": 113.9,\n                \"Latitude\": 22.52782\n            },\n            {\n                \"CreateTime\": 1608890353000,\n                \"Longitude\": 113.95,\n                \"Latitude\": 22.55782\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Positions\": [\n            {\n                \"CreateTime\": 1608882530000,\n                \"Longitude\": 113.9709,\n                \"Latitude\": 22.562782,\n                \"LocationType\": \"\",\n                \"Accuracy\": 42.3\n            }\n        ],\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
         "title": "GetDeviceLocationHistory"
       }
     ],
