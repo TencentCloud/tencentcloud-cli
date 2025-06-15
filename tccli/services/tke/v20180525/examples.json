@@ -1076,6 +1076,14 @@
         "title": "查询开关列表接口示例"
       }
     ],
+    "DescribeMasterComponent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\",\n        \"Component\": \"kube-apiserver\",\n        \"Status\": \"Shutdown\"\n    }\n}",
+        "title": "获取kube-apiserver状态"
+      }
+    ],
     "DescribeMetaFeatureProgress": [
       {
         "document": "",
@@ -1790,6 +1798,14 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyK8sWorkload\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"Namespace\": \"default\",\n    \"Kind\": \"Deployment\",\n    \"Name\": \"nginx\",\n    \"Containers\": [\n        {\n            \"Name\": \"nginx\",\n            \"Image\": \"nginx:latest\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f55aaa93-c681-47c9-860a-59ae16ade268\"\n    }\n}",
         "title": "修改工作负载的镜像"
+      }
+    ],
+    "ModifyMasterComponent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckComponentVersion\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-pd41w15e\",\n    \"Component\": \"kube-apiserver\",\n    \"Operation\": \"shutdown\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ac0d3ae-063e-4789-93fe-3c73e93191b9\"\n    }\n}",
+        "title": "停机kube-apiserver"
       }
     ],
     "ModifyNodePoolDesiredCapacityAboutAsg": [

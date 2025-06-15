@@ -8,11 +8,11 @@
       "status": "online"
     },
     "AsyncRegisterIps": {
-      "document": "批量注册虚拟IP，异步接口。通过接口来查询任务进度。每次请求最多注册256个IP",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n批量注册虚拟IP，异步接口。通过接口来查询任务进度。每次请求最多注册256个IP",
       "input": "AsyncRegisterIpsRequest",
       "name": "批量注册虚拟IP",
       "output": "AsyncRegisterIpsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "BindEipsToNatGateway": {
       "document": "NAT网关绑定EIP接口，可将EIP绑定到NAT网关，该EIP作为访问外网的源IP地址，将流量发送到Internet",
@@ -22,25 +22,25 @@
       "status": "online"
     },
     "BindIpsToNatGateway": {
-      "document": "可用于将子网的部分IP绑定到NAT网关",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n可用于将子网的部分IP绑定到NAT网关",
       "input": "BindIpsToNatGatewayRequest",
       "name": "NAT网关绑定IP",
       "output": "BindIpsToNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "BindSubnetsToNatGateway": {
-      "document": "NAT网关绑定子网后，该子网内全部IP可出公网",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\nNAT网关绑定子网后，该子网内全部IP可出公网",
       "input": "BindSubnetsToNatGatewayRequest",
       "name": "NAT网关绑定子网",
       "output": "BindSubnetsToNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateCustomerGateway": {
-      "document": "本接口（CreateCustomerGateway）用于创建对端网关。",
+      "document": "90天无调用\n\n本接口（CreateCustomerGateway）用于创建对端网关。",
       "input": "CreateCustomerGatewayRequest",
       "name": "创建对端网关",
       "output": "CreateCustomerGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateDockerSubnetWithVlan": {
       "document": "创建黑石Docker子网， 如果不指定VlanId，将会分配2000--2999范围的VlanId; 子网会关闭分布式网关",
@@ -50,11 +50,11 @@
       "status": "online"
     },
     "CreateHostedInterface": {
-      "document": "本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。\n\n1) 不能加入vlanId 为5的子网，只能加入VLANID范围为2000-2999的子网。\n2) 每台托管机器最多可以加入20个子网。\n3) 每次调用最多能支持传入10台托管机器。",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n本接口（CreateHostedInterface）用于黑石托管机器加入带VLANID不为5的子网。\n\n1) 不能加入vlanId 为5的子网，只能加入VLANID范围为2000-2999的子网。\n2) 每台托管机器最多可以加入20个子网。\n3) 每次调用最多能支持传入10台托管机器。",
       "input": "CreateHostedInterfaceRequest",
       "name": "黑石托管机器加入子网",
       "output": "CreateHostedInterfaceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateInterfaces": {
       "document": "物理机加入子网",
@@ -64,18 +64,18 @@
       "status": "online"
     },
     "CreateNatGateway": {
-      "document": "创建NAT网关接口，可针对网段方式、子网全部IP、子网部分IP这三种方式创建NAT网关",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n创建NAT网关接口，可针对网段方式、子网全部IP、子网部分IP这三种方式创建NAT网关",
       "input": "CreateNatGatewayRequest",
       "name": "创建NAT网关",
       "output": "CreateNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateRoutePolicies": {
-      "document": "创建黑石路由表的路由规则",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n创建黑石路由表的路由规则",
       "input": "CreateRoutePoliciesRequest",
       "name": "创建黑石路由表的路由规则",
       "output": "CreateRoutePoliciesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateSubnet": {
       "document": "创建黑石私有网络的子网\n访问管理: 用户可以对VpcId进行授权操作。例如设置资源为[\"qcs::bmvpc:::unVpc/vpc-xxxxx\"]",
@@ -92,18 +92,18 @@
       "status": "online"
     },
     "CreateVpc": {
-      "document": "创建黑石私有网络",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n创建黑石私有网络",
       "input": "CreateVpcRequest",
       "name": "创建黑石私有网络",
       "output": "CreateVpcResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateVpcPeerConnection": {
-      "document": "创建对等连接",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n创建对等连接",
       "input": "CreateVpcPeerConnectionRequest",
       "name": "创建对等连接",
       "output": "CreateVpcPeerConnectionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteCustomerGateway": {
       "document": "本接口（DeleteCustomerGateway）用于删除对端网关。",
@@ -134,18 +134,18 @@
       "status": "online"
     },
     "DeleteNatGateway": {
-      "document": "删除NAT网关",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n删除NAT网关",
       "input": "DeleteNatGatewayRequest",
       "name": "删除NAT网关",
       "output": "DeleteNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteRoutePolicy": {
-      "document": "删除黑石路由表路由规则",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n删除黑石路由表路由规则",
       "input": "DeleteRoutePolicyRequest",
       "name": "删除黑石路由表路由规则",
       "output": "DeleteRoutePolicyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteSubnet": {
       "document": "本接口（DeleteSubnet）用于删除黑石私有网络子网。\n删除子网前，请清理该子网下所有资源，包括物理机、负载均衡、黑石数据库、弹性IP、NAT网关等资源",
@@ -190,11 +190,11 @@
       "status": "online"
     },
     "DeregisterIps": {
-      "document": "注销私有网络IP为空闲",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n注销私有网络IP为空闲",
       "input": "DeregisterIpsRequest",
       "name": "注销私有网络IP",
       "output": "DeregisterIpsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCustomerGateways": {
       "document": "本接口（DescribeCustomerGateways）用于查询对端网关列表。",
@@ -316,11 +316,11 @@
       "status": "online"
     },
     "DownloadCustomerGatewayConfiguration": {
-      "document": "本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。",
+      "document": "90天无调用\n\n本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。",
       "input": "DownloadCustomerGatewayConfigurationRequest",
       "name": "下载VPN通道配置",
       "output": "DownloadCustomerGatewayConfigurationResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCustomerGatewayAttribute": {
       "document": "本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。",
@@ -330,18 +330,18 @@
       "status": "online"
     },
     "ModifyRoutePolicy": {
-      "document": "修改自定义路由",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n修改自定义路由",
       "input": "ModifyRoutePolicyRequest",
       "name": "修改自定义路由",
       "output": "ModifyRoutePolicyResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyRouteTable": {
-      "document": "修改路由表",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n修改路由表",
       "input": "ModifyRouteTableRequest",
       "name": "修改路由表",
       "output": "ModifyRouteTableResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifySubnetAttribute": {
       "document": "修改子网属性",
@@ -407,25 +407,25 @@
       "status": "online"
     },
     "UnbindIpsFromNatGateway": {
-      "document": "NAT网关解绑IP接口，可将子网的部分IP从NAT网关中解绑",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\nNAT网关解绑IP接口，可将子网的部分IP从NAT网关中解绑",
       "input": "UnbindIpsFromNatGatewayRequest",
       "name": "NAT网关解绑IP",
       "output": "UnbindIpsFromNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindSubnetsFromNatGateway": {
-      "document": "NAT网关解绑子网接口，可将子网解绑NAT网关",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\nNAT网关解绑子网接口，可将子网解绑NAT网关",
       "input": "UnbindSubnetsFromNatGatewayRequest",
       "name": "NAT网关解绑子网",
       "output": "UnbindSubnetsFromNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UpgradeNatGateway": {
-      "document": "升级NAT网关接口，可NAT网关修改为小型NAT网关、中型NAT网关、以及大型NAT网关\n",
+      "document": "黑石1.0接口，业务已下线，90天无调用\n\n升级NAT网关接口，可NAT网关修改为小型NAT网关、中型NAT网关、以及大型NAT网关\n",
       "input": "UpgradeNatGatewayRequest",
       "name": "升级NAT网关",
       "output": "UpgradeNatGatewayResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

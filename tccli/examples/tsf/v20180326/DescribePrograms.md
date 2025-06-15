@@ -22,11 +22,11 @@ Output:
                 {
                     "ProgramId": "program-96a79v5b",
                     "ProgramName": "AUTO-appId-@ALL@",
-                    "ProgramDesc": null,
+                    "ProgramDesc": "desc",
                     "CreationTime": 1542870362,
                     "LastUpdateTime": 1542870362,
                     "DeleteFlag": false,
-                    "ProgramItemList": null
+                    "ProgramItemList": []
                 },
                 {
                     "ProgramId": "program-a79e9j9v",
@@ -35,7 +35,7 @@ Output:
                     "CreationTime": 1566467701,
                     "LastUpdateTime": 1566467701,
                     "DeleteFlag": true,
-                    "ProgramItemList": null
+                    "ProgramItemList": []
                 },
                 {
                     "ProgramId": "program-l6ymbvgd",
@@ -44,7 +44,7 @@ Output:
                     "CreationTime": 1542870362,
                     "LastUpdateTime": 1542870362,
                     "DeleteFlag": true,
-                    "ProgramItemList": null
+                    "ProgramItemList": []
                 },
                 {
                     "ProgramId": "program-ymqbq8bv",
@@ -53,7 +53,7 @@ Output:
                     "CreationTime": 1566467729,
                     "LastUpdateTime": 1566483895,
                     "DeleteFlag": false,
-                    "ProgramItemList": null
+                    "ProgramItemList": []
                 },
                 {
                     "ProgramId": "program-yn2g3e9y",
@@ -62,7 +62,7 @@ Output:
                     "CreationTime": 1566479755,
                     "LastUpdateTime": 1566479755,
                     "DeleteFlag": false,
-                    "ProgramItemList": null
+                    "ProgramItemList": []
                 }
             ]
         }

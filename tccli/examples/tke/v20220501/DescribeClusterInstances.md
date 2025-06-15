@@ -29,7 +29,7 @@ Output:
                 "InstanceState": "running",
                 "LanIP": "10.0.6.x",
                 "Native": null,
-                "NodePoolId": "np-xxxxx",
+                "NodePoolId": "np-4h43fuxj",
                 "NodeType": "External",
                 "Regular": null,
                 "Super": null,
@@ -39,7 +39,7 @@ Output:
                 "CreatedTime": "2023-08-17 20:47:35 +0800 CST",
                 "External": null,
                 "FailedReason": null,
-                "InstanceId": "eklet-subnet-xxxx-yyyy",
+                "InstanceId": "eklet-subnet-4h43fuxjx-yyyy",
                 "InstanceRole": "WORKER",
                 "InstanceState": "running",
                 "LanIP": "a.b.c.d",
@@ -57,7 +57,7 @@ Output:
                     "Memory": null,
                     "Name": "",
                     "ResourceType": null,
-                    "SubnetId": "subnet-xxxxx",
+                    "SubnetId": "subnet-4h43fuxj",
                     "UsedCPU": null,
                     "UsedMemory": null,
                     "VpcId": null,
@@ -69,16 +69,33 @@ Output:
                 "CreatedTime": "2023-08-17 12:46:40 +0000 UTC",
                 "External": null,
                 "FailedReason": "=",
-                "InstanceId": "np-xxxx-yyyy",
+                "InstanceId": "np-4h43fuxj-4h43fuxj",
                 "InstanceRole": "WORKER",
                 "InstanceState": "running",
                 "LanIP": "10.0.0.x",
                 "Native": {
                     "CPU": 2,
                     "CreatedAt": "2023-08-17 20:46:39",
-                    "DisplayName": "tke-np-xxxx-worker",
+                    "DataDisks": [
+                        {
+                            "AutoFormatAndMount": true,
+                            "DiskPartition": "",
+                            "DiskSize": 50,
+                            "DiskType": "CLOUD_PREMIUM",
+                            "FileSystem": "ext4",
+                            "MountTarget": "/data"
+                        }
+                    ],
+                    "DisplayName": "tke-np-4h43fuxj-worker",
                     "ExpiredTime": "",
                     "GPU": 0,
+                    "GPUParams": {
+                        "CUDA": "",
+                        "CUDNN": "",
+                        "Driver": "",
+                        "Fabric": false,
+                        "MIGEnable": false
+                    },
                     "InstanceChargeType": "POSTPAID_BY_HOUR",
                     "InstanceFamily": "S2",
                     "InstanceType": "S2.MEDIUM2",
@@ -88,9 +105,12 @@ Output:
                         "MaxBandwidthOut": 0
                     },
                     "IsProtectedFromScaleIn": false,
+                    "KeyIds": [
+                        "skey-ccccc"
+                    ],
                     "LanIp": "10.0.0.x",
                     "LoginStatus": "Opened",
-                    "MachineName": "np-xxxx-yyyy",
+                    "MachineName": "np-4h43fuxj-4h43fuxj",
                     "MachineState": "Running",
                     "Memory": 2,
                     "OsImage": "TencentOS Server 3.1 (Final)",
@@ -108,9 +128,10 @@ Output:
                         "MountTarget": ""
                     },
                     "VpcId": "vpc-zzzzz",
+                    "WanIp": "",
                     "Zone": "ap-guangzhou-3"
                 },
-                "NodePoolId": "np-xxxx",
+                "NodePoolId": "np-4h43fuxj",
                 "NodeType": "Native",
                 "Regular": null,
                 "Super": null,

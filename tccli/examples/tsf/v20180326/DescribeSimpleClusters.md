@@ -23,30 +23,46 @@ Output:
                     "ClusterVersion": "1.18",
                     "SubnetId": "subnet-6a79x94v",
                     "ClusterName": "示例",
-                    "ClusterDesc": null,
+                    "ClusterDesc": "desc",
                     "ClusterType": "C",
                     "VpcId": "vpc-6a79x94v",
-                    "CreateTime": null,
-                    "UpdateTime": null,
-                    "ClusterStatus": null,
-                    "ClusterCIDR": null,
-                    "ClusterTotalCpu": null,
-                    "ClusterTotalMem": null,
-                    "ClusterUsedCpu": null,
-                    "ClusterUsedMem": null,
-                    "ClusterLimitCpu": null,
-                    "ClusterLimitMem": null,
-                    "InstanceCount": null,
-                    "RunInstanceCount": null,
-                    "RunServiceInstanceCount": null,
-                    "NormalInstanceCount": null,
-                    "DeleteFlag": null,
-                    "DeleteFlagReason": null,
-                    "OperationInfo": null,
-                    "TsfRegionId": null,
-                    "TsfRegionName": null,
-                    "TsfZoneId": null,
-                    "TsfZoneName": null
+                    "CreateTime": "2025",
+                    "UpdateTime": "2025",
+                    "ClusterStatus": "status",
+                    "ClusterCIDR": "cidr",
+                    "ClusterTotalCpu": 1,
+                    "ClusterTotalMem": 2,
+                    "ClusterUsedCpu": 1,
+                    "ClusterUsedMem": 2,
+                    "ClusterLimitCpu": 1,
+                    "ClusterLimitMem": 2,
+                    "InstanceCount": 1,
+                    "RunInstanceCount": 1,
+                    "RunServiceInstanceCount": 1,
+                    "NormalInstanceCount": 1,
+                    "DeleteFlag": false,
+                    "DeleteFlagReason": "reason",
+                    "OperationInfo": {
+                        "AddInstance": {
+                            "DisabledReason": "",
+                            "Enabled": true,
+                            "Supported": true
+                        },
+                        "Init": {
+                            "DisabledReason": "",
+                            "Enabled": true,
+                            "Supported": true
+                        },
+                        "Destroy": {
+                            "DisabledReason": "",
+                            "Enabled": true,
+                            "Supported": true
+                        }
+                    },
+                    "TsfRegionId": "region-id",
+                    "TsfRegionName": "name",
+                    "TsfZoneId": "zone-id",
+                    "TsfZoneName": "zone-name"
                 }
             ]
         }

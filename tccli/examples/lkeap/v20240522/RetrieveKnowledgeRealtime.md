@@ -22,12 +22,9 @@ Output:
             {
                 "Metadata": {
                     "Type": "DOC",
-                    "ResultSource": "SEMANTIC",
-                    "ChunkPageNumbers": [
-                        1
-                    ]
+                    "ResultSource": "SEMANTIC"
                 },
-                "Title": "example.pdf",
+                "Title": "",
                 "Content": "国庆放七天假"
             }
         ],

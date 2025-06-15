@@ -14,6 +14,13 @@
       "output": "CreateNodePoolResponse",
       "status": "online"
     },
+    "DeleteClusterMachines": {
+      "document": "删除原生节点池节点",
+      "input": "DeleteClusterMachinesRequest",
+      "name": "删除原生节点池节点",
+      "output": "DeleteClusterMachinesResponse",
+      "status": "online"
+    },
     "DeleteHealthCheckPolicy": {
       "document": "删除健康检测策略",
       "input": "DeleteHealthCheckPolicyRequest",
@@ -92,14 +99,14 @@
       "status": "online"
     },
     "StartMachines": {
-      "document": "本接口 (StartMachines) 用于启动一个或多个原生节点实例。\n\n只有状态为 Stopped 的实例才可以进行此操作。\n接口调用成功后，等待一分钟左右，实例会进入 Running 状态。\n支持批量操作。每次请求批量实例的上限为100。\n本接口为同步接口，启动实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeClusterInstances 接口查询，如果实例的最新状态为 Running，则代表启动实例操作成功。",
+      "document": "本接口 (StartMachines) 用于启动一个或多个原生节点实例。\n\n只有状态为 Stopped 的实例才可以进行此操作。\n接口调用成功后，等待一分钟左右，实例会进入 Running 状态。\n支持批量操作。每次请求批量实例的上限为100。\n本接口为同步接口，启动实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeClusterInstances 接口查询，如果实例的状态为 Running，则代表启动实例操作成功。",
       "input": "StartMachinesRequest",
       "name": "启动原生节点实例",
       "output": "StartMachinesResponse",
       "status": "online"
     },
     "StopMachines": {
-      "document": "本接口 (StopMachines) 用于关闭一个或多个原生节点实例。\n\n只有状态为 Running 的实例才可以进行此操作。\n接口调用成功时，实例会进入 Stopping 状态；关闭实例成功时，实例会进入 Stopped 状态。\n支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n支持批量操作。每次请求批量实例的上限为 100。\n本接口为同步接口，关闭实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeClusterInstances 接口查询，如果实例的最新状stopped_with_charging，则代表关闭实例操作成功。",
+      "document": "本接口 (StopMachines) 用于关闭一个或多个原生节点实例。\n\n只有状态为 Running 的实例才可以进行此操作。\n接口调用成功时，实例会进入 Stopping 状态；关闭实例成功时，实例会进入 Stopped 状态。\n支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。\n支持批量操作。每次请求批量实例的上限为 100。\n本接口为同步接口，关闭实例请求发送成功后会返回一个RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeClusterInstances 接口查询，如果实例的状态为stopped_with_charging，则代表关闭实例操作成功。",
       "input": "StopMachinesRequest",
       "name": "关闭原生节点实例",
       "output": "StopMachinesResponse",
@@ -122,6 +129,7 @@
           "example": "k8s-app",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -132,6 +140,7 @@
           "example": "billing",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -148,6 +157,7 @@
           "example": "24:00",
           "member": "string",
           "name": "AutoUpgradeStartTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -158,6 +168,7 @@
           "example": "3h",
           "member": "string",
           "name": "Duration",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -168,6 +179,7 @@
           "example": "[\"Monday\"]",
           "member": "string",
           "name": "WeeklyPeriod",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -181,7 +193,7 @@
         {
           "disabled": false,
           "document": "正在加入中的节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Joining",
           "output_required": true,
@@ -191,7 +203,7 @@
         {
           "disabled": false,
           "document": "初始化中的节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Initializing",
           "output_required": true,
@@ -201,7 +213,7 @@
         {
           "disabled": false,
           "document": "正常的节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Normal",
           "output_required": true,
@@ -211,7 +223,7 @@
         {
           "disabled": false,
           "document": "节点总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -333,7 +345,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -360,7 +372,7 @@
           "example": "HC1",
           "member": "string",
           "name": "HealthCheckPolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -388,7 +400,7 @@
         {
           "disabled": false,
           "document": "子网列表",
-          "example": "[\"subnet-xxx\"]",
+          "example": "[\"subnet-4h43fuxj\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": true,
@@ -424,7 +436,7 @@
         {
           "disabled": false,
           "document": "安全组列表",
-          "example": "[\"sg-xxx\"]",
+          "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -487,7 +499,7 @@
         {
           "disabled": false,
           "document": "kubelet 自定义参数",
-          "example": "[]",
+          "example": "[\"kube-api-qps=50\"]",
           "member": "string",
           "name": "KubeletArgs",
           "required": false,
@@ -541,7 +553,7 @@
         {
           "disabled": false,
           "document": "原生节点池数据盘列表",
-          "example": "[]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -574,7 +586,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -601,7 +613,7 @@
         {
           "disabled": false,
           "document": "节点  Labels",
-          "example": "[]",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "required": false,
@@ -610,7 +622,7 @@
         {
           "disabled": false,
           "document": "节点污点",
-          "example": "[]",
+          "example": "无",
           "member": "Taint",
           "name": "Taints",
           "required": false,
@@ -619,7 +631,7 @@
         {
           "disabled": false,
           "document": "节点标签",
-          "example": "[]",
+          "example": "无",
           "member": "TagSpecification",
           "name": "Tags",
           "required": false,
@@ -655,7 +667,7 @@
         {
           "disabled": false,
           "document": "节点 Annotation 列表",
-          "example": "[]",
+          "example": "无",
           "member": "Annotation",
           "name": "Annotations",
           "required": false,
@@ -670,7 +682,7 @@
         {
           "disabled": false,
           "document": "节点池 ID",
-          "example": "np-xxxxxxxx",
+          "example": "np-4h43fuxj",
           "member": "string",
           "name": "NodePoolId",
           "output_required": true,
@@ -798,9 +810,74 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像缓存 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "imc-jkyxqhyz",
+          "member": "string",
+          "name": "ImageCacheId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "DeleteClusterMachinesRequest": {
+      "document": "DeleteClusterMachines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名列表",
+          "example": "[np-xxxxxxxx-7j9rt]",
+          "member": "string",
+          "name": "MachineNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "删除节点时是否缩容节点池，true为缩容",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableScaleDown",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例）retain（仅移除，保留实例）",
+          "example": "terminate",
+          "member": "string",
+          "name": "InstanceDeleteMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterMachinesResponse": {
+      "document": "DeleteClusterMachines返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteHealthCheckPolicyRequest": {
       "document": "DeleteHealthCheckPolicy请求参数结构体",
@@ -808,7 +885,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -844,7 +921,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -853,7 +930,7 @@
         {
           "disabled": false,
           "document": "节点池 ID",
-          "example": "np-xxxxxxxx",
+          "example": "np-4h43fuxj",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -880,7 +957,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -906,7 +983,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件列表:\nInstanceIds(实例ID),InstanceType(实例类型：Regular，Native，Virtual，External),VagueIpAddress(模糊匹配IP),Labels(k8s节点label),NodePoolNames(节点池名称),VagueInstanceName(模糊匹配节点名),InstanceStates(节点状态),Unschedulable(是否封锁),NodePoolIds(节点池ID)",
+          "document": "过滤条件列表:\nInstanceIds(实例ID),InstanceType(实例类型：Regular，Native，Super，External),VagueIpAddress(模糊匹配IP),Labels(k8s节点label),NodePoolNames(节点池名称),VagueInstanceName(模糊匹配节点名),InstanceStates(节点状态),Unschedulable(是否封锁),NodePoolIds(节点池ID)",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -931,7 +1008,7 @@
         {
           "disabled": false,
           "document": "集群中实例总数",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -950,13 +1027,13 @@
         },
         {
           "disabled": false,
-          "document": "错误信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "错误信息集合",
+          "example": "eks not support",
           "member": "string",
           "name": "Errors",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1063,7 +1140,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1108,19 +1185,19 @@
           "example": "HC1",
           "member": "HealthCheckPolicy",
           "name": "HealthCheckPolicies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "数组总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数组总数目",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1137,7 +1214,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1182,19 +1259,19 @@
           "example": "HC1",
           "member": "HealthCheckPolicyBinding",
           "name": "HealthCheckPolicyBindings",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "健康检测规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检测规则数量",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1238,7 +1315,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1279,13 +1356,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池列表",
           "example": "无",
           "member": "NodePool",
           "name": "NodePools",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1315,6 +1392,7 @@
           "example": "CloudPremiumDiskType",
           "member": "string",
           "name": "DiskType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1325,6 +1403,7 @@
           "example": "50",
           "member": "int64",
           "name": "DiskSize",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1335,6 +1414,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoFormatAndMount",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -1345,6 +1425,7 @@
           "example": "xfs",
           "member": "string",
           "name": "FileSystem",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1355,9 +1436,21 @@
           "example": "/var/lib/containerd",
           "member": "string",
           "name": "MountTarget",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云盘ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disk-kped07j8",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1371,7 +1464,7 @@
           "example": "node1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1381,7 +1474,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CPU",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1391,7 +1484,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Memory",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1401,7 +1494,7 @@
           "example": "1.20.6-tke.20",
           "member": "string",
           "name": "K8SVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1423,13 +1516,13 @@
         },
         {
           "disabled": false,
-          "document": "节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点数",
           "example": "1",
           "member": "uint64",
           "name": "NodesNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1444,21 +1537,119 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
-          "example": "test",
+          "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
+    },
+    "GPUConfig": {
+      "document": "机型名称与GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本，是否开启MIG以及是否开启Fabric等相关配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GN7.2XLARGE40",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本，是否开启MIG以及是否开启Fabric等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUParams",
+          "name": "GPUParams",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GPUParams": {
+      "document": "GPU相关的参数，包括驱动版本，CUDA版本，cuDNN版本，是否开启MIG以及是否开启Fabric",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU驱动版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "470.82.01",
+          "member": "string",
+          "name": "Driver",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CUDA版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.4",
+          "member": "string",
+          "name": "CUDA",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CUDNN版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.5.0",
+          "member": "string",
+          "name": "CUDNN",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用MIG特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "MIGEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用Fabric特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Fabric",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义驱动下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://mirrors.tencentyun.com/install/GPU/NVIDIA-Linux-x86_64-525.105.17.run",
+          "member": "string",
+          "name": "CustomGPUDriver",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "HealthCheckPolicy": {
       "document": "健康检测规则",
@@ -1469,6 +1660,7 @@
           "example": "Node-pool1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1479,6 +1671,7 @@
           "example": "无",
           "member": "HealthCheckPolicyRule",
           "name": "Rules",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1495,7 +1688,7 @@
           "example": "Node-pool1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1505,17 +1698,17 @@
           "example": "2021-01-20",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关联节点池数组",
-          "example": "无",
+          "example": "[\"np-l6gtb5p0\"]",
           "member": "string",
           "name": "NodePools",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -1531,6 +1724,7 @@
           "example": "KubeletHealth",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1541,6 +1735,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1551,6 +1746,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoRepairEnabled",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1567,6 +1763,7 @@
           "example": "无",
           "member": "HealthCheckTemplateRule",
           "name": "Rules",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1583,6 +1780,7 @@
           "example": "KubeletHealth",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1593,6 +1791,7 @@
           "example": "Check kubelet health",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1603,6 +1802,7 @@
           "example": "Reboot",
           "member": "string",
           "name": "RepairAction",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1613,6 +1813,7 @@
           "example": "Reboot VM",
           "member": "string",
           "name": "RepairEffect",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1623,6 +1824,7 @@
           "example": "true",
           "member": "bool",
           "name": "ShouldEnable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1633,6 +1835,7 @@
           "example": "true",
           "member": "bool",
           "name": "ShouldRepair",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1643,6 +1846,7 @@
           "example": "general",
           "member": "string",
           "name": "Severity",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1659,7 +1863,7 @@
           "example": "ins-dw531dq",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1669,7 +1873,7 @@
           "example": "WORKER",
           "member": "string",
           "name": "InstanceRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1679,7 +1883,7 @@
           "example": "CVM is STOPPED",
           "member": "string",
           "name": "FailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1689,7 +1893,7 @@
           "example": "running",
           "member": "string",
           "name": "InstanceState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1699,7 +1903,7 @@
           "example": "false",
           "member": "bool",
           "name": "Unschedulable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1709,7 +1913,7 @@
           "example": "2021-02-22T07:14:11Z",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1719,7 +1923,7 @@
           "example": "null",
           "member": "string",
           "name": "LanIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1729,7 +1933,7 @@
           "example": "np-enjhles1",
           "member": "string",
           "name": "NodePoolId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1739,7 +1943,7 @@
           "example": "无",
           "member": "NativeNodeInfo",
           "name": "Native",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1749,7 +1953,7 @@
           "example": "无",
           "member": "RegularNodeInfo",
           "name": "Regular",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1759,7 +1963,7 @@
           "example": "无",
           "member": "SuperNodeInfo",
           "name": "Super",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1769,7 +1973,7 @@
           "example": "无",
           "member": "ExternalNodeInfo",
           "name": "External",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1779,7 +1983,7 @@
           "example": "Native",
           "member": "string",
           "name": "NodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1795,6 +1999,7 @@
           "example": "16",
           "member": "int64",
           "name": "DesiredPodNumber",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1805,6 +2010,7 @@
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
           "name": "PreStartUserScript",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1815,6 +2021,7 @@
           "example": "{\"RuntimeType\":\"containerd\",\"RuntimeVersion\":\"1.4.3\",\"RuntimeRootDir\":\"/var/lib/containerd\"}",
           "member": "RuntimeConfig",
           "name": "RuntimeConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1825,6 +2032,7 @@
           "example": "#!/bin/sh echo \"hello world\"",
           "member": "string",
           "name": "UserScript",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1835,6 +2043,7 @@
           "example": "无",
           "member": "InstanceExtraArgs",
           "name": "ExtraArgs",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1876,9 +2085,10 @@
         {
           "disabled": false,
           "document": "kubelet自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"root-dir=/var/lib/kubelet\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"--max-pods=110\"]",
           "member": "string",
           "name": "Kubelet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1895,6 +2105,7 @@
           "example": "Int",
           "member": "int64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -1905,6 +2116,7 @@
           "example": "10",
           "member": "int64",
           "name": "IntVal",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1915,6 +2127,7 @@
           "example": "20%",
           "member": "string",
           "name": "StrVal",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1970,6 +2183,7 @@
           "example": "k8s-app",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1980,6 +2194,7 @@
           "example": "billing",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1993,9 +2208,10 @@
         {
           "disabled": false,
           "document": "节点初始化前自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "aGVsbG8gd29ybGQK",
           "member": "string",
           "name": "PreInit",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2003,9 +2219,10 @@
         {
           "disabled": false,
           "document": "节点初始化后自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "aGVsbG8gd29ybGQK",
           "member": "string",
           "name": "PostInit",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2018,23 +2235,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池最小副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池最小副本数",
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点池最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池最大副本数",
           "example": "10",
           "member": "int64",
           "name": "MaxReplicas",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2042,6 +2261,7 @@
           "example": "ZoneEquality",
           "member": "string",
           "name": "CreatePolicy",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2054,23 +2274,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启自动升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启自动升级",
           "example": "true",
           "member": "bool",
           "name": "AutoUpgrade",
+          "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运维窗口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运维窗口",
           "example": "无",
           "member": "AutoUpgradeOptions",
           "name": "UpgradeOptions",
+          "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2078,19 +2300,21 @@
           "example": "[\"kubelet\",\"kernel\"]",
           "member": "string",
           "name": "Components",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "升级时，最大不可升级的节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "升级时，最大不可升级的节点数",
           "example": "无",
           "member": "IntOrString",
           "name": "MaxUnavailable",
+          "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2143,7 +2367,7 @@
           "example": "0",
           "member": "int64",
           "name": "Joining",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2153,7 +2377,7 @@
           "example": "0",
           "member": "int64",
           "name": "Initializing",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2163,7 +2387,7 @@
           "example": "1",
           "member": "int64",
           "name": "Normal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2173,7 +2397,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2186,7 +2410,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2222,7 +2446,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -2231,7 +2455,7 @@
         {
           "disabled": false,
           "document": "节点池 ID",
-          "example": "np-xxxxxxxx",
+          "example": "np-4h43fuxj",
           "member": "string",
           "name": "NodePoolId",
           "required": true,
@@ -2249,7 +2473,7 @@
         {
           "disabled": false,
           "document": "节点  Labels",
-          "example": "[]",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "required": false,
@@ -2258,7 +2482,7 @@
         {
           "disabled": false,
           "document": "节点污点",
-          "example": "[]",
+          "example": "无",
           "member": "Taint",
           "name": "Taints",
           "required": false,
@@ -2267,7 +2491,7 @@
         {
           "disabled": false,
           "document": "节点标签",
-          "example": "[]",
+          "example": "无",
           "member": "TagSpecification",
           "name": "Tags",
           "required": false,
@@ -2303,7 +2527,7 @@
         {
           "disabled": false,
           "document": "节点 Annotation 列表",
-          "example": "[]",
+          "example": "无",
           "member": "Annotation",
           "name": "Annotations",
           "required": false,
@@ -2330,7 +2554,7 @@
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "np-xxxxxxxx-7j9rt",
+          "example": "np-4h43fuxj-7j9rt",
           "member": "string",
           "name": "MachineName",
           "output_required": true,
@@ -2439,7 +2663,7 @@
         },
         {
           "disabled": false,
-          "document": "节点计费模式（已弃用）",
+          "document": "节点计费模式",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "PayMode",
@@ -2519,8 +2743,48 @@
         },
         {
           "disabled": false,
+          "document": "节点外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "WanIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key-l6gtb5p0\"]",
+          "member": "string",
+          "name": "KeyIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点GPU相关配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUParams",
+          "name": "GPUParams",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[sg-xxxx]",
+          "example": "[sg-4h43fuxjx]",
           "member": "string",
           "name": "SecurityGroupIDs",
           "output_required": true,
@@ -2529,23 +2793,23 @@
         },
         {
           "disabled": false,
-          "document": "VPC 唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxx",
+          "document": "VPC 唯一 ID",
+          "example": "vpc-4h43fuxj",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxx",
+          "document": "子网唯一 ID",
+          "example": "subnet-4h43fuxj",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2556,6 +2820,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "**原生节点的 Machine 类型**\n\n- Native 表示 CXM 类型的原生节点\n- NativeCVM 表示 CVM 类型的原生节点",
+          "example": "Native, NativeCVM",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2575,18 +2849,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "伸缩配置",
           "example": "无",
           "member": "MachineSetScaling",
           "name": "Scaling",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子网列表",
-          "example": "[\"subnet-xxx\"]",
+          "example": "[\"subnet-4h43fuxj\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
@@ -2596,7 +2870,7 @@
         {
           "disabled": false,
           "document": "安全组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"sg-xxx\"]",
+          "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "output_required": true,
@@ -2605,13 +2879,13 @@
         },
         {
           "disabled": false,
-          "document": "自动升级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动升级配置",
           "example": "无",
           "member": "MachineUpgradeSettings",
           "name": "UpgradeSettings",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2635,13 +2909,13 @@
         },
         {
           "disabled": false,
-          "document": "包年包月机型计费配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包年包月机型计费配置",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2656,7 +2930,7 @@
         {
           "disabled": false,
           "document": "密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"key-l6gtb5p0\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": true,
@@ -2665,13 +2939,13 @@
         },
         {
           "disabled": false,
-          "document": "Machine 系统配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Machine 系统配置",
           "example": "无",
           "member": "ManagementConfig",
           "name": "Management",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2696,7 +2970,7 @@
         {
           "disabled": false,
           "document": "kubelet 自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"kube-api-qps=50\"]",
           "member": "string",
           "name": "KubeletArgs",
           "output_required": true,
@@ -2705,38 +2979,38 @@
         },
         {
           "disabled": false,
-          "document": "预定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预定义脚本",
           "example": "无",
           "member": "LifecycleConfig",
           "name": "Lifecycle",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运行时根目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "运行时根目录",
           "example": "/var/lib/docker",
           "member": "string",
           "name": "RuntimeRootDir",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启弹性伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启弹性伸缩",
           "example": "true",
           "member": "bool",
           "name": "EnableAutoscaling",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型列表",
-          "example": "[]",
+          "example": "S2.4XLARGE48",
           "member": "string",
           "name": "InstanceTypes",
           "output_required": true,
@@ -2745,13 +3019,13 @@
         },
         {
           "disabled": false,
-          "document": "期望节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "期望节点数",
           "example": "10",
           "member": "int64",
           "name": "Replicas",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2765,18 +3039,18 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网带宽设置",
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原生节点池数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "output_required": false,
@@ -2785,13 +3059,13 @@
         },
         {
           "disabled": false,
-          "document": "原生节点机型 Native, NativeCVM\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原生节点机型 Native, NativeCVM",
           "example": "Native",
           "member": "string",
           "name": "MachineType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2805,7 +3079,7 @@
           "example": "无",
           "member": "ManuallyAdded",
           "name": "ManuallyAdded",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2815,7 +3089,7 @@
           "example": "无",
           "member": "AutoscalingAdded",
           "name": "AutoscalingAdded",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2828,7 +3102,7 @@
         {
           "disabled": false,
           "document": "集群 ID",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -2838,7 +3112,7 @@
         {
           "disabled": false,
           "document": "节点池 ID",
-          "example": "np-xxxxxxxx",
+          "example": "np-4h43fuxj",
           "member": "string",
           "name": "NodePoolId",
           "output_required": true,
@@ -2848,7 +3122,7 @@
         {
           "disabled": false,
           "document": "节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "TagSpecification",
           "name": "Tags",
           "output_required": true,
@@ -2858,7 +3132,7 @@
         {
           "disabled": false,
           "document": "节点污点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "Taint",
           "name": "Taints",
           "output_required": true,
@@ -2898,7 +3172,7 @@
         {
           "disabled": false,
           "document": "节点  Labels\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "Label",
           "name": "Labels",
           "output_required": true,
@@ -2948,7 +3222,7 @@
         {
           "disabled": false,
           "document": "节点 Annotation 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "Annotation",
           "name": "Annotations",
           "output_required": true,
@@ -3042,7 +3316,7 @@
           "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3052,7 +3326,7 @@
           "example": "asg-eweq21",
           "member": "string",
           "name": "AutoscalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3065,20 +3339,20 @@
         {
           "disabled": false,
           "document": "LaunchConfigurationId 配置",
-          "example": "asc-xxx",
+          "example": "asc-4h43fuxj",
           "member": "string",
           "name": "LaunchConfigurationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "AutoscalingGroupId 分组id",
-          "example": "asg-xxx",
+          "example": "asg-4h43fuxj",
           "member": "string",
           "name": "AutoscalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3088,7 +3362,7 @@
           "example": "{\"AutoscalingAdded\":{\"Initializing\":0,\"Joining\":0,\"Normal\":1,\"Sh",
           "member": "NodeCountSummary",
           "name": "NodeCountSummary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3098,7 +3372,7 @@
           "example": "enabled",
           "member": "string",
           "name": "AutoscalingGroupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3108,7 +3382,7 @@
           "example": "5",
           "member": "int64",
           "name": "MaxNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3118,7 +3392,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3128,7 +3402,7 @@
           "example": "3",
           "member": "int64",
           "name": "DesiredNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3138,7 +3412,7 @@
           "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "NodePoolOs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3148,7 +3422,7 @@
           "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3164,6 +3438,7 @@
           "example": "docker",
           "member": "string",
           "name": "RuntimeType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3174,6 +3449,7 @@
           "example": "1.19",
           "member": "string",
           "name": "RuntimeVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3184,6 +3460,7 @@
           "example": "/var/lib/docker",
           "member": "string",
           "name": "RuntimeRootDir",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3302,10 +3579,10 @@
         {
           "disabled": false,
           "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "eklet-subnet-4h43fuxj",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3315,17 +3592,17 @@
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "supernode",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3335,7 +3612,7 @@
           "example": "100",
           "member": "float",
           "name": "CPU",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3345,7 +3622,7 @@
           "example": "20",
           "member": "float",
           "name": "UsedCPU",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3355,7 +3632,7 @@
           "example": "400",
           "member": "float",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3365,7 +3642,7 @@
           "example": "80",
           "member": "float",
           "name": "UsedMemory",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3375,27 +3652,27 @@
           "example": "\"ap-guangzhou-3\"",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "VPC 唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxx",
+          "example": "vpc-4h43fuxj",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "子网唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxx",
+          "example": "subnet-4h43fuxj",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3405,7 +3682,7 @@
           "example": "2022-05-17 13:22:28",
           "member": "string",
           "name": "ActiveAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3415,7 +3692,7 @@
           "example": "2022-06-17 13:22:28",
           "member": "string",
           "name": "ExpireAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3425,17 +3702,17 @@
           "example": "8",
           "member": "int64",
           "name": "MaxCPUScheduledPod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "eyJMYWJlbHMiOnt9LCJUYWludHMiOltdLCJTZWN1cml0eUdyb3VwSURzIjpbInNnLTJidGlyamhqIl0sIlVuc2NoZWR1bGUiOmZhbHNlfQ==",
           "member": "string",
           "name": "InstanceAttribute",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3477,6 +3754,7 @@
           "example": "key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3487,6 +3765,7 @@
           "example": "value",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3499,10 +3778,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签绑定的资源类型，当前支持类型：\"cluster\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签绑定的资源类型，当前支持类型：\n1.cluster：集群相关接口，TagSpecification 的 ResourceType 传参为 cluster\n2.machine：节点池相关接口，如：CreateNodePool, DescribeNodePools 等，TagSpecification 的 ResourceType 传参为 machine\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster",
           "member": "string",
           "name": "ResourceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3513,6 +3793,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3529,6 +3810,7 @@
           "example": "key1",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3539,6 +3821,7 @@
           "example": "value1",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3549,6 +3832,7 @@
           "example": "NoSchedule ",
           "member": "string",
           "name": "Effect",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3571,7 +3855,7 @@
         {
           "disabled": false,
           "document": "子网列表",
-          "example": "[\"subnet-xxx\"]",
+          "example": "[\"subnet-4h43fuxj\"]",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -3580,7 +3864,7 @@
         {
           "disabled": false,
           "document": "安全组列表",
-          "example": "[\"sg-xxx\"]",
+          "example": "[\"sg-4h43fuxj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -3661,7 +3945,7 @@
         {
           "disabled": false,
           "document": "kubelet 自定义参数",
-          "example": "[]",
+          "example": "[\"kube-api-qps=50\"]",
           "member": "string",
           "name": "KubeletArgs",
           "required": false,
@@ -3697,7 +3981,7 @@
         {
           "disabled": false,
           "document": "机型列表",
-          "example": "[]",
+          "example": "S2.4XLARGE48",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -3715,7 +3999,7 @@
         {
           "disabled": false,
           "document": "数据盘列表",
-          "example": "[]",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -3724,9 +4008,18 @@
         {
           "disabled": false,
           "document": "ssh公钥id数组",
-          "example": "[\"sky-test\",\"sky-test2\"]",
+          "example": "[\"sky-l6gtb5p0\",\"sky-l6gtb5p1\"]",
           "member": "string",
           "name": "KeyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点池 GPU 配置",
+          "example": "[{\"InstanceType\":\"GN7Large.32\",\"GPUParams\":{\"Driver\":\"450.104.51\"}}]",
+          "member": "GPUConfig",
+          "name": "GPUConfigs",
           "required": false,
           "type": "list"
         }

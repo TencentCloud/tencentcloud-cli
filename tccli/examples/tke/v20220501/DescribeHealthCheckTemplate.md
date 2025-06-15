@@ -20,7 +20,7 @@ Output:
                     "RepairEffect": "",
                     "ShouldEnable": true,
                     "ShouldRepair": false,
-                    "Severity": "123"
+                    "Severity": "general"
                 }
             ]
         },

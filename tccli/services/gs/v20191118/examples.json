@@ -102,6 +102,14 @@
         "title": "CreateAndroidInstances"
       }
     ],
+    "CreateAndroidInstancesAccessToken": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstancesAccessToken\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-251006279-6c8fmp7G8Mz\",\n        \"cai-251006279-ea99wkeEIID\",\n        \"cai-251006279-ea99QMMwk3A\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessInfo\": \"eyJBY2Nlc3NJbmZvIjpbeyJab25lIjoiYXAtc2luZ2Fwb3JlLTIiLCJJbnN0YW5jZUlkcyI6WyJjYWktMjUxMDA2Mjc5LTZjOGZtcDdHOE16Il0sIk9wZXJhdG9yQWRkcmVzcyI6Imh0dHBzOi8vdGVzdC1hcC1zaW5nYXBvcmUtMi1vcGVyYXRvci5jYWkuY3J0cmNsb3VkLmNvbToxMDA4OCIsIldlYlNvY2tldEFkZHJlc3MiOiJ3czovL3Rlc3QtYXAtc2luZ2Fwb3JlLTItbWVkaWFzZXJ2ZXIuY2FpLmNydHJjbG91ZC5jb206MjAwODAiLCJXZWJTb2NrZXRTZWN1cmVBZGRyZXNzIjoid3NzOi8vdGVzdC1hcC1zaW5nYXBvcmUtMi1tZWRpYXNlcnZlci5jYWkuY3J0cmNsb3VkLmNvbToyMDQ0MyJ9LHsiWm9uZSI6ImFwLXNoZW56aGVuLTEiLCJJbnN0YW5jZUlkcyI6WyJjYWktMjUxMDA2Mjc5LWVhOTl3a2VFSUlEIiwiY2FpLTI1MTAwNjI3OS1lYTk5UU1Nd2szQSJdLCJPcGVyYXRvckFkZHJlc3MiOiJodHRwczovL3Rlc3QtYXAtc2hlbnpoZW4tMS1vcGVyYXRvci5jYWkuY3J0cmNsb3VkLmNvbToxMDA4OCIsIldlYlNvY2tldEFkZHJlc3MiOiJ3czovL3Rlc3QtYXAtc2hlbnpoZW4tMS1tZWRpYXNlcnZlci5jYWkuY3J0cmNsb3VkLmNvbToyMDA4MCIsIldlYlNvY2tldFNlY3VyZUFkZHJlc3MiOiJ3c3M6Ly90ZXN0LWFwLXNoZW56aGVuLTEtbWVkaWFzZXJ2ZXIuY2FpLmNydHJjbG91ZC5jb206MjA0NDMifV19\",\n        \"RequestId\": \"696f46da-c58f-4627-b98f-37b6a0851ec5\",\n        \"Token\": \"XsNVrlOkDDNabKXv7EMCZ1By7zy7x2gWFVBg0ZFrKsHu6hTnv6rnQKfrC19oDk65\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateAndroidInstancesScreenshot": [
       {
         "document": "安卓实例截图",
@@ -140,6 +148,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidAppVersion\n<公共请求参数>\n\n{\n    \"AndroidAppId\": \"apk-a1b2c3\",\n    \"AndroidAppVersion\": \"ver-a1b2c3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b675310-8ec8-46c0-ae50-dc2944667c6f\"\n    }\n}",
         "title": "删除安卓应用版本示例"
+      }
+    ],
+    "DeleteAndroidInstanceBackupFiles": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceBackupFiles\n<公共请求参数>\n\n{\n    \"AndroidInstanceZone\": \"ap-hangzhou-ec-1\",\n    \"ObjectKeys\": [\n        \"1234/test1.bak\",\n        \"1234/test2.bak\"\n    ],\n    \"StorageType\": \"S3\",\n    \"S3Options\": {\n        \"EndPoint\": \"http://192.168.1.10:9910\",\n        \"Bucket\": \"testbucket\",\n        \"AccessKeyId\": \"admin\",\n        \"SecretAccessKey\": \"DFxjDF\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92f73a08-f7a7-4092-b690-627878ab2e5b\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DeleteAndroidInstanceImages": [
@@ -412,6 +428,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"615cf0a4-075e-4cf5-b26f-d786363daccd\",\n                \"AndroidInstanceId\": \"cai-abcd1234\"\n            }\n        ]\n    }\n}",
         "title": "重启安卓实例"
+      }
+    ],
+    "RenewAndroidInstancesAccessToken": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAndroidInstancesAccessToken\n<公共请求参数>\n\n{\n    \"AccessToken\": \"251006279_l6UxjxWDFHvt4Oo0fYErFesq9qGoH854Ld2rSY0HS7ts8L2GIWZ20\",\n    \"ExpirationDuration\": \"12h\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a232aa85-9490-4179-91a4-3a78790361c9\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ResetAndroidInstances": [
