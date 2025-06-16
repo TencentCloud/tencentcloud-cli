@@ -28,6 +28,13 @@
       "output": "BatchDeleteClientNodesResponse",
       "status": "online"
     },
+    "BuildClientNodeMountCommand": {
+      "document": "生成客户端的挂载命令",
+      "input": "BuildClientNodeMountCommandRequest",
+      "name": "生成客户端节点的挂载命令",
+      "output": "BuildClientNodeMountCommandResponse",
+      "status": "online"
+    },
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
@@ -343,6 +350,52 @@
     "BatchDeleteClientNodesResponse": {
       "document": "BatchDeleteClientNodes返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildClientNodeMountCommandRequest": {
+      "document": "BuildClientNodeMountCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x-c60-a2b3d4",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义挂载目录的绝对路径, 如果未指定, 则会使用默认值, 格式/goosefsx/${fs_id}-proxy. 比如/goosefsx/x-c60-a2b3d4-proxy",
+          "example": "/train_data",
+          "member": "string",
+          "name": "CustomMountDir",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuildClientNodeMountCommandResponse": {
+      "document": "BuildClientNodeMountCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "挂载命令",
+          "example": "test",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

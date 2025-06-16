@@ -24,7 +24,8 @@ Output:
                         "Command": "tar -zxvf test-1.0.X.tgz && cd test-1.0.X && ./install.sh",
                         "UninstallCommand": "cd test-1.0.X && ./uninstall.sh",
                         "CleanupMode": "CLEANUP_ON_UNINSTALL",
-                        "State": "CREATE_SUCCESS"
+                        "State": "CREATE_SUCCESS",
+                        "AndroidAppVersionName": "version_name"
                     },
                     {
                         "AndroidAppVersion": "1705406075397560877",
@@ -32,10 +33,11 @@ Output:
                         "Command": "tar -zxvf test-2.0.X.tgz && cd test-2.0.X && ./install.sh",
                         "UninstallCommand": "cd test-2.0.X && ./uninstall.sh",
                         "CleanupMode": "CLEANUP_AFTER_INSTALL",
-                        "State": "CREATE_FAIL"
+                        "State": "CREATE_FAIL",
+                        "AndroidAppVersionName": "version_name2"
                     }
                 ],
-                "Name": "控制台测试1",
+                "Name": "test-app-1",
                 "State": "ONLINE",
                 "UserId": "user1",
                 "AppMode": "ADVANCED",
@@ -44,7 +46,7 @@ Output:
             {
                 "AndroidAppId": "apk-d6fyydrc",
                 "AndroidAppVersionInfo": null,
-                "Name": "控制台测试1",
+                "Name": "test-app-2",
                 "State": "ONLINE",
                 "UserId": "user2",
                 "AppMode": "NORMAL",

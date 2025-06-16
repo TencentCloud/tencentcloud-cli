@@ -120,6 +120,14 @@
         "title": "接口示例"
       }
     ],
+    "DescribeExposures": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExposures\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ExposeList\": [\n            {\n                \"AclList\": \"0.0.0.0/0\",\n                \"AclType\": \"whitelist\",\n                \"AssetId\": \"ins-bvxns9uy\",\n                \"AssetType\": \"cvm_instance\",\n                \"AssetTypeName\": \"云服务器\",\n                \"CloudAccountId\": \"100010427547\",\n                \"CloudAccountName\": \"安全攻防\",\n                \"CreateTime\": \"2024-10-15T07:21:22Z\",\n                \"DisplayRiskType\": \"非标端口\",\n                \"DisplayStatus\": \"完全开放\",\n                \"Domain\": \"\",\n                \"HighRiskPortServiceCount\": 0,\n                \"InstanceName\": \"tke_cls-5q9sj52q_worker21\",\n                \"Ip\": \"175.178.22.29\",\n                \"Port\": \"30000-32768\",\n                \"PortServiceCount\": 0,\n                \"Provider\": \"腾讯云\",\n                \"RiskType\": \"no_standard_port\",\n                \"RiskWebAppCount\": 0,\n                \"Status\": \"open\",\n                \"UpdateTime\": \"2025-01-14T02:31:55Z\",\n                \"VulCount\": 0,\n                \"WeakPasswordCount\": 0,\n                \"WebAppCount\": 0,\n                \"ScanTaskStatus\": \"running\",\n                \"Uuid\": \"sadsds\",\n                \"HasScan\": \"true\",\n                \"AppId\": 12465129\n            }\n        ],\n        \"RequestId\": \"0ce09587-eaba-4f70-ae9b-1a80b69ee21f\",\n        \"TotalCount\": 102\n    }\n}",
+        "title": "互联网暴露资产列表"
+      }
+    ],
     "DescribeGatewayAssets": [
       {
         "document": "示例",
@@ -291,7 +299,7 @@
     "DescribeTopAttackInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopAttackInfo\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-1f94db8d0x231e0\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopAttackInfo\n<公共请求参数>\n\n{\n    \"StartTime\": \"2024-10-24 00:00:00\",\n    \"EndTime\": \"2024-10-30 23:59:59\",\n    \"MemberId\": [\n        \"mem-tencent-1f94db8d0x231e0\"\n    ],\n    \"QueryType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TopAttackInfo\": [\n            {\n                \"Name\": \"漏洞攻击\",\n                \"Count\": 13\n            }\n        ],\n        \"RequestId\": \"ab168264-2afb-4c51-bfb5-d8e24e0a03ac\"\n    }\n}",
         "title": "查询TOP攻击信息示例"
       }

@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBatchSignUrl": {
-      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId。<font color=\"red\">请确保此OrganizationOpenId对应子客已经认证，且OpenId对应员工此子客下已经实名</font>。Name，Mobile, IdCard等信息此时可以不传，系统会查询此OpenId实名信息自动补充。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。",
+      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId。<font color=\"red\">请确保此OrganizationOpenId对应子客已经认证，且OpenId对应员工此子客下已经实名</font>。Name，Mobile, IdCard等信息此时可以不传，系统会查询此OpenId实名信息自动补充。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
       "input": "ChannelCreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "ChannelCreateBatchSignUrlResponse",
@@ -2006,7 +2006,7 @@
         },
         {
           "disabled": false,
-          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
+          "document": "批量签署的合同流程ID数组。<font color=\"red\">此参数必传。</font>\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
           "example": "[\"yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E\"]",
           "member": "string",
           "name": "FlowIds",
@@ -7126,8 +7126,8 @@
         },
         {
           "disabled": false,
-          "document": "可选的此企业允许的授权方式, 可以设置的方式有:\n<ul><li>1：上传授权书</li>\n<li>2：转法定代表人授权</li>\n<li>4：企业实名认证（信任第三方认证源）（此项有排他性, 选择后不能增添其他的方式）</li></ul>\n注:<ul>\n<li>未选择信任第三方认证源时，如果是法人进行企业激活，仅支持法人扫脸直接授权，该配置不对此法人生效`</li>\n<li>选择信任第三方认证源时，请先通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganization\" target=\"_blank\">同步企业信息</a>接口同步信息。</li>\n<li>该参数仅在企业未激活时生效</li>\n</ul>",
-          "example": "[1, 2, 4]",
+          "document": "可选的此企业允许的授权方式, 可以设置的方式有:\n<ul><li>1：上传授权书</li>\n<li>2：转法定代表人授权</li>\n</ul>",
+          "example": "[1, 2]",
           "member": "int64",
           "name": "AuthorizationTypes",
           "required": false,
@@ -11903,6 +11903,15 @@
           "name": "OperateType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板名称，长度不超过64字符。<br>\n模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。",
+          "example": "入职合同",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11910,6 +11919,26 @@
     "OperateTemplateResponse": {
       "document": "OperateTemplate返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "模板ID，为32位字符串，模板复制新建时返回",
+          "example": "yDt3sUUckpxzhjc9UxGKGtnEys9Scr8j",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板名称，模板复制新建时返回",
+          "example": "入职合同",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

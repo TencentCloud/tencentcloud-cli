@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateBatchSignUrl": {
-      "document": "通过此接口，可以创建小程序批量签署链接，个人/企业员工可通过此链接跳转至小程序进行批量签署。请确保生成链接时的身份信息与签署合同参与方的信息保持一致。\n\n注意事项：\n- 使用此接口生成链接，需要贵企业先开通 <font color=\"red\">个人签署方仅校验手机号 </font>功能。您可以在 <b>【腾讯电子签网页端】->【企业设置】->【拓展服务】</b>中找到该功能。\n- 生成批量签署链接时，<font color=\"red\">合同目标参与方的状态必须为<b>待签署</b>状态</font>。签署人点击链接后需要输入短信验证码才能查看合同内容。\n- 企业员工批量签署链接：需要传入签署方所在企业名称，用户名字和手机号（或者身份证件信息）参数来生成签署链接。<font color=\"red\">该签署方企业必须已完成腾讯电子签企业认证</font>\n- 个人批量签署链接：需要传入签署方用户名字和手机号（或者身份证件信息）参数来生成签署链接。个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。",
+      "document": "通过此接口，可以创建小程序批量签署链接，个人/企业员工可通过此链接跳转至小程序进行批量签署。请确保生成链接时的身份信息与签署合同参与方的信息保持一致。\n\n注意事项：\n- 使用此接口生成链接，需要贵企业先开通 <font color=\"red\">个人签署方仅校验手机号 </font>功能。您可以在 <b>【腾讯电子签网页端】->【企业设置】->【拓展服务】</b>中找到该功能。\n- 生成批量签署链接时，<font color=\"red\">合同目标参与方的状态必须为<b>待签署</b>状态</font>。签署人点击链接后需要输入短信验证码才能查看合同内容。\n- 企业员工批量签署链接：需要传入签署方所在企业名称，用户名字和手机号（或者身份证件信息）参数来生成签署链接。<font color=\"red\">该签署方企业必须已完成腾讯电子签企业认证</font>\n- 个人批量签署链接：需要传入签署方用户名字和手机号（或者身份证件信息）参数来生成签署链接。个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。\n- 进行小程序批量签署必须指定待签署的流程id，<font color=\"red\">接口中FlowIds参数必传。</font>",
       "input": "CreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "CreateBatchSignUrlResponse",
@@ -2954,7 +2954,7 @@
         },
         {
           "disabled": false,
-          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
+          "document": "批量签署的合同流程ID数组，<font color=\"red\">此参数必传。</font>\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
           "example": "[\"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"]",
           "member": "string",
           "name": "FlowIds",
@@ -2990,7 +2990,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完成后是否自动回跳\n<ul><li>false：否, 签署完成不会自动跳转回来(默认)</li><li>true：是, 签署完成会自动跳转回来</li></ul>\n\n注: \n1. 该参数<font color=\"red\">只针对APP类型（电子签小程序跳转贵方小程序）场景</font> 的签署链接有效\n2. <font color=\"red\">手机应用APP 或 微信小程序需要监控界面的返回走后序逻辑</font>, 微信小程序的文档可以参考[这个](https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object)\n3. <font color=\"red\">电子签小程序跳转贵方APP，不支持自动跳转，必需用户手动点击完成按钮（微信的限制）</font> ",
+          "document": "签署完成后是否自动回跳\n<ul><li>false：否, 签署完成不会自动跳转回来(默认)</li><li>true：是, 签署完成会自动跳转回来</li></ul>\n\n注: \n1. 该参数<font color=\"red\">只针对APP类型（电子签小程序跳转贵方小程序）场景</font> 的签署链接有效\n2. <font color=\"red\">手机应用APP 或 微信小程序需要监控界面的返回走后序逻辑</font>, 微信小程序的文档可以参考[这个](https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html#onShow-Object-object)\n3. <font color=\"red\">电子签小程序跳转贵方APP，不支持自动跳转，必须用户手动点击完成按钮（微信的限制）</font> ",
           "example": "true",
           "member": "bool",
           "name": "AutoJumpBack",
@@ -3017,7 +3017,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 使用此功能时，FlowIds参数必传。3. 对于企业签署方，如果有签名控件，则会使用用户首次选择的签名类型签署所有含有签名控件的合同。`",
+          "document": "是否允许此链接中签署方批量确认已读文件。 <ul><li>false (默认): 不允许批量确认已读文件。</li> <li>true : 允许批量确认已读文件。</li></ul>\n注：`1. 此功能为白名单功能，使用前请联系对应客户经理进行开通。2. 使用此功能时，FlowIds参数必传。3. 对于企业签署方，如果对印章/签名控件有限制要求，需要保证所有印章/签名签署控件限制要求(印章id或印章/签名类型限制)一致，否则无法使用此功能。`",
           "example": "false",
           "member": "bool",
           "name": "CanSkipReadFlow",
@@ -13999,6 +13999,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板名称，长度不超过64字符。<br>\n模板复制时指定有效，若为空，则复制后模板名称为 **原模板名称_副本**。",
+          "example": "入职协议",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14006,6 +14015,26 @@
     "OperateTemplateResponse": {
       "document": "OperateTemplate返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "模板ID，为32位字符串，模板复制新建时返回",
+          "example": "yDt3sUUckpxzhjc9UxGKGtnEys9Scr8j",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板名称，模板复制新建时返回",
+          "example": "入职协议",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

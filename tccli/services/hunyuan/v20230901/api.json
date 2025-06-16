@@ -466,6 +466,15 @@
           "name": "WebSearchOptions",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户传入Topic",
+          "example": "无",
+          "member": "string",
+          "name": "TopicChoice",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -571,6 +580,16 @@
           "name": "RecommendedQuestions",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI搜索返回状态",
+          "example": "无",
+          "member": "Processes",
+          "name": "Processes",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2561,6 +2580,42 @@
       ],
       "usage": "out"
     },
+    "Processes": {
+      "document": "大模型执行状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出信息",
+          "example": "开始获取资料…",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "plan:开始获取资料…\nrecall:找到 n 篇相关资料\nquote:引用 n 篇资料作为参考\n",
+          "example": "输出的状态",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当状态是recall和quote，会给出来相关数量",
+          "example": "输出文档数量",
+          "member": "uint64",
+          "name": "Num",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryHunyuanImageChatJobRequest": {
       "document": "QueryHunyuanImageChatJob请求参数结构体",
       "members": [
@@ -4238,6 +4293,15 @@
           "name": "UserLocation",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "打开开关，会返回搜索状态",
+          "example": "true",
+          "member": "bool",
+          "name": "Processes",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

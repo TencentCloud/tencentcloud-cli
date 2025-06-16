@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli csip DescribeTopAttackInfo --cli-unfold-argument  \
-    --MemberId mem-tencent-1f94db8d0x231e0
+    --StartTime 2024-10-24 00:00:00 \
+    --EndTime 2024-10-30 23:59:59 \
+    --MemberId mem-tencent-1f94db8d0x231e0 \
+    --QueryType 1
 ```
 
 Output: 

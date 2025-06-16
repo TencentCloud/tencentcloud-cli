@@ -36449,7 +36449,7 @@
         {
           "disabled": false,
           "document": "恶意请求事件ID数组。加白时必需，否则Filters和EventIDSet二者选其一。",
-          "example": "无",
+          "example": "[10073]",
           "member": "uint64",
           "name": "EventIDSet",
           "required": true,
@@ -36458,7 +36458,7 @@
         {
           "disabled": false,
           "document": "标记事件的状态：\nEVENT_UNDEAL:未处理（取消忽略），\nEVENT_DEALED:已处理，\nEVENT_IGNORE:忽略，\nEVENT_DELETE：已删除\nEVENT_ADD_WHITE：加白\nEVENT_ISOLATE_CONTAINER：隔离容器\nEVENT_RESOTRE_CONTAINER：恢复容器",
-          "example": "无",
+          "example": "EVENT_UNDEAL",
           "member": "string",
           "name": "EventStatus",
           "required": true,
@@ -36467,7 +36467,7 @@
         {
           "disabled": false,
           "document": "白名单域名/IP",
-          "example": "无",
+          "example": "www.baidu.com",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -36476,7 +36476,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -36494,7 +36494,7 @@
         {
           "disabled": false,
           "document": "加白的事件类型，恶意域名请求：DOMAIN，恶意IP请求：IP",
-          "example": "无",
+          "example": "DOMAIN",
           "member": "string",
           "name": "AddWhiteEventType",
           "required": false,

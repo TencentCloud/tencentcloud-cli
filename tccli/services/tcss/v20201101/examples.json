@@ -2517,8 +2517,8 @@
     "ModifyRiskDnsEventStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRiskDnsEventStatus\n<公共请求参数>\n\n{\n    \"EventIDSet\": [\n        1\n    ],\n    \"EventStatus\": \"EVENT_DEALED\",\n    \"Remark\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRiskDnsEventStatus\n<公共请求参数>\n\n{\n    \"EventIDSet\": [\n        1\n    ],\n    \"EventStatus\": \"EVENT_DEALED\",\n    \"Remark\": \"remark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95d4d743-c578-445e-a021-7846815304bf\"\n    }\n}",
         "title": "编辑恶意请求事件状态"
       }
     ],
