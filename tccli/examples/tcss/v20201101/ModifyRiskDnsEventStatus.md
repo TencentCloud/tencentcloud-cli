@@ -8,14 +8,14 @@ Input:
 tccli tcss ModifyRiskDnsEventStatus --cli-unfold-argument  \
     --EventIDSet 1 \
     --EventStatus EVENT_DEALED \
-    --Remark xx
+    --Remark remark
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "95d4d743-c578-445e-a021-7846815304bf"
     }
 }
 ```

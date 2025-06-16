@@ -695,6 +695,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用版本名称",
+          "example": "\"version_name\"",
+          "member": "string",
+          "name": "AndroidAppVersionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2758,7 +2768,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "过滤条件，支持过滤的字段有：UserId",
           "example": "[{\"Name\":\"UserId\",\"Values\":[\"user1\"]}]\t",
           "member": "Filter",
           "name": "Filters",

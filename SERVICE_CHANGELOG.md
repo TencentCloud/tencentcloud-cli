@@ -1,92 +1,166 @@
-# Release 3.0.1220.1
+# Release 3.0.1221.1
 
-## 黑石私有网络(bmvpc) 版本：2018-06-25
+## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 2 次发布
+### 第 47 次发布
 
-发布时间：2025-06-16 01:12:46
+发布时间：2025-06-17 01:22:11
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+新增接口：
 
-* AsyncRegisterIps
-* BindIpsToNatGateway
-* BindSubnetsToNatGateway
-* CreateCustomerGateway
-* CreateHostedInterface
-* CreateNatGateway
-* CreateRoutePolicies
-* CreateVpc
-* CreateVpcPeerConnection
-* DeleteNatGateway
-* DeleteRoutePolicy
-* DeregisterIps
-* DownloadCustomerGatewayConfiguration
-* ModifyRoutePolicy
-* ModifyRouteTable
-* UnbindIpsFromNatGateway
-* UnbindSubnetsFromNatGateway
-* UpgradeNatGateway
+* [DescribeExposures](http://document.tencentcloudapi.woa.com/document/product/1726/87038)
+
+修改接口：
+
+* [DescribeTopAttackInfo](http://document.tencentcloudapi.woa.com/document/product/1726/83377)
+
+	* 新增入参：StartTime, EndTime, QueryType, AssetName, AssetType
+
+
+新增数据结构：
+
+* [ExposesItem](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ExposesItem)
+* [Filters](http://document.tencentcloudapi.woa.com/document/product/1726/80814#Filters)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 142 次发布
+
+发布时间：2025-06-17 01:33:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OperateTemplate](http://document.tencentcloudapi.woa.com/document/product/1668/86128)
+
+	* 新增入参：TemplateName
+
+	* 新增出参：TemplateId, TemplateName
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 190 次发布
+
+发布时间：2025-06-17 01:34:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [OperateTemplate](http://document.tencentcloudapi.woa.com/document/product/1595/86129)
+
+	* 新增入参：TemplateName
+
+	* 新增出参：TemplateId, TemplateName
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 18 次发布
+
+发布时间：2025-06-17 01:36:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BuildClientNodeMountCommand](http://document.tencentcloudapi.woa.com/document/product/1716/87039)
 
 
 
 ## 云游戏(gs) 版本：2019-11-18
 
-### 第 27 次发布
+### 第 28 次发布
 
-发布时间：2025-06-16 01:36:27
+发布时间：2025-06-17 01:36:53
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [CreateAndroidInstancesAccessToken](http://document.tencentcloudapi.woa.com/document/product/1162/87032)
-* [DeleteAndroidInstanceBackupFiles](http://document.tencentcloudapi.woa.com/document/product/1162/87033)
-* [RenewAndroidInstancesAccessToken](http://document.tencentcloudapi.woa.com/document/product/1162/87031)
-
-修改接口：
-
-* [ModifyAndroidInstancesProperties](http://document.tencentcloudapi.woa.com/document/product/1162/86953)
-
-	* 新增出参：AndroidInstanceErrors
-
-* [ModifyAndroidInstancesResolution](http://document.tencentcloudapi.woa.com/document/product/1162/86173)
-
-	* 新增出参：AndroidInstanceErrors
-
 
 修改数据结构：
 
-* [AndroidInstanceImage](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidInstanceImage)
+* [AndroidAppVersionInfo](http://document.tencentcloudapi.woa.com/document/product/1162/40743#AndroidAppVersionInfo)
 
-	* 新增成员：AndroidVersion
-
-
-
-
-## 容器服务(tke) 版本：2022-05-01
+	* 新增成员：AndroidAppVersionName
 
 
 
-## 容器服务(tke) 版本：2018-05-25
 
-### 第 92 次发布
+## 腾讯混元大模型(hunyuan) 版本：2023-09-01
 
-发布时间：2025-06-16 02:07:39
+### 第 9 次发布
+
+发布时间：2025-06-17 01:37:49
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [DescribeMasterComponent](http://document.tencentcloudapi.woa.com/document/product/457/87035)
-* [ModifyMasterComponent](http://document.tencentcloudapi.woa.com/document/product/457/87034)
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1744/85790)
+
+	* 新增入参：TopicChoice
+
+	* 新增出参：Processes
+
+
+新增数据结构：
+
+* [Processes](http://document.tencentcloudapi.woa.com/document/product/1744/85813#Processes)
+
+修改数据结构：
+
+* [WebSearchOptions](http://document.tencentcloudapi.woa.com/document/product/1744/85813#WebSearchOptions)
+
+	* 新增成员：Processes
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 94 次发布
+
+发布时间：2025-06-17 02:09:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [TurnDetection](http://document.tencentcloudapi.woa.com/document/product/647/44055#TurnDetection)
+
+修改数据结构：
+
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+
+	* 新增成员：InitLLMMessage, TurnDetection
+
 
 
 
