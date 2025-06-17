@@ -5782,7 +5782,7 @@
         {
           "disabled": false,
           "document": "域名列表，最多支持20个域名",
-          "example": "[\"www.test.com\\n\"]",
+          "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -5818,7 +5818,7 @@
         {
           "disabled": false,
           "document": "指定省份查询，不填充表示查询所有省份\n省份、国家/地区编码可以查看 [省份编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)",
-          "example": "122",
+          "example": "[122]",
           "member": "int64",
           "name": "Districts",
           "required": false,
@@ -5827,7 +5827,7 @@
         {
           "disabled": false,
           "document": "指定运营商查询，不填充表示查询所有运营商\n运营商编码可以查看 [运营商编码映射](https://cloud.tencent.com/document/product/228/6316#.E5.8C.BA.E5.9F.9F-.2F-.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84.E8.A1.A8)",
-          "example": "3947",
+          "example": "[3947]",
           "member": "int64",
           "name": "Isps",
           "required": false,

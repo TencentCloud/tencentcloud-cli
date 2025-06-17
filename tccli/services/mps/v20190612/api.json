@@ -1820,6 +1820,34 @@
       ],
       "usage": "both"
     },
+    "AddBlindWatermarkConfig": {
+      "document": "增加盲水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盲水印嵌入数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlindWatermarkEmbedInfo",
+          "name": "EmbedInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AddOnSubtitle": {
       "document": "外挂字幕。",
       "members": [
@@ -7362,6 +7390,62 @@
         }
       ],
       "usage": "out"
+    },
+    "BlindWatermarkConfig": {
+      "document": "盲水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增加盲水印\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AddBlindWatermarkConfig",
+          "name": "AddBlindWatermark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提取盲水印\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExtractBlindWatermarkConfig",
+          "name": "ExtractBlindWatermark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "移除盲水印\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemoveBlindWatermarkConfig",
+          "name": "RemoveBlindWatermark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BlindWatermarkEmbedInfo": {
+      "document": "嵌入盲水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "盲水印文字，需要经过 URL 安全的 Base64 编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dGVzdA==",
+          "member": "string",
+          "name": "EmbedText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ClassificationConfigureInfo": {
       "document": "智能分类任务控制参数",
@@ -17116,6 +17200,23 @@
       ],
       "usage": "both"
     },
+    "ExtractBlindWatermarkConfig": {
+      "document": "提取盲水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FaceConfigureInfo": {
       "document": "人脸识别任务控制参数",
       "members": [
@@ -18975,6 +19076,17 @@
           "example": "无",
           "member": "ImageEraseConfig",
           "name": "EraseConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盲水印配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlindWatermarkConfig",
+          "name": "BlindWatermarkConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -27567,6 +27679,23 @@
         }
       ],
       "usage": "out"
+    },
+    "RemoveBlindWatermarkConfig": {
+      "document": "移除盲水印配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ResetWorkflowRequest": {
       "document": "ResetWorkflow请求参数结构体",

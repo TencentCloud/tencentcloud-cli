@@ -3505,7 +3505,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后达到阈值,范围[10-90]",
+          "document": "扩容后达到阈值,范围[1-90]",
           "example": "75",
           "member": "uint64",
           "name": "TargetThreshold",

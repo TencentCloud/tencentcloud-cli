@@ -434,6 +434,13 @@
       "output": "UploadRevokeLetterResponse",
       "status": "online"
     },
+    "UploadUpdateCertificateInstance": {
+      "document": "更新证书内容（证书ID不变）并更新关联的云资源，本接口为异步接口， 调用之后DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常",
+      "input": "UploadUpdateCertificateInstanceRequest",
+      "name": "更新证书内容（证书ID不变）并更新关联的云资源",
+      "output": "UploadUpdateCertificateInstanceResponse",
+      "status": "online"
+    },
     "VerifyManager": {
       "document": "重新核验管理人",
       "input": "VerifyManagerRequest",
@@ -11454,6 +11461,99 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadUpdateCertificateInstanceRequest": {
+      "document": "UploadUpdateCertificateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新",
+          "example": "hey**shje",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要部署的资源类型，参数值可选（小写）：clb",
+          "example": "[\"clb\"]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "公钥证书",
+          "example": "-----BEGIN CERTIFICATE----****",
+          "member": "string",
+          "name": "CertificatePublicKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥证书",
+          "example": "-----BEGIN RSA PRIVATE KEY----***",
+          "member": "string",
+          "name": "CertificatePrivateKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb",
+          "example": "无",
+          "member": "ResourceTypeRegions",
+          "name": "ResourceTypesRegions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadUpdateCertificateInstanceResponse": {
+      "document": "UploadUpdateCertificateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常",
+          "example": "17636",
+          "member": "uint64",
+          "name": "DeployRecordId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID",
+          "example": "1",
+          "member": "int64",
+          "name": "DeployStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新异步创建任务进度详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateSyncProgress",
+          "name": "UpdateSyncProgress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -19,7 +19,7 @@ Output:
                 "GroupNumLimit": 500,
                 "InstanceType": "EXPERIMENT",
                 "MaxMessageDelay": 48,
-                "OnSale": true,
+                "OnSale": false,
                 "PriceTags": [
                     {
                         "Name": "tps"
