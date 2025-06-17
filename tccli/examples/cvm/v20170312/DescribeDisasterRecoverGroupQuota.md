@@ -13,7 +13,7 @@ Output:
     "Response": {
         "GroupQuota": 10,
         "CvmInHostGroupQuota": 50,
-        "CvmInSwGroupQuota": 20,
+        "CvmInSwitchGroupQuota": 20,
         "CvmInRackGroupQuota": 30,
         "CurrentNum": 25,
         "RequestId": "a13da94a-1cbc-42ca-ac6c-e14ef0c76a7c"

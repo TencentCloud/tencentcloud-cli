@@ -17,6 +17,7 @@ Output:
         "TotalCount": 1,
         "ImageSet": [
             {
+                "LicenseType": "TencentCloud",
                 "ImageId": "img-9qabwvbn",
                 "OsName": "CentOS 7.6 64位",
                 "ImageSize": 50,
@@ -26,16 +27,16 @@ Output:
                 "ImageSource": "OFFICIAL",
                 "ImageName": "CentOS 7.6 64位",
                 "ImageDescription": "CentOS 7.6 64位",
-                "ImageCreator": null,
-                "SyncPercent": null,
+                "ImageCreator": "tencent",
+                "SyncPercent": 20,
                 "IsSupportCloudinit": true,
                 "Platform": "CentOS",
                 "Architecture": "x86_64",
                 "SnapshotSet": [],
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "myKey",
+                        "Key": "myValue"
                     }
                 ]
             }
@@ -64,6 +65,7 @@ Output:
         "TotalCount": 408,
         "ImageSet": [
             {
+                "LicenseType": "TencentCloud",
                 "OsName": "CentOS 7.4 64位",
                 "ImageSize": 20,
                 "ImageType": "PRIVATE_IMAGE",
@@ -84,8 +86,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "myKey",
+                        "Key": "myValue"
                     }
                 ],
                 "Architecture": "x86_64",

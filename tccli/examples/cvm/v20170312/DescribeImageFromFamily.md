@@ -14,34 +14,34 @@ Output:
 {
     "Response": {
         "Image": {
-            "ImageId": "abc",
-            "OsName": "abc",
-            "ImageType": "abc",
-            "CreatedTime": "2020-09-22T00:00:00+00:00",
-            "ImageName": "abc",
-            "ImageDescription": "abc",
-            "ImageSize": 0,
-            "Architecture": "abc",
-            "ImageState": "abc",
-            "Platform": "abc",
-            "ImageCreator": "abc",
-            "ImageSource": "abc",
+            "ImageId": "img-1a2b3c4d",
+            "OsName": "Ubuntu Server 20.04 LTS 64bit",
+            "ImageType": "PRIVATE_IMAGE",
+            "CreatedTime": "2025-03-24T06:35:06Z",
+            "ImageName": "myImg",
+            "ImageDescription": "myImg",
+            "ImageSize": 50,
+            "Architecture": "x86_64",
+            "ImageState": "NORMAL",
+            "Platform": "Ubuntu",
+            "ImageCreator": "tencent",
+            "ImageSource": "CREATE_IMAGE",
             "SyncPercent": 0,
             "IsSupportCloudinit": true,
             "SnapshotSet": [
                 {
-                    "SnapshotId": "abc",
-                    "DiskUsage": "abc",
-                    "DiskSize": 0
+                    "SnapshotId": "snap-1a2b3c4d",
+                    "DiskUsage": "SYSTEM_DISK",
+                    "DiskSize": 50
                 }
             ],
             "Tags": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "myKey",
+                    "Value": "myValue"
                 }
             ],
-            "LicenseType": "abc",
+            "LicenseType": "TencentCloud",
             "ImageFamily": "business-daily-update",
             "ImageDeprecated": false
         },

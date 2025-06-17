@@ -18,6 +18,7 @@ Output:
             {
                 "LaunchTemplateVersion": 1,
                 "LaunchTemplateVersionData": {
+                    "DisableApiTermination": true,
                     "VirtualPrivateCloud": {
                         "SubnetId": "subnet-he88kvqu",
                         "AsVpcGateway": false,
@@ -41,6 +42,9 @@ Output:
                         },
                         "MonitorService": {
                             "Enabled": true
+                        },
+                        "AutomationService": {
+                            "Enabled": false
                         }
                     },
                     "SecurityGroupIds": [

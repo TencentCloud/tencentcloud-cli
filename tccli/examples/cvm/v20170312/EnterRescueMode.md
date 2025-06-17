@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cvm EnterRescueMode --cli-unfold-argument  \
-    --InstanceId instance_Id \
-    --Password "uu7797UUX"
+    --InstanceId ins-axzc12s \
+    --Password hello123456789
 ```
 
 Output: 

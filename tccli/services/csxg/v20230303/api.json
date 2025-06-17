@@ -1,39 +1,39 @@
 {
   "actions": {
     "Create5GInstance": {
-      "document": "创建5G入云服务接口",
+      "document": "产品已下线退市，现走流程下线业务\\\\n\\\\n下线流程单：\\\\nhttps://yehe.woa.com/pcm/withdraw-market/detail/2985?tab=eoms\\\\n\\\\n下线需求单：\\\\nhttps://tapd.woa.com/tapd_fe/20418986/story/detail/1020418986123386479\n\n创建5G入云服务接口",
       "input": "Create5GInstanceRequest",
       "name": "创建5G入云服务",
       "output": "Create5GInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "Delete5GInstance": {
-      "document": "删除5G入云服务",
+      "document": "产品已下线退市，现走流程下线业务\\\\n\\\\n下线流程单：\\\\nhttps://yehe.woa.com/pcm/withdraw-market/detail/2985?tab=eoms\\\\n\\\\n下线需求单：\\\\nhttps://tapd.woa.com/tapd_fe/20418986/story/detail/1020418986123386479\n\n删除5G入云服务",
       "input": "Delete5GInstanceRequest",
       "name": "删除5G入云服务",
       "output": "Delete5GInstanceResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "Describe5GAPNs": {
-      "document": "查询APN信息",
+      "document": "产品已下线退市，现走流程下线业务\\\\n\\\\n下线流程单：\\\\nhttps://yehe.woa.com/pcm/withdraw-market/detail/2985?tab=eoms\\\\n\\\\n下线需求单：\\\\nhttps://tapd.woa.com/tapd_fe/20418986/story/detail/1020418986123386479\n\n查询APN信息",
       "input": "Describe5GAPNsRequest",
       "name": "查询APN信息",
       "output": "Describe5GAPNsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "Describe5GInstances": {
-      "document": "查询5G入云服务",
+      "document": "产品已下线退市，现走流程下线业务\\\\n\\\\n下线流程单：\\\\nhttps://yehe.woa.com/pcm/withdraw-market/detail/2985?tab=eoms\\\\n\\\\n下线需求单：\\\\nhttps://tapd.woa.com/tapd_fe/20418986/story/detail/1020418986123386479\n\n查询5G入云服务",
       "input": "Describe5GInstancesRequest",
       "name": "查询5G入云服务",
       "output": "Describe5GInstancesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "Modify5GInstanceAttribute": {
-      "document": "修改5G入云服务",
+      "document": "产品已下线退市，现走流程下线业务\\\\n\\\\n下线流程单：\\\\nhttps://yehe.woa.com/pcm/withdraw-market/detail/2985?tab=eoms\\\\n\\\\n下线需求单：\\\\nhttps://tapd.woa.com/tapd_fe/20418986/story/detail/1020418986123386479\n\n修改5G入云服务",
       "input": "Modify5GInstanceAttributeRequest",
       "name": "修改5G入云服务",
       "output": "Modify5GInstanceAttributeResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

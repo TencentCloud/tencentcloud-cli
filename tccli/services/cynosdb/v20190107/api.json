@@ -11179,10 +11179,10 @@
         {
           "disabled": false,
           "document": "计费用量明细",
-          "example": "无",
+          "example": " [{\"Ccu\": 0,\"Timestamp\": 1621987200,\"Storage\": 0}]",
           "member": "TradeUsage",
           "name": "Usages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
