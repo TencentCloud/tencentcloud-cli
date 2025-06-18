@@ -3433,7 +3433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
+          "document": "文件系统 ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
           "example": "cfs-4abc12343",
           "member": "string",
           "name": "FileSystemId",
@@ -3451,7 +3451,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后目标阈值,范围[10-90],该值要小于ScaleUpThreshold",
+          "document": "扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold",
           "example": "80",
           "member": "uint64",
           "name": "TargetThreshold",
@@ -3460,7 +3460,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态0:关闭，1 开启；不传保留原状态",
+          "document": "规则状态 0：关闭，1：开启；不传保留原状态",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -3475,7 +3475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统id",
+          "document": "文件系统 ID",
           "example": "cfs-x",
           "member": "string",
           "name": "FileSystemId",
@@ -3485,7 +3485,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态0:关闭，1 开启",
+          "document": "规则状态 0：关闭，1：开启",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -3495,7 +3495,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容阈值,范围[10-90]",
+          "document": "扩容阈值，范围[10-90]",
           "example": "85",
           "member": "uint64",
           "name": "ScaleUpThreshold",
@@ -3505,7 +3505,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后达到阈值,范围[1-90]",
+          "document": "扩容后达到阈值，范围[1-90]",
           "example": "75",
           "member": "uint64",
           "name": "TargetThreshold",

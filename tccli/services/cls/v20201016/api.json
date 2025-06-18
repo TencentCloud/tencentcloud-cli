@@ -5762,6 +5762,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID，格式为：用户自定义部分-用户appid，用户自定义部分仅支持小写字母、数字和-，且不能以-开头和结尾，长度为3至40字符，尾部需要使用-拼接用户appid",
+          "example": "user-define-34534566",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5775,6 +5784,7 @@
           "example": "dc01b74a-49e4-11eb-b378-0242ac130002",
           "member": "string",
           "name": "LogsetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6342,6 +6352,15 @@
           "name": "Period",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "二级产品标识",
+          "example": "TKE_AUDIO",
+          "member": "string",
+          "name": "SubAssumerName",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
