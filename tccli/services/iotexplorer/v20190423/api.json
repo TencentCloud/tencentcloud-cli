@@ -70,6 +70,13 @@
       "output": "ControlDeviceDataResponse",
       "status": "online"
     },
+    "CreateAISearchTaskAsync": {
+      "document": "创建视频语义异步搜索任务",
+      "input": "CreateAISearchTaskAsyncRequest",
+      "name": "创建异步视频语义搜索任务",
+      "output": "CreateAISearchTaskAsyncResponse",
+      "status": "online"
+    },
     "CreateBatchProduction": {
       "document": "用于新建批量生产设备",
       "input": "CreateBatchProductionRequest",
@@ -285,6 +292,13 @@
       "input": "DeleteTopicRuleRequest",
       "name": "删除规则",
       "output": "DeleteTopicRuleResponse",
+      "status": "online"
+    },
+    "DescribeAISearchTaskAsync": {
+      "document": "获取视频语义异步搜索任务详情",
+      "input": "DescribeAISearchTaskAsyncRequest",
+      "name": "获取异步视频语义搜索任务详情",
+      "output": "DescribeAISearchTaskAsyncResponse",
       "status": "online"
     },
     "DescribeActivateDevice": {
@@ -1170,6 +1184,42 @@
     "serviceShortName": "iotexplorer"
   },
   "objects": {
+    "AISearchInfo": {
+      "document": "AI视频搜索结果结构体。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基于搜索结果的总结",
+          "example": "What happened on April 1st",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频结果集",
+          "example": "无",
+          "member": "TargetInfo",
+          "name": "Targets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频回放URL",
+          "example": "https://domain.com/video.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ActivateDeviceInfo": {
       "document": "设备激活详情信息",
       "members": [
@@ -2813,6 +2863,79 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateAISearchTaskAsyncRequest": {
+      "document": "CreateAISearchTaskAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "MVTYMD8YCD",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自然语言查询",
+          "example": "今天发生了什么?",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索结果总结的语言类型，支持的类型有：en-US、zh-CN、id-ID、th-TH",
+          "example": "zh-CN",
+          "member": "string",
+          "name": "SummaryLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAISearchTaskAsyncResponse": {
+      "document": "CreateAISearchTaskAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task_0001",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateBatchProductionRequest": {
       "document": "CreateBatchProduction请求参数结构体",
@@ -4816,6 +4939,53 @@
     "DeleteTopicRuleResponse": {
       "document": "DeleteTopicRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAISearchTaskAsyncRequest": {
+      "document": "DescribeAISearchTaskAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task_0001",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAISearchTaskAsyncResponse": {
+      "document": "DescribeAISearchTaskAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态。0-初始状态；1-正在处理；2-处理失败；3-成功",
+          "example": "OK",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理结果数据",
+          "example": "无",
+          "member": "AISearchInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

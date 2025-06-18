@@ -11775,9 +11775,10 @@
         {
           "disabled": false,
           "document": "限流结果",
-          "example": "[{\"ApiId\":\"api-9jw9mzhu\",\"CreatedTime\":\"2024-12-23 14:38:26\",\"Description\":null,\"MaxQps\":10000,\"RuleContent\":null,\"RuleId\":\"rule-gtqzfihy\",\"RuleName\":\"gateway-proxy-rule_grp-ptrhio2l_api-9jw9mzhu\",\"TsfRuleId\":\"rate-ab423r9v\",\"UpdatedTime\":\"2024-12-23 14:38:26\",\"UsableStatus\":\"enabled\"}]",
+          "example": "无",
           "member": "ApiRateLimitRule",
           "name": "Result",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

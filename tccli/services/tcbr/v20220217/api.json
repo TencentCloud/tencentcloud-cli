@@ -1757,6 +1757,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Dockerfile EntryPoint 参数",
+          "example": "[\"echo\", \"test\"]",
+          "member": "string",
+          "name": "EntryPoint",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Dockerfile Cmd 参数",
+          "example": "[\"echo\", \"test\"]",
+          "member": "string",
+          "name": "Cmd",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

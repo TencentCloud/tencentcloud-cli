@@ -378,6 +378,14 @@
         "title": "删除告警策略"
       }
     ],
+    "DeleteAlarmShields": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlarmShields\n<公共请求参数>\n\n{\n    \"Shields\": [\n        \"xx\"\n    ],\n    \"Module\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-266627r66hheh-23\"\n    }\n}",
+        "title": "删除告警屏蔽规则"
+      }
+    ],
     "DeleteAlertRules": [
       {
         "document": "",

@@ -104,6 +104,14 @@
         "title": "设备不在线时或未订阅相关 Topic 时，设置设备数据"
       }
     ],
+    "CreateAISearchTaskAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAISearchTaskAsync\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"Query\": \"What happened on April 1st\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"TaskId\": \"task_0001\"\n    }\n}",
+        "title": "创建视频语义异步搜索任务"
+      }
+    ],
     "CreateBatchProduction": [
       {
         "document": "使用上传文件 url 的方式进行量产",
@@ -404,6 +412,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "删除规则"
+      }
+    ],
+    "DescribeAISearchTaskAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAISearchTaskAsync\n\n{\n    \"TaskId\": \"task_0001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Status\": 3,\n        \"Data\": {\n            \"Summary\": \"Nine videos captured various scenes on April 1st, showcasing pets eating and playing, a peaceful baby interaction, a resting child, and diligent workers like cleaners and delivery men, all without any safety concerns.\",\n            \"Targets\": [\n                {\n                    \"ProductId\": \"MVTYMD8YCD\",\n                    \"DeviceName\": \"dev001\",\n                    \"StartTimeMs\": 1743456533000,\n                    \"EndTimeMs\": 1743456543000,\n                    \"EventId\": \"alarm\",\n                    \"Summary\": \"Two cats and a dog eating\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取视频语义异步搜索任务详情"
       }
     ],
     "DescribeActivateDevice": [

@@ -8680,6 +8680,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否共享知识库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSharedKnowledge",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12559,8 +12570,8 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围 1：全部，2：按条件",
-          "example": "无",
+          "document": "标签适用范围，需要传参为1",
+          "example": "1",
           "member": "uint64",
           "name": "AttrRange",
           "required": true,
@@ -12637,6 +12648,15 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDownload",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

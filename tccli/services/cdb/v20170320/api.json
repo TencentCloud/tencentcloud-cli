@@ -13095,7 +13095,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/253/7167)接口获得。",
+          "document": "数据库名称，可使用[查询数据库](https://cloud.tencent.com/document/api/236/17493)接口获得。",
           "example": "test_data_base",
           "member": "string",
           "name": "Database",
@@ -13123,7 +13123,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13133,7 +13133,7 @@
           "example": "[             \"TABLE_CATALOG\",             \"TABLE_SCHEMA\",      ",
           "member": "string",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
