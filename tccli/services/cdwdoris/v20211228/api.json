@@ -1063,7 +1063,7 @@
         },
         {
           "disabled": false,
-          "document": "实例对应snapshoit的id",
+          "document": "实例对应Snapshot的id",
           "example": "2221",
           "member": "int64",
           "name": "TaskId",
@@ -12208,7 +12208,7 @@
         },
         {
           "disabled": false,
-          "document": "Encryptid",
+          "document": "Encrypted",
           "example": "1",
           "member": "int64",
           "name": "Encrypt",

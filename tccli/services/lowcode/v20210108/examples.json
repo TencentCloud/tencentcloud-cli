@@ -137,8 +137,8 @@
     "DescribeWxAccessToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAccessToken\n<公共请求参数>\n\n{\n    \"WxAppId\": \"abc\",\n    \"ComponentAppId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Token\": \"abc\",\n        \"ExpireAt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxAccessToken\n<公共请求参数>\n\n{\n    \"WxAppId\": \"\",\n    \"ComponentAppId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"\",\n        \"ExpireAt\": 1,\n        \"RequestId\": \"\"\n    }\n}",
         "title": "生成token"
       }
     ],
