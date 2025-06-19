@@ -176,6 +176,14 @@
         "title": "删除共享知识库"
       }
     ],
+    "DeleteVar": [
+      {
+        "document": "删除变量",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVar\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\",\n    \"VarId\": \"b7f9ef77-caa1-49c5-a693-075a2ba3eeb4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b62f07f-689d-4641-9245-f680d4c6c16a\"\n    }\n}",
+        "title": "删除变量"
+      }
+    ],
     "DescribeApp": [
       {
         "document": "获取企业下应用详情",
@@ -866,6 +874,14 @@
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSharedKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeBizId\": \"1908652910168703294\",\n    \"Info\": {\n        \"EmbeddingModel\": \"general-text-embedding-v2.7\",\n        \"KnowledgeDescription\": \"计算机基础理论知识库\",\n        \"KnowledgeName\": \"共享知识库1\",\n        \"QaExtractModel\": \"general-qa-extract-v1.8\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1c3dcb2-e3d7-686e-a809-29d53f7a915f\",\n        \"KnowledgeBizId\": \"1908652910168703294\"\n    }\n}",
         "title": "更新共享知识库"
+      }
+    ],
+    "UpdateVar": [
+      {
+        "document": "更新变量",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVar\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\",\n    \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\",\n    \"VarName\": \"TimeIDUpdate\",\n    \"VarDesc\": \"这个参数要来传时间\",\n    \"VarType\": \"STRING\",\n    \"VarDefaultValue\": \"2025-05-14\",\n    \"VarDefaultFileName\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"94a2fb36-98dc-47d2-b39b-904d244ad888\",\n        \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\"\n    }\n}",
+        "title": "更新变量"
       }
     ],
     "UploadAttributeLabel": [

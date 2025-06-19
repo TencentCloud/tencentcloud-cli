@@ -31,6 +31,7 @@ Output:
                     "CreationTime": "2019-05-29 15:02:08",
                     "UpdateTime": "2019-05-29 15:02:08",
                     "TcrRepoInfo": {
+                        "RepoName": "name",
                         "Region": "ap-guangzhou",
                         "RegistryId": "reg-6a79x94v",
                         "RegistryName": "reg-mock",

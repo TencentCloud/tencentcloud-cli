@@ -350,6 +350,14 @@
         "title": "查询迁移主题实时数据"
       }
     ],
+    "DescribeMigrationTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigrationTaskList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd8c6783-04a4-419f-bc51-9af603872490\",\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"TaskId\": \"603872-7a11-c67\",\n                \"Type\": 1,\n                \"InstanceId\": \"rmq-47zbegoa\",\n                \"TopicNum\": 4,\n                \"GroupNum\": 0,\n                \"Status\": 1,\n                \"CreateTime\": 1693219938000\n            }\n        ]\n    }\n}",
+        "title": "获取数据迁移任务列表"
+      }
+    ],
     "DescribeProductSKUs": [
       {
         "document": "获取产品规格信息",

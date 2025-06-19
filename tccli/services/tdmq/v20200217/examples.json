@@ -601,7 +601,7 @@
     "DescribeRabbitMQQueues": [
       {
         "document": "查询当前 vhost 下所有 queue",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueues\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-jero744g\",\n    \"VirtualHost\": \"tdmq_data\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueues\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-2ppxx4rq\",\n    \"VirtualHost\": \"testVhost\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"QueueInfoList\": [\n            {\n                \"QueueName\": \"prod.queue\",\n                \"Remark\": null,\n                \"QueueType\": \"classic\",\n                \"ConsumerDetail\": {\n                    \"ConsumersNumber\": 1\n                },\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询RabbitMQ队列列表"
       }

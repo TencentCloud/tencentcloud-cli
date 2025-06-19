@@ -498,6 +498,23 @@
       ],
       "usage": "both"
     },
+    "DocumentParseConfig": {
+      "document": "文档解析配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0:图片以链接形式返回\n1:返回图片中提取的文本内容",
+          "example": "1",
+          "member": "uint64",
+          "name": "ImageResponseType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EmbeddingData": {
       "document": "向量内容",
       "members": [
@@ -812,6 +829,39 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档解析配置",
+          "example": "无",
+          "member": "DocumentParseConfig",
+          "name": "DocumentParseConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的起始页码",
+          "example": "1",
+          "member": "int64",
+          "name": "FileStartPageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的结束页码",
+          "example": "1",
+          "member": "int64",
+          "name": "FileEndPageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

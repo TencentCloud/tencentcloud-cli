@@ -301,6 +301,13 @@
       "output": "DescribeMigratingTopicStatsResponse",
       "status": "online"
     },
+    "DescribeMigrationTaskList": {
+      "document": "获取数据迁移任务列表，Filter参数使用说明如下：\n\nTaskId，根据任务ID精确查找\nInstanceId，根据实例ID精确查找\nType，根据任务类型精确查找",
+      "input": "DescribeMigrationTaskListRequest",
+      "name": "获取数据迁移任务列表",
+      "output": "DescribeMigrationTaskListResponse",
+      "status": "online"
+    },
     "DescribeProductSKUs": {
       "document": "查询产品售卖规格，针对 RocketMQ 5.x 集群。",
       "input": "DescribeProductSKUsRequest",
@@ -4391,6 +4398,71 @@
       ],
       "type": "object"
     },
+    "DescribeMigrationTaskListRequest": {
+      "document": "DescribeMigrationTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMigrationTaskListResponse": {
+      "document": "DescribeMigrationTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "迁移任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MigrationTaskItem",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductSKUsRequest": {
       "document": "DescribeProductSKUs请求参数结构体",
       "members": [],
@@ -6502,7 +6574,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移状态 S_RW_D_NA 源集群读写 S_RW_D_R 源集群读写目标集群读 S_RW_D_RW 源集群读写目标集群读写 S_R_D_RW 源集群读目标集群读写 S_NA_D_RW 目标集群读写",
+          "document": "迁移状态 \nS_RW_D_NA 源集群读写，\nS_RW_D_R 源集群读写目标集群读，\nS_RW_D_RW 源集群读写目标集群读写，\nS_R_D_RW 源集群读目标集群读写，\nS_NA_D_RW 目标集群读写",
           "example": "S_RW_D_NA",
           "member": "string",
           "name": "MigrationStatus",
@@ -6578,6 +6650,82 @@
           "name": "HealthCheckErrorList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrationTaskItem": {
+      "document": "迁移任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 - 未指定（存量）\n1 - 元数据导入",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TopicNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组总数",
+          "example": "10",
+          "member": "int64",
+          "name": "GroupNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态： 0，迁移中 1，迁移成功 2，迁移完成，只有部分数据完成迁移",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

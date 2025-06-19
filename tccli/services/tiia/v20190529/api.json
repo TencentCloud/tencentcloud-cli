@@ -77,13 +77,6 @@
       "output": "DetectLabelResponse",
       "status": "online"
     },
-    "DetectLabelBeta": {
-      "document": "图像标签测试接口\n\n>     \n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
-      "input": "DetectLabelBetaRequest",
-      "name": "图像标签测试接口",
-      "output": "DetectLabelBetaResponse",
-      "status": "online"
-    },
     "DetectLabelPro": {
       "document": "通用图像标签可识别数千种常见物体或场景，覆盖日常物品、场景、动物、植物、食物、饮品、交通工具等多个大类，返回主体的标签名称和所属细分类目等。\n\n>   \n- 可前往 [图像标签](https://cloud.tencent.com/document/product/1588) 产品文档中查看更多产品信息。\n- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectLabelProRequest",
@@ -1331,111 +1324,6 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DetectLabelBetaRequest": {
-      "document": "DetectLabelBeta请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片URL地址。 \n图片限制： \n• 图片格式：PNG、JPG、JPEG。 \n• 图片大小：所下载图片经Base64编码后不超过4M。图片下载时间不超过3秒。 \n建议：\n• 图片像素：大于50*50像素，否则影响识别效果； \n• 长宽比：长边：短边<5； \n接口响应时间会受到图片下载时间的影响，建议使用更可靠的存储服务，推荐将图片存储在腾讯云COS。",
-          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
-          "member": "string",
-          "name": "ImageUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片经过base64编码的内容。最大不超过4M。与ImageUrl同时存在时优先使用ImageUrl字段。\n**注意：图片需要base64编码，并且要去掉编码头部。**",
-          "example": "/9j/4AAQSkZJRgABAQAAAQABAAD/4gIo...lftXF/DjFZNXoSP5V2U0HMt/1FQf/Z",
-          "member": "string",
-          "name": "ImageBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "本次调用支持的识别场景，可选值如下：\nWEB，针对网络图片优化;\nCAMERA，针对手机摄像头拍摄图片优化;\nALBUM，针对手机相册、网盘产品优化;\nNEWS，针对新闻、资讯、广电等行业优化；\nNONECAM，非实拍图；\nLOCATION，主体位置识别；\n如果不传此参数，则默认为WEB。\n\n支持多场景（Scenes）一起检测。例如，使用 Scenes=[\"WEB\", \"CAMERA\"]，即对一张图片使用两个模型同时检测，输出两套识别结果。",
-          "example": "[\"CAMERA\"]",
-          "member": "string",
-          "name": "Scenes",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DetectLabelBetaResponse": {
-      "document": "DetectLabelBeta返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "Web网络版标签结果数组。如未选择WEB场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Name\":\"塔楼\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"建筑\",\"Confidence\":81},{\"Name\":\"夜晚\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"自然风光\",\"Confidence\":79}]",
-          "member": "DetectLabelItem",
-          "name": "Labels",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "Camera摄像头版标签结果数组。如未选择CAMERA场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Name\":\"塔楼\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"建筑\",\"Confidence\":81},{\"Name\":\"夜晚\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"自然风光\",\"Confidence\":79}]",
-          "member": "DetectLabelItem",
-          "name": "CameraLabels",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "Album相册版标签结果数组。如未选择ALBUM场景，则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Name\":\"塔楼\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"建筑\",\"Confidence\":81},{\"Name\":\"夜晚\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"自然风光\",\"Confidence\":79}]",
-          "member": "DetectLabelItem",
-          "name": "AlbumLabels",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "News新闻版标签结果数组。如未选择NEWS场景，则为空。\n新闻版目前为测试阶段，暂不提供每个标签的一级、二级分类信息的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Name\":\"塔楼\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"建筑\",\"Confidence\":81},{\"Name\":\"夜晚\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"自然风光\",\"Confidence\":79}]",
-          "member": "DetectLabelItem",
-          "name": "NewsLabels",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "非实拍标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Name\":\"塔楼\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"建筑\",\"Confidence\":81},{\"Name\":\"夜晚\",\"FirstCategory\":\"场景\",\"SecondCategory\":\"自然风光\",\"Confidence\":79}]",
-          "member": "DetectLabelItem",
-          "name": "NoneCamLabels",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Name\":\"硬盘\",\"Parents\":\"电脑、办公-电脑配件,\"Confidence\":81,\"XMin\":120,YMin:100,\"XMax\":365,\"YMax\":580}]",
-          "member": "Product",
-          "name": "LocationLabels",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

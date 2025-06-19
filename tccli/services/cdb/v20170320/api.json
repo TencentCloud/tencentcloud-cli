@@ -16924,7 +16924,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[\"sg-ajr1jzgj\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",

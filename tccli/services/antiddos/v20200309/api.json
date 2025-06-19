@@ -5424,7 +5424,7 @@
         },
         {
           "disabled": false,
-          "document": "业务类型可取值domain, port\nport：端口业务\ndomain：域名业务",
+          "document": "业务类型：</br>\nport：端口业务\ndomain：域名业务",
           "example": "domain",
           "member": "string",
           "name": "BusinessType",
@@ -7077,7 +7077,7 @@
         },
         {
           "disabled": false,
-          "document": "zoenid列表",
+          "document": "ZoneID列表",
           "example": "1",
           "member": "int64",
           "name": "FilterZoneIdList",

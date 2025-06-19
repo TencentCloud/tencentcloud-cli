@@ -154,6 +154,13 @@
       "output": "DeleteSharedKnowledgeResponse",
       "status": "online"
     },
+    "DeleteVar": {
+      "document": "删除变量",
+      "input": "DeleteVarRequest",
+      "name": "删除变量",
+      "output": "DeleteVarResponse",
+      "status": "online"
+    },
     "DescribeApp": {
       "document": "获取企业下应用详情",
       "input": "DescribeAppRequest",
@@ -747,6 +754,13 @@
       "input": "UpdateSharedKnowledgeRequest",
       "name": "更新共享知识库",
       "output": "UpdateSharedKnowledgeResponse",
+      "status": "online"
+    },
+    "UpdateVar": {
+      "document": "更新变量",
+      "input": "UpdateVarRequest",
+      "name": "修改变量",
+      "output": "UpdateVarResponse",
       "status": "online"
     },
     "UploadAttributeLabel": {
@@ -3869,6 +3883,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVarRequest": {
+      "document": "DeleteVar请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1793260396881641472",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变量ID",
+          "example": "b7f9ef77-caa1-49c5-a693-075a2ba3eeb4",
+          "member": "string",
+          "name": "VarId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVarResponse": {
+      "document": "DeleteVar返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16585,6 +16635,97 @@
           "example": "1908652910168703294",
           "member": "string",
           "name": "KnowledgeBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVarRequest": {
+      "document": "UpdateVar请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1744553986638073856",
+          "member": "string",
+          "name": "AppBizId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变量ID",
+          "example": "69e825bb-7c4d-4305-8a87-79dd896527aa",
+          "member": "string",
+          "name": "VarId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变量名称，最大支持50个字符",
+          "example": "UserID",
+          "member": "string",
+          "name": "VarName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数描述",
+          "example": "用户ID",
+          "member": "string",
+          "name": "VarDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "参数类型",
+          "example": "STRING",
+          "member": "string",
+          "name": "VarType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量默认值",
+          "example": "125566126721",
+          "member": "string",
+          "name": "VarDefaultValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量文件默认名称",
+          "example": "无",
+          "member": "string",
+          "name": "VarDefaultFileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVarResponse": {
+      "document": "UpdateVar返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变量ID",
+          "example": "69e825bb-7c4d-4305-8a87-79dd896527aa",
+          "member": "string",
+          "name": "VarId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

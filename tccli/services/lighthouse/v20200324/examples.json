@@ -846,6 +846,14 @@
         "title": "关闭实例"
       }
     ],
+    "SyncBlueprint": [
+      {
+        "document": "向两个地域同步自定义镜像。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncBlueprint\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-ls883feh\",\n    \"DestinationRegions\": [\n        \"ap-singapore\",\n        \"ap-hongkong\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"647f2a53-c672-45fa-980b-385423898a69\"\n    }\n}",
+        "title": "跨地域同步自定义镜像"
+      }
+    ],
     "TerminateDisks": [
       {
         "document": "销毁云硬盘",

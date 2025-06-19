@@ -2340,6 +2340,15 @@
           "name": "TableType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "处置对象,事件ID列表",
+          "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
+          "member": "string",
+          "name": "HandleEventIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

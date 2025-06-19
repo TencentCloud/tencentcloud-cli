@@ -711,12 +711,12 @@
       "usage": "in"
     },
     "AmbientSound": {
-      "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shop: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
+      "document": "背景音设置，将在通话中添加环境音效，使体验更加逼真。目前支持以下选项：\ncoffee_shops: 咖啡店氛围，背景中有人聊天。\nbusy_office: 客服中心\nstreet_traffic: 户外街道\nevening_mountain: 户外山林",
       "members": [
         {
           "disabled": false,
           "document": "环境场景选择",
-          "example": "coffee_shop",
+          "example": "coffee_shops",
           "member": "string",
           "name": "Scene",
           "output_required": false,

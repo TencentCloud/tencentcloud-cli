@@ -41,7 +41,8 @@ Output:
                 "State": "ONLINE",
                 "UserId": "user1",
                 "AppMode": "ADVANCED",
-                "CreateTime": "2024-01-16T11:54:35Z"
+                "CreateTime": "2024-01-16T11:54:35Z",
+                "UpdateState": "CREATE_SUCCESS"
             },
             {
                 "AndroidAppId": "apk-d6fyydrc",
@@ -50,7 +51,8 @@ Output:
                 "State": "ONLINE",
                 "UserId": "user2",
                 "AppMode": "NORMAL",
-                "CreateTime": "2024-01-16T11:54:35Z"
+                "CreateTime": "2024-01-16T11:54:35Z",
+                "UpdateState": "CREATE_SUCCESS"
             }
         ],
         "RequestId": "5eae7edb-7e12-451e-a4c1-7cf0b777c6e7",

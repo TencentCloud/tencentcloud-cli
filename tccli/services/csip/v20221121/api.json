@@ -10242,6 +10242,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户ID字符串",
+          "example": "1235316210",
+          "member": "string",
+          "name": "AppIdStr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

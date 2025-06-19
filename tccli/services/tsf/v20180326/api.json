@@ -7140,7 +7140,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "应用日志配置项，废弃参数",
           "example": "已废弃",
           "member": "string",
@@ -7149,7 +7149,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "应用资源类型，废弃参数",
           "example": "已废弃",
           "member": "string",

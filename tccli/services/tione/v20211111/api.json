@@ -21,6 +21,13 @@
       "output": "CreateModelServiceResponse",
       "status": "online"
     },
+    "CreateModelServiceAuthToken": {
+      "document": "创建一个 AuthToken",
+      "input": "CreateModelServiceAuthTokenRequest",
+      "name": "在线服务创建 AuthToken",
+      "output": "CreateModelServiceAuthTokenResponse",
+      "status": "online"
+    },
     "CreateNotebook": {
       "document": "创建Notebook",
       "input": "CreateNotebookRequest",
@@ -61,6 +68,13 @@
       "input": "DeleteModelServiceRequest",
       "name": "删除模型服务",
       "output": "DeleteModelServiceResponse",
+      "status": "online"
+    },
+    "DeleteModelServiceAuthToken": {
+      "document": "删除一个 AuthToken",
+      "input": "DeleteModelServiceAuthTokenRequest",
+      "name": "在线服务删除 AuthToken",
+      "output": "DeleteModelServiceAuthTokenResponse",
       "status": "online"
     },
     "DeleteModelServiceGroup": {
@@ -271,6 +285,20 @@
       "input": "ModifyModelServiceRequest",
       "name": "更新模型服务",
       "output": "ModifyModelServiceResponse",
+      "status": "online"
+    },
+    "ModifyModelServiceAuthToken": {
+      "document": "修改一个 AuthToken",
+      "input": "ModifyModelServiceAuthTokenRequest",
+      "name": "在线服务修改 AuthToken",
+      "output": "ModifyModelServiceAuthTokenResponse",
+      "status": "online"
+    },
+    "ModifyModelServiceAuthorization": {
+      "document": "修改服务鉴权配置",
+      "input": "ModifyModelServiceAuthorizationRequest",
+      "name": "修改服务鉴权配置",
+      "output": "ModifyModelServiceAuthorizationResponse",
       "status": "online"
     },
     "ModifyNotebookTags": {
@@ -1002,6 +1030,51 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelServiceAuthTokenRequest": {
+      "document": "CreateModelServiceAuthToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组 id",
+          "example": "ms-xxx",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token 名称",
+          "example": "这是 token 名称",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Description 描述",
+          "example": "这是 token 描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelServiceAuthTokenResponse": {
+      "document": "CreateModelServiceAuthToken返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3242,6 +3315,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelServiceAuthTokenRequest": {
+      "document": "DeleteModelServiceAuthToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组 id",
+          "example": "ms-xxx",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token 值",
+          "example": "8PyrHoGd6uZ52hQ",
+          "member": "string",
+          "name": "AuthTokenValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelServiceAuthTokenResponse": {
+      "document": "DeleteModelServiceAuthToken返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7250,6 +7359,87 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyModelServiceAuthTokenRequest": {
+      "document": "ModifyModelServiceAuthToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组 id",
+          "example": "ms-xxx",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要重置，如果为 true，重置 token 值",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedReset",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "AuthToken 数据",
+          "example": "无",
+          "member": "AuthToken",
+          "name": "AuthToken",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServiceAuthTokenResponse": {
+      "document": "ModifyModelServiceAuthToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServiceAuthorizationRequest": {
+      "document": "ModifyModelServiceAuthorization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组Id",
+          "example": "ms-xxffs23",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启鉴权,true表示开启",
+          "example": "无",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServiceAuthorizationResponse": {
+      "document": "ModifyModelServiceAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyModelServiceRequest": {
       "document": "ModifyModelService请求参数结构体",

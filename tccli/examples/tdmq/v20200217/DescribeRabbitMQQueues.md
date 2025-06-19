@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQQueues --cli-unfold-argument  \
-    --InstanceId amqp-jero744g \
-    --VirtualHost tdmq_data
+    --InstanceId amqp-2ppxx4rq \
+    --VirtualHost testVhost
 ```
 
 Output: 

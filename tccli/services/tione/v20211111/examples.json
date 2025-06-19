@@ -24,6 +24,14 @@
         "title": "创建示例"
       }
     ],
+    "CreateModelServiceAuthToken": [
+      {
+        "document": "创建一个AuthToken",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"Name\": \"testname\",\n    \"Description\": \"testdesc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f254c3b-2161-4583-8316-fc6ed570d4cc\"\n    }\n}",
+        "title": "创建示例"
+      }
+    ],
     "CreateNotebook": [
       {
         "document": "创建Notebook",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModelService\n<公共请求参数>\n\n{\n    \"ServiceId\": \"ms-xxxxxx-1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cb0e984-d1eb-4dc1-944d-64b7f1a4d143\"\n    }\n}",
         "title": "删除一个在线服务组"
+      }
+    ],
+    "DeleteModelServiceAuthToken": [
+      {
+        "document": "删除一个 token",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"AuthTokenValue\": \"MTc0NTQ5NDY5NzI\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3dca072-937b-44da-8ffb-8e00190a2044\"\n    }\n}",
+        "title": "删除示例"
       }
     ],
     "DeleteModelServiceGroup": [
@@ -310,6 +326,22 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelService\n<公共请求参数>\n\n{\n    \"ServiceDescription\": \"\",\n    \"InstanceType\": \"TI.S.MEDIUM.POST\",\n    \"ImageInfo\": {\n        \"ImageType\": \"\",\n        \"ImageUrl\": \"ccr.ccs.tencentyun.com/xxxx/xxxxx\",\n        \"RegistryRegion\": \"\",\n        \"RegistryId\": \"\"\n    },\n    \"ScaleMode\": \"MANUAL\",\n    \"Replicas\": 1,\n    \"LogEnable\": false,\n    \"Env\": [\n        {\n            \"Name\": \"test\",\n            \"Value\": \"1\"\n        }\n    ],\n    \"ServiceId\": \"ms-xxxxx-1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Service\": {\n            \"ServiceGroupId\": \"ms-skdg89rx\",\n            \"ServiceId\": \"ms-skdg89rx-1\",\n            \"ServiceGroupName\": \"demo-create\",\n            \"ServiceDescription\": \"\",\n            \"ServiceInfo\": {\n                \"Replicas\": 1,\n                \"ImageInfo\": {\n                    \"ImageType\": \"CCR\",\n                    \"ImageUrl\": \"ccr.ccs.tencentyun.com/test-ccr/hellotest\",\n                    \"RegistryRegion\": \"ap-guangzhou\",\n                    \"RegistryId\": \"\"\n                },\n                \"Env\": [],\n                \"Resources\": {\n                    \"Cpu\": 2000,\n                    \"Memory\": 4096,\n                    \"Gpu\": 0,\n                    \"RealGpu\": 0,\n                    \"GpuType\": \"none\",\n                    \"RealGpuDetailSet\": []\n                },\n                \"InstanceType\": \"TI.S.MEDIUM.POST\",\n                \"ModelInfo\": null,\n                \"LogEnable\": false,\n                \"LogConfig\": null,\n                \"AuthorizationEnable\": false,\n                \"ScaleMode\": \"MANUAL\",\n                \"HorizontalPodAutoscaler\": null,\n                \"CronScaleJobs\": [],\n                \"ScaleStrategy\": \"\",\n                \"Status\": null,\n                \"Weight\": 100,\n                \"PodList\": [],\n                \"Pods\": null,\n                \"PodInfos\": [],\n                \"ResourceTotal\": null,\n                \"OldReplicas\": 0,\n                \"HybridBillingPrepaidReplicas\": 0,\n                \"OldHybridBillingPrepaidReplicas\": 0,\n                \"ModelHotUpdateEnable\": false\n            },\n            \"ClusterId\": \"\",\n            \"Region\": \"ap-guangzhou\",\n            \"Namespace\": \"\",\n            \"ChargeType\": \"POSTPAID_BY_HOUR\",\n            \"ResourceGroupId\": \"\",\n            \"ResourceGroupName\": \"\",\n            \"Tags\": [],\n            \"IngressName\": \"user-ingress-1\",\n            \"CreatedBy\": \"10000000000\",\n            \"CreateTime\": \"\",\n            \"UpdateTime\": \"\",\n            \"Uin\": \"10000000000\",\n            \"SubUin\": \"10000000000\",\n            \"AppId\": 10000000000,\n            \"BusinessStatus\": \"CREATING\",\n            \"CreateFailedReason\": \"\",\n            \"Status\": \"\",\n            \"BillingInfo\": \"\",\n            \"Weight\": 100,\n            \"CreateSource\": \"DEFAULT\",\n            \"Version\": \"\",\n            \"LatestVersion\": \"\",\n            \"ServiceLimit\": {\n                \"EnableInstanceRpsLimit\": false,\n                \"InstanceRpsLimit\": 0,\n                \"EnableInstanceReqLimit\": false,\n                \"InstanceReqLimit\": 0\n            },\n            \"ScheduledAction\": {\n                \"ScheduleStop\": false,\n                \"ScheduleStopTime\": \"2023-04-24T11:54:53+08:00\"\n            }\n        },\n        \"RequestId\": \"b8f848e4-64ea-475c-864e-6d4b0c9ec6ea\"\n    }\n}",
         "title": "更新模型服务"
+      }
+    ],
+    "ModifyModelServiceAuthToken": [
+      {
+        "document": "修改一个 token",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelService\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-n2f929h2\",\n    \"NeedReset\": false,\n    \"AuthToken\": {\n        \"Base\": {\n            \"Value\": \"MTc0NDgwMjgxMTU\",\n            \"Name\": \"test\",\n            \"Description\": \"desc\",\n            \"CreateTime\": \"2025-04-16T11:26:51Z\",\n            \"Status\": \"Enabled\"\n        },\n        \"Limits\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71d3ba29-c044-4142-91c4-777c8fcec877\"\n    }\n}",
+        "title": "修改示例"
+      }
+    ],
+    "ModifyModelServiceAuthorization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModelServiceAuthorization\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-frsxddfrx\",\n    \"AuthorizationEnable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7587b204-6e6d-4564-afd7-548ebf83291e\"\n    }\n}",
+        "title": "鉴权开启示例"
       }
     ],
     "ModifyNotebookTags": [

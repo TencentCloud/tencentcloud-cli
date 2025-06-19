@@ -7435,7 +7435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "盲水印文字，需要经过 URL 安全的 Base64 编码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "盲水印文字，经过URL安全的Base64编码的4Byte数据。Base64解码之后，少于4Byte将会填充0x00到4Byte，超过4Byte将会截断为4Byte。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dGVzdA==",
           "member": "string",
           "name": "EmbedText",
@@ -9649,6 +9649,15 @@
           "name": "SourceAddresses",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "SRT FEC 设置",
+          "example": "无",
+          "member": "SRTFECSimpleOptions",
+          "name": "FEC",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -10086,6 +10095,15 @@
           "name": "Mode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SRT FEC 设置",
+          "example": "无",
+          "member": "SRTFECFullOptions",
+          "name": "FEC",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -13705,6 +13723,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "FEC  设置",
+          "example": "无",
+          "member": "SRTFECSimpleOptions",
+          "name": "FEC",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14371,6 +14399,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "FEC 配置",
+          "example": "无",
+          "member": "SRTFECFullOptions",
+          "name": "FEC",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -27976,6 +28014,84 @@
         }
       ],
       "usage": "out"
+    },
+    "SRTFECFullOptions": {
+      "document": "SRT FEC 高级配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启 FEC",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FEC 数据包 Layout 列数量. 取值范围>0",
+          "example": "3",
+          "member": "int64",
+          "name": "Cols",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FEC 数据包 Layout 行数量. 取值范围 >=2 或者 <=-2",
+          "example": "1",
+          "member": "int64",
+          "name": "Rows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FEC 开启的情况下，ARQ的策略。取值 \"always\", \"onreq\", \"never\"",
+          "example": "always",
+          "member": "string",
+          "name": "ARQ",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FEC 数据包 Layout 组织形式，取值 \"even\", \"staircase\" ",
+          "example": "staircase",
+          "member": "string",
+          "name": "Layout",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SRTFECSimpleOptions": {
+      "document": "SRT FEC 设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启 FEC",
+          "example": "false",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SRTSourceAddressReq": {
       "document": "SRT输入源地址。",
