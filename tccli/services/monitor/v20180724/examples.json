@@ -1310,6 +1310,14 @@
         "title": "修改 Grafana 实例属性"
       }
     ],
+    "ModifyNotificationSetting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNotificationSetting\n<公共请求参数>\n\n{\n    \"MonitorType\": \"MT_CLS\",\n    \"SettingId\": \"ntfs-3c5yw37f4oopcb9n\",\n    \"MatchType\": \"PolicyOneOnOne\",\n    \"MatchById\": \"policy-erictest2\",\n    \"HasEscalation\": false,\n    \"Notices\": [\n        {\n            \"NoticeId\": \"notice-erictest\",\n            \"ContentTmplId\": \"tmpl-erictest\",\n            \"Levels\": [\n                \"None\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afb342b4-bb31-407a-823a-52eb0513ced8\"\n    }\n}",
+        "title": "测试环境真实示例"
+      }
+    ],
     "ModifyPolicyGroup": [
       {
         "document": "",

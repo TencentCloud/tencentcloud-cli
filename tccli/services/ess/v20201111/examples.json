@@ -886,6 +886,14 @@
         "title": "获取创建法人章二维码成功"
       }
     ],
+    "CreateModifyAdminAuthorizationUrl": [
+      {
+        "document": "平台审核因为照片不清晰原因，拒绝了超管授权书，\n此时用户重新上传超管授权书。\n生成的链接是小程序链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModifyAdminAuthorizationUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"AuthorizationId\": \"yDt3sUUckpxzouvxUuFrZIdufFSsBs7L\",\n    \"Endpoint\": \"HTTP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1245a2a3537e\",\n        \"Url\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=REGISTER_ENTERPRISE_FOR_UPDATE_AUTH_FILE&AuthorizationId=yDt3sUUckpxzou8bUuFrZIdxeP9YoXeP\"\n    }\n}",
+        "title": "重新上传超管授权书"
+      }
+    ],
     "CreateMultiFlowSignQRCode": [
       {
         "document": "创建一码多扫流程签署二维码，指定固定的用户才能扫码签署。",
@@ -1382,6 +1390,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSealPolicies\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234567890123456789012345678901\"\n    },\n    \"PolicyIds\": [\n        \"string\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"test\"\n    }\n}",
         "title": "撤销印章授权"
+      }
+    ],
+    "DescribeBatchOrganizationRegistrationTasks": [
+      {
+        "document": "1.通过创建企业批量认证任务 创建了三个认证任务\n2.其中一条认证流认证成功，一条认证流提交成功，一条认证流失败\n3.返回具体的详细信息",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchOrganizationRegistrationTasks\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"TaskIds\": [\n        \"yDt3sUUckpxzouwhUuFrZIdEqeNE9O1t\",\n        \"yDt3sUUckpxzouw2UuFrZIdy9KZYcPGK\",\n        \"yDt3sUUckpxzouwrUuFrZIdRVTqybC0a\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"ErrorMessage\": \"\",\n                \"Status\": \"Authorization\",\n                \"TaskId\": \"yDt3sUUckpxzouw8UuFrZIdSRJJWKucN\"\n            },\n            {\n                \"ErrorMessage\": \"\",\n                \"Status\": \"Submit\",\n                \"TaskId\": \"yDt3sUUckpxzouw8UuFrZIdSRJJWKucN\"\n            },\n            {\n                \"ErrorMessage\": \"认证失败，错误信息:此企业已经完成认证，请联系此企业的超级管理员（典*谦）加入该企业\",\n                \"Status\": \"Failed\",\n                \"TaskId\": \"yDt3sUUckpxzouw8UuFrZIdSRJJWKucN\"\n            }\n        ],\n        \"RequestId\": \"s1750068263505524541\"\n    }\n}",
+        "title": "查询批量企业认证任务状态"
       }
     ],
     "DescribeBatchOrganizationRegistrationUrls": [

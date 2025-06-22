@@ -49,6 +49,13 @@
       "output": "CreateCfsSnapshotResponse",
       "status": "online"
     },
+    "CreateLifecyclePolicy": {
+      "document": "创建文件存储生命周期策略",
+      "input": "CreateLifecyclePolicyRequest",
+      "name": "创建生命周期策略",
+      "output": "CreateLifecyclePolicyResponse",
+      "status": "online"
+    },
     "CreateMigrationTask": {
       "document": "用于创建迁移任务。",
       "input": "CreateMigrationTaskRequest",
@@ -89,6 +96,13 @@
       "input": "DeleteCfsSnapshotRequest",
       "name": "删除文件系统快照",
       "output": "DeleteCfsSnapshotResponse",
+      "status": "online"
+    },
+    "DeleteLifecyclePolicy": {
+      "document": "删除生命周期管理策略",
+      "input": "DeleteLifecyclePolicyRequest",
+      "name": "删除生命周期管理策略",
+      "output": "DeleteLifecyclePolicyResponse",
       "status": "online"
     },
     "DeleteMigrationTask": {
@@ -180,6 +194,13 @@
       "input": "DescribeCfsSnapshotsRequest",
       "name": "查询快照列表",
       "output": "DescribeCfsSnapshotsResponse",
+      "status": "online"
+    },
+    "DescribeLifecyclePolicies": {
+      "document": "查询生命周期管理策略",
+      "input": "DescribeLifecyclePoliciesRequest",
+      "name": "查询生命周期管理策略",
+      "output": "DescribeLifecyclePoliciesResponse",
       "status": "online"
     },
     "DescribeMigrationTasks": {
@@ -325,6 +346,7 @@
           "example": "open,close",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -335,16 +357,18 @@
           "example": "80",
           "member": "uint64",
           "name": "ScaleThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩容后使用量跟集群总量比例,范围[1-90]",
+          "document": "扩容后使用量跟集群总量比例,范围[10-90]",
           "example": "90",
           "member": "uint64",
           "name": "TargetThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1407,6 +1431,79 @@
       ],
       "type": "object"
     },
+    "CreateLifecyclePolicyRequest": {
+      "document": "CreateLifecyclePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略名称，中文/英文/数字/下划线/中划线的组合，不超过64个字符",
+          "example": "大数据NAS存储01",
+          "member": "string",
+          "name": "LifecyclePolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略关联的管理规则列表",
+          "example": "无",
+          "member": "LifecycleRule",
+          "name": "LifecycleRules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "v1.5：创建普通版的通用文件系统； v3.1：创建增强版的通用文件系统 说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。",
+          "example": "v1.5",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID，通过查询文件系统列表获取；[DescribeCfsFileSystems](https://cloud.tencent.com/document/product/582/38170)",
+          "example": "cfs-5xb3aabcd",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略关联目录的绝对路径",
+          "example": "/data/home/user00/",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLifecyclePolicyResponse": {
+      "document": "CreateLifecyclePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略ID",
+          "example": "policy-ek8axxxx",
+          "member": "string",
+          "name": "LifecyclePolicyID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMigrationTaskRequest": {
       "document": "CreateMigrationTask请求参数结构体",
       "members": [
@@ -1783,6 +1880,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLifecyclePolicyRequest": {
+      "document": "DeleteLifecyclePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略ID",
+          "example": "policy-ek8axxxx",
+          "member": "string",
+          "name": "LifecyclePolicyID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "v1.5：删除普通版的通用文件系统； v3.1：删除增强版的通用文件系统 说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。",
+          "example": "v1.5",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLifecyclePolicyResponse": {
+      "document": "DeleteLifecyclePolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2479,6 +2612,118 @@
       ],
       "type": "object"
     },
+    "DescribeLifecyclePoliciesRequest": {
+      "document": "DescribeLifecyclePolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略名称",
+          "example": "大数据NAS存储01",
+          "member": "string",
+          "name": "LifecyclePolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每个分页包含的生命周期管理策略个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表的分页页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "cfs-xxxxxx",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略ID",
+          "example": "policy-hxd1xxxx",
+          "member": "string",
+          "name": "LifecyclePolicyID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "v1.5：查询普通版的通用文件系统； v3.1：查询增强版的通用文件系统 说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。",
+          "example": "v1.5",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLifecyclePoliciesResponse": {
+      "document": "DescribeLifecyclePolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表的分页页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个分页包含的生命周期管理策略个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略列表",
+          "example": "无",
+          "member": "LifecyclePolicy",
+          "name": "LifecyclePolicies",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMigrationTasksRequest": {
       "document": "DescribeMigrationTasks请求参数结构体",
       "members": [
@@ -3162,6 +3407,145 @@
       ],
       "usage": "in"
     },
+    "LifecyclePolicy": {
+      "document": "生命周期管理策略信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略创建的时间",
+          "example": "2020-01-05 00:02:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略ID",
+          "example": "policy-ek8aw4id",
+          "member": "string",
+          "name": "LifecyclePolicyID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "LifecyclePolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略关联的管理规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LifecycleRule",
+          "name": "LifecycleRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略关联目录的绝对路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PathInfo",
+          "name": "Paths",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LifecycleRule": {
+      "document": "生命周期管理策略关联的管理规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据转储后的存储类型",
+          "example": "InfrequentAccess",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据转储文件类型",
+          "example": "All",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据转储行为",
+          "example": "Archive",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据转储触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT_ATIME_14",
+          "member": "string",
+          "name": "Interval",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据转储文件最大规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1G",
+          "member": "string",
+          "name": "FileMaxSize",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据转储文件最小规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1M",
+          "member": "string",
+          "name": "FileMinSize",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "沉降规则附加条件列表，当前仅支持传入\"*\"或者是类似\"*.log\"来表达文件通配符的模式",
+          "example": "无",
+          "member": "string",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MigrationTaskInfo": {
       "document": "CFS数据迁移任务信息",
       "members": [
@@ -3451,7 +3835,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold",
+          "document": "扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold",
           "example": "80",
           "member": "uint64",
           "name": "TargetThreshold",
@@ -3505,7 +3889,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后达到阈值，范围[1-90]",
+          "document": "扩容后达到阈值，范围[10-90]",
           "example": "75",
           "member": "uint64",
           "name": "TargetThreshold",
@@ -3785,6 +4169,32 @@
         }
       ],
       "usage": "out"
+    },
+    "PathInfo": {
+      "document": "生命周期管理策略关联目录的绝对路径",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "cfs-4xxxxxx",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目录绝对路径",
+          "example": "/data/log/001/",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ScaleUpFileSystemRequest": {
       "document": "ScaleUpFileSystem请求参数结构体",

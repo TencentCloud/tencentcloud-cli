@@ -56,6 +56,14 @@
         "title": "创建文件系统快照"
       }
     ],
+    "CreateLifecyclePolicy": [
+      {
+        "document": "创建文件存储生命周期策略",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLifecyclePolicy\n<公共请求参数>\n\n{\n    \"LifecyclePolicyName\": \"default\",\n    \"LifecycleRules\": [\n        {\n            \"StorageType\": \"InfrequentAccess\",\n            \"Interval\": \"DEFAULT_ATIME_14\",\n            \"FileType\": \"ALL\",\n            \"Action\": \"Release\",\n            \"FileMaxSize\": \"10240\",\n            \"FileMinSize\": \"64\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LifecyclePolicyID\": \"policy-13epvfrn\",\n        \"RequestId\": \"req-acb\"\n    }\n}",
+        "title": "创建文件存储生命周期策略"
+      }
+    ],
     "CreateMigrationTask": [
       {
         "document": "用于创建数据迁移任务",
@@ -102,6 +110,14 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCfsSnapshot\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snapcfs-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"SnapshotId\": \"snapcfs-12345\"\n    }\n}",
         "title": "删除快照"
+      }
+    ],
+    "DeleteLifecyclePolicy": [
+      {
+        "document": "删除生命周期管理策略",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLifecyclePolicy\n<公共请求参数>\n\n{\n    \"LifecyclePolicyID\": \"policy-13epvfrn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-aggagagag\"\n    }\n}",
+        "title": "删除生命周期管理策略"
       }
     ],
     "DeleteMigrationTask": [
@@ -206,6 +222,14 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCfsSnapshots\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd01b47d-2b57-4721-a237-1bdf59eac8b4\",\n        \"Snapshots\": [\n            {\n                \"AliveDay\": 0,\n                \"AppId\": 1300275735,\n                \"CreationTime\": \"2024-09-27 16:03:06\",\n                \"DeleteTime\": \"0\",\n                \"FileSystemId\": \"cfs-12345\",\n                \"FsName\": \"aileen-api-charge\",\n                \"Percent\": 0,\n                \"RegionName\": \"ap-guangzhou\",\n                \"Size\": 0,\n                \"SnapshotId\": \"snapcfs-5v2hgj3p\",\n                \"SnapshotName\": \"heihei\",\n                \"SnapshotTime\": \"2024-09-27 16:03:06\",\n                \"SnapshotType\": \"Standard\",\n                \"Status\": \"creating\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"TotalSize\": 0\n    }\n}",
         "title": "查询快照"
+      }
+    ],
+    "DescribeLifecyclePolicies": [
+      {
+        "document": "",
+        "input": "https://cfs.tencentcloudapi.com/?Action=DescribeLifecyclePolicies\n&PageNumber=1\n&PageSize=10\n&LifecyclePolicyName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PageNumber\": 1,\n        \"PageSize\": 10,\n        \"TotalCount\": 2,\n        \"LifecyclePolicies\": [\n            {\n                \"CreateTime\": \"2022-03-01 10:38:54\",\n                \"LifecyclePolicyID\": \"policy-ek8aw4id\",\n                \"LifecyclePolicyName\": \"test\",\n                \"LifecycleRules\": [\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"BIG_FILE\",\n                        \"Action\": \"noarchive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"1G\"\n                    },\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"ALL\",\n                        \"Action\": \"archive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"\"\n                    }\n                ],\n                \"Paths\": [\n                    {\n                        \"FileSystemId\": \"cfs-4030acd30\",\n                        \"Path\": \"/data/log1/\"\n                    },\n                    {\n                        \"FileSystemId\": \"cfs-4030acd30\",\n                        \"Path\": \"/data/log2/\"\n                    }\n                ]\n            },\n            {\n                \"CreateTime\": \"2022-03-02 14:27:46\",\n                \"LifecyclePolicyID\": \"policy-phpizowr\",\n                \"LifecyclePolicyName\": \"test-jay\",\n                \"LifecycleRules\": [\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"BIG_FILE\",\n                        \"Action\": \"noarchive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"1G\"\n                    },\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"ALL\",\n                        \"Action\": \"archive\",\n                        \"FileMinSize\": \"\",\n                        \"FileMaxSize\": \"\"\n                    }\n                ],\n                \"Paths\": []\n            }\n        ],\n        \"RequestId\": \"aaaa-bbbb-cccc-eeeee\"\n    }\n}",
+        "title": "查询生命周期管理策略"
       }
     ],
     "DescribeMigrationTasks": [

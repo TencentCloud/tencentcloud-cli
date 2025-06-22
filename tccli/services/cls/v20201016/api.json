@@ -5291,6 +5291,24 @@
           "name": "ProcessToTimestamp",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "sql数据源信息",
+          "example": "无",
+          "member": "DataTransformSqlDataSource",
+          "name": "DataTransformSqlDataSources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7024,6 +7042,78 @@
       ],
       "usage": "both"
     },
+    "DataTransformSqlDataSource": {
+      "document": "外部表SQL信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据源类型 1:MySql;2:自建mysql;3:pgsql",
+          "example": "1",
+          "member": "uint64",
+          "name": "DataSource",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InstanceId所属地域。例如：ap-guangzhou",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例Id。\n- 当DataSource为1时，表示云数据库Mysql 实例id，如：cdb-zxcvbnm\n",
+          "example": "cdb-zxcvbnm",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL访问用户名",
+          "example": "user_00",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL访问密码。",
+          "example": "ps_00",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "别名。数据加工语句中使用",
+          "example": "my_db1",
+          "member": "string",
+          "name": "AliasName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DataTransformTaskInfo": {
       "document": "数据加工任务基本详情",
       "members": [
@@ -7236,6 +7326,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sql数据源信息",
+          "example": "无",
+          "member": "DataTransformSqlDataSource",
+          "name": "DataTransformSqlDataSources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7273,7 +7383,7 @@
         {
           "disabled": false,
           "document": "告警策略ID。",
-          "example": "5944e926-ae21-4fa1-8af6-e1539b577482",
+          "example": "alarm-59df14aa-f35f-4ed2-9399-2b27ce69a53c",
           "member": "string",
           "name": "AlarmId",
           "required": true,
@@ -10602,6 +10712,34 @@
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvInfo": {
+      "document": "数据加工-高级设置-环境变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量名",
+          "example": "SecretKey",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境变量值",
+          "example": "key_ubsgg_demo",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14578,6 +14716,24 @@
           "name": "HasServicesLog",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "sql外部数据源信息",
+          "example": "无",
+          "member": "DataTransformSqlDataSource",
+          "name": "DataTransformSqlDataSources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
