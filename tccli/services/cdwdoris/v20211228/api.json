@@ -3591,7 +3591,7 @@
         {
           "disabled": false,
           "document": "Be节点",
-          "example": "已废弃",
+          "example": "beNodes",
           "member": "string",
           "name": "BeNodes",
           "output_required": false,
@@ -3601,7 +3601,7 @@
         {
           "disabled": false,
           "document": "Fe节点",
-          "example": "已废弃",
+          "example": "feNodes",
           "member": "string",
           "name": "FeNodes",
           "output_required": false,

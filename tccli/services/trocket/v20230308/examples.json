@@ -374,6 +374,14 @@
         "title": "查询角色列表"
       }
     ],
+    "DescribeSmoothMigrationTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmoothMigrationTaskList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Data\": [\n            {\n                \"TaskId\": \"abc\",\n                \"TaskName\": \"test\",\n                \"SourceClusterName\": \"Test\",\n                \"InstanceId\": \"rmq-xxxxx\",\n                \"ConnectionType\": \"VPC\",\n                \"SourceNameServer\": \"1.1.1.1:9876\",\n                \"TaskStatus\": \"ServiceMigration\",\n                \"InstanceVersion\": \"5\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取迁移任务列表"
+      }
+    ],
     "DescribeSourceClusterGroupList": [
       {
         "document": "",

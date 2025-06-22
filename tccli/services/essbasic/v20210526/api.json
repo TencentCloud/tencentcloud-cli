@@ -448,6 +448,13 @@
       "output": "CreateLegalSealQrCodeResponse",
       "status": "online"
     },
+    "CreateModifyAdminAuthorizationUrl": {
+      "document": "本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。\n\n注意:\n1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书审核结果回调](https://qian.tencent.com/developers/partner/callback_types_staffs#%E5%9B%9B-%E6%8E%88%E6%9D%83%E4%B9%A6%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
+      "input": "CreateModifyAdminAuthorizationUrlRequest",
+      "name": "生成变更超管授权书链接",
+      "output": "CreateModifyAdminAuthorizationUrlResponse",
+      "status": "online"
+    },
     "CreateOrganizationAuthFile": {
       "document": "生成合成后的各类企业授权书，包括：\n- 企业认证超管授权书\n- 超管变更授权书\n- 企业注销授权书\n\n注: 需自行保证传入真实的企业/法人/超管信息，否则后续的审核将会拒绝。",
       "input": "CreateOrganizationAuthFileRequest",
@@ -488,6 +495,13 @@
       "input": "DeleteOrganizationAuthorizationsRequest",
       "name": "批量清除未认证的企业认证流",
       "output": "DeleteOrganizationAuthorizationsResponse",
+      "status": "online"
+    },
+    "DescribeBatchOrganizationRegistrationTasks": {
+      "document": "本接口（DescribeBatchOrganizationRegistrationTasks）用于查询企业批量认证任务状态。",
+      "input": "DescribeBatchOrganizationRegistrationTasksRequest",
+      "name": "查询企业批量认证状态",
+      "output": "DescribeBatchOrganizationRegistrationTasksResponse",
       "status": "online"
     },
     "DescribeBatchOrganizationRegistrationUrls": {
@@ -610,11 +624,11 @@
       "status": "online"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，<font color='red'> **不建议使用**</font>。",
+      "document": "已经不再使用\n\n该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，<font color='red'> **不建议使用**</font>。",
       "input": "PrepareFlowsRequest",
       "name": "准备待发起文件",
       "output": "PrepareFlowsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SyncProxyOrganization": {
       "document": "此接口（SyncProxyOrganization）用于同步第三方平台子客企业信息，包括企业名称、企业营业执照、企业统一社会信用代码和法人姓名等，便于子客企业在企业激活过程中无需手动上传营业执照或补充企业信息。\n\n注意：\n\n- **需要在<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>前同步的企业信息**, 否则会出现信息同步没有用的情形\n- **企业信息需要和营业执照信息对应**,  否则会出现激活过程验证不通过的问题\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/7ec91b79a0a4860e77c9ff9f4a5f13ad/channel_SyncProxyOrganization2.png)\n\n\n- **企业统一社会信用代码**: 对应上图中的**1**\n- **第三方平台子客企业名称**: 对应上图中的**2**\n- **企业法定代表人的名字**:对应上图中的**3**\n- **企业详细住所**:对应上图中的**4**",
@@ -1250,6 +1264,42 @@
         }
       ],
       "usage": "in"
+    },
+    "BatchOrganizationRegistrationTasksDetails": {
+      "document": "批量认证企业任务详情信息，其中包括 TaskId，状态信息等等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成注册链接的任务Id",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量创建企业任务的状态\n<ul>\n<li>Processing</li>\n<li>Create</li>\n<li>Submit</li>\n<li>Authorization</li>\n<li>Failed</li>\n</ul>\n\n各个状态所代表的含义如下表格所示：\n<table>\n<thead align=\"center\" valign=\"center\">\n<tr><th>任务状态名称</th><th>任务状态详情</th></tr>\n</thead>\n<tbody>\n<tr><th align=\"center\" valign=\"center\">Processing</th><th>企业认证任务处理中，用户调用了<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks\">CreateBatchOrganizationRegistrationTasks</a>接口，但是任务还在处理中的状态</th></tr>\n<tr><th align=\"center\" valign=\"center\">Create</th><th>创建企业认证链接任务完成，可以调用生成任务链接接口</th></tr>\n<tr><th align=\"center\" valign=\"center\">Submit</th><th>企业认证任务已提交,到如下界面之后，会变为这个状态\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/acbcec8c7a71de14d9c041e3b8ca8b3f.png)</th></tr>\n<tr><th align=\"center\" valign=\"center\">Authorization</th><th>企业认证任务认证成功,点击下图下一步，进入到授权书上传或者法人认证，则会变为这个状态\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/c52448354871cffa729da8db4e3a6f18.png)</th></tr>\n<tr><th align=\"center\" valign=\"center\">Failed</th><th>企业认证任务失败</th></tr>\n</tbody>\n</table>",
+          "example": "Submit",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果任务失败,会返回错误信息",
+          "example": "三要素校验失败: 工商库未能查询到企业信息，请核实信息或切换为上传营业执照认证。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CancelFailureFlow": {
       "document": "撤销失败的流程信息",
@@ -7874,6 +7924,61 @@
       ],
       "type": "object"
     },
+    "CreateModifyAdminAuthorizationUrlRequest": {
+      "document": "CreateModifyAdminAuthorizationUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>\n",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业认证流Id，可以通过回调[授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
+          "example": "\"yDRS4UUgygqdcj5pUuO4zjEu602GFIe6\"",
+          "member": "string",
+          "name": "AuthorizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**PC**： 跳转电子签web 端控制台的链接。</li></ul>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModifyAdminAuthorizationUrlResponse": {
+      "document": "CreateModifyAdminAuthorizationUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变更企业超管授权书链接。没有有效期限制。注意：此链接仅能由当时认证企业的认证人使用。",
+          "example": "https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=REGISTER_ENTERPRISE_FOR_UPDATE_AUTH_FILE&AuthorizationId=yDt3sUUckpxzou8bUuFrZIdxeP9YoXeP",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrganizationAuthFileRequest": {
       "document": "CreateOrganizationAuthFile请求参数结构体",
       "members": [
@@ -8617,6 +8722,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeBatchOrganizationRegistrationTasksRequest": {
+      "document": "DescribeBatchOrganizationRegistrationTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>\n",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业批量认证链接的子任务 SubTaskId，该 SubTaskId 是通过接口[查询企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/DescribeBatchOrganizationRegistrationUrls)可以得到。",
+          "example": "[\"yDRS4UUgygqdcj56UuO4zjExBQcOiB68\",\"yDRS4UUgygqdcj5pUuO4zjEu602GFIe6\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOrganizationRegistrationTasksResponse": {
+      "document": "DescribeBatchOrganizationRegistrationTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业批量任务状态明细",
+          "example": "无",
+          "member": "BatchOrganizationRegistrationTasksDetails",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeBatchOrganizationRegistrationUrlsRequest": {
       "document": "DescribeBatchOrganizationRegistrationUrls请求参数结构体",

@@ -6434,7 +6434,7 @@
         {
           "disabled": false,
           "document": "告警策略ID。",
-          "example": "5944e926-ae21-4fa1-8af6-e1539b577482",
+          "example": "alarm-59df14aa-f35f-4ed2-9399-2b27ce69a53c",
           "member": "string",
           "name": "AlarmId",
           "required": true,

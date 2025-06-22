@@ -736,6 +736,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveCloudEffectList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLiveCloudEffectList\n<公共请求参数>\n\n{\n    \"Prompt\": \"小狗\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\",\n        \"InfoList\": [\n            {\n                \"Id\": \"1001\",\n                \"Prompt\": \"小狗\",\n                \"Flag\": \"动物\",\n                \"PreviewImageUrl\": \"http://preview.image.com/pic.jpg\",\n                \"Type\": \"PGC\",\n                \"CreateTime\": \"2025-05-19T00:00:00Z\",\n                \"UpdateTime\": \"2025-05-20T00:00:00Z\"\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeLiveDelayInfoList": [
       {
         "document": "",
@@ -829,6 +837,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLivePadRules\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Rules\": [],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeLivePadStreamList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLivePadStreamList\n<公共请求参数>\n\n{\n    \"DomainName\": \"5000.livepush.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInfoList\": [\n            {\n                \"DomainName\": \"5000.livepush.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"test\",\n                \"PublishTime\": \"2025-04-01T00:00:00Z\",\n                \"PadStreamType\": \"1\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalNum\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -1496,6 +1512,22 @@
         "title": "请求示例"
       }
     ],
+    "SendLiveCloudEffect": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: SendLiveCloudEffect\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\",\n    \"Id\": \"1001\",\n    \"Operator\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StartLivePadStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLivePadStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "StartLiveStreamMonitor": [
       {
         "document": "开启一个监播场次。",
@@ -1525,6 +1557,14 @@
         "document": "接口用于停止垫片流。",
         "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLivePadProcessor\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.myqcloud.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"mystreamname\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResultMessage\": \"success\",\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "StopLivePadStream": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLivePadStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
     ],

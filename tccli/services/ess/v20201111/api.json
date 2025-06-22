@@ -266,6 +266,13 @@
       "output": "CreateLegalSealQrCodeResponse",
       "status": "online"
     },
+    "CreateModifyAdminAuthorizationUrl": {
+      "document": "本接口（CreateModifyAdminAuthorizationUrl）用于重新上传超管授权书。\n\n注意:\n1. 重新上传超管授权书，必须是审核失败的情况下才能重新上传,可以通过回调[!授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
+      "input": "CreateModifyAdminAuthorizationUrlRequest",
+      "name": "生成变更超管授权书链接",
+      "output": "CreateModifyAdminAuthorizationUrlResponse",
+      "status": "online"
+    },
     "CreateMultiFlowSignQRCode": {
       "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1.满足以下条件的模板支持创建签署码： \n - 签署对象：企业与个人（无序签署）、企业与个人（顺序签署&企业非首位）、 仅个人签署。\n - 其发起方没有填写控件,签署方（B端或C端）可以有填写控件。 \n - 如签署对象中含企业方，企业方签署区只能由发起方企业签署。\n\n2. 通过一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "CreateMultiFlowSignQRCodeRequest",
@@ -453,6 +460,13 @@
       "input": "DeleteSealPoliciesRequest",
       "name": "撤销企业员工的印章授权",
       "output": "DeleteSealPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeBatchOrganizationRegistrationTasks": {
+      "document": "本接口（DescribeBatchOrganizationRegistrationTasks）用于查询企业批量认证任务状态。",
+      "input": "DescribeBatchOrganizationRegistrationTasksRequest",
+      "name": "查询企业批量认证状态",
+      "output": "DescribeBatchOrganizationRegistrationTasksResponse",
       "status": "online"
     },
     "DescribeBatchOrganizationRegistrationUrls": {
@@ -1524,6 +1538,42 @@
         }
       ],
       "usage": "in"
+    },
+    "BatchOrganizationRegistrationTasksDetails": {
+      "document": "批量认证企业任务详情信息，其中包括 TaskId，状态信息等等。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成注册链接的任务Id",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量创建企业任务的状态\n<ul>\n<li>Processing</li>\n<li>Create</li>\n<li>Submit</li>\n<li>Authorization</li>\n<li>Failed</li>\n</ul>\n\n各个状态所代表的含义如下表格所示：\n<table>\n<thead align=\"center\" valign=\"center\">\n<tr><th>任务状态名称</th><th>任务状态详情</th></tr>\n</thead>\n<tbody>\n<tr><th align=\"center\" valign=\"center\">Processing</th><th>企业认证任务处理中，用户调用了<a href=\"https://qian.tencent.com/developers/companyApis/organizations/CreateBatchOrganizationRegistrationTasks\">CreateBatchOrganizationRegistrationTasks</a>接口，但是任务还在处理中的状态</th></tr>\n<tr><th align=\"center\" valign=\"center\">Create</th><th>创建企业认证链接任务完成，可以调用生成任务链接接口</th></tr>\n<tr><th align=\"center\" valign=\"center\">Submit</th><th>企业认证任务已提交,到如下界面之后，会变为这个状态\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/acbcec8c7a71de14d9c041e3b8ca8b3f.png)</th></tr>\n<tr><th align=\"center\" valign=\"center\">Authorization</th><th>企业认证任务认证成功,点击下图下一步，进入到授权书上传或者法人认证，则会变为这个状态\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/c52448354871cffa729da8db4e3a6f18.png)</th></tr>\n<tr><th align=\"center\" valign=\"center\">Failed</th><th>企业认证任务失败</th></tr>\n</tbody>\n</table>",
+          "example": "Submit",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果任务失败,会返回错误信息",
+          "example": "三要素校验失败: 工商库未能查询到企业信息，请核实信息或切换为上传营业执照认证。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BillUsageDetail": {
       "document": "用户计费使用情况详情",
@@ -5664,6 +5714,70 @@
       ],
       "type": "object"
     },
+    "CreateModifyAdminAuthorizationUrlRequest": {
+      "document": "CreateModifyAdminAuthorizationUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业认证流Id，可以通过回调[授权书认证审核结果回调](https://qian.tencent.com/developers/company/callback_types_staffs#%E5%8D%81%E5%85%AD-%E6%8E%88%E6%9D%83%E4%B9%A6%E8%AE%A4%E8%AF%81%E5%AE%A1%E6%A0%B8%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)得到",
+          "example": "\"yDRS4UUgygqdcj5pUuO4zjEu602GFIe6\"",
+          "member": "string",
+          "name": "AuthorizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要跳转的链接类型<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li><li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li><li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li><li>**PC**： 跳转电子签web 端控制台的链接。</li></ul>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModifyAdminAuthorizationUrlResponse": {
+      "document": "CreateModifyAdminAuthorizationUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "变更企业超管授权书链接。\n没有有效期限制。\n\n注意：\n此链接仅能由当时认证企业的认证人使用。",
+          "example": "https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=REGISTER_ENTERPRISE_FOR_UPDATE_AUTH_FILE&AuthorizationId=yDt3sUUckpxzou8bUuFrZIdxeP9YoXeP",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMultiFlowSignQRCodeRequest": {
       "document": "CreateMultiFlowSignQRCode请求参数结构体",
       "members": [
@@ -8791,6 +8905,61 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeBatchOrganizationRegistrationTasksRequest": {
+      "document": "DescribeBatchOrganizationRegistrationTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业批量认证链接的子任务 SubTaskId，该 SubTaskId 是通过接口[查询企业批量认证链接](https://qian.tencent.com/developers/companyApis/organizations/DescribeBatchOrganizationRegistrationUrls)可以得到。",
+          "example": "[\"yDRS4UUgygqdcj56UuO4zjExBQcOiB68\",\"yDRS4UUgygqdcj5pUuO4zjEu602GFIe6\"]",
+          "member": "string",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOrganizationRegistrationTasksResponse": {
+      "document": "DescribeBatchOrganizationRegistrationTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业批量任务状态明细",
+          "example": "无",
+          "member": "BatchOrganizationRegistrationTasksDetails",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeBatchOrganizationRegistrationUrlsRequest": {
       "document": "DescribeBatchOrganizationRegistrationUrls请求参数结构体",

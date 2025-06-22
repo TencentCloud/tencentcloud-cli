@@ -261,6 +261,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相邻切片重合字符数，需要小于分片长度",
+          "example": "4000",
+          "member": "uint64",
+          "name": "ChunkOverlap",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -409,6 +420,16 @@
           "name": "Chunks",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token消耗量",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

@@ -325,6 +325,7 @@
           "example": "open,close",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -335,16 +336,18 @@
           "example": "80",
           "member": "uint64",
           "name": "ScaleThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩容后使用量跟集群总量比例,范围[1-90]",
+          "document": "扩容后使用量跟集群总量比例,范围[10-90]",
           "example": "90",
           "member": "uint64",
           "name": "TargetThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3451,7 +3454,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后目标阈值，范围[1-90]，该值要小于 ScaleUpThreshold",
+          "document": "扩容后目标阈值，范围[10-90]，该值要小于 ScaleUpThreshold",
           "example": "80",
           "member": "uint64",
           "name": "TargetThreshold",
@@ -3505,7 +3508,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容后达到阈值，范围[1-90]",
+          "document": "扩容后达到阈值，范围[10-90]",
           "example": "75",
           "member": "uint64",
           "name": "TargetThreshold",

@@ -322,6 +322,13 @@
       "output": "DescribeRoleListResponse",
       "status": "online"
     },
+    "DescribeSmoothMigrationTaskList": {
+      "document": "用于查询平滑迁移任务列表\n\n查询参数Filters， 支持的字段如下：\nTaskStatus, 支持多选 \nConnectionType，支持多选 \nInstanceId，精确搜索 \nTaskName，支持模糊搜索",
+      "input": "DescribeSmoothMigrationTaskListRequest",
+      "name": "获取平滑迁移任务列表",
+      "output": "DescribeSmoothMigrationTaskListResponse",
+      "status": "online"
+    },
     "DescribeSourceClusterGroupList": {
       "document": "平滑迁移过程获取源集群group列表接口\n\n查询过滤器，支持字段\nGroupName，消费组名称模糊搜索\nImported，是否已导入\nImportStatus，导入状态\nNamespace，命名空间",
       "input": "DescribeSourceClusterGroupListRequest",
@@ -4564,6 +4571,71 @@
       ],
       "type": "object"
     },
+    "DescribeSmoothMigrationTaskListRequest": {
+      "document": "DescribeSmoothMigrationTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSmoothMigrationTaskListResponse": {
+      "document": "DescribeSmoothMigrationTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务列表\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmoothMigrationTaskItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSourceClusterGroupListRequest": {
       "document": "DescribeSourceClusterGroupList请求参数结构体",
       "members": [
@@ -7912,6 +7984,92 @@
         }
       ],
       "type": "object"
+    },
+    "SmoothMigrationTaskItem": {
+      "document": "平滑迁移任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标集群实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络连接类型， \nPUBLIC 公网 \nVPC 私有网络 \nOTHER 其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群NameServer地址\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceNameServer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标集群实例版本，\n4 表示4.x版本\n5 表示5.x版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SourceClusterGroupConfig": {
       "document": "消费组配置信息",

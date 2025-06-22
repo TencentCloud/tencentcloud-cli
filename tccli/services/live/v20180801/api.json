@@ -623,6 +623,13 @@
       "output": "DescribeLiveCertsResponse",
       "status": "online"
     },
+    "DescribeLiveCloudEffectList": {
+      "document": "使用该接口查询云端特效列表，特效列表中包含一部分官方精品特效，同时包含用户自定义生成的特效。",
+      "input": "DescribeLiveCloudEffectListRequest",
+      "name": "查询直播云端特效列表",
+      "output": "DescribeLiveCloudEffectListResponse",
+      "status": "online"
+    },
     "DescribeLiveDelayInfoList": {
       "document": "获取直播延播列表。",
       "input": "DescribeLiveDelayInfoListRequest",
@@ -705,6 +712,13 @@
       "input": "DescribeLivePadRulesRequest",
       "name": "获取直播垫片规则列表",
       "output": "DescribeLivePadRulesResponse",
+      "status": "online"
+    },
+    "DescribeLivePadStreamList": {
+      "document": "使用该接口查询垫片流列表。垫片流状态更新存在一定延迟，可间隔30秒以上查询，避免频繁查询该接口。",
+      "input": "DescribeLivePadStreamListRequest",
+      "name": "查询直播中的垫片流列表",
+      "output": "DescribeLivePadStreamListResponse",
       "status": "online"
     },
     "DescribeLivePadTemplate": {
@@ -1288,6 +1302,20 @@
       "output": "ResumeLiveStreamResponse",
       "status": "online"
     },
+    "SendLiveCloudEffect": {
+      "document": "使用该接口发送云端特效到线上正活跃的直播流，观众可在播放端看到特效从直播流画面中展示。",
+      "input": "SendLiveCloudEffectRequest",
+      "name": "发送直播云端特效",
+      "output": "SendLiveCloudEffectResponse",
+      "status": "online"
+    },
+    "StartLivePadStream": {
+      "document": "使用该接口将直播流开始切入垫片。",
+      "input": "StartLivePadStreamRequest",
+      "name": "开始切入垫片",
+      "output": "StartLivePadStreamResponse",
+      "status": "online"
+    },
     "StartLiveStreamMonitor": {
       "document": "该接口用来启动直播流监播任务。",
       "input": "StartLiveStreamMonitorRequest",
@@ -1314,6 +1342,13 @@
       "input": "StopLivePadProcessorRequest",
       "name": "停止垫片流",
       "output": "StopLivePadProcessorResponse",
+      "status": "online"
+    },
+    "StopLivePadStream": {
+      "document": "使用该接口将直播流停止切入垫片。",
+      "input": "StopLivePadStreamRequest",
+      "name": "停止切入垫片",
+      "output": "StopLivePadStreamResponse",
       "status": "online"
     },
     "StopLiveRecord": {
@@ -3599,6 +3634,89 @@
         }
       ],
       "usage": "out"
+    },
+    "CloudEffectInfo": {
+      "document": "云端特效信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云端特效 ID。",
+          "example": "1001",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端特效描述词。",
+          "example": "小狗",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端特效标签。",
+          "example": "动物",
+          "member": "string",
+          "name": "Flag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端特效预览图片。",
+          "example": "http://preview.image.com/pic.jpg",
+          "member": "string",
+          "name": "PreviewImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端特效类型。\nPGC : 官方精品特效。\nAIGC : AI生成的特效。\nUGC : 用户上传特效。",
+          "example": "system_preset",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端特效创建时间。",
+          "example": "2025-05-19T00:00:00Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端特效更新时间。",
+          "example": "2025-05-20T00:00:00Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CommonMixControlParams": {
       "document": "通用混流控制参数",
@@ -8817,6 +8935,70 @@
       ],
       "type": "object"
     },
+    "DescribeLiveCloudEffectListRequest": {
+      "document": "DescribeLiveCloudEffectList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云端特效ID。",
+          "example": "1552",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端特效描述词。由用户原始输入的描述词。",
+          "example": "小熊",
+          "member": "string",
+          "name": "Prompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端特效标签。对云端特效进行分类标签，可用于分类搜索。",
+          "example": "动物",
+          "member": "string",
+          "name": "Flag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端特效类型, 默认不填，返回全部。PGC: 特效库中的特效；AICG : AI生成的特效；UGC：用户自定义上传的特效；",
+          "example": "system_preset",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveCloudEffectListResponse": {
+      "document": "DescribeLiveCloudEffectList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云端特效信息列表。",
+          "example": "无",
+          "member": "CloudEffectInfo",
+          "name": "InfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLiveDelayInfoListRequest": {
       "document": "DescribeLiveDelayInfoList请求参数结构体",
       "members": [],
@@ -9618,6 +9800,119 @@
           "name": "Rules",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadStreamListRequest": {
+      "document": "DescribeLivePadStreamList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLivePadStreamListResponse": {
+      "document": "DescribeLivePadStreamList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前正在拉取垫片的流信息列表。",
+          "example": "无",
+          "member": "PadStreamInfo",
+          "name": "StreamInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的分页页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的分页个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询到的总个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可以分的总页数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -17176,6 +17471,62 @@
       ],
       "usage": "out"
     },
+    "PadStreamInfo": {
+      "document": "查询当前垫片流的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "垫片流类型。\n0-自动垫片；\n1-手动切入垫片。",
+          "example": "0",
+          "member": "string",
+          "name": "PadStreamType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "垫片流开始时间。UTC时间，示例：2025-04-10T00:01:00Z。注意：该时间与北京时间相差八小时。",
+          "example": "2025-04-10T00:01:00Z",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PadTemplate": {
       "document": "直播垫片模板。",
       "members": [
@@ -19343,6 +19694,96 @@
       ],
       "usage": "out"
     },
+    "SendLiveCloudEffectRequest": {
+      "document": "SendLiveCloudEffect请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端特效 ID。",
+          "example": "1001",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人备注信息。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缩小比例，默认0 不缩放。\n可选值：0-9， 值越大，越缩小。",
+          "example": "4",
+          "member": "int64",
+          "name": "ZoomFactor",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定云端特效渲染位置百分比。默认居中显示。\n原点为画面左上角，该参数指定特效渲染离原点的横向比例，可选值 0 - 100。",
+          "example": "20",
+          "member": "string",
+          "name": "XPosition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定云端特效渲染位置百分比。默认居中显示。\n原点为画面左上角，该参数指定特效渲染离原点的纵向比例，可选值 0 - 100。",
+          "example": "20",
+          "member": "string",
+          "name": "YPosition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendLiveCloudEffectResponse": {
+      "document": "SendLiveCloudEffect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SnapshotTemplateInfo": {
       "document": "截图模板信息。",
       "members": [
@@ -19468,6 +19909,60 @@
         }
       ],
       "usage": "out"
+    },
+    "StartLivePadStreamRequest": {
+      "document": "StartLivePadStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人备注信息。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartLivePadStreamResponse": {
+      "document": "StartLivePadStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StartLiveStreamMonitorRequest": {
       "document": "StartLiveStreamMonitor请求参数结构体",
@@ -19614,6 +20109,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLivePadStreamRequest": {
+      "document": "StopLivePadStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流路径，与推流和播放地址中的AppName保持一致，默认为 live。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "您的推流域名。",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "stream1",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作人备注信息。",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopLivePadStreamResponse": {
+      "document": "StopLivePadStream返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

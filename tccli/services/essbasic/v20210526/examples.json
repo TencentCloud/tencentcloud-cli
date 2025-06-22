@@ -1010,6 +1010,14 @@
         "title": "获取创建法人章二维码成功"
       }
     ],
+    "CreateModifyAdminAuthorizationUrl": [
+      {
+        "document": "平台审核因为照片不清晰原因，拒绝了超管授权书，\n此时用户重新上传超管授权书。\n生成的链接是小程序链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModifyAdminAuthorizationUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"dianziqian\"\n        },\n        \"ProxyOrganizationOpenId\": \"dianziqian_org\",\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\"\n    },\n    \"AuthorizationId\": \"yDt3sUUckpxzou8bUuFrZIdxeP9YoXeP\",\n    \"Endpoint\": \"HTTP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1245a2a3537e\",\n        \"Url\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=REGISTER_ENTERPRISE_FOR_UPDATE_AUTH_FILE&AuthorizationId=yDt3sUUckpxzou8bUuFrZIdxeP9YoXeP\"\n    }\n}",
+        "title": "重新上传超管授权书"
+      }
+    ],
     "CreateOrganizationAuthFile": [
       {
         "document": "",
@@ -1134,6 +1142,14 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationAuthorizations\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        }\n    },\n    \"AdminName\": \"张三\",\n    \"AdminMobile\": \"18888888888\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteOrganizationAuthorizationInfos\": [\n            {\n                \"AuthorizationId\": \"yDCkRUUckp4mdtwzUuvjSCCEzIZPsM4A\",\n                \"OrganizationName\": \"张三示例企业一\",\n                \"OrganizationOpenId\": \"org_zhangsan_1\"\n            },\n            {\n                \"AuthorizationId\": \"yDCkRUUckp4mdw8eUuYnzJiiRO2w2jQI\",\n                \"OrganizationName\": \"张三示例企业一\",\n                \"OrganizationOpenId\": \"org_zhangsan_2\"\n            }\n        ],\n        \"RequestId\": \"37e81c99bc4e\",\n        \"Status\": 1\n    }\n}",
         "title": "批量清理张三的所有认证中的认证流"
+      }
+    ],
+    "DescribeBatchOrganizationRegistrationTasks": [
+      {
+        "document": "1.通过创建企业批量认证任务 创建了三个认证任务\n2.其中一条认证流认证成功，一条认证流提交成功，一条认证流失败\n3.返回具体的详细信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchOrganizationRegistrationTasks\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"dianziqian\"\n        },\n        \"ProxyOrganizationOpenId\": \"dianziqian_org\",\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\"\n    },\n    \"TaskIds\": [\n        \"yDt3sUUckpxe0hpyUuO0RjiSvVkhutfO\",\n        \"yDt3sUUckpxe0hpwUuO0RjiuHRkYOTjC\",\n        \"yDt3sUUckpxe0hpvUuO0Rji8Cg6fp80L\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Details\": [\n            {\n                \"ErrorMessage\": \"\",\n                \"Status\": \"Authorization\",\n                \"TaskId\": \"yDt3sUUckpxzouw8UuFrZIdSRJJWKucN\"\n            },\n            {\n                \"ErrorMessage\": \"\",\n                \"Status\": \"Submit\",\n                \"TaskId\": \"yDt3sUUckpxzouw8UuFrZIdSRJJWKucN\"\n            },\n            {\n                \"ErrorMessage\": \"认证失败，错误信息:此企业已经完成认证，请联系此企业的超级管理员（典*谦）加入该企业\",\n                \"Status\": \"Failed\",\n                \"TaskId\": \"yDt3sUUckpxzouw8UuFrZIdSRJJWKucN\"\n            }\n        ],\n        \"RequestId\": \"s1750068263505524541\"\n    }\n}",
+        "title": "查询批量企业认证任务状态"
       }
     ],
     "DescribeBatchOrganizationRegistrationUrls": [
