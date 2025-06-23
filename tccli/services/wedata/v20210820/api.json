@@ -840,6 +840,13 @@
       "output": "DescribeIntegrationVersionNodesInfoResponse",
       "status": "online"
     },
+    "DescribeManualTriggerRecordPage": {
+      "document": "查询手动任务触发记录",
+      "input": "DescribeManualTriggerRecordPageRequest",
+      "name": "查询手动任务触发记录",
+      "output": "DescribeManualTriggerRecordPageResponse",
+      "status": "online"
+    },
     "DescribeOfflineTaskToken": {
       "document": "获取离线任务长连接Token",
       "input": "DescribeOfflineTaskTokenRequest",
@@ -1643,6 +1650,13 @@
       "input": "ModifyTaskInfoRequest",
       "name": "更新任务（废弃）",
       "output": "ModifyTaskInfoResponse",
+      "status": "online"
+    },
+    "ModifyTaskInfoDs": {
+      "document": "更新任务Ds",
+      "input": "ModifyTaskInfoDsRequest",
+      "name": "更新任务信息Ds",
+      "output": "ModifyTaskInfoDsResponse",
       "status": "online"
     },
     "ModifyTaskLinks": {
@@ -19012,6 +19026,116 @@
       ],
       "type": "object"
     },
+    "DescribeManualTriggerRecordPageRequest": {
+      "document": "DescribeManualTriggerRecordPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发运行名称",
+          "example": "task_t1",
+          "member": "string",
+          "name": "TriggerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流过滤关键字，工作流名称 or 工作流ID",
+          "example": "9256-11ed-8909-bc",
+          "member": "string",
+          "name": "WorkflowKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发运行提交人过滤，多个提交人用英文逗号分割",
+          "example": "jack",
+          "member": "string",
+          "name": "Creator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发提交创建时间过滤，起始时间",
+          "example": "2024-12-12 11:11:11",
+          "member": "string",
+          "name": "TriggerStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发提交创建时间过滤，结束时间",
+          "example": "2024-12-12 12:11:11",
+          "member": "string",
+          "name": "TriggerEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，整型",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，整型",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeManualTriggerRecordPageResponse": {
+      "document": "DescribeManualTriggerRecordPage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "详情结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManualTriggerRecordOpsDtoPage",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOfflineTaskTokenRequest": {
       "document": "DescribeOfflineTaskToken请求参数结构体",
       "members": [],
@@ -23721,7 +23845,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤字段",
+          "document": "过滤字段:\ndbName-数据库名称\nbizCatalogIds-资产目录ID\nDataLayerUuid-数仓分层ID\nownerAccount-负责人ID\nassetStatus-资产状态：1-已上架 0-未上架\nassetLevel-资产等级：40-核心30-重要 20-一般 10-临时 \nmsTypes-数据源类型：例如TENCENT_MYSQL-腾讯云MySQL，数据源类型ID可参考\n[\n  {\n    \"DisplayName\": \"TCHouse-P\",\n    \"Id\": \"TCHOUSE_P\"\n  },\n  {\n    \"DisplayName\": \"Iceberg\",\n    \"Id\": \"ICEBERG\"\n  },\n  {\n    \"DisplayName\": \"Hive\",\n    \"Id\": \"HIVE\"\n  },\n  {\n    \"DisplayName\": \"HBase\",\n    \"Id\": \"HBASE\"\n  },\n  {\n    \"DisplayName\": \"DLC\",\n    \"Id\": \"DLC\"\n  },\n  {\n    \"DisplayName\": \"腾讯云MySQL\",\n    \"Id\": \"TENCENT_MYSQL\"\n  },\n  {\n    \"DisplayName\": \"TCHouse-D\",\n    \"Id\": \"TCHOUSE_D\"\n  },\n  {\n    \"DisplayName\": \"TCHouse-C\",\n    \"Id\": \"TCHOUSE_C\"\n  },\n  {\n    \"DisplayName\": \"EMR StarRocks\",\n    \"Id\": \"EMR_STARROCKS\"\n  },\n  {\n    \"DisplayName\": \"Doris\",\n    \"Id\": \"DORIS\"\n  },\n  {\n    \"DisplayName\": \"MySQL\",\n    \"Id\": \"MYSQL\"\n  },\n  {\n    \"DisplayName\": \"Oracle\",\n    \"Id\": \"ORACLE\"\n  },\n  {\n    \"DisplayName\": \"PostgreSQL\",\n    \"Id\": \"POSTGRE\"\n  },\n  {\n    \"DisplayName\": \"SQL Server\",\n    \"Id\": \"SQLSERVER\"\n  },\n  {\n    \"DisplayName\": \"TDSQL PostgreSQL\",\n    \"Id\": \"TDSQL_POSTGRE\"\n  },\n  {\n    \"DisplayName\": \"Greenplum\",\n    \"Id\": \"GREENPLUM\"\n  },\n  {\n    \"DisplayName\": \"StarRocks\",\n    \"Id\": \"STARROCKS\"\n  },\n  {\n    \"DisplayName\": \"ClickHouse\",\n    \"Id\": \"CLICKHOUSE\"\n  },\n  {\n    \"DisplayName\": \"INFLUXDB\",\n    \"Id\": \"INFLUXDB\"\n  },\n  {\n    \"DisplayName\": \"达梦DM\",\n    \"Id\": \"DM\"\n  },\n  {\n    \"DisplayName\": \"OceanBase\",\n    \"Id\": \"OCEANBASE\"\n  },\n  {\n    \"DisplayName\": \"TDSQL MySQL\",\n    \"Id\": \"TDSQL_MYSQL\"\n  },\n  {\n    \"DisplayName\": \"GaussDB\",\n    \"Id\": \"GAUSSDB\"\n  }\n]\nprojectIds-归属项目ID\nkeyword-关键字，支持表名/表中文名/数据库名",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -23749,7 +23873,7 @@
           "example": "无",
           "member": "TableMeta",
           "name": "TableMetas",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23759,7 +23883,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -36984,6 +37108,72 @@
       ],
       "usage": "both"
     },
+    "ManualTriggerRecordOpsDtoPage": {
+      "document": "手动工作流触发运行记录分页查询",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手动工作流触发运行记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManualTriggerRecordOpsDto",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalPage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyApproveStatusRequest": {
       "document": "ModifyApproveStatus请求参数结构体",
       "members": [
@@ -38274,6 +38464,358 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskInfoDsRequest": {
+      "document": "ModifyTaskInfoDs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目Id",
+          "example": "1461767738399854597",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "20250317220349191",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟",
+          "example": "30",
+          "member": "int64",
+          "name": "DelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "启动时间：该字段已废弃，无需填写",
+          "example": "无",
+          "member": "int64",
+          "name": "StartupTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值",
+          "example": "1",
+          "member": "int64",
+          "name": "SelfDepend",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生效开始时间，格式 yyyy-MM-dd HH:mm:ss",
+          "example": "2025-05-21 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效结束时间，格式 yyyy-MM-dd HH:mm:ss",
+          "example": "2099-12-31 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。",
+          "example": "1,2",
+          "member": "string",
+          "name": "TaskAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离",
+          "example": "2",
+          "member": "int64",
+          "name": "CycleType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。",
+          "example": "5",
+          "member": "int64",
+          "name": "CycleStep",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "cron表达式  周期类型为crontab调度才需要",
+          "example": "0 0 0-23/1 * * ?",
+          "member": "string",
+          "name": "CrontabExpression",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效",
+          "example": "00:00",
+          "member": "string",
+          "name": "ExecutionStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效",
+          "example": "23:59",
+          "member": "string",
+          "name": "ExecutionEndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务名，该字段废弃，请勿使用该字段重命名任务",
+          "example": "taskName",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "失败重试间隔,单位分钟，创建任务的时候已经给了默认值",
+          "example": "1",
+          "member": "int64",
+          "name": "RetryWait",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "失败重试次数，创建任务的时候已经给了默认值",
+          "example": "5",
+          "member": "int64",
+          "name": "TryLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值",
+          "example": "0",
+          "member": "int64",
+          "name": "Retriable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "运行优先级，4高 5中 6低；暂不支持其他值",
+          "example": "4",
+          "member": "int64",
+          "name": "RunPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务的扩展配置",
+          "example": "TaskExt",
+          "member": "TaskExtInfo",
+          "name": "TaskExt",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器",
+          "example": "20252344239772390",
+          "member": "string",
+          "name": "ResourceGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源池队列名称",
+          "example": "default",
+          "member": "string",
+          "name": "YarnQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组下具体执行机，any 表示可以跑在任意一台。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "BrokerIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "责任人，多个责任人请用分号隔开",
+          "example": "user1;user2",
+          "member": "string",
+          "name": "InCharge",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务备注",
+          "example": "note",
+          "member": "string",
+          "name": "Notes",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务参数",
+          "example": "ParamInfo数组",
+          "member": "ParamInfo",
+          "name": "TaskParamInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源数据源Id",
+          "example": "9076",
+          "member": "string",
+          "name": "SourceServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标数据源Id",
+          "example": "9075",
+          "member": "string",
+          "name": "TargetServer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否支持工作流依赖 yes / no 默认 no",
+          "example": "no",
+          "member": "string",
+          "name": "DependencyWorkflow",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "依赖配置,仅可修改上游任务实例配置方法",
+          "example": "DependencyConfig",
+          "member": "DependencyConfig",
+          "name": "DependencyConfigDTOs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "运行耗时超时时间分钟数",
+          "example": "5",
+          "member": "int64",
+          "name": "ExecutionTTL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "脚本是否改变",
+          "example": "true",
+          "member": "bool",
+          "name": "ScriptChange",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务时区，仅支持整数时区配置",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 正常调度 1 空跑调度；暂不支持其他值",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScheduleRunType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值",
+          "example": "0",
+          "member": "uint64",
+          "name": "ConcurrentStrategy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "shell任务发布事件",
+          "example": "无",
+          "member": "RegisterDsEventPublisherReq",
+          "name": "RegisterDsEventPublisherRequest",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "base64编码后脚本内容",
+          "example": "c2VsZWN0IDE7",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTaskInfoDsResponse": {
+      "document": "ModifyTaskInfoDs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行结果",
+          "example": "无",
+          "member": "bool",
+          "name": "Data",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -42167,6 +42709,57 @@
         }
       ],
       "type": "object"
+    },
+    "RegisterDsEventPublisherReq": {
+      "document": "RegisterDsEventPublisher注册事件发布者参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "123345",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "1234",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型 REST_API、KAFKA",
+          "example": "REST_API",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置信息",
+          "example": "无",
+          "member": "ParamInfoDs",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "RegisterDsEventRequest": {
       "document": "RegisterDsEvent请求参数结构体",
@@ -52385,6 +52978,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 0- wedata, 1-inlong\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportTarget",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

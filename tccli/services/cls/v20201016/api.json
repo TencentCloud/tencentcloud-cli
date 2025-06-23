@@ -1985,7 +1985,7 @@
         {
           "disabled": false,
           "document": "加工任务目的topic_id以及别名",
-          "example": "topicid-1",
+          "example": "无",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
           "required": false,

@@ -13,6 +13,8 @@ tccli trocket ChangeMigratingTopicToNextStage --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "Results": [
             {

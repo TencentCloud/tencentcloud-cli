@@ -621,7 +621,7 @@
         },
         {
           "disabled": false,
-          "document": "显示数量限制，默认20，最大1000。",
+          "document": "显示数量限制，默认20，最大100。",
           "example": "20",
           "member": "uint64",
           "name": "Limit",

@@ -12119,6 +12119,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例删除保护开关: 1 开启 0 关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "DeleteProtectionEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14004,6 +14014,15 @@
           "example": "1",
           "member": "int64",
           "name": "UncleanLeaderElectionEnable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例删除保护开关: 1 开启  0 关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "DeleteProtectionEnable",
           "required": false,
           "type": "int"
         }

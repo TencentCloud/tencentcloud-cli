@@ -6,12 +6,16 @@ Input:
 
 ```
 tccli wedata DescribeTableMetas --cli-unfold-argument  \
-    --OrderFields.0.Direction xx \
-    --OrderFields.0.Name xx \
-    --PageNumber 0 \
-    --Filters.0.Values  \
-    --Filters.0.Name xx \
-    --PageSize 0
+    --PageNumber 1 \
+    --PageSize 10 \
+    --Filters.0.Name keywordType \
+    --Filters.0.Values table \
+    --Filters.1.Name msTypes \
+    --Filters.1.Values HIVE HBASE \
+    --Filters.2.Name keyword \
+    --Filters.2.Values t210011 \
+    --OrderFields.0.Name heatValue \
+    --OrderFields.0.Direction ASC
 ```
 
 Output: 
@@ -20,70 +24,87 @@ Output:
     "Response": {
         "TableMetas": [
             {
-                "ClusterId": "xx",
+                "ClusterId": null,
                 "TableHeat": {
-                    "Heat": 0.0,
-                    "TableId": "xx",
+                    "Heat": 0,
+                    "MaxHeat": 0,
+                    "TableId": "100011eKq1NfbRTkGIhfK_Q",
                     "DayTime": "2020-09-22T00:00:00+00:00"
                 },
-                "DatabaseId": "xx",
+                "DatabaseId": "12tAIQcu10001_jg",
                 "HasFavorite": true,
-                "ProjectDisplayName": "xx",
-                "StorageSizeWithUnit": "xx",
-                "TableId": "xx",
-                "BizCatalogNames": [
-                    "xx"
-                ],
-                "TablePath": "xx",
+                "ProjectDisplayName": "dev-proj",
+                "StorageSizeWithUnit": "839B",
+                "TableId": "100011eKq1NfbRTkGIhfK_Q",
+                "BizCatalogNames": [],
+                "TablePath": null,
                 "LikeCount": 0,
-                "TableNameCn": "xx",
+                "TableNameCn": null,
                 "DdlModifyTime": "2020-09-22T00:00:00+00:00",
-                "Description": "xx",
-                "InstanceId": "xx",
-                "TableName": "xx",
+                "Description": null,
+                "InstanceId": null,
+                "TableName": "t2",
                 "LastAccessTime": "2020-09-22T00:00:00+00:00",
                 "LifeCycleTime": 0,
                 "MetastoreId": 0,
                 "DataModifyTime": "2020-09-22T00:00:00+00:00",
                 "TablePropertyScore": {
-                    "Timeliness": 0.0,
-                    "Average": 0.0,
+                    "Timeliness": 0,
+                    "Average": 0,
                     "DayTime": "2020-09-22T00:00:00+00:00",
-                    "Normative": 0.0,
-                    "Stability": 0.0,
-                    "TableId": "xx",
-                    "Safety": 0.0,
-                    "Integrity": 0.0
+                    "Normative": 0,
+                    "Stability": 0,
+                    "TableId": "100011eKq1NfbRTkGIhfK_Q",
+                    "Safety": 0,
+                    "Integrity": 0
                 },
-                "Partitions": "xx",
-                "ReplicationFactor": "xx",
-                "DatasourceName": "xx",
-                "StorageFormat": "xx",
-                "TechnologyType": "xx",
-                "ProjectId": "xx",
-                "BizCatalogIds": [
-                    "xx"
+                "Partitions": null,
+                "ReplicationFactor": null,
+                "DatasourceName": "hive_emr-db",
+                "StorageFormat": null,
+                "TechnologyType": null,
+                "ProjectId": "1840468646888110001",
+                "BizCatalogIds": [],
+                "ColumnSeparator": null,
+                "DataSourceCategory": null,
+                "Columns": [
+                    {
+                        "ChineseName": null,
+                        "ColumnKey": null,
+                        "Description": null,
+                        "IsPartition": false,
+                        "Name": "id",
+                        "Position": 0,
+                        "Type": "BIGINT",
+                        "CreateTime": "2024-01-04T05:51:19.000+00:00",
+                        "DefaultValue": null,
+                        "Length": null,
+                        "ModifiedTime": "2024-01-04T05:51:19.000+00:00",
+                        "Precision": null,
+                        "Scale": null
+                    }
                 ],
-                "ColumnSeparator": "xx",
                 "DatasourceId": 0,
                 "HasAdminAuthority": true,
-                "TableOwnerName": "xx",
+                "TableOwnerName": "owner-name",
                 "ModifyTime": "2020-09-22T00:00:00+00:00",
-                "TableNameEn": "xx",
+                "TableNameEn": "t2",
                 "FavoriteCount": 0,
-                "TableType": "xx",
-                "DatasourceDisplayName": "xx",
-                "ClusterName": "xx",
-                "ProjectName": "xx",
+                "TableType": null,
+                "DatasourceDisplayName": "hive_emr-bb",
+                "ClusterName": null,
+                "ProjectName": null,
                 "HasLike": true,
-                "MetastoreType": "xx",
-                "DatabaseName": "xx",
+                "MetastoreType": "HIVE",
+                "DatabaseName": "database-name",
                 "StorageSize": 0,
-                "CreateTime": "2020-09-22T00:00:00+00:00"
+                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "TableOwnerId": "owner-id",
+                "OwnerProjectId": "project-id"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "xx"
+        "TotalCount": 10,
+        "RequestId": "91300e24-4685-4f08-8870-b46ad2fad146"
     }
 }
 ```

@@ -1050,6 +1050,15 @@
           "name": "CfsVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "turbo文件系统元数据属性\nbasic：创建标准型的元数据\nenhanced：创建增强型的元数据",
+          "example": "basic",
+          "member": "string",
+          "name": "MetaType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -1110,6 +1110,14 @@
         "title": "同步执行 TWeSee 语义理解任务"
       }
     ],
+    "InvokeVideosKeywordsAnalyzer": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeAISearchService\n\n{\n    \"ProductId\": \"MVTYMD8YCD\",\n    \"DeviceName\": \"dev001\",\n    \"StartTimeMs\": 1750158420000,\n    \"EndTimeMs\": 1750169220000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\",\n        \"Keywords\": [\n            \"key1\",\n            \"key2\"\n        ]\n    }\n}",
+        "title": "获取某个时间段的视频内容关键字"
+      }
+    ],
     "ListEventHistory": [
       {
         "document": "用于查询设备上报的所有类型历史事件信息",

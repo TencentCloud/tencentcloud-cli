@@ -6,6 +6,18 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"SourceType\": \"net\",\n            \"Description\": \"pro\",\n            \"TargetContent\": \"www.qq.com\",\n            \"TargetType\": \"domain\",\n            \"Protocol\": \"HTTP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Scope\": \"serial\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"3f60a76f-0f44-4b58-bf98-615cbbc59ede\"\n    }\n}",
         "title": "添加互联网边界访问控制规则"
+      },
+      {
+        "document": "添加互联网边界访问控制规则，模板类型，其中模板id为mb_开头形式，由接口DescribeAddressTemplateList 可以查询所得模板",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"mb_1256532032_1655200956209\",\n            \"SourceType\": \"template\",\n            \"TargetContent\": \"mb_1300448058_1740510699974\",\n            \"TargetType\": \"template\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Enable\": \"true\",\n            \"Description\": \"test\",\n            \"Scope\": \"serial\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d6b877f-9a5f-4da2-876d-9968c9fe0491\",\n        \"RuleUuid\": [\n            1907266\n        ]\n    }\n}",
+        "title": "添加互联网边界访问控制规则，模板类型"
+      },
+      {
+        "document": "添加互联网边界访问控制规则，资产分组类型，其中资产分组d为cfwrg_开头形式，由接口DescribeResourceGroupNew可以查询所得资产分组id",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"cfwrg-b002b9b9d71b1a63951da2059d78cef41744255370\",\n            \"SourceType\": \"group\",\n            \"TargetContent\": \"mb_1300448058_1740510699974\",\n            \"TargetType\": \"template\",\n            \"Protocol\": \"TCP\",\n            \"RuleAction\": \"accept\",\n            \"Port\": \"-1/-1\",\n            \"Direction\": 0,\n            \"OrderIndex\": 1,\n            \"Enable\": \"true\",\n            \"Description\": \"rule-pro\",\n            \"Scope\": \"serial\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"278cabc7-b282-4ec8-a5b1-89d1e38195df\",\n        \"RuleUuid\": [\n            1907269\n        ]\n    }\n}",
+        "title": "添加互联网边界访问控制规则，资产分组类型"
       }
     ],
     "AddEnterpriseSecurityGroupRules": [

@@ -14,6 +14,8 @@ tccli trocket DescribeSourceClusterGroupList --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "TotalCount": 10,
         "Groups": [
@@ -22,7 +24,11 @@ Output:
                 "Remark": "remark",
                 "Imported": true,
                 "Namespace": "",
-                "ImportStatus": "Success"
+                "ImportStatus": "Success",
+                "ConsumeMessageOrderly": false,
+                "FullNamespaceV4": null,
+                "GroupNameV4": null,
+                "NamespaceV4": null
             }
         ],
         "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"

@@ -604,7 +604,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"async\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"\",\n            \"Vport\": 0,\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"ProtectMode\": 0,\n        \"Zone\": \"ap-guangzhou-3\",\n        \"DeployMode\": 1,\n        \"Switched\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"SlaveConfig\": {\n            \"ReplicationMode\": \"async\",\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"BackupConfig\": {\n            \"ReplicationMode\": \"sync\",\n            \"Vip\": \"172.1.1.1\",\n            \"Vport\": 3306,\n            \"Zone\": \"ap-guangzhou-3\"\n        },\n        \"ProtectMode\": 0,\n        \"Zone\": \"ap-guangzhou-3\",\n        \"DeployMode\": 1,\n        \"Switched\": false\n    }\n}",
         "title": "查询云数据库实例的配置信息"
       }
     ],
@@ -954,7 +954,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"e48eb1e9-0ca0ecae-c0dac9c7-60d12864\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "隔离云数据库实例"
       }
     ],
@@ -1033,7 +1033,7 @@
     "ModifyAutoRenewFlag": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenew\": \"1\",\n    \"InstanceIds\": [\n        \"cdb-f35wr6wj\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenew\": 1,\n    \"InstanceIds\": [\n        \"cdb-f35wr6wj\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a42feb9-82087f71-6a0031ac-699a92a8\"\n    }\n}",
         "title": "修改云数据库实例的自动续费标记"
       }
@@ -1113,7 +1113,7 @@
     "ModifyDBInstanceReadOnlyStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceReadOnlyStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-uns231ns\",\n    \"ReadOnly\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceReadOnlyStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-uns231ns\",\n    \"ReadOnly\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cf0e063-0f70f622-2d5c3f7c-0e612ab0\"\n    }\n}",
         "title": "设置MySQL云数据库实例为只读"
       }
@@ -1129,8 +1129,8 @@
     "ModifyDBInstanceVipVport": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceVipVport\n&InstanceId=cdb-f35wr6wj\n&DstIp=10.0.1.1\n&DstPort=1025\n&UniqVpcId=11357\n&UniqSubnetId=23789\n&ReleaseDuration=24\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"d2baf2fb-cbae62df-7dd0d736-9cbd3e31\"\n    }\n}",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyDBInstanceVipVport\n&InstanceId=cdb-f35wr6wj\n&DstIp=10.0.1.1\n&DstPort=1025\n&UniqVpcId=vpc-73o91172\n&UniqSubnetId=subnet-o2g4e1dh\n&ReleaseDuration=24\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改云数据库实例的IP和端口号"
       }
     ],
@@ -1287,7 +1287,7 @@
     "RenewDBInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\",\n    \"TimeSpan\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ezq1vzem\",\n    \"TimeSpan\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20170320233333\"\n    }\n}",
         "title": "续费云数据库实例"
       }

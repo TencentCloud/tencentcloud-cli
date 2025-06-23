@@ -42,6 +42,13 @@
       "output": "DescribeAlertListResponse",
       "status": "online"
     },
+    "DescribeAssetRiskList": {
+      "document": "资产视角下云资源配置风险列表",
+      "input": "DescribeAssetRiskListRequest",
+      "name": "资产视角下的云资源配置风险列表",
+      "output": "DescribeAssetRiskListResponse",
+      "status": "online"
+    },
     "DescribeAssetViewVulRiskList": {
       "document": "获取资产视角的漏洞风险列表",
       "input": "DescribeAssetViewVulRiskListRequest",
@@ -56,6 +63,13 @@
       "output": "DescribeCFWAssetStatisticsResponse",
       "status": "online"
     },
+    "DescribeCSIPRiskStatistics": {
+      "document": "获取风险中心风险概况示例",
+      "input": "DescribeCSIPRiskStatisticsRequest",
+      "name": "资产风险概览统计接口",
+      "output": "DescribeCSIPRiskStatisticsResponse",
+      "status": "online"
+    },
     "DescribeCVMAssetInfo": {
       "document": "cvm详情",
       "input": "DescribeCVMAssetInfoRequest",
@@ -68,6 +82,13 @@
       "input": "DescribeCVMAssetsRequest",
       "name": "cvm列表",
       "output": "DescribeCVMAssetsResponse",
+      "status": "online"
+    },
+    "DescribeCheckViewRisks": {
+      "document": "检查视角下云资源配置风险列表示例",
+      "input": "DescribeCheckViewRisksRequest",
+      "name": "检查项视角风险列表",
+      "output": "DescribeCheckViewRisksResponse",
       "status": "online"
     },
     "DescribeClusterAssets": {
@@ -103,6 +124,20 @@
       "input": "DescribeDomainAssetsRequest",
       "name": "域名列表",
       "output": "DescribeDomainAssetsResponse",
+      "status": "online"
+    },
+    "DescribeExposeAssetCategory": {
+      "document": "暴露面资产分类",
+      "input": "DescribeExposeAssetCategoryRequest",
+      "name": "查询当前账号下暴露资产分类",
+      "output": "DescribeExposeAssetCategoryResponse",
+      "status": "online"
+    },
+    "DescribeExposePath": {
+      "document": "查询互联网暴露节点",
+      "input": "DescribeExposePathRequest",
+      "name": "查询暴露路径节点",
+      "output": "DescribeExposePathResponse",
       "status": "online"
     },
     "DescribeExposures": {
@@ -147,11 +182,25 @@
       "output": "DescribeOrganizationUserInfoResponse",
       "status": "online"
     },
+    "DescribeOtherCloudAssets": {
+      "document": "资产列表",
+      "input": "DescribeOtherCloudAssetsRequest",
+      "name": "资产列表",
+      "output": "DescribeOtherCloudAssetsResponse",
+      "status": "online"
+    },
     "DescribePublicIpAssets": {
       "document": "ip公网列表",
       "input": "DescribePublicIpAssetsRequest",
       "name": "公网列表",
       "output": "DescribePublicIpAssetsResponse",
+      "status": "online"
+    },
+    "DescribeRepositoryImageAssets": {
+      "document": "仓库镜像列表",
+      "input": "DescribeRepositoryImageAssetsRequest",
+      "name": "仓库镜像列表",
+      "output": "DescribeRepositoryImageAssetsResponse",
       "status": "online"
     },
     "DescribeRiskCenterAssetViewCFGRiskList": {
@@ -182,6 +231,13 @@
       "output": "DescribeRiskCenterAssetViewWeakPasswordRiskListResponse",
       "status": "online"
     },
+    "DescribeRiskCenterCFGViewCFGRiskList": {
+      "document": "获取配置视角的配置风险列表",
+      "input": "DescribeRiskCenterCFGViewCFGRiskListRequest",
+      "name": "获取配置视角的配置风险列表",
+      "output": "DescribeRiskCenterCFGViewCFGRiskListResponse",
+      "status": "online"
+    },
     "DescribeRiskCenterPortViewPortRiskList": {
       "document": "获取端口视角的端口风险列表",
       "input": "DescribeRiskCenterPortViewPortRiskListRequest",
@@ -210,11 +266,39 @@
       "output": "DescribeRiskCenterWebsiteRiskListResponse",
       "status": "online"
     },
+    "DescribeRiskDetailList": {
+      "document": "风险详情列表示例",
+      "input": "DescribeRiskDetailListRequest",
+      "name": "云配置风险详情列表",
+      "output": "DescribeRiskDetailListResponse",
+      "status": "online"
+    },
+    "DescribeRiskRuleDetail": {
+      "document": "查询风险规则详情示例",
+      "input": "DescribeRiskRuleDetailRequest",
+      "name": "云配置风险规则详情",
+      "output": "DescribeRiskRuleDetailResponse",
+      "status": "online"
+    },
+    "DescribeRiskRules": {
+      "document": "高级配置风险规则列表示例",
+      "input": "DescribeRiskRulesRequest",
+      "name": "高级配置风险规则列表",
+      "output": "DescribeRiskRulesResponse",
+      "status": "online"
+    },
     "DescribeScanReportList": {
       "document": "获取扫描报告列表",
       "input": "DescribeScanReportListRequest",
       "name": "获取扫描报告列表",
       "output": "DescribeScanReportListResponse",
+      "status": "online"
+    },
+    "DescribeScanStatistic": {
+      "document": "查询互联网暴露扫描结果统计信息",
+      "input": "DescribeScanStatisticRequest",
+      "name": "查询暴露面扫描结果统计信息",
+      "output": "DescribeScanStatisticResponse",
       "status": "online"
     },
     "DescribeScanTaskList": {
@@ -271,6 +355,13 @@
       "input": "DescribeUebaRuleRequest",
       "name": "查询用户行为分析策略列表",
       "output": "DescribeUebaRuleResponse",
+      "status": "online"
+    },
+    "DescribeVULList": {
+      "document": "新安全中心风险中心-漏洞列表",
+      "input": "DescribeVULListRequest",
+      "name": "风险中心-漏洞列表",
+      "output": "DescribeVULListResponse",
       "status": "online"
     },
     "DescribeVULRiskAdvanceCFGList": {
@@ -2619,6 +2710,152 @@
       ],
       "usage": "out"
     },
+    "AssetRiskItem": {
+      "document": "资产视角风险项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "1302396215",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "ProviderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云账号名称",
+          "example": "声声乌龙",
+          "member": "string",
+          "name": "CloudAccountName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云账号ID",
+          "example": "100014592178",
+          "member": "string",
+          "name": "CloudAccountId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "AI测试",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-p7x4hn7p",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次发现时间",
+          "example": "2025-01-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险状态",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "子账号未开启登录操作保护",
+          "member": "string",
+          "name": "RiskTitle",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查类型",
+          "example": "data_security",
+          "member": "string",
+          "name": "CheckType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "high",
+          "member": "string",
+          "name": "Severity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险规则ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RiskRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AssetTag": {
       "document": "安全中心资产标签",
       "members": [
@@ -4057,6 +4294,32 @@
       ],
       "usage": "out"
     },
+    "AttributeOptionSet": {
+      "document": "通用的下拉框列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cvm实例类型",
+          "example": "cvm_instance",
+          "member": "string",
+          "name": "Text",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cvm实例名称",
+          "example": "CVM",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BugInfoDetail": {
       "document": "漏洞详细信息",
       "members": [
@@ -4259,6 +4522,182 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CFGViewCFGRisk": {
+      "document": "配置视角的配置风险对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "影响资产",
+          "example": "1.1.1.1",
+          "member": "int64",
+          "name": "NoHandleCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。",
+          "example": "high",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近识别时间",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "RecentTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次识别时间",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "FirstTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，0未处理、1已处置、2已忽略",
+          "example": "0",
+          "member": "uint64",
+          "name": "AffectAssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产唯一id",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产子类型",
+          "example": "1",
+          "member": "string",
+          "name": "From",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前端索引",
+          "example": "1",
+          "member": "string",
+          "name": "Index",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Nick",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFGName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检查类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CheckType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFGSTD",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFGDescribe",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修复建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFGFix",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帮助文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CFGHelpURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5006,6 +5445,142 @@
       ],
       "usage": "both"
     },
+    "CheckViewRiskItem": {
+      "document": "检查项视角风险",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检查项规则ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RiskRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "子账号未开启操作保护",
+          "member": "string",
+          "name": "RiskTitle",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查类型",
+          "example": "网络安全",
+          "member": "string",
+          "name": "CheckType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "high",
+          "member": "string",
+          "name": "Severity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存在1个风险项",
+          "example": "风险描述",
+          "member": "string",
+          "name": "RiskDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次发现时间",
+          "example": "2025-05-05 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险更新时间",
+          "example": "2025-05-05 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "RiskStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受影响资产数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "AssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "RiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型",
+          "example": "安全组",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型",
+          "example": "不合理规则",
+          "member": "string",
+          "name": "EventType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClbListenerListInfo": {
       "document": "clb实例和监听器信息",
       "members": [
@@ -5397,6 +5972,182 @@
         }
       ],
       "type": "object"
+    },
+    "CsipRiskCenterStatistics": {
+      "document": "风险中心风险概览统计数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口风险总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "PortTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口风险高危数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "PortHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t弱口令风险总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "WeakPasswordTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弱口令风险高危数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "WeakPasswordHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网站风险数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "WebsiteTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网站高危风险数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "WebsiteHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新的扫描时间",
+          "example": "2021-01-01 01:01:01",
+          "member": "string",
+          "name": "LastScanTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞风险数",
+          "example": "无",
+          "member": "int64",
+          "name": "VULTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高危漏洞风险数",
+          "example": "无",
+          "member": "int64",
+          "name": "VULHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置项风险数量",
+          "example": "无",
+          "member": "int64",
+          "name": "CFGTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高危配置项风险数量",
+          "example": "无",
+          "member": "int64",
+          "name": "CFGHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测绘服务风险数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ServerTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "测绘服务高危数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ServerHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机基线风险数量",
+          "example": "0",
+          "member": "int64",
+          "name": "HostBaseLineRiskTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机基线高危风险数量",
+          "example": "0",
+          "member": "int64",
+          "name": "HostBaseLineRiskHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器基线风险数量",
+          "example": "0",
+          "member": "int64",
+          "name": "PodBaseLineRiskTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器基线高危风险数量",
+          "example": "0",
+          "member": "int64",
+          "name": "PodBaseLineRiskHighLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DBAssetVO": {
       "document": "db资产输出字段",
@@ -6078,6 +6829,98 @@
       ],
       "type": "object"
     },
+    "DescribeAssetRiskListRequest": {
+      "document": "DescribeAssetRiskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetRiskListResponse": {
+      "document": "DescribeAssetRiskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产视角下风险数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产视角下风险列表",
+          "example": "无",
+          "member": "AssetRiskItem",
+          "name": "AssetRiskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetViewVulRiskListRequest": {
       "document": "DescribeAssetViewVulRiskList请求参数结构体",
       "members": [
@@ -6330,6 +7173,52 @@
       ],
       "type": "object"
     },
+    "DescribeCSIPRiskStatisticsRequest": {
+      "document": "DescribeCSIPRiskStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCSIPRiskStatisticsResponse": {
+      "document": "DescribeCSIPRiskStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产概况数据",
+          "example": "无",
+          "member": "CsipRiskCenterStatistics",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCVMAssetInfoRequest": {
       "document": "DescribeCVMAssetInfo请求参数结构体",
       "members": [
@@ -6531,6 +7420,98 @@
           "member": "FilterDataObject",
           "name": "ProtectStatusList",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCheckViewRisksRequest": {
+      "document": "DescribeCheckViewRisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCheckViewRisksResponse": {
+      "document": "DescribeCheckViewRisks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检查视角下风险数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查视角下风险列表",
+          "example": "无",
+          "member": "CheckViewRiskItem",
+          "name": "CheckViewRiskList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7022,6 +8003,116 @@
       ],
       "type": "object"
     },
+    "DescribeExposeAssetCategoryRequest": {
+      "document": "DescribeExposeAssetCategory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExposeAssetCategoryResponse": {
+      "document": "DescribeExposeAssetCategory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "暴露资产分类列表",
+          "example": "无",
+          "member": "ExposeAssetTypeItem",
+          "name": "ExposeAssetTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExposePathRequest": {
+      "document": "DescribeExposePath请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资产ID",
+          "example": "ins-1shdjyd",
+          "member": "string",
+          "name": "AssetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资产域名",
+          "example": "abc.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口或端口范围",
+          "example": "80-65535/8080",
+          "member": "string",
+          "name": "Port",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExposePathResponse": {
+      "document": "DescribeExposePath返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "暴露路径节点内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExposuresRequest": {
       "document": "DescribeExposures请求参数结构体",
       "members": [
@@ -7494,6 +8585,102 @@
       ],
       "type": "object"
     },
+    "DescribeOtherCloudAssetsRequest": {
+      "document": "DescribeOtherCloudAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS",
+          "example": "[\"MYSQL\",\"MARIADB\"]",
+          "member": "string",
+          "name": "AssetTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOtherCloudAssetsResponse": {
+      "document": "DescribeOtherCloudAssets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DBAssetVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "RegionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产类型枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "AssetTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Vpc枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "VpcList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Appid枚举\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "AppIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePublicIpAssetsRequest": {
       "document": "DescribePublicIpAssets请求参数结构体",
       "members": [
@@ -7607,6 +8794,60 @@
           "member": "FilterDataObject",
           "name": "AppIdList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryImageAssetsRequest": {
+      "document": "DescribeRepositoryImageAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "filter过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRepositoryImageAssetsResponse": {
+      "document": "DescribeRepositoryImageAssets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "仓库镜像列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RepositoryImageVO",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "region列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "RegionList",
           "type": "list",
           "value_allowed_null": false
         },
@@ -8089,6 +9330,105 @@
       ],
       "type": "object"
     },
+    "DescribeRiskCenterCFGViewCFGRiskListRequest": {
+      "document": "DescribeRiskCenterCFGViewCFGRiskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskCenterCFGViewCFGRiskListResponse": {
+      "document": "DescribeRiskCenterCFGViewCFGRiskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产视角的配置风险列表",
+          "example": "无",
+          "member": "CFGViewCFGRisk",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "StatusLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "危险等级列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "LevelLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置名列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "CFGNameLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查类型列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "CheckTypeLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "InstanceTypeLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源列表",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "FromLists",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRiskCenterPortViewPortRiskListRequest": {
       "document": "DescribeRiskCenterPortViewPortRiskList请求参数结构体",
       "members": [
@@ -8459,6 +9799,295 @@
       ],
       "type": "object"
     },
+    "DescribeRiskDetailListRequest": {
+      "document": "DescribeRiskDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险规则ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RiskRuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-cdb0183",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskDetailListResponse": {
+      "document": "DescribeRiskDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产视角下风险详情数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产视角下风险详情列表",
+          "example": "无",
+          "member": "RiskDetailItem",
+          "name": "AssetRiskDetailList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskRuleDetailRequest": {
+      "document": "DescribeRiskRuleDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险规则ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RiskRuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskRuleDetailResponse": {
+      "document": "DescribeRiskRuleDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RiskRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云厂商",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "子账号未开启操作保护",
+          "member": "string",
+          "name": "RiskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险危害",
+          "example": "云上多种产品都有管理后台功能且具有对公网开放能力，管理后台对外开放后后容易存在口令被爆破/被入侵风险，可导致重要数据泄露，服务器遭受入侵等严重后果。",
+          "member": "string",
+          "name": "RiskInfluence",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复指引",
+          "example": "如无开放必要，请关闭管理后台。登录云官网控制台",
+          "member": "string",
+          "name": "RiskFixAdvice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskRulesRequest": {
+      "document": "DescribeRiskRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "{\"Filters\":[{\"Name\":\"Status\",\"Values\":[\"0\"],\"OperatorType\":7}]}",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "update_time",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskRulesResponse": {
+      "document": "DescribeRiskRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险规则数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险规则列表",
+          "example": "无",
+          "member": "RiskRuleItem",
+          "name": "RiskRuleList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型选项",
+          "example": "无",
+          "member": "AttributeOptionSet",
+          "name": "InstanceTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScanReportListRequest": {
       "document": "DescribeScanReportList请求参数结构体",
       "members": [
@@ -8514,6 +10143,122 @@
           "name": "UINList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanStatisticRequest": {
+      "document": "DescribeScanStatistic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "体检任务id",
+          "example": "rmis-m1c2xlek",
+          "member": "string",
+          "name": "TaskLogId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanStatisticResponse": {
+      "document": "DescribeScanStatistic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口服务数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "PortServiceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Web服务数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "WebAppCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弱口令风险数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "WeakPasswordCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞风险数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "VulCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高危端口服务数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "HighRiskPortServiceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险Web服务数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskWebAppCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口服务近7天新增数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "PortServiceIncrement",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Web服务近7天新增数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "WebAppIncrement",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -9133,6 +10878,122 @@
           "member": "FilterDataObject",
           "name": "AlterType",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVULListRequest": {
+      "document": "DescribeVULList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVULListResponse": {
+      "document": "DescribeVULList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞列表",
+          "example": "[]",
+          "member": "VULBaseInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞类型列表",
+          "example": "[{\"Text\":\"sql注入\",\"Value\":\"3\"}]",
+          "member": "FilterDataObject",
+          "name": "VULTypeLists",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级列表",
+          "example": "[{\"Text\":\"低危\",\"Value\":\"low\"}]",
+          "member": "FilterDataObject",
+          "name": "RiskLevels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "[{\"Text\":\"该漏洞有poc\",\"Value\":\"poc\"}]",
+          "member": "FilterDataObject",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品支持情况",
+          "example": "[{\"Text\":\"主机防御\",\"Value\":\"cwp_defence\"}]",
+          "member": "FilterDataObject",
+          "name": "ProductSupport",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品支持情况",
+          "example": "[{\"Text\":‘未检测’,\"Value\":\"0\"}]",
+          "member": "FilterDataObject",
+          "name": "CheckStatus",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击热度枚举",
+          "example": "[{\"Text\":3,\"Value\":\"3\"}]",
+          "member": "FilterDataObject",
+          "name": "AttackHeat",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9959,6 +11820,52 @@
         }
       ],
       "usage": "both"
+    },
+    "ExposeAssetTypeItem": {
+      "document": "暴露资产分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云厂商",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "ProviderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型",
+          "example": "cdn_instance",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型名称",
+          "example": "CDN",
+          "member": "string",
+          "name": "AssetTypeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ExposesItem": {
       "document": "暴露资产",
@@ -12611,6 +14518,221 @@
       ],
       "usage": "in"
     },
+    "RepositoryImageVO": {
+      "document": "仓库镜像列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceCreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像大小带单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceSize",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "构建次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BuildCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthStatus",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RepositoryName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否核心\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCore",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VulRisk",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检查任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CheckCount",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CheckTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RiskCenterStatusKey": {
       "document": "风险中心状态处理Key",
       "members": [
@@ -12652,6 +14774,228 @@
         }
       ],
       "usage": "in"
+    },
+    "RiskDetailItem": {
+      "document": "风险详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "首次发现时间",
+          "example": "2025-01-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险状态",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险内容",
+          "example": "风险配置内容",
+          "member": "string",
+          "name": "RiskContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商",
+          "example": "tencent",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "ProviderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云账号",
+          "example": "102787547",
+          "member": "string",
+          "name": "CloudAccountId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云账号名称",
+          "example": "声声乌龙",
+          "member": "string",
+          "name": "CloudAccountName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-xs989xs",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "AI测试",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "12",
+          "member": "uint64",
+          "name": "RiskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险规则ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "RiskRuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险验证状态",
+          "example": "running",
+          "member": "string",
+          "name": "CheckStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RiskRuleItem": {
+      "document": "风险规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险检查项ID",
+          "example": "tc_001",
+          "member": "string",
+          "name": "ItemId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云厂商名称",
+          "example": "腾讯云",
+          "member": "string",
+          "name": "Provider",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "cvm_instance",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型名称",
+          "example": "cvm",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险名称",
+          "example": "子账号未开启登录保护",
+          "member": "string",
+          "name": "RiskTitle",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查类型",
+          "example": "数据安全",
+          "member": "string",
+          "name": "CheckType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "high",
+          "member": "string",
+          "name": "Severity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险危害",
+          "example": "风险危害描述",
+          "member": "string",
+          "name": "RiskInfluence",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RoleInfo": {
       "document": "告警数据攻击者或受害者信息",
@@ -15118,6 +17462,312 @@
         }
       ],
       "type": "object"
+    },
+    "VULBaseInfo": {
+      "document": "应急漏洞基本数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险等级\nhigh 高危/ middle 中危 / low 低危 /info 提示",
+          "example": "High",
+          "member": "string",
+          "name": "Level",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件",
+          "example": "Nginx",
+          "member": "string",
+          "name": "Component",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞发布时间",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近扫描时间",
+          "example": "2022-10-10 00:00:00",
+          "member": "string",
+          "name": "LastScanTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响资产数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "AffectAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "0b01fb18c8fb6e5644ef6f1e69a7fa30",
+          "member": "string",
+          "name": "RiskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞类型",
+          "example": "命令注入",
+          "member": "string",
+          "name": "VULType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名",
+          "example": "Oracle Fusion Middleware WebLogic Server组件安全漏洞",
+          "member": "string",
+          "name": "VULName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve",
+          "example": "CVE-2016-0638",
+          "member": "string",
+          "name": "CVE",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "Oracle Fusion Middleware（Oracle融合中间件）是美国甲骨文（Oracle）公司的一套面向企业和云环境的业务创新平台。该平台提供了中间件、软件集合等功能。Oracle WebLogic Server是其中的一个适用于云环境和传统环境的应用服务器组件。Oracle Fusion Middleware的Oracle WebLogic Server组件中的Java Messaging Service子组件存在安全漏洞。远程攻击者可利用该漏洞控制组件，影响数据的保密性，完整性及可用性。以下版本受到影响：Oracle Fusion Middleware 10.3.6版本，12.1.2版本，12.1.3版本，12.2.1版本。",
+          "member": "string",
+          "name": "Describe",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞payload",
+          "example": "/wls-wsat/CoordinatorPortType",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响组件",
+          "example": "Weblogic_interface_7001",
+          "member": "string",
+          "name": "AppName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "技术参考",
+          "example": "http://www.oracle.com/technetwork/security-advisory/alert-cve-2019-2729-5570780.htm",
+          "member": "string",
+          "name": "References",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响版本",
+          "example": "Oracle WebLogic Server 10.3.6.0.0版本，12.1.3.0.0版本，12.2.1.1.0版本，12.2.1.2.0版本",
+          "member": "string",
+          "name": "AppVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险点",
+          "example": "https://abcd.test",
+          "member": "string",
+          "name": "VULURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Nick",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "1234",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修复建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "将组件升级至官方最新版",
+          "member": "string",
+          "name": "Fix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应急漏洞类型，1-应急漏洞，0-非应急漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EMGCVulType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVSS评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "CVSS",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击热度\n0/1/2/3 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AttackHeat",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检测状态 0 未扫描 1扫描中 2 扫描完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScanStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1/0是否必修\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsSuggest",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VulTag",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持产品 逗号分隔  \"cfw_waf_virtual\", \"cwp_detect\", \"cwp_defense\", \"cwp_fix\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfw_waf_virtual，cwp_defense",
+          "member": "string",
+          "name": "SupportProduct",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞检测任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rmis-11a4ymi3",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3311cbba46ccd941c088c80dee412f71",
+          "member": "string",
+          "name": "Index",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞id 旧版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pcmger-xxx",
+          "member": "string",
+          "name": "PcmgrID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞id  新版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TVD-xxx",
+          "member": "string",
+          "name": "TvdID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "VULRiskAdvanceCFGList": {
       "document": "漏洞风险高级配置列表",

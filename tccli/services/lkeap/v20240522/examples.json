@@ -216,14 +216,6 @@
         "title": "语义检索（问答对）"
       }
     ],
-    "RetrieveKnowledgeRealtime": [
-      {
-        "document": "实时语义检索",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetrieveKnowledgeRealtime\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"49019910106\",\n    \"Query\": \"国庆节放几天假\",\n    \"DocIds\": [\n        \"1828720159590123264\"\n    ],\n    \"RetrievalMethod\": \"SEMANTIC\",\n    \"RetrievalSetting\": {\n        \"TopK\": 3,\n        \"ScoreThreshold\": 0.7\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Metadata\": {\n                    \"Type\": \"DOC\",\n                    \"ResultSource\": \"SEMANTIC\"\n                },\n                \"Title\": \"\",\n                \"Content\": \"国庆放七天假\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d422c101-96e6-4aeb-b51c-0ccb551a5a52\"\n    }\n}",
-        "title": "实时语义检索"
-      }
-    ],
     "RunRerank": [
       {
         "document": "重排序",

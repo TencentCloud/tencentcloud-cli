@@ -6621,6 +6621,95 @@
       ],
       "type": "object"
     },
+    "ForwardingConfig": {
+      "document": "呼转配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1 无条件呼转 2 有条件呼转",
+          "example": "2",
+          "member": "int64",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼转目标",
+          "example": "{\"Type\":1,\"StaffUserId\":\"foo@tencent.com\"}",
+          "member": "ForwardingTarget",
+          "name": "Target",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ForwardingTarget": {
+      "document": "呼转目标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "呼转目标类型 1 座席 2 技能组 3 分机",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼转目标为座席的账号 Type 为 1 时填写",
+          "example": "foo@tencent.com",
+          "member": "string",
+          "name": "StaffUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼转目标为技能组的 ID，Type 为 2 时填写",
+          "example": "1254",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼转目标为分机的账号，Type 为 3 时填写",
+          "example": "1003@1400000000.sip.tccc.qcloud.com",
+          "member": "string",
+          "name": "Extension",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HangUpCallRequest": {
       "document": "HangUpCall请求参数结构体",
       "members": [
@@ -8525,7 +8614,7 @@
         },
         {
           "disabled": true,
-          "document": "用户角色id\n一个用户绑定了多个角色时以RoleIdList为准",
+          "document": "用户角色 ID，一个用户绑定了多个角色时以RoleIdList为准",
           "example": "1",
           "member": "uint64",
           "name": "RoleId",
@@ -8581,6 +8670,16 @@
           "name": "ExtensionNumber",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼叫转移配置",
+          "example": "{\"Enabled\":true,\"Condition\":2,\"Target\":{\"Type\":1,\"StaffUserId\":\"foo@tencent.com\"}}",
+          "member": "ForwardingConfig",
+          "name": "ForwardingConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

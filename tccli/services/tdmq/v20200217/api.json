@@ -533,16 +533,16 @@
       "status": "online"
     },
     "DescribeRabbitMQVipInstance": {
-      "document": "获取单个RabbitMQ专享实例信息",
+      "document": "获取单个 RabbitMQ 托管版实例信息",
       "input": "DescribeRabbitMQVipInstanceRequest",
-      "name": "获取单个RabbitMQ专享实例信息",
+      "name": "获取单个 RabbitMQ 托管版实例信息",
       "output": "DescribeRabbitMQVipInstanceResponse",
       "status": "online"
     },
     "DescribeRabbitMQVipInstances": {
-      "document": "查询用户已购的RabbitMQ专享实例列表",
+      "document": "查询用户已购的 RabbitMQ 托管版实例列表",
       "input": "DescribeRabbitMQVipInstancesRequest",
-      "name": "查询RabbitMQ专享实例列表",
+      "name": "查询 RabbitMQ 托管版实例列表",
       "output": "DescribeRabbitMQVipInstancesResponse",
       "status": "online"
     },
@@ -7741,7 +7741,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
@@ -7750,8 +7750,8 @@
         },
         {
           "disabled": false,
-          "document": "Vhost名称",
-          "example": "tdmq_data",
+          "document": "VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。",
+          "example": "testvhost",
           "member": "string",
           "name": "VirtualHost",
           "required": true,
@@ -7759,7 +7759,7 @@
         },
         {
           "disabled": false,
-          "document": "分页offset",
+          "document": "分页 offset，默认 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7768,7 +7768,7 @@
         },
         {
           "disabled": false,
-          "document": "分页limit",
+          "document": "分页 limit，默认 20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7795,7 +7795,7 @@
         },
         {
           "disabled": false,
-          "document": "根据目标QueueName精准搜索过滤，和DestinationExchange过滤不可同时设置",
+          "document": "根据目标队列名精准搜索过滤，和 DestinationExchange 过滤不可同时设置",
           "example": "prod.queue",
           "member": "string",
           "name": "QueueName",
@@ -7829,7 +7829,7 @@
         },
         {
           "disabled": false,
-          "document": "数量",
+          "document": "路由关系数量",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -7851,8 +7851,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 id",
-          "example": "amqp-xxx",
+          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7860,7 +7860,7 @@
         },
         {
           "disabled": false,
-          "document": "vhost 参数",
+          "document": "VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到Vhost名称。",
           "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
@@ -7869,7 +7869,7 @@
         },
         {
           "disabled": false,
-          "document": "分页 offset",
+          "document": "分页 offset，默认 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7878,7 +7878,7 @@
         },
         {
           "disabled": false,
-          "document": "分页 limit",
+          "document": "分页 limit，默认 20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -7896,7 +7896,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选 exchange 类型, 数组中每个元素为选中的过滤类型",
+          "document": "筛选 exchange 类型, 数组中每个元素为选中的过滤类型，仅支持 direct、fanout、topic、header",
           "example": "[\"fanout\",\"direct\"]",
           "member": "string",
           "name": "ExchangeTypeFilters",
@@ -7932,7 +7932,7 @@
         },
         {
           "disabled": false,
-          "document": "排序顺序，ascend 或 descend",
+          "document": "排序顺序，ascend 或 descend\nascend：升序\ndescend：降序",
           "example": "descend",
           "member": "string",
           "name": "SortOrder",
@@ -8080,8 +8080,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例id",
-          "example": "amqp-jero744g",
+          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8089,7 +8089,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，用于查询过滤，不传则查询全部",
+          "document": "用户名，形如 admin。有效的 User 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，点击集群列表中的集群，进入集群详情，并在用户与权限页签中找到用户列表，从而找到用户名称。",
           "example": "admin",
           "member": "string",
           "name": "User",
@@ -8098,8 +8098,8 @@
         },
         {
           "disabled": false,
-          "document": "vhost名，用于查询过滤，不传则查询全部",
-          "example": "tdmq_data",
+          "document": "VirtualHost 名称，形如 testvhost。有效的 VirtualHost 名称可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询，在左侧导航栏点击 Vhost，并在 Vhost 列表中找到 Vhost 名称。",
+          "example": "testVhost",
           "member": "string",
           "name": "VirtualHost",
           "required": false,
@@ -8107,7 +8107,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Offset",
+          "document": "分页 Offset，默认 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8116,7 +8116,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Limit",
+          "document": "分页 Limit，默认 20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -8638,8 +8638,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例Id",
-          "example": "amqp-jero744g",
+          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
+          "example": "amqp-2ppxx4rq",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8656,7 +8656,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Offset",
+          "document": "分页 Offset，默认 0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8665,7 +8665,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Limit",
+          "document": "分页 Limit，默认 20",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -8683,7 +8683,7 @@
         },
         {
           "disabled": false,
-          "document": "用户标签，根据标签过滤列表",
+          "document": "用户标签，用于决定改用户访问 RabbitMQ Management 的权限范围\nmanagement：普通控制台用户，monitoring：管理型控制台用户，其他值：非控制台用户",
           "example": "[\"tag1\",\"tag2\"]",
           "member": "string",
           "name": "Tags",
@@ -8730,7 +8730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
@@ -8836,7 +8836,7 @@
         },
         {
           "disabled": false,
-          "document": "查询数目上限，默认20",
+          "document": "查询数目上限，默认 20",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -8845,7 +8845,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认 0",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -13980,6 +13980,15 @@
           "name": "MessageRetention",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15808,11 +15817,11 @@
       "usage": "out"
     },
     "RabbitMQClusterInfo": {
-      "document": "RabbiteMQ集群基本信息",
+      "document": "RabbitMQ 集群基本信息",
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群 ID",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
@@ -15842,7 +15851,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位",
+          "document": "创建时间，毫秒为单位。unix 时间戳",
           "example": "1666257531142",
           "member": "uint64",
           "name": "CreateTime",
@@ -15922,7 +15931,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳",
           "example": "1666257531143",
           "member": "int64",
           "name": "ExpireTime",
@@ -16052,7 +16061,7 @@
         },
         {
           "disabled": false,
-          "document": "开始隔离时间",
+          "document": "开始隔离时间。unix 时间戳",
           "example": "1666257531143",
           "member": "int64",
           "name": "IsolatedTime",
@@ -16892,11 +16901,11 @@
       "usage": "out"
     },
     "RabbitMQVipInstance": {
-      "document": "RabbitMQ专享实例信息",
+      "document": "RabbitMQ 托管版实例信息",
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "实例 ID",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "InstanceId",
@@ -16986,8 +16995,8 @@
         },
         {
           "disabled": false,
-          "document": "实例到期时间，毫秒为单位",
-          "example": "100000",
+          "document": "实例到期时间，按量付费的资源该值为 0，毫秒为单位。unix 时间戳",
+          "example": "1666257531143",
           "member": "uint64",
           "name": "ExpireTime",
           "output_required": true,
@@ -17006,7 +17015,7 @@
         },
         {
           "disabled": false,
-          "document": "0-后付费，1-预付费",
+          "document": "1 表示预付费，0 表示后付费",
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
@@ -17026,8 +17035,8 @@
         },
         {
           "disabled": false,
-          "document": "实例配置ID",
-          "example": "vip-basic-1",
+          "document": "集群的节点规格，需要输入对应的规格标识：\n2C8G：rabbit-vip-basic-2c8g\n4C16G：rabbit-vip-basic-4c16g\n8C32G：rabbit-vip-basic-8c32g\n16C32G：rabbit-vip-basic-4\n16C64G：rabbit-vip-basic-16c64g\n2C4G：rabbit-vip-basic-5\n4C8G：rabbit-vip-basic-1\n8C16G（已售罄）：rabbit-vip-basic-2\n不传默认为4C8G：rabbit-vip-basic-1",
+          "example": "rabbit-vip-basic-1",
           "member": "string",
           "name": "SpecName",
           "output_required": true,
@@ -17036,7 +17045,7 @@
         },
         {
           "disabled": false,
-          "document": "集群异常。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "节点[rabbit@rabbitmq-broker-2.rabbitmq-broker-internal.amqp-jero744g.svc.cluster.local]连接异常",
           "member": "string",
           "name": "ExceptionInformation",
@@ -17076,7 +17085,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，毫秒为单位",
+          "document": "创建时间，毫秒为单位。unix 时间戳",
           "example": "1666257531143",
           "member": "uint64",
           "name": "CreateTime",

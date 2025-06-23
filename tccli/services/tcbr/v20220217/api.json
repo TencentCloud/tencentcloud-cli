@@ -1779,6 +1779,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话亲和性开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "open",
+          "member": "string",
+          "name": "SessionAffinity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

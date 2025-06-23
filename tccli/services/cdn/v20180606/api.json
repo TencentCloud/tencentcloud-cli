@@ -11773,7 +11773,7 @@
         },
         {
           "disabled": false,
-          "document": "排序对象，支持以下几种形式：\nurl：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request\ndistrict：省份、国家/地区排序，支持的 Filter 为 flux、request\nisp：运营商排序，支持的 Filter 为 flux、request\nhost：域名访问数据排序，支持的 Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode\noriginHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode",
+          "document": "排序对象，支持以下几种形式：\nurl：访问 URL 排序（无参数的URL），支持的 Filter 为 flux、request\ndistrict：省份、国家/地区排序，支持的 Filter 为 flux、request\nisp：运营商排序，支持的 Filter 为 flux、request\nhost：域名访问数据排序，支持的Filter 为：flux、request、bandwidth、fluxHitRate、2XX、3XX、4XX、5XX、statusCode   \noriginHost：域名回源数据排序，支持的 Filter 为 flux、request、bandwidth、origin_2XX、origin_3XX、origin_4XX、origin_5XX、OriginStatusCode",
           "example": "host",
           "member": "string",
           "name": "Metric",
@@ -11870,7 +11870,7 @@
         {
           "disabled": false,
           "document": "各个资源的Top 访问数据详情。",
-          "example": "[]",
+          "example": "[{\"Resource\": \"www.test1.com\",\"DetailData\": [{\"Name\": \"www.test1.com/1.jpg?abc=123\",\"Value\": 13838}]}]",
           "member": "TopData",
           "name": "Data",
           "output_required": true,

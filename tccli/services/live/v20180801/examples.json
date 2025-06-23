@@ -824,14 +824,6 @@
         "title": "查询直播套餐包信息"
       }
     ],
-    "DescribeLivePadProcessorList": [
-      {
-        "document": "查询正在拉垫片的流。",
-        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLivePadProcessorList\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StreamNameList\": [\n            \"test1\",\n            \"test2\"\n        ],\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
-        "title": "请求示例"
-      }
-    ],
     "DescribeLivePadRules": [
       {
         "document": "",
@@ -1549,14 +1541,6 @@
         "document": "停止预监任务",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCasterPvw\n<公共请求参数>\n\n{\n    \"CasterId\": 63501\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "请求示例"
-      }
-    ],
-    "StopLivePadProcessor": [
-      {
-        "document": "接口用于停止垫片流。",
-        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLivePadProcessor\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.myqcloud.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"mystreamname\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ResultMessage\": \"success\",\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
     ],

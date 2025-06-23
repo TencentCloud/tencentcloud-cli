@@ -2406,6 +2406,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网网关所属账号，如果云联网网关为其他账号资源需要填写",
+          "example": "212221111",
+          "member": "string",
+          "name": "CcnOwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

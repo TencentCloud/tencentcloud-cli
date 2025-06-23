@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreateFenceBind": {
-      "document": "创建围栏绑定信息",
+      "document": "> 创建围栏绑定信息。",
       "input": "CreateFenceBindRequest",
       "name": "创建围栏绑定信息",
       "output": "CreateFenceBindResponse",
@@ -155,7 +155,7 @@
       "status": "online"
     },
     "CreatePositionFence": {
-      "document": "创建围栏",
+      "document": "创建围栏。",
       "input": "CreatePositionFenceRequest",
       "name": "创建围栏",
       "output": "CreatePositionFenceResponse",
@@ -232,7 +232,7 @@
       "status": "online"
     },
     "DeleteFenceBind": {
-      "document": "删除围栏绑定信息",
+      "document": "删除围栏绑定信息。",
       "input": "DeleteFenceBindRequest",
       "name": "删除围栏绑定信息",
       "output": "DeleteFenceBindResponse",
@@ -253,14 +253,14 @@
       "status": "online"
     },
     "DeletePositionFence": {
-      "document": "删除围栏",
+      "document": "删除围栏。",
       "input": "DeletePositionFenceRequest",
       "name": "删除围栏",
       "output": "DeletePositionFenceResponse",
       "status": "online"
     },
     "DeletePositionSpace": {
-      "document": "删除位置空间",
+      "document": "删除位置空间。",
       "input": "DeletePositionSpaceRequest",
       "name": "删除位置空间",
       "output": "DeletePositionSpaceResponse",
@@ -519,14 +519,14 @@
       "status": "online"
     },
     "DescribeFenceBindList": {
-      "document": "获取围栏绑定信息列表",
+      "document": "获取围栏绑定信息列表。",
       "input": "DescribeFenceBindListRequest",
       "name": "获取围栏绑定信息列表",
       "output": "DescribeFenceBindListResponse",
       "status": "online"
     },
     "DescribeFenceEventList": {
-      "document": "获取围栏告警事件列表",
+      "document": "获取围栏告警事件列表。",
       "input": "DescribeFenceEventListRequest",
       "name": "获取围栏告警事件列表",
       "output": "DescribeFenceEventListResponse",
@@ -645,7 +645,7 @@
       "status": "online"
     },
     "DescribeSpaceFenceEventList": {
-      "document": "获取位置空间中围栏告警事件列表",
+      "document": "获取位置空间中围栏告警事件列表。",
       "input": "DescribeSpaceFenceEventListRequest",
       "name": "获取位置空间中围栏告警事件列表",
       "output": "DescribeSpaceFenceEventListResponse",
@@ -882,6 +882,13 @@
       "output": "InvokeTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "InvokeVideosKeywordsAnalyzer": {
+      "document": "获取某个时间段的视频内容关键字",
+      "input": "InvokeVideosKeywordsAnalyzerRequest",
+      "name": "获取某个时间段的视频内容关键字",
+      "output": "InvokeVideosKeywordsAnalyzerResponse",
+      "status": "online"
+    },
     "ListEventHistory": {
       "document": "获取设备的历史事件",
       "input": "ListEventHistoryRequest",
@@ -925,7 +932,7 @@
       "status": "online"
     },
     "ModifyFenceBind": {
-      "document": "更新围栏绑定信息",
+      "document": "更新围栏绑定信息。",
       "input": "ModifyFenceBindRequest",
       "name": "更新围栏绑定信息",
       "output": "ModifyFenceBindResponse",
@@ -953,14 +960,14 @@
       "status": "online"
     },
     "ModifyPositionFence": {
-      "document": "更新围栏",
+      "document": "更新围栏。",
       "input": "ModifyPositionFenceRequest",
       "name": "更新围栏",
       "output": "ModifyPositionFenceResponse",
       "status": "online"
     },
     "ModifyPositionSpace": {
-      "document": "更新位置空间",
+      "document": "更新位置空间。",
       "input": "ModifyPositionSpaceRequest",
       "name": "更新位置空间",
       "output": "ModifyPositionSpaceResponse",
@@ -5442,6 +5449,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "云存 AI 套餐 ID",
+          "example": "1m_hl_3d",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7374,7 +7391,7 @@
           "example": "无",
           "member": "ProductDevicesPositionItem",
           "name": "Positions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7384,7 +7401,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7494,7 +7511,7 @@
           "example": "无",
           "member": "FenceBindProductItem",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7504,7 +7521,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7595,7 +7612,7 @@
           "example": "[{             \"ProductId\":\"X4912BAIVR\",             \"DeviceName",
           "member": "FenceEventItem",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7605,7 +7622,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8727,7 +8744,7 @@
           "example": "[{ \t\"ProductId\": \"X4912BAIVR\", \t\"DeviceName\": \"dev1\", \t\"FenceId\"",
           "member": "FenceEventItem",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8737,7 +8754,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11960,6 +11977,42 @@
           "name": "ChannelId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回总结，默认为False；  开启后会加大接口响应时长",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSummary",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）\n3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为\"过去三天关于猫咪的视频\"， 则会将\"过去三天忽略\"）",
+          "example": "1750158420000",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 如果同时指定了StartTimeMs与EndTimeMs，时间区间不能大于7天；如果只指定其中一个（例如只指定StartTimeMs，则查询自StartTimeMs后7天内的数据， 反之EndTimeMs也一样）\n3. 只要指定了其中一个参数，接口则会忽略Query参数中关于时间的描述；（例如Query为\"过去三天关于猫咪的视频\"， 则会将\"过去三天忽略\"）",
+          "example": "1750244820000",
+          "member": "int64",
+          "name": "EndTimeMs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时区。默认值：Asia/Shanghai\n\n注：\n符合iana标准 https://www.iana.org/time-zones，例如Asia/Shanghai、Asia/Bangkok\n",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12382,6 +12435,79 @@
           "name": "Result",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeVideosKeywordsAnalyzerRequest": {
+      "document": "InvokeVideosKeywordsAnalyzer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "MVTYMD8YCD",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 时间区间必须控制在某一个自然天内，不支持跨天",
+          "example": "1750158420000",
+          "member": "int64",
+          "name": "StartTimeMs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。\n\n注：\n1. 单位为毫秒（ms）\n2. 时间区间必须控制在某一个自然天内，不支持跨天",
+          "example": "1750244820000",
+          "member": "int64",
+          "name": "EndTimeMs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回的关键字最大数量，默认为5；最大不能超过10",
+          "example": "5",
+          "member": "uint64",
+          "name": "KeywordsMaxNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeVideosKeywordsAnalyzerResponse": {
+      "document": "InvokeVideosKeywordsAnalyzer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基于搜索结果的总结",
+          "example": "What happened on April 1st",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

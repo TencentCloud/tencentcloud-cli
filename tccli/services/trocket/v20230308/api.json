@@ -288,7 +288,7 @@
       "status": "online"
     },
     "DescribeMigratingTopicList": {
-      "document": "查询Topic迁移状态列表\n\n查询过滤器，支持TopicName、MigrationStatus、Namespace查询",
+      "document": "查询Topic迁移状态列表\n\nFilters字段为查询过滤器，支持以下条件：\nTopicName 主题名称，支持模糊查询，\nMigrationStatus 迁移状态，可参考MigratingTopic数据结构，\nNamespace 命名空间，仅4.x集群有效，",
       "input": "DescribeMigratingTopicListRequest",
       "name": "平滑迁移：查询Topic迁移状态列表",
       "output": "DescribeMigratingTopicListResponse",
@@ -323,14 +323,14 @@
       "status": "online"
     },
     "DescribeSmoothMigrationTaskList": {
-      "document": "用于查询平滑迁移任务列表\n\n查询参数Filters， 支持的字段如下：\nTaskStatus, 支持多选 \nConnectionType，支持多选 \nInstanceId，精确搜索 \nTaskName，支持模糊搜索",
+      "document": "用于查询平滑迁移任务列表\n\n查询参数Filters， 支持的字段如下：\nTaskStatus, 任务状态，支持多选 \nConnectionType，网络连接类型，支持多选 \nInstanceId，实例ID，精确搜索 \nTaskName，任务名称，支持模糊搜索",
       "input": "DescribeSmoothMigrationTaskListRequest",
-      "name": "获取平滑迁移任务列表",
+      "name": "查询平滑迁移任务列表",
       "output": "DescribeSmoothMigrationTaskListResponse",
       "status": "online"
     },
     "DescribeSourceClusterGroupList": {
-      "document": "平滑迁移过程获取源集群group列表接口\n\n查询过滤器，支持字段\nGroupName，消费组名称模糊搜索\nImported，是否已导入\nImportStatus，导入状态\nNamespace，命名空间",
+      "document": "平滑迁移过程获取源集群group列表接口\n\nFilters字段为查询过滤器，支持以下字段：\nGroupName，消费组名称模糊搜索\nImported，是否已导入\nImportStatus，导入状态\nNamespace，命名空间",
       "input": "DescribeSourceClusterGroupListRequest",
       "name": "平滑迁移：获取源集群的group列表",
       "output": "DescribeSourceClusterGroupListResponse",
@@ -367,14 +367,14 @@
     "ImportSourceClusterConsumerGroups": {
       "document": "导入消费者组列表",
       "input": "ImportSourceClusterConsumerGroupsRequest",
-      "name": "导入 Group 元数据",
+      "name": "平滑迁移任务导入 Group 元数据",
       "output": "ImportSourceClusterConsumerGroupsResponse",
       "status": "online"
     },
     "ImportSourceClusterTopics": {
       "document": "导入topic列表",
       "input": "ImportSourceClusterTopicsRequest",
-      "name": "导入 Topic 元数据",
+      "name": "平滑迁移任务导入 Topic 元数据",
       "output": "ImportSourceClusterTopicsResponse",
       "status": "online"
     },
@@ -489,7 +489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -498,7 +498,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称列表",
+          "document": "主题名称列表，主题名称可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。\n",
           "example": "[\"Topic-A\"]",
           "member": "string",
           "name": "TopicNameList",
@@ -507,7 +507,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间列表，仅4.x集群有效，与TopicNameList一一对应",
+          "document": "命名空间列表，仅4.x集群有效，与TopicNameList一一对应，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
           "example": "[\"tdmq-default\"]",
           "member": "string",
           "name": "NamespaceList",
@@ -1809,7 +1809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -4166,7 +4166,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -4175,7 +4175,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称",
+          "document": "消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)或控制台中获取。\n",
           "example": "group-a",
           "member": "string",
           "name": "GroupName",
@@ -4184,7 +4184,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)或控制台中获取。",
           "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
@@ -4251,7 +4251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -4260,16 +4260,16 @@
         },
         {
           "disabled": false,
-          "document": "查询条件列表",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
+          "document": "查询结果限制数量，默认20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
           "required": false,
-          "type": "list"
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4278,12 +4278,12 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
-          "example": "20",
-          "member": "int64",
-          "name": "Limit",
+          "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
           "required": false,
-          "type": "int"
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4325,8 +4325,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
-          "example": "700000-r5923c",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
+          "example": "4f9864ae-26ac-4662-9ede-1942b20d7a04",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4334,7 +4334,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。\n",
           "example": "topic-a",
           "member": "string",
           "name": "TopicName",
@@ -4343,7 +4343,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，仅4.x集群有效",
+          "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
           "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
@@ -4576,25 +4576,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询结果限制数量，默认20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
-          "example": "10",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "查询条件列表",
+          "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4609,13 +4609,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4623,7 +4623,7 @@
           "example": "无",
           "member": "SmoothMigrationTaskItem",
           "name": "Data",
-          "output_required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4641,7 +4641,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -4650,16 +4650,16 @@
         },
         {
           "disabled": false,
-          "document": "查询条件列表",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
+          "document": "查询结果限制数量，默认20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
           "required": false,
-          "type": "list"
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "查询起始位置",
+          "document": "查询起始位置，默认为0。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4668,12 +4668,12 @@
         },
         {
           "disabled": false,
-          "document": "查询结果限制数量",
-          "example": "20",
-          "member": "int64",
-          "name": "Limit",
+          "document": "过滤查询条件列表，请在引用此参数的API说明中了解使用方法。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
           "required": false,
-          "type": "int"
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5086,7 +5086,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -5095,7 +5095,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。\n",
           "example": "topic-a",
           "member": "string",
           "name": "TopicName",
@@ -5104,7 +5104,7 @@
         },
         {
           "disabled": false,
-          "document": "是否忽略当前检查",
+          "document": "必填，是否忽略当前检查",
           "example": "true",
           "member": "bool",
           "name": "IgnoreCheck",
@@ -5113,7 +5113,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，仅4.x集群有效",
+          "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
           "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
@@ -5138,7 +5138,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查返回的错误信息\nNotChecked 未执行检查， Unknown 未知错误, TopicNotImported 主题未导入, TopicNotExistsInSourceCluster 主题在源集群中不存在, TopicNotExistsInTargetCluster 主题在目标集群中不存在, ConsumerConnectedOnTarget 目标集群上存在消费者连接, SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, TargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, TargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, ConsumerGroupCountNotMatch 订阅组数量不一致, SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检查返回的错误信息\nNotChecked 未执行检查， \nUnknown 未知错误, \nTopicNotImported 主题未导入,\nTopicNotExistsInSourceCluster 主题在源集群中不存在, \nTopicNotExistsInTargetCluster 主题在目标集群中不存在, \nConsumerConnectedOnTarget 目标集群上存在消费者连接, \nSourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入, \nTargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入, \nSourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, \nTargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入, \nConsumerGroupCountNotMatch 订阅组数量不一致, \nSourceTopicHasUnconsumedMessages 源集群主题存在未消费消息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TopicNotExistsInTargetCluster",
           "member": "string",
           "name": "Reason",
@@ -5481,7 +5481,7 @@
         {
           "disabled": false,
           "document": "4.x独有数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{                     \"IsVip\": true,                     \"InstanceStatus\": 1,                     \"VipInstanceStatus\": 1,                     \"MaxBandWidth\": 80,                     \"NodeCount\": 2,                     \"MaxStorage\": 200,                     \"SpecName\": \"rocket-vip-basic-0\",                     \"MaxRetention\": 168,                     \"MinRetention\": 24                 }",
+          "example": "无",
           "member": "InstanceItemExtraInfo",
           "name": "InstanceItemExtraInfo",
           "output_required": false,
@@ -5507,6 +5507,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5516,7 +5526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "n4zk7nv4-d596886f",
           "member": "string",
           "name": "TaskId",
@@ -5526,7 +5536,7 @@
         {
           "disabled": false,
           "document": "待导入的消费组列表",
-          "example": "[]",
+          "example": "[\"GroupName\": \"group-a\", \"Remark\": \"备注\"]",
           "member": "SourceClusterGroupConfig",
           "name": "GroupList",
           "required": true,
@@ -5552,7 +5562,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "fe391925-2ed6-43ea-8a53-8a9c1d04a319",
           "member": "string",
           "name": "TaskId",
@@ -7030,6 +7040,15 @@
           "name": "ExtraTopicNum",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7470,11 +7489,11 @@
       "usage": "out"
     },
     "PriceTag": {
-      "document": "价格标签信息",
+      "document": "价格标签信息，一个完整的价格标签包含计价类别和计费项标签。",
       "members": [
         {
           "disabled": false,
-          "document": "计价名称",
+          "document": "计价名称（枚举值：tps：TPS基础价；stepTps：TPS步长）",
           "example": "tps",
           "member": "string",
           "name": "Name",
@@ -7484,7 +7503,7 @@
         },
         {
           "disabled": false,
-          "document": "步长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费项对应的步长数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Step",
@@ -7675,7 +7694,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -7684,7 +7703,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)或控制台中获取。",
           "example": "topic-a",
           "member": "string",
           "name": "TopicName",
@@ -7693,7 +7712,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，仅迁移至4.x集群有效",
+          "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
           "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
@@ -7945,7 +7964,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -7954,7 +7973,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。\n",
           "example": "topic-a",
           "member": "string",
           "name": "TopicName",
@@ -7963,7 +7982,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，仅4.x集群有效",
+          "document": "命名空间，仅迁移至4.x集群有效，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
           "example": "tdmq-default",
           "member": "string",
           "name": "Namespace",
@@ -7991,80 +8010,80 @@
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "9b299610-7402-47d3-91d1-f012faf13929",
           "member": "string",
           "name": "TaskId",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test-migration",
           "member": "string",
           "name": "TaskName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "源集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "source-cluster",
           "member": "string",
           "name": "SourceClusterName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "目标集群实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rmq-1gz33dsf",
           "member": "string",
           "name": "InstanceId",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "网络连接类型， \nPUBLIC 公网 \nVPC 私有网络 \nOTHER 其他\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "VPC",
           "member": "string",
           "name": "ConnectionType",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "源集群NameServer地址\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.1.1.1:9876",
           "member": "string",
           "name": "SourceNameServer",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "任务状态 Configuration 迁移配置 SourceConnecting 连接源集群中 MetaDataImport 元数据导入 EndpointSetup 切换接入点 ServiceMigration 切流中 Completed 已完成 Cancelled 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务状态:\nConfiguration 迁移配置,\nSourceConnecting 连接源集群中,\n MetaDataImport 元数据导入,\nEndpointSetup 切换接入点,\nServiceMigration 切流中,\nCompleted 已完成,\nCancelled 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Configuration",
           "member": "string",
           "name": "TaskStatus",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "目标集群实例版本，\n4 表示4.x版本\n5 表示5.x版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5",
           "member": "string",
           "name": "InstanceVersion",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8076,7 +8095,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)数据中获取。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group1",
           "member": "string",
           "name": "GroupName",
@@ -8120,7 +8139,7 @@
         },
         {
           "disabled": false,
-          "document": "导入状态\nUnknown 未知\nSuccess 成功\nFailure 失败\nAlreadyExists 已存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导入状态\nUnknown 未知\nSuccess 成功\nFailure 失败\nAlreadyExists 已存在\n\n仅作为出参时使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Success",
           "member": "string",
           "name": "ImportStatus",
@@ -8181,7 +8200,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。",
           "example": "topic1",
           "member": "string",
           "name": "TopicName",
@@ -8247,7 +8266,7 @@
         },
         {
           "disabled": false,
-          "document": "导入状态，\nUnknown 未知，\nAlreadyExists 已存在，\nSuccess 成功，\nFailure 失败",
+          "document": "导入状态，\nUnknown 未知，\nAlreadyExists 已存在，\nSuccess 成功，\nFailure 失败\n\n仅作为出参可用",
           "example": "Unknown",
           "member": "string",
           "name": "ImportStatus",

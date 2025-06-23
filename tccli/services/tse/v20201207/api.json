@@ -7385,6 +7385,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14132,6 +14142,15 @@
           "name": "InternetPayMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启实例删除保护,默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "DeleteProtect",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

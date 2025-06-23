@@ -8,7 +8,7 @@ Input:
 tccli ess CreateOrganizationAuthUrl --cli-unfold-argument  \
     --Operator.UserId yDwfsUUckpsqt647UE6uSrk1ZWhYH56z \
     --Endpoint SHORT_URL \
-    --AuthorizationTypes 1 2 3 \
+    --AuthorizationTypes 2 5 \
     --UniformSocialCreditCode 9144030071526726XG \
     --OrganizationName 典子谦示例企业 \
     --UniformSocialCreditCodeSame True \
@@ -27,13 +27,13 @@ Output:
 }
 ```
 
-**Example 2: 创建企业认证链接-通过授权书上传**
+**Example 2: 创建企业认证链接-通过授权书+对公打款上传**
 
 场景：创建企业认证链接， 通过超管授权书上传， 这个场景一般是法人不方便操作的时候使用
 授权书的文件生成 可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 然后转成 base64 格式。
 但是必须得保证超管和创建企业认证是同一个人。
 
-1. AuthorizationTypes 必须且只能传递 1- 授权书认证。
+1. AuthorizationTypes 必须且只能传递 5- 授权书认证。
 2. PowerOfAttorneys base64 格式的文件流 数组。 单个大小不能超过 8M。
 
 
@@ -45,7 +45,7 @@ tccli ess CreateOrganizationAuthUrl --cli-unfold-argument  \
     --Operator.UserId yDwfsUUckpsqt647UE6uSrk1ZWhYH56z \
     --Operator.ClientIp 8.8.8.8 \
     --Endpoint PC \
-    --AuthorizationTypes 1 \
+    --AuthorizationTypes 5 \
     --AdminName 典子谦 \
     --AdminMobile 13200000000 \
     --BusinessLicense base64格式的营业执照文件流 \

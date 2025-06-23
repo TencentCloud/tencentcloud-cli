@@ -1,4 +1,4 @@
-**Example 1: 获取单个Amqp集群信息**
+**Example 1: 获取单个 RabbitMQ 托管版实例信息**
 
 -
 

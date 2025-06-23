@@ -13,7 +13,6 @@ Output:
 ```
 {
     "Response": {
-        "AsyncRequestId": "e48eb1e9-0ca0ecae-c0dac9c7-60d12864",
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }

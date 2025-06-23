@@ -2176,6 +2176,61 @@
         },
         {
           "disabled": false,
+          "document": "操作系统名称",
+          "example": "Microsoft Windows 10 专业版",
+          "member": "string",
+          "name": "Os",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统位数",
+          "example": "64",
+          "member": "int64",
+          "name": "OsBits",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统版本",
+          "example": "10.0.19045",
+          "member": "string",
+          "name": "OsVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统语言",
+          "example": "简体中文",
+          "member": "string",
+          "name": "OsLanguage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统安装时间",
+          "example": "2024-05-13",
+          "member": "string",
+          "name": "OsInstallDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "设备名，和Name相同",
           "example": "DESKTOP-U9QR7P1",
           "member": "string",

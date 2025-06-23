@@ -294,6 +294,20 @@
       "output": "DescribeHostUpdateRecordDetailResponse",
       "status": "online"
     },
+    "DescribeHostUploadUpdateRecord": {
+      "document": "查询证书云资源更新（证书ID不变）记录列表",
+      "input": "DescribeHostUploadUpdateRecordRequest",
+      "name": "查询证书云资源更新（证书ID不变）记录列表",
+      "output": "DescribeHostUploadUpdateRecordResponse",
+      "status": "online"
+    },
+    "DescribeHostUploadUpdateRecordDetail": {
+      "document": "查询证书更新（证书ID不变）部署记录详情",
+      "input": "DescribeHostUploadUpdateRecordDetailRequest",
+      "name": "查询证书更新记录（证书ID不变）部署记录详情",
+      "output": "DescribeHostUploadUpdateRecordDetailResponse",
+      "status": "online"
+    },
     "DescribeHostVodInstanceList": {
       "document": "查询证书Vod云资源部署实例列表",
       "input": "DescribeHostVodInstanceListRequest",
@@ -439,6 +453,20 @@
       "input": "UploadUpdateCertificateInstanceRequest",
       "name": "更新证书内容（证书ID不变）并更新关联的云资源",
       "output": "UploadUpdateCertificateInstanceResponse",
+      "status": "online"
+    },
+    "UploadUpdateCertificateRecordRetry": {
+      "document": "云资源更新（证书ID不变）重试部署记录",
+      "input": "UploadUpdateCertificateRecordRetryRequest",
+      "name": "云资源更新（证书ID不变）失败重试部署记录",
+      "output": "UploadUpdateCertificateRecordRetryResponse",
+      "status": "online"
+    },
+    "UploadUpdateCertificateRecordRollback": {
+      "document": "云资源更新成功（证书ID不变）记录回滚， 会对全量任务进行回滚",
+      "input": "UploadUpdateCertificateRecordRollbackRequest",
+      "name": "云资源更新成功（证书ID不变）记录回滚",
+      "output": "UploadUpdateCertificateRecordRollbackResponse",
       "status": "online"
     },
     "VerifyManager": {
@@ -3673,6 +3701,92 @@
       ],
       "type": "object"
     },
+    "DeployRecord": {
+      "document": "托管记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功总数",
+          "example": "无",
+          "member": "int64",
+          "name": "SuccessTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败总数",
+          "example": "无",
+          "member": "int64",
+          "name": "FailedTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署中总数",
+          "example": "无",
+          "member": "int64",
+          "name": "RunningTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署记录类型 0 为部署， 1 为回滚",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署记录详情列表",
+          "example": "无",
+          "member": "DeployRecordList",
+          "name": "RecordDetailList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管资源部署状态：0 等待部署， 1 部署成功， 2 部署失败 3 部署中， 4 回滚成功， 5 回滚失败",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管资源创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeployRecordDetail": {
       "document": "部署记录详情",
       "members": [
@@ -3970,6 +4084,258 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeployRecordItem": {
+      "document": "部署记录详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署记录详情ID",
+          "example": "17990",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原绑定证书ID",
+          "example": "ehy**nsn",
+          "member": "string",
+          "name": "OldCertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署实例ID",
+          "example": "lb-****",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署实例名称",
+          "example": "zrh",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署监听器ID",
+          "example": "lbl-****",
+          "member": "string",
+          "name": "ListenerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署域名列表",
+          "example": "[\"www.**.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署监听器协议",
+          "example": "https",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署错误信息",
+          "example": "no domain",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署记录详情创建时间",
+          "example": "2028-09-08 23:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署记录详情最后一次更新时间",
+          "example": "2028-09-08 24:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署监听器名称",
+          "example": "zrh",
+          "member": "string",
+          "name": "ListenerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SNI",
+          "example": "0",
+          "member": "int64",
+          "name": "SniSwitch",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COS存储桶名称",
+          "example": "cos-****",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称",
+          "example": "zrhname",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "secret名称",
+          "example": "testSc",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "90",
+          "member": "int64",
+          "name": "Port",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署的TCB地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡类型，0 传统型负载均衡； 1 应用型负载均衡",
+          "example": "0",
+          "member": "int64",
+          "name": "Forward",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证",
+          "example": "UNIDIRECTIONAL",
+          "member": "string",
+          "name": "SSLMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "clb",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeployRecordList": {
+      "document": "托管记录详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署资源详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeployRecordItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该部署资源总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6929,6 +7295,126 @@
           "document": "证书部署记录列表",
           "example": "无",
           "member": "UpdateRecordInfo",
+          "name": "DeployRecordList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUploadUpdateRecordDetailRequest": {
+      "document": "DescribeHostUploadUpdateRecordDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管记录ID",
+          "example": "无",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认为10，最大为200， 超过200则为200",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUploadUpdateRecordDetailResponse": {
+      "document": "DescribeHostUploadUpdateRecordDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "托管记录详情列表",
+          "example": "无",
+          "member": "DeployRecord",
+          "name": "DeployRecordDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUploadUpdateRecordRequest": {
+      "document": "DescribeHostUploadUpdateRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "egts**hehsy",
+          "member": "string",
+          "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostUploadUpdateRecordResponse": {
+      "document": "DescribeHostUploadUpdateRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书部署记录列表",
+          "example": "无",
+          "member": "UploadUpdateRecordInfo",
           "name": "DeployRecordList",
           "output_required": true,
           "type": "list",
@@ -11563,6 +12049,135 @@
         }
       ],
       "type": "object"
+    },
+    "UploadUpdateCertificateRecordRetryRequest": {
+      "document": "UploadUpdateCertificateRecordRetry请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID。 本参数不传的话，则DeployRecordDetailId必传",
+          "example": "748939",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得， 本参数不传的话， 则DeployRecordId必传",
+          "example": "6637737",
+          "member": "int64",
+          "name": "DeployRecordDetailId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadUpdateCertificateRecordRetryResponse": {
+      "document": "UploadUpdateCertificateRecordRetry返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadUpdateCertificateRecordRollbackRequest": {
+      "document": "UploadUpdateCertificateRecordRollback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得",
+          "example": "7377374",
+          "member": "int64",
+          "name": "DeployRecordId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadUpdateCertificateRecordRollbackResponse": {
+      "document": "UploadUpdateCertificateRecordRollback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadUpdateRecordInfo": {
+      "document": "部署记录列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录ID",
+          "example": "178837",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原证书ID",
+          "example": "hesy*8he",
+          "member": "string",
+          "name": "OldCertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型列表",
+          "example": "[\"CLB\"]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部署时间",
+          "example": "2018-09-10 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次更新时间",
+          "example": "2018-09-10 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VODInstanceList": {
       "document": "vod实例详情 - 异步关联云资源数据结构",

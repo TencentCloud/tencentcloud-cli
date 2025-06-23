@@ -168,13 +168,6 @@
       "output": "RetrieveKnowledgeResponse",
       "status": "online"
     },
-    "RetrieveKnowledgeRealtime": {
-      "document": "用于实时检索在UploadDocRealtime接口上传的实时文档内容。 使用场景：适用于在会话中对文档进行问答的场景",
-      "input": "RetrieveKnowledgeRealtimeRequest",
-      "name": "实时检索知识库内容",
-      "output": "RetrieveKnowledgeRealtimeResponse",
-      "status": "online"
-    },
     "RunRerank": {
       "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。",
       "input": "RunRerankRequest",
@@ -2370,89 +2363,6 @@
         }
       ],
       "usage": "in"
-    },
-    "RetrieveKnowledgeRealtimeRequest": {
-      "document": "RetrieveKnowledgeRealtime请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "知识库ID。",
-          "example": "1840331836752986944",
-          "member": "string",
-          "name": "KnowledgeBaseId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用于检索的文本。",
-          "example": "国庆放几天假",
-          "member": "string",
-          "name": "Query",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实时文件ID列表。",
-          "example": "[\"1828720159590123264\"]",
-          "member": "string",
-          "name": "DocIds",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "检索方法，默认使用`HYBRID`混合检索。\n- `SEMANTIC`：语义检索\n- `FULL_TEXT`：全文检索\n- `HYBRID`：混合检索",
-          "example": "SEMANTIC",
-          "member": "string",
-          "name": "RetrievalMethod",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "检索设置。",
-          "example": "{\"TopK\":3,\"ScoreThreshold\":0.7}",
-          "member": "RetrievalSetting",
-          "name": "RetrievalSetting",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "RetrieveKnowledgeRealtimeResponse": {
-      "document": "RetrieveKnowledgeRealtime返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "检索结果",
-          "example": "[{\"Metadata\":{\"Type\":\"DOC\",\"ResultSource\":\"SEMANTIC\",\"ChunkPageNumbers\":[1,2]},\"Score\":0,\"Title\":\"example.pdf\",\"Content\":\"国庆放7天假\"}]",
-          "member": "RetrievalRecord",
-          "name": "Records",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "检索结果数量",
-          "example": "3",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "RetrieveKnowledgeRequest": {
       "document": "RetrieveKnowledge请求参数结构体",

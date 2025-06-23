@@ -274,7 +274,7 @@
       "status": "online"
     },
     "DeleteTimeWindow": {
-      "document": "本接口(DeleteTimeWindow)用于删除云数据库实例的维护时间窗口。删除实例维护时间窗口之后，默认的维护时间窗为 03:00-04:00，即当选择在维护时间窗口内切换访问新实例时，默认会在 03:00-04:00 点进行切换访问新实例。",
+      "document": "本接口（DeleteTimeWindow）用于删除云数据库实例的维护时间窗口。删除实例维护时间窗口之后，默认的维护时间窗为每天的03:00-04:00，数据校验延迟阈值为10秒，即当选择在维护时间窗口内切换访问新实例时，默认会在03:00-04:00点进行切换访问新实例。",
       "input": "DeleteTimeWindowRequest",
       "name": "删除维护时间窗口",
       "output": "DeleteTimeWindowResponse",
@@ -484,7 +484,7 @@
       "status": "online"
     },
     "DescribeDBInstanceConfig": {
-      "document": "本接口(DescribeDBInstanceConfig)用于云数据库实例的配置信息，包括同步模式，部署模式等。",
+      "document": "本接口（DescribeDBInstanceConfig）用于查询云数据库实例的配置信息，包括同步模式，部署模式等。",
       "input": "DescribeDBInstanceConfigRequest",
       "name": "查询云数据库实例的配置信息",
       "output": "DescribeDBInstanceConfigResponse",
@@ -785,7 +785,7 @@
       "status": "online"
     },
     "IsolateDBInstance": {
-      "document": "本接口(IsolateDBInstance)用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
+      "document": "本接口（IsolateDBInstance）用于隔离云数据库实例，隔离后不能通过IP和端口访问数据库。隔离的实例可在回收站中进行开机。若为欠费隔离，请尽快进行充值。",
       "input": "IsolateDBInstanceRequest",
       "name": "隔离云数据库实例",
       "output": "IsolateDBInstanceResponse",
@@ -939,7 +939,7 @@
       "status": "online"
     },
     "ModifyDBInstanceVipVport": {
-      "document": "本接口(ModifyDBInstanceVipVport)用于修改云数据库实例的IP和端口号，也可进行基础网络转 VPC 网络和 VPC 网络下的子网变更。",
+      "document": "本接口（ModifyDBInstanceVipVport）用于修改云数据库实例的IP和端口号，也可进行基础网络转 VPC 网络和 VPC 网络下的子网变更。",
       "input": "ModifyDBInstanceVipVportRequest",
       "name": "修改云数据库实例的IP和端口号",
       "output": "ModifyDBInstanceVipVportResponse",
@@ -1072,7 +1072,7 @@
       "status": "online"
     },
     "RenewDBInstance": {
-      "document": "本接口(RenewDBInstance)用于续费云数据库实例，支持付费模式为包年包月的实例。按量计费实例可通过该接口续费为包年包月的实例。",
+      "document": "本接口（RenewDBInstance）用于续费云数据库实例，支持付费模式为包年包月的实例。按量计费实例可通过该接口续费为包年包月的实例。",
       "input": "RenewDBInstanceRequest",
       "name": "续费云数据库实例",
       "output": "RenewDBInstanceResponse",
@@ -1338,7 +1338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
@@ -1410,7 +1410,7 @@
         },
         {
           "disabled": false,
-          "document": "最大延迟阈值，仅对主实例和灾备实例有效。",
+          "document": "最大延迟阈值（秒），仅对主实例和灾备实例有效。默认值：10，取值范围：1-10的整数。",
           "example": "10",
           "member": "uint64",
           "name": "MaxDelayTime",
@@ -2940,7 +2940,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性扩容观测周期（秒级）",
+          "document": "弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。",
           "example": "300",
           "member": "int64",
           "name": "ExpandSecondPeriod",
@@ -2951,8 +2951,8 @@
         },
         {
           "disabled": false,
-          "document": "缩容观测周期（秒级）",
-          "example": "60",
+          "document": "缩容观测周期（秒级），可取值为：300。",
+          "example": "300",
           "member": "int64",
           "name": "ShrinkSecondPeriod",
           "output_required": false,
@@ -3396,7 +3396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RO 组的 ID，格式如：cdbrg-c1nl9rpv。",
+          "document": "RO 组的 ID，格式如：cdbrg-c1nl9rpv。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 获取。",
           "example": "cdbrg-eb2w7dto",
           "member": "string",
           "name": "RoGroupId",
@@ -4451,7 +4451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。可传入只读组 ID 关闭只读组外网访问。 ",
           "example": "cdb-ezq1vzem",
           "member": "string",
           "name": "InstanceId",
@@ -4460,7 +4460,7 @@
         },
         {
           "disabled": false,
-          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "document": "变更云盘版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。如果操作读写节点则不需指定该参数。",
           "example": "cdb-xxx|readonly",
           "member": "string",
           "name": "OpResourceId",
@@ -10028,7 +10028,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProtectMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10038,7 +10038,7 @@
           "example": "1",
           "member": "int64",
           "name": "DeployMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10048,27 +10048,27 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ReplicationMode\": \"async\",\"Zone\": \"ap-guangzhou-3\"}",
           "member": "SlaveConfig",
           "name": "SlaveConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "强同步实例第二备库的配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ReplicationMode\": \"sync\",\"Vip\": \"\",\"Vport\": 0,\"Zone\": \"ap-guangzhou-3\"}",
           "member": "BackupConfig",
           "name": "BackupConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10078,7 +10078,7 @@
           "example": "false",
           "member": "bool",
           "name": "Switched",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16852,7 +16852,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所属项目的 ID，可在账号中心下的项目管理页面查询。",
+          "document": "实例所属项目的 ID，可在账号中心下的项目管理页面查询。\n说明：此项为必填。",
           "example": "11954",
           "member": "int64",
           "name": "NewProjectId",
@@ -16978,7 +16978,7 @@
         },
         {
           "disabled": false,
-          "document": "目标 IP。该参数和 DstPort 参数，两者必传一个。",
+          "document": "目标 IP。",
           "example": "10.0.1.1",
           "member": "string",
           "name": "DstIp",
@@ -16987,7 +16987,7 @@
         },
         {
           "disabled": false,
-          "document": "目标端口，支持范围为：[1024-65535]。该参数和 DstIp 参数，两者必传一个。",
+          "document": "目标端口，支持范围为：[1024-65535]。",
           "example": "1025",
           "member": "int64",
           "name": "DstPort",
@@ -16997,7 +16997,7 @@
         {
           "disabled": false,
           "document": "私有网络统一 ID。",
-          "example": "11357",
+          "example": "vpc-73o91172",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -17006,7 +17006,7 @@
         {
           "disabled": false,
           "document": "子网统一 ID。",
-          "example": "23789",
+          "example": "subnet-o2g4e1dh",
           "member": "string",
           "name": "UniqSubnetId",
           "required": false,
@@ -17549,7 +17549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-eb2w7dto",
           "member": "string",
           "name": "InstanceId",
@@ -17576,7 +17576,7 @@
         },
         {
           "disabled": false,
-          "document": "数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10",
+          "document": "数据延迟阈值（秒），仅对主实例和灾备实例有效。不传默认不修改，保持原来的阈值，取值范围：1-10的整数。",
           "example": "10",
           "member": "uint64",
           "name": "MaxDelayTime",
@@ -19316,7 +19316,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组 ID。",
+          "document": "只读组 ID。\n说明：若此数据结构在购买实例操作中被使用，则当只读组模式选择 join 时，此项为必填。",
           "example": "cdbrg-92zkeaq2",
           "member": "string",
           "name": "RoGroupId",
@@ -19349,7 +19349,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟阈值。",
+          "document": "延迟阈值。单位：秒。值范围：1-10000，整数。",
           "example": "1",
           "member": "int64",
           "name": "RoMaxDelayTime",
@@ -19470,7 +19470,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟复制时间。",
+          "document": "延迟复制时间。单位：秒。值范围：1-259200，整数。",
           "example": "1000",
           "member": "int64",
           "name": "DelayReplicationTime",
@@ -20869,7 +20869,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。仅支持只读实例。",
+          "document": "实例 ID。仅支持只读实例。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdbro-lsjh9i11",
           "member": "string",
           "name": "InstanceId",
@@ -20906,7 +20906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
@@ -20921,7 +20921,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
+          "document": "异步任务 ID。在调用 [DescribeAsyncRequestInfo](https://cloud.tencent.com/document/api/236/20410) 进行任务执行进度的查询时，可以传入该 ID。",
           "example": "02e874af-e4876fb4-4c672e64-86f17866",
           "member": "string",
           "name": "AsyncRequestId",
@@ -20970,7 +20970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。仅支持只读实例。",
+          "document": "实例 ID。仅支持只读实例。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdbro-himitj11",
           "member": "string",
           "name": "InstanceId",
@@ -21689,7 +21689,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始扩容时间。\n说明：此值的格式为 Integer 的时间戳。",
+          "document": "开始扩容时间。\n说明：此值的格式为 Integer 的时间戳（秒级）。",
           "example": "1749546000",
           "member": "int64",
           "name": "StartTime",
@@ -21700,7 +21700,7 @@
         },
         {
           "disabled": false,
-          "document": "结束扩容时间。\n说明：此值的格式为 Integer 的时间戳。",
+          "document": "结束扩容时间。\n说明：此值的格式为 Integer 的时间戳（秒级）。",
           "example": "1749718800",
           "member": "int64",
           "name": "EndTime",

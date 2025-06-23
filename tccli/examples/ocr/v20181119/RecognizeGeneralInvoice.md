@@ -138,7 +138,9 @@ Output:
                     "CustomsDeclaration": null,
                     "OverseasInvoice": null,
                     "ShoppingReceipt": null,
-                    "SaleInventory": null
+                    "SaleInventory": null,
+                    "MotorVehicleSaleInvoiceElectronic": null,
+                    "UsedCarPurchaseInvoiceElectronic": null
                 },
                 "Page": 1,
                 "CutImage": "",
@@ -216,7 +218,9 @@ Output:
                     "CustomsDeclaration": null,
                     "OverseasInvoice": null,
                     "ShoppingReceipt": null,
-                    "SaleInventory": null
+                    "SaleInventory": null,
+                    "MotorVehicleSaleInvoiceElectronic": null,
+                    "UsedCarPurchaseInvoiceElectronic": null
                 },
                 "Page": 1,
                 "CutImage": "",
@@ -309,7 +313,9 @@ Output:
                     "CustomsDeclaration": null,
                     "OverseasInvoice": null,
                     "ShoppingReceipt": null,
-                    "SaleInventory": null
+                    "SaleInventory": null,
+                    "MotorVehicleSaleInvoiceElectronic": null,
+                    "UsedCarPurchaseInvoiceElectronic": null
                 },
                 "Page": 1,
                 "CutImage": "",

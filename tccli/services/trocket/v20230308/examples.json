@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeMigratingTopicToNextStage\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"TopicNameList\": [\n        \"TopicTest\"\n    ],\n    \"NamespaceList\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"TopicName\": \"TopicTest\",\n                \"Success\": true,\n                \"Namespace\": \"\"\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Results\": [\n            {\n                \"TopicName\": \"TopicTest\",\n                \"Success\": true,\n                \"Namespace\": \"\"\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "修改迁移主题进入下一个迁移阶段"
       }
     ],
@@ -132,7 +132,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmoothMigrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"taskid-123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "删除平滑迁移任务"
       }
     ],
@@ -329,8 +329,8 @@
     "DescribeMigratingGroupStats": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingGroupStats\n<公共请求参数>\n\n{\n    \"TaskId\": \"taskId\",\n    \"GroupName\": \"group-a\",\n    \"Namespace\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SourceConsumeLag\": 0,\n        \"TargetConsumeLag\": 0,\n        \"SourceConsumerClients\": [\n            {\n                \"ClientId\": \"client-a\",\n                \"ClientAddr\": \"1.1.1.1\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"5\",\n                \"ConsumerLag\": 0\n            }\n        ],\n        \"TargetConsumerClients\": [\n            {\n                \"ClientId\": \"client-b\",\n                \"ClientAddr\": \"2.2.2.2\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"5.0\",\n                \"ConsumerLag\": 0\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingGroupStats\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"GroupName\": \"group-a\",\n    \"Namespace\": \"\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"SourceConsumeLag\": 0,\n        \"TargetConsumeLag\": 0,\n        \"SourceConsumerClients\": [\n            {\n                \"ClientId\": \"client-a\",\n                \"ClientAddr\": \"1.1.1.1\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"5\",\n                \"ConsumerLag\": 0,\n                \"ChannelProtocol\": \"\"\n            }\n        ],\n        \"TargetConsumerClients\": [\n            {\n                \"ClientId\": \"client-b\",\n                \"ClientAddr\": \"2.2.2.2\",\n                \"Language\": \"JAVA\",\n                \"Version\": \"5.0\",\n                \"ConsumerLag\": 0\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "查看迁移消费组的实时信息"
       }
     ],
@@ -338,7 +338,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingTopicList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"MigrateTopics\": [\n            {\n                \"TopicName\": \"topic-a\",\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"HealthCheckPassed\": true,\n                \"HealthCheckError\": \"\",\n                \"Namespace\": \"\"\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"MigrateTopics\": [\n            {\n                \"TopicName\": \"topic-a\",\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"HealthCheckPassed\": true,\n                \"HealthCheckError\": \"\",\n                \"Namespace\": \"\",\n                \"FullNamespaceV4\": null,\n                \"NamespaceV4\": null,\n                \"TopicNameV4\": null\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "查询迁移主题列表"
       }
     ],
@@ -346,7 +346,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingTopicStats\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"TopicName\": \"TopicTest\",\n    \"Namespace\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SourceClusterConsumerCount\": 0,\n        \"TargetClusterConsumerCount\": 0,\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"SourceClusterConsumerCount\": 0,\n        \"TargetClusterConsumerCount\": 0,\n        \"SourceClusterConsumerGroups\": [],\n        \"TargetClusterConsumerGroups\": [],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "查询迁移主题实时数据"
       }
     ],
@@ -378,7 +378,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmoothMigrationTaskList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Data\": [\n            {\n                \"TaskId\": \"abc\",\n                \"TaskName\": \"test\",\n                \"SourceClusterName\": \"Test\",\n                \"InstanceId\": \"rmq-xxxxx\",\n                \"ConnectionType\": \"VPC\",\n                \"SourceNameServer\": \"1.1.1.1:9876\",\n                \"TaskStatus\": \"ServiceMigration\",\n                \"InstanceVersion\": \"5\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Data\": [\n            {\n                \"TaskId\": \"28deebbb-d489-471e-bb21-69fab50aed36\",\n                \"TaskName\": \"test-task\",\n                \"SourceClusterName\": \"source-cluster\",\n                \"InstanceId\": \"rmq-1gabcde\",\n                \"ConnectionType\": \"VPC\",\n                \"SourceNameServer\": \"1.1.1.1:9876\",\n                \"TaskStatus\": \"ServiceMigration\",\n                \"InstanceVersion\": \"5\"\n            }\n        ],\n        \"RequestId\": \"9b299610-7402-47d3-91d1-f012faf13929\"\n    }\n}",
         "title": "获取迁移任务列表"
       }
     ],
@@ -386,7 +386,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourceClusterGroupList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Groups\": [\n            {\n                \"GroupName\": \"Test\",\n                \"Remark\": \"remark\",\n                \"Imported\": true,\n                \"Namespace\": \"\",\n                \"ImportStatus\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"Groups\": [\n            {\n                \"GroupName\": \"Test\",\n                \"Remark\": \"remark\",\n                \"Imported\": true,\n                \"Namespace\": \"\",\n                \"ImportStatus\": \"Success\",\n                \"ConsumeMessageOrderly\": false,\n                \"FullNamespaceV4\": null,\n                \"GroupNameV4\": null,\n                \"NamespaceV4\": null\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "查询源集群消费组列表"
       }
     ],
@@ -418,7 +418,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DoHealthCheckOnMigratingTopic\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"TopicName\": \"Test\",\n    \"IgnoreCheck\": true,\n    \"Namespace\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Passed\": true,\n        \"Reason\": \"\",\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Passed\": true,\n        \"Reason\": null,\n        \"ReasonList\": null,\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "迁移主题安全检查"
       }
     ],
@@ -426,7 +426,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSourceClusterConsumerGroups\n<公共请求参数>\n\n{\n    \"TaskId\": \"n4zk7nv4-d596886f\",\n    \"GroupList\": [\n        {\n            \"GroupName\": \"test_group\",\n            \"Remark\": \"remark info\",\n            \"Namespace\": \"test_namespace\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\"\n    }\n}",
         "title": "导入源集群消费组"
       }
     ],
@@ -434,7 +434,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSourceClusterTopics\n<公共请求参数>\n\n{\n    \"TaskId\": \"215d3ec6-70c9\",\n    \"TopicList\": [\n        {\n            \"TopicName\": \"test_topic\",\n            \"TopicType\": \"Normal\",\n            \"QueueNum\": 3,\n            \"Remark\": \"测试导入\",\n            \"Namespace\": \"test_namespace\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\"\n    }\n}",
         "title": "导入源集群主题列表"
       }
     ],
@@ -522,7 +522,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveMigratingTopic\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"Namespace\": \"\",\n    \"TopicName\": \"topic-a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "将主题移出迁移任务"
       }
     ],
@@ -546,7 +546,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackMigratingTopicStage\n<公共请求参数>\n\n{\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\",\n    \"TopicName\": \"TopicTest\",\n    \"Namespace\": \"\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "回滚迁移主题的切流状态"
       }
     ]
