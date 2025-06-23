@@ -14,9 +14,13 @@ tccli trocket DescribeMigratingTopicStats --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "SourceClusterConsumerCount": 0,
         "TargetClusterConsumerCount": 0,
+        "SourceClusterConsumerGroups": [],
+        "TargetClusterConsumerGroups": [],
         "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"
     }
 }

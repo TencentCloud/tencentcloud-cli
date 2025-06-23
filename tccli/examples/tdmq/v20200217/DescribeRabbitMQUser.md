@@ -1,12 +1,12 @@
 **Example 1: 查询RabbitMQ 用户列表**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq DescribeRabbitMQUser --cli-unfold-argument  \
-    --InstanceId amqp-jero744g
+    --InstanceId amqp-2ppxx4rq
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
                 "MaxChannels": 1024,
                 "MaxConnections": 1000,
                 "Type": "1",
-                "InstanceId": "amqp-jero744g",
+                "InstanceId": "amqp-2ppxx4rq",
                 "User": "test_user",
                 "Password": "Tencent123",
                 "Description": "user description",

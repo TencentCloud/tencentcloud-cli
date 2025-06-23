@@ -15,6 +15,8 @@ tccli trocket ImportSourceClusterConsumerGroups --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "RequestId": "c5d126b6-aeeb-40ad-81c0-a94abd43f157"
     }

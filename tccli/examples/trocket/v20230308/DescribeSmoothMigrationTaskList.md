@@ -13,21 +13,23 @@ tccli trocket DescribeSmoothMigrationTaskList --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "TotalCount": 10,
         "Data": [
             {
-                "TaskId": "abc",
-                "TaskName": "test",
-                "SourceClusterName": "Test",
-                "InstanceId": "rmq-xxxxx",
+                "TaskId": "28deebbb-d489-471e-bb21-69fab50aed36",
+                "TaskName": "test-task",
+                "SourceClusterName": "source-cluster",
+                "InstanceId": "rmq-1gabcde",
                 "ConnectionType": "VPC",
                 "SourceNameServer": "1.1.1.1:9876",
                 "TaskStatus": "ServiceMigration",
                 "InstanceVersion": "5"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "9b299610-7402-47d3-91d1-f012faf13929"
     }
 }
 ```

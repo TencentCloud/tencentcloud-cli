@@ -2290,7 +2290,7 @@
         {
           "disabled": false,
           "document": "加工任务目的topic_id以及别名",
-          "example": "topicid-1",
+          "example": "无",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
           "required": false,
@@ -2304,6 +2304,33 @@
           "name": "FuncType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加工任务id。\n\ncheck现有任务时，以下场景需要传入现有任务TaskId:\n-    加工语句中有mysql相关函数信息。\n-    DataTransformSqlDataSources字段值不为空。",
+          "example": "abdeace6-9484-4d2e-b670-28289c42b60f",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql数据源信息",
+          "example": "无",
+          "member": "DataTransformSqlDataSource",
+          "name": "DataTransformSqlDataSources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "环境变量",
+          "example": "无",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7091,23 +7118,23 @@
         },
         {
           "disabled": false,
-          "document": "SQL访问密码。",
-          "example": "ps_00",
+          "document": "别名。数据加工语句中使用",
+          "example": "my_db1x",
           "member": "string",
-          "name": "Password",
-          "output_required": false,
+          "name": "AliasName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "别名。数据加工语句中使用",
-          "example": "my_db1",
+          "document": "SQL访问密码。",
+          "example": "ps_00",
           "member": "string",
-          "name": "AliasName",
-          "output_required": true,
-          "required": true,
+          "name": "Password",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

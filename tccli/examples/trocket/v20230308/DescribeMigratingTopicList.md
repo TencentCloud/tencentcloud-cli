@@ -14,6 +14,8 @@ tccli trocket DescribeMigratingTopicList --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "TotalCount": 10,
         "MigrateTopics": [
@@ -22,7 +24,10 @@ Output:
                 "MigrationStatus": "S_RW_D_NA",
                 "HealthCheckPassed": true,
                 "HealthCheckError": "",
-                "Namespace": ""
+                "Namespace": "",
+                "FullNamespaceV4": null,
+                "NamespaceV4": null,
+                "TopicNameV4": null
             }
         ],
         "RequestId": "02f6c31a-9707-4244-8dd3-35ad868ef92a"

@@ -5987,7 +5987,7 @@
         },
         {
           "disabled": false,
-          "document": "设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行视频时可显示对应的占位图。",
+          "document": "设置为1时代表启用占位图功能，0时代表不启用占位图功能，默认为0。启用占位图功能时，在预设位置的用户没有上行音视频时可显示对应的占位图。",
           "example": "0",
           "member": "uint64",
           "name": "PlaceHolderMode",
@@ -5996,7 +5996,7 @@
         },
         {
           "disabled": false,
-          "document": "背景画面宽高比不一致的时候处理方案，与MixLayoufList定义的RenderMode一致。",
+          "document": "背景画面宽高比不一致的时候处理方案，与MixLayoutList定义的RenderMode一致。",
           "example": "1",
           "member": "uint64",
           "name": "BackgroundImageRenderMode",
@@ -6023,7 +6023,7 @@
         },
         {
           "disabled": false,
-          "document": "模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。",
+          "document": "模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoutList定义的RenderMode一致。",
           "example": "1",
           "member": "uint64",
           "name": "RenderMode",
@@ -6038,6 +6038,15 @@
           "name": "MaxResolutionUserAlign",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制房间内纯音频用户是否占据混流布局，只在混流录制，模板布局生效。true: 代表纯音频用户不占位，false: 代表纯音频用户占位（默认为false）。",
+          "example": "false",
+          "member": "bool",
+          "name": "PureAudioDisableLayout",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

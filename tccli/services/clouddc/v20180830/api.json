@@ -48,13 +48,6 @@
       "name": "获取产业树节点信息",
       "output": "GetTreeNodeInfoByCodesResponse",
       "status": "online"
-    },
-    "SendOutsideEmailAndSms": {
-      "document": "给外部客户发送短信和邮件，有白名单限制，需要的童鞋，请联系 joshuadu 或billxu配置白名单 更多接入问题请看 http://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
-      "input": "SendOutsideEmailAndSmsRequest",
-      "name": "给外部客户发送短信和邮件",
-      "output": "SendOutsideEmailAndSmsResponse",
-      "status": "online"
     }
   },
   "metadata": {
@@ -2133,87 +2126,6 @@
         }
       ],
       "usage": "out"
-    },
-    "SendOutsideEmailAndSmsRequest": {
-      "document": "SendOutsideEmailAndSms请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户cid",
-          "example": "",
-          "member": "string",
-          "name": "Cid",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "销售易上的用户类型",
-          "example": "",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "客户名称",
-          "example": "",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "在经营维表维护的模板id",
-          "example": "",
-          "member": "int64",
-          "name": "ThemeId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "短信模板参数",
-          "example": "",
-          "member": "string",
-          "name": "SmsTemplate",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "邮件模板参数",
-          "example": "",
-          "member": "string",
-          "name": "EmailTemplate",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "SendOutsideEmailAndSmsResponse": {
-      "document": "SendOutsideEmailAndSms返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "回包数据",
-          "example": "",
-          "member": "string",
-          "name": "JsonString",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     }
   },
   "version": "1.0"

@@ -55,14 +55,6 @@
         "output": "{\n    \"Response\": {\n        \"NodeInfoList\": [\n            {\n                \"Code\": \"abc\",\n                \"CenterIds\": [\n                    0\n                ],\n                \"DepartmentIds\": [\n                    0\n                ],\n                \"Level\": 0,\n                \"Managers\": [\n                    \"abc\"\n                ],\n                \"Name\": \"abc\",\n                \"Status\": 0,\n                \"Version\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
       }
-    ],
-    "SendOutsideEmailAndSms": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=SendOutsideEmailAndSms\n&Cid=abc\n&Type=123\n&Name=abc\n&ThemeId=123\n&EmailTemplate.0=123\n&SmsTemplate.0=123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"logIds\\\":[6656359307858385920]}\",\n        \"RequestId\": \"bd8862e5-149a-4e97-a39d-ad07eb819fbd\"\n    }\n}",
-        "title": "示例"
-      }
     ]
   },
   "version": "1.0"

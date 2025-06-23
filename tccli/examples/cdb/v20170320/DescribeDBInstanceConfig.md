@@ -20,8 +20,8 @@ Output:
         },
         "BackupConfig": {
             "ReplicationMode": "sync",
-            "Vip": "",
-            "Vport": 0,
+            "Vip": "172.1.1.1",
+            "Vport": 3306,
             "Zone": "ap-guangzhou-3"
         },
         "ProtectMode": 0,

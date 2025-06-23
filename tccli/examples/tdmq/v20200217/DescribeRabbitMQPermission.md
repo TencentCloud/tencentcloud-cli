@@ -1,12 +1,12 @@
 **Example 1: 查询RabbitMQ权限列表**
 
--
+
 
 Input: 
 
 ```
 tccli tdmq DescribeRabbitMQPermission --cli-unfold-argument  \
-    --InstanceId amqp-jero744g
+    --InstanceId amqp-2ppxx4rq
 ```
 
 Output: 
@@ -16,9 +16,9 @@ Output:
         "TotalCount": 1,
         "RabbitMQPermissionList": [
             {
-                "InstanceId": "amqp-jero744g",
+                "InstanceId": "amqp-2ppxx4rq",
                 "User": "admin",
-                "VirtualHost": "tdmq_data",
+                "VirtualHost": "testVhost",
                 "ConfigRegexp": ".*",
                 "WriteRegexp": ".*",
                 "ReadRegexp": ".*",

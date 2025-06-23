@@ -12,6 +12,8 @@ tccli trocket DeleteSmoothMigrationTask --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "RequestId": "requestId"
     }

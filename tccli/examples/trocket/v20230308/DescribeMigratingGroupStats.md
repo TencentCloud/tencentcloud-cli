@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trocket DescribeMigratingGroupStats --cli-unfold-argument  \
-    --TaskId taskId \
+    --TaskId 02f6c31a-9707-4244-8dd3-35ad868ef92a \
     --GroupName group-a \
     --Namespace 
 ```
@@ -14,6 +14,8 @@ tccli trocket DescribeMigratingGroupStats --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "SourceConsumeLag": 0,
         "TargetConsumeLag": 0,
@@ -23,7 +25,8 @@ Output:
                 "ClientAddr": "1.1.1.1",
                 "Language": "JAVA",
                 "Version": "5",
-                "ConsumerLag": 0
+                "ConsumerLag": 0,
+                "ChannelProtocol": ""
             }
         ],
         "TargetConsumerClients": [
