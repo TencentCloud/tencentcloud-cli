@@ -1,5 +1,13 @@
 {
   "actions": {
+    "ApplyPathLifecyclePolicy": [
+      {
+        "document": "",
+        "input": "https://cfs.tencentcloudapi.com/?Action=ApplyPathLifecyclePolicy\n&LifecyclePolicyID=policy-ek8aw4id\n&Paths.0.FileSystemId=cfs-4030acd30\n&Paths.0.Path=/data\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CheckResults\": [\n            {\n                \"LifecyclePolicyID\": \"policy-4cqyxcma\",\n                \"FileSystemId\": \"cfs-5ajk45jk8\",\n                \"Path\": \"/data/home/user00/\",\n                \"LifecycleRules\": [\n                    {\n                        \"StorageType\": \"InfrequentAccess\",\n                        \"Interval\": \"DEFAULT_ATIME_14\",\n                        \"FileType\": \"All\",\n                        \"Action\": \"Archive\",\n                        \"FileMaxSize\": \"1G\",\n                        \"FileMinSize\": \"1M\"\n                    }\n                ],\n                \"TargetPath\": \"/data/home/user00/\"\n            }\n        ],\n        \"RequestId\": \"a1b2c3-d4e5f6-g7h8j9\"\n    }\n}",
+        "title": "配置生命周期策略关联目录"
+      }
+    ],
     "BindAutoSnapshotPolicy": [
       {
         "document": "绑定文件系统快照策略",
@@ -262,6 +270,14 @@
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-abc12345\"\n}",
         "output": "{\n    \"Response\": {\n        \"UserQuotaInfo\": [\n            {\n                \"UserType\": \"Uid\",\n                \"UserId\": \"1000\",\n                \"FileSystemId\": \"cfs-abc12345\",\n                \"CapacityHardLimit\": 10,\n                \"FileHardLimit\": 10000,\n                \"Status\": \"available\",\n                \"DirectoryPath\": \"/cfs/abc\",\n                \"CapacityUsed\": 1,\n                \"FileUsed\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "查询文件系统配额"
+      }
+    ],
+    "DoDirectoryOperation": [
+      {
+        "document": "用于部分类型的文件系统目录操作",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"OpetationType\": \"create\",\n    \"DirectoryPath\": \"/user1/dir1/\",\n    \"Mode\": \"0644\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"Result\": 1\n    }\n}",
+        "title": "文件系统目录操作接口"
       }
     ],
     "ModifyFileSystemAutoScaleUpRule": [

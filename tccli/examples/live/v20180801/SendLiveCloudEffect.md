@@ -8,7 +8,7 @@ Input:
 tccli live SendLiveCloudEffect --cli-unfold-argument  \
     --PushDomainName 5000.livepush.com \
     --AppName live \
-    --StreamName test \
+    --StreamName stream \
     --Id 1001 \
     --Operator admin
 ```

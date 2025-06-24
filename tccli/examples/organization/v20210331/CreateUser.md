@@ -30,6 +30,7 @@ Output:
             "UserStatus": "Enabled",
             "UserType": "Manual",
             "UserId": "u-2342ds2s",
+            "Password": "d893nd8!@HK&",
             "CreateTime": "2024-02-02 12:12:12",
             "UpdateTime": "2024-02-02 12:12:12"
         },

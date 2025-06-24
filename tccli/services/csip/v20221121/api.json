@@ -6147,7 +6147,7 @@
         {
           "disabled": false,
           "document": "漏洞风险数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "VULTotal",
           "output_required": true,
@@ -6157,7 +6157,7 @@
         {
           "disabled": false,
           "document": "高危漏洞风险数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "VULHighLevel",
           "output_required": true,
@@ -6167,7 +6167,7 @@
         {
           "disabled": false,
           "document": "配置项风险数量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "CFGTotal",
           "output_required": true,
@@ -6177,7 +6177,7 @@
         {
           "disabled": false,
           "document": "高危配置项风险数量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "CFGHighLevel",
           "output_required": true,
@@ -6187,7 +6187,7 @@
         {
           "disabled": false,
           "document": "测绘服务风险数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ServerTotal",
           "output_required": true,
@@ -6197,7 +6197,7 @@
         {
           "disabled": false,
           "document": "测绘服务高危数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ServerHighLevel",
           "output_required": true,
@@ -8194,13 +8194,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "暴露路径节点内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "暴露路径节点内容",
           "example": "1",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8791,6 +8791,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "-",
           "example": "无",
           "member": "Filter",
@@ -9188,6 +9197,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "filter过滤条件",
           "example": "无",
           "member": "Filter",
@@ -9207,6 +9225,7 @@
           "example": "无",
           "member": "RepositoryImageVO",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9216,6 +9235,7 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9225,6 +9245,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "RegionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9712,6 +9733,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤内容",
           "example": "无",
           "member": "Filter",
@@ -9731,6 +9761,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9740,6 +9771,7 @@
           "example": "无",
           "member": "CFGViewCFGRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9749,6 +9781,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "StatusLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9758,6 +9791,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9767,6 +9801,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "CFGNameLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9776,6 +9811,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "CheckTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9785,6 +9821,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9794,6 +9831,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10306,13 +10344,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "风险规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险规则ID",
           "example": "tc_001",
           "member": "string",
           "name": "RiskRuleId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -15,46 +15,46 @@
       "status": "online"
     },
     "BindRs": {
-      "document": "绑定黑石EIP",
+      "document": "90天无调用\n\n绑定黑石EIP",
       "input": "BindRsRequest",
       "name": "绑定黑石EIP",
       "output": "BindRsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "BindVpcIp": {
-      "document": "黑石EIP绑定VPC IP",
+      "document": "90天无调用\n\n黑石EIP绑定VPC IP",
       "input": "BindVpcIpRequest",
       "name": "黑石EIP绑定VPC IP",
       "output": "BindVpcIpResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEip": {
-      "document": "创建黑石弹性公网IP",
+      "document": "90天无调用\n\n创建黑石弹性公网IP",
       "input": "CreateEipRequest",
       "name": "创建黑石EIP",
       "output": "CreateEipResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateEipAcl": {
-      "document": "创建黑石弹性公网 EIP ACL",
+      "document": "90天无调用\n\n创建黑石弹性公网 EIP ACL",
       "input": "CreateEipAclRequest",
       "name": "创建黑石弹性公网 EIP ACL",
       "output": "CreateEipAclResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEip": {
-      "document": "释放黑石弹性公网IP",
+      "document": "90天无调用\n\n释放黑石弹性公网IP",
       "input": "DeleteEipRequest",
       "name": "释放黑石弹性公网IP",
       "output": "DeleteEipResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteEipAcl": {
-      "document": "删除弹性公网IP ACL",
+      "document": "90天无调用\n\n删除弹性公网IP ACL",
       "input": "DeleteEipAclRequest",
       "name": "删除弹性公网IP ACL",
       "output": "DeleteEipAclResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeEipAcls": {
       "document": "查询弹性公网IP ACL",
@@ -92,18 +92,18 @@
       "status": "online"
     },
     "ModifyEipCharge": {
-      "document": "黑石EIP修改计费方式",
+      "document": "90天无调用\n\n黑石EIP修改计费方式",
       "input": "ModifyEipChargeRequest",
       "name": "黑石EIP修改计费方式",
       "output": "ModifyEipChargeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyEipName": {
-      "document": "更新黑石EIP名称",
+      "document": "90天无调用\n\n更新黑石EIP名称",
       "input": "ModifyEipNameRequest",
       "name": "更新黑石EIP名称",
       "output": "ModifyEipNameResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindEipAcls": {
       "document": "解绑弹性公网IP ACL",
@@ -120,25 +120,25 @@
       "status": "online"
     },
     "UnbindRs": {
-      "document": "解绑黑石EIP",
+      "document": "90天无调用\n\n解绑黑石EIP",
       "input": "UnbindRsRequest",
       "name": "解绑黑石EIP",
       "output": "UnbindRsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindRsList": {
-      "document": "批量解绑物理机弹性公网IP接口",
+      "document": "90天无调用\n\n批量解绑物理机弹性公网IP接口",
       "input": "UnbindRsListRequest",
       "name": "批量解绑物理机弹性公网IP",
       "output": "UnbindRsListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindVpcIp": {
-      "document": "黑石EIP解绑VPCIP",
+      "document": "90天无调用\n\n黑石EIP解绑VPCIP",
       "input": "UnbindVpcIpRequest",
       "name": "黑石EIP解绑VPC IP",
       "output": "UnbindVpcIpResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

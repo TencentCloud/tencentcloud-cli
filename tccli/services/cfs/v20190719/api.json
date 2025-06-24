@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ApplyPathLifecyclePolicy": {
+      "document": "配置生命周期策略关联到的目录列表",
+      "input": "ApplyPathLifecyclePolicyRequest",
+      "name": "配置生命周期策略关联目录",
+      "output": "ApplyPathLifecyclePolicyResponse",
+      "status": "online"
+    },
     "BindAutoSnapshotPolicy": {
       "document": "文件系统绑定快照策略，可以同时绑定多个fs，一个fs 只能跟一个策略绑定",
       "input": "BindAutoSnapshotPolicyRequest",
@@ -231,6 +238,13 @@
       "output": "DescribeUserQuotaResponse",
       "status": "online"
     },
+    "DoDirectoryOperation": {
+      "document": "文件系统目录操作接口",
+      "input": "DoDirectoryOperationRequest",
+      "name": "目录操作接口",
+      "output": "DoDirectoryOperationResponse",
+      "status": "online"
+    },
     "ModifyFileSystemAutoScaleUpRule": {
       "document": "用来设置文件系统扩容策略，该接口只支持turbo文件系统",
       "input": "ModifyFileSystemAutoScaleUpRuleRequest",
@@ -337,6 +351,61 @@
     "serviceShortName": "cfs"
   },
   "objects": {
+    "ApplyPathLifecyclePolicyRequest": {
+      "document": "ApplyPathLifecyclePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略ID",
+          "example": "policy-xxxxxx",
+          "member": "string",
+          "name": "LifecyclePolicyID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略关联目录的绝对路径列表",
+          "example": "无",
+          "member": "PathInfo",
+          "name": "Paths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "v1.5：创建普通版的通用文件系统； v3.1：创建增强版的通用文件系统 说明：增强版的通用系统需要开通白名单才能使用，如有需要请提交工单与我们联系。",
+          "example": "v1.5",
+          "member": "string",
+          "name": "CfsVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyPathLifecyclePolicyResponse": {
+      "document": "ApplyPathLifecyclePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有规则冲突时返回的已有冲突规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CheckResult",
+          "name": "CheckResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AutoScaleUpRule": {
       "document": "自动扩容规则",
       "members": [
@@ -784,6 +853,62 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CheckResult": {
+      "document": "有规则冲突时返回的已有冲突规则信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期管理策略ID",
+          "example": "policy-ek8aw4id",
+          "member": "string",
+          "name": "LifecyclePolicyID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "cfs-4030acd30",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目录绝对路径",
+          "example": "/data/log1/",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期管理策略关联的管理规则列表",
+          "example": "无",
+          "member": "LifecycleRule",
+          "name": "LifecycleRules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标路径",
+          "example": "/data/",
+          "member": "string",
+          "name": "TargetPath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2973,6 +3098,70 @@
           "name": "UserQuotaInfo",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DoDirectoryOperationRequest": {
+      "document": "DoDirectoryOperation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统Id",
+          "example": "cfs-5xxxyyyzz",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "create：创建目录  check：确认目录是否存在",
+          "example": "check",
+          "member": "string",
+          "name": "OpetationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目录的绝对路径  默认递归创建（即如果目录中有子目录不存在，则先创建出对应子目录）",
+          "example": "/user1/dir2/",
+          "member": "string",
+          "name": "DirectoryPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建目录的权限，若不传，默认为0755  若Operation Type为check，此值无实际意义",
+          "example": "0777",
+          "member": "string",
+          "name": "Mode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DoDirectoryOperationResponse": {
+      "document": "DoDirectoryOperation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1:成功  0:失败  创建目录的操作，1表示创建成功，0表示创建失败。  确认目录是否存在的操作，1表示目录存在，0表示目录不存在。  说明：创建目录操作若目录已存在，也会返回创建成功。",
+          "example": "1",
+          "member": "int64",
+          "name": "Result",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
