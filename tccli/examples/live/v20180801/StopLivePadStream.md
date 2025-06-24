@@ -8,7 +8,7 @@ Input:
 tccli live StopLivePadStream --cli-unfold-argument  \
     --PushDomainName 5000.livepush.com \
     --AppName live \
-    --StreamName test
+    --StreamName stream1
 ```
 
 Output: 

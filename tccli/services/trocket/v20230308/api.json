@@ -288,7 +288,7 @@
       "status": "online"
     },
     "DescribeMigratingTopicList": {
-      "document": "查询Topic迁移状态列表\n\nFilters字段为查询过滤器，支持以下条件：\nTopicName 主题名称，支持模糊查询，\nMigrationStatus 迁移状态，可参考MigratingTopic数据结构，\nNamespace 命名空间，仅4.x集群有效，",
+      "document": "查询Topic迁移状态列表。\n\nFilters字段为查询过滤器，支持以下条件：\n* TopicName 主题名称，支持模糊查询\n* MigrationStatus 迁移状态，可参考[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构\n* Namespace 命名空间，仅4.x集群有效\n\nFilters示例：\n[{\n    \"Name\": \"TopicName\",\n    \"Values\": [\"topic-a\"]\n}]",
       "input": "DescribeMigratingTopicListRequest",
       "name": "平滑迁移：查询Topic迁移状态列表",
       "output": "DescribeMigratingTopicListResponse",
@@ -323,14 +323,14 @@
       "status": "online"
     },
     "DescribeSmoothMigrationTaskList": {
-      "document": "用于查询平滑迁移任务列表\n\n查询参数Filters， 支持的字段如下：\nTaskStatus, 任务状态，支持多选 \nConnectionType，网络连接类型，支持多选 \nInstanceId，实例ID，精确搜索 \nTaskName，任务名称，支持模糊搜索",
+      "document": "用于查询平滑迁移任务列表。\n\n查询参数Filters， 支持的字段如下：\n* TaskStatus, 任务状态，支持多选 \n* ConnectionType，网络连接类型，支持多选，参考[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)的说明\n* InstanceId，实例ID，精确搜索 \n* TaskName，任务名称，支持模糊搜索\n\nFilters示例：\n[{\n    \"Name\": \"InstanceId\",\n    \"Values\": [\"rmq-1gzecldfg\"]\n}]",
       "input": "DescribeSmoothMigrationTaskListRequest",
       "name": "查询平滑迁移任务列表",
       "output": "DescribeSmoothMigrationTaskListResponse",
       "status": "online"
     },
     "DescribeSourceClusterGroupList": {
-      "document": "平滑迁移过程获取源集群group列表接口\n\nFilters字段为查询过滤器，支持以下字段：\nGroupName，消费组名称模糊搜索\nImported，是否已导入\nImportStatus，导入状态\nNamespace，命名空间",
+      "document": "平滑迁移过程获取源集群group列表接口。\n\nFilters字段为查询过滤器，支持以下字段：\n* GroupName，消费组名称，支持模糊搜索\n* Imported，是否已导入\n* ImportStatus，导入状态，参考[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)的说明\n* Namespace，命名空间，仅4.x集群有效\n\nFilters示例：\n[{\n    \"Name\": \"GroupName\",\n    \"Values\": [\"group-a\"]\n}]",
       "input": "DescribeSourceClusterGroupListRequest",
       "name": "平滑迁移：获取源集群的group列表",
       "output": "DescribeSourceClusterGroupListResponse",
@@ -4641,7 +4641,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台中获得。\n",
+          "document": "任务ID，可在[DescribeSmoothMigrationTaskList](https://cloud.tencent.com/document/api/1493/119997)接口返回的[SmoothMigrationTaskItem](https://cloud.tencent.com/document/api/1493/96031#SmoothMigrationTaskItem)或控制台上获得。\n",
           "example": "02f6c31a-9707-4244-8dd3-35ad868ef92a",
           "member": "string",
           "name": "TaskId",
@@ -7703,7 +7703,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，可在[DescribeSourceClusterGroupList](https://cloud.tencent.com/document/api/1493/118006)接口返回的[SourceClusterGroupConfig](https://cloud.tencent.com/document/api/1493/96031#SourceClusterGroupConfig)或控制台中获取。",
+          "document": "主题名称，可在[DescribeMigratingTopicList](https://cloud.tencent.com/document/api/1493/118007)接口返回的[MigratingTopic](https://cloud.tencent.com/document/api/1493/96031#MigratingTopic)数据结构中获得。\n",
           "example": "topic-a",
           "member": "string",
           "name": "TopicName",

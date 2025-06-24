@@ -2966,6 +2966,46 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "共享订阅组数最大限制",
+          "example": "20",
+          "member": "int64",
+          "name": "SharedSubscriptionGroupLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个共享订阅组TopicFilter数限制",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxTopicFilterPerSharedSubscriptionGroup",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动订阅规则条数限制",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoSubscriptionPolicyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单条自动订阅规则TopicFilter数限制",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxTopicFilterPerAutoSubscriptionPolicy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4179,6 +4219,46 @@
           "example": "12000",
           "member": "int64",
           "name": "MaxSubscription",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "共享订阅组数最大限制",
+          "example": "20",
+          "member": "int64",
+          "name": "SharedSubscriptionGroupLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个共享订阅组TopicFilter数限制",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxTopicFilterPerSharedSubscriptionGroup",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动订阅规则条数限制",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoSubscriptionPolicyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单条自动订阅规则TopicFilter数限制",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxTopicFilterPerAutoSubscriptionPolicy",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

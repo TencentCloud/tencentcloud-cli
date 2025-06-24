@@ -344,6 +344,14 @@
         "title": "查询服务进程信息"
       }
     ],
+    "DescribeSparkApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInsightList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-j14o941k\",\n    \"PageSize\": 10,\n    \"StartTime\": 1745944098,\n    \"EndTime\": 1746030498,\n    \"Page\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"RequestId-1746503327\",\n        \"ResultList\": [\n            {\n                \"ID\": \"spark-49cdc7a5b06a46fca99c497a5b47e7f1\",\n                \"Name\": \"kyuubi_CONNECTION_SPARK_SQL_hadoop_7043f4f2-c8b6-4681-8e7a-873e477c6db7\",\n                \"User\": \"hadoop\",\n                \"StartTime\": 1746003194374,\n                \"EndTime\": 1746003394835,\n                \"Duration\": 200461,\n                \"State\": \"completed\",\n                \"ApplicationType\": \"SPARK\",\n                \"CoreSeconds\": 478,\n                \"MemorySeconds\": \"489472 MB Seconds\",\n                \"Insight\": \"UNKNOWN\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取spark应用列表"
+      }
+    ],
     "DescribeSparkQueries": [
       {
         "document": "",

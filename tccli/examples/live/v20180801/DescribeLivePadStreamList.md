@@ -17,7 +17,7 @@ Output:
             {
                 "DomainName": "5000.livepush.com",
                 "AppName": "live",
-                "StreamName": "test",
+                "StreamName": "stream",
                 "PublishTime": "2025-04-01T00:00:00Z",
                 "PadStreamType": "1"
             }

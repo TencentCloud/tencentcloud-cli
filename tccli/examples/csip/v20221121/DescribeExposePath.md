@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli csip DescribeExposePath --cli-unfold-argument  \
-    --AssetId ins-xxxx
+    --AssetId ins-isd76xs9
 ```
 
 Output: 

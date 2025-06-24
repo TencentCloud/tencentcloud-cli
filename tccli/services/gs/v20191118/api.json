@@ -2863,9 +2863,18 @@
         {
           "disabled": false,
           "document": "镜像 ID 列表",
-          "example": "[\"abc\"]",
+          "example": "[\"cai-abcd1234\"]",
           "member": "string",
           "name": "AndroidInstanceImageIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像可用区列表",
+          "example": "[\"ap-shenzhen-1\"]",
+          "member": "string",
+          "name": "AndroidInstanceImageZones",
           "required": false,
           "type": "list"
         },

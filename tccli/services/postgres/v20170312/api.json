@@ -4821,7 +4821,7 @@
         },
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\nbase-backup-id：按照备份集ID过滤，类型为string。",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\nbase-backup-id：按照备份集ID过滤，类型为string。\ndb-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。",
           "example": "[     {         \"Values\": [             \"postgres-jdlmoll9\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -4883,7 +4883,7 @@
         {
           "disabled": false,
           "document": "数据备份详细信息列表。",
-          "example": "[     {         \"BackupMethod\": \"physical\",         \"BackupMode\": \"manual\",         \"DBInstanceId\": \"postgres-9n26zs6n\",         \"ExpireTime\": \"2023-02-18 23:59:59\",         \"FinishTime\": \"2023-02-15 19:09:36\",         \"Id\": \"88d3a71e-b822-5728-9d41-d8cfc0d0556e\",         \"Name\": \"manual-20230215190924.tar.gz\",         \"Size\": 39845888,         \"StartTime\": \"2023-02-15 19:09:24\",         \"State\": \"finished\"     } ]",
+          "example": "无",
           "member": "BaseBackup",
           "name": "BaseBackupSet",
           "output_required": true,
@@ -6126,7 +6126,7 @@
         },
         {
           "disabled": false,
-          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。",
+          "document": "按照一个或者多个过滤条件进行查询，目前支持的过滤条件有：\ndb-instance-id：按照实例ID过滤，类型为string。\ndb-instance-name：按照实例名过滤，类型为string。\ndb-instance-ip：按照实例私有网络IP地址过滤，类型为string。\ndb-instance-status：按实例状态过滤，类型为string。取值参考DBInstance结构的DBInstanceStatus字段。",
           "example": "[     {         \"Values\": [             \"postgres-xxxxxxxx\"         ],         \"Name\": \"db-instance-id\"     } ]",
           "member": "Filter",
           "name": "Filters",
@@ -6188,7 +6188,7 @@
         {
           "disabled": false,
           "document": "日志备份详细信息列表。",
-          "example": "[     {         \"BackupMethod\": \"physical\",         \"BackupMode\": \"automatic\",         \"DBInstanceId\": \"postgres-jdlmoll9\",         \"ExpireTime\": \"2023-02-22 21:10:52\",         \"FinishTime\": \"2023-02-15 21:10:52\",         \"Id\": \"2628bcde-ce13-554a-b47d-2b15187a02ec\",         \"Name\": \"******.tar.gz\",         \"Size\": 16783360,         \"StartTime\": \"2023-02-15 21:10:52\",         \"State\": \"finished\"     } ]",
+          "example": "无",
           "member": "LogBackup",
           "name": "LogBackupSet",
           "output_required": true,

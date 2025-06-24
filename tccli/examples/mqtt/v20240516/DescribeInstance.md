@@ -43,3 +43,53 @@ Output:
 }
 ```
 
+**Example 2: 查询MQTT实例详情信息**
+
+查询MQTT实例详情信息
+
+Input: 
+
+```
+tccli mqtt DescribeInstance --cli-unfold-argument  \
+    --InstanceId mqtt-zj944d74
+```
+
+Output: 
+```
+{
+    "Error": null,
+    "RequestId": null,
+    "Response": {
+        "AuthorizationPolicy": true,
+        "AuthorizationPolicyLimit": 20,
+        "AutoSubscriptionPolicyLimit": 10,
+        "AutomaticActivation": false,
+        "ClientNumLimit": 6000,
+        "CreatedTime": 1736236715,
+        "DestroyTime": 0,
+        "DeviceCertificateProvisionType": "JITP",
+        "ExpiryTime": 0,
+        "InstanceId": "mqtt-zj944d74",
+        "InstanceName": "seiroli-byoc-test-0107",
+        "InstanceStatus": "RUNNING",
+        "InstanceType": "PRO",
+        "MaxCaNum": 20,
+        "MaxSubscription": 180000,
+        "MaxSubscriptionPerClient": 30,
+        "MaxTopicFilterPerAutoSubscriptionPolicy": 5,
+        "MaxTopicFilterPerSharedSubscriptionGroup": 10,
+        "PayMode": "POSTPAID",
+        "RegistrationCode": "bf2ead84-e9e2-478e-a153-3b6baa9b78b1",
+        "Remark": "",
+        "RenewFlag": 1,
+        "RequestId": "a71557b4-34ca-46b0-ab51-2420bf4555c2",
+        "SharedSubscriptionGroupLimit": 20,
+        "SkuCode": "pro_6k_1",
+        "TopicNum": 2,
+        "TopicNumLimit": 300,
+        "TpsLimit": 6000,
+        "X509Mode": "BYOC"
+    }
+}
+```
+

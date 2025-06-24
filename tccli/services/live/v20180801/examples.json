@@ -836,7 +836,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: DescribeLivePadStreamList\n<公共请求参数>\n\n{\n    \"DomainName\": \"5000.livepush.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"StreamInfoList\": [\n            {\n                \"DomainName\": \"5000.livepush.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"test\",\n                \"PublishTime\": \"2025-04-01T00:00:00Z\",\n                \"PadStreamType\": \"1\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalNum\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"StreamInfoList\": [\n            {\n                \"DomainName\": \"5000.livepush.com\",\n                \"AppName\": \"live\",\n                \"StreamName\": \"stream\",\n                \"PublishTime\": \"2025-04-01T00:00:00Z\",\n                \"PadStreamType\": \"1\"\n            }\n        ],\n        \"TotalPage\": 1,\n        \"TotalNum\": 1,\n        \"PageNum\": 1,\n        \"PageSize\": 10,\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -1507,7 +1507,7 @@
     "SendLiveCloudEffect": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: SendLiveCloudEffect\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\",\n    \"Id\": \"1001\",\n    \"Operator\": \"admin\"\n}",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: SendLiveCloudEffect\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream\",\n    \"Id\": \"1001\",\n    \"Operator\": \"admin\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
@@ -1515,7 +1515,7 @@
     "StartLivePadStream": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLivePadStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLivePadStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }
@@ -1547,7 +1547,7 @@
     "StopLivePadStream": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLivePadStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLivePadStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
       }

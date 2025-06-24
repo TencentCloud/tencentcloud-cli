@@ -301,6 +301,13 @@
       "output": "DescribeServiceNodeInfosResponse",
       "status": "online"
     },
+    "DescribeSparkApplications": {
+      "document": "获取spark应用列表",
+      "input": "DescribeSparkApplicationsRequest",
+      "name": "获取Spark任务列表",
+      "output": "DescribeSparkApplicationsResponse",
+      "status": "online"
+    },
     "DescribeSparkQueries": {
       "document": "查询Spark查询信息列表",
       "input": "DescribeSparkQueriesRequest",
@@ -7187,6 +7194,89 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkApplicationsRequest": {
+      "document": "DescribeSparkApplications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "1746498971",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "1746498972",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每一页条数",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "第几页",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkApplicationsResponse": {
+      "document": "DescribeSparkApplications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark应用列表",
+          "example": "无",
+          "member": "SparkApplicationsList",
+          "name": "ResultList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17975,6 +18065,122 @@
           "name": "Required",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SparkApplicationsList": {
+      "document": "spark任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用id",
+          "example": "spark-49cdc7a5b06a46fca99c497a5b47e7f1",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "kyuubi_CONNECTION_SPARK_SQL_hadoop_7043f4f2-c8b6-4681-8e7a-873e477c6db7",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户",
+          "example": "hadoop",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "1746003194374",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1746003394835",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "持续时间",
+          "example": "200461",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "completed",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "SPARK",
+          "member": "string",
+          "name": "ApplicationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "核数*秒",
+          "example": "478",
+          "member": "int64",
+          "name": "CoreSeconds",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存MB*秒",
+          "example": "489472 MB Seconds",
+          "member": "string",
+          "name": "MemorySeconds",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "洞察结果",
+          "example": "UNKNOWN",
+          "member": "string",
+          "name": "Insight",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
