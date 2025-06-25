@@ -722,6 +722,15 @@
           "name": "References",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新增、删除、查询库表，新增、删除、更新术语，带术语查询",
+          "example": "无",
+          "member": "ReferenceRepo",
+          "name": "ReferenceRepo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2692,6 +2701,39 @@
       ],
       "usage": "out"
     },
+    "Phrase": {
+      "document": "翻译Phrase",
+      "members": [
+        {
+          "disabled": false,
+          "document": "术语id",
+          "example": "1d5a8c39b1ee4e43a88db5c680f0efed",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语原文",
+          "example": "美丽的世界",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语译文",
+          "example": "beautiful world",
+          "member": "string",
+          "name": "Target",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Processes": {
       "document": "大模型执行状态",
       "members": [
@@ -3028,6 +3070,147 @@
           "name": "Translation",
           "required": false,
           "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ReferenceRepo": {
+      "document": "翻译ReferenceRepo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "1d5a8c39b1ee4e43a88db5c680f0efed",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1-库表， 2-术语",
+          "example": "1",
+          "member": "uint64",
+          "name": "OpType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型 add del read update",
+          "example": "add",
+          "member": "string",
+          "name": "Op",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "# 1-术语库，2-例句库",
+          "example": "1",
+          "member": "uint64",
+          "name": "TableType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "库表id",
+          "example": "9b4a11b5ac0dbb3c8a92b2dcb7fb04d7",
+          "member": "string",
+          "name": "TableId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "库表名，32字符",
+          "example": "test",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述，最大512字符",
+          "example": "test",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源语言",
+          "example": "zh",
+          "member": "string",
+          "name": "SrcLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标语言",
+          "example": "en",
+          "member": "string",
+          "name": "TargetLang",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "术语操作，批量",
+          "example": "无",
+          "member": "Phrase",
+          "name": "Phrase",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量库表id",
+          "example": "[\"9b4a11b5ac0dbb3c8a92b2dcb7fb04d7\"]",
+          "member": "string",
+          "name": "TableIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量库表类型",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "TableTypeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量翻译类型",
+          "example": "[\"zh_en\"]",
+          "member": "string",
+          "name": "TranslateTypeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页的数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

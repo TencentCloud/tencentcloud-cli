@@ -2704,7 +2704,7 @@
         {
           "disabled": false,
           "document": "索引的ID",
-          "example": "index-xxxxxxxx",
+          "example": "index-n73sit02",
           "member": "string",
           "name": "InstanceId",
           "required": true,

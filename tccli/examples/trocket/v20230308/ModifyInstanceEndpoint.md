@@ -17,6 +17,8 @@ tccli trocket ModifyInstanceEndpoint --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "RequestId": "999bc587-90d9-4ec2-97e3-3ef170e1da96"
     }

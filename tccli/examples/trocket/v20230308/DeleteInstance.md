@@ -12,6 +12,8 @@ tccli trocket DeleteInstance --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "RequestId": "97f45511-b653-4e2a-ade6-58c8d3ae523b"
     }

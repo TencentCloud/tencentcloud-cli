@@ -14,7 +14,7 @@ tccli cdb CreateCdbProxy --cli-unfold-argument  \
     --ProxyNodeCustom.0.Region ap-guangzhou \
     --ProxyNodeCustom.0.Zone ap-guangzhou-1 \
     --ProxyNodeCustom.0.Cpu 1 \
-    --ProxyNodeCustom.0.Mem 1
+    --ProxyNodeCustom.0.Mem 1000
 ```
 
 Output: 

@@ -595,6 +595,13 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribeLLMRuleInfo": {
+      "document": "获取大模型内容检测匹配内容信息",
+      "input": "DescribeLLMRuleInfoRequest",
+      "name": "获取LLM内容检测匹配信息",
+      "output": "DescribeLLMRuleInfoResponse",
+      "status": "online"
+    },
     "DescribeLogHistogram": {
       "document": "本接口用于构建日志数量直方图",
       "input": "DescribeLogHistogramRequest",
@@ -2717,8 +2724,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "待废弃，可不填。Waf的资源ID。",
+          "disabled": true,
+          "document": "Waf的资源ID。",
           "example": "waf_2kl62zgs0108e8j3",
           "member": "string",
           "name": "ResourceId",
@@ -2753,8 +2760,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "待废弃，可不填。是否开启灰度，0表示不开启灰度。",
+          "disabled": true,
+          "document": "是否开启灰度，0表示不开启灰度。",
           "example": "0",
           "member": "int64",
           "name": "IsGray",
@@ -2762,8 +2769,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "待废弃，可不填。灰度的地区",
+          "disabled": true,
+          "document": "灰度的地区",
           "example": "[\"gz\",\"bj\"]",
           "member": "string",
           "name": "GrayAreas",
@@ -2807,8 +2814,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "待废弃，可不填。WAF实例类型。\nsparta-waf：SAAS型WAF\nclb-waf：负载均衡型WAF\ncdn-waf：CDN上的Web防护能力",
+          "disabled": true,
+          "document": "WAF实例类型。\nsparta-waf：SAAS型WAF\nclb-waf：负载均衡型WAF\ncdn-waf：CDN上的Web防护能力",
           "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
@@ -2816,8 +2823,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
+          "disabled": true,
+          "document": "目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
           "member": "int64",
           "name": "Anycast",
@@ -3025,11 +3032,20 @@
         {
           "disabled": false,
           "document": "分流回源时生效，分流回源的规则。",
-          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0}]",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "业务场景。0：默认值，表示常规业务场景 1：大模型业务场景",
+          "example": "0",
+          "member": "int64",
+          "name": "UseCase",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5922,6 +5938,16 @@
           "name": "Labels",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -12485,6 +12511,43 @@
       ],
       "type": "object"
     },
+    "DescribeLLMRuleInfoRequest": {
+      "document": "DescribeLLMRuleInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLLMRuleInfoResponse": {
+      "document": "DescribeLLMRuleInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容防护敏感信息匹配内容",
+          "example": "详情见数据结构",
+          "member": "LLMRule",
+          "name": "SensitiveRuleList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容防护不当信息匹配内容",
+          "example": "详情见数据结构",
+          "member": "LLMRule",
+          "name": "InappropriateRuleList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogHistogramRequest": {
       "document": "DescribeLogHistogram请求参数结构体",
       "members": [
@@ -15505,7 +15568,7 @@
         {
           "disabled": false,
           "document": "负载均衡器相关配置",
-          "example": "[{\"ListenerId\":\"lbl-2ngb9pkz\",\"ListenerName\":\"evantest.qcloudwaf.com\",\"LoadBalancerId\":\"lb-3fty24fb\",\"LoadBalancerName\":\"lb-60da87b4\",\"Protocol\":\"HTTP\",\"Region\":\"bj\",\"Vip\":\"81.70.116.9\",\"Vport\":80,\"Zone\":\"ap-beijing-7\",\"NumericalVpcId\":1060819,\"LoadBalancerType\":\"OPEN\",\"LoadBalancerDomain\":\"\"}]",
+          "example": "无",
           "member": "LoadBalancerPackageNew",
           "name": "LoadBalancerSet",
           "output_required": true,
@@ -15713,7 +15776,7 @@
         },
         {
           "disabled": false,
-          "document": "clbwaf接入状态",
+          "document": "clbwaf接入状态，0代表“尚无流量接入”，1代表“流量接入”，2代表“CLB监听器已注销”，3代表“配置生效中”，4代表“配置下发失败中”",
           "example": "1",
           "member": "int64",
           "name": "AccessStatus",
@@ -15978,8 +16041,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "是否开启灰度，已废弃。",
+          "disabled": true,
+          "document": "是否开启灰度。",
           "example": "1",
           "member": "uint64",
           "name": "IsGray",
@@ -16390,11 +16453,21 @@
         {
           "disabled": false,
           "document": "分流回源策略",
-          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0}]",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务场景。0：默认值，表示常规业务场景 1：大模型业务场景",
+          "example": "0",
+          "member": "int64",
+          "name": "UseCase",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -19556,6 +19629,34 @@
         }
       ],
       "usage": "out"
+    },
+    "LLMRule": {
+      "document": "llm内容防护匹配信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配内容id",
+          "example": "3",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配内容id对应的规则名称",
+          "example": "desc",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LoadBalancer": {
       "document": "负载均衡的监听器",
@@ -23122,8 +23223,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "待废弃，可不填。是否开启灰度，0表示不开启灰度。",
+          "disabled": true,
+          "document": "是否开启灰度，0表示不开启灰度。",
           "example": "0",
           "member": "int64",
           "name": "IsGray",
@@ -23158,8 +23259,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
+          "disabled": true,
+          "document": "目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
           "member": "int64",
           "name": "Anycast",
@@ -23376,11 +23477,20 @@
         {
           "disabled": false,
           "document": "分流回源时生效，分流回源的规则。",
-          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0}]",
           "member": "UpstreamRule",
           "name": "UpstreamRules",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "业务场景。0：默认值，表示常规业务场景 1：大模型业务场景",
+          "example": "0",
+          "member": "int64",
+          "name": "UseCase",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

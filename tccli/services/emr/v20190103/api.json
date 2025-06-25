@@ -4198,6 +4198,15 @@
           "name": "CosBucket",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点标识信息，目前只提供给tf平台使用",
+          "example": "无",
+          "member": "NodeMark",
+          "name": "NodeMarks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4728,6 +4737,15 @@
           "name": "CosBucket",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点标识信息，目前只提供给tf平台使用",
+          "example": "无",
+          "member": "NodeMark",
+          "name": "NodeMarks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15226,6 +15244,7 @@
           "example": "无",
           "member": "Resource",
           "name": "MasterResourceSpec",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -15236,6 +15255,7 @@
           "example": "无",
           "member": "Resource",
           "name": "CoreResourceSpec",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -15246,6 +15266,7 @@
           "example": "无",
           "member": "Resource",
           "name": "TaskResourceSpec",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -15256,6 +15277,7 @@
           "example": "2",
           "member": "int64",
           "name": "MasterCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -15266,6 +15288,7 @@
           "example": "3",
           "member": "int64",
           "name": "CoreCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -15276,6 +15299,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -15286,6 +15310,7 @@
           "example": "无",
           "member": "Resource",
           "name": "CommonResourceSpec",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -15296,6 +15321,7 @@
           "example": "3",
           "member": "int64",
           "name": "CommonCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -15929,9 +15955,58 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点标注信息，目前只提供给tf平台使用",
+          "example": "\"core1\"",
+          "member": "string",
+          "name": "NodeMark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "NodeMark": {
+      "document": "节点标记信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点类型：master,core,task,router",
+          "example": "master",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点标记信息，目前只提供给tf平台使用，作为入参区分同类型节点信息",
+          "example": "Master_1",
+          "member": "string",
+          "name": "NodeNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区名称",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NodeRenewPriceDetail": {
       "document": "节点续费询价明细",
@@ -19275,6 +19350,15 @@
           "name": "ScaleOutServiceConfGroupsInfo",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点标记信息，当前只提供给tf平台使用",
+          "example": "无",
+          "member": "NodeMark",
+          "name": "NodeMarks",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -19612,6 +19696,15 @@
           "example": "无",
           "member": "ComputeResourceAdvanceParams",
           "name": "ComputeResourceAdvanceParams",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "节点标记信息，目前只提供tf平台使用",
+          "example": "无",
+          "member": "NodeMark",
+          "name": "NodeMarks",
           "required": false,
           "type": "object"
         }

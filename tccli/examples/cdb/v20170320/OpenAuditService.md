@@ -9,9 +9,8 @@ tccli cdb OpenAuditService --cli-unfold-argument  \
     --InstanceId cdb-3u8h3h1w \
     --LogExpireDay 30 \
     --HighLogExpireDay 7 \
-    --AuditRuleFilters.0.RuleFilters.0.Compare NEQ \
-    --AuditRuleFilters.0.RuleFilters.0.Type host \
-    --AuditRuleFilters.0.RuleFilters.0.Value 127.0.0.1
+    --RuleTemplateIds cdb-art-l1mlbo59 \
+    --AuditAll True
 ```
 
 Output: 

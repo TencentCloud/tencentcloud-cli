@@ -35,7 +35,7 @@
     "CreateEdgePackTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgePackTask\n<公共请求参数>\n\n{\n    \"CosBucket\": \"edgepack-bucket1\",\n    \"BlockID\": \"0\",\n    \"CosUriTo\": \"/out/app_out.apk\",\n    \"CosUriFrom\": \"/apk/app.apk\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdn.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgePackTask\n<公共请求参数>\n\n{\n    \"CosBucket\": \"edgepack-bucket1\",\n    \"BlockID\": 0,\n    \"CosUriTo\": \"/out/app_out.apk\",\n    \"CosUriFrom\": \"/apk/app.apk\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"19d1096d-a4e8-4607-bfca-840a3f515378\"\n    }\n}",
         "title": "动态打包任务提交"
       }

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli es CreateServerlessInstanceUser --cli-unfold-argument  \
-    --InstanceId abc \
-    --Username abc \
-    --Password abc
+    --InstanceId index-n73sit02 \
+    --Username elastic-a \
+    --Password xxxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "eb03187d-cf57-4d03-9b9f-8056c0ad5b11"
     }
 }
 ```

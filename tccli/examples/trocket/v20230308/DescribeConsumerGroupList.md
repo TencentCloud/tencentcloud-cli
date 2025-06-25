@@ -24,7 +24,11 @@ Output:
                 "ConsumerGroup": "test_group",
                 "InstanceId": "rmq-72mo3a9o",
                 "MaxRetryTimes": 16,
-                "Remark": "测试消费组"
+                "Remark": "测试消费组",
+                "ClusterIdV4": null,
+                "NamespaceV4": null,
+                "ConsumerGroupV4": null,
+                "FullNamespaceV4": null
             }
         ],
         "RequestId": "318142bf-0dd1-4b81-9444-a40f988619a1",
