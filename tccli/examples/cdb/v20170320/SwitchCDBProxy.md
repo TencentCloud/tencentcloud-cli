@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb SwitchCDBProxy --cli-unfold-argument  \
-    --InstanceId cdb-test \
-    --ProxyGroupId proxy-test
+    --InstanceId cdb-pr1rb3j1 \
+    --ProxyGroupId proxy-p11rb3j9
 ```
 
 Output: 

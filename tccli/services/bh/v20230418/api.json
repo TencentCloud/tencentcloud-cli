@@ -42,6 +42,13 @@
       "output": "BindDeviceResourceResponse",
       "status": "online"
     },
+    "CheckLDAPConnection": {
+      "document": "测试LDAP连接",
+      "input": "CheckLDAPConnectionRequest",
+      "name": "测试LDAP连接",
+      "output": "CheckLDAPConnectionResponse",
+      "status": "online"
+    },
     "CreateAccessWhiteListRule": {
       "document": "添加访问白名单规则",
       "input": "CreateAccessWhiteListRuleRequest",
@@ -287,6 +294,13 @@
       "output": "DescribeDomainsResponse",
       "status": "online"
     },
+    "DescribeLDAPUnitSet": {
+      "document": "获取LDAP ou 列表",
+      "input": "DescribeLDAPUnitSetRequest",
+      "name": "获取LDAP ou 列表",
+      "output": "DescribeLDAPUnitSetResponse",
+      "status": "online"
+    },
     "DescribeLoginEvent": {
       "document": "查询登录日志",
       "input": "DescribeLoginEventRequest",
@@ -378,6 +392,13 @@
       "output": "ModifyDeviceGroupResponse",
       "status": "online"
     },
+    "ModifyLDAPSetting": {
+      "document": "修改LDAP配置信息",
+      "input": "ModifyLDAPSettingRequest",
+      "name": "修改LDAP配置信息",
+      "output": "ModifyLDAPSettingResponse",
+      "status": "online"
+    },
     "ModifyOAuthSetting": {
       "document": "设置OAuth认证参数",
       "input": "ModifyOAuthSettingRequest",
@@ -411,6 +432,13 @@
       "input": "ModifyUserGroupRequest",
       "name": "修改用户组",
       "output": "ModifyUserGroupResponse",
+      "status": "online"
+    },
+    "ReplaySession": {
+      "document": "会话回放",
+      "input": "ReplaySessionRequest",
+      "name": "会话回放",
+      "output": "ReplaySessionResponse",
       "status": "online"
     },
     "ResetDeviceAccountPassword": {
@@ -509,6 +537,20 @@
       "input": "SearchTaskResultRequest",
       "name": "搜索运维任务执行结果",
       "output": "SearchTaskResultResponse",
+      "status": "online"
+    },
+    "SetLDAPSyncFlag": {
+      "document": "设置LDAP 立即同步标记",
+      "input": "SetLDAPSyncFlagRequest",
+      "name": "设置LDAP 立即同步标记",
+      "output": "SetLDAPSyncFlagResponse",
+      "status": "online"
+    },
+    "UnlockUser": {
+      "document": "解锁用户",
+      "input": "UnlockUserRequest",
+      "name": "解锁用户",
+      "output": "UnlockUserResponse",
       "status": "online"
     }
   },
@@ -1895,6 +1937,105 @@
         }
       ],
       "usage": "out"
+    },
+    "CheckLDAPConnectionRequest": {
+      "document": "CheckLDAPConnection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启LDAP认证，必须为true",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务器地址",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "389",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SSL，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSL",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "Base DN",
+          "example": "bh-test-DN",
+          "member": "string",
+          "name": "BaseDN",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号",
+          "example": "admin",
+          "member": "string",
+          "name": "AdminAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理员密码",
+          "example": "pwd",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备用服务器地址",
+          "example": "10.10.10.2",
+          "member": "string",
+          "name": "IpBackup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域id",
+          "example": "net-default",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckLDAPConnectionResponse": {
+      "document": "CheckLDAPConnection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Clb": {
       "document": "负载均衡",
@@ -4688,6 +4829,133 @@
       ],
       "type": "object"
     },
+    "DescribeLDAPUnitSetRequest": {
+      "document": "DescribeLDAPUnitSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启LDAP认证，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务器地址",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "389",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SSL，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSL",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "Base DN",
+          "example": "bh-test-DN",
+          "member": "string",
+          "name": "BaseDN",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号",
+          "example": "admin",
+          "member": "string",
+          "name": "AdminAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理员密码",
+          "example": "pwd",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名映射属性",
+          "example": "attr-user-name",
+          "member": "string",
+          "name": "AttributeUserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部门过滤",
+          "example": "bh-attr-test",
+          "member": "string",
+          "name": "AttributeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备用服务器地址",
+          "example": "10.10.10.2",
+          "member": "string",
+          "name": "IpBackup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id",
+          "example": "net-default",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLDAPUnitSetResponse": {
+      "document": "DescribeLDAPUnitSet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ou 列表",
+          "example": "[]",
+          "member": "string",
+          "name": "UnitSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoginEventRequest": {
       "document": "DescribeLoginEvent请求参数结构体",
       "members": [
@@ -6861,6 +7129,204 @@
       ],
       "type": "object"
     },
+    "ModifyLDAPSettingRequest": {
+      "document": "ModifyLDAPSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启LDAP认证，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务器地址",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备用服务器地址",
+          "example": "10.10.10.2",
+          "member": "string",
+          "name": "IpBackup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "389",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SSL，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSL",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "Base DN",
+          "example": "base-dn",
+          "member": "string",
+          "name": "BaseDN",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号",
+          "example": "admin",
+          "member": "string",
+          "name": "AdminAccount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理员密码",
+          "example": "adminpwd",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户属性",
+          "example": "attr-user",
+          "member": "string",
+          "name": "AttributeUser",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名属性",
+          "example": "attr-username",
+          "member": "string",
+          "name": "AttributeUserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动同步，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "覆盖用户信息，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Overwrite",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "同步周期，30～60000之间的整数",
+          "example": "30",
+          "member": "uint64",
+          "name": "SyncPeriod",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步全部，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "同步OU列表，SyncAll为false时必传",
+          "example": "[]",
+          "member": "string",
+          "name": "SyncUnitSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "组织单元属性",
+          "example": "unit",
+          "member": "string",
+          "name": "AttributeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户姓名属性",
+          "example": "realname",
+          "member": "string",
+          "name": "AttributeRealName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号属性",
+          "example": "phone",
+          "member": "string",
+          "name": "AttributePhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "邮箱属性",
+          "example": "email",
+          "member": "string",
+          "name": "AttributeEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络域Id",
+          "example": "net-default",
+          "member": "string",
+          "name": "DomainId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLDAPSettingResponse": {
+      "document": "ModifyLDAPSetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOAuthSettingRequest": {
       "document": "ModifyOAuthSetting请求参数结构体",
       "members": [
@@ -7483,6 +7949,33 @@
         }
       ],
       "usage": "out"
+    },
+    "ReplaySessionRequest": {
+      "document": "ReplaySession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话Sid",
+          "example": "we123wrwqqw",
+          "member": "string",
+          "name": "Sid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReplaySessionResponse": {
+      "document": "ReplaySession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetDeviceAccountPasswordRequest": {
       "document": "ResetDeviceAccountPassword请求参数结构体",
@@ -10137,6 +10630,23 @@
       ],
       "usage": "out"
     },
+    "SetLDAPSyncFlagRequest": {
+      "document": "SetLDAPSyncFlag请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SetLDAPSyncFlagResponse": {
+      "document": "SetLDAPSyncFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TagFilter": {
       "document": "资产标签",
       "members": [
@@ -10256,6 +10766,33 @@
         }
       ],
       "usage": "out"
+    },
+    "UnlockUserRequest": {
+      "document": "UnlockUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnlockUserResponse": {
+      "document": "UnlockUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "User": {
       "document": "用户信息",

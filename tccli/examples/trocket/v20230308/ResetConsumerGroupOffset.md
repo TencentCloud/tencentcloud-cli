@@ -15,6 +15,8 @@ tccli trocket ResetConsumerGroupOffset --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
         "RequestId": "707a78e5-019d-41f6-80fc-15743d99c81a"
     }

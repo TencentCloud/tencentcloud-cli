@@ -28,6 +28,13 @@
       "output": "BindCloudResourceResponse",
       "status": "online"
     },
+    "CancelDataKeyDeletion": {
+      "document": "取消计划删除数据密钥",
+      "input": "CancelDataKeyDeletionRequest",
+      "name": "取消计划删除数据密钥",
+      "output": "CancelDataKeyDeletionResponse",
+      "status": "online"
+    },
     "CancelKeyArchive": {
       "document": "取消密钥归档，取消后密钥的状态变为Enabled。",
       "input": "CancelKeyArchiveRequest",
@@ -75,6 +82,20 @@
       "input": "DeleteWhiteBoxKeyRequest",
       "name": "删除白盒密钥",
       "output": "DeleteWhiteBoxKeyResponse",
+      "status": "online"
+    },
+    "DescribeDataKey": {
+      "document": "获取数据密钥的详情",
+      "input": "DescribeDataKeyRequest",
+      "name": "获取数据密钥的详情",
+      "output": "DescribeDataKeyResponse",
+      "status": "online"
+    },
+    "DescribeDataKeys": {
+      "document": "返回数据密钥属性信息列表",
+      "input": "DescribeDataKeysRequest",
+      "name": "获取数据密钥的详情列表",
+      "output": "DescribeDataKeysResponse",
       "status": "online"
     },
     "DescribeKey": {
@@ -126,6 +147,20 @@
       "output": "DescribeWhiteBoxServiceStatusResponse",
       "status": "online"
     },
+    "DisableDataKey": {
+      "document": "禁用数据密钥",
+      "input": "DisableDataKeyRequest",
+      "name": "禁用数据密钥",
+      "output": "DisableDataKeyResponse",
+      "status": "online"
+    },
+    "DisableDataKeys": {
+      "document": "批量禁用数据密钥",
+      "input": "DisableDataKeysRequest",
+      "name": "批量禁用数据密钥",
+      "output": "DisableDataKeysResponse",
+      "status": "online"
+    },
     "DisableKey": {
       "document": "本接口用于禁用一个主密钥，处于禁用状态的Key无法用于加密、解密操作。",
       "input": "DisableKeyRequest",
@@ -159,6 +194,20 @@
       "input": "DisableWhiteBoxKeysRequest",
       "name": "批量禁用白盒密钥",
       "output": "DisableWhiteBoxKeysResponse",
+      "status": "online"
+    },
+    "EnableDataKey": {
+      "document": "启用数据密钥",
+      "input": "EnableDataKeyRequest",
+      "name": "启用数据密钥",
+      "output": "EnableDataKeyResponse",
+      "status": "online"
+    },
+    "EnableDataKeys": {
+      "document": "批量启用数据密钥",
+      "input": "EnableDataKeysRequest",
+      "name": "批量启用数据密钥",
+      "output": "EnableDataKeysResponse",
       "status": "online"
     },
     "EnableKey": {
@@ -224,6 +273,20 @@
       "output": "GenerateRandomResponse",
       "status": "online"
     },
+    "GetDataKeyCiphertextBlob": {
+      "document": "下载数据密钥密文",
+      "input": "GetDataKeyCiphertextBlobRequest",
+      "name": "下载数据密钥密文",
+      "output": "GetDataKeyCiphertextBlobResponse",
+      "status": "online"
+    },
+    "GetDataKeyPlaintext": {
+      "document": "获取数据密钥明文",
+      "input": "GetDataKeyPlaintextRequest",
+      "name": "获取数据密钥明文",
+      "output": "GetDataKeyPlaintextResponse",
+      "status": "online"
+    },
     "GetKeyRotationStatus": {
       "document": "查询指定的CMK是否开启了密钥轮换功能。",
       "input": "GetKeyRotationStatusRequest",
@@ -259,6 +322,13 @@
       "output": "GetServiceStatusResponse",
       "status": "online"
     },
+    "ImportDataKey": {
+      "document": "数据密钥导入接口，并托管到KMS",
+      "input": "ImportDataKeyRequest",
+      "name": "导入数据密钥",
+      "output": "ImportDataKeyResponse",
+      "status": "online"
+    },
     "ImportKeyMaterial": {
       "document": "用于导入密钥材料。只有类型为EXTERNAL 的CMK 才可以导入，导入的密钥材料使用 GetParametersForImport 获取的密钥进行加密。可以为指定的 CMK 重新导入密钥材料，并重新指定过期时间，但必须导入相同的密钥材料。CMK 密钥材料导入后不可以更换密钥材料。导入的密钥材料过期或者被删除后，指定的CMK将无法使用，需要再次导入相同的密钥材料才能正常使用。CMK是独立的，同样的密钥材料可导入不同的 CMK 中，但使用其中一个 CMK 加密的数据无法使用另一个 CMK解密。\n只有Enabled 和 PendingImport状态的CMK可以导入密钥材料。",
       "input": "ImportKeyMaterialRequest",
@@ -271,6 +341,20 @@
       "input": "ListAlgorithmsRequest",
       "name": "列出当前Region支持的加密方式",
       "output": "ListAlgorithmsResponse",
+      "status": "online"
+    },
+    "ListDataKeyDetail": {
+      "document": "根据指定Offset和Limit获取数据密钥列表详情。",
+      "input": "ListDataKeyDetailRequest",
+      "name": "获取数据密钥列表详情",
+      "output": "ListDataKeyDetailResponse",
+      "status": "online"
+    },
+    "ListDataKeys": {
+      "document": "用于查询数据密钥的列表",
+      "input": "ListDataKeysRequest",
+      "name": "获取数据密钥的列表",
+      "output": "ListDataKeysResponse",
       "status": "online"
     },
     "ListKeyDetail": {
@@ -329,6 +413,13 @@
       "output": "ReEncryptResponse",
       "status": "online"
     },
+    "ScheduleDataKeyDeletion": {
+      "document": "计划删除数据密钥",
+      "input": "ScheduleDataKeyDeletionRequest",
+      "name": "计划删除数据密钥",
+      "output": "ScheduleDataKeyDeletionResponse",
+      "status": "online"
+    },
     "ScheduleKeyDeletion": {
       "document": "CMK计划删除接口，用于指定CMK删除的时间，可选时间区间为[7,30]天",
       "input": "ScheduleKeyDeletionRequest",
@@ -355,6 +446,20 @@
       "input": "UpdateAliasRequest",
       "name": "修改别名",
       "output": "UpdateAliasResponse",
+      "status": "online"
+    },
+    "UpdateDataKeyDescription": {
+      "document": "修改数据密钥描述",
+      "input": "UpdateDataKeyDescriptionRequest",
+      "name": "修改数据密钥描述",
+      "output": "UpdateDataKeyDescriptionResponse",
+      "status": "online"
+    },
+    "UpdateDataKeyName": {
+      "document": "修改数据密钥名称",
+      "input": "UpdateDataKeyNameRequest",
+      "name": "修改数据密钥名称",
+      "output": "UpdateDataKeyNameResponse",
       "status": "online"
     },
     "UpdateKeyDescription": {
@@ -589,6 +694,43 @@
     "BindCloudResourceResponse": {
       "document": "BindCloudResource返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelDataKeyDeletionRequest": {
+      "document": "CancelDataKeyDeletion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的唯一标志符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelDataKeyDeletionResponse": {
+      "document": "CancelDataKeyDeletion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一标志被计划删除的数据密钥",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
+          "member": "string",
+          "name": "DataKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -928,6 +1070,159 @@
       ],
       "type": "object"
     },
+    "DataKey": {
+      "document": "数据密钥属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DataKey的全局唯一标识。",
+          "example": "\t 5551ef2e-6742-11ef-8133-525400b2f623",
+          "member": "string",
+          "name": "DataKeyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DataKeyMetadata": {
+      "document": "数据密钥属性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DataKey的全局唯一标识",
+          "example": "93866e69-9755-11ef-8e65-52540089547t",
+          "member": "string",
+          "name": "DataKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CMK的全局唯一标识",
+          "example": "6cdf26d1-44ff-11eb-841c-5254006d0810",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "作为密钥更容易辨识，更容易被人看懂的数据密钥名称",
+          "example": "lzctest",
+          "member": "string",
+          "name": "DataKeyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥的长度,单位字节",
+          "example": "32",
+          "member": "uint64",
+          "name": "NumberOfBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥创建时间",
+          "example": "1730357927",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DataKey的描述",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DataKey的状态， 取值为：Enabled | Disabled | PendingDelete",
+          "example": "PendingDelete",
+          "member": "string",
+          "name": "KeyState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "700001224410",
+          "member": "uint64",
+          "name": "CreatorUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥的创建者，用户创建的为 user，授权各云产品自动创建的为对应的产品名",
+          "example": "user",
+          "member": "string",
+          "name": "Owner",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计划删除的时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "DeletionDate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DataKey 密钥材料类型，由KMS创建的为： TENCENT_KMS， 由用户导入的类型为：EXTERNAL",
+          "example": "EXTERNAL",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）",
+          "example": "cls-hsm-1a2b3c4d",
+          "member": "string",
+          "name": "HsmClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，格式：creatorUin/$creatorUin/$dataKeyId",
+          "example": "creatorUin/12345/6cdf26d1-44ff-11eb-841c-5254006d0810",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DecryptRequest": {
       "document": "Decrypt请求参数结构体",
       "members": [
@@ -1047,6 +1342,80 @@
     "DeleteWhiteBoxKeyResponse": {
       "document": "DeleteWhiteBoxKey返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataKeyRequest": {
+      "document": "DescribeDataKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥全局唯一标识符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataKeyResponse": {
+      "document": "DescribeDataKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥属性信息",
+          "example": "无",
+          "member": "DataKeyMetadata",
+          "name": "DataKeyMetadata",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataKeysRequest": {
+      "document": "DescribeDataKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询DataKey的ID列表，批量查询一次最多支持100个DataKeyId",
+          "example": "[\"87ff856e-973c-11ef-947b-525400d834e5\"]",
+          "member": "string",
+          "name": "DataKeyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataKeysResponse": {
+      "document": "DescribeDataKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据密钥属性信息列表",
+          "example": " { \"DataKeyName\": \"x\", \"CreateTime\": xxx, \"CreatorUin\": xxx, \"DeletionDate\": 0, \"Description\": \"x\", \"HsmClusterId\": \"cls-x-x\",\"NumberOfBytes\":32, \"DataKeyId\": \"xxx\", \"KeyId\": \"xxx\",  \"KeyState\": \"xxx\", \"Origin\": \"xxx\",\"ResourceId\": \"creatorUin/xxx/xxx\" } ",
+          "member": "DataKeyMetadata",
+          "name": "DataKeyMetadatas",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1370,6 +1739,60 @@
       ],
       "usage": "both"
     },
+    "DisableDataKeyRequest": {
+      "document": "DisableDataKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableDataKeyResponse": {
+      "document": "DisableDataKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableDataKeysRequest": {
+      "document": "DisableDataKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要批量禁用的DataKey Id 列表，数据密钥数量最大支持100",
+          "example": "[\"23e80852-1e38-11e9-b129-5cb9019b4b02\"]",
+          "member": "string",
+          "name": "DataKeyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableDataKeysResponse": {
+      "document": "DisableDataKeys返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisableKeyRequest": {
       "document": "DisableKey请求参数结构体",
       "members": [
@@ -1495,6 +1918,60 @@
     },
     "DisableWhiteBoxKeysResponse": {
       "document": "DisableWhiteBoxKeys返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableDataKeyRequest": {
+      "document": "EnableDataKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥唯一标识符",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableDataKeyResponse": {
+      "document": "EnableDataKey返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableDataKeysRequest": {
+      "document": "EnableDataKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要批量启用的DataKey Id 列表， 数据密钥数量最大支持100",
+          "example": "\t [\"23e80852-1e38-11e9-b129-5cb9019b4b02\"]",
+          "member": "string",
+          "name": "DataKeyIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableDataKeysResponse": {
+      "document": "EnableDataKeys返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1861,6 +2338,42 @@
           "name": "EncryptionAlgorithm",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。表示生成的数据密钥是否被KMS托管。1:表示被KMS托管保存,0:表示KMS不托管。",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsHostedByKms",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥的名称，当IsHostedByKms为1时,必须填写。当IsHostedByKms为0时,可以不填，KMS不托管。",
+          "example": "testdataKey",
+          "member": "string",
+          "name": "DataKeyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥 的描述，最大100字节",
+          "example": "Description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KMS 独享版对应的 HSM 集群 ID。\n当KeyId 没有传入时有效，如果指定HsmClusterId,会默认在此集群下生成根密钥，然后利用创建的根密钥产生数据密钥。\n如果没有指定HsmClusterId，则会在公有云共享集群下创建一个根密钥，然后利用创建的根密钥产生数据密钥。",
+          "example": "cluster-123",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1899,6 +2412,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "DataKey的全局唯一标识,当KMS托管数据密钥时返回。",
+          "example": "93866e69-9755-11ef-8e65-52540089547t",
+          "member": "string",
+          "name": "DataKeyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1932,6 +2455,98 @@
           "member": "string",
           "name": "Plaintext",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataKeyCiphertextBlobRequest": {
+      "document": "GetDataKeyCiphertextBlob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的唯一标志符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataKeyCiphertextBlobResponse": {
+      "document": "GetDataKeyCiphertextBlob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的密文",
+          "example": "GPJUsGlmPcSjHKIktXGyzn33yestz+7NteW36M6FuL8hPfJ1xVfdO6Akr8sF69x3yBXMwto4njumJMIsi9WKow==-k-XqqalxTyNKIC1rITRePFGQ==-k-xAL9z9eXIHV/p+WT1RsHP3dm6f43bkomXjwmvWdMXH+JQoFORTThfXgcRh1f9lPNLENK4+fCOiQVG1VvLdA0RvcuRvU=",
+          "member": "string",
+          "name": "CiphertextBlob",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataKeyPlaintextRequest": {
+      "document": "GetDataKeyPlaintext请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的唯一标志符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "PEM 格式公钥字符串，支持 RSA2048 和 SM2 公钥，用于对返回数据中的 Plaintext 值进行加密。若为空，则不对 Plaintext 值加密。",
+          "example": "-----BEGIN PUBLIC KEY----- MFkwEwY*****fJiHQuh2Jr9lMspgK58UVMJTvQCAU+Hztyhd6Aw== -----END PUBLIC KEY-----",
+          "member": "string",
+          "name": "EncryptionPublicKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "非对称加密算法，配合 EncryptionPublicKey 对返回数据进行加密。目前支持：SM2（以 C1C3C2 格式返回密文），SM2_C1C3C2_ASN1 （以 C1C3C2 ASN1 格式返回密文），RSAES_PKCS1_V1_5，RSAES_OAEP_SHA_1，RSAES_OAEP_SHA_256。若为空，则默认为 SM2。",
+          "example": "SM2",
+          "member": "string",
+          "name": "EncryptionAlgorithm",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDataKeyPlaintextResponse": {
+      "document": "GetDataKeyPlaintext返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "若调用时未提供 EncryptionPublicKey，该字段值为 Base64 编码的明文，需进行 Base64 解码以获取明文。 若调用时提供了 EncryptionPublicKey，则该字段值为使用 EncryptionPublicKey 公钥进行非对称加密后的 Base64 编码的密文。需在 Base64 解码后，使用用户上传的公钥对应的私钥进行进一步解密，以获取明文。",
+          "example": "dGVzdAo=",
+          "member": "string",
+          "name": "Plaintext",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2210,7 +2825,7 @@
         },
         {
           "disabled": false,
-          "document": "旗舰版购买记录的唯一性标识。如果为开通旗舰版，则返回值为空",
+          "document": "旗舰版购买记录的唯一性标识。如果未开通旗舰版，则返回值为空",
           "example": "kms_pro_12345",
           "member": "string",
           "name": "ProResourceId",
@@ -2276,6 +2891,138 @@
           "name": "ExclusiveHSMList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持数据密钥托管。1:支持，0:不支持。",
+          "example": "0",
+          "member": "bool",
+          "name": "IsAllowedDataKeyHosted",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IsAllowedDataKeyHosted为1时有效，数据密钥的购买额度",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataKeyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IsAllowedDataKeyHosted为1时有效，数据密钥免费额度。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FreeDataKeyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IsAllowedDataKeyHosted为1时有效，已使用的数据密钥数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataKeyUsedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportDataKeyRequest": {
+      "document": "ImportDataKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的名称",
+          "example": "testDataKey",
+          "member": "string",
+          "name": "DataKeyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果导入的是明文数据密钥，则是base64 转换后的明文数据密钥，  如果导入的是密文数据密钥，则是由KMS GenerateDataKey接口生成的密文数据密钥。",
+          "example": "YLbjnjPPIYjPb1XhyBYNmcx",
+          "member": "string",
+          "name": "ImportKeyMaterial",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:密文导入(由KMS接口生成的密文数据密钥)，2:明文导入。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ImportType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥 的描述，最大100字节",
+          "example": "描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当导入密文数据密钥时，无需传入根密钥,如果传入也会忽略。\n当KeyId 为空，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。\n如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据生成的根密钥加密数据密钥。\n如果KeyId 不为空，根据指定的根密钥加密数据密钥。",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KMS 独享版对应的 HSM 集群 ID。\n当KeyId 没有传入时有效，如果指定了独享集群HsmClusterId，则会在独享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。\n如果没有指定独享集群HsmClusterId,则会在公有云共享集群下创建一个根密钥，根据产生的根密钥加密数据密钥。",
+          "example": "hsm-cluster-123",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportDataKeyResponse": {
+      "document": "ImportDataKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CMK的全局唯一标识",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "KeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DataKey的全局唯一标识  否  官网/国内&国际站展示",
+          "example": "93866e69-9755-11ef-8e65-52540089547t",
+          "member": "string",
+          "name": "DataKeyId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2590,6 +3337,208 @@
       ],
       "type": "object"
     },
+    "ListDataKeyDetailRequest": {
+      "document": "ListDataKeyDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥",
+          "example": "0",
+          "member": "uint64",
+          "name": "Role",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据DataKey创建时间排序， 0 表示按照降序排序，1表示按照升序排序",
+          "example": "0",
+          "member": "uint64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据DataKey状态筛选， 0表示全部DataKey， 1 表示仅查询Enabled DataKey， 2 表示仅查询Disabled DataKey，3 表示查询PendingDelete 状态的DataKey(处于计划删除状态的Key)。",
+          "example": "0",
+          "member": "uint64",
+          "name": "KeyState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据DataKeyId或者DataKeyName进行模糊匹配查询",
+          "example": "lzctest",
+          "member": "string",
+          "name": "SearchKeyAlias",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根据DateKey类型筛选， \"TENCENT_KMS\" 表示筛选密钥材料由KMS创建的数据密钥， \"EXTERNAL\" 表示筛选密钥材料需要用户导入的 EXTERNAL类型数据密钥，\"ALL\" 或者不设置表示两种类型都查询，大小写敏感。",
+          "example": "ALL",
+          "member": "string",
+          "name": "Origin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "KMS 高级版对应的 HSM 集群 ID。",
+          "example": "cls-hsm-3dflmo9g",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "根密钥全局唯一标识符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥的长度",
+          "example": "16",
+          "member": "uint64",
+          "name": "DataKeyLen",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDataKeyDetailResponse": {
+      "document": "ListDataKeyDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的属性信息列表。",
+          "example": "无",
+          "member": "DataKeyMetadata",
+          "name": "DataKeyMetadatas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DataKey的总数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDataKeysRequest": {
+      "document": "ListDataKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "含义跟 SQL 查询的 Offset 一致，表示本次获取从按一定顺序排列数组的第 Offset 个元素开始，缺省为0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "含义跟 SQL 查询的 Limit 一致，表示本次最多获取 Limit 个元素。缺省值为10，最大值为200",
+          "example": "2",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据创建者角色筛选，默认 0 表示用户自己创建的数据密钥， 1 表示授权其它云产品自动创建的数据密钥",
+          "example": "0",
+          "member": "uint64",
+          "name": "Role",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "KMS 高级版对应的 HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）",
+          "example": "cls-hsm-3dflmo9g",
+          "member": "string",
+          "name": "HsmClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListDataKeysResponse": {
+      "document": "ListDataKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥Id列表数组",
+          "example": "无",
+          "member": "DataKey",
+          "name": "DataKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥的总数量",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListKeyDetailRequest": {
       "document": "ListKeyDetail请求参数结构体",
       "members": [
@@ -2702,7 +3651,7 @@
         {
           "disabled": false,
           "document": "返回的属性信息列表。",
-          "example": "[       {         \"Alias\": \"Weijiali_test_000000005\",         \"CreateTime\": 1725354067,         \"CreatorUin\": 700001028674,         \"DeletionDate\": 0,         \"Description\": \"weijiali_test_00000000000005\",         \"HsmClusterId\": \"cls-hsm-3dflmo9g\",         \"KeyId\": \"0ed49d3e-69d3-11ef-9841-52540089bc41\",         \"KeyRotationEnabled\": false,         \"KeyState\": \"Enabled\",         \"KeyUsage\": \"ASYMMETRIC_SIGN_VERIFY_SM2\",         \"LastRotateTime\": 1725354067,         \"NextRotateTime\": 1756890067,         \"Origin\": \"TENCENT_KMS\",         \"Owner\": \"user\",         \"ResourceId\": \"creatorUin/700001028674/0ed49d3e-69d3-11ef-9841-52540089bc41\",         \"RotateDays\": 365,         \"Type\": 4,         \"ValidTo\": 0       },       {         \"Alias\": \"Weijiali_test_00000000000004\",         \"CreateTime\": 1725354055,         \"CreatorUin\": 700001028674,         \"DeletionDate\": 0,         \"Description\": \"Weijiali_test_00000000000004\",         \"HsmClusterId\": \"cls-hsm-3dflmo9g\",         \"KeyId\": \"07ad2031-69d3-11ef-9841-52540089bc41\",         \"KeyRotationEnabled\": false,         \"KeyState\": \"Enabled\",         \"KeyUsage\": \"ASYMMETRIC_DECRYPT_SM2\",         \"LastRotateTime\": 1725354055,         \"NextRotateTime\": 1756890055,         \"Origin\": \"TENCENT_KMS\",         \"Owner\": \"user\",         \"ResourceId\": \"creatorUin/700001028674/07ad2031-69d3-11ef-9841-52540089bc41\",         \"RotateDays\": 365,         \"Type\": 4,         \"ValidTo\": 0       },       {         \"Alias\": \"weijiali_test_00000000000003\",         \"CreateTime\": 1725354040,         \"CreatorUin\": 700001028674,         \"DeletionDate\": 0,         \"Description\": \"weijiali_test_00000000000003\",         \"HsmClusterId\": \"cls-hsm-3dflmo9g\",         \"KeyId\": \"fea98175-69d2-11ef-910d-525400d834e5\",         \"KeyRotationEnabled\": false,         \"KeyState\": \"Enabled\",         \"KeyUsage\": \"ENCRYPT_DECRYPT\",         \"LastRotateTime\": 1725354040,         \"NextRotateTime\": 1756890040,         \"Origin\": \"TENCENT_KMS\",         \"Owner\": \"user\",         \"ResourceId\": \"creatorUin/700001028674/fea98175-69d2-11ef-910d-525400d834e5\",         \"RotateDays\": 365,         \"Type\": 4,         \"ValidTo\": 0       }     ]",
+          "example": "无",
           "member": "KeyMetadata",
           "name": "KeyMetadatas",
           "output_required": false,
@@ -3144,6 +4093,62 @@
       ],
       "type": "object"
     },
+    "ScheduleDataKeyDeletionRequest": {
+      "document": "ScheduleDataKeyDeletion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的唯一标志符",
+          "example": "\t 93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计划删除时间区间[7,30]",
+          "example": "7",
+          "member": "uint64",
+          "name": "PendingWindowInDays",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScheduleDataKeyDeletionResponse": {
+      "document": "ScheduleDataKeyDeletion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计划删除执行时间",
+          "example": "1559318399",
+          "member": "uint64",
+          "name": "DeletionDate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一标志被计划删除的数据密钥",
+          "example": "23e80852-1e38-11e9-b129-5cb9019b4b01",
+          "member": "string",
+          "name": "DataKeyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ScheduleKeyDeletionRequest": {
       "document": "ScheduleKeyDeletion请求参数结构体",
       "members": [
@@ -3383,6 +4388,78 @@
     },
     "UpdateAliasResponse": {
       "document": "UpdateAlias返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataKeyDescriptionRequest": {
+      "document": "UpdateDataKeyDescription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的唯一标志符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥 的描述，最大100字节",
+          "example": "描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataKeyDescriptionResponse": {
+      "document": "UpdateDataKeyDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataKeyNameRequest": {
+      "document": "UpdateDataKeyName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据密钥的唯一标志符",
+          "example": "93866e69-9755-11ef-8e65-52540089bc41",
+          "member": "string",
+          "name": "DataKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据密钥的名称",
+          "example": "test",
+          "member": "string",
+          "name": "DataKeyName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataKeyNameResponse": {
+      "document": "UpdateDataKeyName返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

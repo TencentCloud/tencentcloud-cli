@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli cdb DescribeProxySupportParam --cli-unfold-argument  \
-    --InstanceId cdb-xxx
+    --InstanceId cdb-aykuksx3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx-xxx-xxx",
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
         "ProxyVersion": "1.3.1",
         "SupportPool": true,
         "PoolMin": 1,

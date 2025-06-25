@@ -2212,7 +2212,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 默认可打断， 1：高优先不可打断",
+          "document": "0: 默认可打断， 2：高优先不可打断",
           "example": "0",
           "member": "int64",
           "name": "WelcomeMessagePriority",

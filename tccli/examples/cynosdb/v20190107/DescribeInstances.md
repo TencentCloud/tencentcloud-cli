@@ -114,6 +114,7 @@ Output:
                         "PackageType": "CCU"
                     }
                 ],
+                "CynosVersionTag": "stable",
                 "InstanceIndexMode": "onlyRowIndex"
             }
         ],

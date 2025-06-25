@@ -554,7 +554,7 @@
       "status": "online"
     },
     "DescribeDSPADiscoveryTaskResult": {
-      "document": "获取分类分级任务结果，该接口只有在任务状态为以下状态时才支持结果正常查询：\n3 扫描成功，\n4 扫描失败",
+      "document": "获取分类分级任务结果，该接口只有在任务状态为以下状态时才支持结果正常查询：3 扫描成功，4 扫描失败",
       "input": "DescribeDSPADiscoveryTaskResultRequest",
       "name": "获取分类分级任务执行结果",
       "output": "DescribeDSPADiscoveryTaskResultResponse",
@@ -3927,6 +3927,15 @@
           "example": "id",
           "member": "string",
           "name": "GlobalOrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "full:全量扫描 incre:变更扫描",
+          "example": "full",
+          "member": "string",
+          "name": "ScanRange",
           "required": false,
           "type": "string"
         }
@@ -7899,12 +7908,21 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "扫描Bucket任务结果ID",
           "example": "1",
           "member": "int64",
           "name": "BucketResultId",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "扫描结果id",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanResultId",
+          "required": false,
           "type": "int"
         }
       ],
@@ -7916,7 +7934,7 @@
         {
           "disabled": false,
           "document": "文件列表",
-          "example": "[file1, file2]",
+          "example": "[\"1.txt\"]",
           "member": "string",
           "name": "Files",
           "output_required": true,
@@ -7970,6 +7988,33 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-05-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-05-01 13:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询历史结果",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchHistory",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7994,6 +8039,16 @@
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大展示扫描结果次数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8121,20 +8176,20 @@
         },
         {
           "disabled": false,
-          "document": "扫描Bucket结果ID",
-          "example": "1",
-          "member": "int64",
-          "name": "BucketResultId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "合规组ID",
           "example": "1",
           "member": "int64",
           "name": "ComplianceId",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "扫描Bucket结果ID",
+          "example": "1",
+          "member": "int64",
+          "name": "BucketResultId",
+          "required": false,
           "type": "int"
         },
         {
@@ -8199,6 +8254,15 @@
           "name": "CategoryIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "扫描结果id",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanResultId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8209,7 +8273,7 @@
         {
           "disabled": false,
           "document": "扫描结果详情列表",
-          "example": "[]",
+          "example": "无",
           "member": "DspaDiscoveryCOSTaskResultDetail",
           "name": "Items",
           "output_required": true,
@@ -9064,6 +9128,15 @@
           "name": "CategoryIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务扫描id",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanResultId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9074,7 +9147,7 @@
         {
           "disabled": false,
           "document": "扫描结果详情列表",
-          "example": "[   {     \"FieldResultId\": 1,     \"TaskId\": 1,     \"TableName\": \"miyaxlliutest001\",     \"FieldName\": \"hhtestbIllhhtest\",     \"SchemaName\": \"\",     \"RuleId\": 74,     \"RuleName\": \"交易金额\",     \"CategoryId\": 333,     \"CategoryName\": \"交易记录\",     \"CategoryFullPath\": \"[\\\"用户数据\\\",\\\"用户交易记录\\\",\\\"交易记录\\\"]\",     \"LevelId\": 8,     \"LevelName\": \"敏感\",     \"LevelRiskScore\": 10,     \"SafeGuard\": {       \"Encrypt\": \"\",       \"Desensitization\": \"\"     }   } ]",
+          "example": "无",
           "member": "DspaDiscoveryTaskResultDetail",
           "name": "Items",
           "output_required": true,
@@ -9183,6 +9256,33 @@
           "name": "ResourceRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-05-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-05-01 13:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询历史结果",
+          "example": "true",
+          "member": "bool",
+          "name": "FetchHistory",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9193,7 +9293,7 @@
         {
           "disabled": false,
           "document": "扫描任务结果项",
-          "example": "[   {     \"DbResultId\": 1,     \"TaskId\": 1,     \"TaskName\": \"新建任务0001\",     \"DataSourceId\": \"cdb-6cmpe42v\",     \"DataSourceName\": \"cdb-测试\",     \"ResourceRegion\": \"ap-guangzhou\",     \"ResultId\": 1,     \"DbName\": \"dsgctest001\",     \"TotalTables\": 1,     \"SensitiveTables\": 0,     \"SensitiveField\": 0,     \"TotalField\": 51,     \"EndTime\": \"2024-11-09 13:20:48\",     \"Status\": 3,     \"ErrorInfo\": \"\"   } ]",
+          "example": "无",
           "member": "DspaDiscoveryTaskDbResult",
           "name": "Items",
           "output_required": true,
@@ -9207,6 +9307,16 @@
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大展示扫描结果次数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9241,12 +9351,12 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据库扫描结果ID",
           "example": "1",
           "member": "int64",
           "name": "DbResultId",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -9257,6 +9367,15 @@
           "name": "DbName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务扫描id",
+          "example": "1",
+          "member": "int64",
+          "name": "ScanResultId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11495,7 +11614,7 @@
         {
           "disabled": false,
           "document": "Bucket扫描的结束时间，格式如：2006-01-02 15:04:05",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -11549,6 +11668,26 @@
           "member": "string",
           "name": "OverSize",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务实例id",
+          "example": "3_1",
+          "member": "string",
+          "name": "TaskInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12672,6 +12811,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\tfull:全量扫描 incre:变更扫描",
+          "example": "full",
+          "member": "string",
+          "name": "ScanRange",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12864,7 +13013,7 @@
         {
           "disabled": false,
           "document": "DB扫描的结束时间，格式如：2006-01-02 15:04:05",
-          "example": "2006-01-02 15:04:05",
+          "example": "2025-01-02 15:04:05",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -12929,6 +13078,36 @@
           "name": "TotalField",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务实例id",
+          "example": "3_1",
+          "member": "string",
+          "name": "TaskInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-01-02 15:00:05",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描范围（full:全量扫描 incre：变更扫描）",
+          "example": "full",
+          "member": "string",
+          "name": "ScanRange",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13034,6 +13213,16 @@
           "member": "string",
           "name": "TimingStartTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "full:全量扫描 incre:变更扫描",
+          "example": "full",
+          "member": "string",
+          "name": "ScanRange",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16460,6 +16649,15 @@
           "example": "cdb",
           "member": "string",
           "name": "DataSourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\tfull:全量扫描 incre:变更扫描",
+          "example": "full",
+          "member": "string",
+          "name": "ScanRange",
           "required": false,
           "type": "string"
         }

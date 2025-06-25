@@ -64,7 +64,7 @@ Output:
                     "CREATE",
                     "DROP"
                 ],
-                "Database": "jersey_test"
+                "Database": "jersey"
             }
         ]
     }

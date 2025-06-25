@@ -637,6 +637,20 @@
       "output": "DescribeDsParentFolderTreeResponse",
       "status": "online"
     },
+    "DescribeDsTaskVersionInfo": {
+      "document": "查看任务版本详细信息",
+      "input": "DescribeDsTaskVersionInfoRequest",
+      "name": "查看任务版本详细信息",
+      "output": "DescribeDsTaskVersionInfoResponse",
+      "status": "online"
+    },
+    "DescribeDsTaskVersionList": {
+      "document": "拉取任务版本列表",
+      "input": "DescribeDsTaskVersionListRequest",
+      "name": "拉取任务版本列表",
+      "output": "DescribeDsTaskVersionListResponse",
+      "status": "online"
+    },
     "DescribeDutyScheduleDetails": {
       "document": "获取值班日历",
       "input": "DescribeDutyScheduleDetailsRequest",
@@ -1303,9 +1317,9 @@
       "status": "online"
     },
     "DescribeTaskScript": {
-      "document": "查询任务脚本",
+      "document": "查询任务脚本。本接口已废弃，请使用接口GetPaginationTaskScript。",
       "input": "DescribeTaskScriptRequest",
-      "name": "查询任务脚本",
+      "name": "查询任务脚本（废弃）",
       "output": "DescribeTaskScriptResponse",
       "status": "online"
     },
@@ -1655,7 +1669,7 @@
     "ModifyTaskInfoDs": {
       "document": "更新任务Ds",
       "input": "ModifyTaskInfoDsRequest",
-      "name": "更新任务信息Ds",
+      "name": "更新任务信息",
       "output": "ModifyTaskInfoDsResponse",
       "status": "online"
     },
@@ -1681,9 +1695,9 @@
       "status": "online"
     },
     "ModifyTaskScript": {
-      "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n修改任务脚本",
+      "document": "<p style=\"color:red;\">[注意：该版本只满足广州区部分白名单客户使用]</p>\n修改任务脚本。本接口已废弃，请使用接口ModifyTaskInfoDs。",
       "input": "ModifyTaskScriptRequest",
-      "name": "修改任务脚本",
+      "name": "修改任务脚本（废弃）",
       "output": "ModifyTaskScriptResponse",
       "status": "online"
     },
@@ -16562,6 +16576,116 @@
       ],
       "type": "object"
     },
+    "DescribeDsTaskVersionInfoRequest": {
+      "document": "DescribeDsTaskVersionInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "20230224110309511",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "无",
+          "member": "string",
+          "name": "TaskVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDsTaskVersionInfoResponse": {
+      "document": "DescribeDsTaskVersionInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务版本详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskVersionDsDTO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDsTaskVersionListRequest": {
+      "document": "DescribeDsTaskVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "20230224110309511",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1525735072999010000",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅返回当前编辑版本",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOnlyCurrentEditingVersion",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDsTaskVersionListResponse": {
+      "document": "DescribeDsTaskVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskVersionDsDTO",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDutyScheduleDetailsRequest": {
       "document": "DescribeDutyScheduleDetails请求参数结构体",
       "members": [
@@ -24912,8 +25036,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务脚本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务脚本内容，BASE64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BASE64编码内容",
           "member": "TaskScriptContent",
           "name": "Data",
           "output_required": true,
@@ -28497,6 +28621,67 @@
         }
       ],
       "usage": "out"
+    },
+    "EventPublisherDTO": {
+      "document": "事件发布者信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键字，一般为任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "REST_API、KAFKA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTs",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamInfoDs",
+          "name": "PropertiesList",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ExecutorResourceGroupInfo": {
       "document": "资源组详情",
@@ -39421,8 +39606,8 @@
         },
         {
           "disabled": false,
-          "document": "脚本内容 base64编码",
-          "example": "\"\"",
+          "document": "必填，脚本内容 base64编码",
+          "example": "\"base64编码\"",
           "member": "string",
           "name": "ScriptContent",
           "required": false,
@@ -39431,7 +39616,7 @@
         {
           "disabled": false,
           "document": "集成任务脚本配置",
-          "example": "[]",
+          "example": "无",
           "member": "IntegrationNodeDetail",
           "name": "IntegrationNodeDetails",
           "required": false,
@@ -57830,6 +58015,243 @@
           "example": "数据计算",
           "member": "string",
           "name": "TypeSort",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskVersionDsDTO": {
+      "document": "TaskVersionVO",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20221219102936239",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VersionNum",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VersionRemark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新调度计划变更时间 生产态存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastSchedulerCommitTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本是否正在使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UsedVersion",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskDsDTO",
+          "name": "TaskInfo",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParameterTaskDsDto",
+          "name": "TaskParaInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TaskInputParam输入参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParameterTaskInDsDto",
+          "name": "TaskInputParam",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TaskOutputParam输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParameterTaskOutDsDto",
+          "name": "TaskOutputParam",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务上游依赖信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskLinkDsDTO",
+          "name": "TaskLinkInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveStatus",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务事件绑定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventPublisherDTO",
+          "name": "TaskEventPublisher",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务产出登记信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskDataRegistryDTO",
+          "name": "TaskRegisterOutputTable",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "循环依赖信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskCycleLinkDTO",
+          "name": "TaskCycleLinkInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件监听信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventListenerDTO",
+          "name": "TaskEventListener",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproveTime",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

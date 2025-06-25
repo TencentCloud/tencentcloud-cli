@@ -25193,6 +25193,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序，大小写无关：asc 升序，desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序列，严格相等：最近检测时间RecentFoundTime",
+          "example": "RecentFoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25203,7 +25221,7 @@
         {
           "disabled": false,
           "document": "事件列表",
-          "example": "[             {                 \"Id\": 184113,                 \"Quuid\": \"d4cc302e-09e5-436f-b99b-5ab9c9070323\",                 \"Uuid\": \"d4cc302e-09e5-436f-b99b-5ab9c9070323\",                 \"Alias\": \"machine\",                 \"HostIp\": \"1.1.1.1\",                 \"Type\": 0,                 \"Description\": \"检测到java进程921852/org.apache.catalina.startup.Bootstrap start中加载的webshell_filter类中存在木马\",                 \"CreateTime\": \"2024-09-20 15:32:08\",                 \"RecentFoundTime\": \"2024-09-20 15:32:08\",                 \"Status\": 1,                 \"MachineExtraInfo\": {                     \"WanIP\": \"1.1.1.1\",                     \"PrivateIP\": \"1.1.1.1\",                     \"NetworkType\": 0,                     \"NetworkName\": \"vpc-id\",                     \"InstanceID\": \"ins-id\",                     \"HostName\": \"hn\"                 },                 \"ClassName\": \"webshell_filter\",                 \"SuperClassName\": \"java.my.******\",                 \"Interfaces\": \"javax\\\\.servlet\\\\.Filter\",                 \"Annotations\": \"\",                 \"LoaderClassName\": \"org\\\\.apache\\\\.jsp\\\\.bebinder_005fshell_jsp\\\\$U\"             }         ]",
+          "example": "无",
           "member": "JavaMemShellInfo",
           "name": "List",
           "output_required": true,
@@ -25739,6 +25757,26 @@
           "member": "bool",
           "name": "RepurchaseRenewSwitch",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动新增机器绑定rasp防护,false 关闭 true 开启",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoBindRaspSwitch",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动新增机器开启rasp防护,false 关闭 true 开启",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoOpenRaspSwitch",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -34895,7 +34933,7 @@
         {
           "disabled": false,
           "document": "漏洞描述信息",
-          "example": "\t\nApache OFBiz是美国阿帕奇（Apache）基金会的一套企业资源计划（ERP）系统。该系统提供了一整套基于Java的Web应用程序组件和工具。 Apache OFBiz 18.12.16之前版本存在代码问题漏洞，该漏洞源于容易受到服务端请求伪造和代码注入攻击。",
+          "example": "Apache OFBiz是美国阿帕奇（Apache）基金会的一套企业资源计划（ERP）系统。",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -35019,6 +35057,16 @@
           "member": "int64",
           "name": "FixSwitch",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持防御： 0-不支持 1-支持",
+          "example": "1",
+          "member": "int64",
+          "name": "SupportDefence",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39361,6 +39409,24 @@
           "name": "Where",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序，大小写无关：asc 升序，desc降序",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序列，严格相等：最近检测时间RecentFoundTime",
+          "example": "RecentFoundTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -46077,6 +46143,24 @@
           "example": "0",
           "member": "uint64",
           "name": "RepurchaseRenewSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新增机器自动绑定rasp,0 关闭 1开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBindRaspSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新增机器自动开启rasp防护,默认关闭,0 关闭 1开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoOpenRaspSwitch",
           "required": false,
           "type": "int"
         }
@@ -59624,6 +59708,26 @@
           "name": "NameEn",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持自动修复 0:不支持 >0: 支持",
+          "example": "0",
+          "member": "int64",
+          "name": "SupportFix",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持自动防御 0:不支持 1:支持",
+          "example": "1",
+          "member": "int64",
+          "name": "SupportDefense",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

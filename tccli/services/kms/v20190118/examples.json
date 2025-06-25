@@ -32,6 +32,14 @@
         "title": "绑定密钥和云产品资源的使用关系"
       }
     ],
+    "CancelDataKeyDeletion": [
+      {
+        "document": "取消计划删除数据密钥",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelDataKeyDeletion\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"2a87094f-4c0e-11f0-8c25-52540073b995\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataKeyId\": \"2a87094f-4c0e-11f0-8c25-52540073b995\",\n        \"RequestId\": \"9c08a46c-b2cd-448c-970b-581c1ce436c5\"\n    }\n}",
+        "title": "取消计划删除数据密钥示例"
+      }
+    ],
     "CancelKeyArchive": [
       {
         "document": "",
@@ -86,6 +94,22 @@
         "input": "https://kms.tencentcloudapi.com/?Action=DeleteWhiteBoxKey\n&KeyId=244dab8c-6dad-11ea-80c6-5254006d0810\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"850bf779-2249-4995-8c55-b3966daf0a8c\"\n    }\n}",
         "title": "删除白盒密钥"
+      }
+    ],
+    "DescribeDataKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataKey\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"c0fb30d1-4ceb-11f0-bcaa-525400eb1719\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataKeyMetadata\": {\n            \"CreateTime\": 1750323588,\n            \"CreatorUin\": 100000007998,\n            \"DataKeyId\": \"c0fb30d1-4ceb-11f0-bcaa-525400eb1719\",\n            \"DataKeyName\": \"42tofUJQy1gVjfsuIS0sbDoSqtpKuiw3\",\n            \"DeletionDate\": 0,\n            \"Description\": \"TestDateKey_01\",\n            \"HsmClusterId\": \"\",\n            \"KeyId\": \"0397abd8-4029-11f0-aa65-52540064acab\",\n            \"KeyState\": \"Enabled\",\n            \"NumberOfBytes\": 1024,\n            \"Origin\": \"TENCENT_KMS\",\n            \"Owner\": \"user\",\n            \"ResourceId\": \"creatorUin/100000007998/c0fb30d1-4ceb-11f0-bcaa-525400eb1719\"\n        },\n        \"RequestId\": \"46107db0-5b2b-4d1d-b71d-acfefcaf6d12\"\n    }\n}",
+        "title": "获取数据密钥的详情"
+      }
+    ],
+    "DescribeDataKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataKeys\n<公共请求参数>\n\n{\n    \"DataKeyIds\": [\n        \"7fe31abf-5018-11f0-b672-52540073b995\",\n        \"8042dfcb-5018-11f0-b672-52540073b995\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataKeyMetadatas\": [\n            {\n                \"CreateTime\": 1750672660,\n                \"CreatorUin\": 100000007998,\n                \"DataKeyId\": \"7fe31abf-5018-11f0-b672-52540073b995\",\n                \"DataKeyName\": \"Test6331120\",\n                \"DeletionDate\": 0,\n                \"Description\": \"\",\n                \"HsmClusterId\": \"\",\n                \"KeyId\": \"0397abd8-4029-11f0-aa65-52540064acab\",\n                \"KeyState\": \"Enabled\",\n                \"NumberOfBytes\": 32,\n                \"Origin\": \"EXTERNAL\",\n                \"Owner\": \"user\",\n                \"ResourceId\": \"creatorUin/100000007998/7fe31abf-5018-11f0-b672-52540073b995\"\n            },\n            {\n                \"CreateTime\": 1750672660,\n                \"CreatorUin\": 100000007998,\n                \"DataKeyId\": \"8042dfcb-5018-11f0-b672-52540073b995\",\n                \"DataKeyName\": \"miNAmDEc09znOK7jw9Yi3L9cmq8xk6z1\",\n                \"DeletionDate\": 0,\n                \"Description\": \"TestDateKey_01\",\n                \"HsmClusterId\": \"\",\n                \"KeyId\": \"0397abd8-4029-11f0-aa65-52540064acab\",\n                \"KeyState\": \"Enabled\",\n                \"NumberOfBytes\": 1024,\n                \"Origin\": \"TENCENT_KMS\",\n                \"Owner\": \"user\",\n                \"ResourceId\": \"creatorUin/100000007998/8042dfcb-5018-11f0-b672-52540073b995\"\n            }\n        ],\n        \"RequestId\": \"33c0c722-09e0-4f19-b16b-187a5898fd66\"\n    }\n}",
+        "title": "获取数据密钥的详情列表示例"
       }
     ],
     "DescribeKey": [
@@ -144,6 +168,22 @@
         "title": "获取白盒密钥服务状态"
       }
     ],
+    "DisableDataKey": [
+      {
+        "document": "禁用数据密钥",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableDataKey\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"26299dfb-4f42-11f0-b672-52540073b995\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f4bb2ac-283f-41c0-9ff5-0f35cf551609\"\n    }\n}",
+        "title": "禁用数据密钥示例"
+      }
+    ],
+    "DisableDataKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableDataKeys\n<公共请求参数>\n\n{\n    \"DataKeyIds\": [\n        \"7fe31abf-5018-11f0-b672-52540073b995\",\n        \"8042dfcb-5018-11f0-b672-52540073b995\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b4bfd47-df00-4494-9131-da3870a76295\"\n    }\n}",
+        "title": "批量禁用数据密钥示例"
+      }
+    ],
     "DisableKey": [
       {
         "document": "禁用指定的CMK。",
@@ -182,6 +222,22 @@
         "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableWhiteBoxKeys\n<公共请求参数>\n\n{\n    \"KeyIds\": [\n        \"23e80852-1e38-11e9-b129-5cb9019b4b02\",\n        \"23e80852-1e38-11e9-b129-5cb9019b4b01\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
         "title": "批量禁用白盒密钥"
+      }
+    ],
+    "EnableDataKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableDataKey\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"c0fb30d1-4ceb-11f0-bcaa-525400eb1719\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93a3bea5-f32f-4319-8d8d-956540dfc422\"\n    }\n}",
+        "title": "启用数据密钥示例"
+      }
+    ],
+    "EnableDataKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableDataKeys\n<公共请求参数>\n\n{\n    \"DataKeyIds\": [\n        \"eb46f9c0-5015-11f0-ace9-525400eb1719\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54d25f02-cb69-4045-9fc8-433eaedcac70\"\n    }\n}",
+        "title": "批量启用数据密钥"
       }
     ],
     "EnableKey": [
@@ -256,6 +312,22 @@
         "title": "随机数生成接口示例"
       }
     ],
+    "GetDataKeyCiphertextBlob": [
+      {
+        "document": "下载数据密钥密文",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDataKeyCiphertextBlob\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"cb0f16e6-4f49-11f0-b672-52540073b995\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CiphertextBlob\": \"KoFmB5Ro70M6wfNJe1xlzriwwyn4Ypj6cjXNUbhbEE7+cAtl4ym/EIj3aAzK0Sa6GKgPzyor+zC7bUhRyB5eeQ==-k-fKVP3WIlGpg8m9LMW4jEkQ==-k-yMhT0yaoSueIApZePMxwBZ0y6EjfaKdxvvPhk9LT1ldmhb+Z\",\n        \"RequestId\": \"88d9d828-f019-4625-b0f7-75b57dd2e582\"\n    }\n}",
+        "title": "下载数据密钥密文示例"
+      }
+    ],
+    "GetDataKeyPlaintext": [
+      {
+        "document": "获取数据密钥明文",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDataKeyPlaintext\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"cb0f16e6-4f49-11f0-b672-52540073b995\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Plaintext\": \"3434\",\n        \"RequestId\": \"bd05b0b7-8019-44cf-a67e-fd9a940cee82\"\n    }\n}",
+        "title": "获取数据密钥明文示例"
+      }
+    ],
     "GetKeyRotationStatus": [
       {
         "document": "查询指定的CMK密钥轮换功能是否开启。",
@@ -296,6 +368,14 @@
         "title": "查询服务状态"
       }
     ],
+    "ImportDataKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportDataKey\n<公共请求参数>\n\n{\n    \"DataKeyName\": \"test_weijia_0123456\",\n    \"ImportKeyMaterial\": \"MTIzNAo=\",\n    \"ImportType\": 2,\n    \"Description\": \"数据密钥导入测试\",\n    \"KeyId\": \"0397abd8-4029-11f0-aa65-52540064acab\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataKeyId\": \"eb46f9c0-5015-11f0-ace9-525400eb1719\",\n        \"KeyId\": \"0397abd8-4029-11f0-aa65-52540064acab\",\n        \"RequestId\": \"85568b48-a19c-43e1-9850-6d9101dc2b3a\"\n    }\n}",
+        "title": "数据密钥导入示例"
+      }
+    ],
     "ImportKeyMaterial": [
       {
         "document": "",
@@ -310,6 +390,22 @@
         "input": "https://kms.tencentcloudapi.com/?Action=ListAlgorithms\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"460fe7ff-f4db-4509-9b20-208badcfb915\",\n        \"SymmetricAlgorithms\": [\n            {\n                \"KeyUsage\": \"ENCRYPT_DECRYPT\",\n                \"Algorithm\": \"SM4\"\n            }\n        ],\n        \"AsymmetricAlgorithms\": [\n            {\n                \"KeyUsage\": \"ASYMMETRIC_DECRYPT_SM2\",\n                \"Algorithm\": \"SM2\"\n            },\n            {\n                \"KeyUsage\": \"ASYMMETRIC_DECRYPT_RSA_2048\",\n                \"Algorithm\": \"RSA_2048\"\n            }\n        ],\n        \"AsymmetricSignVerifyAlgorithms\": [\n            {\n                \"KeyUsage\": \"ASYMMETRIC_SIGN_VERIFY_SM2\",\n                \"Algorithm\": \"SM2\"\n            }\n        ]\n    }\n}",
         "title": "列出当前Region支持的加密方式"
+      }
+    ],
+    "ListDataKeyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDataKeyDetail\n<公共请求参数>\n\n{\n    \"SearchKeyAlias\": \"e6c1f360-4ceb-11f0-8428-52540073b995\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataKeyMetadatas\": [\n            {\n                \"CreateTime\": 1750323652,\n                \"CreatorUin\": 100000007998,\n                \"DataKeyId\": \"e6c1f360-4ceb-11f0-8428-52540073b995\",\n                \"DataKeyName\": \"eY66EuC61oAhm6qXyjZAPWhX0Gn9oe8g\",\n                \"DeletionDate\": 1750928452,\n                \"Description\": \"TestDateKey_01\",\n                \"HsmClusterId\": \"\",\n                \"KeyId\": \"0397abd8-4029-11f0-aa65-52540064acab\",\n                \"KeyState\": \"PendingDelete\",\n                \"NumberOfBytes\": 1024,\n                \"Origin\": \"TENCENT_KMS\",\n                \"Owner\": \"user\",\n                \"ResourceId\": \"creatorUin/100000007998/e6c1f360-4ceb-11f0-8428-52540073b995\"\n            }\n        ],\n        \"RequestId\": \"75bd39cb-1e80-4b54-9b83-b991b6f684d6\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取数据密钥列表详情示例"
+      }
+    ],
+    "ListDataKeys": [
+      {
+        "document": "获取数据密钥",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDataKeys\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DataKeys\": [\n            {\n                \"DataKeyId\": \"50cc8e9f-4f44-11f0-ace9-525400eb1719\"\n            },\n            {\n                \"DataKeyId\": \"32e9bd2c-4f44-11f0-ace9-525400eb1719\"\n            },\n            {\n                \"DataKeyId\": \"d02ea923-4f43-11f0-b672-52540073b995\"\n            },\n            {\n                \"DataKeyId\": \"1a6a8465-4dc8-11f0-b672-52540073b995\"\n            },\n            {\n                \"DataKeyId\": \"f3fd3a12-4dba-11f0-ace9-525400eb1719\"\n            },\n            {\n                \"DataKeyId\": \"d6e6cf2d-4ceb-11f0-8428-52540073b995\"\n            },\n            {\n                \"DataKeyId\": \"c0fb30d1-4ceb-11f0-bcaa-525400eb1719\"\n            },\n            {\n                \"DataKeyId\": \"72da485a-4ceb-11f0-bcaa-525400eb1719\"\n            },\n            {\n                \"DataKeyId\": \"602b4824-4ceb-11f0-bcaa-525400eb1719\"\n            },\n            {\n                \"DataKeyId\": \"52293da7-4cc1-11f0-a29a-525400eb1719\"\n            }\n        ],\n        \"RequestId\": \"e9033eb2-e7ba-46a6-b83e-3bc2fc8d906c\",\n        \"TotalCount\": 132\n    }\n}",
+        "title": "获取数据密钥列表示例"
       }
     ],
     "ListKeyDetail": [
@@ -376,6 +472,14 @@
         "title": "重加密接口示例"
       }
     ],
+    "ScheduleDataKeyDeletion": [
+      {
+        "document": "计划删除数据密钥",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScheduleDataKeyDeletion\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"2a87094f-4c0e-11f0-8c25-52540073b995\",\n    \"PendingWindowInDays\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"DataKeyId\": \"2a87094f-4c0e-11f0-8c25-52540073b995\",\n        \"DeletionDate\": 1751276581,\n        \"RequestId\": \"f610236f-580d-49d3-a766-71163d9108eb\"\n    }\n}",
+        "title": "计划删除数据密钥示例"
+      }
+    ],
     "ScheduleKeyDeletion": [
       {
         "document": "指定CMK于累计7天后被删除",
@@ -406,6 +510,28 @@
         "input": "https://kms.tencentcloudapi.com/?Action=UpdateAlias\n&KeyId=23e80852-1e38-11e9-b129-5cb9019b4b01\n&Alias=NewAlias\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b580852-1e38-11e9-b129-5cb9019b4b00\"\n    }\n}",
         "title": "修改别名示例"
+      }
+    ],
+    "UpdateDataKeyDescription": [
+      {
+        "document": "修改数据密钥描述",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataKeyDescription\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"cb0f16e6-4f49-11f0-b672-52540073b995\",\n    \"Description\": \"测试修改描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea9ab121-2339-4176-b2fc-eb6f428789ec\"\n    }\n}",
+        "title": "修改数据密钥描述示例"
+      },
+      {
+        "document": "修改数据密钥描述",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataKeyDescription\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"cb0f16e6-4f49-11f0-b672-52540073b995\",\n    \"Description\": \"测试修改描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea9ab121-2339-4176-b2fc-eb6f428789ec\"\n    }\n}",
+        "title": "修改数据密钥描述的示例"
+      }
+    ],
+    "UpdateDataKeyName": [
+      {
+        "document": "修改数据密钥名称",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataKeyName\n<公共请求参数>\n\n{\n    \"DataKeyId\": \"cb0f16e6-4f49-11f0-b672-52540073b995\",\n    \"DataKeyName\": \"updatedatakeyname\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"130b3e73-e6dc-4adf-b9ea-c3e087be45cb\"\n    }\n}",
+        "title": "修改数据密钥名称示例"
       }
     ],
     "UpdateKeyDescription": [

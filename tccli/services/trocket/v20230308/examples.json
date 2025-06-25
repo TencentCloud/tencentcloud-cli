@@ -84,7 +84,7 @@
       {
         "document": "删除 RocketMQ 5.x 集群",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97f45511-b653-4e2a-ade6-58c8d3ae523b\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"97f45511-b653-4e2a-ade6-58c8d3ae523b\"\n    }\n}",
         "title": "删除集群"
       }
     ],
@@ -152,6 +152,14 @@
         "title": "查询消费者客户端详情"
       }
     ],
+    "DescribeConsumerClientList": [
+      {
+        "document": "查询消费组下的客户端连接",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerClientList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"group\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [],\n        \"RequestId\": \"c2d581fa-d7b2-453c-ba1a-65c0e507a533\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询消费组下的客户端连接"
+      }
+    ],
     "DescribeConsumerGroup": [
       {
         "document": "查询消费者详情",
@@ -164,7 +172,7 @@
       {
         "document": "获取消费组列表",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerGroupList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ConsumeEnable\": true,\n                \"ConsumeMessageOrderly\": true,\n                \"ConsumerGroup\": \"test_group\",\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"MaxRetryTimes\": 16,\n                \"Remark\": \"测试消费组\"\n            }\n        ],\n        \"RequestId\": \"318142bf-0dd1-4b81-9444-a40f988619a1\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ConsumeEnable\": true,\n                \"ConsumeMessageOrderly\": true,\n                \"ConsumerGroup\": \"test_group\",\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"MaxRetryTimes\": 16,\n                \"Remark\": \"测试消费组\",\n                \"ClusterIdV4\": null,\n                \"NamespaceV4\": null,\n                \"ConsumerGroupV4\": null,\n                \"FullNamespaceV4\": null\n            }\n        ],\n        \"RequestId\": \"318142bf-0dd1-4b81-9444-a40f988619a1\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取消费组列表"
       }
     ],
@@ -300,7 +308,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Body\": \"testBody\",\n        \"MessageId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n        \"MessageTracks\": [\n            {\n                \"ConsumeStatus\": \"CONSUMED\",\n                \"ConsumerGroup\": \"group\",\n                \"ExceptionDesc\": null,\n                \"TrackType\": \"CONSUMED\"\n            }\n        ],\n        \"ProduceTime\": \"2023-05-09 14:43:27\",\n        \"ProducerAddr\": \"30.174.57.21\",\n        \"Properties\": \"{\\\"TRACE_ON\\\":\\\"true\\\",\\\"MSG_REGION\\\":\\\"cd\\\",\\\"KEYS\\\":\\\"testKey\\\",\\\"UNIQ_KEY\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"CLUSTER\\\":\\\"rmqbroker-cd-1\\\",\\\"WAIT\\\":\\\"true\\\",\\\"TAGS\\\":\\\"testTag\\\"}\",\n        \"RequestId\": \"8e97b978-376b-4d94-96cc-db0ead5f2f99\",\n        \"ShowTopicName\": \"topic\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Body\": \"testBody\",\n        \"MessageId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n        \"MessageTracksCount\": 1,\n        \"MessageTracks\": [\n            {\n                \"ConsumeStatus\": \"CONSUMED\",\n                \"ConsumerGroup\": \"group\",\n                \"ExceptionDesc\": null,\n                \"TrackType\": \"CONSUMED\"\n            }\n        ],\n        \"ProduceTime\": \"2023-05-09 14:43:27\",\n        \"ProducerAddr\": \"30.174.57.21\",\n        \"Properties\": \"{\\\"TRACE_ON\\\":\\\"true\\\",\\\"MSG_REGION\\\":\\\"cd\\\",\\\"KEYS\\\":\\\"testKey\\\",\\\"UNIQ_KEY\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"CLUSTER\\\":\\\"rmqbroker-cd-1\\\",\\\"WAIT\\\":\\\"true\\\",\\\"TAGS\\\":\\\"testTag\\\"}\",\n        \"RequestId\": \"8e97b978-376b-4d94-96cc-db0ead5f2f99\",\n        \"ShowTopicName\": \"topic\"\n    }\n}",
         "title": "查询普通消息"
       }
     ],
@@ -370,7 +378,7 @@
       {
         "document": "查询角色列表成功",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"RoleName\": \"test_role_name\",\n                \"AccessKey\": \"ak4ae3zkj2zea6741a2a709\",\n                \"SecretKey\": \"skd68607c7dc2be6a4\",\n                \"PermRead\": true,\n                \"PermWrite\": true,\n                \"Remark\": \"\",\n                \"CreatedTime\": 1729153015000,\n                \"ModifiedTime\": 1729153015000\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"RoleName\": \"test_role_name\",\n                \"AccessKey\": \"ak0000aaaa\",\n                \"SecretKey\": \"sk0000aaaa\",\n                \"PermRead\": true,\n                \"PermWrite\": true,\n                \"Remark\": \"\",\n                \"CreatedTime\": 1729153015000,\n                \"ModifiedTime\": 1729153015000\n            }\n        ]\n    }\n}",
         "title": "查询角色列表"
       }
     ],
@@ -458,7 +466,7 @@
       {
         "document": "修改实例公网配置",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-cdrgxq94om\",\n    \"Type\": \"PUBLIC\",\n    \"Bandwidth\": 2,\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.2.3.4\",\n            \"Allow\": true,\n            \"Remark\": \"test remark\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"999bc587-90d9-4ec2-97e3-3ef170e1da96\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"999bc587-90d9-4ec2-97e3-3ef170e1da96\"\n    }\n}",
         "title": "修改实例公网配置"
       }
     ],
@@ -538,7 +546,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConsumerGroupOffset\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"Topic\": \"test_topic\",\n    \"ResetTimestamp\": -1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"707a78e5-019d-41f6-80fc-15743d99c81a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"707a78e5-019d-41f6-80fc-15743d99c81a\"\n    }\n}",
         "title": "重置消费位点"
       }
     ],

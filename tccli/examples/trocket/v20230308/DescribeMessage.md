@@ -19,6 +19,7 @@ Output:
     "Response": {
         "Body": "testBody",
         "MessageId": "1EAE3915000721B8D17C2C5BB31638D1",
+        "MessageTracksCount": 1,
         "MessageTracks": [
             {
                 "ConsumeStatus": "CONSUMED",

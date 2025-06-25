@@ -22,8 +22,8 @@ Output:
         "Data": [
             {
                 "RoleName": "test_role_name",
-                "AccessKey": "ak4ae3zkj2zea6741a2a709",
-                "SecretKey": "skd68607c7dc2be6a4",
+                "AccessKey": "ak0000aaaa",
+                "SecretKey": "sk0000aaaa",
                 "PermRead": true,
                 "PermWrite": true,
                 "Remark": "",

@@ -4899,6 +4899,24 @@
           "name": "ProxyConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动归档",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoArchive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "暂停后的归档处理时间",
+          "example": "12",
+          "member": "int64",
+          "name": "AutoArchiveDelayHours",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -11386,7 +11404,7 @@
         {
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
-          "example": "无",
+          "example": "[{\"Names\": \"ProjectId\",\"Values\": \"andy\",\"ExactMatch\": \"1\",\"Name\": \"172\",\"Operator\": \"27627162\"}]",
           "member": "QueryFilter",
           "name": "Filters",
           "required": false,
@@ -11418,6 +11436,15 @@
           "name": "InstanceIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，取值范围<li> CYNOSDB：事务集群 </li><li> LIBRADB：分析集群 </li><li> ALL：全部 </li>，缺省为 ALL",
+          "example": "CYNOSDB",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11438,7 +11465,7 @@
         {
           "disabled": false,
           "document": "实例列表",
-          "example": "无",
+          "example": "[{}]",
           "member": "CynosdbInstance",
           "name": "InstanceSet",
           "output_required": true,

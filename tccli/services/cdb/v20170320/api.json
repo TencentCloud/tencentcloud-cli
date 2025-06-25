@@ -8,7 +8,7 @@
       "status": "online"
     },
     "AdjustCdbProxy": {
-      "document": "调整数据库代理配置",
+      "document": "本接口（AdjustCdbProxy）用于调整数据库代理配置。",
       "input": "AdjustCdbProxyRequest",
       "name": "调整数据库代理",
       "output": "AdjustCdbProxyResponse",
@@ -64,14 +64,14 @@
       "status": "online"
     },
     "CloseCdbProxyAddress": {
-      "document": "请求关闭数据库代理地址",
+      "document": "本接口（CloseCdbProxyAddress）用于请求关闭数据库代理地址。",
       "input": "CloseCdbProxyAddressRequest",
       "name": "关闭数据库代理地址",
       "output": "CloseCdbProxyAddressResponse",
       "status": "online"
     },
     "CloseSSL": {
-      "document": "关闭SSL连接功能。",
+      "document": "本接口（CloseSSL）用于关闭 SSL 连接功能。",
       "input": "CloseSSLRequest",
       "name": "关闭SSL",
       "output": "CloseSSLResponse",
@@ -183,7 +183,7 @@
       "status": "online"
     },
     "CreateParamTemplate": {
-      "document": "该接口（CreateParamTemplate）用于创建参数模板，全地域公共参数 Region 均为 ap-guangzhou。",
+      "document": "该接口（CreateParamTemplate）用于创建参数模板。\n说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。",
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse",
@@ -260,7 +260,7 @@
       "status": "online"
     },
     "DeleteParamTemplate": {
-      "document": "该接口（DeleteParamTemplate）用于删除参数模板，全地域公共参数 Region 均为 ap-guangzhou。",
+      "document": "该接口（DeleteParamTemplate）用于删除参数模板。\n说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。",
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse",
@@ -281,7 +281,7 @@
       "status": "online"
     },
     "DescribeAccountPrivileges": {
-      "document": "本接口(DescribeAccountPrivileges)用于查询云数据库账户支持的权限信息。",
+      "document": "本接口（DescribeAccountPrivileges）用于查询云数据库账户支持的权限信息。",
       "input": "DescribeAccountPrivilegesRequest",
       "name": "查询云数据库账户的权限信息",
       "output": "DescribeAccountPrivilegesResponse",
@@ -638,7 +638,7 @@
       "status": "online"
     },
     "DescribeParamTemplates": {
-      "document": "该接口（DescribeParamTemplates）查询参数模板列表，全地域公共参数Region均为ap-guangzhou。",
+      "document": "该接口（DescribeParamTemplates）查询参数模板列表。\n说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。",
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板列表",
       "output": "DescribeParamTemplatesResponse",
@@ -659,7 +659,7 @@
       "status": "online"
     },
     "DescribeProxySupportParam": {
-      "document": "查询实例支持代理版本和参数",
+      "document": "本接口（DescribeProxySupportParam）用于查询实例支持代理版本和参数。",
       "input": "DescribeProxySupportParamRequest",
       "name": "查询实例支持代理版本和参数",
       "output": "DescribeProxySupportParamResponse",
@@ -883,21 +883,21 @@
       "status": "online"
     },
     "ModifyCdbProxyAddressDesc": {
-      "document": "修改代理地址描述信息",
+      "document": "本接口（ModifyCdbProxyAddressDesc）用于修改代理地址描述信息。",
       "input": "ModifyCdbProxyAddressDescRequest",
       "name": "修改代理地址描述",
       "output": "ModifyCdbProxyAddressDescResponse",
       "status": "online"
     },
     "ModifyCdbProxyAddressVipAndVPort": {
-      "document": "修改数据库代理地址VPC信息",
+      "document": "本接口（ModifyCdbProxyAddressVipAndVPort）用于修改数据库代理地址VPC信息。",
       "input": "ModifyCdbProxyAddressVipAndVPortRequest",
       "name": "修改数据库代理地址VPC",
       "output": "ModifyCdbProxyAddressVipAndVPortResponse",
       "status": "online"
     },
     "ModifyCdbProxyParam": {
-      "document": "配置数据库代理参数",
+      "document": "本接口（ModifyCdbProxyParam）用于配置数据库代理参数。",
       "input": "ModifyCdbProxyParamRequest",
       "name": "配置数据库代理参数",
       "output": "ModifyCdbProxyParamResponse",
@@ -981,7 +981,7 @@
       "status": "online"
     },
     "ModifyParamTemplate": {
-      "document": "该接口（ModifyParamTemplate）用于修改参数模板，全地域公共参数Region均为ap-guangzhou。",
+      "document": "该接口（ModifyParamTemplate）用于修改参数模板。\n说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。",
       "input": "ModifyParamTemplateRequest",
       "name": "修改参数模板",
       "output": "ModifyParamTemplateResponse",
@@ -1023,14 +1023,14 @@
       "status": "online"
     },
     "OpenAuditService": {
-      "document": "CDB实例开通审计服务",
+      "document": "本接口（OpenAuditService）用 CDB 实例开通审计服务。",
       "input": "OpenAuditServiceRequest",
       "name": "开通审计服务",
       "output": "OpenAuditServiceResponse",
       "status": "online"
     },
     "OpenDBInstanceEncryption": {
-      "document": "本接口（OpenDBInstanceEncryption）用于启用实例数据存储加密功能，支持用户指定自定义密钥。\n\n注意，启用实例数据存储加密之前，需要进行以下操作：\n\n1、进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作；\n\n2、开启 [KMS服务](https://console.cloud.tencent.com/kms2)；\n\n3、对云数据库(MySQL)[授予访问KMS密钥的权限](https://console.cloud.tencent.com/cam/role)，角色名为MySQL_QCSRole，预设策略名为QcloudAccessForMySQLRole；\n\n该 API 耗时可能到10s，客户端可能超时，如果调用 API 返回 InternalError ，请您调用DescribeDBInstanceInfo 确认后端加密是否开通成功。",
+      "document": "本接口（OpenDBInstanceEncryption）用于启用实例数据存储加密功能，支持用户指定自定义密钥。\n\n注意，启用实例数据存储加密之前，需要进行以下操作：\n\n1、进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作；\n\n2、开启 [KMS服务](https://console.cloud.tencent.com/kms2)；\n\n3、对云数据库(MySQL)[授予访问KMS密钥的权限](https://console.cloud.tencent.com/cam/role)，角色名为MySQL_QCSRole，预设策略名为QcloudAccessForMySQLRole；\n4、开启加密后不允许关闭。\n\n该 API 耗时可能到10s，客户端可能超时，如果调用 API 返回 InternalError ，请您调用 [DescribeDBInstanceInfo](https://cloud.tencent.com/document/product/236/44160) 确认后端加密是否开通成功，调用后参数 Encryption 为 YES 表示已开通成功。",
       "input": "OpenDBInstanceEncryptionRequest",
       "name": "启用数据存储加密",
       "output": "OpenDBInstanceEncryptionResponse",
@@ -1044,7 +1044,7 @@
       "status": "online"
     },
     "OpenSSL": {
-      "document": "开启SSL连接功能。",
+      "document": "本接口（OpenSSL）用于开启 SSL 连接功能。",
       "input": "OpenSSLRequest",
       "name": "开启SSL",
       "output": "OpenSSLResponse",
@@ -1128,7 +1128,7 @@
       "status": "online"
     },
     "StopDBImportJob": {
-      "document": "本接口(StopDBImportJob)用于终止数据导入任务。",
+      "document": "本接口（StopDBImportJob）用于终止数据导入任务。\n说明：只有未完成的导入任务支持被终止，且终止后已执行的 SQL 部分会被保留。",
       "input": "StopDBImportJobRequest",
       "name": "终止数据导入任务",
       "output": "StopDBImportJobResponse",
@@ -1156,7 +1156,7 @@
       "status": "online"
     },
     "SwitchCDBProxy": {
-      "document": "数据库代理配置变更或则升级版本后手动发起立即切换",
+      "document": "本接口（SwitchCDBProxy）用于数据库代理配置变更或者升级版本后手动发起立即切换。",
       "input": "SwitchCDBProxyRequest",
       "name": "切换数据库代理",
       "output": "SwitchCDBProxyResponse",
@@ -1184,14 +1184,14 @@
       "status": "online"
     },
     "UpgradeCDBProxyVersion": {
-      "document": "升级数据库代理版本",
+      "document": "本接口（UpgradeCDBProxyVersion）用于升级数据库代理版本。",
       "input": "UpgradeCDBProxyVersionRequest",
       "name": "升级数据库代理版本",
       "output": "UpgradeCDBProxyVersionResponse",
       "status": "online"
     },
     "UpgradeDBInstance": {
-      "document": "本接口(UpgradeDBInstance)用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。如果进行迁移业务，请一定填写实例规格（CPU、内存），不然系统会默认以最小允许规格传参。",
+      "document": "本接口（UpgradeDBInstance）用于升级或降级云数据库实例的配置，实例类型支持主实例、灾备实例和只读实例。如果进行迁移业务，请一定填写实例规格（CPU、内存），不然系统会默认以最小允许规格传参。",
       "input": "UpgradeDBInstanceRequest",
       "name": "调整云数据库实例的配置",
       "output": "UpgradeDBInstanceResponse",
@@ -1224,7 +1224,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新账户的名称",
+          "document": "账号名，可输入1 - 32个字符。",
           "example": "andy",
           "member": "string",
           "name": "User",
@@ -1235,7 +1235,7 @@
         },
         {
           "disabled": false,
-          "document": "新账户的域名",
+          "document": "账号的主机。\n说明：\n1. IP 形式，支持填入%。\n2. 多个主机以分隔符分隔，分隔符支持;,|换行符和空格。",
           "example": "172.1.1.1",
           "member": "string",
           "name": "Host",
@@ -1513,7 +1513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyGroupId",
@@ -1540,7 +1540,7 @@
         },
         {
           "disabled": false,
-          "document": "最小保留数量，最小取值：0",
+          "document": "最小保留数量，最小取值：0。\n说明：当 IsKickOut 为 true 时才有效。",
           "example": "2",
           "member": "uint64",
           "name": "MinCount",
@@ -1549,7 +1549,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：0",
+          "document": "延迟剔除阈值，最小取值：1，取值范围：[1,10000]，整数。",
           "example": "100",
           "member": "uint64",
           "name": "MaxDelay",
@@ -1585,8 +1585,8 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址ID",
-          "example": "proxy-il2nlsdn",
+          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "example": "proxyadd-il2nlsdn",
           "member": "string",
           "name": "ProxyAddressId",
           "required": true,
@@ -1594,7 +1594,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启事务分离，取值：\"true\" | \"false\"",
+          "document": "是否开启事务分离，取值：\"true\" | \"false\"，默认值 false。",
           "example": "true",
           "member": "bool",
           "name": "TransSplit",
@@ -1603,7 +1603,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
+          "document": "是否开启连接池。默认关闭。\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -1621,7 +1621,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自适应负载均衡",
+          "document": "是否开启自适应负载均衡。默认关闭。",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -1630,7 +1630,7 @@
         },
         {
           "disabled": false,
-          "document": "访问模式：就近访问，均衡分配",
+          "document": "访问模式：nearby - 就近访问，balance - 均衡分配，默认就近访问。",
           "example": "balance",
           "member": "string",
           "name": "AccessMode",
@@ -1667,7 +1667,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
@@ -1676,7 +1676,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyGroupId",
@@ -1859,7 +1859,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-r9bpb9gs",
           "member": "string",
           "name": "InstanceId",
@@ -1905,7 +1905,7 @@
         {
           "disabled": false,
           "document": "该过滤条件下的审计日志结果集作为分析日志。",
-          "example": "{\"SqlTypes\": [\"SELECT\"]}",
+          "example": "[{\"Type\": \"sqlType\",\"Compare\": \"EQS\",\"Value\": [\"delete\"]}]",
           "member": "InstanceAuditLogFilters",
           "name": "LogFilter",
           "required": false,
@@ -4297,7 +4297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-22dhn3e3",
           "member": "string",
           "name": "InstanceId",
@@ -4324,7 +4324,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-93hvfedd",
           "member": "string",
           "name": "InstanceId",
@@ -4333,7 +4333,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-ixw3ll2d",
           "member": "string",
           "name": "ProxyGroupId",
@@ -4369,7 +4369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-aykuksx3",
           "member": "string",
           "name": "ProxyGroupId",
@@ -4378,7 +4378,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址ID",
+          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxyaddr-aykuksx3",
           "member": "string",
           "name": "ProxyAddressId",
@@ -4405,8 +4405,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。只读组 ID为空时必填。",
-          "example": "cdb-test",
+          "document": "实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "example": "cdb-je5egmdl",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -4414,8 +4414,8 @@
         },
         {
           "disabled": false,
-          "document": "只读组 ID。实例 ID为空时必填。",
-          "example": "cdbrg-test",
+          "document": "只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。",
+          "example": "cdbrg-k9a6gup3",
           "member": "string",
           "name": "RoGroupId",
           "required": false,
@@ -4433,7 +4433,7 @@
           "example": "123asd21-2dasdasd-123qcsdw-313213",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5078,7 +5078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计规则",
+          "document": "审计规则。",
           "example": "[{\"Type\": \"host\",\"Compare\": \"EQS\",\"Value\": [\"100.122.76.176\",\"10.0.0.9\"]}]",
           "member": "RuleFilters",
           "name": "RuleFilters",
@@ -5087,7 +5087,7 @@
         },
         {
           "disabled": false,
-          "document": "规则模板名称",
+          "document": "规则模板名称。最多支持输入30个字符。",
           "example": "andy",
           "member": "string",
           "name": "RuleTemplateName",
@@ -5096,7 +5096,7 @@
         },
         {
           "disabled": false,
-          "document": "规则模板描述",
+          "document": "规则模板描述。最多支持输入200个字符。",
           "example": "用于测试的规则模板",
           "member": "string",
           "name": "Description",
@@ -5105,7 +5105,7 @@
         },
         {
           "disabled": false,
-          "document": "告警等级。1-低风险，2-中风险，3-高风险",
+          "document": "告警等级。1 - 低风险，2 - 中风险，3 - 高风险。默认值为1。",
           "example": "3",
           "member": "uint64",
           "name": "AlarmLevel",
@@ -5114,7 +5114,7 @@
         },
         {
           "disabled": false,
-          "document": "告警策略。0-不告警，1-告警",
+          "document": "告警策略。0 - 不告警，1 - 告警。默认值为0。",
           "example": "1",
           "member": "uint64",
           "name": "AlarmPolicy",
@@ -5224,7 +5224,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-kti9m7m1",
           "member": "string",
           "name": "ProxyGroupId",
@@ -5260,7 +5260,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟剔除阈值，最小取值：0",
+          "document": "延迟剔除阈值，最小取值：1，范围：1 - 10000，整数。",
           "example": "100",
           "member": "uint64",
           "name": "MaxDelay",
@@ -5314,7 +5314,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -5323,7 +5323,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网ID",
+          "document": "私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "subnet-0z3r56vq",
           "member": "string",
           "name": "UniqSubnetId",
@@ -5332,7 +5332,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
+          "document": "是否开启连接池。默认关闭。\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
           "example": "true",
           "member": "bool",
           "name": "ConnectionPool",
@@ -5350,7 +5350,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址",
+          "document": "IP 地址。不填则默认为所选 VPC 下支持的随机一个 IP。",
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -5359,7 +5359,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "端口。默认值3306。",
           "example": "80",
           "member": "uint64",
           "name": "VPort",
@@ -5377,7 +5377,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool为true时生效。",
+          "document": "连接池类型。可选值 transaction（事务级别连接池），connection（会话级别连接池），ConnectionPool 为 true 时生效。默认值：connection。",
           "example": "connection",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -5386,7 +5386,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自适应负载均衡",
+          "document": "是否开启自适应负载均衡。默认关闭。",
           "example": "false",
           "member": "bool",
           "name": "AutoLoadBalance",
@@ -5395,7 +5395,7 @@
         },
         {
           "disabled": false,
-          "document": "接入模式",
+          "document": "接入模式。nearBy - 就近访问，balance - 均衡分配，默认值：nearBy。",
           "example": "nearBy",
           "member": "string",
           "name": "AccessMode",
@@ -5432,7 +5432,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
@@ -5441,7 +5441,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -5450,7 +5450,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网ID",
+          "document": "私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "subnet-0z3r56vq",
           "member": "string",
           "name": "UniqSubnetId",
@@ -5469,7 +5469,7 @@
         {
           "disabled": false,
           "document": "安全组",
-          "example": "[{\"security\"}]",
+          "example": "[\"security\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -7202,7 +7202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计日志文件名称。",
+          "document": "审计日志文件名称。可通过 [DescribeAuditLogFiles](https://cloud.tencent.com/document/api/236/45454) 接口获取。",
           "example": "13123**346_cdb-0ej6n21d_1734**9765_42322441.csv",
           "member": "string",
           "name": "FileName",
@@ -7211,7 +7211,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-0ej6n21d",
           "member": "string",
           "name": "InstanceId",
@@ -7639,7 +7639,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库的账号名称。",
+          "document": "数据库的账号名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
           "example": "ajnnw",
           "member": "string",
           "name": "User",
@@ -7648,7 +7648,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库的账号域名。",
+          "document": "数据库的账号域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Host",
@@ -7664,40 +7664,40 @@
         {
           "disabled": false,
           "document": "全局权限数组。",
-          "example": "[\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"CREATE\",\"DROP\",\"REFERENCES",
+          "example": "[\"SELECT\",\"INSERT\",\"UPDATE\",\"DELETE\",\"...\",\"TRIGGER\"]",
           "member": "string",
           "name": "GlobalPrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库权限数组。",
-          "example": "无",
+          "example": "[{\"Privileges\": [\"CREATE\",\"DROP\"],\"Database\": \"jersey\"}]",
           "member": "DatabasePrivilege",
           "name": "DatabasePrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库中的表权限数组。",
-          "example": "无",
+          "example": "[{\"Table\": \"user\",\"Privileges\": [\"SELECT\",\"INSERT\"],\"Database\": \"mysql\"}]",
           "member": "TablePrivilege",
           "name": "TablePrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库表中的列权限数组。",
-          "example": "无",
+          "example": "[{\"Column\": \"Host\",\"Table\": \"user\",\"Privileges\": [\"SELECT\",\"INSERT\"],\"Database\": \"mysql\"}]",
           "member": "ColumnPrivilege",
           "name": "ColumnPrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8005,7 +8005,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小参数。默认值为 20，最小值为 1，最大值为 100。",
+          "document": "分页大小参数。默认值为20，最小值为1，最大值为300。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -8049,7 +8049,7 @@
         {
           "disabled": false,
           "document": "审计日志文件详情。",
-          "example": "[{\"FileName\": \"shenji_andy\", \"CreateTime\": \"2024-03-20 17:09:13\",\"Status\": success}]",
+          "example": "[{\"FileName\": \"shenji_andy\", \"CreateTime\": \"2024-03-20 17:09:13\",\"Status\": \"success\"...}]",
           "member": "AuditLogFile",
           "name": "Items",
           "output_required": true,
@@ -8391,7 +8391,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量。默认值20。",
+          "document": "单次请求返回的数量。默认值20，最大值为1000。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -9359,7 +9359,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-xxdasd",
           "member": "string",
           "name": "InstanceId",
@@ -9374,7 +9374,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略类型。输出值 auto、manual。如果返回为 NULL 说明尚未开通弹性扩容策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型。输出值：auto、manual、timeInterval、period。\n说明：1. auto 表示自动扩容。2. manual 表示自定义扩容，扩容时间为立即生效。3. timeInterval 表示自定义扩容，扩容时间为按时间段。4. period 表示自定义扩容，扩容时间为按周期。5. 如果返回为 NULL 说明尚未开通弹性扩容策略。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "auto",
           "member": "string",
           "name": "Type",
@@ -9384,7 +9384,7 @@
         },
         {
           "disabled": false,
-          "document": "手动扩容的 CPU 。Type 为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义扩容，且扩容时间为立即生效时的 CPU。Type 为 manual 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "ExpandCpu",
@@ -9404,7 +9404,7 @@
         },
         {
           "disabled": false,
-          "document": "按周期扩容策略。",
+          "document": "按周期扩容策略。当 Type 为 period 时有效。",
           "example": "{\"TimeCycle\": {\"Friday\": true,\"Monday\": true,\"Saturday\": false,\"Sunday\": false,\"Thursday\": true,\"Tuesday\": false,\"Wednesday\": true},\"TimeInterval\": {\"EndTime\": \"00:00\",\"StartTime\": \"08:00\"}}",
           "member": "PeriodStrategy",
           "name": "PeriodStrategy",
@@ -9414,8 +9414,8 @@
         },
         {
           "disabled": false,
-          "document": "按时间段扩容策略。",
-          "example": "{\"StartTime\": 1749722400}",
+          "document": "按时间段扩容策略。当 Type 为 timeInterval 时有效。",
+          "example": "{\"EndTime\": 1750348800,\"StartTime\": 1750338000}",
           "member": "TimeIntervalStrategy",
           "name": "TimeIntervalStrategy",
           "output_required": false,
@@ -9584,7 +9584,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。\n说明：仅能输入实例架构为云盘版的实例 ID，对应控制台实例配置显示为“云盘版（云盘）”的实例。",
           "example": "cdb-dctw4edd",
           "member": "string",
           "name": "InstanceId",
@@ -11755,7 +11755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "\"cdb-g3rbtabc\"",
           "member": "string",
           "name": "InstanceId",
@@ -11764,7 +11764,7 @@
         },
         {
           "disabled": false,
-          "document": "目标数据库版本",
+          "document": "目标数据库版本。\n说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。",
           "example": "\"8.0\"",
           "member": "string",
           "name": "DstMysqlVersion",
@@ -12194,7 +12194,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID。",
+          "document": "项目 ID。可通过 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725) 接口获取。",
           "example": "11954",
           "member": "int64",
           "name": "ProjectId",
@@ -12210,7 +12210,7 @@
         {
           "disabled": false,
           "document": "安全组详情。",
-          "example": "[]",
+          "example": "[{\"Outbound\": [],\"SecurityGroupName\": \"CDB\",\"Inbound\": [],\"ProjectId\": 11954,\"SecurityGroupId\": \"sg-disnd\",\"SecurityGroupRemark\": \"\",\"CreateTime\": \"2017-04-13 15:00:06\"}]",
           "member": "SecurityGroup",
           "name": "Groups",
           "output_required": true,
@@ -12316,7 +12316,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
@@ -15678,7 +15678,7 @@
         },
         {
           "disabled": false,
-          "document": "账户的名称",
+          "document": "账户的名称。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
           "example": "andy",
           "member": "string",
           "name": "User",
@@ -15687,7 +15687,7 @@
         },
         {
           "disabled": false,
-          "document": "账户的旧主机",
+          "document": "账户的旧主机。格式：IP 形式，支持单个 IP 地址或者%。",
           "example": "172.1.1.1",
           "member": "string",
           "name": "Host",
@@ -15696,7 +15696,7 @@
         },
         {
           "disabled": false,
-          "document": "账户的新主机",
+          "document": "账户的新主机。格式：IP 形式，支持单个 IP 地址或者%。",
           "example": "172.1.1.2",
           "member": "string",
           "name": "NewHost",
@@ -15934,7 +15934,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-txcniupi",
           "member": "string",
           "name": "InstanceId",
@@ -15952,7 +15952,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。\n当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。\nCloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按照CloseAudit优先的逻辑处理。",
+          "document": "是否关闭审计服务。可选值：true - 关闭审计服务；false - 不关闭审计服务。默认值为 false。\n说明：\n1. 当关闭审计服务时，会删除用户的审计日志和文件，并删除该实例的所有审计策略。\n2. CloseAudit、LogExpireDay 必须至少提供一个，如果两个都提供则按照 CloseAudit 优先的逻辑处理。\n3. 可通过设置此参数来关闭审计服务，已关闭后不能通过此接口来开启审计服务。",
           "example": "true",
           "member": "bool",
           "name": "CloseAudit",
@@ -16051,7 +16051,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计规则模板ID。",
+          "document": "审计规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。",
           "example": "cdb-art-l1mlbo59",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -16123,7 +16123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-22dhn3e3",
           "member": "string",
           "name": "InstanceId",
@@ -16132,7 +16132,7 @@
         },
         {
           "disabled": false,
-          "document": "日志保留时长。",
+          "document": "日志保留时长。支持值包括：\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
           "example": "30",
           "member": "uint64",
           "name": "LogExpireDay",
@@ -16141,7 +16141,7 @@
         },
         {
           "disabled": false,
-          "document": "高频日志保留时长。",
+          "document": "高频日志保留时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：\n3 - 3天；\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
           "example": "7",
           "member": "uint64",
           "name": "HighLogExpireDay",
@@ -16168,7 +16168,7 @@
         },
         {
           "disabled": false,
-          "document": "规则模板ID。",
+          "document": "规则模板 ID。可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取。",
           "example": "cdb-art-nuf7e111",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -16528,7 +16528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-ixw3ll2d",
           "member": "string",
           "name": "ProxyGroupId",
@@ -16537,7 +16537,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址ID",
+          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxyaddr-ixw3ll2d",
           "member": "string",
           "name": "ProxyAddressId",
@@ -16573,7 +16573,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-ixw3ll2d",
           "member": "string",
           "name": "ProxyGroupId",
@@ -16582,7 +16582,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址ID",
+          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxyaddr-ixw3ll2d",
           "member": "string",
           "name": "ProxyAddressId",
@@ -16591,7 +16591,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "私有网络 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "vpc-ixw3ll2d",
           "member": "string",
           "name": "UniqVpcId",
@@ -16600,7 +16600,7 @@
         },
         {
           "disabled": false,
-          "document": "私有子网ID",
+          "document": "私有子网 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "subnet-ixw3ll2d",
           "member": "string",
           "name": "UniqSubnetId",
@@ -16609,7 +16609,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址",
+          "document": "IP 地址。若不填写则自动分配子网下的可用 IP。",
           "example": "192.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -16618,7 +16618,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "端口。默认值3306，取值范围：1024 - 65535。",
           "example": "80",
           "member": "uint64",
           "name": "VPort",
@@ -16627,7 +16627,7 @@
         },
         {
           "disabled": false,
-          "document": "旧IP地址回收时间",
+          "document": "旧 IP 地址回收时间。单位：小时，默认值：24，取值范围：0 - 168。",
           "example": "10",
           "member": "uint64",
           "name": "ReleaseDuration",
@@ -16654,7 +16654,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
@@ -16663,7 +16663,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-ixw3ll2d",
           "member": "string",
           "name": "ProxyGroupId",
@@ -16672,7 +16672,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阈值\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
+          "document": "连接池阈值。取值范围：大于0，小于等于300。\n注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。",
           "example": "10",
           "member": "uint64",
           "name": "ConnectionPoolLimit",
@@ -17666,7 +17666,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDB实例ID",
+          "document": "CDB 实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-etxaaa12",
           "member": "string",
           "name": "InstanceId",
@@ -17675,7 +17675,7 @@
         },
         {
           "disabled": false,
-          "document": "审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年；",
+          "document": "审计日志保存时长。支持值包括：\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
           "example": "30",
           "member": "uint64",
           "name": "LogExpireDay",
@@ -17684,7 +17684,7 @@
         },
         {
           "disabled": false,
-          "document": "高频审计日志保存时长。支持值包括：\n7 - 一周\n30 - 一个月；",
+          "document": "高频审计日志保存时长。默认值为7，此项取值需小于等于 LogExpireDay，支持值包括：\n3 - 3天；\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
           "example": "7",
           "member": "uint64",
           "name": "HighLogExpireDay",
@@ -17702,7 +17702,7 @@
         },
         {
           "disabled": false,
-          "document": "规则模板ID。同AuditRuleFilters都不填是全审计。",
+          "document": "规则模板 ID。",
           "example": "[\"cdb-art-l1mlbo59\"]",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -17711,7 +17711,7 @@
         },
         {
           "disabled": false,
-          "document": "审计类型。true-全审计；默认false-规则审计。",
+          "document": "审计类型。true - 全审计；默认 false - 规则审计。",
           "example": "true",
           "member": "bool",
           "name": "AuditAll",
@@ -17738,7 +17738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云数据库实例 ID。",
+          "document": "云数据库实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-qwer1234",
           "member": "string",
           "name": "InstanceId",
@@ -17820,8 +17820,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
-          "example": "cdb-test",
+          "document": "实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "example": "cdb-je5egmdl",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -17829,8 +17829,8 @@
         },
         {
           "disabled": false,
-          "document": "只读组 ID。",
-          "example": "cdbrg-test",
+          "document": "只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。",
+          "example": "cdbrg-k9a6gup3",
           "member": "string",
           "name": "RoGroupId",
           "required": false,
@@ -17848,7 +17848,7 @@
           "example": "123asd21-2dasdasd-123qcsdw-313213",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17866,7 +17866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同，可使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口获取，其值为输出参数中字段 InstanceId 的值。可以传入只读组 ID。",
           "example": "cdb-ezq1vzem",
           "member": "string",
           "name": "InstanceId",
@@ -19496,7 +19496,7 @@
         },
         {
           "disabled": false,
-          "document": "RO 实例最大延迟阈值。单位为秒，最小值为 1。注意，RO 组必须设置了开启实例延迟剔除策略，该值才有效。",
+          "document": "RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。\n注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。",
           "example": "10",
           "member": "int64",
           "name": "RoMaxDelayTime",
@@ -19514,7 +19514,7 @@
         },
         {
           "disabled": false,
-          "document": "最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。注意，若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。",
+          "document": "最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。\n注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。",
           "example": "1",
           "member": "int64",
           "name": "MinRoInGroup",
@@ -19532,7 +19532,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟复制时间。",
+          "document": "延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。",
           "example": "100",
           "member": "int64",
           "name": "ReplicationDelayTime",
@@ -20787,7 +20787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-himitj11",
           "member": "string",
           "name": "InstanceId",
@@ -20815,7 +20815,7 @@
         {
           "disabled": false,
           "document": "自动扩容策略。Type 为 auto 时必传。",
-          "example": "[{\"ExpandThreshold\": \"70\",\"ShrinkThreshold\": \"\t10\",\"ExpandPeriod\": \"1\",\"ShrinkPeriod\": \"5\"}]",
+          "example": "{\"ExpandThreshold\": 70,\"ShrinkThreshold\": 30,\"ExpandSecondPeriod\": 15,\"ShrinkSecondPeriod\": 300}",
           "member": "AutoStrategy",
           "name": "AutoStrategy",
           "required": false,
@@ -20823,8 +20823,8 @@
         },
         {
           "disabled": false,
-          "document": "按时间段扩容策略。",
-          "example": "[{\"StartTime\": 1749546000,\"EndTime\": 1749718800}]",
+          "document": "按时间段扩容策略。\n说明：当 Type 为 timeInterval 时，TimeIntervalStrategy 必填。",
+          "example": "{\"StartTime\": 1749546000,\"EndTime\": 1749718800}",
           "member": "TimeIntervalStrategy",
           "name": "TimeIntervalStrategy",
           "required": false,
@@ -20832,8 +20832,8 @@
         },
         {
           "disabled": false,
-          "document": "按周期扩容策略。",
-          "example": "[{\"TimeCycle\": {\"Monday\": true,\"Tuesday\": false,\"Wednesday\": false,\"Thursday\": false,\"Friday\": true,\"Saturday\": false,\"Sunday\": false},\"TimeInterval\": {\"StartTime\": \"17:00\",\"EndTime\": \"20:00\"}}]",
+          "document": "按周期扩容策略。\n说明：当 Type 为 period 时，PeriodStrategy 必填。",
+          "example": "{\"TimeCycle\": {\"Monday\": true,\"Tuesday\": false,\"Wednesday\": false,\"Thursday\": false,\"Friday\": true,\"Saturday\": false,\"Sunday\": false},\"TimeInterval\": {\"StartTime\": \"17:00\",\"EndTime\": \"20:00\"}}",
           "member": "PeriodStrategy",
           "name": "PeriodStrategy",
           "required": false,
@@ -20847,7 +20847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务 ID 。可以调用DescribeAsyncRequest 传入该 ID ，进行任务执行进度的查询",
+          "document": "异步任务 ID 。可以调用 DescribeAsyncRequest 传入该 ID，进行任务执行进度的查询。",
           "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
@@ -21044,7 +21044,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-g3rbtabc",
           "member": "string",
           "name": "InstanceId",
@@ -21053,7 +21053,7 @@
         },
         {
           "disabled": false,
-          "document": "目标数据库版本。",
+          "document": "目标数据库版本。\n说明：可选值5.6、5.7、8.0，不支持跨版本升级，升级后不支持版本降级。",
           "example": "8.0",
           "member": "string",
           "name": "DstMysqlVersion",
@@ -21090,7 +21090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-pr1rb3j1",
           "member": "string",
           "name": "InstanceId",
@@ -21099,7 +21099,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理ID",
+          "document": "数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-p11rb3j9",
           "member": "string",
           "name": "ProxyGroupId",
@@ -21717,7 +21717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-pr1rb3j1",
           "member": "string",
           "name": "InstanceId",
@@ -21726,7 +21726,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理ID",
+          "document": "数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-p11rb3j9",
           "member": "string",
           "name": "ProxyGroupId",
@@ -21935,7 +21935,7 @@
         },
         {
           "disabled": false,
-          "document": "主实例数据库引擎版本，支持值包括：5.5、5.6 和 5.7。",
+          "document": "主实例数据库引擎版本，支持值包括：5.5、5.6、5.7、8.0。\n说明：升级数据库版本请使用 [UpgradeDBInstanceEngineVersion](https://cloud.tencent.com/document/api/236/15870) 接口。",
           "example": "\"5.7\"",
           "member": "string",
           "name": "EngineVersion",
@@ -21953,7 +21953,7 @@
         },
         {
           "disabled": false,
-          "document": "备库 2 的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。\n备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。",
+          "document": "备库2的可用区信息，默认为空，升级主实例时可指定该参数，升级只读实例或者灾备实例时指定该参数无意义。可通过 [获取云数据库可售卖规格](https://cloud.tencent.com/document/product/236/17229) 接口查询支持的可用区。\n备注：如您要将三节点降级至双节点，将该参数设置为空值即可实现。",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "BackupZone",
@@ -22077,8 +22077,8 @@
         },
         {
           "disabled": false,
-          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
-          "example": "\"1sdada\"",
+          "document": "异步任务的请求 ID，可使用此 ID [查询异步任务的执行结果](https://cloud.tencent.com/document/product/236/20410)。",
+          "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
           "output_required": true,

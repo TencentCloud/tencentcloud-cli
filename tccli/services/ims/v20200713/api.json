@@ -295,7 +295,7 @@
         {
           "disabled": false,
           "document": "扩展字段，用于特定信息返回，不同客户/Biztype下返回信息不同。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\\\"TerrorInfo\\\":[{\\\"Label\\\":\\\"Terror\\\"}}",
           "member": "string",
           "name": "Extra",
           "output_required": true,

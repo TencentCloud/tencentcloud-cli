@@ -1336,7 +1336,7 @@
         },
         {
           "disabled": false,
-          "document": "购买工作空间数量",
+          "document": "购买工作空间实例的数量",
           "example": "1",
           "member": "int64",
           "name": "SpaceCount",
@@ -1911,7 +1911,7 @@
           "example": "hpc-5lyv94lq",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2923,6 +2923,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "集群ID",
+          "example": "hpc-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "节点实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-f5ew7k5w",
           "member": "string",
@@ -3007,6 +3017,26 @@
           "example": "IDLE",
           "member": "string",
           "name": "NodeAllocateState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的名称",
+          "example": "unnamed",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的创建时间",
+          "example": "2024-12-18T13:46:34Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

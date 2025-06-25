@@ -21,6 +21,13 @@
       "output": "ConvertDocumentResponse",
       "status": "deprecated"
     },
+    "CreateAgent": {
+      "document": "你创建一个Agent",
+      "input": "CreateAgentRequest",
+      "name": "创建Agent",
+      "output": "CreateAgentResponse",
+      "status": "online"
+    },
     "CreateApp": {
       "document": "创建知识引擎应用。",
       "input": "CreateAppRequest",
@@ -98,6 +105,13 @@
       "output": "CreateWorkflowRunResponse",
       "status": "online"
     },
+    "DeleteAgent": {
+      "document": "删除Agent",
+      "input": "DeleteAgentRequest",
+      "name": "删除Agent",
+      "output": "DeleteAgentResponse",
+      "status": "online"
+    },
     "DeleteApp": {
       "document": "删除应用",
       "input": "DeleteAppRequest",
@@ -166,6 +180,13 @@
       "input": "DescribeAppRequest",
       "name": "获取企业下应用详情",
       "output": "DescribeAppResponse",
+      "status": "online"
+    },
+    "DescribeAppAgentList": {
+      "document": "查询指定应用下的Agent列表",
+      "input": "DescribeAppAgentListRequest",
+      "name": "拉取应用下Agent列表",
+      "output": "DescribeAppAgentListResponse",
       "status": "online"
     },
     "DescribeAttributeLabel": {
@@ -602,6 +623,13 @@
       "output": "ListWorkflowRunsResponse",
       "status": "online"
     },
+    "ModifyAgent": {
+      "document": "修改Agent信息",
+      "input": "ModifyAgentRequest",
+      "name": "修改Agent",
+      "output": "ModifyAgentResponse",
+      "status": "online"
+    },
     "ModifyApp": {
       "document": "修改应用请求结构体",
       "input": "ModifyAppRequest",
@@ -846,6 +874,144 @@
       ],
       "usage": "both"
     },
+    "Agent": {
+      "document": "Agent 的定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AgentID",
+          "example": "test-agent-id",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WorkflowID，非空则当前Agent从workflow转换而来",
+          "example": "test-workflow-id",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent名称，同一个应用内，Agent名称不能重复",
+          "example": "挂号Agent",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件图标url",
+          "example": "https://example.com/image/icon",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent指令；当该Agent被调用时，将作为“系统提示词”使用，描述Agent应执行的操作和响应方式",
+          "example": "帮我完成开发票",
+          "member": "string",
+          "name": "Instructions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当Agent作为转交目标时的描述，用于让其他Agent的LLM理解其功能和转交时机",
+          "example": "我可以开发票",
+          "member": "string",
+          "name": "HandoffDescription",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent可转交的子AgentId列表",
+          "example": "[agent-id1, agent-id2]",
+          "member": "string",
+          "name": "Handoffs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent调用LLM时使用的模型配置",
+          "example": "无",
+          "member": "AgentModelInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent可使用的工具列表",
+          "example": "无",
+          "member": "AgentToolInfo",
+          "name": "Tools",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent可使用的插件列表",
+          "example": "无",
+          "member": "AgentPluginInfo",
+          "name": "Plugins",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前Agent是否是启动Agent",
+          "example": "false",
+          "member": "bool",
+          "name": "IsStartingAgent",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent类型; 0: 未指定类型; 1: 知识库检索Agent",
+          "example": "0",
+          "member": "uint64",
+          "name": "AgentType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentDebugInfo": {
       "document": "Agent调试信息",
       "members": [
@@ -870,6 +1036,468 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentInput": {
+      "document": "Agent输入值，支持直接赋值和引用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入来源类型：0 用户输入，3 自定义变量（API参数）",
+          "example": "0",
+          "member": "uint64",
+          "name": "InputType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户手写输入",
+          "example": "无",
+          "member": "AgentInputUserInputValue",
+          "name": "UserInputValue",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量（API参数）",
+          "example": "927175de-d2ae-4a26-839c-6b6c6d0ea4d7",
+          "member": "string",
+          "name": "CustomVarId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentInputUserInputValue": {
+      "document": "用户手写输入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户输入的值",
+          "example": "['text']",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentKnowledgeAttrLabel": {
+      "document": "标签过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性ID",
+          "example": "1922991044897213888",
+          "member": "string",
+          "name": "AttributeBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值，标签值之间是或的关系，只有匹配的，才会进行知识检索，否则报检索不到",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Inputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentKnowledgeFilter": {
+      "document": "知识检索筛选范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识检索筛选方式; 0: 全部知识; 1:按文档和问答; 2: 按标签",
+          "example": "0",
+          "member": "uint64",
+          "name": "FilterType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档和问答过滤器",
+          "example": "无",
+          "member": "AgentKnowledgeFilterDocAndAnswer",
+          "name": "DocAndAnswer",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤器",
+          "example": "无",
+          "member": "AgentKnowledgeFilterTag",
+          "name": "Tag",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentKnowledgeFilterDocAndAnswer": {
+      "document": "文档和问答过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档ID列表",
+          "example": "[\"1923271504777045952\"]",
+          "member": "string",
+          "name": "DocBizIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问答",
+          "example": "false",
+          "member": "bool",
+          "name": "AllQa",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentKnowledgeFilterTag": {
+      "document": "标签过滤器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签之间的关系;0:AND, 1:OR",
+          "example": "1",
+          "member": "uint64",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "AgentKnowledgeAttrLabel",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentKnowledgeQAPlugin": {
+      "document": "知识库问答插件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识检索筛选范围",
+          "example": "无",
+          "member": "AgentKnowledgeFilter",
+          "name": "Filter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentMCPServerInfo": {
+      "document": "mcp的服务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "mcp server URL地址",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "McpServerUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mcp server header信息",
+          "example": "无",
+          "member": "AgentPluginHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时时间，单位秒",
+          "example": "5",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sse服务超时时间，单位秒",
+          "example": "300",
+          "member": "int64",
+          "name": "SseReadTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentModelInfo": {
+      "document": "Agent 配置里面的模型定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "function call pro",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型别名",
+          "example": "精调Function-call模型",
+          "member": "string",
+          "name": "ModelAliasName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型温度",
+          "example": "0.5",
+          "member": "float",
+          "name": "Temperature",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型TopP",
+          "example": "0.5",
+          "member": "float",
+          "name": "TopP",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型是否可用",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对话历史条数限制",
+          "example": "5",
+          "member": "uint64",
+          "name": "HistoryLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型上下文长度字符限制",
+          "example": "8k",
+          "member": "string",
+          "name": "ModelContextWordsLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指令长度字符限制",
+          "example": "4096",
+          "member": "uint64",
+          "name": "InstructionsWordsLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentPluginHeader": {
+      "document": "应用配置MCP插件header信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "无",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值",
+          "example": "无",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "header参数配置是否隐藏不可见",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入的值",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数是否可以为空",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRequired",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentPluginInfo": {
+      "document": "Agent 的插件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件id",
+          "example": "0960ae93-80a0-408d-928b-f484064f834a",
+          "member": "string",
+          "name": "PluginId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用配置的插件header信息",
+          "example": "无",
+          "member": "AgentPluginHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件调用LLM时使用的模型配置，一般用于指定知识库问答插件的生成模型",
+          "example": "无",
+          "member": "AgentModelInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件信息类型; 0: 未指定类型; 1: 知识库问答插件",
+          "example": "0",
+          "member": "uint64",
+          "name": "PluginInfoType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库问答插件配置",
+          "example": "无",
+          "member": "AgentKnowledgeQAPlugin",
+          "name": "KnowledgeQa",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1339,6 +1967,387 @@
         }
       ],
       "usage": "out"
+    },
+    "AgentToolInfo": {
+      "document": "Agent的工具信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件id",
+          "example": "0960ae93-80a0-408d-928b-f484064f833h",
+          "member": "string",
+          "name": "PluginId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件名称",
+          "example": "天气",
+          "member": "string",
+          "name": "PluginName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件图标url",
+          "example": "http://xxxx.jpg\t",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 自定义插件\n1 官方插件\n2 第三方插件 目前用于第三方实现的mcp server",
+          "example": "1",
+          "member": "uint64",
+          "name": "PluginType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具id",
+          "example": "0960ae93-80a0-408d-928b-f484064f834a",
+          "member": "string",
+          "name": "ToolId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具名称",
+          "example": "GetWeatherInfo",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工具描述",
+          "example": "获取指定日期和地点的天气信息\t",
+          "member": "string",
+          "name": "ToolDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入参数",
+          "example": "无",
+          "member": "AgentToolReqParam",
+          "name": "Inputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出参数",
+          "example": "无",
+          "member": "AgentToolRspParam",
+          "name": "Outputs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建方式，0:服务创建，1:代码创建，2:MCP创建\t",
+          "example": "0",
+          "member": "int64",
+          "name": "CreateType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MCP插件的配置信息",
+          "example": "无",
+          "member": "AgentMCPServerInfo",
+          "name": "McpServer",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该工具是否和知识库绑定",
+          "example": "false",
+          "member": "bool",
+          "name": "IsBindingKnowledge",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件状态，1:可用，2:不可用\t",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "header信息",
+          "example": "无",
+          "member": "AgentPluginHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NON_STREAMING: 非流式  STREAMIN: 流式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NON_STREAMING",
+          "member": "string",
+          "name": "CallingMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentToolReqParam": {
+      "document": "Agent工具的请求参数定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "姓名",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数描述",
+          "example": "人物名字",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数是否必填",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRequired",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数默认值",
+          "example": "张三",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子参数,ParamType 是OBJECT 或 ARRAY<>类型有用",
+          "example": "无",
+          "member": "AgentToolReqParam",
+          "name": "SubParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏不可见",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent模式下模型是否可见",
+          "example": "false",
+          "member": "bool",
+          "name": "AgentHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其中任意",
+          "example": "无",
+          "member": "AgentToolReqParam",
+          "name": "AnyOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其中一个",
+          "example": "无",
+          "member": "AgentToolReqParam",
+          "name": "OneOf",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentToolRspParam": {
+      "document": "Agent工具的响应参数定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "姓名",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数描述",
+          "example": "人物名字",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数类型，0:string, 1:int, 2:float，3:bool 4:object 5:array_string, 6:array_int, 7:array_float, 8:array_bool, 9:array_object",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子参数,ParamType 是OBJECT 或 ARRAY<>类型有用",
+          "example": "无",
+          "member": "AgentToolRspParam",
+          "name": "SubParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent模式下模型是否可见",
+          "example": "false",
+          "member": "bool",
+          "name": "AgentHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏不可见",
+          "example": "false",
+          "member": "bool",
+          "name": "GlobalHidden",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "COVER: 覆盖解析 INCREMENT:增量解析",
+          "example": "COVER",
+          "member": "string",
+          "name": "AnalysisMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ApiVarAttrInfo": {
       "document": "自定义变量和标签关系数据",
@@ -2643,6 +3652,52 @@
       ],
       "usage": "out"
     },
+    "CreateAgentRequest": {
+      "document": "CreateAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1906600044720291840",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要增加的Agent的信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentResponse": {
+      "document": "CreateAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建的AgentID",
+          "example": "test-agent-id",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAppRequest": {
       "document": "CreateApp请求参数结构体",
       "members": [
@@ -3585,6 +4640,52 @@
       ],
       "usage": "both"
     },
+    "DeleteAgentRequest": {
+      "document": "DeleteAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent的ID",
+          "example": "349b2172-9a22-460b-b14c-5996bf0891f0",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1889221097956048896",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentResponse": {
+      "document": "DeleteAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent的ID",
+          "example": "349b2172-9a22-460b-b14c-5996bf0891f0",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAppRequest": {
       "document": "DeleteApp请求参数结构体",
       "members": [
@@ -3919,6 +5020,53 @@
     "DeleteVarResponse": {
       "document": "DeleteVar返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppAgentListRequest": {
+      "document": "DescribeAppAgentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1906600044720291840",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppAgentListResponse": {
+      "document": "DescribeAppAgentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "入口启动AgentID",
+          "example": "start-agent-id",
+          "member": "string",
+          "name": "StaringAgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用Agent信息列表",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agents",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4938,6 +6086,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDownload",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6592,6 +7750,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档的自定义链接",
+          "example": "无",
+          "member": "string",
+          "name": "WebUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7507,6 +8675,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDownload",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12306,6 +13484,52 @@
       ],
       "usage": "both"
     },
+    "ModifyAgentRequest": {
+      "document": "ModifyAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的应用ID",
+          "example": "1906600044720291840",
+          "member": "string",
+          "name": "AppBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的Agent的信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentResponse": {
+      "document": "ModifyAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改的AgentId",
+          "example": "test-agent-id",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAppRequest": {
       "document": "ModifyApp请求参数结构体",
       "members": [
@@ -13373,6 +14597,46 @@
           "example": "无",
           "member": "string",
           "name": "DocId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称",
+          "example": "无",
+          "member": "string",
+          "name": "KnowledgeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库业务id",
+          "example": "无",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档业务id",
+          "example": "无",
+          "member": "string",
+          "name": "DocBizId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "问答业务id",
+          "example": "无",
+          "member": "string",
+          "name": "QaBizId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15735,6 +16999,15 @@
           "name": "CateBizId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否可下载，IsRefer为true并且ReferUrlType为0时，该值才有意义",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDownload",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

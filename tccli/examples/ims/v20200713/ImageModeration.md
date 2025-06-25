@@ -62,9 +62,9 @@ Output:
                             "Height": 769.98254,
                             "Rotate": 0
                         },
-                        "SubLabel": "abc",
-                        "GroupId": "abc",
-                        "ObjectId": "abc"
+                        "SubLabel": "QRCODE",
+                        "GroupId": "group_id",
+                        "ObjectId": "object_id"
                     }
                 ]
             }
@@ -110,7 +110,7 @@ Output:
                         "Score": 99,
                         "Label": "Porn",
                         "Tag": "",
-                        "ImageId": "111",
+                        "ImageId": "image_id",
                         "Id": 0,
                         "LibId": ""
                     }

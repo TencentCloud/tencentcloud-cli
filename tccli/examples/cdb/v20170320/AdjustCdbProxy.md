@@ -13,16 +13,16 @@ tccli cdb AdjustCdbProxy --cli-unfold-argument  \
     --ProxyNodeCustom.0.NodeCount 2 \
     --ProxyNodeCustom.0.Region ap-guangzhou \
     --ProxyNodeCustom.0.Zone ap-guangzhou-1 \
-    --ProxyNodeCustom.0.Cpu 3 \
-    --ProxyNodeCustom.0.Mem 4
+    --ProxyNodeCustom.0.Cpu 2 \
+    --ProxyNodeCustom.0.Mem 4000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "123-123-123",
-        "AsyncRequestId": "123-123-xxx"
+        "RequestId": "3689c0eb-a92d-77ce-0ee2-17d99f604e64",
+        "AsyncRequestId": "a6040589-3b098df5-b551d9e5-81c6bfdc"
     }
 }
 ```

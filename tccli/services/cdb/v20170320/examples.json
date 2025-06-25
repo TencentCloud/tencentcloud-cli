@@ -11,8 +11,8 @@
     "AdjustCdbProxy": [
       {
         "document": "调整数据库代理配置",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AdjustCdbProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"ReloadBalance\": \"auto\",\n    \"UpgradeTime\": \"nowTime\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Cpu\": 3,\n            \"Mem\": 4\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123-123-123\",\n        \"AsyncRequestId\": \"123-123-xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AdjustCdbProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"ReloadBalance\": \"auto\",\n    \"UpgradeTime\": \"nowTime\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Cpu\": 2,\n            \"Mem\": 4000\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "调整数据库代理"
       }
     ],
@@ -82,15 +82,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseCdbProxyAddress\n<公共请求参数>\n\n{\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"ProxyAddressId\": \"proxyaddr-mc0efsw0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "关闭数据代理地址"
       }
     ],
     "CloseSSL": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx\",\n        \"AsyncRequestId\": \"xxxx-xxxx-xxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-je5egmdl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"123asd21-2dasdasd-123qcsdw-313213\"\n    }\n}",
         "title": "关闭SSL"
       }
     ],
@@ -159,7 +159,7 @@
     "CreateCdbProxy": [
       {
         "document": "主实例创建数据库代理",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdbProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"UniqVpcId\": \"vpc-ixw3ll2d\",\n    \"UniqSubnetId\": \"subnet-0z3r56vq\",\n    \"Desc\": \"andy_proxy\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Cpu\": 1,\n            \"Mem\": 1\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdbProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"UniqVpcId\": \"vpc-ixw3ll2d\",\n    \"UniqSubnetId\": \"subnet-0z3r56vq\",\n    \"Desc\": \"andy_proxy\",\n    \"ProxyNodeCustom\": [\n        {\n            \"NodeCount\": 2,\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-1\",\n            \"Cpu\": 1,\n            \"Mem\": 1000\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"7EF78BEC-0111-43AF-BB11-111112FB54A7\"\n    }\n}",
         "title": "创建数据库代理"
       }
@@ -360,7 +360,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountPrivileges\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Host\": \"127.0.0.1\",\n    \"User\": \"ajnnw\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TablePrivileges\": [\n            {\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"GlobalPrivileges\": [\n            \"SELECT\",\n            \"INSERT\",\n            \"UPDATE\",\n            \"DELETE\",\n            \"CREATE\",\n            \"DROP\",\n            \"REFERENCES\",\n            \"INDEX\",\n            \"ALTER\",\n            \"SHOW DATABASES\",\n            \"CREATE TEMPORARY TABLES\",\n            \"LOCK TABLES\",\n            \"EXECUTE\",\n            \"CREATE VIEW\",\n            \"SHOW VIEW\",\n            \"CREATE ROUTINE\",\n            \"ALTER ROUTINE\",\n            \"EVENT\",\n            \"TRIGGER\"\n        ],\n        \"ColumnPrivileges\": [\n            {\n                \"Column\": \"Host\",\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"DatabasePrivileges\": [\n            {\n                \"Privileges\": [\n                    \"CREATE\",\n                    \"DROP\"\n                ],\n                \"Database\": \"jersey_test\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TablePrivileges\": [\n            {\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"GlobalPrivileges\": [\n            \"SELECT\",\n            \"INSERT\",\n            \"UPDATE\",\n            \"DELETE\",\n            \"CREATE\",\n            \"DROP\",\n            \"REFERENCES\",\n            \"INDEX\",\n            \"ALTER\",\n            \"SHOW DATABASES\",\n            \"CREATE TEMPORARY TABLES\",\n            \"LOCK TABLES\",\n            \"EXECUTE\",\n            \"CREATE VIEW\",\n            \"SHOW VIEW\",\n            \"CREATE ROUTINE\",\n            \"ALTER ROUTINE\",\n            \"EVENT\",\n            \"TRIGGER\"\n        ],\n        \"ColumnPrivileges\": [\n            {\n                \"Column\": \"Host\",\n                \"Table\": \"user\",\n                \"Privileges\": [\n                    \"SELECT\",\n                    \"INSERT\"\n                ],\n                \"Database\": \"mysql\"\n            }\n        ],\n        \"DatabasePrivileges\": [\n            {\n                \"Privileges\": [\n                    \"CREATE\",\n                    \"DROP\"\n                ],\n                \"Database\": \"jersey\"\n            }\n        ]\n    }\n}",
         "title": "查询云数据库账户的权限信息"
       }
     ],
@@ -794,7 +794,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectSecurityGroups\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11954\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-xx\",\n                \"SecurityGroupRemark\": \"\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Groups\": [\n            {\n                \"Outbound\": [],\n                \"SecurityGroupName\": \"CDB\",\n                \"Inbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-xx\",\n                \"SecurityGroupRemark\": \"cdb安全组\",\n                \"CreateTime\": \"2017-04-13 15:00:06\"\n            }\n        ]\n    }\n}",
         "title": "查询项目安全组信息"
       }
     ],
@@ -809,8 +809,8 @@
     "DescribeProxySupportParam": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySupportParam\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xxx-xxx\",\n        \"ProxyVersion\": \"1.3.1\",\n        \"SupportPool\": true,\n        \"PoolMin\": 1,\n        \"PoolMax\": 10,\n        \"SupportTransSplit\": true,\n        \"SupportTransSplitMinVersion\": \"1.3.1\",\n        \"SupportPoolMinVersion\": \"1.1.1\",\n        \"SupportReadOnly\": true,\n        \"SupportAutoLoadBalance\": true,\n        \"SupportAccessMode\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySupportParam\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"ProxyVersion\": \"1.3.1\",\n        \"SupportPool\": true,\n        \"PoolMin\": 1,\n        \"PoolMax\": 10,\n        \"SupportTransSplit\": true,\n        \"SupportTransSplitMinVersion\": \"1.3.1\",\n        \"SupportPoolMinVersion\": \"1.1.1\",\n        \"SupportReadOnly\": true,\n        \"SupportAutoLoadBalance\": true,\n        \"SupportAccessMode\": true\n    }\n}",
         "title": "查询实例支持代理版本和参数"
       }
     ],
@@ -1074,15 +1074,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdbProxyAddressVipAndVPort\n<公共请求参数>\n\n{\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"ProxyAddressId\": \"proxyaddr-mc0efsw0\",\n    \"UniqVpcId\": \"vpc-ixw3ll2d\",\n    \"UniqSubnetId\": \"subnet-0z3r56vq\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "修改数据库代理地址VPC"
       }
     ],
     "ModifyCdbProxyParam": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdbProxyParam\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxxx\",\n    \"ProxyGroupId\": \"proxy-xxx\",\n    \"ConnectionPoolLimit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdbProxyParam\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\",\n    \"ProxyGroupId\": \"proxy-ixw3ll2d\",\n    \"ConnectionPoolLimit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "配置数据库代理参数"
       }
     ],
@@ -1231,7 +1231,7 @@
     "OpenAuditService": [
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-3u8h3h1w\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7,\n    \"AuditRuleFilters\": [\n        {\n            \"RuleFilters\": [\n                {\n                    \"Compare\": \"NEQ\",\n                    \"Type\": \"host\",\n                    \"Value\": [\n                        \"127.0.0.1\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-3u8h3h1w\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7,\n    \"RuleTemplateIds\": [\n        \"cdb-art-l1mlbo59\"\n    ],\n    \"AuditAll\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf6123\"\n    }\n}",
         "title": "开通实例审计服务"
       }
@@ -1255,8 +1255,8 @@
     "OpenSSL": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx\",\n        \"AsyncRequestId\": \"xxxx-xxxx-xxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-je5egmdl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"123asd21-2dasdasd-123qcsdw-313213\"\n    }\n}",
         "title": "开启SSL连接功能。"
       }
     ],
@@ -1383,7 +1383,7 @@
     "SwitchCDBProxy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchCDBProxy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-pr1rb3j1\",\n    \"ProxyGroupId\": \"proxy-p11rb3j9\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
         "title": "切换数据库代理"
       }
@@ -1415,7 +1415,7 @@
     "UpgradeCDBProxyVersion": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCDBProxyVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"ProxyGroupId\": \"proxy-test\",\n    \"DstProxyVersion\": \"1.0.1\",\n    \"SrcProxyVersion\": \"1.1.2\",\n    \"UpgradeTime\": \"nowTime\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeCDBProxyVersion\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-pr1rb3j1\",\n    \"ProxyGroupId\": \"proxy-p11rb3j9\",\n    \"DstProxyVersion\": \"1.0.1\",\n    \"SrcProxyVersion\": \"1.1.2\",\n    \"UpgradeTime\": \"nowTime\"\n}",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"8155d27a-079a2580-19593e48-f1af5042\",\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\"\n    }\n}",
         "title": "升级数据库代理版本"
       }
@@ -1423,7 +1423,7 @@
     "UpgradeDBInstance": [
       {
         "document": "升级云数据库实例",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-6si6qy6p\",\n    \"Volume\": \"50\",\n    \"Memory\": \"1000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-6si6qy6p\",\n    \"Volume\": 50,\n    \"Memory\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealIds\": [\n            \"20171204110077\"\n        ],\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "升级云数据库实例"
       }

@@ -48,6 +48,14 @@
         "title": "修改资产绑定的堡垒机服务"
       }
     ],
+    "CheckLDAPConnection": [
+      {
+        "document": "测试LDAP连接",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLDAPConnection\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminPassword\": \"pwd\",\n    \"Ip\": \"10.10.1.10\",\n    \"BaseDN\": \"bh-test-DN\",\n    \"EnableSSL\": true,\n    \"IpBackup\": \"\",\n    \"AdminAccount\": \"admin\",\n    \"Port\": 80\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "测试LDAP连接"
+      }
+    ],
     "CreateAccessWhiteListRule": [
       {
         "document": "新建访问白名单规则",
@@ -352,6 +360,14 @@
         "title": "查询网络域"
       }
     ],
+    "DescribeLDAPUnitSet": [
+      {
+        "document": "获取LDAP ou 列表",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLDAPUnitSet\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminPassword\": \"pwd\",\n    \"Ip\": \"192.168.0.1\",\n    \"BaseDN\": \"bh-base-dn\",\n    \"EnableSSL\": true,\n    \"IpBackup\": \"\",\n    \"AttributeUserName\": \"attr-user\",\n    \"AdminAccount\": \"admin\",\n    \"AttributeUnit\": \"attr-uint\",\n    \"Port\": 22\n}",
+        "output": "{\n    \"Response\": {\n        \"UnitSet\": [\n            \"bh-test-uint\"\n        ],\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "获取LDAP ou 列表"
+      }
+    ],
     "DescribeLoginEvent": [
       {
         "document": "",
@@ -462,6 +478,14 @@
         "title": "修改资产组"
       }
     ],
+    "ModifyLDAPSetting": [
+      {
+        "document": "修改LDAP配置信息",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLDAPSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminAccount\": \"admin\",\n    \"AttributeEmail\": \"bhtets@email.com\",\n    \"AdminPassword\": \"password\",\n    \"AutoSync\": true,\n    \"Ip\": \"172.168.0.1\",\n    \"BaseDN\": \"bhtest-dn\",\n    \"SyncPeriod\": 1,\n    \"SyncAll\": true,\n    \"EnableSSL\": true,\n    \"AttributeRealName\": \"attrRealName\",\n    \"SyncUnitSet\": [\n        \"\"\n    ],\n    \"IpBackup\": \"\",\n    \"AttributeUser\": \"user\",\n    \"AttributeUserName\": \"testusername\",\n    \"AttributePhone\": \"phone\",\n    \"AttributeUnit\": \"unit\",\n    \"Port\": 1,\n    \"Overwrite\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e5a83b7-564a-4831-8111-28a4ec740c61\"\n    }\n}",
+        "title": "修改LDAP配置信息"
+      }
+    ],
     "ModifyOAuthSetting": [
       {
         "document": "",
@@ -500,6 +524,14 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"运维组\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8ebf0b3-ecf5-49bf-9f9d-86341c4072f1\"\n    }\n}",
         "title": "新建主机成功"
+      }
+    ],
+    "ReplaySession": [
+      {
+        "document": "会话回放",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaySession\n<公共请求参数>\n\n{\n    \"Sid\": \"1weqr234131qw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "会话回放"
       }
     ],
     "ResetDeviceAccountPassword": [
@@ -612,6 +644,22 @@
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchTaskResult\n<公共请求参数>\n\n{\n    \"UserName\": \"nick\",\n    \"Name\": \"nic\",\n    \"Limit\": 1,\n    \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n    \"Offset\": 1,\n    \"EndTime\": \"2020-09-22T00:00:00+08:00\",\n    \"OperationId\": \"ops-aeqwcaw\",\n    \"TaskType\": [\n        1,\n        2\n    ],\n    \"RealName\": \"tom\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"c241022e-c50d-47b2-9748-691a09c143c4\",\n        \"TaskResult\": [\n            {\n                \"UserName\": \"nick\",\n                \"Status\": 0,\n                \"Name\": \"nic\",\n                \"FromIp\": \"192.168.0.1\",\n                \"StartTime\": \"2020-09-22T00:00:00+08:00\",\n                \"EndTime\": \"2020-09-22T00:00:00+08:00\",\n                \"Id\": \"1\",\n                \"RealName\": \"tom\",\n                \"OperationId\": \"ops-adexdea\"\n            }\n        ]\n    }\n}",
         "title": "搜索运维任务执行结果"
+      }
+    ],
+    "SetLDAPSyncFlag": [
+      {
+        "document": "设置LDAP 立即同步标记",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetLDAPSyncFlag\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "title": "设置LDAP 立即同步标记"
+      }
+    ],
+    "UnlockUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockUser\n<公共请求参数>\n\n{\n    \"IdSet\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfsadf-sdfasd-sdfsad-sdf2222\"\n    }\n}",
+        "title": "解锁用户"
       }
     ]
   },

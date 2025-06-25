@@ -22,7 +22,7 @@ Output:
                 "Inbound": [],
                 "ProjectId": 0,
                 "SecurityGroupId": "sg-xx",
-                "SecurityGroupRemark": "",
+                "SecurityGroupRemark": "cdb安全组",
                 "CreateTime": "2017-04-13 15:00:06"
             }
         ]
