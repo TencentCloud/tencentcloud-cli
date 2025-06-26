@@ -157,7 +157,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExposeAssetCategory\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"ExposeAssetTypeList\": [\n            {\n                \"Provider\": \"tencent\",\n                \"ProviderName\": \"腾讯云\",\n                \"AssetType\": \"cvm_instance\",\n                \"AssetTypeName\": \"云服务器\"\n            }\n        ],\n        \"RequestId\": \"46fb51ad-b6d8-4c91-af47-8f4bc947a69c\"\n    }\n}",
-        "title": "暴露面资产分类"
+        "title": "云边界分析资产分类"
       }
     ],
     "DescribeExposePath": [
@@ -165,7 +165,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExposePath\n<公共请求参数>\n\n{\n    \"AssetId\": \"ins-isd76xs9\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c93adc50-6598-4af6-afa4-51e09895451f\",\n        \"Content\": \"\"\n    }\n}",
-        "title": "查询互联网暴露节点"
+        "title": "查询云边界分析路径节点"
       }
     ],
     "DescribeExposures": [
@@ -173,7 +173,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExposures\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"ExposeList\": [\n            {\n                \"AclList\": \"0.0.0.0/0\",\n                \"AclType\": \"whitelist\",\n                \"AssetId\": \"ins-bvxns9uy\",\n                \"AssetType\": \"cvm_instance\",\n                \"AssetTypeName\": \"云服务器\",\n                \"CloudAccountId\": \"100010427547\",\n                \"CloudAccountName\": \"安全攻防\",\n                \"CreateTime\": \"2024-10-15T07:21:22Z\",\n                \"DisplayRiskType\": \"非标端口\",\n                \"DisplayStatus\": \"完全开放\",\n                \"Domain\": \"\",\n                \"HighRiskPortServiceCount\": 0,\n                \"InstanceName\": \"tke_cls-5q9sj52q_worker21\",\n                \"Ip\": \"175.178.22.29\",\n                \"Port\": \"30000-32768\",\n                \"PortServiceCount\": 0,\n                \"Provider\": \"腾讯云\",\n                \"RiskType\": \"no_standard_port\",\n                \"RiskWebAppCount\": 0,\n                \"Status\": \"open\",\n                \"UpdateTime\": \"2025-01-14T02:31:55Z\",\n                \"VulCount\": 0,\n                \"WeakPasswordCount\": 0,\n                \"WebAppCount\": 0,\n                \"ScanTaskStatus\": \"running\",\n                \"Uuid\": \"sadsds\",\n                \"HasScan\": \"true\",\n                \"AppId\": 12465129\n            }\n        ],\n        \"RequestId\": \"0ce09587-eaba-4f70-ae9b-1a80b69ee21f\",\n        \"TotalCount\": 102\n    }\n}",
-        "title": "互联网暴露资产列表"
+        "title": "云边界分析资产列表"
       }
     ],
     "DescribeExtendOrderResources": [
@@ -370,10 +370,10 @@
     ],
     "DescribeScanStatistic": [
       {
-        "document": "查询暴露面扫描结果统计信息",
+        "document": "查询云边界分析结果统计信息",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanStatistic\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"HighRiskPortServiceCount\": 3,\n        \"PortServiceCount\": 3,\n        \"PortServiceIncrement\": 0,\n        \"RequestId\": \"45ca21d4-f373-4274-9295-5380abc74bed\",\n        \"RiskWebAppCount\": 0,\n        \"VulCount\": 0,\n        \"WeakPasswordCount\": 1,\n        \"WebAppCount\": 0,\n        \"WebAppIncrement\": 0\n    }\n}",
-        "title": "查询暴露面扫描结果统计信息"
+        "title": "查询云边界分析结果统计信息"
       }
     ],
     "DescribeScanTaskList": [
@@ -470,6 +470,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAssets\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-68b8087a65268000\"\n    ],\n    \"Filter\": {\n        \"Limit\": 1,\n        \"Offset\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"AppIdList\": [\n            {\n                \"Text\": \"1302111215\",\n                \"Value\": \"1302111215\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"AppId\": \"1302111215\",\n                \"AssetId\": \"vpc-1hezruby\",\n                \"AssetName\": \"li-跨账号2\",\n                \"CIDR\": \"172.16.0.0/16\",\n                \"CVM\": 3,\n                \"ConnectedVpc\": 0,\n                \"CreateTime\": \"2024-08-27 10:22:36\",\n                \"DNS\": [\n                    \"183.**.**.19\",\n                    \"183.**.**.98\"\n                ],\n                \"IsCore\": 1,\n                \"IsNewAsset\": 0,\n                \"Nick\": \"声声乌龙\",\n                \"Region\": \"ap-beijing\",\n                \"Subnet\": 1,\n                \"Tag\": null,\n                \"Uin\": \"100014125178\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Text\": \"广州\",\n                \"Value\": \"ap-guangzhou\"\n            },\n            {\n                \"Text\": \"重庆\",\n                \"Value\": \"ap-chongqing\"\n            }\n        ],\n        \"RequestId\": \"25e46c79-08c5-4582-9952-eee1245bbbb2\",\n        \"TotalCount\": 35,\n        \"VpcList\": [\n            {\n                \"Text\": \"vpc_c8\",\n                \"Value\": \"vpc-2pu5xuk1\"\n            },\n            {\n                \"Text\": \"vpc_c2\",\n                \"Value\": \"vpc-2t0l3vhb\"\n            }\n        ]\n    }\n}",
         "title": "获取vpc列表"
+      }
+    ],
+    "DescribeVulRiskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVulRiskList\n<公共请求参数>\n\n{\n    \"CloudAccountID\": \"100010421111\",\n    \"Provider\": \"tencent\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8df95ddb-cc28-489d-a37d-422e0d93fe4b\",\n        \"TotalCount\": 882,\n        \"VulRiskList\": [\n            {\n                \"AssetID\": \"ins-xxxx\",\n                \"CloudAccountID\": \"100010421111\",\n                \"ContainerID\": \"\",\n                \"CreateTime\": \"2025-05-15 01:18:44\",\n                \"CveID\": \"CVE-2025-32911\",\n                \"Description\": \"libsoup是GNOME项目的一款GNOME的HTTP客户端/服务器库。 libsoup存在安全漏洞，该漏洞源于函数soup_message_headers_get_content_disposition存在双重释放问题。\",\n                \"Fix\": \"软件: libsoup2.4-1, 版本: 2.70.0-1\\n\\n修复命令\\nsudo apt-get -y install libsoup2.4-1 --only-upgrade\\n\",\n                \"InstanceName\": \"测试平台\",\n                \"InstanceStatus\": \"active\",\n                \"UpdateTime\": \"2025-05-21 01:22:30\",\n                \"VulCategory\": \"4\",\n                \"VulCategoryName\": \"Linux软件漏洞\",\n                \"VulLevel\": \"4\",\n                \"VulLevelName\": \"严重\",\n                \"VulName\": \"libsoup 安全漏洞(CVE-2025-32911)\",\n                \"InstanceStatusName\": \"运行中\"\n            }\n        ]\n    }\n}",
+        "title": "查询云边界分析-暴露路径下主机节点的漏洞列表"
       }
     ],
     "DescribeVulViewVulRiskList": [

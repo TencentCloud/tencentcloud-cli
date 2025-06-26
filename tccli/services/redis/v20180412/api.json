@@ -5721,7 +5721,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询详情。",
+          "document": "慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。",
           "example": "无",
           "member": "InstanceProxySlowlogDetail",
           "name": "InstanceProxySlowLogDetail",
@@ -6302,7 +6302,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询详情。",
+          "document": "慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。",
           "example": "无",
           "member": "InstanceSlowlogDetail",
           "name": "InstanceSlowLogDetail",
@@ -6617,7 +6617,7 @@
         },
         {
           "disabled": false,
-          "document": "慢查询详情",
+          "document": "慢查询详情，注意：TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。 建议缩小BeginTime和EndTime的时间间隔，多次查询。",
           "example": "无",
           "member": "TendisSlowLogDetail",
           "name": "TendisSlowLogDetail",

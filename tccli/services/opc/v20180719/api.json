@@ -64,11 +64,11 @@
       "status": "online"
     },
     "DescribeCvmRenewInstanceDetail": {
-      "document": "获取新购CVM的信息，用于续费场景",
+      "document": "业务已下线\n\n获取新购CVM的信息，用于续费场景",
       "input": "DescribeCvmRenewInstanceDetailRequest",
       "name": "获取新购CVM的信息，用于续费场景",
       "output": "DescribeCvmRenewInstanceDetailResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetActivityRegFormRecordList": {
       "document": "查询活动报名表单记录列表",

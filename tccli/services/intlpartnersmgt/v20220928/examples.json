@@ -122,6 +122,14 @@
         "title": "DescribeCustomerBillDetail"
       }
     ],
+    "DescribeCustomerBillDetailByDay": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDetailByDay\n<公共请求参数>\n\n{\n    \"CustomerUin\": 123123123,\n    \"Date\": \"2025-01-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdfasd-asdasdasd-123123asdas\",\n        \"TotalCost\": \"123.12312312\"\n    }\n}",
+        "title": "经销商查询子客日账单消费"
+      }
+    ],
     "DescribeCustomerBillDownloadUrl": [
       {
         "document": "经销商下载直接子客L2资源账单",

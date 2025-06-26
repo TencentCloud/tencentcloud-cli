@@ -270,6 +270,14 @@
         "title": "示例"
       }
     ],
+    "DescribeMessageDetails": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageDetails\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g839agr2\",\n    \"MessageId\": \"15397032005D639FEE4893603732005C\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Body\": \"this is body\",\n        \"ClientId\": \"client1\",\n        \"MessageId\": \"15397032005D639FEE4893603732005C\",\n        \"OriginTopic\": \"home/room3\",\n        \"Qos\": \"1\",\n        \"RequestId\": \"ba5d5d6a-64c9-40cf-8889-21efed76389d\",\n        \"StoreTimestamp\": \"1745828681259\",\n        \"UserProperties\": [\n            {\n                \"Key\": \"key1\",\n                \"Value\": \"value-1\"\n            },\n            {\n                \"Key\": \"key2\",\n                \"Value\": \"value-2\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeMessageList": [
       {
         "document": "",

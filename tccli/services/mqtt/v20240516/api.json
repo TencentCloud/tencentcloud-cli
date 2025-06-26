@@ -231,6 +231,13 @@
       "output": "DescribeMessageByTopicResponse",
       "status": "online"
     },
+    "DescribeMessageDetails": {
+      "document": "查询MQTT消息详情",
+      "input": "DescribeMessageDetailsRequest",
+      "name": "查询MQTT详细信息",
+      "output": "DescribeMessageDetailsResponse",
+      "status": "online"
+    },
     "DescribeMessageList": {
       "document": "根据一级Topic查询消息列表",
       "input": "DescribeMessageListRequest",
@@ -3078,6 +3085,121 @@
       ],
       "type": "object"
     },
+    "DescribeMessageDetailsRequest": {
+      "document": "DescribeMessageDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "0B8D67D3003505C29BFD077EC65B0002",
+          "member": "string",
+          "name": "MessageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅表达式",
+          "example": "home/room",
+          "member": "string",
+          "name": "Subscription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageDetailsResponse": {
+      "document": "DescribeMessageDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息体",
+          "example": "body",
+          "member": "string",
+          "name": "Body",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义属性",
+          "example": "无",
+          "member": "UserProperty",
+          "name": "UserProperties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息存储时间，毫秒级时间戳。",
+          "example": "1745828681259",
+          "member": "int64",
+          "name": "StoreTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "0B8D67D3003505C29BFD077EC65B0002",
+          "member": "string",
+          "name": "MessageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产者地址",
+          "example": "client-1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Topic",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源topic",
+          "example": "home/room",
+          "member": "string",
+          "name": "OriginTopic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMessageListRequest": {
       "document": "DescribeMessageList请求参数结构体",
       "members": [
@@ -5791,6 +5913,34 @@
         }
       ],
       "type": "object"
+    },
+    "UserProperty": {
+      "document": "map结构返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "value",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VpcInfo": {
       "document": "VPC信息",
