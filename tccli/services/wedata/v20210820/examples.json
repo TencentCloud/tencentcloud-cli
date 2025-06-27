@@ -1876,6 +1876,14 @@
         "title": "调试运行集成任务"
       }
     ],
+    "GetPaginationTaskScript": [
+      {
+        "document": "分页获取任务脚本",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPaginationTaskScript\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"TaskId\": \"abc\",\n    \"PageNum\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ProjectId\": \"abc\",\n                \"TaskId\": \"abc\",\n                \"PageSize\": 0,\n                \"PageNum\": 0,\n                \"PageTotal\": 0,\n                \"Base64ScriptContent\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "分页获取任务脚本"
+      }
+    ],
     "GetTaskInstance": [
       {
         "document": "获取实例详情示例",

@@ -8557,9 +8557,10 @@
         {
           "disabled": false,
           "document": "媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
-          "example": "NULL",
+          "example": "TopRankVideo-125xxx88",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8567,9 +8568,10 @@
         {
           "disabled": false,
           "document": "媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
-          "example": "NULL",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8577,9 +8579,10 @@
         {
           "disabled": false,
           "document": "媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。",
-          "example": "NULL",
+          "example": "/movie/201907/WildAnimal.mov",
           "member": "string",
           "name": "Object",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8593,9 +8596,10 @@
         {
           "disabled": false,
           "document": "媒体处理生成的文件输出的目标 Bucket 名，如 TopRankVideo-125xxx88。如果不填，表示继承上层。",
-          "example": "NULL",
+          "example": "TopRankVideo-125xxx88",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8603,9 +8607,10 @@
         {
           "disabled": false,
           "document": "媒体处理生成的文件输出的目标 Bucket 的园区，如 ap-chongqing。如果不填，表示继承上层。",
-          "example": "NULL",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -21160,6 +21165,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "摘要思维导图地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxxx.cos.myqcloud.com",
+          "member": "string",
+          "name": "MindMapUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -21899,6 +21914,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21909,6 +21925,7 @@
           "example": "NULL",
           "member": "CosInputInfo",
           "name": "CosInputInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -21919,6 +21936,7 @@
           "example": "NULL",
           "member": "UrlInputInfo",
           "name": "UrlInputInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -21929,6 +21947,7 @@
           "example": "NULL",
           "member": "S3InputInfo",
           "name": "S3InputInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -27101,7 +27120,7 @@
         {
           "disabled": false,
           "document": "质检项名称。质检项取值如下：\n<li>LowEvaluation：无参考打分</li>\n<li>Mosaic：马赛克检测</li>\n<li>CrashScreen：花屏检测</li>\n<li>Blur：模糊检测</li>\n<li>BlackWhiteEdge：黑白边检测</li>\n<li>SolidColorScreen：纯色屏检测</li>\n<li>LowLighting：低光照</li>\n<li>HighLighting：过曝</li>\n<li>NoVoice：静音检测</li>\n<li>LowVoice：低音检测</li>\n<li>HighVoice：爆音检测</li>\n<li>Jitter：抖动检测</li>\n<li>Noise：噪点检测</li>\n<li>QRCode：二维码检测</li>\n<li>BarCode：条形码检测</li>\n<li>AppletCode：小程序码检测</li>\n<li>VideoResolutionChanged：视频分辨率变化</li>\n<li>AudioSampleRateChanged：音频采样率变化</li>\n<li>AudioChannelsChanged：音频通道数变化</li>\n<li>ParameterSetsChanged：流参数集信息发生变化</li>\n<li>DarOrSarInvalid：视频的宽高比异常</li>\n<li>TimestampFallback：DTS时间戳回退</li>\n<li>DtsJitter：DTS抖动过大</li>\n<li>PtsJitter：PTS抖动过大</li>\n<li>AACDurationDeviation：AAC帧时间戳间隔不合理</li>\n<li>AudioDroppingFrames：音频丢帧</li>\n<li>VideoDroppingFrames：视频丢帧</li>\n<li>AVTimestampInterleave：音视频交织不合理</li>\n<li>PtsLessThanDts：媒体流的 pts 小于 dts</li>\n<li>ReceiveFpsJitter：网络接收帧率抖动过大</li>\n<li>ReceiveFpsTooSmall：网络接收视频帧率过小</li>\n<li>FpsJitter：通过PTS计算得到的流帧率抖动过大</li>\n<li>StreamOpenFailed：流打开失败</li>\n<li>StreamEnd：流结束</li>\n<li>StreamParseFailed：流解析失败</li>\n<li>VideoFirstFrameNotIdr：首帧不是IDR帧</li>\n<li>StreamNALUError：NALU起始码错误</li>\n<li>TsStreamNoAud：mpegts的H26x流缺失 AUD NALU</li>\n<li>AudioStreamLack：无音频流</li>\n<li>VideoStreamLack：无视频流</li>\n<li>LackAudioRecover：缺失音频流恢复</li>\n<li>LackVideoRecover：缺失视频流恢复</li>\n<li>VideoBitrateOutofRange：视频流码率(kbps)超出范围</li>\n<li>AudioBitrateOutofRange：音频流码率(kbps)超出范围</li>\n<li>VideoDecodeFailed：视频解码错误</li>\n<li>AudioDecodeFailed：音频解码错误</li>\n<li>AudioOutOfPhase：双通道音频相位相反</li>\n<li>VideoDuplicatedFrame：视频流中存在重复帧</li>\n<li>AudioDuplicatedFrame：音频流中存在重复帧</li>\n<li>VideoRotation：视频画面旋转</li>\n<li>TsMultiPrograms：MPEG2-TS流有多个program</li>\n<li>Mp4InvalidCodecFourcc：MP4中codec fourcc不符合Apple HLS要求</li>\n<li>HLSBadM3u8Format：无效的m3u8文件</li>\n<li>HLSInvalidMasterM3u8：无效的main m3u8文件</li>\n<li>HLSInvalidMediaM3u8：无效的media m3u8文件</li>\n<li>HLSMasterM3u8Recommended：main m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8Recommended：media m3u8缺少标准推荐的参数</li>\n<li>HLSMediaM3u8DiscontinuityExist：media m3u8存在EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsStreamNumChange：切片的流数目发生变化</li>\n<li>HLSMediaSegmentsPTSJitterDeviation：切片间PTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>HLSMediaSegmentsDTSJitterDeviation：切片间DTS跳变且没有EXT-X-DISCONTINUITY</li>\n<li>TimecodeTrackExist：MP4存在tmcd轨道</li>",
-          "example": "无",
+          "example": "Mosaic",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -27112,7 +27131,7 @@
         {
           "disabled": false,
           "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "output_required": false,
@@ -27145,7 +27164,7 @@
         {
           "disabled": false,
           "document": "异常持续时间，单位：ms。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100",
+          "example": "1000",
           "member": "uint64",
           "name": "Duration",
           "output_required": false,
@@ -27156,7 +27175,7 @@
         {
           "disabled": false,
           "document": "检测项对应的阈值，不同检测项对应阈值不同。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "Threshold",
           "output_required": false,
@@ -27199,7 +27218,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板唯一标识。",
-          "example": "0",
+          "example": "10",
           "member": "int64",
           "name": "Definition",
           "output_required": true,
@@ -27209,7 +27228,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "test",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -27219,7 +27238,7 @@
         {
           "disabled": false,
           "document": "模板描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "my test media quality control template",
           "member": "string",
           "name": "Comment",
           "output_required": false,
@@ -27229,7 +27248,7 @@
         {
           "disabled": false,
           "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "Custom",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -27249,7 +27268,7 @@
         {
           "disabled": false,
           "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "2021-02-03T04:05:06Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -27259,7 +27278,7 @@
         {
           "disabled": false,
           "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "2022-02-03T04:05:06Z",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -30375,7 +30394,7 @@
         {
           "disabled": false,
           "document": "要压制到视频中的字幕文件地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "address",
+          "example": "https://test-123xxxx456.cos.ap-nanjing.myqcloud.com/xxxxx/subtitle/1.srt",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -30385,8 +30404,8 @@
         },
         {
           "disabled": false,
-          "document": "指定要压制到视频中的字幕轨道，如果有指定Path，则Path 优先级更高。Path 和 StreamIndex 至少指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "3",
+          "document": "指定要压制到视频中的字幕轨道，Path 和 StreamIndex 至少指定一个；如果指定了Path，则优先使用Path。\nStreamindex的取值须与源文件中的字幕轨索引一致。例如，源文件中的字幕轨为stream#0:3，则StreamIndex应为3，否则可能导致任务处理失败。\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "StreamIndex",
           "output_required": false,
@@ -30396,8 +30415,8 @@
         },
         {
           "disabled": false,
-          "document": "字体类型，\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>simkai.ttf：楷体</li>\n<li>arial.ttf：仅支持英文</li>\n默认hei.ttf\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "simkai.ttf",
+          "document": "字体类型，支持：\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>kai.ttf（推荐）或 simkai.ttf：楷体</li>\n<li>msyh.ttf：微软雅黑</li>\n<li>msyhbd.ttf：微软雅黑加粗</li>\n<li>hkjgt.ttf：华康金刚体</li>\n<li>dhttx.ttf：典黑体特细</li>\n<li>xqgdzt.ttf：喜鹊古字典体</li>\n<li>qpcyt.ttf：巧拼超圆体</li>\n<li>arial.ttf：仅支持英文</li>\n<li>dinalternate.ttf：DIN Alternate Bold</li>\n<li>helveticalt.ttf：Helvetica</li>\n<li>helveticains.ttf：Helvetica Inserat</li>\n<li>trajanpro.ttf：TrajanPro-Bold</li>\n<li>korean.ttf：韩语</li>\n<li>japanese.ttf：日语</li>\n<li>thai.ttf：泰语</li>\n默认：hei.ttf 黑体。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kai.ttf",
           "member": "string",
           "name": "FontType",
           "output_required": false,
@@ -30407,8 +30426,8 @@
         },
         {
           "disabled": false,
-          "document": "字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5px",
+          "document": "字体大小，格式：Npx，N 为数值，不指定则以字幕文件中为准。\n默认源视频高度的5%。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50px",
           "member": "string",
           "name": "FontSize",
           "output_required": false,
@@ -30418,8 +30437,8 @@
         },
         {
           "disabled": false,
-          "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0xRRGGBB",
+          "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0xFFFFFF",
           "member": "string",
           "name": "FontColor",
           "output_required": false,
@@ -30433,6 +30452,72 @@
           "example": "1",
           "member": "float",
           "name": "FontAlpha",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕y轴坐标位置，指定此参数会忽略字幕文件自带坐标；支持像素和百分比格式：\n\n- 像素：Npx，N范围：[0,4096]。\n- 百分百：N%，N范围：[0,100]；例如10%表示字幕y坐标=10%*源视频高度。\n\n默认值：源视频高度*4%。\n注意：坐标轴原点在源视频中轴线底部，字幕基准点在字幕中轴线底部，参考下图：\n![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4%",
+          "member": "string",
+          "name": "YPos",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕背景底板的y轴坐标位置；支持像素和百分比格式：\n\n- 像素：Npx，N范围：[0,4096]。\n- 百分百：N%，N范围：[0,100]；例如10%表示字幕背景底板y坐标=10%*源视频高度。\n\n不传表示不开启字幕背景底板。\n注意：坐标轴原点位于源视频的中轴线底部，字幕背景底板的基准点在其中轴线底部，参考下图：\n![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/mps-demo/102_ai_subtitle/subtitle_style.png)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1%",
+          "member": "string",
+          "name": "BoardY",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "底板的宽度，单位为像素，取值范围：[0,4096]。\n默认源视频宽像素的90%。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1920",
+          "member": "int64",
+          "name": "BoardWidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "底板的高度。单位为像素，取值范围：[0,4096]。\n默认为源视频高像素的15%。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "BoardHeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "底板颜色。格式：0xRRGGBB，\n默认值：0x000000（黑色）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0x000000",
+          "member": "string",
+          "name": "BoardColor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字幕背景板透明度，取值范围：[0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>\n默认值：0.8。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.8",
+          "member": "float",
+          "name": "BoardAlpha",
           "output_required": false,
           "required": false,
           "type": "float",
@@ -30732,6 +30817,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -30742,6 +30828,7 @@
           "example": "NULL",
           "member": "CosOutputStorage",
           "name": "CosOutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -30752,6 +30839,7 @@
           "example": "NULL",
           "member": "S3OutputStorage",
           "name": "S3OutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -32975,7 +33063,7 @@
         },
         {
           "disabled": false,
-          "document": "原点位置，可选值：\n<li>topLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>topRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>bottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>bottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下。；</li>",
+          "document": "原点位置，可选值：\n<li>TopLeft：表示坐标原点位于视频图像左上角，水印原点为图片或文字的左上角；</li>\n<li>TopRight：表示坐标原点位于视频图像的右上角，水印原点为图片或文字的右上角；</li>\n<li>BottomLeft：表示坐标原点位于视频图像的左下角，水印原点为图片或文字的左下角；</li>\n<li>BottomRight：表示坐标原点位于视频图像的右下角，水印原点为图片或文字的右下角。</li>",
           "example": "TopLeft",
           "member": "string",
           "name": "CoordinateOrigin",

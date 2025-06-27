@@ -452,6 +452,12 @@
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeProxySlowLog\n&InstanceId=crs-asda****\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 106980,\n        \"InstanceProxySlowLogDetail\": [\n            {\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Client\": \"172.16.21.78\",\n                \"Command\": \"hget\"\n            }\n        ],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\"\n    }\n}",
         "title": "请求示例"
+      },
+      {
+        "document": "TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeProxySlowLog\n&InstanceId=crs-asda****\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&Limit=10\n&Offset=10000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10001,\n        \"InstanceProxySlowLogDetail\": [],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\"\n    }\n}",
+        "title": "请求示例2"
       }
     ],
     "DescribeRedisClusterOverview": [
@@ -508,6 +514,12 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asda****\",\n    \"EndTime\": \"2019-09-09 12:12:41\",\n    \"BeginTime\": \"2019-09-08 12:12:41\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceSlowLogDetail\": [\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"hget\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7********\",\n                \"Command\": \"keys\",\n                \"CommandLine\": \"keys OtherResControler:orion.ovs.client.1514259512471:orion.ovs.entprise.9281083591:sence:*\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            },\n            {\n                \"Node\": \"24a05f0d545da235f07a5bc5deebb937********\",\n                \"Command\": \"get\",\n                \"CommandLine\": \"get slot::fsm::status::orion.ovs.client.1508751991541::1db7ffcf9216bc1fd939e6c710514f6fb40fd4fe1525f\",\n                \"Duration\": 41,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\",\n                \"Client\": \"\"\n            }\n        ],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\",\n        \"TotalCount\": 106980\n    }\n}",
         "title": "查询实例慢查询记录"
+      },
+      {
+        "document": "TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asda****\",\n    \"EndTime\": \"2019-09-09 12:12:41\",\n    \"BeginTime\": \"2019-09-08 12:12:41\",\n    \"Limit\": 10,\n    \"Offset\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSlowLogDetail\": [],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\",\n        \"TotalCount\": 106980\n    }\n}",
+        "title": "查询实例慢查询记录超过1W条"
       }
     ],
     "DescribeTaskInfo": [
@@ -529,9 +541,15 @@
     "DescribeTendisSlowLog": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTendisSlowLog\n&InstanceId=crs-asdasdas\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTendisSlowLog\n&InstanceId=crs-asdas***\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 106980,\n        \"TendisSlowLogDetail\": [\n            {\n                \"Node\": \"833a2f6d8b402319aee8ad7f1c0fbbf7a6604337\",\n                \"Command\": \"hget\",\n                \"CommandLine\": \"hget hash_key classify_scope::default\",\n                \"Duration\": 45,\n                \"ExecuteTime\": \"2019-09-08 12:13:08\"\n            }\n        ],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef686158cbd6\"\n    }\n}",
         "title": "请求示例"
+      },
+      {
+        "document": "TotalCount大于1W，即慢日志超过1万条，不支持返回日志详情，返回数据为空。",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeTendisSlowLog\n&InstanceId=crs-asdas***\n&BeginTime=2019-09-08 12:12:41\n&EndTime=2019-09-09 12:12:41\n&Limit=10\n&Offset=10000\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 106980,\n        \"TendisSlowLogDetail\": [],\n        \"RequestId\": \"121d5b40-d2b8-11e9-8c40-ef68615******\"\n    }\n}",
+        "title": "请求示例2"
       }
     ],
     "DestroyPostpaidInstance": [

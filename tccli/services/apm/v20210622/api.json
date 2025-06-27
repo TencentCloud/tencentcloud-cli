@@ -2117,6 +2117,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标数据单位",
+          "example": "个/秒",
+          "member": "string",
+          "name": "MetricUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

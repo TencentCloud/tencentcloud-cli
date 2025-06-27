@@ -10524,7 +10524,7 @@
         },
         {
           "disabled": false,
-          "document": "播放链接过期时间",
+          "document": "播放链接过期时间（时间戳，单位秒）",
           "example": "1619331648",
           "member": "uint64",
           "name": "ExpireTime",
@@ -11980,7 +11980,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要返回总结，默认为False；  开启后会加大接口响应时长",
+          "document": "是否需要返回总结，默认为True；  开启后会加大接口响应时长",
           "example": "false",
           "member": "bool",
           "name": "EnableSummary",

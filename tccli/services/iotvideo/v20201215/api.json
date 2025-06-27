@@ -5868,7 +5868,7 @@
         },
         {
           "disabled": false,
-          "document": "播放链接过期时间",
+          "document": "播放链接过期时间（时间戳，单位秒）",
           "example": "1619331648",
           "member": "uint64",
           "name": "ExpireTime",
@@ -5887,7 +5887,7 @@
           "example": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8?sign=x",
           "member": "string",
           "name": "SignedVideoURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

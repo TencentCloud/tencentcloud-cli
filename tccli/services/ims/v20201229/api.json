@@ -451,33 +451,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回识别对象的ID以方便识别和区分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回识别对象的ID以方便识别和区分。",
           "example": "0",
           "member": "int64",
           "name": "Id",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该字段用于返回识命中的子标签名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回时命中的子标签名称。",
           "example": "PornSum",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回对应子标签命中的分值，取值为**0-100**，如：*Porn-SexBehavior 99* 则代表相应识别内容命中色情-性行为标签的分值为99。",
           "example": "89",
           "member": "uint64",
           "name": "Score",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -537,13 +537,13 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回分类模型命中子标签的详细信息，如：序号、命中标签名称、分数等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回分类模型命中子标签的详细信息，如：序号、命中标签名称、分数等信息。",
           "example": "无",
           "member": "LabelDetailItem",
           "name": "Details",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -679,13 +679,13 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回黑白库比对结果的详细信息，如：序号、库名称、恶意标签等信息；详细返回信息敬请参考对应数据结构（[LibDetail](https://cloud.tencent.com/document/product/1125/53274#LibDetail)）的描述文档",
           "example": "无",
           "member": "LibDetail",
           "name": "Details",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -811,13 +811,13 @@
         },
         {
           "disabled": false,
-          "document": "该参数用于返回命中的人脸id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数用于返回命中的人脸id",
           "example": "xxx-xxx-xxx",
           "member": "string",
           "name": "ObjectId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -877,23 +877,23 @@
         },
         {
           "disabled": false,
-          "document": "该标签用于返回所识别出的实体名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该标签用于返回所识别出的实体名称。",
           "example": "[\"QRCODE\"]",
           "member": "string",
           "name": "Names",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail\n](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该标签用于返回所识别出实体的详细信息，如：序号、命中标签名称、位置坐标等信息，详细返回内容敬请参考相应数据结构（[ObjectDetail\n](https://cloud.tencent.com/document/api/1125/53274#ObjectDetail)）。",
           "example": "无",
           "member": "ObjectDetail",
           "name": "Details",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -999,13 +999,13 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回OCR识别出的结果的详细内容，如：文本内容、对应标签、识别框位置等信息。",
           "example": "无",
           "member": "OcrTextDetail",
           "name": "Details",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1157,23 +1157,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前可能的取值：Scene（图片场景模型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前可能的取值：Scene（图片场景模型）",
           "example": "Scene",
           "member": "string",
           "name": "Label",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Label对应模型下的识别标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Label对应模型下的识别标签信息",
           "example": "无",
           "member": "RecognitionTag",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1183,33 +1183,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签名称",
           "example": "Ad",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "置信分：0～100，数值越大表示置信度越高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "置信分：0～100，数值越大表示置信度越高",
           "example": "89",
           "member": "int64",
           "name": "Score",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签位置信息，若模型无位置信息，则可能为零值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签位置信息，若模型无位置信息，则可能为零值",
           "example": "无",
           "member": "Location",
           "name": "Location",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

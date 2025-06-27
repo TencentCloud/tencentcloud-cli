@@ -9858,6 +9858,16 @@
           "output_required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库类型:0默认1共享",
+          "example": "1",
+          "member": "int64",
+          "name": "KnowledgeType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9911,7 +9921,7 @@
         },
         {
           "disabled": false,
-          "document": "是否共享知识库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "废弃\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsSharedKnowledge",
@@ -9919,6 +9929,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库类型:0默认1共享",
+          "example": "1",
+          "member": "int64",
+          "name": "KnowledgeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -274,11 +274,11 @@
       "status": "online"
     },
     "CreateTasksInOrder": {
-      "document": "按顺序创建任务（已经废弃，后期不再维护，请使用接口CreateTasks）",
+      "document": "废弃接口，申请下线\n\n按顺序创建任务（已经废弃，后期不再维护，请使用接口CreateTasks）",
       "input": "CreateTasksInOrderRequest",
       "name": "按顺序创建任务",
       "output": "CreateTasksInOrderResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateUser": {
       "document": "创建用户",
@@ -1580,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "单位毫秒，引擎内执行耗时",
+          "document": "单位毫秒，引擎内执行耗时, 反映真正用于计算所需的耗时，即从  Spark 任务第一个 Task  开始执行到任务结束之间的耗时。\n具体的：会统计任务的每个 Spark Stage 第一个 Task 到最后一个 Task 完成时长之和，不包含任务开始的排队耗时（即剔除从任务提交到 Spark Task 开始执行之间的调度等其他耗时），也不包含任务执行过程中多个 Spark Stage 之间因 executor 资源不足而等待执行 Task 所消耗的时间。",
           "example": "80852",
           "member": "int64",
           "name": "JobTimeSum",
@@ -1590,7 +1590,7 @@
         },
         {
           "disabled": false,
-          "document": "单位秒，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和",
+          "document": "单位秒，累计 CPU* 秒 ( 累计 CPU * 时 = 累计 CPU* 秒/ 3600)，统计参与计算所用 Spark Executor 每个 core 的 CPU 执行时长总和",
           "example": "4329",
           "member": "int64",
           "name": "TaskTimeSum",
@@ -4815,7 +4815,7 @@
         },
         {
           "disabled": false,
-          "document": "提交任务的附加配置集合，当前支持Key包含：MAINARGS：程序入口参数，空格分割(SqlType任务通过该值指定base64加密后的sql)、SPARKCONFIG：Spark配置，以换行符分隔、ENI：Eni连接信息、DEPENDENCYPACKAGEPATH：依赖的程序包（--jars、--py-files:支持py/zip/egg等归档格式），多文件以逗号分隔、DEPENDENCYFILEPATH：依赖文件资源（--files: 非jar、zip），多文件以逗号分隔、DEPENDENCYARCHIVESPATH：依赖archives资源（--archives: 支持tar.gz/tgz/tar等归档格式)，多文件以逗号分隔、MAXRETRIES：任务重试次数，非流任务默认为1、SPARKIMAGE：Spark镜像版本号，支持使用dlc镜像/用户自定的tcr镜像运行任务、SPARKIMAGEVERSION：Spark镜像版本名称，与SPARKIMAGE一一对应",
+          "document": "提交任务的附加配置集合，当前支持Key包含：MAINARGS：程序入口参数，空格分割(SqlType任务通过该值指定base64加密后的sql)、SPARKCONFIG：Spark配置，以换行符分隔、ENI：Eni连接信息、DEPENDENCYPACKAGEPATH：依赖的程序包（--jars、--py-files:支持py/zip/egg等归档格式），多文件以逗号分隔、DEPENDENCYFILEPATH：依赖文件资源（--files: 非jar、zip），多文件以逗号分隔、DEPENDENCYARCHIVESPATH：依赖archives资源（--archives: 支持tar.gz/tgz/tar等归档格式)，多文件以逗号分隔、MAXRETRIES：任务重试次数，非流任务默认为1、SPARKIMAGE：Spark镜像版本号，支持使用dlc镜像/用户自定的tcr镜像运行任务、SPARKIMAGEVERSION：Spark镜像版本名称，与SPARKIMAGE一一对应；SPARKPRESETCODE：base64后的notebook预置代码；SPARKENV：base64后的spark环境变量；SPARKGITINFO：base64后的git相关信息",
           "example": "无",
           "member": "KVPair",
           "name": "CmdArgs",
@@ -4830,6 +4830,15 @@
           "name": "SourceInfo",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ai资源组名称",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18457,7 +18466,7 @@
       "type": "object"
     },
     "TCHouseD": {
-      "document": "Doirs数据源详细信息",
+      "document": "Doris数据源详细信息",
       "members": [
         {
           "disabled": false,

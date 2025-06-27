@@ -3985,6 +3985,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制面子网信息，仅在以下场景返回。\n- 容器网络插件为CiliumOverlay。\n- 支持CDC的托管集群，且网络插件为VPC-CNI。",
+          "example": "subnet-0bn5jksy",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

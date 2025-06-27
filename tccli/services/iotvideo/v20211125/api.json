@@ -8106,7 +8106,7 @@
         },
         {
           "disabled": false,
-          "document": "播放链接过期时间",
+          "document": "播放链接过期时间（时间戳，单位秒）",
           "example": "1619331648",
           "member": "uint64",
           "name": "ExpireTime",

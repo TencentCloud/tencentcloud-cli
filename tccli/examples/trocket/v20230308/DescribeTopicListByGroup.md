@@ -15,8 +15,10 @@ tccli trocket DescribeTopicListByGroup --cli-unfold-argument  \
 Output: 
 ```
 {
+    "Error": null,
+    "RequestId": null,
     "Response": {
-        "RequestId": "fcf7340b-b7b8-48fd-afe2-b061df13a290",
+        "RequestId": "06a6649b-76ec-4c5d-b4c8-8a48d24be07f",
         "TotalCount": 1,
         "Data": [
             {
@@ -30,8 +32,9 @@ Output:
                 "SubString": "test_tag",
                 "ExpressionType": "TAG",
                 "Consistency": 0,
-                "ConsumerLag": 20,
-                "LastUpdateTime": 1736935187759,
+                "ClientSubscriptionInfos": [],
+                "ConsumerLag": 0,
+                "LastUpdateTime": 1750853702996,
                 "MaxRetryTimes": 16,
                 "ConsumeMessageOrderly": false,
                 "MessageModel": "CLUSTERING"

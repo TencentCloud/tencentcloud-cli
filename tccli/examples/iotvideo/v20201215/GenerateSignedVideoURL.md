@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "SignedVideoURL": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8?sign=x",
-        "RequestId": "xx"
+        "RequestId": "requestid"
     }
 }
 ```

@@ -1526,6 +1526,13 @@
       "output": "GetOfflineInstanceListResponse",
       "status": "online"
     },
+    "GetPaginationTaskScript": {
+      "document": "获取带分页的任务脚本",
+      "input": "GetPaginationTaskScriptRequest",
+      "name": "获取带分页的任务脚本",
+      "output": "GetPaginationTaskScriptResponse",
+      "status": "online"
+    },
     "GetTaskInstance": {
       "document": "获取实例列表",
       "input": "GetTaskInstanceRequest",
@@ -31040,6 +31047,127 @@
         }
       ],
       "type": "object"
+    },
+    "GetPaginationTaskScriptRequest": {
+      "document": "GetPaginationTaskScript请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目编号",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务编号",
+          "example": "1111",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码（从1开始）",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPaginationTaskScriptResponse": {
+      "document": "GetPaginationTaskScript返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetPaginationTaskScriptResponseInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPaginationTaskScriptResponseInfo": {
+      "document": "获取任务脚本内容返回体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页内尺寸\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8192",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaaa",
+          "member": "string",
+          "name": "Base64ScriptContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GetTaskInstanceRequest": {
       "document": "GetTaskInstance请求参数结构体",

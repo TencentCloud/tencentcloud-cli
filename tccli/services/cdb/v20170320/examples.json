@@ -977,7 +977,7 @@
     "ModifyAccountMaxUserConnections": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountMaxUserConnections\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"MaxUserConnections\": \"100\",\n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\",\n            \"User\": \"ajnnw\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountMaxUserConnections\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"MaxUserConnections\": 100,\n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\",\n            \"User\": \"ajnnw\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "修改云数据库账户最大可用连接数"
       }
@@ -1201,7 +1201,7 @@
     "ModifyRoGroupInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupInfo\n<公共请求参数>\n\n{\n    \"RoGroupId\": \"cdbrg-iup41a4t\",\n    \"RoGroupInfo\": {\n        \"RoOfflineDelay\": \"1\",\n        \"MinRoInGroup\": \"1\",\n        \"RoMaxDelayTime\": \"10\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupInfo\n<公共请求参数>\n\n{\n    \"RoGroupId\": \"cdbrg-iup41a4t\",\n    \"RoGroupInfo\": {\n        \"RoOfflineDelay\": 1,\n        \"MinRoInGroup\": 1,\n        \"RoMaxDelayTime\": 10\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "设置RO组的延迟剔除策略"
       },

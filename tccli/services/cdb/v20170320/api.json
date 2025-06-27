@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateAccounts": {
-      "document": "本接口(CreateAccounts)用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息以及最大可用连接数。",
+      "document": "本接口（CreateAccounts）用于创建云数据库的账户，需要指定新的账户名和域名，以及所对应的密码，同时可以设置账号的备注信息以及最大可用连接数。",
       "input": "CreateAccountsRequest",
       "name": "创建云数据库的账户",
       "output": "CreateAccountsResponse",
@@ -806,7 +806,7 @@
       "status": "online"
     },
     "ModifyAccountMaxUserConnections": {
-      "document": "本接口(ModifyAccountMaxUserConnections)用于修改云数据库账户最大可用连接数。",
+      "document": "本接口（ModifyAccountMaxUserConnections）用于修改云数据库账户最大可用连接数。",
       "input": "ModifyAccountMaxUserConnectionsRequest",
       "name": "修改账户最大可用连接数",
       "output": "ModifyAccountMaxUserConnectionsResponse",
@@ -4787,7 +4787,7 @@
         {
           "disabled": false,
           "document": "云数据库账号。",
-          "example": "无",
+          "example": "[{\"Host\": \"127.0.0.1\",\"User\": \"ajnnw\"}]",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -4795,7 +4795,7 @@
         },
         {
           "disabled": false,
-          "document": "新账户的密码。",
+          "document": "新账户的密码。\n说明：\n1. 在8 ～ 64位字符数以内（推荐12位以上）。\n2. 至少包含其中两项：小写字母 a ~ z 或 大写字母 A ～ Z。数字0 ～ 9。_+-,&=!@#$%^*().|。\n3. 不能包含非法字符。",
           "example": "fsdgfdgfd",
           "member": "string",
           "name": "Password",
@@ -4804,7 +4804,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息。",
+          "document": "备注信息。最多支持输入255个字符。",
           "example": "test description",
           "member": "string",
           "name": "Description",
@@ -7166,7 +7166,7 @@
         {
           "disabled": false,
           "document": "云数据库账号。",
-          "example": "[\"User\": \"andy\",\"Host\": \"192.1.1.1\"}]",
+          "example": "[{\"User\": \"andy\",\"Host\": \"192.1.1.1\"}]",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -15733,7 +15733,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云数据库账号。",
+          "document": "云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
           "example": "andy",
           "member": "Account",
           "name": "Accounts",
@@ -15806,8 +15806,8 @@
         },
         {
           "disabled": false,
-          "document": "云数据库账号。",
-          "example": "无",
+          "document": "云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
+          "example": "andy",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -15852,8 +15852,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库的账号，包括用户名和域名。",
-          "example": "andy",
+          "document": "数据库的账号，包括用户名和域名。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
+          "example": "[{\"User\": \"andy\",\"Host\": \"%\"}]",
           "member": "Account",
           "name": "Accounts",
           "required": true,
@@ -17476,7 +17476,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RO 组的 ID。",
+          "document": "RO 组的 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。",
           "example": "cdbrg-iup41a4t",
           "member": "string",
           "name": "RoGroupId",
@@ -17486,7 +17486,7 @@
         {
           "disabled": false,
           "document": "RO 组的详细信息。",
-          "example": "{\"RoOfflineDelay\": \"1\",\"MinRoInGroup\": \"1\",\"RoMaxDelayTime\": \"10\"}",
+          "example": "{\"RoOfflineDelay\": 1,\"MinRoInGroup\": 1,\"RoMaxDelayTime\": 10}",
           "member": "RoGroupAttr",
           "name": "RoGroupInfo",
           "required": false,
@@ -17494,8 +17494,8 @@
         },
         {
           "disabled": false,
-          "document": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。",
-          "example": " [{\"InstanceId\": \"cdbr0-test1234\",\"Weight\": \"70\"},{\"InstanceId\": \"cdbr0-iup41a4t\",\"Weight\": \"30\"}]",
+          "document": "RO 组内实例的权重。若修改 RO 组的权重模式为用户自定义模式（custom），则必须设置该参数，且需要设置每个 RO 实例的权重值。RO 实例 ID 可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。",
+          "example": " [{\"InstanceId\": \"cdbr0-test1234\",\"Weight\": 70},{\"InstanceId\": \"cdbr0-iup41a4t\",\"Weight\": 30}]",
           "member": "RoWeightValue",
           "name": "RoWeightValues",
           "required": false,

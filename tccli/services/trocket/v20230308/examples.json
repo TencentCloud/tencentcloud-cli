@@ -148,7 +148,7 @@
       {
         "document": "查询消费者客户端详情",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerClient\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"ConsumerGroup\": \"group\",\n    \"ClientId\": \"11.139.244.247@75043#6734858812769343\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Client\": {\n            \"ClientAddr\": \"11.139.244.247:58330\",\n            \"ClientId\": \"11.139.244.247@75043#6734858812769343\",\n            \"ConsumerLag\": 0,\n            \"Language\": \"JAVA\",\n            \"Version\": \"399\"\n        },\n        \"RequestId\": \"7e3acbab-5b5f-457f-b276-68c2f7e16f5e\",\n        \"TopicList\": [\n            {\n                \"ConsumerLag\": 0,\n                \"LastUpdateTime\": 1683614607184,\n                \"QueueNum\": 16,\n                \"SubString\": \"test_tag\",\n                \"Topic\": \"topic\",\n                \"TopicType\": \"NORMAL\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Client\": {\n            \"ClientAddr\": \"11.139.244.247:58330\",\n            \"ClientId\": \"11.139.244.247@75043#6734858812769343\",\n            \"ConsumerLag\": 0,\n            \"Language\": \"JAVA\",\n            \"Version\": \"V4_9_3\"\n        },\n        \"RequestId\": \"7e3acbab-5b5f-457f-b276-68c2f7e16f5e\",\n        \"TopicList\": [\n            {\n                \"ConsumerLag\": 0,\n                \"LastUpdateTime\": 1683614607184,\n                \"QueueNum\": 16,\n                \"SubString\": \"test_tag\",\n                \"Topic\": \"topic\",\n                \"TopicType\": \"NORMAL\"\n            }\n        ]\n    }\n}",
         "title": "查询消费者客户端详情"
       }
     ],
@@ -346,7 +346,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMigratingTopicList\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"TaskId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"MigrateTopics\": [\n            {\n                \"TopicName\": \"topic-a\",\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"HealthCheckPassed\": true,\n                \"HealthCheckError\": \"\",\n                \"Namespace\": \"\",\n                \"FullNamespaceV4\": null,\n                \"NamespaceV4\": null,\n                \"TopicNameV4\": null\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"MigrateTopics\": [\n            {\n                \"TopicName\": \"topic-a\",\n                \"MigrationStatus\": \"S_RW_D_NA\",\n                \"HealthCheckPassed\": true,\n                \"HealthCheckError\": \"\",\n                \"Namespace\": \"\",\n                \"FullNamespaceV4\": null,\n                \"NamespaceV4\": null,\n                \"TopicNameV4\": null,\n                \"HealthCheckErrorList\": []\n            }\n        ],\n        \"RequestId\": \"02f6c31a-9707-4244-8dd3-35ad868ef92a\"\n    }\n}",
         "title": "查询迁移主题列表"
       }
     ],
@@ -418,7 +418,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicListByGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ConsumerGroup\": \"test_group\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf7340b-b7b8-48fd-afe2-b061df13a290\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"Topic\": \"test_topic\",\n                \"TopicType\": \"NORMAL\",\n                \"TopicQueueNum\": 3,\n                \"ConsumerGroup\": \"test_group\",\n                \"IsOnline\": true,\n                \"ConsumeType\": \"PUSH\",\n                \"SubString\": \"test_tag\",\n                \"ExpressionType\": \"TAG\",\n                \"Consistency\": 0,\n                \"ConsumerLag\": 20,\n                \"LastUpdateTime\": 1736935187759,\n                \"MaxRetryTimes\": 16,\n                \"ConsumeMessageOrderly\": false,\n                \"MessageModel\": \"CLUSTERING\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"06a6649b-76ec-4c5d-b4c8-8a48d24be07f\",\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"Topic\": \"test_topic\",\n                \"TopicType\": \"NORMAL\",\n                \"TopicQueueNum\": 3,\n                \"ConsumerGroup\": \"test_group\",\n                \"IsOnline\": true,\n                \"ConsumeType\": \"PUSH\",\n                \"SubString\": \"test_tag\",\n                \"ExpressionType\": \"TAG\",\n                \"Consistency\": 0,\n                \"ClientSubscriptionInfos\": [],\n                \"ConsumerLag\": 0,\n                \"LastUpdateTime\": 1750853702996,\n                \"MaxRetryTimes\": 16,\n                \"ConsumeMessageOrderly\": false,\n                \"MessageModel\": \"CLUSTERING\"\n            }\n        ]\n    }\n}",
         "title": "查询消费组订阅的主题列表"
       }
     ],
@@ -521,7 +521,7 @@
     "ModifyTopic": [
       {
         "document": "修改主题属性",
-        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"QueueNum\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"QueueNum\": 6\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"945afc69-1c24-4891-a2ce-c5fa6032ba75\"\n    }\n}",
         "title": "修改主题属性"
       }

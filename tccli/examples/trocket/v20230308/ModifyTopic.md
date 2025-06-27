@@ -8,7 +8,7 @@ Input:
 tccli trocket ModifyTopic --cli-unfold-argument  \
     --InstanceId rmq-72mo3a9o \
     --Topic test_topic \
-    --QueueNum 1
+    --QueueNum 6
 ```
 
 Output: 

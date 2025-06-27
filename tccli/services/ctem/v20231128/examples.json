@@ -1,0 +1,205 @@
+{
+  "actions": {
+    "CreateCustomer": [
+      {
+        "document": "添加企业",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomer\n<公共请求参数>\n\n{\n    \"Name\": \"测试\",\n    \"ScanType\": \"资产收集\",\n    \"Percent\": 55\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5458985-ef27-455e-a417-62e8001a4bd6\"\n    }\n}",
+        "title": "添加企业"
+      }
+    ],
+    "CreateJobRecord": [
+      {
+        "document": "启动测绘",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobRecord\n<公共请求参数>\n\n{\n    \"CustomerId\": 100136,\n    \"Qps\": 55,\n    \"TaskType\": \"即时任务\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 10000036,\n        \"RequestId\": \"1b2dcfec-80d6-4a5d-acec-aaea7c6caa14\"\n    }\n}",
+        "title": "启动测绘"
+      }
+    ],
+    "DescribeApps": [
+      {
+        "document": "查看移动端资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApps\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppVersion\": \"v1.1.1\",\n                \"Description\": \"\",\n                \"Developer\": \"tester\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 17:30:23\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"test\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"b5c10af2a904da1ce896da2800e4933b\",\n                    \"UpdateAt\": \"2024-06-06 17:30:23\"\n                },\n                \"DownloadUrl\": \"http://a.test.com\",\n                \"Id\": 11,\n                \"Logo\": \"\",\n                \"Name\": \"test\",\n                \"PackageName\": \"com.test\",\n                \"Platform\": \"android\",\n                \"ServerUrl\": \"http://test.com\"\n            }\n        ],\n        \"RequestId\": \"922257b7-c750-4d0c-8e74-3f4119551fee\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看移动端资产"
+      }
+    ],
+    "DescribeAssets": [
+      {
+        "document": "查看主机资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"City\": \"深圳\",\n                \"Country\": \"中国\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 16:16:16\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"040d6b47e6d1f754992a14752bbb3fe4\",\n                    \"UpdateAt\": \"2024-06-06 16:16:16\"\n                },\n                \"Id\": 6880,\n                \"Ip\": \"1.1.1.1\",\n                \"Isp\": \"电信\",\n                \"Os\": \"\",\n                \"Province\": \"广东\"\n            }\n        ],\n        \"RequestId\": \"c156b846-9f28-4976-a3a4-e9b9683b3b00\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看主机资产"
+      }
+    ],
+    "DescribeConfigs": [
+      {
+        "document": "查看目录爆破数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Code\": 200,\n                \"ContentLength\": 0,\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 11:26:14\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"3c7bc55dc38c9c9e4b554f06b169fa7f\",\n                    \"UpdateAt\": \"2024-06-07 11:27:15\"\n                },\n                \"Id\": 41,\n                \"Ip\": \"\",\n                \"Title\": \"test\",\n                \"Url\": \"http://a.cn\"\n            }\n        ],\n        \"RequestId\": \"15eb13bd-0a0e-4a3d-9a32-ef6db4186d41\",\n        \"Total\": 1,\n        \"AllConfigNum\": 1,\n        \"HighRiskConfigNum\": 1\n    }\n}",
+        "title": "查看目录爆破数据"
+      }
+    ],
+    "DescribeCustomers": [
+      {
+        "document": "查看企业",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": 1300055108,\n                \"AuthEndAt\": \"\",\n                \"AuthFile\": \"\",\n                \"AuthStartAt\": \"\",\n                \"CreateAt\": \"2024-06-07 14:24:11\",\n                \"Creator\": \"\",\n                \"EnableAuth\": false,\n                \"EnableCron\": false,\n                \"EnableScanSubEnterprise\": false,\n                \"Icon\": \"\",\n                \"Id\": 100136,\n                \"Keywords\": \"\",\n                \"Name\": \"测试\",\n                \"Percent\": 55,\n                \"ScanCron\": \"\",\n                \"ScanTime\": \"{\\\"Monday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false},\\\"Tuesday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false},\\\"Wednesday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false},\\\"Thursday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false},\\\"Friday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false},\\\"Saturday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false},\\\"Sunday\\\":{\\\"0\\\":false,\\\"1\\\":false,\\\"10\\\":false,\\\"11\\\":false,\\\"12\\\":false,\\\"13\\\":false,\\\"14\\\":false,\\\"15\\\":false,\\\"16\\\":false,\\\"17\\\":false,\\\"18\\\":false,\\\"19\\\":false,\\\"2\\\":false,\\\"20\\\":false,\\\"21\\\":false,\\\"22\\\":false,\\\"23\\\":false,\\\"3\\\":false,\\\"4\\\":false,\\\"5\\\":false,\\\"6\\\":false,\\\"7\\\":false,\\\"8\\\":false,\\\"9\\\":false}}\",\n                \"ScanType\": \"资产收集\",\n                \"Uin\": \"600000560604\",\n                \"UpdateAt\": \"2024-06-07 14:24:11\"\n            }\n        ],\n        \"RequestId\": \"cdd53649-1559-4b1d-8a54-3f0274d4e3f7\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看企业"
+      }
+    ],
+    "DescribeDarkWebs": [
+      {
+        "document": "查看暗网数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDarkWebs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Content\": \"test\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 11:32:09\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"dd5a495259147cfa1d9d4c4ab4414610\",\n                    \"UpdateAt\": \"2024-06-07 11:32:09\"\n                },\n                \"Id\": 30,\n                \"MatchedKeywords\": \"123\",\n                \"Url\": \"http://a.cn\"\n            }\n        ],\n        \"RequestId\": \"0dad3f27-bf93-4b11-bc20-acc6ae2a2932\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看暗网数据"
+      }
+    ],
+    "DescribeDomains": [
+      {
+        "document": "查看主域名数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomains\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Company\": \"\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 15:49:05\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"b0b91453d6733070139b6a2bd3ba1514\",\n                    \"UpdateAt\": \"2024-06-06 15:49:05\"\n                },\n                \"Domain\": \"test.com\",\n                \"ExpiredTime\": \"\",\n                \"ICP\": \"\",\n                \"Id\": 4436,\n                \"RegisteredTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"c2a13b42-e53c-4b93-a290-a4cc61bae379\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看主域名数据"
+      }
+    ],
+    "DescribeEnterprises": [
+      {
+        "document": "查看子公司数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterprises\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Abbreviation\": \"\",\n                \"CreditCode\": \"\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-05-31 11:49:51\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"ca9476ab116f2ee8ec03684e011df198\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"ca9476ab116f2ee8ec03684e011df198\",\n                    \"UpdateAt\": \"2024-05-31 11:49:51\"\n                },\n                \"EnterpriseUid\": \"ca9476ab116f2ee8ec03684e011df198\",\n                \"Id\": 14593,\n                \"Industry\": \"\",\n                \"LegalPerson\": \"\",\n                \"Name\": \"aaabb\",\n                \"ParentEnterpriseUid\": \"\",\n                \"RegisteredCapital\": \"\",\n                \"ShareholdingRatio\": \"\",\n                \"Status\": \"\",\n                \"Type\": \"\"\n            },\n            {\n                \"Abbreviation\": \"\",\n                \"CreditCode\": \"\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-05-31 11:46:12\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"80b79ef76c27c7bf675591618e07454b\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"80b79ef76c27c7bf675591618e07454b\",\n                    \"UpdateAt\": \"2024-05-31 11:46:12\"\n                },\n                \"EnterpriseUid\": \"80b79ef76c27c7bf675591618e07454b\",\n                \"Id\": 14592,\n                \"Industry\": \"\",\n                \"LegalPerson\": \"\",\n                \"Name\": \"asss\",\n                \"ParentEnterpriseUid\": \"\",\n                \"RegisteredCapital\": \"\",\n                \"ShareholdingRatio\": \"\",\n                \"Status\": \"\",\n                \"Type\": \"\"\n            }\n        ],\n        \"RequestId\": \"5c508816-3155-4906-93ce-2e1286697ba6\",\n        \"Total\": 2\n    }\n}",
+        "title": "查看子公司数据"
+      }
+    ],
+    "DescribeGithubs": [
+      {
+        "document": "查看github泄露数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGithubs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Content\": \"key=123\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 11:38:06\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"6b72273989650c06b3e3c7b48fdf724f\",\n                    \"UpdateAt\": \"2024-06-07 11:38:06\"\n                },\n                \"Id\": 15,\n                \"MatchedKeywords\": \"password\",\n                \"Status\": \"泄露\",\n                \"Url\": \"http://github.com/aaa\"\n            }\n        ],\n        \"RequestId\": \"b3b19eca-1d28-4be9-9646-3740c7c84520\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看github泄露数据"
+      }
+    ],
+    "DescribeHttps": [
+      {
+        "document": "查看http数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHttps\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Api\": \"\",\n                \"Code\": 200,\n                \"Content\": \"\",\n                \"ContentLength\": 0,\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 17:15:10\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"1879dc192f156097b5511fbf9b1bd145\",\n                    \"UpdateAt\": \"2024-06-06 17:15:10\"\n                },\n                \"Id\": 3248,\n                \"Ip\": \"1.1.1.1\",\n                \"ScreenshotThumbUrl\": \"\",\n                \"ScreenshotUrl\": \"\",\n                \"Ssl\": \"\",\n                \"SslExpiredTime\": \"\",\n                \"Title\": \"test\",\n                \"Url\": \"a.test.com\"\n            }\n        ],\n        \"RequestId\": \"f1935acd-4fcf-4972-9b9c-82d4661c2347\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看http数据"
+      }
+    ],
+    "DescribeJobRecordDetails": [
+      {
+        "document": "查看链路详情",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobRecordDetails\n<公共请求参数>\n\n{\n    \"Module\": \"http\",\n    \"Id\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"a2752b92-54c9-48ad-9307-1a8838aa64bf\",\n        \"Total\": 0\n    }\n}",
+        "title": "查看链路详情"
+      }
+    ],
+    "DescribeJobRecords": [
+      {
+        "document": "查看任务记录",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobRecords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"35d790a4-e77f-405d-b657-b6d36d690de5\",\n        \"Total\": 0\n    }\n}",
+        "title": "查看任务记录"
+      }
+    ],
+    "DescribeManages": [
+      {
+        "document": "查看后台数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeManages\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Code\": 200,\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 10:23:41\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"6b3fce3dfa57095790e80d4ab53574da\",\n                    \"UpdateAt\": \"2024-06-07 10:23:41\"\n                },\n                \"Icon\": \"\",\n                \"Id\": 31,\n                \"Screenshot\": \"\",\n                \"Title\": \"test\",\n                \"Url\": \"http://test.cn\",\n                \"Host\": \"127.0.0.1\"\n            }\n        ],\n        \"RequestId\": \"501fa2ff-065a-4405-b4b9-b98ae51fe358\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看后台数据"
+      }
+    ],
+    "DescribeNetDisks": [
+      {
+        "document": "查看网盘泄露数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetDisks\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Content\": \"test\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 11:43:18\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"fbecc76ff52943c9bff65515521dc0de\",\n                    \"UpdateAt\": \"2024-06-07 11:43:18\"\n                },\n                \"Id\": 32,\n                \"MatchedKeywords\": \"123\",\n                \"Platform\": \"baidu.com\",\n                \"Status\": \"\",\n                \"Url\": \"http://a.cn\"\n            }\n        ],\n        \"RequestId\": \"b440b23c-5f8f-4150-b806-07d7a57ade2a\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看网盘泄露数据"
+      }
+    ],
+    "DescribePorts": [
+      {
+        "document": "查看端口数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePorts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"App\": \"mysql\",\n                \"Asset\": \"db.test.com\",\n                \"Banner\": \"\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 16:34:35\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"36f9f9e1a49bc000f5bf46e0390b3be5\",\n                    \"UpdateAt\": \"2024-06-06 16:34:35\"\n                },\n                \"Id\": 24838,\n                \"Ip\": \"1.1.1.1\",\n                \"IsHighRisk\": true,\n                \"Port\": 3306,\n                \"Service\": \"mysql\"\n            }\n        ],\n        \"RequestId\": \"060f8b23-15a0-46ea-9ff8-806729094e98\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看端口数据"
+      }
+    ],
+    "DescribeSensitiveInfos": [
+      {
+        "document": "查看敏感信息泄露数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveInfos\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 14:15:14\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"366ecd81e3353e615b1e7dd13e5bf7fa\",\n                    \"UpdateAt\": \"2024-06-07 14:15:30\"\n                },\n                \"Id\": 10,\n                \"Source\": \"baidu.com\",\n                \"Type\": \"敏感信息\",\n                \"Value\": \"key=123\"\n            }\n        ],\n        \"RequestId\": \"dc218a31-31be-45d7-94d0-8565c9fb9f89\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看敏感信息泄露数据"
+      }
+    ],
+    "DescribeSubDomains": [
+      {
+        "document": "查看子域名数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubDomains\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"City\": \"深圳\",\n                \"Country\": \"中国\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 15:59:09\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"679e65f8583a8a88f5c9e1d6a1e76259\",\n                    \"UpdateAt\": \"2024-06-06 15:59:09\"\n                },\n                \"Id\": 63660,\n                \"Ip\": \"1.1.1.1\",\n                \"Isp\": \"电信\",\n                \"Province\": \"广东\",\n                \"SubDomain\": \"test.qq.com\"\n            }\n        ],\n        \"RequestId\": \"452e1e8f-fb05-45af-b2b0-67d0f211e30c\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看子域名数据"
+      }
+    ],
+    "DescribeSuspiciousAssets": [
+      {
+        "document": "查看影子资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSuspiciousAssets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"7d12ffeb-2c6b-49cd-9861-fec151f2d96f\",\n        \"Total\": 0\n    }\n}",
+        "title": "查看影子资产"
+      }
+    ],
+    "DescribeVuls": [
+      {
+        "document": "查看漏洞数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVuls\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DiscoverTime\": \"2024-06-07 10:59:23\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 10:59:23\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"847604bc4c5622c19116008cc8454e33\",\n                    \"UpdateAt\": \"2024-06-07 10:59:23\"\n                },\n                \"Id\": 168,\n                \"Ip\": \"1.1.1.1\",\n                \"Level\": 0,\n                \"Name\": \"test\",\n                \"Port\": 80,\n                \"RepairStatus\": 0,\n                \"Suggestion\": \"\",\n                \"Url\": \"http://a.cn\"\n            }\n        ],\n        \"RequestId\": \"0eb8c233-c47f-4a80-97c3-7a551f1178cc\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看漏洞数据"
+      }
+    ],
+    "DescribeWeakPasswords": [
+      {
+        "document": "查看弱口令数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWeakPasswords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Account\": \"tester\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 11:18:56\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"0647840402863130803dab85174b963f\",\n                    \"UpdateAt\": \"2024-06-07 11:18:56\"\n                },\n                \"Id\": 13,\n                \"Ip\": \"1.1.1.1\",\n                \"IsHoneypot\": true,\n                \"Password\": \"123456\",\n                \"Port\": 22,\n                \"Type\": \"\",\n                \"Url\": \"http://a.cn\"\n            }\n        ],\n        \"RequestId\": \"176ed921-d230-44d3-a9af-b431f2e86da7\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看弱口令数据"
+      }
+    ],
+    "DescribeWechatApplets": [
+      {
+        "document": "查看微信小程序数据",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWechatApplets\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AccountId\": \"tester\",\n                \"Description\": \"\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 17:42:47\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"test\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"a14874f9e36c3f04e0dfc3ab8967ef4c\",\n                    \"UpdateAt\": \"2024-06-06 17:42:47\"\n                },\n                \"Id\": 11,\n                \"Logo\": \"\",\n                \"Name\": \"测试\",\n                \"QrCode\": \"\"\n            }\n        ],\n        \"RequestId\": \"055d7aa9-6cec-43e9-8f5f-27c3425d7b7c\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看微信小程序数据"
+      }
+    ],
+    "DescribeWechatOfficialAccounts": [
+      {
+        "document": "查看微信公众号",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWechatOfficialAccounts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AccountId\": \"wx123\",\n                \"Description\": \"\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-06 19:05:56\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"5555\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"e8e66edcf875f380cb03930e6d7e8b59\",\n                    \"UpdateAt\": \"2024-06-06 19:05:56\"\n                },\n                \"Id\": 12,\n                \"Logo\": \"\",\n                \"Name\": \"测试\",\n                \"QrCode\": \"\"\n            }\n        ],\n        \"RequestId\": \"ca3fbaae-4f42-4382-a01c-e19c7d62364e\",\n        \"Total\": 1\n    }\n}",
+        "title": "查看微信公众号"
+      }
+    ],
+    "ModifyCustomer": [
+      {
+        "document": "编辑企业",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomer\n<公共请求参数>\n\n{\n    \"Name\": \"test2\",\n    \"Percent\": 60,\n    \"ScanType\": \"资产收集\",\n    \"Id\": 100136\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"401db7ae-2c4f-4948-964f-431cb1454c82\"\n    }\n}",
+        "title": "编辑企业"
+      }
+    ],
+    "StopJobRecord": [
+      {
+        "document": "停止任务",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopJobRecord\n<公共请求参数>\n\n{\n    \"JobRecordId\": 10000416\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f65c0d27-caa1-40ce-83c9-bedee17e93b5\"\n    }\n}",
+        "title": "停止任务"
+      }
+    ]
+  },
+  "version": "1.0"
+}
