@@ -182,6 +182,14 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeDetailedSlowLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetailedSlowLogs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qny2****\",\n    \"StartTime\": \"2025-03-27 12:00:00\",\n    \"EndTime\": \"2025-03-27 13:33:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DetailedSlowLogs\": [\n            {\n                \"Log\": \"xxxxxxx\",\n                \"NodeName\": \"cmgo-xxxx_0-node-primary\",\n                \"QueryHash\": \"BA0DFF88\"\n            }\n        ],\n        \"RequestId\": \"a1460a2d-dc8e-467c-b2d5-0beb6b84a7a7\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询慢日志详情"
+      }
+    ],
     "DescribeInstanceParams": [
       {
         "document": "用户请求该接口获取其mongoDB实例可配置的参数列表；",

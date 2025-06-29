@@ -15312,6 +15312,24 @@
           "name": "BgpEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "IP类型",
+          "example": "4in4",
+          "member": "string",
+          "name": "IpStack",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CCN类型私网VPN接入网段",
+          "example": "10.0.0.0/16",
+          "member": "string",
+          "name": "AccessSubnet",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

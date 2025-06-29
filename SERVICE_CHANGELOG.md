@@ -1,49 +1,10 @@
-# Release 3.0.1229.1
+# Release 3.0.1230.1
 
-## 云安全一体化平台(csip) 版本：2022-11-21
+## 批量计算(batch) 版本：2017-03-12
 
-### 第 51 次发布
+### 第 23 次发布
 
-发布时间：2025-06-27 01:13:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeVulRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/87117)
-
-新增数据结构：
-
-* [VulRiskItem](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VulRiskItem)
-
-
-
-## 腾讯混元大模型(hunyuan) 版本：2023-09-01
-
-### 第 11 次发布
-
-发布时间：2025-06-27 01:23:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1744/85790)
-
-	* 新增入参：EnableThinking
-
-
-
-
-## 图片内容安全(ims) 版本：2020-12-29
-
-### 第 12 次发布
-
-发布时间：2025-06-27 01:23:53
+发布时间：2025-06-30 01:09:06
 
 本次发布包含了以下内容：
 
@@ -51,38 +12,22 @@
 
 修改数据结构：
 
-* [RecognitionResult](http://document.tencentcloudapi.woa.com/document/product/1125/53274#RecognitionResult)
+* [InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/599/15912#InternetAccessible)
 
-	* <font color="#dd0000">**修改成员**：</font>Label, Tags
-
-
-
-
-## 图片内容安全(ims) 版本：2020-07-13
+	* 新增成员：IPv4AddressType, IPv6AddressType, AntiDDoSPackageId
 
 
 
-## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
-### 第 37 次发布
-
-发布时间：2025-06-27 01:24:02
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCustomerBillDetailByDay](http://document.tencentcloudapi.woa.com/document/product/1724/87118)
+## 云服务器(cvm) 版本：2019-12-12
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+## 云服务器(cvm) 版本：2017-03-12
 
-### 第 39 次发布
+### 第 90 次发布
 
-发布时间：2025-06-27 01:28:28
+发布时间：2025-06-30 01:13:54
 
 本次发布包含了以下内容：
 
@@ -90,65 +35,22 @@
 
 修改数据结构：
 
-* [SlowLogPattern](http://document.tencentcloudapi.woa.com/document/product/240/38576#SlowLogPattern)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
 
-	* 新增成员：QueryHash
+	* 新增成员：PublicIPv6Addresses
 
+* [InternetAccessible](http://document.tencentcloudapi.woa.com/document/product/213/15753#InternetAccessible)
 
-
-
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
-
-
-
-## 媒体处理(mps) 版本：2019-06-12
-
-### 第 97 次发布
-
-发布时间：2025-06-27 01:29:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
-
-	* 新增成员：MindMapUrl
-
-* [SubtitleTemplate](http://document.tencentcloudapi.woa.com/document/product/862/37615#SubtitleTemplate)
-
-	* 新增成员：YPos, BoardY, BoardWidth, BoardHeight, BoardColor, BoardAlpha
+	* 新增成员：IPv4AddressType, IPv6AddressType, AntiDDoSPackageId
 
 
 
 
-## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+## 边缘计算机器(ecm) 版本：2019-07-19
 
-### 第 16 次发布
+### 第 25 次发布
 
-发布时间：2025-06-27 01:29:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeMessageDetails](http://document.tencentcloudapi.woa.com/document/product/1773/87119)
-
-新增数据结构：
-
-* [UserProperty](http://document.tencentcloudapi.woa.com/document/product/1773/84898#UserProperty)
-
-
-
-## 运营产品中心(opc) 版本：2018-07-19
-
-### 第 11 次发布
-
-发布时间：2025-06-27 01:30:44
+发布时间：2025-06-30 01:17:34
 
 本次发布包含了以下内容：
 
@@ -156,7 +58,111 @@
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* DescribeCvmRenewInstanceDetail
+* AttachDisks
+* CreateDisks
+* DeleteSnapshots
+* DescribeDisks
+* DescribeSnapshots
+* DetachDisks
+* TerminateDisks
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 40 次发布
+
+发布时间：2025-06-30 01:25:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDetailedSlowLogs](http://document.tencentcloudapi.woa.com/document/product/240/87120)
+
+新增数据结构：
+
+* [SlowLogItem](http://document.tencentcloudapi.woa.com/document/product/240/38576#SlowLogItem)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 59 次发布
+
+发布时间：2025-06-30 01:31:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ConfirmOriginACLUpdate](http://document.tencentcloudapi.woa.com/document/product/1738/87126)
+* [DescribeOriginACL](http://document.tencentcloudapi.woa.com/document/product/1738/87125)
+* [DisableOriginACL](http://document.tencentcloudapi.woa.com/document/product/1738/87124)
+* [EnableOriginACL](http://document.tencentcloudapi.woa.com/document/product/1738/87123)
+* [ModifyOriginACL](http://document.tencentcloudapi.woa.com/document/product/1738/87122)
+
+新增数据结构：
+
+* [Addresses](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Addresses)
+* [CurrentOriginACL](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CurrentOriginACL)
+* [NextOriginACL](http://document.tencentcloudapi.woa.com/document/product/1738/81211#NextOriginACL)
+* [OriginACLEntity](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginACLEntity)
+* [OriginACLInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginACLInfo)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 93 次发布
+
+发布时间：2025-06-30 01:33:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterNetworkSettings](http://document.tencentcloudapi.woa.com/document/product/457/31866#ClusterNetworkSettings)
+
+	* 新增成员：SubnetId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 221 次发布
+
+发布时间：2025-06-30 01:35:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpnGateway](http://document.tencentcloudapi.woa.com/document/product/215/17521)
+
+	* 新增入参：IpStack, AccessSubnet
+
 
 
 
