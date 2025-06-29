@@ -19241,8 +19241,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
-          "example": "cdb-xxxx",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "example": "cdb-4t34ozl0",
           "member": "string",
           "name": "InstanceId",
           "required": true,

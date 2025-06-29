@@ -28,6 +28,13 @@
       "output": "CheckCnameStatusResponse",
       "status": "online"
     },
+    "ConfirmOriginACLUpdate": {
+      "document": "本接口用于回源 IP 网段发生变更时，确认已将最新回源 IP 网段更新至源站防火墙。确认已更新至最新的回源 IP 网段后，相关变更通知将会停止推送。",
+      "input": "ConfirmOriginACLUpdateRequest",
+      "name": "确认回源 IP 网段更新",
+      "output": "ConfirmOriginACLUpdateResponse",
+      "status": "online"
+    },
     "CreateAccelerationDomain": {
       "document": "在创建完站点之后，您可以通过本接口创建加速域名。 \n\nCNAME 模式接入时，若您未完成站点归属权校验，本接口将为您返回域名归属权验证信息，您可以单独对域名进行归属权验证，详情参考 [站点/域名归属权验证](https://cloud.tencent.com/document/product/1552/70789)。",
       "input": "CreateAccelerationDomainRequest",
@@ -539,6 +546,13 @@
       "output": "DescribeLoadBalancerListResponse",
       "status": "online"
     },
+    "DescribeOriginACL": {
+      "document": "本接口用于查询站点下的七层加速域名/四层代理实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。如果您想通过自动化脚本定期获取回源 IP 网段的最新版本，可以较低频率（建议每三天一次）轮询本接口，若 NextOriginACL 字段有返回值，则将最新的回源 IP 网段同步到源站防火墙配置中。",
+      "input": "DescribeOriginACLRequest",
+      "name": "查询源站防护详情",
+      "output": "DescribeOriginACLResponse",
+      "status": "online"
+    },
     "DescribeOriginGroup": {
       "document": "获取源站组列表",
       "input": "DescribeOriginGroupRequest",
@@ -700,6 +714,13 @@
       "output": "DestroyPlanResponse",
       "status": "online"
     },
+    "DisableOriginACL": {
+      "document": "本接口用于关闭站点的源站防护功能。停用后，相关资源不再仅使用「源站防护」提供的回源 IP 网段请求您的源站，同时停止发送回源 IP 网段更新通知。",
+      "input": "DisableOriginACLRequest",
+      "name": "关闭源站防护",
+      "output": "DisableOriginACLResponse",
+      "status": "online"
+    },
     "DownloadL4Logs": {
       "document": "本接口（DownloadL4Logs）用于下载四层离线日志。",
       "input": "DownloadL4LogsRequest",
@@ -712,6 +733,13 @@
       "input": "DownloadL7LogsRequest",
       "name": "下载七层离线日志",
       "output": "DownloadL7LogsResponse",
+      "status": "online"
+    },
+    "EnableOriginACL": {
+      "document": "开启回源白名单功能，按照4/7层实例开启。当前启用时候的实例数有上限设置，七层域名为200，四层转发实例为100，总实例个数不超过200，超过会提醒报错；可以先最大数量开启，超过的数量用ModifyOriginACL接口来设置。",
+      "input": "EnableOriginACLRequest",
+      "name": "开启回源白名单",
+      "output": "EnableOriginACLResponse",
       "status": "online"
     },
     "ExportZoneConfig": {
@@ -915,6 +943,13 @@
       "input": "ModifyLoadBalancerRequest",
       "name": "修改负载均衡实例",
       "output": "ModifyLoadBalancerResponse",
+      "status": "online"
+    },
+    "ModifyOriginACL": {
+      "document": "本接口用于对七层加速域名/四层代理实例启用/关闭特定回源 IP 网段回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需变更超过 200 个实例，请通过本接口分批提交。",
+      "input": "ModifyOriginACLRequest",
+      "name": "变更源站防护实例",
+      "output": "ModifyOriginACLResponse",
       "status": "online"
     },
     "ModifyOriginGroup": {
@@ -1654,6 +1689,34 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Addresses": {
+      "document": "IP 网段详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv4 网段列表。",
+          "example": "[\"11.11.11.0/24\",\"22.22.22.0/24\"]",
+          "member": "string",
+          "name": "IPv4",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv6 网段列表。",
+          "example": "[\"2001:980:7002:6::/64\"]",
+          "member": "string",
+          "name": "IPv6",
+          "output_required": true,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -4281,6 +4344,33 @@
       ],
       "usage": "both"
     },
+    "ConfirmOriginACLUpdateRequest": {
+      "document": "ConfirmOriginACLUpdate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfirmOriginACLUpdateResponse": {
+      "document": "ConfirmOriginACLUpdate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ContentIdentifier": {
       "document": "内容标识符。该功能仅白名单开放。",
       "members": [
@@ -6321,6 +6411,56 @@
         }
       ],
       "type": "object"
+    },
+    "CurrentOriginACL": {
+      "document": "当前生效的回源 IP 网段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源 IP 网段详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "EntireAddresses",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mlc-1.0.1-20250421",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本生效时间，时间是北京时间 UTC+8， 遵循 ISO 8601 标准的日期和时间格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-12-30T10:00:00Z",
+          "member": "string",
+          "name": "ActiveTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本参数用于记录当前版本生效前是否完成「我已更新至最新回源 IP 网段」的确认。取值有：\n<li>true：版本生效时，已完成更新至最新回源 IP 的确认；</li>\n<li>false：版本生效时，仍未完成已更新至最新回源 IP 的确认，回源 IP 网段由后台强制更新至最新版本。</li>注意：本参数返回 false 时，请及时确认您的源站防火墙配置是否已更新至最新的回源 IP 网段，以避免出现回源失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "string",
+          "name": "IsPlaned",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "CustomEndpoint": {
       "document": "实时日志投递到自定义 HTTP(S) 接口的配置信息。",
@@ -9931,6 +10071,43 @@
       ],
       "type": "object"
     },
+    "DescribeOriginACLRequest": {
+      "document": "DescribeOriginACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOriginACLResponse": {
+      "document": "DescribeOriginACL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "七层加速域名/四层代理实例与回源 IP 网段的绑定关系详情。",
+          "example": "无",
+          "member": "OriginACLInfo",
+          "name": "OriginACLInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeOriginGroupHealthStatusRequest": {
       "document": "DescribeOriginGroupHealthStatus请求参数结构体",
       "members": [
@@ -12041,6 +12218,33 @@
       ],
       "usage": "out"
     },
+    "DisableOriginACLRequest": {
+      "document": "DisableOriginACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisableOriginACLResponse": {
+      "document": "DisableOriginACL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DnsRecord": {
       "document": "DNS 记录",
       "members": [
@@ -12498,6 +12702,69 @@
         }
       ],
       "usage": "both"
+    },
+    "EnableOriginACLRequest": {
+      "document": "EnableOriginACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "七层加速域名开启回源白名单的模式。\n<li>all：为站点下的所有七层加速域名开启回源白名单。</li>\n<li>specific：为站点下指定的七层加速域名开启回源白名单。</li>\n当参数为空时，默认为specific。",
+          "example": "\"specific\"",
+          "member": "string",
+          "name": "L7EnableMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启回源白名单的七层加速域名列表，当请求参数 L7EnableMode 为 all 时必须为空。",
+          "example": "[\"www.qq.com\"]",
+          "member": "string",
+          "name": "L7Hosts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "四层代理 ID 开启回源白名单的模式。\n<li>all：为站点下的所有四层代理开启回源白名单。</li>\n<li>specific：为站点下指定的四层代理 ID 开启回源白名单。</li>\n当参数为空时，默认为specific。",
+          "example": "\"specific\"",
+          "member": "string",
+          "name": "L4EnableMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启回源白名单的四层代理 ID 列表，当请求参数 L4EnableMode 为 all 时必须为空。单次最多支持 200 个实例。",
+          "example": "[\"proxy-19389e5dwwxfs\"]",
+          "member": "string",
+          "name": "L4ProxyIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableOriginACLResponse": {
+      "document": "EnableOriginACL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "EntityStatus": {
       "document": "安全实例状态。",
@@ -17201,6 +17468,42 @@
       ],
       "type": "object"
     },
+    "ModifyOriginACLRequest": {
+      "document": "ModifyOriginACL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "\"zone-276zs184g93m\"",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要启用/关闭特定回源 IP 网段回源的实例。",
+          "example": "无",
+          "member": "OriginACLEntity",
+          "name": "OriginACLEntities",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOriginACLResponse": {
+      "document": "ModifyOriginACL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyOriginGroupRequest": {
       "document": "ModifyOriginGroup请求参数结构体",
       "members": [
@@ -18103,6 +18406,78 @@
       ],
       "usage": "both"
     },
+    "NextOriginACL": {
+      "document": "当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前生效的回源 IP 网段的对比。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号。",
+          "example": "mlc-1.0.1-20250421",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本生效时间，时间是北京时间 UTC+8， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2014-12-30T10:00:00Z",
+          "member": "string",
+          "name": "PlannedActiveTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源 IP 网段详情。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "EntireAddresses",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新回源 IP 网段相较于 CurrentOrginACL 中回源 IP 网段新增的部分。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "AddedAddresses",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新回源 IP 网段相较于 CurrentOrginACL 中回源 IP 网段删减的部分。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "RemovedAddresses",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新回源 IP 网段相较于 CurrentOrginACL 中回源 IP 网段无变化的部分。",
+          "example": "无",
+          "member": "Addresses",
+          "name": "NoChangeAddresses",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NoCache": {
       "document": "不缓存配置",
       "members": [
@@ -18255,6 +18630,100 @@
           "example": "off",
           "member": "string",
           "name": "CosPrivateAccess",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OriginACLEntity": {
+      "document": "需要配置特定回源 IP 网段回源的实例。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型，取值有：\n- l7：七层加速域名；\n- l4：四层代理实例。",
+          "example": "l7",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例详情，取值有：\n- 当 Type = l7 时，请填写七层加速域名；\n- 当 Type = l4 时，请填写四层代理实例 ID。",
+          "example": "['www.example.com']",
+          "member": "string",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作模式，取值有：\n<li>enable：启用；</li>\n<li>disable：停用。</li>",
+          "example": "enable",
+          "member": "string",
+          "name": "OperationMode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "OriginACLInfo": {
+      "document": "七层加速域名/四层代理实例与回源 IP 网段的绑定关系，以及回源 IP 网段详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "启用了特定回源 IP 网段回源的七层加速域名列表。源站防护未开启时为空。",
+          "example": "[\"www.qq.com\",\"aaa.qq.com\"]",
+          "member": "string",
+          "name": "L7Hosts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启用了特定回源 IP 网段回源的四层代理实例列表。源站防护未开启时为空。",
+          "example": "[\"sid-19389e5dwwxfs\"]",
+          "member": "string",
+          "name": "L4ProxyIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前生效的回源 IP 网段。源站防护未开启时为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CurrentOriginACL",
+          "name": "CurrentOriginACL",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前回源 IP 网段的对比。无更新或者源站防护未开启时该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NextOriginACL",
+          "name": "NextOriginACL",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源站防护状态，取值有：\n<li>online：已生效；</li>\n<li>offline：已停用；</li>\n<li>updating: 配置部署中。</li>",
+          "example": "offline",
+          "member": "string",
+          "name": "Status",
           "output_required": true,
           "required": false,
           "type": "string",

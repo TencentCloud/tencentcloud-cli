@@ -2943,6 +2943,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "海关缴款书常用字段",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "CommonContent",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

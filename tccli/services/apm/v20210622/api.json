@@ -7,6 +7,13 @@
       "output": "CreateApmInstanceResponse",
       "status": "online"
     },
+    "CreateProfileTask": {
+      "document": "创建事件任务",
+      "input": "CreateProfileTaskRequest",
+      "name": "创建性能剖析事件任务",
+      "output": "CreateProfileTaskResponse",
+      "status": "online"
+    },
     "DescribeApmAgent": {
       "document": "获取 APM 接入点",
       "input": "DescribeApmAgentRequest",
@@ -1058,6 +1065,106 @@
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProfileTaskRequest": {
+      "document": "CreateProfileTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "springboot-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "APM业务系统ID",
+          "example": "apm-eQls4MGPr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用实例（在线）",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ServiceInstance",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型（cpu、alloc）",
+          "example": "cpu",
+          "member": "string",
+          "name": "Event",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务持续时长(单位：毫秒)，范围限制在5~180秒",
+          "example": "5000",
+          "member": "int64",
+          "name": "Duration",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "执行次数，范围限制在1~100次",
+          "example": "1",
+          "member": "int64",
+          "name": "AllTimes",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳，0代表从当前开始(单位：秒)",
+          "example": "0",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务执行间隔(单位：毫秒)，范围限制在10~600秒，不可小于1.5倍的Duration",
+          "example": "5000",
+          "member": "int64",
+          "name": "TaskInterval",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProfileTaskResponse": {
+      "document": "CreateProfileTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "100001",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

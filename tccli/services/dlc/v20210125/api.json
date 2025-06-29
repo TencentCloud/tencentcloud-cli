@@ -2227,6 +2227,7 @@
           "example": "\\\\",
           "member": "string",
           "name": "Escape",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2237,6 +2238,7 @@
           "example": "\"",
           "member": "string",
           "name": "Quote",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2247,12 +2249,13 @@
           "example": ",",
           "member": "string",
           "name": "Separator",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CancelNotebookSessionStatementBatchRequest": {
       "document": "CancelNotebookSessionStatementBatch请求参数结构体",

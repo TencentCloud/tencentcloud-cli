@@ -8,6 +8,14 @@
         "title": "创建 APM 业务系统"
       }
     ],
+    "CreateProfileTask": [
+      {
+        "document": "成功示例",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProfileTask\n<公共请求参数>\n\n{\n    \"ServiceName\": \"springboot-service\",\n    \"InstanceId\": \"apm-ewyzCXlxj\",\n    \"ServiceInstance\": \"127.0.0.1\",\n    \"StartTime\": 0,\n    \"Duration\": 5000,\n    \"Event\": \"cpu\",\n    \"AllTimes\": 1,\n    \"TaskInterval\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac7cf53-1900-4367-9076-a5649ddd4dbb\",\n        \"TaskId\": 10001\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeApmAgent": [
       {
         "document": "获取 APM 接入点示例",

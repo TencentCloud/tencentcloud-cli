@@ -154,6 +154,13 @@
       "output": "DescribeDBInstancesResponse",
       "status": "online"
     },
+    "DescribeDetailedSlowLogs": {
+      "document": "查询实例慢日志详情",
+      "input": "DescribeDetailedSlowLogsRequest",
+      "name": "查询实例慢日志详情",
+      "output": "DescribeDetailedSlowLogsResponse",
+      "status": "online"
+    },
     "DescribeInstanceParams": {
       "document": "本接口（DescribeInstanceParams）用于查询当前实例可修改的参数列表。",
       "input": "DescribeInstanceParamsRequest",
@@ -3016,6 +3023,152 @@
           "member": "InstanceDetail",
           "name": "InstanceDetails",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetailedSlowLogsRequest": {
+      "document": "DescribeDetailedSlowLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cmgo-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待查询慢日志的开始时间",
+          "example": "2025-01-02 13:14:15",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待慢日志的结束时间",
+          "example": "2025-01-02 13:14:15",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤执行时间大于此值的慢日志，单位ms，默认值100",
+          "example": "100",
+          "member": "int64",
+          "name": "ExecTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤慢日志的命令类型",
+          "example": "find",
+          "member": "string",
+          "name": "Commands",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "全文搜索关键字，多个关键字间为或关系",
+          "example": "[\"aaa\",\"bbb\"]",
+          "member": "string",
+          "name": "Texts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "根据节点名过滤",
+          "example": "[\"cmgo-xxxx-node-primary\"]",
+          "member": "string",
+          "name": "NodeNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "根据queryHash过滤",
+          "example": "[\"abcdef\"]",
+          "member": "string",
+          "name": "QueryHash",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序条件，只支持StartTime(按慢日志生成时间)和ExecTime(慢日志执行时间)",
+          "example": "ExecTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序。desc倒排，asc正排",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetailedSlowLogsResponse": {
+      "document": "DescribeDetailedSlowLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "满足条件的慢日志数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢日志详情",
+          "example": "无",
+          "member": "SlowLogItem",
+          "name": "DetailedSlowLogs",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6362,6 +6515,42 @@
           "member": "string",
           "name": "RealReplicaSetId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLogItem": {
+      "document": "慢日志详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "慢日志",
+          "example": "无",
+          "member": "string",
+          "name": "Log",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "queryHash",
+          "example": "无",
+          "member": "string",
+          "name": "QueryHash",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
