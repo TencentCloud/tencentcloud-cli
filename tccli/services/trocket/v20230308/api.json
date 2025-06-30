@@ -155,7 +155,7 @@
       "status": "online"
     },
     "DeleteRole": {
-      "document": "删除角色",
+      "document": "删除角色。请确保该角色相关信息不在当前代码中被使用。删除角色后，原先使用该角色进行生产或消费消息的密钥（AccessKey 和 SecretKey）将立即失效。",
       "input": "DeleteRoleRequest",
       "name": "删除角色",
       "output": "DeleteRoleResponse",
@@ -232,7 +232,7 @@
       "status": "online"
     },
     "DescribeConsumerGroupList": {
-      "document": "获取消费组列表，Filter参数使用说明如下：\n\n1. ConsumerGroupName，名称模糊查询\n2. ConsumeMessageOrderly，投递顺序性。\"true\":顺序投递；\"false\":并发投递",
+      "document": "获取消费组列表，Filter参数使用说明如下：\n\n- ConsumerGroupName 消费组名称，支持模糊查询，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n- ConsumeMessageOrderly，投递顺序性，枚举值如下：\n    - true 顺序投递\n    - false 并发投递\n\nFilters示例： \n[{ \"Name\": \"ConsumeMessageOrderly\", \"Values\": [\"true\"] }]",
       "input": "DescribeConsumerGroupListRequest",
       "name": "查询消费组列表",
       "output": "DescribeConsumerGroupListResponse",
@@ -246,7 +246,7 @@
       "status": "online"
     },
     "DescribeFusionInstanceList": {
-      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，集群ID查询\n3. InstanceType, 集群类型查询，支持多选\n4. Version，集群版本查询",
+      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n\n- InstanceName 集群名称，支持模糊查询，从 [DescribeInstance](https://cloud.tencent.com/document/api/1493/97866) 接口或控制台获得\n- InstanceId 集群ID，精确查询，从当前接口或控制台获得\n- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n- Version 集群版本，枚举值如下：\n    - 4 RocketMQ 4.x 集群\n    - 5 RocketMQ 5.x 集群\n\nFilters示例：\n [{ \"Name\": \"InstanceId\", \"Values\": [\"rmq-72mo3a9o\"] }]",
       "input": "DescribeFusionInstanceListRequest",
       "name": "查询集群列表",
       "output": "DescribeFusionInstanceListResponse",
@@ -260,7 +260,7 @@
       "status": "online"
     },
     "DescribeInstanceList": {
-      "document": "查询集群列表，仅支持 5.x 集群。Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，集群ID查询\n3. InstanceType, 集群类型查询，支持多选\n3. InstanceStatus，集群状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
+      "document": "查询集群列表，仅支持 5.x 集群。Filters参数使用说明如下：\n\n- InstanceName 集群名称，支持模糊搜索\n- InstanceId 腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得\n- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n- InstanceStatus 集群状态，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n\nFilters示例：\n[{\n    \"Name\": \"InstanceId\",\n    \"Values\": [\"rmq-72mo3a9o\"]\n}]",
       "input": "DescribeInstanceListRequest",
       "name": "查询 5.X 集群列表",
       "output": "DescribeInstanceListResponse",
@@ -421,7 +421,7 @@
       "status": "online"
     },
     "DescribeRoleList": {
-      "document": "查询角色列表，Filter参数使用说明如下：\n\n1. RoleName，角色名称模糊搜索\n2. AccessKey，AccessKey模糊搜索",
+      "document": "查询角色列表，Filter参数使用说明如下：\n\n- RoleName 角色名称，支持模糊搜索，从本接口返回值或控制台获得\n- AccessKey AccessKey，支持模糊搜索，从本接口返回值或控制台获得\n\nFilters示例： \n[{ \"Name\": \"RoleName\", \"Values\": [\"test_role\"] }]",
       "input": "DescribeRoleListRequest",
       "name": "查询角色列表",
       "output": "DescribeRoleListResponse",
@@ -456,21 +456,21 @@
       "status": "online"
     },
     "DescribeTopic": {
-      "document": "查询主题详情，Offset和Limit参数是指订阅该主题的消费组查询分页参数，Filter参数使用说明如下：\n\nConsumerGroup，消费组名称过滤",
+      "document": "查询主题详情，Offset和Limit参数是指订阅该主题的消费组查询分页参数，Filter参数使用说明如下：\n\n- ConsumerGroup 消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。\n\nFilters示例： \n[{ \"Name\": \"ConsumerGroup\", \"Values\": [\"test_group\"] }]",
       "input": "DescribeTopicRequest",
       "name": "查询主题详情",
       "output": "DescribeTopicResponse",
       "status": "online"
     },
     "DescribeTopicList": {
-      "document": "获取主题列表，Filter参数使用说明如下：\n\n1. TopicName，主题名称模糊搜索\n2. TopicType，主题类型查询，支持多选，可选值：Normal,Order,Transaction,DelayScheduled",
+      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段",
       "input": "DescribeTopicListRequest",
       "name": "查询主题列表",
       "output": "DescribeTopicListResponse",
       "status": "online"
     },
     "DescribeTopicListByGroup": {
-      "document": "根据消费组获取主题列表，Filter参数使用说明如下：\n\nTopicName，主题名称过滤",
+      "document": "根据消费组获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。\n\nFilters示例： \n[{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]",
       "input": "DescribeTopicListByGroupRequest",
       "name": "查询消费组订阅的主题列表",
       "output": "DescribeTopicListByGroupResponse",
@@ -1493,7 +1493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -1529,7 +1529,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -1612,7 +1612,7 @@
         },
         {
           "disabled": false,
-          "document": "商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。",
+          "document": "商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。",
           "example": "basic_1k",
           "member": "string",
           "name": "SkuCode",
@@ -1684,7 +1684,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：\n\n- 默认值：DefaultRetention 参数\n- 最小值：RetentionLowerLimit 参数\n- 最大值：RetentionUpperLimit 参数",
+          "document": "消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：\n\n- 默认值：DefaultRetention 参数\n- 最小值：RetentionLowerLimit 参数\n- 最大值：RetentionUpperLimit 参数",
           "example": "72",
           "member": "int64",
           "name": "MessageRetention",
@@ -1720,7 +1720,7 @@
         },
         {
           "disabled": false,
-          "document": "最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：\n\n- 默认值和最小值：TopicNumLimit 参数\n- 最大值：TopicNumUpperLimit 参数",
+          "document": "最大可创建主题数，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：\n\n- 默认值和最小值：TopicNumLimit 参数\n- 最大值：TopicNumUpperLimit 参数",
           "example": "50",
           "member": "int64",
           "name": "MaxTopicNum",
@@ -1729,7 +1729,7 @@
         },
         {
           "disabled": false,
-          "document": "部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口获得。",
+          "document": "部署可用区列表，从 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口返回中的 [ZoneInfo](https://cloud.tencent.com/document/api/1596/77932#ZoneInfo) 数据结构中获得。",
           "example": "[10001,10002]",
           "member": "int64",
           "name": "ZoneIds",
@@ -2075,7 +2075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -2084,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称",
+          "document": "角色名称，从 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862) 接口中返回的 [RoleItem](https://cloud.tencent.com/document/api/1493/96031#RoleItem) 或控制台获得。",
           "example": "test_role_name",
           "member": "string",
           "name": "Role",
@@ -2229,7 +2229,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -2238,7 +2238,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -2247,7 +2247,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型\nUNSPECIFIED:未指定,\nNORMAL:普通消息,\nFIFO:顺序消息,\nDELAY:延时消息,\nTRANSACTION:事务消息",
+          "document": "主题类型，枚举值如下：\n\n- NORMAL: 普通消息\n- FIFO: 顺序消息\n- DELAY: 延时消息\n- TRANSACTION: 事务消息",
           "example": "NORMAL",
           "member": "string",
           "name": "TopicType",
@@ -2431,7 +2431,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -2440,7 +2440,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -2467,7 +2467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -2620,7 +2620,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -2629,7 +2629,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称，从 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862) 接口或控制台获得。",
+          "document": "角色名称，从 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862) 接口响应中的 [RoleItem](https://cloud.tencent.com/document/api/1493/96031#RoleItem) 或控制台获得。",
           "example": "test_role_name",
           "member": "string",
           "name": "Role",
@@ -2728,7 +2728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -2737,7 +2737,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -3039,7 +3039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -3048,7 +3048,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -3122,7 +3122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -3167,7 +3167,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -3214,7 +3214,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -3297,7 +3297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -3306,7 +3306,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -3433,7 +3433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -3442,7 +3442,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -3451,7 +3451,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，4.x集群必填，从 [DescribeRocketMQNamespaces](https://cloud.tencent.com/document/api/1179/63419) 接口或控制台获得。",
+          "document": "命名空间，4.x集群必填，从 [DescribeRocketMQNamespaces](https://cloud.tencent.com/document/api/1179/63419) 接口返回的 [RocketMQNamespace](https://cloud.tencent.com/document/api/1179/46089#RocketMQNamespace) 或控制台获得。",
           "example": "namespace_test",
           "member": "string",
           "name": "Namespace",
@@ -3460,7 +3460,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅主题，不为空则查询订阅了该主题的消费组的堆积，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "订阅主题，不为空则查询订阅了该主题的消费组的堆积，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "topic_test",
           "member": "string",
           "name": "SubscribeTopic",
@@ -3645,7 +3645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -3960,7 +3960,7 @@
         },
         {
           "disabled": false,
-          "document": "所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。",
+          "document": "所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口返回中的 [ZoneInfo](https://cloud.tencent.com/document/api/1596/77932#ZoneInfo) 数据结构。",
           "example": "[100001,100002]",
           "member": "int64",
           "name": "ZoneIds",
@@ -5094,7 +5094,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -5103,7 +5103,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -5157,7 +5157,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -5166,7 +5166,7 @@
         },
         {
           "disabled": false,
-          "document": "消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。",
+          "document": "消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。",
           "example": "01963F0B14BAF09F27077D244F00000000",
           "member": "string",
           "name": "MsgId",
@@ -5175,7 +5175,7 @@
         },
         {
           "disabled": false,
-          "document": "消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。",
+          "document": "消息 Key，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。",
           "example": "test_key",
           "member": "string",
           "name": "MsgKey",
@@ -5202,7 +5202,7 @@
         },
         {
           "disabled": false,
-          "document": "消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。",
+          "document": "消息 Tag，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。",
           "example": "test_tag",
           "member": "string",
           "name": "Tag",
@@ -5259,7 +5259,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -5268,7 +5268,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -5420,7 +5420,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -5429,7 +5429,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -5438,7 +5438,7 @@
         },
         {
           "disabled": false,
-          "document": "消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口或业务日志中获得。",
+          "document": "消息 ID，从 [DescribeMessageList](https://cloud.tencent.com/document/api/1493/114593) 接口返回的 [MessageItem](https://cloud.tencent.com/document/api/1493/96031#MessageItem) 或业务日志中获得。",
           "example": "1EAE3915000721B8D17C2C5BB31638D1",
           "member": "string",
           "name": "MsgId",
@@ -6083,7 +6083,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -6407,7 +6407,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -6434,7 +6434,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -6490,7 +6490,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -6564,7 +6564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -6573,7 +6573,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -6695,7 +6695,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时长",
+          "document": "消息保留时长，单位：小时",
           "example": "72",
           "member": "int64",
           "name": "MsgTTL",
@@ -6773,7 +6773,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限对应的资源\n可以是主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。\n可以是消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "权限对应的资源\n可以是主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。\n可以是消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Resource",
@@ -7248,7 +7248,7 @@
         },
         {
           "disabled": false,
-          "document": "所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属可用区列表，参考 [DescribeZones](https://cloud.tencent.com/document/product/1596/77929) 接口返回中的 [ZoneInfo](https://cloud.tencent.com/document/api/1596/77932#ZoneInfo) 数据结构。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[10001,10002]",
           "member": "int64",
           "name": "ZoneIds",
@@ -8810,7 +8810,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -8819,7 +8819,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -8882,7 +8882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -8945,7 +8945,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -9305,7 +9305,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -9314,7 +9314,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称，从 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862) 接口或控制台获得。",
+          "document": "角色名称，从 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862) 接口中返回的 [RoleItem](https://cloud.tencent.com/document/api/1493/96031#RoleItem) 或控制台获得。",
           "example": "test_role_name",
           "member": "string",
           "name": "Role",
@@ -9431,7 +9431,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -9440,7 +9440,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -10079,7 +10079,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -10097,7 +10097,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -10134,7 +10134,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1493/96028) 接口或控制台获得。",
+          "document": "腾讯云 RocketMQ 实例 ID，从 [DescribeFusionInstanceList](https://cloud.tencent.com/document/api/1493/106745) 接口或控制台获得。",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -10143,7 +10143,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口或控制台获得。",
+          "document": "主题名称，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得。",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -10161,7 +10161,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口或控制台获得。",
+          "document": "消费组名称，从 [DescribeConsumerGroupList](https://cloud.tencent.com/document/api/1493/101535) 接口返回的 [ConsumeGroupItem](https://cloud.tencent.com/document/api/1493/96031#ConsumeGroupItem) 或控制台获得。",
           "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
@@ -10930,7 +10930,7 @@
         },
         {
           "disabled": false,
-          "document": "最后消费进度更新时间，秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后消费进度更新时间，**Unix时间戳（毫秒）**\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1713164969433",
           "member": "int64",
           "name": "LastUpdateTime",

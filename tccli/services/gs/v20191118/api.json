@@ -3145,6 +3145,15 @@
           "name": "AndroidAppIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

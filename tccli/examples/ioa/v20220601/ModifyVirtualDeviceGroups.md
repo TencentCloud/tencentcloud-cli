@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli ioa ModifyVirtualDeviceGroups --cli-unfold-argument  \
+    --DomainInstanceId 3 \
     --DeviceVirtualGroupId 10 \
     --DeviceList.0.DeviceMid C007D8BFA830C84A61965ABEC6FEDFD466A9E861 \
     --DeviceList.0.Operation 1 \

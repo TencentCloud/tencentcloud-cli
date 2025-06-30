@@ -742,6 +742,8 @@ tccli/services/scf/v20180416/api.json
 tccli/services/scf/v20180416/examples.json
 tccli/services/secmocker/__init__.py
 tccli/services/secmocker/secmocker_client.py
+tccli/services/securitylake/__init__.py
+tccli/services/securitylake/securitylake_client.py
 tccli/services/ses/__init__.py
 tccli/services/ses/ses_client.py
 tccli/services/ses/v20201002/api.json

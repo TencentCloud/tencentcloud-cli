@@ -689,6 +689,9 @@ SERVICE_VERSIONS = {
     "secmocker": [
         "2024-07-18"
     ],
+    "securitylake": [
+        "2024-01-17"
+    ],
     "ses": [
         "2020-10-02"
     ],

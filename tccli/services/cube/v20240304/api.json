@@ -966,6 +966,15 @@
           "name": "RetainIp",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例异常事件类型",
+          "example": "待定",
+          "member": "string",
+          "name": "FatalEvent",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

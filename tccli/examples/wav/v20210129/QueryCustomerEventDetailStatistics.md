@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wav QueryCustomerEventDetailStatistics --cli-unfold-argument  \
-    --Cursor xx \
+    --Cursor +1H24tK0tELjSiTOR10DzA \
     --Limit 0 \
     --BeginTime 1647273600 \
     --EndTime 1647573600

@@ -568,9 +568,9 @@
       "status": "online"
     },
     "DescribeOriginProtection": {
-      "document": "查询源站防护信息",
+      "document": "本接口为旧版本查询源站防护接口，EdgeOne 于 2025 年 6 月 27 日已对源站防护相关接口全面升级，新版本查询源站防护接口详情请参考 [DescribeOriginACL](https://cloud.tencent.com/document/product/1552/120408)。\n\n<p style=\"color: red;\">注意：自 2025 年 6 月 27 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版源站防护接口。</p>",
       "input": "DescribeOriginProtectionRequest",
-      "name": "查询源站防护信息",
+      "name": "查询源站防护信息（旧）",
       "output": "DescribeOriginProtectionResponse",
       "status": "online"
     },
@@ -19386,7 +19386,7 @@
           "example": "\"zone-xxx\"",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19396,7 +19396,7 @@
           "example": "[\"www.qq.com\",\"aaa.qq.com\"]",
           "member": "string",
           "name": "Hosts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19406,7 +19406,7 @@
           "example": "[\"proxy-xxx\"]",
           "member": "string",
           "name": "ProxyIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19416,7 +19416,7 @@
           "example": "无",
           "member": "IPWhitelist",
           "name": "CurrentIPWhitelist",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19426,7 +19426,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedUpdate",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -19436,7 +19436,7 @@
           "example": "\"online\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19446,7 +19446,7 @@
           "example": "true",
           "member": "bool",
           "name": "PlanSupport",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -19456,7 +19456,7 @@
           "example": "无",
           "member": "DiffIPWhitelist",
           "name": "DiffIPWhitelist",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

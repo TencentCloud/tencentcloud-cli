@@ -10317,9 +10317,18 @@
         {
           "disabled": false,
           "document": "媒体质检模板描述信息，长度限制：256 个字符。",
-          "example": "模板 1",
+          "example": "模板1",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件格式。可选值：\n<li>PNG: PNG图片</li>",
+          "example": "PNG",
+          "member": "string",
+          "name": "RecordFormat",
           "required": false,
           "type": "string"
         }
@@ -24504,7 +24513,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板名称，长度限制：64 个字符。",
-          "example": "无",
+          "example": "媒体质检模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -24513,7 +24522,7 @@
         {
           "disabled": false,
           "document": "模板描述信息，长度限制：256 个字符。",
-          "example": "无",
+          "example": "媒体质检模板",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -24527,6 +24536,15 @@
           "name": "QualityControlItemSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件格式。可选值：\n<li>PNG: PNG图片</li>",
+          "example": "PNG",
+          "member": "string",
+          "name": "RecordFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

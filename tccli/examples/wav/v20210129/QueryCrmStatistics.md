@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wav QueryCrmStatistics --cli-unfold-argument  \
-    --SalesId xx \
-    --Cursor xx \
+    --SalesId ID1234 \
+    --Cursor 1H24tK0tELjSiTOR10DzA \
     --Limit 0 \
     --BeginTime 1 \
     --OrgId 1 \

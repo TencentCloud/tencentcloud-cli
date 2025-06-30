@@ -26,7 +26,7 @@
       "input": "TransportGeneralInterfaceRequest",
       "name": "信鸽取数平台接口",
       "output": "TransportGeneralInterfaceResponse",
-      "status": "deprecated"
+      "status": "offline"
     }
   },
   "metadata": {

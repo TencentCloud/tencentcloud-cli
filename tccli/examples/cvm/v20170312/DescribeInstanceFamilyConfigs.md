@@ -5,9 +5,7 @@
 Input: 
 
 ```
-tccli cvm DescribeInstanceFamilyConfigs --cli-unfold-argument  \
-    --Region ap-guangzhou
-```
+tccli cvm DescribeInstanceFamilyConfigs --cli-unfold-argument ```
 
 Output: 
 ```

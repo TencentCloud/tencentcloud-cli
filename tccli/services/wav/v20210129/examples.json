@@ -83,7 +83,7 @@
     "QueryCrmStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCrmStatistics\n<公共请求参数>\n\n{\n    \"SalesId\": \"xx\",\n    \"Cursor\": \"xx\",\n    \"Limit\": 0,\n    \"BeginTime\": 1,\n    \"OrgId\": 1,\n    \"EndTime\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCrmStatistics\n<公共请求参数>\n\n{\n    \"SalesId\": \"ID1234\",\n    \"Cursor\": \"1H24tK0tELjSiTOR10DzA\",\n    \"Limit\": 0,\n    \"BeginTime\": 1,\n    \"OrgId\": 1,\n    \"EndTime\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"LeadCnt\": 0,\n                \"BuildCnt\": 0,\n                \"InvitedCnt\": 0,\n                \"OrderedCnt\": 0,\n                \"DeliveredCnt\": 0,\n                \"DefeatCnt\": 0,\n                \"NewContactCnt\": 0,\n                \"StatisticalTime\": \"String\"\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "查询CRM统计数据接口"
       }
@@ -91,7 +91,7 @@
     "QueryCustomerEventDetailStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerEventDetailStatistics\n<公共请求参数>\n\n{\n    \"Cursor\": \"xx\",\n    \"Limit\": 0,\n    \"BeginTime\": 1647273600,\n    \"EndTime\": 1647573600\n}",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerEventDetailStatistics\n<公共请求参数>\n\n{\n    \"Cursor\": \"+1H24tK0tELjSiTOR10DzA\",\n    \"Limit\": 0,\n    \"BeginTime\": 1647273600,\n    \"EndTime\": 1647573600\n}",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"EventCode\": \"1000\",\n                \"EventType\": 1,\n                \"EventSource\": 1,\n                \"MaterialType\": 1,\n                \"MaterialId\": 1348495383617208321,\n                \"ExternalUserId\": \"wmQIM2CwAAL1ZKqK-icQG9XAMa3AhP-A\",\n                \"EventTime\": 1647573600,\n                \"SalesId\": 1323253932850728968\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "查询外部联系人SaaS使用明细数据接口"
       }
@@ -187,7 +187,7 @@
     "QueryStaffEventDetailStatistics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryStaffEventDetailStatistics\n<公共请求参数>\n\n{\n    \"Cursor\": \"xx\",\n    \"Limit\": 0,\n    \"BeginTime\": 1647273600,\n    \"EndTime\": 1647573600\n}",
+        "input": "POST / HTTP/1.1\nHost: wav.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryStaffEventDetailStatistics\n<公共请求参数>\n\n{\n    \"Cursor\": \"+1H24tK0tELjSiTOR10DzA\",\n    \"Limit\": 0,\n    \"BeginTime\": 1647273600,\n    \"EndTime\": 1647573600\n}",
         "output": "{\n    \"Response\": {\n        \"NextCursor\": \"+1H24tK0tELjSiTOR10DzA==\",\n        \"PageData\": [\n            {\n                \"EventCode\": \"1000\",\n                \"EventType\": 1,\n                \"EventSource\": 1,\n                \"MaterialType\": 1,\n                \"MaterialId\": 1348495383617208321,\n                \"EventTime\": 1647573600,\n                \"SalesId\": 1323253932850728968\n            }\n        ],\n        \"RequestId\": \"b1a024bf-4d74-4b5d-a5bd-bbec330520e8\"\n    }\n}",
         "title": "查询企业成员SaaS使用明细数据接口"
       }
