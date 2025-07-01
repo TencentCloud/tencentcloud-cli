@@ -1,5 +1,13 @@
 {
   "actions": {
+    "FetchTermRepoByRepoId": [
+      {
+        "document": "术语库",
+        "input": "POST / HTTP/1.1\nHost: tmt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchTermRepoByRepoId\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"15b3e533-4f51-44b9-a5fe-dc4e352caddc\"\n    }\n}",
+        "title": "查找指定术语库示例"
+      }
+    ],
     "FileTranslate": [
       {
         "document": "通过文件数据来调用接口",

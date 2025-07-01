@@ -4880,6 +4880,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "CLB id",
+          "example": "lb-xxxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

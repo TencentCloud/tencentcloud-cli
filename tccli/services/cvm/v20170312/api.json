@@ -6504,7 +6504,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像状态:\nCREATING-创建中\nNORMAL-正常\nCREATEFAILED-创建失败\nUSING-使用中\nSYNCING-同步中\nIMPORTING-导入中\nIMPORTFAILED-导入失败",
+          "document": "镜像状态:\nCREATING-创建中\nNORMAL-正常\nCREATEFAILED-创建失败\nSYNCING-复制中\nIMPORTING-导入中\nIMPORTFAILED-导入失败",
           "example": "NORMAL",
           "member": "string",
           "name": "ImageState",

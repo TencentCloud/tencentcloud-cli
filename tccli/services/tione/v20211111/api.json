@@ -6856,7 +6856,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态 \n注意：此字段为枚举值\n说明: \nDEPLOYING: 部署中\nRUNNING: 运行中 \nDEPLOY_FAILED: 部署失败\n RELEASING 释放中 \nRELEASED：已释放 \nEXCEPTION：异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态 \n注意：此字段为枚举值\n说明: \nDEPLOYING: 部署中\nRUNNING: 运行中 \nDEPLOY_FAILED: 部署失败\nRELEASING 释放中 \nRELEASED：已释放 \nEXCEPTION：异常\nDEBT_OR_EXPIRED: 欠费过期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",

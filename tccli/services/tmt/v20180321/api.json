@@ -1,5 +1,12 @@
 {
   "actions": {
+    "FetchTermRepoByRepoId": {
+      "document": "查询用户指定的术语库。",
+      "input": "FetchTermRepoByRepoIdRequest",
+      "name": "查找指定术语库",
+      "output": "FetchTermRepoByRepoIdResponse",
+      "status": "online"
+    },
     "FileTranslate": {
       "document": "提交文档原文内容，输出任务ID， 支持原文为单一语种文档（如出现多语言文档，仅支持以选定的源语言相关内容翻译）,文件格式有pdf、docx、pptx、xlsx，支持的文本格式有txt、xml、html、markdown、properties。任务翻译数据可保存7天，7天后不再返回任务数据。请注意保存。",
       "input": "FileTranslateRequest",
@@ -109,6 +116,23 @@
         }
       ],
       "usage": "out"
+    },
+    "FetchTermRepoByRepoIdRequest": {
+      "document": "FetchTermRepoByRepoId请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "FetchTermRepoByRepoIdResponse": {
+      "document": "FetchTermRepoByRepoId返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "FileTranslateRequest": {
       "document": "FileTranslate请求参数结构体",

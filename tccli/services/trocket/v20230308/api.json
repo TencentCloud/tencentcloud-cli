@@ -2084,7 +2084,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名称，从 [DescribeRoleList](https://cloud.tencent.com/document/api/1493/98862) 接口中返回的 [RoleItem](https://cloud.tencent.com/document/api/1493/96031#RoleItem) 或控制台获得。",
+          "document": "角色名称，不能为空，只支持数字 大小写字母 分隔符(\"_\",\"-\")，不能超过 32 个字符",
           "example": "test_role_name",
           "member": "string",
           "name": "Role",

@@ -5894,6 +5894,15 @@
           "name": "CdcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽安装指定Addon组件，填写相应的AddonName",
+          "example": "[\"ip-masq-agent\"]",
+          "member": "string",
+          "name": "DisableAddons",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

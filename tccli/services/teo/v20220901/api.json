@@ -8768,7 +8768,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -8786,7 +8786,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -8869,7 +8869,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，时间范围为 30 天。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -8887,7 +8887,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -8997,7 +8997,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -9015,7 +9015,7 @@
         },
         {
           "disabled": false,
-          "document": "站点ID集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11099,7 +11099,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -11117,7 +11117,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zone-2rntun0a1z6t\",\"zone-323urc8a9j0q\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11209,7 +11209,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -11227,7 +11227,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "zone-2ju9lrnpaxol",
           "member": "string",
           "name": "ZoneIds",
@@ -11411,7 +11411,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -11429,7 +11429,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zone-2mzegj4vln5f\"]",
           "member": "string",
           "name": "ZoneIds",
