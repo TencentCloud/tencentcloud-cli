@@ -19641,12 +19641,22 @@
         },
         {
           "disabled": false,
-          "document": "服务区域，取值有：\n<li>mainland: 中国大陆；</li>\n<li>overseas: 全球（不包括中国大陆)；</li>\n<li>global: 全球（包括中国大陆)。</li>",
+          "document": "服务区域，取值有：\n<li>mainland: 中国大陆；</li>\n<li>overseas: 全球（不包括中国大陆）；</li>\n<li>global: 全球（包括中国大陆）。</li>",
           "example": "oversea",
           "member": "string",
           "name": "Area",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费开关。取值有：\n<li>true: 已开启自动续费；</li>\n<li>false: 未开启自动续费。</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRenewal",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

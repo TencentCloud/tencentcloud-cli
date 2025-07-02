@@ -2099,6 +2099,221 @@
       ],
       "usage": "out"
     },
+    "Command": {
+      "document": "命令集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令",
+          "example": "pwd",
+          "member": "string",
+          "name": "Cmd",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令输入的时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "Time",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令执行时间相对于所属会话开始时间的偏移量，单位ms",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeOffset",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令执行情况，1--允许，2--拒绝，3--确认",
+          "example": "1",
+          "member": "int64",
+          "name": "Action",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话id",
+          "example": "bh-test-sid-1a2b3c",
+          "member": "string",
+          "name": "Sid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备account",
+          "example": "张三",
+          "member": "string",
+          "name": "Account",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备ip",
+          "example": "ins-onwx8e9y",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "source ip",
+          "example": "1.1.124.125",
+          "member": "string",
+          "name": "FromIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该命令所属会话的会话开始时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "SessTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该命令所属会话的会话开始时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "SessionTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复核时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "ConfirmTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户部门id",
+          "example": "1.3",
+          "member": "string",
+          "name": "UserDepartmentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户部门name",
+          "example": "部门名称",
+          "member": "string",
+          "name": "UserDepartmentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备部门id",
+          "example": "1",
+          "member": "string",
+          "name": "DeviceDepartmentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备部门name",
+          "example": "部门名称",
+          "member": "string",
+          "name": "DeviceDepartmentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "adef2345defdadaefdc1",
+          "member": "string",
+          "name": "SignValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型",
+          "example": "TKE",
+          "member": "string",
+          "name": "DeviceKind",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAccessWhiteListRuleRequest": {
       "document": "CreateAccessWhiteListRule请求参数结构体",
       "members": [
@@ -7950,13 +8165,59 @@
       ],
       "usage": "out"
     },
+    "ReplayInformation": {
+      "document": "回放所需字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "令牌",
+          "example": "bh-replay-token",
+          "member": "string",
+          "name": "Token",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话开始时间",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回放链接",
+          "example": "ws://localhost:8080/bh/replay",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回放类型 ，默认0， 1-rfb 2-mp4 3-ssh",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReplayType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ReplaySessionRequest": {
       "document": "ReplaySession请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "会话Sid",
-          "example": "we123wrwqqw",
+          "example": "d6021542-c198-4d6f-a1fd-a8091544847c",
           "member": "string",
           "name": "Sid",
           "required": true,
@@ -7968,6 +8229,16 @@
     "ReplaySessionResponse": {
       "document": "ReplaySession返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "回放所需信息",
+          "example": "{\"Token\":\"eyJhbGciOiJFUzUx\", \"StartTime\":\"2025-07-01T19:25:31+08:00\", \"Address\":\"wss://bh.cloud.tencent.com/tui/replay\",\"ReplayType\": 0}",
+          "member": "ReplayInformation",
+          "name": "ReplayInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8815,6 +9086,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命令列表",
+          "example": "[{\"Sid\": \"d6021542-c198-4d6f-a1fd-a8091544847c\",\"Cmd\":\"pwd\"}]",
+          "member": "Command",
+          "name": "CommandSet",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

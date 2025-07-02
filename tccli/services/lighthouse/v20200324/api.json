@@ -14785,7 +14785,7 @@
         },
         {
           "disabled": false,
-          "document": "MCP Server的环境变量值。最大长度：1024",
+          "document": "MCP Server的环境变量值。最大长度：1024。该字段可能存储密钥，出参时将固定返回“**********”，避免明文泄露。",
           "example": "api_key_xxx_xxx",
           "member": "string",
           "name": "Value",

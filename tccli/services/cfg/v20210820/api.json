@@ -2454,6 +2454,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "演练场景",
+          "example": "[{\"TargetId\":  17, \"TargetDesc\": \"张三\"}]",
+          "member": "TaskTarget",
+          "name": "TaskScenario",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "演练目的",
+          "example": "[{\"TargetId\": 23, \"TargetDesc\": \"张三\"}]",
+          "member": "TaskTarget",
+          "name": "TaskPurpose",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3568,6 +3590,56 @@
         }
       ],
       "usage": "out"
+    },
+    "TaskTarget": {
+      "document": "演练目标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标标签ID",
+          "example": "1",
+          "member": "int64",
+          "name": "TargetId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标描述",
+          "example": "迁移上云",
+          "member": "string",
+          "name": "TargetDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:演练场景\n2:演练目标",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:平台 2:用户个人",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Template": {
       "document": "经验库",

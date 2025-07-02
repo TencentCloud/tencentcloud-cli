@@ -82,7 +82,7 @@
       "input": "SyncProductIntroPageDataRequest",
       "name": "同步产品介绍页资源位数据",
       "output": "SyncProductIntroPageDataResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "TryDeductActivityGoodsQuota": {
       "document": "活动商品下单预扣减商品配额",

@@ -1,0 +1,253 @@
+**Example 1: 部署容器应用**
+
+
+
+Input: 
+
+```
+tccli tsf DeployContainerApplication --cli-unfold-argument  \
+    --ApplicationId application-xx \
+    --ObservabilityConfig.BusinessLogConfigIdList log-xx \
+    --ObservabilityConfig.BusinessLogDeliveryConfigIdList log-xx \
+    --ClusterId cluster-xx \
+    --GroupId group-xx \
+    --Envs.0.Name key \
+    --Envs.0.Value val \
+    --Envs.0.ValueFrom.FieldRef.FieldPath path \
+    --Envs.0.ValueFrom.ResourceFieldRef.Resource ref \
+    --Envs.0.ValueFrom.ConfigMapKeyRef.Name name \
+    --Envs.0.ValueFrom.ConfigMapKeyRef.Key key \
+    --Envs.0.ValueFrom.SecretKeyRef.Name test \
+    --Envs.0.ValueFrom.SecretKeyRef.Key test \
+    --VolumeMountInfoList.0.VolumeMountName mount-name \
+    --VolumeMountInfoList.0.VolumeMountPath path \
+    --VolumeMountInfoList.0.VolumeMountSubPath sub-path \
+    --VolumeMountInfoList.0.ReadOrWrite 1 \
+    --LifeCycleHookList.0.HookType PostStart \
+    --LifeCycleHookList.0.ExecMode execCommand \
+    --LifeCycleHookList.0.ExecCommandContent sleep xx \
+    --LifeCycleHookList.0.HttpGetOption.Host host.com \
+    --LifeCycleHookList.0.HttpGetOption.Path path \
+    --LifeCycleHookList.0.HttpGetOption.Port port \
+    --LifeCycleHookList.0.HttpGetOption.Scheme HTTP \
+    --AdditionalContainerList.0.Name add \
+    --AdditionalContainerList.0.ContainerId c-id \
+    --AdditionalContainerList.0.Status test \
+    --AdditionalContainerList.0.Reason test \
+    --AdditionalContainerList.0.Image test \
+    --AdditionalContainerList.0.IsBusinessMainContainer True \
+    --AdditionalContainerList.0.Server test \
+    --AdditionalContainerList.0.RepoName test \
+    --AdditionalContainerList.0.RepoType test \
+    --AdditionalContainerList.0.TcrRepoInfo.Region test \
+    --AdditionalContainerList.0.TcrRepoInfo.RegistryId test \
+    --AdditionalContainerList.0.TcrRepoInfo.RegistryName test \
+    --AdditionalContainerList.0.TcrRepoInfo.Namespace test \
+    --AdditionalContainerList.0.TcrRepoInfo.RepoName test \
+    --AdditionalContainerList.0.SecretName test \
+    --AdditionalContainerList.0.TagName test \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.ActionType test \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.InitialDelaySeconds 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.TimeoutSeconds 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.PeriodSeconds 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.SuccessThreshold 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.FailureThreshold 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.Scheme test \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.Port 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.Path test \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.Command test \
+    --AdditionalContainerList.0.HealthCheckSettings.LivenessProbe.Type test \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.ActionType test \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.InitialDelaySeconds 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.TimeoutSeconds 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.PeriodSeconds 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.SuccessThreshold 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.FailureThreshold 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.Scheme test \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.Port 1 \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.Path test \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.Command test \
+    --AdditionalContainerList.0.HealthCheckSettings.ReadinessProbe.Type test \
+    --AdditionalContainerList.0.CpuRequest test \
+    --AdditionalContainerList.0.CpuLimit test \
+    --AdditionalContainerList.0.MemRequest test \
+    --AdditionalContainerList.0.MemLimit test \
+    --AdditionalContainerList.0.Envs.0.Name test \
+    --AdditionalContainerList.0.Envs.0.Value test \
+    --AdditionalContainerList.0.Envs.0.ValueFrom.FieldRef.FieldPath test \
+    --AdditionalContainerList.0.Envs.0.ValueFrom.ResourceFieldRef.Resource test \
+    --AdditionalContainerList.0.Envs.0.ValueFrom.ConfigMapKeyRef.Name test \
+    --AdditionalContainerList.0.Envs.0.ValueFrom.ConfigMapKeyRef.Key test \
+    --AdditionalContainerList.0.UserEnvs.0.Name test \
+    --AdditionalContainerList.0.UserEnvs.0.Value test \
+    --AdditionalContainerList.0.UserEnvs.0.ValueFrom.FieldRef.FieldPath test \
+    --AdditionalContainerList.0.UserEnvs.0.ValueFrom.ResourceFieldRef.Resource test \
+    --AdditionalContainerList.0.JvmOpts test \
+    --AdditionalContainerList.0.VolumeMountInfoList.0.VolumeMountName test \
+    --AdditionalContainerList.0.VolumeMountInfoList.0.VolumeMountPath test \
+    --AdditionalContainerList.0.VolumeMountInfoList.0.VolumeMountSubPath test \
+    --AdditionalContainerList.0.VolumeMountInfoList.0.ReadOrWrite test \
+    --AdditionalContainerList.0.InitContainerEnable True \
+    --AdditionalContainerList.0.LifeCycleHookList.0.HookType test \
+    --AdditionalContainerList.0.LifeCycleHookList.0.ExecMode test \
+    --AdditionalContainerList.0.LifeCycleHookList.0.ExecCommandContent test \
+    --AdditionalContainerList.0.LifeCycleHookList.0.HttpGetOption.Host test \
+    --AdditionalContainerList.0.LifeCycleHookList.0.HttpGetOption.Path test \
+    --AdditionalContainerList.0.LifeCycleHookList.0.HttpGetOption.Port test \
+    --AdditionalContainerList.0.LifeCycleHookList.0.HttpGetOption.Scheme test \
+    --AdditionalContainerList.0.PrivilegeContainerEnable True \
+    --AdditionalContainerList.0.RunCommand test \
+    --AdditionalContainerList.0.RunArg test \
+    --AdditionalContainerList.0.ContainerName test \
+    --VolumeInfoList.0.VolumeType test \
+    --VolumeInfoList.0.VolumeName test \
+    --VolumeInfoList.0.VolumeConfig test \
+    --VolumeInfoList.0.ConfigMapOptions.0.Key test \
+    --VolumeInfoList.0.ConfigMapOptions.0.Path test \
+    --VolumeInfoList.0.ConfigMapOptions.0.Mode test \
+    --VolumeInfoList.0.EmptyDirOption.EnableMemory True \
+    --VolumeInfoList.0.EmptyDirOption.StorageCapacity 0 \
+    --VolumeInfoList.0.EmptyDirOption.StorageUnit test \
+    --VolumeInfoList.0.EmptyDirOption.SizeLimit test \
+    --ServiceSettingList.0.AccessType 0 \
+    --ServiceSettingList.0.ProtocolPorts.0.Protocol test \
+    --ServiceSettingList.0.ProtocolPorts.0.Port 0 \
+    --ServiceSettingList.0.ProtocolPorts.0.TargetPort 0 \
+    --ServiceSettingList.0.ProtocolPorts.0.NodePort 0 \
+    --ServiceSettingList.0.ProtocolPorts.0.Name test \
+    --ServiceSettingList.0.SubnetId test \
+    --ServiceSettingList.0.DisableService True \
+    --ServiceSettingList.0.HeadlessService True \
+    --ServiceSettingList.0.AllowDeleteService True \
+    --ServiceSettingList.0.OpenSessionAffinity True \
+    --ServiceSettingList.0.SessionAffinityTimeoutSeconds 0 \
+    --ServiceSettingList.0.ServiceName test \
+    --ServiceSettingList.0.ExternalTrafficStrategy test \
+    --ServiceSettingList.0.ExternalTrafficPolicy test \
+    --ServiceSettingList.0.LoadBalancerProvisioner test \
+    --ServiceSettingList.0.LoadBalancingType test \
+    --ServiceSettingList.0.ClusterIp test \
+    --ServiceSettingList.0.DisableServiceInt 1 \
+    --ServiceSettingList.0.OpenSessionAffinityInt 1 \
+    --ServiceSettingList.0.HeadlessServiceInt 1 \
+    --ServiceSettingList.0.Name test \
+    --ServiceSettingList.0.VpcId test \
+    --ServiceSettingList.0.LoadBalancingIp test \
+    --ServiceSettingList.0.LoadBalancerId test \
+    --Alias test \
+    --GroupName test \
+    --Tags.0.TagKey test \
+    --Tags.0.TagValue test \
+    --ContainerKind test \
+    --Server test \
+    --RepoName test \
+    --RepoType test \
+    --TcrRepoInfo.Region test \
+    --TcrRepoInfo.RegistryId test \
+    --TcrRepoInfo.RegistryName test \
+    --TcrRepoInfo.Namespace test \
+    --TcrRepoInfo.RepoName test \
+    --SecretName test \
+    --TagName test \
+    --HealthCheckSettings.LivenessProbe.ActionType test \
+    --HealthCheckSettings.LivenessProbe.InitialDelaySeconds 1 \
+    --HealthCheckSettings.LivenessProbe.TimeoutSeconds 1 \
+    --HealthCheckSettings.LivenessProbe.PeriodSeconds 1 \
+    --HealthCheckSettings.LivenessProbe.SuccessThreshold 1 \
+    --HealthCheckSettings.LivenessProbe.FailureThreshold 1 \
+    --HealthCheckSettings.LivenessProbe.Scheme test \
+    --HealthCheckSettings.LivenessProbe.Port 1 \
+    --HealthCheckSettings.LivenessProbe.Path test \
+    --HealthCheckSettings.LivenessProbe.Command test \
+    --HealthCheckSettings.LivenessProbe.Type test \
+    --CpuRequest test \
+    --CpuLimit test \
+    --MemRequest test \
+    --MemLimit test \
+    --JvmOpts test \
+    --InitContainerEnable True \
+    --PrivilegeContainerEnable True \
+    --RunCommand test \
+    --RunArg test \
+    --InstanceNum 0 \
+    --SchedulingStrategy.Type test \
+    --SchedulingStrategy.NodeScheduleStrategyType test \
+    --SchedulingStrategy.NodeScheduleOptions.0.LabelName test \
+    --SchedulingStrategy.NodeScheduleOptions.0.Operator test \
+    --SchedulingStrategy.NodeScheduleOptions.0.LabelValue test \
+    --SchedulingStrategy.StrongAffinityList.0.LabelName test \
+    --SchedulingStrategy.StrongAffinityList.0.Operator test \
+    --SchedulingStrategy.StrongAffinityList.0.LabelValue test \
+    --SchedulingStrategy.WeakAffinityList.0.LabelName test \
+    --SchedulingStrategy.WeakAffinityList.0.Operator test \
+    --SchedulingStrategy.WeakAffinityList.0.LabelValue test \
+    --SchedulingStrategy.WeakAffinityWeight 0 \
+    --SchedulingStrategy.AvailableZoneScatterScheduleType test \
+    --SchedulingStrategy.AvailableZoneScatterScheduleRules.0.ScatterDimension test \
+    --SchedulingStrategy.AvailableZoneScatterScheduleRules.0.MaxUnbalanceQuantity 0 \
+    --SchedulingStrategy.AvailableZoneScatterScheduleRules.0.IsForceSchedule True \
+    --SchedulingStrategy.PodScheduleStrategyType test \
+    --SchedulingStrategy.CustomPodSchedule.ForceSchedule.AffinityList.0.Scope test \
+    --SchedulingStrategy.CustomPodSchedule.ForceSchedule.AffinityList.0.Weight test \
+    --SchedulingStrategy.CustomPodSchedule.ForceSchedule.AntiAffinityList.0.Scope test \
+    --SchedulingStrategy.CustomPodSchedule.ForceSchedule.AntiAffinityList.0.Weight test \
+    --SchedulingStrategy.CustomPodSchedule.TrySchedule.AffinityList.0.Scope test \
+    --SchedulingStrategy.CustomPodSchedule.TrySchedule.AffinityList.0.Weight test \
+    --SchedulingStrategy.TolerateScheduleType test \
+    --SchedulingStrategy.CustomTolerateSchedules.0.Key test \
+    --SchedulingStrategy.CustomTolerateSchedules.0.Operator test \
+    --SchedulingStrategy.CustomTolerateSchedules.0.Value test \
+    --SchedulingStrategy.CustomTolerateSchedules.0.Effect test \
+    --SchedulingStrategy.CustomTolerateSchedules.0.TolerationSeconds 0 \
+    --RestartPolicy test \
+    --ServiceSpecEncode test \
+    --IstioMemRequest test \
+    --IstioCpuRequest test \
+    --IstioMemLimit test \
+    --IstioCpuLimit test \
+    --ServiceGovernanceConfig.EnableGovernance True \
+    --ServiceGovernanceConfig.ServiceConfigList.0.Name test \
+    --ServiceGovernanceConfig.ServiceConfigList.0.Ports.0.TargetPort 1 \
+    --ServiceGovernanceConfig.ServiceConfigList.0.Ports.0.Protocol test \
+    --ServiceGovernanceConfig.ServiceConfigList.0.HealthCheck.Path test \
+    --ServiceGovernanceConfig.ExclusiveInstances.0.CenterType test \
+    --ServiceGovernanceConfig.ExclusiveInstances.0.InstanceId test \
+    --ServiceGovernanceConfig.ExclusiveInstances.0.InstanceType test \
+    --ServiceGovernanceConfig.ExclusiveInstances.0.InstanceName test \
+    --ServiceGovernanceConfig.ExclusiveInstances.0.RegionId test \
+    --ServiceGovernanceConfig.ExclusiveInstances.0.InstanceNamespaceId test \
+    --ServiceGovernanceConfig.GovernanceType test \
+    --AgentMemRequest test \
+    --AgentCpuRequest test \
+    --AgentMemLimit test \
+    --AgentCpuLimit test \
+    --UpdateType 0 \
+    --UpdateIvl 0 \
+    --MaxSurge test \
+    --MaxUnavailable test \
+    --WarmupSetting.Enabled True \
+    --WarmupSetting.WarmupTime 1 \
+    --WarmupSetting.Curvature 1 \
+    --WarmupSetting.EnabledProtection True \
+    --ConfigTemplateId test \
+    --ConfigTemplateVersion 0 \
+    --VolumeClean True \
+    --NamespaceId test \
+    --DeployAgent True \
+    --AgentProfileList.0.AgentType test \
+    --AgentProfileList.0.AgentVersion test
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Result": {
+            "GroupId": "group-xx",
+            "TaskId": "task-2.0-xx"
+        },
+        "RequestId": "request-id"
+    }
+}
+```
+

@@ -20,6 +20,7 @@ Output:
         "Plans": [
             {
                 "Area": "overseas",
+                "AutoRenewal": false,
                 "PayMode": 0,
                 "PlanId": "edgeone-2ycvr8ml4zpq",
                 "PlanType": "plan-enterprise-v2",
@@ -46,6 +47,7 @@ Output:
             },
             {
                 "Area": "global",
+                "AutoRenewal": false,
                 "PayMode": 0,
                 "PlanId": "edgeone-2ycvr8p345am",
                 "PlanType": "plan-enterprise-v2",
@@ -72,6 +74,7 @@ Output:
             },
             {
                 "Area": "overseas",
+                "AutoRenewal": false,
                 "PayMode": 0,
                 "PlanId": "edgeone-2ycvr8p36yfi",
                 "PlanType": "plan-enterprise",
@@ -98,6 +101,7 @@ Output:
             },
             {
                 "Area": "overseas",
+                "AutoRenewal": false,
                 "PayMode": 0,
                 "PlanId": "edgeone-2ycvr8p39rke",
                 "PlanType": "plan-standard",

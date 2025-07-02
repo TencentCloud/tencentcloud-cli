@@ -2143,8 +2143,8 @@
     "DescribeEipInfos": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEipInfos\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e637f946-f2e7-4a4c-a2f3-0b9eb2c28902\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEipInfos\n<公共请求参数>\n\n{\n    \"AddressIps\": [\n        \"1.14.57.146\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-gud9dg5i\",\n                \"AddressIp\": \"193.112.244.148\",\n                \"AddressGroup\": \"ap-guangzhou\",\n                \"PrivateAddressIp\": \"172.16.16.17\",\n                \"Region\": \"ap-guangzhou\",\n                \"Uin\": \"100005643178\",\n                \"UserUin\": \"100005643178\",\n                \"InstanceId\": \"ins-p8et7u8w\",\n                \"LighthouseId\": null,\n                \"CreateTime\": \"2020-04-21 10:05:10\",\n                \"InstanceType\": \"CVM\"\n            }\n        ],\n        \"RequestId\": \"e637f946-f2e7-4a4c-a2f3-0b9eb2c28902\"\n    }\n}",
         "title": "查询EIP信息"
       }
     ],

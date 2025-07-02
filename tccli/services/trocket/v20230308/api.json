@@ -463,7 +463,7 @@
       "status": "online"
     },
     "DescribeTopicList": {
-      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段",
+      "document": "获取主题列表，Filter参数使用说明如下：\n\n- TopicName 主题名称，支持模糊搜索，从 [DescribeTopicList](https://cloud.tencent.com/document/api/1493/96030) 接口返回的 [TopicItem](https://cloud.tencent.com/document/api/1493/96031#TopicItem) 或控制台获得\n- TopicType 主题类型查询，支持多选，参考 [DescribeTopic](https://cloud.tencent.com/document/api/1493/97945) 接口 TopicType 字段\n\nFilters示例：\n [{ \"Name\": \"TopicName\", \"Values\": [\"test_topic\"] }]",
       "input": "DescribeTopicListRequest",
       "name": "查询主题列表",
       "output": "DescribeTopicListResponse",
@@ -2265,7 +2265,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，最多 128 字符",
+          "document": "备注信息，最多 128 个字符",
           "example": "测试主题",
           "member": "string",
           "name": "Remark",
@@ -6655,7 +6655,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，秒为单位",
+          "document": "创建时间，**Unix时间戳（毫秒）**",
           "example": "1712729699",
           "member": "int64",
           "name": "CreatedTime",
@@ -6665,7 +6665,7 @@
         },
         {
           "disabled": false,
-          "document": "最后写入时间，秒为单位",
+          "document": "最后写入时间，**Unix时间戳（毫秒）**",
           "example": "1712729699",
           "member": "int64",
           "name": "LastUpdateTime",

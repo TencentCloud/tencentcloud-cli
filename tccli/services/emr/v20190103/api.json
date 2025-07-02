@@ -1859,6 +1859,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部autoscaler该规格的最大最小节点数量",
+          "example": "无",
+          "member": "ResourceGroupSetting",
+          "name": "ResourceGroupSetting",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19335,6 +19346,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceGroupSetting": {
+      "document": "弹性伸缩配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该机型弹性伸缩最大节点数量",
+          "example": "4",
+          "member": "int64",
+          "name": "MaxNodes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该机型弹性伸缩最小节点数量",
+          "example": "1",
+          "member": "int64",
+          "name": "MinNodes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RestartPolicy": {
       "document": "组件重启策略",

@@ -106,7 +106,7 @@
       "status": "online"
     },
     "DescribeJobMonitorData": {
-      "document": "查询作业任务实例的资源使用监控信息。",
+      "document": "查询作业任务实例的资源使用监控信息。当前只支持查询弹性节点任务并且Job未删除；暂不支持计算环境类任务；该接口只支持查询作业实例时间范围之内的资源使用情况。",
       "input": "DescribeJobMonitorDataRequest",
       "name": "查询作业任务实例的资源监控信息",
       "output": "DescribeJobMonitorDataResponse",
@@ -2035,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "支持查询的指标；当前支持查询的任务指标；\n\n- CpuUsage：cpu利用率\n- MemUsage：内存利用率\n- LanOuttraffic：内网出带宽\n- LanIntraffic：内网入带宽",
+          "document": "支持查询的指标；当前支持查询的任务指标；\n\n- CpuUsage：cpu利用率，单位：%\n- MemUsage：内存利用率，单位：%\n- LanOuttraffic：内网出带宽，单位：Bytes/s\n- LanIntraffic：内网入带宽，单位：Bytes/s",
           "example": "CpuUsage",
           "member": "string",
           "name": "MetricName",
@@ -2044,7 +2044,7 @@
         },
         {
           "disabled": false,
-          "document": "查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。",
+          "document": "查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。",
           "example": "2025-06-11T21:12:50Z",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -2053,7 +2053,7 @@
         },
         {
           "disabled": false,
-          "document": "查询任务实例的终止时间；如果未传入查询起始时间或传入的时间大于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。",
+          "document": "查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。",
           "example": "2025-06-11T22:12:50Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -2068,7 +2068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控数据粒度，单位:秒",
+          "document": "监控数据粒度，单位:秒；时间粒度随着查询的时间范围变化，查询时间范围越小，时间粒度越小。",
           "example": "10",
           "member": "int64",
           "name": "Period",
