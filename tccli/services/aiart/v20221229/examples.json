@@ -152,6 +152,22 @@
         "title": "调用示例"
       }
     ],
+    "TextToImageLite": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImageLite\n<公共请求参数>\n\n{\n    \"Prompt\": \"小狗\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d5d96b7a-7fe3-4ea2-9dce-504e2c0d63cd\",\n        \"ResultImage\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg\",\n        \"Seed\": 2068699513\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
+    "TextToImageRapid": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImageRapid\n<公共请求参数>\n\n{\n    \"Prompt\": \"画一个小狗\",\n    \"Resolution\": \"1024:1024\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e77c02f6-44b1-4e67-a503-844ebb44f067\",\n        \"ResultImage\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg\",\n        \"Seed\": 4180030109\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "UploadTrainPortraitImages": [
       {
         "document": "成功调用上传",

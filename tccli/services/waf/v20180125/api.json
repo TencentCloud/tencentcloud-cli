@@ -10506,7 +10506,7 @@
         {
           "disabled": false,
           "document": "domain列表",
-          "example": "[{\"AppId\":1256702383,\"Domain\":\"randygz2.qcloudwaf.com\",\"DomainId\":\"7d58ebf3db7e5f7e8f91eb017c6a7b31\",\"InstanceId\":\"waf_2kw60jgy0908e8j3\",\"InstanceName\":\"广州双栈集群企业版\",\"Edition\":\"sparta-waf\",\"Region\":\"gz\",\"CreateTime\":\"2024-07-18T10:46:12+08:00\",\"Cname\":\"dae1cae7d48ec31c7727a86a8cda2a62.qcloudzygj.com\",\"ClsStatus\":1,\"PostCLSStatus\":0,\"PostCKafkaStatus\":0,\"FlowMode\":0,\"Status\":1,\"Mode\":1,\"State\":0,\"Engine\":1,\"Ipv6Status\":1,\"BotStatus\":2,\"ApiStatus\":0,\"Level\":3,\"CdcClusters\":\"\",\"RsList\":[\"134.175.221.0/24\",\"2402:4e00:1020:1707::/64\"],\"CCList\":[],\"Ports\":[{\"NginxServerId\":231056,\"Port\":\"80\",\"Protocol\":\"http\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"},{\"NginxServerId\":321607,\"Port\":\"443\",\"Protocol\":\"https\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"}],\"LoadBalancerSet\":[],\"AlbType\":\"\",\"SgState\":2,\"SgDetail\":\"\",\"CloudType\":\"\",\"Note\":\"22222\",\"SrcList\":[\"114.132.246.237\"],\"UpstreamDomainList\":[],\"SgID\":\"sg-7dme0v73\",\"AccessStatus\":1,\"Labels\":[\"\"]},{\"AppId\":1256704386,\"Domain\":\"xiaochengxu.qcloudwaf.com\",\"DomainId\":\"42059f9a9905519d8f9e72a823891544\",\"InstanceId\":\"waf_2kw60jgy0908e8j3\",\"InstanceName\":\"广州双栈集群企业版\",\"Edition\":\"sparta-waf\",\"Region\":\"gz\",\"CreateTime\":\"2024-07-08T17:42:42+08:00\",\"Cname\":\"3323d11c0772e26ca3c68548b9cd069f.qcloudzygj.com\",\"ClsStatus\":1,\"PostCLSStatus\":0,\"PostCKafkaStatus\":0,\"FlowMode\":0,\"Status\":1,\"Mode\":1,\"State\":1,\"Engine\":1,\"Ipv6Status\":0,\"BotStatus\":2,\"ApiStatus\":0,\"Level\":3,\"CdcClusters\":\"\",\"RsList\":[\"134.175.221.0/24\"],\"CCList\":[],\"Ports\":[{\"NginxServerId\":257856,\"Port\":\"80\",\"Protocol\":\"http\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"}],\"LoadBalancerSet\":[],\"AlbType\":\"\",\"SgState\":1,\"SgDetail\":\"\",\"CloudType\":\"\",\"Note\":\"\",\"SrcList\":[\"124.221.148.62\"],\"UpstreamDomainList\":[],\"SgID\":\"\",\"AccessStatus\":1,\"Labels\":[\"\"]}]",
+          "example": "无",
           "member": "DomainInfo",
           "name": "Domains",
           "output_required": true,
@@ -11020,7 +11020,7 @@
         {
           "disabled": false,
           "document": "instance列表",
-          "example": "[{\"AppId\":1256704386,\"InstanceId\":\"waf_2kw60zgy0908e8j3\",\"InstanceName\":\"广州双栈集群企业版\",\"ResourceIds\":\"waf_2kw60zgy0908e8j3\",\"Edition\":\"sparta-waf\",\"Region\":\"gz\",\"PayMode\":1,\"Status\":0,\"RenewFlag\":1,\"AttackLogPost\":1,\"Level\":3,\"ElasticBilling\":100000,\"ValidTime\":\"2024-12-01 15:27:23\",\"BeginTime\":\"2022-09-01 15:27:23\",\"SubDomainLimit\":30,\"MainDomainLimit\":3,\"APISecurity\":1,\"IsAPISecurityTrial\":0,\"BillingItem\":\"sv_wsm_waf_package_enterprise\",\"FreeDelayFlag\":0,\"Mode\":1,\"DomainCount\":18,\"MainDomainCount\":3,\"MaxQPS\":50,\"MaxBandwidth\":203021,\"QPS\":{\"ResourceIds\":\"\",\"ValidTime\":\"\",\"RenewFlag\":0,\"Count\":0,\"Region\":\"\",\"BillingItem\":\"\"},\"BotQPS\":{\"ResourceIds\":\"\",\"ValidTime\":\"\",\"Count\":0,\"Region\":\"\",\"MaxBotQPS\":50,\"RenewFlag\":0},\"DomainPkg\":{\"ResourceIds\":\"\",\"ValidTime\":\"\",\"RenewFlag\":0,\"Count\":0,\"Region\":\"\"},\"BotPkg\":{\"ResourceIds\":\"waf_2kw60zgy0908e8j3\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2022-01-05 15:38:04\",\"EndTime\":\"2022-01-15 15:38:04\",\"Type\":\"sv_wsm_waf_scene_bot\",\"InquireNum\":1,\"UsedNum\":0,\"RenewFlag\":0,\"BotCPWaf\":0,\"BotNPWaf\":0,\"IsBotTrial\":0},\"FraudPkg\":{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_fraud\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-06-19 19:22:59\",\"EndTime\":\"2024-12-01 19:22:59\",\"InquireNum\":5000,\"UsedNum\":37,\"RenewFlag\":1},\"MajorEventsPkg\":{\"ResourceIds\":\"\",\"Status\":0,\"Region\":0,\"BeginTime\":\"\",\"EndTime\":\"\",\"InquireNum\":0,\"UsedNum\":0,\"BillingItem\":\"\",\"RenewFlag\":0,\"HWState\":0},\"HybridPkg\":{\"ResourceIds\":\"\",\"Status\":0,\"Region\":0,\"BeginTime\":\"\",\"EndTime\":\"\",\"InquireNum\":0,\"UsedNum\":0,\"RenewFlag\":0},\"ApiPkg\":{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_api\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-23 00:01:51\",\"EndTime\":\"2024-12-01 00:01:51\",\"InquireNum\":1,\"UsedNum\":0,\"BillingItem\":\"sv_wsm_waf_scene_ent\",\"RenewFlag\":1,\"APICPWaf\":0,\"APINPWaf\":0,\"IsAPISecurityTrial\":0},\"MiniPkg\":{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_1_mini\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-11 11:31:01\",\"EndTime\":\"2024-12-01 11:31:01\",\"Count\":5,\"BillingItem\":\"sv_wsm_waf_scene_mini\",\"RenewFlag\":1,\"AccessAppidNum\":4,\"DdosThreshold\":300,\"ElasticMode\":1,\"ElasticBilling\":473000},\"MiniExtendPkg\":{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_mini_extend\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-05-30 23:35:08\",\"EndTime\":\"2024-12-01 23:35:08\",\"Count\":1,\"BillingItem\":\"sv_wsm_waf_exp_exp\",\"RenewFlag\":1},\"QpsStandard\":105000,\"BandwidthStandard\":2600,\"SandboxQps\":115000,\"LastQpsExceedTime\":\"\",\"MiniQpsStandard\":473500,\"MiniMaxQPS\":2}]",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "Instances",
           "output_required": true,
@@ -17044,6 +17044,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的网络配置",
+          "example": "详见数据结构",
+          "member": "NetworkConfig",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21317,6 +21328,45 @@
         }
       ],
       "type": "object"
+    },
+    "NetworkConfig": {
+      "document": "实例的网络配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "高防EIP地址",
+          "example": "126.35.69.226",
+          "member": "string",
+          "name": "AntiDDosEip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高防EIP绑定状态。\n0：解绑\n1：绑定",
+          "example": "1",
+          "member": "uint64",
+          "name": "AntiDDosEipStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF原生VIP绑定状态。\n0：解绑\n1：绑定",
+          "example": "1",
+          "member": "uint64",
+          "name": "VipStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ParamCompareList": {
       "document": "bot-自定义规则请求参数比对结构体",

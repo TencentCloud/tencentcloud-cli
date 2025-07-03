@@ -958,6 +958,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "[]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HadoopYarnItem",
+          "name": "Yarns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2060,6 +2070,33 @@
           "name": "TaskManagerMem",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "0=默认使用老的 1=使用新的",
+          "example": "0",
+          "member": "int64",
+          "name": "UseOldSystemConnector",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "压缩参数",
+          "example": "压缩参数",
+          "member": "string",
+          "name": "ProgramArgsAfterGzip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "checkpoint 超时时间",
+          "example": "36000",
+          "member": "int64",
+          "name": "CheckpointTimeoutSecond",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4700,6 +4737,100 @@
       ],
       "type": "object"
     },
+    "HadoopYarnItem": {
+      "document": "hadoopYarn资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ClusterGroupSerialId",
+          "example": "cluster-aa",
+          "member": "string",
+          "name": "ClusterGroupSerialId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mem",
+          "example": "2048",
+          "member": "float",
+          "name": "Mem",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-03-14 07:36:34",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-03-14 07:38:34",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件内容",
+          "example": "{\"hdfs-site.xml\":\"\"}",
+          "member": "string",
+          "name": "Config",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CreatorUin",
+          "example": "111222",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "JobConfig": {
       "document": "作业配置详情",
       "members": [
@@ -4776,7 +4907,7 @@
         {
           "disabled": false,
           "document": "系统参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[xxx]",
           "member": "Property",
           "name": "Properties",
           "output_required": true,
@@ -4786,7 +4917,7 @@
         {
           "disabled": false,
           "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[xxx]",
           "member": "ResourceRefDetail",
           "name": "ResourceRefDetails",
           "output_required": true,
@@ -4866,7 +4997,7 @@
         {
           "disabled": false,
           "document": "CLS日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "xxx-xx",
           "member": "string",
           "name": "ClsLogsetId",
           "output_required": true,
@@ -4876,7 +5007,7 @@
         {
           "disabled": false,
           "document": "CLS日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "xxx-xxx",
           "member": "string",
           "name": "ClsTopicId",
           "output_required": true,
@@ -4916,7 +5047,7 @@
         {
           "disabled": false,
           "document": "类日志级别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[xxx]",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
           "output_required": true,
@@ -4936,7 +5067,7 @@
         {
           "disabled": false,
           "document": "专家模式的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{xxx}",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
           "output_required": false,
@@ -4956,7 +5087,7 @@
         {
           "disabled": false,
           "document": "trace链路配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{xxx}",
           "member": "TraceModeConfiguration",
           "name": "TraceModeConfiguration",
           "output_required": true,
@@ -4976,7 +5107,7 @@
         {
           "disabled": false,
           "document": "算子拓扑图\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{xxx}",
           "member": "JobGraph",
           "name": "JobGraph",
           "output_required": false,
@@ -5082,6 +5213,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "checkpoint 超时时间",
+          "example": "36000",
+          "member": "int64",
+          "name": "CheckpointTimeoutSecond",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5720,6 +5861,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "停止持续告警",
+          "example": "1",
+          "member": "int64",
+          "name": "ContinueAlarm",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5944,6 +6095,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "停止持续告警",
+          "example": "1",
+          "member": "int64",
+          "name": "ContinueAlarm",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

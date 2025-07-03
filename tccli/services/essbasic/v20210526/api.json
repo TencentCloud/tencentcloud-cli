@@ -10763,7 +10763,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的类别分类（如销售合同/入职合同等）。",
+          "document": "合同流程的类别分类（如销售合同/入职合同等）。\n该字段将被废弃，不建议使用。\t请使用 UserFlowType",
           "example": "入职合同",
           "member": "string",
           "name": "FlowType",
@@ -10849,6 +10849,26 @@
           "name": "NeedCreateReview",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户合同的自定义分类。\n\n自定义合同类型的位置，在下图所示地方:\n![image](https://qcloudimg.tencent-cloud.cn/raw/37138cc5f3c38e6f788f4b82f695cebf.png)",
+          "example": "无",
+          "member": "UserFlowType",
+          "name": "UserFlowType",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发起模板时,使用的模板Id",
+          "example": "yDtIcUUckp9d8yxkUxdI5uCy3KQ2RGCJ",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

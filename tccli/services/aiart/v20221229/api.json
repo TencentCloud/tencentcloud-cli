@@ -133,6 +133,20 @@
       "output": "TextToImageResponse",
       "status": "online"
     },
+    "TextToImageLite": {
+      "document": "混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "TextToImageLiteRequest",
+      "name": "文生图轻量版",
+      "output": "TextToImageLiteResponse",
+      "status": "online"
+    },
+    "TextToImageRapid": {
+      "document": "混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
+      "input": "TextToImageRapidRequest",
+      "name": "文生图极速版",
+      "output": "TextToImageRapidResponse",
+      "status": "online"
+    },
     "UploadTrainPortraitImages": {
       "document": "AI 写真分为上传训练图片、训练写真模型（可选跳过）、生成写真图片3个环节，需要依次调用对应接口。\n本接口用于上传人像图片并指定对应的写真模型 ID。上传的图片要求是同一个人，建议上传单人、正脸、脸部区域占比较大、脸部清晰无遮挡、无大角度偏转、无夸张表情的图片。\n可选模式：\n- 常规训练模式：上传20 - 25张图片用于模型训练，完成训练后可生成写真图片。\n- 快速训练模式：仅需上传1张图片用于模型训练，训练速度更快，完成训练后可生成写真图片。\n- 免训练模式：仅需上传1张图片，跳过训练环节，直接生成写真图片。\n\n上传写真训练图片默认提供1个并发。",
       "input": "UploadTrainPortraitImagesRequest",
@@ -386,6 +400,34 @@
         }
       ],
       "type": "object"
+    },
+    "Image": {
+      "document": "图片",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片Base64",
+          "example": "MIIHNjCCBh6gAwIBAgIQCVe4E0h49mzI0NcSqMy1",
+          "member": "string",
+          "name": "Base64",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片Url",
+          "example": "https://123.jpg",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ImageInpaintingRemovalRequest": {
       "document": "ImageInpaintingRemoval请求参数结构体",
@@ -1914,6 +1956,217 @@
     "SubmitTrainPortraitModelJobResponse": {
       "document": "SubmitTrainPortraitModelJob返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToImageLiteRequest": {
+      "document": "TextToImageLite请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本描述。将根据输入的文本智能生成与之相关的图像。\n不能为空，推荐使用中文。最多可传1024个 utf-8 字符。",
+          "example": "雨中, 竹林,  小路",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "反向提示词。 减少生成结果中出现描述内容。\n推荐使用中文。最多可传1024个 utf-8 字符。",
+          "example": "黑色",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成图分辨率，默认1024:1024。\n支持的图像宽高比例: 1:1，3:4，4:3，9:16，16:9。\n支持的长边分辨率: 160，200，225，258，512，520，608，768，1024，1080，1280，1600，1620，1920，2048，2400，2560，2592，3440，3840，4096。",
+          "example": "1024:1024",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "随机种子，默认随机。\n0：随机种子生成。\n不传：随机种子生成。\n正数：固定种子生成。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url），二选一，默认为 base64。url 有效期为1小时。",
+          "example": "url",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToImageLiteResponse": {
+      "document": "TextToImageLite返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
+          "example": "https://xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Seed",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToImageRapidRequest": {
+      "document": "TextToImageRapid请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本描述。\n算法将根据输入的文本智能生成与之相关的图像。建议详细描述画面主体、细节、场景等，文本描述越丰富，生成效果越精美。\n不能为空，推荐使用中文。最多可传256个 utf-8 字符。",
+          "example": "雨中, 竹林,  小路",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成图分辨率，默认1024:1024。\n支持的图像宽高比例: 1:1，3:4，4:3，9:16，16:9。\n支持的长边分辨率: 160，200，225，258，512，520，608，768，1024，1080，1280，1600，1620，1920，2048，2400，2560，2592，3440，3840，4096。",
+          "example": "1024:1024",
+          "member": "string",
+          "name": "Resolution",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "随机种子，默认随机。\n0：随机种子生成。\n不传：随机种子生成。\n正数：固定种子生成。\n",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "参考图。\n\n- Base64 和 Url 必须提供一个，如果都提供以 Url 为准。\n- 当传入Image参数时，Style和Resolution参数不生效，输出图分辨率将保持Image传入图分辨率。\n- 图片限制：单边分辨率大于128且小于2048；图片小于6M；格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "\"Image\":{\"Url\":\"https://***/test.png\", \"Base64\": \"\"}",
+          "member": "Image",
+          "name": "Image",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "生成的图片风格，参考值：\n\n1：宫崎骏风格；\n2：新海诚风格；\n3：去旅行风格；\n4：水彩风格；\n5：像素风格；\n6：童话世界风格；\n7：奇趣卡通风格；\n8：赛博朋克风格；\n9：极简风格；\n10：复古风格；\n11：暗黑系风格；\n12：波普风风格；\n13：糖果色风格；\n14：胶片电影风格；\n15：素描风格；\n16：水墨画风格；\n17：油画风格；\n18：粉笔风格；\n19：粘土风格；\n20：毛毡风格；\n21：刺绣风格；\n22：彩铅风格；\n23：莫奈风格；\n24：毕加索风格；\n25：穆夏风格；\n26：古风二次元风格；\n27：都市二次元风格；\n28：悬疑风格；\n29：校园风格；\n30：都市异能风格。",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
+          "example": "url",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TextToImageRapidResponse": {
+      "document": "TextToImageRapid返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
+          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Seed",
+          "example": "1",
+          "member": "int64",
+          "name": "Seed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

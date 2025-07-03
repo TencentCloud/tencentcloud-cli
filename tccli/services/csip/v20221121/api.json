@@ -35,6 +35,13 @@
       "output": "DeleteRiskScanTaskResponse",
       "status": "online"
     },
+    "DescribeAccessKeyAsset": {
+      "document": "获取用户访问密钥资产列表",
+      "input": "DescribeAccessKeyAssetRequest",
+      "name": "获取访问密钥资产",
+      "output": "DescribeAccessKeyAssetResponse",
+      "status": "online"
+    },
     "DescribeAlertList": {
       "document": "告警中心全量告警列表接口",
       "input": "DescribeAlertListRequest",
@@ -89,6 +96,13 @@
       "input": "DescribeCVMAssetsRequest",
       "name": "cvm列表",
       "output": "DescribeCVMAssetsResponse",
+      "status": "online"
+    },
+    "DescribeCallRecord": {
+      "document": "获取调用记录列表",
+      "input": "DescribeCallRecordRequest",
+      "name": "获取调用记录",
+      "output": "DescribeCallRecordResponse",
       "status": "online"
     },
     "DescribeCheckViewRisks": {
@@ -329,6 +343,13 @@
       "output": "DescribeSearchBugInfoResponse",
       "status": "online"
     },
+    "DescribeSourceIPAsset": {
+      "document": "获取用户访问密钥资产列表（源IP视角）",
+      "input": "DescribeSourceIPAssetRequest",
+      "name": "获取访问密钥资产（源IP视角）",
+      "output": "DescribeSourceIPAssetResponse",
+      "status": "online"
+    },
     "DescribeSubUserInfo": {
       "document": "查询集团的子账号列表",
       "input": "DescribeSubUserInfoRequest",
@@ -463,6 +484,254 @@
     "serviceShortName": "csip"
   },
   "objects": {
+    "AKInfo": {
+      "document": "AK简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ak对应id",
+          "example": "10005",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak具体值\n临时密钥时返回临时密钥",
+          "example": "AKID***FGAW1  ",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属账号",
+          "example": "乌龙",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是一个备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessKeyAlarmInfo": {
+      "document": "访问密钥资产告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警类型/风险类型\n告警类型：\n0异常调用\n1泄漏检测\n2自定义\n\n风险类型：\n0：配置风险\n1: 自定义风险",
+          "example": "异常行为",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警数量/风险数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AccessKeyAsset": {
+      "document": "访问密钥资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "AK 的id",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AK名称",
+          "example": "AKIDf12*****c192rb",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是一个AK",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号所属APPID",
+          "example": "120407**01",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属主账号Uin",
+          "example": "100***87**3512",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号昵称",
+          "example": "生生乌龙",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属子账号Uin",
+          "example": "100***87**3512",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属子账号昵称",
+          "example": "生生乌龙",
+          "member": "string",
+          "name": "SubNickname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 主账号AK\n1 子账号AK\n2 临时密钥",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全建议 枚举\n0 正常\n1 立即处理\n2 建议加固",
+          "example": "1",
+          "member": "int64",
+          "name": "Advice",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警信息列表",
+          "example": "告警列表",
+          "member": "AccessKeyAlarmInfo",
+          "name": "AccessKeyAlarmList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险信息列表",
+          "example": "风险列表",
+          "member": "AccessKeyAlarmInfo",
+          "name": "AccessKeyRiskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP数量",
+          "example": "6",
+          "member": "int64",
+          "name": "IPCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-01-16 15:32:31",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近访问时间",
+          "example": "2025-01-17 18:32:31",
+          "member": "string",
+          "name": "LastAccessTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AK状态 \n0:禁用\n1:已启用",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0 表示已检测\n1 表示检测中",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AddNewBindRoleUserRequest": {
       "document": "AddNewBindRoleUser请求参数结构体",
       "members": [],
@@ -5582,6 +5851,252 @@
       ],
       "usage": "both"
     },
+    "CallRecord": {
+      "document": "调用记录详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用记录ID",
+          "example": "202509000000383742",
+          "member": "string",
+          "name": "CallID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问密钥",
+          "example": "AKID******fzD8s",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问密钥备注",
+          "example": "备注：产研AK",
+          "member": "string",
+          "name": "AccessKeyRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问密钥ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "AccessKeyID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用源IP",
+          "example": "201.*.86.13",
+          "member": "string",
+          "name": "SourceIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用源IP备注",
+          "example": "备注：内部IP",
+          "member": "string",
+          "name": "SourceIPRemark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用源IP地域",
+          "example": "广东 广州",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP类型 0:账号内（未备注） 1:账号外（未备注） 2:账号内 (已备注) 3:账号外 (已备注)",
+          "example": "0",
+          "member": "int64",
+          "name": "IPType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用接口名称",
+          "example": "DescribeInstances",
+          "member": "string",
+          "name": "EventName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用产品名称",
+          "example": "CVM",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用类型\n0:控制台调用\n1:API",
+          "example": "0",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\nCAMUser/root/AssumedRole\n",
+          "example": "CAMUser",
+          "member": "string",
+          "name": "UserType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户/角色名称",
+          "example": "Jack",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "[\"policy-1\",\"policy-301\"]",
+          "member": "string",
+          "name": "PolicySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用次数",
+          "example": "3",
+          "member": "int64",
+          "name": "CallCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用错误码\n0表示成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次调用时间",
+          "example": "2025-01-20 15:22:11",
+          "member": "string",
+          "name": "FirstCallTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后调用时间",
+          "example": "2025-01-20 15:23:11",
+          "member": "string",
+          "name": "LastCallTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP关联资产ID，如果为空字符串，表示没有关联",
+          "example": "ins-d1yf6",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP关联资产名称",
+          "example": "foo-cvm",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "聚合日期",
+          "example": "2025-01-20",
+          "member": "string",
+          "name": "Date",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "10852**92",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "展示状态",
+          "example": "true",
+          "member": "bool",
+          "name": "ShowStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营商",
+          "example": "电信",
+          "member": "string",
+          "name": "ISP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CheckViewRiskItem": {
       "document": "检查项视角风险",
       "members": [
@@ -6862,6 +7377,62 @@
       ],
       "type": "object"
     },
+    "DescribeAccessKeyAssetRequest": {
+      "document": "DescribeAccessKeyAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "过滤器",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessKeyAssetResponse": {
+      "document": "DescribeAccessKeyAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问密钥资产列表",
+          "example": "访问密钥资产列表",
+          "member": "AccessKeyAsset",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全部数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlertListRequest": {
       "document": "DescribeAlertList请求参数结构体",
       "members": [
@@ -7659,6 +8230,80 @@
           "name": "ProtectStatusList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallRecordRequest": {
+      "document": "DescribeCallRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "访问密钥的ID",
+          "example": "10002",
+          "member": "uint64",
+          "name": "AccessKeyID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调用源IP的ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "SourceIPID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "过滤器",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCallRecordResponse": {
+      "document": "DescribeCallRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用记录列表",
+          "example": "调用记录列表",
+          "member": "CallRecord",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用记录总数",
+          "example": "20",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10796,6 +11441,62 @@
           "name": "ReturnMsg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSourceIPAssetRequest": {
+      "document": "DescribeSourceIPAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "过滤器",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSourceIPAssetResponse": {
+      "document": "DescribeSourceIPAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问密钥资产列表",
+          "example": "访问密钥资产列表",
+          "member": "SourceIPAsset",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全部数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -16796,6 +17497,182 @@
           "name": "IsSupport",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SourceIPAsset": {
+      "document": "访问密钥资产信息（源IP角度）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源IP id",
+          "example": "10001",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP",
+          "example": "21.18.**.72",
+          "member": "string",
+          "name": "SourceIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是一个AK",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号所属APPID",
+          "example": "120407**01",
+          "member": "int64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP地域",
+          "example": "广东 广州",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用方式\n0:控制台调用\n1:API",
+          "example": "0",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP类型\n0:账号内（未备注）\n1:账号外（未备注）\n2:账号内   (已备注)\n3:账号外   (已备注)",
+          "example": "0",
+          "member": "int64",
+          "name": "IPType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警信息列表",
+          "example": "告警列表",
+          "member": "AccessKeyAlarmInfo",
+          "name": "AccessKeyAlarmList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ak信息列表",
+          "example": "ak信息列表",
+          "member": "AKInfo",
+          "name": "AKInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用接口数量",
+          "example": "5",
+          "member": "int64",
+          "name": "ActionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近访问时间",
+          "example": "2025-01-17 18:32:31",
+          "member": "string",
+          "name": "LastAccessTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP关联实例ID，如果为空字符串，代表非账号内资产",
+          "example": "ins-dc72b",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP关联实例名称",
+          "example": "foo-cvm",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号所属Uin",
+          "example": "100**2512",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "生生乌龙",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "展示状态",
+          "example": "true",
+          "member": "bool",
+          "name": "ShowStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营商字段",
+          "example": "电信",
+          "member": "string",
+          "name": "ISP",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

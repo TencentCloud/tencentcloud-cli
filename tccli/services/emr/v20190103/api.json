@@ -3,7 +3,7 @@
     "AddMetricScaleStrategy": {
       "document": "添加扩缩容规则，按负载和时间",
       "input": "AddMetricScaleStrategyRequest",
-      "name": "添加扩缩容负载规则",
+      "name": "新增自动扩缩容规则",
       "output": "AddMetricScaleStrategyResponse",
       "status": "online"
     },
@@ -16503,6 +16503,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU信息",
+          "example": "1 * NVIDIA T4",
+          "member": "string",
+          "name": "GpuDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17088,6 +17098,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU信息",
+          "example": "1 * NVIDIA T4",
+          "member": "string",
+          "name": "GpuDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

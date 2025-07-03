@@ -35,6 +35,13 @@
       "output": "BindStaffSkillGroupListResponse",
       "status": "online"
     },
+    "ControlAIConversation": {
+      "document": "提供服务端控制机器人的功能",
+      "input": "ControlAIConversationRequest",
+      "name": "控制AI对话",
+      "output": "ControlAIConversationResponse",
+      "status": "online"
+    },
     "CreateAIAgentCall": {
       "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
       "input": "CreateAIAgentCallRequest",
@@ -2025,6 +2032,60 @@
         }
       ],
       "usage": "both"
+    },
+    "ControlAIConversationRequest": {
+      "document": "ControlAIConversation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制命令，目前支持命令如下：\n\n- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端发送播报文本命令，当Command为ServerPushText时必填",
+          "example": "无",
+          "member": "ServerPushText",
+          "name": "ServerPushText",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlAIConversationResponse": {
+      "document": "ControlAIConversation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAIAgentCallRequest": {
       "document": "CreateAIAgentCall请求参数结构体",
@@ -8379,6 +8440,66 @@
         }
       ],
       "usage": "out"
+    },
+    "ServerPushText": {
+      "document": "服务端控制AI对话机器人播报指定文本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务端推送播报文本",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许该文本打断机器人说话",
+          "example": "无",
+          "member": "bool",
+          "name": "Interrupt",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "播报完文本后，是否自动关闭对话任务",
+          "example": "无",
+          "member": "bool",
+          "name": "StopAfterPlay",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务端推送播报音频\n    格式说明：音频必须为单声道，采样率必须跟对应TTS的采样率保持一致，编码为Base64字符串。\n    输入规则：当提供Audio字段时，将不接受Text字段的输入。系统将直接播放Audio字段中的音频内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Audio",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认为0，仅在Interrupt为false时有效\n- 0表示当前有交互发生时，会丢弃Interrupt为false的消息\n- 1表示当前有交互发生时，不会丢弃Interrupt为false的消息，而是缓存下来，等待当前交互结束后，再去处理\n\n注意：DropMode为1时，允许缓存多个消息，如果后续出现了打断，缓存的消息会被清空",
+          "example": "0",
+          "member": "uint64",
+          "name": "DropMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ServerPushText消息的优先级，0表示可被打断，1表示不会被打断。**目前仅支持传入0，如果需要传入1，请提工单联系我们添加权限。**\n注意：在接收到Priority=1的消息后，后续其他任何消息都会被忽略（包括Priority=1的消息），直到Priority=1的消息处理结束。该字段可与Interrupt、DropMode字段配合使用。\n例子：\n- Priority=1、Interrupt=true，会打断现有交互，立刻播报，播报过程中不会被打断\n- Priority=1、Interrupt=false、DropMode=1，会等待当前交互结束，再进行播报，播报过程中不会被打断\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "SkillGroupInfoItem": {
       "document": "技能组信息",

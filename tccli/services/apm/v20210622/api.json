@@ -922,6 +922,126 @@
         },
         {
           "disabled": false,
+          "document": "是否开启删除任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDeleteAnyFileAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启读取任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsReadAnyFileAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启上传任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsUploadAnyFileAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启包含任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsIncludeAnyFileAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启目录遍历检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDirectoryTraversalAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启模板引擎注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsTemplateEngineInjectionAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启脚本引擎注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsScriptEngineInjectionAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启表达式注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsExpressionInjectionAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启JNDI注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsJNDIInjectionAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启JNI注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsJNIInjectionAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启Webshell后门检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsWebshellBackdoorAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启反序列化检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDeserializationAnalysis",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "业务系统鉴权 token",
           "example": "oXauxrxnxuz",
           "member": "string",
@@ -2492,6 +2612,114 @@
           "name": "LogTraceIdKey",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDeleteAnyFileAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启读取任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsReadAnyFileAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启上传任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsUploadAnyFileAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启包含任意文件检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsIncludeAnyFileAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启目录遍历检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDirectoryTraversalAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启模板引擎注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsTemplateEngineInjectionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启脚本引擎注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsScriptEngineInjectionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启表达式注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsExpressionInjectionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启JNDI注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsJNDIInjectionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启JNI注入检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsJNIInjectionAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启Webshell后门检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsWebshellBackdoorAnalysis",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启反序列化检测（0-关闭，1-开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "IsDeserializationAnalysis",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -8998,6 +8998,15 @@
           "name": "AutoBackupType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "全量备份文件保存天数。单位：天。",
+          "example": "7",
+          "member": "int64",
+          "name": "BackupStorageDays",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

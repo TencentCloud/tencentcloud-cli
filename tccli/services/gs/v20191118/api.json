@@ -1186,7 +1186,7 @@
           "member": "string",
           "name": "Value",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }

@@ -4515,7 +4515,7 @@
         {
           "disabled": false,
           "document": "源端路径",
-          "example": "cos://kelvin-test-125176278734.cos.ap-nanjing.myqcloud.com/batch_test/",
+          "example": "/home/output/",
           "member": "string",
           "name": "SourcePath",
           "output_required": true,
@@ -4526,7 +4526,7 @@
         {
           "disabled": false,
           "document": "目的端路径",
-          "example": "/home/output/",
+          "example": "cos://kelvin-test-125176278734.cos.ap-nanjing.myqcloud.com/batch_test/",
           "member": "string",
           "name": "DestinationPath",
           "output_required": true,
