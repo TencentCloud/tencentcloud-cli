@@ -529,8 +529,8 @@
     "ReplaySession": [
       {
         "document": "会话回放",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaySession\n<公共请求参数>\n\n{\n    \"Sid\": \"1weqr234131qw\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaySession\n<公共请求参数>\n\n{\n    \"Sid\": \"d6021542-c198-4d6f-a1fd-a8091544847c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\",\n        \"ReplayInfo\": {\n            \"Token\": \"eyJhbGciOiJFUzUx\",\n            \"StartTime\": \"2025-07-01T19:25:31+08:00\",\n            \"Address\": \"wss://bh.cloud.tencent.com/tui/replay\",\n            \"ReplayType\": 0\n        }\n    }\n}",
         "title": "会话回放"
       }
     ],
@@ -594,7 +594,7 @@
       {
         "document": "根据会话Id搜索Command",
         "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCommandBySid\n<公共请求参数>\n\n{\n    \"Sid\": \"qee131were2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"ec7676f4-a498-4ef5-ad68-6678b16e45d7\",\n        \"CommandSet\": [\n            {\n                \"Sid\": \"d6021542-c198-4d6f-a1fd-a8091544847c\",\n                \"UserName\": \"test-0701\",\n                \"Account\": \"root\",\n                \"InstanceId\": \"ins-h8wdh7my\",\n                \"FromIp\": \"139.199.149.81\",\n                \"SessTime\": \"2025-07-01T19:25:31.439302203+08:00\",\n                \"SessionTime\": \"2025-07-01T19:25:31.439302203+08:00\",\n                \"Time\": \"2025-07-01T19:25:34.393856986+08:00\",\n                \"TimeOffset\": 2954,\n                \"Cmd\": \"date\",\n                \"Action\": 1,\n                \"UserDepartmentId\": \"1\",\n                \"UserDepartmentName\": \"总部\",\n                \"DeviceDepartmentId\": \"1\",\n                \"DeviceDepartmentName\": \"总部\",\n                \"DeviceKind\": \"TKE\",\n                \"SignValue\": \"690ffb6bc1e1\",\n                \"Size\": 1937\n            }\n        ]\n    }\n}",
         "title": "根据会话Id搜索Command"
       }
     ],

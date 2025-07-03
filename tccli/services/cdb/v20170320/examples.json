@@ -905,7 +905,7 @@
     "DescribeTagsOfInstanceIds": [
       {
         "document": "获取实例标签信息",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagsOfInstanceIds\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"InstanceIds\": [\n        \"cdb-uns231ns\"\n    ],\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagsOfInstanceIds\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"InstanceIds\": [\n        \"cdb-uns231ns\"\n    ],\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Offset\": 0,\n        \"Limit\": 10,\n        \"Rows\": [\n            {\n                \"InstanceId\": \"cdb-uns231ns\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"name\",\n                        \"TagValue\": \"zhang\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取实例标签信息"
       }
@@ -945,7 +945,7 @@
     "InquiryPriceUpgradeInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceUpgradeInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-6si6qy6p\",\n    \"Volume\": \"50\",\n    \"Memory\": \"1000\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceUpgradeInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-6si6qy6p\",\n    \"Volume\": 50,\n    \"Memory\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Price\": 48000,\n        \"OriginalPrice\": 460800\n    }\n}",
         "title": "查询数据库升级价格"
       }
@@ -1207,7 +1207,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupInfo\n<公共请求参数>\n\n{\n    \"RoWeightValues\": [\n        {\n            \"InstanceId\": \"cdbr0-test1234\",\n            \"Weight\": \"70\"\n        },\n        {\n            \"InstanceId\": \"cdbr0-iup41a4t\",\n            \"Weight\": \"30\"\n        }\n    ],\n    \"IsBalanceRoLoad\": \"1\",\n    \"RoGroupId\": \"cdbrg-iup41a4t\",\n    \"RoGroupInfo\": {\n        \"WeightMode\": \"custom\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupInfo\n<公共请求参数>\n\n{\n    \"RoWeightValues\": [\n        {\n            \"InstanceId\": \"cdbr0-test1234\",\n            \"Weight\": 70\n        },\n        {\n            \"InstanceId\": \"cdbr0-iup41a4t\",\n            \"Weight\": 30\n        }\n    ],\n    \"IsBalanceRoLoad\": 1,\n    \"RoGroupId\": \"cdbrg-iup41a4t\",\n    \"RoGroupInfo\": {\n        \"WeightMode\": \"custom\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54Ad\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfd1\"\n    }\n}",
         "title": "重新均衡RO组内实例的权重"
       }

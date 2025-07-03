@@ -285,7 +285,7 @@
         {
           "disabled": false,
           "document": "*内测中，敬请期待*",
-          "example": "暂无",
+          "example": "cmn",
           "member": "string",
           "name": "SubLabelCode",
           "output_required": true,
@@ -300,18 +300,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "该字段用于返回检测结果需要检测的内容类型，此处固定为**Moan**（呻吟）以调用呻吟检测功能。",
+          "example": "Moan",
           "member": "string",
           "name": "Label",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该字段用于返回呻吟检测的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表音频越有可能属于呻吟内容。",
-          "example": "无",
+          "example": "89",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -321,7 +321,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "StartTime",
           "output_required": true,
@@ -331,7 +331,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。",
-          "example": "无",
+          "example": "15",
           "member": "float",
           "name": "EndTime",
           "output_required": true,
@@ -350,18 +350,18 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回当前标签（Lable）下的二级标签。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "该字段用于返回当前标签（Lable）下的二级标签。",
+          "example": "PornMoan",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该字段用于返回基于恶意标签的后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。<br>返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "Pass",
+          "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -376,43 +376,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果需要检测的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回检测结果需要检测的内容类型。",
           "example": "cmn",
           "member": "string",
           "name": "Label",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回呻吟检测的置信度，取值范围：0（置信度最低）-100（置信度最高），越高代表音频越有可能属于说话人声纹。",
           "example": "80",
           "member": "int64",
           "name": "Score",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。",
           "example": "1",
           "member": "float",
           "name": "StartTime",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。",
           "example": "15",
           "member": "float",
           "name": "EndTime",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -423,7 +423,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -433,7 +433,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回ASR识别出的文本内容命中的关键词信息，用于标注内容违规的具体原因（如：加我微信）。该参数可能会有多个返回值，代表命中的多个关键词；若返回值为空，Score不为空，则代表识别结果所对应的恶意标签（Label）来自于语义模型判断的返回值。",
-          "example": "无",
+          "example": "加微信",
           "member": "string",
           "name": "Keywords",
           "output_required": true,
@@ -443,7 +443,7 @@
         {
           "disabled": false,
           "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。",
-          "example": "无",
+          "example": "LibId_1",
           "member": "string",
           "name": "LibId",
           "output_required": true,
@@ -453,7 +453,7 @@
         {
           "disabled": false,
           "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。",
-          "example": "无",
+          "example": "测试词库",
           "member": "string",
           "name": "LibName",
           "output_required": true,
@@ -463,7 +463,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签下的置信度，取值范围：0（**置信度最低**）-100（**置信度最高**），越高代表文本越有可能属于当前返回的标签；如：*色情 99*，则表明该文本非常有可能属于色情内容。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Score",
           "output_required": true,
@@ -473,7 +473,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示具体的后续建议操作。<br>\n返回值：**Block**：建议屏蔽，**Review** ：建议人工复审，**Pass**：建议通过",
-          "example": "无",
+          "example": "Block",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -483,7 +483,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回自定义关键词对应的词库类型，取值为**1**（黑白库）和**2**（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LibType",
           "output_required": true,
@@ -493,7 +493,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回当前标签（Lable）下的二级标签。",
-          "example": "无",
+          "example": "Add",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
@@ -1306,7 +1306,7 @@
         {
           "disabled": false,
           "document": "场景",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Scene",
           "output_required": false,
@@ -1315,8 +1315,8 @@
         },
         {
           "disabled": false,
-          "document": "建议",
-          "example": "无",
+          "document": "建议值",
+          "example": "Review",
           "member": "int64",
           "name": "Suggestion",
           "output_required": false,
@@ -1326,7 +1326,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": false,
@@ -1336,7 +1336,7 @@
         {
           "disabled": false,
           "document": "名称：歌曲名，语种名，说话人名 等",
-          "example": "无",
+          "example": "测试歌曲",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1346,7 +1346,7 @@
         {
           "disabled": false,
           "document": "得分",
-          "example": "无",
+          "example": "70",
           "member": "int64",
           "name": "Score",
           "output_required": false,
@@ -1356,7 +1356,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "StartTime",
           "output_required": false,
@@ -1366,7 +1366,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "15",
           "member": "float",
           "name": "EndTime",
           "output_required": false,
@@ -1556,7 +1556,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "无",
+          "example": "cmn",
           "member": "string",
           "name": "Label",
           "output_required": false,
@@ -1566,7 +1566,7 @@
         {
           "disabled": false,
           "document": "得分",
-          "example": "无",
+          "example": "90",
           "member": "int64",
           "name": "Score",
           "output_required": false,
@@ -1576,7 +1576,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "StartTime",
           "output_required": false,
@@ -1586,7 +1586,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "15",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -2070,7 +2070,7 @@
         {
           "disabled": false,
           "document": "一级标签",
-          "example": "无",
+          "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": false,
@@ -2080,7 +2080,7 @@
         {
           "disabled": false,
           "document": "二级标签",
-          "example": "无",
+          "example": "Add",
           "member": "string",
           "name": "SubLabel",
           "output_required": false,
@@ -2090,7 +2090,7 @@
         {
           "disabled": false,
           "document": "风险等级",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "RiskLevel",
           "output_required": false,
@@ -2100,7 +2100,7 @@
         {
           "disabled": false,
           "document": "出行音频角色",
-          "example": "无",
+          "example": "AudioRole_1",
           "member": "string",
           "name": "AudioRole",
           "output_required": false,
@@ -2110,7 +2110,7 @@
         {
           "disabled": false,
           "document": "出行语音文本",
-          "example": "无",
+          "example": "出行文本",
           "member": "string",
           "name": "AudioText",
           "output_required": false,
@@ -2120,7 +2120,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "StartTime",
           "output_required": false,
@@ -2130,7 +2130,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "15",
           "member": "float",
           "name": "EndTime",
           "output_required": false,

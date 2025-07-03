@@ -280,6 +280,14 @@
         "title": "Notebook列表"
       }
     ],
+    "DescribePlatformImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformImages\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 200,\n    \"Filters\": [\n        {\n            \"Name\": \"ImageRange\",\n            \"Values\": [\n                \"Train\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlatformImageInfos\": [\n            {\n                \"Framework\": \"PYTORCH\",\n                \"ImageType\": \"TCR\",\n                \"ImageUrl\": \"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\n                \"RegistryRegion\": \"\",\n                \"RegistryId\": \"\",\n                \"ImageName\": \"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\n                \"ImageId\": \"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\",\n                \"FrameworkVersion\": \"2.3\",\n                \"SupportGpuList\": [\n                    \"A10\",\n                    \"V100\",\n                    \"T4\"\n                ],\n                \"Description\": \"支持的核心库：Python 3.10，CUDA 12.4，jupyterlab 2.3.2，torch 2.3.0a0+40ec155e58.nv24.3，transformers 4.39.3，deepspeed 0.13.4，tilearn-llm 0.9.9，tilearn.ops 0.2.2.175，angel-vllm 0.4.2\\n支持的卡型：A10，V100，T4\",\n                \"ImageRange\": [\n                    \"Notebook\",\n                    \"Train\"\n                ],\n                \"ExtraAttributes\": [\n                    {\n                        \"Type\": \"\",\n                        \"Key\": \"AllowSaveAllContent\",\n                        \"Value\": \"true\",\n                        \"Values\": []\n                    },\n                    {\n                        \"Type\": \"\",\n                        \"Key\": \"SupportDataPipeline\",\n                        \"Value\": \"false\",\n                        \"Values\": []\n                    },\n                    {\n                        \"Type\": \"List\",\n                        \"Key\": \"TrainingModes\",\n                        \"Value\": \"\",\n                        \"Values\": [\n                            \"DDP\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"8a3942be-0e3c-4efd-bf03-422e0410afa9\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeTrainingModelVersion": [
       {
         "document": "",

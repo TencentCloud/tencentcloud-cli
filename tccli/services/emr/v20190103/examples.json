@@ -32,6 +32,14 @@
         "title": "云盘挂载"
       }
     ],
+    "ConvertPreToPostCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConvertPreToPostCluster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-gjmqt2b1\",\n    \"ClientToken\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11f53a6c-df44-4496-acac-d09b98ccd\"\n    }\n}",
+        "title": "包月集群转按量集群"
+      }
+    ],
     "CreateCloudInstance": [
       {
         "document": "创建EMR容器实例",
@@ -304,6 +312,14 @@
         "title": "DescribeNodeResourceConfigFast示例"
       }
     ],
+    "DescribeNodeSpec": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeSpec\n<公共请求参数>\n\n{\n    \"ZoneId\": 190001,\n    \"CvmPayMode\": 0,\n    \"NodeType\": \"All\",\n    \"TradeType\": 3,\n    \"ProductId\": 30,\n    \"SceneName\": \"Hadoop-Default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeSpecs\": [\n            {\n                \"CmnTypes\": [],\n                \"NodeName\": \"Master 节点\",\n                \"NodeType\": \"Master\",\n                \"Types\": [\n                    {\n                        \"InstanceFamilies\": [\n                            {\n                                \"FamilyName\": \"标准型S6\",\n                                \"InstanceFamily\": \"S6\",\n                                \"InstanceTypes\": [],\n                                \"Order\": 60\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"bb613114-cbe0-4fc1-8845-1d69e4f35e7a\"\n    }\n}",
+        "title": "查询节点规格"
+      }
+    ],
     "DescribeResourceSchedule": [
       {
         "document": "",
@@ -334,6 +350,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSLInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OrderField\": \"AddTime\",\n    \"Asc\": 1,\n    \"DisplayStrategy\": \"clusterList\",\n    \"Filters\": []\n}",
         "output": "{\n    \"Response\": {\n        \"InstancesList\": [\n            {\n                \"AddTime\": \"2024-03-14 17:40:19\",\n                \"AppId\": 251233704,\n                \"ClusterId\": \"emr-2ecolb9q\",\n                \"ClusterName\": \"EMR-haosen\",\n                \"Id\": 126358006,\n                \"PayMode\": 0,\n                \"RegionId\": 1,\n                \"Status\": 3,\n                \"StatusDesc\": \"集群生产中\",\n                \"SubnetId\": 2666622,\n                \"Tags\": [],\n                \"VpcId\": 11406751,\n                \"Zone\": \"ap-guangzhou-2\",\n                \"ZoneId\": 100002\n            }\n        ],\n        \"RequestId\": \"fde6361c-205a-45e5-8bec-34b9100fc5b0\",\n        \"TotalCnt\": 1\n    }\n}",
         "title": "Serverless HBase查询实例列表"
+      }
+    ],
+    "DescribeServiceConfGroupInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceConfGroupInfos\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-cp4f67tz\",\n    \"ServiceName\": \"HDFS\",\n    \"ConfGroupName\": \"hdfs-core-defaultGroup\",\n    \"PageNo\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfItemKVList\": [\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZGVsZWdhdGlvbi50b2tlbi5pZGVudGlmaWVyLnNlcmlhbGl6YXRpb24udmVyc2lvbg==\",\n                \"Value\": \"MA==\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZGVsZWdhdGlvbi50b2tlbi5pZGVudGlmaWVyLnRyYW5zbWlzc2lvbi52ZXJzaW9u\",\n                \"Value\": \"MA==\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLmNmcy5ncm91cC5pZC5tYXA=\",\n                \"Value\": \"cm9vdDowO2hhZG9vcDo1MDA=\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLmNmcy5pby5ibG9ja3NpemU=\",\n                \"Value\": \"MTA0ODU3Ng==\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLmNmcy51c2VyLmlkLm1hcA==\",\n                \"Value\": \"cm9vdDowO2hhZG9vcDo1MDA=\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLmNmcy53cml0ZS5sZXZlbA==\",\n                \"Value\": \"Mg==\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLnRlbXJmcy5kb3dubG9hZC5tZDU=\",\n                \"Value\": \"NTNiNGY5NWQxYzQ0YTI2OGYxNmIwMDllNDNkYjcxMzA=\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLnRlbXJmcy5kb3dubG9hZC5yZWdpb24=\",\n                \"Value\": \"Z3o=\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLnRlbXJmcy5kb3dubG9hZC52ZXJzaW9u\",\n                \"Value\": \"My4xLjAtOC4yLjctMS4wLjg=\"\n            },\n            {\n                \"InFile\": \"core-site.xml\",\n                \"Name\": \"ZW1yLnRlbXJmcy50bXAuY2FjaGUuZGly\",\n                \"Value\": \"L2RhdGEvZW1yL2hkZnMvdG1wL3RlbXJmcw==\"\n            }\n        ],\n        \"RequestId\": \"d2d5d132-d5f9-4b76-90b3-a12756be5d92\",\n        \"TotalCount\": 146\n    }\n}",
+        "title": "配置组配置参数信息"
       }
     ],
     "DescribeServiceNodeInfos": [

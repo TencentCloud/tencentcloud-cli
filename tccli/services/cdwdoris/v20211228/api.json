@@ -5455,7 +5455,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用，“true\" \"false\"",
+          "document": "高可用，\"true\" \"false\"",
           "example": "false",
           "member": "string",
           "name": "HA",
@@ -5851,6 +5851,26 @@
           "name": "ComputeGroupCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存算分离cos存储数据",
+          "example": "64.3",
+          "member": "float",
+          "name": "CosStorageSize",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存算分离的指标 当是true 不支持新建计算组",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMasterNonVM",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -8526,7 +8546,7 @@
         },
         {
           "disabled": false,
-          "document": "调度类型，不传该参数时为立即执行：\nDay-天\nWeek-周\nMonth-月\nOnce-单次\n",
+          "document": "调度类型，不传该参数时为立即执行：\nDay-天\nWeek-周\nMonth-月\nQuarter-季度\nYear-年\nOnce-单次\n",
           "example": "Day",
           "member": "string",
           "name": "ScheduleType",

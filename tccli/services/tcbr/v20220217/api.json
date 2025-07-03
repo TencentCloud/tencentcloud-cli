@@ -1790,6 +1790,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Vpc 配置参数",
+          "example": "{\"VpcId\": \"\", \"VpcCIDR\": \"\",\"SubnetId\": \"\",\"SubnetCIDR\":\"\"}",
+          "member": "VpcConf",
+          "name": "VpcConf",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2360,6 +2371,15 @@
           "name": "ServerConfig",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "业务类型，默认tcr",
+          "example": "tcb",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2451,6 +2471,56 @@
         }
       ],
       "usage": "in"
+    },
+    "VpcConf": {
+      "document": "云托管服务 Vpc 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "\"vpc-xxx\"",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc 网段",
+          "example": "\"192.168.0.0/24\"",
+          "member": "string",
+          "name": "VpcCIDR",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "subnet id",
+          "example": "\"subnet-xxx\"",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "subnet 网段",
+          "example": "\"192.168.0.0/25\"",
+          "member": "string",
+          "name": "SubnetCIDR",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     }
   },
   "version": "1.0"

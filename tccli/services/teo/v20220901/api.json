@@ -568,9 +568,9 @@
       "status": "online"
     },
     "DescribeOriginProtection": {
-      "document": "查询源站防护信息",
+      "document": "本接口为旧版本查询源站防护接口，EdgeOne 于 2025 年 6 月 27 日已对源站防护相关接口全面升级，新版本查询源站防护接口详情请参考 [DescribeOriginACL](https://cloud.tencent.com/document/product/1552/120408)。\n\n<p style=\"color: red;\">注意：自 2025 年 6 月 27 日起，旧版接口停止更新迭代，后续新增功能将仅在新版接口中提供。为避免在使用旧版接口时出现数据字段冲突，建议您尽早迁移到新版源站防护接口。</p>",
       "input": "DescribeOriginProtectionRequest",
-      "name": "查询源站防护信息",
+      "name": "查询源站防护信息（旧）",
       "output": "DescribeOriginProtectionResponse",
       "status": "online"
     },
@@ -736,9 +736,9 @@
       "status": "online"
     },
     "EnableOriginACL": {
-      "document": "开启回源白名单功能，按照4/7层实例开启。当前启用时候的实例数有上限设置，七层域名为200，四层转发实例为100，总实例个数不超过200，超过会提醒报错；可以先最大数量开启，超过的数量用ModifyOriginACL接口来设置。",
+      "document": "本接口用于站点首次开启源站防护，启用后 EdgeOne 将会使用特定的回源 IP 网段为七层加速域名/四层代理实例回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需要启用超过 200 个资源，可先通过指定资源的方式以最大数量启用，剩余资源通过 ModifyOriginACL 接口启用。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。\n\n注意：\n- 调用本接口视为同意 [源站防护启用特别约定](https://cloud.tencent.com/document/product/1552/120141)；\n- 回源 IP 网段会不定期变更，EdgeOne 将在回源 IP 网段变更前 14 天、前 7 天、前 3 天和前 1 天分别通过站内信、短信、邮件等一种或多种方式发起通知，为了能正常收到回源 IP 网段的变更通知，请务必确保您在 [腾讯云消息中心控制台](https://console.cloud.tencent.com/message)内，已勾选边缘安全加速平台 EO 的产品服务相关消息通知，并配置正确的消息接收人。配置方式请参考 [消息订阅管理](https://cloud.tencent.com/document/product/567/43476)。",
       "input": "EnableOriginACLRequest",
-      "name": "开启回源白名单",
+      "name": "开启源站防护",
       "output": "EnableOriginACLResponse",
       "status": "online"
     },
@@ -8748,7 +8748,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -8766,7 +8766,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -8849,7 +8849,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，时间范围为 30 天。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -8867,7 +8867,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -8977,7 +8977,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -8995,7 +8995,7 @@
         },
         {
           "disabled": false,
-          "document": "站点ID集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11079,7 +11079,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -11097,7 +11097,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zone-2rntun0a1z6t\",\"zone-323urc8a9j0q\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -11189,7 +11189,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -11207,7 +11207,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "zone-2ju9lrnpaxol",
           "member": "string",
           "name": "ZoneIds",
@@ -11391,7 +11391,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间。查询时间范围（`EndTime` - `StartTime`）需小于等于 31 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -11409,7 +11409,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID 集合，此参数必填。",
+          "document": "站点 ID 集合，此参数必填。最多传入 100 个站点 ID。若需查询腾讯云主账号下所有站点数据，请用 `*` 代替，查询账号级别数据需具备本接口全部站点资源权限。",
           "example": "[\"zone-2mzegj4vln5f\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -12708,7 +12708,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点ID。",
+          "document": "站点 ID。",
           "example": "\"zone-276zs184g93m\"",
           "member": "string",
           "name": "ZoneId",
@@ -12717,7 +12717,7 @@
         },
         {
           "disabled": false,
-          "document": "七层加速域名开启回源白名单的模式。\n<li>all：为站点下的所有七层加速域名开启回源白名单。</li>\n<li>specific：为站点下指定的七层加速域名开启回源白名单。</li>\n当参数为空时，默认为specific。",
+          "document": "七层加速域名开启源站防护的模式。\n<li>all：针对站点下的所有七层加速域名开启。</li>\n<li>specific：针对站点下指定的七层加速域名开启。</li>当参数为空时，默认为 specific。",
           "example": "\"specific\"",
           "member": "string",
           "name": "L7EnableMode",
@@ -12726,7 +12726,7 @@
         },
         {
           "disabled": false,
-          "document": "开启回源白名单的七层加速域名列表，当请求参数 L7EnableMode 为 all 时必须为空。",
+          "document": "开启源站防护的七层加速域名列表，仅当参数 L7EnableMode 为 specific 时生效。L7EnableMode 为 all 时，请保留此参数为空。单次最大仅支持填写 200 个七层加速域名。",
           "example": "[\"www.qq.com\"]",
           "member": "string",
           "name": "L7Hosts",
@@ -12735,7 +12735,7 @@
         },
         {
           "disabled": false,
-          "document": "四层代理 ID 开启回源白名单的模式。\n<li>all：为站点下的所有四层代理开启回源白名单。</li>\n<li>specific：为站点下指定的四层代理 ID 开启回源白名单。</li>\n当参数为空时，默认为specific。",
+          "document": "四层代理实例开启源站防护的模式。\n<li>all：针对站点下的所有四层代理实例开启。</li>\n<li>specific：针对站点下指定的四层代理实例开启。</li>当参数为空时，默认为 specific。",
           "example": "\"specific\"",
           "member": "string",
           "name": "L4EnableMode",
@@ -12744,7 +12744,7 @@
         },
         {
           "disabled": false,
-          "document": "开启回源白名单的四层代理 ID 列表，当请求参数 L4EnableMode 为 all 时必须为空。单次最多支持 200 个实例。",
+          "document": "开启源站防护的四层代理实例列表，仅当参数 L4EnableMode 为 specific 时生效。L4EnableMode 为 all 时，请保留此参数为空。单次最大仅支持填写 100 个四层代理实例。",
           "example": "[\"proxy-19389e5dwwxfs\"]",
           "member": "string",
           "name": "L4ProxyIds",
@@ -19296,7 +19296,7 @@
           "example": "\"zone-xxx\"",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19306,7 +19306,7 @@
           "example": "[\"www.qq.com\",\"aaa.qq.com\"]",
           "member": "string",
           "name": "Hosts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19316,7 +19316,7 @@
           "example": "[\"proxy-xxx\"]",
           "member": "string",
           "name": "ProxyIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19326,7 +19326,7 @@
           "example": "无",
           "member": "IPWhitelist",
           "name": "CurrentIPWhitelist",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19336,7 +19336,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedUpdate",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -19346,7 +19346,7 @@
           "example": "\"online\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19356,7 +19356,7 @@
           "example": "true",
           "member": "bool",
           "name": "PlanSupport",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -19366,7 +19366,7 @@
           "example": "无",
           "member": "DiffIPWhitelist",
           "name": "DiffIPWhitelist",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -19534,12 +19534,22 @@
         },
         {
           "disabled": false,
-          "document": "服务区域，取值有：\n<li>mainland: 中国大陆；</li>\n<li>overseas: 全球（不包括中国大陆)；</li>\n<li>global: 全球（包括中国大陆)。</li>",
+          "document": "服务区域，取值有：\n<li>mainland: 中国大陆；</li>\n<li>overseas: 全球（不包括中国大陆）；</li>\n<li>global: 全球（包括中国大陆）。</li>",
           "example": "oversea",
           "member": "string",
           "name": "Area",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费开关。取值有：\n<li>true: 已开启自动续费；</li>\n<li>false: 未开启自动续费。</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoRenewal",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {

@@ -245,6 +245,13 @@
       "output": "DescribeNotebooksResponse",
       "status": "online"
     },
+    "DescribePlatformImages": {
+      "document": "查询平台镜像信息",
+      "input": "DescribePlatformImagesRequest",
+      "name": "查询平台镜像信息",
+      "output": "DescribePlatformImagesResponse",
+      "status": "online"
+    },
     "DescribeTrainingModelVersion": {
       "document": "查询模型版本",
       "input": "DescribeTrainingModelVersionRequest",
@@ -358,6 +365,56 @@
     "serviceShortName": "tione"
   },
   "objects": {
+    "Attribute": {
+      "document": "镜像属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "为‘List’时属性值取Values 否则取Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AuthToken": {
       "document": "在线服务的 AuthToken 数据",
       "members": [
@@ -4981,6 +5038,71 @@
       ],
       "type": "object"
     },
+    "DescribePlatformImagesRequest": {
+      "document": "DescribePlatformImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤器,  Name支持ImageId/ImageName/SupportDataPipeline/AllowSaveAllContent/ImageRange，其中ImageRange支持枚举值Train,Inference,Notebook",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移信息",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量, 默认100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformImagesResponse": {
+      "document": "DescribePlatformImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像列表",
+          "example": "无",
+          "member": "PlatformImageInfo",
+          "name": "PlatformImageInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTrainingModelVersionRequest": {
       "document": "DescribeTrainingModelVersion请求参数结构体",
       "members": [
@@ -6211,7 +6333,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态 \n注意：此字段为枚举值\n说明: \nDEPLOYING: 部署中\nRUNNING: 运行中 \nDEPLOY_FAILED: 部署失败\n RELEASING 释放中 \nRELEASED：已释放 \nEXCEPTION：异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态 \n注意：此字段为枚举值\n说明: \nDEPLOYING: 部署中\nRUNNING: 运行中 \nDEPLOY_FAILED: 部署失败\nRELEASING 释放中 \nRELEASED：已释放 \nEXCEPTION：异常\nDEBT_OR_EXPIRED: 欠费过期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -8634,6 +8756,166 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatformImageInfo": {
+      "document": "平台镜像信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "框架名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像类型: ccr or tcr\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TCR镜像示例所属地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "RegistryRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TCR镜像所属实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "框架版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FrameworkVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的gpu列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SupportGpuList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Attribute",
+          "name": "ExtraAttributes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像适用场景Train/Inference/Notebook\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageRange",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持分布式部署\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDistributedDeploy",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的地域 all(所有地域)/autonomous(自动驾驶地域)/general(通用地域)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "all",
+          "member": "string",
+          "name": "RegionScope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

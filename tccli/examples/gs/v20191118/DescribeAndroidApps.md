@@ -25,7 +25,9 @@ Output:
                         "UninstallCommand": "cd test-1.0.X && ./uninstall.sh",
                         "CleanupMode": "CLEANUP_ON_UNINSTALL",
                         "State": "CREATE_SUCCESS",
-                        "AndroidAppVersionName": "version_name"
+                        "AndroidAppVersionName": "version_name",
+                        "Activity": "",
+                        "VersionName": ""
                     },
                     {
                         "AndroidAppVersion": "1705406075397560877",
@@ -34,7 +36,9 @@ Output:
                         "UninstallCommand": "cd test-2.0.X && ./uninstall.sh",
                         "CleanupMode": "CLEANUP_AFTER_INSTALL",
                         "State": "CREATE_FAIL",
-                        "AndroidAppVersionName": "version_name2"
+                        "AndroidAppVersionName": "version_name2",
+                        "Activity": "",
+                        "VersionName": ""
                     }
                 ],
                 "Name": "test-app-1",
@@ -42,7 +46,8 @@ Output:
                 "UserId": "user1",
                 "AppMode": "ADVANCED",
                 "CreateTime": "2024-01-16T11:54:35Z",
-                "UpdateState": "CREATE_SUCCESS"
+                "UpdateState": "CREATE_SUCCESS",
+                "PackageName": "package_name"
             },
             {
                 "AndroidAppId": "apk-d6fyydrc",
@@ -52,7 +57,8 @@ Output:
                 "UserId": "user2",
                 "AppMode": "NORMAL",
                 "CreateTime": "2024-01-16T11:54:35Z",
-                "UpdateState": "CREATE_SUCCESS"
+                "UpdateState": "CREATE_SUCCESS",
+                "PackageName": "package_name"
             }
         ],
         "RequestId": "5eae7edb-7e12-451e-a4c1-7cf0b777c6e7",

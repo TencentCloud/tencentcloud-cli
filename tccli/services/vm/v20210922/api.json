@@ -2079,43 +2079,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果所对应的恶意标签。\n返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回检测结果所对应的恶意标签。\n返回值：Porn：色情，Abuse：谩骂，Ad：广告；以及其他令人反感、不安全或不适宜的内容类型。",
           "example": "Ad",
           "member": "string",
           "name": "Label",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审核建议，可选值：\nPass 通过，\nReview 建议人审，\nBlock 确认违规",
           "example": "Review",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "得分，分数是 0 ～ 100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "得分，分数是 0 ～ 100",
           "example": "89",
           "member": "int64",
           "name": "Score",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命中的二级标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命中的二级标签",
           "example": "phone",
           "member": "string",
           "name": "SubLabel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

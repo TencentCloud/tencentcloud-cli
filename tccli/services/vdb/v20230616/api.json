@@ -824,6 +824,15 @@
           "name": "TaskStatus",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "根据实例vip搜索实例",
+          "example": "[\"10.0.1.1\", \"10.11.1.1\"]",
+          "member": "string",
+          "name": "Networks",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1264,6 +1273,36 @@
         },
         {
           "disabled": false,
+          "document": "产品版本，0-标准版，1-容量增强版",
+          "example": "0",
+          "member": "int64",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "single",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "计算型",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "外网地址。",
           "example": "lb-5mk****-wid8362zluyvekp4.clb.ap-guangzhou.testclb.com:8100",
           "member": "string",
@@ -1300,6 +1339,16 @@
           "name": "TaskStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的安全组id",
+          "example": "[\"sg-hduehhu\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

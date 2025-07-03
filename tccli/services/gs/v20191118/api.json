@@ -615,6 +615,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用包名",
+          "example": "app_pakcage_name",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -708,10 +718,30 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用版本名称",
+          "document": "安卓应用版本名称（版本描述、备注）",
           "example": "\"version_name\"",
           "member": "string",
           "name": "AndroidAppVersionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安卓应用启动页",
+          "example": "\".MainActivity\"",
+          "member": "string",
+          "name": "Activity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本号（Version Name）",
+          "example": "\"6.5.2\"",
+          "member": "string",
+          "name": "VersionName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3144,6 +3174,15 @@
           "member": "string",
           "name": "AndroidAppIds",
           "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "字段过滤器。Filter 的 Name 有以下值： AndroidInstanceId：实例 ID",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
           "type": "list"
         }
       ],

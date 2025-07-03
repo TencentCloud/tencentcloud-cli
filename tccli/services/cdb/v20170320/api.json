@@ -631,7 +631,7 @@
       "status": "online"
     },
     "DescribeParamTemplateInfo": {
-      "document": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情，全地域公共参数Region均为ap-guangzhou。",
+      "document": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情。\n说明：参数模板为公共组件，配置完成后全地域生效。接口调用配置地域可选择广州、新加坡。",
       "input": "DescribeParamTemplateInfoRequest",
       "name": "查询参数模板详情",
       "output": "DescribeParamTemplateInfoResponse",
@@ -743,7 +743,7 @@
       "status": "online"
     },
     "DescribeTagsOfInstanceIds": {
-      "document": "本接口(DescribeTagsOfInstanceIds)用于获取云数据库实例的标签信息。",
+      "document": "本接口（DescribeTagsOfInstanceIds）用于获取云数据库实例的标签信息。",
       "input": "DescribeTagsOfInstanceIdsRequest",
       "name": "获取实例绑定的标签",
       "output": "DescribeTagsOfInstanceIdsResponse",
@@ -778,9 +778,9 @@
       "status": "online"
     },
     "InquiryPriceUpgradeInstances": {
-      "document": "本接口(InquiryPriceUpgradeInstances)用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。",
+      "document": "本接口（InquiryPriceUpgradeInstances）用于查询云数据库实例升级的价格，支持查询按量计费或者包年包月实例的升级价格，实例类型支持主实例、灾备实例和只读实例。",
       "input": "InquiryPriceUpgradeInstancesRequest",
-      "name": "查询数据库升级价格",
+      "name": "查询云数据库升级价格",
       "output": "InquiryPriceUpgradeInstancesResponse",
       "status": "online"
     },
@@ -1016,7 +1016,7 @@
       "status": "online"
     },
     "OfflineIsolatedInstances": {
-      "document": "本接口(OfflineIsolatedInstances)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态，即通过 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询到 Status 值为 5 的实例。\n\n该接口为异步操作，部分资源的回收可能存在延迟。您可以通过使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口，指定实例 InstanceId 和状态 Status 为 [5,6,7] 进行查询，若返回实例为空，则实例资源已全部释放。\n\n注意，实例下线后，相关资源和数据将无法找回，请谨慎操作。",
+      "document": "本接口(OfflineIsolatedInstances)用于立即下线隔离状态的云数据库实例。进行操作的实例状态必须为隔离状态，即通过 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询到 Status 值为 5 的实例。\n\n该接口为异步操作，部分资源的回收可能存在延迟。您可以通过使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口，指定实例 InstanceId 和状态 Status 为 [5,6,7] 进行查询，其中5代表已隔离，6代表下线中，7代表已下线。若返回实例为空，则实例资源已全部释放。\n\n注意，实例下线后，相关资源和数据将无法找回，请谨慎操作。",
       "input": "OfflineIsolatedInstancesRequest",
       "name": "下线隔离状态的云数据库实例",
       "output": "OfflineIsolatedInstancesResponse",
@@ -1198,7 +1198,7 @@
       "status": "online"
     },
     "UpgradeDBInstanceEngineVersion": {
-      "document": "本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例等。",
+      "document": "本接口（UpgradeDBInstanceEngineVersion）用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例等。升级前请通过 [SubmitInstanceUpgradeCheckJob](https://cloud.tencent.com/document/product/236/110468) 提交升级检查任务，通过后才能升级。",
       "input": "UpgradeDBInstanceEngineVersionRequest",
       "name": "升级实例版本",
       "output": "UpgradeDBInstanceEngineVersionResponse",
@@ -4597,7 +4597,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RW 节点拓扑。",
+          "document": "RW 节点拓扑。\n说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。",
           "example": "[{\"Zone\": \"ap-guangzhou-4\",\"NodeId\": \"dbn-73ktfl1j\"}]",
           "member": "ReadWriteNode",
           "name": "ReadWriteNode",
@@ -4606,7 +4606,7 @@
         },
         {
           "disabled": false,
-          "document": "RO 节点拓扑。",
+          "document": "RO 节点拓扑。\n说明：NodeId 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 获取。",
           "example": "[{\"IsRandomZone\": \"\",\"Zone\": \"ap-guangzhou-2\",\"NodeId\": \"dbn-73ktf111\"}]",
           "member": "ReadonlyNode",
           "name": "ReadOnlyNodes",
@@ -10467,7 +10467,7 @@
         },
         {
           "disabled": false,
-          "document": "返回结果集排序方式，目前支持：\"ASC\" 或者 \"DESC\"。",
+          "document": "返回结果集排序方式。目前支持值：\"ASC\" - 表示升序，\"DESC\" - 表示降序，默认为 \"DESC\"。",
           "example": "\"DESC\"",
           "member": "string",
           "name": "OrderDirection",
@@ -10476,7 +10476,7 @@
         },
         {
           "disabled": false,
-          "document": "是否以安全组 ID 为过滤条件。",
+          "document": "是否以安全组 ID 为过滤条件。\n说明：0表示否，1表示是。",
           "example": "0",
           "member": "int64",
           "name": "WithSecurityGroup",
@@ -10549,7 +10549,7 @@
         {
           "disabled": false,
           "document": "置放群组ID列表。",
-          "example": "[\"\"]",
+          "example": "[\"ps-7t11vrwf\"]",
           "member": "string",
           "name": "DeployGroupIds",
           "required": false,
@@ -10558,7 +10558,7 @@
         {
           "disabled": false,
           "document": "是否以标签键为过滤条件。",
-          "example": "[\"\"]",
+          "example": "[\"tagKey\"]",
           "member": "string",
           "name": "TagKeysForSearch",
           "required": false,
@@ -10629,7 +10629,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库引擎类型。",
+          "document": "数据库引擎类型。可选值为：InnoDB、RocksDB。",
           "example": "[\"InnoDB\"]",
           "member": "string",
           "name": "EngineTypes",
@@ -10638,7 +10638,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取集群版实例节点信息，可填：true或false",
+          "document": "是否获取集群版实例节点信息，可填：true 或 false。默认为 false。",
           "example": "false",
           "member": "bool",
           "name": "QueryClusterInfo",
@@ -10664,7 +10664,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "[{}]",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "Items",
           "output_required": true,
@@ -11524,7 +11524,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-0mu6taqx",
           "member": "string",
           "name": "InstanceId",
@@ -11578,7 +11578,7 @@
         },
         {
           "disabled": false,
-          "document": "事件展示数量。",
+          "document": "事件展示数量。默认为100，最大为200。",
           "example": "10",
           "member": "string",
           "name": "Limit",
@@ -13234,7 +13234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例列表。",
+          "document": "实例列表。实例 ID 可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。可传入的数组长度暂无限制。",
           "example": "[\"cdb-uns231ns\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -13252,7 +13252,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小。",
+          "document": "分页大小。默认为15。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -14014,7 +14014,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态值",
+          "document": "状态值。0 - 初始化中，1 - 运行中，2 - 运行成功，3 - 运行失败。",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -14024,7 +14024,7 @@
         },
         {
           "disabled": false,
-          "document": "状态值",
+          "document": "状态值，为负数时任务异常。",
           "example": "1",
           "member": "int64",
           "name": "Code",
@@ -14034,7 +14034,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间",
+          "document": "执行时间，单位：秒。",
           "example": "0",
           "member": "int64",
           "name": "CostTime",
@@ -14074,7 +14074,7 @@
         },
         {
           "disabled": false,
-          "document": "执行进度",
+          "document": "执行进度，单位：百分比。",
           "example": "5",
           "member": "int64",
           "name": "Process",
@@ -14094,7 +14094,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小",
+          "document": "文件大小，单位：byte。",
           "example": "12",
           "member": "string",
           "name": "FileSize",
@@ -14309,7 +14309,7 @@
           "example": "48000",
           "member": "int64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14319,7 +14319,7 @@
           "example": "460800",
           "member": "int64",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15088,7 +15088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同",
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -15098,7 +15098,7 @@
         },
         {
           "disabled": false,
-          "document": "预期重启时间",
+          "document": "预期重启时间，单位：秒。",
           "example": "360",
           "member": "int64",
           "name": "TimeInSeconds",
@@ -16816,7 +16816,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的实例名称。",
+          "document": "修改后的实例名称，仅支持数字,英文大小写字母、中文以及特殊字符-_./()[]（）+=:：@ 且长度不能超过60。",
           "example": "我是中文",
           "member": "string",
           "name": "InstanceName",
@@ -17640,7 +17640,7 @@
         {
           "disabled": false,
           "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
-          "example": "[\"cdb-70zdmgg1\\r\\n\"]",
+          "example": "[\"cdb-70zdmgg1\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -18788,7 +18788,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小",
+          "document": "内存大小，单位为 MB。",
           "example": "100",
           "member": "uint64",
           "name": "Mem",
@@ -18798,7 +18798,7 @@
         },
         {
           "disabled": false,
-          "document": "节点状态",
+          "document": "节点状态，0 - 初始化中，1 - 在线中，2 - 下线中，3 - 销毁中，4 - 故障恢复中，5 - 节点故障，6 - 切换中。",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -18973,7 +18973,7 @@
         {
           "disabled": false,
           "document": "解隔离操作的结果集。",
-          "example": "[{\"InstanceId\": \"cdb-f35wr6wj\",\"Code\": 0,\"Message\": \"ok\"}]",
+          "example": "[{\"InstanceId\": \"cdb-f35wr6wj\",\"Code\": 0,\"Message\": \"\"}]",
           "member": "ReleaseResult",
           "name": "Items",
           "output_required": true,
@@ -21799,7 +21799,7 @@
         },
         {
           "disabled": false,
-          "document": "主实例数据库引擎版本，支持值包括：5.6 和 5.7。",
+          "document": "主实例数据库引擎版本，支持值包括：5.6、5.7、8.0。\n说明：不支持越级升级，升级后不支持降级。",
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
@@ -21817,7 +21817,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。",
+          "document": "是否是内核子版本升级，支持的值：1 - 升级内核子版本；0 - 升级数据库引擎版本。无默认值，请指定要升级的版本类型。",
           "example": "20201231",
           "member": "int64",
           "name": "UpgradeSubversion",
@@ -21826,7 +21826,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟阈值。取值范围1~10",
+          "document": "延迟阈值。取值范围：1 - 10。无默认值，不传此参数时，延迟阈值为0，表示延迟阈值不做设置。",
           "example": "1",
           "member": "int64",
           "name": "MaxDelayTime",
@@ -21835,7 +21835,7 @@
         },
         {
           "disabled": false,
-          "document": "5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略",
+          "document": "5.7升级8.0是否忽略关键字错误，取值范围[0,1]，1表示忽略，0表示不忽略。无默认值，不传此参数表示不做处理。",
           "example": "1",
           "member": "int64",
           "name": "IgnoreErrKeyword",
@@ -21845,7 +21845,7 @@
         {
           "disabled": false,
           "document": "版本升级支持指定参数",
-          "example": "无",
+          "example": "[{\"Name\": \"default_collation_for_utf8mb4\", \"Value\": \"EXC\",\"Value\": \"utf8mb4_0900_ai_ci\"}]",
           "member": "UpgradeEngineVersionParams",
           "name": "ParamList",
           "required": false,

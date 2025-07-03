@@ -1333,6 +1333,89 @@
       ],
       "usage": "out"
     },
+    "CertificateInfo": {
+      "document": "Pulsar集群TLS证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SSL证书管理中的id",
+          "example": "Mpn1cTtO",
+          "member": "string",
+          "name": "CertificateId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书到期时间",
+          "example": "2027-12-12 23:02:59",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书绑定的域名",
+          "example": "pulsar-a82d8nxw9vo2.sap-uf1f3s6o.tdmq.ap-gz.public.tencenttdmq.com",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书状态：0 已签发\n1 即将过期\n2 未启用\n3 已过期\n4 不可用",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书类型：0：根证书，1：服务端证书",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TencentCloud：SSL证书；Default：TDMQ官方默认证书",
+          "example": "TencentCloud",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书添加/更新时间",
+          "example": "2027-12-12 23:02:59",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClearCmqQueueRequest": {
       "document": "ClearCmqQueue请求参数结构体",
       "members": [
@@ -3889,6 +3972,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnablePublicAccess",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否打开集群删除保护，不传默认为 false",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
           "required": false,
           "type": "bool"
         }
@@ -8730,7 +8822,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "实例 ID，形如 amqp-xxxxxxxx。有效的 InstanceId 可通过登录 [TDMQ RabbitMQ 控制台](https://console.cloud.tencent.com/trabbitmq/cluster?rid=1)查询。",
           "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
@@ -8810,6 +8902,16 @@
           "member": "QueueQuota",
           "name": "QueueQuota",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户配额信息",
+          "example": "{\"MaxUser\":20,\"UsedUser\":1}",
+          "member": "RabbitMQUserQuota",
+          "name": "UserQuota",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13649,7 +13751,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名称",
+          "document": "集群名称，不填则不修改。非空字符串时必须 3-64 个字符，只能包含数字、字母、“-”和“_”",
           "example": "prod_rabbitmq",
           "member": "string",
           "name": "ClusterName",
@@ -13658,12 +13760,21 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "备注，不填则不修改",
           "example": "生产使用集群",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启删除保护，不填则不修改",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15086,6 +15197,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启TLS加密",
+          "example": "true",
+          "member": "bool",
+          "name": "Tls",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点自定义域名",
+          "example": "http://aaa.example.com:8443",
+          "member": "string",
+          "name": "CustomUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15524,6 +15655,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群的证书列表",
+          "example": "[{}]",
+          "member": "CertificateInfo",
+          "name": "CertificateList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15812,6 +15953,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TLS加密的数据流公网接入点",
+          "example": "amqps://amqp-xxx.amqp.tencenttdmq.com:5672",
+          "member": "string",
+          "name": "PublicTlsAccessEndpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16075,6 +16226,26 @@
           "example": "true",
           "member": "bool",
           "name": "Container",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -16900,6 +17071,32 @@
       ],
       "usage": "out"
     },
+    "RabbitMQUserQuota": {
+      "document": "RabbitMQ 实例用户配额信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大可创建用户数",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxUser",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用用户数",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedUser",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RabbitMQVipInstance": {
       "document": "RabbitMQ 托管版实例信息",
       "members": [
@@ -17095,7 +17292,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，0 专享版、1 Serverless 版",
+          "document": "实例类型，0 托管版、1 Serverless 版",
           "example": "0",
           "member": "uint64",
           "name": "InstanceType",
@@ -17105,12 +17302,32 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间，毫秒为单位",
+          "document": "隔离时间，毫秒为单位。unix 时间戳",
           "example": "1666257531143",
           "member": "uint64",
           "name": "IsolatedTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启删除保护",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableDeletionProtection",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -21236,6 +21453,36 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大连接数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxConnectionPerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大交换机数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxExchangePerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单个 vhost 下允许的最大队列机数",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxQueuePerVhost",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21377,6 +21624,17 @@
           "member": "string",
           "name": "VpcDataStreamEndpointStatus",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TLS加密的数据流接入点",
+          "example": "amqps://amqp-xxx.amqp.tencenttdmq.com:5671",
+          "member": "string",
+          "name": "VpcTlsEndpoint",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -19005,7 +19005,7 @@
         {
           "disabled": false,
           "document": "路由表对象。",
-          "example": "[{\"RouteSet\": [{\"RouteTableId\": \"rtb-l2h8d7c2\", \"RouteItemId\": \"rti6-hj3he929\", \"Enabled\": true, \"RouteId\": 0, \"GatewayId\": \"ccn-nswq8wkq\", \"PublishedToVbc\": false, \"CreatedTime\": \"2017-06-30 19:52:03\", \"DestinationIpv6CidrBlock\": \"2402:4e00:1000:810b::/64\", \"DestinationCidrBlock\": \"\", \"RouteDescription\": \"\", \"GatewayType\": \"CCN\", \"RouteType\": \"USER\"}], \"RouteTableId\": \"rtb-l2h8d7c2\", \"VpcId\": \"vpc-2at5y1pn\", \"TagSet\": [{\"Key\": \"tag-key\", \"Value\": \"tag-value\"}], \"CreatedTime\": \"2017-06-30 19:52:03\", \"AssociationSet\": [], \"Main\": false, \"RouteTableName\": \"RouteTable\", \"LocalCidrForCcn\": [{\"Cidr\": \"10.1.0.0/16\", \"PublishedToVbc\": true}]}]",
+          "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
           "output_required": true,

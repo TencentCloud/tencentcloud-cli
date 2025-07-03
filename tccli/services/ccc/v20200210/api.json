@@ -7333,6 +7333,15 @@
           "name": "ExtensionNumber",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "呼叫转移配置",
+          "example": "{\"Enabled\":true,\"Condition\":2,\"Target\":{\"Type\":1,\"StaffUserId\":\"foo@tencent.com\"}}",
+          "member": "ForwardingConfig",
+          "name": "ForwardingConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

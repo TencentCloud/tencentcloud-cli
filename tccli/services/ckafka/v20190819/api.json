@@ -4600,7 +4600,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称，是一个不超过 128 个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)",
+          "document": "只能包含字母、数字、下划线、“-”、“.”",
           "example": "topic-test",
           "member": "string",
           "name": "TopicName",
@@ -7386,6 +7386,26 @@
           "name": "Tags",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务描述信息\t",
+          "example": "任务描述信息\t",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1:正常 2:隔离中",
+          "example": "1",
+          "member": "int64",
+          "name": "IsolateStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

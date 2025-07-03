@@ -48530,6 +48530,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "WorkflowNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

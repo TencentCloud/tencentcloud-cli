@@ -1518,7 +1518,7 @@
         },
         {
           "disabled": false,
-          "document": "开通时候的身份验证方式, 取值为：\n<ul><li>**WEIXINAPP** : 微信人脸识别</li>\n<li>**INSIGHT** : 慧眼人脸识别</li>\n<li>**TELECOM** : 运营商三要素验证</li></ul>\n注：\n<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>\n<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>",
+          "document": "开通时候的身份验证方式, 取值为：\n<ul><li>**WEIXINAPP** : 微信人脸识别</li>\n<li>**INSIGHT** : 慧眼人脸识别</li>\n<li>**TELECOM** : 运营商三要素验证</li></ul>\n注：\n<ul><li>如果是小程序开通链接，仅支持 WEIXINAPP 。为空默认 WEIXINAPP</li>\n<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannels",
@@ -11679,7 +11679,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同是，该参数无需传值。\n如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同时，该参数无需传值。\n如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
           "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
           "member": "string",
           "name": "RecipientId",
@@ -11706,7 +11706,7 @@
         },
         {
           "disabled": false,
-          "document": "补充企业签署人员工姓名",
+          "document": "补充企业签署人员工姓名\n<ul>\n<li>ApproverSource!=WEWORKAPP时，必传</li>\n</ul>",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",
@@ -11715,7 +11715,7 @@
         },
         {
           "disabled": false,
-          "document": "补充企业签署人员工手机号",
+          "document": "补充企业签署人员工手机号\n<ul>\n<li>ApproverSource!=WEWORKAPP时，必传</li>\n</ul>",
           "example": "18800000000",
           "member": "string",
           "name": "ApproverMobile",
@@ -11742,7 +11742,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
           "example": "37000019890303000X",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -11755,6 +11755,15 @@
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知类型：\n<li>当FillApproverType =0，或签场景补充签署人时，指定是否发送或签领取短信</li>\n\n<li>SMS：开启或签领取短信通知</li>\n\n<li>NONE：关闭或签领取短信通知</li>\n\n<li>当NotifyType=NONE时，可调用<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateSchemeUrl\" target=\"_blank\" rel=\"noopener noreferrer\">获取跳转至腾讯电子签小程序的签署链接</a>接口生成签署链接来完成或签领取</li>\n\n\n",
+          "example": "SMS",
+          "member": "string",
+          "name": "NotifyType",
           "required": false,
           "type": "string"
         }
@@ -15241,7 +15250,7 @@
         },
         {
           "disabled": false,
-          "document": "指定企业认证的授权方式 支持多选:\n\n<ul>\n<li><strong>2</strong>: 法人授权方式</li>\n<li><strong>5</strong>: 授权书+对公打款方式</li>\n</ul>",
+          "document": "指定企业认证的授权方式:\n\n<ul>\n<li><strong>2</strong>: 法人授权方式</li>\n<li><strong>5</strong>: 授权书+对公打款方式</li>\n</ul>",
           "example": "2",
           "member": "int64",
           "name": "AuthorizationType",

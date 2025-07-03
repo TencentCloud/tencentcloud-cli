@@ -3098,7 +3098,7 @@
         {
           "disabled": false,
           "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>quota-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>配额类型</strong>】进行过滤。配额类型形如：PostPaidQuotaSet。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：</p><p style=\"padding-left: 30px;\">PostPaidQuotaSet: 后付费配额</p><p style=\"padding-left: 30px;\">PrePaidQuotaSet: 预付费配额</p><p style=\"padding-left: 30px;\">SpotPaidQuotaSet: 竞价配额</p><p style=\"padding-left: 30px;\">ImageQuotaSet: 镜像配额</p><p style=\"padding-left: 30px;\">DisasterRecoverGroupQuotaSet: 置放群组配额</p>",
-          "example": "[     {         \"Name\": \"quota-type\",         \"Values\": [             \"PrePaidQuotaSet\"         ]     } ]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3826,9 +3826,10 @@
         {
           "disabled": false,
           "document": "实例机型组配置的列表信息",
-          "example": "",
+          "example": "无",
           "member": "InstanceFamilyConfig",
           "name": "InstanceFamilyConfigSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4332,9 +4333,10 @@
         {
           "disabled": false,
           "document": "网络计费类型配置。",
-          "example": "",
+          "example": "无",
           "member": "InternetChargeTypeConfig",
           "name": "InternetChargeTypeConfigSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4617,7 +4619,7 @@
         {
           "disabled": false,
           "document": "地域列表信息。",
-          "example": "无",
+          "example": "[     {         \"Region\": \"ap-beijing\",         \"RegionName\": \"华北地区(北京)\",         \"RegionState\": \"AVAILABLE\"     } ]",
           "member": "RegionInfo",
           "name": "RegionSet",
           "output_required": true,
@@ -6023,7 +6025,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像状态:\nCREATING-创建中\nNORMAL-正常\nCREATEFAILED-创建失败\nUSING-使用中\nSYNCING-同步中\nIMPORTING-导入中\nIMPORTFAILED-导入失败",
+          "document": "镜像状态:\nCREATING-创建中\nNORMAL-正常\nCREATEFAILED-创建失败\nSYNCING-复制中\nIMPORTING-导入中\nIMPORTFAILED-导入失败",
           "example": "NORMAL",
           "member": "string",
           "name": "ImageState",
@@ -11930,6 +11932,15 @@
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例是否开启巨型帧，取值范围：<br><li/> true：表示实例开启巨型帧，只有支持巨型帧的机型可设置为true。<br><li/>false：表示实例关闭巨型帧，只有支持巨型帧的机型可设置为false。<br> 支持巨型帧的实例规格： [实例规格](https://cloud.tencent.com/document/product/213/11518)",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableJumboFrame",
           "required": false,
           "type": "bool"
         }

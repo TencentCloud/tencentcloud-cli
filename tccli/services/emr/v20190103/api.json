@@ -28,6 +28,13 @@
       "output": "AttachDisksResponse",
       "status": "online"
     },
+    "ConvertPreToPostCluster": {
+      "document": "包月集群转按量集群（不含cdb）",
+      "input": "ConvertPreToPostClusterRequest",
+      "name": "包月转按量集群",
+      "output": "ConvertPreToPostClusterResponse",
+      "status": "online"
+    },
     "CreateCloudInstance": {
       "document": "创建EMR容器集群实例",
       "input": "CreateCloudInstanceRequest",
@@ -266,6 +273,13 @@
       "output": "DescribeNodeResourceConfigFastResponse",
       "status": "online"
     },
+    "DescribeNodeSpec": {
+      "document": "查询节点规格",
+      "input": "DescribeNodeSpecRequest",
+      "name": "查询节点规格",
+      "output": "DescribeNodeSpecResponse",
+      "status": "online"
+    },
     "DescribeResourceSchedule": {
       "document": "查询YARN资源调度数据信息。已废弃，请使用`DescribeYarnQueue`去查询队列信息。",
       "input": "DescribeResourceScheduleRequest",
@@ -292,6 +306,13 @@
       "input": "DescribeSLInstanceListRequest",
       "name": "Serverless HBase查询实例列表",
       "output": "DescribeSLInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeServiceConfGroupInfos": {
+      "document": "描述服务配置组信息",
+      "input": "DescribeServiceConfGroupInfosRequest",
+      "name": "描述服务配置组信息",
+      "output": "DescribeServiceConfGroupInfosResponse",
       "status": "online"
     },
     "DescribeServiceNodeInfos": {
@@ -1120,6 +1141,24 @@
           "name": "SelectiveConfServices",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘计费类型（1包月、3包销）",
+          "example": "1",
+          "member": "int64",
+          "name": "ChargeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘包销购买时长（仅支持12、24、36、48、60）",
+          "example": "12",
+          "member": "int64",
+          "name": "UnderWriteDuration",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1710,6 +1749,16 @@
           "example": "emr-vm-rwxi34si",
           "member": "string",
           "name": "EmrResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包销到期时间",
+          "example": "2026-03-27 17:38:41",
+          "member": "string",
+          "name": "UnderwriteExpiredTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2622,6 +2671,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Redis信息",
+          "example": "crs-0kfb1a25",
+          "member": "string",
+          "name": "RedisId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3041,6 +3100,81 @@
         }
       ],
       "usage": "both"
+    },
+    "ConfigurationItem": {
+      "document": "配置项（配置管理页）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项名称",
+          "example": "item1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置项值",
+          "example": "val1",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所在的配置文件名",
+          "example": "core-site.xml",
+          "member": "string",
+          "name": "InFile",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConvertPreToPostClusterRequest": {
+      "document": "ConvertPreToPostCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID。",
+          "example": "\"emr-ge0vrqkl\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "5min内不可重入标识，订单标识",
+          "example": "86f16cf2f5ceb39b1ff5ac3d56e869a8",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ConvertPreToPostClusterResponse": {
+      "document": "ConvertPreToPostCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateCloudInstanceRequest": {
       "document": "CreateCloudInstance请求参数结构体",
@@ -3794,6 +3928,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "CLB id",
+          "example": "lb-xxxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6628,6 +6771,156 @@
       ],
       "type": "object"
     },
+    "DescribeNodeSpec": {
+      "document": "节点规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "Master",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型名称",
+          "example": "Master节点",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Types数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecType",
+          "name": "Types",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云托管节点机型规格列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecType",
+          "name": "CmnTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeNodeSpecRequest": {
+      "document": "DescribeNodeSpec请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息",
+          "example": "100003",
+          "member": "int64",
+          "name": "ZoneId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0,按量，1包年包月，99按量+包年包月，错填将不会展示费用信息",
+          "example": "1",
+          "member": "uint64",
+          "name": "CvmPayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "节点类型,Master,Core,Task,Router,All",
+          "example": "All",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0:旧计费页面,1:新计费页面。 错填，默认为旧计费",
+          "example": "1",
+          "member": "uint64",
+          "name": "TradeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品Id，不填为0，则表示所有productId，前台使用必填\n\n44\tEMR\tV3.5.0\n43\tEMR\tV3.4.0.tlinux\n42\tEMR\tV2.7.0.tlinux\n41\tDRUID\tV1.1.0\n67\tSTARROCKS\tV2.2.0\n45\tDRUID\tV1.1.0.tlinux\n40\tEMRCLOUD\tv3.2.0\n47\tEMR\tV4.0.0\n48\tSTARROCKS\tV1.2.0\n49\tSTARROCKS\tV1.3.0\n50\tKAFKA\tV2.0.0\n51\tSTARROCKS\tV1.4.0\n52\tEMR-TKE\tV1.0.0\n53\tEMR\tV3.6.0\n54\tSTARROCKS\tV2.0.0\n55\tEMR-TKE\tV1.0.1\n56\tEMR-TKE\tDLCV1.0.0\n57\tEMR\tV2.8.0\n58\tEMR\tV3.6.1\n59\tSERVERLESS\tV1.0.0\n60\tEMR-TKE\tV1.1.0\n62\tSTARROCKS\tV2.1.1\n63\tSTARROCKS\tV2.1.1.tlinux\n64\tEMR-TKE\tTCCV1.0.0\n65\tEMR-TKE-AI\tV1.0.0\n66\tRSS\tV1.0.0\n24\tEMR\tTianQiong-V1.0.0\n3\tEMR\tV2.0.1.tlinux\n4\tEMR\tV2.1.0\n7\tEMR\tV3.0.0\n8\tEMR\tV3.0.0.tlinux\n9\tEMR\tV2.2.0\n11\tCLICKHOUSE\tV1.0.0\n12\tCLICKHOUSE\tV1.0.0.tlinux\n16\tEMR\tV2.3.0\n17\tCLICKHOUSE\tV1.1.0\n18\tCLICKHOUSE\tV1.1.0.tlinux\n19\tEMR\tV2.4.0\n20\tEMR\tV2.5.0\n21\tUSERCUSTOM\tV1.0.0\n22\tCLICKHOUSE\tV1.2.0\n39\tSTARROCKS\tV1.1.0\n25\tEMR\tV3.1.0\n26\tDORIS\tV1.0.0\n27\tKAFKA\tV1.0.0\n28\tEMR\tV3.2.0\n29\tEMR\tV2.5.1\n30\tEMR\tV2.6.0\n32\tDORIS\tV1.1.0\n33\tEMR\tV3.2.1\n34\tEMR\tV3.3.0\n35\tDORIS\tV1.2.0\n36\tSTARROCKS\tV1.0.0\n37\tEMR\tV3.4.0\n38\tEMR\tV2.7.0",
+          "example": "20",
+          "member": "uint64",
+          "name": "ProductId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "场景名",
+          "example": "HADOOP-Hbase",
+          "member": "string",
+          "name": "SceneName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型为ComputeResource和EMR以及默认，默认为EMR",
+          "example": "ComputeResource",
+          "member": "string",
+          "name": "ResourceBaseType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源id",
+          "example": "emr-cr-xxxxx",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeSpecResponse": {
+      "document": "DescribeNodeSpec返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点规格类型",
+          "example": "无",
+          "member": "DescribeNodeSpec",
+          "name": "NodeSpecs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceConfig": {
       "document": "DescribeResourceConfig接口出参",
       "members": [
@@ -7045,6 +7338,89 @@
           "name": "NodeNum",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceConfGroupInfosRequest": {
+      "document": "DescribeServiceConfGroupInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "emr-cp4f67tz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件名",
+          "example": "HDFS",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置组名称",
+          "example": "hdfs-core-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceConfGroupInfosResponse": {
+      "document": "DescribeServiceConfGroupInfos返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表大小",
+          "example": "146",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置项key value列表",
+          "example": "无",
+          "member": "ConfigurationItem",
+          "name": "ConfItemKVList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11747,9 +12123,21 @@
           "example": "无",
           "member": "LoadMetricsCondition",
           "name": "LoadMetrics",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:所有条件满足\n1：满足任意一个",
+          "example": "0",
+          "member": "int64",
+          "name": "Match",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13948,6 +14336,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包销资源是否支持设置自动续费",
+          "example": "true",
+          "member": "bool",
+          "name": "UnderwriteSetAutoRenew",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Gpu信息",
+          "example": "1 * NVIDIA A10 1 * 24GB",
+          "member": "string",
+          "name": "GpuDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14287,6 +14695,56 @@
       ],
       "usage": "both"
     },
+    "NodeSpecDisk": {
+      "document": "节点磁盘类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名字",
+          "example": "高效云盘",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定磁盘大小",
+          "example": "1000",
+          "member": "int64",
+          "name": "DefaultDiskSize",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NodeSpecDiskV2": {
       "document": "节点磁盘类型",
       "members": [
@@ -14333,6 +14791,343 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeSpecFamily": {
+      "document": "节点机型列族",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型",
+          "example": "S5",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型名称",
+          "example": "标准型S5",
+          "member": "string",
+          "name": "FamilyName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InstanceType的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecInstanceType",
+          "name": "InstanceTypes",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeSpecInstanceType": {
+      "document": "节点规格类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格",
+          "example": "SA2.4XALARGE",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "4",
+          "example": "核数",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "8，单位G",
+          "example": "内存",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序，越小排的越前",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Num",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售罄原因",
+          "example": "Fileterd",
+          "member": "string",
+          "name": "SellOutReason",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecDisk",
+          "name": "SystemDisk",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecDisk",
+          "name": "DataDisk",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecDisk",
+          "name": "LocalDataDisk",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售罄原因",
+          "example": "Fileterd",
+          "member": "string",
+          "name": "SoldOutReason",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型类别",
+          "example": "S6",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "Master 节点",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "Master",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别",
+          "example": "typeTest",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别名称",
+          "example": "typeTest",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别分类",
+          "example": "s6",
+          "member": "string",
+          "name": "FamilyName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu类型",
+          "example": "AMD EPYC™ Rome",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售罄 RunOut、库存少 Less、充足 Enough",
+          "example": "RunOut",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价",
+          "example": "10.31",
+          "member": "float",
+          "name": "OriginPrice",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包销计费机型支持的购买时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "PrepaidUnderwritePeriods",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU信息",
+          "example": "4 * NVIDIA T4 4 * 16GB",
+          "member": "string",
+          "name": "GpuDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeSpecType": {
+      "document": "节点机型类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型序列",
+          "example": "S",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型序列名字",
+          "example": "标准型",
+          "member": "string",
+          "name": "TypeName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "1",
+          "member": "int64",
+          "name": "Order",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InstanceFamily数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeSpecFamily",
+          "name": "InstanceFamilies",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

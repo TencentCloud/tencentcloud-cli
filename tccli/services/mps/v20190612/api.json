@@ -3266,7 +3266,7 @@
         {
           "disabled": false,
           "document": "渠道扩展参数json序列化字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "{\\\"OutputDir\\\":\\\"/test/output/1abc***12345/\\\"}",
           "member": "string",
           "name": "ChannelExtPara",
           "output_required": true,
@@ -10244,9 +10244,18 @@
         {
           "disabled": false,
           "document": "媒体质检模板描述信息，长度限制：256 个字符。",
-          "example": "模板 1",
+          "example": "模板1",
           "member": "string",
           "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件格式。可选值：\n<li>PNG: PNG图片</li>",
+          "example": "PNG",
+          "member": "string",
+          "name": "RecordFormat",
           "required": false,
           "type": "string"
         }
@@ -20353,6 +20362,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "websocket与trtc识别结果的UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bot",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -20975,6 +20994,16 @@
           "name": "SteadyState",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "websocket与trtc实时翻译的UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bot",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -24237,7 +24266,7 @@
         {
           "disabled": false,
           "document": "媒体质检模板名称，长度限制：64 个字符。",
-          "example": "无",
+          "example": "媒体质检模板1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -24246,7 +24275,7 @@
         {
           "disabled": false,
           "document": "模板描述信息，长度限制：256 个字符。",
-          "example": "无",
+          "example": "媒体质检模板",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -24260,6 +24289,15 @@
           "name": "QualityControlItemSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件格式。可选值：\n<li>PNG: PNG图片</li>",
+          "example": "PNG",
+          "member": "string",
+          "name": "RecordFormat",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26503,7 +26541,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv 等）。",
+          "document": "直播流 URL（必须是直播文件地址，支持 rtmp，hls 和 flv, trtc 等）。\ntrtc地址如下：\n trtc: //trtc.rtc.qq.com/mps/`<roomid>`?sdkappid=`<sdkappid>`&userid=`<userid>`&usersig=<`usersig>`\n`<roomid>` 为trtc的房间号id, 为数字\n`<sdkappid>` 为trtc的sdk app id\n`<userid>` 为服务进入房间的用户id,可以区分谁是机器人\n<`usersig>` 为trtc 用户的签名",
           "example": "http://www.abc.com/abc.m3u8",
           "member": "string",
           "name": "Url",

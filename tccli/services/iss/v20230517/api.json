@@ -8352,8 +8352,8 @@
         },
         {
           "disabled": false,
-          "document": "排序规则（仅支持 StartTime，EndTime，倒序为-StartTime，-EndTime）",
-          "example": "StartTime,-EndTIme",
+          "document": "排序规则（仅支持 StartTime，倒序为-StartTime）",
+          "example": "StartTime",
           "member": "string",
           "name": "SortRule",
           "required": false,
@@ -8403,6 +8403,15 @@
           "name": "UrlExpires",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务日期，默认当天",
+          "example": "2025-01-02",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

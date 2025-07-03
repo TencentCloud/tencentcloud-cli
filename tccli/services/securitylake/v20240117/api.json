@@ -1,0 +1,723 @@
+{
+  "actions": {
+    "DescribeSecurityAlarmTableList": {
+      "document": "查询告警列表",
+      "input": "DescribeSecurityAlarmTableListRequest",
+      "name": "告警列表",
+      "output": "DescribeSecurityAlarmTableListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-01-17",
+    "api_brief": "安全湖",
+    "serviceNameCN": "安全湖",
+    "serviceShortName": "securitylake"
+  },
+  "objects": {
+    "DescribeSecurityAlarmTableListRequest": {
+      "document": "DescribeSecurityAlarmTableList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "sdl-a1b2c3d4",
+          "member": "string",
+          "name": "SdlId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "[{\"Name\":\"tags\"}]",
+          "member": "WebSearchFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "长度",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移",
+          "example": "2",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "alarm_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间,毫秒",
+          "example": "19283018301",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1821021291",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityAlarmTableListResponse": {
+      "document": "DescribeSecurityAlarmTableList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段列表",
+          "example": "[{\"Timestamp\":\"2024-12-00 00:00:00\"}]",
+          "member": "SecurityAlarmTable",
+          "name": "AlarmList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "偏移",
+          "example": "2",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SecurityAlarmTable": {
+      "document": "告警列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2024-03-12 00:00:00",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警名称",
+          "example": "kris_api_alarm_988477",
+          "member": "string",
+          "name": "AlarmName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称",
+          "example": "kris_api_ip_988477",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警id",
+          "example": "12",
+          "member": "int64",
+          "name": "AlarmId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全性",
+          "example": "3",
+          "member": "int64",
+          "name": "Severity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评分",
+          "example": "1",
+          "member": "int64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类",
+          "example": "账号异常",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子分类",
+          "example": "异常时间登陆",
+          "member": "string",
+          "name": "SubCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "自动化,情报检测规",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效载荷",
+          "example": "a2b4c3d4a3b4",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "成功",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可信度",
+          "example": "4",
+          "member": "int64",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "TODO",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则主题",
+          "example": "kris_api",
+          "member": "string",
+          "name": "RuleTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理时间",
+          "example": "2024-03-12 00:00:00",
+          "member": "string",
+          "name": "HandleTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建议",
+          "example": "需要处理",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "需要处理",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源名称",
+          "example": "防火墙日志",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "APPID",
+          "example": "167897801",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "1289",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件时间",
+          "example": "2024-03-12 00:00:00",
+          "member": "string",
+          "name": "EventTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型",
+          "example": "good",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击次数",
+          "example": "3",
+          "member": "int64",
+          "name": "AttackNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警数量",
+          "example": "5",
+          "member": "int64",
+          "name": "AlarmCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ATT&CK子技术",
+          "example": "T1110.001",
+          "member": "string",
+          "name": "AttackSubTechnique",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ATT&CK技术",
+          "example": "T1110",
+          "member": "string",
+          "name": "AttackTechnique",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ATT&CK战术",
+          "example": "TA0007",
+          "member": "string",
+          "name": "AttackTactic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ATT&CK子技术名称",
+          "example": "暴力破解: SSH",
+          "member": "string",
+          "name": "AttackSubTechniqueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ATT&CK技术名称",
+          "example": "暴力破解",
+          "member": "string",
+          "name": "AttackTechniqueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "凭证访问",
+          "example": "ATT&CK战术名称",
+          "member": "string",
+          "name": "AttackTacticName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2023-10-05 14:25:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2023-10-05 14:25:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则表达式",
+          "example": "failed_login > 5",
+          "member": "string",
+          "name": "RuleExpression",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表达式类型",
+          "example": "SQL",
+          "member": "string",
+          "name": "ExpressionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下钻表达式",
+          "example": "src_ip = 192.168.1.100",
+          "member": "string",
+          "name": "DrillDownExpression",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP",
+          "example": "192.168.1.100",
+          "member": "string",
+          "name": "SrcIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端口",
+          "example": "23",
+          "member": "int64",
+          "name": "SrcPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的IP",
+          "example": "10.10.1.50",
+          "member": "string",
+          "name": "DstIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的端口",
+          "example": "22",
+          "member": "int64",
+          "name": "DstPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机IP",
+          "example": "10.10.1.50",
+          "member": "string",
+          "name": "HostIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机资产",
+          "example": "数据库服务器",
+          "member": "string",
+          "name": "HostAsset",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "sdl-a1b2c3d4",
+          "member": "string",
+          "name": "SdlId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义富化字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " ",
+          "member": "string",
+          "name": "RichCustomInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击者ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "AttackerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击者资产ID",
+          "example": "id123",
+          "member": "string",
+          "name": "AttackerAsset",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受害者ip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "VictimIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "受害者资产ID",
+          "example": "id123",
+          "member": "string",
+          "name": "VictimAsset",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击方向",
+          "example": "up",
+          "member": "string",
+          "name": "AttackDirection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量方向",
+          "example": "att",
+          "member": "string",
+          "name": "TrafficDirection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试",
+          "example": "无",
+          "member": "SecurityGroupAlertInfo",
+          "name": "SecurityGroupAlertInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SecurityGroupAlertInfo": {
+      "document": "被归并的原始告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警Uuid",
+          "example": "ads-12",
+          "member": "string",
+          "name": "AlarmUuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警生成时间",
+          "example": "2025-01-11 10:00:00",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WebSearchFilter": {
+      "document": "web搜索过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段",
+          "example": "tag",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "[\"其他\",\"任务\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否全匹配",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

@@ -24,7 +24,8 @@ Output:
             "ClientId": "11.139.244.247@75043#6734858812769343",
             "ConsumerLag": 0,
             "Language": "JAVA",
-            "Version": "V4_9_3"
+            "Version": "V4_9_3",
+            "ChannelProtocol": "remoting"
         },
         "RequestId": "7e3acbab-5b5f-457f-b276-68c2f7e16f5e",
         "TopicList": [

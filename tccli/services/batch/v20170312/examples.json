@@ -120,6 +120,14 @@
         "title": "查询作业详细信息"
       }
     ],
+    "DescribeJobMonitorData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"JobId\": \"job-1jj9noyr\",\n    \"TaskName\": \"demo-1\",\n    \"TaskInstanceIndex\": 0,\n    \"MetricName\": \"CpuUsage\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a66adf73-110f-49b4-a173-c68c952d4428\",\n        \"Period\": 60,\n        \"DataPoints\": {\n            \"Timestamps\": [\n                1749696420,\n                1749696430,\n                1749696440\n            ],\n            \"Values\": [\n                0.1,\n                0.2,\n                0.3\n            ]\n        }\n    }\n}",
+        "title": "查询作业实例的资源使用监控信息"
+      }
+    ],
     "DescribeJobSubmitInfo": [
       {
         "document": "",

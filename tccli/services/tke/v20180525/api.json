@@ -3363,7 +3363,7 @@
         },
         {
           "disabled": false,
-          "document": "当选择Cilium Overlay网络插件时，TKE会从该子网获取2个IP用来创建内网负载均衡",
+          "document": "控制面子网信息，仅在以下场景使用时要求必填。\n- 容器网络插件为CiliumOverlay时，TKE会从该子网获取2个IP用来创建内网负载均衡。\n- 创建支持CDC的托管集群，且网络插件为VPC-CNI时，要求预留至少12个IP。",
           "example": "subnet-e55paxnt",
           "member": "string",
           "name": "SubnetId",
@@ -5224,6 +5224,15 @@
           "name": "CdcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽安装指定Addon组件，填写相应的AddonName",
+          "example": "[\"ip-masq-agent\"]",
+          "member": "string",
+          "name": "DisableAddons",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5354,7 +5363,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -5381,7 +5390,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表",
+          "document": "安全组ID列表，必选参数",
           "example": "[\"sg-e55paxnt\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -5417,7 +5426,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "删除保护开关，默认关闭",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -5463,7 +5472,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -5472,7 +5481,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点所属节点池",
+          "document": "虚拟节点所属节点池，通过DescribeNodePools接口获取",
           "example": "np-e55paxnt",
           "member": "string",
           "name": "NodePoolId",
@@ -5481,7 +5490,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点所属子网",
+          "document": "虚拟节点所属子网，SubnetId、SubnetIds、VirtualNodes必选一个。",
           "example": "subnet-e55paxnt",
           "member": "string",
           "name": "SubnetId",
@@ -5490,7 +5499,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点子网ID列表，和参数SubnetId互斥",
+          "document": "虚拟节点子网ID列表，SubnetId、SubnetIds、VirtualNodes必选一个。",
           "example": "[\"subnet-e55paxnt\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -5499,7 +5508,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点列表",
+          "document": "虚拟节点列表，SubnetId、SubnetIds、VirtualNodes必选一个。",
           "example": "无",
           "member": "VirtualNodeSpec",
           "name": "VirtualNodes",
@@ -7571,7 +7580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-br2j3s0c",
           "member": "string",
           "name": "ClusterId",
@@ -7580,7 +7589,7 @@
         },
         {
           "disabled": false,
-          "document": "超级节点池ID列表",
+          "document": "节点池ID，通过DescribeNodePools接口获取",
           "example": "[\"np-meg2rq7e\"]",
           "member": "string",
           "name": "NodePoolIds",
@@ -7616,7 +7625,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -7625,7 +7634,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点列表",
+          "document": "虚拟节点ID列表",
           "example": "[\"eklet-subnet-meg2rq7e-0\"]",
           "member": "string",
           "name": "NodeNames",
@@ -10216,7 +10225,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-meg2rq7e",
           "member": "string",
           "name": "ClusterId",
@@ -10263,7 +10272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-meg2rq7e",
           "member": "string",
           "name": "ClusterId",
@@ -10272,7 +10281,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池ID",
+          "document": "节点池ID，通过DescribeNodePools接口获取",
           "example": "np-meg2rq7e",
           "member": "string",
           "name": "NodePoolId",
@@ -10281,7 +10290,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名称",
+          "document": "节点名称，可搜索DescribeClusterVirtualNode接口节点",
           "example": "[\"node1\",\"node2\"]",
           "member": "string",
           "name": "NodeNames",
@@ -14762,7 +14771,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-meg2rq7e",
           "member": "string",
           "name": "ClusterId",
@@ -14771,7 +14780,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名",
+          "document": "节点ID",
           "example": "eklet-subnet-meg2rq7e-0",
           "member": "string",
           "name": "NodeName",
@@ -19378,7 +19387,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID，通过DescribeClusters接口获取",
           "example": "cls-e55paxnt",
           "member": "string",
           "name": "ClusterId",
@@ -19387,7 +19396,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池ID",
+          "document": "节点池ID，通过DescribeNodePools接口获取",
           "example": "np-e55paxnt",
           "member": "string",
           "name": "NodePoolId",
@@ -19396,7 +19405,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池名称",
+          "document": "节点池名称，必须修改至少一个参数",
           "example": "virtual-node-prod",
           "member": "string",
           "name": "Name",
@@ -19405,7 +19414,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID列表",
+          "document": "安全组ID列表，必须修改至少一个参数",
           "example": "[\"sg-0kxvmoz1\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -19414,7 +19423,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点label",
+          "document": "虚拟节点label，必须修改至少一个参数",
           "example": "无",
           "member": "Label",
           "name": "Labels",
@@ -19423,7 +19432,7 @@
         },
         {
           "disabled": false,
-          "document": "虚拟节点taint",
+          "document": "虚拟节点taint，必须修改至少一个参数",
           "example": "无",
           "member": "Taint",
           "name": "Taints",
@@ -19432,7 +19441,7 @@
         },
         {
           "disabled": false,
-          "document": "删除保护开关",
+          "document": "删除保护开关，必须修改至少一个参数",
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
@@ -26896,7 +26905,7 @@
         },
         {
           "disabled": false,
-          "document": "节点池生命周期",
+          "document": "节点池生命周期\n- creating：创建中\n- normal：正常\n- updating：更新中",
           "example": "running",
           "member": "string",
           "name": "LifeState",
@@ -26932,7 +26941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点展示名称",
+          "document": "节点展示名称，建议不超过20个字符",
           "example": "测试节点",
           "member": "string",
           "name": "DisplayName",

@@ -105,6 +105,13 @@
       "output": "DescribeJobResponse",
       "status": "online"
     },
+    "DescribeJobMonitorData": {
+      "document": "查询作业任务实例的资源使用监控信息。当前只支持查询弹性节点任务并且Job未删除；暂不支持计算环境类任务；该接口只支持查询作业实例时间范围之内的资源使用情况。",
+      "input": "DescribeJobMonitorDataRequest",
+      "name": "查询作业任务实例的资源监控信息",
+      "output": "DescribeJobMonitorDataResponse",
+      "status": "online"
+    },
     "DescribeJobSubmitInfo": {
       "document": "用于查询指定作业的提交信息，其返回内容包括 JobId 和 SubmitJob 接口中作为输入参数的作业提交信息",
       "input": "DescribeJobSubmitInfoRequest",
@@ -1254,6 +1261,32 @@
       ],
       "usage": "both"
     },
+    "DataPointView": {
+      "document": "监控采集的数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控数据采集的时间\n",
+          "example": "[1749696420, 1749696430]",
+          "member": "int64",
+          "name": "Timestamps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控指标数据; 如果涉及到多个实例的监控数据的间隙时间，取值会为null\n",
+          "example": "[0.1, 0.2]",
+          "member": "float",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteComputeEnvRequest": {
       "document": "DeleteComputeEnv请求参数结构体",
       "members": [
@@ -1959,6 +1992,98 @@
           "name": "InstanceCategorySet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobMonitorDataRequest": {
+      "document": "DescribeJobMonitorData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业ID；JobId详见[作业列表](https://cloud.tencent.com/document/product/599/15909)",
+          "example": "job-97zcl3wt",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业的Task名称，详见[作业详情](https://cloud.tencent.com/document/product/599/15904)。",
+          "example": "demo-1",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业任务实例的序号，详见[任务详情](https://cloud.tencent.com/document/product/599/15905)",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskInstanceIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "支持查询的指标；当前支持查询的任务指标；\n\n- CpuUsage：cpu利用率，单位：%\n- MemUsage：内存利用率，单位：%\n- LanOuttraffic：内网出带宽，单位：Bytes/s\n- LanIntraffic：内网入带宽，单位：Bytes/s",
+          "example": "CpuUsage",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务实例的起始时间；如果未传入查询起始时间或传入的时间小于任务实例的创建时间（任务实例创建时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），会自动将查询时间调整到任务实例的创建时间。传入时间格式只支持零时区格式。",
+          "example": "2025-06-11T21:12:50Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务实例的终止时间；如果未传入查询终止时间或传入的时间大于任务实例的终止时间（任务实例终止时间详见[任务详情](https://cloud.tencent.com/document/product/599/15905)），并且任务实例已经结束，会自动将查询终止时间调整到任务实例的终止时间；如果任务实例未结束，会自动将查询终止时间调整到当前时间。传入时间格式只支持零时区格式。",
+          "example": "2025-06-11T22:12:50Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobMonitorDataResponse": {
+      "document": "DescribeJobMonitorData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控数据粒度，单位:秒；时间粒度随着查询的时间范围变化，查询时间范围越小，时间粒度越小。",
+          "example": "10",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控采集的数据。时间戳和对应的值一一对应；如果查询的任务重试，采集时间段涉及多个实例的话，某些时间段内的值为null, 表示对应时间点没有实例存在，也不存在对应的监控数据；相邻监控时间段之间的空值数量最多为10。",
+          "example": "无",
+          "member": "DataPointView",
+          "name": "DataPoints",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

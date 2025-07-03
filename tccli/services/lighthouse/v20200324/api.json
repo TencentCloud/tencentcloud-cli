@@ -9598,7 +9598,7 @@
         {
           "disabled": false,
           "document": "同步镜像的目的地域列表。",
-          "example": "无",
+          "example": "[\"ap-beijing\",\"ap-shanghai\"]",
           "member": "string",
           "name": "DestinationRegions",
           "required": true,

@@ -1,0 +1,207 @@
+{
+  "actions": {
+    "CreateAddressPool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAddressPool\n<公共请求参数>\n\n{\n    \"PoolName\": \"abc\",\n    \"TrafficStrategy\": \"abc\",\n    \"MonitorId\": 1,\n    \"AddressSet\": [\n        {\n            \"AddressId\": 1,\n            \"Addr\": \"abc\",\n            \"Location\": \"abc\",\n            \"Status\": \"abc\",\n            \"IsEnable\": \"abc\",\n            \"Weight\": 1,\n            \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressPoolId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建地址池"
+      }
+    ],
+    "CreateInstance": [
+      {
+        "document": "创建免费版套餐",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"example-test-instance\",\n    \"Domain\": \"igtm.example.com\",\n    \"AccessType\": \"custom\",\n    \"AccessDomain\": \"example.com\",\n    \"AccessSubDomain\": \"access.igtm\",\n    \"GlobalTtl\": 300,\n    \"PackageType\": \"Free\",\n    \"Remark\": \"测试实例\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec040ddf-7c7d-4aef-9e0d-6f3105fa0a4c\"\n    }\n}",
+        "title": "创建免费版套餐"
+      }
+    ],
+    "CreateMonitor": [
+      {
+        "document": "tcp监控",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控tcp\",\n    \"CheckProtocol\": \"TCP\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"TcpPort\": 80\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": 92,\n        \"RequestId\": \"ea6eaf52-428b-4d1d-b7d7-1712cf508124\"\n    }\n}",
+        "title": "tcp监控"
+      },
+      {
+        "document": "http监控",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控http\",\n    \"CheckProtocol\": \"HTTP\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"TcpPort\": 80,\n    \"ReturnCodeThreshold\": 400,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": 93,\n        \"RequestId\": \"506ffb0f-a5d4-4b8e-8ce8-14e512ec731e\"\n    }\n}",
+        "title": "http监控"
+      },
+      {
+        "document": "新增监控器",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控器1\",\n    \"DetectorGroupIds\": [\n        5,\n        6,\n        7\n    ],\n    \"CheckInterval\": 60,\n    \"PacketLossRate\": 20,\n    \"CheckProtocol\": \"HTTP\",\n    \"FailRate\": 20,\n    \"TcpPort\": 80,\n    \"EnableSni\": \"DISABLED\",\n    \"PingNum\": 10,\n    \"ReturnCodeThreshold\": 500,\n    \"Host\": \"test.com\",\n    \"Timeout\": 50,\n    \"Path\": \"/index.html\",\n    \"FailTimes\": 2,\n    \"DetectorStyle\": \"AUTO\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": 1,\n        \"RequestId\": \"ea6eaf52-428b-4d1d-b7d7-1712cf508124\"\n    }\n}",
+        "title": "新增监控器"
+      },
+      {
+        "document": "监控器ping协议",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"MonitorName\": \"监控ping\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 60,\n    \"Timeout\": 2,\n    \"FailTimes\": 0,\n    \"FailRate\": 50,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 20,\n    \"PacketLossRate\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorId\": 91,\n        \"RequestId\": \"93ba54c1-a533-42bb-aab5-458aef4b1666\"\n    }\n}",
+        "title": "监控器ping协议"
+      }
+    ],
+    "CreateStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-sdsderd12e\",\n    \"StrategyName\": \"testname\",\n    \"Source\": [\n        {\n            \"DnsLineId\": 1,\n            \"Name\": \"line1\"\n        }\n    ],\n    \"MainAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"FallbackAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"KeepDomainRecords\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategyId\": 0,\n        \"RequestId\": \"abcasd232dsad1dsadasd\"\n    }\n}",
+        "title": "创建策略"
+      }
+    ],
+    "DeleteAddressPool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddressPool\n<公共请求参数>\n\n{\n    \"PoolId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除地址池"
+      }
+    ],
+    "DeleteMonitor": [
+      {
+        "document": "删除监控器",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除监控器"
+      }
+    ],
+    "DeleteStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStrategy\n<公共请求参数>\n\n{\n    \"StrategyId\": 1,\n    \"InstanceId\": \"gtm-ddgasdwe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9b19115c-8732-4940-9199-98952a13dsf15\"\n    }\n}",
+        "title": "删除策略"
+      }
+    ],
+    "DescribeAddressLocation": [
+      {
+        "document": "{\n  \"Address\": [\n    \"0.0.0.1\"\n  ]\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressLocation\n<公共请求参数>\n\n{\n    \"Address\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressLocation\": [\n            {\n                \"Addr\": \"0.0.0.1\",\n                \"Location\": \"未知\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取IP归属"
+      }
+    ],
+    "DescribeAddressPoolDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressPoolDetail\n<公共请求参数>\n\n{\n    \"PoolId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressPool\": {\n            \"PoolId\": 1,\n            \"PoolName\": \"abc\",\n            \"TrafficStrategy\": \"abc\",\n            \"MonitorId\": 1,\n            \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n        },\n        \"AddressSet\": [\n            {\n                \"AddressId\": 1,\n                \"Addr\": \"abc\",\n                \"Location\": \"abc\",\n                \"Status\": \"abc\",\n                \"IsEnable\": \"abc\",\n                \"Weight\": 1,\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "地址池详情"
+      }
+    ],
+    "DescribeAddressPoolList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressPools\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": [\n                \"abc\"\n            ],\n            \"Fuzzy\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressPoolSet\": [\n            {\n                \"PoolId\": 1,\n                \"PoolName\": \"abc\",\n                \"TrafficStrategy\": \"abc\",\n                \"MonitorId\": 1,\n                \"Status\": \"abc\",\n                \"AddressNum\": 0,\n                \"MonitorGroupNum\": 0,\n                \"MonitorTaskNum\": 0,\n                \"AddressSet\": [\n                    {\n                        \"AddressId\": 1,\n                        \"Addr\": \"abc\",\n                        \"Location\": \"abc\",\n                        \"Status\": \"abc\",\n                        \"IsEnable\": \"abc\",\n                        \"Weight\": 1,\n                        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                        \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n                    }\n                ],\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "地址池列表"
+      }
+    ],
+    "DescribeDetectors": [
+      {
+        "document": "获取探测节点列表",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetectors\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"DetectorGroupSet\": [\n            {\n                \"Gid\": 30,\n                \"InternetFamily\": \"ipv4\",\n                \"GroupType\": \"bgp\",\n                \"GroupName\": \"广州\",\n                \"PackageSet\": [\n                    \"FREE\",\n                    \"STANDARD\",\n                    \"ULTIMATE\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取探测节点列表"
+      }
+    ],
+    "DescribeDnsLineList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsLines\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DnsLineSet\": [\n            {\n                \"Parent\": 1,\n                \"LineName\": \"abc\",\n                \"LineId\": \"abc\",\n                \"Useful\": true,\n                \"SubGroup\": 1,\n                \"LinePackage\": 1,\n                \"Weight\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "线路列表"
+      }
+    ],
+    "DescribeInstanceDetail": [
+      {
+        "document": "{\n  \"InstanceId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"Domain\": \"abc\",\n            \"AccessType\": \"abc\",\n            \"AccessSubDomain\": \"abc\",\n            \"AccessDomain\": \"abc\",\n            \"GlobalTtl\": 1,\n            \"PackageType\": \"abc\",\n            \"WorkingStatus\": \"abc\",\n            \"Status\": \"abc\",\n            \"IsCnameConfigured\": true,\n            \"Remark\": \"abc\",\n            \"StrategyNum\": 0,\n            \"AddressPoolNum\": 0,\n            \"MonitorNum\": 0,\n            \"ResourceId\": \"abc\",\n            \"NotifyEventSet\": [\n                \"abc\"\n            ],\n            \"CreatedOn\": \"abc\",\n            \"UpdatedOn\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "实例详情"
+      }
+    ],
+    "DescribeInstanceList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": [\n                \"abc\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Domain\": \"abc\",\n                \"AccessType\": \"abc\",\n                \"AccessDomain\": \"abc\",\n                \"AccessSubDomain\": \"abc\",\n                \"GlobalTtl\": 0,\n                \"PackageType\": \"abc\",\n                \"WorkingStatus\": \"abc\",\n                \"Status\": \"abc\",\n                \"Remark\": \"abc\",\n                \"StrategyNum\": 0,\n                \"AddressPoolNum\": 0,\n                \"MonitorNum\": 0,\n                \"CreatedOn\": \"abc\",\n                \"UpdatedOn\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "实例列表"
+      }
+    ],
+    "DescribeMonitorDetail": [
+      {
+        "document": "查询监控器详情",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthyCheckRule\n<公共请求参数>\n\n{\n    \"MonitorId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorDetail\": {\n            \"MonitorId\": 1,\n            \"MonitorName\": \"abc\",\n            \"Uin\": \"abc\",\n            \"DetectorGroupIds\": [\n                1\n            ],\n            \"CheckProtocol\": \"abc\",\n            \"CheckInterval\": 1,\n            \"PingNum\": 1,\n            \"TcpPort\": 1,\n            \"Host\": \"abc\",\n            \"Path\": \"abc\",\n            \"ReturnCodeThreshold\": 1,\n            \"EnableRedirect\": \"abc\",\n            \"EnableSni\": \"abc\",\n            \"PacketLossRate\": 1,\n            \"Timeout\": 1,\n            \"FailTimes\": 1,\n            \"FailRate\": 1,\n            \"DetectorStyle\": \"abc\"\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": " 查询监控器详情"
+      }
+    ],
+    "DescribeMonitors": [
+      {
+        "document": "获取所有监控器",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitors\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"MonitorDataSet\": [\n            {\n                \"MonitorId\": 1,\n                \"MonitorName\": \"abc\",\n                \"Uin\": \"abc\",\n                \"DetectorGroupIds\": [\n                    1\n                ],\n                \"CheckProtocol\": \"abc\",\n                \"CheckInterval\": 1,\n                \"PingNum\": 1,\n                \"TcpPort\": 1,\n                \"Host\": \"abc\",\n                \"Path\": \"abc\",\n                \"ReturnCodeThreshold\": 1,\n                \"EnableRedirect\": \"abc\",\n                \"EnableSni\": \"abc\",\n                \"PacketLossRate\": 1,\n                \"Timeout\": 1,\n                \"FailTimes\": 1,\n                \"FailRate\": 1,\n                \"CreatedOn\": \"abc\",\n                \"UpdatedOn\": \"abc\",\n                \"DetectorStyle\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"398db591-8793-4a0f-aaa3-3a0131494184\"\n    }\n}",
+        "title": "获取所有监控器"
+      }
+    ],
+    "DescribeQuotas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuotas\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Quotas\": {\n            \"TaskQuota\": 1,\n            \"PoolQuota\": 1,\n            \"AddressQuota\": 1,\n            \"MonitorQuota\": 1,\n            \"MessageQuota\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "配额"
+      }
+    ],
+    "DescribeStrategyDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategyDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StrategyId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategyDetail\": {\n            \"InstanceId\": \"abc\",\n            \"StrategyId\": 1,\n            \"Name\": \"abc\",\n            \"Source\": [\n                {\n                    \"DnsLineId\": 1,\n                    \"Name\": \"abc\"\n                }\n            ],\n            \"MainAddressPoolSet\": [\n                {\n                    \"MainAddressPoolId\": 1,\n                    \"AddressPools\": [\n                        {\n                            \"PoolId\": 1,\n                            \"Weight\": 1\n                        }\n                    ],\n                    \"MinSurviveNum\": 1,\n                    \"TrafficStrategy\": \"abc\"\n                }\n            ],\n            \"FallbackAddressPoolSet\": [\n                {\n                    \"MainAddressPoolId\": 1,\n                    \"AddressPools\": [\n                        {\n                            \"PoolId\": 1,\n                            \"Weight\": 1\n                        }\n                    ],\n                    \"MinSurviveNum\": 1,\n                    \"TrafficStrategy\": \"abc\"\n                }\n            ],\n            \"KeepDomainRecords\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "策略详情"
+      }
+    ],
+    "DescribeStrategyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": [\n                \"abc\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"StrategySet\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"StrategyId\": 1,\n                \"Name\": \"abc\",\n                \"Source\": [\n                    {\n                        \"DnsLineId\": 1,\n                        \"Name\": \"abc\"\n                    }\n                ],\n                \"Status\": \"abc\",\n                \"ActivePoolType\": \"abc\",\n                \"ActiveTrafficStrategy\": \"abc\",\n                \"MonitorNum\": 1,\n                \"KeepDomainRecords\": \"abc\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "策略列表"
+      }
+    ],
+    "ModifyAddressPool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressPool\n<公共请求参数>\n\n{\n    \"PoolId\": 1,\n    \"PoolName\": \"testname\",\n    \"TrafficStrategy\": \"all\",\n    \"MonitorId\": 1,\n    \"AddressSet\": [\n        {\n            \"AddressId\": 1,\n            \"Addr\": \"1.1.1.2\",\n            \"Location\": \"中国上海\",\n            \"Status\": \"ok\",\n            \"IsEnable\": \"ENABLED\",\n            \"Weight\": 1,\n            \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n            \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"9b19115c-873gt2-4940-91339-98952a13f159\"\n    }\n}",
+        "title": "编辑地址池"
+      }
+    ],
+    "ModifyInstanceConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceConfig\n<公共请求参数>\n\n{\n    \"InstanceConfig\": {\n        \"InstanceName\": \"测试实例 1\",\n        \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n        \"AccessType\": \"CUSTOM\",\n        \"AccessDomain\": \"exmaple-access.com\",\n        \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n        \"Remark\": \"测试实例\",\n        \"GlobalTtl\": 300\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Instance\": {\n            \"InstanceName\": \"测试实例 1\",\n            \"InstanceId\": \"gtm-xxxxxxxxxxx\",\n            \"ResourceId\": \"\",\n            \"Domain\": \"xxxx.xxxx.xxxxxxxx@exmaple.com\",\n            \"AccessType\": \"CUSTOM\",\n            \"AccessDomain\": \"exmaple-access.com\",\n            \"AccessSubDomain\": \"xxxx.xxxx.xxxxxxxx.access\",\n            \"GlobalTtl\": 300,\n            \"PackageType\": \"FREE\",\n            \"WorkingStatus\": \"NORMAL\",\n            \"Status\": \"ENABLED\",\n            \"Remark\": \"测试实例\",\n            \"StrategyNum\": 0,\n            \"AddressPoolNum\": 0,\n            \"MonitorNum\": 0,\n            \"CreatedOn\": \"2023-12-20 06:43:16\",\n            \"UpdatedOn\": \"2023-12-26 20:00:03\",\n            \"NotifyEventSet\": []\n        },\n        \"RequestId\": \"be7d3d39-82cf-41e8-9b60-151e9745c422\"\n    }\n}",
+        "title": "修改实例配置"
+      }
+    ],
+    "ModifyMonitor": [
+      {
+        "document": "修改监控器",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": 1,\n    \"MonitorName\": \"test\",\n    \"CheckProtocol\": \"PING\",\n    \"CheckInterval\": 1,\n    \"Timeout\": 1,\n    \"FailTimes\": 1,\n    \"FailRate\": 1,\n    \"DetectorStyle\": \"AUTO\",\n    \"DetectorGroupIds\": [\n        1\n    ],\n    \"PingNum\": 1,\n    \"TcpPort\": 1,\n    \"Host\": \"url\",\n    \"Path\": \"/path\",\n    \"ReturnCodeThreshold\": 1,\n    \"EnableRedirect\": \"DISABLED\",\n    \"EnableSni\": \"DISABLED\",\n    \"PacketLossRate\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"100-222\"\n    }\n}",
+        "title": "修改监控器"
+      }
+    ],
+    "ModifyStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStrategy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-sdsdrdasd\",\n    \"StrategyId\": 1,\n    \"StrategyName\": \"test_strategy\",\n    \"Source\": [\n        {\n            \"DnsLineId\": 1,\n            \"Name\": \"默认\"\n        }\n    ],\n    \"MainAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"FallbackAddressPoolSet\": [\n        {\n            \"MainAddressPoolId\": 1,\n            \"AddressPools\": [\n                {\n                    \"PoolId\": 1,\n                    \"Weight\": 1\n                }\n            ],\n            \"MinSurviveNum\": 1,\n            \"TrafficStrategy\": \"all\"\n        }\n    ],\n    \"IsEnabled\": \"ENABLED\",\n    \"KeepDomainRecords\": \"DISABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"abdsadasddc12312jhjyg\"\n    }\n}",
+        "title": "修改策略"
+      }
+    ]
+  },
+  "version": "1.0"
+}

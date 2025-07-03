@@ -1380,6 +1380,15 @@
           "name": "UserInfoList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户组id列表",
+          "example": "[123,456]",
+          "member": "uint64",
+          "name": "UserGroups",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

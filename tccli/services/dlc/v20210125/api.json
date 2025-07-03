@@ -5365,6 +5365,34 @@
       ],
       "usage": "both"
     },
+    "CustomConfig": {
+      "document": "自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义参数名",
+          "example": "hive.iceberg-catalog-name",
+          "member": "string",
+          "name": "ConfigKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数值",
+          "example": "prod_iceberg",
+          "member": "string",
+          "name": "ConfigValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DLCCatalogAccess": {
       "document": "DLC 数据目录访问权限",
       "members": [
@@ -7772,6 +7800,28 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数",
+          "example": "无",
+          "member": "CustomConfig",
+          "name": "CustomConfig",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许回退",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowRollback",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -15479,6 +15529,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持 eg",
+          "example": "1",
+          "member": "int64",
+          "name": "EGSupport",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
