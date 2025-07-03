@@ -140,6 +140,13 @@
       "output": "GetBackUpValidateResponse",
       "status": "online"
     },
+    "GetGroupUserListIntl": {
+      "document": "获取用户组信息",
+      "input": "GetGroupUserListIntlRequest",
+      "name": "获取用户组列表",
+      "output": "GetGroupUserListIntlResponse",
+      "status": "online"
+    },
     "GetMediaPlatformAccessToken": {
       "document": "获取微信公众号access_token",
       "input": "GetMediaPlatformAccessTokenRequest",
@@ -1602,6 +1609,43 @@
       ],
       "type": "object"
     },
+    "GetGroupUserListIntlRequest": {
+      "document": "GetGroupUserListIntl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "GroupId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetGroupUserListIntlResponse": {
+      "document": "GetGroupUserListIntl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupUserList",
+          "name": "GroupUserList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetMediaPlatformAccessTokenRequest": {
       "document": "GetMediaPlatformAccessToken请求参数结构体",
       "members": [
@@ -2164,6 +2208,42 @@
         }
       ],
       "type": "object"
+    },
+    "GroupUserList": {
+      "document": "用户列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Uid",
+          "example": "10000121",
+          "member": "uint64",
+          "name": "Uid",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户Name",
+          "example": "test1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2020-01-01 12:12:12",
+          "member": "datetime",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IPInfo": {
       "document": " 所查询Uin的IP信息列表",

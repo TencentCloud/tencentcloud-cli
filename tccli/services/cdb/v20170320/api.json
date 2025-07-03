@@ -4467,7 +4467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-2wpip111",
           "member": "string",
           "name": "InstanceId",
@@ -4476,7 +4476,7 @@
         },
         {
           "disabled": false,
-          "document": "实例CPU核数",
+          "document": "实例 CPU 核数。当 InstanceId 为主实例时必传。",
           "example": "1",
           "member": "int64",
           "name": "Cpu",
@@ -4485,7 +4485,7 @@
         },
         {
           "disabled": false,
-          "document": "实例内存大小，单位：MB",
+          "document": "实例内存大小，单位：MB。当 InstanceId 为主实例时必传。",
           "example": "1000",
           "member": "int64",
           "name": "Memory",
@@ -4494,7 +4494,7 @@
         },
         {
           "disabled": false,
-          "document": "实例硬盘大小，单位：GB",
+          "document": "实例硬盘大小，单位：GB。",
           "example": "50",
           "member": "int64",
           "name": "Volume",
@@ -4503,7 +4503,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型。 CLOUD_SSD: SSD云硬盘; CLOUD_HSSD: 增强型SSD云硬盘",
+          "document": "磁盘类型。 CLOUD_SSD: SSD 云硬盘; CLOUD_HSSD: 增强型 SSD 云硬盘。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -4512,7 +4512,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘版节点拓扑配置。",
+          "document": "云盘版节点拓扑配置。当 InstanceId 为主实例时必传。",
           "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
@@ -4530,7 +4530,7 @@
         },
         {
           "disabled": false,
-          "document": "只读实例信息",
+          "document": "只读实例信息。",
           "example": "{\"InstanceRole\": \"ro\",\"MasterInstanceId\": \"cdb-fn3f9xpx\",\"Period\": \"1\",\"Volume\": 100,\"Memory\": 4000}",
           "member": "MigrateClusterRoInfo",
           "name": "RoInfo",
@@ -5290,7 +5290,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-cdtkp3hr",
           "member": "string",
           "name": "InstanceId",
@@ -5299,7 +5299,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。",
+          "document": "开始时间(建议开始到结束时间区间最大7天)。",
           "example": "2023-06-07 15:59:45",
           "member": "string",
           "name": "StartTime",
@@ -5308,7 +5308,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间(建议开始到结束时间区间最大7天）。",
           "example": "2023-06-16 14:27:00",
           "member": "string",
           "name": "EndTime",
@@ -5317,7 +5317,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
+          "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序，默认降序排序。",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -5326,7 +5326,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
+          "document": "排序字段。支持值包括(默认按照时间戳排序)： \"timestamp\" - 时间戳； \"affectRows\" - 影响行数； \"execTime\" - 执行时间。",
           "example": "timestamp",
           "member": "string",
           "name": "OrderBy",
@@ -5345,7 +5345,7 @@
         {
           "disabled": false,
           "document": "过滤条件。可按设置的过滤条件过滤日志。",
-          "example": "{\"SqlTypes\": [\"SELECT\"]}",
+          "example": "[{\"Type\": \"host\", \"Compare\": \"EXC\",\"Value\": \"10.0.\"}]",
           "member": "InstanceAuditLogFilters",
           "name": "LogFilter",
           "required": false,
@@ -5354,7 +5354,7 @@
         {
           "disabled": false,
           "document": "下载筛选列",
-          "example": "{\"ColumnFilter\": [\"AffectRows\", \"TableName\",\"DBName\", \"Sql\"]}",
+          "example": "{\"ColumnFilter\": [\"AffectRows\", \"ErrCode\", \"SqlType\", \"TableName\", \"DBName\", \"Sql\", \"Host\", \"User\", \"ExecTime\", \"CheckRows\", \"SentRows\", \"ThreadId\", \"NsTime\", \"IoWaitTime\", \"TrxLivingTime\", \"Timestamp\", \"Result\",\"RiskLevel\",\"TrxId\"]}",
           "member": "string",
           "name": "ColumnFilter",
           "required": false,
@@ -7814,7 +7814,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计规则模板ID。",
+          "document": "审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。",
           "example": "cdb-art-l1mlbo59",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -8497,7 +8497,7 @@
         {
           "disabled": false,
           "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"BillingAmount\": 0,\"LowRealStorage\": 0,\"InstanceId\": \"cdb-euu5fkcj\",\"AuditTask\": 1,\"CreateAt\": \"2022-03-02 10:09:08\",\"AuditStatus\": \"1\",\"LogExpireDay\": 1,\"AuditAll\": true,\"InstanceInfo\": {\"ProjectId\": 0,\"TagList\": [{\"TagKey\": \"andy\",\"TagValue\": \"1\"}]},\"HighRealStorage\": 0,\"HighLogExpireDay\": 30,\"LowLogExpireDay\": 7}]",
+          "example": "[{\"BillingAmount\": 0,\"LowRealStorage\": 0,\"InstanceId\": \"cdb-euu5fkcj\",\"AuditTask\": 1,\"CreateAt\": \"2022-03-02 10:09:08\",\"AuditStatus\": \"1\"...}]",
           "member": "InstanceDbAuditStatus",
           "name": "Items",
           "output_required": true,
@@ -8592,7 +8592,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-of5qmu1b",
           "member": "string",
           "name": "InstanceId",
@@ -8601,7 +8601,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。",
+          "document": "开始时间(建议开始到结束时间区间最大7天)。",
           "example": "2023-06-18 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -8610,7 +8610,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间(建议开始到结束时间区间最大7天）。",
           "example": "2023-06-19 00:00:00",
           "member": "string",
           "name": "EndTime",
@@ -8637,7 +8637,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序。",
+          "document": "排序方式。支持值包括：\"ASC\" - 升序，\"DESC\" - 降序，默认降序排序。",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -8646,7 +8646,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。支持值包括：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
+          "document": "排序字段。支持值包括(默认按照时间戳排序)：\n\"timestamp\" - 时间戳；\n\"affectRows\" - 影响行数；\n\"execTime\" - 执行时间。",
           "example": "timestamp",
           "member": "string",
           "name": "OrderBy",
@@ -8803,7 +8803,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
+          "document": "审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取。",
           "example": "[\"cdb-art-8qx2kcr7\"]",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -8830,7 +8830,7 @@
         },
         {
           "disabled": false,
-          "document": "返回条数。",
+          "document": "返回条数,默认值-20，最大值-1000。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -8848,7 +8848,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式。DESC-按修改时间倒排，ASC-正序。",
+          "document": "排序方式，DESC-按修改时间倒排，ASC-正序，默认：DESC。",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -8874,7 +8874,7 @@
         {
           "disabled": false,
           "document": "变更详情。",
-          "example": "[\"TaskId\": 1997098,\"ModifyBeforeInfo\": {\"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\"RuleTemplateName\": \"wy_1\",\"RuleFilters\": [{\"Type\": \"sqlType\",\"Compare\": \"EQS\",\"Value\": [\"DROP\"]}],\"AlarmLevel\": 1,\"AlarmPolicy\": 0,\"Description\": \"\"},\"ModifyAfterInfo\": {\"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\"RuleTemplateName\": \"wy_1\",\"RuleFilters\": [{\"Type\": \"sqlType\",\"Compare\": \"EQS\",\"Value\": [\"DROP\",\"DELETE\"]}],\"AlarmLevel\": 2,\"AlarmPolicy\": 0,\"Description\": \"\"},\"AffectedInstances\": [\"cdb-nzg4gv35\",\"cdb-12y4cjjd\"],\"Operator\": \"700000579947\",\"UpdateTime\": \"2023-07-26 00:09:00\"}]",
+          "example": "[\"TaskId\": 12,\"ModifyBeforeInfo\": {},\"ModifyAfterInfo\": {},\"AffectedInstances\": [\"cdb-xqwe\"],\"Operator\": \"700000579947\",\"UpdateTime\": \"2023-07-26 00:09:00\"}]",
           "member": "RuleTemplateRecordInfo",
           "name": "Items",
           "output_required": false,
@@ -10294,7 +10294,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-dctw4edd",
           "member": "string",
           "name": "InstanceId",
@@ -10321,8 +10321,8 @@
         },
         {
           "disabled": false,
-          "document": "查询的开始时间。只能查看30天内的扩容历史",
-          "example": "2024-10-29 00:01:24",
+          "document": "查询的开始时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。",
+          "example": "1750994217",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -10330,8 +10330,8 @@
         },
         {
           "disabled": false,
-          "document": "查询的结束时间。只能查看30天内的扩容历史",
-          "example": "2024-10-30 00:01:24",
+          "document": "查询的结束时间。只能查看30天内的扩容历史，格式为 Integer 的时间戳（秒级）。",
+          "example": "1750994218",
           "member": "int64",
           "name": "EndTime",
           "required": false,
@@ -12845,7 +12845,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-2wpip1dd",
           "member": "string",
           "name": "InstanceId",
@@ -12854,7 +12854,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例 CPU 的核数。",
+          "document": "目标实例 CPU 的核数。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的 CPU 值范围。",
           "example": "2",
           "member": "float",
           "name": "DstCpu",
@@ -12863,7 +12863,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例内存大小，单位：MB。",
+          "document": "目标实例内存大小，单位：MB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的内存大小范围。",
           "example": "4000",
           "member": "uint64",
           "name": "DstMemory",
@@ -12872,7 +12872,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例磁盘大小，单位：GB。",
+          "document": "目标实例磁盘大小，单位：GB。为保证传入值有效，请使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取实例可售卖的磁盘大小范围。",
           "example": "1000",
           "member": "uint64",
           "name": "DstDisk",
@@ -12881,7 +12881,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例数据库版本。",
+          "document": "目标实例数据库版本。可选值：5.6，5.7，8.0。",
           "example": "5.7",
           "member": "string",
           "name": "DstVersion",
@@ -12890,7 +12890,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例部署模型。",
+          "document": "目标实例部署模型。默认为0，支持值包括：0 - 表示单可用区，1 - 表示多可用区。",
           "example": "0",
           "member": "int64",
           "name": "DstDeployMode",
@@ -12899,7 +12899,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例复制类型。",
+          "document": "目标实例复制类型，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。",
           "example": "0",
           "member": "int64",
           "name": "DstProtectMode",
@@ -12908,7 +12908,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例备机1可用区。",
+          "document": "目标实例备机1可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。",
           "example": "100001",
           "member": "int64",
           "name": "DstSlaveZone",
@@ -12917,7 +12917,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例备机2可用区。",
+          "document": "目标实例备机2可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。",
           "example": "100001",
           "member": "int64",
           "name": "DstBackupZone",
@@ -12926,7 +12926,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例类型。",
+          "document": "目标实例类型。支持值包括：\"CUSTOM\" - 通用型实例，\"EXCLUSIVE\" - 独享型实例，\"ONTKE\" - ONTKE 单节点实例，\"CLOUD_NATIVE_CLUSTER\" - 云盘版标准型，\"CLOUD_NATIVE_CLUSTER_EXCLUSIVE\" - 云盘版加强型。",
           "example": "CUSTOM",
           "member": "string",
           "name": "DstCdbType",
@@ -12935,7 +12935,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例主可用区。",
+          "document": "目标实例主可用区 ID。可使用 [DescribeCdbZoneConfig](https://cloud.tencent.com/document/product/236/80281) 获取可用区 ID。",
           "example": "100001",
           "member": "int64",
           "name": "DstZoneId",
@@ -12953,7 +12953,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版的节点拓扑配置",
+          "document": "集群版的节点拓扑配置。Nodeld信息可通过 [DescribeClusterInfo](https://cloud.tencent.com/document/api/236/105116) 接口获取。",
           "example": "{\"ReadWriteNode\":{\"Zone\":\"ap-beijing-6\"},\"ReadOnlyNodes\":[{\"Zone\":\"ap-beijing-6\"}]}",
           "member": "ClusterTopology",
           "name": "ClusterTopology",
@@ -13005,7 +13005,7 @@
         },
         {
           "disabled": false,
-          "document": "实例升级类型。",
+          "document": "实例升级类型。Trsf - 迁移升级，InPlace - 原地升级，Topology - 架构升级。",
           "example": "Trsf",
           "member": "string",
           "name": "UpgradeType",
@@ -15035,7 +15035,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组 ID。",
+          "document": "安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。",
           "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
@@ -15044,8 +15044,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 列表，一个或者多个实例 ID 组成的数组。",
-          "example": "[\"cdb-eb2w7dto\\r\\n\"]",
+          "document": "实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "example": "[\"cdb-eb2w7dto\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -15053,7 +15053,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "document": "当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组，需要将该入参置为 True，默认为 False。",
           "example": "False",
           "member": "bool",
           "name": "ForReadonlyInstance",
@@ -15746,7 +15746,7 @@
         },
         {
           "disabled": false,
-          "document": "日志保留时长。",
+          "document": "日志保留时长。支持值包括：\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
           "example": "30",
           "member": "uint64",
           "name": "LogExpireDay",
@@ -15756,7 +15756,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储时长。",
+          "document": "高频存储时长。支持值包括：\n3 - 3天；\n7 - 一周；\n30 - 一个月；\n90 - 三个月；\n180 - 六个月；\n365 - 一年；\n1095 - 三年；\n1825 - 五年。",
           "example": "7",
           "member": "uint64",
           "name": "HighLogExpireDay",
@@ -15766,7 +15766,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储时长。",
+          "document": "低频存储时长。单位：天，等于日志保存时长减去高频存储时长。",
           "example": "23",
           "member": "uint64",
           "name": "LowLogExpireDay",
@@ -15776,7 +15776,7 @@
         },
         {
           "disabled": false,
-          "document": "日志存储量。",
+          "document": "日志存储量(单位：GB)。",
           "example": "173749.248",
           "member": "float",
           "name": "BillingAmount",
@@ -15786,7 +15786,7 @@
         },
         {
           "disabled": false,
-          "document": "高频存储量。",
+          "document": "高频存储量(单位：GB)。",
           "example": "45639.68",
           "member": "float",
           "name": "HighRealStorage",
@@ -15796,7 +15796,7 @@
         },
         {
           "disabled": false,
-          "document": "低频存储量。",
+          "document": "低频存储量(单位：GB)。",
           "example": "128109.568",
           "member": "float",
           "name": "LowRealStorage",
@@ -15836,7 +15836,7 @@
         },
         {
           "disabled": false,
-          "document": "总存储量。",
+          "document": "总存储量(单位：GB)。",
           "example": "173749.248",
           "member": "float",
           "name": "RealStorage",
@@ -17288,7 +17288,7 @@
         },
         {
           "disabled": false,
-          "document": "云数据库账号。",
+          "document": "云数据库账号。可通过 [DescribeAccounts](https://cloud.tencent.com/document/api/236/17499) 接口获取。",
           "example": "andy",
           "member": "Account",
           "name": "Accounts",
@@ -17297,7 +17297,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库账号的备注信息。",
+          "document": "数据库账号的备注信息。最多支持输入255个字符。",
           "example": "new",
           "member": "string",
           "name": "Description",
@@ -18598,8 +18598,8 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
-          "example": "[\"sg-ajr1jzgj\\r\\n\"]",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
+          "example": "[\"sg-ajr1jzgj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -18607,7 +18607,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入只读实例ID时，默认操作的是对应只读组的安全组。如果需要操作只读实例ID的安全组， 需要将该入参置为True",
+          "document": "当传入只读实例 ID 时，默认操作的是对应只读组的安全组。如果需要操作只读实例 ID 的安全组， 需要将该入参置为 True。默认为 False。",
           "example": "False",
           "member": "bool",
           "name": "ForReadonlyInstance",
@@ -18616,7 +18616,7 @@
         },
         {
           "disabled": false,
-          "document": "变更集群版实例只读组时，InstanceId传实例id，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
+          "document": "变更集群版实例只读组时，InstanceId 传实例 ID，需要额外指定该参数表示操作只读组。 如果操作读写节点则不需指定该参数。",
           "example": "cdb-xxx|readonly",
           "member": "string",
           "name": "OpResourceId",
@@ -20341,7 +20341,7 @@
         },
         {
           "disabled": false,
-          "document": "代理状态",
+          "document": "代理状态。0 - 初始化中，1 - 在线中，2 - 在线中-读写分离中，3 - 下线，4 - 销毁。",
           "example": "online",
           "member": "string",
           "name": "Status",
@@ -20351,7 +20351,7 @@
         },
         {
           "disabled": false,
-          "document": "代理任务状态",
+          "document": "代理任务状态，Upgrading - 升级中，UpgradeTo - 升级待切换，UpgradeSwitching - 升级切换中，ProxyCreateAddress - 配置地址中，ProxyModifyAddress - 修改地址中，ProxyCloseAddress - 关闭地址中。",
           "example": "upgrade",
           "member": "string",
           "name": "TaskStatus",
@@ -20840,7 +20840,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
           "example": "proxy-ixw3ll2d",
           "member": "string",
           "name": "ProxyGroupId",
@@ -20849,7 +20849,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组地址ID",
+          "document": "代理组地址 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。如果不传则会对所有代理组地址进行负载均衡。",
           "example": " proxyaddr-kti9dddd",
           "member": "string",
           "name": "ProxyAddressId",
@@ -24294,7 +24294,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码。",
+          "document": "错误码。0代表成功，其他对应不同的报错场景。",
           "example": "0",
           "member": "int64",
           "name": "Code",

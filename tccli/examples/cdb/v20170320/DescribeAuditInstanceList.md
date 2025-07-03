@@ -1,6 +1,6 @@
 **Example 1: 获取审计实例列表**
 
-无
+获取审计实例列表
 
 Input: 
 
@@ -23,7 +23,7 @@ Output:
         "Items": [
             {
                 "InstanceId": "cdb-euu5fkcj",
-                "AuditStatus": "1",
+                "AuditStatus": "OFF",
                 "AuditTask": 1,
                 "LogExpireDay": 1,
                 "HighLogExpireDay": 1,

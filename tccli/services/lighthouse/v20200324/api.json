@@ -1030,11 +1030,11 @@
       "status": "online"
     },
     "ModifyInstancesIpv6Bandwidth": {
-      "document": "本接口用于批量修改实例的IPv6地址带宽。",
+      "document": "ModifyInstancesIpv6Bandwidth接口近90天现网已无用户调用，申请预下线\n\n本接口用于批量修改实例的IPv6地址带宽。",
       "input": "ModifyInstancesIpv6BandwidthRequest",
       "name": "批量修改实例IPv6带宽",
       "output": "ModifyInstancesIpv6BandwidthResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyInstancesRenewFlag": {
       "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。",

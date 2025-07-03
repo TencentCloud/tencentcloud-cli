@@ -246,7 +246,7 @@
       "status": "online"
     },
     "DescribeFusionInstanceList": {
-      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n\n- InstanceName 集群名称，支持模糊查询，从 [DescribeInstance](https://cloud.tencent.com/document/api/1493/97866) 接口或控制台获得\n- InstanceId 集群ID，精确查询，从当前接口或控制台获得\n- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n- Version 集群版本，枚举值如下：\n    - 4 RocketMQ 4.x 集群\n    - 5 RocketMQ 5.x 集群\n\nFilters示例：\n [{ \"Name\": \"InstanceId\", \"Values\": [\"rmq-72mo3a9o\"] }]",
+      "document": "查询集群列表，支持 4.x 和 5.x 集群，其中 Filters 参数使用说明如下：\n\n- InstanceName 集群名称，支持模糊查询，从本接口返回值或控制台获得\n- InstanceId 集群ID，精确查询，从当前接口或控制台获得\n- InstanceType 集群类型，可参考 [InstanceItem](https://cloud.tencent.com/document/api/1493/96031#InstanceItem) 数据结构，支持多选\n- Version 集群版本，枚举值如下：\n    - 4 RocketMQ 4.x 集群\n    - 5 RocketMQ 5.x 集群\n\nFilters示例：\n [{ \"Name\": \"InstanceId\", \"Values\": [\"rmq-72mo3a9o\"] }]",
       "input": "DescribeFusionInstanceListRequest",
       "name": "查询集群列表",
       "output": "DescribeFusionInstanceListResponse",
@@ -8981,7 +8981,7 @@
         },
         {
           "disabled": false,
-          "document": "商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参获得。",
+          "document": "商品规格，从 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参获得。",
           "example": "basic_1k",
           "member": "string",
           "name": "SkuCode",
@@ -8990,7 +8990,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：\n\n- 默认值：DefaultRetention 参数\n- 最小值：RetentionLowerLimit 参数\n- 最大值：RetentionUpperLimit 参数",
+          "document": "消息保留时长（单位：小时），取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：\n\n- 默认值：DefaultRetention 参数\n- 最小值：RetentionLowerLimit 参数\n- 最大值：RetentionUpperLimit 参数",
           "example": "72",
           "member": "int64",
           "name": "MessageRetention",
@@ -9017,7 +9017,7 @@
         },
         {
           "disabled": false,
-          "document": "最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参：\n\n- 最小值和默认值：TopicNumLimit 参数\n- 最大值：TopicNumUpperLimit 参数",
+          "document": "最大可创建主题数，取值范围参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参：\n\n- 最小值和默认值：TopicNumLimit 参数\n- 最大值：TopicNumUpperLimit 参数",
           "example": "100",
           "member": "int64",
           "name": "MaxTopicNum",
@@ -9026,7 +9026,7 @@
         },
         {
           "disabled": false,
-          "document": "免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/107676) 出参中的 TopicNumLimit 参数。",
+          "document": "免费额度之外的主题个数，免费额度参考 [DescribeProductSKUs](https://cloud.tencent.com/document/api/1493/107676) 接口中的 [ProductSKU](https://cloud.tencent.com/document/api/1493/96031#ProductSKU) 出参中的 TopicNumLimit 参数。",
           "example": "50",
           "member": "string",
           "name": "ExtraTopicNum",
@@ -11183,7 +11183,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型，枚举值如下：\n\n- NORMAL：普通消息主题\n- FIFO：顺序消息主题\n- DELAY：延迟消息主题\n- TRANSACTION：事务消息主题",
+          "document": "主题类型，枚举值如下：\n\n- UNSPECIFIED：未指定\n- NORMAL：普通消息\n- FIFO：顺序消息\n- DELAY：延时消息\n- TRANSACTION：事务消息",
           "example": "NORMAL",
           "member": "string",
           "name": "TopicType",

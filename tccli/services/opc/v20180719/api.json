@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CheckUinFollower": {
-      "document": "校验uin和OA账号在tcc系统中是否有关联关系",
+      "document": "迁移至cem\n\n校验uin和OA账号在tcc系统中是否有关联关系",
       "input": "CheckUinFollowerRequest",
       "name": "检查TCC UIN关联关系",
       "output": "CheckUinFollowerResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CheckUinShowAddFansEntrance": {
       "document": "检查用户是否展示加粉入口",
