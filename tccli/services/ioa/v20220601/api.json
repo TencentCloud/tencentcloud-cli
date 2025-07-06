@@ -56,6 +56,13 @@
       "output": "DescribeDeviceInfoResponse",
       "status": "online"
     },
+    "DescribeDeviceVirtualGroups": {
+      "document": "查询终端自定义分组列表，私有化调用path为：/capi/Assets/Device/DescribeDeviceVirtualGroups",
+      "input": "DescribeDeviceVirtualGroupsRequest",
+      "name": "查询终端自定义分组列表",
+      "output": "DescribeDeviceVirtualGroupsResponse",
+      "status": "online"
+    },
     "DescribeDevices": {
       "document": "查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices",
       "input": "DescribeDevicesRequest",
@@ -1228,6 +1235,98 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeDeviceVirtualGroupsPageRsp": {
+      "document": "查询返回终端自定义分组的Data数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页公共对象",
+          "example": "{ \t\t\"PageCount\": 1, \t\t\"Total\": 1, \t\t\"PageSize\": 10, \t\t\"PageNum\": 1 \t}",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端自定义分组列表数据",
+          "example": "[{ \t\t\"DeviceVirtualGroupName\": \"自定义分组1\", \t\t\"DeviceCount\": 0, \t\t\"TimeType\": 0, \t\t\"OsType\": 0, \t\t\"Id\": 10307, \t\t\"Status\": 1, \t\t\"Utime\": \"2025-05-23T15:58:40.411484+08:00\", \t\t\"Description\": \"\", \t\t\"Itime\": \"2025-05-23T15:58:40.411484+08:00\" \t}]",
+          "member": "DeviceVirtualDeviceGroupsDetail",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDeviceVirtualGroupsRequest": {
+      "document": "DescribeDeviceVirtualGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "滤条件、分页参数 <li>Name - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按终端自定义分组过滤。</li> <li>DeviceVirtualGroupName - String - 是否必填：否 - 操作符: like  - 排序支持：否- 按终端自定义分组过滤。</li>",
+          "example": "{\"Filters\":[{\"Field\":\"Name\",\"Operator\":\"ilike\",\"Values\":[\"分组1\"]}],\"Sort\":{},\"PageSize\":-1,\"PageNum\":1}",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "必填，系统类型（0: win，1：linux，2: mac，4：android，5：ios   默认值0）",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "非必填，自定义分组ids",
+          "example": "[10307]",
+          "member": "int64",
+          "name": "VirtualGroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceVirtualGroupsResponse": {
+      "document": "DescribeDeviceVirtualGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询终端自定义分组的Data数据",
+          "example": "{\"Page\":{\"PageCount\":1,\"Total\":1,\"PageSize\":10,\"PageNum\":1},\"Items\":[{\"DeviceVirtualGroupName\":\"自定义分组1\",\"DeviceCount\":0,\"TimeType\":0,\"OsType\":0,\"Id\":10307,\"Status\":1}]}",
+          "member": "DescribeDeviceVirtualGroupsPageRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeDevicesPageRsp": {
       "document": "分页的data数据",
@@ -2898,6 +2997,78 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceVirtualDeviceGroupsDetail": {
+      "document": "终端自定义分组列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端自定义分组id",
+          "example": "10307",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义分组名称",
+          "example": "自定义分组1",
+          "member": "string",
+          "name": "DeviceVirtualGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备数",
+          "example": "10",
+          "member": "int64",
+          "name": "DeviceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统类型（0: win，1：linux，2: mac，4：android，5：ios  ）",
+          "example": "0",
+          "member": "int64",
+          "name": "OsType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-05-23T15:58:40.411484+08:00",
+          "member": "string",
+          "name": "Itime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-05-23T15:58:40.411484+08:00",
+          "member": "string",
+          "name": "Utime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

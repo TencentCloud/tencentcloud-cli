@@ -12033,6 +12033,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行命令(解码后)",
+          "example": "rm",
+          "member": "string",
+          "name": "BashCmdDecoded",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -28480,6 +28490,36 @@
           "example": "0",
           "member": "uint64",
           "name": "ProtectFileScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行清理开关 0未开启 1开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "DoClean",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选的隔离主机集合",
+          "example": "[\"972290ce-2e07-4689-8f92-f617239bbf82\"]",
+          "member": "string",
+          "name": "QuaraUuids",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户选择的隔离范围，0：默认全隔离 1：用户自选",
+          "example": "0",
+          "member": "uint64",
+          "name": "QuaraScope",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -45427,6 +45467,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以清理",
+          "example": "true",
+          "member": "bool",
+          "name": "DoClean",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次检出方式 0扫描；1实时监控",
+          "example": "1",
+          "member": "uint64",
+          "name": "FirstDetectionMethod",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -45818,6 +45878,16 @@
           "name": "ProcessExists",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次检出方式0扫描;1实时监控",
+          "example": "0",
+          "member": "uint64",
+          "name": "FirstDetectionMethod",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -47956,6 +48026,24 @@
           "example": "0",
           "member": "uint64",
           "name": "ProtectFileScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自选的隔离主机集合",
+          "example": "[\"quuidA\"]",
+          "member": "string",
+          "name": "QuaraUuids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户选择的隔离范围，0：默认全隔离 1：用户自选",
+          "example": "1",
+          "member": "uint64",
+          "name": "QuaraScope",
           "required": false,
           "type": "int"
         }
@@ -54700,7 +54788,7 @@
         {
           "disabled": false,
           "document": "建议方案",
-          "example": "1.检查恶意进程及非法端口，删除可疑的启动项和定时任务；\n2.隔离或者删除相关的木马文件；\n3.对系统进行风险排查，并进行安全加固，详情可参考如下链接： \n【Linux】https://cloud.tencent.com/document/product/296/9604 \n【Windows】https://cloud.tencent.com/document/product/296/****",
+          "example": "1.检查恶意进程及非法端口",
           "member": "string",
           "name": "SuggestSolution",
           "output_required": true,
@@ -54755,6 +54843,16 @@
           "name": "Uuid",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次检出方式 0扫描;1实时监控",
+          "example": "1",
+          "member": "uint64",
+          "name": "FirstDetectionMethod",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -55269,6 +55367,26 @@
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选主机里面包含基础版个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "BasicVersionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建扫描任务机器个数",
+          "example": "20",
+          "member": "uint64",
+          "name": "SuccessCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -60756,7 +60874,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件告警类型；1：离线，2：木马，3：异常登录，4：爆破，5：漏洞（已拆分为9-12四种类型）6：高位命令，7：反弹sell，8：本地提权，9：系统组件漏洞，10：web应用漏洞，11：应急漏洞，12：安全基线，14：恶意请求，15: 网络攻击，16：Windows系统漏洞，17：Linux软件漏洞",
+          "document": "事件告警类型；1：离线，2：木马，3：异常登录，4：爆破，5：漏洞（已拆分为9-12四种类型）6：高危命令，7：反弹sell，8：本地提权，9：系统组件漏洞，10：web应用漏洞，11：应急漏洞，12：安全基线，14：恶意请求，15: 网络攻击，16：Windows系统漏洞，17：Linux软件漏洞",
           "example": "2",
           "member": "uint64",
           "name": "Type",
@@ -60807,6 +60925,15 @@
           "name": "HostRange",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单位",
+          "example": "minute",
+          "member": "string",
+          "name": "Unit",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

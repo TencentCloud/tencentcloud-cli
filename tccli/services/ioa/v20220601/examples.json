@@ -94,6 +94,26 @@
         "title": "测试"
       }
     ],
+    "DescribeDeviceVirtualGroups": [
+      {
+        "document": "查询终端自定义分组列表",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceVirtualGroups\n<公共请求参数>\n\n{\n    \"OsType\": 0,\n    \"Condition\": {\n        \"PageNum\": 0,\n        \"PageSize\": 10,\n        \"Filters\": [\n            {\n                \"Field\": \"Name\",\n                \"Operator\": \"like\",\n                \"Values\": [\n                    \"auottest1666336897100\"\n                ]\n            }\n        ],\n        \"Sort\": {\n            \"Field\": \"Itime\",\n            \"Order\": \"desc\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0bd4d6b9-be26-4435-9f3e-79dbdb0c57c9\",\n        \"Data\": {\n            \"Page\": {\n                \"PageNum\": 1,\n                \"Total\": 0,\n                \"PageCount\": 0,\n                \"PageSize\": 1000\n            },\n            \"Items\": [\n                {\n                    \"Utime\": \"2022-10-21 15:21:37\",\n                    \"DeviceVirtualGroupName\": \"auottest1666336897100\",\n                    \"DeviceCount\": 0,\n                    \"Itime\": \"2022-10-21 15:21:37\",\n                    \"OsType\": 0,\n                    \"Id\": 356\n                }\n            ]\n        }\n    }\n}",
+        "title": "示例1"
+      },
+      {
+        "document": "展示自定义分组列表",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceVirtualGroups\n<公共请求参数>\n\n{\n    \"Condition\": {\n        \"FilterGroups\": [\n            {\n                \"Filters\": [\n                    {\n                        \"Field\": \"DeviceVirtualGroupName\",\n                        \"Operator\": \"eq\",\n                        \"Values\": [\n                            \"auto00\"\n                        ]\n                    }\n                ]\n            }\n        ]\n    },\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"DeviceCount\": 0,\n                    \"DeviceVirtualGroupName\": \"auto00\",\n                    \"Id\": 7,\n                    \"Itime\": \"2023-03-28T15:07:52.581053+08:00\",\n                    \"OsType\": 0,\n                    \"Utime\": \"2023-03-28T15:24:46.281814+08:00\"\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 1000,\n                \"Total\": 1\n            }\n        },\n        \"RequestId\": \"5d27c416-73d6-4081-809b-c5ac5943f33c\"\n    }\n}",
+        "title": "示例2"
+      },
+      {
+        "document": "查询设备自定义分组列表",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceVirtualGroups\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"1\",\n    \"Condition\": {\n        \"PageSize\": 10,\n        \"PageNum\": 1\n    },\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"Page\": {\n                \"PageCount\": 0,\n                \"PageNum\": 1,\n                \"PageSize\": 10,\n                \"Total\": 0\n            }\n        },\n        \"RequestId\": \"a4408eff-66b2-4705-ac4e-80c9a1371088\"\n    }\n}",
+        "title": "查询设备自定义分组列表"
+      }
+    ],
     "DescribeDevices": [
       {
         "document": "获取租户满足条件：最近登录账号包含\\'cc\\'（不区分大小写）的设备列表详情",

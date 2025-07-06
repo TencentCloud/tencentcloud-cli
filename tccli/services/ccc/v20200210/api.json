@@ -8497,6 +8497,15 @@
           "name": "Priority",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否将文本加入到llm历史上下文中",
+          "example": "true",
+          "member": "bool",
+          "name": "AddHistory",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -498,7 +498,7 @@
       "status": "online"
     },
     "DescribeDBInstanceInfo": {
-      "document": "本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密）。",
+      "document": "本接口（DescribeDBInstanceInfo）用于查询实例基本信息（实例 ID，实例名称，是否开通加密），只读实例不支持查询。",
       "input": "DescribeDBInstanceInfoRequest",
       "name": "查询实例基本信息",
       "output": "DescribeDBInstanceInfoResponse",
@@ -701,7 +701,7 @@
       "status": "online"
     },
     "DescribeSSLStatus": {
-      "document": "查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。",
+      "document": "本接口（DescribeSSLStatus）用于查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。",
       "input": "DescribeSSLStatusRequest",
       "name": "查询 SSL 开通情况",
       "output": "DescribeSSLStatusResponse",
@@ -1951,7 +1951,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组 ID。",
+          "document": "安全组 ID。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/api/236/15854) 接口获取。",
           "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
@@ -1960,8 +1960,8 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID 列表，一个或者多个实例 ID 组成的数组。",
-          "example": "[\"cdb-eb2w7dto\\r\\n\"]",
+          "document": "实例 ID 列表，一个或者多个实例 ID 组成的数组。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "example": "[\"cdb-eb2w7dto\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5912,7 +5912,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
@@ -5921,7 +5921,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。",
+          "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。\n说明：若此项不填，则系统会选择默认 VPC 下的默认子网。",
           "example": "subnet-b5v6i111",
           "member": "string",
           "name": "UniqSubnetId",
@@ -5957,7 +5957,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。\n说明：必填项。",
+          "document": "实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。\n说明：请选择实例类型，不填会默认选择 master。",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -5975,7 +5975,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义端口，端口支持范围：[ 1024-65535 ] 。",
+          "document": "自定义端口，端口支持范围：[1024 - 65535]。\n说明：不填则默认为3306。",
           "example": "3306",
           "member": "int64",
           "name": "Port",
@@ -6328,7 +6328,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。",
+          "document": "私有网络 ID，请使用 [查询私有网络列表](/document/api/215/15778)。\n说明：如果创建的是集群版实例，此参数为必填且为私有网络类型。若此项不填，则系统会选择默认的 VPC。",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
@@ -6337,7 +6337,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。",
+          "document": "私有网络下的子网 ID，如果设置了 UniqVpcId，则 UniqSubnetId 必填，请使用 [查询子网列表](/document/api/215/15784)。\n说明：若此项不填，则系统会选择默认 VPC 下的默认子网。",
           "example": "subnet-b5v6i111",
           "member": "string",
           "name": "UniqSubnetId",
@@ -6355,7 +6355,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义端口，端口支持范围：[ 1024-65535 ]。",
+          "document": "自定义端口，端口支持范围：[ 1024-65535 ]。\n说明：若此项不填，则默认为3306。",
           "example": "3306",
           "member": "int64",
           "name": "Port",
@@ -6364,7 +6364,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。\n说明：必填项。",
+          "document": "实例类型，支持值包括：master - 表示主实例，dr - 表示灾备实例，ro - 表示只读实例。\n说明：请选择实例类型，不填会默认选择 master。",
           "example": "master",
           "member": "string",
           "name": "InstanceRole",
@@ -6373,7 +6373,7 @@
         },
         {
           "disabled": false,
-          "document": "实例 ID，购买只读实例时必填，该字段表示只读实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
+          "document": "实例 ID，购买只读实例或灾备实例时必填，该字段表示只读实例或灾备实例的主实例 ID，请使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询云数据库实例 ID。",
           "example": "cdb-q72dnodd",
           "member": "string",
           "name": "MasterInstanceId",
@@ -6445,7 +6445,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。",
+          "document": "自动续费标记，可选值为：0 - 不自动续费；1 - 自动续费。默认为0。",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -7050,7 +7050,7 @@
         },
         {
           "disabled": false,
-          "document": "内存",
+          "document": "内存，单位为MB",
           "example": "4000",
           "member": "uint64",
           "name": "Memory",
@@ -9436,7 +9436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
@@ -9445,7 +9445,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组ID",
+          "document": "代理组 ID。",
           "example": "proxy-ixw3ll2d",
           "member": "string",
           "name": "ProxyGroupId",
@@ -10133,7 +10133,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。\n说明：仅主实例支持查询，此项仅支持输入主实例 ID。",
           "example": "cdb-59dm059k",
           "member": "string",
           "name": "InstanceId",
@@ -12241,7 +12241,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-2wpip1dd",
           "member": "string",
           "name": "InstanceId",
@@ -12752,7 +12752,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。\n说明：实例 ID 和实例组 ID 两个参数选其一填写即可。若要查询双节点、三节点实例 SSL 开通情况，请填写实例 ID 参数进行查询。单节点（云盘）、集群版实例不支持开启 SSL，因此不支持查询。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。\n说明：实例 ID 和只读组 ID 两个参数选其一填写即可。若要查询双节点、三节点实例 SSL 开通情况，请填写实例 ID 参数进行查询。单节点（云盘）、云盘版实例不支持开启 SSL，因此不支持查询。",
           "example": "cdb-test",
           "member": "string",
           "name": "InstanceId",
@@ -12761,7 +12761,7 @@
         },
         {
           "disabled": false,
-          "document": "只读组 ID。\n说明：实例 ID 和实例组 ID 两个参数选其一填写即可。若要查询只读实例或只读组 SSL 开通情况，请填写 RoGroupId 参数，并注意填写的都是只读组 ID。单节点（云盘）、集群版实例不支持开启 SSL，因此不支持查询。",
+          "document": "只读组 ID。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。\n说明：实例 ID 和只读组 ID 两个参数选其一填写即可。若要查询只读实例或只读组 SSL 开通情况，请填写 RoGroupId 参数，并注意填写的都是只读组 ID。单节点（云盘）、云盘版实例不支持开启 SSL，因此不支持查询。",
           "example": "cdbrg-test",
           "member": "string",
           "name": "RoGroupId",

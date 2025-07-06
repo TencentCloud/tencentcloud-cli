@@ -3548,6 +3548,15 @@
           "name": "NodeMarks",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "clb id",
+          "example": "lb-xxxxxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6235,6 +6244,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群依赖的Redis实例Id",
+          "example": "[\"crs-disx2492\"]",
+          "member": "string",
+          "name": "RedisInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
