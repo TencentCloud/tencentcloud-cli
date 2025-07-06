@@ -378,6 +378,15 @@
           "name": "Credit",
           "required": true,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "临时补余额",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

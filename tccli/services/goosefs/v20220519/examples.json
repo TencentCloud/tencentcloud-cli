@@ -136,6 +136,14 @@
         "title": "查询GooseFS集群客户端凭证"
       }
     ],
+    "DescribeClusterConfig": [
+      {
+        "document": "创建集群配置",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"x_c60_r3c4fa1f\",\n    \"ConfigFilename\": \"goosefs-site.properties\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\",\n        \"ConfigContent\": \"a2V5PXZhbHVl\"\n    }\n}",
+        "title": "创建集群配置"
+      }
+    ],
     "DescribeClusterRoleToken": [
       {
         "document": "",
@@ -150,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterRoles\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_x419f8qc\",\n    \"RoleName\": \"GooseFS_QCSLinkedRoleInManageCloudService\"\n}",
         "output": "{\n    \"Response\": {\n        \"ClusterRoles\": [\n            {\n                \"ClusterId\": \"g_cvm_x419f8qc\",\n                \"RoleName\": \"GooseFS_QCSLinkedRoleInManageCloudService\",\n                \"Description\": \"列举集群角色列表\",\n                \"DirectoryList\": [\n                    \"root\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a10aeff3-cc7c-4535-8af5-db3b9bc108cb\"\n    }\n}",
         "title": "查询集群角色列表"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "列出所有的 GooseFS 集群",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterAttributeList\": [\n            {\n                \"ClusterId\": \"g_cvm_744ikj5x\",\n                \"Name\": \"MyTestFS\",\n                \"Status\": \"alive\",\n                \"Type\": \"goosefs\",\n                \"VpcId\": \"vpc-123\",\n                \"SubnetId\": \"subnet-123\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"Description\": \"my test fs\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Tag\": [\n                    {\n                        \"Value\": \"production\",\n                        \"Key\": \"env\"\n                    }\n                ],\n                \"GooseFSAttribute\": {\n                    \"ClusterHighAvailability\": \"是\",\n                    \"ClusterDeployType\": \"INDEPENDENT_CLUSTER\",\n                    \"GooseFSCloudAuth\": true,\n                    \"InstanceType\": \"CVM\",\n                    \"TkeClusterId\": \"xxx\",\n                    \"ClientNumber\": 111,\n                    \"GooseFSNodeList\": [\n                        {\n                            \"NodeIp\": \"10.0.0.1\",\n                            \"InstanceId\": \"xxx\",\n                            \"InstanceType\": \"CVM\",\n                            \"NodeType\": \"Master\",\n                            \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"Status\": \"Success\",\n                            \"GroupId\": \"xxx\",\n                            \"NetworkId\": \"xxx\",\n                            \"Services\": [\n                                {\n                                    \"ServiceName\": \"master\",\n                                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                                    \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                                    \"Status\": \"Running\",\n                                    \"KeepAlive\": false,\n                                    \"ConfigChanged\": false\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        ],\n        \"TotalCount\": 30,\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
+        "title": "列出 GooseFS 集群"
       }
     ],
     "DescribeCvmResource": [

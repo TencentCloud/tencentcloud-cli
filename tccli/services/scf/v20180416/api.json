@@ -821,6 +821,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认读写属性 支持值： rw,ro",
+          "example": "ro",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "turbocfs 所依赖的插件信息",
+          "example": "无",
+          "member": "PluginConfig",
+          "name": "PluginConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1184,6 +1206,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认读写属性 支持值： rw,ro\n",
+          "example": "rw",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件配置信息",
+          "example": "无",
+          "member": "PluginConfig",
+          "name": "PluginConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -1740,6 +1784,15 @@
           "name": "CosFsConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "CosFS配置参数，用于云函数挂载Cos文件系统",
+          "example": "无",
+          "member": "GooseFsInfo",
+          "name": "GooseFsConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4280,6 +4333,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "GooseFs配置参数，用于云函数关联GooseFs",
+          "example": "无",
+          "member": "GooseFsInfo",
+          "name": "GooseFsConfig",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4672,6 +4735,100 @@
         }
       ],
       "type": "object"
+    },
+    "GooseFsInfo": {
+      "document": "Goose文件系统挂载信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "goosefs集群信息",
+          "example": "g_cvm_1a1aa11a",
+          "member": "string",
+          "name": "GooseFsCluster",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "goosefs命名空间信息",
+          "example": "goosefs-ns",
+          "member": "string",
+          "name": "GooseFsNamespace",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体所需挂载的GooseFS目录",
+          "example": "/test",
+          "member": "string",
+          "name": "RemoteMountPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数实例中的本地目录",
+          "example": "/mnt/test",
+          "member": "string",
+          "name": "LocalMountDir",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "允许用户自定义JVM配置，部分配置项需根据当前函数规格校验是否允许配置\n只能包含字母、数字、符号，500个字符以内\n",
+          "example": "-Xms4g -Xmx4g -XX:MaxDirectMemorySize=2g ",
+          "member": "string",
+          "name": "JVMConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "fs挂载时指定的特殊选项。",
+          "example": "fs挂载时指定的特殊选项。",
+          "member": "string",
+          "name": "MountOption",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认读写属性 支持值： rw,ro",
+          "example": "rw",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Goosefs依赖的插件信息",
+          "example": "无",
+          "member": "PluginConfig",
+          "name": "PluginConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ImageConfig": {
       "document": "TCR镜像信息描述",
@@ -8757,6 +8914,15 @@
           "name": "CosFsConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "GooseFsConfig",
+          "example": "空",
+          "member": "string",
+          "name": "GooseFsConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

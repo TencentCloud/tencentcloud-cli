@@ -70,6 +70,13 @@
       "output": "AddSpartaProtectionResponse",
       "status": "online"
     },
+    "AllocateInstanceInnerVip": {
+      "document": "为SAASWAF实例分配内网VIP，提供给高防EIP调用。",
+      "input": "AllocateInstanceInnerVipRequest",
+      "name": "为SAASWAF实例分配内网VIP",
+      "output": "AllocateInstanceInnerVipResponse",
+      "status": "online"
+    },
     "ApplyResponsePage": {
       "document": "给域名应用自定义响应页面",
       "input": "ApplyResponsePageRequest",
@@ -833,6 +840,13 @@
       "output": "DescribeUserSignatureRuleV2Response",
       "status": "online"
     },
+    "DescribeUserWafAccessInfo": {
+      "document": "获取用户waf接入信息，给高防EIP调用",
+      "input": "DescribeUserWafAccessInfoRequest",
+      "name": "获取客户实例的接入信息",
+      "output": "DescribeUserWafAccessInfoResponse",
+      "status": "online"
+    },
     "DescribeVipInfo": {
       "document": "根据过滤条件查询VIP信息",
       "input": "DescribeVipInfoRequest",
@@ -1272,6 +1286,13 @@
       "input": "ModifyUserSignatureRuleV2Request",
       "name": "修改用户防护规则V2",
       "output": "ModifyUserSignatureRuleV2Response",
+      "status": "online"
+    },
+    "ModifyWafAntiDDoSEip": {
+      "document": "提供给高防EIP调用，绑定解绑WAF实例",
+      "input": "ModifyWafAntiDDoSEipRequest",
+      "name": "修改WAF的高防EIP",
+      "output": "ModifyWafAntiDDoSEipResponse",
       "status": "online"
     },
     "ModifyWafAutoDenyRules": {
@@ -3053,6 +3074,43 @@
     "AddSpartaProtectionResponse": {
       "document": "AddSpartaProtection返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateInstanceInnerVipRequest": {
+      "document": "AllocateInstanceInnerVip请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "WAF实例id",
+          "example": "waf_2l12yabe01d91pi9",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateInstanceInnerVipResponse": {
+      "document": "AllocateInstanceInnerVip返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网VIP信息",
+          "example": "[{\"LoadBalancerId\":\"lb-duk6vy4i\",\"LbUin\":\"2252646423\",\"LbAppid\":\"1251316161\",\"Vip\":\"30.162.45.38\",\"VipType\":\"ipv4\",\"Region\":\"ap-guangzhou\",\"Isp\":\"INNER\"}]",
+          "member": "WafVipInfo",
+          "name": "VipInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14998,6 +15056,71 @@
       ],
       "type": "object"
     },
+    "DescribeUserWafAccessInfoRequest": {
+      "document": "DescribeUserWafAccessInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持InstanceId，InstanceRegion过滤",
+          "example": "详见数据结构",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值。默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制值。默认10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserWafAccessInfoResponse": {
+      "document": "DescribeUserWafAccessInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户waf实例信息",
+          "example": "{\"InstanceId\":\"waf_ins27jk9ahsxa\",\"InstanceName\":\"广州域名实例\",\"VipInfo\":[],\"IdleVipList\":[{\"LoadBalancerId\":\"lb-j72ai3a\",\"LbUin\":\"23652389844\",\"LbAppid\":\"125635984\",\"Vip\":\"20.36.135.11\",\"VipType\":\"ipv4\",\"Region\":\"gz\",\"Isp\":\"INNER\"}]}",
+          "member": "UserWafAccessInfo",
+          "name": "InstanceInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVipInfoRequest": {
       "document": "DescribeVipInfo请求参数结构体",
       "members": [
@@ -23844,6 +23967,98 @@
       ],
       "type": "object"
     },
+    "ModifyWafAntiDDoSEipRequest": {
+      "document": "ModifyWafAntiDDoSEip请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型。1：绑定 2：解绑",
+          "example": "1",
+          "member": "uint64",
+          "name": "OperateType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例id",
+          "example": "waf_in9sajd3klja",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "EIP所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EipRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "EIP唯一id",
+          "example": "eip-snadkdp",
+          "member": "string",
+          "name": "EipId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "高防EIP地址",
+          "example": "204.32.63.125",
+          "member": "string",
+          "name": "Eip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF提供的内网地址",
+          "example": "30.213.6.36",
+          "member": "string",
+          "name": "InnerIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWafAntiDDoSEipResponse": {
+      "document": "ModifyWafAntiDDoSEip返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyWafAutoDenyRulesRequest": {
       "document": "ModifyWafAutoDenyRules请求参数结构体",
       "members": [
@@ -28047,6 +28262,62 @@
       ],
       "usage": "out"
     },
+    "UserWafAccessInfo": {
+      "document": "用户waf接入信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "waf实例ID",
+          "example": "waf_ins27jk9ahsxa",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf实例名称",
+          "example": "广州域名实例",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf实例地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EIP绑定状态。\n0：未绑定\n1：绑定",
+          "example": "0",
+          "member": "uint64",
+          "name": "EipStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例已接入VIP信息",
+          "example": "[{\"LoadBalancerId\":\"lb-2apdi3a\",\"LbUin\":\"\",\"Vip\":\"30.16.35.121\",\"VipType\":\"ipv4\",\"Region\":\"gz\",\"Isp\":\"INNER\"}]",
+          "member": "WafVipInfo",
+          "name": "VipInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "UserWafDomainInfo": {
       "document": "用户的SAASWAF域名信息",
       "members": [
@@ -28605,6 +28876,82 @@
         }
       ],
       "usage": "both"
+    },
+    "WafVipInfo": {
+      "document": "WAF的VIP信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡id",
+          "example": "lb-2apdi3a",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "lb所在账户uin",
+          "example": "225063249",
+          "member": "string",
+          "name": "LbUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "lb所在账户appid",
+          "example": "125635884",
+          "member": "string",
+          "name": "LbAppid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip地址",
+          "example": "30.16.35.121",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip类型，包括ipv4和ipv6",
+          "example": "ipv4",
+          "member": "string",
+          "name": "VipType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vip所在地域",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运营商。\nBGP: BGP类型\nINNER:腾讯内网\nCMCC:中国移动\nCTCC:中国电信\nCUCC:中国联通",
+          "example": "INNER",
+          "member": "string",
+          "name": "Isp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WebshellStatus": {
       "document": "域名的webshell开启状态",

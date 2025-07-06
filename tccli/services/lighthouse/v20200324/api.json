@@ -1029,13 +1029,6 @@
       "output": "ModifyInstancesBundleResponse",
       "status": "online"
     },
-    "ModifyInstancesIpv6Bandwidth": {
-      "document": "ModifyInstancesIpv6Bandwidth接口近90天现网已无用户调用，申请预下线\n\n本接口用于批量修改实例的IPv6地址带宽。",
-      "input": "ModifyInstancesIpv6BandwidthRequest",
-      "name": "批量修改实例IPv6带宽",
-      "output": "ModifyInstancesIpv6BandwidthResponse",
-      "status": "deprecated"
-    },
     "ModifyInstancesRenewFlag": {
       "document": "本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。\n\n* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。\n* 支持批量操作。每次请求批量实例的上限为100。",
       "input": "ModifyInstancesRenewFlagRequest",
@@ -15649,42 +15642,6 @@
     },
     "ModifyInstancesBundleResponse": {
       "document": "ModifyInstancesBundle返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyInstancesIpv6BandwidthRequest": {
-      "document": "ModifyInstancesIpv6Bandwidth请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
-          "example": "[\"lhins-abcd1234\"]",
-          "member": "string",
-          "name": "InstanceIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "IPv6地址带宽。\n取值范围闭区间[0,套餐最大带宽-1]",
-          "example": "2",
-          "member": "int64",
-          "name": "Ipv6Bandwidth",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyInstancesIpv6BandwidthResponse": {
-      "document": "ModifyInstancesIpv6Bandwidth返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

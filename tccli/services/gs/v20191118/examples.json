@@ -202,7 +202,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceLabels\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Labels\": [\n            {\n                \"Key\": \"key1\",\n                \"Value\": \"value1\"\n            },\n            {\n                \"Key\": \"key2\",\n                \"Value\": \"value2\"\n            },\n            {\n                \"Key\": \"key3\",\n                \"Value\": \"value3\"\n            }\n        ],\n        \"RequestId\": \"ea6152f5-b6f4-4ef8-b828-acd85581d042\",\n        \"Total\": 3\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AndroidInstanceLabels\": [\n            {\n                \"CreateTime\": \"2025-03-21T06:58:23.202Z\",\n                \"Description\": \"\",\n                \"Label\": {\n                    \"Key\": \"key3\",\n                    \"Value\": \"value3\"\n                }\n            },\n            {\n                \"CreateTime\": \"2025-03-21T08:58:24.181Z\",\n                \"Description\": \"\",\n                \"Label\": {\n                    \"Key\": \"key3\",\n                    \"Value\": \"value333\"\n                }\n            },\n            {\n                \"CreateTime\": \"2025-07-02T10:09:07.72Z\",\n                \"Description\": \"desc55\",\n                \"Label\": {\n                    \"Key\": \"testkey55\",\n                    \"Value\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"5103a125-e5eb-45d6-99ad-b16c7313483e\",\n        \"Total\": 8\n    }\n}",
         "title": "示例"
       }
     ],
@@ -235,7 +235,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstancesByApps\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"AndroidAppIds\": [\n        \"apk-abcd1234\"\n    ],\n    \"Filters\": [\n        {}\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TotalCount\": 1,\n        \"AndroidInstances\": [\n            {\n                \"AndroidInstanceId\": \"cai-abcd1234\",\n                \"AndroidInstanceRegion\": \"ap-guagnzhou\",\n                \"State\": \"NORMAL\",\n                \"AndroidInstanceType\": \"A6\"\n            }\n        ]\n    }\n}",
-        "title": "查询安装指定应用的安卓实例"
+        "title": "批量查询安装指定应用的安卓实例"
       }
     ],
     "DescribeInstancesCount": [
