@@ -16818,6 +16818,33 @@
           "name": "DeductionProductCodes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "大区id",
+          "example": "47",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "小区id",
+          "example": "400007",
+          "member": "uint64",
+          "name": "ZoneId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询自定义属性的列表",
+          "example": "serialNo",
+          "member": "string",
+          "name": "DosageFields",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16850,7 +16877,7 @@
         {
           "disabled": false,
           "document": "资源包所属uin",
-          "example": "\"\"",
+          "example": "\"100000238955\"",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -16860,7 +16887,7 @@
         {
           "disabled": false,
           "document": "抵扣uin",
-          "example": "\"\"",
+          "example": "\"100000238955\"",
           "member": "string",
           "name": "DeductionUin",
           "output_required": true,
@@ -16890,7 +16917,7 @@
         {
           "disabled": false,
           "document": "资源包对应产品一层名称",
-          "example": "\"\"",
+          "example": "\"云呼叫中心\"",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -16900,7 +16927,7 @@
         {
           "disabled": false,
           "document": "资源包对应产品二层名称",
-          "example": "\"\"",
+          "example": "\"通信套餐包\"",
           "member": "string",
           "name": "SubProductName",
           "output_required": true,
@@ -16910,7 +16937,7 @@
         {
           "disabled": false,
           "document": "用量抵扣的产品一层名称",
-          "example": "\"\"",
+          "example": "\"云呼叫中心\"",
           "member": "string",
           "name": "DeductionProductName",
           "output_required": true,
@@ -16920,7 +16947,7 @@
         {
           "disabled": false,
           "document": "用量抵扣的产品二层名称",
-          "example": "\"\"",
+          "example": "\"通信套餐包\"",
           "member": "string",
           "name": "DeductionSubProductName",
           "output_required": true,
@@ -16930,7 +16957,7 @@
         {
           "disabled": false,
           "document": "资源包名称",
-          "example": "\"\"",
+          "example": "\"固定号码呼出-定制套餐包\"",
           "member": "string",
           "name": "PackageName",
           "output_required": true,
@@ -16940,7 +16967,7 @@
         {
           "disabled": false,
           "document": "资源包id",
-          "example": "\"\"",
+          "example": "\"1000026735\"",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -16970,7 +16997,7 @@
         {
           "disabled": false,
           "document": "用量开始时间",
-          "example": "\"\"",
+          "example": "\"2025-06-12 20:30:00\"",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -16980,7 +17007,7 @@
         {
           "disabled": false,
           "document": "用量结束时间",
-          "example": "\"\"",
+          "example": "\"\"2025-06-12 20:35:00\"\"",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -16990,7 +17017,7 @@
         {
           "disabled": false,
           "document": "抵扣时间",
-          "example": "\"\"",
+          "example": "\"\"2025-06-12 20:40:00\"\"",
           "member": "string",
           "name": "DeductionTime",
           "output_required": true,
@@ -17000,7 +17027,7 @@
         {
           "disabled": false,
           "document": "用量实例ID",
-          "example": "\"\"",
+          "example": "\"test100357\"",
           "member": "string",
           "name": "DeductionSerialId",
           "output_required": true,
@@ -17010,7 +17037,7 @@
         {
           "disabled": false,
           "document": "计费项",
-          "example": "\"\"",
+          "example": "\"v_ccc_package_test\"",
           "member": "string",
           "name": "DeductionBillCode",
           "output_required": true,
@@ -17070,7 +17097,7 @@
         {
           "disabled": false,
           "document": "周期id",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "ResourceCycleId",
           "output_required": true,
@@ -17090,7 +17117,7 @@
         {
           "disabled": false,
           "document": "计费细项",
-          "example": "\"\"",
+          "example": "\"sv_ccc_package_test\"",
           "member": "string",
           "name": "DeductionSubBillCode",
           "output_required": true,
@@ -17106,6 +17133,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包单位",
+          "example": "分钟",
+          "member": "string",
+          "name": "PackageUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包容量单位",
+          "example": "分钟",
+          "member": "string",
+          "name": "CapacityUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包原始单位",
+          "example": "分钟",
+          "member": "string",
+          "name": "OriginUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

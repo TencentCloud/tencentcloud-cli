@@ -3094,12 +3094,22 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用户是否举报该发送者",
           "example": "true",
           "member": "bool",
           "name": "UserComplainted",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户是否举报该发送者",
+          "example": "true",
+          "member": "bool",
+          "name": "UserComplained",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         }

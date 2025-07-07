@@ -1,3 +1,3 @@
-tencentcloud-sdk-python-internal>=3.0.1235
+tencentcloud-sdk-python-internal>=3.0.1236
 jmespath==0.10.0
 six==1.16.0

@@ -517,6 +517,15 @@
           "name": "RejectReason",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认分配信用额度",
+          "example": "100",
+          "member": "int64",
+          "name": "AllocatedAmount",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
