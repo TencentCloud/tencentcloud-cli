@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "QueryHunyuanTo3DJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"JobId\": \"1315932989749215232\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"RequestId\": \"cfbcde8e-dc35-47ec-adda-0fa6d5db1dd2\",\n        \"ResultFile3Ds\": [\n            {\n                \"Type\": \"STL\",\n                \"Url\": \"https://xxx.cos.ap-guangzhou.tencentcos.cn/xxx.stl\"\n            }\n        ],\n        \"Status\": \"DONE\"\n    }\n}",
+        "title": "调用请求示例"
+      }
+    ],
+    "SubmitHunyuanTo3DJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ai3d.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuanTo3DJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://xxx.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"1315932989749215232\",\n        \"RequestId\": \"1efb4823-902e-4809-9656-aea168410e54\"\n    }\n}",
+        "title": "调用请求示例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

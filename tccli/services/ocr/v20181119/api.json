@@ -2570,7 +2570,7 @@
         {
           "disabled": false,
           "document": "证件边缘是否完整\n0：正常\n1：边缘不完整",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "BorderCheck",
           "output_required": false,
@@ -2581,7 +2581,7 @@
         {
           "disabled": false,
           "document": "证件是否被遮挡\n0：正常\n1：有遮挡",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "OcclusionCheck",
           "output_required": false,
@@ -2592,7 +2592,7 @@
         {
           "disabled": false,
           "document": "是否复印\n0:正常\n1:复印件",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CopyCheck",
           "output_required": false,
@@ -2603,7 +2603,7 @@
         {
           "disabled": false,
           "document": "是否屏幕翻拍\n0:正常\n1:翻拍",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ReshootCheck",
           "output_required": false,
@@ -2614,12 +2614,34 @@
         {
           "disabled": false,
           "document": "证件是否有PS\n0：正常\n1：有PS",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PSCheck",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否模糊：\n0:正常\n1:模糊",
+          "example": "1",
+          "member": "int64",
+          "name": "BlurCheck",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模糊分数， 范围：0.0-1.0，分数越高越模糊，建议阈值为0.5",
+          "example": "0.1",
+          "member": "float",
+          "name": "BlurScore",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -5308,7 +5330,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模版\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板\nAirWayBill -- 航空运单识别模板\nTable -- 表格模版\nSteelLabel -- 实物标签识别模板\nCarInsurance -- 车辆保险单识别模板\nMultiRealEstateCertificate -- 房产材料识别模板\nMultiRealEstateMaterial -- 房产证明识别模板\nHongKongUtilityBill -- 香港水电煤单识别模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",
@@ -15235,6 +15257,15 @@
           "example": "false",
           "member": "bool",
           "name": "EnableWordCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "默认值为false，打开返回证件是否模糊。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableQualityCheck",
           "required": false,
           "type": "bool"
         }
