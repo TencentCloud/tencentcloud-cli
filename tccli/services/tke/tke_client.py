@@ -1475,6 +1475,58 @@ def doGetUpgradeInstanceProgress(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyNodePoolDesiredCapacityAboutAsg(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyNodePoolDesiredCapacityAboutAsgRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyNodePoolDesiredCapacityAboutAsg(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyPrometheusAgentExternalLabels(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2515,7 +2567,7 @@ def doModifyPrometheusAlertPolicy(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeClusters(args, parsed_globals):
+def doModifyClusterTags(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2544,11 +2596,11 @@ def doDescribeClusters(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeClustersRequest()
+    model = models.ModifyClusterTagsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeClusters(model)
+        rsp = client.ModifyClusterTags(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4543,7 +4595,7 @@ def doDescribeEdgeLogSwitches(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyClusterTags(args, parsed_globals):
+def doDescribeClusters(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4572,11 +4624,11 @@ def doModifyClusterTags(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyClusterTagsRequest()
+    model = models.DescribeClustersRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyClusterTags(model)
+        rsp = client.DescribeClusters(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6467,7 +6519,7 @@ def doDescribePrometheusClusterAgents(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyNodePoolDesiredCapacityAboutAsg(args, parsed_globals):
+def doSetMachineLogin(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -6496,11 +6548,11 @@ def doModifyNodePoolDesiredCapacityAboutAsg(args, parsed_globals):
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyNodePoolDesiredCapacityAboutAsgRequest()
+    model = models.SetMachineLoginRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyNodePoolDesiredCapacityAboutAsg(model)
+        rsp = client.SetMachineLogin(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -13528,6 +13580,7 @@ ACTION_MAP = {
     "DescribeIPAMD": doDescribeIPAMD,
     "CreateClusterRouteTable": doCreateClusterRouteTable,
     "GetUpgradeInstanceProgress": doGetUpgradeInstanceProgress,
+    "ModifyNodePoolDesiredCapacityAboutAsg": doModifyNodePoolDesiredCapacityAboutAsg,
     "ModifyPrometheusAgentExternalLabels": doModifyPrometheusAgentExternalLabels,
     "DescribePodsBySpec": doDescribePodsBySpec,
     "DescribeReservedInstances": doDescribeReservedInstances,
@@ -13548,7 +13601,7 @@ ACTION_MAP = {
     "ModifyReservedInstanceScope": doModifyReservedInstanceScope,
     "DescribeOSImages": doDescribeOSImages,
     "ModifyPrometheusAlertPolicy": doModifyPrometheusAlertPolicy,
-    "DescribeClusters": doDescribeClusters,
+    "ModifyClusterTags": doModifyClusterTags,
     "CreateCLSLogConfig": doCreateCLSLogConfig,
     "EnableClusterAudit": doEnableClusterAudit,
     "CreateBackupStorageLocation": doCreateBackupStorageLocation,
@@ -13587,7 +13640,7 @@ ACTION_MAP = {
     "DescribeClusterRouteTables": doDescribeClusterRouteTables,
     "DeleteEdgeCVMInstances": doDeleteEdgeCVMInstances,
     "DescribeEdgeLogSwitches": doDescribeEdgeLogSwitches,
-    "ModifyClusterTags": doModifyClusterTags,
+    "DescribeClusters": doDescribeClusters,
     "DescribeClusterEndpointStatus": doDescribeClusterEndpointStatus,
     "CreateReservedInstances": doCreateReservedInstances,
     "DeleteClusterMachines": doDeleteClusterMachines,
@@ -13624,7 +13677,7 @@ ACTION_MAP = {
     "CreateInstantInspectJob": doCreateInstantInspectJob,
     "DescribeEKSContainerInstanceRegions": doDescribeEKSContainerInstanceRegions,
     "DescribePrometheusClusterAgents": doDescribePrometheusClusterAgents,
-    "ModifyNodePoolDesiredCapacityAboutAsg": doModifyNodePoolDesiredCapacityAboutAsg,
+    "SetMachineLogin": doSetMachineLogin,
     "CreateEKSCluster": doCreateEKSCluster,
     "DescribeClusterExtraArgs": doDescribeClusterExtraArgs,
     "UpdateClusterKubeconfig": doUpdateClusterKubeconfig,

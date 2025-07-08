@@ -17,6 +17,7 @@ Output:
             {
                 "GroupId": 97,
                 "Name": "ExampleIpGroup",
+                "IPTotalCount": 2,
                 "Content": [
                     "2.2.2.2",
                     "23.23.23.0/24"
@@ -56,6 +57,7 @@ Output:
             {
                 "GroupId": 100,
                 "Name": "ExampleIpGroup-1",
+                "IPTotalCount": 2,
                 "Content": [
                     "2.2.2.2",
                     "23.23.23.0/24"
@@ -72,6 +74,7 @@ Output:
             {
                 "GroupId": 200,
                 "Name": "ExampleIpGroup-2",
+                "IPTotalCount": 2,
                 "Content": [
                     "1.1.1.1",
                     "23.23.23.0/24"

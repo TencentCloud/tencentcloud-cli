@@ -10790,7 +10790,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单分路径配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "IpFilterPathRule",
           "name": "FilterRules",
@@ -10829,7 +10829,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 200 个白名单或 500 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 500 个白名单或 200 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Filters",

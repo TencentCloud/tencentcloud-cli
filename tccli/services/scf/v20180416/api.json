@@ -4826,6 +4826,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "允许用户自定义JVM配置，部分配置项需根据当前函数规格校验是否允许配置\n只能包含字母、数字、符号，500个字符以内\n",
+          "example": "-Xms4g -Xmx4g -XX:MaxDirectMemorySize=2g ",
+          "member": "string",
+          "name": "GooseFsFuseJVMConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

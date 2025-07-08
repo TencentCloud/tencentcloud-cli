@@ -5157,6 +5157,51 @@
           "name": "RecordExceptionLevels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "质检回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "QualityCheckExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评测阈值触发回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "EvaluateThresholdExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评测平均分回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "EvaluateAverageExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "IntelligentErasureNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "SuppressSubtitleTextNotifyUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16757,6 +16802,51 @@
           "name": "RecordExceptionLevels",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "质检回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "QualityCheckExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评测阈值触发回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "EvaluateThresholdExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评测平均分回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "EvaluateAverageExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能擦除回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "IntelligentErasureNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "SuppressSubtitleTextNotifyUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

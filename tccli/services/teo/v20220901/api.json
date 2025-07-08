@@ -624,7 +624,7 @@
       "status": "online"
     },
     "DescribeSecurityIPGroup": {
-      "document": "查询安全 IP 组的配置信息，包括安全 IP 组的 ID、名称和内容。",
+      "document": "查询安全 IP 组的配置信息，包括安全 IP 组的 ID、名称和内容。本接口的查询结果中，每个 IP 组最多只返回 2000 个 IP / 网段。如果存在超过 2000 个 IP / 网段的超大 IP 组，请调用 DescribeSecurityIPGroupContent 进行分页查询。",
       "input": "DescribeSecurityIPGroupRequest",
       "name": "查询安全 IP 组",
       "output": "DescribeSecurityIPGroupResponse",
@@ -2101,6 +2101,34 @@
       ],
       "usage": "out"
     },
+    "AllowActionParameters": {
+      "document": "Web 安全 Allow 的附加参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小延迟响应时间，当配置为 0s 时，表示不延迟直接响应。支持的单位有：<li>s：秒，取值范围 0～5。</li>",
+          "example": "0s",
+          "member": "string",
+          "name": "MinDelayTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大延迟响应时间，支持的单位有：<li>s：秒，取值范围 5～10。</li>",
+          "example": "0s",
+          "member": "string",
+          "name": "MaxDelayTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApplicationProxy": {
       "document": "应用代理实例",
       "members": [
@@ -3000,6 +3028,23 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BotManagement": {
+      "document": "Web 安全的 BOT 规则结构。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端认证规则的定义列表。该功能内测中，如需使用，请提工单或联系智能客服。",
+          "example": "无",
+          "member": "ClientAttestationRules",
+          "name": "ClientAttestationRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -4013,6 +4058,117 @@
         }
       ],
       "usage": "out"
+    },
+    "ClientAttestationRule": {
+      "document": "客户端认证规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端认证规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li> <b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li> <b>删除</b>已有规则：BotManagement 参数中，ClientAttestationRule 列表中未包含的已有规则将被删除。</li>",
+          "example": "1492837239",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端认证规则的名称。",
+          "example": "loginValidation",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则的优先级，数值越小越优先执行，范围是 0 ~ 100，默认为 0。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则的具体内容，需符合表达式语法，详细规范参见产品文档。",
+          "example": "${http.request.api_resource} in ['apires-d92k5q11kgg@zone-9tk319gs192g']",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端认证选项 ID。",
+          "example": "attest-x9192k11kgg@zone-9tk319gs192g",
+          "member": "string",
+          "name": "AttesterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端设备配置。若 ClientAttestationRules 参数中，未指定 DeviceProfiles 参数值：保持已有客户端设备配置，不做修改。",
+          "example": "参考 DeviceProfile 结构\t",
+          "member": "DeviceProfile",
+          "name": "DeviceProfiles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端认证未通过的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。",
+          "example": "参考 SecurityAction 结构",
+          "member": "SecurityAction",
+          "name": "InvalidAttestationAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClientAttestationRules": {
+      "document": "客户端认证的配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端认证的列表。使用 ModifySecurityPolicy 修改 Web 防护配置时：<li>  若未指定 SecurityPolicy.BotManagement.ClientAttestationRules 中的 Rules 参数，或 Rules 参数长度为零：清空所有客户端认证规则配置。</li> <li> 若 SecurityPolicy.BotManagement 参数中，未指定 ClientAttestationRules 参数值：保持已有客户端认证规则配置，不做修改。</li>",
+          "example": "无",
+          "member": "ClientAttestationRule",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ClientFiltering": {
       "document": "智能客户端过滤",
@@ -10958,7 +11114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全 IP 组的详细配置信息。包含每个安全 IP 组的 ID 、名称、 IP / 网段列表信息和过期时间信息。",
+          "document": "安全 IP 组的详细配置信息。包含每个安全 IP 组的 ID 、名称、IP / 网段总数量、 IP / 网段列表信息和过期时间信息。",
           "example": "{     \"GroupId\": 123,     \"Name\": \"ExampleIpGroup\",     \"Content\": [         \"2.2.2.2\",         \"23.23.23.0/24\"     ],     \"ExpireInfo\": [         {             \"Time\": \"2026-03-24T16:03:00+08:00\",             \"IP\": \"2.2.2.2\"         }     ] }",
           "member": "IPGroup",
           "name": "IPGroups",
@@ -12187,6 +12343,67 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceProfile": {
+      "document": "客户端设备配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端设备类型。取值有：<li>iOS；</li><li>Android；</li><li>WebView。</li>",
+          "example": "Android",
+          "member": "string",
+          "name": "ClientType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "判定请求为高风险的最低值，取值范围为 1～99。数值越大请求风险越高越接近 Bot 客户端发起的请求。默认值为 50，对应含义 51～100 为高风险。",
+          "example": "50",
+          "member": "uint64",
+          "name": "HighRiskMinScore",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高风险请求的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。",
+          "example": "参考 SecurityAction 结构",
+          "member": "SecurityAction",
+          "name": "HighRiskRequestAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "判定请求为中风险的最低值，取值范围为 1～99。数值越大请求风险越高越接近 Bot 客户端发起的请求。默认值为 15，对应含义 16～50 为中风险。",
+          "example": "15",
+          "member": "uint64",
+          "name": "MediumRiskMinScore",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中风险请求的处置方式。SecurityAction 的 Name 取值支持：<li>Deny：拦截；</li><li>Monitor：观察；</li><li>Redirect：重定向；</li><li>Challenge：挑战。</li>默认值为 Monitor。",
+          "example": "参考 SecurityAction 结构",
+          "member": "SecurityAction",
+          "name": "MediumRiskRequestAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -14540,7 +14757,18 @@
         },
         {
           "disabled": false,
-          "document": "IP 定时过期信息。\n作为入参：用于为指定的 IP 地址或网段配置定时过期时间。\n作为出参，包含以下两类信息：\n<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>\n<li>一周内已到期的定时过期信息：已触发的过期配置。</li>",
+          "document": "IP 组中正在生效的 IP 或网段个数。作为出参时有效，作为入参时无需填写该字段。",
+          "example": "100",
+          "member": "int64",
+          "name": "IPTotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 定时过期信息。\n作为入参，用于为指定的 IP 地址或网段配置定时过期时间。\n作为出参，包含以下两类信息：\n<li>当前未到期的定时过期信息：尚未触发的过期配置。</li>\n<li>一周内已到期的定时过期信息：已触发的过期配置。</li>",
           "example": "[     {         \"Time\": \"2022-01-01T00:00:00+08:00\",         \"IP\": [             \"1.1.1.1\",             \"2.2.2.2\"         ]     },     {         \"Time\": \"2022-01-02T00:00:00+08:00\",         \"IP\": [             \"3.3.3.3\"         ]     } ]",
           "member": "IPExpireInfo",
           "name": "IPExpireInfo",
@@ -19593,7 +19821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块名称，取值为：\n<li>waf：托管规则。</li>",
+          "document": "模块名称，取值为：\n<li>managed-rule：托管规则 Id；</li>\n<li>managed-group：托管规则组；</li>\n<li>waf：待废弃，托管规则。</li>",
           "example": "waf",
           "member": "string",
           "name": "Module",
@@ -22597,6 +22825,17 @@
         },
         {
           "disabled": false,
+          "document": "当 Name 为 Allow 时的附加参数。",
+          "example": "参考 AllowActionParameters 结构",
+          "member": "AllowActionParameters",
+          "name": "AllowActionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "当 Name 为 Challenge 时的附加参数。",
           "example": "参考 ChallengeActionParameters 结构",
           "member": "ChallengeActionParameters",
@@ -22785,7 +23024,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP DDOS防护配置。",
+          "document": "HTTP DDOS 防护配置。",
           "example": "参考 HttpDDoSProtection 示例",
           "member": "HttpDDoSProtection",
           "name": "HttpDDoSProtection",
@@ -22811,6 +23050,17 @@
           "example": "参考 ExceptionRules 示例",
           "member": "ExceptionRules",
           "name": "ExceptionRules",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bot 管理配置。",
+          "example": "参考 BotManagement 示例",
+          "member": "BotManagement",
+          "name": "BotManagement",
           "output_required": false,
           "required": false,
           "type": "object",

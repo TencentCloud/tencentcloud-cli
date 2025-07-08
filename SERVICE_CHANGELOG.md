@@ -1,36 +1,10 @@
-# Release 3.0.1236.1
+# Release 3.0.1237.1
 
-## 费用中心(billing) 版本：2018-07-09
+## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 94 次发布
+### 第 54 次发布
 
-发布时间：2025-07-08 01:09:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeMeasureDeductionDetailFlow](http://document.tencentcloudapi.woa.com/document/product/555/85844)
-
-	* 新增入参：RegionId, ZoneId, DosageFields
-
-
-修改数据结构：
-
-* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
-
-	* 新增成员：PackageUnit, CapacityUnit, OriginUnit
-
-
-
-
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 76 次发布
-
-发布时间：2025-07-08 01:12:06
+发布时间：2025-07-09 01:22:13
 
 本次发布包含了以下内容：
 
@@ -38,40 +12,36 @@
 
 新增接口：
 
-* [DescribeLogStorageStatistic](http://document.tencentcloudapi.woa.com/document/product/1132/87167)
+* [CreateAccessKeyCheckTask](http://document.tencentcloudapi.woa.com/document/product/1726/87180)
+* [CreateAccessKeySyncTask](http://document.tencentcloudapi.woa.com/document/product/1726/87179)
+* [DescribeAbnormalCallRecord](http://document.tencentcloudapi.woa.com/document/product/1726/87178)
+* [DescribeAccessKeyAlarm](http://document.tencentcloudapi.woa.com/document/product/1726/87177)
+* [DescribeAccessKeyAlarmDetail](http://document.tencentcloudapi.woa.com/document/product/1726/87176)
+* [DescribeAccessKeyRisk](http://document.tencentcloudapi.woa.com/document/product/1726/87175)
+* [DescribeAccessKeyRiskDetail](http://document.tencentcloudapi.woa.com/document/product/1726/87174)
+* [DescribeAccessKeyUserDetail](http://document.tencentcloudapi.woa.com/document/product/1726/87173)
+* [DescribeAccessKeyUserList](http://document.tencentcloudapi.woa.com/document/product/1726/87172)
+* [DescribeRiskCallRecord](http://document.tencentcloudapi.woa.com/document/product/1726/87171)
+* [DescribeUserCallRecord](http://document.tencentcloudapi.woa.com/document/product/1726/87170)
+* [UpdateAccessKeyAlarmStatus](http://document.tencentcloudapi.woa.com/document/product/1726/87169)
+* [UpdateAccessKeyRemark](http://document.tencentcloudapi.woa.com/document/product/1726/87168)
 
 新增数据结构：
 
-* [IntArray](http://document.tencentcloudapi.woa.com/document/product/1132/49071#IntArray)
-* [StorageHistogram](http://document.tencentcloudapi.woa.com/document/product/1132/49071#StorageHistogram)
-* [StorageHistogramShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#StorageHistogramShow)
+* [AccessKeyAlarm](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AccessKeyAlarm)
+* [AccessKeyAlarmCount](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AccessKeyAlarmCount)
+* [AccessKeyRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AccessKeyRisk)
+* [AccessKeyUser](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AccessKeyUser)
+* [RiskCallRecord](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCallRecord)
+* [UserCallRecord](http://document.tencentcloudapi.woa.com/document/product/1726/80814#UserCallRecord)
 
 
 
-## 主机安全(cwp) 版本：2018-02-28
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 126 次发布
+### 第 150 次发布
 
-发布时间：2025-07-08 01:14:30
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeVulInfoCvss](http://document.tencentcloudapi.woa.com/document/product/296/60898)
-
-	* 新增入参：Source
-
-
-
-
-## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
-
-### 第 39 次发布
-
-发布时间：2025-07-08 01:20:36
+发布时间：2025-07-09 01:35:36
 
 本次发布包含了以下内容：
 
@@ -79,18 +49,60 @@
 
 修改接口：
 
-* [ApproveClientApply](http://document.tencentcloudapi.woa.com/document/product/1724/85720)
+* [CreateOrganizationAuthUrl](http://document.tencentcloudapi.woa.com/document/product/1668/83727)
 
-	* 新增入参：AllocatedAmount
+	* 新增入参：UserData
 
 
 
 
 ## 云直播CSS(live) 版本：2018-08-01
 
-### 第 87 次发布
+### 第 88 次发布
 
-发布时间：2025-07-08 01:23:43
+发布时间：2025-07-09 01:47:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32637)
+
+	* 新增入参：QualityCheckExceptionNotifyUrl, EvaluateThresholdExceptionNotifyUrl, EvaluateAverageExceptionNotifyUrl, IntelligentErasureNotifyUrl, SuppressSubtitleTextNotifyUrl
+
+* [ModifyLiveCallbackTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32631)
+
+	* 新增入参：QualityCheckExceptionNotifyUrl, EvaluateThresholdExceptionNotifyUrl, EvaluateAverageExceptionNotifyUrl, IntelligentErasureNotifyUrl, SuppressSubtitleTextNotifyUrl
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 61 次发布
+
+发布时间：2025-07-09 01:58:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GooseFsInfo](http://document.tencentcloudapi.woa.com/document/product/583/17244#GooseFsInfo)
+
+	* 新增成员：GooseFsFuseJVMConfig
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 61 次发布
+
+发布时间：2025-07-09 02:07:49
 
 本次发布包含了以下内容：
 
@@ -98,33 +110,50 @@
 
 新增数据结构：
 
-* [ChildTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#ChildTemplateInfo)
+* [AllowActionParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AllowActionParameters)
+* [BotManagement](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BotManagement)
+* [ClientAttestationRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ClientAttestationRule)
+* [ClientAttestationRules](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ClientAttestationRules)
+* [DeviceProfile](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DeviceProfile)
 
 修改数据结构：
 
-* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#TemplateInfo)
+* [IPGroup](http://document.tencentcloudapi.woa.com/document/product/1738/81211#IPGroup)
 
-	* 新增成员：IsAdaptiveBitRate, AdaptiveChildren
+	* 新增成员：IPTotalCount
+
+* [SecurityAction](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SecurityAction)
+
+	* 新增成员：AllowActionParameters
+
+* [SecurityPolicy](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SecurityPolicy)
+
+	* 新增成员：BotManagement
 
 
 
 
-## 邮件推送(ses) 版本：2020-10-02
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
-### 第 32 次发布
 
-发布时间：2025-07-08 01:28:00
+
+## 容器服务(tke) 版本：2022-05-01
+
+### 第 10 次发布
+
+发布时间：2025-07-09 02:11:40
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [SendEmailStatus](http://document.tencentcloudapi.woa.com/document/product/1288/51053#SendEmailStatus)
+* [SetMachineLogin](http://document.tencentcloudapi.woa.com/document/product/457/87181)
 
-	* 新增成员：UserComplained
 
+
+## 容器服务(tke) 版本：2018-05-25
 
 
 
