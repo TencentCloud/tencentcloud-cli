@@ -1192,7 +1192,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n注：\n`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`",
+          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n\n\n注：\n1. `使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`\n2. 此参数在嵌入式场景下无效。",
           "example": "1",
           "member": "int64",
           "name": "FillType",
@@ -4904,6 +4904,42 @@
           "example": "true",
           "member": "bool",
           "name": "ForbidEditWatermark",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏操作指引: 具体的控件类型如下\n\n<ul><li>1 : 操作指引入口</li>\n<li>2 : 操作文档</li>\n<li>3 : 操作视频</li>\n</ul>",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "HideOperationInstructions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "隐藏操作步骤: 具体的控件类型如下\n\n<ul><li>1 : 选择文件及签署方</li>\n<li>2 : 补充文件内容</li>\n<li>4 : 发起前合同信息与设置确认</li>\n</ul>",
+          "example": "[1,2,4]",
+          "member": "uint64",
+          "name": "HideOperationSteps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "本企业简称",
+          "example": "本企业",
+          "member": "string",
+          "name": "SelfName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起后签署码隐藏，默认false",
+          "example": "true",
+          "member": "bool",
+          "name": "HideSignCodeAfterStart",
           "required": false,
           "type": "bool"
         }

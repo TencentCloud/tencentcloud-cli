@@ -17,7 +17,7 @@ Output:
         "Code": 1,
         "AsyncRequestId": "abc",
         "Msg": "abc",
-        "RequestId": "abc"
+        "RequestId": "1305a410-b030-476d-acdf-eba0dfd5323b"
     }
 }
 ```

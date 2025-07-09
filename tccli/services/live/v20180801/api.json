@@ -5504,7 +5504,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述，限制 512 字节。",
+          "document": "任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。",
           "example": "任务描述",
           "member": "string",
           "name": "Comment",

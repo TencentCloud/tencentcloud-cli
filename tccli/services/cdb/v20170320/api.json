@@ -154,6 +154,13 @@
       "output": "CreateCloneInstanceResponse",
       "status": "online"
     },
+    "CreateCrossAccountCloneTask": {
+      "document": "本接口（CreateCloneInstance）用于从源实例跨账号进行克隆到目标实例，可以指定克隆实例回档到源实例的指定物理备份文件或者指定的回档时间点。",
+      "input": "CreateCrossAccountCloneTaskRequest",
+      "name": "创建跨账号克隆任务",
+      "output": "CreateCrossAccountCloneTaskResponse",
+      "status": "online"
+    },
     "CreateDBImportJob": {
       "document": "本接口（CreateDBImportJob）用于创建云数据库数据导入任务。\n注意，用户进行数据导入任务的文件，必须提前上传到腾讯云。用户须在控制台进行文件导入。",
       "input": "CreateDBImportJobRequest",
@@ -474,6 +481,13 @@
       "input": "DescribeCpuExpandHistoryRequest",
       "name": "查询扩容历史",
       "output": "DescribeCpuExpandHistoryResponse",
+      "status": "online"
+    },
+    "DescribeCrossAccountCloneTask": {
+      "document": "本接口（DescribeCrossAccountCloneTask）用于查询克隆任务进度信息。",
+      "input": "DescribeCrossAccountCloneTaskRequest",
+      "name": "查询跨账号克隆任务",
+      "output": "DescribeCrossAccountCloneTaskResponse",
       "status": "online"
     },
     "DescribeDBFeatures": {
@@ -6229,6 +6243,107 @@
       ],
       "type": "object"
     },
+    "CreateCrossAccountCloneTaskRequest": {
+      "document": "CreateCrossAccountCloneTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "克隆源实例id",
+          "example": "cdb-xxxxx",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标appId",
+          "example": "1122045124",
+          "member": "int64",
+          "name": "DstAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标实例Id",
+          "example": "cdb-yyyyyy",
+          "member": "string",
+          "name": "DstInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户uin",
+          "example": "700000730759",
+          "member": "string",
+          "name": "UserUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预校验(只校验是否可以克隆，不会真正发起克隆)，在发起克隆之前进行克隆校验，克隆参数不变",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "如果需要克隆实例回档到指定时间，则指定该值。时间格式为：yyyy-mm-dd hh:mm:ss。 说明：此参数和 SpecifiedBackupId 参数需要2选1进行设置。",
+          "example": "2020-01-28 20:47:26",
+          "member": "string",
+          "name": "SpecifiedRollbackTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果需要克隆实例回档到指定备份集，则指定该值为备份文件的 Id。请使用 https://cloud.tencent.com/document/api/236/15842 查询数据备份文件列表。 说明：如果是克隆双节点、三节点实例，备份文件为物理备份，如果是克隆单节点、集群版实例，备份文件为快照备份。",
+          "example": "118127",
+          "member": "int64",
+          "name": "SpecifiedBackupId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCrossAccountCloneTaskResponse": {
+      "document": "CreateCrossAccountCloneTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务查询id，为uuid类型",
+          "example": " 11123-yyyy-ccccc",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回接口的错误信息，当dryRun为true时，该值为：“预校验成功”",
+          "example": "源实例当前有进行中的任务",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDBImportJobRequest": {
       "document": "CreateDBImportJob请求参数结构体",
       "members": [
@@ -10379,6 +10494,63 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossAccountCloneTaskRequest": {
+      "document": "DescribeCrossAccountCloneTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "256117ed-efa08b54-61784d44-91781bbd",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossAccountCloneTaskResponse": {
+      "document": "DescribeCrossAccountCloneTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回错误信息。",
+          "example": "克隆任务异常",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "克隆任务状态。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度信息。",
+          "example": "{\"ErrMsg\":\"没有错误信息\",\"Status\":\"success\",\"ProcessInfo\":{\"AllStepsCount\":5,\"NowStepIndex\":1,\"SrcInstanceId\":\"cdb-je5dfmdl\",\"DstInstanceId\":\"cdb-d3ydf2kn\",\"StartTime\":\"2025-05-22 17:24:11\",\"EndTime\":\"2025-05-22 17:34:18\"}}",
+          "member": "ProcessInfo",
+          "name": "ProcessInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -15176,6 +15348,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ExtraInfo": {
+      "document": "克隆任务补充信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前导入量",
+          "example": "10240",
+          "member": "int64",
+          "name": "CurrentBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前导入速度",
+          "example": "1000",
+          "member": "int64",
+          "name": "Speed",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数据量",
+          "example": "102400",
+          "member": "int64",
+          "name": "TotalBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "HistoryJob": {
       "document": "单条扩容历史记录",
@@ -20071,6 +20282,89 @@
       ],
       "usage": "both"
     },
+    "ProcessInfo": {
+      "document": "克隆任务进度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总步骤数",
+          "example": "5",
+          "member": "int64",
+          "name": "AllStepsCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤",
+          "example": "1",
+          "member": "int64",
+          "name": "NowStepIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详细步骤",
+          "example": "[{\"Progress\":100,\"StepDesc\":\"实例初始化中\",\"StepEndTime\":\"2025-05-22 17:27:58\",\"StepStartTime\":\"2025-05-22 17:24:24\"}]",
+          "member": "StepInfo",
+          "name": "AllStepsDesc",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源实例id",
+          "example": "cdb-xxxxxx",
+          "member": "string",
+          "name": "SrcInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标实例id",
+          "example": "cdb-yyyyyyy",
+          "member": "string",
+          "name": "DstInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-05-22 17:24:11",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2025-05-22 17:34:18",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ProxyAddress": {
       "document": "数据库代理地址信息",
       "members": [
@@ -23424,6 +23718,67 @@
         }
       ],
       "type": "object"
+    },
+    "StepInfo": {
+      "document": "dbbrain克隆任务步骤详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤进度",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤说明",
+          "example": "数据备份导入中",
+          "member": "string",
+          "name": "StepDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤开始时间",
+          "example": "2025-05-22 17:29:46",
+          "member": "string",
+          "name": "StepStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤结束时间",
+          "example": "2025-05-22 17:33:30",
+          "member": "string",
+          "name": "StepEndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补充信息",
+          "example": "{\"CurrentBytes\":13129014,\"CurrentTime\":\"2025-05-22 17:30:50\",\"Speed\":0,\"TotalBytes\":13129014}",
+          "member": "ExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "StopCpuExpandRequest": {
       "document": "StopCpuExpand请求参数结构体",

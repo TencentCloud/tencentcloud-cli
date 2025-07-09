@@ -10004,6 +10004,7 @@
           "example": "200",
           "member": "uint64",
           "name": "Code",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10013,6 +10014,7 @@
           "example": "开机成功",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10022,6 +10024,7 @@
           "example": "任务ID",
           "member": "string",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11874,6 +11877,7 @@
           "example": "200",
           "member": "uint64",
           "name": "Code",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11883,6 +11887,7 @@
           "example": "201324123421342",
           "member": "string",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11892,6 +11897,7 @@
           "example": "关机任务创建成功",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

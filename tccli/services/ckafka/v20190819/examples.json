@@ -36,7 +36,7 @@
       {
         "document": "CPU高负载",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BurnCPU\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"LoadRate\": 60,\n    \"Duration\": 60\n}",
-        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"1305a410-b030-476d-acdf-eba0dfd5323b\"\n    }\n}",
         "title": "CPU高负载"
       }
     ],
@@ -656,7 +656,7 @@
       {
         "document": "开机",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownAttackRollback\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Msg\": \"abc\",\n        \"AsyncRequestId\": \"abc\",\n        \"RequestId\": \"1305a410-b030-476d-acdf-eba0dfd5323b\"\n    }\n}",
         "title": "开机"
       }
     ],
@@ -704,7 +704,7 @@
       {
         "document": "关机",
         "input": "POST / HTTP/1.1\nHost: ckafka.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InjectDownAttack\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"InjectZoneId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"AsyncRequestId\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"AsyncRequestId\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"1305a410-b030-476d-acdf-eba0dfd5323b\"\n    }\n}",
         "title": "关机"
       }
     ],
