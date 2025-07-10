@@ -1786,11 +1786,20 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "CosFS配置参数，用于云函数挂载Cos文件系统",
           "example": "无",
           "member": "GooseFsInfo",
           "name": "GooseFsConfig",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "GooseFS配置参数，用于云函数挂载goose文件系统",
+          "example": "[{\"GooseFsFuseJVMConfig\":\"\",\"GooseFsCluster\":\"\",\"GooseFsNamespace\":\"ns\",\"GooseFsEndpoint\":\"1.1.1.1:8888,2.2.2.2:8888,3.3.3.3:8888\",\"LocalMountDir\":\"/mnt/test\",\"RemoteMountPath\":\"/\",\"PluginConfig\":{\"PluginName\":\"GooseFsSystemPlugin\",\"PluginVersion\":1}}]",
+          "member": "GooseFsInfo",
+          "name": "GooseFsConfigs",
           "required": false,
           "type": "list"
         }
@@ -4333,11 +4342,21 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "GooseFs配置参数，用于云函数关联GooseFs",
           "example": "无",
           "member": "GooseFsInfo",
           "name": "GooseFsConfig",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GooseFs配置参数，用于云函数关联GooseFs",
+          "example": "[{\"GooseFsFuseJVMConfig\":\"\",\"GooseFsCluster\":\"\",\"GooseFsNamespace\":\"ns\",\"GooseFsEndpoint\":\"1.1.1.1:8888,2.2.2.2:8888,3.3.3.3:8888\",\"LocalMountDir\":\"/mnt/test\",\"RemoteMountPath\":\"/\",\"PluginConfig\":{\"PluginName\":\"GooseFsSystemPlugin\",\"PluginVersion\":1}}]",
+          "member": "GooseFsInfo",
+          "name": "GooseFsConfigs",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8927,13 +8946,22 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "GooseFsConfig",
           "example": "空",
           "member": "string",
           "name": "GooseFsConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "GooseFsConfig",
+          "example": "[{\"GooseFsFuseJVMConfig\":\"\",\"GooseFsCluster\":\"\",\"GooseFsNamespace\":\"ns\",\"GooseFsEndpoint\":\"1.1.1.1:8888,2.2.2.2:8888,3.3.3.3:8888\",\"LocalMountDir\":\"/mnt/test\",\"RemoteMountPath\":\"/\",\"PluginConfig\":{\"PluginName\":\"GooseFsSystemPlugin\",\"PluginVersion\":1}}]",
+          "member": "GooseFsInfo",
+          "name": "GooseFsConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -18544,6 +18544,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关标识",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteProtection",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

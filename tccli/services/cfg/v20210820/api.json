@@ -3833,6 +3833,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "演练场景",
+          "example": "[{\"TargetId\": 17, \"TargetDesc\": \"张三\"}]\t",
+          "member": "TaskTarget",
+          "name": "TemplateScenario",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "演练目的",
+          "example": "[{\"TargetId\": 23, \"TargetDesc\": \"张三\"}]",
+          "member": "TaskTarget",
+          "name": "TemplatePurpose",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -18341,7 +18341,7 @@
         },
         {
           "disabled": false,
-          "document": "UA黑白名单生效规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "UA黑白名单生效规则列表，不能超过10条规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserAgentFilterRule",
           "name": "FilterRules",
@@ -18380,7 +18380,7 @@
         },
         {
           "disabled": false,
-          "document": "UserAgent列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "UserAgent列表，UserAgent 个数不能超过 10个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "curl/7.68.0",
           "member": "string",
           "name": "UserAgents",
