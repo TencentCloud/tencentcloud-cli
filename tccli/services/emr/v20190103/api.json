@@ -3986,7 +3986,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费模式，0表示后付费，即按量计费。",
+          "document": "实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
@@ -3995,7 +3995,7 @@
         },
         {
           "disabled": false,
-          "document": "实例存储类型，填写CLOUD_HSSD，表示性能云存储。",
+          "document": "实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。",
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
@@ -4053,6 +4053,15 @@
           "example": "sdcdwxxxws",
           "member": "string",
           "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署模式",
+          "example": "Active-Standby",
+          "member": "string",
+          "name": "DeploymentMode",
           "required": false,
           "type": "string"
         }
@@ -7357,6 +7366,16 @@
           "name": "NodeNum",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Serverless Instance infomation",
+          "example": "无",
+          "member": "SLInstance",
+          "name": "SLInstance",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -17478,6 +17497,192 @@
       ],
       "type": "object"
     },
+    "SLInstance": {
+      "document": "Serverless Instance",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR Instance Id",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EMR Numeric Instance Id",
+          "example": "1234567",
+          "member": "int64",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Instance Name",
+          "example": "instance-1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Region id",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Zone Name",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pay Mode",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Disk Type",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Disk Size",
+          "example": "200",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Node Type",
+          "example": "4C16G",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Node Number",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Expire Time",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Isolate Time",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Create Time",
+          "example": "2025-06-20 10:33:30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Auto Renew Flag",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EMR Numeric Instance Status",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Zone Setting",
+          "example": "无",
+          "member": "ZoneSetting",
+          "name": "ZoneSettings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bound Tags",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Deploy Role",
+          "example": "Active",
+          "member": "string",
+          "name": "DeployRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SLInstanceInfo": {
       "document": "Serverless HBase实例信息",
       "members": [
@@ -17667,6 +17872,16 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主备部署角色",
+          "example": "Active",
+          "member": "string",
+          "name": "DeployRole",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

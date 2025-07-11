@@ -78,7 +78,6 @@ Output:
                 "RegionId": 1,
                 "RemainBandwidthDuration": "",
                 "Size": 4096,
-                "SizeUsed": 0,
                 "SlaveReadWeight": 0,
                 "Status": 1,
                 "SubStatus": 37,

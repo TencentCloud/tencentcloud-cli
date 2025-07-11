@@ -384,6 +384,14 @@
         "title": "获取用户信息"
       }
     ],
+    "DescribeUserDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:  DescribeUserDetail\n\n{\n    \"UserId\": \"2jatnsjdosdnjuT8l60980Rh50FP\",\n    \"OriginId\": \"teacher8383\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"865810-31a6-4378-a6ea-d9b719552\",\n        \"Users\": [\n            {\n                \"Avatar\": \"\",\n                \"Name\": \"teacher8383\",\n                \"OriginId\": \"teacher8383\",\n                \"SdkAppId\": 39234193,\n                \"UserId\": \"2jatnsjdosdnjuT8l60980Rh50FP\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeUserDetail"
+      }
+    ],
     "DescribeWhiteBoardSnapshot": [
       {
         "document": "",

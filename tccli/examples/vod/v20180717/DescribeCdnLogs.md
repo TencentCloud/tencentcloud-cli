@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeCdnLogs --cli-unfold-argument  \
-    --DomainName test.vod2.myqcloud.com \
+    --DomainName example.com \
     --StartTime 2021-03-01T00:00:00+08:00 \
     --EndTime 2021-03-02T00:00:00+08:00
 ```
@@ -19,8 +19,8 @@ Output:
         "DomesticCdnLogs": [
             {
                 "Date": "2021-03-01",
-                "Name": "2018120213-test.vod2.myqcloud.com",
-                "Url": "http: //test.log.cdn/2018120213-test.vod2.myqcloud.com.tar.gz",
+                "Name": "example.com",
+                "Url": "http: //test.log.cdn/example.com.tar.gz",
                 "StartTime": "2021-03-01T15:00:00+08:00",
                 "EndTime": "2021-03-01T15:59:59+08:00"
             }

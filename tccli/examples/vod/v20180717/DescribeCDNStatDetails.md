@@ -1,12 +1,12 @@
-**Example 1: 查询域名123.vod2.com中国大陆的流量数据。**
+**Example 1: 查询域名 example.com 中国大陆的流量数据。**
 
-查询域名123.vod2.com中国大陆的流量数据。
+查询域名 example.com 中国大陆的流量数据。
 
 Input: 
 
 ```
 tccli vod DescribeCDNStatDetails --cli-unfold-argument  \
-    --DomainNames 123.vod2.myqcloud.com \
+    --DomainNames example.com \
     --StartTime 2018-12-01T00:00:00+08:00 \
     --EndTime 2018-12-03T00:00:00+08:00 \
     --Area 'Chinese Mainland' \

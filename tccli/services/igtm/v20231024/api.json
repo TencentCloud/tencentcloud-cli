@@ -70,6 +70,20 @@
       "output": "DescribeAddressPoolListResponse",
       "status": "online"
     },
+    "DescribeDetectPackageDetail": {
+      "document": "探测任务包详情",
+      "input": "DescribeDetectPackageDetailRequest",
+      "name": "探测任务套餐详情",
+      "output": "DescribeDetectPackageDetailResponse",
+      "status": "online"
+    },
+    "DescribeDetectTaskPackageList": {
+      "document": "探测任务套餐列表",
+      "input": "DescribeDetectTaskPackageListRequest",
+      "name": "获取探测任务套餐列表",
+      "output": "DescribeDetectTaskPackageListResponse",
+      "status": "online"
+    },
     "DescribeDetectors": {
       "document": "获取探测节点列表接口",
       "input": "DescribeDetectorsRequest",
@@ -96,6 +110,13 @@
       "input": "DescribeInstanceListRequest",
       "name": "获取实例列表",
       "output": "DescribeInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeInstancePackageList": {
+      "document": "实例套餐列表",
+      "input": "DescribeInstancePackageListRequest",
+      "name": "获取实例套餐列表",
+      "output": "DescribeInstancePackageListResponse",
       "status": "online"
     },
     "DescribeMonitorDetail": {
@@ -520,6 +541,32 @@
         }
       ],
       "usage": "both"
+    },
+    "CostItem": {
+      "document": "计费项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项名称",
+          "example": "sv-xxx",
+          "member": "string",
+          "name": "CostName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项值",
+          "example": "1",
+          "member": "uint64",
+          "name": "CostValue",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAddressPoolRequest": {
       "document": "CreateAddressPool请求参数结构体",
@@ -1225,6 +1272,199 @@
       ],
       "type": "object"
     },
+    "DescribeDetectPackageDetailRequest": {
+      "document": "DescribeDetectPackageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "task-aaa",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetectPackageDetailResponse": {
+      "document": "DescribeDetectPackageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "task-aabbb",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型 TASK 探测任务",
+          "example": "TASK",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Quota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "2023-12-20 12:00:00",
+          "member": "string",
+          "name": "CurrentDeadline",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2023-11-20 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过期",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsExpire",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 ENABLED: 正常 ISOLATED: 隔离 DESTROYED：销毁 REFUNDED：已退款",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费0不1是",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "无",
+          "member": "CostItem",
+          "name": "CostItemList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "UsedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetectTaskPackageListRequest": {
+      "document": "DescribeDetectTaskPackageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "探测任务过滤条件：ResourceId 探测任务的资源id，PeriodStart 最小过期时间,PeriodEnd 最大过期时间",
+          "example": "[{\"Name\": \"ResourceId\", \"Value\": [\"资源id\"]}]",
+          "member": "ResourceFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDetectTaskPackageListResponse": {
+      "document": "DescribeDetectTaskPackageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探测任务套餐列表",
+          "example": "无",
+          "member": "DetectTaskPackage",
+          "name": "TaskPackageSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDetectorsRequest": {
       "document": "DescribeDetectors请求参数结构体",
       "members": [],
@@ -1381,6 +1621,71 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePackageListRequest": {
+      "document": "DescribeInstancePackageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "InstanceId实例Id，InstanceName实例名称，ResourceId套餐Id，PackageType套餐类型 ",
+          "example": "[{\"Name\": \"InstanceName\", \"Value\": [\"未命名\"]}]",
+          "member": "ResourceFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用：0未使用1已使用",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsUsed",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePackageListResponse": {
+      "document": "DescribeInstancePackageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例套餐列表",
+          "example": "无",
+          "member": "InstancePackage",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1649,6 +1954,122 @@
         }
       ],
       "type": "object"
+    },
+    "DetectTaskPackage": {
+      "document": "探测任务套餐",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "task-aabbb",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\nTASK 探测任务",
+          "example": "TASK",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额度",
+          "example": "1",
+          "member": "uint64",
+          "name": "Quota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐过期时间",
+          "example": "2023-12-20 12:00:00 ",
+          "member": "string",
+          "name": "CurrentDeadline",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐创建时间",
+          "example": "2023-12-20 12:00:00 ",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过期0否1是",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsExpire",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态\nENABLED: 正常\nISOLATED: 隔离\nDESTROYED：销毁\nREFUNDED：已退款",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费0不1是",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "无",
+          "member": "CostItem",
+          "name": "CostItemList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "探测任务类型：100系统设定；200计费；300管理系统；110D监控迁移的免费任务；120容灾切换任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "uint64",
+          "name": "Group",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DetectorGroup": {
       "document": "探测组",
@@ -2342,6 +2763,162 @@
         }
       ],
       "usage": "both"
+    },
+    "InstancePackage": {
+      "document": "实例套餐",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例套餐资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-aaaa",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "gtminstance1",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "instanceName",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型\nFREE: 免费版\nSTANDARD：标准版\nULTIMATE：旗舰版",
+          "example": "FREE",
+          "member": "string",
+          "name": "PackageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐过期时间",
+          "example": "2023-12-20 12:00:00 ",
+          "member": "string",
+          "name": "CurrentDeadline",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐创建时间",
+          "example": "2023-12-20 12:00:00 ",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过期0否1是",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsExpire",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\nENABLED: 正常\nDISABLED: 禁用",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费0不1是",
+          "example": "1",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "无",
+          "member": "CostItem",
+          "name": "CostItemList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最小检查间隔时间s",
+          "example": "60",
+          "member": "uint64",
+          "name": "MinCheckInterval",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最小TTL s",
+          "example": "600",
+          "member": "uint64",
+          "name": "MinGlobalTtl",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量策略类型：ALL返回全部，WEIGHT权重",
+          "example": "ALL",
+          "member": "string",
+          "name": "TrafficStrategy",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型：LOCATION按地理位置调度，DELAY按延迟调度",
+          "example": "LOCATION",
+          "member": "string",
+          "name": "ScheduleStrategy",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MainAddressPool": {
       "document": "主力地址池",

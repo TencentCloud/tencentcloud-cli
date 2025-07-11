@@ -6010,7 +6010,7 @@
       "type": "object"
     },
     "CommonApproverOption": {
-      "document": "签署人配置信息",
+      "document": "签署人配置信息。\n此参数对子客和自动签无效，不允许进行修改。",
       "members": [
         {
           "disabled": false,
@@ -7698,7 +7698,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以编辑签署人包括新增，修改，删除 \n<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>\n\n注意：如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空",
+          "document": "是否可以编辑签署人包括新增，修改，删除 \n<ul><li>（默认） false -可以编辑签署人</li> <li> true - 禁止编辑签署人</li></ul>\n\n\n\n注意：\n* 如果设置参数为 true， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空\n* 此参数对子客和自动签无效，不允许进行修改。",
           "example": "false",
           "member": "bool",
           "name": "ForbidEditApprover",
@@ -10472,7 +10472,7 @@
         },
         {
           "disabled": false,
-          "document": "使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID: <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)",
+          "document": "使用PDF文件直接发起合同时，签署人指定的签署控件；<br/>使用模板发起合同时，指定本企业印章签署控件的印章ID:注意：(如果模板里面指定了印章，默认使用模板里面配置的印章，不能进行变更) <br/>通过ComponentId或ComponenetName指定签署控件，ComponentValue为印章ID。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/91757a7f9188ccf3057a4a8979cf3f93.png)",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",

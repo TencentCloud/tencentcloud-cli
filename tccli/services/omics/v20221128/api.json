@@ -373,6 +373,24 @@
           "name": "LimitRange",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "系统节点池实例规格。",
+          "example": "SA3.MEDIUM4",
+          "member": "string",
+          "name": "SystemNodeInstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统节点池实例数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SystemNodeCount",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -1921,6 +1939,26 @@
           "example": "cls-9j9zh13o",
           "member": "string",
           "name": "EKSId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TKE容器集群ID。",
+          "example": "cls-8ceobc28",
+          "member": "string",
+          "name": "TKEId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TKE系统节点池ID。",
+          "example": "np-2ecoev9q",
+          "member": "string",
+          "name": "TKESystemNodePoolId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

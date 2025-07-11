@@ -12195,7 +12195,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据卷信息-废弃，请用VolumeInfoList参数",
           "example": "无",
           "member": "VolumeInfo",
@@ -12204,7 +12204,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据卷挂载点信息-废弃，请用VolumeMountInfoList参数",
           "example": "无",
           "member": "VolumeMountInfo",
@@ -21759,7 +21759,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "ApplicationName值（废弃）",
           "example": "nginx",
           "member": "ScalableRule",
@@ -30112,7 +30112,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "守护线程数 拼写错误，废弃",
           "example": "无",
           "member": "CurvePoint",

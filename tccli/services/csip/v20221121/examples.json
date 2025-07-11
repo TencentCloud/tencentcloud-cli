@@ -8,6 +8,22 @@
         "title": "新用户加入通知"
       }
     ],
+    "CreateAccessKeyCheckTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessKeyCheckTask\n<公共请求参数>\n\n{\n    \"RiskIDList\": [\n        12\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Msg\": \"create check task success\",\n        \"RequestId\": \"d6372275-50d1-419b-b7f9-5f4208695bf7\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "CreateAccessKeySyncTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessKeySyncTask\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"eee4250f-65c4-48ff-92f0-d0e8ef78829e\",\n        \"TaskID\": 10281\n    }\n}",
+        "title": "1"
+      }
+    ],
     "CreateDomainAndIp": [
       {
         "document": "",
@@ -40,6 +56,30 @@
         "title": "删除风险中心扫描任务"
       }
     ],
+    "DescribeAbnormalCallRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAbnormalCallRecord\n<公共请求参数>\n\n{\n    \"AlarmRuleID\": 10007,\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \"AKID6*******tZBU1Hi\",\n                \"AccessKeyID\": 10093,\n                \"AccessKeyRemark\": \"飞快的云镜-临时密钥\",\n                \"AppID\": 1256299843,\n                \"CallCount\": 50,\n                \"CallID\": \"13\",\n                \"Code\": 0,\n                \"Date\": \"2025-02-26 00:00:00\",\n                \"EventName\": \"ListAccessKeys\",\n                \"EventType\": 1,\n                \"FirstCallTime\": \"2025-02-26 23:37:59\",\n                \"IPType\": 1,\n                \"InstanceID\": \"\",\n                \"InstanceName\": \"\",\n                \"LastCallTime\": \"2025-02-26 23:39:46\",\n                \"PolicySet\": [],\n                \"ProductName\": \"cam\",\n                \"Region\": \"\",\n                \"SourceIP\": \"30.49.109.154\",\n                \"SourceIPRemark\": \"\",\n                \"UserName\": \"100024699394\",\n                \"UserType\": \"AssumedRole\"\n            }\n        ],\n        \"RequestId\": \"1a431738-b670-4c86-94c1-cae98e11af64\",\n        \"Total\": 2\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeAccessKeyAlarm": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyAlarm\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \"TEMP_AK\",\n                \"AccessKeyID\": 10093,\n                \"AccessKeyRemark\": \"飞快的云镜-临时密钥\",\n                \"AlarmRuleID\": 94865,\n                \"AlarmType\": 0,\n                \"AppID\": 1256299843,\n                \"Date\": \"2025-03-13\",\n                \"ID\": 10185,\n                \"LastAlarmTime\": \"2025-03-13 16:50:44\",\n                \"Level\": 5,\n                \"Name\": \"可疑IP调用高危接口\",\n                \"Nickname\": \"飞快的云镜\",\n                \"Status\": 0,\n                \"SubNickname\": \"飞快的云镜\",\n                \"SubUin\": \"100004506473\",\n                \"Tag\": [],\n                \"Type\": 2,\n                \"Uin\": \"100004506473\"\n            }\n        ],\n        \"RequestId\": \"1249df92-930b-4574-a517-45dc70580764\",\n        \"Total\": 28\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeAccessKeyAlarmDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyAlarmDetail\n<公共请求参数>\n\n{\n    \"ID\": 10007\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmInfo\": {\n            \"AccessKey\": \"TEMP_AK\",\n            \"AccessKeyID\": 10093,\n            \"AccessKeyRemark\": \"飞快的云镜-临时密钥\",\n            \"AlarmRuleID\": 10969,\n            \"AlarmType\": 0,\n            \"AppID\": 1256299843,\n            \"Date\": \"2025-02-26\",\n            \"ID\": 10007,\n            \"LastAlarmTime\": \"2025-02-26 23:50:04\",\n            \"Level\": 4,\n            \"Name\": \"非控制台方式调用高危接口\",\n            \"Nickname\": \"飞快的云镜\",\n            \"Status\": 0,\n            \"SubNickname\": \"飞快的云镜\",\n            \"SubUin\": \"100004506473\",\n            \"Tag\": [],\n            \"Type\": 2,\n            \"Uin\": \"100004506473\"\n        },\n        \"CamCount\": 1111,\n        \"RequestId\": \"e33bc9ad-0496-49de-a76b-940f2d6027bb\",\n        \"RiskCount\": 0\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeAccessKeyAsset": [
       {
         "document": "",
@@ -51,6 +91,38 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyAsset\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKeyAlarmList\": [\n                    {\n                        \"Count\": 7,\n                        \"Type\": 0\n                    }\n                ],\n                \"AccessKeyRiskList\": [\n                    {\n                        \"Count\": 11,\n                        \"Type\": 0\n                    }\n                ],\n                \"Advice\": 1,\n                \"AppID\": 1256299843,\n                \"CheckStatus\": 0,\n                \"CreateTime\": \"2024-09-24 19:21:38\",\n                \"ID\": 10092,\n                \"IPCount\": 1,\n                \"LastAccessTime\": \"2025-03-12 20:05:59\",\n                \"Name\": \"AKID***1\",\n                \"Nickname\": \"飞快的云镜\",\n                \"Remark\": \"iiiiii\",\n                \"Status\": 1,\n                \"SubNickname\": \"piperdev\",\n                \"SubUin\": \"100000415991\",\n                \"Type\": 1,\n                \"Uin\": \"100004506473\"\n            }\n        ],\n        \"RequestId\": \"2b6d0999-a614-41e3-92b8-984c80705275\",\n        \"Total\": 37\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeAccessKeyRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyRisk\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \"AKIDX***13DJ\",\n                \"AccessKeyID\": 10075,\n                \"AccessKeyRemark\": \"test\",\n                \"AppID\": 1256299843,\n                \"CheckStatus\": 0,\n                \"Description\": \"应该删除长期未使用AK密钥，即使AK被禁用了也应该删除\",\n                \"Evidence\": \"\",\n                \"ID\": 141,\n                \"Level\": 4,\n                \"Name\": \"应该删除长期未使用AK密钥\",\n                \"Nickname\": \"飞快的云镜\",\n                \"RiskRuleID\": 2,\n                \"RiskTime\": \"2025-03-13 14:01:30\",\n                \"RiskType\": 0,\n                \"Status\": 0,\n                \"SubNickname\": \"dorahe\",\n                \"SubUin\": \"100030819418\",\n                \"Tag\": [],\n                \"Type\": 1,\n                \"Uin\": \"100004506473\"\n            }\n        ],\n        \"RequestId\": \"927e370e-9aeb-454e-9854-32224937c581\",\n        \"Total\": 142\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeAccessKeyRiskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyRiskDetail\n<公共请求参数>\n\n{\n    \"ID\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmCount\": 0,\n        \"CamCount\": 3,\n        \"RequestId\": \"9e9119de-b50e-4011-830d-7d0e698e29b7\",\n        \"RiskInfo\": {\n            \"AccessKey\": \"AKID******\",\n            \"AccessKeyID\": 10066,\n            \"AccessKeyRemark\": \"\",\n            \"AppID\": 100001,\n            \"CheckStatus\": 0,\n            \"Description\": \"应该对私有网络(VPC)的操作权限进行收敛，不应拥有如下敏感接口权限：CreateCcnRouteTables, CreateNatGatewayDestinationIpPortTranslationNatRule, CreateNatGatewaySourceIpTranslationNatRule, CreateSecurityGroup, CreateSecurityGroupWithPolicies, CreateVpcEndPoint, CreateVpcPeeringConnection\",\n            \"Evidence\": \"vpc:*\",\n            \"ID\": 7,\n            \"Level\": 4,\n            \"Name\": \"应该对私有网络(VPC)的操作权限进行收敛\",\n            \"Nickname\": \"name\",\n            \"RiskRuleID\": 28,\n            \"RiskTime\": \"2025-03-13 14:00:43\",\n            \"RiskType\": 0,\n            \"Status\": 0,\n            \"SubNickname\": \"name\",\n            \"SubUin\": \"1000001\",\n            \"Tag\": [],\n            \"Type\": 1,\n            \"Uin\": \"100001\"\n        }\n    }\n}",
+        "title": "查询AccessKey风险详情"
+      }
+    ],
+    "DescribeAccessKeyUserDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyUserDetail\n<公共请求参数>\n\n{\n    \"SubUin\": \"1000***1**78\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85ffe508-b4a0-4125-b2b5-b78519c30d69\",\n        \"User\": {\n            \"AccessKeyAlarmList\": [],\n            \"AccessKeyRiskList\": [\n                {\n                    \"Count\": 6,\n                    \"Type\": 0\n                }\n            ],\n            \"AccessType\": 1,\n            \"ActionFlag\": 0,\n            \"Advice\": 2,\n            \"AppID\": 1300008,\n            \"CheckStatus\": 0,\n            \"ID\": 200637,\n            \"ISP\": \"电信\",\n            \"LoginFlag\": 0,\n            \"LoginIP\": \"119.147.10.163\",\n            \"LoginLocation\": \"中国-广东省-深圳市\",\n            \"LoginTime\": \"2025-05-22 10:45:34\",\n            \"Name\": \"cfw-test\",\n            \"Nickname\": \"天空之蓝\",\n            \"SubNickname\": \"cfw-test\",\n            \"SubUin\": \"1000***1**78\",\n            \"Type\": 1,\n            \"Uin\": \"1000*****18\"\n        }\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeAccessKeyUserList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessKeyUserList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKeyAlarmList\": [\n                    {\n                        \"Count\": 12,\n                        \"Type\": 0\n                    }\n                ],\n                \"AccessKeyRiskList\": [\n                    {\n                        \"Count\": 1,\n                        \"Type\": 0\n                    }\n                ],\n                \"AccessType\": 1,\n                \"ActionFlag\": 0,\n                \"Advice\": 1,\n                \"AppID\": 13000008,\n                \"CheckStatus\": 0,\n                \"ID\": 200631,\n                \"ISP\": \"电信\",\n                \"LoginFlag\": 0,\n                \"LoginIP\": \"113.108.**.73\",\n                \"LoginLocation\": \"中国-广东省-深圳市\",\n                \"LoginTime\": \"2025-05-07 15:21:05\",\n                \"Name\": \"jose***li_blue\",\n                \"Nickname\": \"天空之蓝\",\n                \"SubNickname\": \"josephlkli_blue\",\n                \"SubUin\": \"1000***72635\",\n                \"Type\": 1,\n                \"Uin\": \"1000***6646\"\n            }\n        ],\n        \"RequestId\": \"fabb0428-3853-46df-b473-afbc7021fed4\",\n        \"Total\": 22\n    }\n}",
         "title": "1"
       }
     ],
@@ -276,6 +348,14 @@
         "title": "仓库镜像列表"
       }
     ],
+    "DescribeRiskCallRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskCallRecord\n<公共请求参数>\n\n{\n    \"RiskID\": 10091\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CallCount\": 0,\n                \"EventDescCN\": \"卸载主机安全客户端\",\n                \"EventDescEN\": \"DeleteMachine\",\n                \"EventName\": \"DeleteMachine\",\n                \"ProductName\": \"cwp\",\n                \"ProductNameCN\": \"主机安全\"\n            }\n        ],\n        \"RequestId\": \"728a0b3b-230d-468e-a10a-f6e7a56c0056\",\n        \"Total\": 1\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeRiskCenterAssetViewCFGRiskList": [
       {
         "document": "获取资产视角的配置风险列表",
@@ -460,6 +540,14 @@
         "title": "test"
       }
     ],
+    "DescribeUserCallRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserCallRecord\n<公共请求参数>\n\n{\n    \"SubUin\": \"100021372635\",\n    \"Filter\": {\n        \"Limit\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppID\": 0,\n                \"CallCount\": 5941,\n                \"Code\": 0,\n                \"Date\": \"\",\n                \"EventType\": 1,\n                \"FirstCallTime\": \"2025-05-16 00:01:44\",\n                \"ISP\": \"腾讯云\",\n                \"LastCallTime\": \"2025-05-22 11:09:39\",\n                \"Region\": \"中国-广东省-广州市\",\n                \"SourceIP\": \"106.55.***.47\",\n                \"SourceIPRemark\": \"\",\n                \"UserName\": \"jos***_blue\"\n            }\n        ],\n        \"RequestId\": \"502c625d-756e-4bdb-bd5f-784d008150b5\",\n        \"Total\": 76\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeVULList": [
       {
         "document": "示例1",
@@ -546,6 +634,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopRiskCenterTask\n<公共请求参数>\n\n{\n    \"TaskIdList\": [\n        {\n            \"TaskId\": \"rmis-******\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"7c9179a6-1dbe-4ee6-933c-c53f5d3bb0d4\"\n    }\n}",
         "title": "停止扫风险中心扫描任务"
+      }
+    ],
+    "UpdateAccessKeyAlarmStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAccessKeyAlarmStatus\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"RiskIDList\": [\n        91000005\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"2a8b1b1e-e8c7-4b5d-8674-6881faa18a96\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "UpdateAccessKeyRemark": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAccessKeyRemark\n<公共请求参数>\n\n{\n    \"Remark\": \"这是一个备注\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Msg\": \"success\",\n        \"RequestId\": \"0add44c1-1f33-4019-a188-9b778df1bee7\"\n    }\n}",
+        "title": "修改备注"
       }
     ],
     "UpdateAlertStatusList": [

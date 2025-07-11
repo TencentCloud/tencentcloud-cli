@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod ModifyDefaultDistributionConfig --cli-unfold-argument  \
-    --Domain test.vod2.myqcloud.com \
+    --Domain example.com \
     --Scheme HTTPS
 ```
 

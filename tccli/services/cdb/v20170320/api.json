@@ -232,7 +232,7 @@
       "status": "deprecated"
     },
     "DeleteAuditRuleTemplates": {
-      "document": "删除审计规则模板",
+      "document": "本接口（DeleteAuditRuleTemplates）用于删除审计规则模板。",
       "input": "DeleteAuditRuleTemplatesRequest",
       "name": "删除审计规则模板",
       "output": "DeleteAuditRuleTemplatesResponse",
@@ -7301,7 +7301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计规则模板ID,可通过[DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811)接口获取，单次允许最多删除5个规则模板。",
+          "document": "审计规则模板 ID，可通过 [DescribeAuditRuleTemplates](https://cloud.tencent.com/document/api/236/101811) 接口获取，单次允许最多删除5个规则模板。",
           "example": "cdb-art-l1mlbo59",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -16924,7 +16924,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](hhttps://cloud.tencent.com/document/api/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
+          "document": "要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。可通过 [DescribeDBSecurityGroups](https://cloud.tencent.com/document/product/236/15854) 接口获取。输入的安全组 ID 数组无长度限制。\n注意：该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[\"sg-ajr1jzgj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -17188,7 +17188,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
           "example": "cdb-uns231ns",
           "member": "string",
           "name": "InstanceId",
@@ -17197,8 +17197,8 @@
         },
         {
           "disabled": false,
-          "document": "要增加或修改的标签。",
-          "example": "无",
+          "document": "要增加或修改的标签。ReplaceTags 和 DeleteTags 必填一个。",
+          "example": "[{\"TagKey\": \"march\",\"TagValue\": \"march1\"}]",
           "member": "TagInfo",
           "name": "ReplaceTags",
           "required": false,
@@ -17206,8 +17206,8 @@
         },
         {
           "disabled": false,
-          "document": "要删除的标签。",
-          "example": "无",
+          "document": "要删除的标签。ReplaceTags 和 DeleteTags 必填一个。",
+          "example": "[{\"TagKey\": \"andy\",\"TagValue\": \"andy1\"}]",
           "member": "TagInfo",
           "name": "DeleteTags",
           "required": false,

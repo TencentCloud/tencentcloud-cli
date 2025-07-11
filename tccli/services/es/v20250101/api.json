@@ -487,6 +487,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的起始页码",
+          "example": "1",
+          "member": "int64",
+          "name": "FileStartPageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档的结束页码",
+          "example": "1",
+          "member": "int64",
+          "name": "FileEndPageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

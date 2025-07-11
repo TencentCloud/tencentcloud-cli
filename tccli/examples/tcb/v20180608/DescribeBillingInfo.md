@@ -27,7 +27,19 @@ Output:
                 "FreeQuota": "",
                 "PaymentChannel": "qcloud",
                 "ExtPackageType": "baas",
-                "OrderInfo": null,
+                "OrderInfo": {
+                    "CreateTime": "",
+                    "ExtensionId": "",
+                    "Flag": "",
+                    "PackageId": "",
+                    "PayMode": "",
+                    "ReqBody": "",
+                    "ResourceReady": "",
+                    "TranId": "",
+                    "TranStatus": "",
+                    "TranType": "",
+                    "UpdateTime": ""
+                },
                 "IsAlwaysFree": false,
                 "EnableOverrun": true
             }

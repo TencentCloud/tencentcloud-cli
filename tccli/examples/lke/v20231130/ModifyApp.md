@@ -84,7 +84,12 @@ tccli lke ModifyApp --cli-unfold-argument  \
     --AppConfig.KnowledgeQa.ThoughtModel.Name function-call-pro \
     --AppConfig.KnowledgeQa.ThoughtModel.TokenBalance 0 \
     --AppConfig.KnowledgeQa.ThoughtModel.Temperature 0.5 \
-    --AppConfig.KnowledgeQa.ThoughtModel.TopP 0.5
+    --AppConfig.KnowledgeQa.ThoughtModel.TopP 0.5 \
+    --AppConfig.KnowledgeQa.BackgroundImage.LandscapeImageUrl https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/1753030485940633600/1933045939331552832/image/hehEVqvCbsPmDkURkUUe-1936336152095918144.png \
+    --AppConfig.KnowledgeQa.BackgroundImage.OriginalImageUrl https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/1753030485940633600/1933045939331552832/image/hehEVqvCbsPmDkURkUUe-1936336152095918144.png \
+    --AppConfig.KnowledgeQa.BackgroundImage.PortraitImageUrl https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/1753030485940633600/1933045939331552832/image/hehEVqvCbsPmDkURkUUe-1936336152095918144.png \
+    --AppConfig.KnowledgeQa.BackgroundImage.ThemeColor #abc123 \
+    --AppConfig.KnowledgeQa.BackgroundImage.Brightness 32
 ```
 
 Output: 

@@ -533,7 +533,7 @@
       "status": "deprecated"
     },
     "UpdateDomainConfig": {
-      "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口。\n操作审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到操作审计。",
+      "document": "UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。\n注意：如果需要更新复杂类型的配置项，必须传递整个对象的所有属性，未传递的属性将使用默认值，建议通过查询接口获取配置属性后，直接修改后传递给本接口；如果仅修改单独配置项只传对应配置参数即可。\n操作审计相关：接口的入参可能包含密钥等敏感信息，所以此接口的入参不会上报到操作审计。",
       "input": "UpdateDomainConfigRequest",
       "name": "更新加速域名配置",
       "output": "UpdateDomainConfigResponse",
@@ -10654,7 +10654,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单分路径配置，白名单功能\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单分路径配置，白名单功能。黑白名单 IP 总数不能超过 1000 个。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "null",
           "member": "IpFilterPathRule",
           "name": "FilterRules",
@@ -10693,7 +10693,7 @@
         },
         {
           "disabled": false,
-          "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 200 个白名单或 500 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP 黑白名单列表\n支持 X.X.X.X 格式IPV4地址 或X:X:X:X:X:X:X:X 格式IPV6地址， 或网段格式/X（IPV4:1≤X≤32；IPV6:1≤X≤128）\n最多可填充 500 个白名单或 200 个黑名单；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Filters",
@@ -18014,7 +18014,7 @@
         },
         {
           "disabled": false,
-          "document": "UA黑白名单生效规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "UA黑白名单生效规则列表，不能超过10条规则\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UserAgentFilterRule",
           "name": "FilterRules",
@@ -18053,7 +18053,7 @@
         },
         {
           "disabled": false,
-          "document": "UserAgent列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "UserAgent列表，UserAgent 个数不能超过 10个\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "curl/7.68.0",
           "member": "string",
           "name": "UserAgents",

@@ -66,8 +66,8 @@
   },
   "metadata": {
     "apiVersion": "2024-05-23",
-    "api_brief": "大模型视频创作引擎API，是一款提供视频生成和视频处理能力的API技术服务。包括视频转译、视频风格化、图片跳舞等多项视频创作能力，基于腾讯混元大模型等一系列领先的人工智能音视频处理技术，支持用户高质量生成视频并处理视频内容。",
-    "serviceNameCN": "大模型视频创作引擎",
+    "api_brief": "腾讯混元生视频API，是一款提供视频生成和视频处理能力的API技术服务。包括视频风格化、图片跳舞等多项视频创作能力，基于腾讯混元大模型等一系列领先的人工智能音视频处理技术，支持用户高质量生成视频并处理视频内容。",
+    "serviceNameCN": "腾讯混元生视频",
     "serviceShortName": "vclm"
   },
   "objects": {
@@ -764,7 +764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "特效模板名称。\n枚举值：\nhug ：拥抱\nkiss ：亲吻\nheart ： 比心\nfuzzy ： 毛茸茸\nbefigure：变手办风\nlonghair：金色长发\nmorphlab：膨胀\nbloom：万物生花\npinch：捏捏\nballoonfly：飞走了\ndragme：被拽走了\n",
+          "document": "特效模板名称。请在 [视频特效模版列表](https://cloud.tencent.com/document/product/1616/119194)  中选择想要生成的特效对应的 template 名称。",
           "example": "hug",
           "member": "string",
           "name": "Template",

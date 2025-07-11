@@ -808,7 +808,7 @@
   },
   "metadata": {
     "apiVersion": "2023-11-30",
-    "api_brief": "提供腾讯云智能体开发平台API能力",
+    "api_brief": "腾讯云智能体开发平台（Tencent Cloud Agent Development Platform）深度整合 LLM+RAG 增强检索、自动化工作流、多 Agent 协作架构等核心能力，助力企业高效搭建稳定、安全、符合业务场景的智能体应用。API接口可提供腾讯云智能体开发平台通过接口完成配置的能力。",
     "serviceNameCN": "腾讯云智能体开发平台",
     "serviceShortName": "lke"
   },
@@ -1096,6 +1096,78 @@
       ],
       "usage": "both"
     },
+    "AgentKnowledge": {
+      "document": "Agent 知识库检索插件支持多知识库搜索",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库id",
+          "example": "\"1932739306311112222\"",
+          "member": "string",
+          "name": "KnowledgeBizId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0-应用内知识库\n1-共享知识库",
+          "example": "1",
+          "member": "int64",
+          "name": "KnowledgeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0-全部知识\n1-按文档和问答\n2-按标签",
+          "example": "1",
+          "member": "int64",
+          "name": "Filter",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档id",
+          "example": "\"1933511741231456800\"",
+          "member": "string",
+          "name": "DocBizIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "true:包含所有问答\nfalse:不包含问答",
+          "example": "true",
+          "member": "bool",
+          "name": "AllQa",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档标签过滤器",
+          "example": "无",
+          "member": "AgentKnowledgeFilterTag",
+          "name": "Tag",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentKnowledgeAttrLabel": {
       "document": "标签过滤器",
       "members": [
@@ -1158,6 +1230,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "知识库列表",
+          "example": "无",
+          "member": "AgentKnowledge",
+          "name": "KnowledgeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否检索全部知识",
+          "example": "true",
+          "member": "bool",
+          "name": "AllKnowledge",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -1372,6 +1466,17 @@
           "example": "4096",
           "member": "uint64",
           "name": "InstructionsWordsLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单次会话最大推理轮数",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxReasoningRound",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -2992,6 +3097,67 @@
       ],
       "usage": "out"
     },
+    "BackgroundImageConfig": {
+      "document": "背景图相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "横图(pc)",
+          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/1753030485940633600/1933045939331552832/image/hehEVqvCbsPmDkURkUUe-1936336152095918144.png",
+          "member": "string",
+          "name": "LandscapeImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始图",
+          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/1753030485940633600/1933045939331552832/image/hehEVqvCbsPmDkURkUUe-1936336152095918144.png",
+          "member": "string",
+          "name": "OriginalImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "长图(手机)",
+          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/1753030485940633600/1933045939331552832/image/hehEVqvCbsPmDkURkUUe-1936336152095918144.png",
+          "member": "string",
+          "name": "PortraitImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题色",
+          "example": "#3B4651",
+          "member": "string",
+          "name": "ThemeColor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "亮度值",
+          "example": "12",
+          "member": "int64",
+          "name": "Brightness",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BaseConfig": {
       "document": "应用基础配置",
       "members": [
@@ -4289,6 +4455,15 @@
           "name": "Desc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "渠道业务ID",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelBizIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5250,6 +5425,16 @@
           "name": "IsCopying",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能体类型 dialogue 对话式智能体，wechat 公众号智能体",
+          "example": "无",
+          "member": "string",
+          "name": "AgentType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7760,6 +7945,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页码信息",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9211,6 +9406,15 @@
           "name": "VarType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要内部变量(默认false)",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedInternalVar",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10161,6 +10365,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背景图相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackgroundImageConfig",
+          "name": "BackgroundImage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开场问题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"开场问题1\",\"开场问题2\",\"开场问题3\"]",
+          "member": "string",
+          "name": "OpeningQuestions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11352,6 +11578,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "员工名称",
+          "example": "无",
+          "member": "string",
+          "name": "StaffName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12020,6 +12256,16 @@
           "name": "IsDisabled",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "员工名称",
+          "example": "无",
+          "member": "string",
+          "name": "StaffName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -13565,7 +13811,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classifys-知识标签提取",
+          "document": "应用类型；knowledge_qa-知识问答管理；summary-知识摘要；classify-知识标签提取",
           "example": "无",
           "member": "string",
           "name": "AppType",

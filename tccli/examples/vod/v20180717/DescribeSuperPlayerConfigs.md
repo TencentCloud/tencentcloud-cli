@@ -33,7 +33,7 @@ Output:
                 ],
                 "TranscodeDefinition": 0,
                 "AudioVideoType": "AdaptiveDynamicStream",
-                "Domain": "xxx.vod2.myqcloud.com",
+                "Domain": "example.com",
                 "Scheme": "HTTPS",
                 "Comment": "",
                 "DrmStreamingsInfo": {

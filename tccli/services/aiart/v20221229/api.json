@@ -136,14 +136,14 @@
     "TextToImageLite": {
       "document": "混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "TextToImageLiteRequest",
-      "name": "文生图轻量版",
+      "name": "混元生图（极速版）",
       "output": "TextToImageLiteResponse",
       "status": "online"
     },
     "TextToImageRapid": {
       "document": "混元文生图接口，基于混元大模型，根据输入的文本描述智能生成图片\n默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后，才能开始处理下一个任务。",
       "input": "TextToImageRapidRequest",
-      "name": "文生图极速版",
+      "name": "混元生图 2.0",
       "output": "TextToImageRapidResponse",
       "status": "online"
     },
@@ -158,7 +158,7 @@
   "metadata": {
     "apiVersion": "2022-12-29",
     "api_brief": "结合输入的文本或图片智能创作出与输入相关的图像内容。",
-    "serviceNameCN": "大模型图像创作引擎",
+    "serviceNameCN": "腾讯混元生图",
     "serviceShortName": "aiart"
   },
   "objects": {

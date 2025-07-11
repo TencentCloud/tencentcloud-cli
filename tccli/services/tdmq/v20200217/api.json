@@ -7447,6 +7447,15 @@
           "name": "OwnerBroker",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户(如果没有自定义租户名称，和 tenantId 相同；如果有配置自定义租户名称，则为自定义租户名 user_tenant)",
+          "example": "pulsar-nzw8q5b3g7b2",
+          "member": "string",
+          "name": "Tenant",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15362,6 +15371,16 @@
           "name": "Tenant",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除保护开关标识",
+          "example": "0",
+          "member": "int64",
+          "name": "DeleteProtection",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

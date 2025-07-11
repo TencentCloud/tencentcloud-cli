@@ -73,7 +73,7 @@ Output:
 }
 ```
 
-**Example 3: 查询域名123.vod2.myqcloud.com和test.a.com从2018-12-01到2018-12-07的5分钟粒度的带宽数据**
+**Example 3: 查询域名 example1.com 和 example2.com 从2018-12-01到2018-12-07的5分钟粒度的带宽数据**
 
 
 
@@ -81,7 +81,7 @@ Input:
 
 ```
 tccli vod DescribeCDNUsageData --cli-unfold-argument  \
-    --DomainNames 123.vod2.myqcloud.com test.a.com \
+    --DomainNames example1.com example2.com \
     --StartTime 2018-12-01T00:00:00+08:00 \
     --EndTime 2018-12-03T00:00:00+08:00 \
     --DataType Bandwidth \

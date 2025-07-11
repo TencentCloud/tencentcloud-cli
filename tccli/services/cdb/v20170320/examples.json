@@ -302,7 +302,7 @@
     ],
     "DeleteAuditRuleTemplates": [
       {
-        "document": "无",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cdb-rt-ws23fwu8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
         "title": "删除审计规则模板"

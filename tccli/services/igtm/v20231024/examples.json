@@ -98,6 +98,22 @@
         "title": "地址池列表"
       }
     ],
+    "DescribeDetectPackageDetail": [
+      {
+        "document": "探测任务包详情",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetectPackageDetail\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 1,\n        \"CostItemList\": [\n            {\n                \"CostName\": \"sv_igtm_monitor_task_mt\",\n                \"CostValue\": 1\n            }\n        ],\n        \"CreateTime\": \"2024-03-13 15:41:10\",\n        \"CurrentDeadline\": \"2024-04-13 15:41:11\",\n        \"IsExpire\": 0,\n        \"Quota\": 50,\n        \"Remark\": \"\",\n        \"RequestId\": \"aace8684-a8d6-454f-8fac-3e398f203620\",\n        \"ResourceId\": \"task-hzxwlklfznla\",\n        \"ResourceType\": \"TASK_NUM\",\n        \"Status\": \"ENABLED\",\n        \"UsedNum\": 17\n    }\n}",
+        "title": "探测任务包详情"
+      }
+    ],
+    "DescribeDetectTaskPackageList": [
+      {
+        "document": "探测任务套餐列表",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetectTaskPackageList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b83ab7db-3a32-42ec-875a-aaff131836f1\",\n        \"TaskPackageSet\": [\n            {\n                \"AutoRenewFlag\": 1,\n                \"CostItemList\": [\n                    {\n                        \"CostName\": \"sv_igtm_monitor_task_mt\",\n                        \"CostValue\": 1\n                    }\n                ],\n                \"CreateTime\": \"2024-03-13 15:41:10\",\n                \"CurrentDeadline\": \"2024-04-13 15:41:11\",\n                \"IsExpire\": 0,\n                \"Quota\": 50,\n                \"Remark\": \"\",\n                \"ResourceId\": \"task-hzxwlklfznla\",\n                \"ResourceType\": \"TASK_NUM\",\n                \"Status\": \"ENABLED\"\n            },\n            {\n                \"AutoRenewFlag\": 0,\n                \"CostItemList\": [\n                    {\n                        \"CostName\": \"sv_igtm_monitor_task_mt\",\n                        \"CostValue\": 1\n                    }\n                ],\n                \"CreateTime\": \"2024-03-13 14:48:20\",\n                \"CurrentDeadline\": \"2024-03-12 14:48:21\",\n                \"IsExpire\": 1,\n                \"Quota\": 1,\n                \"Remark\": \"\",\n                \"ResourceId\": \"task-uukzocrmqior\",\n                \"ResourceType\": \"TASK_NUM\",\n                \"Status\": \"ENABLED\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "探测任务套餐列表"
+      }
+    ],
     "DescribeDetectors": [
       {
         "document": "获取探测节点列表",
@@ -128,6 +144,14 @@
         "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": [\n                \"abc\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Domain\": \"abc\",\n                \"AccessType\": \"abc\",\n                \"AccessDomain\": \"abc\",\n                \"AccessSubDomain\": \"abc\",\n                \"GlobalTtl\": 0,\n                \"PackageType\": \"abc\",\n                \"WorkingStatus\": \"abc\",\n                \"Status\": \"abc\",\n                \"Remark\": \"abc\",\n                \"StrategyNum\": 0,\n                \"AddressPoolNum\": 0,\n                \"MonitorNum\": 0,\n                \"CreatedOn\": \"abc\",\n                \"UpdatedOn\": \"abc\",\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "实例列表"
+      }
+    ],
+    "DescribeInstancePackageList": [
+      {
+        "document": "实例套餐列表",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancePackageList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"AutoRenewFlag\": 1,\n                \"CostItemList\": [],\n                \"CreateTime\": \"2024-03-27 14:08:03\",\n                \"CurrentDeadline\": \"2024-04-27 14:08:03\",\n                \"InstanceId\": \"\",\n                \"InstanceName\": \"\",\n                \"IsExpire\": 0,\n                \"MinCheckInterval\": 60,\n                \"MinGlobalTtl\": 60,\n                \"PackageType\": \"STANDARD\",\n                \"Remark\": \"\",\n                \"ResourceId\": \"gtm-pdnssdbxdst\",\n                \"ScheduleStrategy\": [\n                    \"LOCATION\",\n                    \"DELAY\"\n                ],\n                \"Status\": \"ENABLED\",\n                \"TrafficStrategy\": [\n                    \"ALL\",\n                    \"WEIGHT\"\n                ]\n            },\n            {\n                \"AutoRenewFlag\": 0,\n                \"CostItemList\": [\n                    {\n                        \"CostName\": \"sv_igtm_standard_instance\",\n                        \"CostValue\": 1\n                    }\n                ],\n                \"CreateTime\": \"2024-03-27 09:55:06\",\n                \"CurrentDeadline\": \"2025-04-27 09:55:07\",\n                \"InstanceId\": \"gtm-axjpoifqwev\",\n                \"InstanceName\": \"gjz-测试\",\n                \"IsExpire\": 0,\n                \"MinCheckInterval\": 60,\n                \"MinGlobalTtl\": 60,\n                \"PackageType\": \"STANDARD\",\n                \"Remark\": \"\",\n                \"ResourceId\": \"gtm-rznpntnbzov\",\n                \"ScheduleStrategy\": [\n                    \"LOCATION\",\n                    \"DELAY\"\n                ],\n                \"Status\": \"ENABLED\",\n                \"TrafficStrategy\": [\n                    \"ALL\",\n                    \"WEIGHT\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d90cae16-82b5-481c-bc1b-3e11ee829d50\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "实例套餐列表"
       }
     ],
     "DescribeMonitorDetail": [

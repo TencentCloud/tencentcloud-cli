@@ -190,7 +190,7 @@
       "status": "online"
     },
     "GeneralHandwritingOCR": {
-      "document": "本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "<b>此接口为通用手写体识别的旧版本服务，不再进行服务升级，建议您使用识别能力更强、服务性能更优的<a href=\"https://cloud.tencent.com/document/product/866/34937\">通用印刷体识别(高精度)识别服务</a>。</b>\n\n本接口支持图片内手写体文字的检测和识别，针对手写字体无规则、字迹潦草、模糊等特点进行了识别能力的增强。\n\n默认接口请求频率限制：10次/秒。",
       "input": "GeneralHandwritingOCRRequest",
       "name": "通用手写体识别",
       "output": "GeneralHandwritingOCRResponse",
@@ -1765,6 +1765,15 @@
           "name": "EnablePeriodComplete",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBusinessCertificate",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1875,7 +1884,7 @@
         {
           "disabled": false,
           "document": "Code 告警码列表和释义：\n-9102 黑白复印件告警\n-9104 翻拍件告警",
-          "example": "[]",
+          "example": "[-9102]",
           "member": "int64",
           "name": "RecognizeWarnCode",
           "output_required": true,
@@ -1885,7 +1894,7 @@
         {
           "disabled": false,
           "document": "告警码说明：\nWARN_COPY_CARD 黑白复印件告警\nWARN_RESHOOT_CARD翻拍件告警",
-          "example": "[]",
+          "example": "[\"WARN_COPY_CARD\"]",
           "member": "string",
           "name": "RecognizeWarnMsg",
           "output_required": true,
@@ -1990,6 +1999,16 @@
           "name": "Electronic",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "非营业执照的营业类证件识别结果，将以结构化形式呈现。",
+          "example": "无",
+          "member": "BusinessCertificateInfo",
+          "name": "BusinessCertificate",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2437,6 +2456,42 @@
         }
       ],
       "type": "object"
+    },
+    "BusinessCertificateInfo": {
+      "document": "非营业执照的营业类证件识别结果，将以结构化形式呈现。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别出的名称",
+          "example": "日期",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称对应的值",
+          "example": "2020年08月24日",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "坐标",
+          "example": "无",
+          "member": "Rect",
+          "name": "Rect",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CandWord": {
       "document": "候选字符集(包含候选字Character以及置信度Confidence)",
@@ -6752,7 +6807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -6761,7 +6816,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralHandwritingOCR/GeneralHandwritingOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",

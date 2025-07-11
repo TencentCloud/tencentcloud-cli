@@ -343,6 +343,13 @@
       "output": "DescribeIdsWhiteRuleResponse",
       "status": "deprecated"
     },
+    "DescribeLogStorageStatistic": {
+      "document": "租户日志存储统计",
+      "input": "DescribeLogStorageStatisticRequest",
+      "name": "租户日志存储统计",
+      "output": "DescribeLogStorageStatisticResponse",
+      "status": "online"
+    },
     "DescribeLogs": {
       "document": "日志审计日志查询",
       "input": "DescribeLogsRequest",
@@ -6527,6 +6534,163 @@
       ],
       "type": "object"
     },
+    "DescribeLogStorageStatisticRequest": {
+      "document": "DescribeLogStorageStatistic请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLogStorageStatisticResponse": {
+      "document": "DescribeLogStorageStatistic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回状态码 0 成功 非0不成功",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息  success 成功 其他 不成功",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "UsedSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额存储总量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "TotalSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储天数",
+          "example": "180",
+          "member": "int64",
+          "name": "StorageDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问控制日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "AclSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "入侵防御日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "IdsSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "NetFlowSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作日志存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "OperateSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余存储量，单位B",
+          "example": "1024",
+          "member": "int64",
+          "name": "LeftSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，0后付费，1预付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每日增加日志存储量柱状图",
+          "example": "[{\"NetFlowSize\":232850065,\"OperateSize\":59072400,\"IdsSize\":584894,\"AclSize\":22095186,\"Time\":\"2024-10-25 00:00:00\"},{\"NetFlowSize\":226512606,\"OperateSize\":1822500,\"IdsSize\":308073,\"AclSize\":56409259,\"Time\":\"2024-10-26 00:00:00\"},{\"NetFlowSize\":312016348,\"OperateSize\":1591200,\"IdsSize\":1136827,\"AclSize\":89038893,\"Time\":\"2024-10-27 00:00:00\"},{\"NetFlowSize\":263122695,\"OperateSize\":1791000,\"IdsSize\":1633817,\"AclSize\":112221690,\"Time\":\"2024-10-28 00:00:00\"},{\"NetFlowSize\":314737760,\"OperateSize\":4045500,\"IdsSize\":11400888,\"AclSize\":58205747,\"Time\":\"2024-10-29 00:00:00\"},{\"NetFlowSize\":1000469317,\"OperateSize\":3949200,\"IdsSize\":69040,\"AclSize\":51893,\"Time\":\"2024-10-30 00:00:00\"},{\"NetFlowSize\":17837072505,\"OperateSize\":1984500,\"IdsSize\":5723094,\"AclSize\":4378551511,\"Time\":\"2024-10-31 00:00:00\"}]",
+          "member": "StorageHistogram",
+          "name": "TimeHistogram",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "柱形图格式数据",
+          "example": "{\"StorageType\":[\"访问控制日志\",\"入侵防御日志\",\"流量日志\",\"操作日志\"],\"Dates\":[\"10-25\",\"10-26\",\"10-27\",\"10-28\",\"10-29\",\"10-30\",\"10-31\"],\"Data\":[{\"List\":[22095186,56409259,89038893,112221690,58205747,51893,4378551511]},{\"List\":[584894,308073,1136827,1633817,11400888,69040,5723094]},{\"List\":[232850065,226512606,312016348,263122695,314737760,1000469317,17837072505]},{\"List\":[59072400,1822500,1591200,1791000,4045500,3949200,1984500]}]}",
+          "member": "StorageHistogramShow",
+          "name": "TimeHistogramShow",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后付费模式存储状态，0正常，1欠费停止写入",
+          "example": "1",
+          "member": "int64",
+          "name": "ArrearsStopWriting",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogsRequest": {
       "document": "DescribeLogs请求参数结构体",
       "members": [
@@ -9571,6 +9735,22 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IntArray": {
+      "document": "用于构造二维数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1000,10001]",
+          "member": "int64",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14179,6 +14359,98 @@
         }
       ],
       "type": "object"
+    },
+    "StorageHistogram": {
+      "document": "日志存储统计柱形图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问控制日志存储量，单位B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "AclSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入侵防御日志存储量，单位B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "IdsSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流量日志存储量，单位B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "NetFlowSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作日志存储量，单位B\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "OperateSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-30",
+          "member": "string",
+          "name": "Time",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StorageHistogramShow": {
+      "document": "前端图表使用日志存储统计柱形图数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"访问控制日志\"]",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2024-10-24\"]",
+          "member": "string",
+          "name": "Dates",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1024000]",
+          "member": "IntArray",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SwitchListsData": {
       "document": "防火墙开关列表对象",

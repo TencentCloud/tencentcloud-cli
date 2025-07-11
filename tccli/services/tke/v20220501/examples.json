@@ -104,6 +104,14 @@
         "title": "重启原生节点实例"
       }
     ],
+    "SetMachineLogin": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetMachineLogin\n<公共请求参数>\n\n{\n    \"MachineName\": \"np-rz2reeg8-7j9rt\",\n    \"ClusterId\": \"cls-0bupg8pm\",\n    \"KeyIds\": [\n        \"skey-871qdbga\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"743a32dd-5f9e-47c3-8312-1eabd4eda5f7f\"\n    }\n}",
+        "title": "设置是否开启节点登录"
+      }
+    ],
     "StartMachines": [
       {
         "document": "启动原生节点实例",

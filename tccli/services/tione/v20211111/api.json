@@ -7336,6 +7336,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源的配置",
+          "example": "无",
+          "member": "PublicDataSourceFS",
+          "name": "PublicDataSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9337,6 +9348,11 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "both"
+    },
+    "PublicDataSourceFS": {
+      "document": "公有云数据源结构",
+      "members": [],
       "usage": "both"
     },
     "PushTrainingMetricsRequest": {

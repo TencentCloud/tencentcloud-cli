@@ -662,10 +662,10 @@
     ],
     "DescribeCDNStatDetails": [
       {
-        "document": "查询域名123.vod2.com中国大陆的流量数据。",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNStatDetails\n&DomainNames.0=123.vod2.myqcloud.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&Area=Chinese Mainland\n&Metric=Traffic\n&<公共请求参数>",
+        "document": "查询域名 example.com 中国大陆的流量数据。",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNStatDetails\n&DomainNames.0=example.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&Area=Chinese Mainland\n&Metric=Traffic\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInterval\": 1440,\n        \"Data\": [\n            {\n                \"Time\": \"2018-12-01T00:00:00+08:00\",\n                \"Value\": 1000000\n            },\n            {\n                \"Time\": \"2018-12-02T00:00:00+08:00\",\n                \"Value\": 1500000\n            },\n            {\n                \"Time\": \"2018-12-03T00:00:00+08:00\",\n                \"Value\": 1500000\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
-        "title": "查询域名123.vod2.com中国大陆的流量数据。"
+        "title": "查询域名 example.com 中国大陆的流量数据。"
       }
     ],
     "DescribeCDNUsageData": [
@@ -683,9 +683,9 @@
       },
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\n&DomainNames.0=123.vod2.myqcloud.com\n&DomainNames.1=test.a.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&DataType=Bandwidth\n&DataInterval=5\n&<公共请求参数>",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\n&DomainNames.0=example1.com\n&DomainNames.1=example2.com\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&DataType=Bandwidth\n&DataInterval=5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInterval\": 5,\n        \"Data\": [\n            {\n                \"Time\": \"2018-12-01T00:00:00+08:00\",\n                \"Value\": 100000\n            },\n            {\n                \"Time\": \"2018-12-01T05:00:00+08:00\",\n                \"Value\": 200000\n            },\n            {\n                \"Time\": \"2018-12-01T10:00:00+08:00\",\n                \"Value\": 350000\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
-        "title": "查询域名123.vod2.myqcloud.com和test.a.com从2018-12-01到2018-12-07的5分钟粒度的带宽数据"
+        "title": "查询域名 example1.com 和 example2.com 从2018-12-01到2018-12-07的5分钟粒度的带宽数据"
       }
     ],
     "DescribeCLSLogsets": [
@@ -715,8 +715,8 @@
     "DescribeCdnLogs": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCdnLogs\n&DomainName=test.vod2.myqcloud.com\n&StartTime=2021-03-01T00:00:00+08:00\n&EndTime=2021-03-02T00:00:00+08:00\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 202,\n        \"DomesticCdnLogs\": [\n            {\n                \"Date\": \"2021-03-01\",\n                \"Name\": \"2018120213-test.vod2.myqcloud.com\",\n                \"Url\": \"http: //test.log.cdn/2018120213-test.vod2.myqcloud.com.tar.gz\",\n                \"StartTime\": \"2021-03-01T15:00:00+08:00\",\n                \"EndTime\": \"2021-03-01T15:59:59+08:00\"\n            }\n        ],\n        \"OverseaCdnLogs\": [],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeCdnLogs\n&DomainName=example.com\n&StartTime=2021-03-01T00:00:00+08:00\n&EndTime=2021-03-02T00:00:00+08:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 202,\n        \"DomesticCdnLogs\": [\n            {\n                \"Date\": \"2021-03-01\",\n                \"Name\": \"example.com\",\n                \"Url\": \"http: //test.log.cdn/example.com.tar.gz\",\n                \"StartTime\": \"2021-03-01T15:00:00+08:00\",\n                \"EndTime\": \"2021-03-01T15:59:59+08:00\"\n            }\n        ],\n        \"OverseaCdnLogs\": [],\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "查询CDN日志下载链接"
       }
     ],
@@ -1030,7 +1030,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSuperPlayerConfigs\n<公共请求参数>\n\n{\n    \"Names\": [\n        \"SuperPlayerName\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlayerConfigSet\": [\n            {\n                \"Name\": \"SuperPlayerName\",\n                \"Type\": \"Custom\",\n                \"DrmSwitch\": \"OFF\",\n                \"AdaptiveDynamicStreamingDefinition\": 10,\n                \"ImageSpriteDefinition\": 10,\n                \"ResolutionNameSet\": [\n                    {\n                        \"MinEdgeLength\": 480,\n                        \"Name\": \"标清\"\n                    },\n                    {\n                        \"MinEdgeLength\": 1440,\n                        \"Name\": \"2K\"\n                    }\n                ],\n                \"TranscodeDefinition\": 0,\n                \"AudioVideoType\": \"AdaptiveDynamicStream\",\n                \"Domain\": \"xxx.vod2.myqcloud.com\",\n                \"Scheme\": \"HTTPS\",\n                \"Comment\": \"\",\n                \"DrmStreamingsInfo\": {\n                    \"FairPlayDefinition\": 0,\n                    \"SimpleAesDefinition\": 0,\n                    \"WidevineDefinition\": 0\n                },\n                \"CreateTime\": \"2019-10-11T10:00:00Z\",\n                \"UpdateTime\": \"2019-10-11T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-4594145287e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PlayerConfigSet\": [\n            {\n                \"Name\": \"SuperPlayerName\",\n                \"Type\": \"Custom\",\n                \"DrmSwitch\": \"OFF\",\n                \"AdaptiveDynamicStreamingDefinition\": 10,\n                \"ImageSpriteDefinition\": 10,\n                \"ResolutionNameSet\": [\n                    {\n                        \"MinEdgeLength\": 480,\n                        \"Name\": \"标清\"\n                    },\n                    {\n                        \"MinEdgeLength\": 1440,\n                        \"Name\": \"2K\"\n                    }\n                ],\n                \"TranscodeDefinition\": 0,\n                \"AudioVideoType\": \"AdaptiveDynamicStream\",\n                \"Domain\": \"example.com\",\n                \"Scheme\": \"HTTPS\",\n                \"Comment\": \"\",\n                \"DrmStreamingsInfo\": {\n                    \"FairPlayDefinition\": 0,\n                    \"SimpleAesDefinition\": 0,\n                    \"WidevineDefinition\": 0\n                },\n                \"CreateTime\": \"2019-10-11T10:00:00Z\",\n                \"UpdateTime\": \"2019-10-11T10:00:00Z\"\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-4594145287e1\"\n    }\n}",
         "title": "获取播放器配置列表"
       }
     ],
@@ -1355,7 +1355,7 @@
     "ModifyDefaultDistributionConfig": [
       {
         "document": "修改默认分发配置修改默认分发配置。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDefaultDistributionConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"test.vod2.myqcloud.com\",\n    \"Scheme\": \"HTTPS\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDefaultDistributionConfig\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\",\n    \"Scheme\": \"HTTPS\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "修改默认分发配置"
       }

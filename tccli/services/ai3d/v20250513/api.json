@@ -27,7 +27,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "3D文件的格式。取值范围：OBJ",
+          "document": "文件格式",
           "example": "OBJ",
           "member": "string",
           "name": "Type",

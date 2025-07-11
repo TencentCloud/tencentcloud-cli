@@ -3723,6 +3723,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "线路类型。各种线路类型详情可参考：[EIP 的 IP 地址类型](https://cloud.tencent.com/document/product/1199/41646)。默认值：BGP。\n\n- BGP：常规 BGP 线路\n\n已开通静态单线IP白名单的用户，可选值：\n\n - CMCC：中国移动\n - CTCC：中国电信\n - CUCC：中国联通\n\n注意：仅部分地域支持静态单线IP。\n示例值：BGP",
+          "example": "CMCC",
+          "member": "string",
+          "name": "InternetServiceProvider",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网 IP 类型。\n\n- WanIP：普通公网IP。\n- HighQualityEIP：精品 IP。仅新加坡和中国香港支持精品IP。\n- AntiDDoSEIP：高防 IP。仅部分地域支持高防IP，详情可见[弹性公网IP产品概述](https://cloud.tencent.com/document/product/1199/41646)。\n\n如需为资源分配公网IPv4地址，请指定公网IPv4地址类型。\n\n示例值：WanIP\n\n此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
+          "example": "WanIP",
+          "member": "string",
+          "name": "IPv4AddressType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网 IPv6 类型。\n- EIPv6：弹性公网 IPv6。\n- HighQualityEIPv6：精品 IPv6。仅中国香港支持精品IPv6。\n\n如需为资源分配IPv6地址，请指定弹性公网IPv6类型。\n示例值：EIPv6\n\n此功能仅部分地区灰度开发，如需使用[请提交工单咨询](https://console.cloud.tencent.com/workorder/category)",
+          "example": "EIPv6",
+          "member": "string",
+          "name": "IPv6AddressType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高防包唯一ID，申请高防IP时，该字段必传。\n示例值：bgp-12345678\n",
+          "example": "bgp-12345678",
+          "member": "string",
+          "name": "AntiDDoSPackageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

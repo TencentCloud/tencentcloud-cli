@@ -8065,8 +8065,8 @@
         },
         {
           "disabled": false,
-          "document": "日志名称，格式为：日期小时-域名\n如 2018120101-test.vod2.mqcloud.com。",
-          "example": "2018120101-test.vod2.mqcloud.com",
+          "document": "日志名称，格式为：日期小时-域名\n如 example.com。",
+          "example": "example.com",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -14111,7 +14111,7 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "test.vod2.myqcloud.com",
+          "example": "example.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -25620,7 +25620,7 @@
         {
           "disabled": false,
           "document": "分发域名，取值为点播域名列表里的域名。不填或者填空，表示不修改域名。",
-          "example": "test.vod2.myqcloud.com",
+          "example": "example.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -39220,7 +39220,7 @@
         },
         {
           "disabled": false,
-          "document": "发布视频所对应的转码模板 ID，为0代表原始视频。",
+          "document": "发布视频所对应的转码模板 ID，为 0 代表原始视频。支持的视频格式：\n<li>当 SourceDefinition 为 0 时，视频格式支持 MP4、3GP 格式；</li>\n<li>当 SourceDefinition 大于 0 时，视频格式支持 MP4、3GP 及 M3U8 格式。</li>不填默认值为 0。",
           "example": "10",
           "member": "int64",
           "name": "SourceDefinition",

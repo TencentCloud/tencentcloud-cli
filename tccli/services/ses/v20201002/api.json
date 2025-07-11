@@ -740,6 +740,15 @@
           "name": "DKIMOption",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "tag 标签",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1396,6 +1405,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tag 标签",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1958,7 +1977,35 @@
     },
     "ListEmailIdentitiesRequest": {
       "document": "ListEmailIdentities请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "tag 标签",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页 limit",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页 offset",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ListEmailIdentitiesResponse": {
@@ -1970,7 +2017,7 @@
           "example": "无",
           "member": "EmailIdentity",
           "name": "EmailIdentities",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1980,7 +2027,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MaxReputationLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1990,7 +2037,17 @@
           "example": "10000",
           "member": "uint64",
           "name": "MaxDailyQuota",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2773,12 +2830,22 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "用户是否举报该发送者",
           "example": "true",
           "member": "bool",
           "name": "UserComplainted",
           "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户是否举报该发送者",
+          "example": "true",
+          "member": "bool",
+          "name": "UserComplained",
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -2974,6 +3041,34 @@
         }
       ],
       "usage": "in"
+    },
+    "TagList": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品",
+          "example": "tagkey",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ses",
+          "example": "tagvalue",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Template": {
       "document": "模板发送相关信息，包含模板ID，模板变量参数等信息",

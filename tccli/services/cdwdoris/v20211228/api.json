@@ -707,6 +707,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照保留策略",
+          "example": "无",
+          "member": "SnapshotRemainPolicy",
+          "name": "SnapshotRemainPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -742,6 +753,17 @@
           "example": "snapshot-axxx",
           "member": "string",
           "name": "SnapShotPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cos桶所在地域",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "Region",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1670,7 +1692,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "0为默认。1时是对远端的doris进行备份，不周期，一次性",
           "example": "1",
           "member": "int64",
@@ -1679,7 +1701,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "远端doris集群的连接信息",
           "example": "DorisSourceInfo",
           "member": "DorisSourceInfo",
@@ -1689,7 +1711,7 @@
         },
         {
           "disabled": false,
-          "document": "0为默认。1时是一次性备份。2时是远端备份",
+          "document": "0为周期备份。1时是立即备份。3时是定时备份。",
           "example": "1",
           "member": "int64",
           "name": "BackupTimeType",
@@ -1697,7 +1719,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "0为默认。1时是备份完成后立即恢复",
           "example": "1",
           "member": "int64",
@@ -1706,7 +1728,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "0为默认。1时是提供自定义的secret连接cos",
           "example": "1",
           "member": "int64",
@@ -1715,7 +1737,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "cos认证的信息",
           "example": "1",
           "member": "CosSourceInfo",
@@ -1756,6 +1778,24 @@
           "example": "carson-test-1301087413",
           "member": "string",
           "name": "CosBucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照保留策略",
+          "example": "无",
+          "member": "SnapshotRemainPolicy",
+          "name": "SnapshotRemainPolicy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "备份数据所在地域，当前地域应该为空",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "DataRemoteRegion",
           "required": false,
           "type": "string"
         }
@@ -4852,6 +4892,15 @@
           "name": "TableName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名列表",
+          "example": "[ ]",
+          "member": "string",
+          "name": "UserNames",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6001,6 +6050,16 @@
         },
         {
           "disabled": false,
+          "document": "虚拟可用区",
+          "example": "virtual-ap-guangzhou-5-0",
+          "member": "string",
+          "name": "VirtualZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "创建时间",
           "example": "2024-12-16 12:23:11",
           "member": "string",
@@ -6666,7 +6725,7 @@
         },
         {
           "disabled": false,
-          "document": "更新类型，默认0，1为更新绑定计算组",
+          "document": "更新类型，默认0，1为更新绑定计算组，2为更新默认计算组",
           "example": "0",
           "member": "int64",
           "name": "UpdateType",
@@ -6681,6 +6740,15 @@
           "name": "UpdateComputeGroups",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认计算组",
+          "example": "tchd-ekwold58-gdviogwc",
+          "member": "string",
+          "name": "DefaultComputeGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6960,6 +7028,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "虚拟可用区",
+          "example": "virtual-ap-chongqing-1-1",
+          "member": "string",
+          "name": "VirtualZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7083,6 +7161,17 @@
           "example": "1.2.3.4",
           "member": "string",
           "name": "RIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "虚拟可用区",
+          "example": "virtual-ap-chongqing-1-1",
+          "member": "string",
+          "name": "VirtualZone",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -8340,6 +8429,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "恢复任务id",
+          "example": "3412",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8841,6 +8940,45 @@
         }
       ],
       "usage": "out"
+    },
+    "SnapshotRemainPolicy": {
+      "document": "备份快照保留策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-不主动删除；1-超过指定时间周期自动删除；2-保留指定数据快照",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保留快照的时间",
+          "example": "7",
+          "member": "int64",
+          "name": "RemainDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保留最新快照的数量",
+          "example": "10",
+          "member": "int64",
+          "name": "RemainLatestNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签描述",

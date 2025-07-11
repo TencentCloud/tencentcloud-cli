@@ -16,6 +16,7 @@ Output:
                 "Width": 250,
                 "Fps": 30,
                 "TemplateId": 1000,
+                "IsAdaptiveBitRate": 0,
                 "Gop": 3,
                 "Acodec": "aac",
                 "Profile": "baseline",
@@ -31,6 +32,24 @@ Output:
                 "Vcodec": "h264",
                 "NeedAudio": 1,
                 "DRMTracks": "AUDIO|UHD2",
+                "AdaptiveChildren": [
+                    {
+                        "BitrateToOrig": 0,
+                        "TemplateName": "模板名称",
+                        "VideoBitrate": 0,
+                        "ShortEdgeAsHeight": 0,
+                        "Vcodec": "h264",
+                        "Height": 0,
+                        "Width": 0,
+                        "NeedAudio": 0,
+                        "FpsToOrig": 0,
+                        "Fps": 0,
+                        "TemplateId": 0,
+                        "HeightToOrig": 0,
+                        "NeedVideo": 0,
+                        "Gop": 0
+                    }
+                ],
                 "NeedVideo": 1,
                 "DRMType": "widevine",
                 "ShortEdgeAsHeight": 0,

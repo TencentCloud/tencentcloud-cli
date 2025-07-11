@@ -1999,7 +1999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li>说明：CKV 版本当前有存量用户使用，暂时保留。</ul>",
+          "document": "实例类型。\n<ul><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li><li>15：Redis 6.2 内存版（标准架构）。</li><li>16：Redis 6.2 内存版（集群架构）。</li><li>17：Redis 7.0 内存版（标准架构）。</li><li>18：Redis 7.0 内存版（集群架构）。</li><li>200：Memcached 1.6 内存版（集群架构）。</li>说明：CKV 版本当前有存量用户使用，暂时保留。</ul>",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -4829,7 +4829,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200:Memcached 1.6 内存版（集群架构）。",
           "example": "8",
           "member": "int64",
           "name": "Type",
@@ -6711,7 +6711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200:Memcached 1.6 内存版（集群架构）。",
           "example": "6",
           "member": "uint64",
           "name": "TypeId",
@@ -7888,7 +7888,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。\n- 200:Memcached 1.6 内存版（集群架构）。",
           "example": "7",
           "member": "int64",
           "name": "Type",
@@ -8228,7 +8228,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的节点详细信息。",
+          "document": "实例的节点详细信息。\n只有多可用区实例会返回。",
           "example": "无",
           "member": "RedisNodeInfo",
           "name": "NodeSet",
@@ -12113,7 +12113,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型。\n- FLOW_CREATE: \"001\"，新建实例\n- FLOW_RESIZE ： \"002\"，配置变更\n- FLOW_CLOSE：\"003\"，关闭实例\n- FLOW_CLEAN： \"004\"，清空实例\n- FLOW_STARTUP：\"005\"，实例启用。\n- FLOW_DELETE：\"006\"，删除实例。\n- FLOW_SETPWD：\"007\"，重置密码。\n- FLOW_EXPORTBACKUP：\"009\"，导出备份文件。\n- FLOW_RESTOREBACKUP：\"010\"，恢复备份。\n- FLOW_BACKUPINSTANCE：\"012\"，备份实例。\n- FLOW_MIGRATEINSTANCE：\"013\"，迁移实例。\n- FLOW_DELBACKUP：\"014\"，删除备份。\n- FLOW_EXCHANGEINSTANCE： \"016\"，切换实例流程。\n- FLOW_AUTOBACKUP：\"017\"，自动备份实例。\n- FLOW_MIGRATECHECK： \"022\"，迁移参数校验。\n- FLOW_MIGRATETASK：\"023\"，数据迁移中。\n- FLOW_CLEANDB：\"025\"，清空某个数据库。\n- FLOW_CLONEBACKUP：\"026\"，克隆备份。\n- FLOW_CHANGEVIP： \"027\"，改变vip地址。\n- FLOW_EXPORSHR ：\"028\"，扩缩容。\n- FLOW_ADDNODES：\"029\"，加（减）节点。\n- FLOW_CHANGENET：\"031\"，改变网络类型。\n- FLOW_MODIFYINSTACEREADONLY：\"033\"，只读策略变更。\n- FLOW_MODIFYINSTANCEPARAMS：\"034\"，修改实例参数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：\"035\"，设置免密。\n- FLOW_SWITCHINSTANCEVIP：\"036\"，实例VIP切换。\n- FLOW_MODIFYINSTANCEACCOUNT：\"037\"，实例帐号变更。\n- FLOW_MODIFYINSTANCEBANDWIDTH：\"038\"，实例带宽变更。\n- FLOW_ENABLEINSTANCE_REPLICATE：\"039\"，开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE：\"040\"，关闭副本只读。\n- FLOW_UpgradeArch：\"041\"，实例架构升级，主从升集群。\n- FLOW_DowngradeArch： \"042\"，实例架构降级，集群降主从。\n- FLOW_UpgradeVersion： \"043\"，版本升级。\n- FLOW_MODIFYCONNECTIONCONFIG：\"044\"，带宽连接数调整。\n- FLOW_CLEARNETWORK：\"045\"，更换网络，\n- FLOW_REMOVE_BACKUP_FILE：\"046\"，删除备份。\n- FLOW_UPGRADE_SUPPORT_MULTI_AZ：\"047\"，升级实例支持多可用区。\n- FLOW_SHUTDOWN_MASTER：\"048\"，模拟故障。\n- FLOW_CHANGE_REPLICA_TO_MASTER：\"049\"，手动提主。\n- FLOW_CODE_ADD_REPLICATION_INSTANCE：\"050\"，新增复制组。\n- FLOW_OPEN_WAN：\"052\"，开通外网。\n- FLOW_CLOSE_WAN：\"053\"，关闭外网FLOW_UPDATE_WAN：\"054\"，更新外网。\n- FLOW_CODE_DELETE_REPLICATION_INSTANCE：\"055\"，解绑复制组。\n- FLOW_CODE_CHANGE_MASTER_INSTANCE：\"056\"，复制组实例切主。\n- FLOW_CODE_CHANGE_INSTANCE_ROLE： \"057\"，更改复制组实例角色。\n- FLOW_MIGRATE_NODE：\"058\"，迁移节点。\n- FLOW_SWITCH_NODE：\"059\"，切换节点。\n- FLOW_UPGRADE_SMALL_VERSION：\"060\"，升级 Redi s版本。\n- FLOW_UPGRADE_PROXY_VERSION：\"061\"，升级 Proxy 版本。\n- FLOW_MODIFY_INSTANCE_NETWORK： \"062\"，实例修改网络。\n- FLOW_MIGRATE_PROXY_NODE：\"063\"，迁移proxy节点。\n- FLOW_MIGRATION_INSTANCE_ZONE：\"066\"，实例可用区迁移中。\n- FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： \"067\"，实例版本升级中。\n- FLOW_MODIFY_PROXY_NUM：\"069\"，加（减）Proxy 节点。\n- FLOW_MODIFYBACKUPMOD：\"070\"，变更实例备份模式。",
+          "document": "任务类型。\n- FLOW_CREATE: \"001\"，新建实例\n- FLOW_RESIZE ： \"002\"，配置变更\n- FLOW_CLOSE：\"003\"，关闭实例\n- FLOW_CLEAN： \"004\"，清空实例\n- FLOW_STARTUP：\"005\"，实例启用。\n- FLOW_DELETE：\"006\"，删除实例。\n- FLOW_SETPWD：\"007\"，重置密码。\n- FLOW_EXPORTBACKUP：\"009\"，导出备份文件。\n- FLOW_RESTOREBACKUP：\"010\"，恢复备份。\n- FLOW_BACKUPINSTANCE：\"012\"，备份实例。\n- FLOW_MIGRATEINSTANCE：\"013\"，迁移实例。\n- FLOW_DELBACKUP：\"014\"，删除备份。\n- FLOW_EXCHANGEINSTANCE： \"016\"，切换实例流程。\n- FLOW_AUTOBACKUP：\"017\"，自动备份实例。\n- FLOW_MIGRATECHECK： \"022\"，迁移参数校验。\n- FLOW_MIGRATETASK：\"023\"，数据迁移中。\n- FLOW_CLEANDB：\"025\"，清空数据库。\n- FLOW_CLONEBACKUP：\"026\"，克隆备份。\n- FLOW_CHANGEVIP： \"027\"，改变vip地址。\n- FLOW_EXPORSHR ：\"028\"，扩缩容。\n- FLOW_ADDNODES：\"029\"，加（减）节点。\n- FLOW_CHANGENET：\"031\"，改变网络类型。\n- FLOW_MODIFYINSTACEREADONLY：\"033\"，只读策略变更。\n- FLOW_MODIFYINSTANCEPARAMS：\"034\"，修改实例参数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：\"035\"，设置免密。\n- FLOW_SWITCHINSTANCEVIP：\"036\"，实例VIP切换。\n- FLOW_MODIFYINSTANCEACCOUNT：\"037\"，实例账号变更。\n- FLOW_MODIFYINSTANCEBANDWIDTH：\"038\"，实例带宽变更。\n- FLOW_ENABLEINSTANCE_REPLICATE：\"039\"，开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE：\"040\"，关闭副本只读。\n- FLOW_UpgradeArch：\"041\"，实例架构升级，主从升集群。\n- FLOW_DowngradeArch： \"042\"，实例架构降级，集群降主从。\n- FLOW_UpgradeVersion： \"043\"，版本升级。\n- FLOW_MODIFYCONNECTIONCONFIG：\"044\"，带宽连接数调整。\n- FLOW_CLEARNETWORK：\"045\"，更换网络，\n- FLOW_REMOVE_BACKUP_FILE：\"046\"，删除备份。\n- FLOW_UPGRADE_SUPPORT_MULTI_AZ：\"047\"，升级实例支持多可用区。\n- FLOW_SHUTDOWN_MASTER：\"048\"，模拟故障。\n- FLOW_CHANGE_REPLICA_TO_MASTER：\"049\"，手动提主。\n- FLOW_CODE_ADD_REPLICATION_INSTANCE：\"050\"，新增复制组。\n- FLOW_OPEN_WAN：\"052\"，开通外网。\n- FLOW_CLOSE_WAN：\"053\"，关闭外网\n- FLOW_CODE_DELETE_REPLICATION_INSTANCE：\"055\"，解绑复制组。\n- FLOW_CODE_CHANGE_MASTER_INSTANCE：\"056\"，复制组实例切主。\n- FLOW_CODE_CHANGE_INSTANCE_ROLE： \"057\"，更改复制组实例角色。\n- FLOW_MIGRATE_NODE：\"058\"，迁移节点。\n- FLOW_SWITCH_NODE：\"059\"，切换节点。\n- FLOW_UPGRADE_SMALL_VERSION：\"060\"，升级 Redis版本。\n- FLOW_UPGRADE_PROXY_VERSION：\"061\"，升级 Proxy 版本。\n- FLOW_MODIFY_INSTANCE_NETWORK： \"062\"，实例修改网络。\n- FLOW_MIGRATE_PROXY_NODE：\"063\"，迁移 proxy节点。\n- FLOW_MIGRATION_INSTANCE_ZONE：\"066\"，实例可用区迁移中。\n- FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： \"067\"，实例版本升级中。\n- FLOW_MODIFY_PROXY_NUM：\"069\"，加（减）Proxy 节点。\n- FLOW_MODIFYBACKUPMOD：\"070\"，变更实例备份模式。",
           "example": "037",
           "member": "string",
           "name": "TaskType",

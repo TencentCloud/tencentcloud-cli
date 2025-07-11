@@ -1141,10 +1141,30 @@
         },
         {
           "disabled": false,
+          "document": "镜像描述",
+          "example": "test-image",
+          "member": "string",
+          "name": "AndroidInstanceImageDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "安卓10",
           "example": "ANDROID10",
           "member": "string",
           "name": "AndroidVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-07-02T10:15:36Z",
+          "member": "string",
+          "name": "CreateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1919,6 +1939,15 @@
           "member": "string",
           "name": "AndroidInstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安卓实例镜像描述",
+          "example": "test-image",
+          "member": "string",
+          "name": "AndroidInstanceImageDescription",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2993,6 +3022,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字段过滤器。Filter 的 Name 有以下值：\nImageName：镜像名称\nImageState：镜像状态\nAndroidVersion：安卓版本",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

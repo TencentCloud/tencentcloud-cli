@@ -185,7 +185,7 @@
   },
   "metadata": {
     "apiVersion": "2024-05-22",
-    "api_brief": "支持直接通过API调用大模型能力。",
+    "api_brief": "知识引擎原子能力（LLM Knowledge Engine Basic API）基于知识引擎研发的知识问答全链路能力，面向企业及开发者，提供灵活组建及开发模型应用的能力。您可通过多款原子能力组建您专属的模型服务，调用大模型对话、文档解析、拆分、embedding、多轮改写等服务进行组装，定制企业专属 AI 业务。支持直接通过API调用大模型能力。",
     "serviceNameCN": "知识引擎原子能力",
     "serviceShortName": "lkeap"
   },

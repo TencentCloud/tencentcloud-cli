@@ -3555,6 +3555,188 @@
       ],
       "usage": "out"
     },
+    "ChildTemplateInfo": {
+      "document": "自适应码率转码模板，子模板，出入参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自适应码率转码模板，子模板Id。\n入参时候，填写此字段，表示更新子模板，否则是新增子模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "485142",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_500",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频编码：h264/h265/origin，默认origin。\n\norigin: 保持原始编码格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "origin",
+          "member": "string",
+          "name": "Vcodec",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频码率。范围：0kbps - 8000kbps。\n0为保持原始码率。\n注: 转码模板有码率唯一要求，最终保存的码率可能与输入码率有所差别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1080",
+          "member": "int64",
+          "name": "VideoBitrate",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "宽，默认0。\n范围[0-3000]。\n数值必须是2的倍数，0是原始宽度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Width",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高，默认0。\n范围[0-3000]\n数值必须是2的倍数，0是原始高度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Height",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帧率，默认0。\n范围0-60fps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Fps",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键帧间隔，单位：秒。\n默认原始的间隔。\n范围2-6。\n同一个父模板下面的所有子模板，gop必须相等且存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Gop",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否保留视频，0：否，1：是。默认1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedVideo",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否保留音频，0：否，1：是。默认1。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedAudio",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当设置的码率>原始码率时，是否以原始码率为准。\n0：否， 1：是\n默认 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BitrateToOrig",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当设置的高度>原始高度时，是否以原始高度为准。\n0：否， 1：是\n默认 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "HeightToOrig",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当设置的帧率>原始帧率时，是否以原始帧率为准。\n0：否， 1：是\n默认 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FpsToOrig",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否以短边作为高度，0：否，1：是。默认0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ShortEdgeAsHeight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HLS 分片类型。\n可选值：ts、fmp4。\n注：编码方式为 H.265 时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ts",
+          "member": "string",
+          "name": "HlsContainerFormat",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编码标签。\n可选值：hvc1、hev1。\n注：HLS 分片类型选择 fmp4 时生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hvc1",
+          "member": "string",
+          "name": "HlsMp4VideoCodecTag",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClientIpPlaySumInfo": {
       "document": "客户端ip播放汇总信息。",
       "members": [
@@ -4999,7 +5181,7 @@
         },
         {
           "disabled": false,
-          "document": "任务描述，限制 512 字节。",
+          "document": "任务描述，限制 512 字节。不可以使用特殊字符，如Unicode的特殊字符集。",
           "example": "任务描述",
           "member": "string",
           "name": "Comment",
@@ -20819,6 +21001,26 @@
           "name": "DRMTracks",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否创建自适应码率，默认值 0。\n0：否。\n1：是。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAdaptiveBitRate",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChildTemplateInfo",
+          "name": "AdaptiveChildren",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
