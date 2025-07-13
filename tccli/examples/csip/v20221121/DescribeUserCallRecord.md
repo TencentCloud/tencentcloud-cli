@@ -1,4 +1,4 @@
-**Example 1: 1**
+**Example 1: 获取账号调用记录列表**
 
 
 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "Data": [
             {
-                "AppID": 0,
+                "AppID": 10001,
                 "CallCount": 5941,
                 "Code": 0,
                 "Date": "",
@@ -27,11 +27,11 @@ Output:
                 "Region": "中国-广东省-广州市",
                 "SourceIP": "106.55.***.47",
                 "SourceIPRemark": "",
-                "UserName": "jos***_blue"
+                "UserName": "name"
             }
         ],
         "RequestId": "502c625d-756e-4bdb-bd5f-784d008150b5",
-        "Total": 76
+        "Total": 1
     }
 }
 ```

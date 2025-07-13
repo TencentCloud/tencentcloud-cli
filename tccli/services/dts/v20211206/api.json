@@ -5442,6 +5442,16 @@
         },
         {
           "disabled": false,
+          "document": "schema",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "表名",
           "example": "t1",
           "member": "string",
@@ -8963,6 +8973,16 @@
         },
         {
           "disabled": false,
+          "document": "schema名",
+          "example": "schema1",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "表名",
           "example": "t1",
           "member": "string",
@@ -10045,7 +10065,7 @@
         },
         {
           "disabled": false,
-          "document": "不能发起一致性校验的原因",
+          "document": "不能发起内置校验的原因",
           "example": "当前任务开启了DML过滤",
           "member": "string",
           "name": "CauseOfCompareDisable",

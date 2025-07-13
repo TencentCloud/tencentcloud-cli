@@ -2885,7 +2885,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用，“true\" \"false\"",
+          "document": "高可用,\"true\" \"false\"",
           "example": "false",
           "member": "string",
           "name": "HA",
@@ -3281,6 +3281,16 @@
           "name": "HasPublicCloudClb",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可升级的zk版本",
+          "example": "3.6.1,3.8.3",
+          "member": "string",
+          "name": "UpgradeZkVersions",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

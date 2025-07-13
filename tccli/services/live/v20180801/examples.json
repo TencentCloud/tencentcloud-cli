@@ -88,6 +88,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateAuditKeywords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "直播审核创建关键词"
+      }
+    ],
     "CreateCaster": [
       {
         "document": "请求创建导播台",
@@ -310,6 +318,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=CreateScreenshotTask\n&AppName=live\n&DomainName=5000.live.push.com\n&StreamName=livetest\n&StartTime=1589889600\n&EndTime=1589904000\n&TemplateId=0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteAuditKeywords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditKeywords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "直播审核删除关键词"
       }
     ],
     "DeleteCaster": [
@@ -542,6 +558,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=DescribeAreaBillBandwidthAndFluxList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-02-0100:00:00\n&EndTime=2019-02-0100:10:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Name\": \"中东/非洲\",\n                \"Countrys\": [\n                    {\n                        \"Name\": \"阿联酋\",\n                        \"BandInfoList\": [\n                            {\n                                \"Bandwidth\": 6.95,\n                                \"Flux\": 260.7,\n                                \"PeakTime\": \"2020-09-09 00:00:00\",\n                                \"Time\": \"2020-09-09 00:05:00\"\n                            },\n                            {\n                                \"Bandwidth\": 5.84,\n                                \"Flux\": 219.09,\n                                \"PeakTime\": \"2020-09-09 00:05:00\",\n                                \"Time\": \"2020-09-09 00:10:00\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeAuditKeywords": [
+      {
+        "document": "直播审核获取关键词列表搜索。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditKeywords\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "直播审核获取关键词"
       }
     ],
     "DescribeBackupStreamList": [

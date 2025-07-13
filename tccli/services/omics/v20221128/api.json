@@ -2482,7 +2482,7 @@
         {
           "disabled": false,
           "document": "应用版本。",
-          "example": "{\"Type\": \"HISTORY\",\"ApplicationVersionId\": \"26\",\"Name\": \"\",\"Description\": \"\",\"Entrypoint\": \"ExomeGermlineSingleSample.wdl\",\"CreateTime\": \"2024-06-06 14:49:06\",\"CreatorName\": \"manager\",\"CreatorId\": \"df8c0fbfd4b94490aed913753473ebed\",\"GitSource\": null,\"CosSource\": null}",
+          "example": "{\"Type\": \"HISTORY\",\"ApplicationVersionId\": \"26\",\"Name\": \"\",\"Description\": \"\",\"Entrypoint\": \"main.wdl\",\"CreateTime\": \"2024-06-06 14:49:06\",\"CreatorName\": \"manager\",\"CreatorId\": \"df8c0fbfd4b94490aed913753473ebed\",\"GitSource\": null,\"CosSource\": null}",
           "member": "ApplicationVersion",
           "name": "ApplicationVersion",
           "output_required": false,
@@ -2611,7 +2611,7 @@
         },
         {
           "disabled": false,
-          "document": "输入模版ID。",
+          "document": "输入模板ID。",
           "example": "in-slim-yellow-coorgi-672677",
           "member": "string",
           "name": "InputTemplateId",
@@ -2682,7 +2682,7 @@
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "[{\"causedBy\": [{\"causedBy\": [{\"causedBy\": [{\"causedBy\": [],\"message\": \":\\nDisk strings should be of the format 'local-disk SIZE TYPE' or '/mount/point SIZE TYPE' but got: '50 GB'\"}],\"message\": \"Runtime attribute validation failed\"}],\"message\": \"TesAsyncBackendJobExecutionActor failed and didn't catch its exception. This condition has been handled and the job will be marked as failed.\"}],\"message\": \"Workflow failed\"}]",
+          "example": "[{\"causedBy\": [{\"message\": \"The compute backend terminated the job.\", \"causedBy\": []}], \"message\": \"Workflow failed\"}]",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
