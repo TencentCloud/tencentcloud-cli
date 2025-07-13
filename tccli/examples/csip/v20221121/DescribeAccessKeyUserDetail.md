@@ -1,4 +1,4 @@
-**Example 1: 1**
+**Example 1: 查询用户的账号详情**
 
 
 
@@ -30,12 +30,12 @@ Output:
             "ID": 200637,
             "ISP": "电信",
             "LoginFlag": 0,
-            "LoginIP": "119.147.10.163",
+            "LoginIP": "119.147.10.***",
             "LoginLocation": "中国-广东省-深圳市",
             "LoginTime": "2025-05-22 10:45:34",
-            "Name": "cfw-test",
-            "Nickname": "天空之蓝",
-            "SubNickname": "cfw-test",
+            "Name": "name",
+            "Nickname": "name",
+            "SubNickname": "name",
             "SubUin": "1000***1**78",
             "Type": 1,
             "Uin": "1000*****18"

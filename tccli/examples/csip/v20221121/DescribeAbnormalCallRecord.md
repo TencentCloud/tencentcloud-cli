@@ -1,4 +1,4 @@
-**Example 1: 1**
+**Example 1: 获取调用记录列表**
 
 
 
@@ -16,10 +16,10 @@ Output:
     "Response": {
         "Data": [
             {
-                "AccessKey": "AKID6*******tZBU1Hi",
+                "AccessKey": "AKID*******",
                 "AccessKeyID": 10093,
-                "AccessKeyRemark": "飞快的云镜-临时密钥",
-                "AppID": 1256299843,
+                "AccessKeyRemark": "临时密钥",
+                "AppID": 100001,
                 "CallCount": 50,
                 "CallID": "13",
                 "Code": 0,
@@ -34,9 +34,9 @@ Output:
                 "PolicySet": [],
                 "ProductName": "cam",
                 "Region": "",
-                "SourceIP": "30.49.109.154",
+                "SourceIP": "30.49.109.***",
                 "SourceIPRemark": "",
-                "UserName": "100024699394",
+                "UserName": "1000246***",
                 "UserType": "AssumedRole"
             }
         ],
