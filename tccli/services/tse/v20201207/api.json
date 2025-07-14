@@ -406,6 +406,13 @@
       "output": "DescribeCloudNativeAPIGatewayServicesResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayServicesLight": {
+      "document": "轻量查询云原生网关服务列表",
+      "input": "DescribeCloudNativeAPIGatewayServicesLightRequest",
+      "name": "轻量查询云原生网关服务列表",
+      "output": "DescribeCloudNativeAPIGatewayServicesLightResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayUpstream": {
       "document": "获取云原生网关服务详情下的Upstream列表",
       "input": "DescribeCloudNativeAPIGatewayUpstreamRequest",
@@ -7573,6 +7580,70 @@
       ],
       "type": "object"
     },
+    "DescribeCloudNativeAPIGatewayServicesLightRequest": {
+      "document": "DescribeCloudNativeAPIGatewayServicesLight请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表 offset",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，多个过滤条件之间是与的关系，支持 id、name、upstreamType",
+          "example": "无",
+          "member": "ListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayServicesLightResponse": {
+      "document": "DescribeCloudNativeAPIGatewayServicesLight返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "GatewayServices",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayServicesRequest": {
       "document": "DescribeCloudNativeAPIGatewayServices请求参数结构体",
       "members": [
@@ -10879,6 +10950,32 @@
       ],
       "usage": "out"
     },
+    "GatewayServices": {
+      "document": "轻量查询网关服务列表出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务列表",
+          "example": "无",
+          "member": "KongServiceLightPreview",
+          "name": "ServiceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GovernanceAlias": {
       "document": "服务别名结构信息",
       "members": [
@@ -13052,6 +13149,102 @@
         }
       ],
       "usage": "both"
+    },
+    "KongServiceLightPreview": {
+      "document": "云原生网关服务简洁预览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名字",
+          "example": "test-service",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端配置",
+          "example": "无",
+          "member": "KongUpstreamInfo",
+          "name": "UpstreamInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端类型",
+          "example": "HostIP",
+          "member": "string",
+          "name": "UpstreamType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-11-25 10:49:23",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/open",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端协议",
+          "example": "http",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重试次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Retries",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后端延时，单位ms",
+          "example": "5000",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "KongServicePreview": {
       "document": "云原生网关服务预览信息",

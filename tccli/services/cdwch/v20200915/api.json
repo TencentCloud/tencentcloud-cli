@@ -1649,7 +1649,7 @@
         {
           "disabled": false,
           "document": "搜索的集群id名称",
-          "example": "cdwch-xxxx",
+          "example": "clickhouse-cn-xxxxxx",
           "member": "string",
           "name": "SearchInstanceID",
           "required": false,
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "搜索的集群name",
-          "example": "-",
+          "example": "clickhouse-cn-xxxxxx",
           "member": "string",
           "name": "SearchInstanceName",
           "required": false,
@@ -1694,7 +1694,7 @@
         {
           "disabled": false,
           "document": "集群类型，弹性版或自研数仓版",
-          "example": "无",
+          "example": "clickhouse-cn",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -1703,7 +1703,7 @@
         {
           "disabled": false,
           "document": "组件名称列表",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Components",
           "required": false,
@@ -1728,7 +1728,7 @@
         {
           "disabled": false,
           "document": "实例数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "[{\"instanceId:\"clickhouse-cn\"\"}]",
           "member": "CnInstanceInfo",
           "name": "InstancesList",
           "output_required": true,
@@ -1737,8 +1737,8 @@
         },
         {
           "disabled": false,
-          "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,

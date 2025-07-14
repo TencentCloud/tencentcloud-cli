@@ -6088,8 +6088,8 @@
           "type": "int"
         },
         {
-          "disabled": false,
-          "document": "项目 ID。登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在右上角的账号信息下拉菜单中，选择**项目管理**，即可获取对应的项目 ID。",
+          "disabled": true,
+          "document": "该字段已废弃, 请忽略, 项目 ID",
           "example": "11322",
           "member": "int64",
           "name": "ProjectIds",
@@ -6098,7 +6098,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型。\n\n- FLOW_CREATE: \"001\"，新建实例。\n- FLOW_RESIZE ： \"002\"，配置变更。\n- FLOW_CLOSE：\"003\"，关闭实例。\n- FLOW_CLEAN： \"004\"，清空实例。\n- FLOW_STARTUP：\"005\"，实例启用。\n- FLOW_DELETE：\"006\"，删除实例。\n- FLOW_SETPWD：\"007\"，重置密码。\n- FLOW_EXPORTBACKUP：\"009\"，导出备份文件。\n- FLOW_RESTOREBACKUP：\"010\"，恢复备份。\n- FLOW_BACKUPINSTANCE：\"012\"，备份实例。\n- FLOW_MIGRATEINSTANCE：\"013\"，迁移实例。\n- FLOW_DELBACKUP：\"014\"，删除备份。\n- FLOW_EXCHANGEINSTANCE： \"016\"，切换实例流程。\n- FLOW_AUTOBACKUP：\"017\"，自动备份实例。\n- FLOW_MIGRATECHECK： \"022\"，迁移参数校验。\n- FLOW_MIGRATETASK：\"023\"，数据迁移中。\n- FLOW_CLEANDB：\"025\"，清空某个数据库。\n- FLOW_CLONEBACKUP：\"026\"，克隆备份。\n- FLOW_CHANGEVIP： \"027\"，改变vip地址。\n- FLOW_EXPORSHR ：\"028\"，扩缩容。\n- FLOW_ADDNODES：\"029\"，加（减）节点。\n- FLOW_CHANGENET：\"031\"，改变网络类型。\n- FLOW_MODIFYINSTACEREADONLY：\"033\"，只读策略变更。\n- FLOW_MODIFYINSTANCEPARAMS：\"034\"，修改实例参数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：\"035\"，设置免密。\n- FLOW_SWITCHINSTANCEVIP：\"036\"，实例VIP切换。\n- FLOW_MODIFYINSTANCEACCOUNT：\"037\"，实例帐号变更。\n- FLOW_MODIFYINSTANCEBANDWIDTH：\"038\"，实例带宽变更。\n- FLOW_ENABLEINSTANCE_REPLICATE：\"039\"，开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE：\"040\"，关闭副本只读。\n- FLOW_UpgradeArch：\"041\"，实例架构升级，主从升集群。\n- FLOW_DowngradeArch： \"042\"，实例架构降级，集群降主从。\n- FLOW_UpgradeVersion： \"043\"，版本升级。\n- FLOW_MODIFYCONNECTIONCONFIG：\"044\"，带宽连接数调整，\n- FLOW_CLEARNETWORK：\"045\"，更换网络，\n- FLOW_REMOVE_BACKUP_FILE：\"046\"，删除备份。\n- FLOW_UPGRADE_SUPPORT_MULTI_AZ：\"047\"，升级实例支持多可用区。\n- FLOW_SHUTDOWN_MASTER：\"048\"，模拟故障。\n- FLOW_CHANGE_REPLICA_TO_MASTER：\"049\"，手动提主。\n- FLOW_CODE_ADD_REPLICATION_INSTANCE：\"050\"，新增复制组。\n- FLOW_OPEN_WAN：\"052\"，开通外网。\n- FLOW_CLOSE_WAN：\"053\"，关闭外网FLOW_UPDATE_WAN：\"054\"，更新外网。\n- FLOW_CODE_DELETE_REPLICATION_INSTANCE：\"055\"，解绑复制组。\n- FLOW_CODE_CHANGE_MASTER_INSTANCE：\"056\"，复制组实例切主。\n- FLOW_CODE_CHANGE_INSTANCE_ROLE： \"057\"，更改复制组实例角色。\n- FLOW_MIGRATE_NODE：\"058\"，迁移节点。\n- FLOW_SWITCH_NODE：\"059\"，切换节点。\n- FLOW_UPGRADE_SMALL_VERSION：\"060\"，升级 Redi s版本。\n- FLOW_UPGRADE_PROXY_VERSION：\"061\"，升级 Proxy 版本。\n- FLOW_MODIFY_INSTANCE_NETWORK： \"062\"，实例修改网络。\n- FLOW_MIGRATE_PROXY_NODE：\"063\"，迁移proxy节点。\n- FLOW_MIGRATION_INSTANCE_ZONE：\"066\"，实例可用区迁移中。\n- FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： \"067\"，实例版本升级中。\n- FLOW_MODIFY_PROXY_NUM：\"069\"，加（减）Proxy 节点。\n- FLOW_MODIFYBACKUPMOD：\"070\"，变更实例备份模式。",
+          "document": "任务类型。\n\n- FLOW_CREATE: \"001\"，新建实例。\n- FLOW_RESIZE ： \"002\"，配置变更。\n- FLOW_CLOSE：\"003\"，关闭实例。\n- FLOW_CLEAN： \"004\"，清空实例。\n- FLOW_STARTUP：\"005\"，实例启用。\n- FLOW_DELETE：\"006\"，删除实例。\n- FLOW_SETPWD：\"007\"，重置密码。\n- FLOW_EXPORTBACKUP：\"009\"，导出备份文件。\n- FLOW_RESTOREBACKUP：\"010\"，恢复备份。\n- FLOW_BACKUPINSTANCE：\"012\"，备份实例。\n- FLOW_MIGRATEINSTANCE：\"013\"，迁移实例。\n- FLOW_DELBACKUP：\"014\"，删除备份。\n- FLOW_EXCHANGEINSTANCE： \"016\"，切换实例流程。\n- FLOW_AUTOBACKUP：\"017\"，自动备份实例。\n- FLOW_MIGRATECHECK： \"022\"，迁移参数校验。\n- FLOW_MIGRATETASK：\"023\"，数据迁移中。\n- FLOW_CLEANDB：\"025\"，清空某个数据库。\n- FLOW_CLONEBACKUP：\"026\"，克隆备份。\n- FLOW_CHANGEVIP： \"027\"，改变vip地址。\n- FLOW_EXPORSHR ：\"028\"，扩缩容。\n- FLOW_ADDNODES：\"029\"，加（减）节点。\n- FLOW_CHANGENET：\"031\"，改变网络类型。\n- FLOW_MODIFYINSTACEREADONLY：\"033\"，只读策略变更。\n- FLOW_MODIFYINSTANCEPARAMS：\"034\"，修改实例参数。\n- FLOW_MODIFYINSTANCEPASSWORDFREE：\"035\"，设置免密。\n- FLOW_SWITCHINSTANCEVIP：\"036\"，实例VIP切换。\n- FLOW_MODIFYINSTANCEACCOUNT：\"037\"，实例账号变更。\n- FLOW_MODIFYINSTANCEBANDWIDTH：\"038\"，实例带宽变更。\n- FLOW_ENABLEINSTANCE_REPLICATE：\"039\"，开启副本只读。\n- FLOW_DISABLEINSTANCE_REPLICATE：\"040\"，关闭副本只读。\n- FLOW_UpgradeArch：\"041\"，实例架构升级，主从升集群。\n- FLOW_DowngradeArch： \"042\"，实例架构降级，集群降主从。\n- FLOW_UpgradeVersion： \"043\"，版本升级。\n- FLOW_MODIFYCONNECTIONCONFIG：\"044\"，带宽连接数调整，\n- FLOW_CLEARNETWORK：\"045\"，更换网络，\n- FLOW_REMOVE_BACKUP_FILE：\"046\"，删除备份。\n- FLOW_UPGRADE_SUPPORT_MULTI_AZ：\"047\"，升级实例支持多可用区。\n- FLOW_SHUTDOWN_MASTER：\"048\"，模拟故障。\n- FLOW_CHANGE_REPLICA_TO_MASTER：\"049\"，手动提主。\n- FLOW_CODE_ADD_REPLICATION_INSTANCE：\"050\"，新增复制组。\n- FLOW_OPEN_WAN：\"052\"，开通外网。\n- FLOW_CLOSE_WAN：\"053\"，关闭外网FLOW_UPDATE_WAN：\"054\"，更新外网。\n- FLOW_CODE_DELETE_REPLICATION_INSTANCE：\"055\"，解绑复制组。\n- FLOW_CODE_CHANGE_MASTER_INSTANCE：\"056\"，复制组实例切主。\n- FLOW_CODE_CHANGE_INSTANCE_ROLE： \"057\"，更改复制组实例角色。\n- FLOW_MIGRATE_NODE：\"058\"，迁移节点。\n- FLOW_SWITCH_NODE：\"059\"，切换节点。\n- FLOW_UPGRADE_SMALL_VERSION：\"060\"，升级 Redis版本。\n- FLOW_UPGRADE_PROXY_VERSION：\"061\"，升级 Proxy 版本。\n- FLOW_MODIFY_INSTANCE_NETWORK： \"062\"，实例修改网络。\n- FLOW_MIGRATE_PROXY_NODE：\"063\"，迁移proxy节点。\n- FLOW_MIGRATION_INSTANCE_ZONE：\"066\"，实例可用区迁移中。\n- FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： \"067\"，实例版本升级中。\n- FLOW_MODIFY_PROXY_NUM：\"069\"，加（减）Proxy 节点。\n- FLOW_MODIFYBACKUPMOD：\"070\"，变更实例备份模式。",
           "example": "037",
           "member": "string",
           "name": "TaskTypes",
@@ -9195,7 +9195,7 @@
         },
         {
           "disabled": false,
-          "document": "更换为新的安全组 ID 列表，即一个或者多个安全组 ID 组成的数组。\n- 若实例第一次配置安全组，请使用接口[AssociateSecurityGroups](https://cloud.tencent.com/document/product/239/41260)先绑定安全组。\n- 更换安全组，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。",
+          "document": "更换为新的安全组 ID 列表，即一个或者多个安全组 ID 组成的数组。\n- 若实例第一次配置安全组，请使用接口[AssociateSecurityGroups](https://cloud.tencent.com/document/product/239/41260)先绑定安全组。\n- 更换安全组，请在[控制台安全组](https://console.cloud.tencent.com/vpc/security-group)页面获取安全组 ID。\n  **注意：**该入参会全量替换存量已有集合，非增量更新。修改需传入预期的全量集合。",
           "example": "[\"sg-ajr1jzgj\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -12067,11 +12067,20 @@
         {
           "disabled": false,
           "document": "实例 ProxyID，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。  ",
-          "example": "vbjxbsucvnkcndkbk",
+          "example": "6ff0eb7815606bb7e3f14cdde9410b64b488e8f9",
           "member": "string",
           "name": "ProxyID",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例 ProxyID列表，请通过接口[DescribeInstanceNodeInfo](https://cloud.tencent.com/document/product/239/48603)的返回参数**Proxy**中的**NodeId**获取。",
+          "example": "[\"896873be5805ebacae5042311237e6d2d78be00b\"]",
+          "member": "string",
+          "name": "ProxyIDList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12079,6 +12088,16 @@
     "SwitchProxyResponse": {
       "document": "SwitchProxy返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "1378445",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

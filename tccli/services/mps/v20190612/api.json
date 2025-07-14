@@ -20184,10 +20184,10 @@
         {
           "disabled": false,
           "document": "审核结果的类型，可以取的值有：\n<li>ImagePorn：图片鉴黄</li>\n<li>ImageTerrorism：图片涉敏</li>\n<li>ImagePolitical：图片涉敏</li>\n<li>VoicePorn：声音违规</li>",
-          "example": "\"\"",
+          "example": "ImagePorn",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20197,7 +20197,7 @@
           "example": "无",
           "member": "LiveStreamAiReviewImagePornResult",
           "name": "ImagePornResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20207,7 +20207,7 @@
           "example": "无",
           "member": "LiveStreamAiReviewImageTerrorismResult",
           "name": "ImageTerrorismResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20217,7 +20217,7 @@
           "example": "无",
           "member": "LiveStreamAiReviewImagePoliticalResult",
           "name": "ImagePoliticalResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20227,7 +20227,7 @@
           "example": "无",
           "member": "LiveStreamAiReviewVoicePornResult",
           "name": "VoicePornResultSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

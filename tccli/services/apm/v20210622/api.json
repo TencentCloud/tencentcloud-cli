@@ -38,7 +38,7 @@
     "DescribeGeneralMetricData": {
       "document": "获取指标数据通用接口。用户根据需要上送请求参数，返回对应的指标数据。\n接口调用频率限制为：20次/秒，1200次/分钟。单请求的数据点数限制为1440个。",
       "input": "DescribeGeneralMetricDataRequest",
-      "name": "获取指标数据通用接口",
+      "name": "获取指标数据通用接口（推荐）",
       "output": "DescribeGeneralMetricDataResponse",
       "status": "online"
     },
@@ -1503,7 +1503,7 @@
         {
           "disabled": false,
           "document": "需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
-          "example": "[\"request_count\"、“duration”]",
+          "example": "[\"request_count\"、“duration_avg”]",
           "member": "string",
           "name": "Metrics",
           "required": true,
@@ -1566,7 +1566,7 @@
         {
           "disabled": false,
           "document": "是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。\n- 填入0，则计算开始时间到截止时间的指标数据。\n- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：\n - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。\n - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。\n - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。",
-          "example": "60",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -1575,7 +1575,7 @@
         {
           "disabled": false,
           "document": "对查询指标进行排序：\nKey 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)\nValue 填写排序方式：     \n- asc：对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
-          "example": "{ \t\"Key\": \"duration\",         \"Value\": \"desc\"",
+          "example": "{ \t\"Key\": \"duration_avg\",         \"Value\": \"desc\"",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -2244,12 +2244,11 @@
         {
           "disabled": false,
           "document": "过滤维度名",
-          "example": "serviceName",
+          "example": "service.name",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2258,8 +2257,7 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

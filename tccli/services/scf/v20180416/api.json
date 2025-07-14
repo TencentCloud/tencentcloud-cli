@@ -3121,6 +3121,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3130,6 +3131,7 @@
           "example": "无",
           "member": "FunctionLog",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3139,6 +3141,7 @@
           "example": "无",
           "member": "LogSearchContext",
           "name": "SearchContext",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

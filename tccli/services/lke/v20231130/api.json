@@ -14,13 +14,6 @@
       "output": "CheckAttributeLabelReferResponse",
       "status": "online"
     },
-    "ConvertDocument": {
-      "document": "产品规划\n\n接口支持图片和PDF转可编辑word格式文件，将文件中的图片、文本、表格等元素识别，并根据位置进行还原。",
-      "input": "ConvertDocumentRequest",
-      "name": "文档转换",
-      "output": "ConvertDocumentResponse",
-      "status": "deprecated"
-    },
     "CreateAgent": {
       "document": "你创建一个Agent",
       "input": "CreateAgentRequest",
@@ -40,13 +33,6 @@
       "input": "CreateAttributeLabelRequest",
       "name": "创建标签",
       "output": "CreateAttributeLabelResponse",
-      "status": "online"
-    },
-    "CreateCorp": {
-      "document": "创建企业",
-      "input": "CreateCorpRequest",
-      "name": "创建企业",
-      "output": "CreateCorpResponse",
       "status": "online"
     },
     "CreateDocCate": {
@@ -215,13 +201,6 @@
       "input": "DescribeConcurrencyUsageGraphRequest",
       "name": "并发调用折线图",
       "output": "DescribeConcurrencyUsageGraphResponse",
-      "status": "online"
-    },
-    "DescribeCorp": {
-      "document": "企业详情",
-      "input": "DescribeCorpRequest",
-      "name": "企业详情",
-      "output": "DescribeCorpResponse",
       "status": "online"
     },
     "DescribeDoc": {
@@ -399,13 +378,6 @@
       "output": "GetDocPreviewResponse",
       "status": "online"
     },
-    "GetEmbedding": {
-      "document": "本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。\n开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。\n本接口（GetEmbedding）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
-      "input": "GetEmbeddingRequest",
-      "name": "获取特征向量",
-      "output": "GetEmbeddingResponse",
-      "status": "online"
-    },
     "GetLikeDataCount": {
       "document": "点赞点踩数据统计",
       "input": "GetLikeDataCountRequest",
@@ -418,13 +390,6 @@
       "input": "GetMsgRecordRequest",
       "name": "获取聊天历史",
       "output": "GetMsgRecordResponse",
-      "status": "online"
-    },
-    "GetReconstructDocumentResult": {
-      "document": "本接口为异步接口的查询结果接口，用于获取文档解析处理结果。",
-      "input": "GetReconstructDocumentResultRequest",
-      "name": "查询文档解析任务结果",
-      "output": "GetReconstructDocumentResultResponse",
       "status": "online"
     },
     "GetTaskStatus": {
@@ -693,25 +658,11 @@
       "output": "ModifyRejectedQuestionResponse",
       "status": "online"
     },
-    "QueryRewrite": {
-      "document": "多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。\n开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
-      "input": "QueryRewriteRequest",
-      "name": "多轮改写",
-      "output": "QueryRewriteResponse",
-      "status": "online"
-    },
     "RateMsgRecord": {
       "document": "点赞点踩消息",
       "input": "RateMsgRecordRequest",
       "name": "评价消息【点赞点踩】",
       "output": "RateMsgRecordResponse",
-      "status": "online"
-    },
-    "ReconstructDocument": {
-      "document": "支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。\n\n体验期间单账号限制qps仅为1，若有正式接入需要请与产研团队沟通开放。",
-      "input": "ReconstructDocumentRequest",
-      "name": "文档解析",
-      "output": "ReconstructDocumentResponse",
       "status": "online"
     },
     "ReferShareKnowledge": {
@@ -747,13 +698,6 @@
       "input": "RetryReleaseRequest",
       "name": "发布暂停后重试",
       "output": "RetryReleaseResponse",
-      "status": "online"
-    },
-    "RunReRank": {
-      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。（这个接口已下线，请使用新接口，接口文档：https://cloud.tencent.com/document/product/1772/115339）。",
-      "input": "RunReRankRequest",
-      "name": "重排序（已下线）",
-      "output": "RunReRankResponse",
       "status": "online"
     },
     "SaveDoc": {
@@ -3728,96 +3672,6 @@
       ],
       "usage": "out"
     },
-    "ConvertDocumentRequest": {
-      "document": "ConvertDocument请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "图片的 Url 地址。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经 Base64 编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "无",
-          "member": "string",
-          "name": "FileUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "图片的 Base64 值。 支持的图片格式：PNG、JPG、JPEG、PDF，暂不支持 GIF 格式。 支持的图片大小：所下载图片经Base64编码后不超过 8M。图片下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "无",
-          "member": "string",
-          "name": "FileBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "当传入文件是PDF类型（FileType=PDF）时，用来指定pdf识别的起始页码，识别的页码包含当前值。",
-          "example": "1",
-          "member": "int64",
-          "name": "FileStartPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "当传入文件是PDF类型（FileType=PDF）时，用来指定pdf识别的结束页码，识别的页码包含当前值。\n建议一次请求的页面不超过3页。",
-          "example": "2",
-          "member": "int64",
-          "name": "FileEndPageNumber",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ConvertDocumentResponse": {
-      "document": "ConvertDocument返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别生成的word文件base64编码的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "WordRecognizeInfo",
-          "name": "WordRecognizeInfo",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "Coord": {
-      "document": "坐标",
-      "members": [
-        {
-          "disabled": false,
-          "document": "横坐标",
-          "example": "无",
-          "member": "int64",
-          "name": "X",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "纵坐标",
-          "example": "无",
-          "member": "int64",
-          "name": "Y",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "CreateAgentRequest": {
       "document": "CreateAgent请求参数结构体",
       "members": [
@@ -3998,70 +3852,6 @@
           "example": "123123213",
           "member": "string",
           "name": "AttrBizId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateCorpRequest": {
-      "document": "CreateCorp请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "企业全称",
-          "example": "无",
-          "member": "string",
-          "name": "FullName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人名称",
-          "example": "无",
-          "member": "string",
-          "name": "ContactName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人邮箱",
-          "example": "无",
-          "member": "string",
-          "name": "Email",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人手机号",
-          "example": "无",
-          "member": "string",
-          "name": "Telephone",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateCorpResponse": {
-      "document": "CreateCorp返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "企业ID",
-          "example": "无",
-          "member": "string",
-          "name": "CorpBizId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5897,93 +5687,6 @@
           "name": "ExceedUsageTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCorpRequest": {
-      "document": "DescribeCorp请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeCorpResponse": {
-      "document": "DescribeCorp返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "企业ID\n",
-          "example": "无",
-          "member": "string",
-          "name": "CorpBizId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "应用配额",
-          "example": "无",
-          "member": "uint64",
-          "name": "RobotQuota",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "企业全称\n",
-          "example": "无",
-          "member": "string",
-          "name": "FullName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否试用",
-          "example": "无",
-          "member": "bool",
-          "name": "IsTrial",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否试用过期",
-          "example": "无",
-          "member": "bool",
-          "name": "IsTrialExpired",
-          "output_required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "可用应用数量",
-          "example": "无",
-          "member": "uint64",
-          "name": "AvailableAppQuota",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否支持自定义模型配置",
-          "example": "无",
-          "member": "bool",
-          "name": "IsSupportCustomModel",
-          "output_required": false,
-          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -7959,185 +7662,6 @@
       ],
       "usage": "out"
     },
-    "DocumentElement": {
-      "document": "文档元素字段",
-      "members": [
-        {
-          "disabled": false,
-          "document": "文档元素索引\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Index",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "元素类型，包括paragraph、table、formula、figure、title、header、footer、figure_text\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Type",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "元素内容，当type为figure或formula(公式识别关闭)时该字段内容为图片的位置\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Text",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "元素坐标，左上角(x1, y1)，右上角(x2, y2)，右下角(x3, y3)，左下角(x4, y4)\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Polygon",
-          "name": "Polygon",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "元素层级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Level",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "InsetImageName",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DocumentElement",
-          "name": "Elements",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DocumentRecognizeInfo": {
-      "document": "单页文档识别的内容",
-      "members": [
-        {
-          "disabled": false,
-          "document": "输入PDF文件的页码，从1开始。输入图片的话值始终为1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "PageNumber",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "旋转角度\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Angle",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "AI算法识别处理后的图片高度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Height",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "AI算法识别处理后的图片宽度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "Width",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "图片的原始高度，输入PDF文件则表示单页PDF转图片之后的图片高度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "OriginHeight",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "图片的原始宽度，输入PDF文件则表示单页PDF转图片之后的图片宽度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "OriginWidth",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "文档元素信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DocumentElement",
-          "name": "Elements",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "旋转角度\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "float",
-          "name": "RotatedAngle",
-          "output_required": false,
-          "type": "float",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "EmbeddingObject": {
-      "document": "向量",
-      "members": [
-        {
-          "disabled": false,
-          "document": "向量",
-          "example": "无",
-          "member": "float",
-          "name": "Embedding",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "ExportAttributeLabelRequest": {
       "document": "ExportAttributeLabel请求参数结构体",
       "members": [
@@ -8890,71 +8414,6 @@
       ],
       "type": "object"
     },
-    "GetEmbeddingRequest": {
-      "document": "GetEmbedding请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "模型名称",
-          "example": "lke-text-embedding-v1",
-          "member": "string",
-          "name": "Model",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条",
-          "example": "[\"hello\", \"world\"]",
-          "member": "string",
-          "name": "Inputs",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "是否在线, 后台异步任务使用离线, 实时任务使用在线, 默认值: false",
-          "example": "false",
-          "member": "bool",
-          "name": "Online",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "GetEmbeddingResponse": {
-      "document": "GetEmbedding返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "特征",
-          "example": "无",
-          "member": "EmbeddingObject",
-          "name": "Data",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "消耗量，返回TotalToken",
-          "example": "{\"TotalTokens\":3}",
-          "member": "Usage",
-          "name": "Usage",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "GetLikeDataCountRequest": {
       "document": "GetLikeDataCount请求参数结构体",
       "members": [
@@ -9188,63 +8647,6 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetReconstructDocumentResultRequest": {
-      "document": "GetReconstructDocumentResult请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务唯一Id。[CreateReconstructDocumentFlow](https://cloud.tencent.com/document/product/1759/107506) 返回的TaskId。",
-          "example": "无",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetReconstructDocumentResultResponse": {
-      "document": "GetReconstructDocumentResult返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务状态: Success->执行完成；Processing->执行中；Failed->执行失败；WaitExecute->等待执行。",
-          "example": "无",
-          "member": "string",
-          "name": "Status",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "本次文档解析的结果文件，存储在腾讯云COS的下载URL，下载URL的有效期为10分钟。",
-          "example": "无",
-          "member": "string",
-          "name": "DocumentRecognizeResultUrl",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "本次文档解析失败的页码信息。",
-          "example": "无",
-          "member": "ReconstructDocumentFailedPage",
-          "name": "FailedPages",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13469,34 +12871,6 @@
       ],
       "type": "object"
     },
-    "Message": {
-      "document": "一条message代表一条对话记录\nrole表示角色  user或者assistant\ncontent表示对话内容",
-      "members": [
-        {
-          "disabled": false,
-          "document": "role表示角色  user标识用户提问，assistant标识返回的答案\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "user; assistant",
-          "member": "string",
-          "name": "Role",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "对话内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "你好",
-          "member": "string",
-          "name": "Content",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
     "ModelInfo": {
       "document": "模型信息",
       "members": [
@@ -15419,52 +14793,6 @@
       ],
       "usage": "both"
     },
-    "Polygon": {
-      "document": "文本的坐标，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值",
-      "members": [
-        {
-          "disabled": false,
-          "document": "左上顶点坐标",
-          "example": "无",
-          "member": "Coord",
-          "name": "LeftTop",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "右上顶点坐标",
-          "example": "无",
-          "member": "Coord",
-          "name": "RightTop",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "右下顶点坐标",
-          "example": "无",
-          "member": "Coord",
-          "name": "RightBottom",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "左下顶点坐标",
-          "example": "无",
-          "member": "Coord",
-          "name": "LeftBottom",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "Procedure": {
       "document": "执行过程信息记录",
       "members": [
@@ -15872,71 +15200,6 @@
       ],
       "usage": "in"
     },
-    "QueryRewriteRequest": {
-      "document": "QueryRewrite请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "需要改写的问题",
-          "example": "国内哪里",
-          "member": "string",
-          "name": "Question",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。",
-          "example": "[{\"Role\":\"user\",\"Content\":\"你家在哪里\"},{\"Role\":\"assistant\",\"Content\":“我家在国内”}]",
-          "member": "Message",
-          "name": "Messages",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "模型名称",
-          "example": "lke-query-rewrite-base",
-          "member": "string",
-          "name": "Model",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "QueryRewriteResponse": {
-      "document": "QueryRewrite返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "改写结果",
-          "example": "无",
-          "member": "string",
-          "name": "Content",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "消耗量，返回输入token数，输出token数以及总token数",
-          "example": "{\"InputTokens\":45,\"OutputTokens\":6,\"TotalTokens\":51}",
-          "member": "Usage",
-          "name": "Usage",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "QuoteInfo": {
       "document": "搜索引擎参考来源索引",
       "members": [
@@ -16010,154 +15273,6 @@
     "RateMsgRecordResponse": {
       "document": "RateMsgRecord返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ReRankDataObject": {
-      "document": "重排数据, 计算2段内容的关联性",
-      "members": [
-        {
-          "disabled": false,
-          "document": "第一段内容",
-          "example": "hello",
-          "member": "string",
-          "name": "PromptA",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "第二段内容",
-          "example": "world",
-          "member": "string",
-          "name": "PromptB",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "usage": "in"
-    },
-    "ReconstructDocumentConfig": {
-      "document": "ReconstructDocument配置选项",
-      "members": [
-        {
-          "disabled": false,
-          "document": "生成的Markdown中是否嵌入图片",
-          "example": "无",
-          "member": "bool",
-          "name": "EnableInsetImage",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "usage": "in"
-    },
-    "ReconstructDocumentFailedPage": {
-      "document": "文档解析失败记录",
-      "members": [
-        {
-          "disabled": false,
-          "document": "失败页码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "PageNumber",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "ReconstructDocumentRequest": {
-      "document": "ReconstructDocument请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "文件的 Base64 值。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
-          "example": "无",
-          "member": "string",
-          "name": "FileBase64",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文件的 Url 地址。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经 Base64 编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "无",
-          "member": "string",
-          "name": "FileUrl",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。",
-          "example": "1",
-          "member": "int64",
-          "name": "FileStartPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为10，表示识别到pdf文件的第10页。单次调用最多支持识别10页内容，即FileEndPageNumber-FileStartPageNumber需要不大于10。",
-          "example": "3",
-          "member": "int64",
-          "name": "FileEndPageNumber",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "配置选项，支持配置是否在生成的Markdown中是否嵌入图片",
-          "example": "无",
-          "member": "ReconstructDocumentConfig",
-          "name": "Config",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "ReconstructDocumentResponse": {
-      "document": "ReconstructDocument返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "识别生成的Markdown文件base64编码的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MarkdownBase64",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "输入文件中嵌入的图片放在一个文件夹中打包为.zip压缩文件，识别生成的Markdown文件通过路径关联插入本文件夹中的图片。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "InsetImagePackage",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "输入文件中嵌入的图片中文字内容的识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "DocumentRecognizeInfo",
-          "name": "DocumentRecognizeInfo",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -17027,89 +16142,6 @@
         }
       ],
       "usage": "both"
-    },
-    "RunReRankRequest": {
-      "document": "RunReRank请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "查询内容，必填",
-          "example": "腾讯知识引擎大模型",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文档列表，必填，最多20个",
-          "example": "[\"腾讯知识引擎\",\"知识引擎大模型\"]",
-          "member": "string",
-          "name": "Docs",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "模型名称, 非必填，默认: lke-reranker-base",
-          "example": "lke-reranker-base",
-          "member": "string",
-          "name": "Model",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": true,
-          "document": "需要计算关联性的2段内容",
-          "example": "[{\"PromptA\":\"hello\",\"PromptB\":\"world\"},{\"PromptA\":\"hello\",\"PromptB\":\"世界\"}]",
-          "member": "ReRankDataObject",
-          "name": "DataList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": true,
-          "document": "是否在线, 后台异步任务使用离线, 实时任务使用在线, 默认值: false",
-          "example": "false",
-          "member": "bool",
-          "name": "Online",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "RunReRankResponse": {
-      "document": "RunReRank返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "相关性, 数值越大越相关",
-          "example": "[-19.681953, -19.414124]",
-          "member": "float",
-          "name": "ScoreList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "消耗量，仅返回TotalToken",
-          "example": "{\"TotalTokens\":3}",
-          "member": "Usage",
-          "name": "Usage",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "SaveDocRequest": {
       "document": "SaveDoc请求参数结构体",
@@ -18390,52 +17422,6 @@
       ],
       "type": "object"
     },
-    "Usage": {
-      "document": "消耗量",
-      "members": [
-        {
-          "disabled": false,
-          "document": "文档页数",
-          "example": "10",
-          "member": "int64",
-          "name": "TotalPages",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "输入token数",
-          "example": "10",
-          "member": "int64",
-          "name": "InputTokens",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "输出token数",
-          "example": "10",
-          "member": "int64",
-          "name": "OutputTokens",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总token数",
-          "example": "10",
-          "member": "int64",
-          "name": "TotalTokens",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
-    },
     "UserBaseInfo": {
       "document": "用户基础信息",
       "members": [
@@ -18650,32 +17636,6 @@
         }
       ],
       "usage": "both"
-    },
-    "WordRecognizeInfo": {
-      "document": "解析为 word 文档的结果",
-      "members": [
-        {
-          "disabled": false,
-          "document": "输入文件的页码数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "PageNumber",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "word的base64\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "WordBase64",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
     },
     "WorkFlowSummary": {
       "document": "工作流程调试信息",

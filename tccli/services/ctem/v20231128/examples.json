@@ -104,6 +104,30 @@
         "title": "查看任务记录"
       }
     ],
+    "DescribeLeakageCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLeakageCodes\n<公共请求参数>\n\n{\n    \"CreateAtEnd\": \"2023-02-01 12:00:00\",\n    \"CreateAtStart\": \"2023-01-01 12:00:00\",\n    \"CustomerId\": 1,\n    \"EnterpriseUidList\": [\n        \"string\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"string\",\n            \"Values\": [\n                \"string\"\n            ]\n        }\n    ],\n    \"Format\": \"json\",\n    \"Ignored\": false,\n    \"IsNew\": false,\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"UpdateAtEnd\": \"2023-02-01 12:00:00\",\n    \"UpdateAtStart\": \"2023-01-01 12:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 0,\n                \"Url\": \"string\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取代码泄露数据"
+      }
+    ],
+    "DescribeLeakageDatas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLeakageDatas\n<公共请求参数>\n\n{\n    \"CreateAtEnd\": \"2023-02-01 12:00:00\",\n    \"CreateAtStart\": \"2023-01-01 12:00:00\",\n    \"CustomerId\": 1,\n    \"EnterpriseUidList\": [\n        \"string\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"string\",\n            \"Values\": [\n                \"string\"\n            ]\n        }\n    ],\n    \"Format\": \"json\",\n    \"Ignored\": false,\n    \"IsNew\": false,\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"UpdateAtEnd\": \"2023-02-01 12:00:00\",\n    \"UpdateAtStart\": \"2023-01-01 12:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 0,\n                \"Url\": \"string\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取数据泄露事件"
+      }
+    ],
+    "DescribeLeakageEmails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLeakageEmails\n<公共请求参数>\n\n{\n    \"CreateAtEnd\": \"2023-02-01 12:00:00\",\n    \"CreateAtStart\": \"2023-01-01 12:00:00\",\n    \"CustomerId\": 1,\n    \"EnterpriseUidList\": [\n        \"string\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"string\",\n            \"Values\": [\n                \"string\"\n            ]\n        }\n    ],\n    \"Format\": \"json\",\n    \"Ignored\": false,\n    \"IsNew\": false,\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"UpdateAtEnd\": \"2023-02-01 12:00:00\",\n    \"UpdateAtStart\": \"2023-01-01 12:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Id\": 0,\n                \"Email\": \"string\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取邮箱泄露数据"
+      }
+    ],
     "DescribeManages": [
       {
         "document": "查看后台数据",
