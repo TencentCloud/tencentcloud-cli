@@ -3572,6 +3572,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3581,6 +3582,7 @@
           "example": "无",
           "member": "FunctionLog",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3590,6 +3592,7 @@
           "example": "无",
           "member": "LogSearchContext",
           "name": "SearchContext",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7085,6 +7088,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统插件的子类型",
+          "example": "CosFs",
+          "member": "string",
+          "name": "PluginSubType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件类型：SystemPlugin/CustiomPlugin",
+          "example": "SystemPlugin",
+          "member": "string",
+          "name": "PluginType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -1709,7 +1709,7 @@
       },
       {
         "document": "DescribeDownloadViruses",
-        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDownloadViruses\n<公共请求参数>\n\n{\n    \"OsType\": 13,\n    \"OnlineStatus\": 1,\n    \"GroupId\": 1,\n    \"Condition\": {\n        \"PageSize\": 1,\n        \"PageNum\": 1\n    },\n    \"RiskStatus\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDownloadViruses\n<公共请求参数>\n\n{\n    \"DomainInstanceId\": \"13\",\n    \"OsType\": 13,\n    \"OnlineStatus\": 1,\n    \"GroupId\": 1,\n    \"Condition\": {\n        \"PageSize\": 1,\n        \"PageNum\": 1\n    },\n    \"RiskStatus\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"AuthFailure.SignatureFailure\",\n            \"Message\": \"请求签名验证失败，请检查您的签名计算是否正确。\"\n        },\n        \"RequestId\": \"46fca9b9-2df3-4655-8dcd-9ed1f2bbb27e\"\n    }\n}",
         "title": "DescribeDownloadViruses"
       }

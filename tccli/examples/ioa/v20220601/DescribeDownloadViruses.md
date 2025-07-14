@@ -32,6 +32,7 @@ Input:
 
 ```
 tccli ioa DescribeDownloadViruses --cli-unfold-argument  \
+    --DomainInstanceId 13 \
     --OsType 13 \
     --OnlineStatus 1 \
     --GroupId 1 \

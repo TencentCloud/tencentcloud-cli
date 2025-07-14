@@ -11169,7 +11169,7 @@
           "example": "lhdm-xxxxxxxx",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11179,7 +11179,7 @@
           "example": "xxx.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11189,7 +11189,7 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "PurchaseState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11199,7 +11199,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "DNSState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11209,7 +11209,7 @@
           "example": "2019-03-28 17:52:42",
           "member": "string",
           "name": "RegisterTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11219,7 +11219,7 @@
           "example": "2022-03-28 17:52:42",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11229,8 +11229,18 @@
           "example": "无",
           "member": "string",
           "name": "EffectiveDNS",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名注册ID。",
+          "example": "domain-i09712",
+          "member": "string",
+          "name": "RegisterDomainId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11239,7 +11249,7 @@
           "example": "2021-09-30T04:12:31Z",
           "member": "datetime_iso",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11249,7 +11259,7 @@
           "example": "2021-09-30T04:12:31Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

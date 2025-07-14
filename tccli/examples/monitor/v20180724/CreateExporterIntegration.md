@@ -346,7 +346,7 @@ Output:
 3.6. spec.instanceSpec.useRole 表示是否使用服务角色，布尔类型，必填。当前逻辑一定会使用服务角色，所以必填 `true`
 3.7. spec.instanceSpec.labels 用于给指标添加自定义标签，键值对类型，选填
 3.8. spec.exporterSpec.[云产品] 表示是否采集对应云产品，布尔类型，`true` 表示采集该云产品。云产品各编码指代含义：`cvm`:云服务器,`cbs`:云硬盘,`lb_public`:负载均衡(公网),`lb_private`:负载均衡(内网),`tgw_set`:负载均衡(独占集群),`cmongo`:数据库MongoDB,`cdb`:数据库MySQL(CDB),`redis`:数据库Redis(CKV版),`redis_mem`:数据库Redis(内存版),`tendis`:Tendis,`xstor`:CTSDB(InfluxDB版),`mariadb`:数据库MariaDB,`postgres`:数据库PostgreSQL,`tdmysql`:TDSQL MySQL版,`cynosdb_mysql`:TDSQL-C MySQL,`sqlserver`:数据库SQL Server,`nat_gateway`:NAT网关,`ckafka`:CKafka,`rocketmq`:RocketMQ(新指标),`lb`:弹性公网IP,`vpngw`:VPN网关,`vpnx`:VPN通道,`vpc_net_detect`:网络探测,`cdn`:CDN,`ov_cdn`:CDN(海外),`cos`:COS,`dc`:专线接入-物理专线,`dcx`:专线接入-专用通道,`dcg`:专线接入-专线网关,`lighthouse`:轻量应用服务器,`nacos`:Nacos,`zookeeper`:Zookeeper,`ces`:Elasticsearch,`dts`:数据传输服务,`vbc`:云联网,`gaap`:全球应用加速,`waf`:Web应用防火墙,`cfs`:文件存储,`bwp`:共享带宽包,`scf_v2`:云函数(别名),`vod`:云点播(VOD),`cls`:日志服务(CLS)-日志主题,`apigateway`:API 网关,`ti_traintask`:TI-ONE(任务式建模),`ti_notebook`:TI-ONE(Notebook),`ti_model`:TI-ONE(在线服务),`self`:采集器自监控
-2.9. spec.scrapeSpec.relabelConfigs 用于添加 `metricRelabelings` 配置，选填。该配置是 prometheus-operator 的 relabel 配置，部分字段与 prometheus 原生 relabel 配置不同，具体可参考[官方配置说明](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.RelabelConfig)
+2.9. spec.scrapeSpec.relabelConfigs 用于添加 `metric_relabel_configs` 配置，选填。可参考[配置示例](https://cloud.tencent.com/document/product/248/87398#29fe272b-ac9e-4932-b6dc-972c2b1ef9dc)
 
 Input: 
 
@@ -354,7 +354,7 @@ Input:
 tccli monitor CreateExporterIntegration --cli-unfold-argument  \
     --InstanceId prom-1 \
     --Kind qcloud-exporter \
-    --Content {"name":"test-qcloud","kind":"qcloud-exporter","spec":{"instanceSpec":{"region":"广州","delaySeconds":0,"reload_interval_minutes":10,"useRole":true,"labels":{"labelKey":"labelValue","test":"test"}},"exporterSpec":{"cvm":true,"cbs":true},"scrapeSpec":{"relabelConfigs":"metricRelabelings:\n- action: labeldrop\n  regex: tmp_test_label\n"}}}
+    --Content {"name":"test-qcloud","kind":"qcloud-exporter","spec":{"instanceSpec":{"region":"广州","delaySeconds":0,"reload_interval_minutes":10,"useRole":true,"labels":{"labelKey":"labelValue","test":"test"}},"exporterSpec":{"cvm":true,"cbs":true},"scrapeSpec":{"relabelConfigs":"metric_relabel_configs:\n- action: labeldrop\n  regex: tmp_test_label\n"}}}
 ```
 
 Output: 

@@ -20,6 +20,7 @@ Output:
                 "DomainId": "lhdo-3ob8xfuu",
                 "DomainName": "lhsday.com",
                 "PurchaseState": "",
+                "RegisterDomainId": "domain-8ihjd21q",
                 "DNSState": "UNUSE_DNSPOD",
                 "RegisterTime": "",
                 "ExpireTime": "",
