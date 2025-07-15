@@ -6715,6 +6715,24 @@
           "name": "DRMTracks",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否创建自适应码率，默认值 0。\n0：否。\n1：是。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAdaptiveBitRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。",
+          "example": "无",
+          "member": "ChildTemplateInfo",
+          "name": "AdaptiveChildren",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -18217,6 +18235,24 @@
           "name": "DRMTracks",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否创建自适应码率，默认值 0。\n0：否。\n1：是。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAdaptiveBitRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自适应码率，子转码模板信息，当 IsAdaptiveBitRate 为 1 时有效。",
+          "example": "无",
+          "member": "ChildTemplateInfo",
+          "name": "AdaptiveChildren",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

@@ -1859,7 +1859,7 @@
         },
         {
           "disabled": false,
-          "document": "文件时长，只有视频和音频不为0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件时长，单位分钟(四舍五入取整)，只有视频和音频不为0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Duration",

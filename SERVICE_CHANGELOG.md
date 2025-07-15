@@ -1,29 +1,14 @@
-# Release 3.0.1241.1
+# Release 3.0.1242.1
 
-## 游戏多媒体引擎(gme) 版本：2018-07-11
-
-### 第 27 次发布
-
-发布时间：2025-07-15 01:18:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ApplicationDataStatistics](http://document.tencentcloudapi.woa.com/document/product/607/35375#ApplicationDataStatistics)
-
-	* 新增成员：MiniGameDataNum, MiniGameDataMainland, MiniGameDataOversea, MiniGameDataSum
+## 云服务器(cvm) 版本：2019-12-12
 
 
 
+## 云服务器(cvm) 版本：2017-03-12
 
-## iOA 零信任安全管理系统(ioa) 版本：2022-06-01
+### 第 93 次发布
 
-### 第 13 次发布
-
-发布时间：2025-07-15 01:21:43
+发布时间：2025-07-16 01:13:17
 
 本次发布包含了以下内容：
 
@@ -31,80 +16,22 @@
 
 修改接口：
 
-* [DescribeDownloadViruses](http://document.tencentcloudapi.woa.com/document/product/1794/86415)
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/213/15730)
 
-	* 新增入参：DomainInstanceId
-
-
-修改数据结构：
-
-* [DescribeDownloadVirusesRspData](http://document.tencentcloudapi.woa.com/document/product/1794/86648#DescribeDownloadVirusesRspData)
-
-	* 新增成员：TaskId
-
-	* <font color="#dd0000">**修改成员**：</font>DownloadURL
-
-
-
-
-## 密钥管理系统(kms) 版本：2019-01-18
-
-### 第 11 次发布
-
-发布时间：2025-07-15 01:24:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GetServiceStatus](http://document.tencentcloudapi.woa.com/document/product/573/34417)
-
-	* 新增出参：SyncTaskList, IsAllowedSync
+	* 新增入参：ElasticNetworkInterfaces
 
 
 新增数据结构：
 
-* [DestinationSyncConfig](http://document.tencentcloudapi.woa.com/document/product/573/34431#DestinationSyncConfig)
-
-修改数据结构：
-
-* [DataKeyMetadata](http://document.tencentcloudapi.woa.com/document/product/573/34431#DataKeyMetadata)
-
-	* 新增成员：IsSyncReplica, SourceRegion, SyncStatus, SyncMessages, SyncStartTime, SyncEndTime, SourceHsmClusterId
-
-* [KeyMetadata](http://document.tencentcloudapi.woa.com/document/product/573/34431#KeyMetadata)
-
-	* 新增成员：IsSyncReplica, SourceRegion, SyncStatus, SyncMessages, SyncStartTime, SyncEndTime, SourceHsmClusterId
+* [ElasticNetworkInterfaces](http://document.tencentcloudapi.woa.com/document/product/213/15753#ElasticNetworkInterfaces)
 
 
 
+## 云直播CSS(live) 版本：2018-08-01
 
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
+### 第 90 次发布
 
-### 第 78 次发布
-
-发布时间：2025-07-15 01:24:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Domain](http://document.tencentcloudapi.woa.com/document/product/1207/47576#Domain)
-
-	* 新增成员：RegisterDomainId
-
-
-
-
-## 云数据库Redis(redis) 版本：2018-04-12
-
-### 第 56 次发布
-
-发布时间：2025-07-15 01:28:57
+发布时间：2025-07-16 01:22:39
 
 本次发布包含了以下内容：
 
@@ -112,71 +39,22 @@
 
 修改接口：
 
-* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/239/39374)
+* [CreateLiveTranscodeTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32646)
 
-* [SwitchProxy](http://document.tencentcloudapi.woa.com/document/product/239/75626)
+	* 新增入参：IsAdaptiveBitRate, AdaptiveChildren
 
-	* 新增入参：ProxyIDList
+* [ModifyLiveTranscodeTemplate](http://document.tencentcloudapi.woa.com/document/product/267/32640)
 
-	* 新增出参：TaskId
-
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 63 次发布
-
-发布时间：2025-07-15 01:29:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PluginConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#PluginConfig)
-
-	* 新增成员：PluginSubType, PluginType
+	* 新增入参：IsAdaptiveBitRate, AdaptiveChildren
 
 
 
 
-## SSL 证书(ssl) 版本：2019-12-05
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 86 次发布
+### 第 101 次发布
 
-发布时间：2025-07-15 01:31:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeHostDeployRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/77800)
-
-	* 新增出参：PendingTotalCount
-
-* [DescribeHostUpdateRecordDetail](http://document.tencentcloudapi.woa.com/document/product/400/77794)
-
-	* 新增出参：PendingTotalCount
-
-
-修改数据结构：
-
-* [DeployRecord](http://document.tencentcloudapi.woa.com/document/product/400/41679#DeployRecord)
-
-	* 新增成员：PendingTotalCount
-
-
-
-
-## TSF-Polaris&ZK&网关(tse) 版本：2020-12-07
-
-### 第 92 次发布
-
-发布时间：2025-07-15 01:36:10
+发布时间：2025-07-16 01:25:03
 
 本次发布包含了以下内容：
 
@@ -184,12 +62,52 @@
 
 新增接口：
 
-* [DescribeCloudNativeAPIGatewayServicesLight](http://document.tencentcloudapi.woa.com/document/product/1364/87200)
+* [CreateMediaEvaluation](http://document.tencentcloudapi.woa.com/document/product/862/87202)
 
 新增数据结构：
 
-* [GatewayServices](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GatewayServices)
-* [KongServiceLightPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongServiceLightPreview)
+* [EvaluationMediaInputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#EvaluationMediaInputInfo)
+* [EvaluationTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#EvaluationTaskInput)
+* [EvaluationTemplateInputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#EvaluationTemplateInputInfo)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 63 次发布
+
+发布时间：2025-07-16 01:31:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87217)
+* [CreateMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87216)
+* [CreateMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87215)
+* [DeleteMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87214)
+* [DeleteMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87213)
+* [DescribeMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87212)
+* [DescribeMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87211)
+* [DescribeMultiPathGatewayRegions](http://document.tencentcloudapi.woa.com/document/product/1738/87210)
+* [DescribeMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87209)
+* [DescribeMultiPathGateways](http://document.tencentcloudapi.woa.com/document/product/1738/87208)
+* [ModifyMultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/87207)
+* [ModifyMultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/87206)
+* [ModifyMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87205)
+* [RefreshMultiPathGatewaySecretKey](http://document.tencentcloudapi.woa.com/document/product/1738/87204)
+
+新增数据结构：
+
+* [GatewayRegion](http://document.tencentcloudapi.woa.com/document/product/1738/81211#GatewayRegion)
+* [MultiPathGateway](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MultiPathGateway)
+* [MultiPathGatewayLine](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MultiPathGatewayLine)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 

@@ -3,7 +3,7 @@
     "BindPrometheusManagedGrafana": {
       "document": "绑定 Grafana 可视化服务实例",
       "input": "BindPrometheusManagedGrafanaRequest",
-      "name": "绑定 Grafana 可视化实例",
+      "name": "绑定 Grafana 服务实例",
       "output": "BindPrometheusManagedGrafanaResponse",
       "status": "online"
     },
@@ -1102,7 +1102,7 @@
     "UnbindPrometheusManagedGrafana": {
       "document": "解除实例绑定的 Grafana 可视化实例",
       "input": "UnbindPrometheusManagedGrafanaRequest",
-      "name": "解除实例绑定的 Grafana 可视化实例",
+      "name": "解除实例绑定的 Grafana 服务实例",
       "output": "UnbindPrometheusManagedGrafanaResponse",
       "status": "online"
     },
@@ -5088,7 +5088,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
+          "document": "腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
           "example": "[\"Consumer-5sfs3242\", \"notice-as6512as\"]",
           "member": "string",
           "name": "AMPReceivers",
@@ -19771,7 +19771,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控告警模板ID ，返回告警模板转换后的notice ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"notice-as454a12\"]",
           "member": "string",
           "name": "AMPReceivers",
@@ -24150,7 +24150,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
+          "document": "腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
           "example": "[\"Consumer-5sfs3242\"]",
           "member": "string",
           "name": "AMPReceivers",

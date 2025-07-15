@@ -5524,6 +5524,57 @@
       ],
       "usage": "out"
     },
+    "ElasticNetworkInterfaces": {
+      "document": "描述了弹性网卡相关信息，包括vpc,subnet,networkInterface信息等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有网络ID，形如vpc-xxx。有效的VpcId可通过登录控制台查询；也可以调用接口 DescribeVpcEx ，从接口返回中的unVpcId字段获取。若在创建子机时VpcId与SubnetId同时传入DEFAULT，则强制使用默认vpc网络。",
+          "example": "vpc-s1ukfewa",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络子网ID，形如subnet-xxx。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 DescribeSubnets ，从接口返回中的SubnetId 字段获取。若在创建子机时SubnetId与VpcId同时传入DEFAULT，则强制使用默认vpc网络。",
+          "example": "subnet-bcizb6vz",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "弹性网卡实例ID查询。形如：eni-pxir56ns。每次请求的实例的上限为100。参数不支持同时指定NetworkInterfaceIds和Filters。可通过DescribeNetworkInterfaces接口获取。",
+          "example": "eni-7p0e0s02",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为RDMA弹性网卡，true-是rdma弹性网卡，false-不是",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRdma",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动安装vrdma驱动，true-是开启自动安装vrdma驱动，false-未开启自动安装vrdma驱动",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoInstallRdmaDriver",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "EnhancedService": {
       "document": "描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent",
       "members": [
@@ -12882,6 +12933,15 @@
           "name": "WaitRaidSyncProgress",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "弹性网卡相关信息配置。通过该参数可以指定私有网络的ID，子网ID,网卡ID等信息。若在此参数中指定了弹性网卡数据，即表示每个实例的会自动创建弹性网卡并绑定实例",
+          "example": "{\"SubnetId\":\"subnet-ilvmekya\",\"IsRdma\":true,\"VpcId\":\"vpc-ilcecbpj\",\"NetworkInterfaceId\":\"\",\"AutoInstallRdmaDriver\":true}",
+          "member": "ElasticNetworkInterfaces",
+          "name": "ElasticNetworkInterfaces",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

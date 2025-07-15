@@ -96,7 +96,7 @@
       "input": "CreateIdsWhiteRuleRequest",
       "name": "创建入侵防御规则白名单接口",
       "output": "CreateIdsWhiteRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "CreateNatFwInstance": {
       "document": "创建NAT防火墙实例（Region参数必填）",
@@ -166,7 +166,7 @@
       "input": "DeleteIdsWhiteRuleRequest",
       "name": "删除入侵防御规则白名单接口",
       "output": "DeleteIdsWhiteRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DeleteNatFwInstance": {
       "document": "销毁防火墙实例",
@@ -369,7 +369,7 @@
       "input": "DescribeIdsWhiteRuleRequest",
       "name": "查询入侵防御规则白名单接口",
       "output": "DescribeIdsWhiteRuleResponse",
-      "status": "deprecated"
+      "status": "offline"
     },
     "DescribeLogStorageStatistic": {
       "document": "租户日志存储统计",

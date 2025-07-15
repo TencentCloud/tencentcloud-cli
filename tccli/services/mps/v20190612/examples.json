@@ -138,6 +138,14 @@
         "title": "创建直播录制模板"
       }
     ],
+    "CreateMediaEvaluation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMediaEvaluation\n<公共请求参数>\n\n{\n    \"InputInfo\": {\n        \"Type\": \"URL\",\n        \"UrlInputInfo\": {\n            \"Url\": \"http://abc/reference.mp4\"\n        }\n    },\n    \"OutputStorage\": {\n        \"Type\": \"COS\",\n        \"CosOutputStorage\": {\n            \"Bucket\": \"abc\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    },\n    \"OutputDir\": \"/output/\",\n    \"EvaluationTask\": {\n        \"TaskType\": \"NORMAL\",\n        \"EvaluationTypeSet\": [\n            \"PSNR\",\n            \"VMAF\"\n        ],\n        \"EvaluationRangeType\": \"FRAME\",\n        \"ContrastMediaSet\": [\n            {\n                \"InputInfo\": {\n                    \"Type\": \"URL\",\n                    \"UrlInputInfo\": {\n                        \"Url\": \"http://abc/reference_transcode.mp4\"\n                    }\n                }\n            }\n        ],\n        \"StartFrameIndex\": 1,\n        \"EndFrameIndex\": 100\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"24000006-EvaluationTask-366dd19ff7159ba06e24467b4212c41ett12\",\n        \"RequestId\": \"df1b9015-1f90-4ed1-820a-380cd78cbe5e\"\n    }\n}",
+        "title": "发起评测任务"
+      }
+    ],
     "CreatePersonSample": [
       {
         "document": "2",

@@ -37182,7 +37182,7 @@
         {
           "disabled": false,
           "document": "漏洞标签 多个逗号分割",
-          "example": "tag1,tag2",
+          "example": "EXP:存在EXP, KNOWN_EXPLOITED:在野攻击, LOCAL:本地利用, NEED_FIX:必修漏洞, NETWORK:远程利用, POC:存在POC, RESTART:系统重启",
           "member": "string",
           "name": "Labels",
           "output_required": true,

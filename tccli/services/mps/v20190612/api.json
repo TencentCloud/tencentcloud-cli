@@ -84,6 +84,13 @@
       "output": "CreateLiveRecordTemplateResponse",
       "status": "online"
     },
+    "CreateMediaEvaluation": {
+      "document": "发起视频评测任务，功能包括：\n\n1. 对一个原视频和多个转码后的视频进行评分。\n2. 计算不同转码方式的 BD-Rate。",
+      "input": "CreateMediaEvaluationRequest",
+      "name": "创建媒体评测",
+      "output": "CreateMediaEvaluationResponse",
+      "status": "online"
+    },
     "CreatePersonSample": {
       "document": "该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、内容不适宜等视频处理。",
       "input": "CreatePersonSampleRequest",
@@ -9804,6 +9811,106 @@
       ],
       "type": "object"
     },
+    "CreateMediaEvaluationRequest": {
+      "document": "CreateMediaEvaluation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "评测的原文件输入信息。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "评测任务参数。",
+          "example": "无",
+          "member": "EvaluationTaskInput",
+          "name": "EvaluationTask",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "评测的输出文件的目标存储。不填则继承 InputInfo 中的存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "评测生成文件的输出目录，必选以 / 开头和结尾，如/movie/201907/。 如果不填，表示与 InputInfo 中文件所在的目录一致。",
+          "example": "无",
+          "member": "string",
+          "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "example": "无",
+          "member": "TaskNotifyConfig",
+          "name": "TaskNotifyConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "任务优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
+          "example": "无",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMediaEvaluationResponse": {
+      "document": "CreateMediaEvaluation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-EvaluationTask-bffb15f07530b57",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOutputInfo": {
       "document": "创建输出的配置信息。",
       "members": [
@@ -17359,6 +17466,200 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EvaluationMediaInputInfo": {
+      "document": "视频评测任务的视频来源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对比视频的来源 ID，当评测任务的类型为 BD_RATE 且对比视频来自用户输入时有效；当对比视频来自转码模版时为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "SourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对比视频的输入信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EvaluationTaskInput": {
+      "document": "评测任务输入参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "评测任务类型，可选 NORMAL、BD_RATE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评测类型，可选 PSNR、SSIM、VMAF、VMAF_NEG\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"PSNR\"]",
+          "member": "string",
+          "name": "EvaluationTypeSet",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评测范围类型，可选 ALL（全部时长）、TIME（指定时长范围）、FRAME（指定帧数范围）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL",
+          "member": "string",
+          "name": "EvaluationRangeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对比视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "ContrastInfoSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对比视频信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EvaluationMediaInputInfo",
+          "name": "ContrastMediaSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对比转码模版信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EvaluationTemplateInputInfo",
+          "name": "ContrastTemplateSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始评测时间，单位秒，当 EvaluationRangeType 为 TIME 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束评测时间，单位秒，当 EvaluationRangeType 为 TIME 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评测开始帧，默认从0开始，当 EvaluationRangeType 为FRAME 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartFrameIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评测结束帧，默认为视频中可以参与评测的最后一帧，当 EvaluationRangeType 为 FRAME 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
+          "member": "uint64",
+          "name": "EndFrameIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分辨率对齐模式，默认对齐到低分辨率的视频，可选 ALIGN_HIGH_RESOLUTION、ALIGN_LOW_RESOLUTION\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALIGN_HIGH_RESOLUTION",
+          "member": "string",
+          "name": "ResolutionAlignmentMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定码率评测，当评测任务类型为 BD_RATE 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1500,2000,2500,3000]",
+          "member": "int64",
+          "name": "BitrateSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定 vcrf 评测，当评测任务类型为 BD_RATE 有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20,24,30,34]",
+          "member": "int64",
+          "name": "VCRFSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EvaluationTemplateInputInfo": {
+      "document": "在评测中使用的转码模版的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转码模版的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100010",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": false,
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
