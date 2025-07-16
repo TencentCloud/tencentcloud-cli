@@ -27,7 +27,7 @@ Output:
                 },
                 "WatermarkConfigure": {
                     "Switch": "ON",
-                    "Url": "http://1490012345.vod-qcloud.com/watermark.png",
+                    "Url": "http://example.com/watermark.png",
                     "Width": "10%",
                     "Height": "10%",
                     "XPos": "10%",

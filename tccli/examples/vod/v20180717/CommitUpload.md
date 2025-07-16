@@ -15,8 +15,8 @@ Output:
 {
     "Response": {
         "FileId": "24820810452266399",
-        "MediaUrl": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
-        "CoverUrl": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
+        "MediaUrl": "http://example.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
+        "CoverUrl": "http://example.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
         "RequestId": "requestId"
     }
 }

@@ -24,7 +24,7 @@ Output:
             "FaceInfoSet": [
                 {
                     "FaceId": "10109",
-                    "Url": "http://1251659802.vod2.myqcloud.com/vodcq1251659802/ai_samples/251006362/faces/15517827183907093125.jpeg"
+                    "Url": "http://example.com/vodcq1251659802/ai_samples/251006362/faces/15517827183907093125.jpeg"
                 }
             ],
             "TagSet": [

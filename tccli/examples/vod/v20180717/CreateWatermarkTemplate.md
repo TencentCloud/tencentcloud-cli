@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Definition": 1001,
-        "ImageUrl": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg",
+        "ImageUrl": "http://example.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg",
         "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e1"
     }
 }

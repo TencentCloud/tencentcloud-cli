@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod DescribeCLSPushTargets --cli-unfold-argument  \
-    --Domains xxx.vod-qcloud.com
+    --Domains example.com
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "TotalCount": 1,
         "DomainCLSTargets": [
             {
-                "Domain": "xxx.vod-qcloud.com",
+                "Domain": "example.com",
                 "ChineseMainlandCLSTargetInfo": {
                     "Switch": "OFF",
                     "CLSRegion": "ap-guangzhou",
@@ -31,7 +31,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "xxx"
+        "RequestId": "12ae8d8e-dce3-4151-9d4b-5594145287e2"
     }
 }
 ```

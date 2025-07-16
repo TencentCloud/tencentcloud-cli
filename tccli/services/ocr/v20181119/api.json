@@ -7149,7 +7149,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。",
+          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -7158,7 +7158,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -7283,7 +7283,7 @@
         },
         {
           "disabled": false,
-          "document": "人像照片Base64后的结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Base64编码的证件左侧人像大图\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "HeadImage",
@@ -7292,8 +7292,18 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "Base64编码的证件右侧人像小图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "SmallHeadImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "disabled": true,
-          "document": "多重告警码，当身份证是翻拍、复印件时返回对应告警码。\n-9102：证照复印件告警\n-9103：证照翻拍告警",
+          "document": "该字段已废弃， 将固定返回空数组，不建议使用。\nThis field is deprecated and will always return an empty array. Usage is not recommended.",
           "example": "[-9102,-9103]",
           "member": "int64",
           "name": "WarningCode",
@@ -7309,6 +7319,16 @@
           "name": "WarnCardInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件透明视窗内的文本信息",
+          "example": "C000000",
+          "member": "string",
+          "name": "WindowEmbeddedText",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

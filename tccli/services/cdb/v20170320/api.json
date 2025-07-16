@@ -2940,7 +2940,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性扩容观测周期（秒级），可取值为：5，30，45，60，180，300，600，900，1800。",
+          "document": "弹性扩容观测周期（秒级），可取值为：15，30，45，60，180，300，600，900，1800。",
           "example": "300",
           "member": "int64",
           "name": "ExpandSecondPeriod",
@@ -2951,7 +2951,7 @@
         },
         {
           "disabled": false,
-          "document": "缩容观测周期（秒级），可取值为：300。",
+          "document": "缩容观测周期（秒级），可取值为：300、600、900、1800。",
           "example": "300",
           "member": "int64",
           "name": "ShrinkSecondPeriod",

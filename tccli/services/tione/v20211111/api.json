@@ -7864,6 +7864,15 @@
           "name": "Sidecar",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源组 id",
+          "example": "rsg-xxtt111",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

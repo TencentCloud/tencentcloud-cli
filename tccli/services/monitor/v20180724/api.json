@@ -3,7 +3,7 @@
     "BindPrometheusManagedGrafana": {
       "document": "绑定 Grafana 可视化服务实例",
       "input": "BindPrometheusManagedGrafanaRequest",
-      "name": "绑定 Grafana 可视化实例",
+      "name": "绑定 Grafana 服务实例",
       "output": "BindPrometheusManagedGrafanaResponse",
       "status": "online"
     },
@@ -1025,7 +1025,7 @@
     "UnbindPrometheusManagedGrafana": {
       "document": "解除实例绑定的 Grafana 可视化实例",
       "input": "UnbindPrometheusManagedGrafanaRequest",
-      "name": "解除实例绑定的 Grafana 可视化实例",
+      "name": "解除实例绑定的 Grafana 服务实例",
       "output": "UnbindPrometheusManagedGrafanaResponse",
       "status": "online"
     },
@@ -4831,7 +4831,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
+          "document": "腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
           "example": "[\"Consumer-5sfs3242\", \"notice-as6512as\"]",
           "member": "string",
           "name": "AMPReceivers",
@@ -16569,44 +16569,58 @@
       "document": "ModifyConditionsTemplateRequestEventCondition",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "告警通知周期",
-          "example": "",
+          "example": "已不再使用",
           "member": "string",
           "name": "AlarmNotifyPeriod",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "告警通知方式",
-          "example": "",
+          "example": "已不再使用",
           "member": "string",
           "name": "AlarmNotifyType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "事件ID",
-          "example": "",
+          "example": "已不再使用",
           "member": "string",
           "name": "EventID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "required": false,
+          "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "规则ID",
-          "example": "",
+          "example": "已不再使用",
           "member": "int64",
           "name": "RuleID",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重构后的eventType",
+          "example": "cvm:ErrorEvent:CvmPacketDropedByQ osConnectionSession",
+          "member": "string",
+          "name": "MetricName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件描述信息",
+          "example": "连接数超限导致丢包",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -18227,7 +18241,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控告警模板ID ，返回告警模板转换后的notice ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"notice-as454a12\"]",
           "member": "string",
           "name": "AMPReceivers",
@@ -22196,7 +22210,7 @@
         },
         {
           "disabled": false,
-          "document": "云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
+          "document": "腾讯云可观测平台告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
           "example": "[\"Consumer-5sfs3242\"]",
           "member": "string",
           "name": "AMPReceivers",

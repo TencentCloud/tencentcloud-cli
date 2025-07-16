@@ -155,7 +155,7 @@
       "status": "online"
     },
     "ReconstructDocumentSSE": {
-      "document": "准实时文档解析接口，使用HTTP SSE 协议通信。",
+      "document": "准实时文档解析接口，使用HTTP SSE 协议通信。\n支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。\n输入：pdf、ppt、docx、doc、jpg等\n输出：正常阅读顺序的md文件、识别结果的json（可选）等",
       "input": "ReconstructDocumentSSERequest",
       "name": "实时文档解析",
       "output": "ReconstructDocumentSSEResponse",
@@ -665,6 +665,15 @@
           "name": "ResultType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略失败页，返回已成功的页数据。默认为true。",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreFailedPage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -683,7 +692,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
+          "document": "说明：文件的 URL 地址。\n备注：文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
           "example": "无",
           "member": "string",
           "name": "FileUrl",
@@ -701,7 +710,7 @@
         },
         {
           "disabled": false,
-          "document": "文档的起始页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。",
+          "document": "说明：文档的起始页码。\n备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。\n默认值：无",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -710,7 +719,7 @@
         },
         {
           "disabled": false,
-          "document": "文档的结束页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。",
+          "document": "说明：文档的结束页码。\n备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。\n默认值：无",
           "example": "100",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -719,7 +728,7 @@
         },
         {
           "disabled": false,
-          "document": "创建文档解析任务配置信息。",
+          "document": "说明：创建文档解析任务配置信息。\n备注：可设置结果的返回格式\n默认值：无",
           "example": "{\"TableResultType\":\"1\"}",
           "member": "CreateReconstructDocumentFlowConfig",
           "name": "Config",
@@ -735,7 +744,7 @@
         {
           "disabled": false,
           "document": "任务唯一id。30天内可以通过GetReconstructDocumentResult接口查询TaskId对应的处理结果。",
-          "example": "无",
+          "example": "25adcef61750343903609",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -789,6 +798,15 @@
           "name": "MaxChunkSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略返回失败页码",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreFailedPage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -1254,6 +1272,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析成功页数",
+          "example": "10",
+          "member": "int64",
+          "name": "SuccessPageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析失败页数",
+          "example": "1",
+          "member": "int64",
+          "name": "FailPageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1373,8 +1411,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "解析任务ID",
-          "example": "无",
+          "document": "说明：解析任务ID\n备注：仅支持单个任务ID",
+          "example": "25adcef61750343903609",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1414,6 +1452,16 @@
           "name": "FailedPages",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档拆分任务的用量\t",
+          "example": "无",
+          "member": "DocumentUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1476,7 +1524,7 @@
         {
           "disabled": false,
           "document": "文档拆分任务的用量",
-          "example": "{\"PageNumber\":10,\"TotalTokens\":2048}",
+          "example": "无",
           "member": "DocumentUsage",
           "name": "Usage",
           "output_required": false,
@@ -2123,6 +2171,15 @@
           "name": "PageFormat",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略失败页，返回已成功的页数据",
+          "example": "true",
+          "member": "bool",
+          "name": "IgnoreFailedPage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -2132,7 +2189,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。\n**支持的文件类型**：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n**支持的文件大小**：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M\n",
+          "document": "支持解析的文件类型。\n**支持的文件类型**：PDF、DOC、DOCX、PPT、PPTX、MD、TXT、XLS、XLSX、CSV、PNG、JPG、JPEG、BMP、GIF、WEBP、HEIC、EPS、ICNS、IM、PCX、PPM、TIFF、XBM、HEIF、JP2\n**支持的文件大小**：\n- PDF、DOC、DOCX、PPT、PPTX 支持100M\n- MD、TXT、XLS、XLSX、CSV 支持10M\n- 其他支持20M\n",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -2141,7 +2198,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
+          "document": "文件的 URL 地址。文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)\n\n默认值：无",
           "example": "无",
           "member": "string",
           "name": "FileUrl",
@@ -2150,7 +2207,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
+          "document": "说明：文件的 Base64 值。\n备注：支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。\n\n默认值：无",
           "example": "无",
           "member": "string",
           "name": "FileBase64",
@@ -2159,7 +2216,7 @@
         },
         {
           "disabled": false,
-          "document": "文档的起始页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。",
+          "document": "说明：文档的起始页码。\n备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。\n默认值：无",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -2168,7 +2225,7 @@
         },
         {
           "disabled": false,
-          "document": "文档的结束页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。",
+          "document": "说明：文档的结束页码。\n备注：当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。\n默认值：无",
           "example": "100",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -2177,7 +2234,7 @@
         },
         {
           "disabled": false,
-          "document": "文档解析配置信息\t",
+          "document": "说明：文档解析配置信息\t\n备注：可设置返回markdown结果的格式\n默认值：无\n",
           "example": "无",
           "member": "ReconstructDocumentSSEConfig",
           "name": "Config",
@@ -2202,7 +2259,7 @@
         },
         {
           "disabled": false,
-          "document": "响应类型。1：返回进度信息，2：返回解析结果",
+          "document": "响应类型。1：返回进度信息， 2：返回解析结果",
           "example": "无",
           "member": "string",
           "name": "ResponseType",
@@ -2232,7 +2289,7 @@
         },
         {
           "disabled": false,
-          "document": "文档解析结果的临时下载地址。\n文件类型为zip压缩包，下载链接有效期30分钟。\n压缩包内包含*.md、*.json以及images文件夹。\n",
+          "document": "文档解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟。压缩包内包含*.md、*.json以及images文件夹。\n",
           "example": "无",
           "member": "string",
           "name": "DocumentRecognizeResultUrl",
@@ -2248,6 +2305,26 @@
           "name": "FailedPages",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档解析失败页数",
+          "example": "1",
+          "member": "int64",
+          "name": "FailPageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档解析成功页数",
+          "example": "10",
+          "member": "int64",
+          "name": "SuccessPageNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

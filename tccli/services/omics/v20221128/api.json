@@ -391,6 +391,15 @@
           "name": "SystemNodeCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "纳管环境自动升配",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoUpgradeClusterLevel",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

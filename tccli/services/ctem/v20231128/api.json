@@ -63,6 +63,34 @@
       "output": "DescribeEnterprisesResponse",
       "status": "online"
     },
+    "DescribeFakeApps": {
+      "document": "查询仿冒应用",
+      "input": "DescribeFakeAppsRequest",
+      "name": "查询仿冒APP",
+      "output": "DescribeFakeAppsResponse",
+      "status": "online"
+    },
+    "DescribeFakeMiniPrograms": {
+      "document": "查询仿冒小程序",
+      "input": "DescribeFakeMiniProgramsRequest",
+      "name": "查询仿冒小程序",
+      "output": "DescribeFakeMiniProgramsResponse",
+      "status": "online"
+    },
+    "DescribeFakeWebsites": {
+      "document": "查询仿冒网站",
+      "input": "DescribeFakeWebsitesRequest",
+      "name": "查询仿冒网站",
+      "output": "DescribeFakeWebsitesResponse",
+      "status": "online"
+    },
+    "DescribeFakeWechatOfficials": {
+      "document": "查询仿冒公众号",
+      "input": "DescribeFakeWechatOfficialsRequest",
+      "name": "查询仿冒公众号",
+      "output": "DescribeFakeWechatOfficialsResponse",
+      "status": "online"
+    },
     "DescribeGithubs": {
       "document": "查看Github泄露数据",
       "input": "DescribeGithubsRequest",
@@ -1662,6 +1690,590 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeAppsRequest": {
+      "document": "DescribeFakeApps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否新增数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "EnterpriseUidList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据输出格式：json、file，默认不填为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示被忽略的数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignored",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeAppsResponse": {
+      "document": "DescribeFakeApps返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DisplayFakeApp",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeMiniProgramsRequest": {
+      "document": "DescribeFakeMiniPrograms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否新增数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "EnterpriseUidList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据输出格式：json、file，默认不填为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示被忽略的数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignored",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeMiniProgramsResponse": {
+      "document": "DescribeFakeMiniPrograms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒小程序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DisplayFakeMiniProgram",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeWebsitesRequest": {
+      "document": "DescribeFakeWebsites请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否新增数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "EnterpriseUidList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据输出格式：json、file，默认不填为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示被忽略的数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignored",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeWebsitesResponse": {
+      "document": "DescribeFakeWebsites返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒网站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DisplayFakeWebsite",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeWechatOfficialsRequest": {
+      "document": "DescribeFakeWechatOfficials请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否新增数据",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "企业ID",
+          "example": "1",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子公司ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "EnterpriseUidList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据输出格式：json、file，默认不填为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-开始",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间-结束",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateAtEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "[{\"Name\":\"Keyword\",\"Values\":[\"test\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否显示被忽略的数据",
+          "example": "true",
+          "member": "bool",
+          "name": "Ignored",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFakeWechatOfficialsResponse": {
+      "document": "DescribeFakeWechatOfficials返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒公众号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DisplayFakeWechatOfficial",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4712,6 +5324,370 @@
           "name": "VulCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DisplayFakeApp": {
+      "document": "仿冒应用详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒应用包名称",
+          "example": "无",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载链接",
+          "example": "无",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "无",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
+          "example": "无",
+          "member": "int64",
+          "name": "ShutdownStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停时间",
+          "example": "无",
+          "member": "string",
+          "name": "ShutdownTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DisplayFakeMiniProgram": {
+      "document": "仿冒小程序详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒小程序名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "小程序ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类别",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码",
+          "example": "无",
+          "member": "string",
+          "name": "QrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "无",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
+          "example": "无",
+          "member": "int64",
+          "name": "ShutdownStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停时间",
+          "example": "无",
+          "member": "string",
+          "name": "ShutdownTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DisplayFakeWebsite": {
+      "document": "仿冒网站详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒网站",
+          "example": "无",
+          "member": "string",
+          "name": "Website",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip位置",
+          "example": "无",
+          "member": "string",
+          "name": "IPLocation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "截图",
+          "example": "无",
+          "member": "string",
+          "name": "Screenshot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "无",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
+          "example": "无",
+          "member": "int64",
+          "name": "ShutdownStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停时间",
+          "example": "无",
+          "member": "string",
+          "name": "ShutdownTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DisplayFakeWechatOfficial": {
+      "document": "仿冒公众号详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公共字段",
+          "example": "无",
+          "member": "DisplayToolCommon",
+          "name": "DisplayToolCommon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "仿冒公众号名称",
+          "example": "无",
+          "member": "string",
+          "name": "AccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公众号ID",
+          "example": "无",
+          "member": "string",
+          "name": "WechatId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像",
+          "example": "无",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码",
+          "example": "无",
+          "member": "string",
+          "name": "QrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态：0-待处理 1-处理中 2-已处理",
+          "example": "无",
+          "member": "int64",
+          "name": "HandlingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停状态：0-(默认状态) 1-关停审核中 2-已拦截 3-已拒绝 4-下线流程中 5-已下线 6-下线失败",
+          "example": "无",
+          "member": "int64",
+          "name": "ShutdownStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关停时间",
+          "example": "无",
+          "member": "string",
+          "name": "ShutdownTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

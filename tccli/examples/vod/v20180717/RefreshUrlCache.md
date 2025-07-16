@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod RefreshUrlCache --cli-unfold-argument  \
-    --Urls http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/aaa.mp4 http://1251634155-test.vod2.myqcloud.com/079cf6a3vodcq1251634155/bbb.mp4
+    --Urls http://example.com/079cf6a3vodcq1251634155/aaa.mp4 http://example.com/079cf6a3vodcq1251634155/bbb.mp4
 ```
 
 Output: 

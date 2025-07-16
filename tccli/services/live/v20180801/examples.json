@@ -91,8 +91,8 @@
     "CreateAuditKeywords": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywords\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywords\n<公共请求参数>\n\n{\n    \"Keywords\": [\n        {\n            \"Content\": \"content\",\n            \"Label\": \"321\"\n        }\n    ],\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"content\",\n                \"KeywordId\": \"8454212\",\n                \"CreateTime\": \"2018-11-29T19:00:00Z\",\n                \"Label\": \"321\"\n            }\n        ],\n        \"KeywordIds\": [\n            \"4895545216621\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核创建关键词"
       }
     ],
@@ -323,8 +323,8 @@
     "DeleteAuditKeywords": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditKeywords\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditKeywords\n<公共请求参数>\n\n{\n    \"KeywordIds\": [\n        \"xx-id1\",\n        \"xx-id2\"\n    ],\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 100,\n        \"Infos\": [\n            {\n                \"KeywordId\": \"id1\",\n                \"Deleted\": true,\n                \"Content\": \"451id\",\n                \"Error\": \"suc\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核删除关键词"
       }
     ],
@@ -563,8 +563,8 @@
     "DescribeAuditKeywords": [
       {
         "document": "直播审核获取关键词列表搜索。",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditKeywords\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditKeywords\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 100,\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\",\n    \"Content\": \"\",\n    \"Labels\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Infos\": [\n            {\n                \"KeywordId\": \"415124487845454\",\n                \"Content\": \"content-name\",\n                \"CreateTime\": \"20240214\",\n                \"Label\": \"12\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核获取关键词"
       }
     ],

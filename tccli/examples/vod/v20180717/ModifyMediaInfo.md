@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "CoverUrl": "http://example.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
         "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }
@@ -38,7 +38,7 @@ Output:
 ```
 {
     "Response": {
-        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "CoverUrl": "http://example.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
         "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }
@@ -71,7 +71,7 @@ Output:
                 "Name": "English",
                 "Language": "en-US",
                 "Format": "vtt",
-                "Url": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt",
+                "Url": "http://example.com/vodgzp123/15517123183853310575/subtitles/subtitleId.vtt",
                 "Source": "UserUploaded"
             }
         ],
@@ -96,7 +96,7 @@ Output:
 ```
 {
     "Response": {
-        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "CoverUrl": "http://example.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
         "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }
@@ -123,7 +123,7 @@ Output:
 ```
 {
     "Response": {
-        "CoverUrl": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+        "CoverUrl": "http://example.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
         "AddedSubtitleSet": [],
         "RequestId": "requestId"
     }

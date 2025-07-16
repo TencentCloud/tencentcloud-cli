@@ -24,11 +24,13 @@ Output:
         "Symbol": "***AZ",
         "FirstIssueDate": "(09-99)",
         "CurrentIssueDate": "23-09-10",
-        "HeadImage": "",
+        "HeadImage": null,
         "WarnCardInfos": [
             -9104
         ],
-        "RequestId": "fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875"
+        "RequestId": "fba1c9ad-aeb3-4418-9ecf-80ab1b5fc875",
+        "WindowEmbeddedText": "C000000",
+        "SmallHeadImage": null
     }
 }
 ```

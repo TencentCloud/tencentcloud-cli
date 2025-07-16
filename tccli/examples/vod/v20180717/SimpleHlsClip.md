@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
-    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhhh.m3u8 \
+    --Url http://example.com/xxxxx/aaaaaa/hhhh.m3u8 \
     --StartTimeOffset 2.0 \
     --EndTimeOffset 10.0
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "Url": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
+        "Url": "http://example.com/xxxxx/aaaaaa/10_50.m3u8",
         "FileId": "",
         "TaskId": "",
         "MetaData": {
@@ -64,7 +64,7 @@ Input:
 
 ```
 tccli vod SimpleHlsClip --cli-unfold-argument  \
-    --Url http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8 \
+    --Url http://example.com/xxxxx/aaaaaa/hhh.m3u8 \
     --StartTimeOffset 2.0 \
     --EndTimeOffset 10.0
 ```
@@ -73,7 +73,7 @@ Output:
 ```
 {
     "Response": {
-        "Url": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
+        "Url": "http://example.com/xxxxx/aaaaaa/10_50.m3u8",
         "FileId": "",
         "TaskId": "",
         "MetaData": {

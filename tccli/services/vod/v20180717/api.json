@@ -3250,7 +3250,7 @@
         {
           "disabled": false,
           "document": "字幕文件 Url。",
-          "example": "https://123.vod-qcloud.com/6cbf8d22vodcq123/032fd9961397757957958967101/subtitles/7iSNv9.vtt",
+          "example": "https://example.com/6cbf8d22vodcq123/032fd9961397757957958967101/subtitles/7iSNv9.vtt",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -5025,7 +5025,7 @@
         {
           "disabled": false,
           "document": "视频拆条片段 Url。",
-          "example": "https://123.vod-qcloud.com/6cbf8d22vodcq123/032fd9961397757957958967101/f0.mp4",
+          "example": "https://example.com/6cbf8d22vodcq123/032fd9961397757957958967101/f0.mp4",
           "member": "string",
           "name": "SegmentUrl",
           "output_required": true,
@@ -5065,7 +5065,7 @@
         {
           "disabled": false,
           "document": "拆条封面图片 Url。",
-          "example": "https://123.vod-qcloud.com/6cbf8d22vodcq123/032fd9961397757957958967101/cover.jpg",
+          "example": "https://example.com/6cbf8d22vodcq123/032fd9961397757957958967101/cover.jpg",
           "member": "string",
           "name": "CovImgUrl",
           "output_required": true,
@@ -6612,7 +6612,7 @@
         {
           "disabled": false,
           "document": "人脸图片地址。",
-          "example": "http://1490012345.vod-qcloud.com/face.png",
+          "example": "http://example.com/face.png",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -8174,7 +8174,7 @@
         {
           "disabled": false,
           "document": "输出目标文件的文件地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
           "member": "string",
           "name": "FileUrl",
           "output_required": true,
@@ -8296,7 +8296,7 @@
         {
           "disabled": false,
           "document": "媒体播放地址。",
-          "example": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
+          "example": "http://example.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
           "member": "string",
           "name": "MediaUrl",
           "output_required": true,
@@ -8306,7 +8306,7 @@
         {
           "disabled": false,
           "document": "媒体封面地址。",
-          "example": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
+          "example": "http://example.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
           "member": "string",
           "name": "CoverUrl",
           "output_required": true,
@@ -8461,7 +8461,7 @@
         {
           "disabled": false,
           "document": "自适应码流的播放地址。",
-          "example": "http://1250000000.vod2.myqcloud.com/cf72b740vodtranscq1250000000/aa2a78091397757895313140803/adp.10.m3u8",
+          "example": "http://example.com/cf72b740vodtranscq1250000000/aa2a78091397757895313140803/adp.10.m3u8",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -8920,7 +8920,7 @@
           "example": "mp4",
           "member": "string",
           "name": "FileType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8930,17 +8930,17 @@
           "example": "523xxx",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件播放地址。",
-          "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xx.mp4",
+          "example": "http://example.com/xxx/xxx/xx.mp4",
           "member": "string",
           "name": "FileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8950,7 +8950,7 @@
           "example": "fileName",
           "member": "string",
           "name": "MediaName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8960,7 +8960,7 @@
           "example": "0",
           "member": "int64",
           "name": "ClassId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8970,7 +8970,7 @@
           "example": "9999-12-31T23:59:59Z",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9013,7 +9013,7 @@
         {
           "disabled": false,
           "document": "视频拼接源文件的地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
           "member": "string",
           "name": "FileUrl",
           "output_required": true,
@@ -9425,7 +9425,7 @@
         {
           "disabled": false,
           "document": "封面 URL。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
           "member": "string",
           "name": "CoverUrl",
           "output_required": true,
@@ -10704,7 +10704,7 @@
         {
           "disabled": false,
           "document": "截取雪碧图输出的地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
           "member": "string",
           "name": "ImageSpriteUrlSet",
           "output_required": true,
@@ -10714,7 +10714,7 @@
         {
           "disabled": false,
           "document": "雪碧图子图位置与时间关系 WebVtt 文件地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.vtt",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.vtt",
           "member": "string",
           "name": "WebVttUrl",
           "output_required": true,
@@ -12270,7 +12270,7 @@
         {
           "disabled": false,
           "document": "水印图片地址，仅当 Type 为 image，该字段有效。",
-          "example": "http://1256768367.vod2.myqcloud.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg",
+          "example": "http://example.com/8b0dd2b5vodcq1256768367/4d27b39f5285890783754292994/aa.jpeg",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
@@ -13972,7 +13972,7 @@
         {
           "disabled": false,
           "document": "点播域名。",
-          "example": "[\"xxx.vod-qcloud.com\"]",
+          "example": "[\"example.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -17754,7 +17754,7 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "xxx.vod-qcloud.com",
+          "example": "example.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -18506,17 +18506,17 @@
           "example": "mp4",
           "member": "string",
           "name": "FileType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体文件播放地址。",
-          "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xx.mp4",
+          "example": "http://example.com/xxx/xxx/xx.mp4",
           "member": "string",
           "name": "FileUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18526,7 +18526,7 @@
           "example": "523xxx",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18536,7 +18536,7 @@
           "example": "fileName",
           "member": "string",
           "name": "MediaName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18546,7 +18546,7 @@
           "example": "0",
           "member": "int64",
           "name": "ClassId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18556,7 +18556,7 @@
           "example": "9999-12-31T23:59:59Z",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19266,7 +19266,7 @@
         {
           "disabled": false,
           "document": "需要提取水印的媒体 URL。",
-          "example": "http://1490012345.vod-qcloud.com/rplay/v1/xxxx/playlist.m3u8",
+          "example": "http://example.com/rplay/v1/xxxx/playlist.m3u8",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -19476,7 +19476,7 @@
         {
           "disabled": false,
           "document": "需要提取水印的媒体 URL。",
-          "example": "http://1490012345.vod-qcloud.com/rplay/v1/xxxx/playlist.m3u8",
+          "example": "http://example.com/rplay/v1/xxxx/playlist.m3u8",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -19663,7 +19663,7 @@
         {
           "disabled": false,
           "document": "需要提取水印的媒体 URL。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -19947,7 +19947,7 @@
         {
           "disabled": false,
           "document": "快速编辑后的媒体播放地址。",
-          "example": "https://xxx.vod2.myqcloud.com/xxx/xxx.m3u8",
+          "example": "https://example.com/xxx/xxx.m3u8",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -22067,7 +22067,7 @@
         {
           "disabled": false,
           "document": "转动图的文件地址。",
-          "example": "http://1256768367.vod2.myqcloud.com/xxx/xxx/v.f20001.webp",
+          "example": "http://example.com/xxx/xxx/v.f20001.webp",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -22289,7 +22289,7 @@
         {
           "disabled": false,
           "document": "媒体文件的封面图片地址。",
-          "example": "http://xxx.vod-qcloud.com/xxx/snapshot/1572936704_3908310029.100_0.jpg",
+          "example": "http://example.com/xxx/snapshot/1572936704_3908310029.100_0.jpg",
           "member": "string",
           "name": "CoverUrl",
           "output_required": true,
@@ -22309,7 +22309,7 @@
         {
           "disabled": false,
           "document": "原始媒体文件的 URL 地址。",
-          "example": "http://xxx.vod-qcloud.com/xxx/snapshot/xxx.mp4",
+          "example": "http://example.com/xxx/snapshot/xxx.mp4",
           "member": "string",
           "name": "MediaUrl",
           "output_required": true,
@@ -22605,7 +22605,7 @@
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\nPicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "https://xxx.vod2.myqcloud.com/xxx/xxx.jpg",
+          "example": "https://example.com/xxx/xxx.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -22691,7 +22691,7 @@
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "https://xxx.vod2.myqcloud.com/xxx/xxx.jpg",
+          "example": "https://example.com/xxx/xxx.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -22787,7 +22787,7 @@
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "https://xxx.vod2.myqcloud.com/xxx/xxx.jpg",
+          "example": "https://example.com/xxx/xxx.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -22907,7 +22907,7 @@
         {
           "disabled": false,
           "document": "每一张雪碧图大图的地址。",
-          "example": "[\"http://12345.vod2.myqcloud.com/vodtranssh1251413404/1397757908156919948/sampleSnapshot/sampleSnapshot_10_0.jpg\",\"http://12345.vod2.myqcloud.com/12345/1397757908156919948/sampleSnapshot/sampleSnapshot_10_1.jpg\"]",
+          "example": "[\"http://example.com/vodtranssh1251413404/1397757908156919948/sampleSnapshot/sampleSnapshot_10_0.jpg\",\"http://example.com/12345/1397757908156919948/sampleSnapshot/sampleSnapshot_10_1.jpg\"]",
           "member": "string",
           "name": "ImageUrlSet",
           "output_required": true,
@@ -23344,7 +23344,7 @@
         {
           "disabled": false,
           "document": "小程序音视频审核视频播放地址。",
-          "example": "http://xxx.vod2.myqcloud.com/xxx/xxx/m.f0.mp4",
+          "example": "http://example.com/xxx/xxx/m.f0.mp4",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -24293,7 +24293,7 @@
         {
           "disabled": false,
           "document": "生成的截图 url 列表。",
-          "example": "[\"http://123456.vod2.myqcloud.com/****.jpg\"]",
+          "example": "[\"http://example.com/****.jpg\"]",
           "member": "string",
           "name": "ImageUrlSet",
           "output_required": true,
@@ -24371,7 +24371,7 @@
         {
           "disabled": false,
           "document": "该张截图的 URL 地址。",
-          "example": "http://123456.vod2.myqcloud.com/vodtranscq123456/1397757908307822775/snapshotByTimeOffset/snapshotByTimeOffset_10_1.jpg",
+          "example": "http://example.com/vodtranscq123456/1397757908307822775/snapshotByTimeOffset/snapshotByTimeOffset_10_1.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -24606,7 +24606,7 @@
         {
           "disabled": false,
           "document": "字幕 URL。",
-          "example": "http://xxx.vod2.myqcloud.com/xxx/xxx/subtitles/MySubtitleId.vtt",
+          "example": "http://example.com/xxx/xxx/subtitles/MySubtitleId.vtt",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -26319,7 +26319,7 @@
         {
           "disabled": false,
           "document": "新的视频封面 URL。\n* 注意：仅当请求携带 CoverData 时此返回值有效。 *",
-          "example": "http://123.vod2.myqcloud.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
+          "example": "http://example.com/vodgzp123/15517123183853310575/GMOrxp.jpeg",
           "member": "string",
           "name": "CoverUrl",
           "output_required": true,
@@ -30536,7 +30536,7 @@
         {
           "disabled": false,
           "document": "拉取上传完成后生成的播放地址。",
-          "example": "http://125xxx.vod2.myqcloud.com/xxx/xxx/xxx.mp4",
+          "example": "http://example.com/xxx/xxx/xxx.mp4",
           "member": "string",
           "name": "FileUrl",
           "output_required": true,
@@ -30996,7 +30996,7 @@
         {
           "disabled": false,
           "document": "异常片段列表文件 URL。文件 内容 为  JSON，数据结构与 SegmentSet 字段一致。（文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
-          "example": "http://***.vod-qcloud.com/xxx/result.txt",
+          "example": "http://example.com/xxx/result.txt",
           "member": "string",
           "name": "SegmentSetFileUrl",
           "output_required": true,
@@ -32733,7 +32733,7 @@
         {
           "disabled": false,
           "document": "媒体文件地址。",
-          "example": "15000xxxxx.vod2.myqcloud.com/xxx/xxx/a.mp4",
+          "example": "http://example.com/xxx/xxx/a.mp4",
           "member": "string",
           "name": "FileUrl",
           "output_required": true,
@@ -32945,7 +32945,7 @@
         {
           "disabled": false,
           "document": "刷新的 URL 列表，单次最多指定20个 URL。",
-          "example": "[\"http:\\/\\/1251634155-test.vod2.myqcloud.com\\/079cf6a3vodcq12516",
+          "example": "[\"http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4\"]",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -33017,7 +33017,7 @@
         {
           "disabled": false,
           "document": "媒体文件播放地址。",
-          "example": "15000xxxxx.vod2.myqcloud.com/xxx/xxx/abc.mp4",
+          "example": "http://example.com/xxx/xxx/abc.mp4",
           "member": "string",
           "name": "FileUrl",
           "output_required": true,
@@ -33729,7 +33729,7 @@
         {
           "disabled": false,
           "document": "嫌疑图片 URL （图片不会永久存储，到达\n PicUrlExpireTime 时间点后图片将被删除）。",
-          "example": "http://xxx.vod-qcloud.com/xxx/image.jpg",
+          "example": "http://example.com/xxx/image.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -33917,7 +33917,7 @@
         {
           "disabled": false,
           "document": "涉及违规信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
-          "example": "http://xxx.vod-qcloud.com/xxx/a.mp4",
+          "example": "http://example.com/xxx/a.mp4",
           "member": "string",
           "name": "SegmentSetFileUrl",
           "output_required": true,
@@ -34058,7 +34058,7 @@
         {
           "disabled": false,
           "document": "涉及违规信息的嫌疑的视频片段列表文件 URL。文件的内容为 JSON，数据结构与 SegmentSet 字段一致。 （文件不会永久存储，到达SegmentSetFileUrlExpireTime 时间点后文件将被删除）。",
-          "example": "http://xxx.vod-qcloud.com/xxx/a.mp4",
+          "example": "http://example.com/xxx/a.mp4",
           "member": "string",
           "name": "SegmentSetFileUrl",
           "output_required": true,
@@ -34418,7 +34418,7 @@
         {
           "disabled": false,
           "document": "轮播播放地址。",
-          "example": "http://123.vod-qcloud.com/rplay/v1/xxxx/playlist.m3u8",
+          "example": "http://example.com/rplay/v1/xxxx/playlist.m3u8",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -35300,7 +35300,7 @@
         {
           "disabled": false,
           "document": "需要裁剪的腾讯云点播 HLS 视频 URL。",
-          "example": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/hhh.m3u8",
+          "example": "http://example.com/xxxxx/aaaaaa/hhh.m3u8",
           "member": "string",
           "name": "Url",
           "required": true,
@@ -35423,7 +35423,7 @@
         {
           "disabled": false,
           "document": "裁剪后的视频地址。",
-          "example": "http://xxxxx.vod2.myqcloud.com/xxxxx/aaaaaa/10_50.m3u8",
+          "example": "http://example.com/xxxxx/aaaaaa/10_50.m3u8",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -35495,7 +35495,7 @@
         {
           "disabled": false,
           "document": "截图输出文件地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -37329,7 +37329,7 @@
         {
           "disabled": false,
           "document": "播放地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.mp4",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -37445,7 +37445,7 @@
         {
           "disabled": false,
           "document": "封面地址。",
-          "example": "http://1000000000.vod2.myqcloud.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
+          "example": "http://example.com/b7364ee0vodgzp1000000000/1c32a5e74424135347123456789/f0.jpg",
           "member": "string",
           "name": "CoverUrl",
           "output_required": true,
@@ -38801,7 +38801,7 @@
         {
           "disabled": false,
           "document": "水印 Url。",
-          "example": "http://1490012345.vod-qcloud.com/watermark/exam.png",
+          "example": "http://example.com/watermark/exam.png",
           "member": "string",
           "name": "Url",
           "output_required": false,

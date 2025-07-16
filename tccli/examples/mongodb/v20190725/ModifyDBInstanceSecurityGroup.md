@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli mongodb ModifyDBInstanceSecurityGroup --cli-unfold-argument  \
-    --InstanceId cmgo-14i5dgtl' \
-    --SecurityGroupIds sg-l7ipccjl
+    --InstanceId cmgo-14i5****' \
+    --SecurityGroupIds sg-l7ip****
 ```
 
 Output: 

@@ -19,7 +19,8 @@ Output:
         "ResultFile3Ds": [
             {
                 "Type": "STL",
-                "Url": "https://xxx.cos.ap-guangzhou.tencentcos.cn/xxx.stl"
+                "Url": "https://xxx.cos.ap-guangzhou.tencentcos.cn/xxx.stl",
+                "PreviewImageUrl": "https://xxx.cos.ap-guangzhou.tencentcos.cn/xxx.png"
             }
         ],
         "Status": "DONE"

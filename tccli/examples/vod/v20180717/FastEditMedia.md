@@ -19,7 +19,7 @@ Output:
     "Response": {
         "RequestId": "6ca31e3a-6b8e-4b4e-9256-fdc700064ef3",
         "FileId": "152854854879852xxxxx",
-        "Url": "https://xxx.vod2.myqcloud.com/xxx/xxx.m3u8"
+        "Url": "https://example.com/xxx/xxx.m3u8"
     }
 }
 ```

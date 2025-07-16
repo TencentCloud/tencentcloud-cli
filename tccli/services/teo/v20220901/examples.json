@@ -226,6 +226,48 @@
         "title": "创建不启用探测的负载均衡实例"
       }
     ],
+    "CreateMultiPathGateway": [
+      {
+        "document": "在指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，创建云上网关，地域（RegionId）是北京（ap-beijing），端口（GatewayPort）为 8080。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiPathGateway\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayType\": \"cloud\",\n    \"GatewayName\": \"EOMPGW-1\",\n    \"RegionId\": \"ap-beijing\",\n    \"GatewayPort\": 8080\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayId\": \"mpgw-9d65563y6p\",\n        \"RequestId\": \"04e15f26-7a59-4e29-b297-1b43ed4ec691\"\n    }\n}",
+        "title": "创建多通道安全加速网关（云上网关）"
+      },
+      {
+        "document": "在指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，创建自有网关，IP（GatewayIP） 是 49.7.248.202，端口（GatewayPort）为 443。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiPathGateway\n<公共请求参数>\n\n{\n    \"GatewayType\": \"private\",\n    \"GatewayName\": \"private-1\",\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayPort\": 443,\n    \"GatewayIP\": \"49.7.248.202\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayId\": \"mpgw-ajf5qkoync\",\n        \"RequestId\": \"e8fef204-be7b-4a39-aee3-85b617651734\"\n    }\n}",
+        "title": "创建多通道安全加速网关（自有网关）"
+      }
+    ],
+    "CreateMultiPathGatewayLine": [
+      {
+        "document": "为指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，网关 ID 为 mpgw-lbxuhk1oh 的多通道安全加速网关创建 EdgeOne 四层代理线路。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineType\": \"proxy\",\n    \"LineAddress\": \"101.23.573.10:8989\",\n    \"ProxyId\": \"sid-2gpv1z8cx8y2\",\n    \"RuleId\": \"rule-33ik84rw3nuu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LineId\": \"line-1\",\n        \"RequestId\": \"34b734a7-71de-4ffc-a59d-eeac9d171da2\"\n    }\n}",
+        "title": "创建 EdgeOne 四层代理线路"
+      },
+      {
+        "document": "为指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，网关 ID 为 mpgw-lbxuhk1oh 的多通道安全加速网关创建自定义线路。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineType\": \"custom\",\n    \"LineAddress\": \"120.62.91.54:8080\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LineId\": \"line-2\",\n        \"RequestId\": \"a622678d-ea5b-41e8-9cd2-d335816141a0\"\n    }\n}",
+        "title": "创建自定义线路"
+      }
+    ],
+    "CreateMultiPathGatewaySecretKey": [
+      {
+        "document": "在指定站点（ZoneId 为 zone-27q0p0bal192）下，创建用户自定义的多通道安全加速网关接入密钥。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiPathGatewaySecretKey\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"SecretKey\": \"b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "title": "创建多通道安全加速网关接入密钥（自定义）"
+      },
+      {
+        "document": "在指定站点（ZoneId 为 zone-27q0p0bal192）下，创建系统自动生成的多通道安全加速网关接入密钥。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMultiPathGatewaySecretKey\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1026aae4-26b1-4580-adc3-fa7cd4dasd19\"\n    }\n}",
+        "title": "创建多通道安全加速网关接入密钥（系统自动生成）"
+      }
+    ],
     "CreateOriginGroup": [
       {
         "document": "创建HTTP专用型源站组",
@@ -506,6 +548,22 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnqaxol\",\n    \"InstanceId\": \"lb-23sw25sziowm\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"669724a7-65b1-4a13-b130-0ebccdb76ecd\"\n    }\n}",
         "title": "删除负载均衡实例"
+      }
+    ],
+    "DeleteMultiPathGateway": [
+      {
+        "document": "删除指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，网关 ID 为 mpgw-lbxuhk1oh 的多通道安全加速网关。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMultiPathGateway\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ad406fd-0e19-4bb4-af86-4ec580f89901\"\n    }\n}",
+        "title": "删除多通道安全加速网关"
+      }
+    ],
+    "DeleteMultiPathGatewayLine": [
+      {
+        "document": "删除多通道安全加速网关的指定自定义线路。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineId\": \"line-2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a622678d-ea5b-41e8-9cd2-d335816141a0\"\n    }\n}",
+        "title": "删除多通道安全加速网关的线路"
       }
     ],
     "DeleteOriginGroup": [
@@ -818,6 +876,64 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoadBalancerList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Filters\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8ecbb28-9360-4895-8138-668315e80b05\",\n        \"LoadBalancerList\": [\n            {\n                \"FailoverPolicy\": \"OtherOriginGroup\",\n                \"HealthChecker\": {\n                    \"CriticalThreshold\": 0,\n                    \"ExpectedCodes\": [],\n                    \"FollowRedirect\": \"\",\n                    \"Headers\": [],\n                    \"HealthThreshold\": 0,\n                    \"Interval\": 0,\n                    \"Method\": \"\",\n                    \"Path\": \"\",\n                    \"Port\": 0,\n                    \"RecvContext\": \"\",\n                    \"SendContext\": \"\",\n                    \"Timeout\": 0,\n                    \"Type\": \"NoCheck\"\n                },\n                \"InstanceId\": \"lb-2my56s2a4fw7\",\n                \"L4UsedList\": [],\n                \"L7UsedList\": [],\n                \"Name\": \"dyn-lb\",\n                \"OriginGroupHealthStatus\": [\n                    {\n                        \"OriginGroupID\": \"og-30l5kv5z2bse\",\n                        \"OriginGroupName\": \"allen_test_slave\",\n                        \"OriginHealthStatus\": [\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"1.12.231.49\"\n                            },\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"43.137.35.174\"\n                            }\n                        ],\n                        \"OriginType\": \"GENERAL\",\n                        \"Priority\": \"priority_1\"\n                    },\n                    {\n                        \"OriginGroupID\": \"og-30l5kv5z2ase\",\n                        \"OriginGroupName\": \"allen_test_master\",\n                        \"OriginHealthStatus\": [\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"1.116.214.39\"\n                            },\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"43.138.115.171\"\n                            }\n                        ],\n                        \"OriginType\": \"GENERAL\",\n                        \"Priority\": \"priority_2\"\n                    },\n                    {\n                        \"OriginGroupID\": \"og-30l5kv5z2bsf\",\n                        \"OriginGroupName\": \"test-origin\",\n                        \"OriginHealthStatus\": [\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"1.1.1.1\"\n                            },\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"www.baidu.com\"\n                            }\n                        ],\n                        \"OriginType\": \"GENERAL\",\n                        \"Priority\": \"priority_3\"\n                    },\n                    {\n                        \"OriginGroupID\": \"og-31l5kv5z2bsf\",\n                        \"OriginGroupName\": \"origin-general\",\n                        \"OriginHealthStatus\": [\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"1.1.1.1\"\n                            },\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"2.2.2.2\"\n                            }\n                        ],\n                        \"OriginType\": \"GENERAL\",\n                        \"Priority\": \"priority_4\"\n                    }\n                ],\n                \"Status\": \"Running\",\n                \"SteeringPolicy\": \"Pritory\",\n                \"Type\": \"GENERAL\"\n            },\n            {\n                \"FailoverPolicy\": \"OtherOriginGroup\",\n                \"HealthChecker\": {\n                    \"CriticalThreshold\": 2,\n                    \"ExpectedCodes\": [],\n                    \"FollowRedirect\": \"\",\n                    \"Headers\": [],\n                    \"HealthThreshold\": 3,\n                    \"Interval\": 30,\n                    \"Method\": \"\",\n                    \"Path\": \"\",\n                    \"Port\": 3344,\n                    \"RecvContext\": \"\",\n                    \"SendContext\": \"\",\n                    \"Timeout\": 5,\n                    \"Type\": \"TCP\"\n                },\n                \"InstanceId\": \"lb-2my4ja5zzo1j\",\n                \"L4UsedList\": [],\n                \"L7UsedList\": [],\n                \"Name\": \"pic-lb\",\n                \"OriginGroupHealthStatus\": [\n                    {\n                        \"OriginGroupID\": \"og-30l5kv5z2bse\",\n                        \"OriginGroupName\": \"allen_test_master\",\n                        \"OriginHealthStatus\": [\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"1.116.214.39\"\n                            },\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"43.138.115.171\"\n                            }\n                        ],\n                        \"OriginType\": \"GENERAL\",\n                        \"Priority\": \"priority_1\"\n                    },\n                    {\n                        \"OriginGroupID\": \"og-30l5kv5z2bse\",\n                        \"OriginGroupName\": \"allen_test_slave\",\n                        \"OriginHealthStatus\": [\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"1.12.231.49\"\n                            },\n                            {\n                                \"Healthy\": \"Unhealthy\",\n                                \"Origin\": \"43.137.35.174\"\n                            }\n                        ],\n                        \"OriginType\": \"GENERAL\",\n                        \"Priority\": \"priority_2\"\n                    }\n                ],\n                \"Status\": \"Running\",\n                \"SteeringPolicy\": \"Pritory\",\n                \"Type\": \"GENERAL\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询负载均衡列表"
+      }
+    ],
+    "DescribeMultiPathGateway": [
+      {
+        "document": "查询站点 ID 为 zone-27q0p0bal192 下，网关 ID 为 mpgw-9d65563y6p 的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGateway\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-9d65563y6p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayDetail\": {\n            \"GatewayId\": \"mpgw-9d65563y6p\",\n            \"GatewayIP\": \"49.233.240.134\",\n            \"GatewayName\": \"EOMPGW-1\",\n            \"GatewayPort\": 8080,\n            \"RegionId\": \"ap-beijing\",\n            \"Status\": \"online\",\n            \"GatewayType\": \"cloud\",\n            \"Lines\": [\n                {\n                    \"LineAddress\": \"49.233.240.134:8080\",\n                    \"LineId\": \"line-0\",\n                    \"LineType\": \"direct\"\n                }\n            ]\n        },\n        \"RequestId\": \"aaab53cb-23c4-4b13-85f5-e63745107ba0\"\n    }\n}",
+        "title": "查询云上网关详情"
+      },
+      {
+        "document": "查询站点 ID 为 zone-27q0p0bal192 下，网关 ID 为 mpgw-9d6asd63376 的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGateway\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-9d6asd63376\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayDetail\": {\n            \"GatewayId\": \"mpgw-9d6asd63376\",\n            \"GatewayIP\": \"41.125.20.114\",\n            \"GatewayName\": \"EOMPGW-2\",\n            \"GatewayPort\": 8080,\n            \"RegionId\": \"ap-shanghai\",\n            \"Status\": \"online\",\n            \"GatewayType\": \"private\",\n            \"Lines\": [\n                {\n                    \"LineAddress\": \"43.213.14.191:8080\",\n                    \"LineId\": \"line-0\",\n                    \"LineType\": \"direct\"\n                }\n            ]\n        },\n        \"RequestId\": \"aaab53cb-23c4-4b13-85f5-e63745107ba0\"\n    }\n}",
+        "title": "查询自有网关详情"
+      }
+    ],
+    "DescribeMultiPathGatewayLine": [
+      {
+        "document": "查询站点（ZoneId 为 zone-27q0p0bal192）下，网关 Id（GatewayId 为 mpgw-lbxuhk1oh），线路类型（LineId 为 line-0）的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineId\": \"line-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Line\": {\n            \"LineId\": \"line-0\",\n            \"LineType\": \"direct\",\n            \"LineAddress\": \"159.21.35.91:8080\"\n        },\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "title": "查询多通道安全加速网关的直连线路"
+      },
+      {
+        "document": "查询站点（ZoneId 为 zone-27q0p0bal192）下，网关 Id（GatewayId 为 mpgw-lbxuhk1oh），线路类型（LineId 为 line-1）的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineId\": \"line-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Line\": {\n            \"LineType\": \"proxy\",\n            \"LineAddress\": \"120.12.31.91:8080\",\n            \"LineId\": \"line-1\",\n            \"ProxyId\": \"sid-2gpv1z8cx8y2\",\n            \"RuleId\": \"rule-33ik84rw3nuu\"\n        },\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "title": "查询多通道安全加速网关的代理线路"
+      },
+      {
+        "document": "查询站点（ZoneId 为 zone-27q0p0bal192）下，网关 Id（GatewayId 为 mpgw-lbxuhk1oh），线路类型（LineId 为 line-2）的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineId\": \"line-2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Line\": {\n            \"LineId\": \"line-2\",\n            \"LineType\": \"custom\",\n            \"LineAddress\": \"120.12.31.91:8080\"\n        },\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "title": "查询多通道安全加速网关的自定义接入线路"
+      }
+    ],
+    "DescribeMultiPathGatewayRegions": [
+      {
+        "document": "获取站点（ ZoneId 为 zone-27q0p0bal192 ）下，云上网关的可用地域列表。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGatewayRegions\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GatewayRegions\": [\n            {\n                \"RegionId\": \"ap-beijing\",\n                \"CNName\": \"北京\",\n                \"ENName\": \"beijing\"\n            },\n            {\n                \"RegionId\": \"ap-shanghai\",\n                \"CNName\": \"上海\",\n                \"ENName\": \"shanghai\"\n            }\n        ],\n        \"RequestId\": \"a622678d-ea5b-41e8-9cd2-d335816141a0\"\n    }\n}",
+        "title": "获取可用网关地域列表"
+      }
+    ],
+    "DescribeMultiPathGatewaySecretKey": [
+      {
+        "document": "查询指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，多通道安全加速网关的接入密钥。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGatewaySecretKey\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=\",\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "title": "查询多通道安全加速网关接入密钥"
+      }
+    ],
+    "DescribeMultiPathGateways": [
+      {
+        "document": "查询多通道安全加速网关列表，一页显示 10 行记录，不带过滤条件。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGateways\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"GatewayId\": \"mpgw-lbxuhk1oh\",\n                \"GatewayName\": \"mpgw\",\n                \"GatewayType\": \"private\",\n                \"GatewayPort\": 8080,\n                \"Status\": \"online\",\n                \"GatewayIP\": \"101.43.204.125\"\n            }\n        ],\n        \"RequestId\": \"a622678d-ea5b-41e8-9cd2-d335816141a0\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询多通道安全加速网关列表"
       }
     ],
     "DescribeOriginACL": [
@@ -1430,6 +1546,36 @@
         "title": "修改负载均衡实例的检查策略"
       }
     ],
+    "ModifyMultiPathGateway": [
+      {
+        "document": "修改指定站点下 ZoneId 为 zone-27q0p0bal192，网关 GatewayId 为 mpgw-lbxuhk1oh 的多通道安全加速网关的网关名、 IP  和端口信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMultiPathGateway\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"GatewayName\": \"eomp\",\n    \"GatewayIP\": \"101.31.33.19\",\n    \"GatewayPort\": 8080\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"175a5e55-a849-41f1-93d2-c9741859fedd\"\n    }\n}",
+        "title": "修改多通道安全加速网关信息"
+      }
+    ],
+    "ModifyMultiPathGatewayLine": [
+      {
+        "document": "修改站点（ ZoneId 取值为 zone-27q0p0bal192 ）下，多通道安全加速网关 ID 为 mpgw-lbxuhk1oh 的 Edgeone 四层代理线路转发线路，将 LineAddress 修改为 101.23.573.10:8989，ProxyId 修改为 sid-2gpv1z8cx8y2，RuleId 修改为 rule-33ik84rw3nuu。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineId\": \"line-1\",\n    \"LineType\": \"proxy\",\n    \"LineAddress\": \"101.23.573.10:8989\",\n    \"ProxyId\": \"sid-2gpv1z8cx8y2\",\n    \"RuleId\": \"rule-33ik84rw3nuu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a622678d-ea5b-41e8-9cd2-d335816141a0\"\n    }\n}",
+        "title": "修改多通道安全加速网关的代理线路"
+      },
+      {
+        "document": "修改站点（ ZoneId 取值为 zone-27q0p0bal192 ）下，多通道安全加速网关 ID 为 mpgw-lbxuhk1oh 的自定义线路，将 LineAddress 修改为 120.91.82.74:8080。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMultiPathGatewayLine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"GatewayId\": \"mpgw-lbxuhk1oh\",\n    \"LineId\": \"line-2\",\n    \"LineType\": \"custom\",\n    \"LineAddress\": \"120.91.82.74:8080\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"548b1b65-fcec-4095-8c7a-ec8afa862635\"\n    }\n}",
+        "title": "修改多通道安全加速网关的自定义线路"
+      }
+    ],
+    "ModifyMultiPathGatewaySecretKey": [
+      {
+        "document": "修改指定站点下（ ZoneId 为 zone-27q0p0bal192）的多通道安全加速网关接入密钥，修改后原密钥失效。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMultiPathGatewaySecretKey\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\",\n    \"SecretKey\": \"b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "title": "修改接入密钥"
+      }
+    ],
     "ModifyOriginACL": [
       {
         "document": "ZoneId 为 'zone-276zs184g93m' 的站点新增七层加速域名 ‘www.qq.com’ 使用特定回源 IP 网段回源。",
@@ -1618,6 +1764,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneStatus\n<公共请求参数>\n\n{\n    \"Paused\": true,\n    \"ZoneId\": \"zone-27q0p0bali16\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7sd20b24-7dc5-98f4-96ce-95825dcd34sa\"\n    }\n}",
         "title": "切换站点状态"
+      }
+    ],
+    "RefreshMultiPathGatewaySecretKey": [
+      {
+        "document": "刷新指定站点下多通道安全加速网关的密钥，刷新密钥后，原始密钥会失效。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefreshMultiPathGatewaySecretKey\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=\",\n        \"RequestId\": \"a622678d-ea5b-41e8-9cd2-d335816141a0\"\n    }\n}",
+        "title": "刷新多通道安全加速网关的密钥"
       }
     ],
     "RenewPlan": [
